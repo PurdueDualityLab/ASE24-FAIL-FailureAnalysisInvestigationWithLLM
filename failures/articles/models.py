@@ -4,6 +4,8 @@ import feedparser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from failures.networks.models import ZeroShotClassifier
+
 
 class Article(models.Model):
     title = models.CharField(_("Title"), max_length=255)
@@ -15,6 +17,8 @@ class Article(models.Model):
     source = models.URLField(_("Source"))
 
     summary = models.TextField(_("Summary"), blank=True)
+
+    body = models.TextField(_("Body"), blank=True)
 
     scraped_at = models.DateTimeField(_("Scraped at"), auto_now_add=True)
 
@@ -128,3 +132,12 @@ class Annotation(models.Model):
     class Meta:
         verbose_name = _("Annotation")
         verbose_name_plural = _("Annotations")
+
+    @classmethod
+    def create_from_article(cls, article: Article, classifier: ZeroShotClassifier):
+        for field in ("duration", "location", "semantics", "behavior", "dimension"):
+            labels = [choice[0].lower() for choice in getattr(cls, field).choices]
+            result = classifier.classify(article.summary, labels)
+            scores = result["scores"]
+            predicted_label = result["labels"][scores.index(max(scores))]
+            setattr(article, field, predicted_label.upper())
