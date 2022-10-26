@@ -4,10 +4,39 @@ import feedparser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+import datetime
+
 from failures.networks.models import ZeroShotClassifier
+
+import logging
+
+
+class SearchQuery(models.Model):
+    keyword = models.CharField(_("Keyword"), max_length=255)
+
+    start_year = models.IntegerField(_("Start Year"), null=True)
+
+    end_year = models.IntegerField(_("End Year"), null=True)
+
+    searched_at = models.DateTimeField(_("Searched at"), auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Search Query")
+        verbose_name_plural = _("Search Queries")
+
+    def __str__(self):
+        return self.keyword
 
 
 class Article(models.Model):
+    search_query = models.ForeignKey(
+        SearchQuery,
+        on_delete=models.CASCADE,
+        related_name="articles",
+        related_query_name="article",
+        verbose_name=_("Search Query"),
+    )
+
     title = models.CharField(_("Title"), max_length=255)
 
     url = models.URLField(_("URL"))
@@ -32,16 +61,33 @@ class Article(models.Model):
     def has_manual_annotation(self) -> bool:
         return self.annotations.filter(manual=True).exists()
 
-    def get_google_news_rss_feed(
-        self,
+    @classmethod
+    def create_from_google_news_rss_feed(
+        cls,
         keyword: str,
         start_year: Optional[int] = None,
         end_year: Optional[int] = None,
         sources: Optional[list[str]] = None,
-    ) -> feedparser.FeedParserDict:
-        url = self.format_google_news_rss_url(keyword, start_year, end_year, sources)
-        return feedparser.parse(url)
+    ):
+        url = cls.format_google_news_rss_url(keyword, start_year, end_year, sources)
+        feed = feedparser.parse(url)
+        search_query = SearchQuery.objects.create(
+            keyword=keyword, start_year=start_year, end_year=end_year
+        )
+        for entry in feed.entries:
+            if not cls.objects.filter(url=entry.link).exists():
+                cls.objects.get_or_create(
+                    search_query=search_query,
+                    title=entry["title"],
+                    url=entry["link"],
+                    # Mon, 24 Oct 2022 11:00:00 GMT to datetime
+                    published=datetime.datetime.strptime(
+                        entry["published"], "%a, %d %b %Y %H:%M:%S %Z"
+                    ),
+                    source=entry["source"]["href"],
+                )
 
+    # TODO: should this method be on SearchQuery?
     @staticmethod
     def format_google_news_rss_url(
         keyword: str,
@@ -141,3 +187,4 @@ class Annotation(models.Model):
             scores = result["scores"]
             predicted_label = result["labels"][scores.index(max(scores))]
             setattr(article, field, predicted_label.upper())
+        article.save()
