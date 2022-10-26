@@ -1,14 +1,12 @@
+import datetime
+import logging
 from typing import Optional
 
 import feedparser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-import datetime
-
 from failures.networks.models import ZeroShotClassifier
-
-import logging
 
 
 class SearchQuery(models.Model):
@@ -80,7 +78,7 @@ class Article(models.Model):
                     search_query=search_query,
                     title=entry["title"],
                     url=entry["link"],
-                    # Mon, 24 Oct 2022 11:00:00 GMT to datetime
+                    # example: Mon, 24 Oct 2022 11:00:00 GMT
                     published=datetime.datetime.strptime(
                         entry["published"], "%a, %d %b %Y %H:%M:%S %Z"
                     ),
