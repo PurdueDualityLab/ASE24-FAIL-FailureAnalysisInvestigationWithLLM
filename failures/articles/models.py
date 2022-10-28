@@ -1,8 +1,8 @@
 import datetime
-import logging
 from typing import Optional
 
 import feedparser
+import newsplease
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -27,9 +27,17 @@ class SearchQuery(models.Model):
 
 
 class Article(models.Model):
-    search_query = models.ForeignKey(
-        SearchQuery,
+    failure = models.ForeignKey(
+        "failures.Failure",
         on_delete=models.CASCADE,
+        related_name="articles",
+        related_query_name="article",
+        verbose_name=_("Failure"),
+        null=True,
+    )
+
+    search_query = models.ManyToManyField(
+        SearchQuery,
         related_name="articles",
         related_query_name="article",
         verbose_name=_("Search Query"),
@@ -37,7 +45,8 @@ class Article(models.Model):
 
     title = models.CharField(_("Title"), max_length=255)
 
-    url = models.URLField(_("URL"))
+    # Marking url as unique=True because we don't want to store the same article twice
+    url = models.URLField(_("URL"), unique=True)
 
     published = models.DateTimeField(_("Published"))
 
@@ -57,7 +66,10 @@ class Article(models.Model):
         return self.title
 
     def has_manual_annotation(self) -> bool:
-        return self.annotations.filter(manual=True).exists()
+        if self.failure is not None:
+            self.failure: Failure
+            return self.failure.manual_annotation
+        return False
 
     @classmethod
     def create_from_google_news_rss_feed(
@@ -73,9 +85,9 @@ class Article(models.Model):
             keyword=keyword, start_year=start_year, end_year=end_year
         )
         for entry in feed.entries:
+            # TODO: reduce queries here
             if not cls.objects.filter(url=entry.link).exists():
-                cls.objects.get_or_create(
-                    search_query=search_query,
+                article = cls.objects.create(
                     title=entry["title"],
                     url=entry["link"],
                     # example: Mon, 24 Oct 2022 11:00:00 GMT
@@ -84,6 +96,9 @@ class Article(models.Model):
                     ),
                     source=entry["source"]["href"],
                 )
+            else:
+                article = cls.objects.get(url=entry.link)
+            article.search_query.add(search_query)
 
     # TODO: should this method be on SearchQuery?
     @staticmethod
@@ -93,6 +108,7 @@ class Article(models.Model):
         end_year: Optional[int] = None,
         sources: Optional[list[str]] = None,
     ) -> str:
+        keyword = keyword.replace(" ", "%20")
         url = f"https://news.google.com/rss/search?q={keyword}"
         if start_year:
             url += f"%20after%3A{start_year}-01-01"
@@ -105,8 +121,17 @@ class Article(models.Model):
         url += "&hl=en-US&gl=US&ceid=US%3Aen"
         return url
 
+    def scrape_body(self):
+        article = newsplease.NewsPlease.from_url(self.url)
+        self.body = article.text
+        self.save()
 
-class Annotation(models.Model):
+    def summarize_body(self, summarizer):
+        self.summary = summarizer(self.body)
+        self.save()
+
+
+class Failure(models.Model):
     class Duration(models.TextChoices):
         TRANSIENT = "TRANSIENT", _("Transient")
         PERMANENT = "PERMANENT", _("Permanent")
@@ -131,15 +156,20 @@ class Annotation(models.Model):
         SOFTWARE = "SOFTWARE", _("Software")
         HARDWARE = "HARDWARE", _("Hardware")
 
-    article = models.ForeignKey(
-        Article,
-        on_delete=models.CASCADE,
-        related_name="annotations",
-        related_query_name="annotation",
-        verbose_name=_("Article"),
-    )
+    name = models.CharField(_("Name"), max_length=255)
+
+    description = models.TextField(_("Description"), blank=True)
+
+    started_at = models.DateTimeField(_("Started at"))
+
+    # ended_at may not apply to all failures, so marking it as null=True
+    ended_at = models.DateTimeField(_("Ended at"), null=True)
 
     created_at = models.DateTimeField(_("Created at"), auto_now_add=True)
+
+    manual_annotation = models.BooleanField(_("Manual Annotation"), default=False)
+
+    automated_annotation = models.BooleanField(_("Automated Annotation"), default=False)
 
     duration = models.CharField(
         _("Duration"),
@@ -171,14 +201,17 @@ class Annotation(models.Model):
         choices=Dimension.choices,
     )
 
-    manual = models.BooleanField(_("Manual"), default=False)
-
     class Meta:
-        verbose_name = _("Annotation")
-        verbose_name_plural = _("Annotations")
+        verbose_name = _("Failure")
+        verbose_name_plural = _("Failures")
+
+    def __str__(self):
+        return self.name
 
     @classmethod
-    def create_from_article(cls, article: Article, classifier: ZeroShotClassifier):
+    def create_automated_from_article(
+        cls, article: Article, classifier: ZeroShotClassifier
+    ):
         for field in ("duration", "location", "semantics", "behavior", "dimension"):
             labels = [choice[0].lower() for choice in getattr(cls, field).choices]
             result = classifier.classify(article.summary, labels)
