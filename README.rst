@@ -1,6 +1,6 @@
-failures
+Failures
 ========
 
-failures is a tool for scraping and analyzing software failures in the news.
+Failures is a rich database of software failures scraped from news articles.
 
-failures uses GitHub Actions, mailgun, and Roboflow for automation.
+TODO: Add more details here
