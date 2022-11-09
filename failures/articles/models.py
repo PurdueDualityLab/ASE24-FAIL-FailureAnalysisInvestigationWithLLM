@@ -1,12 +1,14 @@
 import datetime
+import logging
+import time
 from typing import Optional
 
 import feedparser
-import newsplease
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from newsplease import NewsPlease
 
-from failures.networks.models import ZeroShotClassifier
+from failures.networks.models import Summarizer, ZeroShotClassifier
 
 
 class SearchQuery(models.Model):
@@ -23,30 +25,28 @@ class SearchQuery(models.Model):
         verbose_name_plural = _("Search Queries")
 
     def __str__(self):
-        return self.keyword
+        return f"{self.keyword}"
 
 
 class Article(models.Model):
-    failure = models.ForeignKey(
-        "failures.Failure",
-        on_delete=models.CASCADE,
+    failures = models.ManyToManyField(
+        "Failure",
         related_name="articles",
         related_query_name="article",
-        verbose_name=_("Failure"),
-        null=True,
+        verbose_name=_("Failures"),
     )
 
-    search_query = models.ManyToManyField(
+    search_queries = models.ManyToManyField(
         SearchQuery,
         related_name="articles",
         related_query_name="article",
-        verbose_name=_("Search Query"),
+        verbose_name=_("Search Queries"),
     )
 
-    title = models.CharField(_("Title"), max_length=255)
+    title = models.CharField(_("Title"), max_length=510)
 
     # Marking url as unique=True because we don't want to store the same article twice
-    url = models.URLField(_("URL"), unique=True)
+    url = models.URLField(_("URL"), unique=True, max_length=510)
 
     published = models.DateTimeField(_("Published"))
 
@@ -55,6 +55,8 @@ class Article(models.Model):
     summary = models.TextField(_("Summary"), blank=True)
 
     body = models.TextField(_("Body"), blank=True)
+
+    embedding = models.FileField(_("Embedding"), upload_to="embeddings", null=True)
 
     scraped_at = models.DateTimeField(_("Scraped at"), auto_now_add=True)
 
@@ -66,10 +68,7 @@ class Article(models.Model):
         return self.title
 
     def has_manual_annotation(self) -> bool:
-        if self.failure is not None:
-            self.failure: Failure
-            return self.failure.manual_annotation
-        return False
+        return self.failures.filter(manual_annotation=True).exists()
 
     @classmethod
     def create_from_google_news_rss_feed(
@@ -84,6 +83,7 @@ class Article(models.Model):
         search_query = SearchQuery.objects.create(
             keyword=keyword, start_year=start_year, end_year=end_year
         )
+        logging.info(f"Created search query: {search_query}")
         for entry in feed.entries:
             # TODO: reduce queries here
             if not cls.objects.filter(url=entry.link).exists():
@@ -96,9 +96,11 @@ class Article(models.Model):
                     ),
                     source=entry["source"]["href"],
                 )
+                logging.info(f"Created article: {article}")
             else:
                 article = cls.objects.get(url=entry.link)
-            article.search_query.add(search_query)
+            logging.info(f"Adding search query to article: {search_query} - {article}")
+            article.search_queries.add(search_query)
 
     # TODO: should this method be on SearchQuery?
     @staticmethod
@@ -122,12 +124,20 @@ class Article(models.Model):
         return url
 
     def scrape_body(self):
-        article = newsplease.NewsPlease.from_url(self.url)
-        self.body = article.text
+        try:
+            article = NewsPlease.from_url(self.url)
+        except Exception as e:
+            logging.error(f"Failed to scrape article: {self.url} - {e}")
+            return
+        if article.maintext is None:
+            logging.error(f"Failed to scrape article: {self.url} - No text found")
+            return
+        self.body = article.maintext
         self.save()
+        logging.info(f"Scraped body for {self.url}")
 
-    def summarize_body(self, summarizer):
-        self.summary = summarizer(self.body)
+    def summarize_body(self, summarizer: Summarizer):
+        self.summary: str = summarizer.run(self.body)
         self.save()
 
 
@@ -158,7 +168,7 @@ class Failure(models.Model):
 
     name = models.CharField(_("Name"), max_length=255)
 
-    description = models.TextField(_("Description"), blank=True)
+    description = models.TextField(_("Description"))
 
     started_at = models.DateTimeField(_("Started at"))
 
@@ -167,9 +177,13 @@ class Failure(models.Model):
 
     created_at = models.DateTimeField(_("Created at"), auto_now_add=True)
 
+    # manual_annotation=False means that the failure was automatically detected
     manual_annotation = models.BooleanField(_("Manual Annotation"), default=False)
 
-    automated_annotation = models.BooleanField(_("Automated Annotation"), default=False)
+    # display means that this failure should be displayed in the UI, because it has been merged with other failures
+    display = models.BooleanField(_("Display"), default=False)
+
+    industry = models.CharField(_("Industry"), max_length=255)
 
     duration = models.CharField(
         _("Duration"),
@@ -214,7 +228,7 @@ class Failure(models.Model):
     ):
         for field in ("duration", "location", "semantics", "behavior", "dimension"):
             labels = [choice[0].lower() for choice in getattr(cls, field).choices]
-            result = classifier.classify(article.summary, labels)
+            result = classifier.run(article.summary, labels)
             scores = result["scores"]
             predicted_label = result["labels"][scores.index(max(scores))]
             setattr(article, field, predicted_label.upper())

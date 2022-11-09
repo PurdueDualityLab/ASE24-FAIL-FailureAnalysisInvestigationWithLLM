@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from failures.articles.models import Annotation, Article, SearchQuery
+from failures.articles.models import Article, Failure, SearchQuery
 
 
 @admin.register(Article)
@@ -11,8 +11,20 @@ class ArticleAdmin(admin.ModelAdmin):
 
 @admin.register(SearchQuery)
 class SearchQueryAdmin(admin.ModelAdmin):
-    list_display = ("keyword", "start_year", "end_year", "searched_at")
+    list_display = ("id", "keyword", "start_year", "end_year", "searched_at")
     list_filter = ("searched_at",)
 
 
-admin.site.register(Annotation)
+@admin.register(Failure)
+class FailureAdmin(admin.ModelAdmin):
+    list_display = (
+        "name",
+        "industry",
+        "started_at",
+        "duration",
+        "location",
+        "semantics",
+        "behavior",
+        "dimension",
+    )
+    list_filter = ("created_at",)
