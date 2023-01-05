@@ -47,6 +47,7 @@ class ZeroShotClassifier(Network[str, tuple[str, float]]):
         return prediction["labels"][scores.index(max_score)], max_score
 
 
+# TODO: expose parameters for summary length
 class Summarizer(Network[str, str]):
     def __init__(self, model_name: str = "facebook/bart-large-cnn"):
         self.summarizer = transformers.pipeline("summarization", model=model_name)
