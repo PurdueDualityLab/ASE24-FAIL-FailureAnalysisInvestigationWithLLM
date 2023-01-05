@@ -109,3 +109,30 @@ Merge Articles into Failures Using the Command Line
 
     $ docker compose -f local.yml run --rm django python -m failures merge --all
 
+
+Admin Parameters
+----------------
+
+#. ``FAILURE_NAME_QUESTION``: The question to ask the question and answer model
+   when predicting the over-arching failure name. The default is
+   ``"What is the name of the software failure?"``.
+
+#. ``FAILURE_INDUSTRY_QUESTION``: The question to ask the question and answer
+   model when predicting the industry of the failure. The default is
+   ``"What industry does this software failure belong to?"``.
+
+#. ``FAILURE_STARTED_AT_QUESTION``: The question to ask the question and answer
+   model when predicting the start date of the failure. The default is
+   ``"When did this software failure start?"``.
+
+#. ``FAILURE_ENDED_AT_QUESTION``: The question to ask the question and answer
+    model when predicting the end date of the failure. The default is
+    ``"When did this software failure end?"``.
+
+#. ``FAILURE_POSITIVE_CLASSIFICATION_CLASS``: The class used as one of the labels for
+   the zero-shot classification model when predicting that the article is about a
+   software failure. The default is ``"software failure"``.
+
+#. ``FAILURE_NEGATIVE_CLASSIFICATION_CLASS``: The class used as one of the labels for
+    the zero-shot classification model when predicting that the article is not about a
+    software failure. The default is ``"not a software failure"``.
