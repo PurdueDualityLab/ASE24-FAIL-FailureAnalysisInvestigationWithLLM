@@ -20,6 +20,6 @@ Admin Site
 
 #. Create an admin account::
 
-    $ python manage.py createsuperuser
+    $ docker compose -f local.yml run --rm django python manage.py createsuperuser
 
 #. Access the site administration page at ``/admin/``
