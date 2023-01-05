@@ -39,3 +39,64 @@ Scraping News Articles Using the Admin Site
 
     $ docker compose -f local.yml run --rm django python -m failures scrape
 
+
+Scraping News Articles Using Only the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m failures scrape --help
+
+#. Run a scrape::
+
+    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
+
+
+Summarizing Articles Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m failures summarize --help
+
+#. Summarize articles::
+
+    $ docker compose -f local.yml run --rm django python -m failures summarize --all
+
+
+
+Classifying Articles Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m failures classify --help
+
+#. Classify articles::
+
+    $ docker compose -f local.yml run --rm django python -m failures classify --all
+
+
+Create Embedding for Articles Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m failures embed --help
+
+#. Create embeddings for articles::
+
+    $ docker compose -f local.yml run --rm django python -m failures embed --all
+
+
+Merge Articles into Failures Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m failures merge --help
+
+#. Merge articles into failures::
+
+    $ docker compose -f local.yml run --rm django python -m failures merge --all
+
