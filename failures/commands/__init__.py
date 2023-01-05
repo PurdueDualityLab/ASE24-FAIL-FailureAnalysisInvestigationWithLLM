@@ -4,6 +4,11 @@ import textwrap
 from typing import Protocol
 
 from failures.commands.scrape import ScrapeCommand
+from failures.commands.summarize import SummarizeCommand
+from failures.commands.embed import EmbedCommand
+from failures.commands.classify import ClassifyCommand
+from failures.commands.merge import MergeCommand
+
 
 _EPILOG = textwrap.dedent(
     """\
@@ -27,7 +32,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), MergeCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:

@@ -7,6 +7,7 @@ from django.views import defaults as default_views
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
+    path("failures/", include("failures.articles.urls", namespace="articles")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
