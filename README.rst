@@ -164,3 +164,40 @@ Working with Parameters Programmatically
 
 If the parameter does not exist, it will be created with the default value. This is similar to
 ``dict.get``; however, parameters set in the admin site are persisted in the database.
+
+Using failures.networks Programmatically
+---------------------------------------
+
+There are four main classes in the ``failures.networks.models`` module:
+
+#. ``ZeroShotClassifier``::
+
+        >>> from failures.networks.models import ZeroShotClassifier
+        >>> classifier = ZeroShotClassifier(["software failure", "not a software failure"])
+        >>> classifier.run("This is a software failure.")
+        ('software failure', 0.9999998807907104)
+
+
+#. ``Summarizer``::
+
+        >>> from failures.networks.models import Summarizer
+        >>> summarizer = Summarizer()
+        >>> summarizer.run("This is an article about a software failure...")
+        'This is a summary of the article.'
+
+#. ``QuestionAnswerer``::
+
+        >>> from failures.networks.models import QuestionAnswerer
+        >>> question_answerer = QuestionAnswerer()
+        >>> question_answerer.run("When did this software failure start?", "This software failure started in 2020.")
+        '2020'
+
+
+#. ``Embedder``::
+
+        >>> from failures.networks.models import Embedder
+        >>> embedder = Embedder()
+        >>> embedder.run("This is an article about a software failure...")
+        array([ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00, ...,
+                0.00000000e+00,  0.00000000e+00, -1.19209290e-07], dtype=float32)
+
