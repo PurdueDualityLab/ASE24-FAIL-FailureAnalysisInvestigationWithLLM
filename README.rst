@@ -136,3 +136,16 @@ Admin Parameters
 #. ``FAILURE_NEGATIVE_CLASSIFICATION_CLASS``: The class used as one of the labels for
    the zero-shot classification model when predicting that the article is not about a
    software failure. The default is ``"not a software failure"``.
+
+Setting Admin Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to the ``/admin/`` page and log in.
+
+#. Click on ``Parameters`` underneath the ``Parameters`` section.
+
+#. Click on ``ADD PARAMETER +``.
+
+#. Enter a name, value, and value type and click ``SAVE``.
+
+#. Repeat for each parameter.
