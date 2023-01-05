@@ -24,8 +24,17 @@ Admin Site
 
 #. Access the site administration page at ``/admin/``
 
-Scraping News Articles Using the Admin Site
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Main Site: WIP
+^^^^^^^^^^^^^^
+
+#. Make sure the container is running::
+
+    $ docker compose -f local.yml up
+
+#. Access the main site at ``/failures/``
+
+Scraping News Articles Using the Admin Site and the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to the ``/admin/`` page and log in.
 
