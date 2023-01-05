@@ -129,9 +129,9 @@ Admin Parameters
     model when predicting the end date of the failure. The default is
     ``"When did this software failure end?"``.
 
-#. ``FAILURE_POSITIVE_CLASSIFICATION_CLASS``: The class used as one of the labels for
-   the zero-shot classification model when predicting that the article is about a
-   software failure. The default is ``"software failure"``.
+#. ``FAILURE_POSITIVE_CLASSIFICATION_CLASS``: The class used as one of the
+    labels for the zero-shot classification model when predicting that the article is about a
+    software failure. The default is ``"software failure"``.
 
 #. ``FAILURE_NEGATIVE_CLASSIFICATION_CLASS``: The class used as one of the labels for
     the zero-shot classification model when predicting that the article is not about a
