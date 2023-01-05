@@ -23,3 +23,19 @@ Admin Site
     $ docker compose -f local.yml run --rm django python manage.py createsuperuser
 
 #. Access the site administration page at ``/admin/``
+
+Scraping News Articles Using the Admin Site
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to the ``/admin/`` page and log in.
+
+#. Click on ``Search Queries`` underneath the ``Articles`` section.
+
+#. Click on ``ADD SEARCH QUERY +``.
+
+#. Enter a search query and click ``SAVE``.
+
+#. Run a scrape from the command line::
+
+    $ docker compose -f local.yml run --rm django python -m failures scrape
+
