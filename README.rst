@@ -149,3 +149,18 @@ Setting Admin Parameters
 #. Enter a name, value, and value type and click ``SAVE``.
 
 #. Repeat for each parameter.
+
+Working with Parameters Programmatically
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Import the ``Parameter`` model::
+
+    >>> from failures.parameters.models import Parameter
+
+#. Get the value of a parameter::
+
+        >>> Parameter.get("FAILURE_NAME_QUESTION", "What is the name of the software failure?")
+        'What is the name of the software failure?'
+
+If the parameter does not exist, it will be created with the default value. This is similar to
+``dict.get``; however, parameters set in the admin site are persisted in the database.
