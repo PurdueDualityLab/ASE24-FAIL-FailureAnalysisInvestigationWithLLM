@@ -389,5 +389,8 @@ class Failure(models.Model):
         failure.ended_at = question_answerer.run(
             (Parameter.get("FAILURE_ENDED_AT_QUESTION", "When did this software failure end?"), article.body)
         )
+        failure.description = question_answerer.run(
+            (Parameter.get("FAILURE_DESCRIPTION_QUESTION", "What is the description of the software failure?"), article.body)
+        )
         failure.save()
         return failure
