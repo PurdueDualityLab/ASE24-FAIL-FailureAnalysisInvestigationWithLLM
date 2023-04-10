@@ -48,3 +48,18 @@ class Parameter(models.Model):
             return instance.value.lower() == "true"
         else:
             raise ValueError("Unknown value type")
+        
+    '''
+    @classmethod
+    def set(cls, name: str, default: Optional[Any] = None) -> Any:
+        try:
+            instance = cls.objects.get(name=name)
+        except ObjectDoesNotExist:
+    '''
+            
+
+'''
+#Need to set up multiple classes of parameters:
+1. Ones that only need to be run once 
+2. Ones that need to be run each time a new parameter is added
+'''

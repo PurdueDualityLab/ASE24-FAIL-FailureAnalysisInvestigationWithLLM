@@ -10,12 +10,16 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from newsplease import NewsPlease
+from newspaper import Article as NewsScraper
+from bs4 import BeautifulSoup
+import requests
 
 from failures.networks.models import (
     Embedder,
     QuestionAnswerer,
     Summarizer,
     ZeroShotClassifier,
+    ChatGPT,
 )
 
 from failures.parameters.models import Parameter
@@ -213,7 +217,7 @@ class Article(models.Model):
         if start_year:
             url += f"%20after%3A{start_year}-01-01"
         if end_year:
-            url += f"%20before%3A{end_year}-01-01"
+            url += f"%20before%3A{end_year}-01-15" #TODO: Remove 15
         for i, source in enumerate(sources):
             if i > 0:
                 url += "%20OR"
@@ -221,6 +225,7 @@ class Article(models.Model):
         url += "&hl=en-US&gl=US&ceid=US%3Aen"
         return url
 
+    '''
     def scrape_body(self):
         try:
             article = NewsPlease.from_url(self.url)
@@ -234,6 +239,60 @@ class Article(models.Model):
         self.save()
         logging.info(f"Scraped body for %s.", self)
         return self.body
+    '''
+    def scrape_body(self):
+        try:
+            dest_url = requests.get(self.url)
+            self.url = dest_url.url
+            article_scrape = NewsScraper(self.url)
+            article_scrape.download()
+            article_scrape.parse()
+            article_text = self.preprocess_html(article_scrape)
+        except Exception as e:
+            logging.error(f"Failed to scrape article %s: %s.", self, e)
+            return
+        if article_text is None:
+            logging.error("Failed to scrape article %s: No text found.", self)
+            return
+        self.body = article_text
+        self.save()
+        logging.info(f"Scraped body for %s.", self)
+        return self.body
+    
+    def preprocess_html(self, article_scrape):
+        logging.info(f"Processing html for %s.", self)
+        # HTML string
+        html_string = article_scrape.html
+        article_text = None
+
+        # Create a BeautifulSoup object
+        soup = BeautifulSoup(html_string, 'html.parser')
+
+        #Scrape text from WIRED
+        if "wired" in article_scrape.url:
+            article_div = soup.find_all("div", attrs={"class": "body__inner-container"})
+            article_text = ""
+            for text in article_div:
+                article_text = article_text + " " + text.get_text(separator=' ')
+
+        #Scrape text from NYT
+        elif "nytimes" in article_scrape.url:
+            article_div = soup.find_all("section", attrs={"name": "articleBody"})
+            article_text = ""
+            for text in article_div:
+                article_text = article_text + " " + text.get_text(separator=' ')
+
+        else:
+            logging.info("URL is not NYT or WIRED: " + article_scrape.url + " for article: " + str(self))
+            article_text = article_scrape.text
+        
+        if article_text is None or len(article_text.split()) < 100:
+            logging.info("Issue parsing: " + article_scrape.url + " for article: " + str(self))
+            article_text = article_scrape.text
+
+        article_text = "Published on " + str(article_scrape.publish_date) + ". " + article_text
+
+        return article_text
 
     def summarize_body(self, summarizer: Summarizer):
         self.summary: str = summarizer.run(self.body)
@@ -265,7 +324,7 @@ class Article(models.Model):
         return self.describes_failure
 
 
-class FailureCause(models.Model):
+class FailureCause(models.Model): #TODO: Not used 
     failure = models.ForeignKey(
         "Failure",
         related_name="failure_causes",
@@ -285,6 +344,74 @@ class FailureCause(models.Model):
 
 
 class Failure(models.Model):
+
+    #published = models.DateTimeField(_("Published"), help_text=_("Date and time when the article was published."))
+
+    #Open ended postmortem fields
+    title = models.TextField(_("Title"), blank=True, null=True)
+    summary = models.TextField(_("Summary"), blank=True, null=True)
+    system = models.TextField(_("System"), blank=True, null=True)
+    time = models.TextField(_("Time"), blank=True, null=True)
+    SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
+    NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
+    impacts = models.TextField(_("Impacts"), blank=True, null=True)
+    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+
+    #Choices for taxonomy
+    phase = (('0', 'system design'), ('1', 'operation'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
+    boundary = (('0', 'within the system'), ('1', 'outside the system'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
+    nature = (('0', 'human actions'), ('1', 'non human actions'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
+    dimension = (('0', 'hardware'), ('1', 'software'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
+    objective = (('0', 'malicious'), ('1', 'non-malicious'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
+    intent = (('0', 'deliberate'), ('1', 'accidental'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
+    capability = (('0', 'accidental'), ('1', 'development incompetence'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
+    duration = (('0', 'permanent'), ('1', 'temporary'), ('2', 'intermittent'), ('-1', 'unknown'))
+    domain = (('0', 'automotive'), ('1', 'critical infrastructure'), ('2', 'healthcare'), ('3', 'energy'), ('4', 'transportation'), ('5', 'infrastructure'), ('6', 'aerospace'), ('7', 'telecommunications'), ('-1', 'unknown'))
+    cps = (('true', 'true'), ('false', 'false'), ('-1', 'unknown'))
+    perception = (('0', 'sensors'), ('1', 'actuators'), ('2', 'processing unit'), ('3', 'network communication'), ('4', 'embedded software'), ('-1', 'unknown'))
+    communication = (('false', 'False'), ('1', 'link level'), ('2', 'connectivity level'), ('-1', 'unknown'))
+    application = (('true', 'true'), ('false', 'false'), ('-1', 'unknown'))
+    behaviour = (('0', 'crash'), ('1', 'omission'), ('2', 'timing'), ('3', 'value'), ('4', 'Byzantine fault'), ('-1', 'unknown'))
+
+    #Taxonomy fields: Options
+    phase_option = models.CharField(max_length=255, choices=phase, blank=True, null=True)
+    boundary_option = models.CharField(max_length=255, choices=boundary, blank=True, null=True)
+    nature_option = models.CharField(max_length=255, choices=nature, blank=True, null=True)
+    dimension_option = models.CharField(max_length=255, choices=dimension, blank=True, null=True)
+    objective_option = models.CharField(max_length=255, choices=objective, blank=True, null=True)
+    intent_option = models.CharField(max_length=255, choices=intent, blank=True, null=True)
+    capability_option = models.CharField(max_length=255, choices=capability, blank=True, null=True)
+    duration_option = models.CharField(max_length=255, choices=duration, blank=True, null=True)
+    domain_option = models.CharField(max_length=255, choices=domain, blank=True, null=True)
+    cps_option = models.CharField(max_length=255, choices=cps, blank=True, null=True)
+    perception_option = models.CharField(max_length=255, choices=perception, blank=True, null=True)
+    communication_option = models.CharField(max_length=255, choices=communication, blank=True, null=True)
+    application_option = models.CharField(max_length=255, choices=application, blank=True, null=True)
+    behaviour_option = models.CharField(max_length=255, choices=behaviour, blank=True, null=True)
+
+    #Taxonomy fields: Explanations
+    phase_rationale = models.TextField(_("Phase Rationale"), blank=True, null=True)
+    boundary_rationale = models.TextField(_("Boundary Rationale"), blank=True, null=True)
+    phase_rationale = models.TextField(_("Phase Rationale"), blank=True, null=True)
+    boundary_rationale = models.TextField(_("Boundary Rationale"), blank=True, null=True)
+    nature_rationale = models.TextField(_("Nature Rationale"), blank=True, null=True)
+    dimension_rationale = models.TextField(_("Dimension Rationale"), blank=True, null=True)
+    objective_rationale = models.TextField(_("Objective Rationale"), blank=True, null=True)
+    intent_rationale = models.TextField(_("Intent Rationale"), blank=True, null=True)
+    capability_rationale = models.TextField(_("Capability Rationale"), blank=True, null=True)
+    duration_rationale = models.TextField(_("Duration Rationale"), blank=True, null=True)
+    domain_rationale = models.TextField(_("Domain Rationale"), blank=True, null=True)
+    cps_rationale = models.TextField(_("CPS Rationale"), blank=True, null=True)
+    perception_rationale = models.TextField(_("Perception Rationale"), blank=True, null=True)
+    communication_rationale = models.TextField(_("Communication Rationale"), blank=True, null=True)
+    application_rationale = models.TextField(_("Application Rationale"), blank=True, null=True)
+    behaviour_rationale = models.TextField(_("Behaviour Rationale"), blank=True, null=True)
+
+
+
+
+
+    '''
     class Duration(models.TextChoices):
         TRANSIENT = "TRANSIENT", _("Transient")
         PERMANENT = "PERMANENT", _("Permanent")
@@ -361,6 +488,7 @@ class Failure(models.Model):
         choices=Dimension.choices,
         blank=True,
     )
+    '''
 
     class Meta:
         verbose_name = _("Failure")
@@ -369,6 +497,7 @@ class Failure(models.Model):
     def __str__(self):
         return self.name
 
+    '''
     @classmethod
     def create_from_article(
         cls,
@@ -376,6 +505,8 @@ class Failure(models.Model):
         question_answerer: QuestionAnswerer,
     ):
         failure = cls()
+
+        logging.info("Extracting postmortem from article: %s.", article)
 
         failure.name = question_answerer.run(
             (Parameter.get("FAILURE_NAME_QUESTION", "What is the name of the software failure?"), article.body)
@@ -392,5 +523,108 @@ class Failure(models.Model):
         failure.description = question_answerer.run(
             (Parameter.get("FAILURE_DESCRIPTION_QUESTION", "What is the description of the software failure?"), article.body)
         )
+        failure.save()
+        return failure
+    '''
+
+    @classmethod
+    def postmortem_from_article_ChatGPT(
+        cls,
+        article: Article,
+        questions: dict,
+        ChatGPT: ChatGPT,
+    ):
+        failure = cls()
+
+        logging.info("Extracting postmortem from article: %s.", article)
+
+        
+        article_body = article.body
+        #Pre-process articles if they are too long
+        article_len = len(article_body.split())
+        print(article_len)
+        if article_len > 2750:
+            article_begin = article_body.split()[:-(article_body-2500)]
+            article_end = article_body.split()[-(article_body-2500):]
+
+            content = "You will summarize a part of an article."
+            messages = [
+                    {"role": "system", 
+                    "content": content}
+                    ]
+            messages.append(
+                            {"role": "user", "content": "summarize this text with a maximum of 500 words: " + ' '.join(article_end)},
+                            )
+        
+            reply = ChatGPT.run(messages)
+
+            article_body = ' '.join(article_begin) + reply
+            logging.info("Reduced articled length for article: "+ str(article) + "; Old length: " + str(article_len) + " ; New length: " + str(len(article_body.split())) )
+
+
+        #Create postmortems
+        content = "You will answer questions about a software failure (failure could mean a flaw, bug, mistake, anomaly, fault, error, exception, crash, glitch, defect, incident, side effect, or hack) described in this article: " + article_body
+
+        postmortem = {}
+        for question_key in [list(questions.keys())[i] for i in [0,2,4,8,16,21]]: #list(questions.keys()):
+
+            logging.info("Querying question: " + str(question_key) )
+
+            messages = [
+                    {"role": "system", 
+                    "content": content}
+                    ]
+            messages.append(
+                            {"role": "user", "content": questions[question_key]},
+                            )
+            reply = ChatGPT.run(messages)
+
+            postmortem[question_key] = reply
+        
+
+        #failure.published = article.published #TODO: Find the earliest published date and use the month and year
+
+        #Assign the postmortem to the failure #TODO: Create a struct, failure.title.prompt and failure.title.response - so that you only need to update at one place
+        failure.title           = postmortem['title']
+        #failure.summary         = postmortem['summary']
+        failure.system          = postmortem['system']
+        #failure.time            = postmortem['time']
+        failure.SEcauses        = postmortem['SEcauses']
+        #failure.NSEcauses       = postmortem['NSEcauses']
+        #failure.impacts         = postmortem['impacts']
+        #failure.mitigations     = postmortem['mitigations']
+        
+        failure.phase_option = postmortem['phase']['option']
+        #failure.boundary_option = postmortem['boundary']['option']
+        #failure.nature_option = postmortem['nature']['option']
+        #failure.dimension_option = postmortem['dimension']['option']
+        #failure.objective_option = postmortem['objective']['option']
+        #failure.intent_option = postmortem['intent']['option']
+        #failure.capability_option = postmortem['capability']['option']
+        #failure.duration_option = postmortem['duration']['option']
+        failure.domain_option = postmortem['domain']['option']
+        #failure.cps_option = postmortem['cps']['option']
+        #failure.perception_option = postmortem['perception']['option']
+        #failure.communication_option = postmortem['communication']['option']
+        #failure.application_option = postmortem['application']['option']
+        failure.behaviour_option = postmortem['behaviour']['option']
+
+        failure.phase_rationale = postmortem['phase']['explanation']
+        #failure.boundary_rationale = postmortem['boundary']['explanation']
+        #failure.nature_rationale = postmortem['nature']['explanation']
+        #failure.dimension_rationale = postmortem['dimension']['explanation']
+        #failure.objective_rationale = postmortem['objective']['explanation']
+        #failure.intent_rationale = postmortem['intent']['explanation']
+        #failure.capability_rationale = postmortem['capability']['explanation']
+        #failure.duration_rationale = postmortem['duration']['explanation']
+        failure.domain_rationale = postmortem['domain']['explanation']
+        #failure.cps_rationale = postmortem['cps']['explanation']
+        #failure.perception_rationale = postmortem['perception']['explanation']
+        #failure.communication_rationale = postmortem['communication']['explanation']
+        #failure.application_rationale = postmortem['application']['explanation']
+        failure.behaviour_rationale = postmortem['behaviour']['explanation']
+
+        #write a sanitization function to sanitize options: unknown, true, false
+
         failure.save()
         return failure

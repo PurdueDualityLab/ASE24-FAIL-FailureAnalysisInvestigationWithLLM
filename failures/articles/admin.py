@@ -5,7 +5,7 @@ from failures.articles.models import Article, Failure, SearchQuery
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ("title", "source", "published", "scraped_at")
+    list_display = ("title", "source", "published", "scraped_at", "describes_failure","describes_failure_confidence")
     list_filter = ("scraped_at",)
 
 
@@ -24,13 +24,11 @@ class SearchQueryAdmin(admin.ModelAdmin):
 @admin.register(Failure)
 class FailureAdmin(admin.ModelAdmin):
     list_display = (
-        "name",
-        "industry",
-        "started_at",
-        "duration",
-        "location",
-        "semantics",
-        "behavior",
-        "dimension",
+        "title",
+        "system",
+        "domain_option",
+        "SEcauses",
+        "phase_option",
+        "behaviour_option",
     )
-    list_filter = ("created_at",)
+    list_filter = ("title",)

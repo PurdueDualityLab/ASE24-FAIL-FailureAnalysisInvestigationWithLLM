@@ -2,6 +2,13 @@ from typing import Any, Protocol, TypeVar, Union
 
 import sentence_transformers
 import transformers
+import openai
+import os
+import logging
+import re
+
+
+from failures.parameters.models import Parameter
 
 T = TypeVar("T")
 E = TypeVar("E")
@@ -97,3 +104,72 @@ class Embedder(Network[str, list[float]]):
 
     def postprocess(self, prediction: list[list[float]]) -> list[float]:
         return prediction[0]
+
+class ChatGPT(Network[list, str]):
+    def __init__(self):
+        self.openai = openai
+        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+
+    def preprocess(self, input_data: list) -> list:
+        return input_data
+
+    def predict(self, preprocessed_data: list) -> str:
+        messages = preprocessed_data
+        
+        try:
+            chat_completion = None
+            chat_completion = self.openai.ChatCompletion.create(
+                            model="gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
+                            ) 
+        
+        except openai.error.Timeout as e:
+            #Handle timeout error, e.g. retry or log
+            logging.info(f"OpenAI API request timed out: {e}")
+        except openai.error.APIError as e:
+            #Handle API error, e.g. retry or log
+            logging.info(f"OpenAI API returned an API Error: {e}")
+        except openai.error.APIConnectionError as e:
+            #Handle connection error, e.g. check network or log
+            logging.info(f"OpenAI API request failed to connect: {e}")
+        except openai.error.InvalidRequestError as e:
+            #Handle invalid request error, e.g. validate parameters or log
+            logging.info(f"OpenAI API request was invalid: {e}")
+        except openai.error.AuthenticationError as e:
+            #Handle authentication error, e.g. check credentials or log
+            logging.info(f"OpenAI API request was not authorized: {e}")
+        except openai.error.PermissionError as e:
+            #Handle permission error, e.g. check scope or log
+            logging.info(f"OpenAI API request was not permitted: {e}")
+        except openai.error.RateLimitError as e:
+            #Handle rate limit error, e.g. wait or log
+            logging.info(f"OpenAI API request exceeded rate limit: {e}")
+        
+        if chat_completion is not None:
+            reply = chat_completion.choices[0].message.content
+            
+            if "{" and "}" in reply:
+                try:
+                    reply = chat_completion.choices[0].message.content
+
+                    # extract the values for "explanation" and "option" using capturing groups
+                    match = re.search(r'{"explanation": "(.*)", "option": (.*)}', reply)
+
+                    # sanitize the values if there're quotes
+                    explanation = match.group(1).replace('"', '\\"')
+                    option = str(match.group(2))
+
+                    reply = {"explanation": explanation,
+                                "option": option
+                                }
+                    
+                    #if response json is in incorrect format
+                except:
+                    reply = chat_completion.choices[0].message.content
+            else:
+                reply = chat_completion.choices[0].message.content
+        
+        return reply
+            
+
+    def postprocess(self, prediction: str) -> str:
+        return prediction
