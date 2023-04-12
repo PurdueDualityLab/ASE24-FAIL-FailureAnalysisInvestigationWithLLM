@@ -225,6 +225,7 @@ class Article(models.Model):
         url += "&hl=en-US&gl=US&ceid=US%3Aen"
         return url
 
+    #TODO: Cleanup
     '''
     def scrape_body(self):
         try:
@@ -316,8 +317,9 @@ class Article(models.Model):
             np.linalg.norm(embedding_one) * np.linalg.norm(embedding_two)
         )
 
-    def classify_as_failure(self, classifier: ZeroShotClassifier):
-        prediction: tuple[str, float] = classifier.run(self.body)
+    def classify_as_failure(self, classifier: ZeroShotClassifier, labels: list[str]):
+        classify_data = {"text": self.body, "labels": labels}
+        prediction: tuple[str, float] = classifier.run(classify_data)
         self.describes_failure = classifier.labels.index(prediction[0]) == 0
         self.describes_failure_confidence = prediction[1]
         self.save()
@@ -345,7 +347,7 @@ class FailureCause(models.Model): #TODO: Not used
 
 class Failure(models.Model):
 
-    #published = models.DateTimeField(_("Published"), help_text=_("Date and time when the article was published."))
+    published = models.DateTimeField(_("Published"), help_text=_("Date and time when the article was published."), blank=True, null=True)
 
     #Open ended postmortem fields
     title = models.TextField(_("Title"), blank=True, null=True)
@@ -409,8 +411,7 @@ class Failure(models.Model):
 
 
 
-
-
+    #TODO: Cleanup
     '''
     class Duration(models.TextChoices):
         TRANSIENT = "TRANSIENT", _("Transient")
@@ -497,6 +498,7 @@ class Failure(models.Model):
     def __str__(self):
         return self.name
 
+    #TODO: Cleanup
     '''
     @classmethod
     def create_from_article(
@@ -582,7 +584,7 @@ class Failure(models.Model):
             postmortem[question_key] = reply
         
 
-        #failure.published = article.published #TODO: Find the earliest published date and use the month and year
+        failure.published = article.published #TODO: Find the earliest published date and use the month and year
 
         #Assign the postmortem to the failure #TODO: Create a struct, failure.title.prompt and failure.title.response - so that you only need to update at one place
         failure.title           = postmortem['title']
