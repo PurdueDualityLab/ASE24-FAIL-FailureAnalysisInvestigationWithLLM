@@ -1,5 +1,6 @@
 version: '3'
 
+
 volumes:
   failures_local_postgres_data: {}
   failures_local_postgres_data_backups: {}
@@ -23,6 +24,15 @@ services:
     ports:
       - "8000:8000"
     command: /start
+
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia/cuda:11.4.0-base nvidia-smi
+    #           count: 1
+    #           capabilities: [gpu]
+
 
   postgres:
     build:

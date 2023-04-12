@@ -31,15 +31,15 @@ class Network(Protocol[T, E]):
 
 
 class ZeroShotClassifier(Network[str, tuple[str, float]]):
-    def __init__(self, labels: list[str], model_name: str = "facebook/bart-large-mnli"):
+    def __init__(self, model_name: str = "facebook/bart-large-mnli"):
         self.classifier = transformers.pipeline(
-            "zero-shot-classification", model=model_name
+            "zero-shot-classification", model=model_name, device=0
         )
         self.max_input_length = self.classifier.model.config.max_position_embeddings
-        self.labels = labels
 
-    def preprocess(self, input_data: str) -> str:
-        return input_data[: self.max_input_length]
+    def preprocess(self, input_data: dict) -> str:
+        self.labels = input_data["labels"]
+        return input_data["text"][: self.max_input_length]
 
     def predict(
         self, preprocessed_data: str
