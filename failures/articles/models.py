@@ -13,6 +13,7 @@ from newsplease import NewsPlease
 from newspaper import Article as NewsScraper
 from bs4 import BeautifulSoup
 import requests
+import re
 
 from failures.networks.models import (
     Embedder,
@@ -359,8 +360,9 @@ class Failure(models.Model):
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
     mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
 
+    '''
     #Choices for taxonomy
-    phase = (('0', 'system design'), ('1', 'operation'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
+    phase = [("0", 'system design'), ("1", 'operation'), ("2", 'both'), ("3", 'neither'), ("-1", 'unknown')]
     boundary = (('0', 'within the system'), ('1', 'outside the system'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
     nature = (('0', 'human actions'), ('1', 'non human actions'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
     dimension = (('0', 'hardware'), ('1', 'software'), ('2', 'both'), ('3', 'neither'), ('-1', 'unknown'))
@@ -374,7 +376,7 @@ class Failure(models.Model):
     communication = (('false', 'False'), ('1', 'link level'), ('2', 'connectivity level'), ('-1', 'unknown'))
     application = (('true', 'true'), ('false', 'false'), ('-1', 'unknown'))
     behaviour = (('0', 'crash'), ('1', 'omission'), ('2', 'timing'), ('3', 'value'), ('4', 'Byzantine fault'), ('-1', 'unknown'))
-
+    
     #Taxonomy fields: Options
     phase_option = models.CharField(max_length=255, choices=phase, blank=True, null=True)
     boundary_option = models.CharField(max_length=255, choices=boundary, blank=True, null=True)
@@ -390,10 +392,27 @@ class Failure(models.Model):
     communication_option = models.CharField(max_length=255, choices=communication, blank=True, null=True)
     application_option = models.CharField(max_length=255, choices=application, blank=True, null=True)
     behaviour_option = models.CharField(max_length=255, choices=behaviour, blank=True, null=True)
+    '''
+
+        
+    #Taxonomy fields: Options
+    phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
+    boundary_option = models.TextField(_("Boundary Option"), blank=True, null=True)
+    nature_option = models.TextField(_("Nature Option"), blank=True, null=True)
+    dimension_option = models.TextField(_("Dimension Option"), blank=True, null=True)
+    objective_option = models.TextField(_("Objective Option"), blank=True, null=True)
+    intent_option = models.TextField(_("Intent Option"), blank=True, null=True)
+    capability_option = models.TextField(_("Capability Option"), blank=True, null=True)
+    duration_option = models.TextField(_("Duration Option"), blank=True, null=True)
+    domain_option = models.TextField(_("Domain Option"), blank=True, null=True)
+    cps_option = models.TextField(_("CPS Option"), blank=True, null=True)
+    perception_option = models.TextField(_("Perception Option"), blank=True, null=True)
+    communication_option = models.TextField(_("Communication Option"), blank=True, null=True)
+    application_option = models.TextField(_("Application Option"), blank=True, null=True)
+    behaviour_option = models.TextField(_("Behaviour Option"), blank=True, null=True)
+    
 
     #Taxonomy fields: Explanations
-    phase_rationale = models.TextField(_("Phase Rationale"), blank=True, null=True)
-    boundary_rationale = models.TextField(_("Boundary Rationale"), blank=True, null=True)
     phase_rationale = models.TextField(_("Phase Rationale"), blank=True, null=True)
     boundary_rationale = models.TextField(_("Boundary Rationale"), blank=True, null=True)
     nature_rationale = models.TextField(_("Nature Rationale"), blank=True, null=True)
@@ -496,7 +515,7 @@ class Failure(models.Model):
         verbose_name_plural = _("Failures")
 
     def __str__(self):
-        return self.name
+        return self.title
 
     #TODO: Cleanup
     '''
@@ -532,10 +551,11 @@ class Failure(models.Model):
     @classmethod
     def postmortem_from_article_ChatGPT(
         cls,
+        ChatGPT: ChatGPT,
         article: Article,
         questions: dict,
-        ChatGPT: ChatGPT,
-    ):
+        taxonomy_options: dict,
+    ): 
         failure = cls()
 
         logging.info("Extracting postmortem from article: %s.", article)
@@ -568,7 +588,7 @@ class Failure(models.Model):
         content = "You will answer questions about a software failure (failure could mean a flaw, bug, mistake, anomaly, fault, error, exception, crash, glitch, defect, incident, side effect, or hack) described in this article: " + article_body
 
         postmortem = {}
-        for question_key in [list(questions.keys())[i] for i in [0,2,4,8,16,21]]: #list(questions.keys()):
+        for question_key in [list(questions.keys())[i] for i in [8, 16]]: #list(questions.keys()):  #0,2,4,8,16,21
 
             logging.info("Querying question: " + str(question_key) )
 
@@ -581,22 +601,79 @@ class Failure(models.Model):
                             )
             reply = ChatGPT.run(messages)
 
+            if "{" and "}" in reply:
+                try:
+                    logging.info("Found json")
+
+                    # extract the values for "explanation" and "option" using capturing groups
+                    match = re.search(r'{"explanation": "(.*)", "option": (.*)}', reply)
+                    logging.info(match)
+                    # sanitize the values if there're quotes
+                    explanation = match.group(1).replace('"', '\\"')
+                    logging.info(explanation)
+                    option = match.group(2).replace('"', '')
+                    logging.info(option)
+
+                    try:
+                        logging.info("Trying to catch option")
+                        option_value = taxonomy_options[question_key][option]
+                    except:
+                        logging.info("Option error")
+                        option_value = option
+
+                    reply = {"explanation": explanation,
+                                "option": option_value
+                                }
+                    
+                    #if response json is in incorrect format
+                except:
+                    logging.info("Incorrect json form")
+                    logging.info(type(reply))
+                    reply = reply
+            else:
+
+                reply = reply
+
             postmortem[question_key] = reply
         
+        
+
+        #failure.title           = "Testing" #postmortem['title']
+        #failure.system          = "Testing" #postmortem['system']
+        #failure.SEcauses        = "Testing" #postmortem['SEcauses']
+
+        failure.phase_option = "0" #postmortem['phase']['option']
+        #failure.domain_option = "0" #postmortem['domain']['option']
+        #failure.behaviour_option = "0" #postmortem['behaviour']['option']
+
+        #failure.phase_rationale = "Testing"# postmortem['phase']['explanation']
+        #failure.domain_rationale = "Testing"#postmortem['domain']['explanation']
+        #failure.behaviour_rationale = "Testing"#postmortem['behaviour']['explanation']
+
+        #logging.info("types\n")
+        logging.info(type(failure.phase_option))
+        #logging.info(type(failure.domain_option))
+        #logging.info(type(failure.behaviour_option))
+
+        #logging.info(failure.get_phase_option_display())
+        #logging.info(failure.get_domain_option_display())
+        #logging.info(failure.get_behaviour_option_display())
 
         failure.published = article.published #TODO: Find the earliest published date and use the month and year
 
         #Assign the postmortem to the failure #TODO: Create a struct, failure.title.prompt and failure.title.response - so that you only need to update at one place
-        failure.title           = postmortem['title']
+        #failure.title            = postmortem['title']
         #failure.summary         = postmortem['summary']
-        failure.system          = postmortem['system']
-        #failure.time            = postmortem['time']
-        failure.SEcauses        = postmortem['SEcauses']
+        #failure.system           = postmortem['system']
+        ##failure.time            = postmortem['time']
+        #failure.SEcauses         = postmortem['SEcauses']
         #failure.NSEcauses       = postmortem['NSEcauses']
         #failure.impacts         = postmortem['impacts']
         #failure.mitigations     = postmortem['mitigations']
         
-        failure.phase_option = postmortem['phase']['option']
+        logging.info("Phase: ")
+        logging.info(postmortem['phase'])
+        failure.phase_option = postmortem['phase']['option']  #str(postmortem['phase']['option'])]
         #failure.boundary_option = postmortem['boundary']['option']
         #failure.nature_option = postmortem['nature']['option']
         #failure.dimension_option = postmortem['dimension']['option']
@@ -609,9 +686,9 @@ class Failure(models.Model):
         #failure.perception_option = postmortem['perception']['option']
         #failure.communication_option = postmortem['communication']['option']
         #failure.application_option = postmortem['application']['option']
-        failure.behaviour_option = postmortem['behaviour']['option']
+        #failure.behaviour_option = postmortem['behaviour']['option']
 
-        failure.phase_rationale = postmortem['phase']['explanation']
+        #failure.phase_rationale = postmortem['phase']['explanation']
         #failure.boundary_rationale = postmortem['boundary']['explanation']
         #failure.nature_rationale = postmortem['nature']['explanation']
         #failure.dimension_rationale = postmortem['dimension']['explanation']
@@ -619,14 +696,49 @@ class Failure(models.Model):
         #failure.intent_rationale = postmortem['intent']['explanation']
         #failure.capability_rationale = postmortem['capability']['explanation']
         #failure.duration_rationale = postmortem['duration']['explanation']
-        failure.domain_rationale = postmortem['domain']['explanation']
+        #failure.domain_rationale = postmortem['domain']['explanation']
         #failure.cps_rationale = postmortem['cps']['explanation']
         #failure.perception_rationale = postmortem['perception']['explanation']
         #failure.communication_rationale = postmortem['communication']['explanation']
         #failure.application_rationale = postmortem['application']['explanation']
-        failure.behaviour_rationale = postmortem['behaviour']['explanation']
+        #failure.behaviour_rationale = postmortem['behaviour']['explanation']
 
         #write a sanitization function to sanitize options: unknown, true, false
 
+        
+        #logging.info("failure title: " + failure.title + " postmortem title: " +postmortem['title'])
+        #logging.info("failure system: " + failure.system + " postmortem system: " +postmortem['system'])
+        #logging.info("failure SEcauses: " + failure.SEcauses + " postmortem SEcauses: " +postmortem['SEcauses'])
+        
+        logging.info("failure phase_option: " + failure.phase_option + " postmortem phase_option: " +postmortem['phase']['option'])
+        #logging.info("failure domain_option: " + failure.domain_option + " postmortem domain_option: " +postmortem['domain']['option'])
+        #logging.info("failure behaviour_option: " + failure.behaviour_option + " postmortem behaviour_option: " +postmortem['behaviour']['option'])
+
+        #logging.info("failure phase_rationale: " + failure.phase_rationale + " postmortem phase_rationale: " +postmortem['phase']['explanation'])
+        #logging.info("failure domain_rationale: " + failure.domain_rationale + " postmortem domain_rationale: " +postmortem['domain']['explanation'])
+        #logging.info("failure behaviour_rationale: " + failure.behaviour_rationale + " postmortem behaviour_rationale: " +postmortem['behaviour']['explanation'])
+        
+        #logging.info("types\n")
+        logging.info(type(failure.phase_option))
+        #logging.info(type(failure.domain_option))
+        #logging.info(type(failure.behaviour_option))
+
         failure.save()
+
+        #logging.info("failure title: " + failure.title + " postmortem title: " +postmortem['title'])
+        #logging.info("failure system: " + failure.system + " postmortem system: " +postmortem['system'])
+        #logging.info("failure SEcauses: " + failure.SEcauses + " postmortem SEcauses: " +postmortem['SEcauses'])
+        
+        logging.info("failure phase_option: " + failure.phase_option + " postmortem phase_option: " +postmortem['phase']['option'])
+        #logging.info("failure domain_option: " + failure.domain_option + " postmortem domain_option: " +postmortem['domain']['option'])
+        #logging.info("failure behaviour_option: " + failure.behaviour_option + " postmortem behaviour_option: " +postmortem['behaviour']['option'])
+
+        #logging.info("failure phase_rationale: " + failure.phase_rationale + " postmortem phase_rationale: " +postmortem['phase']['explanation'])
+        #logging.info("failure domain_rationale: " + failure.domain_rationale + " postmortem domain_rationale: " +postmortem['domain']['explanation'])
+        #logging.info("failure behaviour_rationale: " + failure.behaviour_rationale + " postmortem behaviour_rationale: " +postmortem['behaviour']['explanation'])
+        
+        #logging.info(failure.get_phase_option_display())
+        #logging.info(failure.get_domain_option_display())
+        #logging.info(failure.get_behaviour_option_display())
+
         return failure

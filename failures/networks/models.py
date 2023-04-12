@@ -146,29 +146,9 @@ class ChatGPT(Network[list, str]):
         
         if chat_completion is not None:
             reply = chat_completion.choices[0].message.content
-            
-            if "{" and "}" in reply:
-                try:
-                    reply = chat_completion.choices[0].message.content
-
-                    # extract the values for "explanation" and "option" using capturing groups
-                    match = re.search(r'{"explanation": "(.*)", "option": (.*)}', reply)
-
-                    # sanitize the values if there're quotes
-                    explanation = match.group(1).replace('"', '\\"')
-                    option = str(match.group(2))
-
-                    reply = {"explanation": explanation,
-                                "option": option
-                                }
-                    
-                    #if response json is in incorrect format
-                except:
-                    reply = chat_completion.choices[0].message.content
-            else:
-                reply = chat_completion.choices[0].message.content
-        
-        return reply
+            return reply
+        else:
+            return None
             
 
     def postprocess(self, prediction: str) -> str:
