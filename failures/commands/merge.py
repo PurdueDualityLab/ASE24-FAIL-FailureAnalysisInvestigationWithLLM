@@ -56,6 +56,22 @@ class MergeCommand:
             else:
                 questions_chat[question_key] = "Answer the question using the article: " + questions[question_key]
 
+        taxonomy_options = {
+            "phase": {"0": "system design", "1": "operation", "2": "both", "3": "neither", "-1": "unknown"},
+            "boundary": {"0": "within the system", "1": "outside the system", "2": "both", "3": "neither", "-1": "unknown"},
+            "nature": {"0": "human actions", "1": "non human actions", "2": "both", "3": "neither", "-1": "unknown"},
+            "dimension": {"0": "hardware", "1": "software", "2": "both", "3": "neither", "-1": "unknown"},
+            "objective": {"0": "malicious", "1": "non-malicious", "2": "both", "3": "neither", "-1": "unknown"},
+            "intent": {"0": "deliberate", "1": "accidental", "2": "both", "3": "neither", "-1": "unknown"},
+            "capability": {"0": "accidental", "1": "development incompetence", "2": "both", "3": "neither", "-1": "unknown"},
+            "duration": {"0": "permanent", "1": "temporary", "2": "intermittent", "3": "unknown"},
+            "domain": {"0": "automotive", "1": "critical infrastructure", "2": "healthcare", "3": "energy", "4": "transportation", "5": "infrastructure", "6": "aerospace", "7": "telecommunications", "-1": "unknown"},
+            "cps": {"true": "true", "false": "false", "-1": "unknown"},
+            "perception": {"0": "sensors", "1": "actuators", "2": "processing unit", "3": "network communication", "4": "embedded software", "-1": "unknown"},
+            "communication": {"false": "False", "1": "link level", "2": "connectivity level", "-1": "unknown"},
+            "application": {"true": "true", "false": "false", "-1": "unknown"},
+            "behaviour": {"0": "crash", "1": "omission", "2": "timing", "3": "value", "4": "byzantine fault", "-1": "unknown"}
+        }
 
         logging.info("Creating failures.")
         Chat_GPT = ChatGPT()
@@ -66,7 +82,7 @@ class MergeCommand:
                 logging.info("Article is empty or does not describe failure %s.", article)
                 continue
             logging.info("Creating failure for article %s.", article)
-            Failure.postmortem_from_article_ChatGPT(article, questions_chat, Chat_GPT)
+            Failure.postmortem_from_article_ChatGPT(Chat_GPT, article, questions_chat, taxonomy_options)
             logging.info("Succesfully created failure for article %s.", article)
             successful_failure_creations += 1
 
