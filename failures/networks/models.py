@@ -33,7 +33,7 @@ class Network(Protocol[T, E]):
 class ZeroShotClassifier(Network[str, tuple[str, float]]):
     def __init__(self, model_name: str = "facebook/bart-large-mnli"):
         self.classifier = transformers.pipeline(
-            "zero-shot-classification", model=model_name, device=0
+            "zero-shot-classification", model=model_name
         )
         self.max_input_length = self.classifier.model.config.max_position_embeddings
 

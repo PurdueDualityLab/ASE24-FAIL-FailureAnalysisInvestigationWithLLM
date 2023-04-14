@@ -31,6 +31,16 @@ class ScrapeCommand:
             help="News articles will be searched until this year. This argument is optional.",
         )
         parser.add_argument(
+            "--start-month",
+            type=int,
+            help="News articles will be searched from this month onwards. This argument is optional.",
+        )
+        parser.add_argument(
+            "--end-month",
+            type=int,
+            help="News articles will be searched until this month. This argument is optional.",
+        )
+        parser.add_argument(
             "--sources",
             type=str,
             nargs="+",
@@ -49,6 +59,8 @@ class ScrapeCommand:
                 keyword=args.keyword,
                 start_year=args.start_year,
                 end_year=args.end_year,
+                start_month=args.start_month,
+                end_month=args.end_month,
                 sources=args.sources,
             )
             search_queries = [search_query]
@@ -56,7 +68,7 @@ class ScrapeCommand:
             search_queries = SearchQuery.objects.all()
 
         for search_query in search_queries:
-            logging.info("Scraping articles for search query %s.", search_query)
+            logging.info("Collected articles for search query %s.", search_query)
             articles = Article.create_from_google_news_rss_feed(
                 search_query=search_query
             )

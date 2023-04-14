@@ -7,7 +7,7 @@ from failures.commands.scrape import ScrapeCommand
 from failures.commands.summarize import SummarizeCommand
 from failures.commands.embed import EmbedCommand
 from failures.commands.classify import ClassifyCommand
-from failures.commands.merge import MergeCommand
+from failures.commands.postmortem import PostmortemCommand
 
 
 _EPILOG = textwrap.dedent(
@@ -32,7 +32,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), MergeCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -45,7 +45,7 @@ def get_argument_parser() -> argparse.ArgumentParser:
         "-v",
         "--verbose",
         action="count",
-        default=0,
+        default=1,
         help="Increase verbosity. Option is additive and can be specified up to 3 times.",
     )
 
@@ -84,8 +84,11 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
+        filename="test.log",
+        filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
+        force=True,
     )
 
     args.entrypoint(args, parser)

@@ -5,27 +5,12 @@ from failures.articles.models import Article, Failure, SearchQuery
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ("title", "source", "published", "scraped_at", "describes_failure","describes_failure_confidence")
-    list_filter = ("scraped_at",)
-
-
-@admin.register(SearchQuery)
-class SearchQueryAdmin(admin.ModelAdmin):
     list_display = (
-        "keyword",
-        "start_year",
-        "end_year",
-        "created_at",
-        "last_searched_at",
-    )
-    list_filter = ("created_at", "last_searched_at")
-
-
-@admin.register(Failure)
-class FailureAdmin(admin.ModelAdmin):
-    list_display = (
-        "published",
+        "headline",
         "title",
+        "published",
+        "source",
+        "describes_failure",
         "summary",
         "system",
         "time",
@@ -61,5 +46,27 @@ class FailureAdmin(admin.ModelAdmin):
         "communication_rationale",
         "application_rationale",
         "behaviour_rationale",
+    )
+    list_filter = ("describes_failure",)
+
+
+@admin.register(SearchQuery)
+class SearchQueryAdmin(admin.ModelAdmin):
+    list_display = (
+        "keyword",
+        "start_year",
+        "end_year",
+        "created_at",
+        "last_searched_at",
+    )
+    list_filter = ("created_at", "last_searched_at")
+
+
+@admin.register(Failure)
+class FailureAdmin(admin.ModelAdmin):
+    list_display = (
+        "published",
+        "title",
+        "summary",
     )
     list_filter = ("title",)
