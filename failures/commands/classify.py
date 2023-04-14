@@ -48,7 +48,7 @@ class ClassifyCommand:
                     logging.info("Classification met as " + positive_term + " for article: " + str(article))
                     break;
                 
-                time.sleep(0.75)
+                time.sleep(3)
 
 
         logging.info("Successfully classified %d articles as describing a software failure.", positive_classifications)

@@ -6,22 +6,24 @@ from failures.articles.models import Article, Failure
 from failures.networks.models import QuestionAnswerer, ChatGPT
 from failures.parameters.models import Parameter
 
-class MergeCommand:
+class PostmortemCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         parser.description = textwrap.dedent(
             """
-            Create embeddings for articles present in the database. If no arguments are provided, create embeddings for all
-            articles that do not have an embedding; otherwise, if --all is provided, create embeddings for all
-            articles. If an article does not have a body, an embedding will not be created for it.
+            Create postmortems for articles that report on SE failures present in the database. If no arguments are provided, create postmortems for all
+            articles that do not have a postmortem; otherwise, if --all is provided, create postmortems for all
+            articles. If an article does not have a body, a postmortems will not be created for it.
             """
         )
         parser.add_argument(
             "--all",
             action="store_true",
-            help="Create embeddings for all articles even if they already have an embedding.",
+            help="Create postmortems for all articles even if they already have a postmortem.",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+
+        queryset = Article.objects.all()
 
         #Pre-process prompts:
         questions = {
@@ -75,14 +77,15 @@ class MergeCommand:
 
         logging.info("Creating failures.")
         Chat_GPT = ChatGPT()
-        queryset = Article.objects.all()
+
         successful_failure_creations = 0
         for article in queryset:
             if article.body == "" or article.describes_failure is not True:
                 logging.info("Article is empty or does not describe failure %s.", article)
                 continue
             logging.info("Creating failure for article %s.", article)
-            Failure.postmortem_from_article_ChatGPT(Chat_GPT, article, questions_chat, taxonomy_options)
+            article.postmortem_from_article_ChatGPT(Chat_GPT, questions_chat, taxonomy_options, args.all)
+            #Failure.postmortem_from_article_ChatGPT(Chat_GPT, article, questions_chat, taxonomy_options)
             logging.info("Succesfully created failure for article %s.", article)
             successful_failure_creations += 1
 
