@@ -21,6 +21,8 @@ from failures.networks.models import (
     Summarizer,
     ZeroShotClassifier,
     ChatGPT,
+    SummarizerGPT,
+    ClassifierGPT,
 )
 
 from failures.parameters.models import Parameter
@@ -258,6 +260,7 @@ class Article(models.Model):
         search_query.save()
         for entry in feed.entries:
             # TODO: reduce queries here
+            # TODO: Continue if "opinion" in title
             dest_url = requests.get(entry.link) 
             dest_url = dest_url.url
             if not cls.objects.filter(url=dest_url).exists():
@@ -396,7 +399,8 @@ class Article(models.Model):
             np.linalg.norm(embedding_one) * np.linalg.norm(embedding_two)
         )
 
-    def classify_as_failure(self, classifier: ZeroShotClassifier, labels: list[str]):
+    #Open source classifier
+    def classify_as_failure_os(self, classifier: ZeroShotClassifier, labels: list[str]):
         #If its an opinion article, then ignore
         if "opinion" in self.headline.lower():
             self.describes_failure = False
@@ -408,6 +412,21 @@ class Article(models.Model):
 
         self.save()
         return self.describes_failure
+
+    # GPT based classifier
+    def classify_as_failure_GPT(self, classifier: ClassifierGPT, labels: list[str]):
+        #If its an opinion article, then ignore
+        if "opinion" in self.headline.lower():
+            self.describes_failure = False
+        else:
+            classify_data = {"text": self.body, "labels": labels}
+            prediction: tuple[str, float] = classifier.run(classify_data)
+            self.describes_failure = classifier.labels.index(prediction[0]) == 0
+            self.describes_failure_confidence = prediction[1]
+
+        self.save()
+        return self.describes_failure
+
 
     def postmortem_from_article_ChatGPT(
         self,
