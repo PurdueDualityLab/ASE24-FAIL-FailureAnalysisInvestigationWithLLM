@@ -106,17 +106,15 @@ class Embedder(Network[str, list[float]]):
     def postprocess(self, prediction: list[list[float]]) -> list[float]:
         return prediction[0]
 
-class ClassifierGPT(Network[str, bool]):
+class ClassifierChatGPT(Network[list, bool]):
     def __init__(self):
-        self.openai = openai
-        self.openai.api_key = os.getenv('OPENAI_API_KEY')
 
         self.chatGPT = ChatGPT()
 
-    def preprocess(self, input_data: str) -> str:
+    def preprocess(self, input_data: list) -> list:
         return input_data
     
-    def predict(self, preprocessed_data: str) -> str:
+    def predict(self, preprocessed_data: list) -> str:
         messages = preprocessed_data
 
         response = self.chatGPT.run(messages)
@@ -146,7 +144,7 @@ class SummarizerGPT(Network[str, str]):
 
         try:
             response = None
-            response = openai.Completion.create(
+            response = self.openai.Completion.create(
                 model="text-babbage-001",
                 prompt=prompt,
                 max_tokens=300,
