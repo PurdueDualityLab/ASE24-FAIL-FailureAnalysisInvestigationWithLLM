@@ -22,7 +22,7 @@ from failures.networks.models import (
     ZeroShotClassifier,
     ChatGPT,
     SummarizerGPT,
-    ClassifierGPT,
+    ClassifierChatGPT,
 )
 
 from failures.parameters.models import Parameter
@@ -167,11 +167,20 @@ class Article(models.Model):
         editable=False,
     )
 
-    describes_failure = models.BooleanField(
-        _("Describes Failure"),
+
+    describes_failure_os = models.BooleanField(
+        _("Describes Failure OS"),
         null=True,
         help_text=_(
-            "Whether the article describes a failure. This field is set by a human or the classifier."
+            "Whether the article describes a failure. This field is set by an open-source classifier."
+        ),
+    )
+
+    describes_failure_ChatGPT = models.BooleanField(
+        _("Describes Failure ChatGPT"),
+        null=True,
+        help_text=_(
+            "Whether the article describes a failure. This field is set by ChatGPT."
         ),
     )
 
@@ -183,7 +192,13 @@ class Article(models.Model):
         ),
     )
 
-
+    summary_init = models.TextField(
+        _("Classifier Summary"), 
+        blank=True, null=True,
+        help_text=_(
+            "Summary of article to run through classifier to check if article describes a software failure."
+        ),
+    )
     
     headline = models.TextField(_("Headline"), blank=True, null=True)
     
@@ -260,7 +275,9 @@ class Article(models.Model):
         search_query.save()
         for entry in feed.entries:
             # TODO: reduce queries here
-            # TODO: Continue if "opinion" in title
+            # Continue if "opinion" in title
+            if "opinion" in entry["title"].lower():
+                continue
             dest_url = requests.get(entry.link) 
             dest_url = dest_url.url
             if not cls.objects.filter(url=dest_url).exists():
@@ -401,31 +418,39 @@ class Article(models.Model):
 
     #Open source classifier
     def classify_as_failure_os(self, classifier: ZeroShotClassifier, labels: list[str]):
-        #If its an opinion article, then ignore
-        if "opinion" in self.headline.lower():
-            self.describes_failure = False
-        else:
-            classify_data = {"text": self.body, "labels": labels}
-            prediction: tuple[str, float] = classifier.run(classify_data)
-            self.describes_failure = classifier.labels.index(prediction[0]) == 0
-            self.describes_failure_confidence = prediction[1]
+        classify_data = {"text": self.body, "labels": labels}
+        prediction: tuple[str, float] = classifier.run(classify_data)
+        self.describes_failure_os = classifier.labels.index(prediction[0]) == 0
+        self.describes_failure_confidence = prediction[1]
 
         self.save()
-        return self.describes_failure
+        return self.describes_failure_os
 
     # GPT based classifier
-    def classify_as_failure_GPT(self, classifier: ClassifierGPT, labels: list[str]):
-        #If its an opinion article, then ignore
-        if "opinion" in self.headline.lower():
-            self.describes_failure = False
-        else:
-            classify_data = {"text": self.body, "labels": labels}
-            prediction: tuple[str, float] = classifier.run(classify_data)
-            self.describes_failure = classifier.labels.index(prediction[0]) == 0
-            self.describes_failure_confidence = prediction[1]
+    def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT):
+
+        #Truncate article if it is too long
+        article_text = self.body.split()[:2750]
+
+        content = "You will help classify whether this article describes a software failure: \n" + ' '.join(article_text)
+
+        messages = [
+                {"role": "system", 
+                "content": content}
+                ]
+
+        prompt = "Does this article describe a software failure (software failure could mean a flaw, bug, mistake, anomaly, fault, error, exception, crash, glitch, defect, incident, side effect, or hack in software)?: " \
+                + "\n" \
+                + "Answer with just True or False"
+
+        messages.append(
+                        {"role": "user", "content": prompt },
+                        )
+        
+        self.describes_failure_ChatGPT = classifier.run(messages)
 
         self.save()
-        return self.describes_failure
+        return self.describes_failure_ChatGPT
 
 
     def postmortem_from_article_ChatGPT(
@@ -447,6 +472,9 @@ class Article(models.Model):
         if article_len > 2750:
             article_begin = article_body.split()[:-(article_len-2500)]
             article_end = article_body.split()[-(article_len-2500):]
+                
+            if len(article_end.split()) > 2750: #if the last part of article is too long, just truncate it
+                article_end = article_end.split()[:2500]
 
             content = "You will summarize a part of an article."
             messages = [
@@ -454,7 +482,7 @@ class Article(models.Model):
                     "content": content}
                     ]
             messages.append(
-                            {"role": "user", "content": "summarize this text with a maximum of 500 words: " + ' '.join(article_end)},
+                            {"role": "user", "content": "summarize this text (retain information relevant to software failure) with a maximum of 500 words: " + ' '.join(article_end)},
                             )
         
             reply = ChatGPT.run(messages)

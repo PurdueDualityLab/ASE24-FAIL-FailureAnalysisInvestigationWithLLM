@@ -4,7 +4,7 @@ import textwrap
 import time
 
 from failures.articles.models import Article
-from failures.networks.models import ZeroShotClassifier
+from failures.networks.models import ZeroShotClassifier, ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 
@@ -26,33 +26,42 @@ class ClassifyCommand:
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         
         queryset = (
-            Article.objects.all() if args.all else Article.objects.filter(describes_failure=None)
+            Article.objects.all() if args.all else Article.objects.filter(describes_failure_ChatGPT=None)
         )
+
+        classifierOS = ZeroShotClassifier()
+        classifierChatGPT = ClassifierChatGPT()
 
         failure_terms = ["failure"] #, "hack", "bug", "flaw", "fault", "error", "glitch", "mistake", "exception", "crash", "defect", "incident", "side effect", "anomaly"] #TODO: Create a global struct
 
-        positive_classifications = 0
+        positive_classifications_os = 0
+        positive_classifications_ChatGPT = 0
         for article in queryset:
             if article.body == "":
                 continue
             
-            classifier = ZeroShotClassifier()
             logging.info("Classifying %s.", article)
 
             for term in failure_terms:
                 positive_term = "software " + term
                 negative_term = "not software " + term
                 
-                if article.classify_as_failure(classifier, [positive_term,negative_term]):
-                    positive_classifications += 1
-                    logging.info("Classification met as " + positive_term + " for article: " + str(article))
+                if article.classify_as_failure_os(classifierOS, [positive_term,negative_term]):
+                    positive_classifications_os += 1
+                    logging.info("OS Classifier: Classification met as " + positive_term + " for article: " + str(article))
                     break;
                 
-                time.sleep(3)
+                time.sleep(1)
+            
+            if article.classify_as_failure_ChatGPT(classifierChatGPT):
+                positive_classifications_ChatGPT += 1
+                logging.info("ChatGPT Classifier: Classification met as " + positive_term + " for article: " + str(article))
 
 
-        logging.info("Successfully classified %d articles as describing a software failure.", positive_classifications)
 
+        logging.info("OS successfully classified %d articles as describing a software failure.", positive_classifications_os)
+
+        logging.info("ChatGPT successfully classified %d articles as describing a software failure.", positive_classifications_ChatGPT)
 
     
         #TODO: Cleanup
