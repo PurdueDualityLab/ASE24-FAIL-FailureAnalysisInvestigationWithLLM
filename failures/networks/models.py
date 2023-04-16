@@ -54,6 +54,7 @@ class ZeroShotClassifier(Network[str, tuple[str, float]]):
         return prediction["labels"][scores.index(max_score)], max_score
 
 
+
 # TODO: expose parameters for summary length
 class Summarizer(Network[str, str]):
     def __init__(self, model_name: str = "facebook/bart-large-cnn"):
@@ -104,6 +105,87 @@ class Embedder(Network[str, list[float]]):
 
     def postprocess(self, prediction: list[list[float]]) -> list[float]:
         return prediction[0]
+
+class ClassifierGPT(Network[str, bool]):
+    def __init__(self):
+        self.openai = openai
+        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+
+        self.chatGPT = ChatGPT()
+
+    def preprocess(self, input_data: str) -> str:
+        return input_data
+    
+    def predict(self, preprocessed_data: str) -> str:
+        messages = preprocessed_data
+
+        response = self.chatGPT.run(messages)
+
+        return response
+    
+    def postprocess(self, prediction: str) -> bool:
+        if "true" in prediction.lower():
+            return True
+        else:
+            return False
+    
+
+
+class SummarizerGPT(Network[str, str]):
+    def __init__(self):
+        self.openai = openai
+        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+
+        self.context = "Provide a summary of this text: \n\n"
+
+    def preprocess(self, input_data: str) -> str:
+        prompt = self.context + input_data[:1500] + "\n\n"
+        
+    def predict(self, preprocessed_data: str) -> str:
+        prompt = preprocessed_data
+
+        try:
+            response = None
+            response = openai.Completion.create(
+                model="text-babbage-001",
+                prompt=prompt,
+                max_tokens=300,
+            )
+        
+        except openai.error.Timeout as e:
+            #Handle timeout error, e.g. retry or log
+            logging.info(f"OpenAI API request timed out: {e}")
+        except openai.error.APIError as e:
+            #Handle API error, e.g. retry or log
+            logging.info(f"OpenAI API returned an API Error: {e}")
+        except openai.error.APIConnectionError as e:
+            #Handle connection error, e.g. check network or log
+            logging.info(f"OpenAI API request failed to connect: {e}")
+        except openai.error.InvalidRequestError as e:
+            #Handle invalid request error, e.g. validate parameters or log
+            logging.info(f"OpenAI API request was invalid: {e}")
+        except openai.error.AuthenticationError as e:
+            #Handle authentication error, e.g. check credentials or log
+            logging.info(f"OpenAI API request was not authorized: {e}")
+        except openai.error.PermissionError as e:
+            #Handle permission error, e.g. check scope or log
+            logging.info(f"OpenAI API request was not permitted: {e}")
+        except openai.error.RateLimitError as e:
+            #Handle rate limit error, e.g. wait or log
+            logging.info(f"OpenAI API request exceeded rate limit: {e}")
+
+        if response is not None:
+            summary = response.choices[0]["text"].strip()
+            return summary
+        else:
+            return None
+
+    def postprocess(self, prediction: str) -> str:
+        return prediction
+
+
+
+
 
 class ChatGPT(Network[list, str]):
     def __init__(self):
