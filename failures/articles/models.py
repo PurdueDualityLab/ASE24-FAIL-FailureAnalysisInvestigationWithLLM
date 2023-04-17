@@ -167,7 +167,7 @@ class Article(models.Model):
         editable=False,
     )
 
-
+    '''
     describes_failure_os = models.BooleanField(
         _("Describes Failure OS"),
         null=True,
@@ -175,15 +175,17 @@ class Article(models.Model):
             "Whether the article describes a failure. This field is set by an open-source classifier."
         ),
     )
+    '''
 
-    describes_failure_ChatGPT = models.BooleanField(
-        _("Describes Failure ChatGPT"),
+    describes_failure = models.BooleanField(
+        _("Describes Failure"),
         null=True,
         help_text=_(
             "Whether the article describes a failure. This field is set by ChatGPT."
         ),
     )
 
+    '''
     describes_failure_confidence = models.FloatField(
         _("Describes Failure Confidence"),
         null=True,
@@ -191,6 +193,7 @@ class Article(models.Model):
             "Confidence of the classifier in whether the article describes a failure."
         ),
     )
+    '''
 
     summary_init = models.TextField(
         _("Classifier Summary"), 
