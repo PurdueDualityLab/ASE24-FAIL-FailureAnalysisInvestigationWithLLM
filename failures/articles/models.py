@@ -14,6 +14,7 @@ from newspaper import Article as NewsScraper
 from bs4 import BeautifulSoup
 import requests
 import re
+import json
 
 from failures.networks.models import (
     Embedder,
@@ -23,6 +24,7 @@ from failures.networks.models import (
     ChatGPT,
     SummarizerGPT,
     ClassifierChatGPT,
+    EmbedderGPT,
 )
 
 from failures.parameters.models import Parameter
@@ -248,6 +250,13 @@ class Article(models.Model):
     application_rationale = models.TextField(_("Application Rationale"), blank=True, null=True)
     behaviour_rationale = models.TextField(_("Behaviour Rationale"), blank=True, null=True)
 
+    #Embeddings
+    summary_embedding = models.TextField(_("Summary Embedding"), blank=True, null=True)
+    SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
+    NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
+    impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
+    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
+
 
     class Meta:
         verbose_name = _("Article")
@@ -402,6 +411,7 @@ class Article(models.Model):
         self.save()
         return self.summary
 
+    '''
     def create_embedding(self, embedder: Embedder):
         embedding = embedder.run(self.body)
         bytes_io = io.BytesIO()
@@ -409,6 +419,24 @@ class Article(models.Model):
         self.embedding.save("embedding.npy", bytes_io)
         self.save()
         return self.embedding
+    '''
+
+    def create_postmortem_embeddings_GPT(self, embedder: EmbedderGPT, postmortem_keys: list, query_all: bool):
+
+        for postmortem_key in postmortem_keys:
+            answer_set = True
+
+            postmortem_embedding_key = postmortem_key + "_embedding"
+            if not getattr(self, postmortem_embedding_key):
+                answer_set = False
+            
+            if query_all or not answer_set: 
+                embeddings = embedder.run(getattr(self, postmortem_key))
+
+                setattr(self, postmortem_embedding_key, json.dumps(embeddings))
+            
+        self.save()
+
 
     def cosine_similarity(self, other: "Article") -> float:
         if self.embedding is None or other.embedding is None:
@@ -536,7 +564,10 @@ class Article(models.Model):
                         option = match.group(2).replace('"', '')
                         try:
                             #logging.info("Trying to catch option")
-                            option_value = taxonomy_options[question_key][option]
+                            if "-1" in option:
+                                option_value = taxonomy_options[question_key]["-1"]
+                            else:
+                                option_value = taxonomy_options[question_key][option]
                         except:
                             logging.info("Option error")
                             option_value = option

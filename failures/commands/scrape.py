@@ -67,6 +67,8 @@ class ScrapeCommand:
         else:
             search_queries = SearchQuery.objects.all()
 
+        logging.info("\nScraping articles")
+
         for search_query in search_queries:
             logging.info("Collected articles for search query %s.", search_query)
             articles = Article.create_from_google_news_rss_feed(

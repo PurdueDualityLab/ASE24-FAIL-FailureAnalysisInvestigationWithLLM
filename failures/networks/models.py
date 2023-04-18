@@ -106,6 +106,25 @@ class Embedder(Network[str, list[float]]):
     def postprocess(self, prediction: list[list[float]]) -> list[float]:
         return prediction[0]
 
+
+class EmbedderGPT(Network[str, list[float]]):
+    def __init__(self):
+        self.openai = openai
+        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+
+    def preprocess(self, input_data: str) -> str:
+        input_data = input_data.replace("\n", " ")
+        return input_data        
+    
+    def predict(self, preprocessed_data: str) -> list[float]:
+        embeddings = self.openai.Embedding.create(input = [preprocessed_data], model='text-embedding-ada-002')['data'][0]['embedding']
+        return embeddings
+    
+    def postprocess(self, prediction: list[float]) -> list[float]:
+        return prediction
+
+
+
 class ClassifierChatGPT(Network[list, bool]):
     def __init__(self):
 
@@ -126,7 +145,6 @@ class ClassifierChatGPT(Network[list, bool]):
             return True
         else:
             return False
-    
 
 
 class SummarizerGPT(Network[str, str]):
