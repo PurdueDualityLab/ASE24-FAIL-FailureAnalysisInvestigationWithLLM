@@ -29,6 +29,7 @@ class ClassifyCommand:
             Article.objects.all() if args.all else Article.objects.filter(describes_failure=None)
         )
 
+        logging.info("\nClassifying articles.")
         
         classifierChatGPT = ClassifierChatGPT()
 
