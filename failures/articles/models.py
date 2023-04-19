@@ -431,6 +431,9 @@ class Article(models.Model):
                 answer_set = False
             
             if query_all or not answer_set: 
+
+                logging.info("Getting embedding for: " + postmortem_embedding_key)
+                
                 embeddings = embedder.run(getattr(self, postmortem_key))
 
                 setattr(self, postmortem_embedding_key, json.dumps(embeddings))
@@ -499,7 +502,6 @@ class Article(models.Model):
         
         #Pre-process articles if they are too long
         article_len = len(article_body.split())
-        print(article_len)
         if article_len > 2750:
             article_begin = article_body.split()[:-(article_len-2500)]
             article_end = article_body.split()[-(article_len-2500):]
