@@ -53,12 +53,14 @@ class PostmortemCommand:
         "behaviour":    Parameter.get("behaviour", "Was the software failure due to a 'crash' (option 0) or 'omission' (option 1) or 'timing' (option 2) or 'value' (option 3) or 'Byzantine' fault (option 4) or 'unknown' (option -1)?")
         }
 
+        failure_synonyms = "Remember, software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+
         questions_chat = {}
         for question_key in questions.keys():
             if "option" in questions[question_key]:
-                questions_chat[question_key] = "Answer the question using the article: " + questions[question_key] + " \n MUST ONLY RETURN ANSWER IN JSON FORMAT: {\"explanation\": \"explanation\", \"option\": \"option number\"}. Don't provide anything outside the format."
+                questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key] + " \n MUST ONLY RETURN ANSWER IN JSON FORMAT: {\"explanation\": \"explanation\", \"option\": \"option number\"}. Don't provide anything outside the format."
             else:
-                questions_chat[question_key] = "Answer the question using the article: " + questions[question_key]
+                questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key]
 
         taxonomy_options = {
             "phase": {"0": "system design", "1": "operation", "2": "both", "3": "neither", "-1": "unknown"},
@@ -79,7 +81,7 @@ class PostmortemCommand:
 
         logging.info("\nCreating postmortems.")
         
-        Chat_GPT = ChatGPT()
+        chatGPT = ChatGPT()
 
         successful_failure_creations = 0
         for article in queryset:
@@ -87,8 +89,8 @@ class PostmortemCommand:
                 logging.info("Article is empty or does not describe failure %s.", article)
                 continue
             logging.info("Creating failure for article %s.", article)
-            article.postmortem_from_article_ChatGPT(Chat_GPT, questions_chat, taxonomy_options, args.all)
-            #Failure.postmortem_from_article_ChatGPT(Chat_GPT, article, questions_chat, taxonomy_options)
+            article.postmortem_from_article_ChatGPT(chatGPT, questions_chat, taxonomy_options, args.all)
+            #Failure.postmortem_from_article_ChatGPT(chatGPT, article, questions_chat, taxonomy_options)
             logging.info("Succesfully created failure for article %s.", article)
             successful_failure_creations += 1
 

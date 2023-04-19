@@ -8,6 +8,7 @@ from failures.commands.summarize import SummarizeCommand
 from failures.commands.embed import EmbedCommand
 from failures.commands.classify import ClassifyCommand
 from failures.commands.postmortem import PostmortemCommand
+from failures.commands.cluster import ClusterCommand
 
 
 _EPILOG = textwrap.dedent(
@@ -32,7 +33,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemCommand(), ClusterCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:

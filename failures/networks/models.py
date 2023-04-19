@@ -117,8 +117,37 @@ class EmbedderGPT(Network[str, list[float]]):
         return input_data        
     
     def predict(self, preprocessed_data: str) -> list[float]:
-        embeddings = self.openai.Embedding.create(input = [preprocessed_data], model='text-embedding-ada-002')['data'][0]['embedding']
-        return embeddings
+        try:
+            response = None
+            response = self.openai.Embedding.create(input = [preprocessed_data], model='text-embedding-ada-002')
+        except openai.error.Timeout as e:
+            #Handle timeout error, e.g. retry or log
+            logging.info(f"OpenAI API request timed out: {e}")
+        except openai.error.APIError as e:
+            #Handle API error, e.g. retry or log
+            logging.info(f"OpenAI API returned an API Error: {e}")
+        except openai.error.APIConnectionError as e:
+            #Handle connection error, e.g. check network or log
+            logging.info(f"OpenAI API request failed to connect: {e}")
+        except openai.error.InvalidRequestError as e:
+            #Handle invalid request error, e.g. validate parameters or log
+            logging.info(f"OpenAI API request was invalid: {e}")
+        except openai.error.AuthenticationError as e:
+            #Handle authentication error, e.g. check credentials or log
+            logging.info(f"OpenAI API request was not authorized: {e}")
+        except openai.error.PermissionError as e:
+            #Handle permission error, e.g. check scope or log
+            logging.info(f"OpenAI API request was not permitted: {e}")
+        except openai.error.RateLimitError as e:
+            #Handle rate limit error, e.g. wait or log
+            logging.info(f"OpenAI API request exceeded rate limit: {e}")
+        
+        if response is not None:
+            embeddings = response['data'][0]['embedding']
+            return embeddings
+        else:
+            return None
+
     
     def postprocess(self, prediction: list[float]) -> list[float]:
         return prediction
