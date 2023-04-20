@@ -59,11 +59,6 @@ def cluster(queryset, postmortem_keys):
 
     chatGPT = ChatGPT()
 
-    messages = [
-            {"role": "system", 
-            "content": "You will identify similarities between software postmortem descriptions."}
-            ]
-
     postmortem_embedding_keys = [key+"_embedding" for key in postmortem_keys]
 
     queryset_list = list(queryset.values('id', *postmortem_keys, *postmortem_embedding_keys))
@@ -106,6 +101,11 @@ def cluster(queryset, postmortem_keys):
             postmortem_descriptions = "\n".join(
                 df[df[postmortem_cluster_key] == i][postmortem_key].sample(num_samples, random_state=42).values
             )
+
+            messages = [
+            {"role": "system", 
+            "content": "You will identify similarities between software postmortem descriptions."}
+            ]
 
             prompt = "What do the following software postmortem descriptions have in common? (Answer in under 10 words)" + postmortem_descriptions
 
