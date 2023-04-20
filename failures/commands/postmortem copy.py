@@ -6,7 +6,7 @@ from failures.articles.models import Article, Failure
 from failures.networks.models import QuestionAnswerer, ChatGPT
 from failures.parameters.models import Parameter
 
-class PostmortemCommand:
+class MergeCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         parser.description = textwrap.dedent(
             """
@@ -29,14 +29,14 @@ class PostmortemCommand:
 
         #Pre-process prompts:
         questions = {
-        "title":        Parameter.get("title", "Provide a 10 word title for this software failure incident (return just the title)."),
+        "title":        Parameter.get("title", "Provide a 10 word title for this software failure (return just the title)."),
         "summary":      Parameter.get("summary", "Summarize the software failure incident."),
-        "system":       Parameter.get("system", "What failed in the software failure incident?"),
-        "time":         Parameter.get("time", "When did the software failure incident happen?"),
-        "SEcauses":     Parameter.get("se-causes", "What were the software causes of the failure incident?"),
-        "NSEcauses":    Parameter.get("nse-causes", "What were the non-software causes of the failure incident?"),
-        "impacts":      Parameter.get("impacts", "What happened due to the software failure incident?"),
-        "mitigations":  Parameter.get("mitigations", "What could have prevented the software failure incident?"),
+        "system":       Parameter.get("system", "What failed in the software failure?"),
+        "time":         Parameter.get("time", "When did the software failure happen?"),
+        "SEcauses":     Parameter.get("se-causes", "What were the software causes of the incident?"),
+        "NSEcauses":    Parameter.get("nse-causes", "What were the non-software causes of the incident?"),
+        "impacts":      Parameter.get("impacts", "What happened due to the software failure?"),
+        "mitigations":  Parameter.get("mitigations", "What could have prevented the software failure?"),
         "phase":        Parameter.get("phase", "Was the software failure due to 'system design' (option 0) or 'operation' (option 1) faults or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?"),
         "boundary":     Parameter.get("boundary", "Was the software failure due to faults from 'within the system' (option 0) or from 'outside the system' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?"),
         "nature":       Parameter.get("nature", "Was the software failure due to 'human actions' (option 0) or 'non human actions' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?"),

@@ -58,9 +58,11 @@ class ArticleAdmin(ImportExportModelAdmin):
     list_display = (
         "headline",
         "title",
+        "SEcauses_embedding",
         "published",
         "source",
         "describes_failure",
+        "article_summary",
         "summary",
         "system",
         "time",
