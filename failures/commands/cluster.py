@@ -36,7 +36,7 @@ class ClusterCommand:
 
         #TODO: args.all should not be used here but rather for individual postmortem key embeddings: similar to postmortem command
         queryset = (
-            Article.objects.all() if args.all else Article.objects.filter(describes_failure=True)
+            Article.objects.filter(describes_failure=True)
         )
 
         postmortem_keys = ["SEcauses"] #["summary","SEcauses","NSEcauses","impacts","mitigations"]

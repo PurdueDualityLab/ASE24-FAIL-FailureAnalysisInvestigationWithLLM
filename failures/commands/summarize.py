@@ -24,7 +24,7 @@ class SummarizeCommand:
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         summarizer = Summarizer()
         queryset = (
-            Article.objects.all() if args.all else Article.objects.filter(summary="")
+            Article.objects.all() if args.all else Article.objects.filter(article_summary="")
         )
         successful_summaries = 0
         for article in queryset:
