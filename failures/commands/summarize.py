@@ -3,7 +3,7 @@ import logging
 import textwrap
 
 from failures.articles.models import Article
-from failures.networks.models import Summarizer
+from failures.networks.models import Summarizer, ChatGPT
 
 
 class SummarizeCommand:
@@ -22,6 +22,7 @@ class SummarizeCommand:
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+        '''
         summarizer = Summarizer()
         queryset = (
             Article.objects.all() if args.all else Article.objects.filter(article_summary="")
@@ -32,6 +33,46 @@ class SummarizeCommand:
             if article.body == "":
                 continue
             if article.summarize_body(summarizer):
+                successful_summaries += 1
+
+        logging.info("Successfully summarized %d articles.", successful_summaries)
+        '''
+
+        queryset = (
+            Article.objects.all() if args.all else Article.objects.filter(article_summary="")
+        )
+
+
+        chatGPT = ChatGPT()
+
+
+        successful_summaries = 0
+        for article in queryset:
+            if article.body == "":
+                continue
+
+            logging.info("Summarizing %s.", article)
+            article_text = article.body.split()[:2750]
+
+            content = "You will summarize the article: \n" + ' '.join(article_text)
+
+            messages = [
+                    {"role": "system", 
+                    "content": content}
+                    ]
+            
+            prompt = "In under a 100 words, summarize the article (if present in the article, retain information relevant to software failures - software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect).\nBut don't explicitly state software failure." 
+            
+            messages.append(
+                        {"role": "user", "content": prompt },
+                        )
+            
+            reply = chatGPT.run(messages)
+
+            if reply is not None:
+                article.article_summary = reply
+                article.save()
+
                 successful_summaries += 1
 
         logging.info("Successfully summarized %d articles.", successful_summaries)
