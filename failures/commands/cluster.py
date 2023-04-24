@@ -146,7 +146,7 @@ def cluster(queryset, postmortem_keys):
 
             ax.scatter(avg_x, avg_y, marker="x", color=color, s=100)
 
-        ax.legend()
+        ax.legend(bbox_to_anchor =(0.5,-0.27), loc='lower center')
 
         filename = postmortem_key+"_clustered"+".png"
         fig.savefig(filename)

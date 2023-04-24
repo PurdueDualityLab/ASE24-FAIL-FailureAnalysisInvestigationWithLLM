@@ -2,26 +2,26 @@
 
 # Define arrays of keywords and date ranges
 keywords=(
-  "software flaw"
   "software fail"
-  "software bug"
-  "software mistake"
-  "software anomaly"
-  "software fault"
-  "software error"
-  "software exception"
-  "software crash"
+  "software hack" 
+  "software bug" 
+  "software fault" 
+  "software error" 
+  "software exception" 
+  "software crash" 
   "software glitch"
-  "software defect"
-  "software incident"
+  "software defect" 
+  "software incident" 
+  "software flaw" 
+  "software mistake" 
+  "software anomaly" 
   "software side effect"
-  "software hack"
 )
 
-start_years=(2010)
-end_years=(2010)
-start_months=(01)
-end_months=(02)
+start_years=(2020)
+end_years=(2020)
+start_months=(9)
+end_months=(10)
 
 # Iterate through all combinations of keywords, years, and months
 for keyword in "${keywords[@]}"

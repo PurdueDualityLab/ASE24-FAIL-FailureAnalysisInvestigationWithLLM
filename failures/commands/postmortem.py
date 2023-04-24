@@ -24,19 +24,26 @@ class PostmortemCommand:
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
         queryset = (
-            Article.objects.filter(describes_failure=True)
-        )
+                    Article.objects.filter(
+                        describes_failure=True,
+                        #headline__icontains='Boeing'
+                    )
+                    )
 
         #Pre-process prompts:
         questions = {
         "title":        Parameter.get("title", "Provide a 10 word title for this software failure incident (return just the title)."),
         "summary":      Parameter.get("summary", "Summarize the software failure incident."),
-        "system":       Parameter.get("system", "What failed in the software failure incident?"),
-        "time":         Parameter.get("time", "When did the software failure incident happen?"),
+        }
+        '''
+        "time":         Parameter.get("time", "When did the software failure incident happen? (answer in under 10 words)"),
+        "system":       Parameter.get("system", "What system failed in the software failure incident? (answer in under 10 words)"),
+        "organization": Parameter.get("organization", "Which organizations can the software failure be attributed to? (answer in under 10 words)"),
         "SEcauses":     Parameter.get("se-causes", "What were the software causes of the failure incident?"),
         "NSEcauses":    Parameter.get("nse-causes", "What were the non-software causes of the failure incident?"),
         "impacts":      Parameter.get("impacts", "What happened due to the software failure incident?"),
-        "mitigations":  Parameter.get("mitigations", "What could have prevented the software failure incident?"),
+        "mitigations":  Parameter.get("mitigations", "What could have prevented the software failure incident?"), 
+        
         "phase":        Parameter.get("phase", "Was the software failure due to 'system design' (option 0) or 'operation' (option 1) faults or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?"),
         "boundary":     Parameter.get("boundary", "Was the software failure due to faults from 'within the system' (option 0) or from 'outside the system' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?"),
         "nature":       Parameter.get("nature", "Was the software failure due to 'human actions' (option 0) or 'non human actions' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?"),
@@ -52,6 +59,7 @@ class PostmortemCommand:
         "application":  Parameter.get("application", "Was there a software failure at the application level: 'true' (option true) or 'false' (option false) or 'unknown' (option -1)?"),
         "behaviour":    Parameter.get("behaviour", "Was the software failure due to a 'crash' (option 0) or 'omission' (option 1) or 'timing' (option 2) or 'value' (option 3) or 'Byzantine' fault (option 4) or 'unknown' (option -1)?")
         }
+        '''
 
         failure_synonyms = "Remember, software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
 
@@ -59,8 +67,10 @@ class PostmortemCommand:
         for question_key in questions.keys():
             if "option" in questions[question_key]:
                 questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key] + " \n MUST ONLY RETURN ANSWER IN JSON FORMAT: {\"explanation\": \"explanation\", \"option\": \"option number\"}. Don't provide anything outside the format."
-            else:
+            elif "word" or "words" in questions[question_key]:
                 questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key]
+            else:
+                questions_chat[question_key] = failure_synonyms + "\nAnswer the question within 100 words using the article: " + questions[question_key]
 
         taxonomy_options = {
             "phase": {"0": "system design", "1": "operation", "2": "both", "3": "neither", "-1": "unknown"},
@@ -88,10 +98,10 @@ class PostmortemCommand:
             if article.body == "" or article.describes_failure is not True:
                 logging.info("Article is empty or does not describe failure %s.", article)
                 continue
-            logging.info("Creating failure for article %s.", article)
+            logging.info("Creating postmortem for article %s.", article)
             article.postmortem_from_article_ChatGPT(chatGPT, questions_chat, taxonomy_options, args.all)
             #Failure.postmortem_from_article_ChatGPT(chatGPT, article, questions_chat, taxonomy_options)
-            logging.info("Succesfully created failure for article %s.", article)
+            logging.info("Succesfully created postmortem for article %s.", article)
             successful_failure_creations += 1
 
-        logging.info("Successfully created failures for %d articles.", successful_failure_creations)
+        logging.info("Successfully created postmortems for %d articles.", successful_failure_creations)
