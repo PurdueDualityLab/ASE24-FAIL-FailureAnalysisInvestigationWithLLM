@@ -16,8 +16,17 @@ from bs4 import BeautifulSoup
 import requests
 import re
 import json
+import sys
 
-import openai.embeddings_utils
+from openai.embeddings_utils import cosine_similarity as openai_cosine_similarity
+
+'''
+try:
+    from openai.embeddings_utils import cosine_similarity as openai_cosine_similarity
+except ImportError:
+    logging.info(ImportError)
+    pass
+'''
 
 from failures.networks.models import (
     Embedder,
@@ -107,9 +116,28 @@ class SearchQuery(models.Model):
         return f"{self.keyword}"
 
 
+class Incident(models.Model):
+
+    published = models.DateTimeField(_("Published"), help_text=_("Date and time when the earliest article was published."), blank=True, null=True)
+    #TODO: Find the earliest published date and use the month and year
+    
+    title = models.TextField(_("Title"), blank=True, null=True)
+    summary = models.TextField(_("Summary"), blank=True, null=True)
+
+
+
+
+    class Meta:
+        verbose_name = _("Failure")
+        verbose_name_plural = _("Failures")
+
+    def __str__(self):
+        return self.title
+
+
 class Article(models.Model):
 
-    incident = models.ForeignKey(Incident, blank=True, null=True, on_delete=models.SET_NULL)
+    incident = models.ForeignKey(Incident, blank=True, null=True, on_delete=models.SET_NULL, related_name='articles')
 
     search_queries = models.ManyToManyField(
         SearchQuery,
@@ -229,10 +257,12 @@ class Article(models.Model):
         verbose_name_plural = _("Articles")
 
     def __str__(self):
-        return self.headline
+        return self.title
 
+    '''
     def has_manual_annotation(self) -> bool:
         return self.failures.filter(manual_annotation=True).exists()
+    '''
 
     @classmethod
     def create_from_google_news_rss_feed(
@@ -415,7 +445,7 @@ class Article(models.Model):
         embedding_self = json.loads(self.summary_embedding)
         embedding_other = json.loads(other.summary_embedding)
         
-        self.similarity_score = openai.embeddings_utils.cosine_similarity(embedding_self, embedding_other)
+        self.similarity_score = openai_cosine_similarity(embedding_self, embedding_other)
         return self.similarity_score
     
         #return np.dot(embedding_self, embedding_other) / (np.linalg.norm(embedding_one) * np.linalg.norm(embedding_two))
@@ -589,25 +619,6 @@ class FailureCause(models.Model): #TODO: Not used
     def __str__(self):
         return self.description
 '''
-
-
-class Incident(models.Model):
-
-    published = models.DateTimeField(_("Published"), help_text=_("Date and time when the earliest article was published."), blank=True, null=True)
-    #TODO: Find the earliest published date and use the month and year
-    
-    title = models.TextField(_("Title"), blank=True, null=True)
-    summary = models.TextField(_("Summary"), blank=True, null=True)
-
-
-
-
-    class Meta:
-        verbose_name = _("Failure")
-        verbose_name_plural = _("Failures")
-
-    def __str__(self):
-        return self.title
 
 
 

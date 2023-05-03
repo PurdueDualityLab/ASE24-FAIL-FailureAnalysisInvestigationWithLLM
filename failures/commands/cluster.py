@@ -22,8 +22,8 @@ class ClusterCommand:
         parser.description = textwrap.dedent(
             """
             Cluster postmortems for articles that report on SE failures present in the database. If no arguments are provided, 
-            create embeddings for all articles that do not have a postmortem; otherwise, if --all is provided, create 
-            embeddings for all articles. 
+            create embeddings for articles describing SE failures if they're not already created; otherwise, if --all is provided, create 
+            embeddings for articles describing SE failures. 
             """
         )
         parser.add_argument(
