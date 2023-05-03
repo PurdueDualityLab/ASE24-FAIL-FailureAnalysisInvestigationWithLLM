@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from failures.articles.models import Article, Failure, SearchQuery
+from failures.articles.models import Article, Incident, SearchQuery
 
 from import_export.admin import ImportExportModelAdmin
 
@@ -62,6 +62,7 @@ class ArticleAdmin(ImportExportModelAdmin):
         "published",
         "source",
         "summary",
+        #"summary_embedding",
         "system",
         "organization",
         "time",
@@ -99,6 +100,25 @@ class ArticleAdmin(ImportExportModelAdmin):
         "behaviour_rationale",
     )
     
+'''
+class ArticleInline(admin.TabularInline):
+    model = Article
+
+#@admin.register(Incident)
+class IncidentAdmin(admin.ModelAdmin):
+    inlines = [
+        ArticleInline,
+    ]
+
+admin.site.register(Incident, IncidentAdmin)
+'''
+
+@admin.register(Incident)
+class IncidentAdmin(ImportExportModelAdmin):
+    list_display = (
+        "title",
+    )
+
 @admin.register(SearchQuery)
 class SearchQueryAdmin(admin.ModelAdmin):
     list_display = (
@@ -111,6 +131,7 @@ class SearchQueryAdmin(admin.ModelAdmin):
     list_filter = ("created_at", "last_searched_at")
 
 
+'''
 @admin.register(Failure)
 class FailureAdmin(admin.ModelAdmin):
     list_display = (
@@ -119,3 +140,4 @@ class FailureAdmin(admin.ModelAdmin):
         "summary",
     )
     list_filter = ("title",)
+'''

@@ -1,6 +1,10 @@
 from django.shortcuts import render
 
-from .models import Failure
+
+
+
+from .models import Incident
+
 
 
 def index(request):
@@ -8,6 +12,6 @@ def index(request):
         request,
         "articles/index.html",
         {
-            "failures": Failure.objects.all(),
+            "incidents": Incident.objects.all(),
         },
     )
