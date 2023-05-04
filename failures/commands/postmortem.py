@@ -11,8 +11,8 @@ class PostmortemCommand:
         parser.description = textwrap.dedent(
             """
             Create postmortems for articles that report on SE failures present in the database. If no arguments are provided, create postmortems for all
-            articles that do not have a postmortem; otherwise, if --all is provided, create postmortems for all
-            articles. If an article does not have a body, a postmortems will not be created for it.
+            SE failure articles that do not have a postmortem; otherwise, if --all is provided, create postmortems for all
+            SE failure articles. If an article does not have a body, a postmortems will not be created for it.
             """
         )
         parser.add_argument(
@@ -34,11 +34,12 @@ class PostmortemCommand:
         questions = {
         "title":        Parameter.get("title", "Provide a 10 word title for this software failure incident (return just the title)."),
         "summary":      Parameter.get("summary", "Summarize the software failure incident."),
+        
+        "time":         Parameter.get("time", "When (month and/or year) did the software failure incident happen? If necessary, calculate using article published date. ONLY return month and/or year."),
+        "system":       Parameter.get("system", "What system failed in the software failure incident? (answer in under 10 words)"),
+        "organization": Parameter.get("organization", "Which organizations or companies can the software failure be attributed to? (answer in under 10 words)"),
         }
         '''
-        "time":         Parameter.get("time", "When (month and/or year) did the software failure incident happen?"),
-        "system":       Parameter.get("system", "What system failed in the software failure incident? (answer in under 10 words)"),
-        "organization": Parameter.get("organization", "Which organizations can the software failure be attributed to? (answer in under 10 words)"),
         "SEcauses":     Parameter.get("se-causes", "What were the software causes of the failure incident?"),
         "NSEcauses":    Parameter.get("nse-causes", "What were the non-software causes of the failure incident?"),
         "impacts":      Parameter.get("impacts", "What happened due to the software failure incident?"),

@@ -128,8 +128,8 @@ class Incident(models.Model):
 
 
     class Meta:
-        verbose_name = _("Failure")
-        verbose_name_plural = _("Failures")
+        verbose_name = _("Incident")
+        verbose_name_plural = _("Incidents")
 
     def __str__(self):
         return self.title
@@ -246,6 +246,10 @@ class Article(models.Model):
 
     #Embeddings
     summary_embedding = models.TextField(_("Summary Embedding"), blank=True, null=True)
+    time_embedding = models.TextField(_("Time Embedding"), blank=True, null=True)
+    system_embedding = models.TextField(_("System Embedding"), blank=True, null=True)
+    organization_embedding = models.TextField(_("Organization Embedding"), blank=True, null=True)
+
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
@@ -257,7 +261,7 @@ class Article(models.Model):
         verbose_name_plural = _("Articles")
 
     def __str__(self):
-        return self.title
+        return self.headline #TODO: Check places where you use this: Do you want to get headline or title?
 
     '''
     def has_manual_annotation(self) -> bool:
@@ -439,14 +443,18 @@ class Article(models.Model):
         self.save()
 
 
-    def cosine_similarity(self, other: "Article") -> float:
-        if self.summary_embedding is None or other.summary_embedding is None:
-            raise ValueError("One or both articles have no summary embedding.")
-        embedding_self = json.loads(self.summary_embedding)
-        embedding_other = json.loads(other.summary_embedding)
+    def cosine_similarity(self, other: "Article", option_key) -> float:
+        if not getattr(self, option_key) or not getattr(self, option_key):
+            raise ValueError("One or both articles have no " + option_key)
         
-        self.similarity_score = openai_cosine_similarity(embedding_self, embedding_other)
-        return self.similarity_score
+        embedding_self = json.loads(getattr(self, option_key))
+        embedding_other = json.loads(getattr(other, option_key))
+
+        similarity_score = openai_cosine_similarity(embedding_self, embedding_other)
+
+        if "summary" in option_key:
+            self.similarity_score = similarity_score
+        return similarity_score
     
         #return np.dot(embedding_self, embedding_other) / (np.linalg.norm(embedding_one) * np.linalg.norm(embedding_two))
 
@@ -473,7 +481,7 @@ class Article(models.Model):
                 "content": content}
                 ]
 
-        prompt = "Does this article describe a software failure (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?: " \
+        prompt = "Does this article report on software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?: " \
                 + "\n" \
                 + "Answer with just True or False"
 
