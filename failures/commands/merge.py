@@ -42,7 +42,8 @@ class MergeCommand:
         incidents = list(Incident.objects.prefetch_related('articles'))
 
 
-        postmortem_keys = ["summary"]
+        postmortem_keys = ["summary", "time", "system", "organization"]
+
         embedder = EmbedderGPT()
 
         logging.info("\n\nMerging Articles.")
@@ -58,20 +59,27 @@ class MergeCommand:
             for incident in incidents:
                 logging.info("Searching within incident: %s.", incident)
                 for article_incident in incident.articles.all():
-                    incident_similarity = article_new.cosine_similarity(article_incident)
+                    
+                    mean_score = 0
+                    sum_scores = 0
+                    for postmortem_key in postmortem_keys:
+                        incident_similarity = article_new.cosine_similarity(article_incident, postmortem_key + "_embedding") 
+                        sum_scores += incident_similarity
+                    
+                    mean_score = sum_scores/len(postmortem_keys)
                     
                     if "boeing" in article_new.headline.lower() and "boeing" in article_incident.headline.lower():
-                        logging.info("Boeing article similarity: %s.", incident_similarity)
+                        logging.info("Boeing article similarity: %s.", mean_score)
                     
                     if "volkswagen" in article_new.headline.lower() and "volkswagen" in article_incident.headline.lower():
-                        logging.info("volkswagen article similarity: %s.", incident_similarity)
+                        logging.info("volkswagen article similarity: %s.", mean_score)
 
                     if "bear" in article_new.headline.lower() and "bear" in article_incident.headline.lower():
-                        logging.info("russia bear article similarity: %s.", incident_similarity)
+                        logging.info("russia bear article similarity: %s.", mean_score)
 
 
-                    if incident_similarity > 0.9:
-                        logging.info("Found incident match with a score of " + str(incident_similarity) + " in incident: " + str(incident))
+                    if mean_score > 0.85:
+                        logging.info("Found incident match with a score of " + str(mean_score) + " in incident: " + str(incident))
 
                         similar_found = True
                         article_new.incident = incident
@@ -82,10 +90,9 @@ class MergeCommand:
                     break
 
             if similar_found is False:
-                logging.info("Incident match not found, creating new incident: %s.", article_new)
+                logging.info("Incident match not found, creating new incident: %s.", article_new.title)
 
-                incident = Incident.objects.create()
-                incident.title = article_new.title
+                incident = Incident.objects.create(title=article_new.title)
 
                 article_new.incident = incident
                 article_new.save()
