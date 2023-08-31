@@ -43,6 +43,7 @@ class MergeCommand:
 
 
         postmortem_keys = ["summary", "time", "system", "organization"]
+        weights = [0.25, 0.25, 0.25, 0.25]
 
         embedder = EmbedderGPT()
 
@@ -62,11 +63,11 @@ class MergeCommand:
                     
                     mean_score = 0
                     sum_scores = 0
-                    for postmortem_key in postmortem_keys:
+                    for ind, postmortem_key in enumerate(postmortem_keys):
                         incident_similarity = article_new.cosine_similarity(article_incident, postmortem_key + "_embedding") 
-                        sum_scores += incident_similarity
+                        sum_scores += incident_similarity * weights[ind]
                     
-                    mean_score = sum_scores/len(postmortem_keys)
+                    mean_score = sum_scores #/len(postmortem_keys)
                     
                     if "boeing" in article_new.headline.lower() and "boeing" in article_incident.headline.lower():
                         logging.info("Boeing article similarity: %s.", mean_score)
