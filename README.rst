@@ -57,6 +57,8 @@ Scraping News Articles Using Only the Command Line
 
     $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
 
+#. To scrape news for automated experiments use: experiment.sh
+
 
 Classifying Articles Using the Command Line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,7 +84,7 @@ Create Postmortems for Articles Using the Command Line
     $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m failures postmortem --all
     
 
-Create Embedding for Articles Using the Command Line
+Create Embedding for Articles Using the Command Line (OUTDATED): REMOVE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Display the help text::
@@ -94,7 +96,7 @@ Create Embedding for Articles Using the Command Line
     $ docker compose -f local.yml run --rm django python -m failures embed --all
 
 
-Setting Admin Parameters
+Setting Admin Parameters (OUTDATED): REMOVE
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Navigate to the ``/admin/`` page and log in.
@@ -107,7 +109,7 @@ Setting Admin Parameters
 
 #. Repeat for each parameter.
 
-Working with Parameters Programmatically
+Working with Parameters Programmatically (OUTDATED): REMOVE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Import the ``Parameter`` model::
@@ -122,7 +124,7 @@ Working with Parameters Programmatically
 If the parameter does not exist, it will be created with the default value. This is similar to
 ``dict.get``; however, parameters set in the admin site are persisted in the database.
 
-Using failures.networks Programmatically
+Using failures.networks Programmatically (OUTDATED): Update (w/ open source models + OpenAI models)
 ---------------------------------------
 
 There are four main classes in the ``failures.networks.models`` module:
