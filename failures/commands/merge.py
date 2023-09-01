@@ -42,8 +42,8 @@ class MergeCommand:
         incidents = list(Incident.objects.prefetch_related('articles'))
 
 
-        postmortem_keys = ["summary", "time", "system", "organization"]
-        weights = [0.25, 0.25, 0.25, 0.25]
+        postmortem_keys = ["summary", "time", "system", "ResponsibleOrg", "ImpactedOrg"]
+        weights = [0.20, 0.20, 0.20, 0.20, 0.20]
 
         embedder = EmbedderGPT()
 
@@ -81,6 +81,11 @@ class MergeCommand:
 
                     if mean_score > 0.85:
                         logging.info("Found incident match with a score of " + str(mean_score) + " in incident: " + str(incident))
+
+                        #TODO: Measure false positive rate with just cosine similarity
+                        #TODO: Implement asking LLM if incident is same
+
+                        
 
                         similar_found = True
                         article_new.incident = incident
