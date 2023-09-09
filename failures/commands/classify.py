@@ -10,6 +10,13 @@ from failures.parameters.models import Parameter
 
 class ClassifyCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
+        """
+        Prepare the argument parser for the classify command
+
+        Args:
+            parser (argparse.ArgumentParser): The argument parser to configure
+        """
+
         parser.description = textwrap.dedent(
             """
             Classify the articles present in the database as either describing a software failure or not. If no arguments are
@@ -24,6 +31,13 @@ class ClassifyCommand:
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+        """
+        Run the article classification process based on provided arguments.
+
+        Args: 
+            args (argparse.Namespace): The parsed command-line arguments.
+            parser (argparse.ArgumentParser): The argument parser for the configuration
+        """
         
         queryset = (
             Article.objects.all() if args.all else Article.objects.filter(describes_failure=None)
