@@ -8,6 +8,12 @@ from failures.parameters.models import Parameter
 
 class MergeCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
+        """
+        Prepare the argument parser for the merge command.
+
+        Args:
+            parser (argparse.ArgumentParser): The argument parser to configure.
+        """
         parser.description = textwrap.dedent(
             """
             Merge postmortems for articles that report on SE failures present in the database. If no arguments are provided, 
@@ -23,25 +29,32 @@ class MergeCommand:
 
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+        """
+        Run the incident merging process based on the provided arguments.
 
-        #Delete all incidents
+        Args:
+            args (argparse.Namespace): The parsed command-line arguments.
+            parser (argparse.ArgumentParser): The argument parser used for configuration.
+        """
+
+        # Delete all incidents
         if args.all:
             incidents = Incident.objects.all()
-            #Ensures that the articles are not deleted
+            # Ensures that the articles are not deleted
             for incident in incidents:
                 Article.objects.filter(incident=incident).update(incident=None)
             
             incidents.delete()
 
+        # Determine the queryset of articles for merging
         queryset = (
             Article.objects.filter(describes_failure=True, incident__isnull=True)
         )
 
-        #incidents = Incident.objects.prefetch_related('articles')
-
+        # incidents = Incident.objects.prefetch_related('articles')
         incidents = list(Incident.objects.prefetch_related('articles'))
 
-
+        # Define postmortem information keys and their weights for similarity calculation
         postmortem_keys = ["summary", "time", "system", "organization"]
         weights = [0.25, 0.25, 0.25, 0.25]
 
@@ -53,6 +66,7 @@ class MergeCommand:
 
             logging.info("\nSearching for incident for article: %s.", article_new)
 
+            # Create embeddings for the new article's postmortem information
             article_new.create_postmortem_embeddings_GPT(embedder, postmortem_keys, False)
 
             similar_found = False
@@ -64,6 +78,7 @@ class MergeCommand:
                     mean_score = 0
                     sum_scores = 0
                     for ind, postmortem_key in enumerate(postmortem_keys):
+                        # Calculate similarity between articles based on embeddings
                         incident_similarity = article_new.cosine_similarity(article_incident, postmortem_key + "_embedding") 
                         sum_scores += incident_similarity * weights[ind]
                     
