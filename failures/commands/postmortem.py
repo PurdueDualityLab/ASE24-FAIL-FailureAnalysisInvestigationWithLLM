@@ -20,6 +20,11 @@ class PostmortemCommand:
             action="store_true",
             help="Create postmortems for all articles even if they already have a postmortem.",
         )
+        parser.add_argument(
+            "--key",
+            type=str,
+            help="Redo extraction for a specific postmortem key for all articles.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
@@ -32,12 +37,12 @@ class PostmortemCommand:
         #Pre-process prompts:
         questions = {
         "title":            Parameter.get("title", "Provide a 10 word title for this software failure incident (return just the title)."),
-        "summary":          Parameter.get("summary", "Summarize the software failure incident."),
+        "summary":          Parameter.get("summary", "Summarize the software failure incident. Include when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity, and the impacted entity."),
         
         "time":             Parameter.get("time", "When (month and/or year) did the software failure incident happen? If necessary, calculate using article published date. ONLY return month and/or year."),
         "system":           Parameter.get("system", "What system failed in the software failure incident? (answer in under 10 words)"),
-        "ResponsibleOrg":   Parameter.get("ResponsibleOrg", "Which entity was responsible for causing the software failure? (answer in under 10 words)"),
-        "ImpactedOrg":      Parameter.get("ImpactedOrg", "Which entity was impacted by the software failure? (answer in under 10 words)"),
+        "ResponsibleOrg":   Parameter.get("ResponsibleOrg", "Which entity(s) was responsible for causing the software failure? (answer in under 10 words)"),
+        "ImpactedOrg":      Parameter.get("ImpactedOrg", "Which entity(s) was impacted by the software failure? (answer in under 10 words)"),
         }
         '''
         "SEcauses":     Parameter.get("SEcauses", "What were the software causes of the failure incident?"),
@@ -100,7 +105,7 @@ class PostmortemCommand:
                 logging.info("Article is empty or does not describe failure %s.", article)
                 continue
             logging.info("Creating postmortem for article %s.", article)
-            article.postmortem_from_article_ChatGPT(chatGPT, questions_chat, taxonomy_options, args.all)
+            article.postmortem_from_article_ChatGPT(chatGPT, questions_chat, taxonomy_options, args.all, args.key)
             logging.info("Succesfully created postmortem for article %s.", article)
             successful_failure_creations += 1
 

@@ -247,6 +247,8 @@ class ChatGPT(Network[list, str]):
             chat_completion = None
             chat_completion = self.openai.ChatCompletion.create(
                             model="gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
+                            #TODO: Pass temperature, conduct experiment by varying for classification tasks and for open ended responses
+                            #TODO: Pass model, auto switch 4k vs 16k based on article length
                             ) 
         
         except openai.error.Timeout as e:
