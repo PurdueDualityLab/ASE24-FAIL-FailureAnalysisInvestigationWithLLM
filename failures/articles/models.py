@@ -520,7 +520,7 @@ class Article(models.Model):
                 "content": content}
                 ]
 
-        prompt = "Does this article contain enough information about the following criteria to conduct a detailed failure analysis of the software failure incident(s): " \ 
+        prompt = "Does this article contain enough information about the following criteria to conduct a detailed failure analysis of the software failure incident(s): " \
                 + "\n" \
                 + "Criteria: Cause of failure, impact of failure, entity(s) responsible for failure, and the entity(s) impacted by failure" \
                 + "\n" \
