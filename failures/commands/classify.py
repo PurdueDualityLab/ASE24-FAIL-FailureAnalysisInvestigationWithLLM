@@ -48,7 +48,9 @@ class ClassifyCommand:
         classifierChatGPT = ClassifierChatGPT()
 
 
-        positive_classifications_ChatGPT = 0
+        failure_positive_classifications_ChatGPT = 0
+        analyzable_positive_classifications_ChatGPT = 0
+
         for article in queryset:
             if article.body == "":
                 continue
@@ -57,32 +59,20 @@ class ClassifyCommand:
 
 
             if article.classify_as_failure_ChatGPT(classifierChatGPT):
-                positive_classifications_ChatGPT += 1
+                failure_positive_classifications_ChatGPT += 1
                 logging.info("ChatGPT Classifier: Classification met as software failure for article: " + str(article))
 
 
-        logging.info("ChatGPT successfully classified %d articles as describing a software failure.", positive_classifications_ChatGPT)
+                #Does the article have enough information to conduct failure analysis
 
-    
-        #TODO: Cleanup
-        '''
-        classifier = ZeroShotClassifier([Parameter.get("FAILURE_POSITIVE_CLASSIFICATION_CLASS", "software failure"),
-                                         Parameter.get("FAILURE_NEGATIVE_CLASSIFICATION_CLASS", "not a software failure")]
-                                        )
-        queryset = (
-            Article.objects.all() if args.all else Article.objects.filter(describes_failure=None)
-        )
-        positive_classifications = 0
-        negative_classifications = 0
-        for article in queryset:
-            logging.info("Classifying %s.", article)
-            if article.body == "":
-                continue
-            if article.classify_as_failure(classifier):
-                positive_classifications += 1
-            else:
-                negative_classifications += 1
+                if article.classify_as_analyzable_ChatGPT(classifierChatGPT):
+                    analyzable_positive_classifications_ChatGPT += 1
+                    logging.info("ChatGPT Classifier: Classification met as eligible for failure analysis for article: " + str(article))
 
-        logging.info("Successfully classified %d articles as describing a software failure.", positive_classifications)
-        logging.info("Successfully classified %d articles as not describing a software failure.", negative_classifications)
-        '''
+
+
+        logging.info("ChatGPT successfully classified %d articles as describing a software failure.", failure_positive_classifications_ChatGPT)
+        logging.info("ChatGPT successfully classified %d articles as eligible for failure analysis.", analyzable_positive_classifications_ChatGPT)
+
+
+
