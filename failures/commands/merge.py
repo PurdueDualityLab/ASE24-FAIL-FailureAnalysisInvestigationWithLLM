@@ -89,7 +89,7 @@ class MergeCommand:
                     
                     mean_score = sum_scores #/len(postmortem_keys)
                     
-                    '''
+                    ''' TODO: Clean up
                     if "boeing" in article_new.headline.lower() and "boeing" in article_incident.headline.lower():
                         logging.info("Boeing article similarity: %s.", mean_score)
                     
