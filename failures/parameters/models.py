@@ -59,6 +59,7 @@ class Parameter(models.Model):
             
 
 '''
+TODO: Do we even need Parameters?
 #Need to set up multiple classes of parameters:
 1. Ones that only need to be run once 
 2. Ones that need to be run each time a new parameter is added

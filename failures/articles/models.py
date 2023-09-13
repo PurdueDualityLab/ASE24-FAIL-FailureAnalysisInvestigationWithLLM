@@ -195,6 +195,16 @@ class Article(models.Model):
         ),
     )
 
+    analyzable_failure = models.BooleanField(
+        _("Analyzable Failure"),
+        null=True,
+        help_text=_(
+            "Whether the article can be used to conduct a failure analysis. This field is set by ChatGPT."
+        ),
+    )
+
+    analyzable_failure
+
 
     similarity_score = models.FloatField(_("Cosine similarity score"),null=True,blank=True)
     
@@ -209,7 +219,8 @@ class Article(models.Model):
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
     mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
-    organization = models.TextField(_("Organization"), blank=True, null=True)
+    ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
+    ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
 
     #Taxonomy fields: Options
     phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
@@ -248,7 +259,8 @@ class Article(models.Model):
     summary_embedding = models.TextField(_("Summary Embedding"), blank=True, null=True)
     time_embedding = models.TextField(_("Time Embedding"), blank=True, null=True)
     system_embedding = models.TextField(_("System Embedding"), blank=True, null=True)
-    organization_embedding = models.TextField(_("Organization Embedding"), blank=True, null=True)
+    ResponsibleOrg_embedding = models.TextField(_("ResponsibleOrg Embedding"), blank=True, null=True)
+    ImpactedOrg_embedding = models.TextField(_("ImpactedOrg Embedding"), blank=True, null=True)
 
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
@@ -468,7 +480,7 @@ class Article(models.Model):
         self.save()
         return self.describes_failure_os
 
-    # GPT based classifier
+    # GPT based classifier for reports on software failure
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT):
 
         #Truncate article if it is too long
@@ -495,12 +507,42 @@ class Article(models.Model):
         return self.describes_failure
 
 
+    # GPT based classifier for: Does the article have enough information to conduct failure analysis
+    def classify_as_analyzable_ChatGPT(self, classifier: ClassifierChatGPT):
+
+        #Truncate article if it is too long
+        article_text = self.body.split()[:2750]
+
+        content = "You will help decide whether a news article contains information to conduct failure analysis about a software failure (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect) \n" + ' '.join(article_text)
+
+        messages = [
+                {"role": "system", 
+                "content": content}
+                ]
+
+        prompt = "Does this article contain enough information about the following criteria to conduct a detailed failure analysis of the software failure incident(s): " \
+                + "\n" \
+                + "Criteria: Cause of failure, impact of failure, entity(s) responsible for failure, and the entity(s) impacted by failure" \
+                + "\n" \
+                + "Answer with just True or False"
+
+        messages.append(
+                        {"role": "user", "content": prompt },
+                        )
+        
+        self.analyzable_failure = classifier.run(messages)
+
+        self.save()
+        return self.analyzable_failure
+
+
     def postmortem_from_article_ChatGPT(
         self,
         ChatGPT: ChatGPT,
         questions: dict,
         taxonomy_options: dict,
         query_all: bool,
+        query_key: str,
     ): 
 
         logging.info("Extracting postmortem from article: %s.", self)
@@ -549,8 +591,7 @@ class Article(models.Model):
                 if not getattr(self, question_key):
                     answer_set = False
 
-
-            if query_all or not answer_set: 
+            if query_all or (query_key in question_key) or not answer_set: 
 
                 logging.info("Querying question: " + str(question_key))
 

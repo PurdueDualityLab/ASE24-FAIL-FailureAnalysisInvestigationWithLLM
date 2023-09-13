@@ -3,7 +3,7 @@ import logging
 import textwrap
 
 from failures.articles.models import Article, Incident
-from failures.networks.models import QuestionAnswerer, ChatGPT, EmbedderGPT
+from failures.networks.models import QuestionAnswerer, ChatGPT, EmbedderGPT,  ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 class MergeCommand:
@@ -33,19 +33,39 @@ class MergeCommand:
             
             incidents.delete()
 
+
         queryset = (
             Article.objects.filter(describes_failure=True, incident__isnull=True)
         )
 
-        #incidents = Incident.objects.prefetch_related('articles')
+        questions = {
+        "summary":          Parameter.get("summary", "Summarize the software failure incident in under 100 words. Include information about the failed system, when the failure occured, the entity(s) responsible for failure, and the entity(s) impacted by failure."),
+        }
+
+        failure_synonyms = "\nRemember, software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+
+        questions_chat = {}
+        for question_key in questions.keys():
+            if "option" in questions[question_key]:
+                questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key] + " \n MUST ONLY RETURN ANSWER IN JSON FORMAT: {\"explanation\": \"explanation\", \"option\": \"option number\"}. Don't provide anything outside the format."
+            elif "word" or "words" in questions[question_key]:
+                questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key]
+            elif "summary" in question_key:
+                questions_chat[question_key] = failure_synonyms + "\n" + questions[question_key]
+            else:
+                questions_chat[question_key] = failure_synonyms + "\nAnswer the question within 100 words using the article: " + questions[question_key]
 
         incidents = list(Incident.objects.prefetch_related('articles'))
 
 
-        postmortem_keys = ["summary", "time", "system", "organization"]
-        weights = [0.25, 0.25, 0.25, 0.25]
+        #postmortem_keys = ["summary", "time", "system", "ResponsibleOrg", "ImpactedOrg"]
+        #weights = [0.20, 0.20, 0.20, 0.20, 0.20]
+
+        postmortem_keys = ["summary"]
+        weights = [1]
 
         embedder = EmbedderGPT()
+        classifierChatGPT = ClassifierChatGPT()
 
         logging.info("\n\nMerging Articles.")
 
@@ -69,6 +89,7 @@ class MergeCommand:
                     
                     mean_score = sum_scores #/len(postmortem_keys)
                     
+                    ''' TODO: Clean up
                     if "boeing" in article_new.headline.lower() and "boeing" in article_incident.headline.lower():
                         logging.info("Boeing article similarity: %s.", mean_score)
                     
@@ -77,15 +98,47 @@ class MergeCommand:
 
                     if "bear" in article_new.headline.lower() and "bear" in article_incident.headline.lower():
                         logging.info("russia bear article similarity: %s.", mean_score)
-
+                    '''
+                    
 
                     if mean_score > 0.85:
-                        logging.info("Found incident match with a score of " + str(mean_score) + " in incident: " + str(incident))
+                        logging.info("High similarity score of " + str(mean_score) + " in incident: " + str(incident))
 
-                        similar_found = True
-                        article_new.incident = incident
-                        article_new.save()
-                        break
+                        #TODO: Measure false positive rate with just cosine similarity
+                        #TODO: Implement asking LLM if incident is same
+
+
+                        #Confirm with LLM
+                        content = "You will help decide whether two paragraphs descibe the same software failure incident (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)"
+
+                        messages = [
+                                {"role": "system", 
+                                "content": content}
+                                ]
+
+                        prompt = "Does this paragraph: \n" \
+                                + article_new.summary \
+                                + " \n describe the same software failure incident(s) as this paragraph: \n" \
+                                + article_incident.summary \
+                                + "\n ?" \
+                                + "\n Answer with just True or False"
+
+                        messages.append(
+                                        {"role": "user", "content": prompt },
+                                        )
+
+                        similar_found = classifierChatGPT.run(messages)
+
+                        if similar_found is True:
+                            logging.info("Found incident match with a score of " + str(mean_score) + " in incident: " + str(incident))
+                            article_new.incident = incident
+                            article_new.save()
+                            break
+
+                        #similar_found = True
+                        #article_new.incident = incident
+                        #article_new.save()
+                        #break
                 
                 if similar_found is True:
                     break
