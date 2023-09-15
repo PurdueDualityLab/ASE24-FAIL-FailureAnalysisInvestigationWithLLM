@@ -154,18 +154,18 @@ class EmbedderGPT(Network[str, list[float]]):
 
 
 
-class ClassifierChatGPT(Network[list, bool]):
+class ClassifierChatGPT(Network[dict, bool]):
     def __init__(self):
 
         self.chatGPT = ChatGPT()
 
-    def preprocess(self, input_data: list) -> list:
+    def preprocess(self, input_data: dict) -> dict:
         return input_data
     
-    def predict(self, preprocessed_data: list) -> str:
-        messages = preprocessed_data
-
-        response = self.chatGPT.run(messages)
+    def predict(self, preprocessed_data: dict) -> str:
+        inputs = preprocessed_data
+        
+        response = self.chatGPT.run(inputs)
 
         return response
     
@@ -232,21 +232,23 @@ class SummarizerGPT(Network[str, str]):
 
 
 
-class ChatGPT(Network[list, str]):
+class ChatGPT(Network[dict, str]):
     def __init__(self):
         self.openai = openai
         self.openai.api_key = os.getenv('OPENAI_API_KEY')
 
-    def preprocess(self, input_data: list) -> list:
+    def preprocess(self, input_data: dict) -> dict:
         return input_data
 
-    def predict(self, preprocessed_data: list) -> str:
-        messages = preprocessed_data
+    def predict(self, preprocessed_data: dict) -> str:
+        messages = preprocessed_data["messages"]
+        model = preprocessed_data["model"]
+        temperature = preprocessed_data["temperature"]
         
         try:
             chat_completion = None
             chat_completion = self.openai.ChatCompletion.create(
-                            model="gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
+                            model=model, messages=messages, temperature=temperature #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
                             #TODO: Pass temperature, conduct experiment by varying for classification tasks and for open ended responses
                             #TODO: Pass model, auto switch 4k vs 16k based on article length
                             ) 
