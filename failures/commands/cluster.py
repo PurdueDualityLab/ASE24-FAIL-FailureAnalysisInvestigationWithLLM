@@ -58,6 +58,7 @@ class ClusterCommand:
 def cluster(queryset, postmortem_keys):
 
     chatGPT = ChatGPT()
+    inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
 
     postmortem_embedding_keys = [key+"_embedding" for key in postmortem_keys]
 
@@ -112,7 +113,9 @@ def cluster(queryset, postmortem_keys):
             messages.append(
                             {"role": "user", "content": prompt},
                             )
-            reply = chatGPT.run(messages)
+
+            inputs["messages"] = messages
+            reply = chatGPT.run(inputs)
 
             themes.append(reply)
 
