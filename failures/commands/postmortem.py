@@ -8,7 +8,7 @@ from failures.parameters.models import Parameter
 
 class PostmortemCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
-         """
+        """
         Prepare the argument parser for the postmortem command.
 
         Args:
