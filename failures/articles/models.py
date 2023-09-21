@@ -481,7 +481,7 @@ class Article(models.Model):
         return self.describes_failure_os
 
     # GPT based classifier for reports on software failure
-    def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT):
+    def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long
         article_text = self.body.split()[:2750]
@@ -501,14 +501,16 @@ class Article(models.Model):
                         {"role": "user", "content": prompt },
                         )
         
-        self.describes_failure = classifier.run(messages)
+        inputs["messages"] = messages
+        
+        self.describes_failure = classifier.run(inputs)
 
         self.save()
         return self.describes_failure
 
 
     # GPT based classifier for: Does the article have enough information to conduct failure analysis
-    def classify_as_analyzable_ChatGPT(self, classifier: ClassifierChatGPT):
+    def classify_as_analyzable_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long
         article_text = self.body.split()[:2750]
@@ -530,7 +532,9 @@ class Article(models.Model):
                         {"role": "user", "content": prompt },
                         )
         
-        self.analyzable_failure = classifier.run(messages)
+        inputs["messages"] = messages
+        
+        self.analyzable_failure = classifier.run(inputs)
 
         self.save()
         return self.analyzable_failure
@@ -539,6 +543,7 @@ class Article(models.Model):
     def postmortem_from_article_ChatGPT(
         self,
         ChatGPT: ChatGPT,
+        inputs: dict,
         questions: dict,
         taxonomy_options: dict,
         query_all: bool,
@@ -567,8 +572,9 @@ class Article(models.Model):
             messages.append(
                             {"role": "user", "content": "summarize this text (retain information relevant to software failure) with a maximum of 500 words: " + ' '.join(article_end)},
                             )
-        
-            reply = ChatGPT.run(messages)
+            
+            inputs["messages"] = messages
+            reply = ChatGPT.run(inputs)
 
             article_body = ' '.join(article_begin) + reply
             logging.info("Reduced articled length for article: "+ str(self) + "; Old length: " + str(article_len) + " ; New length: " + str(len(article_body.split())) )
@@ -602,7 +608,10 @@ class Article(models.Model):
                 messages.append(
                                 {"role": "user", "content": questions[question_key]},
                                 )
-                reply = ChatGPT.run(messages)
+                
+                inputs["messages"] = messages
+
+                reply = ChatGPT.run(inputs)
 
                 if "{" and "}" in reply:
                     try:
