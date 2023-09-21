@@ -66,6 +66,7 @@ class MergeCommand:
 
         embedder = EmbedderGPT()
         classifierChatGPT = ClassifierChatGPT()
+        inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
 
         logging.info("\n\nMerging Articles.")
 
@@ -126,8 +127,9 @@ class MergeCommand:
                         messages.append(
                                         {"role": "user", "content": prompt },
                                         )
-
-                        similar_found = classifierChatGPT.run(messages)
+                        
+                        inputs["messages"] = messages
+                        similar_found = classifierChatGPT.run(inputs)
 
                         if similar_found is True:
                             logging.info("Found incident match with a score of " + str(mean_score) + " in incident: " + str(incident))

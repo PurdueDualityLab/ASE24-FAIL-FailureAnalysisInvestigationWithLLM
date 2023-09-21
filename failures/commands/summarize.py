@@ -44,6 +44,7 @@ class SummarizeCommand:
 
 
         chatGPT = ChatGPT()
+        inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
 
 
         successful_summaries = 0
@@ -67,7 +68,9 @@ class SummarizeCommand:
                         {"role": "user", "content": prompt },
                         )
             
-            reply = chatGPT.run(messages)
+            inputs["messages"] = messages
+
+            reply = chatGPT.run(inputs)
 
             if reply is not None:
                 article.article_summary = reply

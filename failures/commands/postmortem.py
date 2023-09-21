@@ -98,6 +98,7 @@ class PostmortemCommand:
         logging.info("\nCreating postmortems.")
         
         chatGPT = ChatGPT()
+        inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
 
         successful_failure_creations = 0
         for article in queryset:
@@ -105,7 +106,7 @@ class PostmortemCommand:
                 logging.info("Article is empty or does not describe failure %s.", article)
                 continue
             logging.info("Creating postmortem for article %s.", article)
-            article.postmortem_from_article_ChatGPT(chatGPT, questions_chat, taxonomy_options, args.all, args.key)
+            article.postmortem_from_article_ChatGPT(chatGPT, inputs, questions_chat, taxonomy_options, args.all, args.key)
             logging.info("Succesfully created postmortem for article %s.", article)
             successful_failure_creations += 1
 
