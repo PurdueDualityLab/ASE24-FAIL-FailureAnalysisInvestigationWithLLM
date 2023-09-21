@@ -46,6 +46,8 @@ class ClassifyCommand:
         logging.info("\nClassifying articles.")
         
         classifierChatGPT = ClassifierChatGPT()
+        inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
+        
 
 
         failure_positive_classifications_ChatGPT = 0
@@ -58,14 +60,14 @@ class ClassifyCommand:
             logging.info("Classifying %s.", article)
 
 
-            if article.classify_as_failure_ChatGPT(classifierChatGPT):
+            if article.classify_as_failure_ChatGPT(classifierChatGPT, inputs):
                 failure_positive_classifications_ChatGPT += 1
                 logging.info("ChatGPT Classifier: Classification met as software failure for article: " + str(article))
 
 
                 #Does the article have enough information to conduct failure analysis
 
-                if article.classify_as_analyzable_ChatGPT(classifierChatGPT):
+                if article.classify_as_analyzable_ChatGPT(classifierChatGPT, inputs):
                     analyzable_positive_classifications_ChatGPT += 1
                     logging.info("ChatGPT Classifier: Classification met as eligible for failure analysis for article: " + str(article))
 

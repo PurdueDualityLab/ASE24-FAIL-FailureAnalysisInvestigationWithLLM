@@ -59,6 +59,8 @@ class SummarizeCommand:
 
         # Initialize ChatGPT for generating summaries
         chatGPT = ChatGPT()
+        inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
+
 
         successful_summaries = 0
         for article in queryset:
@@ -83,7 +85,9 @@ class SummarizeCommand:
             )
             
             # Generate summary using ChatGPT
-            reply = chatGPT.run(messages)
+            inputs["messages"] = messages
+
+            reply = chatGPT.run(inputs)
 
             if reply is not None:
                 # Update article with generated summary
