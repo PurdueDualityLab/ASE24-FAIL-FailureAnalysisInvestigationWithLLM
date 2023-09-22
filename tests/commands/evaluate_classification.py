@@ -45,7 +45,7 @@ class EvaluateClassificationCommand:
 
         """
         # Define the file path
-        file_path = "./manual_evaluation/Classification_Auto_Dev.xlsx"
+        file_path = "./tests/manual_evaluation/perfect_merge.xlsx"
 
         # Define the columns to read
         columns_to_read = ["id", "Describes Failure? (0: False | 1: True)"]

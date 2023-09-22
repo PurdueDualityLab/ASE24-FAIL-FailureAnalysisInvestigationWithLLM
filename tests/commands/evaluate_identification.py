@@ -45,7 +45,7 @@ class EvaluateIdentificationCommand:
 
         """
         # Define the file path
-        file_path = "./manual_evaluation/Classification_Auto_Dev.xlsx"
+        file_path = "./tests/manual_evaluation/perfect_merge.xlsx"
 
         # Define the columns to read
         columns_to_read = ["id", "Describes Failure? (0: False | 1: True)"]
@@ -63,7 +63,7 @@ class EvaluateIdentificationCommand:
 
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
         df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
-        df = df[df['Describes Failure? (0: False | 1: True)'].isin([0, 1])]
+        df = df[df['Describes Failure? (0: False | 1: True)'] == 1]
 
         # Get a list of article IDs from the manual database
         article_ids = df['id'].tolist()
@@ -84,7 +84,6 @@ class EvaluateIdentificationCommand:
         for article in matching_articles:
             article_id = article.id
             ground_truth = df[df['id'] == article.id]['Describes Failure? (0: False | 1: True)'].values[0]
-            print(article.analyzable_failure)
             if article.analyzable_failure == ground_truth:
                 total_match += 1
             else:
