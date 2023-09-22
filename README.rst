@@ -82,8 +82,40 @@ Create Postmortems for Articles Using the Command Line
 #. Create postmortems::
 
     $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m failures postmortem --all
-    
 
+Evaluate LLM Classification of Articles Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluateclassification --help
+
+#. Evaluate LLM's Classification::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluateclassification --all --list
+
+Evaluate LLM Analysis of Articles Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluateidentification --help
+
+#. Evaluate LLM's Analysis::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluateidentification --all --list
+
+Evaluate LLM Merge of Articles Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --help
+
+#. Evaluate LLM's Merge::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --all
+    
 Create Embedding for Articles Using the Command Line (OUTDATED): REMOVE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
