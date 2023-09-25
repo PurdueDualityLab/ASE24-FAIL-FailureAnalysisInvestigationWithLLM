@@ -10,6 +10,7 @@ from failures.commands.classify import ClassifyCommand
 from failures.commands.postmortem import PostmortemCommand
 from failures.commands.cluster import ClusterCommand
 from failures.commands.merge import MergeCommand
+from failures.commands.vectordb import VectordbCommand
 
 
 _EPILOG = textwrap.dedent(
@@ -34,7 +35,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemCommand(), ClusterCommand(), MergeCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemCommand(), ClusterCommand(), MergeCommand(), VectordbCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:

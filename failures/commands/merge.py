@@ -35,7 +35,7 @@ class MergeCommand:
 
 
         queryset = (
-            Article.objects.filter(describes_failure=True, incident__isnull=True)
+            Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True)
         )
 
         questions = {
@@ -88,19 +88,7 @@ class MergeCommand:
                         incident_similarity = article_new.cosine_similarity(article_incident, postmortem_key + "_embedding") 
                         sum_scores += incident_similarity * weights[ind]
                     
-                    mean_score = sum_scores #/len(postmortem_keys)
-                    
-                    ''' TODO: Clean up
-                    if "boeing" in article_new.headline.lower() and "boeing" in article_incident.headline.lower():
-                        logging.info("Boeing article similarity: %s.", mean_score)
-                    
-                    if "volkswagen" in article_new.headline.lower() and "volkswagen" in article_incident.headline.lower():
-                        logging.info("volkswagen article similarity: %s.", mean_score)
-
-                    if "bear" in article_new.headline.lower() and "bear" in article_incident.headline.lower():
-                        logging.info("russia bear article similarity: %s.", mean_score)
-                    '''
-                    
+                    mean_score = sum_scores #/len(postmortem_keys)                    
 
                     if mean_score > 0.85:
                         logging.info("High similarity score of " + str(mean_score) + " in incident: " + str(incident))
@@ -135,6 +123,9 @@ class MergeCommand:
                             logging.info("Found incident match with a score of " + str(mean_score) + " in incident: " + str(incident))
                             article_new.incident = incident
                             article_new.save()
+
+                            incident.incident_updated = True
+
                             break
 
                         #similar_found = True
