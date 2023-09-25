@@ -124,12 +124,30 @@ class Incident(models.Model):
     title = models.TextField(_("Title"), blank=True, null=True)
     summary = models.TextField(_("Summary"), blank=True, null=True)
 
+    SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
+
+    incident_updated = models.BooleanField(
+        _("Incident Updated"),
+        null=True,
+        help_text=_(
+            "Whether a new article has been added to the incident."
+        ),
+    )
+
+    incident_stored = models.BooleanField(
+        _("Incident Stored"),
+        null=True,
+        help_text=_(
+            "Whether the incident has been stored into the vector database."
+        ),
+    )
 
 
 
     class Meta:
         verbose_name = _("Incident")
         verbose_name_plural = _("Incidents")
+        
 
     def __str__(self):
         return self.title
@@ -203,7 +221,13 @@ class Article(models.Model):
         ),
     )
 
-    analyzable_failure
+    article_stored = models.BooleanField(
+        _("Article Stored"),
+        null=True,
+        help_text=_(
+            "Whether the article has been stored into the vector database."
+        ),
+    )
 
 
     similarity_score = models.FloatField(_("Cosine similarity score"),null=True,blank=True)
