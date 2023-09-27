@@ -10,9 +10,6 @@ from failures.commands.classify import ClassifyCommand
 from failures.commands.postmortem import PostmortemCommand
 from failures.commands.cluster import ClusterCommand
 from failures.commands.merge import MergeCommand
-from failures.commands.evaluate_classification import EvaluateClassificationCommand
-from failures.commands.evaluate_identification import EvaluateIdentificationCommand
-from failures.commands.evaluate_merge import EvaluateMergeCommand
 
 
 
@@ -39,7 +36,7 @@ class Command(Protocol):
 
 
 _COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), 
-                            PostmortemCommand(), ClusterCommand(), MergeCommand(), EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand()]
+                            PostmortemCommand(), ClusterCommand(), MergeCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:

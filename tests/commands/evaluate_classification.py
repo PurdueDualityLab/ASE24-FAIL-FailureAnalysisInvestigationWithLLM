@@ -22,6 +22,7 @@ class EvaluateClassificationCommand:
             If --all is provided then more metrics will be outputted (# Right, # Wrong, # False Positive, # False Negative,
             # Evaluated).
             If --list is provided then a list of all articles that did not match will be outputted.
+            If --articles is provided, then the list of articles input will be evaluated on their classification
             """
         )
         parser.add_argument(
@@ -33,6 +34,12 @@ class EvaluateClassificationCommand:
             "--list",
             action="store_true",
             help="List all articles incorrectly classified.",
+        )
+        parser.add_argument(
+            "--articles",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
@@ -64,6 +71,10 @@ class EvaluateClassificationCommand:
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
         df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
         df = df[df['Describes Failure? (0: False | 1: True)'].isin([0, 1])]
+
+        # Check --articles
+        if args.articles:
+            df = df[df['id'].apply(lambda x: x in args.articles)]
 
         # Get a list of article IDs from the manual database
         article_ids = df['id'].tolist()
@@ -128,3 +139,17 @@ class EvaluateClassificationCommand:
             logging.info(f"False Negatives: {false_negative_rate:.2f}% ({false_negative_fraction})")
             logging.info(f"Wrong: {wrong_percentage:.2f}% ({wrong_classifications}/{total_articles})")
             logging.info(f"Total Evaluated: {total_articles}")
+
+        metrics = {
+            "Accuracy (Percentage)": f"{accuracy_percentage:.2f}%",
+            "Accuracy (Fraction)": f"{total_match}/{total_articles}",
+            "False Positive (Percentage)": f"{false_positive_rate:.2f}%",
+            "False Positive (Fraction)": f"{false_positive_fraction}",
+            "False Negative (Percentage)": f"{false_negative_rate:.2f}%",
+            "False Negative (Fraction)": f"{false_negative_fraction}",
+            "Wrong (Percentage)": f"{wrong_percentage:.2f}%",
+            "Wrong (Fraction)": f"{wrong_classifications}/{total_articles}",
+            "Total Evaluated": str(total_articles) 
+        }
+
+        return metrics

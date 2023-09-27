@@ -39,7 +39,7 @@ class ClusterCommand:
             help="Create embeddings for all articles even if they already have embeddings.",
         )
 
-    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
         """
         Run the article clustering process based on the provided arguments.
 
