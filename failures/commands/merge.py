@@ -28,7 +28,7 @@ class MergeCommand:
         )
 
 
-    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
         """
         Run the incident merging process based on the provided arguments.
 

@@ -32,7 +32,7 @@ class PostmortemCommand:
             help="Redo extraction for a specific postmortem key for all articles.",
         )
 
-    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
         """
         Run the postmortem creation process based on the provided arguments.
 
