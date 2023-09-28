@@ -3,8 +3,10 @@ import logging
 import textwrap
 import pandas as pd
 from openpyxl import load_workbook
+from django.core import serializers
 import random
 import os
+import csv
 
 from failures.articles.models import Article, SearchQuery
 from failures.commands.classify import ClassifyCommand
@@ -121,6 +123,23 @@ class EvaluateTemperatureCommand:
             # Convert to dataframe
             df_temp = pd.DataFrame([classification_metrics])
             dfs.append(df_temp)
+
+            # Get all information about articles recently classified and store in dataframe
+            articles = Article.objects.filter(id__in=args.articles)
+            serialized_data = serializers.serialize('python', articles)
+            article_data_list = []
+
+            for entry in serialized_data:
+                article_data = entry['fields']
+                article_data['Article ID'] = entry['pk']
+                article_data_list.append(article_data)
+
+            article_df = pd.DataFrame(article_data_list)
+        
+
+            # Create dataframe and store in CSV
+            csv_path = f'./tests/performance/temperature{temperature}.csv'
+            article_df.to_csv(csv_path, index=False)
 
         # Convert dataframe to CSV
         df = pd.concat(dfs, ignore_index=True)
