@@ -115,6 +115,17 @@ Evaluate LLM Merge of Articles Using the Command Line
 #. Evaluate LLM's Merge::
 
     $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --all
+
+Evaluate LLM's performance given set of temperature values Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m tests evaluatetemperature --help
+    
+#. Evaluate LLM's Merge::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --all
     
 Create Embedding for Articles Using the Command Line (OUTDATED): REMOVE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
