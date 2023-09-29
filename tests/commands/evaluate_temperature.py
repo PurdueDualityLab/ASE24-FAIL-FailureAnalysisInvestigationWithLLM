@@ -109,12 +109,15 @@ class EvaluateTemperatureCommand:
             args.temp = temperature
 
             # CLASSIFICATION
-            # classify = ClassifyCommand()
-            # classify.run(args, parser)
+            classify = ClassifyCommand()
+            classify.run(args, parser)
 
             # EVALUATION
             evaluate_classify = EvaluateClassificationCommand()
             classification_metrics = evaluate_classify.run(args, parser)
+
+            # Identification
+            # Merge
 
             # Adding addtional metrics then appending excel sheet
             classification_metrics["Temperature"] = str(args.temp)
