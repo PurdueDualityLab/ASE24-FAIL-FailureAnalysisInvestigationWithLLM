@@ -121,11 +121,52 @@ class Incident(models.Model):
     published = models.DateTimeField(_("Published"), help_text=_("Date and time when the earliest article was published."), blank=True, null=True)
     #TODO: Find the earliest published date and use the month and year
     
+    #Open ended postmortem fields
     title = models.TextField(_("Title"), blank=True, null=True)
     summary = models.TextField(_("Summary"), blank=True, null=True)
-
+    system = models.TextField(_("System"), blank=True, null=True)
+    time = models.TextField(_("Time"), blank=True, null=True)
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
+    NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
+    impacts = models.TextField(_("Impacts"), blank=True, null=True)
+    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+    ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
+    ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
 
+    #Taxonomy fields: Options
+    phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
+    boundary_option = models.TextField(_("Boundary Option"), blank=True, null=True)
+    nature_option = models.TextField(_("Nature Option"), blank=True, null=True)
+    dimension_option = models.TextField(_("Dimension Option"), blank=True, null=True)
+    objective_option = models.TextField(_("Objective Option"), blank=True, null=True)
+    intent_option = models.TextField(_("Intent Option"), blank=True, null=True)
+    capability_option = models.TextField(_("Capability Option"), blank=True, null=True)
+    duration_option = models.TextField(_("Duration Option"), blank=True, null=True)
+    domain_option = models.TextField(_("Domain Option"), blank=True, null=True)
+    cps_option = models.TextField(_("CPS Option"), blank=True, null=True)
+    perception_option = models.TextField(_("Perception Option"), blank=True, null=True)
+    communication_option = models.TextField(_("Communication Option"), blank=True, null=True)
+    application_option = models.TextField(_("Application Option"), blank=True, null=True)
+    behaviour_option = models.TextField(_("Behaviour Option"), blank=True, null=True)
+    
+
+    #Taxonomy fields: Explanations
+    phase_rationale = models.TextField(_("Phase Rationale"), blank=True, null=True)
+    boundary_rationale = models.TextField(_("Boundary Rationale"), blank=True, null=True)
+    nature_rationale = models.TextField(_("Nature Rationale"), blank=True, null=True)
+    dimension_rationale = models.TextField(_("Dimension Rationale"), blank=True, null=True)
+    objective_rationale = models.TextField(_("Objective Rationale"), blank=True, null=True)
+    intent_rationale = models.TextField(_("Intent Rationale"), blank=True, null=True)
+    capability_rationale = models.TextField(_("Capability Rationale"), blank=True, null=True)
+    duration_rationale = models.TextField(_("Duration Rationale"), blank=True, null=True)
+    domain_rationale = models.TextField(_("Domain Rationale"), blank=True, null=True)
+    cps_rationale = models.TextField(_("CPS Rationale"), blank=True, null=True)
+    perception_rationale = models.TextField(_("Perception Rationale"), blank=True, null=True)
+    communication_rationale = models.TextField(_("Communication Rationale"), blank=True, null=True)
+    application_rationale = models.TextField(_("Application Rationale"), blank=True, null=True)
+    behaviour_rationale = models.TextField(_("Behaviour Rationale"), blank=True, null=True)
+
+    '''
     incident_updated = models.BooleanField(
         _("Incident Updated"),
         null=True,
@@ -141,6 +182,7 @@ class Incident(models.Model):
             "Whether the incident has been stored into the vector database."
         ),
     )
+    '''
 
 
 
@@ -675,8 +717,6 @@ class Article(models.Model):
                 else:
                     setattr(self, question_key, reply)
 
-
-        #write a sanitization function to sanitize options: unknown, true, false
         self.save()
 
         return True

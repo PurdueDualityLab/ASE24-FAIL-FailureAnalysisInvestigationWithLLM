@@ -124,8 +124,6 @@ class MergeCommand:
                             article_new.incident = incident
                             article_new.save()
 
-                            incident.incident_updated = True
-
                             break
 
                         #similar_found = True
