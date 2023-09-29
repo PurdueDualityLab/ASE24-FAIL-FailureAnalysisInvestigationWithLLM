@@ -6,7 +6,7 @@ from failures.articles.models import Article, Incident
 from failures.networks.models import QuestionAnswerer, ChatGPT
 from failures.parameters.models import Parameter
 
-class PostmortemCommand:
+class PostmortemArticleCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         parser.description = textwrap.dedent(
             """

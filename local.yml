@@ -58,6 +58,7 @@ services:
     environment:
       - IS_PERSISTENT=TRUE
       - PERSIST_DIRECTORY=/var/lib/chroma/data
+      - ALLOW_RESET=TRUE
     command: uvicorn chromadb.app:app --reload --workers 1 --host 0.0.0.0 --port 8001
     extra_hosts:
       - "host.docker.internal:host-gateway"
