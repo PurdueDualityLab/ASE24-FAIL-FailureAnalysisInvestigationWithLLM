@@ -66,8 +66,8 @@ class PostmortemIncidentCommand:
         #TODO: Move this to a data struct file, and import whereever its used
         questions = {
         "title":            Parameter.get("title", "Provide a 10 word title for this software failure incident (return just the title)."),
-        "summary":          Parameter.get("summary", "Summarize the software failure incident. Include when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity, and the impacted entity."),
-        "time":             Parameter.get("time", "When did the software failure incident happen? If necessary, calculate using article published date."),
+        "summary":          Parameter.get("summary", "Summarize the software failure incident as a paragraph. Include when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity, and the impacted entity."),
+        "time":             Parameter.get("time", "When did the software failure incident happen? If possible, calculate using article published date."),
         "system":           Parameter.get("system", "What system failed in the software failure incident? (answer in under 10 words)"),
         "ResponsibleOrg":   Parameter.get("ResponsibleOrg", "Which entity(s) was responsible for causing the software failure? (answer in under 10 words)"),
         "ImpactedOrg":      Parameter.get("ImpactedOrg", "Which entity(s) was impacted by the software failure? (answer in under 10 words)"),
@@ -160,10 +160,22 @@ class PostmortemIncidentCommand:
                     qa_chain = RetrievalQA.from_chain_type( # HOW TO FILTER BY INCIDENT
                         ChatGPT_LC,
                         retriever=vectorDB.as_retriever(search_kwargs={"filter":{"incidentID":incident.id}}),
-                        chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
+                        chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}, 
+                        return_source_documents=True,
                     )
 
-                    response = qa_chain({"query": questions[question_key]})
+                    try:
+                        response = qa_chain({"query": questions[question_key]})
+                    except:
+                        logging.info("Issue with langchain query, skipping question")
+                        continue
+
+                    logging.info("Sources: " + str(response["source_documents"]))
+
+                    # Extract unique articleIDs from source documents
+                    source_articleIDs = [doc.metadata['articleID'] for doc in response["source_documents"]]
+                    source_articleIDs = f" [{', '.join(map(str, set(source_articleIDs)))}]"
+
 
                     if taxonomy_q: # If its a taxonomy question, parse for JSON
                         try:
@@ -177,7 +189,7 @@ class PostmortemIncidentCommand:
                                 explanation = response["result"]
                                 setattr(incident, question_rationale_key, explanation)
                                 continue
-                        explanation = parsedResult.explanation
+                        explanation = parsedResult.explanation + source_articleIDs
                         option_number = str(parsedResult.option)
                         option_value = taxonomy_options[question_key][option_number]
                         setattr(incident, question_option_key, option_value)
@@ -194,7 +206,7 @@ class PostmortemIncidentCommand:
                         #        logging.info("Misformatted parsing returned for " +question_key+ " for incident: "+str(incident.id))
                         #else:
                         #    reply = response["result"]
-                        reply = response["result"]
+                        reply = response["result"] + source_articleIDs
                             
                         setattr(incident, question_key, reply)
                         logging.info(reply)
@@ -205,8 +217,9 @@ class PostmortemIncidentCommand:
             #incident.postmortem_from_article_ChatGPT(chatGPT, inputs, questions_chat, taxonomy_options, args.all, args.key)
             logging.info("Succesfully created postmortem for incident %s: %s.", incident.id, incident.title)
             successful_postmortem_creations += 1
-
-            break
+            
+            if successful_postmortem_creations > 1:
+                break
 
         logging.info("Successfully created postmortems for %d articles.", successful_postmortem_creations)
 
