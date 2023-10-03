@@ -166,6 +166,18 @@ class Incident(models.Model):
     application_rationale = models.TextField(_("Application Rationale"), blank=True, null=True)
     behaviour_rationale = models.TextField(_("Behaviour Rationale"), blank=True, null=True)
 
+    #Embeddings
+    summary_embedding = models.TextField(_("Summary Embedding"), blank=True, null=True)
+    time_embedding = models.TextField(_("Time Embedding"), blank=True, null=True)
+    system_embedding = models.TextField(_("System Embedding"), blank=True, null=True)
+    ResponsibleOrg_embedding = models.TextField(_("ResponsibleOrg Embedding"), blank=True, null=True)
+    ImpactedOrg_embedding = models.TextField(_("ImpactedOrg Embedding"), blank=True, null=True)
+
+    SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
+    NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
+    impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
+    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
+
     '''
     incident_updated = models.BooleanField(
         _("Incident Updated"),
@@ -501,7 +513,7 @@ class Article(models.Model):
         return self.embedding
     '''
 
-    def create_postmortem_embeddings_GPT(self, embedder: EmbedderGPT, postmortem_keys: list, query_all: bool):
+    def create_postmortem_embeddings_GPT(self, embedder: EmbedderGPT, postmortem_keys: list, query_all: bool): #TODO: Remove? No longer clustering by articles which is what this was used for
 
         for postmortem_key in postmortem_keys:
             answer_set = True
