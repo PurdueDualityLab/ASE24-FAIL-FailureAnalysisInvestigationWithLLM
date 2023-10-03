@@ -23,6 +23,7 @@ class PostmortemArticleCommand:
         parser.add_argument(
             "--key",
             type=str,
+            default='None',
             help="Redo extraction for a specific postmortem key for all articles.",
         )
 
@@ -66,6 +67,9 @@ class PostmortemArticleCommand:
         "behaviour":    Parameter.get("behaviour", "Was the software failure due to a 'crash' (option 0) or 'omission' (option 1) or 'timing' (option 2) or 'value' (option 3) or 'Byzantine' fault (option 4) or 'unknown' (option -1)?")
         }
         '''
+
+        if args.key is not 'None':
+            questions = questions[args.key]
 
         failure_synonyms = "\nRemember, software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
 
