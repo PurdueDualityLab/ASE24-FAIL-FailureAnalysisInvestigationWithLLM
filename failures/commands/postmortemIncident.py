@@ -67,7 +67,7 @@ class PostmortemIncidentCommand:
         questions = {
         "title":            Parameter.get("title", "Provide a 10 word title for this software failure incident (return just the title)."),
         "summary":          Parameter.get("summary", "Summarize the software failure incident as a paragraph. Include when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity, and the impacted entity."),
-        "time":             Parameter.get("time", "When did the software failure incident happen? If possible, calculate using article published date."),
+        "time":             Parameter.get("time", "When did the software failure incident happen? If possible, calculate using article published date and relative time mentioned in article."),
         "system":           Parameter.get("system", "What system failed in the software failure incident? (answer in under 10 words)"),
         "ResponsibleOrg":   Parameter.get("ResponsibleOrg", "Which entity(s) was responsible for causing the software failure? (answer in under 10 words)"),
         "ImpactedOrg":      Parameter.get("ImpactedOrg", "Which entity(s) was impacted by the software failure? (answer in under 10 words)"),
@@ -90,6 +90,9 @@ class PostmortemIncidentCommand:
         "application":      Parameter.get("application", "Was there a software failure at the application level: 'true' (option true) or 'false' (option false) or 'unknown' (option -1)?"),
         "behaviour":        Parameter.get("behaviour", "Was the software failure due to a 'crash' (option 0) or 'omission' (option 1) or 'timing' (option 2) or 'value' (option 3) or 'Byzantine' fault (option 4) or 'unknown' (option -1)?")
         }
+        
+        if query_key is not 'None':
+            questions = questions[query_key]
         
         taxonomy_options = {
             "phase": {"0": "system design", "1": "operation", "2": "both", "3": "neither", "-1": "unknown"},
@@ -126,7 +129,7 @@ class PostmortemIncidentCommand:
         for incident in incidents:
             logging.info("Creating postmortem for incident %s.", incident.id)
 
-            for question_key in [list(questions.keys())[i] for i in [0,1,2,10,11,12]]: #list(questions.keys())[0,1,2,10,11,12]:
+            for question_key in list(questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
                 #Check if the question has already been answered
                 answer_set = True
                 taxonomy_q = False #To use json parser
@@ -181,7 +184,7 @@ class PostmortemIncidentCommand:
                         try:
                             parsedResult = JsonParser.parse(response["result"])
                         except:
-                            logging.info("Misformatted JSON returned for " +question_key+ " for incident: "+str(incident.id))
+                            logging.info("Misformatted JSON returned for " +question_key+ " for incident: "+str(incident.id) + ". Trying again.")
                             try:
                                 parsedResult = RetryParser.parse(response["result"])
                             except:
@@ -189,9 +192,17 @@ class PostmortemIncidentCommand:
                                 explanation = response["result"]
                                 setattr(incident, question_rationale_key, explanation)
                                 continue
+
                         explanation = parsedResult.explanation + source_articleIDs
                         option_number = str(parsedResult.option)
-                        option_value = taxonomy_options[question_key][option_number]
+
+                        try:
+                            option_value = taxonomy_options[question_key][option_number]
+                        except:
+                            logging.info("KeyError: Wrong option")
+                            setattr(incident, question_rationale_key, "Option: " + option_number + " ; "+ explanation)
+                            continue
+
                         setattr(incident, question_option_key, option_value)
                         setattr(incident, question_rationale_key, explanation)
                         
@@ -218,8 +229,8 @@ class PostmortemIncidentCommand:
             logging.info("Succesfully created postmortem for incident %s: %s.", incident.id, incident.title)
             successful_postmortem_creations += 1
             
-            if successful_postmortem_creations > 1:
-                break
+            #if successful_postmortem_creations > 1:
+                #break
 
         logging.info("Successfully created postmortems for %d articles.", successful_postmortem_creations)
 
