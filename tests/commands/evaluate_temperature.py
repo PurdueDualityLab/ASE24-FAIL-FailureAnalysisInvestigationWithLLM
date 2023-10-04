@@ -11,6 +11,8 @@ import csv
 from failures.articles.models import Article, SearchQuery
 from failures.commands.classify import ClassifyCommand
 from tests.commands.evaluate_classification import EvaluateClassificationCommand
+from tests.commands.evaluate_identification import EvaluateIdentificationCommand
+from tests.commands.evaluate_merge import EvaluateMergeCommand
 
 class EvaluateTemperatureCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -109,19 +111,28 @@ class EvaluateTemperatureCommand:
             args.temp = temperature
 
             # CLASSIFICATION
-            classify = ClassifyCommand()
-            classify.run(args, parser)
+            # classify = ClassifyCommand()
+            # classify.run(args, parser)
 
             # EVALUATION
+            # classify
             evaluate_classify = EvaluateClassificationCommand()
             classification_metrics = evaluate_classify.run(args, parser)
 
-            # Identification
+            # Identify
+            evaluate_identify = EvaluateIdentificationCommand()
+            identification_metrics = evaluate_identify.run(args, parser)
+
             # Merge
+            evaluate_merge = EvaluateMergeCommand()
+            merge_metrics = evaluate_merge.run(args, parser)
+            
 
             # Adding addtional metrics then appending excel sheet
             classification_metrics["Temperature"] = str(args.temp)
             classification_metrics["Sample Size"] = str(num_sample)
+            classification_metrics.update(identification_metrics)
+            classification_metrics.update(merge_metrics)
 
             # Convert to dataframe
             df_temp = pd.DataFrame([classification_metrics])
@@ -141,7 +152,7 @@ class EvaluateTemperatureCommand:
         
 
             # Create dataframe and store in CSV
-            csv_path = f'./tests/performance/temperature{temperature}.csv'
+            csv_path = f'./tests/performance/temperature{temperature:.1f}.csv'
             article_df.to_csv(csv_path, index=False)
 
         # Convert dataframe to CSV

@@ -34,6 +34,12 @@ class EvaluateIdentificationCommand:
             action="store_true",
             help="List all articles incorrectly classified.",
         )
+        parser.add_argument(
+            "--articles",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         """
@@ -44,6 +50,9 @@ class EvaluateIdentificationCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+        # Creating metrics to return
+        metrics = {}
+        
         # Define the file path
         file_path = "./tests/manual_evaluation/perfect_merge.xlsx"
 
@@ -56,14 +65,18 @@ class EvaluateIdentificationCommand:
             logging.info("Data loaded successfully.")
         except FileNotFoundError:
             logging.info(f"Error: The file '{file_path}' was not found.")
-            return
+            return metrics
         except Exception as e:
             logging.info(f"An error occurred: {str(e)}")
-            return
+            return metrics
 
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
         df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
         df = df[df['Describes Failure? (0: False | 1: True)'] == 1]
+
+        # Check --articles
+        if args.articles:
+            df = df[df['id'].apply(lambda x: x in args.articles)]
 
         # Get a list of article IDs from the manual database
         article_ids = df['id'].tolist()
@@ -84,7 +97,7 @@ class EvaluateIdentificationCommand:
         for article in matching_articles:
             article_id = article.id
             ground_truth = df[df['id'] == article.id]['Describes Failure? (0: False | 1: True)'].values[0]
-            if article.analyzable_failure == ground_truth:
+            if article.analyzable_failure and article.analyzable_failure == ground_truth:
                 total_match += 1
             else:
                 if args.list:
@@ -92,39 +105,56 @@ class EvaluateIdentificationCommand:
                         f"Article ID: {article.id}, "
                         f"Title: {article.title}, "
                         f"Ground Truth: {'Enough info' if ground_truth == 1 else 'Not enough info'}, "
-                        f"Classified As: {'Enough info' if article.analyzable_failure == 1 else 'Not enough info'}"
+                        f"Classified As: {'Enough info' if article.analyzable_failure and article.analyzable_failure == 1 else 'Not enough info'}"
                     )
                 # If --all then update false positives and negatives
                 if args.all:
-                    if article.analyzable_failure == 1 and ground_truth == 0:
+                    if article.analyzable_failure and article.analyzable_failure == 1 and ground_truth == 0:
                         false_positives += 1
-                    elif article.analyzable_failure == 0 and ground_truth == 1:
+                    elif article.analyzable_failure and article.analyzable_failure == 0 and ground_truth == 1:
                         false_negatives += 1
-            
 
-        accuracy_percentage = (total_match / total_articles) * 100
-        logging.info(f"Accuracy: {accuracy_percentage:.2f}% ({total_match}/{total_articles})")
+        # Checking to see if there are any matching articles
+        if total_articles > 0:
+            accuracy_percentage = (total_match / total_articles) * 100
+            logging.info(f"Accuracy: {accuracy_percentage:.2f}% ({total_match}/{total_articles})")
 
-        # Checking if --list
-        if args.list:
-            logging.info('List of incorrectly classified articles:')
-            for article in incorrectly_classified_articles:
-                logging.info(article)
+            # Checking if --list
+            if args.list:
+                logging.info('List of incorrectly classified articles:')
+                for article in incorrectly_classified_articles:
+                    logging.info(article)
 
-        # Checkign if --all
-        if args.all:
-            # Calculate false positive and false negative rates as both fractions and percentages
-            false_positive_rate = (false_positives / total_articles) * 100
-            false_negative_rate = (false_negatives / total_articles) * 100
-            false_positive_fraction = f"{false_positives}/{total_articles}"
-            false_negative_fraction = f"{false_negatives}/{total_articles}"
+            # Checkign if --all
+            if args.all:
+                # Calculate false positive and false negative rates as both fractions and percentages
+                false_positive_rate = (false_positives / total_articles) * 100
+                false_negative_rate = (false_negatives / total_articles) * 100
+                false_positive_fraction = f"{false_positives}/{total_articles}"
+                false_negative_fraction = f"{false_negatives}/{total_articles}"
 
-            # Calculate the number and percentage of correct and wrong classifications
-            correct_classifications = total_match
-            wrong_classifications = total_articles - total_match
-            wrong_percentage = (wrong_classifications / total_articles) * 100
+                # Calculate the number and percentage of correct and wrong classifications
+                correct_classifications = total_match
+                wrong_classifications = total_articles - total_match
+                wrong_percentage = (wrong_classifications / total_articles) * 100
 
-            logging.info(f"False Positives: {false_positive_rate:.2f}% ({false_positive_fraction})")
-            logging.info(f"False Negatives: {false_negative_rate:.2f}% ({false_negative_fraction})")
-            logging.info(f"Wrong: {wrong_percentage:.2f}% ({wrong_classifications}/{total_articles})")
-            logging.info(f"Total Evaluated: {total_articles}")
+                logging.info(f"False Positives: {false_positive_rate:.2f}% ({false_positive_fraction})")
+                logging.info(f"False Negatives: {false_negative_rate:.2f}% ({false_negative_fraction})")
+                logging.info(f"Wrong: {wrong_percentage:.2f}% ({wrong_classifications}/{total_articles})")
+                logging.info(f"Total Evaluated: {total_articles}")
+
+                metrics = {
+                    "Identify: Accuracy (Percentage)": f"{accuracy_percentage:.2f}%",
+                    "Identify: Accuracy (Fraction)": f"{total_match}/{total_articles}",
+                    "Identify: False Positive (Percentage)": f"{false_positive_rate:.2f}%",
+                    "Identify: False Positive (Fraction)": f"{false_positive_fraction}",
+                    "Identify: False Negative (Percentage)": f"{false_negative_rate:.2f}%",
+                    "Identify: False Negative (Fraction)": f"{false_negative_fraction}",
+                    "Identify: Wrong (Percentage)": f"{wrong_percentage:.2f}%",
+                    "Identify: Wrong (Fraction)": f"{wrong_classifications}/{total_articles}",
+                    "Identify: Total Evaluated": str(total_articles) 
+                }
+        else:
+            logging.info("Evaluate Identification Command: No common IDs found between ground truth and predicted data.")
+
+        return metrics
