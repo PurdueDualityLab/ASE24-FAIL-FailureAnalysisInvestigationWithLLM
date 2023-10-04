@@ -51,6 +51,9 @@ class EvaluateClassificationCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+        # Creating metrics to return
+        metrics = {}
+        
         # Define the file path
         file_path = "./tests/manual_evaluation/perfect_merge.xlsx"
 
@@ -63,10 +66,10 @@ class EvaluateClassificationCommand:
             logging.info("Data loaded successfully.")
         except FileNotFoundError:
             logging.info(f"Error: The file '{file_path}' was not found.")
-            return
+            return metrics
         except Exception as e:
             logging.info(f"An error occurred: {str(e)}")
-            return
+            return metrics
 
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
         df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
@@ -95,7 +98,7 @@ class EvaluateClassificationCommand:
         for article in matching_articles:
             article_id = article.id
             ground_truth = df[df['id'] == article.id]['Describes Failure? (0: False | 1: True)'].values[0]
-            if article.describes_failure == ground_truth:
+            if article.describes_failure and article.describes_failure == ground_truth:
                 total_match += 1
             else:
                 if args.list:
@@ -103,53 +106,58 @@ class EvaluateClassificationCommand:
                         f"Article ID: {article.id}, "
                         f"Title: {article.title}, "
                         f"Ground Truth: {'Is a failure' if ground_truth == 1 else 'Is not a failure'}, "
-                        f"Classified As: {'Is a failure' if article.describes_failure == 1 else 'Is not a failure'}"
+                        f"Classified As: {'Is a failure' if article.describes_failure and article.describes_failure == 1 else 'Is not a failure'}"
                     )
                 # If --all then update false positives and negatives
                 if args.all:
-                    if article.describes_failure == 1 and ground_truth == 0:
+                    if article.describes_failure and article.describes_failure == 1 and ground_truth == 0:
                         false_positives += 1
-                    elif article.describes_failure == 0 and ground_truth == 1:
+                    elif article.describes_failure and article.describes_failure == 0 and ground_truth == 1:
                         false_negatives += 1
-            
 
-        accuracy_percentage = (total_match / total_articles) * 100
-        logging.info(f"Accuracy: {accuracy_percentage:.2f}% ({total_match}/{total_articles})")
+        # Checking to see if there are any matching articles
+        if total_articles > 0:
 
-        # Checking if --list
-        if args.list:
-            logging.info('List of incorrectly classified articles:')
-            for article in incorrectly_classified_articles:
-                logging.info(article)
+            accuracy_percentage = (total_match / total_articles) * 100
+            logging.info(f"Accuracy: {accuracy_percentage:.2f}% ({total_match}/{total_articles})")
 
-        # Checkign if --all
-        if args.all:
-            # Calculate false positive and false negative rates as both fractions and percentages
-            false_positive_rate = (false_positives / total_articles) * 100
-            false_negative_rate = (false_negatives / total_articles) * 100
-            false_positive_fraction = f"{false_positives}/{total_articles}"
-            false_negative_fraction = f"{false_negatives}/{total_articles}"
+            # Checking if --list
+            if args.list:
+                logging.info('List of incorrectly classified articles:')
+                for article in incorrectly_classified_articles:
+                    logging.info(article)
 
-            # Calculate the number and percentage of correct and wrong classifications
-            correct_classifications = total_match
-            wrong_classifications = total_articles - total_match
-            wrong_percentage = (wrong_classifications / total_articles) * 100
+            # Checkign if --all
+            if args.all:
+                # Calculate false positive and false negative rates as both fractions and percentages
+                false_positive_rate = (false_positives / total_articles) * 100
+                false_negative_rate = (false_negatives / total_articles) * 100
+                false_positive_fraction = f"{false_positives}/{total_articles}"
+                false_negative_fraction = f"{false_negatives}/{total_articles}"
 
-            logging.info(f"False Positives: {false_positive_rate:.2f}% ({false_positive_fraction})")
-            logging.info(f"False Negatives: {false_negative_rate:.2f}% ({false_negative_fraction})")
-            logging.info(f"Wrong: {wrong_percentage:.2f}% ({wrong_classifications}/{total_articles})")
-            logging.info(f"Total Evaluated: {total_articles}")
+                # Calculate the number and percentage of correct and wrong classifications
+                correct_classifications = total_match
+                wrong_classifications = total_articles - total_match
+                wrong_percentage = (wrong_classifications / total_articles) * 100
 
-        metrics = {
-            "Accuracy (Percentage)": f"{accuracy_percentage:.2f}%",
-            "Accuracy (Fraction)": f"{total_match}/{total_articles}",
-            "False Positive (Percentage)": f"{false_positive_rate:.2f}%",
-            "False Positive (Fraction)": f"{false_positive_fraction}",
-            "False Negative (Percentage)": f"{false_negative_rate:.2f}%",
-            "False Negative (Fraction)": f"{false_negative_fraction}",
-            "Wrong (Percentage)": f"{wrong_percentage:.2f}%",
-            "Wrong (Fraction)": f"{wrong_classifications}/{total_articles}",
-            "Total Evaluated": str(total_articles) 
-        }
+                logging.info(f"False Positives: {false_positive_rate:.2f}% ({false_positive_fraction})")
+                logging.info(f"False Negatives: {false_negative_rate:.2f}% ({false_negative_fraction})")
+                logging.info(f"Wrong: {wrong_percentage:.2f}% ({wrong_classifications}/{total_articles})")
+                logging.info(f"Total Evaluated: {total_articles}")
+
+            metrics = {
+                "Classify: Accuracy (Percentage)": f"{accuracy_percentage:.2f}%",
+                "Classify: Accuracy (Fraction)": f"{total_match}/{total_articles}",
+                "Classify: False Positive (Percentage)": f"{false_positive_rate:.2f}%",
+                "Classify: False Positive (Fraction)": f"{false_positive_fraction}",
+                "Classify: False Negative (Percentage)": f"{false_negative_rate:.2f}%",
+                "Classify: False Negative (Fraction)": f"{false_negative_fraction}",
+                "Classify: Wrong (Percentage)": f"{wrong_percentage:.2f}%",
+                "Classify: Wrong (Fraction)": f"{wrong_classifications}/{total_articles}",
+                "Classify: Total Evaluated": str(total_articles) 
+            }
+        else:
+            logging.info("Evaluate Classification Command: No common IDs found between ground truth and predicted data.")
+
 
         return metrics

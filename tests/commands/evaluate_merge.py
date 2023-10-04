@@ -30,6 +30,12 @@ class EvaluateMergeCommand:
             action="store_true",
             help="Lists all metrics.",
         )
+        parser.add_argument(
+            "--articles",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         """
@@ -40,6 +46,9 @@ class EvaluateMergeCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+        # Create dictionary to store metrics
+        metrics = {}
+
         # Define the file path
         file_path = "./tests/manual_evaluation/Classification_Auto_Dev.xlsx"
 
@@ -52,15 +61,19 @@ class EvaluateMergeCommand:
             logging.info("Data loaded successfully.")
         except FileNotFoundError:
             logging.info(f"Error: The file '{file_path}' was not found.")
-            return
+            return metrics
         except Exception as e:
             logging.info(f"An error occurred: {str(e)}")
-            return
+            return metrics
 
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
         df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
         df = df[df['Describes Failure? (0: False | 1: True)'].isin([0, 1])]
         df = df[df['incident'].apply(lambda x: isinstance(x, float) and x >= 0)]
+
+        # Check --articles
+        if args.articles:
+            df = df[df['id'].apply(lambda x: x in args.articles)]
 
         # Get a list of article IDs from the manual database
         article_ids = df['id'].tolist()
@@ -79,7 +92,6 @@ class EvaluateMergeCommand:
         true_labels = [ground_truth_mapping[article_id] for article_id in common_ids]
         predicted_labels = [predicted_mapping[article_id] for article_id in common_ids]
 
-
         # Calculate homogeneity, completeness, and V-Measure
         if common_ids:
             # Calculate homogeneity score
@@ -96,5 +108,12 @@ class EvaluateMergeCommand:
                 logging.info(f"Homogeneity Score: {homogeneity:.2f}")
                 logging.info(f"Completeness Score: {completeness:.2f}")
             logging.info(f"V-Measure Score: {v_measure:.2f}")
+
+            # Store metrics
+            metrics["Merge: Homogeneity"] = homogeneity
+            metrics["Merge: Completeness"] = completeness
+            metrics["Merge: V Measure"] = v_measure
         else:
-            logging.info("No common IDs found between ground truth and predicted data.")
+            logging.info("Evaluate Merge Command: No common IDs found between ground truth and predicted data.")
+
+        return metrics
