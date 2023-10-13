@@ -20,19 +20,20 @@ class ClassifyCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Classify all articles even if they already have a classification.",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         
         queryset = (
-            Article.objects.all() if args.all else Article.objects.filter(describes_failure=None)
+            Article.objects.filter(scrape_successful=True) if args.all else Article.objects.filter(describes_failure=None, scrape_successful=True)
         )
 
         logging.info("\nClassifying articles.")
         
         classifierChatGPT = ClassifierChatGPT()
-        inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
+        inputs = {"model": "gpt-3.5-turbo", "temperature": 0}
         
 
 
@@ -40,8 +41,8 @@ class ClassifyCommand:
         analyzable_positive_classifications_ChatGPT = 0
 
         for article in queryset:
-            if article.body == "":
-                continue
+            #if article.body == "": #or article.scrape_successful is False:
+            #    continue
             
             logging.info("Classifying %s.", article)
 

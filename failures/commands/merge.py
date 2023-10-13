@@ -18,6 +18,7 @@ class MergeCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Redo incident merging for all articles that describe SE failures.",
         )
 
@@ -39,21 +40,12 @@ class MergeCommand:
         )
 
         questions = {
-        "summary":          Parameter.get("summary", "Summarize the software failure incident in under 100 words. Include information about the failed system, when the failure occured, the entity(s) responsible for failure, and the entity(s) impacted by failure."),
+            "title":            Parameter.get("title", "Provide a 10 word title for the software failure incident (return just the title)."),
+            "summary":          Parameter.get("summary", "Summarize the software failure incident. Include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s). (answer in under 250 words)"),
         }
 
-        failure_synonyms = "\nRemember, software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
-
-        questions_chat = {}
-        for question_key in questions.keys():
-            if "option" in questions[question_key]:
-                questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key] + " \n MUST ONLY RETURN ANSWER IN JSON FORMAT: {\"explanation\": \"explanation\", \"option\": \"option number\"}. Don't provide anything outside the format."
-            elif "word" or "words" in questions[question_key]:
-                questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key]
-            elif "summary" in question_key:
-                questions_chat[question_key] = failure_synonyms + "\n" + questions[question_key]
-            else:
-                questions_chat[question_key] = failure_synonyms + "\nAnswer the question within 100 words using the article: " + questions[question_key]
+        questions_chat = questions
+        
 
         incidents = list(Incident.objects.prefetch_related('articles'))
 
@@ -64,15 +56,18 @@ class MergeCommand:
         postmortem_keys = ["summary"]
         weights = [1]
 
+        chatGPT = ChatGPT()
         embedder = EmbedderGPT()
         classifierChatGPT = ClassifierChatGPT()
-        inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
+        inputs = {"model": "gpt-3.5-turbo", "temperature": 0}
 
         logging.info("\n\nMerging Articles.")
 
         for article_new in queryset:
 
             logging.info("\nSearching for incident for article: %s.", article_new)
+
+            article_new.postmortem_from_article_ChatGPT(chatGPT, inputs, questions_chat, {}, args.all, "summary")
 
             article_new.create_postmortem_embeddings_GPT(embedder, postmortem_keys, False)
 
@@ -98,19 +93,17 @@ class MergeCommand:
 
 
                         #Confirm with LLM
-                        content = "You will help decide whether two paragraphs descibe the same software failure incident (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)"
+                        content = "You will classify whether two paragraphs descibe the same software failure incident (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)"
 
                         messages = [
                                 {"role": "system", 
                                 "content": content}
                                 ]
 
-                        prompt = "Does this paragraph: \n" \
-                                + article_new.summary \
-                                + " \n describe the same software failure incident(s) as this paragraph: \n" \
-                                + article_incident.summary \
-                                + "\n ?" \
-                                + "\n Answer with just True or False"
+                        prompt = "Does the provided paragraph 1 and paragraph 2 describe the same software failure incident(s)?\n" \
+                                + "\nParagraph 1: " + article_new.summary \
+                                + "\nParagraph 2: " + article_incident.summary \
+                                + "\nAnswer with just True or False."
 
                         messages.append(
                                         {"role": "user", "content": prompt },
@@ -135,6 +128,8 @@ class MergeCommand:
                     break
 
             if similar_found is False:
+                article_new.postmortem_from_article_ChatGPT(chatGPT, inputs, questions_chat, {}, args.all, "title")
+
                 logging.info("Incident match not found, creating new incident: %s.", article_new.title)
 
                 incident = Incident.objects.create(title=article_new.title)

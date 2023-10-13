@@ -8,10 +8,16 @@ import pandas as pd
 import datetime
 import requests
 
+import subprocess
+
 from failures.articles.models import Article, SearchQuery
 
+from failures.commands.scrape import ScrapeCommand
+from failures.commands.classify import ClassifyCommand
+from failures.commands.merge import MergeCommand
 
-class exp_GatherArticlesCommand:
+
+class exp_RunQueriesCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         # add description
         parser.description = textwrap.dedent(
@@ -23,7 +29,25 @@ class exp_GatherArticlesCommand:
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
-        logging.info("\Experiment: Collecting articles")
+        logging.info("\nExperiment: Collecting articles")
+
+        scrape_parser = argparse.ArgumentParser()
+        classify_parser = argparse.ArgumentParser()
+        merge_parser = argparse.ArgumentParser()
+
+        Scrape_Command = ScrapeCommand()
+        Scrape_Command.prepare_parser(scrape_parser)
+
+        Classify_Command = ClassifyCommand()
+        Classify_Command.prepare_parser(classify_parser)
+        classify_options = []
+        classify_args = classify_parser.parse_args(classify_options)
+
+        Merge_Command = MergeCommand()
+        Merge_Command.prepare_parser(merge_parser)
+        merge_options = []
+        merge_args = merge_parser.parse_args(merge_options)
+
 
         # Define arrays of keywords and date ranges
         keywords = [
@@ -45,8 +69,8 @@ class exp_GatherArticlesCommand:
 
         start_years = list(range(2010, 2023))
         end_years = list(range(2010, 2023))
-        start_months = list(range(1, 13))
-        end_months = list(range(1, 13))
+        start_months = list(range(1, 12))
+        end_months = list(range(2, 13))
 
         sources = [
             "wired.com", 
@@ -55,7 +79,6 @@ class exp_GatherArticlesCommand:
             "dailymail.co.uk",
             "theguardian.com",
             "bbc.com",
-            "nytimes.com",
             "foxnews.com", #https://pressgazette.co.uk/media-audience-and-business-data/media_metrics/most-popular-websites-news-world-monthly-2/, https://pressgazette.co.uk/media-audience-and-business-data/media_metrics/most-popular-websites-news-world-monthly-2/
             "apnews.com",
             "washingtonpost.com",
@@ -63,6 +86,33 @@ class exp_GatherArticlesCommand:
             "reuters.com", #Identification of sources of failures and their propagation in critical infrastructures from 12 years of public failure reports 
         ]
 
+        # Iterate through all combinations of keywords, years, and months
+        for start_year, end_year in zip(start_years, end_years):
+            for start_month, end_month in zip(start_months, end_months):
+                
+                for keyword in keywords:
+                    for source in sources:
+
+                        scrape_options = ["--sources", source,
+                            "--keyword", keyword,
+                            "--start-year", str(start_year),
+                            "--end-year", str(end_year),
+                            "--start-month", str(start_month),
+                            "--end-month", str(end_month),
+                        ]
+
+                        scrape_args = scrape_parser.parse_args(scrape_options)
+
+                        Scrape_Command.run(scrape_args, scrape_parser)
+
+                Classify_Command.run(classify_args, classify_parser)
+                Merge_Command.run(merge_args, merge_parser)
+
+            break
+
+
+        # Disjoint from the rest of the infra
+        '''
         df = pd.DataFrame(columns=["Headline", "Published", "Url", "Keyword", "Source", "SearchQuery ID"])
 
         # Iterate through all combinations of keywords, years, and months
@@ -105,7 +155,6 @@ class exp_GatherArticlesCommand:
         # Save the DataFrame to a CSV file
         df.to_csv("all_articles.csv", index=False)
 
-
         # Load the DataFrame from CSV
         df = pd.read_csv("all_articles.csv")
 
@@ -131,8 +180,11 @@ class exp_GatherArticlesCommand:
             article.search_queries.add(SearchQuery.objects.get(id=row['SearchQuery ID'])) 
 
             article.save()
+        
+        '''
 
 
+'''
 def format_google_news_rss_url(
         keyword: str,
         start_year: Optional[int] = None,
@@ -154,3 +206,4 @@ def format_google_news_rss_url(
         url += "&hl=en-US&gl=US&ceid=US%3Aen"
 
         return url
+'''

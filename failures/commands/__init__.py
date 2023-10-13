@@ -13,6 +13,8 @@ from failures.commands.cluster import ClusterCommand
 from failures.commands.merge import MergeCommand
 from failures.commands.vectordb import VectordbCommand
 
+from failures.commands.exp_runQueries import exp_RunQueriesCommand
+
 
 _EPILOG = textwrap.dedent(
     """\
@@ -36,7 +38,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), exp_RunQueriesCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -88,11 +90,11 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="test.log",
+        filename="experiments.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
-        force=True,
+        force=True, 
     )
 
     args.entrypoint(args, parser)

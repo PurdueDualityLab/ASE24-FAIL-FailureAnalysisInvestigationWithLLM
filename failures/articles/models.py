@@ -258,6 +258,14 @@ class Article(models.Model):
         editable=False,
     )
 
+    scrape_successful = models.BooleanField(
+        _("Scrape Successful"),
+        null=True,
+        help_text=_(
+            "Whether the article was scraped successfully."
+        ),
+    )
+
 
     describes_failure = models.BooleanField(
         _("Describes Failure"),
@@ -454,9 +462,11 @@ class Article(models.Model):
             article_text = self.preprocess_html(article_scrape)
         except Exception as e:
             logging.error(f"Failed to scrape article %s: %s.", self, e)
+            self.scrape_successful = False
             return
-        if article_text is None:
+        if article_text is None or article_text == "":
             logging.error("Failed to scrape article %s: No text found.", self)
+            self.scrape_successful = False
             return
         self.body = article_text
         self.save()
@@ -465,15 +475,13 @@ class Article(models.Model):
     
     def preprocess_html(self, article_scrape):
         logging.info(f"Processing html for %s.", self)
-        # HTML string
-        html_string = article_scrape.html
-        article_text = None
 
-        # Create a BeautifulSoup object
-        soup = BeautifulSoup(html_string, 'html.parser')
+        article_text = None
 
         #Scrape text from WIRED
         if "wired" in article_scrape.url:
+            html_string = article_scrape.html
+            soup = BeautifulSoup(html_string, 'html.parser')
             article_div = soup.find_all("div", attrs={"class": "body__inner-container"})
             article_text = ""
             for text in article_div:
@@ -481,20 +489,27 @@ class Article(models.Model):
 
         #Scrape text from NYT
         elif "nytimes" in article_scrape.url:
+            html_string = article_scrape.html
+            soup = BeautifulSoup(html_string, 'html.parser')
             article_div = soup.find_all("section", attrs={"name": "articleBody"})
             article_text = ""
             for text in article_div:
                 article_text = article_text + " " + text.get_text(separator=' ')
 
         else:
-            logging.info("URL is not NYT or WIRED: " + article_scrape.url + " for article: " + str(self))
+            #logging.info("URL is not NYT or WIRED: " + article_scrape.url + " for article: " + str(self))
             article_text = article_scrape.text
         
         if article_text is None or len(article_text.split()) < 100:
             logging.info("Issue parsing: " + article_scrape.url + " for article: " + str(self))
+            self.scrape_successful = False
             article_text = article_scrape.text
+        else:
+            self.scrape_successful = True
 
         article_text = "Published on " + str(article_scrape.publish_date) + ". " + article_text
+
+        self.save()
 
         return article_text
 
@@ -562,18 +577,20 @@ class Article(models.Model):
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long
-        article_text = self.body.split()[:2750]
+        article_text = self.body.split()[:2900]
 
-        content = "You will help classify whether this article describes a software failure: \n" + ' '.join(article_text)
+        content = "You will help classify whether an article reports on a software failure incident."
 
         messages = [
                 {"role": "system", 
                 "content": content}
                 ]
 
-        prompt = "Does this article report on software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?: " \
+        prompt = "Does the provided article report on software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?" \
                 + "\n" \
-                + "Answer with just True or False"
+                + "Answer with just True or False" \
+                + "\n" \
+                + "Article: " + ' '.join(article_text)
 
         messages.append(
                         {"role": "user", "content": prompt },
@@ -591,20 +608,21 @@ class Article(models.Model):
     def classify_as_analyzable_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long
-        article_text = self.body.split()[:2750]
+        article_text = self.body.split()[:2900]
 
-        content = "You will help decide whether a news article contains information to conduct failure analysis about a software failure (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect) \n" + ' '.join(article_text)
+        content = "You will help classify whether an article contains information to conduct failure analysis about a software failure."
 
         messages = [
                 {"role": "system", 
                 "content": content}
                 ]
 
-        prompt = "Does this article contain enough information about the following criteria to conduct a detailed failure analysis of the software failure incident(s): " \
+        prompt = "Does the provided article contain enough information about the provided criteria to conduct a failure analysis of the software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?" \
+                + "Answer with just True or False" \
                 + "\n" \
-                + "Criteria: Cause of failure, impact of failure, entity(s) responsible for failure, and the entity(s) impacted by failure" \
+                + "Criteria: System that failed, cause of failure, and impact of failure" \
                 + "\n" \
-                + "Answer with just True or False"
+                + "Article: " + ' '.join(article_text)
 
         messages.append(
                         {"role": "user", "content": prompt },
@@ -659,10 +677,20 @@ class Article(models.Model):
 
 
         #Create postmortems
-        content = "You will answer questions about a software failure (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect) described in this article: " + article_body
+        content = "You will answer questions about a software failure using information from on an article."
+
+        
+        if query_key in questions.keys():
+            question_keys = [query_key]
+        else:
+            question_keys = list(questions.keys())
+
+        #logging.info(question_keys)
 
         postmortem = {}
-        for question_key in list(questions.keys()): #[list(questions.keys())[i] for i in [0,2,4,8,16,21]]: #list(questions.keys()):
+        for question_key in question_keys: #[list(questions.keys())[i] for i in [0,2,4,8,16,21]]: #list(questions.keys()):
+
+            #logging.info(question_key)
             
             #Check if the question has already been answered
             answer_set = True
@@ -683,8 +711,18 @@ class Article(models.Model):
                         {"role": "system", 
                         "content": content}
                         ]
+
+                failure_synonyms = "software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+                
+                prompt = "Answer the provided question using information from the provided article. Note that software failure could mean a " + failure_synonyms + "." \
+                        + "\n" \
+                        + "Question: " + questions[question_key] \
+                        + "\n" \
+                        + "Article: " + article_body
+
+
                 messages.append(
-                                {"role": "user", "content": questions[question_key]},
+                                {"role": "user", "content": prompt},
                                 )
                 
                 inputs["messages"] = messages

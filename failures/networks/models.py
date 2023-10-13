@@ -170,10 +170,16 @@ class ClassifierChatGPT(Network[dict, bool]):
         return response
     
     def postprocess(self, prediction: str) -> bool:
-        if "true" in prediction.lower():
-            return True
+        if prediction is not None:
+            if "true" in prediction.lower():
+                return True
+            elif "false" in prediction.lower():
+                return False
+            else:
+                return None
         else:
-            return False
+            return None
+
 
 
 class SummarizerGPT(Network[str, str]):
