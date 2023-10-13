@@ -58,6 +58,7 @@ class ArticleAdmin(ImportExportModelAdmin):
     list_display = (
         "headline",
         "title",
+        "scrape_successful",
         "describes_failure",
         "analyzable_failure",
         "published",
@@ -166,7 +167,10 @@ class SearchQueryAdmin(admin.ModelAdmin):
     list_display = (
         "keyword",
         "start_year",
+        "start_month",
         "end_year",
+        "end_month",
+        "sources",
         "created_at",
         "last_searched_at",
     )

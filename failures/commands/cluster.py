@@ -29,6 +29,7 @@ class ClusterCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Create embeddings for all articles even if they already have embeddings.",
         )
 

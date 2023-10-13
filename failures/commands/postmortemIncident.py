@@ -35,6 +35,7 @@ class PostmortemIncidentCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Create postmortems for all articles even if they already have a postmortem.",
         )
         parser.add_argument(
@@ -63,10 +64,10 @@ class PostmortemIncidentCommand:
         vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
         
         
-        #TODO: Move this to a data struct file, and import whereever its used
+        #TODO: Move this to a data struct file, and import whereever its used 
         questions = {
-        "title":            Parameter.get("title", "Provide a 10 word title for this software failure incident (return just the title)."),
-        "summary":          Parameter.get("summary", "Summarize the software failure incident as a paragraph. Include when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity, and the impacted entity."),
+        "title":            Parameter.get("title", "Provide a 10 word title for the software failure incident (return just the title)."),
+        "summary":          Parameter.get("summary", "Summarize the software failure incident. Include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s). (answer in under 250 words)"),
         "time":             Parameter.get("time", "When did the software failure incident happen? If possible, calculate using article published date and relative time mentioned in article."),
         "system":           Parameter.get("system", "What system failed in the software failure incident? (answer in under 10 words)"),
         "ResponsibleOrg":   Parameter.get("ResponsibleOrg", "Which entity(s) was responsible for causing the software failure? (answer in under 10 words)"),
@@ -91,8 +92,8 @@ class PostmortemIncidentCommand:
         "behaviour":        Parameter.get("behaviour", "Was the software failure due to a 'crash' (option 0) or 'omission' (option 1) or 'timing' (option 2) or 'value' (option 3) or 'Byzantine' fault (option 4) or 'unknown' (option -1)?")
         }
         
-        if query_key is not 'None':
-            questions = questions[query_key]
+        #if query_key != 'None':
+        #    questions = questions[query_key]
         
         taxonomy_options = {
             "phase": {"0": "system design", "1": "operation", "2": "both", "3": "neither", "-1": "unknown"},
@@ -111,10 +112,11 @@ class PostmortemIncidentCommand:
             "behaviour": {"0": "crash", "1": "omission", "2": "timing", "3": "value", "4": "byzantine fault", "-1": "unknown"}
         }
 
-        failure_synonyms = "Remember, software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect."
+        failure_synonyms = "software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
 
 
-        template = "Use the following pieces of context about a software failure incident to answer the question." + "\n" + failure_synonyms + """
+        template = "Use the following pieces of context about a software failure incident to answer the question." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
+        + """
         If you don't know the answer, return unknown (option -1). 
         Context: {context}
         Question: {question}
@@ -162,7 +164,7 @@ class PostmortemIncidentCommand:
 
                     qa_chain = RetrievalQA.from_chain_type( # HOW TO FILTER BY INCIDENT
                         ChatGPT_LC,
-                        retriever=vectorDB.as_retriever(search_kwargs={"filter":{"incidentID":incident.id}}),
+                        retriever=vectorDB.as_retriever(search_kwargs={"filter":{"incidentID":incident.id}}), #TDOD: How does additional instructions in the question influence the vectorDB retriever? (ex: summarize, under 10 words, etc)
                         chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}, 
                         return_source_documents=True,
                     )

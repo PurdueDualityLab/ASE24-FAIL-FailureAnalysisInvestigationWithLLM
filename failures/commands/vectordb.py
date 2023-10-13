@@ -25,6 +25,7 @@ class VectordbCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Redo vectorization and storage for all incidents.",
         )
 
