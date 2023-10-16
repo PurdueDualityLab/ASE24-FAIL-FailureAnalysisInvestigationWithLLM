@@ -8,6 +8,12 @@ from failures.parameters.models import Parameter
 
 class PostmortemCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
+        """
+        Prepare the argument parser for the postmortem command.
+
+        Args:
+            parser (argparse.ArgumentParser): The argument parser to configure.
+        """
         parser.description = textwrap.dedent(
             """
             Create postmortems for articles that report on SE failures present in the database. If no arguments are provided, create postmortems for all
@@ -26,13 +32,22 @@ class PostmortemCommand:
             help="Redo extraction for a specific postmortem key for all articles.",
         )
 
-    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
+        """
+        Run the postmortem creation process based on the provided arguments.
 
+        Args:
+            args (argparse.Namespace): The parsed command-line arguments.
+            parser (argparse.ArgumentParser): The argument parser used for configuration.
+        """
+
+        # Define a queryset of articles for postmortem creation
         queryset = (
-                    Article.objects.filter(
-                        describes_failure=True,
-                    )
-                    )
+            Article.objects.filter(
+                describes_failure=True,
+                #headline__icontains='Boeing'
+            )
+        )
 
         #Pre-process prompts:
         questions = {
@@ -69,6 +84,7 @@ class PostmortemCommand:
 
         failure_synonyms = "\nRemember, software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
 
+        # Create a mapping of questions to ChatGPT prompts
         questions_chat = {}
         for question_key in questions.keys():
             if "option" in questions[question_key]:
@@ -97,6 +113,7 @@ class PostmortemCommand:
 
         logging.info("\nCreating postmortems.")
         
+        # Initialize ChatGPT model
         chatGPT = ChatGPT()
         inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
 

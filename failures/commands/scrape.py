@@ -7,6 +7,12 @@ from failures.articles.models import Article, SearchQuery
 
 class ScrapeCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
+        """
+        Prepare the argument parser for the scrape command.
+
+        Args:
+            parser (argparse.ArgumentParser): The argument parser to configure.
+        """
         # add description
         parser.description = textwrap.dedent(
             """
@@ -15,6 +21,7 @@ class ScrapeCommand:
             """
         )
 
+        # Define command-line arguments for specifying search criteria
         parser.add_argument(
             "--keyword",
             type=str,
@@ -54,7 +61,16 @@ class ScrapeCommand:
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+        """
+        Run the article scraping process based on the provided arguments.
+
+        Args:
+            args (argparse.Namespace): The parsed command-line arguments.
+            parser (argparse.ArgumentParser): The argument parser used for configuration.
+
+        """
         if args.keyword:
+            # Create a new search query based on the provided arguments
             search_query = SearchQuery.objects.create(
                 keyword=args.keyword,
                 start_year=args.start_year,
@@ -81,9 +97,11 @@ class ScrapeCommand:
             existing_body_scrapes = 0
             for article in articles:
                 if article.body and not args.all:
+                    # Skip articles with existing bodies if not using the --all flag
                     existing_body_scrapes += 1
                     continue
                 if article.scrape_body():
+                    # Scrape the body of the article
                     successful_body_scrapes += 1
 
             if not args.all:
