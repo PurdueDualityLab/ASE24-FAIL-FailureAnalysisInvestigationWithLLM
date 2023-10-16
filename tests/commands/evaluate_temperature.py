@@ -10,6 +10,7 @@ import csv
 
 from failures.articles.models import Article, SearchQuery
 from failures.commands.classify import ClassifyCommand
+from failures.commands.merge import MergeCommand
 from tests.commands.evaluate_classification import EvaluateClassificationCommand
 from tests.commands.evaluate_identification import EvaluateIdentificationCommand
 from tests.commands.evaluate_merge import EvaluateMergeCommand
@@ -113,6 +114,10 @@ class EvaluateTemperatureCommand:
             # CLASSIFICATION
             # classify = ClassifyCommand()
             # classify.run(args, parser)
+
+            # MERGING
+            merge = MergeCommand()
+            merge.run(args, parser)
 
             # EVALUATION
             # classify

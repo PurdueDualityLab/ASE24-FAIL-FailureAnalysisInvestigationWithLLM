@@ -26,6 +26,17 @@ class MergeCommand:
             action="store_true",
             help="Redo incident merging for all articles that describe SE failures.",
         )
+        parser.add_argument(
+            "--articles",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
+        )
+        parser.add_argument(
+            "--temp",
+            type=float,
+            help="Sets the temperature for ChatGPT",
+        )
 
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
@@ -38,7 +49,7 @@ class MergeCommand:
         """
 
         # Delete all incidents
-        if args.all:
+        if args.all and not args.articles:
             incidents = Incident.objects.all()
             # Ensures that the articles are not deleted
             for incident in incidents:
@@ -47,6 +58,7 @@ class MergeCommand:
             incidents.delete()
 
         queryset = (
+            Article.objects.filter(describes_failure=True, id__in=args.articles) if args.articles else
             Article.objects.filter(describes_failure=True, incident__isnull=True)
         )
 
