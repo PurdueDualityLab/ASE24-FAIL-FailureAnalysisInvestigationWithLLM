@@ -6,6 +6,7 @@ import openai
 import os
 import logging
 import re
+import time
 
 
 from failures.parameters.models import Parameter
@@ -111,36 +112,47 @@ class EmbedderGPT(Network[str, list[float]]):
     def __init__(self):
         self.openai = openai
         self.openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.MAX_RETRIES = 3
 
     def preprocess(self, input_data: str) -> str:
         input_data = input_data.replace("\n", " ")
         return input_data        
     
     def predict(self, preprocessed_data: str) -> list[float]:
-        try:
-            response = None
-            response = self.openai.Embedding.create(input = [preprocessed_data], model='text-embedding-ada-002')
-        except openai.error.Timeout as e:
-            #Handle timeout error, e.g. retry or log
-            logging.info(f"OpenAI API request timed out: {e}")
-        except openai.error.APIError as e:
-            #Handle API error, e.g. retry or log
-            logging.info(f"OpenAI API returned an API Error: {e}")
-        except openai.error.APIConnectionError as e:
-            #Handle connection error, e.g. check network or log
-            logging.info(f"OpenAI API request failed to connect: {e}")
-        except openai.error.InvalidRequestError as e:
-            #Handle invalid request error, e.g. validate parameters or log
-            logging.info(f"OpenAI API request was invalid: {e}")
-        except openai.error.AuthenticationError as e:
-            #Handle authentication error, e.g. check credentials or log
-            logging.info(f"OpenAI API request was not authorized: {e}")
-        except openai.error.PermissionError as e:
-            #Handle permission error, e.g. check scope or log
-            logging.info(f"OpenAI API request was not permitted: {e}")
-        except openai.error.RateLimitError as e:
-            #Handle rate limit error, e.g. wait or log
-            logging.info(f"OpenAI API request exceeded rate limit: {e}")
+
+        retries = 0
+
+        while retries < self.MAX_RETRIES:
+            try:
+                response = None
+                response = self.openai.Embedding.create(input = [preprocessed_data], model='text-embedding-ada-002')
+                break
+
+            except openai.error.Timeout as e:
+                #Handle timeout error, e.g. retry or log
+                logging.info(f"OpenAI API request timed out: {e}")
+            except openai.error.APIError as e:
+                #Handle API error, e.g. retry or log
+                logging.info(f"OpenAI API returned an API Error: {e}")
+            except openai.error.APIConnectionError as e:
+                #Handle connection error, e.g. check network or log
+                logging.info(f"OpenAI API request failed to connect: {e}")
+            except openai.error.InvalidRequestError as e:
+                #Handle invalid request error, e.g. validate parameters or log
+                logging.info(f"OpenAI API request was invalid: {e}")
+            except openai.error.AuthenticationError as e:
+                #Handle authentication error, e.g. check credentials or log
+                logging.info(f"OpenAI API request was not authorized: {e}")
+            except openai.error.PermissionError as e:
+                #Handle permission error, e.g. check scope or log
+                logging.info(f"OpenAI API request was not permitted: {e}")
+            except openai.error.RateLimitError as e:
+                #Handle rate limit error, e.g. wait or log
+                logging.info(f"OpenAI API request exceeded rate limit: {e}")
+                time.sleep(61)
+                logging.info(f"Pausing for 1 minute and retrying.")
+                retries += 1
+                
         
         if response is not None:
             embeddings = response['data'][0]['embedding']
@@ -242,6 +254,7 @@ class ChatGPT(Network[dict, str]):
     def __init__(self):
         self.openai = openai
         self.openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.MAX_RETRIES = 3
 
     def preprocess(self, input_data: dict) -> dict:
         return input_data
@@ -250,36 +263,49 @@ class ChatGPT(Network[dict, str]):
         messages = preprocessed_data["messages"]
         model = preprocessed_data["model"]
         temperature = preprocessed_data["temperature"]
+
+        retries = 0
+
+        while retries < self.MAX_RETRIES:
         
-        try:
-            chat_completion = None
-            chat_completion = self.openai.ChatCompletion.create(
-                            model=model, messages=messages, temperature=temperature #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
-                            #TODO: Pass temperature, conduct experiment by varying for classification tasks and for open ended responses
-                            #TODO: Pass model, auto switch 4k vs 16k based on article length
-                            ) 
-        
-        except openai.error.Timeout as e:
-            #Handle timeout error, e.g. retry or log
-            logging.info(f"OpenAI API request timed out: {e}")
-        except openai.error.APIError as e:
-            #Handle API error, e.g. retry or log
-            logging.info(f"OpenAI API returned an API Error: {e}")
-        except openai.error.APIConnectionError as e:
-            #Handle connection error, e.g. check network or log
-            logging.info(f"OpenAI API request failed to connect: {e}")
-        except openai.error.InvalidRequestError as e:
-            #Handle invalid request error, e.g. validate parameters or log
-            logging.info(f"OpenAI API request was invalid: {e}")
-        except openai.error.AuthenticationError as e:
-            #Handle authentication error, e.g. check credentials or log
-            logging.info(f"OpenAI API request was not authorized: {e}")
-        except openai.error.PermissionError as e:
-            #Handle permission error, e.g. check scope or log
-            logging.info(f"OpenAI API request was not permitted: {e}")
-        except openai.error.RateLimitError as e:
-            #Handle rate limit error, e.g. wait or log
-            logging.info(f"OpenAI API request exceeded rate limit: {e}")
+            try:
+                chat_completion = None
+                chat_completion = self.openai.ChatCompletion.create(
+                                model=model, messages=messages, temperature=temperature #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
+                                #TODO: Pass temperature, conduct experiment by varying for classification tasks and for open ended responses
+                                #TODO: Pass model, auto switch 4k vs 16k based on article length
+                                ) 
+                break
+            
+            except openai.error.Timeout as e:
+                #Handle timeout error, e.g. retry or log
+                logging.info(f"OpenAI API request timed out: {e}")
+            except openai.error.APIError as e:
+                #Handle API error, e.g. retry or log
+                logging.info(f"OpenAI API returned an API Error: {e}")
+            except openai.error.APIConnectionError as e:
+                #Handle connection error, e.g. check network or log
+                logging.info(f"OpenAI API request failed to connect: {e}")
+            except openai.error.InvalidRequestError as e:
+                #Handle invalid request error, e.g. validate parameters or log
+                logging.info(f"OpenAI API request was invalid: {e}")
+            except openai.error.AuthenticationError as e:
+                #Handle authentication error, e.g. check credentials or log
+                logging.info(f"OpenAI API request was not authorized: {e}")
+            except openai.error.PermissionError as e:
+                #Handle permission error, e.g. check scope or log
+                logging.info(f"OpenAI API request was not permitted: {e}")
+            except openai.error.RateLimitError as e:
+                #Handle rate limit error, e.g. wait or log
+                logging.info(f"OpenAI API request exceeded rate limit: {e}")
+                time.sleep(61)
+                logging.info(f"Pausing for 1 minute and retrying.")
+                retries += 1
+            
+            
+
+
+
         
         if chat_completion is not None:
             reply = chat_completion.choices[0].message.content
