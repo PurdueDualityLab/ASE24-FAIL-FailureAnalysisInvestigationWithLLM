@@ -3,13 +3,11 @@ import logging
 import textwrap
 from typing import Protocol
 
-from failures.commands.scrape import ScrapeCommand
-from failures.commands.summarize import SummarizeCommand
-from failures.commands.embed import EmbedCommand
-from failures.commands.classify import ClassifyCommand
-from failures.commands.postmortem import PostmortemCommand
-from failures.commands.cluster import ClusterCommand
-from failures.commands.merge import MergeCommand
+from tests.commands.evaluate_classification import EvaluateClassificationCommand
+from tests.commands.evaluate_identification import EvaluateIdentificationCommand
+from tests.commands.evaluate_merge import EvaluateMergeCommand
+from tests.commands.evaluate_temperature import EvaluateTemperatureCommand
+from tests.commands.evaluate_postmortem import EvaluatePostmortemCommand
 
 
 
@@ -35,8 +33,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), 
-                            PostmortemCommand(), ClusterCommand(), MergeCommand()]
+_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:

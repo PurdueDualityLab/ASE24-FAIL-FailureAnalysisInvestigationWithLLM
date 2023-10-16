@@ -8,6 +8,12 @@ from failures.parameters.models import Parameter
 
 class MergeCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
+        """
+        Prepare the argument parser for the merge command.
+
+        Args:
+            parser (argparse.ArgumentParser): The argument parser to configure.
+        """
         parser.description = textwrap.dedent(
             """
             Merge postmortems for articles that report on SE failures present in the database. If no arguments are provided, 
@@ -20,21 +26,39 @@ class MergeCommand:
             action="store_true",
             help="Redo incident merging for all articles that describe SE failures.",
         )
+        parser.add_argument(
+            "--articles",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
+        )
+        parser.add_argument(
+            "--temp",
+            type=float,
+            help="Sets the temperature for ChatGPT",
+        )
 
 
-    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+    def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
+        """
+        Run the incident merging process based on the provided arguments.
 
-        #Delete all incidents
-        if args.all:
+        Args:
+            args (argparse.Namespace): The parsed command-line arguments.
+            parser (argparse.ArgumentParser): The argument parser used for configuration.
+        """
+
+        # Delete all incidents
+        if args.all and not args.articles:
             incidents = Incident.objects.all()
-            #Ensures that the articles are not deleted
+            # Ensures that the articles are not deleted
             for incident in incidents:
                 Article.objects.filter(incident=incident).update(incident=None)
             
             incidents.delete()
 
-
         queryset = (
+            Article.objects.filter(describes_failure=True, id__in=args.articles) if args.articles else
             Article.objects.filter(describes_failure=True, incident__isnull=True)
         )
 
@@ -74,6 +98,7 @@ class MergeCommand:
 
             logging.info("\nSearching for incident for article: %s.", article_new)
 
+            # Create embeddings for the new article's postmortem information
             article_new.create_postmortem_embeddings_GPT(embedder, postmortem_keys, False)
 
             similar_found = False
@@ -85,6 +110,7 @@ class MergeCommand:
                     mean_score = 0
                     sum_scores = 0
                     for ind, postmortem_key in enumerate(postmortem_keys):
+                        # Calculate similarity between articles based on embeddings
                         incident_similarity = article_new.cosine_similarity(article_incident, postmortem_key + "_embedding") 
                         sum_scores += incident_similarity * weights[ind]
                     

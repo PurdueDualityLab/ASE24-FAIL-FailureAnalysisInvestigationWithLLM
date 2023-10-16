@@ -203,8 +203,6 @@ class Article(models.Model):
         ),
     )
 
-    analyzable_failure
-
 
     similarity_score = models.FloatField(_("Cosine similarity score"),null=True,blank=True)
     
