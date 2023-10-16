@@ -577,7 +577,7 @@ class Article(models.Model):
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long
-        article_text = self.body.split()[:2900]
+        article_text = self.body.split()[:2750]
 
         content = "You will help classify whether an article reports on a software failure incident."
 
@@ -608,7 +608,7 @@ class Article(models.Model):
     def classify_as_analyzable_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long
-        article_text = self.body.split()[:2900]
+        article_text = self.body.split()[:2750]
 
         content = "You will help classify whether an article contains information to conduct failure analysis about a software failure."
 
