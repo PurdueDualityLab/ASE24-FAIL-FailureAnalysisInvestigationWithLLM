@@ -67,8 +67,8 @@ class exp_RunQueriesCommand:
             "software side effect"
         ]
 
-        start_years = list(range(2010, 2023))
-        end_years = list(range(2010, 2023))
+        start_years = list(range(2013, 2015))
+        end_years = list(range(2013, 2015))
         start_months = list(range(1, 12))
         end_months = list(range(2, 13))
 
@@ -108,7 +108,7 @@ class exp_RunQueriesCommand:
                 Classify_Command.run(classify_args, classify_parser)
                 Merge_Command.run(merge_args, merge_parser)
 
-            break
+            
 
 
         # Disjoint from the rest of the infra

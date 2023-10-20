@@ -149,10 +149,11 @@ class EmbedderGPT(Network[str, list[float]]):
             except openai.error.RateLimitError as e:
                 #Handle rate limit error, e.g. wait or log
                 logging.info(f"OpenAI API request exceeded rate limit: {e}")
-                time.sleep(61)
-                logging.info(f"Pausing for 1 minute and retrying.")
-                retries += 1
                 
+            logging.info(f"Pausing for 1 minute and retrying.")
+            time.sleep(61)
+            retries += 1
+
         
         if response is not None:
             embeddings = response['data'][0]['embedding']
@@ -289,6 +290,9 @@ class ChatGPT(Network[dict, str]):
             except openai.error.InvalidRequestError as e:
                 #Handle invalid request error, e.g. validate parameters or log
                 logging.info(f"OpenAI API request was invalid: {e}")
+                if "Please reduce the length of the messages" in e:
+                    logging.info(f"Skipping article.")
+                    break
             except openai.error.AuthenticationError as e:
                 #Handle authentication error, e.g. check credentials or log
                 logging.info(f"OpenAI API request was not authorized: {e}")
@@ -298,14 +302,11 @@ class ChatGPT(Network[dict, str]):
             except openai.error.RateLimitError as e:
                 #Handle rate limit error, e.g. wait or log
                 logging.info(f"OpenAI API request exceeded rate limit: {e}")
-                time.sleep(61)
-                logging.info(f"Pausing for 1 minute and retrying.")
-                retries += 1
             
+            logging.info(f"Pausing for 1 minute and retrying.")
+            time.sleep(61)
+            retries += 1
             
-
-
-
         
         if chat_completion is not None:
             reply = chat_completion.choices[0].message.content
