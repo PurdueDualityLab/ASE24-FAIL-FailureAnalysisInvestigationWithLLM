@@ -67,8 +67,8 @@ class exp_RunQueriesCommand:
             "software side effect"
         ]
 
-        start_years = list(range(2013, 2015))
-        end_years = list(range(2013, 2015))
+        start_years = list(range(2015, 2017))
+        end_years = list(range(2015, 2017))
         start_months = list(range(1, 12))
         end_months = list(range(2, 13))
 

@@ -255,7 +255,7 @@ class ChatGPT(Network[dict, str]):
     def __init__(self):
         self.openai = openai
         self.openai.api_key = os.getenv('OPENAI_API_KEY')
-        self.MAX_RETRIES = 3
+        self.MAX_RETRIES = 1
 
     def preprocess(self, input_data: dict) -> dict:
         return input_data
@@ -290,9 +290,9 @@ class ChatGPT(Network[dict, str]):
             except openai.error.InvalidRequestError as e:
                 #Handle invalid request error, e.g. validate parameters or log
                 logging.info(f"OpenAI API request was invalid: {e}")
-                if "Please reduce the length of the messages" in e:
-                    logging.info(f"Skipping article.")
-                    break
+                #if "Please reduce the length of the messages" in e:
+                #    logging.info(f"Skipping article.")
+                #    break
             except openai.error.AuthenticationError as e:
                 #Handle authentication error, e.g. check credentials or log
                 logging.info(f"OpenAI API request was not authorized: {e}")
