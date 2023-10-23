@@ -58,6 +58,7 @@ class ArticleAdmin(ImportExportModelAdmin):
     list_display = (
         "headline",
         "title",
+        "scrape_successful",
         "describes_failure",
         "analyzable_failure",
         "published",
@@ -118,7 +119,47 @@ admin.site.register(Incident, IncidentAdmin)
 @admin.register(Incident)
 class IncidentAdmin(ImportExportModelAdmin):
     list_display = (
+        "id",
         "title",
+        "summary",
+        #"summary_embedding",
+        "system",
+        "ResponsibleOrg",
+        "ImpactedOrg",
+        "time",
+        "SEcauses",
+        "NSEcauses",
+        "impacts",
+        "mitigations",
+        "phase_option",
+        "boundary_option",
+        "nature_option",
+        "dimension_option",
+        "objective_option",
+        "intent_option",
+        "capability_option",
+        "duration_option",
+        "domain_option",
+        "cps_option",
+        "perception_option",
+        "communication_option",
+        "application_option",
+        "behaviour_option",
+        "phase_rationale",
+        "boundary_rationale",
+        "nature_rationale",
+        "dimension_rationale",
+        "objective_rationale",
+        "intent_rationale",
+        "capability_rationale",
+        "duration_rationale",
+        "domain_rationale",
+        "cps_rationale",
+        "perception_rationale",
+        "communication_rationale",
+        "application_rationale",
+        "behaviour_rationale",
+
     )
 
 @admin.register(SearchQuery)
@@ -126,7 +167,10 @@ class SearchQueryAdmin(admin.ModelAdmin):
     list_display = (
         "keyword",
         "start_year",
+        "start_month",
         "end_year",
+        "end_month",
+        "sources",
         "created_at",
         "last_searched_at",
     )

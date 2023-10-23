@@ -4,6 +4,11 @@ version: '3'
 volumes:
   failures_local_postgres_data: {}
   failures_local_postgres_data_backups: {}
+  failures_local_chroma_data: {}
+
+networks:
+  net:
+    driver: bridge
 
 services:
   django: &django
@@ -16,6 +21,7 @@ services:
     depends_on:
       - postgres
       - redis
+      - chroma
     volumes:
       - .:/app:z
     env_file:
@@ -24,14 +30,6 @@ services:
     ports:
       - "8000:8000"
     command: /start
-
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia/cuda:11.4.0-base nvidia-smi
-    #           count: 1
-    #           capabilities: [gpu]
 
 
   postgres:
@@ -46,6 +44,26 @@ services:
     env_file:
       - ./.envs/.local/.postgres
 
+
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    volumes:
+      - failures_local_chroma_data:/var/lib/chroma/data:Z
+    ports:
+      - "8001:8001"
+    expose:
+      - 8001
+    networks:
+      - net
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/var/lib/chroma/data
+      - ALLOW_RESET=TRUE
+    command: uvicorn chromadb.app:app --reload --workers 1 --host 0.0.0.0 --port 8001
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
   redis:
     image: redis:6
     container_name: failures_local_redis
@@ -57,6 +75,7 @@ services:
     depends_on:
       - redis
       - postgres
+      - chroma
     ports: []
     command: /start-celeryworker
 
@@ -67,6 +86,7 @@ services:
     depends_on:
       - redis
       - postgres
+      - chroma
     ports: []
     command: /start-celerybeat
 

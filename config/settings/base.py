@@ -10,6 +10,12 @@ ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 APPS_DIR = ROOT_DIR / "failures"
 env = environ.Env()
 
+# Fix to Chroma requires sqlite3 >= 3.35.0
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+
 # GENERAL
 # ------------------------------------------------------------------------------
 DEBUG = env.bool("DJANGO_DEBUG", False)
