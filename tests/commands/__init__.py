@@ -3,18 +3,12 @@ import logging
 import textwrap
 from typing import Protocol
 
-from failures.commands.scrape import ScrapeCommand
-from failures.commands.summarize import SummarizeCommand
-from failures.commands.embed import EmbedCommand
-from failures.commands.classify import ClassifyCommand
-from failures.commands.postmortemArticle import PostmortemArticleCommand
-from failures.commands.postmortemIncident import PostmortemIncidentCommand
-from failures.commands.cluster import ClusterCommand
-from failures.commands.merge import MergeCommand
-from failures.commands.vectordb import VectordbCommand
+from tests.commands.evaluate_classification import EvaluateClassificationCommand
+from tests.commands.evaluate_identification import EvaluateIdentificationCommand
+from tests.commands.evaluate_merge import EvaluateMergeCommand
+from tests.commands.evaluate_temperature import EvaluateTemperatureCommand
+from tests.commands.evaluate_postmortem import EvaluatePostmortemCommand
 
-from failures.commands.exp_runQueries import exp_RunQueriesCommand
-from failures.commands.stats import StatsCommand
 
 
 _EPILOG = textwrap.dedent(
@@ -39,7 +33,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), exp_RunQueriesCommand(), StatsCommand()]
+_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -91,11 +85,11 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="experiments.log",
+        filename="test.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
-        force=True, 
+        force=True,
     )
 
     args.entrypoint(args, parser)
