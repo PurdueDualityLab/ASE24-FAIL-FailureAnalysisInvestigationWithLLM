@@ -116,6 +116,28 @@ Evaluate LLM Merge of Articles Using the Command Line
 
     $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --all
 
+Evaluate LLM Taxonomization of Articles Using the Command Line ##TODO##
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --help
+
+#. Evaluate LLM's Merge::
+
+    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --all
+
+Evaluate LLM Postmortem Creation Using the Command Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m tests evaluatepostmortem --help
+
+#. Evaluate LLM's Merge::
+
+    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m tests evaluatepostmortem
+
 Evaluate LLM's performance given set of temperature values Using the Command Line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

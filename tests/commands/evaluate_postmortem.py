@@ -3,10 +3,16 @@ import logging
 import textwrap
 import pandas as pd
 import openpyxl
+import json
 
 from failures.articles.models import Article, SearchQuery
 from failures.networks.models import ChatGPT
 
+from typing import List
+from langchain.llms import OpenAI
+from langchain.output_parsers import PydanticOutputParser
+from langchain.prompts import PromptTemplate
+from langchain.pydantic_v1 import BaseModel, Field, validator
 
 class EvaluatePostmortemCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -101,10 +107,19 @@ class EvaluatePostmortemCommand:
 
         if not data_list:
             logging.info("evaluate_postmortem: Could not fetch manual information.")
+            return
 
-        self.__compare_similarity(data_list[0], data_list[1])
+        self.__compare_similarity_test(data_list[0], data_list[1])
 
-    def __compare_similarity(self, manual: dict, automated: dict, specific: str = None):
+    def __evaluate_response(self, response: dict):
+        """
+        Evalaute the ChatGPT similarity resposne
+
+        Args:
+            response (dict): LangChain formatted response for similarity metrics of all categories for an article
+        """
+
+    def __compare_similarity_test(self, manual: dict, automated: dict, specific: str = None):
         """
         Use ChatGPT to compare the similarity between the manual postmortem and
         the automated postmortem
@@ -115,58 +130,54 @@ class EvaluatePostmortemCommand:
             specifc (str, optional): Optional input parameter to add specific details to prompt
         """
         # Create a ChatGPT instance
-        chatGPT = ChatGPT()
+        chatGPT = ChatGPT() 
 
-        # Define the prompt
-        prompt = """
+        # Define the query
+        original_query = """
         You will be provided with an answer denoted by \"Answer:\". Check if the following pieces of information denoted by \"Statements: \" are directly contained in the answer.
-
         For each of these points perform the following steps:
-
-        1 - Provide a citation from the answer which is closest to this point.
-        2 - Consider if someone reading the citation who doesn't know the topic could directly infer the point. Explain why or why not before making up your mind.
-        3 - List the components of the statement not in the answer
-        4 - List the components of the answer not in the statement
-        5 - Write "yes" if the answer to 2 was yes, otherwise write "no".
-
-        Finally, provide a count of how many "yes" answers there are. Provide this count as {“count”: insert-count-here}. State any information in the answer not listed in the statements
         """
 
+        # Set up parser + inject instructions into prompt template
+        parser = PydanticOutputParser(pydantic_object=SimilarQuery)
+
+        prompt = PromptTemplate(
+            template="Answer the user query.\n{format_instructions}\n{statement}\n{answer}\n",
+            input_variables=["statement", "answer"],
+            partial_variables={"format_instructions": parser.get_format_instructions()},
+        )
+
         # Define set of categories to score
-        categories = ["summary", "system", "time", "se-causes", "nse-causes", "impact", "mitigation"] # Take out summary
+        categories = ["system", "time", "se-causes", "nse-causes", "impact", "mitigation"]
+
+        # Defining return object
+        response = {}
 
         # Score all categories
         for (manual_key, manual_val), (auto_key, auto_val) in zip(manual.items(), automated.items()):
             if manual_key not in categories:
                 continue
 
-            # Make prompt
-            query = f"nStatements: {manual_val}\nAnswer: {auto_val}"
+            _input = prompt.format_prompt(statement="Statement: " + str(manual_val), answer="Answer: " + str(auto_val))
 
             # Define input data
             input_data = {
                 "messages": [
-                    {"role": "system", "content": prompt},
-                    {"role": "user", "content": query}
+                    {"role": "user", "content": _input.to_string()}
                 ],
                 "model": "gpt-3.5-turbo",
                 "temperature": 0
             }
 
-            # Preprocess
-            preprocessed_data = chatGPT.preprocess(input_data)
+            # Get and parse output
+            output = chatGPT.predict(input_data)
+            parser.parse(output)
+            response[manual_key] = json.loads(output)
 
-            # print("pre\n")
-            # print(preprocessed_data)
+        return response
 
-            # Call predict
-            response = chatGPT.predict(preprocessed_data)
-            print("\n\npredict\n\n")
-            print(response)
-
-            # Post Process
-            result = chatGPT.postprocess(response)
-            # print("\n\npost\n\n")
-            # print(result)
-
-            break
+class SimilarQuery(BaseModel):
+    statement_in_answer: list = Field(description="1. List the components of the statement not in the answer. Return the statements in a Python list format.")
+    answer_in_statement: list = Field(description="2. List the components of the answer not in the statement. Return the statements in a Python list format.")
+    similar_bool: str = Field(description="Do both the statement and the answer contain the same information? Write \"yes\" if the answer is yes, otherwise write \"no\".")
+    count: int = Field(description="Finally, provide a count of how many \"yes\" answers there are.")
