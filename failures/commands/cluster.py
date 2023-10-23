@@ -2,7 +2,7 @@ import argparse
 import logging
 import textwrap
 
-from failures.articles.models import Article
+from failures.articles.models import Article, Incident
 from failures.networks.models import EmbedderGPT, ChatGPT
 from failures.parameters.models import Parameter
 
@@ -36,6 +36,7 @@ class ClusterCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Create embeddings for all articles even if they already have embeddings.",
         )
 
@@ -49,9 +50,7 @@ class ClusterCommand:
         """
 
         #TODO: args.all should not be used here but rather for individual postmortem key embeddings: similar to postmortem command
-        queryset = (
-            Article.objects.filter(describes_failure=True)
-        )
+        incidents = Incident.objects.all()
 
         postmortem_keys = ["SEcauses"] #["summary","SEcauses","NSEcauses","impacts","mitigations"]
 
@@ -59,14 +58,29 @@ class ClusterCommand:
 
         embedder = EmbedderGPT()
 
-        for article in queryset:
-            logging.info("Creating embeddings for article %s.", article)
+        for incident in incidents:
+            logging.info("Creating embeddings for incident %s.", incident)
 
-            article.create_postmortem_embeddings_GPT(embedder, postmortem_keys, args.all)
+            for postmortem_key in postmortem_keys:
+                answer_set = True
+
+                postmortem_embedding_key = postmortem_key + "_embedding"
+                if not getattr(incident, postmortem_embedding_key):
+                    answer_set = False
+                
+                if args.all or not answer_set: 
+
+                    logging.info("Getting embedding for: " + postmortem_embedding_key)
+                    
+                    embeddings = embedder.run(getattr(incident, postmortem_key))
+
+                    setattr(incident, postmortem_embedding_key, json.dumps(embeddings))
+                
+            incident.save()
 
         #df = pd.DataFrame(list(queryset.values('id', 'summary_embedding', 'SEcauses_embedding', 'NSEcauses_embedding','impacts_embedding','mitigations_embedding')))
 
-        cluster(queryset, postmortem_keys)
+        cluster(incidents, postmortem_keys)
 
 
 def cluster(queryset, postmortem_keys):

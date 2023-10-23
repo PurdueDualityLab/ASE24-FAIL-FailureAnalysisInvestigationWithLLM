@@ -121,15 +121,87 @@ class Incident(models.Model):
     published = models.DateTimeField(_("Published"), help_text=_("Date and time when the earliest article was published."), blank=True, null=True)
     #TODO: Find the earliest published date and use the month and year
     
+    #Open ended postmortem fields
     title = models.TextField(_("Title"), blank=True, null=True)
     summary = models.TextField(_("Summary"), blank=True, null=True)
+    system = models.TextField(_("System"), blank=True, null=True)
+    time = models.TextField(_("Time"), blank=True, null=True)
+    SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
+    NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
+    impacts = models.TextField(_("Impacts"), blank=True, null=True)
+    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+    ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
+    ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
 
+    #Taxonomy fields: Options
+    phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
+    boundary_option = models.TextField(_("Boundary Option"), blank=True, null=True)
+    nature_option = models.TextField(_("Nature Option"), blank=True, null=True)
+    dimension_option = models.TextField(_("Dimension Option"), blank=True, null=True)
+    objective_option = models.TextField(_("Objective Option"), blank=True, null=True)
+    intent_option = models.TextField(_("Intent Option"), blank=True, null=True)
+    capability_option = models.TextField(_("Capability Option"), blank=True, null=True)
+    duration_option = models.TextField(_("Duration Option"), blank=True, null=True)
+    domain_option = models.TextField(_("Domain Option"), blank=True, null=True)
+    cps_option = models.TextField(_("CPS Option"), blank=True, null=True)
+    perception_option = models.TextField(_("Perception Option"), blank=True, null=True)
+    communication_option = models.TextField(_("Communication Option"), blank=True, null=True)
+    application_option = models.TextField(_("Application Option"), blank=True, null=True)
+    behaviour_option = models.TextField(_("Behaviour Option"), blank=True, null=True)
+    
+
+    #Taxonomy fields: Explanations
+    phase_rationale = models.TextField(_("Phase Rationale"), blank=True, null=True)
+    boundary_rationale = models.TextField(_("Boundary Rationale"), blank=True, null=True)
+    nature_rationale = models.TextField(_("Nature Rationale"), blank=True, null=True)
+    dimension_rationale = models.TextField(_("Dimension Rationale"), blank=True, null=True)
+    objective_rationale = models.TextField(_("Objective Rationale"), blank=True, null=True)
+    intent_rationale = models.TextField(_("Intent Rationale"), blank=True, null=True)
+    capability_rationale = models.TextField(_("Capability Rationale"), blank=True, null=True)
+    duration_rationale = models.TextField(_("Duration Rationale"), blank=True, null=True)
+    domain_rationale = models.TextField(_("Domain Rationale"), blank=True, null=True)
+    cps_rationale = models.TextField(_("CPS Rationale"), blank=True, null=True)
+    perception_rationale = models.TextField(_("Perception Rationale"), blank=True, null=True)
+    communication_rationale = models.TextField(_("Communication Rationale"), blank=True, null=True)
+    application_rationale = models.TextField(_("Application Rationale"), blank=True, null=True)
+    behaviour_rationale = models.TextField(_("Behaviour Rationale"), blank=True, null=True)
+
+    #Embeddings
+    summary_embedding = models.TextField(_("Summary Embedding"), blank=True, null=True)
+    time_embedding = models.TextField(_("Time Embedding"), blank=True, null=True)
+    system_embedding = models.TextField(_("System Embedding"), blank=True, null=True)
+    ResponsibleOrg_embedding = models.TextField(_("ResponsibleOrg Embedding"), blank=True, null=True)
+    ImpactedOrg_embedding = models.TextField(_("ImpactedOrg Embedding"), blank=True, null=True)
+
+    SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
+    NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
+    impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
+    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
+
+    '''
+    incident_updated = models.BooleanField(
+        _("Incident Updated"),
+        null=True,
+        help_text=_(
+            "Whether a new article has been added to the incident."
+        ),
+    )
+
+    incident_stored = models.BooleanField(
+        _("Incident Stored"),
+        null=True,
+        help_text=_(
+            "Whether the incident has been stored into the vector database."
+        ),
+    )
+    '''
 
 
 
     class Meta:
         verbose_name = _("Incident")
         verbose_name_plural = _("Incidents")
+        
 
     def __str__(self):
         return self.title
@@ -186,6 +258,14 @@ class Article(models.Model):
         editable=False,
     )
 
+    scrape_successful = models.BooleanField(
+        _("Scrape Successful"),
+        null=True,
+        help_text=_(
+            "Whether the article was scraped successfully."
+        ),
+    )
+
 
     describes_failure = models.BooleanField(
         _("Describes Failure"),
@@ -200,6 +280,14 @@ class Article(models.Model):
         null=True,
         help_text=_(
             "Whether the article can be used to conduct a failure analysis. This field is set by ChatGPT."
+        ),
+    )
+
+    article_stored = models.BooleanField(
+        _("Article Stored"),
+        null=True,
+        help_text=_(
+            "Whether the article has been stored into the vector database."
         ),
     )
 
@@ -374,9 +462,11 @@ class Article(models.Model):
             article_text = self.preprocess_html(article_scrape)
         except Exception as e:
             logging.error(f"Failed to scrape article %s: %s.", self, e)
+            self.scrape_successful = False
             return
-        if article_text is None:
+        if article_text is None or article_text == "":
             logging.error("Failed to scrape article %s: No text found.", self)
+            self.scrape_successful = False
             return
         self.body = article_text
         self.save()
@@ -385,15 +475,13 @@ class Article(models.Model):
     
     def preprocess_html(self, article_scrape):
         logging.info(f"Processing html for %s.", self)
-        # HTML string
-        html_string = article_scrape.html
-        article_text = None
 
-        # Create a BeautifulSoup object
-        soup = BeautifulSoup(html_string, 'html.parser')
+        article_text = None
 
         #Scrape text from WIRED
         if "wired" in article_scrape.url:
+            html_string = article_scrape.html
+            soup = BeautifulSoup(html_string, 'html.parser')
             article_div = soup.find_all("div", attrs={"class": "body__inner-container"})
             article_text = ""
             for text in article_div:
@@ -401,20 +489,27 @@ class Article(models.Model):
 
         #Scrape text from NYT
         elif "nytimes" in article_scrape.url:
+            html_string = article_scrape.html
+            soup = BeautifulSoup(html_string, 'html.parser')
             article_div = soup.find_all("section", attrs={"name": "articleBody"})
             article_text = ""
             for text in article_div:
                 article_text = article_text + " " + text.get_text(separator=' ')
 
         else:
-            logging.info("URL is not NYT or WIRED: " + article_scrape.url + " for article: " + str(self))
+            #logging.info("URL is not NYT or WIRED: " + article_scrape.url + " for article: " + str(self))
             article_text = article_scrape.text
         
         if article_text is None or len(article_text.split()) < 100:
             logging.info("Issue parsing: " + article_scrape.url + " for article: " + str(self))
+            self.scrape_successful = False
             article_text = article_scrape.text
+        else:
+            self.scrape_successful = True
 
         article_text = "Published on " + str(article_scrape.publish_date) + ". " + article_text
+
+        self.save()
 
         return article_text
 
@@ -433,7 +528,7 @@ class Article(models.Model):
         return self.embedding
     '''
 
-    def create_postmortem_embeddings_GPT(self, embedder: EmbedderGPT, postmortem_keys: list, query_all: bool):
+    def create_postmortem_embeddings_GPT(self, embedder: EmbedderGPT, postmortem_keys: list, query_all: bool): #TODO: Remove? No longer clustering by articles which is what this was used for
 
         for postmortem_key in postmortem_keys:
             answer_set = True
@@ -484,16 +579,18 @@ class Article(models.Model):
         #Truncate article if it is too long
         article_text = self.body.split()[:2750]
 
-        content = "You will help classify whether this article describes a software failure: \n" + ' '.join(article_text)
+        content = "You will help classify whether an article reports on a software failure incident."
 
         messages = [
                 {"role": "system", 
                 "content": content}
                 ]
 
-        prompt = "Does this article report on software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?: " \
+        prompt = "Does the provided article report on software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?" \
                 + "\n" \
-                + "Answer with just True or False"
+                + "Answer with just True or False" \
+                + "\n" \
+                + "Article: " + ' '.join(article_text)
 
         messages.append(
                         {"role": "user", "content": prompt },
@@ -513,18 +610,19 @@ class Article(models.Model):
         #Truncate article if it is too long
         article_text = self.body.split()[:2750]
 
-        content = "You will help decide whether a news article contains information to conduct failure analysis about a software failure (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect) \n" + ' '.join(article_text)
+        content = "You will help classify whether an article contains information to conduct failure analysis about a software failure."
 
         messages = [
                 {"role": "system", 
                 "content": content}
                 ]
 
-        prompt = "Does this article contain enough information about the following criteria to conduct a detailed failure analysis of the software failure incident(s): " \
+        prompt = "Does the provided article contain enough information about the provided criteria to conduct a failure analysis of the software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?" \
+                + "Answer with just True or False" \
                 + "\n" \
-                + "Criteria: Cause of failure, impact of failure, entity(s) responsible for failure, and the entity(s) impacted by failure" \
+                + "Criteria: System that failed, cause of failure, and impact of failure" \
                 + "\n" \
-                + "Answer with just True or False"
+                + "Article: " + ' '.join(article_text)
 
         messages.append(
                         {"role": "user", "content": prompt },
@@ -579,10 +677,20 @@ class Article(models.Model):
 
 
         #Create postmortems
-        content = "You will answer questions about a software failure (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect) described in this article: " + article_body
+        content = "You will answer questions about a software failure using information from on an article."
+
+        
+        if query_key in questions.keys():
+            question_keys = [query_key]
+        else:
+            question_keys = list(questions.keys())
+
+        #logging.info(question_keys)
 
         postmortem = {}
-        for question_key in list(questions.keys()): #[list(questions.keys())[i] for i in [0,2,4,8,16,21]]: #list(questions.keys()):
+        for question_key in question_keys: #[list(questions.keys())[i] for i in [0,2,4,8,16,21]]: #list(questions.keys()):
+
+            #logging.info(question_key)
             
             #Check if the question has already been answered
             answer_set = True
@@ -603,8 +711,18 @@ class Article(models.Model):
                         {"role": "system", 
                         "content": content}
                         ]
+
+                failure_synonyms = "software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+                
+                prompt = "Answer the provided question using information from the provided article. Note that software failure could mean a " + failure_synonyms + "." \
+                        + "\n" \
+                        + "Question: " + questions[question_key] \
+                        + "\n" \
+                        + "Article: " + article_body
+
+
                 messages.append(
-                                {"role": "user", "content": questions[question_key]},
+                                {"role": "user", "content": prompt},
                                 )
                 
                 inputs["messages"] = messages
@@ -649,8 +767,6 @@ class Article(models.Model):
                 else:
                     setattr(self, question_key, reply)
 
-
-        #write a sanitization function to sanitize options: unknown, true, false
         self.save()
 
         return True

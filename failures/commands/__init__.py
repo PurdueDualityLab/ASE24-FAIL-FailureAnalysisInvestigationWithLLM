@@ -7,10 +7,14 @@ from failures.commands.scrape import ScrapeCommand
 from failures.commands.summarize import SummarizeCommand
 from failures.commands.embed import EmbedCommand
 from failures.commands.classify import ClassifyCommand
-from failures.commands.postmortem import PostmortemCommand
+from failures.commands.postmortemArticle import PostmortemArticleCommand
+from failures.commands.postmortemIncident import PostmortemIncidentCommand
 from failures.commands.cluster import ClusterCommand
 from failures.commands.merge import MergeCommand
+from failures.commands.vectordb import VectordbCommand
 
+from failures.commands.exp_runQueries import exp_RunQueriesCommand
+from failures.commands.stats import StatsCommand
 
 
 _EPILOG = textwrap.dedent(
@@ -35,8 +39,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), 
-                            PostmortemCommand(), ClusterCommand(), MergeCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), exp_RunQueriesCommand(), StatsCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -88,11 +91,11 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="test.log",
+        filename="experiments.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
-        force=True,
+        force=True, 
     )
 
     args.entrypoint(args, parser)

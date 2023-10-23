@@ -57,6 +57,7 @@ class ScrapeCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Scrape all articles even if they already have a body.",
         )
 

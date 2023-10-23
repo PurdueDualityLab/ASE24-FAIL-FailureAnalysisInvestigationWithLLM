@@ -6,7 +6,7 @@ from failures.articles.models import Article, Incident
 from failures.networks.models import QuestionAnswerer, ChatGPT
 from failures.parameters.models import Parameter
 
-class PostmortemCommand:
+class PostmortemArticleCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         """
         Prepare the argument parser for the postmortem command.
@@ -24,11 +24,13 @@ class PostmortemCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Create postmortems for all articles even if they already have a postmortem.",
         )
         parser.add_argument(
             "--key",
             type=str,
+            default='None',
             help="Redo extraction for a specific postmortem key for all articles.",
         )
 
@@ -51,8 +53,8 @@ class PostmortemCommand:
 
         #Pre-process prompts:
         questions = {
-        "title":            Parameter.get("title", "Provide a 10 word title for this software failure incident (return just the title)."),
-        "summary":          Parameter.get("summary", "Summarize the software failure incident. Include when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity, and the impacted entity."),
+        "title":            Parameter.get("title", "Provide a 10 word title for the software failure incident (return just the title)."),
+        "summary":          Parameter.get("summary", "Summarize the software failure incident. Include when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity, and the impacted entity. (answer in under 250 words)"),
         
         "time":             Parameter.get("time", "When (month and/or year) did the software failure incident happen? If necessary, calculate using article published date. ONLY return month and/or year."),
         "system":           Parameter.get("system", "What system failed in the software failure incident? (answer in under 10 words)"),
@@ -60,10 +62,10 @@ class PostmortemCommand:
         "ImpactedOrg":      Parameter.get("ImpactedOrg", "Which entity(s) was impacted by the software failure? (answer in under 10 words)"),
         }
         '''
-        "SEcauses":     Parameter.get("SEcauses", "What were the software causes of the failure incident?"),
-        "NSEcauses":    Parameter.get("NSEcauses", "What were the non-software causes of the failure incident?"),
-        "impacts":      Parameter.get("impacts", "What happened due to the software failure incident?"),
-        "mitigations":  Parameter.get("mitigations", "What could have prevented the software failure incident?"), 
+        "SEcauses":     Parameter.get("SEcauses", "What were the software causes of the failure incident? (answer in under 100 words)"),
+        "NSEcauses":    Parameter.get("NSEcauses", "What were the non-software causes of the failure incident? (answer in under 100 words)"),
+        "impacts":      Parameter.get("impacts", "What happened due to the software failure incident? (answer in under 100 words)"),
+        "mitigations":  Parameter.get("mitigations", "What could have prevented the software failure incident? (answer in under 100 words)"), 
         
         "phase":        Parameter.get("phase", "Was the software failure due to 'system design' (option 0) or 'operation' (option 1) faults or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?"),
         "boundary":     Parameter.get("boundary", "Was the software failure due to faults from 'within the system' (option 0) or from 'outside the system' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?"),
@@ -82,17 +84,18 @@ class PostmortemCommand:
         }
         '''
 
-        failure_synonyms = "\nRemember, software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+        #if args.key != 'None':
+        #    questions = questions[args.key]
+
+        
 
         # Create a mapping of questions to ChatGPT prompts
         questions_chat = {}
         for question_key in questions.keys():
             if "option" in questions[question_key]:
-                questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key] + " \n MUST ONLY RETURN ANSWER IN JSON FORMAT: {\"explanation\": \"explanation\", \"option\": \"option number\"}. Don't provide anything outside the format."
-            elif "word" or "words" in questions[question_key]:
-                questions_chat[question_key] = failure_synonyms + "\nAnswer the question using the article: " + questions[question_key]
-            else:
-                questions_chat[question_key] = failure_synonyms + "\nAnswer the question within 100 words using the article: " + questions[question_key]
+                questions_chat[question_key] = questions[question_key] + "\nRETURN ANSWER IN JSON FORMAT: {\"explanation\": \"explanation\", \"option\": \"option number\"}. Don't provide anything outside the format."
+            #elif "word" or "words" in questions[question_key]:
+            #    questions_chat[question_key] = questions[question_key]
 
         taxonomy_options = {
             "phase": {"0": "system design", "1": "operation", "2": "both", "3": "neither", "-1": "unknown"},

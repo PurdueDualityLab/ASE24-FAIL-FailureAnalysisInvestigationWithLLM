@@ -28,6 +28,7 @@ class ClassifyCommand:
         parser.add_argument(
             "--all",
             action="store_true",
+            default=False,
             help="Classify all articles even if they already have a classification.",
         )
         parser.add_argument(
@@ -58,9 +59,9 @@ class ClassifyCommand:
         
         # Gets list of article to classify
         queryset = (
-            Article.objects.filter(id__in=args.articles) if args.articles else
-            Article.objects.all() if args.all else
-            Article.objects.filter(describes_failure=None)
+            Article.objects.filter(scrape_successful=True, id__in=args.articles) if args.articles else
+            Article.objects.filter(scrape_successful=True) if args.all else
+            Article.objects.filter(describes_failure=None, scrape_successful=True)
         )
         logging.info("\nClassifying articles.")
         
@@ -76,8 +77,8 @@ class ClassifyCommand:
         analyzable_positive_classifications_ChatGPT = 0
 
         for article in queryset:
-            if article.body == "":
-                continue
+            #if article.body == "": #or article.scrape_successful is False:
+            #    continue
             
             logging.info("Classifying %s.", article)
 
