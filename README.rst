@@ -21,19 +21,19 @@ Running with Docker
     
 #. To log a command, follow these steps::
 
-1. Run the command:
+    a. Run the command:
 
     ```
     $ docker compose -f local.yml run -e OPENAI_API_KEY -d --name failures_run_command django python -m failures classify
     ```
 
-2. Wait for the command to finish running, then export the log:
+    b. Wait for the command to finish running, then export the log:
 
     ```
     $ docker logs failures_run_command >> failures_run_command.log 2>&1
     ```
 
-3. Then kill the container:
+    c. Then kill the container:
 
     ```
     $ docker rm failures_run_command
