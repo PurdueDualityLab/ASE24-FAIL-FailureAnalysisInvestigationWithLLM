@@ -20,13 +20,8 @@ import sys
 
 from openai.embeddings_utils import cosine_similarity as openai_cosine_similarity
 
-'''
-try:
-    from openai.embeddings_utils import cosine_similarity as openai_cosine_similarity
-except ImportError:
-    logging.info(ImportError)
-    pass
-'''
+from failures.commands.PROMPTS import QUESTIONS, FAILURE_SYNONYMS, TAXONOMY_OPTIONS
+
 
 from failures.networks.models import (
     Embedder,
@@ -589,7 +584,7 @@ class Article(models.Model):
                 "content": content}
                 ]
 
-        prompt = "Does the provided article report on software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?" \
+        prompt = "Does the provided article report on software failure incident(s) (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
                 + "\n" \
                 + "Answer with just True or False" \
                 + "\n" \
@@ -626,7 +621,7 @@ class Article(models.Model):
                 "content": content}
                 ]
 
-        prompt = "Does the provided article contain enough information about the provided criteria to conduct a failure analysis of the software failure incident(s) (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)?" \
+        prompt = "Does the provided article contain enough information about the provided criteria to conduct a failure analysis of the software failure incident(s) (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
                 + "Answer with just True or False" \
                 + "\n" \
                 + "Criteria: System that failed, cause of failure, and impact of failure" \
@@ -721,7 +716,7 @@ class Article(models.Model):
                         "content": content}
                         ]
 
-                failure_synonyms = "software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+                failure_synonyms = FAILURE_SYNONYMS
                 
                 prompt = "Answer the provided question using information from the provided article. Note that software failure could mean a " + failure_synonyms + "." \
                         + "\n" \
