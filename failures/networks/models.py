@@ -2,7 +2,10 @@ from typing import Any, Protocol, TypeVar, Union
 
 import sentence_transformers
 import transformers
+
 import openai
+import tiktoken
+
 import os
 import logging
 import re
@@ -112,7 +115,7 @@ class EmbedderGPT(Network[str, list[float]]):
     def __init__(self):
         self.openai = openai
         self.openai.api_key = os.getenv('OPENAI_API_KEY')
-        self.MAX_RETRIES = 3
+        self.MAX_RETRIES = 1
 
     def preprocess(self, input_data: str) -> str:
         input_data = input_data.replace("\n", " ")
@@ -252,10 +255,11 @@ class SummarizerGPT(Network[str, str]):
 
 
 class ChatGPT(Network[dict, str]):
+    
     def __init__(self):
         self.openai = openai
         self.openai.api_key = os.getenv('OPENAI_API_KEY')
-        self.MAX_RETRIES = 1
+        self.MAX_RETRIES = 2
 
     def preprocess(self, input_data: dict) -> dict:
         return input_data
@@ -290,9 +294,11 @@ class ChatGPT(Network[dict, str]):
             except openai.error.InvalidRequestError as e:
                 #Handle invalid request error, e.g. validate parameters or log
                 logging.info(f"OpenAI API request was invalid: {e}")
-                #if "Please reduce the length of the messages" in e:
-                #    logging.info(f"Skipping article.")
-                #    break
+                if "Please reduce the length of the messages" in str(e):
+                    logging.info(f"Reducing article length, and trying again.")
+                    #messages[1]['content'] = ' '.join(messages[1]['content'].split()[:2250])
+                    messages[1]['content'] = truncate_tokens(string=messages[1]['content'], encoding_name=model, max_length=3500)
+
             except openai.error.AuthenticationError as e:
                 #Handle authentication error, e.g. check credentials or log
                 logging.info(f"OpenAI API request was not authorized: {e}")
@@ -317,3 +323,15 @@ class ChatGPT(Network[dict, str]):
 
     def postprocess(self, prediction: str) -> str:
         return prediction
+    
+
+def truncate_tokens(string: str, encoding_name: str, max_length: int = 4097) -> str:
+        """Truncates a text string based on max number of tokens."""
+        encoding = tiktoken.encoding_for_model(encoding_name)
+        encoded_string = encoding.encode(string)
+        num_tokens = len(encoded_string)
+
+        if num_tokens > max_length:
+            string = encoding.decode(encoded_string[:max_length])
+
+        return string

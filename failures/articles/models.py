@@ -577,7 +577,10 @@ class Article(models.Model):
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long
-        article_text = self.body.split()[:2750]
+        #article_text = self.body.split()[:2750]
+        #article_text = ' '.join(article_text)
+        
+        article_text = self.body
 
         content = "You will help classify whether an article reports on a software failure incident."
 
@@ -590,7 +593,10 @@ class Article(models.Model):
                 + "\n" \
                 + "Answer with just True or False" \
                 + "\n" \
-                + "Article: " + ' '.join(article_text)
+                + "Article: " + article_text
+        
+        #logging.info("\n")
+        #logging.info(prompt)
 
         messages.append(
                         {"role": "user", "content": prompt },
@@ -608,7 +614,10 @@ class Article(models.Model):
     def classify_as_analyzable_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long
-        article_text = self.body.split()[:2750]
+        #article_text = self.body.split()[:2750]
+        #article_text = ' '.join(article_text)
+        
+        article_text = self.body
 
         content = "You will help classify whether an article contains information to conduct failure analysis about a software failure."
 
@@ -622,7 +631,7 @@ class Article(models.Model):
                 + "\n" \
                 + "Criteria: System that failed, cause of failure, and impact of failure" \
                 + "\n" \
-                + "Article: " + ' '.join(article_text)
+                + "Article: " + article_text
 
         messages.append(
                         {"role": "user", "content": prompt },
@@ -636,7 +645,7 @@ class Article(models.Model):
         return self.analyzable_failure
 
 
-    def postmortem_from_article_ChatGPT(
+    def postmortem_from_article_ChatGPT( #OUTDATED
         self,
         ChatGPT: ChatGPT,
         inputs: dict,

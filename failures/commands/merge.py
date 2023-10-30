@@ -71,7 +71,7 @@ class MergeCommand:
 
             article_new.create_postmortem_embeddings_GPT(embedder, postmortem_keys, False)
 
-            similar_found = False
+            similar_found = False #TODO: what happens when = None (ex: due to api error), it could cause article not to merge and create new incident, in this case it should skip the article, initialize with none?
             
             for incident in incidents:
                 logging.info("Searching within incident: %s.", incident)

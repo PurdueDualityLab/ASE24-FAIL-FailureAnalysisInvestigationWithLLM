@@ -57,7 +57,7 @@ class ClassifyCommand:
                 if article.classify_as_analyzable_ChatGPT(classifierChatGPT, inputs):
                     analyzable_positive_classifications_ChatGPT += 1
                     logging.info("ChatGPT Classifier: Classification met as eligible for failure analysis for article: " + str(article))
-
+            
 
 
         logging.info("ChatGPT successfully classified %d articles as describing a software failure.", failure_positive_classifications_ChatGPT)
