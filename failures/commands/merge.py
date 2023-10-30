@@ -6,6 +6,8 @@ from failures.articles.models import Article, Incident
 from failures.networks.models import QuestionAnswerer, ChatGPT, EmbedderGPT,  ClassifierChatGPT
 from failures.parameters.models import Parameter
 
+from failures.commands.PROMPTS import QUESTIONS, FAILURE_SYNONYMS
+
 class MergeCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         """
@@ -63,16 +65,11 @@ class MergeCommand:
             Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True)
         )
 
-        questions = {
-            "title":            Parameter.get("title", "Provide a 10 word title for the software failure incident (return just the title)."),
-            "summary":          Parameter.get("summary", "Summarize the software failure incident. Include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s). (answer in under 250 words)"),
-        }
+        questions = {key: QUESTIONS[key] for key in ["title", "summary"]}
 
         questions_chat = questions
         
-
         incidents = list(Incident.objects.prefetch_related('articles'))
-
 
         #postmortem_keys = ["summary", "time", "system", "ResponsibleOrg", "ImpactedOrg"]
         #weights = [0.20, 0.20, 0.20, 0.20, 0.20]
@@ -115,11 +112,10 @@ class MergeCommand:
                         logging.info("High similarity score of " + str(mean_score) + " in incident: " + str(incident))
 
                         #TODO: Measure false positive rate with just cosine similarity
-                        #TODO: Implement asking LLM if incident is same
 
 
                         #Confirm with LLM
-                        content = "You will classify whether two paragraphs descibe the same software failure incident (software failure could mean a software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect)"
+                        content = "You will classify whether two paragraphs descibe the same software failure incident (software failure could mean a " + FAILURE_SYNONYMS + ")"
 
                         messages = [
                                 {"role": "system", 
@@ -145,12 +141,17 @@ class MergeCommand:
 
                             break
 
+                        elif similar_found is None:
+                            logging.info("Similar found is None, skipping article for now.")
+                            break
+
+
                         #similar_found = True
                         #article_new.incident = incident
                         #article_new.save()
                         #break
                 
-                if similar_found is True:
+                if similar_found is True or similar_found is None:
                     break
 
             if similar_found is False:
