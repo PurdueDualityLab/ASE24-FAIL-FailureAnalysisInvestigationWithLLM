@@ -19,7 +19,7 @@ Running with Docker
 
     $ docker compose -f local.yml up
     
-# To log a command, follow these steps:
+#. To log a command, follow these steps::
 
 1. Run the command:
 
