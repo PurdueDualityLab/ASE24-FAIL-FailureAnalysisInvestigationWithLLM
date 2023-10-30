@@ -6,39 +6,44 @@ Failures is a rich database of software failures scraped from news articles.
 Running with Docker
 -------------------
 
-#. Build and spin up the container::
+1. Build and spin up the container:
 
+    ```
     $ docker compose -f local.yml up --build -d
+    ```
 
-#. Apply the migrations in the container::
+2. Apply the migrations in the container:
 
+    ```
     $ docker compose -f local.yml run --rm django python manage.py makemigrations
     $ docker compose -f local.yml run --rm django python manage.py migrate
+    ```
 
-#. Make sure the container is running::
+3. Make sure the container is running:
 
+    ```
     $ docker compose -f local.yml up
-    
-#. To log a command, follow these steps::
-
-a. Run the command:
-
-    ```
-    $ docker compose -f local.yml run -e OPENAI_API_KEY -d --name failures_run_command django python -m failures classify
     ```
 
-b. Wait for the command to finish running, then export the log:
+4. To log a command, follow these steps:
 
-    ```
-    $ docker logs failures_run_command >> failures_run_command.log 2>&1
-    ```
+   a. Run the command:
 
-c. Then kill the container:
+      ```
+      $ docker compose -f local.yml run -e OPENAI_API_KEY -d --name failures_run_command django python -m failures classify
+      ```
 
-    ```
-    $ docker rm failures_run_command
-    ```
+   b. Wait for the command to finish running, then export the log:
 
+      ```
+      $ docker logs failures_run_command >> failures_run_command.log 2>&1
+      ```
+
+   c. Then kill the container:
+
+      ```
+      $ docker rm failures_run_command
+      ```
 
 
 Admin Site
