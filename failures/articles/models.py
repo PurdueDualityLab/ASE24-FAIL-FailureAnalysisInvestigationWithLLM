@@ -20,7 +20,9 @@ import sys
 
 from openai.embeddings_utils import cosine_similarity as openai_cosine_similarity
 
-from failures.commands.PROMPTS import QUESTIONS, FAILURE_SYNONYMS, TAXONOMY_OPTIONS
+#from failures.commands.PROMPTS import FAILURE_SYNONYMS
+FAILURE_SYNONYMS = "software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+
 
 
 from failures.networks.models import (
@@ -127,6 +129,7 @@ class Incident(models.Model):
     mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
+    sources = models.TextField(_("Sources"), blank=True, null=True)
 
     #Taxonomy fields: Options
     phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
@@ -302,6 +305,7 @@ class Article(models.Model):
     mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
+    sources = models.TextField(_("Sources"), blank=True, null=True)
 
     #Taxonomy fields: Options
     phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
