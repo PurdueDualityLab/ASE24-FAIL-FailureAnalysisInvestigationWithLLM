@@ -10,7 +10,7 @@ from datetime import datetime
 from django.utils import timezone
 
 
-class GenerateArticleIdsCommand:
+class SampleDatasetCreationCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         """
         Prepare the argument parser for the generate article ids command.
@@ -69,6 +69,10 @@ class GenerateArticleIdsCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+        # Update publish dates
+        self.__update_incident_publish_dates()
+        logging.info("SampleDatasetCreationCommand: Incident published dates have been updated")
+
         # Set random seed
         if args.seed:
             random.seed(args.seed)
@@ -84,9 +88,9 @@ class GenerateArticleIdsCommand:
         # Get incident ids
         incidents, incident_ids = self.__get_incident_ids(start_date, end_date, args)
         if incident_ids:
-            logging.info("GenerateArticleIdsCommand: Incidents collected (seed = " + str(args.seed) + ")")
+            logging.info("SampleDatasetCreationCommand: Incidents collected (seed = " + str(args.seed) + ")")
         else:
-            logging.info("GenerateArticleIdsCommand: No incidents collected")
+            logging.info("SampleDatasetCreationCommand: No incidents collected")
 
         # Get related articles
         incident_related_articles = Article.objects.filter(incident__id__in=incident_ids)
@@ -100,12 +104,12 @@ class GenerateArticleIdsCommand:
         # Download incidents to experiment_data_auto_incidents.csv
         auto_incidents_csv = "./tests/auto_evaluation/experiment_data_auto_incidents.csv"
         self.__download_incidents_to_csv(incidents, auto_incidents_csv)
-        logging.info("GenerateArticleIdsCommand: Wrote " + str(len(incidents)) + " incidents to experiment_data_auto_incidents.csv")
+        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incidents)) + " incidents to experiment_data_auto_incidents.csv")
 
         # Download articles to experiment_data_auto_articles.csv
         auto_articles_csv = "./tests/auto_evaluation/experiment_data_auto_articles.csv"
         self.__download_articles_to_csv(incident_related_articles, auto_articles_csv)
-        logging.info("GenerateArticleIdsCommand: Wrote " + str(len(incident_related_articles)) + " incidents to experiment_data_auto_articles.csv")
+        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incident_related_articles)) + " incidents to experiment_data_auto_articles.csv")
 
         # Get random list of articles classified as non-failure reporting
         if not args.countANF:
@@ -124,9 +128,34 @@ class GenerateArticleIdsCommand:
         # Download manual dataset to experiment_data_manual_articles.csv
         manual_articles_csv = "./tests/manual_evaluation/experiment_data_manual_articles.csv"
         self.__download_articles_to_csv(manual_articles, manual_articles_csv)
-        logging.info("GenerateArticleIdsCommand: Wrote " + str(len(manual_articles)) + " incidents to experiment_data_manual_articles.csv")
+        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(manual_articles)) + " incidents to experiment_data_manual_articles.csv")
         
         return 0
+
+    def __update_incident_publish_dates(self):
+        """
+        Updates all incidents with published date of earliest article. 
+
+        Args:
+            None
+
+        Returns:
+            None
+        """
+        # Get all incidents with published date set as None
+        incidents_with_none_date = Incident.objects.filter(published__isnull=True)
+
+        for incident in incidents_with_none_date:
+            # Get the associated articles for the incident
+            articles_for_incident = Article.objects.filter(incident=incident)
+
+            if articles_for_incident.exists():
+                # Find the earliest published article among the associated articles
+                earliest_article = articles_for_incident.order_by('published').first()
+
+                # Set the published date of the incident to the earliest article's published date
+                incident.published = earliest_article.published
+                incident.save()
 
     def __get_incident_ids(self, start_date: datetime, end_date: datetime, args: argparse.Namespace):
         """
