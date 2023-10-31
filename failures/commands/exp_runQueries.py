@@ -67,10 +67,10 @@ class exp_RunQueriesCommand:
             "software side effect"
         ]
 
-        start_years = list(range(2015, 2017))
-        end_years = list(range(2015, 2017))
-        start_months = list(range(1, 12))
-        end_months = list(range(2, 13))
+        start_years = list(range(2010, 2017)) #2017-4-01%20before%3A2017-5-01
+        end_years = list(range(2010, 2017))
+        start_months = list(range(12, 13)) #1, 13)) 
+        end_months = list(range(13, 14)) #2, 14)) 
 
         sources = [
             "wired.com", 
@@ -89,6 +89,12 @@ class exp_RunQueriesCommand:
         # Iterate through all combinations of keywords, years, and months
         for start_year, end_year in zip(start_years, end_years):
             for start_month, end_month in zip(start_months, end_months):
+
+                if end_month == 13: #For December 01 to January 01
+                    start_month = 12
+                    end_month = 1
+                    end_year = end_year + 1
+                    
                 
                 for keyword in keywords:
                     for source in sources:
