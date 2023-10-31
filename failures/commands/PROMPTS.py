@@ -9,6 +9,7 @@ QUESTIONS = {
         "NSEcauses":        "What were the non-software causes of the failure incident?",
         "impacts":          "What happened due to the software failure incident?",
         "mitigations":      "What could have prevented the software failure incident?", 
+        "sources":          "From where do the articles gather information about the software failure?",
         "phase":            "Was the software failure due to 'system design' (option 0) or 'operation' (option 1) faults or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
         "boundary":         "Was the software failure due to faults from 'within the system' (option 0) or from 'outside the system' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
         "nature":           "Was the software failure due to 'human actions' (option 0) or 'non human actions' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
