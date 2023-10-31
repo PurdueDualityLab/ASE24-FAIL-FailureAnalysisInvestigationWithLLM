@@ -113,12 +113,12 @@ class SampleDatasetCreationCommand:
 
         # Get random list of articles classified as non-failure reporting
         if not args.countANF:
-            args.countANF = 20
+            args.countANF = 30
         nf_articles = self.__get_articles_nf(start_date, end_date, args)
 
         # Get random list of articles classified as failure reporting but non analyzable
         if not args.countANA:
-            args.countANA = 20
+            args.countANA = 30
         na_articles = self.__get_articles_na(start_date, end_date, args)
 
         # Get aggregate articles
