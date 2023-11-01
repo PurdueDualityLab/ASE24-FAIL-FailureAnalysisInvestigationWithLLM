@@ -129,7 +129,7 @@ class Incident(models.Model):
     mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
-    sources = models.TextField(_("Sources"), blank=True, null=True)
+    references = models.TextField(_("References"), blank=True, null=True)
 
     #Taxonomy fields: Options
     phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
@@ -305,7 +305,7 @@ class Article(models.Model):
     mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
-    sources = models.TextField(_("Sources"), blank=True, null=True)
+    references = models.TextField(_("References"), blank=True, null=True)
 
     #Taxonomy fields: Options
     phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
