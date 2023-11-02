@@ -8,6 +8,7 @@ from tests.commands.evaluate_identification import EvaluateIdentificationCommand
 from tests.commands.evaluate_merge import EvaluateMergeCommand
 from tests.commands.evaluate_temperature import EvaluateTemperatureCommand
 from tests.commands.evaluate_postmortem import EvaluatePostmortemCommand
+from tests.commands.sample_dataset_creation import SampleDatasetCreationCommand
 
 
 
@@ -33,7 +34,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand()]
+_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand(), SampleDatasetCreationCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
