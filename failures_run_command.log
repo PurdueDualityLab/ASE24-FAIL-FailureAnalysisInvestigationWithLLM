@@ -1,0 +1,63 @@
+no configuration file provided: not found
+Error response from daemon: No such container: failures_run_command
+Error response from daemon: No such container: failures_run_command
+PostgreSQL is available
+INFO 2023-10-27 21:06:00,884 utils 1 140309587298112 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-10-27 21:06:00,884 utils 1 140309587298112 NumExpr defaulting to 8 threads.
+INFO 2023-10-27 21:06:01,383 font_manager 1 140309587298112 generated new fontManager
+Traceback (most recent call last):
+  File "/app/failures/networks/models.py", line 281, in predict
+    chat_completion = self.openai.ChatCompletion.create(
+  File "/usr/local/lib/python3.9/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/usr/local/lib/python3.9/site-packages/openai/api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/usr/local/lib/python3.9/site-packages/openai/api_requestor.py", line 620, in _interpret_response
+    self._interpret_response_line(
+  File "/usr/local/lib/python3.9/site-packages/openai/api_requestor.py", line 683, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: This model's maximum context length is 4097 tokens. However, your messages resulted in 38150 tokens. Please reduce the length of the messages.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/app/failures/__main__.py", line 17, in <module>
+    main()
+  File "/app/failures/commands/__init__.py", line 100, in main
+    args.entrypoint(args, parser)
+  File "/app/failures/commands/classify.py", line 50, in run
+    if article.classify_as_failure_ChatGPT(classifierChatGPT, inputs):
+  File "/app/failures/articles/models.py", line 607, in classify_as_failure_ChatGPT
+    self.describes_failure = classifier.run(inputs)
+  File "/app/failures/networks/models.py", line 33, in run
+    prediction = self.predict(preprocessed_data)
+  File "/app/failures/networks/models.py", line 184, in predict
+    response = self.chatGPT.run(inputs)
+  File "/app/failures/networks/models.py", line 33, in run
+    prediction = self.predict(preprocessed_data)
+  File "/app/failures/networks/models.py", line 303, in predict
+    messages[1]['content'] = truncate_tokens(string=messages[1]['content'], encoding_name=model, max_length=3500)
+TypeError: truncate_tokens() missing 1 required positional argument: 'self'
+[0mPostgreSQL is available
+INFO 2023-10-27 21:12:26,147 utils 1 139882346596160 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-10-27 21:12:26,147 utils 1 139882346596160 NumExpr defaulting to 8 threads.
+INFO 2023-10-27 21:12:26,615 font_manager 1 139882346596160 generated new fontManager
+[0mPostgreSQL is available
+INFO 2023-10-27 21:24:30,869 utils 1 140351341754176 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-10-27 21:24:30,869 utils 1 140351341754176 NumExpr defaulting to 8 threads.
+INFO 2023-10-27 21:24:31,370 font_manager 1 140351341754176 generated new fontManager
+[0mPostgreSQL is available
+INFO 2023-10-27 21:31:55,119 utils 1 140252390766400 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-10-27 21:31:55,119 utils 1 140252390766400 NumExpr defaulting to 8 threads.
+INFO 2023-10-27 21:31:55,603 font_manager 1 140252390766400 generated new fontManager
+PostgreSQL is available
+INFO 2023-10-27 21:31:55,119 utils 1 140252390766400 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-10-27 21:31:55,119 utils 1 140252390766400 NumExpr defaulting to 8 threads.
+INFO 2023-10-27 21:31:55,603 font_manager 1 140252390766400 generated new fontManager
+[0m
