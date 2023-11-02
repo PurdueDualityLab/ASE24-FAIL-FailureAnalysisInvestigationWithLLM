@@ -19,7 +19,7 @@ Running with Docker
 
     $ docker compose -f local.yml up
     
-#. To log a command, follow these steps:
+#. To log stdout/stderr for a command that is detached, follow these steps:
 
     #. Run the command::
 
