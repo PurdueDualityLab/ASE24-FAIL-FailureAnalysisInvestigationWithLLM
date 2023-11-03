@@ -127,7 +127,7 @@ class SampleDatasetCreationCommand:
 
         # Download manual dataset to experiment_data_manual_articles.csv
         manual_articles_csv = "./tests/manual_evaluation/experiment_data_manual_articles.csv"
-        self.__download_articles_to_csv(manual_articles, manual_articles_csv)
+        self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(manual_articles)) + " incidents to experiment_data_manual_articles.csv")
         
         return 0
@@ -294,7 +294,41 @@ class SampleDatasetCreationCommand:
                 ]
                 incident_writer.writerow(data_row)
 
-    
+    def __download_articles_to_csv_manual(self, articles, filename):
+        """
+        Download articles to a CSV file, with only ID, title, and URL included, and the rest as empty strings.
+
+        Args:
+            articles (QuerySet): QuerySet containing articles.
+            filename (str): Name of the CSV file to save.
+        """
+        with open(filename, 'w', newline='') as csvfile:
+            article_writer = csv.writer(csvfile)
+            # Write the CSV header
+            header = [
+                "ID", "URL", "Headline", "References",
+                "Describes Failure", "Analyzable Failure", "Summary", "System", "Time", "SEcauses", 
+                "NSEcauses", "Impacts", "Mitigations", "ResponsibleOrg", "ImpactedOrg", "Phase Option", 
+                "Boundary Option", "Nature Option", "Dimension Option", "Objective Option", "Intent Option",
+                "Capability Option", "Duration Option", "Domain Option", "CPS Option", "Perception Option", 
+                "Communication Option", "Application Option", "Behaviour Option", "Phase Rationale", 
+                "Boundary Rationale", "Nature Rationale", "Dimension Rationale", "Objective Rationale", 
+                "Intent Rationale", "Capability Rationale", "Duration Rationale", "Domain Rationale", 
+                "CPS Rationale", "Perception Rationale", "Communication Rationale", "Application Rationale", 
+                "Behaviour Rationale"
+            ]
+            article_writer.writerow(header)
+
+            # Write article data to CSV
+            for article in articles:
+                # Initialize all other columns as empty strings
+                data_row = [
+                    article.id, article.url, article.headline, article.references
+                ]
+                data_row.extend([''] * (len(header) - 4))  # Fill the rest with empty strings
+                article_writer.writerow(data_row)
+
+
     def __download_articles_to_csv(self, articles, filename):
         """
         Download articles to a CSV file.
@@ -349,4 +383,5 @@ class SampleDatasetCreationCommand:
                     article.mitigations_embedding
                 ]
                 article_writer.writerow(data_row)
+
 
