@@ -38,6 +38,7 @@ class MergeCommand:
         parser.add_argument(
             "--temp",
             type=float,
+            default=-1,
             help="Sets the temperature for ChatGPT",
         )
 
@@ -80,7 +81,8 @@ class MergeCommand:
         chatGPT = ChatGPT()
         embedder = EmbedderGPT()
         classifierChatGPT = ClassifierChatGPT()
-        inputs = {"model": "gpt-3.5-turbo", "temperature": 0}
+        temp = args.temp if 0 <= args.temp <= 1 else 1
+        inputs = {"model": "gpt-3.5-turbo", "temperature": temp}
 
         logging.info("\n\nMerging Articles.")
 
@@ -165,3 +167,5 @@ class MergeCommand:
                 article_new.save()
 
                 incidents.append(incident)
+
+        logging.info("Articles merged!")

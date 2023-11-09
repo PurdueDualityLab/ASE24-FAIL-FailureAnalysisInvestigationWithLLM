@@ -26,7 +26,6 @@ class exp_RunQueriesCommand:
             """
         )
 
-
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
         logging.info("\nExperiment: Collecting articles")

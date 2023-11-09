@@ -51,13 +51,14 @@ class EvaluateIdentificationCommand:
 
         """
         # Creating metrics to return
+        logging.info("\n\nNow evaluating ANALYZE FAILURES\n")
         metrics = {}
         
         # Define the file path
-        file_path = "./tests/manual_evaluation/perfect_merge.xlsx"
+        file_path = "./tests/manual_evaluation/experiment_data_manual_articles_Analyst-B.xlsx"
 
         # Define the columns to read
-        columns_to_read = ["id", "Describes Failure? (0: False | 1: True)"]
+        columns_to_read = ["Article ID", "Describes Failure", "Analyzable Failure"]
 
         # Read the Excel file into a Pandas DataFrame
         try:
@@ -71,15 +72,16 @@ class EvaluateIdentificationCommand:
             return metrics
 
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
-        df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
-        df = df[df['Describes Failure? (0: False | 1: True)'] == 1]
+        df = df[df['Article ID'].apply(lambda x: isinstance(x, int) and x >= 0)]
+        df = df[df['Describes Failure'] == True]
 
         # Check --articles
         if args.articles:
-            df = df[df['id'].apply(lambda x: x in args.articles)]
+            df = df[df['Article ID'].apply(lambda x: x in args.articles)]
+            df = df[df['Describes Failure'] == True]
 
         # Get a list of article IDs from the manual database
-        article_ids = df['id'].tolist()
+        article_ids = df['Article ID'].tolist()
 
         # Query for articles matching manual db IDs
         matching_articles = Article.objects.filter(id__in=article_ids)
@@ -96,22 +98,23 @@ class EvaluateIdentificationCommand:
         # Iterate through articles and count matches
         for article in matching_articles:
             article_id = article.id
-            ground_truth = df[df['id'] == article.id]['Describes Failure? (0: False | 1: True)'].values[0]
-            if article.analyzable_failure and article.analyzable_failure == ground_truth:
+            ground_truth = df[df['Article ID'] == article.id]['Analyzable Failure'].values[0]
+            if article.analyzable_failure != None and article.analyzable_failure == ground_truth:
                 total_match += 1
             else:
                 if args.list:
-                    incorrectly_classified_articles.append(
+                    incorrectly_classified_articles.append((
                         f"Article ID: {article.id}, "
-                        f"Title: {article.title}, "
+                        f"Title: {article.headline}, "
                         f"Ground Truth: {'Enough info' if ground_truth == 1 else 'Not enough info'}, "
-                        f"Classified As: {'Enough info' if article.analyzable_failure and article.analyzable_failure == 1 else 'Not enough info'}"
-                    )
+                        f"Classified As: {'Enough info' if article.analyzable_failure != None and article.analyzable_failure == 1 else 'Not enough info'}",
+                        ground_truth
+                    ))
                 # If --all then update false positives and negatives
                 if args.all:
-                    if article.analyzable_failure and article.analyzable_failure == 1 and ground_truth == 0:
+                    if article.analyzable_failure != None and article.analyzable_failure == 1 and ground_truth == 0:
                         false_positives += 1
-                    elif article.analyzable_failure and article.analyzable_failure == 0 and ground_truth == 1:
+                    elif article.analyzable_failure != None and article.analyzable_failure == 0 and ground_truth == 1:
                         false_negatives += 1
 
         # Checking to see if there are any matching articles
@@ -119,11 +122,11 @@ class EvaluateIdentificationCommand:
             accuracy_percentage = (total_match / total_articles) * 100
             logging.info(f"Accuracy: {accuracy_percentage:.2f}% ({total_match}/{total_articles})")
 
-            # Checking if --list
-            if args.list:
-                logging.info('List of incorrectly classified articles:')
-                for article in incorrectly_classified_articles:
-                    logging.info(article)
+            # # Checking if --list
+            # if args.list:
+            #     logging.info('List of incorrectly classified articles:')
+            #     for article in incorrectly_classified_articles:
+            #         logging.info(article[0])
 
             # Checkign if --all
             if args.all:
@@ -139,7 +142,23 @@ class EvaluateIdentificationCommand:
                 wrong_percentage = (wrong_classifications / total_articles) * 100
 
                 logging.info(f"False Positives: {false_positive_rate:.2f}% ({false_positive_fraction})")
+
+                # Print out all false positives
+                if args.list:
+                    logging.info('List of all false positive identifications:')
+                    for article in incorrectly_classified_articles:
+                        if article[1] == 0:
+                            logging.info(article[0])
+
                 logging.info(f"False Negatives: {false_negative_rate:.2f}% ({false_negative_fraction})")
+
+                # Print out all false positives
+                if args.list:
+                    logging.info('List of all false negative identifications:')
+                    for article in incorrectly_classified_articles:
+                        if article[1] == 1:
+                            logging.info(article[0])
+
                 logging.info(f"Wrong: {wrong_percentage:.2f}% ({wrong_classifications}/{total_articles})")
                 logging.info(f"Total Evaluated: {total_articles}")
 

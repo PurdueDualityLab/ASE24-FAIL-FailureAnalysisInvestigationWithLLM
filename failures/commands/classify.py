@@ -45,6 +45,7 @@ class ClassifyCommand:
         parser.add_argument(
             "--temp",
             type=float,
+            default=1,
             help="Sets the temperature for ChatGPT",
         )
 
@@ -69,7 +70,7 @@ class ClassifyCommand:
         classifierChatGPT = ClassifierChatGPT()
 
         # Handles inputs and temperature
-        temperature = args.temp if args.temp else 1
+        temperature = args.temp if 0 <= args.temp <= 1 else 1
         inputs = {"model": "gpt-3.5-turbo", "temperature": temperature}
         logging.info("Classifying articles using temperature %s.", "{:.2f}".format(temperature))
         
