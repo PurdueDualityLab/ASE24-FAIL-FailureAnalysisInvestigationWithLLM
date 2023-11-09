@@ -11,6 +11,9 @@ import csv
 from failures.articles.models import Article, SearchQuery
 from failures.commands.classify import ClassifyCommand
 from failures.commands.merge import MergeCommand
+from failures.commands.vectordb import VectordbCommand
+from failures.commands.postmortemIncident import PostmortemIncidentCommand
+from failures.commands.cluster import ClusterCommand
 from tests.commands.evaluate_classification import EvaluateClassificationCommand
 from tests.commands.evaluate_identification import EvaluateIdentificationCommand
 from tests.commands.evaluate_merge import EvaluateMergeCommand
@@ -52,12 +55,49 @@ class EvaluateTemperatureCommand:
         parser.add_argument(
             "--temp",
             type=float,
+            default=-1,
             help="Sets the temperature for ChatGPT",
         )
         parser.add_argument(
             "--list",
             action="store_true",
             help="List all articles incorrectly classified.",
+        )
+        parser.add_argument(
+            "--noEval",
+            action="store_true",
+            help="Starts testing the pipeline at classify (Defualt).",
+        )
+        parser.add_argument(
+            "--startClassify",
+            action="store_true",
+            help="Starts testing the pipeline at classify (Defualt).",
+        )
+        parser.add_argument(
+            "--startMerge",
+            action="store_true",
+            help="Starts testing the pipeline at merge.",
+        )
+        parser.add_argument(
+            "--startVectorDB",
+            action="store_true",
+            help="Starts testing the pipeline at vectorDB.",
+        )
+        parser.add_argument(
+            "--startPostmortemInicdent",
+            action="store_true",
+            help="Starts testing the pipeline at postmortemIncident.",
+        )
+        parser.add_argument(
+            "--startCluster",
+            action="store_true",
+            help="Starts testing the pipeline at cluster.",
+        )
+        parser.add_argument(
+            "--key",
+            type=str,
+            default='None',
+            help="Redo extraction for a specific postmortem key for all articles.",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
@@ -93,13 +133,18 @@ class EvaluateTemperatureCommand:
         if not args.articles:
             num_sample = args.sample if args.sample else 20
             num_sample = min(len(article_ids), num_sample)
+        else:
+            num_sample = len(args.articles)
         
         # Get 20 random articles if articles not explicitly defined
         if not args.articles:
             article_ids = random.sample(list(article_ids), num_sample)
             args.articles = article_ids
-        if args.temp:
+
+        # Set temperatures
+        if 0.0 <= args.temp <= 1.0:
             temperatures = [args.temp]
+            logging.info("Evaluation pipeline for temperature: " + str(args.temp))
         else:
             temperatures = [0.1 * x for x in range(0, 11)]
 
@@ -108,39 +153,103 @@ class EvaluateTemperatureCommand:
         # df = pd.DataFrame(columns=column_names)
         dfs = []
 
+        # Get starting point for testing
+        start = 0
+        if args.startClassify:
+            start = 0 # Redundant
+        elif args.startMerge:
+            start = 1
+        elif args.startVectorDB:
+            start = 2
+        elif args.startPostmortemInicdent:
+            start = 3
+        elif args.startCluster:
+            start = 4
+
+        logging.info("Temperatures: " + str(temperatures))
         for temperature in temperatures:
             args.temp = temperature
 
-            # CLASSIFICATION
-            # classify = ClassifyCommand()
-            # classify.run(args, parser)
+            # Blank metrics
+            all_metrics = {}
+            classification_metrics = {}
+            identification_metrics = {}
 
-            # MERGING
-            merge = MergeCommand()
-            merge.run(args, parser)
+            # CLASSIFICATION & EVALUATION
+            if start <= 0:
+                logging.info("Classifying articles for " + str(temperature) + " temperature.")
+                # run command
+                classify = ClassifyCommand()
+                classify.run(args, parser)
 
-            # EVALUATION
-            # classify
-            evaluate_classify = EvaluateClassificationCommand()
-            classification_metrics = evaluate_classify.run(args, parser)
+                if not args.noEval:
+                    # classify
+                    evaluate_classify = EvaluateClassificationCommand()
+                    classification_metrics = evaluate_classify.run(args, parser)
 
-            # Identify
-            evaluate_identify = EvaluateIdentificationCommand()
-            identification_metrics = evaluate_identify.run(args, parser)
+                    # Identify
+                    evaluate_identify = EvaluateIdentificationCommand()
+                    identification_metrics = evaluate_identify.run(args, parser)
 
-            # Merge
-            evaluate_merge = EvaluateMergeCommand()
-            merge_metrics = evaluate_merge.run(args, parser)
-            
+            # MERGING & EVALUATION
+            if start <= 1:
+                logging.info("Merging articles for " + str(temperature) + " temperature.")
+                # run command
+                merge = MergeCommand()
+                merge.run(args, parser)
+
+                if not args.noEval:
+                    # merge
+                    evaluate_merge = EvaluateMergeCommand()
+                    merge_metrics = evaluate_merge.run(args, parser)
+
+            # VECTORDB & EVALUATION
+            if start <= 2:
+                logging.info("Vectorizing articles.")
+                # run command
+                vectorDB = VectordbCommand()
+                vectorDB.run(args, parser)
+
+                if not args.noEval:
+                    # PUT EVALUATION HERE IF NEEDED #
+                    # vector
+                    pass
+
+            # POSTMORTEM INCIDENT & EVALUATION
+            if start <= 3:
+                logging.info("Analyzing postmortem for " + str(temperature) + " temperature.")
+                args.all = True
+                postmortem = PostmortemIncidentCommand()
+                postmortem.run(args, parser)
+
+                if not args.noEval:
+                    # PUT EVALUATION HERE IF NEEDED #
+                    # postmortem incident
+                    pass
+
+            # CLUSTER & EVALUATION
+            if start <= 4:
+                logging.info("Clustering incidents for " + str(temperature) + " temperature.")
+                cluster = ClusterCommand()
+                cluster.run(args, parser)
+
+                if not args.noEval:
+                    # PUT EVALUATION HERE IF NEEDED #
+                    # cluster
+                    pass
 
             # Adding addtional metrics then appending excel sheet
-            classification_metrics["Temperature"] = str(args.temp)
-            classification_metrics["Sample Size"] = str(num_sample)
-            classification_metrics.update(identification_metrics)
-            classification_metrics.update(merge_metrics)
+            all_metrics["Temperature"] = str(args.temp)
+            all_metrics["Sample Size"] = str(num_sample)
+            if classification_metrics:
+                all_articles.update(classification_metrics)
+            if identification_metrics:
+                all_metrics.update(identification_metrics)
+            if merge_metrics:
+                all_metrics.update(merge_metrics)
 
             # Convert to dataframe
-            df_temp = pd.DataFrame([classification_metrics])
+            df_temp = pd.DataFrame([all_metrics])
             dfs.append(df_temp)
 
             # Get all information about articles recently classified and store in dataframe
@@ -154,11 +263,11 @@ class EvaluateTemperatureCommand:
                 article_data_list.append(article_data)
 
             article_df = pd.DataFrame(article_data_list)
-        
 
             # Create dataframe and store in CSV
             csv_path = f'./tests/performance/temperature{temperature:.1f}.csv'
             article_df.to_csv(csv_path, index=False)
+            logging.info("Wrote to " + csv_path)
 
         # Convert dataframe to CSV
         df = pd.concat(dfs, ignore_index=True)

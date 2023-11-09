@@ -20,6 +20,7 @@ class VectordbCommand:
             Vectorize and store article bodies into vector database. If no arguments are provided, 
             only new articles and incidents will be vectorized and stored; otherwise, 
             if --all is provided, all articles will be re-vectorized and re-stored into the database. 
+            If --articles is provided, only the articles given in the list will be vectorized
             """
         )
         parser.add_argument(
@@ -28,7 +29,12 @@ class VectordbCommand:
             default=False,
             help="Redo vectorization and storage for all incidents.",
         )
-
+        parser.add_argument(
+            "--articles",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         
@@ -65,7 +71,9 @@ class VectordbCommand:
             logging.info("Incident ID: "+ str(incident.id))
             
             # Get related articles for the current incident
-            if args.all:
+            if args.articles:
+                articles = Article.objects.filter(incident=incident, id__in=args.articles) # Collects only articles that are related to testing suite
+            elif args.all:
                 articles = Article.objects.filter(incident=incident)
             else:
                 articles = Article.objects.filter( Q(incident=incident,article_stored=False) | Q(incident=incident,article_stored__isnull=True) )
@@ -93,4 +101,5 @@ class VectordbCommand:
             
         
         #logging.info("Stored: " + str(vectorDB.get(updated_ids)) + " in VectorDB")
+        logging.info("Articles vectorized!")
         

@@ -50,7 +50,11 @@ class ClusterCommand:
         """
 
         #TODO: args.all should not be used here but rather for individual postmortem key embeddings: similar to postmortem command
-        incidents = Incident.objects.all()
+        # IF TESTING: Only fetching incidents related to article testing set
+        if args.articles:
+            incidents = Incident.objects.filter(articles__in=args.articles).distinct()
+        else:
+            incidents = Incident.objects.all()
 
         postmortem_keys = ["SEcauses"] #["summary","SEcauses","NSEcauses","impacts","mitigations"]
 
