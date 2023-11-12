@@ -3295,4 +3295,265 @@ Traceback (most recent call last):
   File "/app/tests/commands/evaluate_temperature.py", line 242, in run
     if classification_metrics:
 UnboundLocalError: local variable 'classification_metrics' referenced before assignment
-[0m
+[0mPostgreSQL is available
+INFO 2023-11-10 19:05:22,899 utils 1 140638007547712 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 19:05:22,899 utils 1 140638007547712 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 19:05:23,373 font_manager 1 140638007547712 generated new fontManager
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/app/tests/__main__.py", line 17, in <module>
+    main()
+  File "/app/tests/commands/__init__.py", line 97, in main
+    args.entrypoint(args, parser)
+  File "/app/tests/commands/evaluate_temperature.py", line 212, in run
+    vectorDB.run(args, parser)
+  File "/app/failures/commands/vectordb.py", line 73, in run
+    logging.info("Removing article ID: " + str(articleId) + " from vectorDB")
+NameError: name 'articleId' is not defined
+[0mPostgreSQL is available
+INFO 2023-11-10 21:34:30,669 utils 1 139906100193088 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:34:30,670 utils 1 139906100193088 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:34:31,215 font_manager 1 139906100193088 generated new fontManager
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/app/tests/__main__.py", line 17, in <module>
+    main()
+  File "/app/tests/commands/__init__.py", line 97, in main
+    args.entrypoint(args, parser)
+  File "/app/tests/commands/evaluate_temperature.py", line 212, in run
+    vectorDB.run(args, parser)
+  File "/app/failures/commands/vectordb.py", line 60, in run
+    embedding_function = OpenAIEmbeddings()
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for OpenAIEmbeddings
+__root__
+  Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass  `openai_api_key` as a named parameter. (type=value_error)
+[0mPostgreSQL is available
+INFO 2023-11-10 21:34:30,669 utils 1 139906100193088 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:34:30,670 utils 1 139906100193088 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:34:31,215 font_manager 1 139906100193088 generated new fontManager
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/app/tests/__main__.py", line 17, in <module>
+    main()
+  File "/app/tests/commands/__init__.py", line 97, in main
+    args.entrypoint(args, parser)
+  File "/app/tests/commands/evaluate_temperature.py", line 212, in run
+    vectorDB.run(args, parser)
+  File "/app/failures/commands/vectordb.py", line 60, in run
+    embedding_function = OpenAIEmbeddings()
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for OpenAIEmbeddings
+__root__
+  Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass  `openai_api_key` as a named parameter. (type=value_error)
+[0mPostgreSQL is available
+INFO 2023-11-10 21:37:38,504 utils 1 140621827340096 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:37:38,504 utils 1 140621827340096 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:37:39,012 font_manager 1 140621827340096 generated new fontManager
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/app/tests/__main__.py", line 17, in <module>
+    main()
+  File "/app/tests/commands/__init__.py", line 97, in main
+    args.entrypoint(args, parser)
+  File "/app/tests/commands/evaluate_temperature.py", line 212, in run
+    vectorDB.run(args, parser)
+  File "/app/failures/commands/vectordb.py", line 74, in run
+    chunks_for_sampleArticle = vectorDB.get(where={"articleID": articleId})['ids']
+NameError: name 'articleId' is not defined
+[0mPostgreSQL is available
+INFO 2023-11-10 21:39:48,219 utils 1 140480659314496 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:39:48,219 utils 1 140480659314496 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:39:48,729 font_manager 1 140480659314496 generated new fontManager
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/chromadb/api/fastapi.py", line 468, in raise_chroma_error
+    resp.raise_for_status()
+  File "/usr/local/lib/python3.9/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://172.17.0.1:8001/api/v1/collections/1fa7a1e2-b1ce-4e85-9fed-a5a39613a809/delete
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/app/tests/__main__.py", line 17, in <module>
+    main()
+  File "/app/tests/commands/__init__.py", line 97, in main
+    args.entrypoint(args, parser)
+  File "/app/tests/commands/evaluate_temperature.py", line 212, in run
+    vectorDB.run(args, parser)
+  File "/app/failures/commands/vectordb.py", line 75, in run
+    vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+  File "/usr/local/lib/python3.9/site-packages/chromadb/api/models/Collection.py", line 331, in delete
+    self._client._delete(self.id, ids, where, where_document)
+  File "/usr/local/lib/python3.9/site-packages/chromadb/api/fastapi.py", line 298, in _delete
+    raise_chroma_error(resp)
+  File "/usr/local/lib/python3.9/site-packages/chromadb/api/fastapi.py", line 470, in raise_chroma_error
+    raise (Exception(resp.text))
+Exception: {"error":"ValueError('\\n                You must provide either ids, where, or where_document to delete. If\\n                you want to delete all data in a collection you can delete the\\n                collection itself using the delete_collection method. Or alternatively,\\n                you can get() all the relevant ids and then delete them.\\n                ')"}
+[0mPostgreSQL is available
+INFO 2023-11-10 21:41:25,619 utils 1 139796941739840 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:41:25,619 utils 1 139796941739840 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:41:26,099 font_manager 1 139796941739840 generated new fontManager
+PostgreSQL is available
+INFO 2023-11-10 21:41:25,619 utils 1 139796941739840 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:41:25,619 utils 1 139796941739840 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:41:26,099 font_manager 1 139796941739840 generated new fontManager
+[]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/chromadb/api/fastapi.py", line 468, in raise_chroma_error
+    resp.raise_for_status()
+  File "/usr/local/lib/python3.9/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://172.17.0.1:8001/api/v1/collections/1fa7a1e2-b1ce-4e85-9fed-a5a39613a809/delete
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/app/tests/__main__.py", line 17, in <module>
+    main()
+  File "/app/tests/commands/__init__.py", line 97, in main
+    args.entrypoint(args, parser)
+  File "/app/tests/commands/evaluate_temperature.py", line 212, in run
+    vectorDB.run(args, parser)
+  File "/app/failures/commands/vectordb.py", line 76, in run
+    vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+  File "/usr/local/lib/python3.9/site-packages/chromadb/api/models/Collection.py", line 331, in delete
+    self._client._delete(self.id, ids, where, where_document)
+  File "/usr/local/lib/python3.9/site-packages/chromadb/api/fastapi.py", line 298, in _delete
+    raise_chroma_error(resp)
+  File "/usr/local/lib/python3.9/site-packages/chromadb/api/fastapi.py", line 470, in raise_chroma_error
+    raise (Exception(resp.text))
+Exception: {"error":"ValueError('\\n                You must provide either ids, where, or where_document to delete. If\\n                you want to delete all data in a collection you can delete the\\n                collection itself using the delete_collection method. Or alternatively,\\n                you can get() all the relevant ids and then delete them.\\n                ')"}
+[0mPostgreSQL is available
+INFO 2023-11-10 21:42:16,995 utils 1 139813775718208 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:42:16,996 utils 1 139813775718208 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:42:17,493 font_manager 1 139813775718208 generated new fontManager
+PostgreSQL is available
+INFO 2023-11-10 21:42:16,995 utils 1 139813775718208 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:42:16,996 utils 1 139813775718208 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:42:17,493 font_manager 1 139813775718208 generated new fontManager
+PostgreSQL is available
+INFO 2023-11-10 21:42:16,995 utils 1 139813775718208 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 21:42:16,996 utils 1 139813775718208 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 21:42:17,493 font_manager 1 139813775718208 generated new fontManager
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/app/tests/__main__.py", line 17, in <module>
+    main()
+  File "/app/tests/commands/__init__.py", line 97, in main
+    args.entrypoint(args, parser)
+  File "/app/tests/commands/evaluate_temperature.py", line 235, in run
+    cluster.run(args, parser)
+  File "/app/failures/commands/cluster.py", line 87, in run
+    cluster(incidents, postmortem_keys)
+  File "/app/failures/commands/cluster.py", line 149, in cluster
+    df[df[postmortem_cluster_key] == i][postmortem_key].sample(num_samples, random_state=42).values
+  File "/usr/local/lib/python3.9/site-packages/pandas/core/generic.py", line 5773, in sample
+    sampled_indices = sample.sample(obj_len, size, replace, weights, rs)
+  File "/usr/local/lib/python3.9/site-packages/pandas/core/sample.py", line 150, in sample
+    return random_state.choice(obj_len, size=size, replace=replace, p=weights).astype(
+  File "mtrand.pyx", line 965, in numpy.random.mtrand.RandomState.choice
+ValueError: Cannot take a larger sample than population when 'replace=False'
+[0mPostgreSQL is available
+INFO 2023-11-10 23:21:18,357 utils 1 139985385477952 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 23:21:18,357 utils 1 139985385477952 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 23:21:18,835 font_manager 1 139985385477952 generated new fontManager
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+PostgreSQL is available
+INFO 2023-11-10 23:21:18,357 utils 1 139985385477952 Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+INFO 2023-11-10 23:21:18,357 utils 1 139985385477952 NumExpr defaulting to 8 threads.
+INFO 2023-11-10 23:21:18,835 font_manager 1 139985385477952 generated new fontManager
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+/usr/local/lib/python3.9/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------

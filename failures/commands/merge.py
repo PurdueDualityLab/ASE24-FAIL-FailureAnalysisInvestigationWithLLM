@@ -61,10 +61,17 @@ class MergeCommand:
             
             incidents.delete()
 
-        queryset = (
-            Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True, id__in=args.articles) if args.articles else
-            Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True)
-        )
+        if args.articles:
+            logging.info("Merge: Setting incidents for testing set equal to null.")
+            queryset = (
+                # Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True, id__in=args.articles)
+                Article.objects.filter(describes_failure=True, analyzable_failure=True, id__in=args.articles) # Removed incident__isnull=True
+            )
+            queryset.update(incident=None)
+        else:
+            queryset = (
+                Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True)
+            )
 
         questions = {key: QUESTIONS[key] for key in ["title", "summary"]}
 

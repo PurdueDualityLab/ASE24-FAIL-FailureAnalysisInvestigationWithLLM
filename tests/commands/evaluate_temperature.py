@@ -207,6 +207,7 @@ class EvaluateTemperatureCommand:
             if start <= 2:
                 logging.info("Vectorizing articles.")
                 # run command
+                args.all = False
                 vectorDB = VectordbCommand()
                 vectorDB.run(args, parser)
 
