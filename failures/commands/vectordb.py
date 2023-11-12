@@ -54,7 +54,7 @@ class VectordbCommand:
 
         chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
 
-        if args.all:
+        if args.all and not args.articles:
             chroma_client.reset()
         
         embedding_function = OpenAIEmbeddings()
@@ -62,7 +62,19 @@ class VectordbCommand:
 
         vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
 
-        
+        # chunks_for_sampleArticle = vectorDB.get(where={"articleID": 116})
+        # print(chunks_for_sampleArticle)
+        # vectorDB._collection.delete(where={"articleID": 116})
+
+        # Remove any article in args.articles from the vector database
+        if args.articles:
+            logging.info("Deleting all articles in args.articles from the vector database.")
+        for articleID in args.articles:
+            logging.info("Removing article ID: " + str(articleID) + " from vectorDB")
+            chunks_for_sampleArticle = vectorDB.get(where={"articleID": articleID})['ids']
+            if chunks_for_sampleArticle:
+                vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+ 
         count1 = 0
         count2 = 0
         # Iterate through incidents
