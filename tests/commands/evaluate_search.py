@@ -3,6 +3,7 @@ import logging
 import textwrap
 from bs4 import BeautifulSoup
 import requests
+import time
 
 class RisksDigestScraper:
     BASE_URL = "http://catless.ncl.ac.uk/Risks"
@@ -105,13 +106,21 @@ class RisksDigestScraper:
                         if soup.find("div", class_="article-content"):
                             # If the article is valid, add its URL to the list of valid article links
                             article_links.append(article_url)
+                    elif response.status_code == 401:
+                        # Pause for 60 seconds because we have been querying too fast
+                        time.sleep(60)
+                    else:
+                        # Log the error if the response is not successful
+                        logging.error(
+                            f"Error while requesting {article_url}: {response.status_code}"
+                        )
 
         # Return the list of valid article URLs
         return article_links
 
 
     def run(self, args: argparse.Namespace):
-        self.scrape_articles(args)
+        return self.scrape_articles(args)
 
 # Example usage in a different module:
 # if __name__ == "__main__":
