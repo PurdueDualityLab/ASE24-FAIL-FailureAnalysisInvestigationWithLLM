@@ -9,7 +9,8 @@ import os
 import csv
 
 from failures.articles.models import Article, SearchQuery
-from failures.commands.classify import ClassifyCommand
+from failures.commands.classifyAnalyzable import ClassifyAnalyzableCommand #TODO: Update the rest of the code with this
+from failures.commands.classifyFailure import ClassifyFailureCommand #TODO: Update the rest of the code with this
 from failures.commands.merge import MergeCommand
 from tests.commands.evaluate_classification import EvaluateClassificationCommand
 from tests.commands.evaluate_identification import EvaluateIdentificationCommand
