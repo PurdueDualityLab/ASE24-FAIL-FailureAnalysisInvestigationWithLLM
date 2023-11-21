@@ -18,6 +18,10 @@ from tests.commands.evaluate_classification import EvaluateClassificationCommand
 from tests.commands.evaluate_identification import EvaluateIdentificationCommand
 from tests.commands.evaluate_merge import EvaluateMergeCommand
 
+import chromadb
+from langchain.vectorstores import Chroma
+from langchain.embeddings.openai import OpenAIEmbeddings
+
 class EvaluateTemperatureCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         """
@@ -66,7 +70,12 @@ class EvaluateTemperatureCommand:
         parser.add_argument(
             "--noEval",
             action="store_true",
-            help="Starts testing the pipeline at classify (Defualt).",
+            help="Does not evaluate commands, just runs them.",
+        )
+        parser.add_argument(
+            "--noRun",
+            action="store_true",
+            help="Does not run the commands, just evaluates.",
         )
         parser.add_argument(
             "--startClassify",
@@ -174,13 +183,15 @@ class EvaluateTemperatureCommand:
             all_metrics = {}
             classification_metrics = {}
             identification_metrics = {}
+            merge_metrics = {}
 
             # CLASSIFICATION & EVALUATION
             if start <= 0:
-                logging.info("Classifying articles for " + str(temperature) + " temperature.")
-                # run command
-                classify = ClassifyCommand()
-                classify.run(args, parser)
+                if not args.noRun:
+                    logging.info("Classifying articles for " + str(temperature) + " temperature.")
+                    # run command
+                    classify = ClassifyCommand()
+                    classify.run(args, parser)
 
                 if not args.noEval:
                     # classify
@@ -191,12 +202,16 @@ class EvaluateTemperatureCommand:
                     evaluate_identify = EvaluateIdentificationCommand()
                     identification_metrics = evaluate_identify.run(args, parser)
 
+            # Process articles to remove incidents with only one article and incident relationships
+            self.process_incident(args.articles)
+
             # MERGING & EVALUATION
             if start <= 1:
-                logging.info("Merging articles for " + str(temperature) + " temperature.")
-                # run command
-                merge = MergeCommand()
-                merge.run(args, parser)
+                if not args.noRun:
+                    logging.info("Merging articles for " + str(temperature) + " temperature.")
+                    # run command
+                    merge = MergeCommand()
+                    merge.run(args, parser)
 
                 if not args.noEval:
                     # merge
@@ -205,11 +220,12 @@ class EvaluateTemperatureCommand:
 
             # VECTORDB & EVALUATION
             if start <= 2:
-                logging.info("Vectorizing articles.")
-                # run command
-                args.all = False
-                vectorDB = VectordbCommand()
-                vectorDB.run(args, parser)
+                if not args.noRun:
+                    logging.info("Vectorizing articles.")
+                    # run command
+                    args.all = False
+                    vectorDB = VectordbCommand()
+                    vectorDB.run(args, parser)
 
                 if not args.noEval:
                     # PUT EVALUATION HERE IF NEEDED #
@@ -218,10 +234,11 @@ class EvaluateTemperatureCommand:
 
             # POSTMORTEM INCIDENT & EVALUATION
             if start <= 3:
-                logging.info("Analyzing postmortem for " + str(temperature) + " temperature.")
-                args.all = True
-                postmortem = PostmortemIncidentCommand()
-                postmortem.run(args, parser)
+                if not args.noRun:
+                    logging.info("Analyzing postmortem for " + str(temperature) + " temperature.")
+                    args.all = True
+                    postmortem = PostmortemIncidentCommand()
+                    postmortem.run(args, parser)
 
                 if not args.noEval:
                     # PUT EVALUATION HERE IF NEEDED #
@@ -230,9 +247,10 @@ class EvaluateTemperatureCommand:
 
             # CLUSTER & EVALUATION
             if start <= 4:
-                logging.info("Clustering incidents for " + str(temperature) + " temperature.")
-                cluster = ClusterCommand()
-                cluster.run(args, parser)
+                if not args.noRun:
+                    logging.info("Clustering incidents for " + str(temperature) + " temperature.")
+                    cluster = ClusterCommand()
+                    cluster.run(args, parser)
 
                 if not args.noEval:
                     # PUT EVALUATION HERE IF NEEDED #
@@ -274,3 +292,52 @@ class EvaluateTemperatureCommand:
         df = pd.concat(dfs, ignore_index=True)
         csv_path = './tests/performance/temperature.csv'
         df.to_csv(csv_path, index=False)
+
+    def process_incident(self, article_ids):
+        """
+        Remove incidents/incident relationships for articles not analyzable for postmortem.
+        Also remove article and incident (if no other articles in incident) from vectorDB. 
+
+        Args:
+            article_ids (list): List of article ids to check
+        """
+        logging.info("Resetting incidents/incident relationships for analyzable articles")
+
+        if not article_ids:
+            logging.info("Articles not defined")
+            return
+        
+        # Get list of articles that are not analyzable and do not have an incident tied to them
+        articles = Article.objects.filter(id__in=article_ids, analyzable_failure=False, incident__isnull=False)
+
+        # Init vector DB
+        chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
+        embedding_function = OpenAIEmbeddings()
+        vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
+
+        for article in articles:
+
+            # Get associated incident
+            incident = article.incident
+
+            # Check if there is only one article associated with the incident
+            if incident.articles.count() == 1 and incident.articles.first() == article:
+                # Delete from vectorDB
+                logging.info("Deleting incident " + str(incident.id) + " from Django and VectorDB.")
+                chunks_for_incident = vectorDB.get(where={"incidentID": incident.id})['ids']
+                if chunks_for_incident:
+                    vectorDB._collection.delete(ids=chunks_for_incident)
+
+                # Delete incident from Django
+                incident.delete()
+
+            # Delete article from vectorDB
+            logging.info("Deleting article " + str(article.id) + " from VectorDB")
+            chunks_for_sampleArticle = vectorDB.get(where={"articleID": article.id})['ids']
+            if chunks_for_sampleArticle:
+                vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+
+            # Set article incident to none, set article stored to false
+            article.incident = None
+            article.article_stored = False
+            article.save()
