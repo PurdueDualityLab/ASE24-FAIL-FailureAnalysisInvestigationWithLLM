@@ -114,4 +114,3 @@ class VectordbCommand:
         
         #logging.info("Stored: " + str(vectorDB.get(updated_ids)) + " in VectorDB")
         logging.info("Articles vectorized!")
-        
