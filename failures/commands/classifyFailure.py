@@ -7,6 +7,9 @@ from failures.articles.models import Article
 from failures.networks.models import ZeroShotClassifier, ClassifierChatGPT
 from failures.parameters.models import Parameter
 
+import chromadb
+from langchain.vectorstores import Chroma
+from langchain.embeddings.openai import OpenAIEmbeddings
 
 class ClassifyFailureCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -90,3 +93,50 @@ class ClassifyFailureCommand:
 
 
         logging.info("ChatGPT successfully classified %d articles as describing a software failure.", failure_positive_classifications_ChatGPT)
+
+        logging.info("Cleaning up database")
+        self.process_incident()
+
+    def process_incident(self):
+        """
+        Remove incidents/incident relationships for articles not analyzable for postmortem.
+        Also remove article and incident (if no other articles in incident) from vectorDB. 
+
+        Args:
+        """
+        logging.info("Resetting incidents/incident relationships for non-failure articles")
+        
+        # Get list of articles that are not analyzable and do not have an incident tied to them
+        articles = Article.objects.filter(describes_failure=False, incident__isnull=False)
+
+        # Init vector DB
+        chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
+        embedding_function = OpenAIEmbeddings()
+        vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
+
+        for article in articles:
+
+            # Get associated incident
+            incident = article.incident
+
+            # Check if there is only one article associated with the incident
+            if incident.articles.count() == 1 and incident.articles.first() == article:
+                # Delete from vectorDB
+                logging.info("Deleting incident " + str(incident.id) + " from Django and VectorDB.")
+                chunks_for_incident = vectorDB.get(where={"incidentID": incident.id})['ids']
+                if chunks_for_incident:
+                    vectorDB._collection.delete(ids=chunks_for_incident)
+
+                # Delete incident from Django
+                incident.delete()
+
+            # Delete article from vectorDB
+            logging.info("Deleting article " + str(article.id) + " from VectorDB")
+            chunks_for_sampleArticle = vectorDB.get(where={"articleID": article.id})['ids']
+            if chunks_for_sampleArticle:
+                vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+
+            # Set article incident to none, set article stored to false
+            article.incident = None
+            article.article_stored = False
+            article.save()

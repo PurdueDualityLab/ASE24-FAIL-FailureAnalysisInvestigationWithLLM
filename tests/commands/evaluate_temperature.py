@@ -79,7 +79,12 @@ class EvaluateTemperatureCommand:
             help="Does not run the commands, just evaluates.",
         )
         parser.add_argument(
-            "--startClassify",
+            "--startClassifyFailure",
+            action="store_true",
+            help="Starts testing the pipeline at classify (Defualt).",
+        )
+        parser.add_argument(
+            "--startClassifyAnalyze",
             action="store_true",
             help="Starts testing the pipeline at classify (Defualt).",
         )
@@ -108,6 +113,11 @@ class EvaluateTemperatureCommand:
             type=str,
             default='None',
             help="Redo extraction for a specific postmortem key for all articles.",
+        )
+        parser.add_argument(
+            "--end",
+            type=int,
+            help="Dictates the number of samples",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
@@ -165,16 +175,24 @@ class EvaluateTemperatureCommand:
 
         # Get starting point for testing
         start = 0
-        if args.startClassify:
+        if args.startClassifyFailure:
             start = 0 # Redundant
-        elif args.startMerge:
+        elif args.startClassifyAnalyze:
             start = 1
-        elif args.startVectorDB:
+        elif args.startMerge:
             start = 2
-        elif args.startPostmortemInicdent:
+        elif args.startVectorDB:
             start = 3
-        elif args.startCluster:
+        elif args.startPostmortemInicdent:
             start = 4
+        elif args.startCluster:
+            start = 5
+
+        # Get ending point for testing
+        if not args.end:
+            end = 10
+        else:
+            end = args.end
 
         logging.info("Temperatures: " + str(temperatures))
         for temperature in temperatures:
@@ -187,27 +205,32 @@ class EvaluateTemperatureCommand:
             merge_metrics = {}
 
             # CLASSIFICATION & EVALUATION
-            if start <= 0:
+            if start <= 0 and end >= 0:
                 if not args.noRun:
-                    logging.info("Classifying articles for " + str(temperature) + " temperature.")
+                    logging.info("Classifying articles as failure/non-failure for " + str(temperature) + " temperature.")
                     # run command
-                    classify = ClassifyCommand()
-                    classify.run(args, parser)
+                    classifyFailure = ClassifyFailureCommand()
+                    classifyFailure.run(args, parser)
 
                 if not args.noEval:
                     # classify
                     evaluate_classify = EvaluateClassificationCommand()
                     classification_metrics = evaluate_classify.run(args, parser)
 
+            if start <= 1 and end >= 1:
+                if not args.noRun:
+                    logging.info("Classifying articles for " + str(temperature) + " temperature.")
+                    # run command
+                    ClassifyAnalyzable = ClassifyAnalyzableCommand()
+                    ClassifyAnalyzable.run(args, parser)
+
+                if not args.noEval:
                     # Identify
                     evaluate_identify = EvaluateIdentificationCommand()
                     identification_metrics = evaluate_identify.run(args, parser)
 
-            # Process articles to remove incidents with only one article and incident relationships
-            self.process_incident(args.articles)
-
             # MERGING & EVALUATION
-            if start <= 1:
+            if start <= 2 and end >= 2:
                 if not args.noRun:
                     logging.info("Merging articles for " + str(temperature) + " temperature.")
                     # run command
@@ -220,7 +243,7 @@ class EvaluateTemperatureCommand:
                     merge_metrics = evaluate_merge.run(args, parser)
 
             # VECTORDB & EVALUATION
-            if start <= 2:
+            if start <= 3 and end >= 3:
                 if not args.noRun:
                     logging.info("Vectorizing articles.")
                     # run command
@@ -234,7 +257,7 @@ class EvaluateTemperatureCommand:
                     pass
 
             # POSTMORTEM INCIDENT & EVALUATION
-            if start <= 3:
+            if start <= 4 and end >= 4:
                 if not args.noRun:
                     logging.info("Analyzing postmortem for " + str(temperature) + " temperature.")
                     args.all = True
@@ -247,7 +270,7 @@ class EvaluateTemperatureCommand:
                     pass
 
             # CLUSTER & EVALUATION
-            if start <= 4:
+            if start <= 5 and end >= 5:
                 if not args.noRun:
                     logging.info("Clustering incidents for " + str(temperature) + " temperature.")
                     cluster = ClusterCommand()
