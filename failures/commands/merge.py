@@ -38,6 +38,7 @@ class MergeCommand:
         parser.add_argument(
             "--temp",
             type=float,
+            default=-1,
             help="Sets the temperature for ChatGPT",
         )
 
@@ -60,10 +61,17 @@ class MergeCommand:
             
             incidents.delete()
 
-        queryset = (
-            Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True, id__in=args.articles) if args.articles else
-            Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True)
-        )
+        if args.articles:
+            logging.info("Merge: Setting incidents for testing set equal to null.")
+            queryset = (
+                # Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True, id__in=args.articles)
+                Article.objects.filter(describes_failure=True, analyzable_failure=True, id__in=args.articles) # Removed incident__isnull=True
+            )
+            queryset.update(incident=None)
+        else:
+            queryset = (
+                Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True)
+            )
 
         #TODO: SORT BY PUBLISHED DATE FIRST!!!
 
@@ -82,7 +90,8 @@ class MergeCommand:
         chatGPT = ChatGPT()
         embedder = EmbedderGPT()
         classifierChatGPT = ClassifierChatGPT()
-        inputs = {"model": "gpt-3.5-turbo", "temperature": 0}
+        temp = args.temp if 0 <= args.temp <= 1 else 1
+        inputs = {"model": "gpt-3.5-turbo", "temperature": temp}
 
         logging.info("\n\nMerging Articles.")
 
@@ -167,3 +176,5 @@ class MergeCommand:
                 article_new.save()
 
                 incidents.append(incident)
+
+        logging.info("Articles merged!")

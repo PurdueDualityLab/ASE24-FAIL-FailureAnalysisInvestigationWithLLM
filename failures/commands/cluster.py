@@ -50,7 +50,11 @@ class ClusterCommand:
         """
 
         #TODO: args.all should not be used here but rather for individual postmortem key embeddings: similar to postmortem command
-        incidents = Incident.objects.all()
+        # IF TESTING: Only fetching incidents related to article testing set
+        if args.articles:
+            incidents = Incident.objects.filter(articles__in=args.articles).distinct()
+        else:
+            incidents = Incident.objects.all()
 
         postmortem_keys = ["SEcauses"] #["summary","SEcauses","NSEcauses","impacts","mitigations"]
 
@@ -140,9 +144,13 @@ def cluster(queryset, postmortem_keys):
         themes = []
 
         for i in range(optimal_k):
+            # Get number of samples
+            available_items = df[df[postmortem_cluster_key] == i][postmortem_key].shape[0]
+            min_num_samples = min(num_samples, available_items)
+
             # Extract post mortem descriptions from the clustered data
             postmortem_descriptions = "\n".join(
-                df[df[postmortem_cluster_key] == i][postmortem_key].sample(num_samples, random_state=42).values
+                df[df[postmortem_cluster_key] == i][postmortem_key].sample(min_num_samples, random_state=42).values
             )
 
             # Prepare a prompt for ChatGPT
@@ -168,8 +176,8 @@ def cluster(queryset, postmortem_keys):
             logging.info("Theme and Cluster " + str(i) + " : " + reply)
 
             # Log sample articles within the cluster
-            sample_cluster_rows = df[df[postmortem_cluster_key] == i].sample(num_samples, random_state=42)
-            for j in range(num_samples):
+            sample_cluster_rows = df[df[postmortem_cluster_key] == i].sample(min_num_samples, random_state=42)
+            for j in range(min_num_samples):
                 logging.info("Article ID: " + str(sample_cluster_rows["id"].values[j]) + " ; " + postmortem_key + ": " + sample_cluster_rows[postmortem_key].values[j])
 
             print("-" * 100)
