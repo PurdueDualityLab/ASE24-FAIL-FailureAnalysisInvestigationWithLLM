@@ -6,7 +6,8 @@ from typing import Protocol
 from failures.commands.scrape import ScrapeCommand
 from failures.commands.summarize import SummarizeCommand
 from failures.commands.embed import EmbedCommand
-from failures.commands.classify import ClassifyCommand
+from failures.commands.classifyFailure import ClassifyFailureCommand
+from failures.commands.classifyAnalyzable import ClassifyAnalyzableCommand
 from failures.commands.postmortemArticle import PostmortemArticleCommand
 from failures.commands.postmortemIncident import PostmortemIncidentCommand
 from failures.commands.cluster import ClusterCommand
@@ -39,7 +40,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), exp_RunQueriesCommand(), StatsCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), exp_RunQueriesCommand(), StatsCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
