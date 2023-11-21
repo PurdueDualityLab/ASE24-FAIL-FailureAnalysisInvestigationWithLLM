@@ -56,6 +56,7 @@ class VectordbCommand:
 
         if args.all and not args.articles:
             chroma_client.reset()
+            #TODO: rather than reset, dissaciate the chunks' metadata for incident ID. And in the for loop, if article id is already in VectorDB then just add incident ID
         
         embedding_function = OpenAIEmbeddings()
         text_splitter = RecursiveCharacterTextSplitter(chunk_size = 500, chunk_overlap = 0)

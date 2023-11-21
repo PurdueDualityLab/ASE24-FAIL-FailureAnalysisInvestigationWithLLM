@@ -77,10 +77,12 @@ class PostmortemIncidentCommand:
             questions = questions[query_key]
 
 
-        template = "Use the following pieces of context about a software failure incident to answer the question." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
+        template = "Use the following pieces of context about a software failure to answer the question." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
         + """
-        If you don't know the answer, return unknown (option -1). 
+        If you don't know the answer, return unknown. 
+
         Context: {context}
+
         Question: {question}
         """
         ChatGPT_LC = ChatOpenAI(model_name=inputs["model"], temperature=inputs["temperature"])
