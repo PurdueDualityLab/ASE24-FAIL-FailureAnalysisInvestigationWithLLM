@@ -21,7 +21,7 @@ import sys
 from openai.embeddings_utils import cosine_similarity as openai_cosine_similarity
 
 #from failures.commands.PROMPTS import FAILURE_SYNONYMS
-FAILURE_SYNONYMS = "software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+FAILURE_SYNONYMS = "hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
 
 
 
@@ -581,16 +581,16 @@ class Article(models.Model):
         
         article_text = self.body
 
-        content = "You will help classify whether an article reports on a software failure incident."
+        content = "You will help classify whether an article reports on a software failure."
 
         messages = [
                 {"role": "system", 
                 "content": content}
                 ]
 
-        prompt = "Does the provided article report on software failure incident(s) (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
+        prompt = "Does the provided article report on a software failure (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
                 + "\n" \
-                + "Answer with just True or False" \
+                + "Answer with just True or False." \
                 + "\n" \
                 + "Article: " + article_text
         
@@ -625,12 +625,22 @@ class Article(models.Model):
                 "content": content}
                 ]
 
+        ''' Prompt version 1:
         prompt = "Does the provided article contain enough information about the provided criteria to conduct a failure analysis of the software failure incident(s) (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
-                + "Answer with just True or False" \
+                + "Answer with just True or False." \
                 + "\n" \
-                + "Criteria: System that failed, cause of failure, and impact of failure" \
+                + "Criteria: System that failed, cause of failure, and impact of failure." \
                 + "\n" \
                 + "Article: " + article_text
+        ''' 
+        #Prompt version 2:
+        prompt = "Does the provided article contain information about the provided criteria about the software failure (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
+                + "Answer with just True or False." \
+                + "\n" \
+                + "Criteria: System that failed, cause of failure, and impact of failure." \
+                + "\n" \
+                + "Article: " + article_text
+
 
         messages.append(
                         {"role": "user", "content": prompt },

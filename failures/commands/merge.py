@@ -65,6 +65,8 @@ class MergeCommand:
             Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True)
         )
 
+        #TODO: SORT BY PUBLISHED DATE FIRST!!!
+
         questions = {key: QUESTIONS[key] for key in ["title", "summary"]}
 
         questions_chat = questions
