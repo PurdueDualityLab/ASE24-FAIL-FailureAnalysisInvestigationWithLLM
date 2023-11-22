@@ -20,6 +20,7 @@ class VectordbCommand:
             Vectorize and store article bodies into vector database. If no arguments are provided, 
             only new articles and incidents will be vectorized and stored; otherwise, 
             if --all is provided, all articles will be re-vectorized and re-stored into the database. 
+            If --articles is provided, only the articles given in the list will be vectorized
             """
         )
         parser.add_argument(
@@ -28,7 +29,12 @@ class VectordbCommand:
             default=False,
             help="Redo vectorization and storage for all incidents.",
         )
-
+        parser.add_argument(
+            "--articles",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         
@@ -48,7 +54,7 @@ class VectordbCommand:
 
         chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
 
-        if args.all:
+        if args.all and not args.articles:
             chroma_client.reset()
             #TODO: rather than reset, dissaciate the chunks' metadata for incident ID. And in the for loop, if article id is already in VectorDB then just add incident ID
         
@@ -57,7 +63,19 @@ class VectordbCommand:
 
         vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
 
-        
+        # chunks_for_sampleArticle = vectorDB.get(where={"articleID": 116})
+        # print(chunks_for_sampleArticle)
+        # vectorDB._collection.delete(where={"articleID": 116})
+
+        # Remove any article in args.articles from the vector database
+        if args.articles:
+            logging.info("Deleting all articles in args.articles from the vector database.")
+        for articleID in args.articles:
+            logging.info("Removing article ID: " + str(articleID) + " from vectorDB")
+            chunks_for_sampleArticle = vectorDB.get(where={"articleID": articleID})['ids']
+            if chunks_for_sampleArticle:
+                vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+ 
         count1 = 0
         count2 = 0
         # Iterate through incidents
@@ -66,8 +84,10 @@ class VectordbCommand:
             logging.info("Incident ID: "+ str(incident.id))
             
             # Get related articles for the current incident
-            if args.all:
-                articles = Article.objects.filter(incident=incident) 
+            if args.articles:
+                articles = Article.objects.filter(incident=incident, id__in=args.articles) # Collects only articles that are related to testing suite
+            elif args.all:
+                articles = Article.objects.filter(incident=incident)
             else:
                 articles = Article.objects.filter( Q(incident=incident,article_stored=False) | Q(incident=incident,article_stored__isnull=True) )
             
@@ -94,4 +114,4 @@ class VectordbCommand:
             
         
         #logging.info("Stored: " + str(vectorDB.get(updated_ids)) + " in VectorDB")
-        
+        logging.info("Articles vectorized!")
