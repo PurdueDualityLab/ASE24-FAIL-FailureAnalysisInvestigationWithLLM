@@ -42,6 +42,8 @@ class EvaluateClassificationCommand:
             help="A list of integers.",
         )
 
+    # TODO: Find a python library to do a confusion matrix (remove manual analysis)
+    # TODO: Get figures for confusion matrix
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         """
         Run the evaluation process based on the provided arguments.
@@ -52,13 +54,14 @@ class EvaluateClassificationCommand:
 
         """
         # Creating metrics to return
+        logging.info("\n\nNow evaluating CLASSIFY FAILURES\n")
         metrics = {}
         
         # Define the file path
-        file_path = "./tests/manual_evaluation/perfect_merge.xlsx"
+        file_path = "./tests/manual_evaluation/experiment_data_manual_articles_Analyst-B.xlsx"
 
         # Define the columns to read
-        columns_to_read = ["id", "Describes Failure? (0: False | 1: True)"]
+        columns_to_read = ["Article ID", "Describes Failure"]
 
         # Read the Excel file into a Pandas DataFrame
         try:
@@ -72,15 +75,15 @@ class EvaluateClassificationCommand:
             return metrics
 
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
-        df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
-        df = df[df['Describes Failure? (0: False | 1: True)'].isin([0, 1])]
+        df = df[df['Article ID'].apply(lambda x: isinstance(x, int) and x >= 0)]
+        df = df[df['Describes Failure'].isin([True, False])]
 
         # Check --articles
         if args.articles:
-            df = df[df['id'].apply(lambda x: x in args.articles)]
+            df = df[df['Article ID'].apply(lambda x: x in args.articles)]
 
         # Get a list of article IDs from the manual database
-        article_ids = df['id'].tolist()
+        article_ids = df['Article ID'].tolist()
 
         # Query for articles matching manual db IDs
         matching_articles = Article.objects.filter(id__in=article_ids)
@@ -97,23 +100,24 @@ class EvaluateClassificationCommand:
         # Iterate through articles and count matches
         for article in matching_articles:
             article_id = article.id
-            ground_truth = df[df['id'] == article.id]['Describes Failure? (0: False | 1: True)'].values[0]
-            if article.describes_failure and article.describes_failure == ground_truth:
+            ground_truth = df[df['Article ID'] == article.id]['Describes Failure'].values[0]
+            if article.describes_failure != None and article.describes_failure == ground_truth:
                 total_match += 1
             else:
                 if args.list:
-                    incorrectly_classified_articles.append(
+                    incorrectly_classified_articles.append((
                         f"Article ID: {article.id}, "
-                        f"Title: {article.title}, "
+                        f"Title: {article.headline}, "
                         f"Ground Truth: {'Is a failure' if ground_truth == 1 else 'Is not a failure'}, "
-                        f"Classified As: {'Is a failure' if article.describes_failure and article.describes_failure == 1 else 'Is not a failure'}"
-                    )
+                        f"Classified As: {'Is a failure' if article.describes_failure != None and article.describes_failure == 1 else 'Is not a failure'}",
+                        ground_truth
+                    ))
                 # If --all then update false positives and negatives
-                if args.all:
-                    if article.describes_failure and article.describes_failure == 1 and ground_truth == 0:
-                        false_positives += 1
-                    elif article.describes_failure and article.describes_failure == 0 and ground_truth == 1:
-                        false_negatives += 1
+                # if args.all:
+                if article.describes_failure != None and article.describes_failure == 1 and ground_truth == 0:
+                    false_positives += 1
+                elif article.describes_failure != None and article.describes_failure == 0 and ground_truth == 1:
+                    false_negatives += 1
 
         # Checking to see if there are any matching articles
         if total_articles > 0:
@@ -122,28 +126,44 @@ class EvaluateClassificationCommand:
             logging.info(f"Accuracy: {accuracy_percentage:.2f}% ({total_match}/{total_articles})")
 
             # Checking if --list
-            if args.list:
-                logging.info('List of incorrectly classified articles:')
-                for article in incorrectly_classified_articles:
-                    logging.info(article)
+            # if args.list:
+            #     logging.info('List of incorrectly classified articles:')
+            #     for article in incorrectly_classified_articles:
+            #         logging.info(article[0])
 
             # Checkign if --all
-            if args.all:
-                # Calculate false positive and false negative rates as both fractions and percentages
-                false_positive_rate = (false_positives / total_articles) * 100
-                false_negative_rate = (false_negatives / total_articles) * 100
-                false_positive_fraction = f"{false_positives}/{total_articles}"
-                false_negative_fraction = f"{false_negatives}/{total_articles}"
+            # if args.all:
+            # Calculate false positive and false negative rates as both fractions and percentages
+            false_positive_rate = (false_positives / total_articles) * 100
+            false_negative_rate = (false_negatives / total_articles) * 100
+            false_positive_fraction = f"{false_positives}/{total_articles}"
+            false_negative_fraction = f"{false_negatives}/{total_articles}"
 
-                # Calculate the number and percentage of correct and wrong classifications
-                correct_classifications = total_match
-                wrong_classifications = total_articles - total_match
-                wrong_percentage = (wrong_classifications / total_articles) * 100
+            # Calculate the number and percentage of correct and wrong classifications
+            correct_classifications = total_match
+            wrong_classifications = total_articles - total_match
+            wrong_percentage = (wrong_classifications / total_articles) * 100
 
-                logging.info(f"False Positives: {false_positive_rate:.2f}% ({false_positive_fraction})")
-                logging.info(f"False Negatives: {false_negative_rate:.2f}% ({false_negative_fraction})")
-                logging.info(f"Wrong: {wrong_percentage:.2f}% ({wrong_classifications}/{total_articles})")
-                logging.info(f"Total Evaluated: {total_articles}")
+            logging.info(f"False Positives: {false_positive_rate:.2f}% ({false_positive_fraction})")
+
+            # Print out all false positives
+            if args.list:
+                logging.info('List of all false positive classifications:')
+                for article in incorrectly_classified_articles:
+                    if article[1] == 0:
+                        logging.info(article[0])
+            
+            logging.info(f"False Negatives: {false_negative_rate:.2f}% ({false_negative_fraction})")
+
+            # Print out all false positives
+            if args.list:
+                logging.info('List of all false negative classifications:')
+                for article in incorrectly_classified_articles:
+                    if article[1] == 1:
+                        logging.info(article[0])
+
+            logging.info(f"Wrong: {wrong_percentage:.2f}% ({wrong_classifications}/{total_articles})")
+            logging.info(f"Total Evaluated: {total_articles}")
 
             metrics = {
                 "Classify: Accuracy (Percentage)": f"{accuracy_percentage:.2f}%",
