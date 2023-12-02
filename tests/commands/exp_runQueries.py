@@ -13,7 +13,8 @@ import subprocess
 from failures.articles.models import Article, SearchQuery
 
 from failures.commands.scrape import ScrapeCommand
-from failures.commands.classify import ClassifyCommand
+from failures.commands.classifyAnalyzable import ClassifyAnalyzableCommand
+from failures.commands.classifyFailure import ClassifyFailureCommand
 from failures.commands.merge import MergeCommand
 
 
@@ -26,22 +27,27 @@ class exp_RunQueriesCommand:
             """
         )
 
-
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
         logging.info("\nExperiment: Collecting articles")
 
         scrape_parser = argparse.ArgumentParser()
-        classify_parser = argparse.ArgumentParser()
+        classifyFailure_parser = argparse.ArgumentParser()
+        classifyAnalyzable_parser = argparse.ArgumentParser()
         merge_parser = argparse.ArgumentParser()
 
         Scrape_Command = ScrapeCommand()
         Scrape_Command.prepare_parser(scrape_parser)
 
-        Classify_Command = ClassifyCommand()
-        Classify_Command.prepare_parser(classify_parser)
-        classify_options = []
-        classify_args = classify_parser.parse_args(classify_options)
+        ClassifyFailure_Command = ClassifyFailureCommand()
+        ClassifyFailure_Command.prepare_parser(classifyFailure_parser)
+        classifyFailure_options = []
+        classifyFailure_args = classifyFailure_parser.parse_args(classifyFailure_options)
+
+        ClassifyAnalyzable_Command = ClassifyAnalyzableCommand()
+        ClassifyAnalyzable_Command.prepare_parser(classifyAnalyzable_parser)
+        classifyAnalyzable_options = []
+        classifyAnalyzable_args = classifyAnalyzable_parser.parse_args(classifyAnalyzable_options)
 
         Merge_Command = MergeCommand()
         Merge_Command.prepare_parser(merge_parser)
@@ -111,7 +117,8 @@ class exp_RunQueriesCommand:
 
                         Scrape_Command.run(scrape_args, scrape_parser)
 
-                Classify_Command.run(classify_args, classify_parser)
+                ClassifyFailure_Command.run(classifyFailure_args, classifyFailure_parser)
+                ClassifyAnalyzable_Command.run(classifyAnalyzable_args, classifyAnalyzable_parser)
                 Merge_Command.run(merge_args, merge_parser)
 
             
