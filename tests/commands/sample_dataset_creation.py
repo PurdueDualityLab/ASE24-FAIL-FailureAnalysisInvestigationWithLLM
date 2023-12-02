@@ -69,6 +69,22 @@ class SampleDatasetCreationCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+        # # Print fields ending in "_rationale"
+        # rationale_fields = [field.name for field in Incident._meta.fields if field.name.endswith('_rationale')]
+        # print("Fields ending in '_rationale':", rationale_fields)
+
+        # # Get incident with ID 477
+        # incident_477 = Incident.objects.get(id=477)
+
+        # # Print values for each rationale field
+        # print(f"\nValues for each '_rationale' field in incident with ID 477:")
+        # for field_name in rationale_fields:
+        #     field_value = getattr(incident_477, field_name)
+        #     print(f"{field_name}: {field_value}")
+
+        # return
+
+
         # Update publish dates
         self.__update_incident_publish_dates()
         logging.info("SampleDatasetCreationCommand: Incident published dates have been updated")
@@ -103,13 +119,13 @@ class SampleDatasetCreationCommand:
 
         # Download incidents to experiment_data_auto_incidents.csv
         auto_incidents_csv = "./tests/auto_evaluation/experiment_data_auto_incidents.csv"
-        self.__download_incidents_to_csv(incidents, auto_incidents_csv)
+        # self.__download_incidents_to_csv(incidents, auto_incidents_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incidents)) + " incidents to experiment_data_auto_incidents.csv")
 
         # Download articles to experiment_data_auto_articles.csv
         auto_articles_csv = "./tests/auto_evaluation/experiment_data_auto_articles.csv"
-        self.__download_articles_to_csv(incident_related_articles, auto_articles_csv)
-        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incident_related_articles)) + " incidents to experiment_data_auto_articles.csv")
+        # self.__download_articles_to_csv(incident_related_articles, auto_articles_csv)
+        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incident_related_articles)) + " articles to experiment_data_auto_articles.csv")
 
         # Get random list of articles classified as non-failure reporting
         if not args.countANF:
@@ -125,10 +141,12 @@ class SampleDatasetCreationCommand:
         combined_article_ids = set(incident_related_article_ids) | set(nf_articles) | set(na_articles)
         manual_articles = Article.objects.filter(id__in=combined_article_ids)
 
+        print(combined_article_ids)
+
         # Download manual dataset to experiment_data_manual_articles.csv
         manual_articles_csv = "./tests/manual_evaluation/experiment_data_manual_articles.csv"
-        self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
-        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(manual_articles)) + " incidents to experiment_data_manual_articles.csv")
+        # self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
+        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(manual_articles)) + " articles to experiment_data_manual_articles.csv")
         
         return 0
 
@@ -383,5 +401,33 @@ class SampleDatasetCreationCommand:
                     article.mitigations_embedding
                 ]
                 article_writer.writerow(data_row)
+
+    def __download_articles_and_vals_to_csv(self, articles, filename):
+        """
+        Download articles to a CSV file.
+
+        Args:
+            articles (QuerySet): QuerySet containing articles.
+            filename (str): Name of the CSV file to save.
+        """
+        with open(filename, 'w', newline='') as csvfile:
+            article_writer = csv.writer(csvfile)
+            # Write the CSV header
+            header = [
+                "ID", "URL", "Headline", "Source", "Describes Failure",
+                "Analyzable Failure"
+            ]
+            article_writer.writerow(header)
+
+            # Write article data to CSV
+            for article in articles:
+                data_row = [
+                    article.id, article.url, article.headline, article.source,
+                    article.describes_failure, article.analyzable_failure
+                ]
+                article_writer.writerow(data_row)
+
+
+
 
 

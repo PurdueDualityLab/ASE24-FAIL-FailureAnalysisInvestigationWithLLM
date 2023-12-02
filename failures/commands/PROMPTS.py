@@ -1,15 +1,15 @@
 QUESTIONS = {
-        "title":            "Provide a 10 word title for the software failure incident. (return just the title)",
-        "summary":          "Summarize the software failure incident. Include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s). (answer in under 250 words)",
-        "time":             "When did the software failure incident happen? If possible, calculate using article published date and relative time mentioned in article.",
-        "system":           "What system failed in the software failure incident? (answer in under 10 words)",
+        "title":            "Provide a 10 word title for the software failure. (return just the title)",
+        "summary":          "Summarize the software failure. Include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s). (answer in under 250 words)",
+        "time":             "When did the software failure happen? If possible, calculate using article published date and relative time mentioned in article.",
+        "system":           "What system failed in the software failure? (answer in under 10 words)",
         "ResponsibleOrg":   "Which entity(s) was responsible for causing the software failure? (answer in under 10 words)",
         "ImpactedOrg":      "Which entity(s) was impacted by the software failure? (answer in under 10 words)",
-        "SEcauses":         "What were the software causes of the failure incident?",
-        "NSEcauses":        "What were the non-software causes of the failure incident?",
-        "impacts":          "What happened due to the software failure incident?",
-        "mitigations":      "What could have prevented the software failure incident?", 
-        "references":       "From where do the articles gather information about the software failure?",
+        "SEcauses":         "What were the software causes of the failure? (answer in a list)",
+        "NSEcauses":        "What were the non-software causes of the failure? (answer in a list)",
+        "impacts":          "What happened due to the software failure? (answer in a list)",
+        "mitigations":      "What could have prevented the software failure? (answer in a list)", 
+        "references":       "From where do the articles gather information about the software failure? (answer in a list)",
         "phase":            "Was the software failure due to 'system design' (option 0) or 'operation' (option 1) faults or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
         "boundary":         "Was the software failure due to faults from 'within the system' (option 0) or from 'outside the system' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
         "nature":           "Was the software failure due to 'human actions' (option 0) or 'non human actions' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
@@ -45,4 +45,4 @@ TAXONOMY_OPTIONS = {
             "behaviour": {"0": "crash", "1": "omission", "2": "timing", "3": "value", "4": "byzantine fault", "-1": "unknown"}
         }
 
-FAILURE_SYNONYMS = "software hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
+FAILURE_SYNONYMS = "hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"

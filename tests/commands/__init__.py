@@ -9,6 +9,7 @@ from tests.commands.evaluate_merge import EvaluateMergeCommand
 from tests.commands.evaluate_temperature import EvaluateTemperatureCommand
 from tests.commands.evaluate_postmortem import EvaluatePostmortemCommand
 from tests.commands.sample_dataset_creation import SampleDatasetCreationCommand
+from tests.commands.exp_runQueries import exp_RunQueriesCommand
 
 
 
@@ -34,7 +35,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand(), SampleDatasetCreationCommand()]
+_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand(), SampleDatasetCreationCommand(), exp_RunQueriesCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -86,7 +87,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="test.log",
+        filename="trial1.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",

@@ -56,8 +56,11 @@ class PostmortemIncidentCommand:
         query_all = args.all
         query_key = args.key
 
-
-        incidents = Incident.objects.all()
+        # IF TESTING: Only fetching incidents related to article testing set
+        if args.articles:
+            incidents = Incident.objects.filter(articles__in=args.articles).distinct()
+        else:
+            incidents = Incident.objects.all()
 
         chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
 
@@ -74,10 +77,12 @@ class PostmortemIncidentCommand:
             questions = questions[query_key]
 
 
-        template = "Use the following pieces of context about a software failure incident to answer the question." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
+        template = "Use the following pieces of context about a software failure to answer the question." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
         + """
-        If you don't know the answer, return unknown (option -1). 
+        If you don't know the answer, return unknown. 
+
         Context: {context}
+
         Question: {question}
         """
         ChatGPT_LC = ChatOpenAI(model_name=inputs["model"], temperature=inputs["temperature"])
