@@ -1,0 +1,650 @@
+precedence: bulk
+Subject: Risks Digest 25.56
+
+RISKS-LIST: Risks-Forum Digest  Thursday 19 February 2009  Volume 25 : Issue 56
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.56.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Backlogged]
+Train brake failure; broken valve (David Lesher)
+Collision - UK and French Nuclear subs (Charles Wood)
+Control-Alt-Eject? French Navy grounded... (David Lesher)
+GCTIP: New Forums for Internet Transparency, Performance, ISP Issues
+  (Lauren Weinstein)
+The mystery of `Ireland's worst driver': an HR/training problem (Max Power)
+Hiding in plain sight (Jeremy Epstein)
+Stolen military laptop risks (Atom Smasher)
+Risks of reading RISKS (Bruce Horrocks)
+When a bit of knowledge is a dangerous thing (Jeremy Epstein)
+"It leaked into the kiosks and fried our computers" (Monty Solomon)
+Facebook Forever (John Kolesar)
+Opening event goes with a bang (David Alexander)
+Re: Hoare on Null References (Peter Bernard Ladkin, CBFalconer, 
+  William Bader, Dan Franklin)
+
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 13 Feb 2009 00:11:14 -0500 (EST)
+From: "David Lesher" <wb8foz@panix.com>
+Subject: Train brake failure; broken valve
+
+<http://www.raib.gov.uk/publications/bulletins/bulletins_2009/bulletin_03_2009.cfm>
+
+During a switching movement at a siding, a locomotive's automatic brake
+valve handle suddenly has no effect. Engineer applied independent brakes,
+but they can't stop the train due to its weight.
+
+[Broken valve roll pin]
+
+Releasing the deadman pedal was no help because the brake system was
+designed to ignore it if the locomotive brake cylinders had at least 30
+PSI. There was no other means in the cab to exhaust the train line.
+
+Risks? First, not having a second, independent emergency valve. Second,
+the override on the deadman almost lead to dead men.....
+
+MetaRISK? How long have we been making trains with Westinghouse air brakes,
+and we still have not found all possible critical failures?
+
+How will we ever do so for complex systems?
+
+------------------------------
+
+Date: Tue, 17 Feb 2009 19:03:05 +0900
+From: Charles Wood <j.charles.wood@gmail.com>
+Subject: Collision - UK and French Nuclear subs
+
+The report is at http://news.bbc.co.uk/2/hi/uk_news/7892294.stm
+
+Quote "*A Royal Navy nuclear submarine was involved in a collision with a
+French nuclear sub in the middle of the Atlantic, the MoD has confirmed.*"
+
+What is interesting is the potential causes of this incident.
+
+The British published point of view is that it is a random accident caused
+by two extremely stealthy submarines accidentally colliding.
+
+May I suggest two alternative hypotheses?
+
+First: The collision was a result of one of the submarines stalking the
+other, and as an unexpected outcome, colliding with the target?
+
+Second: Perhaps current submarine navigation systems constrain the vessels
+to travel at specific, and integral, depths and tracks?
+
+The second hypothesis has an all too real correspondent in the present air
+navigation systems. The precision of current air navigation systems means
+that aircraft fly within metres of expected altitude and track. The result
+of such precision is an increased risk of collision in case of accidental
+assignment to conflicting air routes. A case in point is the collision on
+September 26, 2006 over Brazil.
+http://www.washingtonpost.com/wp-dyn/content/article/2006/12/08/AR2006120800835.html
+
+------------------------------
+
+Date: Sat, 7 Feb 2009 23:31:49 -0500 (EST)
+From: "David Lesher" <wb8foz@panix5>
+Subject: Control-Alt-Eject? French Navy grounded...
+
+[Source: UPI, 7 Feb 2009]
+
+A computer virus infected French military databases and grounded some navy
+fighter jets for two days last month, a navy spokesman says.  Naval
+spokesman Jerome Erulin said the recent computer security breach was limited
+but prevented the aircraft from downloading flight plans, The Daily
+Telegraph reported Saturday.  "It affected exchanges of information but no
+information was lost. It was a security problem we had already simulated,"
+Erulin said. "We cut the communication links that could have transmitted the
+virus and 99 percent of the network is safe."
+
+The database infection by "Conficker," a malicious software virus publicly
+reported by Microsoft last October, likely was the result of negligence,
+naval officials said.  *The Telegraph* said, according to a report by French
+newspaper *Liberation*, the infection involved France's Villacoublay air
+base and the 8th Transmissions Regiment and left fighter jets grounded for
+two days starting Jan. 15.
+
+  [Also noted by Mark J Bennison on Dave Farber's IP list, with the 
+  article by Kim Willsher in Paris.  PGN]
+http://www.telegraph.co.uk/news/worldnews/europe/france/4547649/French-fighter-planes-grounded-by-computer-virus.html
+
+------------------------------
+
+Date: Mon, 16 Feb 2009 16:21:12 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: GCTIP: New Forums for Internet Transparency, Performance, ISP Issues
+
+            Announcing GCTIP - New Forums for Internet Transparency, 
+                         Performance, and ISP Issues
+                 http://lauren.vortex.com/archive/000506.html
+
+Greetings.  I'm pleased to announce the availability of a new venue for
+discussion, reporting, analysis, information sharing, queries, and consumer
+assistance regarding Internet performance, transparency, and measurement,
+plus a wide range of topics associated with consumers and their interactions
+with Internet Service Providers (ISPs).
+
+Called GCTIP Forums:
+     http://forums.gctip.org
+this project -- The "Global Coalition for Transparent Internet Performance"
+-- is the outgrowth of a network measurement workshop meeting sponsored by
+Vint Cerf and Google at their headquarters in June, 2008 for a number of
+academic network measurement researchers and other related parties.  This is
+the same meeting that formed the genesis of the open platform M-Lab
+("Measurement Lab") project that was recently announced (
+http://www.measurementlab.net ).
+
+GCTIP was the original name for the mailing list that I maintained for that
+Google meeting and subsequent discussions (full disclosure: I helped to
+organize the agenda for the meeting and also attended).
+
+Unless we know what the performance of the Internet for any given users
+really is -- true bandwidth performance, traffic management, port blocking,
+server prohibitions, Terms of Service concerns, and a wide range of other
+parameters, it's impossible for anyone who uses Internet services to really
+know if they're getting what they're paying for, if their data is being
+handled appropriately in terms of privacy and security, and all manner of
+other crucial related issues.
+
+While transparency and related concerns do have impacts on "network
+neutrality" issues, neither GCTIP nor GCTIP Forums are oriented toward
+network neutrality discussions.
+
+The purpose of GCTIP Forums is to provide a free discussion environment to
+act as a clearinghouse for all stakeholders (technical, consumers, ISPs,
+government-related, etc.) to interact on the range of "network transparency"
+and associated topics.  The focus is on collecting, analyzing, and
+disseminating reports relating to Internet measurement/test data -- plus
+associated concerns, discussions, etc., in manners that are most useful to
+the network community at large.  There are many groups working in the
+network measurement area, but surprisingly little data sharing,
+coordination, or ongoing reporting in a form that is useful to most ordinary
+Internet consumers or other interested observers.
+
+An area of particular concern is helping to assure that measurement tests
+and perceived consumer problems with their ISPs aren't misinterpreted by
+users resulting in unfair or simply wrong accusations against those ISPs.  I
+feel strongly that consumers need a place to go with these sorts of issues
+where the broader community and experts can help interpret what's really
+going on.  Guilty firms should be exposed, but the innocent must not be
+inappropriately branded.
+
+All current GCTIP Forums topics can be viewed without signing up on the
+system.  Simple registration is required to post new discussion threads and
+replies, but no non-administrative topics are currently pre-moderated (any
+reported materials confirmed to be inappropriate will be deleted promptly).
+
+GCTIP Forums exist to enable the exchange of relevant ideas, queries, data,
+and other information for anyone concerned about the Internet worldwide.
+
+The Forums are seeded with five top-level discussion topics to get things
+rolling, but suggestions for additional categories are welcome.  New threads
+(e.g. discussions of particular measurement tools, measurement results,
+specific ISP issues and concerns, etc.) can be created by registered users,
+starting right now.
+
+Please note that I am running GCTIP on my own dime at this point.  At such a
+time as any outside support funding becomes available for the project (which
+would be very much appreciated!) it will be publicly announced of course.
+
+Spread the word!  This is your chance to help yourself and everyone else
+better understand what the Internet is *really* doing, and by extension,
+where it is going tomorrow.
+
+Thanks very much.  Be seeing you ... at: http://forums.gctip.org ...
+
+Lauren Weinstein <lauren@vortex.com>  Tel: +1 (818) 225-2800
+http://www.pfir.org/lauren  Lauren's Blog: http://lauren.vortex.com 
+Co-Founder, PFIR - People For Internet Responsibility - http://www.pfir.org 
+Co-Founder, NNSquad - Network Neutrality Squad - http://www.nnsquad.org
+Founder, PRIVACY Forum - http://www.vortex.com 
+
+------------------------------
+
+Date: Thu, 19 Feb 2009 14:39:37 -0800
+From: Max Power <dist23@juno.com>
+Subject: The mystery of `Ireland's worst driver': an HR/training problem
+
+This seems to me that this is an HR and training problem.  True -- it
+involves a computer database -- but the database is not at fault.  As a
+preventative measure you would probably want to have "Driver's Licence" in
+as many different languages in said same offence database, but tagged to
+indicate as such just in case some untrained person makes a mistake.
+
+Ultimately, in Greater Europe (from Vladivostok to Iceland to Saint Helena)
+the traffic-oriented part of the police forces must be trained in knowing
+all the variants of driver's permits in their region.
+
+Countries that need to check their own national driving offence databases
+for this problem: Southern Hemisphere: Australia, NZ & Fiji.
+North America: US, Canada & Mexico.
+
+Max Power  http://HireMe.geek.nz/ 
+
+The mystery of Ireland's worst driver 
+
+Details of how police in the Irish Republic finally caught up with the
+country's most reckless driver have emerged, the Irish Times reports.
+
+He had been wanted from counties Cork to Cavan after racking up scores of
+speeding tickets and parking fines.
+
+However, each time the serial offender was stopped he managed to evade
+justice by giving a different address. 
+
+But then his cover was blown. 
+
+It was discovered that the man every member of the Irish police's rank and
+file had been looking for - a Mr Prawo Jazdy - wasn't exactly the sort of
+prized villain whose apprehension leads to an officer winning an award.
+
+In fact he wasn't even human. 
+
+"Prawo Jazdy is actually the Polish for driving licence and not the first
+and surname on the licence," read a letter from June 2007 from an officer
+working within the Garda's traffic division.  "Having noticed this, I
+decided to check and see how many times officers have made this mistake.
+"It is quite embarrassing to see that the system has created Prawo Jazdy as
+a person with over 50 identities."  The officer added that the "mistake"
+needed to be rectified immediately and asked that a memo be circulated
+throughout the force.
+
+In a bid to avoid similar mistakes being made in future relevant guidelines
+were also amended.  And if nothing else is learnt from this driving-related
+debacle, Irish police officers should now know at least two words of Polish.
+As for the seemingly elusive Mr Prawo Jazdy, he has presumably become a cult
+hero among Ireland's largest immigrant population.
+
+http://news.bbc.co.uk/go/pr/fr/-/1/hi/northern_ireland/7899171.stm
+  [Also noted by several others.  PGN]
+
+------------------------------
+
+Date: Thu, 19 Feb 2009 12:05:44 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Hiding in plain sight
+
+I recently started working on a project that has a * in the middle of its
+name - think of GM's On*Star as an example.  Google (and other search
+engines I tried, including Microsoft Live, Yahoo!, and Lycos) all treat the
+* as a wildcard, and don't allow wildcard escaping.
+
+Now On*Star isn't hard to find with Google, because the words "on" and
+"star" rarely appear together except in this context.  But if you take two
+other words that frequently occur together, put a * between them, and then
+try to find references to that unique term, you won't get very far.  For
+example, stimulus*package would not be a good name, nor would high*tech.
+
+It's not clear to me whether the people who started this project knew that
+their project name would make it effectively impossible to find the project
+and either did that intentionally or didn't care, or whether it's a
+happenstance that is now a problem.  But in any case, it's a way to hide in
+plain sight - any websites they have can be indexed by robots, but won't be
+found by searchers.
+
+The risk is the interaction between name selection and search engine
+operation.  If someone deliberately picks a name this way, and then the
+search engines change their behavior, the value (anonymity) instantly
+disappears.  The classic security problem of a distributed system with
+uncoordinated security policies....
+
+------------------------------
+
+Date: Fri, 13 Feb 2009 10:58:34 +1300 (NZDT)
+From: Atom Smasher <atom@smasher.org>
+Subject: Stolen military laptop risks
+
+The US Struggle to Keep the Taliban From Stealing What's Inside This Box
+  http://www.truthout.org/021209A
+  http://www.globalpost.com/dispatch/pakistan/090211/exclusive-the-wrong-hands
+
+It's one thing when banks and universities screw up by not encrypting their
+hard drives, but an unencrypted drive in a military laptop ostensibly filled
+with sensitive information in a war-zone has to win first place in the
+f**k-up olympics.
+
+"A good price means $800, he says. This would be a steep price in the
+secondhand market for a regular Intel Pentium M laptop manufactured in
+2004. But this is not ordinary equipment... The computer also contained
+dozens of manuals on how to operate, assemble and trouble shoot U.S. Army
+equipment - everything from "space heaters" to "up-armored humvees." Some of
+the manuals contain restricted information and warn that "distribution is
+limited to U.S. government agencies," with instructions to "destroy by any
+methods that must prevent disclosure of contents or reconstruction of the
+document." But the machine - and all the information inside - was available
+for a price in the open market in Peshawar. And it makes an attractive
+investment for anyone who has in their possession any form of serious
+U.S. military hardware."
+
+Read the article for more alarming info about the sensitive info on this
+laptop. OTOH, maybe it's a honey-laptop? filled with tracking software and
+misinformation... but i doubt it.
+
+http://atom.smasher.org/
+
+------------------------------
+
+Date: Mon, 16 Feb 2009 23:14:25 +0000
+From: Bruce Horrocks <bruce@scorecrow.com>
+Subject: Risks of reading RISKS
+
+Re: 390,000 to access child database (RISKS-25.55)
+
+One of the risks of reading RISKS is that one may be tempted to believe that
+articles described as "Full story at:" do actually contain the full story.
+
+For example, hands up how many of you read "390,000 to access child database
+... of all under 18 year-olds in England" and assumed that this means all
+390k have full access to the whole database?
+
+It would help if those submitting risks items actually state what they think
+the risk is, so that their concerns can be allayed should they be misplaced.
+
+------------------------------
+
+Date: Fri, 13 Feb 2009 13:34:22 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: When a bit of knowledge is a dangerous thing
+
+As has been widely reported (but for whatever reason not in RISKS that I can
+find), the ability to find MD5 collisions has been used to create
+counterfeit intermediate certificates, thus putting users at risk of
+trusting incorrect sites.  More detail at
+http://www.win.tue.nl/hashclash/rogue-ca/ and hundreds of news reports, such
+as Markoff's blog (*The NY Times) at
+http://bits.blogs.nytimes.com/2008/12/30/outdated-security-software-threatens-web-commerce/?pagemode=print
+
+I got an e-mail recently from a colleague who is not a security specialist,
+but is a specialist in designing power plants.  He read the news coverage,
+interpreted it as "SSL is no longer secure", and decided to roll his own
+security protocol for use in a new power plant where he's designing the
+control systems.  My reaction, of course, was "NO! don't do that", but I
+wonder how many other people out there have drawn the same conclusion, and
+don't have a security expert to turn to for advice.
+
+The risk?  In finding security problems, we need to carefully communicate
+not only the problem, but also what people should do in response, lest the
+cure be worse than the disease.  I think the researchers did a good job of
+that -- explaining that use of SHA-1 hashes in certificates are much better
+than MD5, and eventually moving to SHA-2 or something else in the
+certificates is the long term solution -- but that level of detail got lost
+in much of the popular reporting.
+
+------------------------------
+
+Date: Wed, 11 Feb 2009 01:57:23 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: "It leaked into the kiosks and fried our computers"
+
+Virgin America spiffs up at Logan [Excerpt]
+http://www.boston.com/business/articles/2009/02/10/virgin_america_spiffs_up_at_logan/
+
+Of course, the fancy digs could come with unintended consequences: A few
+months ago at the San Francisco airport, a passenger using the check-in
+kiosk watered the fake orchids atop the kiosk table with leftover soda.
+
+"It leaked into the kiosks and fried our computers," Pawlowski said.
+
+So Virgin has designed its Boston kiosk tables with smaller computer
+processors and interior pathways to funnel fluids away from the
+electronics. "I'm not going to say it can't happen again, but I'm hoping it
+doesn't."
+
+------------------------------
+
+Date: Tue, 17 Feb 2009 08:23:46 -0500
+From: "John Kolesar" <john@kolesar.net>
+Subject: Facebook Forever
+
+This article showed up on Fox News.  While Fox News is noted for being
+somewhat a sensational tabloid I thought this was interesting.
+http://www.foxnews.com/story/0,2933,494064,00.html
+
+I am not a facebook fan or user but does the average "Joe" know what he is
+allowing them to do?  Should we care?
+
+http://www.facebook.com/terms.php
+
+Licenses
+
+  You are solely responsible for the User Content that you Post on or
+  through the Facebook Service. You hereby grant Facebook an irrevocable,
+  perpetual, non-exclusive, transferable, fully paid, worldwide license
+  (with the right to sublicense) to (a) use, copy, publish, stream, store,
+  retain, publicly perform or display, transmit, scan, reformat, modify,
+  edit, frame, translate, excerpt, adapt, create derivative works and
+  distribute (through multiple tiers), any User Content you (i) Post on or
+  in connection with the Facebook Service or the promotion thereof subject
+  only to your privacy settings <http://www.facebook.com/privacy/> or (ii)
+  enable a user to Post, including by offering a Share Link on your website
+  and (b) to use your name, likeness and image for any purpose, including
+  commercial or advertising, each of (a) and (b) on or in connection with
+  the Facebook Service or the promotion thereof. You represent and warrant
+  that you have all rights and permissions to grant the foregoing licenses.
+
+John Kolesar, 440-871-7965 W, 248-760-4040 M, john@kolesar.net
+
+------------------------------
+
+Date: Wed, 11 Feb 2009 23:17:19 +0000
+From: David Alexander <dave_ale@online.rednet.co.uk>
+Subject: Opening event goes with a bang
+
+This isn't strictly a technology risk, but it's too good to ignore.
+The UK *Daily Telegraph*, 11 Feb 2009:
+
+"China 'sorry' for towering inferno"
+
+China central television, the official broadcasting mouthpiece of the
+Communist party, has apologised for burning down its new headquarters
+building with an illegal fireworks display. One fireman died and six were
+injured in the blaze on Monday night. The 30-story building, which was
+designed by Rem Koolhaas, a leading Dutch architect, and engineered by the
+British firm ARUP, was burnt out.
+
+Beware the risks and impacts of your opening ceremony
+
+David Alexander, Towcester, Northamptonshire, England
+
+------------------------------
+
+Date: Wed, 11 Feb 2009 07:47:57 +0100
+From: "Prof. Dr. Peter Bernard Ladkin" <ladkin@rvs.uni-bielefeld.de>
+Subject: Re: Hoare on Null References (Schaefer, RISKS-25.55)
+
+Rpbert Schaeffer's assertions in Risks-25.55 concerning what I take to be
+Goedel's Theorem are misleading. And I am not persuaded by a corrected
+version of his argument, either.
+
+Schaeffer asserts: "You can't prove that a system is both correct and
+complete without going outside that system."  So, to begin with, let's get a
+more accurate expression of what Schaeffer might want to say. He doesn't
+explain what "correct" means in his statement. Let me assume he means
+"consistent" in its classical sense.
+
+First, given a theory L in first-order logic, you can, contrary to
+Schaeffer, indeed prove in L that L is both consistent and complete,
+provided that L has the resources to express those statements, if L is
+inconsistent. Indeed, you can prove anything in L that L can express.
+
+Second, a partial reverse: given a theory L in first-order logic that
+contains Peano arithmetic (indeed, it doesn't need to be full Peano
+arithmetic - an substantial fragment will suffice), one can prove
+completeness of L in L only if L is inconsistent.
+
+The conditions that Schaeffer missed was that L must be a consistent
+classical first-order theory containing an appropriately substantial
+fragment of Peano arithmetic. Then you can say that L cannot prove its own
+completeness.
+
+Now, consider these conditions one by one. One may think that inconsistent
+theories are not useful. One may also think that all useful theories must be
+formulated in, or contain, classical first-order logic. One may also think
+that all useful theories contain Peano arithmetic. All these conditions may
+be questioned when dealing with computer systems of any sort, as follows.
+
+The people who study and develop paraconsistent logics would disagree that
+inconsistent theories are not useful. Paraconsistent logics are classically
+inconsistent.  There are obvious ways to weaken first-order logics to allow
+some statements of the form (A & not-A) to be proved, but not all. And even
+if one retains classical inference, if one uses L for reasoning (rather than
+for illustrating purely mathematical points) then for practical purposes one
+might only be interested in things one can deduce in L through proofs of
+bounded length (there is a limit to what we can achieve in the life of the
+universe), say length B. If the shortest proof of a statement of the form (A
+and not-A) is longer than B, then for one's purposes the inconsistency of L
+might not be relevant.
+
+Finally, it is questionable that Goedel's theorem could apply here at all. I
+don't know any computer languages or compilers, and certainly no physical
+machines, that implement Peano arithmetic, or indeed a sufficiently
+substantial fragment. All computer arithmetic I know is finite, and I
+confidently expect it to stay that way.
+
+Peter Bernard Ladkin, Causalis Limited and the University of Bielefeld
+www.causalis.com     www.rvs.uni-bielefeld.de
+
+------------------------------
+
+Date: Thu, 12 Feb 2009 02:24:16 -0500
+From: CBFalconer <cbfalconer@yahoo.com>
+Subject: Re: Tony Hoare: "Null References" (Diamond, RISKS-25.55)
+
+There was an even earlier language, Pascal, that provided all that security,
+and more.  It had simultaneous advantages and disadvantages over C:
+
+Pascal was complete.  You didn't need a large standard library.  It was
+defined.  This was both an advantage and a disadvantage, since you could
+immediately write your software, but the language couldn't evolve as easily
+as could C.
+
+The act of having run-time checks, and many compile-time checks, allowed the
+checking code to be fairly trivial.  Good systems could expect about a 5%
+effect.  In comparison equivalent C checking was (and is) virtually
+impossible, or requires exorbitant run-time support.  The same things that
+create C advantages (e.g. string storage that can be a great variable) cause
+horrible checking problems.
+
+Pascal had an approved ISO standard about 10 years before C.
+
+Pascal suffered greatly from the Borland disease.  Borland implemented a
+form of Pascal that did not meet the standards, and still doesn't.  That
+meant that programmers never learned the appropriate ways to write code,
+especially interactive code.
+
+Pascal had the great advantage of defined i/o systems (files, etc.)  which
+were extremely flexible.  However the limitations of some of the standard
+procedures affected things.  For example, there was no way to
+programatically control the error response on a "read(integer);" call.
+
+Chuck F (cbfalconer at maineline dot net)  <http://cbfalconer.home.att.net>
+
+------------------------------
+
+Date: Fri, 13 Feb 2009 20:49:52 -0500
+From: William Bader <williambader@hotmail.com>
+Subject: Re: Tony Hoare: "Null References" (Baker, RISKS-25.52)
+
+Array bounds checking (and pointer checking) is possible in C.
+http://gcc.gnu.org/extensions.html
+http://sourceforge.net/projects/boundschecking/
+http://williambader.com/bounds/example.html
+http://freshmeat.net/projects/valgrind/
+
+------------------------------
+
+Date: Sun, 15 Feb 2009 00:35:24 -0500
+From: Dan Franklin <dfranklin@dan-franklin.com>
+Subject: Re: Tony Hoare: "Null References" (Diamond, RISKS-25.55)
+
+The inventors of the C language did not merely omit array bounds checking
+from C; they encouraged C programmers to omit manual bounds checking as
+well. This is what really bothers me.  Consider:
+
+1. Early C programming books suggested the idiom
+	while (*p++ = *q++);
+   to copy a string from one area to another. No bounds checking was ever
+   suggested.
+
+2. The C library contained several functions that ignored array bounds,
+including the infamous "gets" function, which read an input line into a
+buffer - and took no length parameter for the buffer.  It was impossible to
+use gets safely; no matter what buffer you provide, there was a potential
+input line long enough to cause a buffer overflow.
+
+3. When you pass an array as a parameter, its size is lost to the called
+function.  As with Fortran, if you care about buffer size, you must pass it
+as an additional parameter - a sizable (so to speak) nuisance.
+
+Omitting array bounds checking may have made sense at the time given the
+available hardware and compiler technology.  But there was no need to create
+"gets" without a size parameter, or to avoid passing array sizes by default.
+(Cases where it would have been too inefficient to push the array size
+parameter onto the stack could have been handled by distinguishing between
+arrays and pointers.)
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.56
+************************

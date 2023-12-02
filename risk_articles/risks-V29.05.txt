@@ -1,0 +1,863 @@
+RISKS-LIST: Risks-Forum Digest  Monday 26 October 2015  Volume 29 : Issue 05
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.05.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Now we know the NSA blew the black budget breaking crypto, how can
+  you defend yourself? (Cory Doctorow)
+Most NHS depression apps are unproven, warn health experts (Chris Drewe)
+DoD tries to upgrade cyberdefenses (IHLS via Alister Wm Macintyre)
+US Copyright Office outage - *not* a breach (Jeremy Epstein)
+Senator Wonders If 'Pro-Botnet' Caucus Derailed His CISA Amendment
+  (HuffPost)
+Most Americans would be fine with some Internet surveillance if
+  they were notified (Daily Dot)
+CCTV cameras worldwide used in DDoS attacks (ZDNet)
+Thailand reacts badly to protests via Internet (IHLS)
+Privatizing censorship in fight against extremism is risk to press freedom
+  (CPJ)
+Russia 'tried to cut off' World Wide Web (*The Telegraph)
+CIA and DHS directors' personal email reported hacked;
+  China's "character scores (WYFF4)
+Hackers Prove They Can Pwn the Lives of Those Not Hyperconnected (NYT)
+Western Digital self-encrypting hard drives riddled with security flaws
+  (Ars Technica)
+"Tricky new malware replaces your entire browser with a dangerous Chrome
+  lookalike" (Jared Newman)
+FTD's -- Fitbit Transmitted Diseases (Henry Baker)
+NTP Attacks: It's Earlier Than You Think (Jeremy Kirk)
+Hackers Make Cars Safer. Don't Ban Them From Tinkering (*WiReD*)
+Driverless cars, auto insurance, electric cars (Gabe Goldberg)
+UK Govt's Surveillance -- Who's Doing It? (Fraser Nelson via Chris Drewe)
+UK TalkTalk hacked again (IHLS)
+Encrypted VoIP Leaks: Can You Hear Me Now? (Henry Baker)
+Feds to Apple: Game Over; EULA LUSA (Richard Chirgwin)
+Identity Chaos, Courtesy of Your Federal Government (Ron Lieber)
+Cops are asking Ancestry.com and 23andMe for their customers' DNA
+  (Kashmir Hill)
+Re: Art Forgers Beware: DNA Could Thwart Fakes (Gary Hinson)
+Re: Reducing risks in national elections? (Michael L. Cook)
+Re: Tesla Adds High-Speed Autonomous Driving to Its Bag of Tricks
+  (Stephen Kent)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: October 17, 2015 at 11:19:52 AM EDT
+From: Hendricks Dewayne <dewayne@warpspeed.com>
+Subject: Now we know the NSA blew the black budget breaking crypto, how can
+  you defend yourself? (Cory Doctorow)
+
+Cory Doctorow, BoingBoing, 16 Oct 2015
+<http://boingboing.net/2015/10/16/now-we-know-the-nsa-blew-the-b.html
+
+Well, obviously, we need to get Congress to start imposing adult supervision
+on the NSA, but until that happens, there are some relatively simple steps
+you can take to protect yourself.
+
+Yesterday, Alex Halderman and Nadia Heninger won the prize for best paper at
+the ACM Conference on Computer and Communications Security for Imperfect
+Forward Secrecy: How Diffie-Hellman Fails in Practice
+<https://weakdh.org/imperfect-forward-secrecy-ccs15.pdf>, a paper
+co-authored with a dozen eminent cryptographers, in which they make the case
+that the NSA has probably spent an appreciable fraction of their "black
+budget" (whose size was revealed by the Snowden revelations) attacking some
+standardized prime numbers that were foolishly used by programmers for
+Diffie-Hellman key-exchange in standard cryptographic suites.
+
+This really is very bad news, because it means that the NSA has discovered a
+critical vulnerability in the technology that defends everything from your
+medical implant to your car's steering and brakes, and they kept it a
+secret, so that other entities with the budget to replicate their feat (or
+with the nous to steal the secrets from the NSA) can attack you. f course,
+it also means that you're liable to being attacked by the NSA, who have
+aided US domestic intelligence in targeting groups over everything from
+advocating against invading other countries, building oil pipelines, or just
+worshiping at a non-Christian temple.
+
+Imperfect Forward Secrecy will resound through the security world, and we
+can expect that vendors will begin to take steps to fix things. But until
+they do, there are some measures you can take to protect yourself, by
+removing the weak forms of Diffie-Hellman key-exchange from the list of
+methods used by your browser, SSH client and VPN software.
+
+The Electronic Frontier Foundation's Joseph Bonneau and Bill Budington have
+published an excellent, straightforward guide to hardening your Mac, Windows
+or GNU/Linux system. Do it today -- I just did.
+
+How to Protect Yourself from NSA Attacks on 1024-bit DH
+<https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH>
+Joseph Bonneau and Bill Budington/EFF
+
+------------------------------
+
+Date: Thu, 15 Oct 2015 22:13:01 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Most NHS depression apps are unproven, warn health experts
+
+Medical Apps -- Approval?
+
+There was an item in the newspaper about apps for mental health problems
+recommended by the UK's National Health Service.
+http://www.telegraph.co.uk/news/nhs/11926616/Most-NHS-depression-apps-are-unproven-warn-health-experts.html
+
+  Just 15 percent of apps recommended by the NHS for depression have
+  been proven to be effective, the University of Liverpool has found
+
+  The majority of depression apps recommended by the NHS have not been
+  tested and could do more harm than good, health experts have warned.
+
+  Yet a review of studies by the University of Liverpool found just four of
+  those listed on the site have been found to be effective through rigorous
+  evaluation.
+
+The researchers claim that the NHS *seal of approval* may lead patients to
+wrongly believe the apps are of clinical benefit.  [PGN-ed]
+
+The apps that were found to have passed clinical trials were Big White
+Wall, Moodscope, Happyhealthy and Workguru.
+
+  [Obviously medication is subject to strict clinical trials to ensure
+  safety and effectiveness, but what about software..?]
+
+http://www.telegraph.co.uk/news/nhs/11926616/Most-NHS-depression-apps-are-unproven-warn-health-experts.html
+
+------------------------------
+
+Date: Sat, 24 Oct 2015 15:20:22 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: DoD tries to upgrade cyberdefenses (IHLS)
+
+Ideally every computer system, connected to the Internet, or to anything
+else, should have an automated security system to detect attacks, and take
+appropriate action to protect the system from unwanted intruders.  In
+addition to detecting unwanted intruders, and what they are up to, defenses
+need to detect suspicious activities by formerly authorized insiders,
+employees, contractors, sub-contractors.  There can also be, among those
+insiders, some people installing unauthorized applications, which can have
+adverse effects, where the insiders do not know what all is going on in the
+software they acquired.  The security system needs to be subject to
+auditing, to make sure it has not been compromised, its patches and features
+are up-to-date, and the local setup settings are appropriate to the security
+needs of the enterprise.  The physical facility, housing all portions of the
+computer hardware, needs a security system to detect that no unauthorized
+activity is going on, where someone can physically access the hardware, and
+bypass its internal security.
+
+It would seem that many outfits security lacks some of the above important
+ingredients.
+
+Many outfits have had such complete systems for decades, and now the US DoD
+may be getting one, also.
+
+The Pentagon is particularly interested in having the computers take over a
+lot of the busy work currently done by cyber security personnel.
+
+http://i-hls.com/2015/10/defense-department-aims-for-automated-cyber-defense/
+
+------------------------------
+
+Date: Thu, 22 Oct 2015 14:37:37 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: US Copyright Office outage - *not* a breach
+
+Not all outages are due to attacks.  This one sounds like it was essentially
+a lack of an adequate backup/recovery plan.  Sometimes it's the simple
+things that trip you up.
+
+http://copyright.gov/eco/news.html, although I doubt that's a long-term URL.
+
+The U.S. Copyright Office apologizes to the users of our electronic
+registration system for the recent system outage that lasted for nine days,
+from August 28, 2015, to September 5, 2015. The outage occurred when the
+Library of Congress shut down a data center that hosts a number of the U.S.
+Copyright Office's technology systems, including the Office's electronic
+registration system, to accommodate a two-day annual power outage scheduled
+by the Architect of the Capitol, which owns and maintains Library
+buildings. Unfortunately, the Library was unable to bring copyright systems
+and other agency functions online until September 6, 2015. The outage was
+not the result of a data breach or other security event and, at this time,
+we do not believe that any Copyright Office records or deposits were
+compromised.
+
+[...]
+
+Again, we apologize for any inconvenience this outage caused and will
+endeavor to make sure that this can never happen again.
+
+------------------------------
+
+Date: Wed, 21 Oct 2015 21:02:54 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Senator Wonders If 'Pro-Botnet' Caucus Derailed His CISA Amendment
+
+ NNSquad
+
+http://www.huffingtonpost.com/entry/sheldon-whitehouse-cisa-botnets_5627f40fe4b08589ef4a9b9d
+
+  A controversial amendment to an already controversial cybersecurity bill,
+  which would have expanded an archaic 1986 anti-hacking law, isn't going to
+  get a vote in the U.S. Senate.  And Sen. Sheldon Whitehouse (D-R.I.), who
+  proposed the measure, is frustrated.  Whitehouse headed to the Senate
+  floor on Wednesday to point out that his amendment to the Cybersecurity
+  Information Sharing Act (CISA) is bipartisan and supported by the Justice
+  Department. After explaining what it would do, he wondered if there were
+  "some hidden pro-botnet, pro-foreign cybercriminal caucus here that won't
+  let a bill like mine get a vote."  - - -
+
+"CISA. Either you support it, or you're a cybercriminal botnet lovin'
+hippie freak!"
+
+------------------------------
+
+Date: Mon, 19 Oct 2015 08:03:34 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Most Americans would be fine with some Internet surveillance if
+  they were notified
+
+Daily Dot via NNSquad
+http://www.dailydot.com/politics/internet-surveillance-survey-notification-consent/
+
+  Despite increasingly heated rhetoric from opponents of government
+  surveillance, a recent survey shows that most Americans would be okay with
+  many kinds of Internet snooping as long as the snoopers told them first.
+  The results showed "a surprising willingness by participants to accept the
+  inspection of encrypted traffic, provided they are first notified,"
+  according to the researchers behind the survey, which was titled "At Least
+  Tell Me."
+
+Of course, the most watched cable news channel in the U.S. -- FOX News --
+isn't a real news channel but merely a propaganda outlet for the racist,
+moronic, anti-science, anti-education GOP -- so one might forgive "most
+Americans" for their lack of insight on this technical privacy issue.
+
+------------------------------
+
+Date: 26 Oct 2015 11:52:17 -0400
+From: "Bob Frankston" <bob19-0501@bobf.frankston.com>
+Subject: CCTV cameras worldwide used in DDoS attacks (ZDNet)
+
+http://www.zdnet.com/article/cctv-cameras-worldwide-used-in-ddos-attacks/
+
+Again. the real message is not in the particular vulnerability of reusing
+credentials. It's a reminder that it's going to take a while to evolve this
+new landscape of connected things. In the meantime, we need to learn to
+survive such problems rather focusing on preventing and trying to put a wall
+between good and evil.
+
+------------------------------
+
+Date: Sat, 24 Oct 2015 14:55:17 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Thailand reacts badly to protests via Internet (IHLS)
+
+There are two stories here
+
+1. Many citizens of Thailand do not like their government constraints on
+Internet usage. So there is now a protest movement, via the Internet.
+Instead of hundreds of people marching in the streets, it is hundreds of
+people attacking government web sites.
+
+2. All the time there is new technology which no one can stay current with,
+least of all law enforcement and governments with high censorship regimes.
+So frequently they demonize the medium, instead of the lack of their own
+internal cyber training budgets, and the actual perpetrators of misdeeds.
+It would be like blaming highways for the fact that some motorists drive
+carelessly and have accidents.
+
+http://i-hls.com/2015/10/thailands-government-is-under-attack/
+
+------------------------------
+
+Date: Mon, 19 Oct 2015 16:04:54 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Privatizing censorship in fight against extremism is risk to
+  press freedom
+
+CPJ via NNSquad
+https://www.cpj.org/blog/2015/10/privatizing-censorship-in-fight-against-extremism-.php
+
+  Despite this, some governments are seeking to hold social media firms
+  responsible for the monitoring and removal of content. A July meeting of
+  the U.N. Security Council Counter-Terrorism Committee called for Internet
+  platforms to be held liable for hosting or indexing extremist content. And
+  with the so-called right to be forgotten ruling in the EU, Internet and
+  telecommunications intermediaries are increasingly being called on to act
+  as editors of the Web, as CPJ's report "Balancing Act: Press Freedom at
+  Risk as EU Struggles to Match Action with Values," found.  Intermediary
+  liability threatens innovation and free expression by placing the burden
+  of monitoring content on neutral third party hosts, which is why CPJ
+  supports reforms contained in the Manila Principles on Intermediary
+  Liability, a set of recommended best practices prepared in coalition with
+  leading press freedom and technology policy organizations and individuals.
+
+------------------------------
+
+Date: Sat, 17 Oct 2015 08:21:36 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Russia 'tried to cut off' World Wide Web (*The Telegraph)
+
+*The Telegraph* via NNSquad
+http://www.telegraph.co.uk/news/worldnews/europe/russia/11934411/Russia-tried-to-cut-off-World-Wide-Web.html
+
+  Russia has run large scale experiments to test the feasibility of cutting
+  the country off the World Wide Web, a senior industry executive has
+  claimed.  The tests, which come amid mounting concern about a Kremlin
+  campaign to clamp down on Internet freedoms, have been described by
+  experts as preparations for an information blackout in the event of a
+  domestic political crisis.  Andrei Semerikov, general director of a
+  Russian service provider called Er Telecom, said Russia's ministry of
+  communications and Roskomnadzor, the national Internet regulator, ordered
+  communications hubs run by the main Russian Internet providers to block
+  traffic to foreign communications channels by using a traffic control
+  system called DPI.
+
+------------------------------
+
+Date: Mon, 19 Oct 2015 14:31:55 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: CIA and DHS directors' personal email reported hacked;
+	China's character scores (WYFF4)
+
+WYFF4 via NNSquad
+CIA, DHS secretary hacking report investigated
+http://www.wyff4.com/politics/cia-dhs-secretary-hacking-report-investigated/35921328
+
+  In fact, the hacker told *The New York Post* that he used a stunningly
+  simple tactic to allegedly hack Brennan's account.  The process, called
+  "social engineering," involves collecting information on a person that is
+  publicly available and using it to personalize an attack on their
+  accounts. In this case, the alleged hacker told the Post he tricked
+  Verizon employees into giving him Brennan's information and got AOL to
+  reset his password, presumably sending the reset to the hacker.
+
+AOL ACCOUNT? AOL? Say what???
+
+Inside China's plan to give every citizen a character score
+
+https://www.newscientist.com/article/dn28314-inside-chinas-plan-to-give-every-citizen-a-character-score/
+
+  Where you go, what you buy, who you know, how many points are on your
+  driving licence, how your pupils rate you.  These are just a few of the
+  measures which the Chinese government plans to use to give scores to all
+  its citizens.  China's Social Credit System (SCS) will come up with these
+  ratings by linking up personal data held by banks, e-commerce sites and
+  social media. The scores will serve not just to indicate an individual's
+  credit risk, but could be used by potential landlords, employers and even
+  romantic partners to gauge an individual's character.  "It isn't just
+  about financial creditworthiness," says Rogier Creemers, who studies
+  Chinese media policy and political change at the University of Oxford.
+  "All that behaviour will be integrated into one comprehensive assessment
+  of you as a person, which will then be used to make you eligible or
+  ineligible for certain jobs, or social services."  One of the earliest
+  components of the system is called Sesame Credit - a scoring system built
+  and run by Ant Financial, a subsidiary of the Chinese e-commerce giant
+  Alibaba.  It assigns citizens a score of between 350 and 950 points based
+  on factors such as their financial history.  Spending more through
+  Alibaba's payment app, Alipay, or doing financial transactions involving
+  friends through Sesame Credit, can also raise your score.
+
+Oh, China ... WHAT COULD GO WRONG?
+
+------------------------------
+
+Date: Fri, 23 Oct 2015 10:53:43 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Hackers Prove They Can Pwn the Lives of Those Not Hyperconnected
+
+*TheNYTimes*, 14 Oct 2015
+
+It took the hackers less than two hours to take over Patsy Walsh's life.
+
+On a recent Friday, Mrs. Walsh, a grandmother of six, volunteered to allow
+two hackers to take a crack at hacking her home. How bad could it be?
+
+Mrs. Walsh did not consider herself a digital person. As far as she knew,
+her home was not equipped with any "smart devices," physical objects like
+refrigerators and thermometers that transmit information to the
+Internet. Sure, she has a Facebook account, which she uses to keep up on
+friends' lives, but rarely does she post about her own.
+
+"I don't post things about myself and don't really understand why other
+people do," Mrs. Walsh said. "The fact you can go from one friend's profile
+to their friends' profiles is creepy. I guess you could find out a lot of
+information about somebody if you really wanted to."
+
+http://mobile.nytimes.com/blogs/bits/2015/10/14/hackers-prove-they-can-pwn-the-lives-of-those-not-hyperconnected/
+
+Plenty of vulnerabilities found but no more than I see for many not-stupid
+but non-technical friends. Whose fault is that -- people not
+interested/needing to be tech experts or a technology
+infrastructure/ecosystem requiring specialized expertise for safe use?
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Tue, 20 Oct 2015 16:25:55 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Western Digital self-encrypting hard drives riddled with security
+  flaws
+
+Ars Technica via NNSquad
+http://arstechnica.com/security/2015/10/western-digital-self-encrypting-hard-drives-riddled-with-security-flaws/
+
+  Several versions of self-encrypting hard drives from Western Digital are
+  riddled with so many security flaws that attackers with physical access
+  can retrieve the data with little effort, and in some cases, without even
+  knowing the decryption password, a team of academics said.
+
+Weak or flawed crypto can be even worse than no crypto, because it fools
+you into complacency.
+
+------------------------------
+
+Date: Thu, 22 Oct 2015 10:46:28 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Tricky new malware replaces your entire browser with a
+  dangerous Chrome lookalike" (Jared Newman)
+
+Jared Newman, PCWorld, 19 Oct 2015
+This malicious browser looks and acts just like Chrome--except for
+all the pop-up ads, system file hijacking, and activity monitoring.
+http://www.pcworld.com/article/2994778/security/tricky-new-malware-replaces-your-entire-browser-with-a-dangerous-chrome-lookalike.html
+
+------------------------------
+
+Date: Wed, 21 Oct 2015 06:27:35 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: FTD's -- Fitbit Transmitted Diseases
+
+FYI -- Mass pwnage of 40,000+ runners at the upcoming NY marathon in
+November?  Your Fitbit can be compromised in 10 seconds, and then later
+compromise your PC.
+
+I can't wait for malware like this to infect iWatches...
+
+'full persistence means it does not matter if the FitBit Flex is restarted;
+any computer that connects with the wearable can be infected with a
+backdoor, trojan, or whatever the attacker desires.'
+
+http://www.theregister.co.uk/2015/10/21/fitbit_hack/
+'10-second' hack jogs Fitbits into malware-spreading mode
+To avoid viral stains, go jogging alone or with Bluetooth binned
+
+Darren Pauli, 21 Oct 2015
+A vulnerability in FitBit fitness trackers first reported to the vendor in
+March could still be exploited by the person you sit next to on a park bench
+while catching your breath. [...]
+
+------------------------------
+
+Date: Sun, 25 Oct 2015 16:46:03 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: NTP Attacks: It's Earlier Than You Think (Jeremy Kirk)
+
+FYI -- A Rip Van Winkle and/or TARDIS attack?
+Is the current NTP protocol fool-tardy?
+
+"Attacking the Network Time Protocol"
+http://www.cs.bu.edu/~goldbe/papers/NTPattack.pdf
+
+"We explore the risk that network attackers can exploit *unauthenticated*
+Network Time Protocol (NTP) traffic to alter the time on client systems.  We
+first discuss how an on-path attacker, that hijacks traffic to an NTP
+server, can quickly shift time on the server's clients."
+
+"time is a fundamental building block for computing applications, and is
+heavily utilized by many cryptographic protocols."
+
+"On November 19, 2012 [8], for example, two important NTP (stratum 1)
+servers, tick.usno.navy.mil and tock.usno.navy.mil, went back in time by
+about *12 years,* causing outages at a variety of devices including Active
+Directory (AD) authentication servers, PBXs and routers [45]"
+
+"TLS certificates are used to establish secure encrypted and authenticated
+connections ... For example, the client can be rolled back to mid-2014, when
+> 100K certificates were revoked due to heartbleed."
+
+"Various services ... expose APIs that require authentication each time an
+application queries them.  To prevent replay attacks, queries require a
+timestamp that is within some short window of the server's local time
+... Amazon S3, for example, uses a 15-minute window."
+
+"The [Bitcoin] blockchain consists of timestamped blocks; bitcoin nodes use
+computational proofs-of-work to add blocks to the blockchain.  Because
+blocks should be added to the blockchain according to their validity
+interval (about 2 hours), an NTP attacker can trick a victim into rejecting
+a legitimate block"
+
+Jeremy Kirk, Network World, 21 Oct 2015
+Researchers warn computer clocks can be easily scrambled
+http://www.networkworld.com/article/2996260/security/researchers-warn-computer-clocks-can-be-easily-scrambled.html
+
+In 2012, two servers run by the U.S. Navy rolled back their clocks 12 years,
+deciding it was the year 2000.
+
+The servers were very important: they're part of a worldwide network that
+helps computers keep the right time using the Network Time Protocol (NTP).
+
+Computers that checked in with the Navy's servers and adjusted their clocks
+accordingly had a variety of problems with their phones systems, routers and
+authentication systems.
+
+The incident underscored the serious problems that can occur when using NTP,
+one of the oldest Internet protocols published in 1985.
+
+The protocol is fairly robust, but researchers from Boston University said
+on Wednesday they've found several flaws in NTP that could undermine
+encrypted communications and even jam up bitcoin transactions.
+
+One of the problems they found is that it's possible for an attacker to
+cause an organization's servers to stopping checking the time altogether.
+[....]
+
+------------------------------
+
+Date: Thu, 22 Oct 2015 08:39:38 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Hackers Make Cars Safer. Don't Ban Them From Tinkering
+
+*WiReD* via NNSquad
+http://www.wired.com/2015/10/terrell-mcsweeny-white-hat-car-hacking-makes-cars-safer/
+
+  This connectivity within--and between--vehicles will allow transformative
+  innovations like self-driving cars. But it also will make our cars targets
+  for hackers. The security research community can play a valuable role in
+  helping the auto industry stay ahead of these threats.  But rather than
+  encouraging collaboration, Congress is discussing legislation that would
+  make illegal the kind of research that already has helped improve the
+  industry's approach to security.
+
+------------------------------
+
+Date: Fri, 23 Oct 2015 17:08:22 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Driverless cars, auto insurance, electric cars
+
+Auto premiums account for close to half of global non-life insurance -- but
+cars are about to get much, much safer. Electric cars will be safer than
+gasoline ones and driverless cars are likely to be safer still. At a time of
+excess capital and a shortage of growth opportunities, the insurance
+industry is unprepared for the challenges that will result from this
+wholesale reduction in risk.
+
+Although cars have been getting safer for a long time, about 3,400 people
+are still killed each day in auto accidents around the world -- many times
+the numbers killed in world's wars. However, a combination of changing
+demographics, new designs and the latest technology are likely to radically
+improve car safety.
+
+http://insurancelinked.com/a-new-paradigm-of-auto-safety/
+
+Insurance protects against risks and this is risks digest...
+
+Added note: this article neglects any INCREASED risks from technology --
+whether from hacking or just the usual but chronically unanticipated
+problems/failures. No, wait -- THIS time will be different.
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Fri, 23 Oct 2015 23:26:58 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: UK Govt's Surveillance -- Who's Doing It? (Fraser Nelson)
+
+There was an item this week about possible reform of the UK security
+authorities' surveillance powers due to be debated soon (and the latest
+James Bond movie):
+
+Fraser Nelson, *The Telegraph*, 22 Oct 2015
+British spies need our data, and we should let them have it
+It's the councils, taxmen and assorted other snoopers who want to
+  play James Bond we should worry about
+http://www.telegraph.co.uk/news/uknews/terrorism-in-the-uk/11949030/British-spies-need-our-data-and-we-should-let-them-have-it.html
+
+In summary:
+
+> The Snowden revelations caused uproar in America, but polls show that very
+> few Brits cared. We tend to trust our spies, but this can lead to lazy
+> lawmaking -- it's easy for the government to play the *national
+> security*card.  When the Investigatory Powers Bill comes to be debated,
+> most of the talk will probably be about spies and jihadis and dark
+> threats. But when David Anderson QC investigated all of this for the
+> government recently, he came out with an astonishing fact: just 1 per cent
+> of the private data requested by government agencies relates to terrorism.
+> The vast majority of the snooping is done by police, councils, trading
+> standards authorities and suchlike -- all of whom find it rather
+> convenient to hide behind a debate about terrorism.
+
+------------------------------
+
+Date: Sat, 24 Oct 2015 14:38:13 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: UK TalkTalk hacked again (IHLS)
+
+British TalkTalk communications company releases news that it has had its
+3rd cyber attack in 12 months.  This time by "Russian Jihadis."
+
+4 million customers compromised this time.
+
+http://i-hls.com/2015/10/uk-communications-company-hacked-by-russian-jihadis/
+
+------------------------------
+
+Date: Sun, 25 Oct 2015 16:05:48 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Encrypted VoIP Leaks: Can You Hear Me Now?
+
+FYI -- The focus on back doors in GSM encryption looks downright silly if
+packet timing & size alone give the conversation away.
+
+"Phonotactic Reconstruction of Encrypted VoIP Conversations:
+
+"Although prior work has shown that the interaction of variable bit-rate
+codecs and length-preserving stream ciphers leaks information, we show that
+the threat is more serious than previously thought.  In particular, we
+derive approximate transcripts of encrypted VoIP conversations by segmenting
+an observed packet stream into subsequences representing individual phonemes
+and classifying those subsequences by the phonemes they encode."
+
+"researchers have shown that this interaction allows one to determine the
+language spoken in the conversation, the identity of the speakers, or even
+the presence of known phrases within the call."
+
+http://wwwx.cs.unc.edu/~kzsnow/uploads/8/8/6/2/8862319/foniks-oak11.pdf
+
+------------------------------
+
+Date: Mon, 26 Oct 2015 08:36:43 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Feds to Apple: Game Over; EULA LUSA
+
+FYI -- The first step down Dan Geer's path: you want immunity, you can't
+have proprietary.
+
+Richard Chirgwin, *The Register*, 26 Oct 2015
+You own the software, Feds tell Apple: you can unlock it
+Software licences that leave vendors in control cited as fine reason to hand
+over evidence.
+http://geer.tinho.net/geer.blackhat.6viii14.txt
+http://www.theregister.co.uk/2015/10/26/you_own_the_software_feds_tell_apple_you_can_unlock_it/
+
+Apple's battle to avoid handing over user data to the US government has
+taken an unwelcome turn, with the Feds claiming in court that Cupertino's
+license agreement gives it the right to do what the government tells it.
+[Long item PGN-ed...]
+
+------------------------------
+
+Date: 17 Oct 2015 18:17:09 -0400
+From: "Bob Frankston" <bob19-0501@bobf.frankston.com>
+Subject: Identity Chaos, Courtesy of Your Federal Government (Ron Lieber)
+
+Ron Lieber, *The New York Times*, 16 Oct 2015
+http://www.nytimes.com/2015/10/17/your-money/identity-chaos-courtesy-of-your-federal-government.html?_r=0 (http://goo.gl/4ih6LI)
+
+What struck me in the article was the comment about SSN and EIN number being
+the same! Why must be horde integers and reuse them? Given the use of the
+SSN as an identifier why are we using a 1930's approach. When a credit card
+company has a problem they issue a new number. Why aren't SSNs more
+sophisticated? Not only unique over all time but also following best
+practices like not using the same identifier for all purposes and issuing
+new identifiers when there have been potential compromises?
+
+I know we've got a century of encrusted software that may be hard to change
+but we can have a new identifier for us in modern systems while slowly
+retiring the legacy approach. After all, we're revamping the entire credit
+card system why can't we apply a little of what we've learned over the last
+century?
+
+Or am I missing something about the SSN?
+
+PS: Apparently Visa still issues the same number to multiple instances of a
+card so you can't track which family member used which card.  Why not have
+unique identifiers?
+
+------------------------------
+
+Date: 17 October 2015
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Cops are asking Ancestry.com and 23andMe for their customers' DNA
+  (Kashmir Hill)
+
+Kashmir Hill, *Fusion*, 16 Oct 2015
+http://fusion.net/story/215204/law-enforcement-agencies-are-asking-ancestry-com-and-23andme-for-their-customers-dna/
+
+When companies like Ancestry.com and 23andMe first invited people to send in
+their DNA for genealogy tracing and medical diagnostic tests, privacy
+advocates warned about the creation of giant genetic databases that might
+one day be used against participants by law enforcement. DNA, after all, can
+be a key to solving crimes. It ``has serious information about you and your
+family,'' genetic privacy advocate Jeremy Gruber told me back in 2010 when
+such services were just getting popular.
+
+Now, five years later, when 23andMe and Ancestry Both have over a million
+customers, those warnings are looking prescient.  ``Your relative's DNA
+could turn you into a suspect,'' warns Wired, writing about a case from
+earlier this year, in which New Orleans filmmaker Michael Usry became a
+suspect in an unsolved murder case after cops did a familial genetic search
+using semen collected in 1996. The cops searched an Ancestry.com database
+and got a familial match to a saliva sample Usry's father had given years
+earlier. Usry was ultimately determined to be innocent and the Electronic
+Frontier Foundation called it a wild goose chase that demonstrated ``the
+very real threats to privacy and civil liberties posed by law enforcement
+access to private genetic databases.''
+
+The FBI maintains a national genetic database with samples from convicts and
+arrestees, but this was the most public example of cops turning to private
+genetic databases to find a suspect. But it's not the only time it's
+happened, and it means that people who submitted genetic samples for reasons
+of health, curiosity, or to advance science could now end up in a genetic
+line-up of criminal suspects.
+
+Both Ancestry.com and 23andMe stipulate in their privacy policies that they
+will turn information over to law enforcement if served with a court
+order. 23andMe says it's received a couple of requests from both state law
+enforcement and the FBI, but that it has ``successfully resisted them.''
+[...]
+
+  [Lauren Weinstein added this comment on that article:
+    As Gomer Pyle would say, "Surprise, surprise, surprise!"
+  PGN]
+
+------------------------------
+
+Date: Sun, 18 Oct 2015 13:00:07 +1300
+From: "Gary Hinson" <Gary@isect.com>
+Subject: Re: Art Forgers Beware: DNA Could Thwart Fakes (RISKS-29.04)
+
+> A new method of authenticating artwork uses manufactured DNA to give each
+> piece a unique identifier.
+
+Am I missing something when I suggest that the artists' own bodies are
+perfectly capable of synthesizing unique DNA with neither cost nor effort,
+nor worries about the integrity, authenticity etc. of the synthetic process?
+
+All concerned artists need do is add a relatively small amount of their
+bodily fluids or tissues to their artworks, and ideally place some of the
+genuine articles on record with a suitably trustworthy and competent
+repository capable of running or commissioning DNA fingerprinting if and
+when needed.  Well almost all: I guess they'd also need to guard their DNA
+against thieves, and prevent forgers substituting their DNA for the artist's
+own (same issue with synthetic DNA).
+
+If for some obscure reason there is a desperate need to identify individual
+but otherwise curiously indistinguishable works, simply mix-in some
+biological material from another person or animal to each work plus send
+some of the mix to the repository.
+
+Even without the repository element, a "body of work" could be taken
+literally.  I imagine some artists would find the very notion tremendously
+exciting, while those of us who routinely put blood, sweat and tears into
+our work need not worry about our historical pieces.  Mind you, being a
+professional electronic author, I wish my computers had their own unique
+'DNA' with which to mark my products indelibly.  Meanwhile, I'll settle for
+cryptographic watermarks and steganography.
+
+PS: Was Vincent van Gogh a 'pionear'?  [I think he had a herring aid.  PGN]
+
+Gary Hinson PhD (in genetics!) CEO of IsecT Ltd., New Zealand www.isect.com
+
+------------------------------
+
+Date: Mon, 19 Oct 2015 13:25:14 +0000
+From: "Cook, Michael L." <mlcook@wabtec.com>
+Subject: Re: Reducing risks in national elections? (RISKS-29.04)
+
+> The federal government should play a big role in making national elections
+> run more smoothly.
+
+Because we all know how well the federal government makes so many other
+things run more smoothly.
+
+Uniform voting laws might help.  But some federal government agency
+overseeing voting across the country can only mean a bigger mess.
+
+How about voter IDs, paper ballots, and purple fingers for voting in the
+U.S.A.?
+
+------------------------------
+
+Date: Mon, 19 Oct 2015 10:33:34 -0400
+From: Stephen Kent <kent@bbn.com>
+Subject: Re: Tesla Adds High-Speed Autonomous Driving to Its Bag of Tricks
+  (RISKS-29.04)
+
+It is not true that the software download costs $2,500. That is the cost of
+the hardware option needed to make use of the software.  I know this
+firsthand as a Tesla owner who paid for the option, just received the _free_
+software update, and who is very impressed by this new capability.
+
+  [The original article is here:]
+(http://www.nytimes.com/2015/10/16/automobiles/tesla-adds-high-speed-autonomous-driving-to-its-bag-of-tricks.html)
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.05
+************************

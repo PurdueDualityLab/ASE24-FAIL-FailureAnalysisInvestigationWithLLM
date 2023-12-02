@@ -1,0 +1,1548 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.70
+
+RISKS-LIST: Risks-Forum Digest  Saturday 5 June 2021  Volume 32 : Issue 70
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.70>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents
+WARNING to RISKS readers (PGN)
+Tesla activates in-car camera to monitor drivers using Autopilot
+  (TechCrunch)
+Tesla brings the strategies pioneered by Apple to the auto industry
+  (WashPost)
+Tesla apologizes after man in S.China locked in his car due to power failure
+  (Global Times)
+A "lethal" weaponized drone "hunted down a human target" without being told
+  to for the first time (Business Insider)
+AI in medicine (Statnews via Wendy Grossman)
+AI Drone May Have Acted on Its Own in Attacking Fighters, U.N. Says
+  (NYTimes)
+Don't End Up on This Artificial Intelligence Hall of Shame (WiReD)
+Bug in Siemens PLCs.... (The Hacker News bia Robert Mathews)
+Cyberattack closes JBS meat-packing facilities in Canada, U.S. and Australia
+  (CBC)
+How to Negotiate with Ransomware Hackers (The New Yorker)
+Malware Can Use This Trick to Bypass Ransomware Defense in Antivirus
+  Solutions (The Hacker News)
+This $5 billion insurance company likes to talk up its AI.
+  Now it's in a mess over it.  (cnn.com)
+Steamship authority targeted in ransomware attack
+  (The Martha's Vineyard Times)
+Cybersecurity insurance, if you can get it (knowbe4)
+Supreme Court narrows cybercrime law (The Hill)
+High-tech policing: Suspect identified after posting pic of his hand
+  holding cheese (LinkedIn)
+Our digital pasts weren't supposed to be weaponized like this (NYTimes)
+Will the Excelsior Pass, New York's Vaccine Passport, CatchOn? (NYTimes)
+How do you know this isn't a fake posting? (Rob Slade)
+Amazon "stealing" your data is not the same as what Comcast is doingxo
+  (Lauren Weinstein)
+Amazon Sidewalk Poised to Sweep You Into Its Mesh (ThreatPost)
+Emergency Amazon (Rob Slade)
+Amazon home devices may now use part of your WAN uplink for a mesh network
+  with neighbors' Amazon Devices (Newser)
+FCC's emergency connectivity funds ineligible for school and library
+  self-provisioned networks (Broadband Breakfast)
+E-Commerce liability cases could open floodgates for lawsuites,
+  panelists agree (Broadband Breakfast)
+Norton Antivirus Is Now a Cryptominer; Wait, what (Review Geek)
+The Mayor of Reno Is Betting Big on the Blockchain (WiReD)
+Oximeters used to be designed for equity. What happened? (WiReD)
+One blessing of the Cybersecurity Executive Order (Hagai Bar-El)
+CDC loosened mask guidance to encourage vaccination -- it failed
+  spectacularly (Beth Mole, Ars Technica)
+Deter prying eyes by locking your own letters (Atlas Obscura)
+Facebook systematically censoring "vaccine concerns", regardless of
+  truthfulness (Project Veritas)
+Facebook suspends Trump for 2 years in response to Oversight Board ruling
+  (WashPost)
+Google made it nearly impossible for users to keep their location private
+  (Business Insider)
+Security Engineering: A Guide to Building Dependable Distributed
+  Systems (Ross Anderson, reviewed by Sven Dietrich)
+Re: Risks: Colonial Pipeline accused of negligence in proposed class action
+  (John Bechtel)
+Re: Florida governor signs law to block *deplatforming* of Florida
+  politicians (San Steingold)
+Re: Irish Health Service hit by ransomware (Patrick O'Beirne)
+Re: Why GitHub Refuses to Provide Key Evidence to a Man on Death Row
+  (Stephen E. Bacher)
+Re: NoScript is immoral? (Eli the Bearded, Kaufmann, John Levine)
+Re: Security of the IMPs (Henry Baker)
+Re: Truth, Lies, and Automation (Toebs Douglass)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 5 Jun 2021 13:12:19 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: WARNING to RISKS readers
+
+It is still taking me several hours to get rid of all the detritus in what
+is being submitted to RISKS.  Office 365 is adding over a hundred lines of
+cruft in headers to each message.  All of the encoded characters created by
+different mail systems have to be dealt with separately.  Therefore, as a
+cruelty to readers instead of cruelty to myself, the next issue will be RAW
+RECEIVED TEXT.  Perhaps I will first remove the Office 365 cruft on most of
+the messages, but leave them in for the lead message just for kicks.  This
+will save me a few hours, but perhaps give you some ideas of why this is so
+painful, and how contributors might be able to simplify my efforts with just
+a little awareness of what is being produced.
+
+Dan Jacobson has kindly offered a bunch of excellent suggestions, only some
+of which I have been able to adopt.
+
+------------------------------
+
+Date: Wed, 2 Jun 2021 12:23:54 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Tesla activates in-car camera to monitor drivers using Autopilot
+  (TechCrunch)
+
+Kirsten Korosec, TechCrunch, 27 May 2021, via ACM TechNews, 2 Jun 2021
+
+Electric-vehicle manufacturer Tesla has turned the in-car camera in its
+Model 3 and Model Y vehicles into a monitor for when its Autopilot advanced
+driver assistance system is in use. A Tesla software update specified that
+the ``cabin camera above the rearview mirror can now detect and alert driver
+inattentiveness while Autopilot is engaged,'' and that the system can save
+or transit information [only] if data sharing is intentionally enabled.
+Tesla has been criticized for failing to activate its in-vehicle driver
+monitoring technology amid growing evidence that owners were misusing
+Autopilot.  Jake Fisher (*Consumer Reports*) said, ``If the new system
+proves effective, it could help prevent distraction and be a major
+improvement for safety -- potentially saving lives.''
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2b464x22b90ex067267&
+
+  [I hope someone inside the Tesla organization reads RISKS, and suggests
+  that this monitor needs to be super-reliable, survivable, resilient -- and
+  non-hackable -- because it is ultimately a single point of failure whose
+  failure is likely to result in nasty lawsuits.  PGN
+
+------------------------------
+
+Date: Mon, 31 May 2021 15:24:56 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Tesla brings the strategies pioneered by Apple to the auto industry
+  (WashPost)
+
+Tesla is bringing the strategies pioneered by Apple to the auto
+industry. Consumers are learning that's not always a good thing.
+
+SAN FRANCISCO -- Tesla released its futuristic *Full Self-Driving* package
+last year to great fanfare, criticism and the usual stream of video uploads
+showing off cars that could seemingly drive themselves.
+
+Then something strange happened.
+
+The electric-vehicle giant revoked access for some drivers, it said.  Tesla
+CEO Elon Musk announced on Twitter in March that some users who had received
+access to the company's most advanced driver-assistance features “did not
+pay sufficient attention to the road.” Tesla did not say how it made the
+determination or who among the feature's 2,000 beta testers — who shelled
+out thousands for the package that Tesla now priced at $10,000 — would lose
+access.  [...]
+
+The cars' groundbreaking over-the-air updates mean users can be subject to
+sudden performance changes if products become out of date — like battery
+throttling for which Apple has come under fire. Tesla's unique systems have
+also proved difficult for government authorities investigating crashes to
+decode, a problem that echoes federal authorities' difficulty unlocking
+Apple devices.   [...]
+
+Months after buying a used Tesla Model S for nearly $46,000, Harpreet Singh
+began to notice the car wouldn't travel far enough on a single charge to
+cover his work trips frequently stretching more than 200 miles.
+
+Tesla had taken about 40 miles of range off his used Model S, which began
+with 265 miles, in what Tesla said was an effort to protect the battery. The
+update also slowed down charging times, Singh said. Tesla ultimately agreed
+to replace what it later concluded was a faulty battery, but at the expense
+of what Singh has found is slower acceleration.
+
+After the car and its new battery were working properly, Singh began to
+dread system updates, because they introduced new problems like the shorter
+range and decreased charging rates.
+
+Singh said he thinks about it like other tech updates. “I'm so comfortable
+with Windows 8. … Why do I have to change to Windows 10? And then everything
+breaks,” said Singh, 33, of Cypress, Tex. “Same thing here. … They can do
+anything to do it.” [...]
+
+Full self-driving features are also not transferrable between cars, meaning
+an owner who has shelled out $10,000 for the software would have to buy it
+for their next Tesla as well.
+
+Musk has said, however, that Tesla will look into upping the trade-in value
+for a vehicle with Full Self-Driving, after some owners complained about
+having to purchase it twice.
+
+https://www.washingtonpost.com/technology/2021/05/14/tesla-apple-tech/
+
+------------------------------
+
+From: geoff goodfellow <geoff@iconia.com>
+Date: Fri, 4 Jun 2021 13:18:36 -1000
+Subject: Tesla apologizes after man in S.China locked in his car
+  due to power failure (Global Times)
+
+https://www.globaltimes.cn/page/202106/1225359.shtml
+
+------------------------------
+
+Date: May 31, 2021 6:17:29 JST
+From: Paul Davey <pd@pdc.co.uk>
+Subject: A "lethal" weaponized drone "hunted down a human target" without
+  being told to for the first time (Business Insider)
+
+https://www.businessinsider.com/killer-drone-hunted-down-human-target-without-being-told-un-2021-5?r=US&IR=T
+
+A "lethal" weaponized drone "hunted down a human target" without being told
+to for the first time, according to a UN report seen by the New Scientist.
+
+The March 2020 incident saw a KARGU-2 quadcopter autonomously attack a human
+during a conflict between Libyan government forces and a breakaway military
+faction, led by the Libyan National Army's Khalifa Haftar, the Daily Star
+reported.
+
+The Turkish-built KARGU-2, a deadly attack drone designed for asymmetric
+warfare and anti-terrorist operations, targeted one of Haftar's soldiers
+while he tried to retreat, according to the paper.
+
+  [Also noted by Amnos Shapir.
+    For those who were wondering "what can possibly go wrong" -- it already
+    did,
+  PGN]
+
+------------------------------
+
+Date: Wed, 2 Jun 2021 11:11:57 +0100
+From: "Wendy M. Grossman" <wendyg@pelicancrossing.net>
+Subject: AI in medicine (Statnews)
+
+Statnews reports on a study of 400 AI models proposed during the pandemic
+for spotting illness and predicting which patients are most likely to have
+serious illness...and finds that all of them are flawed in surprisingly
+obvious ways. Underlying problems of methodology is the paucity of large,
+available, diverse data sets.
+https://www.statnews.com/2021/06/02/machine-learning-ai-methodology-research-flaws/
+
+The great thing about machine learning is it does RISKS at scale.  WG
+
+------------------------------
+
+Date: Sat, 5 Jun 2021 17:45:25 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: AI Drone May Have Acted on Its Own in Attacking Fighters, U.N. Says
+  (NYTimes)
+
+A United Nations report suggested that a drone, used against militia
+fighters in Libya's civil war, may have selected a target autonomously.
+
+https://www.nytimes.com/2021/06/03/world/africa/libya-drone.html
+
+  [Also noted by Jan Wolitzky,  PGN]
+
+------------------------------
+
+Date: Thu, 3 Jun 2021 19:46:43 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Don't End Up on This Artificial Intelligence Hall of Shame
+  (WiReD)
+
+A list of incidents that caused, or nearly caused, harm aims to prompt
+developers to think more carefully about the tech they create.
+
+https://www.wired.com/story/artificial-intelligence-hall-shame/
+
+------------------------------
+
+Date: Fri, 04 Jun 2021 12:57:00 -0700
+From: "Robert Mathews (OSIA)" <mathews@hawaii.edu>
+Subject: Bug in Siemens PLCs....
+
+*"A New Bug in Siemens PLCs Could Let Hackers Run Malicious Code Remotely"*
+Ravie Lakshmanan, *The Hacker News*, 31 May 2021
+
+https://thehackernews.com/2021/05/a-new-bug-in-siemens-plcs-could-let.html--
+
+------------------------------
+
+Date: Wed, 2 Jun 2021 06:45:23 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Cyberattack closes JBS meat-packing facilities in Canada,
+  U.S. and Australia (CBC)
+
+https://www.cbc.ca/news/business/jbs-meat-cyberattack-1.6048942
+
+A ransomware attack against Brazilian meat-packing giant JBS has disrupted
+production in the U.S., Canada and Australia.  JBS is the world's largest
+meatpacker and the attack caused its Australian operations to shut down on
+Monday and stopped livestock slaughter at its plants in several U.S. states
+and the company's facility near Brooks, Alta.
+
+The ransomware attack follows one last month on Colonial Pipeline, the
+largest fuel pipeline in the U.S., which crippled fuel delivery for several
+days in the southeastern part of the country.
+
+  [Jan Wolitzky noted
+     Ransomware disrupts meat plants in latest attack on critical
+     U.S. business
+<https://www.nytimes.com/2021/06/01/business/meat-plant-cyberattack-jbs.html
+  PGN]
+
+------------------------------
+
+Date: Mon, 31 May 2021 12:25:54 -0400
+From: Jan Wolitzky <jan.wolitzky@gmail.com>
+Subject: How to Negotiate with Ransomware Hackers (The New Yorker)
+
+Rachel Monroe, Annals of Technology, 7 Jun 2021
+
+Kurtis Minder finds the cat-and-mouse energy of outsmarting criminal
+syndicates deeply satisfying, 31 May 2021
+
+https://www.newyorker.com/magazine/2021/06/07/how-to-negotiate-with-ransomware-hackers
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 10:03:23 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Malware Can Use This Trick to Bypass Ransomware Defense
+  in Antivirus Solutions ()
+
+Researchers have disclosed significant security weaknesses in popular
+software applications that could be abused to deactivate their protections
+and take control of allow-listed applications to perform nefarious
+operations on behalf of the malware to defeat anti-ransomware defenses.
+
+The twin attacks, detailed <https://dl.acm.org/doi/10.1145/3431286> by
+academics from the University of Luxembourg and the University of London,
+are aimed at circumventing the protected folder feature offered by antivirus
+programs to encrypt files (aka "Cut-and-Mouse") and disabling their
+real-time protection by simulating mouse "click" events (aka "Ghost
+Control").
+
+"Antivirus software providers always offer high levels of security, and they
+are an essential element in the everyday struggle against criminals," said
+<https://wwwen.uni.lu/university/news/latest_news/researchers_discover_fix_vulnerability_in_antivirus_software>
+Prof. Gabriele Lenzini, chief scientist at the Interdisciplinary Center for
+Security, Reliability, and Trust at the University of Luxembourg. "But they
+are competing with criminals which now have more and more resources, power,
+and dedication."
+
+Put differently, shortcomings in malware mitigation software could not just
+permit unauthorized code to turn off their protection features, design flaws
+in Protected Folders solution provided by antivirus vendors could be abused
+by, say, ransomware to change the contents of files using an app that's
+provisioned write access to the folder and encrypt user data, or a wipeware
+to irrevocably destroy personal files of victims. [...]
+
+https://thehackernews.com/2021/06/malware-can-use-this-trick-to-bypass.html
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 11:59:46 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: This $5 billion insurance company likes to talk up its AI.
+  Now it's in a mess over it.  (cnn.com)
+
+https://edition.cnn.com/2021/05/27/tech/lemonade-ai-insurance/index.html
+
+"But in Lemonade's IPO paperwork, filed with the Securities and Exchange
+Commission last June, the company wrote that AI Jim 'handles the entire
+claim through resolution in approximately a third of cases, paying the
+claimant or declining the claim without human intervention.'"
+
+Lemonade walked-back that statement -- post-IPO, and after Twitter blasted
+the brand for claiming their AI 'Jim' dispensed claim adjustment based on
+facial recognition.
+
+Expect one or more lawsuits from investors who drank the lemonade without
+reading the label.
+
+Risk: Overtrust reliance on AI business solution capabilities and commercial
+viability.
+
+------------------------------
+
+Date: Wed, 2 Jun 2021 15:17:04 PDT From: Peter Neumann <neumann@csl.sri.com>
+Subject: Steamship authority targeted in ransomware attack
+  (The Martha's Vineyard Times)
+
+https://www.mvtimes.com/2021/06/02/ssa-targeted-ransomware-attack/
+
+  [Wiped out the ability to run operations online.  Long delays.]
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 10:39:32 -0700
+From: Paul Burke <box1320@gmail.com>
+Subject: Cybersecurity insurance, if you can get it (knowbe4)
+
+Article from IT security consultant, about ransomware insurance:
+https://blog.knowbe4.com/cybersecurity-insurance-landscape-is-fundamentally-changing-right-now
+
+ - "Ransomware has been so successful in compromising victims and getting
+   big payouts that it has led to a rapid, fundamental change in the
+   cybersecurity industry. Many previous cybersecurity insurance players are
+   getting out of the industry or refusing to insure for ransomware and
+   other cyber crime. Those that are left are charging more, insuring for
+   less and requiring proof of far stronger controls before a policy is
+   issued...
+
+ - They contract with experienced companies that respond to hundreds to
+   thousands of ransomware events a year...
+
+ - Ransomware gangs had obviously searched for and found a victim's
+   insurance policy after breaking into the victim's environment...
+   ransomware gang would respond with the maximum figure they knew the
+   victim was insured for. So, a hint to anyone who has a cybersecurity
+   policy, make sure that document is not online or specially protect it...
+
+ - They will ascertain your current risk, make recommendations, and
+   constantly monitor your status. You need someone to read your logs or
+   patch your computers, your friendly cybersecurity insurance company may
+   be able to do that for you..."
+
+------------------------------
+
+Date: Thu, 3 Jun 2021 10:21:14 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Supreme Court narrows cybercrime law (The Hill)
+
+Chris Mills Rodrigo, 3 Jun 2021
+
+https://thehill.com/policy/technology/556686-supreme-court-narrows-cybercrime-law
+
+The Supreme Court limited the scope of a crucial federal computer fraud law
+Thursday by overturning the conviction of a former police officer accused of
+misusing a government database.
+
+The justices sided 6-3 with Georgia police sergeant Nathan Van Buren in his
+appeal of a conviction under the Computer Fraud and Abuse Act.  Conservative
+Justices Clarence Thomas, John Roberts and Samuel Alito dissented.
+
+The 1986 law prohibits accessing a computer “without
+authorization or exceeding authorized access."
+
+The Justice Department had argued that Van Buren ran afoul of that law when
+he took a bribe to access a woman's license plate information in what was a
+2015 FBI sting operation.  The former officer had argued that that
+interpretation was too broad because he did have legitimate access to the
+database, even if he misused it.
+
+If simply violating the terms of a system is illegal under the CFAA, his
+team argued, then people could be charged for things as mundane as using
+work computers for personal use.
+
+The majority opinion, penned by Amy Coney Barrett, echoed that assessment.
+"The Government's interpretation of the 'exceeds authorized access' clause
+would attach criminal penalties to a breathtaking amount of commonplace
+computer activity," the opinion reads. "For instance, employers commonly
+state that computers and electronic devices can be used only for business
+purposes. On the Government's reading, an employee who sends a personal
+e-mail or reads the news using a work computer has violated the CFAA."
+
+------------------------------
+
+Date: Wed, 2 Jun 2021 13:29:52 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: High-tech policing: Suspect identified after posting pic
+  of his hand holding cheese (LinkedIn)
+
+https://www.linkedin.com/posts/christian-quinn_innovation-technology-policy-activity-6803646475923443712-H7ph/
+
+------------------------------
+
+Date: Sat, 5 Jun 2021 17:46:21 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Our digital pasts weren't supposed to be weaponized like this
+  (NYTimes)
+
+A recent firing at The Associated Press is the latest example of the way in
+which our digital pasts are never far from the present, despite what early
+internet evangelists thought.
+
+https://www.nytimes.com/2021/05/29/technology/emily-wilder-firing-ap.html
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 20:26:58 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Will the Excelsior Pass, New York's Vaccine Passport, CatchOn?
+
+More than 1 million Excelsior passes have been downloaded since they were introduced, but officials are hoping they will be adopted more widely.
+
+https://www.nytimes.com/2021/06/01/nyregion/excelsior-pass-vaccine.html
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 10:19:00 -0700
+From: Rob Slade <rslade@gmail.com>
+Subject: How do you know this isn't a fake posting? (Rob Slade)
+
+90% of Americans think they are better than average at detecting *fake
+news*, Which is impossible, and they aren't as good as they think they are.
+
+https://lite.cnn.com/en/article/h_077b962ec93232039cadc784d15124a5
+
+Krueger-Dunning lives ...
+
+------------------------------
+
+Date: Sun, 30 May 2021 08:42:59 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Amazon "stealing" your data is not the same as what Comcast is
+  doing
+
+There is some confusion about what Comcast is doing when it sets up public
+Wi-Fi using customers' in-home modems, vis-a-vis what Amazon's new data
+"stealing" scheme is doing. There are big differences.
+
+1) Comcast is setting up essentially a separate virtual LAN for the
+   public Wi-Fi that does not interact with your normal data flows.
+
+2) Comcast is adjusting for that secondary usage so that it has no
+   impact on your usage costs or usable bandwidth.
+
+Amazon is just taking your data without your affirmative permission, to
+service their other customers.
+
+------------------------------
+
+Date: Fri, 4 Jun 2021 13:59:27 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Amazon Sidewalk Poised to Sweep You Into Its Mesh (ThreatPost)
+
+https://threatpost.com/amazon-sidewalk-to-sweep-you-into-its-mesh/166581/
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 10:43:33 -0700
+From: Rob Slade <rslade@gmail.com>
+Subject: Emergency Amazon
+
+Amazon is partnering with aid organizations, including the Red Cross, to get
+disaster relief materials to where they are needed in a disaster.
+https://lite.cnn.com/en/article/h_bc341a644b497f6388fd9bfdbc8a6db3
+
+On the one hand, it's great to see a giant corporation helping out.
+
+On the other hand, does Amazon become a single point of failure for
+disaster relief?
+
+------------------------------
+
+Date: Thu, 3 Jun 2021 07:32:38 -0400
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: Amazon home devices may now use part of your WAN uplink
+  for a mesh network with neighbors' Amazon Devices (Newser)
+
+An interesting and unsettling development on multiple levels. First, there
+is the technical issue of whether the implementation is truly secure,
+including whether information can be deduced from such activity.  Second,
+there is a question of propriety. Is it desirable for that level of personal
+observation to be transmitted outside the residence.  Thirdly, is taking any
+amount of my paid for bandwidth legal and acceptable? An additional, and
+perhaps more important question is whether such a feature should be enabled
+by default. NOTE: The referenced article contains a number of web references
+to The Guardian, Ars Technica, and other mainstream sources.
+
+https://www.newser.com/story/306874/amazon-is-about-to-take-and-share-a-slice-of-your-internet.html
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 14:17:53 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: FCC's emergency connectivity funds ineligible for school and
+  library self-provisioned networks (Broadband Breakfast)
+
+But when the rules on how to spend the money were finalized on May 10th, the
+FCC's Report and Order declared that schools and libraries could not use
+Connectivity Funds to build self-provisioned networks, but instead could
+only use the funds to purchase Wi-Fi hotspots, modems, routers, and
+connected devices, such as laptop computers and tablets.
+
+The one exception in which schools and libraries can use Connectivity Funds
+to build self-provisioned networks is in “areas where no service is
+available for purchase,” based on data self-reported by private ISPs.
+
+The Report and Order indicates the agency was not convinced allowing schools
+and libraries to build their own networks with the funds would be consistent
+with the goals Congress intended for the program, as the language in the
+Rescue Plan states that the Connectivity Fund is limited to the purchase of
+eligible equipment or advanced telecommunications and information services,
+as defined here.
+
+What's striking about that FCC interpretation is that it is completely at
+odds with what the Biden Administration has been espousing in the American
+Jobs Plan: that building publicly-owned community networks and investing in
+future-proof infrastructure are a crucial part of closing the digital
+divide. This FCC decision is a recipe for cutting students off from
+broadband Internet access as soon as Congressional appropriations run out
+rather than using those funds for solutions that will operate sustainably
+into the future.
+
+Not Trying to Rock the Big Telco Boat
+
+When the Connectivity Fund was first introduced, smaller Internet Service
+Providers, public interest groups, and education advocates petitioned the
+FCC to allow for the federal funds headed to schools and libraries to be
+eligible for use to build school and community networks.
+
+The Schools, Health and Libraries Broadband Coalition; the American Library
+Association; and the Consortium for School Networking all found that
+self-provisioned networks are the most cost-effective way to permanently
+close the homework gap. They advocated for giving schools and libraries the
+most flexibility to spend these dollars and maintained that local
+administrators are best positioned to decide how to bridge gaps in
+connectivity.
+
+Instead, the Connectivity Fund is now set to give limited remote learning
+funds to the same corporate ISPs that gave rise to the homework gap in the
+first place. The program gives a strong preference to funding hotspots
+provided by existing wireless mobile service providers, mainly AT&T,
+Verizon, and T-Mobile. (In fact, AT&T, Verizon, and CenturyLink all lobbied
+the agency to disqualify [pdf] self-provisioning from being eligible for ECF
+support.)
+
+The agency has also announced that the program will be forward-looking;
+therefore, lower priority will be placed on reimbursing schools and
+libraries for equipment purchased over the past year to expand existing
+networks or build new networks to serve students and library patrons.
+
+https://broadbandbreakfast.com/2021/05/fccs-emergency-connectivity-funds-ineligible-for-school-and-library-self-provisioned-networks/
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 14:20:16 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: E-Commerce liability cases could open floodgates for lawsuits,
+  panelists agree (Broadband Breakfast)
+
+Amazon is entangled in local legal cases that could set off lawsuits for
+third-party products sold on its platform.
+
+May 27, 2021—Emerging legal rulings holding online retailers
+liable for defective third-party products could cause a ripple effect of
+lawsuits if more courts across the nation adopt that position, according to
+a panel of legal experts at an event hosted by the Information Technology &
+Innovation Foundation on Wednesday.
+
+Product liability law has traditionally held that the
+“seller” of products are responsible for the defects
+those products may have. You buy a curling iron from Target, for instance,
+not directly from Dyson.  Target is the seller, and in the case of product
+defection, Target may be the responsible party.
+
+But Amazon has avoided the legal distinction of seller until recently by
+arguing that they merely act as the middleman in transactions, and that when
+items are purchased from its website, business is done directly with the
+manufacturer, which would be responsible in any legal proceeding. Some have
+argued that this insulation from liability has made e-commerce companies
+like Amazon far too powerful.
+
+But two rulings in California and one outstanding case in Texas are
+challenging that assumption.
+
+https://broadbandbreakfast.com/2021/05/e-commerce-liability-cases-could-open-floodgates-for-lawsuits-panelists-agree/
+
+------------------------------
+
+Date: Fri, 4 Jun 2021 18:08:52 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Norton Antivirus Is Now a Cryptominer; Wait, what (Review Geek)
+
+You can't be serious. Norton 360, the somewhat-frustrating antivirus
+software that comes preinstalled on many Windows computers, will soon have a
+built-in Ethereum cryptominer. In its press release, NortonLifeLock says
+that Norton Crypto will empower people to mine with a “brand they
+trust” instead of taking risks and running “unvetted
+code” on their computers. [...]
+
+But let's be realistic for a second—the kind of people
+who will use Norton Crypto probably wouldn't go out of their way
+to download a spooky, “unvetted” cryptomining
+software. They will only use Norton Crypto because it came preinstalled on
+their computer and, at a glance, produces free money. Norton Crypto users
+may not fully understand how the software works, the impact that
+cryptomining has on their computer's lifespan, the tax
+requirements for cryptomining, or the risks involved with crypto trading.
+
+At its launch, Norton Crypto will only produce Ethereum, which is difficult
+to mine on a single laptop or desktop. As noted by the BBC, it looks like
+NortonLifeLock will get around the problem by combining miners'
+computing power into a “pool” and divvying up
+earnings. Problem is, it's common for crypto pools to have a 1%
+fee. If Norton Crypto relies on such a system, then NortonLifeLock could
+develop an extremely lucrative revenue stream at the expense of its
+customers' computer hardware and naïvety.
+
+https://www.reviewgeek.com/86346/norton-antivirus-is-now-a-cryptominer-wait-what/
+
+News that sounds like a joke. I ran Norton SystemWorks, then Norton 360.
+Gave it up because ... I forget why; maybe too heavy a footprint, too
+expensive, maybe Windows Defender and such became good enough. I've never
+missed it or Norton itself.
+
+------------------------------
+
+Date: Wed, 2 Jun 2021 00:37:33 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Mayor of Reno Is Betting Big on the Blockchain (WiReD)
+
+But this spring, [Mayor] Schieve (pronounced SHE-vee) devised a potential
+solution: a non-fungible token, or NFT, offered for sale on a blockchain
+called Tezos. The new owner would receive a .CAD file and a video from the
+artist, but the actual, physical sculpture would stay in that downtown Reno
+plaza. The proceeds would raise funds for the city to clean up the whale and
+preserve it for the public to enjoy. Schieve realized this type of
+semi-symbolic sale might require some sweetening.  So she was contemplating
+offering benefits, like tagging along on her annual trip to Burning Man with
+fellow elected officials. (They don't stay overnight, Schieve adds; she did
+not intend to jeopardize any future electoral campaigns with drugs and
+orgies.)
+
+The issuance of an NFT is not, at this point, such a radical thing, even for
+a government. Cities and states all over have sought at times to forge links
+to the blockchain. In 2018, Cleveland declared itself Blockland, though the
+label seems to have waned. Wyoming has set itself up as the premier
+regulatory haven for cryptocurrency, a label that other states, including
+Nevada, now seek to challenge. All it takes is a few interested
+businesspeople and elected officials receptive to “new ideas,” especially
+those with a cypherpunk ring. That's not quite what's happening in Reno. For
+Schieve, the NFT was a gateway to something else.
+
+An early sign emerged in January, when Mayor Francis Suarez of Miami, a
+person on a recent tear of throwing out tech-friendly ideas and seeing what
+sticks, tweeted about turning his city into a “hub for crypto innovation”
+centered around Bitcoin. Schieve was unsatisfied. “When are you going to
+become a $LINK marine?” she teased in reply, cryptically to most
+readers. She was referring to a blockchain platform called Chainlink,
+perhaps best known for its cult following of “marines” who swarm toward any
+mention of the technology on social media. Their loyalty is expressed
+through ranks earned by #HODLing (that is, holding) the platform's
+cryptocurrency, called Link. Apparently, the mayor of Reno was a member of
+the battalion -- “link pilled,” in the community's parlance. “It was really
+sweet,” Schieve says of the meme invasion her tweet inspired.
+
+https://www.wired.com/story/mayor-reno-betting-blockchain/
+
+------------------------------
+
+From: Gabe Goldberg <gabe@gabegold.com>
+Date: Fri, 4 Jun 2021 18:31:20 -0400
+Subject: Oximeters used to be designed for equity. What happened?
+  (WiReD)
+
+The pandemic drew attention to the racial bias built into pulse oxes.  But
+calls to create a fairer device are missing one thing: It once existed.
+
+https://www.wired.com/story/pulse-oximeters-equity/
+
+------------------------------
+
+Date: Sat, 5 Jun 2021 21:18:52 +0300
+From: Hagai Bar-El <info@hbarel.com>
+Subject: One blessing of the Cybersecurity Executive Order
+
+On May 12th, the Biden administration issued an Executive Order
+<https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/>
+that was written to improve the overall security posture of software
+products that the government buys from the private sector. Recent events,
+such as the SolarWinds hack <https://www.crn.com/the-solarwinds-hack>,
+contributed to the realization that such a move is necessary.
+
+This Executive Order is a big deal. Of course, nothing will change
+overnight, but given the size and complexity of the software industry, as
+well as the overall culture behind software security (the culture of: “If
+the customer doesn't see it — don't spend money on it”), an Executive Order
+can probably yield the closest thing to immediate improvement that we could
+reasonably wish for. The US Government is a very large customer, and all
+major vendors will elect to comply with its requirements rather than cross
+it all off their addressable markets.
+
+A lot has been written on how important it is for the government to use its
+buying power (if not its regulatory power) to drive vendors into shipping
+more secure products. Product security suffers from what could best be
+described as a /market failure/ condition, which would call for such
+regulatory intervention.
+
+To not overly repeat the mainstream media, I would like to focus on one
+unique aspect of the current Executive Order, and on how it can ignite a new
+trend that will change product and network security for the better.  I'll
+discuss true machine-readable security documentation.
+
+      The requirement for a Software Bill of Materials
+
+The Executive Order requires that every software product is accompanied by a
+Software Bill of Materials (SBOM) which lists the third-party software
+modules that it contains. This is essential for the customer to monitor its
+exposure to supply-chain vulnerabilities. Let's say that I ship software
+/X/, and that my software happens to utilize a library from a third party,
+say, the library /L/. I now need to worry not only about vulnerabilities
+found in my software /X/, but also about vulnerabilities found in /L/. If I
+am careless, I could keep maintaining my own software without incorporating
+patches that are made available for /L/ by its vendor. If I am negligent, I
+would even not bother to check if there are any newly discovered
+vulnerabilities that need to be patched in /L/. If I am yet more negligent,
+I could even keep on using a stale end-of-life /L/ library that is no longer
+maintained at all.  However careless or negligent I am, the price is always
+to be paid eventually by my customer. The customer might not even /know/ how
+reliant his security posture is on /L/. For what he knows, he only bought
+/X/. If that customer knew that its security posture relies on /L/ as well,
+it could have put pressure on me to make sure I use a secure version of /L/
+in my product, or not use it at all. The customer, in other words, could use
+its buying power to improve what it gets. This
+
+situation is what the SBOM provision comes to solve. It forces me to
+disclose to my customers those additional dependencies that I subject them
+to, so they can exert their market power towards improving the quality of
+what they get.
+
+      The bigger picture: security documentation
+
+The SBOM is a great idea, and its benefit is yet wider. Security
+documentation is in poor shape today. Security is not very well covered in
+product documentation. Technical specifications, like the RFCs published by
+the Internet Engineering Task Force (IETF), have sections titled *Security
+Considerations* in them; product documentation usually doesn't. Even answers
+to basic questions such as: “What are the exposure risks to the data
+processed by the product?” or “What could I do as a customer to minimize the
+attack surface of the product I'm using?” are seldom answered directly. If
+the customer is lucky, then there are tips scattered around the manuals,
+help pages, and readme files. If the customer is less lucky, as customers
+usually turn out to be in such cases, he will need to deduce this from other
+pieces of product information.
+
+Any security-specific documentation that products will now have to be
+shipped with is an immense improvement, and will hopefully serve as a
+precedent for more. One day, hopefully, customers will require a clear
+manifest of the product's attack surface: an enumeration of all interfaces
+and how those are protected. Cynicism aside, I am confident that once
+vendors actually produce such documents for their customers, they may become
+aware of some vulnerabilities of their products of which they were not aware
+before, and fix them on time.
+
+Once we generate more security documents for products, the next step would
+be making those security documents truly machine-readable.
+
+      True machine-readable security documents
+
+The Executive Order requires the SBOM document to be included with the
+product, without prescribing the precise format this document should take,
+but noting that it shall be ‘machine-readable'. Every vendor can use
+whatever format it desires, and ‘machine-readable' is a definition that is
+wide enough to cover any document which is not a handwritten napkin (until
+it gets scanned). Nevertheless, we are likely to witness accelerated
+document evolution. Thousands of vendors will have to start producing those
+documents very shortly. It will take very few years, rather than decades,
+for the industry to converge onto a few stable forms (most likely the forms
+that will be used by the major consultancies and certification bodies, and
+in light of further instructions from the government). The standardization
+fora will soon enough take on the challenge of defining a standard schema,
+augmenting some work that has already been done.
+
+When this happens, we will all be one large step into the future of true
+machine-readable security documentation. By ‘/true/ machine-readable' I
+refer to documents that machines can actually learn from, not just parse.
+
+Once the SBOM document uses a true machine-readable format, it will be
+processed by risk management software packages. Such packages will take this
+input, along with assessment and prioritization from tools like /Kenna/ or
+/VulnDB/, to draw a more accurate risk posture for the organization, based
+on the newly learned dependencies. Introducing automation into the process
+will also force the vendors into keeping those SBOM documents accurate and
+updated.
+
+The prevalence of security documents that are truly machine-readable is a
+big deal. We are not just talking about a security document that is read by
+a management app instead of by a person; we are talking about a step in the
+direction of reducing one of the biggest headaches of security monitoring
+configuration: discovery.
+
+        A headache called discovery
+
+The year is 1997, and I get to help improve the security of a large
+organization. One big challenge at the time was the connection of desktops
+using modems that were left in answer mode when unattended. I came prepared
+with instructions and scripts for securing those modems.  Soon enough I
+learned that there was no place in the organization where all those modems
+were even registered. The one-month “secure the modems” project started with
+3.5 weeks of running war-dialers — bots that dial all extensions to create
+the list of active modems, with just one short week left for actually
+securing them. Today we barely use modems, but corporate networks grow
+faster than anyone can keep record, and the trend (at least in tech
+companies) is to not restrict adoption of new technologies by people, unless
+necessary. Be it software packages, web services, connected devices or
+modems, discovery is always a challenge, and the place where many balls get
+dropped.
+
+*Much of the unaddressed attack surface in large systems is caused not by
+vulnerabilities of which you are unaware, but rather by functionality of
+which you are unaware.* (No point Googling it; I made it up.)
+
+Having mechanisms in place that enforce rigorous record-keeping of systems
+and their dependencies might not count as the latest core security tech, but
+can certainly prevent many security incidents.
+
+      Beyond SBOM
+
+Once we get into the habit of deploying systems that come with written
+manifests of their capabilities, there is no reason to stop at the SBOM.
+Some people suggest an intuitive extension into what they call a *Bill of
+Behaviors*, and one can easily think of other security-related properties
+that vendors could report about their systems. So much heuristics are used
+by security monitoring tools just because there is no clear statement of
+what an expected behavior of a system is. Using such heuristics not only
+implies missing alerts, but it also costs us in reduced
+sensitivity. Heuristics-based security monitors are configured for reduced
+sensitivity to overcome false-alerts; false-alerts that could easily kill
+any deployment of a security monitoring tool. Anyone deploying security
+monitoring tools will tell you that the Achilles heel of those tools is not
+in the quality of their monitoring technology, but in the complexity of the
+configuration management that is required to deploy them effectively. By
+targeting this complexity, we strengthen the weakest link.
+
+Once true machine-readable security docs appear, and some standard for them
+emerges, security monitoring systems will happily start reading them. We
+will enjoy less heuristics involved in assessing what packages an installed
+piece of software /may/ contain within it, or what network traffic is
+/reasonable/ to see. Finally, once the overall security posture of a system
+is more deterministic and less reliant on heuristics, there will be an
+incentive for vendors to exceed the requirements of Executive Orders, and
+provide more such machine-readable manifests. This will assure them that
+their systems are not generating false alarms by security monitoring tools.
+
+        What about IoT?
+
+So far, we've discussed typical corporate IT networks. Once the trend of
+machine-readable security documentation gains traction, it may also be
+adopted into IoT, where its value will be yet magnified.
+
+In the IoT space, heuristics are more prevalent. It's a relatively new
+domain where standards are fewer and fragmentation rules. There are good
+companies out there that built complete business models around trying to
+identify what's running on an IoT network; even just recognizing what types
+of devices are involved. Security-wise, the IoT space today is where the IT
+space was two decades ago, with frequent use of weak authentication, use of
+old software stacks, and over-reliance on obscurity.
+
+Clarity is a good friend of Security, and IoT networks could use much of it.
+
+      Summary: the role of the government
+
+The space of IT security, for both corporate networks, home networks and
+IoT, leaves much to wish for. The market is motivated by functional
+features, with security taking the back seat. This is the case, to a large
+extent, because security is evident neither in its existence nor in its
+absence; a situation that is likely to prevail.
+
+Moreover, product security suffers from significant information
+asymmetry. The vendor knows much more about the security of its product than
+the customer (even if such knowledge means knowing that he doesn't really
+know, as is the case with many vendors). This asymmetry implies that
+customers cannot properly factor security into their buying decisions,
+diminishing the ability of the market to fuel improvements, as it does in
+other areas.
+
+Such conditions, like the related public safety conditions, call for
+government intervention. In some cases this happens through regulation
+(e.g., with car seat belts). In softer cases, where life and death do not
+seem to be directly at stake, the government can still catalyze improvement
+by using its buying power. In our case, the primary interest of the
+government might be to protect itself, rather than the public, but the
+outcome is the same. (It is reasonable to expect that some of the benefit of
+that buying power, which the taxpayer enables, benefits back the taxpayer,
+so all is well.)
+
+Forcing software products to come with a *Bill of Materials* is just part of
+the benefit of the Executive Order, but I argue that even this addition
+alone, once imposed on many large vendors, can ignite a multi-phase process
+of improvement:
+
+ 1. starting with one mandatory machine-readable SBOM document that has
+    to be kept up to date,
+ 2. leading to machine-generated machine-readable documents, which are
+    easier for the vendor to produce and refresh,
+ 3. to standards-based true machine-readable documents that can be used
+    by security gear, both for SBOM and for other areas where positive
+    attestation by the vendor can help reduce the use of heuristics in
+    security monitoring,
+ 4. to an overall higher security posture by improving the accuracy and
+    benefit of security monitoring and enforcement tools; accuracy that
+    will also favor vendors.
+
+We do not need an Executive Order for this, but we do need an Executive
+Order to build the critical mass of demand for machine-readable security
+documentation that will ignite this entire process.
+
+Whatever the overall aspiration of the government is — I believe that it
+will get more than it bargained for.
+
+/This essay has also been published at: https://www.hbarel.com/
+
+------------------------------
+
+Date: May 29, 2021 14:31:25 JST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: CDC loosened mask guidance to encourage vaccination --
+  it failed spectacularly (Beth Mole, Ars Technica)
+
+FDA approval and paid time off would make people more likely to get a shot, poll finds.
+By Beth Mole
+May 28 2021
+<https://arstechnica.com/science/2021/05/cdc-loosened-mask-guidance-to-encourage-vaccination-it-failed-spectacularly/>
+
+The Centers for Disease Control and Prevention stunned health officials and
+experts on May 13 with the abrupt announcement that people fully vaccinated
+against COVID-19 could forgo masking in most settings -- indoor, outdoor,
+uncrowded, and crowded alike. The guidance was a stark reversal from the
+health agency's previous stance, issued just two weeks earlier, that still
+recommended vaccinated people wear masks among crowds and in many indoor,
+uncrowded settings.
+
+The CDC said at the time that it was merely following the science for
+masking. The agency and its director, Rochelle Walensky, highlighted fresh,
+real-world studies demonstrating COVID-19 vaccines' high efficacy and
+ability to lower transmission risks. But the update was also part of an
+overt effort to encourage vaccination among the vaccine hesitant by
+emphasizing the perks of being vaccinated -- like not needing to wear masks
+anymore and reclaiming other bits of normal life.
+
+That messaging shift came as states across the country started to see their
+pace of vaccination slow despite a glut of vaccine doses. Numerous polls
+have indicated that most of the people eager to get vaccinated already
+have. Now, with just 62 percent of the US adult population vaccinated, much
+of the remaining unvaccinated portion is either hesitant or resistant to
+being vaccinated. It's that group of people the CDC was trying to reach with
+the new mask guidance.
+
+``The science is also very clear about unvaccinated people,'' Walensky said
+during the May 13 press briefing, in which she announced the mask guidance
+update. ``[Unvaccinated people] remain at risk of mild or severe illness, of
+death, or spreading the disease to others. You should still mask, and you
+should get vaccinated right away.  Your health and how soon you return to
+normal life before the pandemic are in your very capable hands.''
+
+Mask blunder
+
+The mask update immediately generated confusion and controversy given the
+reversal and its abruptness. And according to fresh polling data, the
+guidance failed spectacularly at convincing unvaccinated people to get
+vaccinated.
+
+In new results from the Kaiser Family Foundation's ongoing COVID-19 vaccine
+monitoring poll, 85 percent of unvaccinated people said the CDC's loosened
+mask guidance for fully vaccinated people made *no difference* to their
+vaccination plans. Only 10 percent said the change made them *more likely*
+to get vaccinated and a final 4 percent or so said the change made them
+*less likely* to get a shot.  It gets worse. The poll broke unvaccinated
+people into three groups: people who said they would &*definitely not* get
+vaccinated, people who would get vaccinated *only if required*, or people
+who would *wait and see*.  Those most resistant to getting vaccinated were
+the least likely to be swayed by the CDC's latest guidance. Among the
+*definitely not* group, 98 percent said the change made no difference to
+them and the remaining 2 percent said they were less likely to get vaccinated
+-- zero percent said they were more likely to get a vaccine. For the *only
+if required* group, 89 percent said the CDC change made no difference.
+
+Overall in the poll -- which collects data on a nationally representative
+sampling of adults -- 62 percent said they had already gotten their vaccine
+(which tracks with CDC vaccination data), 12 percent said they would wait
+and see about vaccination, 7 percent said they would only get vaccinated if
+they were required, and 13 percent said they would *definitely not* get
+vaccinated. That *definitely not* portion has largely remained the same
+throughout the polling, which stretches back to December.
+
+While the CDC's loosened masking guidance was clearly not persuasive to the
+unvaccinated, the poll explored other tactics that could boost
+vaccination. The two ideas that seemed to have the most sway were: 1) if the
+Food and Drug Administration grants a vaccine full approval, rather than the
+current Emergency Use Authorizations (EUA); and 2) if employers provided
+paid time off to get vaccinated and recover from any side effects, like
+feeling under the weather the day after a dose.
+
+FDA approval and PTO
+
+A total of 32 percent of unvaccinated people said a full FDA approval (a
+Biologics License Application [BLA] approval) would make them more likely to
+get a COVID-19 vaccine. Currently, all three vaccines available in the US
+have been granted an EUA. The FDA grants EUAs only during public health
+emergencies, like the COVID-19 pandemic, through a process that is
+fast-tracked compared with a full BLA approval.
+
+Importantly, both tracks require efficacy and safety data from massive Phase
+III clinical trials. The main difference between an EUA and full approval is
+the amount of time that people in the clinical trials are followed after
+full vaccination. Typically, the FDA likes to have at least six months of
+follow-up data from a vaccine trail. This allows the trial runners and the
+FDA to look at how well vaccine protection holds up over that time and if
+any rare side effects crop up. For an EUA, the follow-up period may only be
+around two months.
+
+However, the difference is largely moot at this point. With nearly 167
+million people in the US alone already given at least one shot, regulators
+have a wealth of post-market safety data. Also, Pfizer and BioNTech
+announced in April that they had six-months of trial follow-up data that
+confirmed the vaccine's high efficacy and found no safety concerns. Earlier
+this month, Pfizer and BioNTech, as well as Moderna, announced that they
+havestarted a rolling data-submission process for a BLA.  [...]
+
+------------------------------
+
+Date: Fri, 4 Jun 2021 14:59:53 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Deter prying eyes by locking your own letters (Atlas Obscura)
+
+A how-to for those who want to use folds, tucks, slits, and more to turn
+letters into little works of art.
+
+https://www.atlasobscura.com/articles/letterlocking-how-to
+
+DIY encryption.
+
+------------------------------
+
+Date: Mon, 31 May 2021 10:55:10 +0200
+From: Marco <listaddr@gmail.com>
+Subject: Facebook systematically censoring "vaccine concerns",
+  regardless of truthfulness (Project Veritas)
+
+This is not "fighting fake news", this is pure censorship.
+
+https://www.projectveritas.com/news/breaking-facebook-whistleblowers-expose-leaked-internal-docs-detailing-new/
+
+------------------------------
+
+Date: Fri, 4 Jun 2021 15:06:50 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Facebook suspends Trump for 2 years in response to Oversight Board
+  ruling (WashPost)
+
+The change is part of a series of responses to the Facebook Oversight
+Board's ruling on former President Trump.
+https://www.washingtonpost.com/technology/2021/06/03/trump-facebook-oversight-board/
+
+Risks? Facebook, Trump...
+
+------------------------------
+
+Date: Mon, 31 May 2021 14:38:38 +0200
+From: Marco <listaddr@gmail.com>
+Subject: Google made it nearly impossible for users to keep their
+  location private (Business Insider)
+
+Google continued collecting location data even when users turned off various
+location-sharing settings, made popular privacy settings harder to find, and
+even pressured LG and other phone makers into hiding settings precisely
+because users liked them, according to the documents.
+
+https://www.businessinsider.com/unredacted-google-lawsuit-docs-detail-efforts-to-collect-user-location-2021-5
+
+------------------------------
+
+Date: Fri, 4 Jun 2021 13:28:53 -0600
+From: "Cipher Editor" <cipher-editor@ieee-security.org>
+Subject:  Security Engineering: A Guide to Building Dependable Distributed
+  Systems (Ross Anderson)
+
+   [*Cipher* is at http://www.ieee-security.org/cipher.html
+   It is published 6 times per year]
+
+            Security Engineering: A Guide to Building
+             Dependable Distributed Systems by Ross Anderson
+  		    Book Review By Sven Dietrich
+                             5/31/21
+
+Wiley Publishing 2020, ISBN ISBN-13: ISBN: 978-1-119-64278-7 (Hardcover)
+1232 pages, Third Edition
+
+We live amid constant reminders in real life about what could have been done
+better from a computer security perspective.  When something goes wrong, we
+find it is a protocol that is exhibiting an exploitable vulnerability, or a
+software repository that has been infiltrated with code containing a
+vulnerability, or a critical infrastructure system held for ransom. One
+wonders what design principles the system authors and builders had
+considered to mitigate any compromises or to allow them to continue to
+function in the presence of those compromises. How can we engineer those
+solutions, how can we build better systems: more secure, more dependable?
+One book attempts to provide this background.
+
+At over 1200 pages, Ross Anderson's third edition of 'Security Engineering:
+A Guide to Building Dependable Distributed Systems' is a large update after
+the first edition in 2001 and the second edition in 2008. This is a
+comprehensive book on security engineering, providing anywhere from an
+introduction to the various subfields of computer and network security to
+considerations necessary to building secure and resilient real-world
+systems, and all the way to identifying research problems that remain to be
+addressed for the topics in each chapter.
+
+The book is divided into three parts, with a total of 29 chapters, and
+contains an extensive bibliography. The first part covers the basics, the
+second part looks at applications of secure systems, and the third part
+broadly discusses politics, management, and assurance. Each chapter covers
+several themed subsections, followed by a chapter summary, a set of research
+problems, and further reading. The chapters read well and flow easily within
+themselves as well as from one chapter to the next. While it is a a
+descriptive treatise, not a rigorous mathematical treatment of the various
+subjects, nonetheless occasional mathematical formulas or charts will pop up
+inline to illustrate the broad concepts brought forth and to whet the
+reader's appetite to seek out the original research paper or other
+references cited.
+
+The first part spans 8 chapters that quickly set the stage for Ross
+Anderson's approach to the subject matter: 'What is Security Engineering?',
+'Who is the Opponent?', 'Psychology and Usability', 'Protocols',
+'Cryptography', 'Access Control', 'Distributed Systems', and last but not
+least 'Economics'. The reader learns about what it means to deal with
+adversity in the 2020s, identifying the threat models, the pitfalls, and the
+consequences of not getting security right. The big impact here is from the
+author's contribution to the security field, the systems view, the
+psychology and usability aspects, as well as the economics aspects, topics
+for which the author has organized (or otherwise contributed to) workshops
+and conferences.
+
+The second part discusses real-world applications of secure systems,
+covering many decades of security work, from the early days of 'Multilevel
+Security' and 'Nuclear Command and Control', to 'Advanced Cryptographic
+Engineering', 'Biometrics' and 'Tamper Resistance' as well as Digital Rights
+Management in 'Copyright and DRM', to 'Network Attack and Defence',
+'Phones', 'Locks and Alarms', just to mention some of the 16 chapters in
+here. This part is wrapped up with thoughts on 'New Directions' in the
+field, talking among others about the combination of Machine Learning,
+Artificial Intelligence and Security and what it means for both attacker and
+defender sides.
+
+The third part covers politics, management, and assurance in four
+chapters. Here the reader learns about 'Surveillance or Privacy', 'Secure
+Systems Development', 'Assurance and Sustainability'.  Controversial topics
+of surveillance versus privacy are brought up in the context of political
+and technological settings that have affected Internet users for many years,
+including wiretapping and censorship. Risk quantification and DevSecOps are
+brought into the picture here as well. This part wraps up with 'Beyond
+"Computer Says No"', reminding us what Ross Anderson has told us all along
+in these chapters: think about the big picture, and how does it fit in?
+
+This is a fantastic book for organizing one's thinking about security
+engineering and design. The reader how all the facets fit together in the
+real world through both scientific references and anecdotes from the last
+few decades. The depth is provided, should the reader care to delve deeper,
+through an absolutely impressive bibliography of close to 2100 entries. The
+narrative is easy to follow throughout the book, whether the reader is
+learning about DDoS attacks (always close to my heart), espionage (Snowden's
+surveillance revelations, for example), security protocol failures,
+financial transaction protocols, mobile phone security, electronic voting
+security (very relevant in the last few years), security printing, covert
+channels, DNS security, deception, or ransomware, among others.
+
+The breadth of the topics covered provides a good perspective for
+appreciating the impact that good (secure?) design can have on real-world
+systems that surround us. That is even more so relevant now that the
+Internet has invaded, uh, permeated our homes with Internet-of-Things
+devices that make our lives more Internet-centric with all the advantages
+and risks that come with it.
+
+The accessible style of this book and, most importantly, the relevant
+context of the discussed secure systems, make for one pleasurable
+reading. While it could be considered a very comprehensive introduction to
+the idea of security engineering, there are enough timely and
+thought-provoking musings to keep more advanced readers interested in
+seeking out the scientific articles providing the adequate depth, hindsight,
+and foresight. This book is a must-have if security engineering is your
+intended field or connected to your field.
+
+Ross Anderson did a great job of producing the third edition of 'Security
+Engineering: A Guide to Building Dependable Distributed Systems' in 2020, a
+book intended to last for many years. He is a well-known expert in the
+security field and this overarching treatise makes for one impressive (and
+heavy!) book. The book is a welcome addition to my bookshelf, to be used as
+a reference or even textbook in the years to come.
+
+  Sven Dietrich reviews technology and security books for IEEE Cipher. He
+  welcomes your thoughts at spock at ieee dot org.]
+
+------------------------------
+
+Date: Tue, 1 Jun 2021 22:31:13 +0100
+From: John Bechtel <john@bechtel.me.uk>
+Subject: Re: Risks: Colonial Pipeline accused of negligence in proposed
+  class action (Bloomberg Law, RISKS-32.69)
+
+The idea that Colonial would shut the pipeline down if it can't
+measure who is getting what product (as I understand the story) sounds very
+much like the apocryphal story about telephone exchanges (Central Offices or
+Switches to some) back in the day: What is the purpose of a telephone
+exchange?  ``Why, to make telephone calls, of course!''
+But that is not the answer. The true answer is: to generate billing records.
+If the hard disk to which billing records are written is full, should the
+exchange place calls?
+
+------------------------------
+
+Date: Thu, 03 Jun 2021 14:27:41 -0400
+From: Sam Steingold <sds@gnu.org>
+Subject: Re: Florida governor signs law to block *deplatforming* of
+  Florida politicians (The Verge, RISKS-32.69)
+
+I think [they] have reinvented Shadow banning.
+https://en.wikipedia.org/wiki/Shadow_banning
+
+I find it disappointing that such a terrifying risk to free discourse is
+being advocated here.
+
+------------------------------
+
+Date: Mon, 31 May 2021 09:43:09 +0100
+From: "Patrick O'Beirne" <pob@sysmod.com>
+Subject: Re: Irish Health Service hit by ransomware (BBC, RISKS-32.68)
+
+Ongoing disruption and consequences, costs :
+https://www.irishtimes.com/news/health/hse-cyberattack-has-had-devastating-impact-cancer-services-director-says-1.4576211
+"The search for handwritten or printed-out notes can exacerbate delays,
+causing “a devastating impact on . . . the speed at which we can
+assess patients”."
+
+https://www.irishtimes.com/news/health/cyberattack-hse-faces-final-bill-of-at-least-100m-1.4577076
+
+" The cyberattack on IT systems in the health service will cost it at least
+€100 million, according to chief executive Paul Reid. This is at
+the lower end of estimates of the total cost, he indicated, and includes the
+cost of restoring the network, upgrading systems to Microsoft 365 and the
+disruption caused to patients."  (From Windows 7)
+
+In other news, citizen contra-attackers:
+https://www.irishtimes.com/news/crime-and-law/members-of-public-send-messages-to-cyber-gang-that-attacked-hse-1.4575230
+" An online message thread established by the cyber gang that attacked the
+Health Service Executive has been accessed by a number of unknown people,
+with gardaí trying to establish who they are and what their motivations
+are. At least one person who accessed the thread sent sexually explicit and
+racist comments to the attackers in recent days."
+
+------------------------------
+
+Date: Mon, 31 May 2021 12:17:23 -0700
+From: "Stephen E. Bacher" <sebmb1@verizon.net>
+Subject: Re: Why GitHub Refuses to Provide Key Evidence to a Man on Death
+  Row (Gizmodo)
+
+Apart from the social media (Facebook/Twitter/etc.) ramifications, this
+story evokes another risk: the risk of relying without question on "expert"
+DNA analysis to prove innocence (or guilt).
+
+Some time ago the public radio program "This American Life" featured an
+in-depth story which delved anecdotally into the ins and outs of analyzing
+DNA data; it raised some skepticism, at least in my mind, about the accuracy
+and reliability of the resulting evidence presented in courtrooms.
+
+This is , to be sure, a journalistic issue at least as much as a legal one.
+
+------------------------------
+
+Date: Wed,  2 Jun 2021 16:55:23 -0400 (EDT)
+From: Eli the Bearded <*@eli.users.panix.com>
+Subject: Re: NoScript is immoral? (Re: Ward, RISKS-32.69)
+
+The Twitter account Sh_t User Story (name censored for profanity filters)
+has a wealth of examples of bad technology design many of which would be at
+home with RISKS. All are presented in the "User Story" format. One relevant
+to this post:
+
+    As a...
+        web user
+    I want to...
+        whitelist news websites from my ad-blocker plugin
+    so that...
+        I can take a long break between the first two paragraphs of
+        the article, and then be served with a paywall
+
+Link ROT-13rd, again for profanity filters:
+
+uggcf://gjvggre.pbz/FuvgHfreFgbel/fgnghf/1352299991969243138
+
+There are real risk lurking in all of this. Some of them:
+
+  1. People who can pay for news get it, but propaganda remains free.
+
+  2. Ads have become the normalized way of making micropayments on the web,
+     but ads frequently include enough unpleasantness that people take a lot
+     of steps to avoid them (NoScript and ad blockers).
+
+    a. There's no real middle between ad based micropayments and long term
+       subscriptions.
+
+    b. There's not always an easy way to find comparable news stories on a
+       site one already subscribes to. This is particularly true for stories
+       passed as URL without further details.
+
+  3. Search engine discoverability is critical for many sites, and search
+     engines don't typically run javascript, so JS disabled access often has
+     to work.
+
+------------------------------
+
+Date: Thu, 3 Jun 2021 23:43:53 +0200
+From: kaufmann@winning.com
+Subject: Re: NoScript is immoral? (RISKs 32.69) notsp
+
+In RISKs 32.69, Martin Ward writes:
+
+>Is it really morally wrong to choose *not* to execute by default every piece
+>of code that is handed to you by any web site that you decide to visit?
+
+Of course not. The way I look at is, it's my computer and my Internet
+connection, both paid for with my dollars. I have every right to exercise
+full control over what bits are downloaded with that connection and what
+happens to them after they arrive on my computer. To argue otherwise is
+to suggest that it's also morally wrong to leave the room during the
+commercial breaks in television programs. If there are copyright or other
+considerations the publisher wishes enforce, then they should be at
+least nominally negotiated before the content is made available (perhaps
+even if it's only a "click here to accept our terms" button). I guess
+we're all still waiting for a viable micropayments system.
+
+------------------------------
+
+Date: 30 May 2021 23:17:05 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: NoScript is immoral? (Re: Ward, RISKS-32.69)
+
+I wouldn't say it's morally wrong, but as I may have said a few times
+before, reporters need to eat, so you're definitely a freeloader.
+
+------------------------------
+
+Date: Mon, 31 May 2021 07:38:51 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: Security of the IMPs (Cosell, RISKS-32.69)
+
+In an episode of the "The Americans" about deep cover Soviet spies, an
+ARPAnet IMP makes a brief appearance, as well as a PDP-10 they call "The
+Beast".
+
+Here is a still clip from the episode showing the front panel of the IMP.
+
+  Don Hopkins, Arpanet Bullshit, 21 Oct 2015
+  From The Americans, Season 2 Episode 7: Arpanet.
+  https://www.youtube.com/watch?v=hVth6T3gMa0
+
+------------------------------
+
+Date: Mon, 31 May 2021 12:58:55 +0200
+From: Toebs Douglass <risks@winterflaw.net>
+Subject: Re: Truth, Lies, and Automation (RISKS-32.69)
+
+> Among other achievements, it has drafted an op-ed that was commissioned by
+> The Guardian,
+
+So, what happened here is that eight different opt-eds were produced by
+GPT-3; they were all kept short, and this was deliberate, because one of the
+fundamental and unsolved issues with artificial text generation is its
+inability to make sense over longer bodies of text; any given sentence is
+fine, a couple of sentences usually fine, something longer is problematic -
+and always will be, I suspect, because you'd need such a vast amount of
+content, to be able to develop a neural net which has seen enough material
+on enough subjects to be able to fake it for extended bodies of text, that
+it is impossible - that much content doesn't actually exist.  It's a sort of
+n^n problem.  You end up needing an *awful* lot more data and computational
+power just to move ahead a tiny bit.
+
+Of these eight documents, the editors at the Guardian then edited them all,
+as they saw fit, to produce the single document which was published.
+
+I may be wrong, but I suspect they took the most sane paragraphs from the
+eight attempts, fixed them up, and re-ordered them to make sense.
+
+If you're thinking this whole piece is the *direct* product of a text
+generator, it really isn't, and the areas where humans helped are exactly
+the areas where the method used is fundamentally and inherently weak.
+
+> written news stories that a majority of readers thought were written by
+> humans,
+
+This claim is backed up by a link to an arxiv white paper.
+
+In the white paper, various AI models (of increasing size, culminating in
+GPT-3) were given an original 200 or so word news piece written by a human
+and asked to generate text based on this primer.  The generated text was
+presented to the humans, who had to decide if it was human or AI written.
+
+I may well just not be seeing it, but all I can see is the claim that as the
+size of the model increases, the time taken to decide increases, and the
+success rate drops.  No actual numbers appear to be given.
+
+As before, short text is being used because of the fundamental and inherent
+difficulty in producing longer texts.
+
+> and devised new Internet memes.
+
+  This claim is backed up by a link to a tweet.  The tweet appears to show
+in a video of sequential still images a series of short, one or two word
+phases, submitted to GPT-3 by some guy, and its response.  The only other
+information about what was done is that "explaining the meme in the priming
+improves the consistency/quality".  Presumably also these represent the best
+results found, as selected by a human.
+
+> In light of this breakthrough, we consider a simple but important question:
+> can automation generate content for disinformation campaigns?
+
+Examining the claims made so far, there has been no breakthrough.
+
+I've not read the document published by the Center for Security and Emerging
+Technology.  It may be it is a well-balanced, rational and reasonable
+document.  However, this one paragraph, being more closely examined, appears
+to be sensationalism; the claims made are misleading, and seem far in excess
+of the basis upon which they are made.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.70
+************************

@@ -1,0 +1,521 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 5 January 2016  Volume 29 : Issue 20
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.20.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Dutch government defers on dumbing down security (EDRi)
+Bug in prison-release calculations unknown for 10 years, unfixed for 3 more
+  (Mark Brader)
+Kid Racks Up $5,900 Bill on Dad's iPad Playing Jurassic World (PCMag)
+Payment Card Protocols Wide Open to Fraud (OnTheWire)
+IRS insider crime (Tax Law Prof Blog)
+Risks of Facial Recognition (Consumer Reports via Al Mac)
+"Tim Peake said a spreadsheet error had caused his prank call from space"
+  (Sarah Knapton)
+Video of L.A. hoverboard fire (Al Mac)
+Cisco joins Juniper in thorough checking (Bank Info Sec)
+Analysis of VW Dieselgate SW (Henry Baker)
+Millions of Voter Records Posted, and Some Fear Hacker Field Day (NYTimes)
+2 Bankers Charged With Creating AT Cards to Steal From Accounts (NYTimes)
+Microsoft may have your encryption key; here's how to take it back
+  (Ars Technica)
+Re: Hotmail and how not to block spam (Gene Wirchenko)
+Re: Lie-detecting Software uses Machine Learning to Achieve 75%
+  accuracy (Dan Geer)
+Re: Driverless Cars (Al Mac, John Levine)
+Scholarships for Women Studying Information Security (Jeremy Epstein and
+  Rebecca Wright)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 4 Jan 2016 10:58:57 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Dutch government defers on dumbing down security (EDRi)
+
+  [Source: EDRi, European Digital Rights (a confederation of digital-rights
+  nongovernmental European organizations)]
+
+Today the Dutch government sent their position paper on encryption to the
+parliament: ``currently not appropriate to restrict development, availability,
+and use of encryption.''
+
+This may be relevant to many of you as some member states take a different
+position on `the problem of encryption', the Dutch take a fairly clear
+position and the Dutch hold the chair in the Council these six months. You
+may even ask yourself whether it is coincidence the letter was sent only
+today. :)
+
+The government says:
+
+  "The government's role is to ensure the safety of the Netherlands and the
+  offenses to detect. The Cabinet stressed the need for legitimate access to
+  data and communications. In addition, governments, businesses and citizens
+  benefit from maximum security of the digital systems. The government
+  recognizes the importance of strong encryption for Internet security, to
+  support the protection of the privacy of citizens, for confidential
+  communication of the government and companies, and for the Dutch economy."
+
+  "Therefore, the government believes that it is currently not appropriate
+  to adopt restrictive legal measures against the development, availability
+  and use of encryption within the Netherlands. In the international
+  context, the Netherlands will pronounce these conclusion and the
+  considerations."
+
+  G. A. Van der Steur H.G.J. Camp,
+  Minister of Security and Justice,
+  Minister for the Economy Business,
+
+The original, in Dutch:
+http://www.tweedekamer.nl/kamerstukken/brieven_regering/detail?id 16Z00009&did 16D00015
+
+See also (in English):
+Dutch govt says no to backdoors, slides $450K into OpenSSL without breaking
+  eye contact: People need encryption to be safe and secure, says ministry
+http://www.theregister.co.uk/2016/01/04/dutch_government_says_no_to_backdoors/
+
+------------------------------
+
+Date: Tue, 29 Dec 2015 00:57:26 -0500 (EST)
+From: msb@vex.net (Mark Brader)
+Subject: Bug in prison-release calculations unknown for 10 years, unfixed
+  for 3 more
+
+In 2012 the family of a crime victim in the state of Washington learned that
+the criminal was going to be released earlier than he should have been.
+They notified the state department of corrections (DOC), and it turned out
+to be due to a software bug.
+
+Specifically, if a prisoner in Washington receives time off their sentence
+for good behavior, the amount of time off is supposed to depend on the
+sentence as it would have been without the addition of "enhancements" based
+on aggravating factors (such as using a firearm in the crime).  But since
+2002, the actual computation has been based on the total sentence, including
+any enhancements.
+
+The DOC ordered a fix as soon as possible, but 3 years have now passed and
+it still hasn't happened.  Now that this has come to public attention,
+though, the fix is expected soon.
+
+It is now estimated that since 2002 there have been 3,200 prisoners released
+early, by an average of 55 days.
+
+See: http://www.seattletimes.com/seattle-news/politics/inslee-error-releases-inmates-early-since-2002/
+
+------------------------------
+
+Date: Sun, 3 Jan 2016 10:02:48 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Kid Racks Up $5,900 Bill on Dad's iPad Playing Jurassic World
+
+http://www.pcmag.com/article2/0,2817,2497323,00.asp
+
+  While said kid knew his dad's password to get onto the iPad itself, the
+  dad was surprised to learn that his son had also memorized his Apple ID
+  password. And, in doing so, he was able to bypass any restrictions his
+  father had placed on the device and buy whatever he wanted in the game.
+  The damage? The son made 65 transactions between December 13 and December
+  18--that's a lot of dinosaurs--to the tune of L4,000, or just around
+  $5,900.  Shugaa is apparently upset that Apple didn't do anything to
+  verify that the many, many purchases made over that small time period were
+  actually him.
+
+I'm sorry, I consider these games to essentially be scams, and the companies
+that take their cuts from the associated in-app revenues are at the very
+least complicit in situations like this one. Busy parents cannot be expected
+to monitor this stuff on top of everything else they have to do. The entire
+in-app purchase ecosystem -- especially for games -- has turned into an
+unethical mess.
+
+------------------------------
+
+Date: Tue, 29 Dec 2015 09:10:11 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Payment Card Protocols Wide Open to Fraud (Europe)
+
+OnTheWire via NNSquad
+https://www.onthewire.io/payment-card-protocols-wide-open-to-fraud/
+
+  "This mechanism is protected by a cryptographic signature (MAC).  The
+  symmetric signature key, however, is sometimes stored in Hardware Security
+  Modules (HSMs), of which some are vulnerable to a simple timing attack,
+  which discloses valid signatures. A signature extracted from one such HSM
+  can be used to attack other, more secure models since the signature key is
+  the same across many terminals, violating a base principle of security
+  design," the researchers from Security Research Labs wrote in an
+  explanation of the research, which was presented at the 32C3 conference in
+  Berlin earlier this week.
+
+------------------------------
+
+Date: Sun, 3 Jan 2016 15:40:16 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: IRS insider crime (Tax Law Prof Blog)
+
+The US Internal Revenue Service (IRS) is 5+ years behind in applying
+cyber-security repairs, according to US Government Accountability Office
+(GAO), most recently because Republican Congress has dramatically cut IRS
+funding beyond their core function, as punishment for scandal involving IRS
+alleged mistreatment of conservative non-profits exploiting loopholes
+created by US Supreme Court ruling in Citizens United.  The regulations for
+non-profits needed to be totally re-written, because of that, but Congress
+has not supplied sufficient funding for that to be done.  This has become a
+cause celebre for Republicans in election campaigns.
+
+* The last couple years, have had 1 million more tax payers, per year,
+victimized by id theft which files fraudulent tax returns to get fraudulent
+tax refunds sent to the crooks, then when the legitimate tax payer files
+correct return, the IRS treats the victim as the crook.  Everyone expects
+this volume to rise in the years ahead.
+
+* Now we find that an IRS employee, whose job it was to assist taxpayer
+victims of id fraud, had been conducting at least a $ million of that id
+fraud.
+
+http://taxprof.typepad.com/taxprof_blog/2015/12/irs-employee-whose-job-was-assisting-victims-of-identity-theft-charged-in-1-million-identity-theft-t.html
+
+* Nakeisha Hall obtained individuals' names, birth dates and Social Security
+numbers through unauthorized access to IRS computers. Hall used the personal
+identity information (PII) to prepare fraudulent income tax returns and
+submitted them electronically to the IRS. Hall requested that the IRS pay
+the refunds onto debit cards and directed that the cards be mailed to drop
+addresses that she controlled. Hall solicited and received drop addresses
+from Goodman, Coleman and other co-conspirators, who also collected the
+refund cards from the mail.
+
+* Hall activated the cards by using stolen identity information. She,
+Goodman, Coleman and other co-conspirators took the money off the debit
+cards at ATMs or used the cards for purchases. If the fraudulent returns
+generated U.S. Treasury checks rather than the requested debit cards, Hall
+and her co-conspirators used fraudulent endorsements in order to cash the
+checks.  Hall compensated Goodman, Coleman and other co-conspirators by
+giving them a portion of the refund money, or by giving them refund cards
+for their own use.
+
+The IRS is an agency in the US Dept of the Treasury, with an Inspector
+General's office just for investigations of the IRS, with an endless parade
+of reports on various different alleged wrong doing.
+
+https://www.treasury.gov/tigta/
+
+------------------------------
+
+Date: Mon, 4 Jan 2016 22:44:40 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Risks of Facial Recognition (Consumer Reports)
+
+Feb 2016 www.ConsumerReports.org has an article on who's tracking us in
+public, how they doing it, and what are they doing with the info.  As
+shoppers enter store, bank, mall, wherever, facial recognition identifies
+who you are [1] - new customer, old customer, suspected crook (suspected shop
+lifter, celebrity stalker, etc.), etc.  Customer Service greets you by name,
+knows what kind of business you have done there before.
+
+Facial Recognition is unregulated.  Companies may do anything they please
+with your picture.  There is no ethical code of conduct.  They assume that
+by you walking into their establishment, you give your permission for them
+to do anything with your picture, without even giving you an opt-out
+opportunity [2].  Churches use it to identify what regular attendee has
+stopped coming, so they call to see if they are Ok.   Companies can use this
+to target you with ads, some based on age & gender.  They do not have to
+encrypt the data or protect it from breaches.  Hackers can sell the data to
+kidnappers and stalkers.
+
+[1] Google had a public relations disaster when the software identified two
+    black people as gorillas.
+
+[2] Facebook is being sued for using photo of someone without that person's
+    consent.
+
+------------------------------
+
+Date: Wed, 30 Dec 2015 17:42:53 +0000
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: "Tim Peake said a spreadsheet error had caused his prank call
+  from space" (Sarah Knapton)
+
+Sarah Knapton, *The Telegraph*
+
+It was reported that Tim Peake attempted to make a telephone call to his
+parents from the International Space Station, but dialed a wrong number...
+:o)
+
+  British astronaut Tim Peake blamed a spreadsheet error for wrongly phoning
+  grandmother Betty Barker from the International Space Station.  Major
+  Peake said Microsoft Excel had rounded up a number in his list, forcing
+  him to accidentally dial a different West Sussex address when he tried to
+  call his own family.  Mrs Barker hung up after hearing a strange man's
+  voice say: ``Hello, Is this planet Earth?'' on Christmas Eve.  "There was
+  a bit of a gap before he spoke - I thought it was one of those silent
+  calls we are always getting."
+
+http://www.telegraph.co.uk/news/science/space/12073622/Tim-Peake-blames-spreadsheet-error-for-wrongly-phoning-grandmother-from-space.html
+
+------------------------------
+
+Date: Sat, 2 Jan 2016 14:58:40 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Video of L.A. hoverboard fire
+
+Should Hover Board use be covered under our comprehensive vehicle insurance,
+or with a separate rider?  When it burns, are the fumes toxic?
+
+Video of L.A. "hoverboard" fire
+https://www.youtube.com/watch?v›AZfe7b9uw
+
+http://www.huffingtonpost.com/entry/this-is-the-one-hoverboard-explosion-you-must-see_5686d650e4b014efe0da932d
+
+  We already know hoverboards can catch fire. But this new video of an
+  incident in Los Angeles brings it home. It was the first known hoverboard
+  explosion in the city, the L.A. Fire Department told the Los Angeles
+  Times, and it was a doozy.
+
+------------------------------
+
+Date: Wed, 30 Dec 2015 00:09:50 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Cisco joins Juniper in thorough checking (Bank Info Sec)
+
+Juniper found the unauthorized code, via an internal audit.  This implies
+some kind of intruder, into Juniper, put it there.
+
+So Cisco is conducting a similar audit, of their systems.
+
+Are other outfits going to take similar steps?
+
+http://www.bankinfosecurity.com/blogs/cisco-reviews-code-after-juniper-backdoor-found-p-2016
+
+------------------------------
+
+Date: Wed, 30 Dec 2015 15:37:17 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Analysis of VW Dieselgate SW
+
+FYI -- Terrific analysis of the VW Dieselgate software:
+
+Presentation slides (30MBytes):
+https://events.ccc.de/congress/2015/Fahrplan/system/event_attachments/attachments/000/002/812/original/32C3_-_Dieselgate_FINAL_slides.pdf
+
+Presentation video 65-minutes (550MBytes):
+http://50.21.181.236/congress/2015/h264-hd/32c3-7331-en-de-The_exhaust_emissions_scandal_Dieselgate_hd.mp4
+
+Bottom line:
+
+The computer software has two different modes, one of which is far more
+efficient in its use of the additive Adblue (urea); the less efficient model
+is selected only when running the standardized test.
+
+------------------------------
+
+Date: Wed, 30 Dec 2015 16:10:47 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Millions of Voter Records Posted, and Some Fear Hacker Field Day
+
+Names, phone numbers and demographic information was included in 191 million voter records mysteriously published over the last week.
+
+http://www.nytimes.com/2015/12/31/us/politics/voting-records-released-privacy-concerns.html
+
+------------------------------
+
+Date: Tue, 29 Dec 2015 05:16:36 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: 2 Bankers Charged With Creating AT Cards to Steal From Accounts
+
+Two men were accused of forging documents and creating cards for automated
+teller machines to withdraw $400,000 from 15 accounts of elderly and dead
+clients.
+http://www.nytimes.com/2015/12/29/nyregion/2-bankers-charged-with-creating-atm-cards-to-steal-from-accounts.html
+
+------------------------------
+
+Date: Thu, 31 Dec 2015 21:31:55 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Microsoft may have your encryption key; here's how to take it back
+
+http://arstechnica.com/information-technology/2015/12/microsoft-may-have-your-encryption-key-heres-how-to-take-it-back/
+
+------------------------------
+
+Date: Mon, 28 Dec 2015 13:16:42 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Re: Hotmail and how not to block spam (Levine, RISKS-29.18)
+
+> Mailers who grouse about their wonderful mail getting blocked this way
+> invariably turn out to be sending "greymail", it's not exactly spam, but
+> the recipients care whether they get it.
+
+It is not that easy.  I have received E-mails that are plausible as being
+something I asked for and forgot about.  This would also be a way to sneak
+spam, but it might be that I forgot about signing up.  If I can not remember
+asking for it, I toss it.  I can see where the people who flag as spam are
+coming from.
+
+I had an interesting experience several years ago.  I used to have the
+E-mail address <genew@qmail.ocis.net>.  I moved out of that ISP's area.
+Twenty months later, I came back to the area.  I signed up with the same
+ISP.  My E-mail address was then <genew@ocis.net>.  For whatever reason, the
+ISP had dropped the "qmail.".  However, E-mail addresses with "qmail." got
+routed to the address without it.  Shortly after, I started getting E-mails
+from on-line mags that I had previously subscribed to.  Apparently, they did
+not notice over a year's worth of bounce messages and continued sending.
+
+There are also risks here.  What it had been someone else who had gotten
+that E-mail address?  1) The person gets mailbombed.  2) There might be
+enough identifiable information to cause trouble in some cases.
+
+------------------------------
+
+Date: Sun, 03 Jan 2016 17:27:03 -0500
+From: dan@geer.org
+Subject: Re: Lie-detecting Software uses Machine Learning to Achieve 75%
+  accuracy (RISKS-29.18)
+
+> What one would want is separate performance figures for false
+> positives and false negatives. Those are mostly not identical, and
+> might actually be very different.
+>
+> One would hope that the false positive (accusing somebody of lying,
+> when actually truthful) rate is significantly lower than the false
+> negative (not detecting a liar) rate in this case.
+
+Diagnostic testing, and its fraternal twin information retrieval, have a
+defined set of terms for all this, including the headline word "accuracy".
+I offer this cheat sheet on the topic:
+  http://geer.tinho.net/nas.epi.html
+
+------------------------------
+
+Date: Tue, 29 Dec 2015 17:45:39 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: Driverless Cars
+
+Wall Street Journal via Levine
+> teaching them to drive like people, by cutting corners, edging into
+> intersections and crossing double-yellow lines.
+
+There are lead times for people writing articles for magazines, such that
+what they write may have been a few months prior to when article published.
+Not everyone can read every article on changes attempted.
+
+------------------------------
+
+Date: 29 Dec 2015 19:30:06 -0500
+From: "John R. Levine" <johnl@iecc.com>
+Subject: Re: Driverless Cars
+
+The WSJ article was published in September, reporting on a conference in
+July.  The *Analog* article was in the December issue.
+
+There's nothing secret about the stuff the WSJ was reporting on, so the
+author of the other article just missed it.  Tsk, tsk.
+
+------------------------------
+
+Date: Tue, 29 Dec 2015 11:43:04 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Scholarships for Women Studying Information Security
+
+Since 2011, Applied Computer Security Associates, sponsor of the ACSAC and
+NSPW conferences, has offered scholarships for women in security-related
+undergraduate and masters' degree programs through the Scholarships for
+Women Studying Information Security (SWSIS, www.swsis.org).
+
+Thanks to a $250,000 4-year contribution by Hewlett Packard Enterprise (HPE)
+in early 2014, ACSA expanded our program to award 11 scholarships for the
+2014-15 academic year, and 16 for the 2015-16 academic year. The Committee
+on the Status of Women in Computing Research (CRA-W), an arm of the
+Computing Research Alliance, led selection of scholarship winners.
+Information about the 27 SWSIS Scholars (scholarship winners) is available
+at www.swsis.org.
+
+ACSA, CRA-W, and HPE are pleased to announce that applications for 2016-17
+scholarships are accepted Dec 28 2015 - Feb 29 2016.
+
+To apply, an applicant must provide:
+* An essay describing her interest and background in the information
+  security field.
+* A current transcript.
+* A resume or CV.
+* At least two letters of reference (typically from faculty members).
+* Her university name and class status.
+
+The scholarship is renewable for a second year subject to availability of
+funds, given proof of satisfactory academic progress.  Preference is for US
+citizens or permanent residents; funds are available for use at any US
+campus of a US university.
+
+More information at www.swsis.org or swsis@swsis.org
+
+Jeremy Epstein, Director, Scholarship Programs
+Applied Computer Security Associates, Inc.
+
+Rebecca Wright, CRA-W Director for SWSIS
+Computing Research Association Committee on the Status of Women in
+Computing Research
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.20
+************************

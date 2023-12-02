@@ -1,0 +1,2027 @@
+precedence: bulk
+Subject: Risks Digest 29.54
+
+RISKS-LIST: Risks-Forum Digest  Sunday 29 May 2016  Volume 29 : Issue 54
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.54.html>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Catching up with large backlog]
+Connected Car Security (Gabe Goldberg)
+Nest to deliberately brick old smart hubs (Adrian Kingsley-Hughes)
+Are tighter rules needed on recording devices in cars? (Gabe Goldberg)
+Catch 22 in the Courtrooms: FBI and Tor malware (Cyrus Farivar)
+Dronebuster (Ars Technica)
+Attackers Steal $12.7M In Massive ATM Heist (EditorDavid)
+The risk of blaming the messenger (Rogier Wolff)
+Edward Snowden, John Crane, and Whistle-Blowing (McLaughlin/Froomkin)
+Student Exposes Bad Police Encryption, Gets Sentenced (EditorDavid)
+Armed FBI agents raid home of researcher who found unsecured (Ars)
+What the U.S. Gov really thinks about encryption
+  (Christian Science Monitor)
+DARPA Extreme DDoS Project Transforming Network Attack Mitigation
+  (Slashdot)
+Worm Takes Control Of Wireless ISPs Around the Globe (Dan Goodin)
+Untangling the Web: the NSA's supremely weird, florid guide to the Internet
+  (Michael)
+Real-Life RoboCop Guards Shopping Centers In California (BeauHD)
+AI causes more unemployment and lower standards of living (Slashdot)
+"This unusual botnet targets scientists, engineers, and academics"
+  (Danny Palmer)
+TOR to use improved RNG algorithm (Catalin Cimpanu)
+You Can Run, But You Can't Hide (Cyrus Farivar)
+Risk of Talking Like a Terrorist (Peter Bright)
+France's Guillotining of Global Free Speech Continues (Lauren Weinstein)
+"Why Free Speech Is Even More Important Than Privacy" (Lauren Weinstein)
+Major Cell Phone Radiation Study Reignites Cancer Questions (Sci Am via
+  LW)
+The Thai cleaning lady facing prison for 'I see' (BBC)
+Robot Cause Unemployment in Hitech - tagged iPhone7, Foxconn, Apple
+  (Softpedia)
+Facebook begins tracking non-users around the Internet (The Verge)
+"5 active mobile threats spoofing enterprise apps" (Ryan Francis)
+About Android [In]Security (Softpedia)
+Latest news / Hot right now (Softpedia)
+Ransomware Adds DDoS Attacks (Softpedia via EditorDavid on Slashdot)
+More Bad News.... for someone (Softpedia)
+Opera, VPN and sale to Chinese investors (Softmedia, May 26)
+TOR to use improved RNG algorithm (Catalin Cimpanu)
+You Can Run, But You Can't Hide (Cyrus Farivar)
+How copyright law is being misused to remove Internet material
+  (The Guardian)
+China's scary lesson to the world: Censoring the Internet works (WashPost)
+Microsoft accused of Windows 10 upgrade "nasty trick" (BBC)
+PayPal refuses to deliver online purchases to UK addresses containing "Isis"
+  (BoingBoing via Gabe Goldberg)
+Google's Paris HQ raided in tax probe (BBC)
+Censorship by Copyright claim to Google (The Guardian)
+Expect a Change of Google password policy (The Guardian)
+Stanford Computer Scientists Show Telephone Metadata Can Reveal
+  (Bjorn Carey)
+PasteJacking and JavaScript.... (Softpedia)
+Politically Incorrect, April Fools, a rejected X-Files script,
+  or.... just a Bad Dream ?!? (via Slashdot)
+Norwegian Consumer rights institute protests app terms, reading them for
+  24 hours on a live broadcast (via Slashdot)
+WPAD Protocol Bug Puts Windows Users at Risk (Catalin Cimpanu)
+Protect Your PC from Malware by Running Applications Inside a Sandbox
+  (Softpedia)
+The elderly are way savvier with password security than millennials (QZ)
+Robots also Destroy Low-Tech Jobs (Sam Machkovech)
+How Genius annotations undermined web security (The Verge)
+Major DNS provider NS1 hit by mysterious focused DDoS attack
+  (Sean Gallagher)
+China's Government Fabricates About 488 Million Social Media Posts Every
+  Year (NPR)
+"More than 22 BILLION vehicle photos in UK database" (Daily Mail)
+Re: Video Exposes Officials' Mistakes but Can't Undo Blown Calls. Yet.
+  (Paul van Keep)
+Re: It's Trivially Easy To Identify You Based On Records Of Your Calls
+  and Texts (Chris Drewe)
+Re: Another Risk of Self-Driving Cars; Clogged Highways?!? (Amos Shapir)
+Re: The last non-Internet Generation (Anthony)
+Re: Theoretical Breakthrough Made in Random Number Generation (Mark Thorson)
+Re: In Oracle v. Google, a Nerd Subculture Is on Trial (Amos Shapir)
+Windows into the Soul: new book (Gary T. Marx)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 28 May 2016 17:16:01 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Connected Car Security
+
+Connecting cars to the Internet and cloud-based services has clear benefits
+for both drivers and passengers with features ranging from navigation
+systems with live search functions to streaming audio options. But along
+with connectivity comes a certain level of risks -- cybersecurity concerns
+recently exposed in hacks of a Jeep SUV and the Nissan Leaf EV (electric
+vehicle).
+
+Now, experts say, the same connectivity may also offer a solution to this
+cybersecurity problem, in the form of over-the-air updates. And better
+computing power in a vehicle could offer a panacea, as well.
+
+http://cta.tech/i3/Features/2016/May-June/Connected-Car-Security.aspx
+
+Over-the-air updates, great. Think of Windows update fun brought to cars.
+I'd love to try starting my car in the morning only to find it's been
+bricked.  Or features a changed UI. Plus a juicy target for hackers.  I see
+a market for garage-sized Faraday cages, plus controversy about the wisdom
+of rooting your car.
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Mon, 23 May 2016 10:29:57 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Nest to deliberately brick old smart hubs"
+  (Adrian Kingsley-Hughes)
+
+Adrian Kingsley-Hughes for Hardware 2.0, ZDNet, 4 Apr 2016
+Home automation firm Nest is planning to pull the plug on old Revolv
+smart hubs, effectively bricking these devices.
+http://www.zdnet.com/article/nest-to-deliberately-brick-old-smart-hubs/
+
+Gilbert is also frustrated that he was never emailed about the planned
+shutdown, and only found out by accident when he visited the company's
+website. For other users, it's likely that their hubs will go dark and they
+won't know why.
+
+------------------------------
+
+Date: Sat, 28 May 2016 09:45:53 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Are tighter rules needed on recording devices in cars?
+
+It may be 2016, but many cars in Canada have a bit of George Orwell's novel
+Nineteen Eighty-Four in them.
+
+Most vehicles built since the early 2000s contain event data recorders that
+silently log everything, such as braking, speed, steering and whether a
+seatbelt is buckled.
+
+Initially created to improve safety and car performance, the devices have
+become a tool for police to reconstruct crash scenes and for insurance
+companies to assign accident blame.  [...]
+
+Clearer rules could be on the way
+
+The Canadian Automobile Association advocates on issues that are a concern
+to its members and the motoring public.
+
+The CAA says there is lobbying around this issue happening at the federal
+level.
+
+"The Privacy Commission of Canada has determined that this is an important
+issue to tackle and they are approaching it with motorists organizations
+like ours, with manufacturers and with possible legislation," said Gary
+Howard, spokesman for CAA Atlantic.
+
+MacKay says as more of what we do is recorded, our laws have been slow to
+catch up to protect our privacy. Iny agrees the technology is moving very
+swiftly.
+
+"There are plenty of vehicles with onboard systems that can communicate in
+real time, all the time with the car maker. They know where you are and
+they'll know how you're driving. That's much more invasive."
+
+He says cars are turning into a "permanent antenna" that can be used for
+"collecting, transmitting and receiving data about itself all the time."
+
+www.cbc.ca/news/canada/nova-scotia/event-data-recorders-police-insurance-cars-air-bag-control-modules-1.3585539
+
+Gabriel Goldberg, Computers and Publishing, Inc. gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Sat, 21 May 2016 06:02:26 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Catch 22 in the Courtrooms: FBI and Tor malware (Cyrus Farivar)
+
+  [Computer security seems full of Catch 22 problems...  WU]
+
+Cyrus Farivar, Ars Technica, 19 May 2016
+<http://arstechnica.com/tech-policy/2016/05/judge-says-suspect-has-right-to-review-code-that-fbi-has-right-to-keep-secret/>
+
+Judge says suspect has right to review code that FBI has right to keep
+secret.  At issue is Tor malware that enabled the FBI to bust child porn
+ring.
+
+A US federal judge in Tacoma, Washington has put himself in a Catch 22:
+ruling a man charged with possessing child pornography has the right to
+review malware source code while also acknowledging that the government has
+a right to keep it secret.
+
+"The resolution of Defendant's Third Motion to Compel Discovery places this
+matter in an unusual position: the defendant has the right to review the
+full NIT code, but the government does not have to produce it," US District
+Judge Robert Bryan wrote on Wednesday.
+<https://www.documentcloud.org/documents/2839367-Michaud-5-18-16.html>
+"Thus, we reach the question of sanctions: What should be done about it
+when, under these facts, the defense has a justifiable need for information
+in the hands of the government, but the government has a justifiable right
+not to turn the information over to the defense?"
+
+In this case, the defense wants prosecutors to disclose the full source code
+of the NIT, or network investigative technique -- a piece of
+government-created malware that compromised Tor and exposed users of a
+Tor-only child porn site. The Department of Justice did so in a related case
+<https://www.documentcloud.org/documents/2828710-Michaud-tues2.html#document/p5/a2>
+in Nebraska, *United States v. Cottom*, but a DoJ spokesman now says this
+case, *United States v. Michaud,* and *Cottom* are entirely different cases
+and have no bearing on one another.
+
+As Ars has reported previously, since defense lawyer Colin Fieman filed his
+third motion to compel discovery in January 2016, there have been two other
+judges overseeing related cases in different states that have ruled to
+suppress evidence found as a result of the NIT. Those cases, in Oklahoma and
+Massachusetts, have been significantly hindered as a result. (Earlier this
+month, a defense attorney in West Virginia filed a new motion to withdraw a
+guilty plea based on these other rulings.) These cases comprise a small
+handful in a group of 135 that have so far been prosecuted.
+<https://www.documentcloud.org/documents/2829139-Motion-to-Compel-Michaud.html>
+<https://motherboard.vice.com/read/playpen-hack-FBI-child-pornography-investigation>
+<https://www.documentcloud.org/documents/2824556-Defendant-s-Motion-to-Withdraw-Plea-Michael.html>
+
+In early 2015, investigators used this NIT malware to penetrate the digital
+security of Tor users accused of accessing the Tor-hidden child pornography
+site called "Playpen." In yet another related case prosecuted out of New
+York, an FBI search warrant affidavit described both the types of child
+pornography available to Playpen's 150,000 members and the malware's
+capabilities.
+<https://www.documentcloud.org/documents/2166606-ferrell-warrant-1.html>
+<https://www.documentcloud.org/documents/2166606-ferrell-warrant-1.html#document/p11/a227236>
+
+You can't have it both ways.  Brian Owsley, a former federal judge who is
+now a law professor at the University of North Texas, said that such a
+conundrum is "not that uncommon." He pointed to a 1957 Supreme Court
+decision, *Jencks v. United States*, which involved an undercover informant
+and an alleged Communist who demanded government records from the
+investigation.
+
+"The judge solves this problem by dismissing the charge against the
+defendant if the government does not want to release the code for the
+network investigative technique in this case based on an assertion of
+privilege," Owsley said by e-mail. "This enables the government to
+prioritize how important it is to maintain these documents. If the release
+truly would jeopardize national security or some other greater good as in
+this case, then the government must accept the dismissal of its prosecution
+of the one defendant for that greater good. So either the government will
+blink and allow the defendant access to the NIT code or the court may
+dismiss the indictment."
+
+Ahmed Ghappour <http://www.uchastings.edu/faculty/ghappour/index.php>, a law
+professor at the University of California, Hastings, came to a similar
+conclusion. "The judge has already ruled that the source code is material to
+the defense, and the government has not made a sufficient showing that
+access to the source code cannot be used by the defense to mount a
+challenge," he wrote.
+
+Judge Bryan is set to hold another hearing on this issue next week.
+
+------------------------------
+
+Date: Sat, 21 May 2016 7:14:43 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Dronebuster
+
+Dronebuster will let you point and shoot command hacks at pesky drones
+<http://arstechnica.com/information-technology/2016/05/dronebuster-will-let-you-point-and-shoot-command-hacks-at-pesky-drones/>
+
+Not exactly a jammer, the "gun" exploits library of drone control protocols
+
+Anti-drone technology has been high on the shopping list of public safety
+and military organizations at least since a drunken federal employee crashed
+a drone onto the White House lawn. Two companies on hand at the Navy League
+Sea Air Space Exposition here this week had two slightly different
+approaches to the problem. One anti-drone device has already been deployed
+in the hands of federal law enforcement and the military, and a "street
+legal" version may be coming soon.
+
+The drone "killer" getting the most attention at Sea Air Space was the
+DroneDefender, a system developed by researchers at the nonprofit research
+and development organization Battelle. DroneDefender is a two-pronged drone
+jammer -- it can disrupt command-and-control signals from a remote operator
+or disrupt automatic GPS or GLONASS guidance, depending on which of the
+devices' two triggers is pulled.
+<http://www.battelle.org/our-work/national-security/tactical-systems/battelle-dronedefender>,
+
+Powered by a small backpack, DroneDefender looks like some futuristic
+over-under, radio-frequency shotgun-grenade launcher. Targeted through a
+simple optical sight, the device has a range of about 400 meters. Battelle
+calls it a "directed RF energy weapon".  It sends out a jamming signal in
+the Industrial, Scientific and Medical (ISM) bands or global positioning
+bands in a 30-degree cone around the point of aim.
+
+Aboard the Department of Defense's Stiletto "marine demonstrator" boat
+<http://arstechnica.com/information-technology/2016/05/ars-climbs-aboard-the-stiletto-dods-stealthy-high-speed-lab-at-sea/>,
+Jake Sullivan was showing off his company's own counter-drone "gun," the
+Dronebuster. Sullivan, chief technology officer of California-based Flex
+Force <http://flexforce.us/>, said that his company began development of
+Dronebuster shortly after drones interfered with firefighters in California
+last year. The intent was to develop something for first-responders and
+local law enforcement.
+
+A version of the Dronebuster is already in the hands of some federal
+government customers. That device uses broadband jamming like the
+DroneDefender. It has the advantage of being much smaller than the
+DroneDefender, and it can be aimed using optical sights or an integrated
+radio frequency power meter and signal analyzer. Someone trained on the
+device can even distinguish what kind of signal is being emitted from the
+drone telemetry (such as remote video streaming) or control. Still, its
+jamming technology makes it illegal to use in the US.
+
+But a new version being developed by Flex Force operates completely within
+FCC regulations, though depending on what kind of drone is targeted, the new
+device may require an FCC license. Instead of jamming C&C signals, the new
+Dronebuster exploits weaknesses in the drone communications protocols
+themselves, enabling the Dronebuster's operator to trigger the "fly home"
+command on some drones and the "land" command on others. It does so by
+cycling through command sets for various drone systems.
+
+In the system currently being developed, GPS and GLONASS jamming are
+available through an add-on card available only to federal customers.
+Pending FCC approval of the product, Dronebuster could soon be made more
+widely available to local agencies and other customers.
+
+------------------------------
+
+Date: Sun, 22 May 2016 20:20:38 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Attackers Steal $12.7M In Massive ATM Heist (EditorDavid)
+
+EditorDavid, Slashdot, 22 May 2016
+
+[... if it was the bottom-line of banks and bank-networking service
+providers (rather than bank customers')  that got hit by the losses, one
+might be tempted to, mostly, chuckle.... at the thought of "more charity
+donations" :-]
+Attackers Steal $12.7M In Massive ATM Heist
+<https://yro.slashdot.org/story/16/05/22/1640254/attackers-steal-127m-in-massive-atm-heist>
+Within
+two hours $12.7 million in cash was stolen from 1,400 ATMs located at
+convenience stores all across Japan, investigators announced Sunday.
+
+ An anonymous reader quotes a Japanese newspaper
+: *Police suspect that the cash was withdrawn at ATMs using counterfeit
+credit cards containing account information leaked from a South African
+bank <http://mainichi.jp/english/articles/20160522/p2g/00m/0dm/044000c>.
+Japanese police will work with South African authorities through the
+International Criminal Police Organization to look into the major theft,
+including how credit card information was leaked, the sources said. *
+
+Over the two hours attackers withdrew the equivalent of $907 in 14,000
+different transactions.
+
+------------------------------
+
+Date: Sat, 21 May 2016 11:50:07 +0200
+From: Rogier Wolff <R.E.Wolff@bitwizard.nl>
+Subject: The risk of blaming the messenger
+
+Way too often, people think that data is secure when in fact it is not.
+Simply because some data is hiding behind an API does not mean it is not
+public. That data is available to anybody who wants.
+
+People who expose dataleaks like this, often get critiqued by the public.
+The public can be forgiven when they call it hacking when someone simply
+asks a database server for a full-record whereas the in-browser "app" would
+anonymize or redact the presented information.
+
+This is a dangerous situation where developers seem to think: "if I can't
+hack it nobody can", or "nobody is smart enough to query the database
+themselves".  All it takes is one smart guy to write "an app for that".
+
+It depends on specific circumstances if the "leak" gets reported to the
+company or not. Sometimes the reporting person gets thrown in jail for
+"hacking", sometimes not. I think that blaming the messenger is not a
+productive way for improving the world. Do this enough and people who notice
+leaks will think twice before they report it.
+
+Namecalling the messenger is IMHO not helping:
+
+> It's arrogant jerks like the asses behind this data scraping...(*)
+
+(*) Source withheld as an example. Who said that? It's public
+information.  If you want to know, just google it.
+
+R.E.Wolff@BitWizard.nl ** http://www.BitWizard.nl/ ** +31-15-2600998 **
+Delftechpark 26 2628 XH  Delft, The Netherlands. KVK: 27239233    **
+
+------------------------------
+
+Date: Tue, 24 May 2016 18:01:21 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Edward Snowden, John Crane, and Whistle-Blowing
+  (McLaughlin/Froomkin)
+
+Jenna McLaughlin and Dan Froomkin, The Intercept, 23 May 2016
+Vindication for Edward Snowden From a New Player in NSA Whistleblowing Saga
+
+U.S. officials, including President Barack Obama and Democratic front-runner
+Hillary Clinton, have insisted that Snowden should and could have gone
+through channels -- and would have been heard.  John Crane brings
+unprecedented evidence from inside the system that ostensibly protects
+whistleblowers that the system isn't working. And defenders of the system
+can't accuse him of having an outside agenda.
+
+*The Guardian* published a stunning new chapter in the saga of NSA
+whistleblowers on Sunday, revealing a new key player: John Crane, a former
+assistant inspector general at the Pentagon who was responsible for
+protecting whistleblowers, then forced to become one himself when the
+process failed.  An article by Mark Hertsgaard, adapted from his new book,
+Bravehearts: Whistle Blowing in the Age of Snowden, describes how former NSA
+official Thomas Drake went through proper channels in his attempt to expose
+civil-liberties violations at the NSA -- and was punished for it. The
+article vindicates open-government activists who have long argued that
+whistleblower protections aren't sufficient in the national security realm.
+It vindicates NSA whistleblower Edward Snowden who, well aware of what
+happened to Drake, gave up his attempts to go through traditional
+whistleblower channels -- and instead handed over his trove of classified
+documents directly to journalists.  And it adds to the vindication for
+Drake, who was already a hero in the whistleblower's pantheon for having
+endured a four-year persecution by the Justice Department that a judge
+called *unconscionable*.  The case against Drake, who was initially charged
+with 10 felony counts of espionage, famously disintegrated before trial --
+but not before he was professionally and financially ruined.  And now it
+turns out that going through official channels may have actually set off the
+chain of events that led to his prosecution.  Drake initially took his
+concerns about wasteful, illegal, and unconstitutional actions by the NSA to
+high-ranking NSA officials, then to appropriate staff and members of
+Congress. When that didn't work, he signed onto a whistleblower complaint to
+the Pentagon inspector general made by some recently retired NSA
+staffers. But because he was still working at the NSA, he asked the office
+to keep his participation anonymous.  Now, Hertsgaard writes that Crane
+alleges that his former colleagues in the inspector general's office
+revealed Drake's identity to the Justice Department; then they withheld (and
+perhaps destroyed) evidence after Drake was indicted; finally, they lied
+about all this to a federal judge.  Crane's growing concerns about his
+office's conduct pushed him to his breaking point, according to Hertsgaard.
+But his supervisors ignored his concerns, gave him the silent treatment, and
+finally forced him to resign in January 2013.  Due to Crane's continued
+efforts, however, the Department of Justice has opened an investigation into
+the Department of Defense for its treatment of whistleblowers, and
+Hertsgaard tells The Intercept that a public report on the results of the
+investigation is expected next year.  Crane brings unprecedented evidence
+from inside the system that ostensibly protects whistleblowers that the
+system isn't working. And defenders of the system can't accuse him of having
+an outside agenda. Crane has never taken a position for or against the NSA's
+programs, or made contact with Drake during the investigation.  ``Crane kind
+of made it a point not to know him,'' Hertsgaard told The Intercept on
+Monday.  ``He didn't want it to become something personal.''  For him, it
+was about whistleblowing, Hertsgaard explained, and the principle that
+``anonymity must be absolutely sacred.''  Snowden told *The Guardian* that
+Drake's persecution was very much on his mind when he decided to go outside
+normal channels. And he told TheGuardian that colleagues and supervisors
+warned him about raising his concerns, telling him, ``You're playing with
+fire.''  In his *Guardian* interview, Snowden called for changes.  ``We need
+iron-clad, enforceable protections for whistleblowers, and we need a public
+record of success stories.  Protect the people who go to members of Congress
+with oversight roles, and if their efforts lead to a positive change in
+policy, recognize them for their efforts. There are no incentives for people
+to stand up against an agency on the wrong side of the law today, and that's
+got to change.'' U.S. officials, including President Barack Obama and
+Democratic front-runner Hillary Clinton, have insisted that Snowden should
+and could have gone through channels -- and would have been heard.  ``When
+people look at Edward Snowden, he's the most famous,'' Hertsgaard told The
+Intercept.  ``What they don't realize is just how exceptional he is. He
+actually got his message out and he lived to tell the tale.  That is highly
+unusual.  In most cases, whistleblowers pay with their lives to save ours.''
+Hertsgaard writes in his book about many other whistleblowers whose stories
+are slightly less dramatic, but no less important.  ``I'm hoping campaign
+reporters will press Hillary Clinton and Bernie Sanders and Donald Trump on
+this,'' he said.
+
+[Jenna McLaughlin is a reporter and blogger covering surveillance and
+national security. She previously covered national security and foreign
+policy at *Mother Jones* magazine as an editorial fellow. There, she
+recently published a deep-dive investigation into the self-proclaimed
+*freedom fighter* Matthew VanDyke and his mission, entrenched in problems,
+to train the Assyrian Christians of Iraq to fight ISIS.  She routinely
+covered the Pentagon's sexual assault problem, putting pressure on Lackland
+Air Force base and others to address issues with reporting and preventing
+assaults. Her coverage of the Islamic State, ISIS, has been cited by recent
+novels and other stories on the subject, and her coverage of Twitter and its
+relationship to privacy and counterterrorism has been referenced in
+congressional testimony. She has also published multiple freelance articles
+with the National Journal, and previously worked for Baltimore City Paper
+and DC Magazine.  Dan Froomkin is Washington editor of *The Intercept*.  An
+outspoken proponent of accountability journalism, he wrote the popular
+*White House Watch* column at *The Washington Post* from 2004 to 2009. His
+career in journalism started in local news, and since then he has served as
+the senior Washington correspondent and bureau chief for The Huffington
+Post, as editor of WashingtonPost.com, and as deputy editor of
+NiemanWatchdog.org. He lives in Washington, D.C.]
+
+------------------------------
+
+Date: Sun, 22 May 2016 20:38:54 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Student Exposes Bad Police Encryption, Gets Sentenced (EditorDavid)
+
+EditorDavid on Slashdot, May 22)
+
+[ ...Known Dangers of Whistle-Blowing... odd that a computer security
+"expert" should not know... ! ]
+
+<https://yro.slashdot.org/story/16/05/22/0057256/student-exposes-bad-police-encryption-gets-suspended-sentence>
+
+Dejan Ornig, a security analyst in Slovenia warned the Slovenian police
+department about vulnerabilities in their supposedly secure communication
+system TETRA in 2013. (Here's Google's English translation
+<javascript:void(0)> of the article, and the Slovenian original
+<https://podcrto.si/odkritelju-ranljivosti-sistema-tetra-leto-in-tri-mesece-pogojne-zaporne-kazni/>.)
+
+He discovered that the system, which was supposed to provide encrypted
+communication, was incorrectly configured. As a result lots of communication
+could be intercepted with a $25 piece of equipment and some software. To
+make matters worse, the system is not used just by the police, but also by
+the military, military police, IRS, Department of Corrections and a few
+other governmental institutions which rely on secure communications.
+
+After waiting for more than two years for a reaction, from police or
+Ministry of Interior and getting in touch with security researchers at the
+prestigious institute Jozef Stefan, he eventually decided to go public with
+his story... The police and Ministry of interior then launched an internal
+investigation, which then confirmed Ornig's findings and revealed internal
+communications problems between the departments... Ornig has been subject to
+a house search by the police, during which his computers and equipment that
+he used to listen in on the system were seized. Police also found a
+"counterfeit police badge" during the investigation. All along Ornig was
+offering his help with securing the system.
+
+On May 11th Ornig received a prison sentence of 15 months suspended for
+duration of three years, provided that he doesn't repeat any of the offenses
+for which he was found guilty (illegal access of the communications
+system). He can appeal this judgment.
+
+------------------------------
+
+Date: Fri, 27 May 2016 16:33:18 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Armed FBI agents raid home of researcher who found unsecured
+  patient data
+
+http://arstechnica.com/security/2016/05/armed-fbi-agents-raid-home-of-researcher-who-found-unsecured-patent-data/
+
+  With the baby crying in fear from the racket, Shafer opened the door to
+  find what he estimated to be 12 to 15 FBI agents.  One was "pointing a
+  'big green' assault weapon at me," Shafer told Daily Dot, "and the baby's
+  crib was only feet from the door."  The agents allegedly ordered Shafer to
+  put his hands behind his back. As they handcuffed him, his 9-year-old
+  daughter cried in terror, Shafter said, and his wife tried to tell the
+  agents that there were three young children in the house.  Once
+  handcuffed, Shafer was taken outside, still in his boxer shorts, still not
+  knowing what was going on or why.  Over the next few hours, the agents
+  seized all of Shafer's computers and devices--"and even my Dentrix
+  magazines," Shafer said. "The only thing they left was my wife's phone."
+  The seized property list, a copy of which was provided to Daily Dot, shows
+  that federal agents took 29 items.
+
+I have no fear of invoking Godwin when calling this Gestapo tactics.
+Look it up.
+
+------------------------------
+
+Date: Fri, 27 May 2016 4:48:24 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: What the U.S. Gov really thinks about encryption
+
+http://www.csmonitor.com/World/Passcode/2016/0525/What-the-US-government-really-thinks-about-encryption
+
+------------------------------
+
+Date: Sat, 21 May 2016 20:16:05 +0200
+From: Werner U <werneru@gmail.com>
+Subject: DARPA Extreme DDoS Project Transforming Network Attack Mitigation
+
+  (Slashdot, May 21)
+
+<https://news.slashdot.org/story/16/05/21/0037217/darpa-extreme-ddos-project-transforming-network-attack-mitigation>
+coondoggie <https://slashdot.org/%7Ecoondoggie> quotes a report from
+Networkworld:
+
+Researchers with the Defense Advanced Research Projects Agency (DARPA) have
+quickly moved to alter the way the military, public and private enterprises
+protect their networks from high-and low-speed distributed denial-of-service
+attacks with a program called Extreme DDoS Defense
+<http://www.darpa.mil/program/extreme-ddos-defense> (XD3). The agency has
+since September awarded seven XD3 multi-million contracts
+<http://www.networkworld.com/article/3073481/security/darpa-extreme-ddos-project-transforming-network-attack-mitigation.html>
+to Georgia Tech, George Mason University, Invincea Labs, Raytheon BBN,
+Vencore Labs (two contracts) and this week to the University of Pennsylvania
+to radically alter DDoS defenses. One more contract is expected under the
+program. [DARPA says the XD3 program looks to develop technologies that:
+Thwart DDoS attacks by dispersing cyber assets (physically and/or logically)
+to complicate adversarial targeting, disguise the characteristics and
+behaviors of those assets to confuse or deceive the adversary, blunt the
+effects of attacks that succeed in penetrating other defensive measures by
+using adaptive mitigation techniques on endpoints such as mission-critical
+servers.]
+
+------------------------------
+
+Date: Sat, 21 May 2016 16:17:46 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Worm Takes Control Of Wireless ISPs Around the Globe (Dan Goodin)
+
+Dan Goodin, *Ars Technica*, via manishs on Slashdot, 20 May 2016
+
+Foul-Mouthed Worm Takes Control Of Wireless ISPs Around the Globe
+<https://it.slashdot.org/story/16/05/20/1711201/foul-mouthed-worm-takes-control-of-wireless-isps-around-the-globe>
+
+Dan Goodin, reporting for Ars Technica (edited and condensed):
+
+ISPs around the world are being attacked by self-replicating malware that
+can take complete control of widely used wireless networking equipment,
+according to reports from customers. San Jose, California-based Ubiquiti
+Networks confirmed recently that attackers are actively targeting a flaw in
+AirOS, the Linux-based firmware that runs the wireless routers, access
+points, and other gear sold by the company. The vulnerability, which allows
+attackers to gain access to the devices over HTTP and HTTPS connections
+without authenticating themselves, was patched last July, but the fix wasn't
+widely installed. Many customers claimed they never received notification of
+the threat.
+
+ISPs in Argentina, Spain, Brazil have been attacked by the worm,
+said Nico Waisman, a research at security firm Immunity, adding that it's
+likely that ISPs in the U.S. and other places have also been attacked by the
+same malware. From the report, "Once successful, the exploit he examined
+replaces the password files of an infected device and then scans the network
+it's on for other vulnerable gear. After a certain amount of time, the worm
+resets infected devices to their factory default configurations, with the
+exception of leaving behind a backdoor account, and then disappears."
+<http://arstechnica.com/security/2016/05/foul-mouthed-worm-takes-control-of-wireless-isps-around-the-globe/>,
+
+------------------------------
+
+Date: Sat, 28 May 2016 08:07:06 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Untangling the Web: the NSA's supremely weird, florid guide to the
+  Internet
+
+  Michael from Muckrock found a reference to "Untangling the Web," an
+  internal NSA guide to the Internet, on Google Books, so he requisitioned a
+  copy from the NSA under the Freedom of Information Act.  The guide came
+  back in full, with the only redactions being the authors' names. It is
+  supremely weird.  The book, which runs to 650 pages (!), features a series
+  of florid, overwrought comparisons to classical mythology, Freud, and
+  Borges, which Muckrock's Jpat Brown has pulled and screenshotted for your
+  delectation.
+
+  [LW has put an easily downloadable copy of all 651 pages:]
+https://drive.google.com/file/d/1ChIs5MCjb5hWJ2aFYC9k0Q_GdLNH-w8SLSqiSL3Kw9dXgcWf5aNYC3mPpX82xdJPt9YlBDpBwxklDdny/view?usp=sharing
+
+------------------------------
+
+Date: Sat, 21 May 2016 20:24:30 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Real-Life RoboCop Guards Shopping Centers In California (BeauHD)
+
+Metro via BeauHD on Slashdot, 20 May 2016
+
+<https://hardware.slashdot.org/story/16/05/20/2133241/real-life-robocop-guards-shopping-centers-in-california>
+
+While machines from the likes of RoboCop
+<http://www.imdb.com/title/tt0093870/> and Chappie
+<http://www.imdb.com/title/tt1823672/> might just be the reserve of films
+for now, this new type of robot is already fighting crime. This particular
+example can be found guarding a shopping center in California
+<http://metro.co.uk/2016/05/20/shopping-centre-hires-robocop-for-real-5895370/>
+but there are other machines in operation all over the state. Equipped with
+self-navigation, infra-red cameras and microphones that can detect breaking
+glass, the robots, designed by Knightscope <http://knightscope.com/>, are
+intended to support security services. Stacy Dean Stephens, who came up with
+the idea, told The Guardian
+<http://www.theguardian.com/us-news/2016/may/20/robocop-robot-mall-security-guard-palo-alto-california?CMP=twt_gu#comments>
+the problem that needed solving was one of intelligence. "And the only way
+to gain accurate intelligence is through eyes and ears," he said. "So, we
+started looking at different ways to deploy eyes and ears into situations
+like that."
+
+ The robot costs about $7 an hour to rent and was inspired by the Sandy Hook
+school shooting after which it was claimed 12 lives could have been saved if
+officers arrived a minute earlier
+
+------------------------------
+
+Date: Sun, 22 May 2016 19:19:47 +0200
+From: Werner U <werneru@gmail.com>
+Subject: AI causes more unemployment and lower standards of living
+ (Slashdot)
+
+20 May 2016
+[ an effect that has been evident to anyone paying attention to dynamics in
+industry and finance since the Cold War ended ]
+AI Will Create 'Useless Class' Of Human, Predicts Bestselling Historian
+<https://news.slashdot.org/story/16/05/20/2119224/ai-will-create-useless-class-of-human-predicts-bestselling-historian>
+
+*Yuval Noah Harari, author of the international bestseller "Sapiens: A
+Brief History of Humankind
+<http://www.amazon.com/Sapiens-Humankind-Yuval-Noah-Harari/dp/0062316095>,"
+doesn't have a very optimistic view of the future when it comes to
+artificial intelligence. He writes about how humans "might end up jobless
+and aimless, whiling away our days off our nuts and drugs, with VR headsets
+strapped to our faces," writes The Guardian. "Harari calls it 'the rise of
+the useless class' and ranks it as one of the most dire threats of the 21st
+century. As artificial intelligence gets smarter, more humans are pushed
+out of the job market
+<https://www.theguardian.com/technology/2016/may/20/silicon-assassins-condemn-humans-life-useless-artificial-intelligence>.
+No one knows what to study at college, because no one knows what skills
+learned at 20 will be relevant at 40. Before you know it, billions of
+people are useless, not through chance but by definition." He likens his
+predictions, which have been been forecasted by others for at least 200
+years, to the boy who cried wolf, saying, "But in the original story of the
+boy who cried wolf, in the end, the wolf actually comes, and I think that
+is true this time." Harari says there are two kinds of ability that make
+humans useful: physical ones and cognitive ones. He says humans have been
+largely safe in their work when it comes to cognitive powers. But with AI's
+now beginning to outperform humans in this field, Harari says, that even
+though new types of jobs will emerge, we cannot be sure that humans will do
+them better than AIs, computers and robots.*
+
+------------------------------
+
+Date: Mon, 23 May 2016 10:10:08 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "This unusual botnet targets scientists, engineers, and academics"
+  (Danny Palmer)
+
+Danny Palmer, ZDNet. 9 May 2016
+The Jaku campaign performs a "highly targeted operation" to infect
+systems and carry out DDoS and phishing attacks, warn researchers
+from Forcepoint.
+http://www.zdnet.com/article/this-unusual-botnet-targets-scientists-engineers-and-academics/
+
+selected text:
+
+Rather than indiscriminately infecting victims, this campaign is capable of
+performing "a separate, highly targeted operation" used to monitor members
+of international non-governmental organisations, engineering companies,
+academics, scientists and government employees, the researchers said.
+
+------------------------------
+
+Date: Thu, 26 May 2016 15:14:13 +0200
+From: Werner U <werneru@gmail.com>
+Subject: TOR to use improved RNG algorithm (Catalin Cimpanu)
+
+[ interesting, again no matter which side you are on....]
+
+Catalin Cimpanu, Softpedia, 25 May 2016
+Tor to Use Never-Before-Seen Distributed RNG to Generate Truly Random Numbers
+<http://news.softpedia.com/news/tor-to-use-never-seen-before-distributed-rng-to-generate-truly-random-numbers-504461.shtml>
+
+Devs test new Tor RNG algorithm at last week's meeting May 25, 2016 08:45
+
+<http://news.softpedia.com/editors/browse/catalin-cimpanu>
+
+Tor developers have been working on the next iteration of the Tor network
+and its underbelly, the Onion routing protocol, in order to create a
+stronger, harder-to-crack anonymous communications system.....
+
+Future Tor communications will be more secure
+
+The team says it implemented a new mechanism for generating random numbers,
+never before seen on the Internet.
+
+In secure communications and encryption, random numbers are of critical
+importance,serving as the base for generating encryption keys. The stronger
+the algorithm on which the random number is generated, the harder it is...to
+crack and guess the number based on known patterns.
+
+The Tor Project says it created something it calls "a distributed RNG"
+(random number generator) that uses two or more computers to create a random
+number and then blends these outputs. The end result is something that's
+impossible to crack without knowing which computers from a network
+contributed to the final random number, and which entropy each one used.
+
+Not even Tor devs can predict the output of the new distributed RNG
+
+Tor devs finished the new distributed RNG system a few months back, and at
+the Montreal meeting, the Tor team tested it on a network with eleven Tor
+routers. Currently, the distributed RNG is in the code review and auditing
+stage.
+
+------------------------------
+
+Date: Sat, 21 May 2016 05:35:25 +0200
+From: Werner U <werneru@gmail.com>
+Subject: You Can Run, But You Can't Hide (Cyrus Farivar)
+
+Cyrus Farivar, Ars Technica, 17 May 2016
+
+RunKeeper acknowledges location data leak to ad service, pushes updates
+<http://arstechnica.com/tech-policy/2016/05/runkeeper-acknowledges-location-data-leak-to-ad-service-pushes-updates/>
+
+RunKeeper announced Tuesday that it had found a bug in its Android code that
+resulted in the leaking of users' location data to an unnamed third-party
+advertising service. The blog post came four days after the Norwegian
+Consumer Council filed a complaint against the Boston company.
+<http://arstechnica.com/tech-policy/2016/05/runkeeper-fitnesskeeper-breaches-data-protection-law-norway/>
+
+In November 2015, Ars reported how apps in both Google Play and the Apple
+App Store frequently send users' highly personal information to third
+parties, often with little or no notice, according to recently published
+research that studied 110 apps.
+<http://arstechnica.com/security/2015/11/user-data-plundering-by-android-and-ios-apps-is-as-rampant-as-you-suspected/>
+
+------------------------------
+
+Date: Sat, 21 May 2016 05:12:49 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Risk of Talking Like a Terrorist (Peter Bright)
+
+Peter Bright, *Ars Technica*, 20 May 2016
+
+Terrorists no longer welcome on OneDrive or Hotmail
+The company is also funding research to detect terrorist content.
+<http://arstechnica.com/information-technology/2016/05/terrorists-no-longer-welcome-on-onedrive-or-hotmail/>
+
+Microsoft outlined new anti-terrorism policies today
+<http://blogs.microsoft.com/on-the-issues/2016/05/20/microsofts-approach-terrorist-content-online/>.
+Terrorists are no longer welcome to use Microsoft's online services, and the
+company will remove terrorist content when it's reported to be on the
+company's systems.
+
+With the change, terrorist content joins hate speech and the advocacy of
+violence against others as expressly prohibited. Microsoft says that it will
+be using the Consolidated United Nations Security Council Sanctions List
+<https://www.un.org/sc/suborg/en/sanctions/un-sc-consolidated-list> to
+determine whether something is terrorist or not; content posted by or in
+support of the individuals and groups on that list will be prohibited.
+
+The policy for Bing will be different; links to terrorist content will be
+removed only in response to a takedown demand compliant with local law.
+
+Microsoft is working with researchers to develop techniques to automatically
+identify terrorist pictures, videos, and audio. And the company is
+collaborating with government organizations to crack down on terrorist use
+of Internet platforms more broadly.
+
+[ <cough>  it will be removed....  unless it was a quote of a candidate for
+president ]
+
+------------------------------
+
+Date: Fri, 20 May 2016 20:22:25 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: France's Guillotining of Global Free Speech Continues
+
+http://lauren.vortex.com/2016/05/frances-guillotining-of-global-free-speech-continues
+
+The war between France and Google -- with France demanding that Google act
+as a global censor, and Google appealing France's edicts -- shows no signs
+of abating, and the casualty list could easily end up including most of this
+planet's residents.
+
+As soon as the horrific "Right To Be Forgotten" (RTBF) concept was initially
+announced by the EU, many observers (including myself) suspected that the
+"end game" would always be global censorship, despite efforts by Google and
+others to reach agreements that could limit EU censorship to the EU itself.
+
+This is the heart of the matter. France -- and shortly we can be sure a
+parade of such free speech loathing countries like Russia, China, and many
+others -- is demanding that Google remove search results for third-party
+materials on a global basis from all Google indexes around the world.
+
+What this means is that even though I'm sitting right here in Los Angeles,
+if I dare to write a completely accurate and USA-legal post that the French
+government finds objectionable, France is demanding the right to force
+Google (and ultimately, other search engines and indexes) to remove key
+references to my posting from Google and other search results. For
+everyone. Everywhere. Around the world. Because of ... France.
+
+It's nonsensical on its face but incredibly dangerous. It's a dream of every
+dictator and legions of bureaucrats down through history, brought to a shiny
+21st century technological reality.
+
+You don't have to be a computer scientist to realize that if every country
+in the world has a veto power over global search results, the lightspeed
+race to the lowest common denominator of sickly search results pablum would
+make Einstein's head spin.
+
+Proponents of these censorship regimes play the usual sorts of duplicitous
+word games of censorship czars throughout history. They claim it's for the
+good of all, and that it's not "really" censorship since "only" search
+results are involved.
+
+Well here's something you can take to the bank. Let's leave aside for the
+moment the absolute truth that -- given the enormous scale of the Web --
+hiding search results is effectively largely the same as hiding most source
+content itself as far as most people are concerned. But even if we ignore
+this fact, the truth of the matter is that it won't be long before these
+same governments are also demanding the direct censorship of source material
+websites as well as search results.
+
+However small the "forbidden information" leakage past the censorship of
+search results themselves, government censors will never be satisfied. They
+never are. In the history of civilization, they've never been satisfied.
+
+A grand irony of course is that the very rise of Internet technology has
+been the potential enabler of centrally-mandated censorship to a degree
+never imagined even twenty years ago. For those of us who've spent our
+professional lives working to build these systems to foster the open spread
+of information, seeing our technologies turned into the tools of tyrants is
+disheartening to say the least.
+
+It is however encouraging that firms like Google are continuing to fight the
+good fight against governments' censorship regimes. Frankly, it will take
+firms on the scale of Google -- along with support by masses of ordinary
+folks like us -- to have any chance at all of keeping France and other
+governments around the world from turning the Internet into their own
+personal information control fiefdoms.
+
+------------------------------
+
+Date: Wed, 25 May 2016 16:24:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "Why Free Speech Is Even More Important Than Privacy"
+
+http://lauren.vortex.com/2016/05/why-free-speech-is-even-more-important-than-privacy
+
+Supporters of the EU's horrific "Right To Be Forgotten" (RTBF) generally
+make the implicit (and sometimes explicit) argument that privacy must take
+precedence over free speech.
+
+As a privacy advocate for many years (I created my ongoing PRIVACY Forum in
+1992) you might expect that I'd have at least some sympathy for that
+position.
+
+Such an assumption would be incorrect. At least in the context of censorship
+in general -- and of RTBF in particular -- I disagree strongly with such
+assertions.
+
+It's not because privacy is unimportant. In fact, I feel that free speech is
+more important than privacy precisely because privacy itself is so
+important!
+
+It's all a matter of what you know, what you don't know, and what you don't
+know that you don't know.
+
+Basically, there are two categories of censorship.
+
+The first consists largely of materials that you know exist, but that you
+are forbidden by (usually government) edict from accessing. Such items may
+in practice be difficult to obtain, or simple to obtain, but in either case
+may carry significant legal penalties if you actually obtain them (or in
+some cases, even try to obtain them). An obvious example of this category is
+sexually-explicit materials of various sorts around the world.
+
+Ironically, while this category could encompass everything from classic
+erotic literature to the most depraved pornography involving children,
+overall it is the lesser insidious form of censorship, since at least you
+know that it exists.
+
+The even more evil type of censorship -- the sort that is fundamental to the
+"Right To be Forgotten" concept and an essential element of George Orwell's
+"Nineteen Eighty-Four" -- is the effort to hide actual information in a
+manner that would prevent you from even knowing that it exists in the first
+place.
+
+Whether it's a war with "Eastasia" or a personal past that someone would
+prefer that you not know about, the goal is for you not to realize, to not
+even suspect, that some negative information is out there that you might
+consider to be relevant and important.
+
+Combine this with the escalating RTBF demands of France and other countries
+for global censorship powers over Google's and other firms' search results,
+and it becomes clear why privacy itself can be decimated under RTBF and
+similar forms of censorship.
+
+Because if individual governments -- some of whom already impose draconian
+information controls domestically -- gain global censorship powers, we can't
+possibly assume that we even know what's really going on in respect to
+negative impacts on our privacy!
+
+In other words, RTBF and similar forms of censorship can act to hide from us
+the very existence of entities, facts and efforts that could be directly
+damaging to our privacy in a myriad number of ways.  And if we don't know
+that these even exist, how can we possibly make informed evaluations of our
+privacy and the privacy of our loved ones?
+
+To make matters worse, much of this applies not only to privacy issues, but
+to an array of crucial security issues as well.
+
+Attempting to maintain privacy and security in a regime of global censorship
+designed to hide facts from the public -- irrespective of the occasionally
+laudable motives for such actions in some specific cases -- is like trying
+to build a skyscraper on a foundation of quicksand.
+
+You don't need to be an architect, a computer scientist -- or a privacy
+expert -- to recognize the insanity of such an approach.
+
+------------------------------
+
+Date: Fri, 27 May 2016 08:06:49 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Major Cell Phone Radiation Study Reignites Cancer Questions
+
+NNSquad
+http://www.scientificamerican.com/article/major-cell-phone-radiation-study-reignites-cancer-questions/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ScientificAmerican-News+%28Content%3A+News%29
+
+  Federal scientists released partial findings Friday from a $25-million
+  animal study that tested the possibility of links between cancer and
+  chronic exposure to the type of radiation emitted from cell phones and
+  wireless devices. The findings, which chronicle an unprecedented number of
+  rodents subjected to a lifetime of electromagnetic radiation, present some
+  of the strongest evidence to date that such exposure is associated with
+  the formation of rare cancers in at least two cell types in the brains and
+  hearts of rats. The results, which were posted on a prepublication website
+  run by Cold Spring Harbor Laboratory, are poised to reignite controversy
+  about how such everyday exposure might affect human health.
+
+It's worth noting that (a) this is the first major study to show such a
+conclusion, (b) and it is not clear that its radiation model maps accurately
+to human exposure and usage patterns (especially since so many people no
+longer spend much time with the phone against their head, but rather are
+interacting with their hands and/or voice at a distance).
+
+------------------------------
+
+Date: Thu, 26 May 2016 18:19:08 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The Thai cleaning lady facing prison for 'I see' (BBC)
+
+BBC via NNSquad
+http://www.bbc.com/news/world-asia-36328865
+
+  A cleaning lady in Thailand is being charged by the government for posting
+  the words "I see" on Facebook. She is accused of insulting the monarchy -
+  a charge that can lead to jail sentences of up to 15 years.  However, she
+  says she is being punished because her son is an activist, as the BBC's
+  Jonathan Head reports.
+
+The monstrous, sickening, subhuman government and royals of Thailand.
+Should they have global censorship powers under Right To Be Forgotten?
+
+------------------------------
+
+Date: Thu, 26 May 2016 20:02:29 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Robot Cause Unemployment in Hitech - tagged iPhone7, Foxconn,
+ Apple (Softpedia)
+
+[ RISKS to humanity due to A.I. hardware and software cannot be
+overstated... consider who owns, manages, and controls it !! ]
+
+iPhone 7 Will Be Mostly Made by Robots, Softpedia, 26 May 2016
+<http://news.softpedia.com/news/iphone-7-will-be-mostly-made-by-robots-504513.shtml>
+
+Foxconn cuts workforce to half thanks to robots
+
+The upcoming iPhone 7 will be partially manufactured by robots, as one of
+Apple's suppliers has replaced 60,000 of its workers (nearly half) with
+robots...
+
+------------------------------
+
+Date: Fri, 27 May 2016 09:08:12 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Facebook begins tracking non-users around the Internet (The Verge)
+
+http://www.theverge.com/2016/5/27/11795248/facebook-ad-network-non-users-cookies-plug-ins
+
+  Facebook will now display ads to web users who are not members of its
+  social network, the company announced Thursday, in a bid to significantly
+  expand its online ad network. As The Wall Street Journal reports, Facebook
+  will use cookies, "like" buttons, and other plug-ins embedded on
+  third-party sites to track members and non-members alike.  The company
+  says it will be able to better target non-Facebook users and serve
+  relevant ads to them, though its practices have come under criticism from
+  regulators in Europe over privacy concerns. Facebook began displaying a
+  banner notification at the top of its News Feed for users in Europe today,
+  alerting them to its use of cookies as mandated under an EU directive.
+
+Study shows detailed compromising inferences can be readily made with metadata
+
+http://boingboing.net/2016/05/27/study-shows-detailed-compromi.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+boingboing%2FiBag+%28Boing+Boing%29
+
+  In Evaluating the Privacy Properties of Telephone Metadata, a paper by
+  researchers from Stanford's departments of Law and Computer Science
+  published in Proceedings of the National Academy of Sciences, the authors
+  analyzed metadata from six months' worth of volunteers' phone logs to see
+  what kind of compromising information they could extract from them.
+
+------------------------------
+
+Date: Fri, 27 May 2016 10:18:04 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "5 active mobile threats spoofing enterprise apps" (Ryan Francis)
+
+Ryan Francis, CSO, 27 May, 2016
+Enterprise employees use mobile apps every day to get their jobs done, but
+when malicious actors start impersonating those apps, it spells trouble.
+http://www.infoworld.com/article/3074881/mobile-security/5-active-mobile-threats-spoofing-enterprise-apps.html
+
+------------------------------
+
+Date: Thu, 26 May 2016 21:04:39 +0200
+From: Werner U <werneru@gmail.com>
+Subject: About Android [In]Security (Softpedia)
+
+  [Is there enough awareness of Smartphone RISKS?!!]
+
+Softpedia, 26 May 2016
+
+Android Malware Slowly Adapts to Marshmallow's New Permission Model
+<http://news.softpedia.com/news/android-malware-slowly-adapts-t.o-marshmallow-s-new-permission-model-504536.shtml>
+Android's new permission model doesn't deter malware coders.
+
+Malware coders have adapted two Android trojans to cope with Marshmallow's
+new user permission model, showing that despite Google's best efforts,
+crooks will plow through all the company's security measures and still reach
+their targets...
+
+Google launched Marshmallow last year. One of the key security features
+introduced with the mobile operating system was the new permission model
+that allowed apps to require the necessary permissions at runtime when a
+certain app function needed access to more data.
+
+Initially, malware coders didn't like this because it spread out all their
+malicious app's intrusive permissions across different popups, giving users
+the opportunity to spot something wrong. But crooks are resilient, so they
+adapted to adding the "target_sdk" attribute to the malicious app's code,
+and giving it a value of less than 23. This value told Marshmallow to ask
+for all permissions at installation, like on older Android OS versions.
+Security vendors quickly noted this change, and took a closer look at
+Marshmallow apps that employed this trick, Symantec reports
+<http://www.symantec.com/connect/blogs/android-threats-evolve-handle-marshmallow-s-new-permission-model>
+that two malware families, the dangerous *Android.Bankosy*
+<http://news.softpedia.com/news/android-bankosy-trojan-steals-one-time-passwords-sent-to-you-via-voice-calls-498820.shtml>
+banking trojan, and the Android.Cepsohord click-fraud bot, have evolved to
+use the new permission model. Both ask users at runtime for permissions, as
+they need them.
+
+Malware coders are leveraging on popup fatigue.
+
+Why malware coders decided to take this road resides in the profile of
+infected victims. Most people that suffer from such virus infections aren't
+technically trained experts, educated and experienced enough to spot such
+threats; users just click through all permissions without reading them --
+some just don't care about permissions anymore...
+
+------------------------------
+
+Date: Sun, 22 May 2016 21:00:53 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Latest news / Hot right now (Softpedia)
+
+[image: Hacking Team Loses Export License, Banned from Selling Its Software
+Outside EU] Hacking Team Loses Export License, Banned from Selling Its
+Software Outside EU, Softpedia, 22 May 2016
+<http://news.softpedia.com/news/hacking-team-loses-export-license-banned-from-selling-its-software-outside-eu-502642.shtml>
+[image: Israel Gets Ready for the Annual April 7 #OpIsrael Anonymous
+Cyberattack] Israel Gets Ready for the Annual April 7 #OpIsrael Anonymous
+Cyberattack
+<http://news.softpedia.com/news/israel-gets-ready-for-the-annual-april-7-opisrael-anonymous-cyberattack-502641.shtml>
+[image: New Record Set for Layer 7 DDoS Attacks by Nitol Botnet] New Record
+Set for Layer 7 DDoS Attacks by Nitol Botnet
+<http://news.softpedia.com/news/new-record-set-for-layer-7-ddos-attacks-by-nitol-botnet-502639.shtml>
+[image: US Marine Corps Expands with New Hacking Unit] US Marine Corps
+Expands with New Hacking Unit
+<http://news.softpedia.com/news/us-marine-corps-expands-with-new-hacking-unit-502466.shtml>
+Share your thoughts on this story!
+
+------------------------------
+
+Date: Sun, 22 May 2016 20:46:04 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Ransomware Adds DDoS Attacks (Softpedia via EditorDavid on
+ Slashdot)
+
+Ransomware Adds DDoS Attacks To Annoy More People, 22 May 2016
+<https://it.slashdot.org/story/16/05/21/2322211/ransomware-adds-ddos-attacks-to-annoy-more-people>
+
+Ransomware developers have found another method of monetizing their
+operations by adding a DDoS component to their malicious payloads
+<http://news.softpedia.com/news/ransomware-adds-ddos-capabilities-for-annoying-other-people-not-just-you-504323.shtml>.
+So instead of just encrypting your files and locking your screen, new
+ransomware versions seen this week also started adding a DDoS bot that
+quietly blasts spoofed network traffic at various IPs on the Internet.*
+Softpedia <http://news.softpedia.com/> points out that "Renting out DDoS
+botnets on the Dark Web is a very lucrative business, even if prices have
+gone down in recent years."
+<http://news.softpedia.com/news/dell-mines-the-hacking-underground-for-a-list-of-current-prices-502643.shtml>
+
+------------------------------
+
+From: Werner U <werneru@gmail.com>
+Date: Fri, 27 May 2016 02:03:05 +0200
+Subject: More Bad News.... for someone (Softpedia)
+
+[ just when I thought the news couldn't get worse today.... ]
+
+Sony hackers are also bank cyber-robbers, Softpedia, 22 May 2016
+SWIFT Bank Attacks Connected to  North Korean Group Behind Sony Hacks
+<http://news.softpedia.com/news/swift-bank-attacks-connected-to-north-korean-group-behind-sony-hacks-504538.shtml>Security
+researchers report that the malware used in the SWIFT-based attacks closely
+resembles the one used by the cyber-espionage *Lazarus Group*,..
+A code comparison of the "wiping function" (deletes traces of activity on
+infected systems) in the Bangladesh malware (Trojan.Banswift) and
+Backdoor.Contopee (trojan used in cyber-attacks on financial institutions
+in South-East Asia in the past few years) and Backdoor.Destover (one of
+Lazarus' main malware tools) supports that claim.
+
+SWIFT transaction attacks surfaced against *two other banks*
+<http://news.softpedia.com/news/second-bank-suffers-cyber-theft-via-swift-third-bank-catches-heist-just-in-time-504313.shtml>
+(in Ecuador and Vietnam) during the past week, a Philippines bank is also
+mentioned.
+A detailed graphic displays the so-far known SWIFattacks worldwide... "
+
+*Current status of SWIFT hacks [May 26, 2016]"* Crooks use your PC to hide
+their IP, funnel Web trafficWindows Trojan Uses TeamViewer to Turn Your PC
+into a Web Proxy
+<http://news.softpedia.com/news/windows-trojan-uses-teamviewer-to-turn-your-pc-into-a-web-proxy-504540.shtml>*BackDoor.TeamViewer.49
+is the name of a backdoor trojan that will install, * *via a complex
+multi-stage mechanism, the TeamViewer application on infected computers, so
+it can relay Web traffic from the crook to other servers on the Internet,
+effectively using the host as a proxy server.*
+
+Users don't get infected with BackDoor.TeamViewer directly, but first
+through a malware dropper called Trojan.MulDrop6.39120, distributed online
+together with an Adobe Flash Player update package....Once a system is
+infected, the perpetrator Owns it (can virtually do anything with it)
+
+------------------------------
+
+Date: Thu, 26 May 2016 17:31:34 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Opera, VPN and sale to Chinese investors (Softmedia, May 26)
+
+[an excerpt of the news article which shows why it's RISKS-related]
+
+*April 21*
+Opera Becomes First Browser to Offer a Built-in VPN
+<http://news.softpedia.com/news/opera-becomes-first-browser-to-offer-a-built-in-vpn-503258.shtml>
+...first major browser to include a free VPN service in the standard
+distribution.  *Developer Edition available for download*
+
+Opera's quest for better user privacy controls
+
+Using a VPN is recommended for users who would like to keep their privacy
+while online, to avoid restrictive firewalls, to access blocked websites,
+and to mask traffic on public wired or WiFi networks.
+
+Lately, Opera has been very focused on adding privacy-enhancing features to
+its browser, and Opera 37, the browser's current Beta release, is already
+testing out a *built-in ad blocking
+<http://news.softpedia.com/news/opera-37-0-web-browser-with-built-in-ad-blocker-lands-today-in-the-beta-channel-502427.shtml>*
+module. Besides blocking ads, the native ad-blocker will also prevent
+advertising companies from gathering information and fingerprinting users
+online, yet another plus for user privacy.
+
+If you've been following the browser scene since the mid-'90s, you won't be
+surprised by this latest addition to Opera's core features, since Opera has
+been pioneering and testing a large number of browser features before
+anyone else.
+You can download Opera 38 from its official website
+<https://www.opera.com/developer/>, or from one of Softpedia's download
+mirrors...
+
+Opera Shareholders Approve Sale to Chinese Investors, 26 May 2016
+<http://news.softpedia.com/news/opera-shareholders-approve-sale-to-chinese-investors-504522.shtml>
+
+Between the 2012 *rumors of a Facebook sale*
+<http://news.softpedia.com/news/Facebook-Said-to-Be-Interested-in-Opera-but-Don-t-Hold-Your-Breath-271846.shtml>
+and the Chinese buyout, Opera switched from its proprietary rendering
+engine to Google's Chromium core and even lost one of its founding members,
+who went on to create his separate browser called Vivaldi.
+Opera's future ownership doesn't instill trust
+
+Opera's soon-to-be owner is an investment fund officially named "Golden
+Brick Silk Road (Shenzhen) Equity Investment Fund II LLP." The fund is
+backed by three major Chinese companies that include Qihoo 360, who also
+publishes its own browser named 360 Secure Browser, gaming firm Kunlun, and
+investment firm Yonglian.
+
+During the past year, researchers from Citizen Lab have been investigating
+and revealing major security and privacy issues with most of the Chinese
+browsers, such as *UC Browser*
+<http://news.softpedia.com/news/Major-Security-Issues-Found-in-UC-Browser-for-Android-481916.shtml>,
+
+*Baidu Browser*
+<http://news.softpedia.com/news/baidu-browser-acts-like-a-mildly-tempered-infostealer-virus-500882.shtml>,
+and *QQ Browser*
+<http://news.softpedia.com/news/popular-chinese-qq-browser-caught-sending-user-data-to-its-servers-502311.shtml>
+.
+
+Immediately after the news broke about Opera's intentions to sell to
+Chinese firms, a large number of users have criticized the move, fearing
+their beloved browser would face similar security and privacy intrusions as
+the aforementioned Chinese browsers.
+Opera was quick to answer their criticism by *promising to remain the same*
+<http://news.softpedia.com/news/opera-will-continue-to-respect-user-privacy-after-possible-chinese-buyout-500460.shtml>,
+TOR to use improved RNG algorithm (Catalin Cimpanu)but promises don't value much when the people who make them don't own the
+company anymore
+
+------------------------------
+
+Date: Thu, 26 May 2016 15:14:13 +0200
+From: Werner U <werneru@gmail.com>
+Subject: TOR to use improved RNG algorithm (Catalin Cimpanu)
+
+[ interesting, again no matter which side you are on....]
+
+Catalin Cimpanu, Softpedia, 25 May 2016
+Tor to Use Never-Before-Seen Distributed RNG to Generate Truly Random Numbers
+<http://news.softpedia.com/news/tor-to-use-never-seen-before-distributed-rng-to-generate-truly-random-numbers-504461.shtml>
+
+Devs test new Tor RNG algorithm at last week's meeting May 25, 2016 08:45
+
+<http://news.softpedia.com/editors/browse/catalin-cimpanu>
+
+Tor developers have been working on the next iteration of the Tor network
+and its underbelly, the Onion routing protocol, in order to create a
+stronger, harder-to-crack anonymous communications system.....
+
+Future Tor communications will be more secure
+
+The team says it implemented a new mechanism for generating random numbers,
+never before seen on the Internet.
+
+In secure communications and encryption, random numbers are of critical
+importance,serving as the base for generating encryption keys. The stronger
+the algorithm on which the random number is generated, the harder it is...to
+crack and guess the number based on known patterns.
+
+The Tor Project says it created something it calls "a distributed RNG"
+(random number generator) that uses two or more computers to create a random
+number and then blends these outputs. The end result is something that's
+impossible to crack without knowing which computers from a network
+contributed to the final random number, and which entropy each one used.
+
+Not even Tor devs can predict the output of the new distributed RNG
+
+Tor devs finished the new distributed RNG system a few months back, and at
+the Montreal meeting, the Tor team tested it on a network with eleven Tor
+routers. Currently, the distributed RNG is in the code review and auditing
+stage.
+
+------------------------------
+
+Date: Mon, 23 May 2016 08:36:32 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How copyright law is being misused to remove Internet material
+  (The Guardian)
+
+*The Guardian* via NNSquad
+https://www.theguardian.com/technology/2016/may/23/copyright-law-internet-mumsnet
+
+  In fact, no copyright infringement had occurred at all.  Instead,
+  something weirder had happened. At some point after Narey posted her
+  comments on Mumsnet, someone had copied the entire text of one of her
+  posts and pasted it, verbatim, to a spammy blog titled "Home Improvement
+  Tips and Tricks".  The post, headlined "Buildteam interior designers" was
+  backdated to September 14 2015, three months before Narey had written it,
+  and was signed by a "Douglas Bush" of South Bend, Indiana.  The website
+  was registered to someone quite different, though: Muhammed Ashraf, from
+  Faisalabad, Pakistan ... Mumsnet deleted the post, and asked Google to
+  reinstate the thread, but a month later, they received final word from the
+  search firm: "'Google has decided not to take action based on our policies
+  concerning content removal and reinstatement' which (it turned out) meant
+  that they had delisted the entire thread" ...  But in recent years, big
+  web companies have started funding lawsuits themselves, to fill the gap in
+  the law and tilt the scales a bit further in favour of content creators
+  wrongly accused.
+
+------------------------------
+
+Date: Mon, 23 May 2016 20:15:07 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: China's scary lesson to the world: Censoring the Internet works
+  (WashPost)
+
+*Washington Post* via NNSquad
+https://www.washingtonpost.com/world/asia_pacific/chinas-scary-lesson-to-the-world-censoring-the-internet-works/2016/05/23/413afe78-fff3-11e5-8bb1-f124a43f84dc_story.html
+
+  Far from knocking down the world's largest system of censorship, China in
+  fact is moving ever more confidently in the opposite direction,
+  strengthening the wall's legal foundations, closing breaches and
+  reinforcing its control of the Web behind the wall. Defensive no more
+  about its censorship record, China is trumpeting its vision of "Internet
+  sovereignty" as a model for the world and is moving to make it a legal
+  reality at home.
+
+Now what would China do given global "Right To Be Forgotten" powers of
+the sort being demanded by France? Hmm?
+
+------------------------------
+
+Date: Tue, 24 May 2016 07:30:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Microsoft accused of Windows 10 upgrade "nasty trick" (BBC)
+
+ [I'd call it pretty much criminal.  LW via NNSquad]
+
+http://www.bbc.com/news/technology-36367221
+
+  Microsoft has faced criticism for changing the pop-up box encouraging
+  Windows users to upgrade to Windows 10.  Clicking the red cross on the
+  right hand corner of the pop-up box now activates the upgrade instead of
+  closing the box.  And this has caused confusion as typically clicking a
+  red cross closes a pop-up notification The upgrade could still be
+  canceled, when the scheduled time for it to begin appeared, Microsoft
+  said The change occurred because the update is now labeled "recommended"
+  and many people have their PCs configured to accept recommended updates
+  for security reasons.  This means dismissing the box does not dismiss the
+  update.  Brad Chacos, senior editor at the PC World website, described it
+  as a "nasty trick".
+
+ - - -
+
+Pretty much criminal. Talk about jerks.
+
+------------------------------
+
+Date: Tue, 24 May 2016 17:40:42 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: PayPal refuses to deliver online purchases to UK addresses
+ containing "Isis"
+
+The Isis River, which flows through the English university city of Oxford,
+has inspired many place names that include "Isis," including "Isis Close."
+
+A resident of Isis Close was unable to buy a sewing kit online because
+PayPal kept rejecting the transaction. After speaking to PayPal customer
+service, they determined that PayPal would not allow any purchase to an
+address containing the string "Isis."
+
+https://boingboing.net/2016/05/23/paypal-refuses-to-deliver-onli.html
+
+As the web page notes: The tyranny of the algorithm yet again...
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Tue, 24 May 2016 09:42:57 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Google's Paris HQ raided in tax probe (BBC)
+
+BBC via NNSquad
+http://www.bbc.com/news/business-36370628
+
+  Reports say about 100 tax officials entered Google's offices in central
+  Paris early in the morning.  Police sources confirmed the raid. Google
+  said: "We comply with French law and are co-operating fully with the
+  authorities to answer their questions."
+
+Between this nonsense and France demanding global censorship powers via
+Right To Be Forgotten, it's pretty clear that a shakedown is in
+progress. Google pays the taxes due according to current laws. If France and
+the rest of the EU don't like that, they can change their laws, and apply
+them equally to everyone. And what the hell did France expect to find in the
+Paris Google offices, file cabinets full of cash? I suspect they showed up
+just to raid the microkitchens.
+
+------------------------------
+
+Date: Wed, 25 May 2016 01:49:10 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Censorship by Copyright claim to Google (The Guardian)
+
+[ a sad British experience, no thanks to Google...]
+Revealed: How copyright law is being misused to remove material from the
+Internet, *The Guardian*, 23 May 2016
+<https://www.theguardian.com/technology/2016/may/23/copyright-law-internet-mumsnet>
+...to remove something from the Internet: accuse its creator of infringing
+copyright. The potential downside of such a false claim is minimal: the
+accused would have to first file a counterclaim, proving they own the
+copyright; then file a private lawsuit, and prove material damage; and then
+track down the offending party to actually recover any monies granted by
+the court.
+
+That doesn't happen all that often.
+
+------------------------------
+
+Date: Wed, 25 May 2016 02:07:02 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Expect a Change of Google password policy (The Guardian)
+
+Google aims to kill passwords by the end of this year, *The Guardian*, 24 May
+<https://www.theguardian.com/technology/2016/may/24/google-passwords-android>
+
+Android users will be able to log in to services using a combination of
+their face, typing patterns, and how they move
+
+Google will begin testing an alternative to passwords next month, in a move
+that could do away with complicated logins for good.
+
+The new feature, introduced to developers at the company's I/O conference,
+is called the Trust API, and will initially be tested with several very
+large financial institutions in June, according to Google's Daniel
+Kaufman....
+
+------------------------------
+
+Date: Fri, 20 May 2016 12:10:32 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: Stanford Computer Scientists Show Telephone Metadata Can Reveal
+  Surprisingly Sensitive Personal Information
+
+Stanford Computer Scientists Show Telephone Metadata Can Reveal Surprisingly
+  Sensitive Personal Information (Bjorn Carey via ACM TechNews)
+
+Bjorn Carey, Stanford Report, 16 May 2016
+
+An analysis of telephone metadata by Stanford University researchers found that data can clue people into a person's private information, while tracking "hops" from a single individual's communications can involve thousands of others.  The analysis entailed information collected by the U.S. National Security Agency (NSA), which can obtain metadata such as the numbers dialed and call length without a warrant.  The researchers constructed a smartphone application that retrieved the previous call and text message metadata from more than 800 volunteers' smartphone logs.  They then combined automated and manual processes to show how many people would be involved in a scan of a single person, and the level of sensitive information that can be inferred about each user.  A small sample of users enabled the researchers to surmise, for example, that a person who placed calls to a cardiologist, a local drugstore, and a cardiac arrhythmia-monitoring device hotline likely suffers from cardiac arrhythmia.  The researchers also estimated via extrapolation of participant data that the NSA's current authority could permit surveillance on about 25,000 people, if not more, starting from a single phone user metadata scan.  The researchers say their study contradicts the government's rationale for tapping metadata on the assumption it does not constitute sensitive information.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-f143x2e3d2x065971&
+
+------------------------------
+
+Date: Wed, 25 May 2016 03:27:43 +0200
+From: Werner U <werneru@gmail.com>
+Subject: PasteJacking and JavaScript.... (Softpedia)
+
+Softpedia, via BeauHD on Slashdot, 24 May 2016
+
+[ ouch -- this one has great potential for EVIL....]
+
+PasteJacking Attack Appends Malicious Terminal Commands To Your Clipboard
+<https://news.slashdot.org/story/16/05/24/2116209/pastejacking-attack-appends-malicious-terminal-commands-to-your-clipboard>
+
+"It has been possible for a long time for developers to use CSS to append
+malicious content <https://jsfiddle.net/rpendleton/hQ8ev/> to the clipboard
+without a user noticing and thus fool them into executing unwanted terminal
+commands," writes Softpedia. "This type of attack is known as clipboard
+hijacking, and in most scenarios, is useless, except when the user copies
+something inside their terminal." Security researcher Dylan Ayrey published
+a new version of this attack last week, which uses only JavaScript as the
+attack medium, giving the attack more versatility
+<http://news.softpedia.com/news/pastejacking-attack-overrides-your-clipboard-to-trick-you-into-running-evil-code-504420.shtml>
+and making it now easier to carry out.
+
+The attack is called PasteJacking <https://github.com/dxa4481/Pastejacking>
+and it uses JavaScript to theoretically allow attackers to add their
+malicious code to the entire page to run commands behind a user's back when
+they paste anything inside the console.
+
+ "The attack can be deadly if combined with tech support or phishing
+emails," writes Softpedia. "Users might think they're copying innocent text
+into their console, but in fact, they're running the crook's exploit for
+them."
+
+------------------------------
+
+Date: Wed, 25 May 2016 03:54:28 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Politically Incorrect, April Fools, a rejected X-Files script,
+  or.... just a Bad Dream ?!? (Slashdot)
+
+[ the mind boggles....  ]
+
+American Scientists Working On Creating Chimeras: Half-Human, Half-Animal
+Embryos, *Science*, 24 May 2016
+<https://science.slashdot.org/story/16/05/24/2011201/american-scientists-working-on-creating-chimeras-half-human-half-animal-embryos>
+Beware Of Keystroke Loggers Disguised As USB Phone Chargers, FBI Warns
+<https://it.slashdot.org/story/16/05/24/1914215/beware-of-keystroke-loggers-disguised-as-usb-phone-chargers-fbi-warns>
+Too Fat For Facebook: Photo Banned For Depicting Body In 'Undesirable
+Manner'
+<https://tech.slashdot.org/story/16/05/24/185245/too-fat-for-facebook-photo-banned-for-depicting-body-in-undesirable-manner>
+Apple, Microsoft and Google Hold 23% Of All US Corporate Cash Outside the
+Finance Sector
+<https://apple.slashdot.org/story/16/05/24/1448211/apple-microsoft-and-google-hold-23-of-all-us-corporate-cash-outside-the-finance-sector>
+
+------------------------------
+
+Date: Wed, 25 May 2016 04:02:16 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Norwegian Consumer rights institute protests app terms, reading
+  them for 24 hours on a live broadcast
+
+ (forbrukerradet.no via Slashdot, May 2x)
+[ long overdue -- hope it encourages more worldwide resistance to "Terms"! ]
+
+<https://slashdot.org/submission/5898123/consumer-rights-institute-reads-app-terms-for-24-hours>
+
+maggern <https://slashdot.org/%7Emaggern>
+
+The Norwegian body for consumer rights is protesting the terms and conditions
+in 33 apps by reading them all on a live broadcast. A total of 250.000 words
+will be read within 24 hours.
+
+------------------------------
+
+Date: Wed, 25 May 2016 04:15:45 +0200
+From: Werner U <werneru@gmail.com>
+Subject: WPAD Protocol Bug Puts Windows Users at Risk (Catalin Cimpanu)
+
+Catalin Cimpanu, Softpedia, 24 May 2016
+Protocol Bug Puts Windows Users at Risk
+Name collision issue can lead to MitM attacks
+<http://news.softpedia.com/news/wpad-protocol-bug-puts-windows-users-at-risk-504443.shtml>WPAD
+
+US-CERT has issued a public alert after researchers from the University of
+Michigan, and Verisign Labs have discovered a method of leveraging the WAPD
+protocol to launch MitM (Man in the Middle) attacks against corporate
+networks.  <https://www.us-cert.gov/ncas/alerts/TA16-144A>
+
+WAPD stands for Web Proxy Auto-Discovery and is a protocol used to broadcast
+common proxy configurations across a network. The protocol's client is
+active only when the user connects to a network, searching for a WPAD server
+via DHCP or DNS, from where it requests a proxy configuration file, if one
+is available, and applies it to the local computer.  New gTLD domains are
+the root of the problem
+
+The Michigan and Verisign researchers discovered that the introduction of
+the new custom top-level domains has created an unwanted name collision bug
+in how WPAD operates. [...]
+
+------------------------------
+
+Date: Wed, 25 May 2016 04:41:54 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Protect Your PC from Malware by Running Applications Inside a
+  Sandbox (Softpedia)
+
+  [I cannot recall reading reports about encountering malware while
+  sandboxing...]
+
+Softpedia, 24 May 2016
+<http://www.softpedia.com/blog/protect-your-pc-from-malware-by-running-applications-inside-a-sandbox-504426.shtml>
+
+You can increase the level of safety by resorting to sandboxing tools. These
+are security applications that put together a virtual environment isolated
+from the rest of the machine. This way, if you get infected with malware
+because of a shady downloaded file or visited website while you're in the
+sandbox, for example, you can just revert Windows to a previous state.
+
+In the article, we're exploring* Cybergenic Shade*, *Quietzone* and
+*Sandboxie* to show you how to create a sandbox to prevent malware and roll
+back Windows to a stable state if necessary.
+....<more>....
+
+------------------------------
+
+Date: Tue, 24 May 2016 16:26:29 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The elderly are way savvier with password security than millennials
+
+QZ via NNSquad
+http://qz.com/690876/the-elderly-are-way-savvier-with-password-security-than-millennials/
+
+  That's according to a report released May 24 by Gigya, which has an API
+  that businesses can use to let their customers log into websites using
+  their social media accounts.  Surveying 4,000 adults in the US and UK,
+  Gigya found that 18- to 34-year-olds are more likely to use bad passwords
+  and report their online accounts being compromised.  The elderly are often
+  characterized as having trouble using technology, but they appear to be
+  the savviest when it comes to protecting their accounts online. The
+  majority of respondents ages 51 to 69 say they completely steer away from
+  easily cracked passwords like "password," "1234," or birthdays, while
+  two-thirds of those in the 18-to-34 age bracket copped to using those
+  kinds of terms.
+
+------------------------------
+
+Date: Wed, 25 May 2016 16:18:20 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Robots also Destroy Low-Tech Jobs (Sam Machkovech)
+
+  [a "possible" future of the Turbo-Capitalist-dominated society ?!?
+  we already live that future in the hi-tech industry!]
+
+Sam Machkovech, Ars Technica, 25 May 2016
+McDonald's ex-CEO: $15/hr minimum wage will unleash the robot rebellion
+<http://arstechnica.com/business/2016/05/mcdonalds-ex-ceo-15hr-minimum-wage-will-unleash-the-robot-rebellion/>
+
+Tells Fox Business a "$35,000 robotic arm" is cheaper than hiring, training
+mortals.
+Sam Machkovech <http://arstechnica.com/author/samred/> - May 25
+
+------------------------------
+
+Date: Wed, 25 May 2016 16:44:28 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Major DNS provider NS1 hit by mysterious focused DDoS attack
+  (Sean Gallagher)
+
+Sean Gallagher, Ars Technica, 25 May 2016
+Attack on NS1 sends 50 to 60 million lookup packets per second.
+<http://arstechnica.com/information-technology/2016/05/major-dns-provider-hit-by-mysterious-focused-ddos-attack/>
+
+Unknown attackers have been directing an ever-changing army of bots in a
+distributed denial of service (DDoS) attack against NS1, a major DNS and
+traffic management provider, for over a week. While the company has
+essentially shunted off much of the attack traffic
+<https://ns1.com/blog/how-we-responded-to-last-weeks-major-multi-faceted-ddos-attacks>,
+NS1 experienced some interruptions in service early last week. And the
+attackers have also gone after partners of NS1, interrupting service to the
+company's website and other services not tied to the DNS and
+traffic-management platform ....<more>....
+
+------------------------------
+
+Date: Wed, 25 May 2016 10:58:21 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How Genius annotations undermined web security (The Verge)
+
+The Verge via NNSquad
+http://www.theverge.com/2016/5/25/11505454/news-genius-annotate-the-web-content-security-policy-vulnerability
+
+  Until early May, when The Verge confidentially disclosed the results of my
+  independent security tests, the "web annotator" service provided by the
+  tech startup Genius had been routinely undermining a web browser security
+  mechanism. The web annotator is a tool which essentially republishes web
+  pages in order to let Genius users leave comments on specific passages.
+  In the process of republishing, those annotated pages would be stripped of
+  an optional security feature called the Content Security Policy, which was
+  sometimes provided by the original version of the page. This meant that
+  anyone who viewed a page with annotations enabled was potentially
+  vulnerable to security exploits that would have been blocked by the
+  original site. Though no specific victims have been identified, the
+  potential scope of this bug was broad: it was applied to all Genius users,
+  undermined any site with a Content Security Policy, and re-enabled all
+  blocked JavaScript code.
+
+------------------------------
+
+Date: Wed, 25 May 2016 16:44:28 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Major DNS provider NS1 hit by mysterious, focused DDoS attack
+  (Ars Technica)
+
+Major DNS provider hit by mysterious, focused DDoS attack
+<http://arstechnica.com/information-technology/2016/05/major-dns-provider-hit-by
+-mysterious-focused-ddos-attack/>
+Attack on NS1 sends 50 to 60 million lookup packets per second. by Sean
+Gallagher <http://arstechnica.com/author/sean-gallagher/> - May 25
+
+Unknown attackers have been directing an ever-changing army of bots in a
+distributed denial of service (DDoS) attack against NS1, a major DNS and
+traffic management provider, for over a week. While the company has
+essentially shunted off much of the attack traffic, NS1 experienced some
+interruptions in service early last week. And the attackers have also gone
+after partners of NS1, interrupting service to the company's website and
+other services not tied to the DNS and traffic-management platform ...
+<https://ns1.com/blog/how-we-responded-to-last-weeks-major-multi-faceted-ddos-attacks>
+
+------------------------------
+
+Date: Tue, 24 May 2016 11:26:17 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Study: China's Government Fabricates About 488 Million Social Media
+  Posts Every Year (NPR)
+
+NPR via NNSquad
+http://www.npr.org/sections/thetwo-way/2016/05/22/479057698/study-chinas-government-fabricates-about-488-million-social-media-posts-every-ye?sc=tw
+
+  They compared their responses with those of people from Zhanggong they
+  knew were from the 50 Cent Party because of the leaked email trove.  The
+  two groups said "Yes" at almost exactly the same rate -- just under 60
+  percent.  More generally, China has an extensive system of Internet
+  controls, sometimes dubbed the "Great Firewall." Its Internet censorship
+  was recently deemed a trade barrier by the U.S.  "Outright blocking of
+  websites appears to have worsened over the past year, with eight of the
+  top 25 most trafficked global sites now blocked in China," the U.S. Trade
+  Representative said in a report released in April, according to
+  Reuters. "Over the past decade, China's filtering of cross-border Internet
+  traffic has posed a significant burden to foreign suppliers, hurting both
+  Internet sites themselves, and users who often depend on them for their
+  business."
+
+------------------------------
+
+Date: Wed, 25 May 2016 22:44:33 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: "More than 22 BILLION vehicle photos in UK database"
+
+Item in newspaper about UK vehicle number (licence) plate
+cameras and details stored may be of interest:
+
+http://www.dailymail.co.uk/news/article-3607111/More-22-BILLION-number-plate-photos-stored-central-database-police-access-without-warrant-gets-34-million-new-images-day.html
+
+  A police network of 'Big Brother' spy cameras takes photos of about
+  34-million number plates each day, new figures have revealed.  Around
+  9,000 surveillance cameras have been placed along Britain's roads and
+  senior officers claim they are invaluable in preventing and solving
+  serious crimes and terrorist attacks.
+
+  Tony Porter, the independent surveillance camera commissioner, questioned
+  the database's legality in a report.  He said: 'There is no statutory
+  authority for the creation of the national ANPR database, its creation was
+  never agreed by Parliament, and no report on its operation has even been
+  laid before Parliament.'  Mr Porter's warning was troubling because police
+  want to extend retention of details to seven years and DVLA officials
+  could be permitted access to track down road tax cheats - increasing the
+  risk of data being abused.
+
+("DVLA" is UK's national motor vehicles registry, "ANPR" is
+Automatic Number (licence) Plate Recognition.)
+
+As ever, "if you have nothing to hide, you have nothing to fear" (ha!).
+Apart from errors of mis-reading plates optically due to dirt, poor light,
+etc., main RISK is probably unknowingly driving in the vicinity of a crime
+scene, then being pulled in by the cops (possibly some years later) and
+being asked to account for your movements.
+
+------------------------------
+
+Date: Sat, 21 May 2016 12:56:24 +0200
+From: "Paul van Keep" <paul@vankeep.com>
+Subject: Re: Video Exposes Officials' Mistakes but Can't Undo Blown Calls. Yet.
+
+The New York Times article on video evidence in top sport events takes a
+(narrow-minded) US centric view in more than one way. According to the
+article officials can't correct mistakes in a hockey game using video
+evidence. But nothing is further from the truth. International hockey (not
+ice-hockey) matches have been using video refereeing for years now. This is
+a huge success.  See
+https://en.wikipedia.org/wiki/Umpire_(field_hockey)#Video_Umpires. Both
+teams and the referees can refer to the video umpire to challenge decision
+that can be crucial to the outcome of a game. It's just a matter of time
+before this trickles down to national league levels and ultimately AI based
+refereeing.
+
+Paul van Keep
+(Competition Manager South-Holland, Royal Dutch Hockey Federation)
+
+------------------------------
+
+Date: Sun, 22 May 2016 21:19:05 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Re: It's Trivially Easy To Identify You Based On Records Of Your
+  Calls and Texts (RISKS-29.53)
+
+It's similar in the UK.  As I understand it, monitoring by security
+authorities of the contents of telephone calls and e-mail messages requires
+a court order, which at least means that (a) prior permission is needed, and
+(b) there's a record that it's been done, but the Government is proposing
+that the police/GCHQ/MI5/CIA/FBI/whoever should have full access to all
+traffic details (telephone calls made and received, e-mail and SMS messages
+sent and received, web sited visited, searches made, etc.) as they wish, as
+part of the fight against crime, terror, money-laundering, tax evasion, and
+various other nasties of modern life.
+
+Politicians say "there's no violation of privacy, it's not as if they will
+be listening in to your calls or reading your e-mails or anything, so no
+need to worry", but as noted, just the traffic details reveal everything
+(plus the analysis is all done by software, whereas listening to calls and
+reading e-mails takes a lot of manual effort, digging through loads of "hi
+mom" stuff and suchlike).  Not sure if politicians actually believe this or
+they're just trying to sell the idea (with heavy hints that if it doesn't go
+ahead we will all be blown up by terrorists, and anybody who objects is
+supporting crime).
+
+There's also the question of practicalities; landline telephone calling
+details are held for billing purposes anyway, but for Internet and cellphone
+traffic, service providers could have to capture and store information which
+they don't now, and data volumes will be significant.  Who pays for it all?
+
+------------------------------
+
+Date: Sat, 21 May 2016 12:57:33 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Another Risk of Self-Driving Cars; Clogged Highways?!?
+ (RISKS-29.53)
+
+As a regular user of the Waze GPS service, I have found that the best method
+of use is to always ask it to present alternative routes and make my own
+choice of the preferred route.
+
+The main trouble is that when a main road is blocked, GPS may direct drivers
+through side streets -- which would quickly block much worse if hundreds of
+cars pour into them, all following the same instructions.  I have once
+waited for 20 minutes at a traffic light trying to get back to the main
+road, at the end of a detour meant to avoid a 2-minute delay there.
+
+I suspect that self-driving cars, if operated in large numbers, would cause
+GPS-generated jams just by all going the same way at the same time.
+
+------------------------------
+
+Date: Fri, 20 May 2016 23:49:22 +0100
+From: Anthonys Lists <antlists@youngman.org.uk>
+Subject: Re: The last non-Internet Generation (Drewe, RISKS-29.53)
+
+My Internet connection (over copper) is a pretty solid 17Mb/s. I'm not aware
+of any new housing estates near me, but it is rather too common for comfort
+for people like me to be living within *a few hundred yards* of people whose
+connection is so poor they cannot get broadband.
+
+The reason is that the "distance from the exchange" over the copper wires
+often bears no resemblance whatsoever to the actual distance as the crow
+flies. It's quite common for the trunk to follow a large circle such that a
+new housing estate next to an exchange has its phone connection tagged on to
+an estate next door, which was tagged on to the estate next door ... and to
+cover a distance of maybe half a mile the trunk has gone on a ten mile
+detour.
+
+And "no we can't run a new line direct from the exchange - it's going to be
+a nightmare of wayleaves, and digging up roads, and general inconvenience" -
+the same argument that is used against running fibre.  If 10% of British
+households can't get broadband, they can't *all* be remote, can they?
+
+"Using this in densely populated urban areas is no big deal". So why is this
+lack of broadband access a major problem for a lot of people living in large
+towns?
+
+------------------------------
+
+Date: Fri, 20 May 2016 20:35:20 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Re: Theoretical Breakthrough Made in Random Number Generation
+
+I believe you are referring to pseudorandom numbers, not random numbers.
+Big difference.   [Indeed.  PGN]
+
+------------------------------
+
+Date: Sat, 21 May 2016 12:28:19 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: In Oracle v. Google, a Nerd Subculture Is on Trial (Risks 29.53)
+
+"normals"?  Ah, you mean Muggles <https://en.wikipedia.org/wiki/Muggle>...
+
+------------------------------
+
+Date: Tue, 24 May 2016 05:31:11 +0000
+From: Gary T Marx <gtmarx@mit.edu>
+Subject: Windows into the Soul new book by Gary T. Marx
+
+I have at last finished the book on surveillance.
+
+The book represents the culmination of decades of thinking about civil
+rights, civil liberties and social control and technology questions since
+being on the staff of the U.S. Kerner Commission and writing Protest and
+Prejudice and Undercover Police Surveillance in America.
+
+The url for the just published Windows Into the Soul: Surveillance and
+Society in an Age of High Technology is:
+http://www.press.uchicago.edu/ucp/books/book/chicago/W/bo22228665.html
+
+The book reflects my view of social science as best served when it combines
+the empirical with the humanistic, the social with the technical, the law
+with ethics and honors, but does not give up in, the face of complexity. The
+book confronts the haze and is drenched in the ironies, paradoxes,
+trade-offs, and value conflicts that so infuse contentious public issues of
+great import.
+
+It offers a systematic way to think about being watched and being a
+watcher. It goes beyond the usual government and big business suspects to
+also address surveillance as it involves families, friends and
+strangers. The book is organized around the "4 C's of surveillance"
+--contracts, coercion, care and the cross-cutting issue of the private
+within the public. It is based on interviews, observation and the social
+science literature, but also contains four satirical narratives that seek to
+convey the lived experience of being watched and a watcher. These deal with
+work monitoring, children, government and a free range voyeur. The book
+identifies a number of "techno-fallacies of the information age" and
+suggests a series of questions to be asked in assessing the ethics and
+wisdom of any effort to collect personal data. Several other chapters on
+surveillance in popular culture (music, ads, jokes) had to be cut, but are
+available on the webpage the press created for the book.  If you'd like a
+copy please let me know and if you had any suggestions for how I might bring
+it to the attention of relevant audiences concerned with computers and
+society, I'd be most appreciative. Thanks for any suggestions. Best, Gary
+
+www.garymarx.net
+
+------------------------------
+
+Date: Tue, 10 May 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+    newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.52
+************************

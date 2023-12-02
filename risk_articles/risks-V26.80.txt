@@ -1,0 +1,769 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 25 April 2012  Volume 26 : Issue 80
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.80.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Airline pilot distracted by new text messages botches landing attempt
+  (Mike Flacy)
+Backdoor in mission-critical systems (Dan Goodin via C Y Cripps)
+The Power of Individual Voters to Transform Their Government (William Cox)
+Risks from computers in elections? (Brad Friedman via Mark E. Smith)
+Thieves steal fiber (Joel Garry)
+Berkeley High students hack into attendance system (Jill Tucker)
+TapLogger (Jim Reisert)
+Solar panel production page reveals name, address, real-time info
+  (Jonathan Kamens)
+Re: Insider attack on smart meters (Paul Wallich)
+Compromised ATMs of no Consequence to Banks or Customers (Chris J Brady)
+Google Street View face blurring side effects (Ed Ravin)
+Occupy Wall Street protester doesn't own his tweets, judge rules
+  (Lauren Weinstein)
+Harvard Library open access? (Dan Geer)
+White House pushes back on CISPA "cybersecurity" legislation (The Hill and LW)
+11 percent of all sexts sent to the wrong recipient (Natt Garun via
+  Monty Solomon)
+"The Flight from Conversation" (Sherry Turkle)
+Review: CERT Guide to Insider Threats, Capelli/Moore/Trzeciak (Ben Rothke)
+Henry Petroski does it again! (PGN)
+Gmail outage much broader than originally reported (Juan Carlos Perez via
+  Gene Wirchenko)
+Re: "Did first DDOS attack sink the Titanic?" (Jeremy Ardley)
+Re: Hospital generator failure following earthquake (Dick Mills)
+The hidden danger of Windows 8 Microsoft Accounts (Woody Leonhard via
+  Gene Wirchenko)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 23 Apr 2012 17:14:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Airline pilot distracted by new text messages botches landing attempt
+  (Mike Flacy)
+
+Mike Flacy, *Digital Trends*, 19 Apr 2012
+
+While U.S. residents that fly commercially have to turn off their cell
+phones prior to take-off, a airline pilot in Australia left his phone on
+during a flight and found new text messages more interesting than landing
+the plane.
+
+As detailed by the Australian Transport Safety Bureau, an investigation into
+a Jetstar flight JQ57 between Darwin to Singapore discovered that the
+airline captain failed to lower the landing gear during the first attempt at
+a landing as he was too busy with his mobile phone. While the incident
+occurred nearly two years ago, the details of the investigation were
+released this week. According to the report, the captain neglected to turn
+off his mobile phone prior to the 220-seat Airbus 320 taking off in Darwin,
+Australia. When the plane began an initial descent into Changi Airport
+within Singapore, the captain's phone started beeping with new text message
+alerts when the plane was in between 2,500 to 2,000 feet off the ground.
+
+The captain turned his attention to the phone during the descent and the
+co-pilot attempted to get the captain's attention. After trying to alert the
+captain twice, the co-pilot switched off the auto-pilot during landing, but
+started to notice that something was wrong when the plane was just 1,000
+feet off the ground. ...
+
+http://www.digitaltrends.com/mobile/airline-pilot-distracted-by-new-text-messages-botches-landing-attempt/
+
+------------------------------
+
+Date: Wed, 25 Apr 2012 15:44:49 -0400 (EDT)
+From: C Y Cripps <cycmn@nyct.net>
+Subject: Backdoor in mission-critical systems (Dan Goodin)
+
+Backdoor in mission-critical hardware threatens power, traffic-control systems
+
+http://arstechnica.com/business/news/2012/04/backdoor-in-mission-critical-hardware-threatens-power-traffic-control-systems.ars
+
+  Dan Goodin, *ArsTechnica", 25 Apr 2012
+  Backdoor in mission-critical hardware threatens power, traffic-control
+  systems
+
+  Like a key under a door matt, the MAC address exposed here allows hackers
+  to tamper with this Internet-connected RuggedCom device, used to control
+  power substations and other critical infrastructure.
+
+  In the world of computer systems used to flip switches, open valves, and
+  control other equipment inside giant electrical substations and railroad
+  communications systems, you'd think the networking gear would be locked
+  down tightly to prevent tampering by vandals. But for customers of
+  Ontario, Canada-based RuggedCom, there's a good chance those
+  Internet-connected devices have backdoors that make unauthorized access a
+  point-and-click exercise.
+
+  That's because equipment running RuggedCom's Rugged Operating System has
+  an undocumented account that can't be modified and a password that's
+  trivial to crack. What's more, researchers say, for years the company
+  hasn't bothered to warn the power utilities, military facilities, and
+  municipal traffic departments using the industrial-strength gear that the
+  account can give attackers the means to sabotage operations that affect
+  the safety of huge populations of people.
+
+  "You treat these embedded appliances as a device that you don't have a
+  window to see into," says researcher K. Reid Wightman of industrial
+  machinery, which is often designed to withstand extreme heat and cold,
+  dust, and other brutal conditions where they're housed. "You can't really
+  patch it. You have to rely on the vendor to do the right thing when they
+  set the device up and when they install the OS. And the vendor really fell
+  down on this one."
+
+  The backdoor uses the login ID of "factory" and a password that's
+  recovered by plugging the MAC, or media access control, address of the
+  targeted device into a simple Perl script, according to this post
+  published on Monday to the Full Disclosure security list. To make
+  unauthorized access easy, paying customers of the Shodan computer search
+  engine can find the IP numbers of more than 60 networks that use the
+  vulnerable equipment. The first thing users who telnet into them see, as
+  the picture above demonstrates, is its MAC address.
+
+Like a router plugged into a utility's power grid
+
+  Equipment running the Rugged Operating System act as the switches and hubs
+  that connect programmable logic controllers to the computer networks used
+  to send them commands. They may sit between the computer of a electric
+  utility employee and the compact disk-sized controller that breaks a
+  circuit when the employee clicks a button on her screen.  To give the
+  equipment added power, Rugged Operating System is fluent in the Modbus and
+  DNP3 communications protocols used to natively administer industrial
+  control and SCADA, or supervisory control and data acquisition,
+  systems. The US Navy, the Wisconsin Department of Transportation, and
+  Chevron are just three of the customers who rely on the gear, according to
+  this page on RuggedCom's website.
+
+  "As a citizen and based on the customer list on their website, I know for
+  a fact that I personally depend on this equipment every day in some way,"
+  said Justin W. Clarke, the author of the full-disclosure advisory who said
+  he notified company officials of the backdoor 12 months ago.  "The
+  equipment is so widely installed that it would be logical to assume that
+  something I'm doing--whether it's riding a train, using power, or walking
+  across a cross walk--depends on this."
+
+  RuggedCom representatives didn't respond to a request for comment. This
+  article will be updated if a response is received after its initial
+  publication.
+
+  According to a timeline included in Clarke's advisory, RuggedCom officials
+  earlier this month stated "they need another three weeks to alert their
+  customers, but not fix the vulnerability." Working with the US Computer
+  Emergency Response Team, Clarke said he sought additional information, but
+  RuggedCom never responded.
+
+Forever day bugs bite again
+
+  In acknowledging but not fixing a security vulnerability in software
+  that's widely used to control critical infrastructure, RuggedCom joins a
+  growing roster of companies marketing wares bitten by so-called
+  forever-day bugs. The term, which is a play on the phrase zero-day
+  vulnerability, refer to documented flaws in industrial systems that will
+  never be fixed. Other members of this group include ABB, Schneider
+  Electric, and Siemens. Indeed, RuggedCom was acquired by a Canada-based
+  subsidiary of Siemens in March.
+
+  The hardcoded backdoor can be opened when users access affected devices
+  using telnet, remote shell, or a serial console. The best defense against
+  attacks that exploit the vulnerability is a layered approach that includes
+  isolating devices from the Internet altogether as well as disabling or
+  blocking telnet and remote shell access through network filters or
+  firewalls, Clarke said.
+
+  An independent security researcher in San Francisco, Clarke told Ars he
+  has grown so concerned about the lack of security in industrial control
+  systems that he's taken to ordering used gear hawked on eBay to see what
+  kinds of vulnerabilities he can find in it. He said he spotted the Rugged
+  OS backdoor with little trouble by analyzing an image of the RuggedCom
+  firmware.
+
+  "It is esoteric, it is obscure, but this equipment is everywhere," he
+  said. "I was walking down the street and they had one of the traffic
+  control cabinets that controls stop lights open and there was a RuggedCom
+  switch, so while you and I may not see it, this is what's used in electric
+  substations, in train control systems, in power plants and in the
+  military. That's why I personally care about it so much."  This article
+  was updated to remove identifying information included in the image.
+
+    [See also a WiReD item (noted by Lauren Weinstein):
+  Rugged switches and servers are used in "mission-critical" communication
+  networks used in power grids, railway control systems, and traffic control
+  systems as well as in manufacturing facilities.  RuggedCom asserts on its
+  web site that its products are "the product of choice for
+  high-reliability, high-availability, mission-critical communications
+  networks deployed in harsh environments around the world."  Clarke says he
+  notified RuggedCom about his discovery in Apr.  2011 and says the
+  representative he spoke with acknowledged the existence of the backdoor.
+  "They knew it was there," he told Threat Level. "They stopped
+  communicating with me after that."  http://j.mp/Jqr8hm ]
+
+------------------------------
+
+Date: Tue, 24 Apr 2012 15:27:37 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The Power of Individual Voters to Transform Their Government
+
+William John Cox, Dandelion Salad: "U.S. voters appear to be increasingly
+powerless to fight the plutocracy which runs their government. As a result,
+Americans are living in an ever more repressive police state that is
+illegally committing acts of violent aggression around the world. The only
+thing that can possibly transform the U.S. government to one that cares for
+the voters who elect it, rather than for the plutocracy that controls it, is
+a unified opposition by all of the People, irrespective of their social
+class or political beliefs."
+http://truth-out.org/news/item/8705-the-power-of-individual-voters-to-transform-their-government
+
+------------------------------
+
+Date: Tue, 17 Apr 2012 19:58:10 -0700
+From: "Mark E. Smith" <mymark@gmail.com>
+Subject: Risks from computers in elections? (Brad Friedman)
+
+A recent article by Brad Friedman: Baked Again in Alaska: Yet Another
+Election Crashes and Burns in The Last Frontier, states that, "...the
+electronic voting systems we use in this nation --- every single one of them
+--- are complete garbage." http://www.bradblog.com/?p=9259
+
+One of the risks enumerated is that the central tabulators that count more
+than 90% of US votes (whether cast on electronic voting machines or on paper
+ballots read by optical scanners) can be remotely accessed without public
+awareness, and that data entered into them, particularly when all data comes
+from "admin" using the password "password," cannot be traced.  Merely to
+learn that the data is not verifiable can take years of litigation, and the
+information sought can be "manipulated" before being released, if it is
+released at all.
+
+Ultimately, computer systems are only as reliable as the people who program
+and administer them. In the case of programmers working for voting machine
+corporations, and of politically appointed elections officials, the public
+usually has no way to assess their reliability.
+
+Most voters would not trust their lives and the lives of their children to
+the brakes on a car if they had no way to verify that the brakes were in
+good working condition. Yet they continue to trust their future and the
+future of their children and their country to an election system that is,
+indeed, "complete garbage," and, except in rare cases of hand counts,
+completely unverifiable.
+
+The real risk to the public isn't in the computer systems used in elections,
+which could easily be both accurate and verifiable, it is in voters placing
+their trust in systems that in more than 90% of cases cannot be verified as
+accurate, and in the people who program and administer those systems, whose
+reliability can rarely be assessed. Although Brad and many other voters
+continue to insist that nonvoters like myself are "apathetic," I think it is
+obvious that people who vote in systems they know to be unreliable,
+unverifiable garbage, are the ones who really don't care.
+
+------------------------------
+
+Date: Tue, 24 Apr 2012 17:31:33 -0700
+From: joel garry <joel-garry@cox.net>
+Subject: Thieves steal fiber
+
+Thieves stole 75 feet of fiber and 6 feet of copper cable.  600 strand cable
+served 10,000 Internet customers, including military bases, and some
+cellphone servers.
+
+http://www.utsandiego.com/news/2012/apr/24/thieves-steal-copper-and-fiber-optic-cables-alpine/
+
+I'm not sure if the risk is that copper thieves are too stupid to know the
+difference between fiber and copper lines, or if criminal gangs now need
+fiber - they have been known to steal cellphone repeaters off of towers.
+
+An additional risk may be media magnification - TV reporting in the early
+morning said 17 million customers were affected.
+
+http://www.garry.to
+
+------------------------------
+
+Date: Fri, 20 Apr 2012 9:31:40 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Berkeley High students hack into attendance system (Jill Tucker)
+
+[Source: Jill Tucker, Berkeley High students hack into attendance system,
+*San Francisco Chronicle*, 20 Apr 2012; PGN-ed]
+http://www.sfgate.com/cgi-bin/article.cgi?f=3D/c/a/2012/04/20/MN0B1O5RPQ.DTL
+
+Some of Berkeley High's best students are among nearly three dozen students
+suspended for hacking into the school's attendance system.  At least four
+students used an administrator's stolen password to clear tardies and
+unexcused absences from the permanent records of 50 students, offering the
+service or the password for a price.  The scam allowed the students to
+circumvent the school's rigid attendance policy, which had been in effect
+until March 2012 and required teachers to dock student grades if they had
+three or more unexcused absences.  The hackers erased from the system
+hundreds of cut classes and tardies from October through December 2011, and
+charged classmates $2 to $20 for the illicit assistance.
+
+------------------------------
+
+Date: Mon, 23 Apr 2012 15:59:33 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: TapLogger
+
+TapLogger: Inferring User Inputs On Smartphone Touchscreens Using
+On-board Motion Sensors
+
+  http://www.cse.psu.edu/~szhu/papers/taplogger.pdf
+
+Similar to looking at fingerprint patterns on the screen to try to
+determine an unlock password.
+
+Jim Reisert AD1C, <jjreisert@alum.mit.edu>, http://www.ad1c.us
+
+------------------------------
+
+Date: Wed, 18 Apr 2012 00:50:26 -0400
+From: Jonathan Kamens <jik@kamens.us>
+Subject: Solar panel production page reveals name, address, real-time info
+
+The recent articles in RISKS about "smart meters" brought the following
+story to mind which might be of interest here...
+
+My wife and I had a solar photovoltaic electricity generation system,
+a.k.a. "solar panels," installed on our roof late last year by a Boston-area
+company called SunBug. Overall, we were very pleased with SunBug and with
+the quality of our installation, and we're looking forward to several
+decades of much, much lower electric bills (our last monthly bill was
+$1.27!).
+
+Many solar installers offer a web page their customers can use to monitor
+the performance of their systems. SunBug, however, goes one step further:
+their web page monitors not only solar electricity production, but also home
+electricity consumption. This allows customers to monitor how much of their
+electricity needs are being satisfied by solar, and it incentivizes them to
+find ways to conserve energy to make the line on the graph go down. It's a
+great idea in theory, but there are serious problems with SunBug's
+implementation of it.
+
+After our system went live, SunBug set up the monitoring page for us, sent
+us a link to it, and posted that link on a publicly accessible page on their
+web site. I.e., it was at that point possible for anyone in the world to
+access our monitoring page and view our production and consumption in
+real-time.
+
+But that's not all that was visible on the page; it also contained our name
+and address.
+
+I'm not going to post a link to our page because I don't know you all well
+enough to do that :-), but suffice it to say that any moderately intelligent
+person can tell from the consumption graph, with a high degree of accuracy,
+when we are home or away and awake or asleep.
+
+If someone wanted to rob us, they would be able easily to tell the best time
+to do that. Worse, if someone wanted to harm us or our children, they would
+be able easily to tell when we'd be available at home to be harmed. This is
+really bad.
+
+Their exposure of their customers' names and addresses on a publicly
+accessible web site without their prior knowledge or consent is clearly a
+violation of the Massachusetts Data Privacy Law, 201 CMR 17.
+
+There's another interesting twist in the story... As soon as I realized that
+our address was visible to the world on our monitoring page, I updated our
+settings to tell the site not to make our address visible.  They do provide
+that as an option, although they don't enable it by default. However, after
+doing that, I was digging a little deeper into how the monitoring page
+works, and I discovered that the bit controlling whether to display the
+address is enforced on the client side via AJAX, not on the server. In other
+words, our address was being sent down to the web browser regardless of
+whether the bit was set; all the setting did was tell the browser whether to
+display the address to the user.  Therefore, anyone could use a network
+sniffer like wireshark or even just a browser tool like Firebug to find out
+our address.
+
+Needless to say, I raised a big stink to SunBug. They fixed it for us by
+making back-end changes in their database to completely remove all of our
+PII from the site. They also said they understood my concerns and were
+looking into how to address them for all of their customers, although I
+don't know what in particular they've done in the several months since I
+brought the issue to their attention.
+
+The box that SunBug installed to monitor our electricity production and
+consumption is a "smart meter" of sorts, so this story illustrates that the
+concerns people have with smart meters are legitimate and already
+manifesting in the real world.
+
+In closing, I want to emphasize that although I was rather disappointed with
+this particular aspect of SunBug's work, I was pleased overall, and I still
+think we chose the correct installer out of the five or so we interviewed
+seriously before hiring SunBug.
+
+  [And of course the OpSec solution is decidedly anti-ecological: make
+  consumption appear exactly the same all the time!
+
+------------------------------
+
+Date: Tue, 17 Apr 2012 21:07:59 -0400
+From: Paul Wallich <pw@panix.com>
+Subject: Re: Insider attack on smart meters (RISKS-26.79)
+
+> FBI Concerned About Smart Meter Hacking, 9 Apr 2012
+> http://krebsonsecurity.com/2012/04/fbi-smart-meter-hacks-likely-to-spread/
+
+I am a little suspicious of the numbers here (and, in the original report
+they appear to be hedged with subjunctives). A few searches show that Puerto
+Rico consumes about 22 billion kWh annually, with a typical retail cost of
+roughly 10 cents/kWh. So to get into the hundreds of millions (the linked
+piece cites an estimate of "up to" $400M/yr) you would need to steal 10-20%
+of total electricity consumption on the island. Even assuming that basic
+software checks would ignore a drop of as much as 75% in consumption
+year-over-year, that would require about 15-25% (and possibly more) of total
+consumption to be through hacked meters. You would need a large industrial
+enterprise to do that kind of work. Anyone want to bet that the "hundreds of
+millions" is an estimate of what might be the losses if all the smart meters
+were hacked?
+
+------------------------------
+
+Date: Mon, 23 Apr 2012 03:23:06 -0700 (PDT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Compromised ATMs of no Consequence to Banks or Customers
+
+In London many ATMs have been targeted by criminal gangs for years. And it
+appears that no-one cares -- many ATMs are visibly compromised -- yet the
+banks allow them to remain damaged. I know of three; 1/ one in Charing Cross
+Station with wires hanging out of the fascia, 2/ one in Paddington Station
+where the whole machine can be pulled out of the cabinet, 3/ one at the top
+end of Charing Cross Road with glue all round from where a skimming device
+had been installed.  But the situation is worse.  At Paddington I was using
+another -- undamaged -- ATM. Afterwards I saw someone using the damaged ATM
+(she had the obligatory earbuds in both ears), so after she had finished I
+pointed out that the ATM was damaged and its security compromised. She
+didn't care. She walked off.  Ditto with some users of the ATM at Charing
+Cross. No-one could be bothered to listen or take notice.  Late last year I
+reported the one at Charing Cross to Barclays Bank - it remains compromised
+5 months later.  And this will get worse as the tourists arrive for the
+Olympics.
+
+------------------------------
+
+Date: Sun, 22 Apr 2012 18:44:54 -0400
+From: Ed Ravin <eravin@panix.com>
+Subject: Google Street View face blurring side effects
+
+The Israeli daily HaAretz reports that Google Street View is now
+live for several major Israeli cities.  The Justice Ministry
+demanded that Google blur out faces and license plates, but there's
+still a few bugs in the system - faces on some posters and advertisements
+were blurred, but some faces on actual people were not:
+
+  http://www.haaretz.com/business/google-street-view-goes-live-in-israel-2-days-early-1.425753
+
+------------------------------
+
+Date: Tue, 24 Apr 2012 22:02:30 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Occupy Wall Street protester doesn't own his tweets, judge rules
+
+  In a candid ruling, a New York judge said a protester can't stop
+  prosecutors from searching his Twitter account because he doesn't own the
+  tweets in the first place.  Judge Matthew Sciarrino Jr. cited a
+  "widely-believed" but "mistaken" notion about online privacy rights and
+  said that search and seizure protections don't apply because we "do not
+  have a 'physical' home on the Internet."
+  http://j.mp/ID36Rk  (Paid Content)
+
+    [T'weet or not T'weet, That is di-gestion.  PGN]
+
+------------------------------
+
+Date: Tue, 24 Apr 2012 10:03:59 -0400
+From: Dan Geer <dan@GEER.ORG>
+Subject: Harvard Library open access?
+
+http://boingboing.net/2012/04/23/harvard-library-to-faculty-we.html
+
+Harvard Library to faculty: we're going broke unless you go open access
+Cory Doctorow, Monday, Apr 23
+
+"Harvard Library's Faculty Advisory Council is telling faculty that it's
+financially 'untenable' for the university to keep on paying extortionate
+access fees for academic journals. It's suggesting that faculty make their
+research publicly available, switch to publishing in open access journals
+and consider resigning from the boards of journals that don't allow open
+access."
+
+------------------------------
+
+Date: Tue, 17 Apr 2012 18:42:01 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: White House pushes back on CISPA "cybersecurity" legislation
+
+  "In a statement, National Security Council spokeswoman Caitlin Hayden said
+  any cybersecurity legislation should include strong privacy protections
+  and should set mandatory security standards for critical infrastructure
+  systems, such as electrical grids and water supplies." http://j.mp/IWlFmS
+  (The Hill via NNSquad)
+
+My current blog posting re CISPA is: "
+
+"CISPA, Cybersecurity, and the Devil in the Dark":
+
+  http://j.mp/HIO8ud  (Lauren's Blog)
+
+Lauren Weinstein (lauren@vortex.com): http://www.vortex.com/lauren
+http://lists.nnsquad.org/mailman/listinfo/nnsquad
+
+------------------------------
+
+Date: Mon, 23 Apr 2012 17:18:28 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 11 percent of all sexts sent to the wrong recipient (Natt Garun)
+
+Natt Garun, *Digital Trends*, 19 Apr 2012
+
+Sexters beware: A new poll finds that your sexy messages may end up in the
+wrong hands if you're not careful enough.
+
+If you're into mobile, virtual sexy time, we have no judgment with what you
+want to do in your private life. But according to a poll conducted by United
+Kingdom-based mobile news site Recombu, 11 percent of sexts are sent to
+unintended recipients. Looks like too many of you are getting too caught up
+in the moment!
+
+The poll, which surveyed approximately 2,000 adults, showed that 47 percent
+of responders sext on a regular basis. About 48 percent of sexters are
+female, and 45 percent are male (we're guessing the rest means undisclosed
+gender or transgendered). However, the numbers show that males seem to get
+more heated and eager than their female counterparts.
+
+About one in 10 sexts from male senders get accidentally shipped to someone
+it wasn't meant for, while females stats stand at one in 20.  What's worse:
+16 percent of men have had their sexy messages end up in a family member's
+inbox while just 8 percent of females suffer the same embarrassment. ...
+
+http://www.digitaltrends.com/mobile/11-percent-of-all-sexts-end-up-sent-to-the-wrong-recipient/
+
+------------------------------
+
+Date: Mon, 23 Apr 2012 9:49:23 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: "The Flight from Conversation" (Sherry Turkle in The NYT)
+
+  [Source: Sherry Turkle, The Flight From Conversation, *The New York
+  Times*, The Sunday Review, 22 Apr 2012; excellent long article, PGN-ed]
+http://www.nytimes.com/2012/04/22/opinion/sunday/the-flight-from-conversation.html
+
+We live in a technological universe in which we are always communicating.
+And yet we have sacrificed conversation for mere connection.  At home,
+families sit together, texting and reading e-mail. At work executives text
+during board meetings. We text (and shop and go on Facebook) during classes
+and when we're on dates. My students tell me about an important new skill:
+it involves maintaining eye contact with someone while you text someone
+else; it's hard, but it can be done. ...
+
+I spend the summers at a cottage on Cape Cod, and for decades I walked the
+same dunes that Thoreau once walked. Not too long ago, people walked with
+their heads up, looking at the water, the sky, the sand and at one another,
+talking. Now they often walk with their heads down, typing. Even when they
+are with friends, partners, children, everyone is on their own devices.
+
+So I say, look up, look at one another, and let's start the conversation.
+
+Sherry Turkle is a psychologist and professor at M.I.T. and the author, most
+recently, of ``Alone Together: Why We Expect More From Technology and Less
+From Each Other.''
+
+  [This really gives new meaning to being left to your own devices.  PGN]
+
+------------------------------
+
+Date: Wed, 18 Apr 2012 23:20:27 -0400
+From: Ben Rothke <brothke@hotmail.com>
+Subject: Book review: CERT Guide to Insider Threats
+
+Dawn Cappelli, Andrew Moore and Randall Trzeciak
+CERT Guide to Insider Threats: How to Prevent, Detect, and Respond to
+  Information Technology Crimes
+CERT Insider Threat Center
+
+While Julius Caesar likely never said ``Et tu, Brute?'', the saying
+associated with his final minutes has come to symbolize the ultimate insider
+betrayal.  In The CERT Guide to Insider Threats: How to Prevent, Detect, and
+Respond to Information Technology Crimes, authors Dawn Cappelli, Andrew
+Moore and Randall Trzeciak of the CERT Insider Threat Center provide
+incontrovertible data and an abundance of empirical evidence, which creates
+an important resource on the topic of insider threats.  There are thousands
+of companies that have uttered modern day versions of Et tu, Brute due to
+insidious insider attacks and the book documents many of them. The book is
+based on work done at the CERT Insider Threat Center, which has been
+researching this topic for the last decade.  The data the threat center has
+access to is unparalleled, which in turn makes this the definitive book on
+the topic.  The threat center has investigated nearly 1,000 incidents and
+their data sets on the topic are unrivaled.  With that, the book truly needs
+to be on the desktop of everyone tasked with data security and intellectual
+property protection.
+
+Full review at:
+http://365.rsaconference.com/blogs/securityreading/2012/04/18/the-cert-guide-to-insider-threats-how-to-prevent-detect-and-respond-to-information-technology-crimes
+
+------------------------------
+
+Date: Wed, 25 Apr 2012 15:22:07 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Henry Petroski does it again!
+
+Henry Petroski is a long-time friend of RISKS, and his name has appeared in
+at least two dozen RISKS items over the years.  As I write this, I have just
+noticed that his latest regular column (this one is called Backseat
+Designers) in the May-June issue of *American Scientist* is adapted from
+Chapter 11 of his latest book, To Forgive Design: Understanding Failure,
+Belknap Press of Harvard University, 2012.
+
+Many years ago, when I managed to induce Henry to give keynote talks for an
+early COMPASS conference on safety and for the ACM SIGSOFT conference in
+1991, he modestly insisted he did not know enough about computers.  However,
+much of what he has written and said is always highly relevant to RISKS, and
+therefore his new book deserves mention here.
+
+------------------------------
+
+Date: Thu, 19 Apr 2012 19:35:22 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Gmail outage much broader than originally reported (Juan Carlos Perez)
+
+Juan Carlos Perez, *InfoWorld*, 18 Apr 2012
+Google initially underestimated the number of affected users,
+which likely topped 30 million
+
+https://www.infoworld.com/d/applications/gmail-outage-much-broader-originally-reported-191180
+
+------------------------------
+
+Date: Thu, 19 Apr 2012 14:21:26 +0800
+From: Jeremy Ardley <jeremy.ardley@gmail.com>
+Subject: Re: "Did first DDOS attack sink the Titanic?"
+
+This may perhaps have been the first DDOS, but remember the telephone was
+around before then.
+
+Today we have the massive problem of emergency services numbers being
+overwhelmed by calls about a single incident. A lot of this is due to mobile
+phones but some exists because of the size of the incident.
+
+A typical scenario is a grass-fire besides a freeway. In the space of a few
+minutes hundreds of people will call in to report it. This massive volume of
+calls effectively prevents any response to other calls like a house fire.
+
+In the event of 9/11 People all over the city reported in. I literally have
+no idea how the call-centres coped with this massive amount of incoming
+calls and effectively a fixed number of operators.
+
+Back in 1900 I don't know if they had emergency numbers or just operators,
+but I'm sure any significant event would have overwhelmed whatever systems
+they had in place.
+
+The industry has yet to design a resilient call response system that can
+handle peak overloads while still attending to routine but life critical
+calls.
+
+------------------------------
+
+Date: Wed, 18 Apr 2012 13:52:38 -0400
+From: Dick Mills <dickandlibbymills@gmail.com>
+Subject: Re: Hospital generator failure following earthquake
+
+RISKS-26.79 described how an earthquake stirred up sediments in diesel fuel
+tanks, causing the emergency diesel engines to stop.
+
+This problem is well known to boaters.  The classical scenario is trying to
+escape from an enclosed harbor to the open sea.  The pounding of the boat in
+the surf at the harbor entrance stirs sediments, predictably causing engine
+failure at the worst possible time.  The known remedy is to have multiple
+fuel filters plus a rapid way to switch from one to the backup.
+Knowledgeable skippers in that classic scenario will even station a man to
+stand by with his hand on the fuel filter throw-over valve.
+
+Even in less classic scenarios, it is completely foreseeable that fuel
+filters are most likely to clog at the time of maximum agitation.  Since
+that is precisely the time when dependence on engine power is most critical,
+it must be addressed at the design and planning stages.
+
+In an unmanned installation, the switching filters remedy is problematic
+(even if automatic).  Still, the nature of the problem is identical.
+
+So the risk here involves mechanisms to transfer risk knowledge from one
+domain to another.  Surely engine manufacturers must be familiar with it.  I
+wonder what their installation and operating instructions say on the
+subject.
+
+Dick Mills, Sailing Vessel Tarwathie
+
+------------------------------
+
+Date: Wed, 18 Apr 2012 14:22:43 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: The hidden danger of Windows 8 Microsoft Accounts (Woody Leonhard)
+
+Woody Leonhard, *InfoWorld*, 18 Apr 2012
+Microsoft goes to great lengths to convince Windows 8 users to log on with
+an email address, but if your account gets hijacked you could find yourself
+locked out
+http://www.infoworld.com/t/microsoft-windows/the-hidden-danger-of-windows-8-microsoft-accounts-191185
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.80
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E8374209553EXSAN02campus_--

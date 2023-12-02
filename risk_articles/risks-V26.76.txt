@@ -1,0 +1,569 @@
+RISKS-LIST: Risks-Forum Digest  Sunday 1 April 2012  Volume 26 : Issue 76
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.76.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+French Regulation of Primes? (PGN)
+Nogales drone fiasco (PGN)
+DHS Cybersecurity Chief criticizes online voting (Pam Fessler)
+US Outgunned in Hacker War (Devlin Barrett)
+Texting error leads to lockdowns at two schools (Jim Reisert)
+Ship's anchor cuts Internet access to six East African countries (Jim Reisert)
+Space station control codes on stolen NASA laptop (Jim Reisert)
+Second Murdoch hacking scandal (Charles C. Mann)
+Police to cruise streets for unsecured Wi-Fi (Lauren Weinstein)
+MasterCard, VISA Warn of Processor Breach (Brian Krebs via Monty Solomon)
+"Study finds major weaknesses in single-sign-on systems" (Cameron Scott
+  via Gene Wirchenko)
+Mobile operators seek to 'block' Skype in Sweden (Lauren Weinstein)
+The Moral Network (Daniel Berninger via Dave Farber)
+Linux 3.3: Finally a little good news for bufferbloat (Robert X Cringely
+  via Dewayne Hendricks and Dave Farber)
+"Google, Facebook, Twitter warned in privacy report" (Gene Wirchenko)
+Massive crackdowns on Internet freedoms in some Arab countries?
+  (Lauren Weinstein)
+Doug Jones/Barbara Simons, Broken Ballots: Will Your Vote Count? (PGN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 1 Apr 2012 00:11:22 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: French Regulation of Primes?
+
+Perhaps realizing that his position as PRIME Minister had some mathematical
+implications, and certainly aware of France's history of trying to be able
+to monitor all encrypted traffic passing through his country, Prime Minister
+François Fillon has apparently decided to become the French Minister of
+Primes, decreeing that all primes used in public-key encryption within or
+transiting France must be approved by the French Government's newly
+established Département de Cryptographie.  Apart from the potential for
+increased surveillance, this decree could actually constructively reduce the
+likelihood of a prime being used multiple times in different public keys --
+a risk recently observed in various certificates that leads to opportunities
+for forged certificates and security compromises (RISKS-26.73).
+
+------------------------------
+
+Date: Mon, 26 Mar 2012 14:15:49 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Nogales drone fiasco
+
+An unmanned MQ-9 (Predator B) drone crashed near the airport in Nogales,
+Arizona on 25 April 2006.  The recently released final analysis suggests a
+combination of events relating to intricacies of the system design,
+confusing user interfaces, not-entirely anticipated human/system failure
+modes, and long missions requiring multiple users sequentially taking over
+control.  This tends to reinforces our long-held thought in RISKS that
+attempts to put the blame in one place are often misguided.  In this case,
+as in many others discussed here, there were quite a few contributing
+factors.  The report (URL below) is long, but very well worth reading
+carefully as a parable for RISKS.
+
+http://www.ntsb.gov/aviationquery/brief2.aspx?ev_id=20060509X00531&ntsbno=CHI06MA121&akey=1
+
+------------------------------
+
+Date: Fri, 30 Mar 2012 11:05:52 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: DHS Cybersecurity Chief criticizes online voting (Pam Fessler)
+
+Pam Fessler, Online Voting 'Premature,' Warns Government Cybersecurity
+Expert, ItsAllPolitics, NPR Blog, 29 Mar 2012
+http://www.npr.org/blogs/itsallpolitics/2012/03/29/149634764/online-voting-premature-warns-government-cybersecurity-expert
+
+Warnings about the dangers of Internet voting have been growing as the 2012
+election nears, and an especially noteworthy one came Thursday from a top
+cybersecurity official at the U.S. Department of Homeland Security.  Bruce
+McConnell told a group of election officials, academics and advocacy groups
+meeting in Santa Fe, N.M., that he believes "it's premature to deploy
+Internet voting in real elections at this time."  McConnell said voting
+systems are vulnerable and, "when you connect them to the Internet, that
+vulnerability increases." He called security around Internet voting
+"immature and underresourced."
+
+McConnell's comments echo those of a number of computer scientists who say
+there's no way to protect votes cast over the Internet from outside
+manipulation.  But right now a growing number of states are allowing
+overseas and military voters to return their marked ballots by digital fax
+or email, which experts say raises the same threat. It's part of a recent
+push to make voting easier for millions of Americans overseas, who often are
+prevented from voting because of slow ballot delivery and missed deadlines.
+
+The Federal Voting Assistance Program at the Pentagon and other groups have
+been working recently to make it easier for overseas Americans and those in
+the military to register to vote online and to download their ballots.
+
+The question is whether it's safe to return the voted ballot online.
+
+Some election officials say it's a trade-off between security and
+convenience.  Bob Carey, director of FVAP, told a group of bloggers in
+October that there are risks to online voting, but also "inherent security
+risks with the current system," such as people not getting their ballots on
+time and losing the opportunity to vote.  Carey added that "there's not
+going to be any electronic voting system that's ever going to be 100 percent
+secure, but also the current paper-based system is not 100 percent reliable
+either."
+
+The Pentagon is exploring the possibility of expanding e-voting
+opportunities for the military and overseas Americans.
+
+A handful of states are also considering pilot programs that would allow
+voters to vote directly online, as West Virginia did in 2010.  The District
+of Columbia had to cancel its online voting plans in 2010 after University
+of Michigan computer experts were able to infiltrate the system and remotely
+change votes.
+
+Some people think online voting is bound to happen, though, once the kinks
+are worked out. But as McConnell's comments show, those who worry a lot
+about cybersecurity believe that time is a long way away.
+
+------------------------------
+
+Date: Tue, 27 Mar 2012 19:09:42 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: US Outgunned in Hacker War (Devlin Barrett)
+
+Devlin Barrett, *Wall Street Journal*, 28 Mar 2012 [PGN-ed]
+
+Shawn Henry, the Federal Bureau of Investigation's top cyber cop offered a
+grim appraisal of the nation's efforts to keep computer hackers from
+plundering corporate data networks: "We're not winning."  He said that the
+current public and private approach to fending off hackers is
+``unsustainable.''  Computer criminals are simply too talented and defensive
+measures too weak to stop them.  You never get ahead, never become secure,
+never have a reasonable expectation of privacy or security,''
+
+------------------------------
+
+Date: Sun, 25 Mar 2012 12:14:25 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Texting error leads to lockdowns at two schools
+
+An auto corrected text message, accidentally sent to the wrong number, was
+the catalyst to lockdowns Wednesday at West Hall middle and high-schools.
+[...]
+
+The text, saying "gunman be at west hall today," was received and reported
+to police around 11:30 a.m. But after police tracked the number, they
+learned the auto correct feature on the new cellphone changed "gunna" to
+"gunman."
+
+The message being sent to the wrong number added to the confusion.
+
+http://www.gainesvilletimes.com/archives/63990/
+
+[I wonder what would have happened if the student had tried to write
+"gonna", the traditional spelling of this non-word.]
+
+Jim Reisert AD1C, <jjreisert@alum.mit.edu>, http://www.ad1c.us
+
+------------------------------
+
+Date: Sun, 25 Mar 2012 12:16:32 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Ship's anchor cuts Internet access to six East African countries
+
+A ship dropped anchor off Mombasa, Kenya, and cut the Internet to six
+African countries earlier this week.
+
+http://www.csmonitor.com/World/Africa/2012/0229/Ship-s-anchor-cuts-Internet-access-to-six-East-African-countries
+
+Jim Reisert AD1C, <jjreisert@alum.mit.edu>, http://www.ad1c.us
+
+------------------------------
+
+Date: Sun, 25 Mar 2012 13:18:48 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Space station control codes on stolen NASA laptop
+
+A laptop stolen from NASA last year contained command codes used to control
+the International Space Station, an internal investigation has found.
+
+The laptop, which was not encrypted, was among dozens of mobile devices lost
+or stolen in recent years that contained sensitive information, the space
+agency's inspector general told Congress today in testimony highlighting
+NASA's security challenges.
+
+"The March 2011 theft of an unencrypted NASA notebook computer resulted in
+the loss of the algorithms used to command and control the International
+Space Station," NASA Inspector General Paul K. Martin said in written
+testimony (PDF). Another laptop contained sensitive information on the
+NASA's Constellation and Orion programs, as well as Social Security numbers,
+he said.
+
+http://m.cnet.com/Article.rbml?nid=57388136&cid=null&bcid=&bid=-83
+
+Jim Reisert AD1C, <jjreisert@alum.mit.edu>, http://www.ad1c.us
+
+------------------------------
+
+Date: Mon, 26 Mar 2012 23:28:05 +0000 (UTC)
+From: "Charles C. Mann" <ccmann@comcast.net>
+Subject: Second Murdoch hacking scandal
+
+"The witnesses allege a software company NDS, owned by News Corp, cracked
+the smart card codes of rival company ONdigital. ONdigital, owned by the ITV
+companies Granada and Carlton, eventually went under amid a welter of
+counterfeiting by pirates, leaving the immensely lucrative pay-TV field
+clear for Sky."
+http://www.guardian.co.uk/media/2012/mar/26/news-corp-ondigital-paytv-panorama
+
+Unlike the "phone-hacking" scandal, which mainly involved reporters
+listening to answering machines whose owners hadn't bothered to set their
+passwords, this (if it pans out) seems to feature actual computer
+malfeasance.
+
+Charles C. Mann, P.O. Box 66, Amherst, MA, 01004-0066 www.charlesmann.org
+
+------------------------------
+
+Date: Thu, 22 Mar 2012 17:02:30 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Police to cruise streets for unsecured Wi-Fi  (NNSquad)
+
+http://j.mp/GIuwRC  (Sydney Morning Herald)
+
+  "Officers in the Hi Tech Crime Investigation Unit on wardriving missions
+  will drive the streets of Brisbane with a laptop computer, looking for
+  unsecured Wi-Fi networks.  Residents and businesses owners in targeted
+  areas will then be mailed information about how to effectively secure
+  their connection.  Police will return to the area some time later to check
+  whether residents have taken heed of the warning."
+
+------------------------------
+
+Date: Fri, 30 Mar 2012 13:48:16 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: MasterCard, VISA Warn of Processor Breach (Brian Krebs)
+
+Brian Krebs: MasterCard, VISA Warn of Processor Breach, 30 Mar 2012
+
+VISA and MasterCard are alerting banks across the country about a recent
+major breach at a U.S.-based credit card processor. Sources in the financial
+sector are calling the breach "massive," and say it may involve more than 10
+million compromised card numbers.
+
+In separate non-public alerts sent late last week, VISA and MasterCard began
+warning banks about specific cards that may have been compromised. The card
+associations stated that the breached credit card processor was compromised
+between 21 Jan 2012 and 25 Feb 2012. The alerts also said that full Track 1
+and Track 2 data was taken - meaning that the information could be used to
+counterfeit new cards.
+
+Neither VISA nor MasterCard have said which U.S.-based processor was the
+source of the breach. But affected banks are now starting to analyze
+transaction data on the compromised cards, in hopes of finding a common
+point of purchase. Sources at two different major financial institutions
+said the transactions that most of the cards they analyzed seem to have in
+common are that they were used in parking garages in and around the New York
+City area. ...
+
+New credit card data breach revealed
+Avivah Litan, KrebsOnSecurity.com, 30 Mar 2012
+http://krebsonsecurity.com/2012/03/mastercard-visa-warn-of-processor-breach/
+
+Just when we thought the big credit card data breaches were over, at least
+for a while (with Alberto Gonzalez put away after his scams at TJX,
+Heartland Payments and others) - along comes a new one reported today in
+www.Krebsonsecurity.com. See KrebsOnSecurity.com
+
+Visa and MasterCard have already issued warnings on this. I've spoken with
+folks in the card business who are seeing signs of this breach
+mushroom. Looks like the hackers have started using the stolen card data
+more recently. From what I hear, the breach involves a taxi and parking
+garage company in the New York City area so if you've paid a NYC cab in the
+last few months with your credit or debit card - be sure to check your card
+statements for possible fraud. ...
+
+http://blogs.gartner.com/avivah-litan/2012/03/30/new-credit-card-data-breach-revealed/
+
+------------------------------
+
+Date: Wed, 28 Mar 2012 08:33:27 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Study finds major weaknesses in single-sign-on systems"
+  (Cameron Scott)
+
+Cameron Scott, Study finds major weaknesses in single-sign-on systems
+Researchers were able to deceive both OpenID and Facebook authentication
+IT Business, 27 Mar 2012
+http://www.itbusiness.ca/it/client/en/CDN/News.asp?id=66741
+
+selected text:
+
+In one of the flaws the researchers exposed, for example, not all Web sites
+confirmed that a verification coming from OpenID included all of the items
+the Web site asked to be confirmed, such as the first name, last name and
+email address. The researchers were able to access the request, delete one
+piece of requested information (the email address, for example) as it went
+to OpenID and simply re-insert it in the signed okay from OpenID. In this
+way, even a hacker who didn't control the email address linked to the user's
+account on the Web site in question could log in, and potentially make
+purchases, using that person's account.
+
+------------------------------
+
+Date: Fri, 30 Mar 2012 00:32:11 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Mobile operators seek to 'block' Skype in Sweden (NNSquad)
+
+  "Swedish telecom operators want to implement technologies that will block
+  mobile phone users in Sweden from making free calls using services like
+  Skype and Viber."  (The Local;  http://j.mp/H5Uq1T)
+
+------------------------------
+
+Date: Wed, Mar 28, 2012 at 9:25 AM
+From: Daniel Berninger <dan.berninger@gmail.com>
+Subject: The Moral Network (via Dave Farber)
+
+A Moral Network post highlights the public interest implications of
+retiring the PSTN in favor of an all-IP network.
+
+Daniel Berninger, Founder, Voice Communication Exchange Committee
+e: dan@danielberninger.com, tel SD: +1.202.250.3838 w: www.vcxc.org
+
+The Moral Network, Daniel Berninger
+
+The customer exodus makes retirement of the circuit switched PSTN in favor
+of an all-IP network inevitable and maybe even imminent. It puts the entire
+$2 trillion global voice revenue base in play and restarts the bellhead
+versus nethead wars. A nethead victory lap remains out of the question while
+voice still accounts for more than twice the revenue of data services.
+Preserving the voice value proposition requires achieving PSTN like
+reliability, ubiquity, and uniformity in an IP context. This task remains
+better suited to the sensibility of bellheads than netheads. The special
+status society assigns to voice carries public interest obligations. The
+implications of these moral considerations underlie the differences between
+bellhead and nethead modes of operation.
+
+Internet voice lacks the interconnection, reliability, and ease of use
+necessary to replicate the PSTN revenue model. The aggregate revenue of the
+over-the-top VoIP ecosystem (e.g Skype et al) represents less than 1% of the
+voice total. The revenue that VoIP players do collect owes mainly to the
+bellhead PSTN. The myriad of Internet enabled communication options
+destroying the economics of the PSTN demonstrate only the ability of
+netheads to erase revenue.
+
+The IP world cannot not replicate the reach of the PSTN as long as the
+competitive landscape remains driven by the power politics of network
+size. Skype claims more registered users than China Mobile, but as a closed
+network end points online at any time represent a tiny fraction of the six
+billion phones reachable via the PSTN. The PSTN suffered similar
+fragmentation until public interest considerations led governments to impose
+interconnection. Even the commercial peering agreements associated with the
+Internet got their start via government interconnection mandates during the
+commercialization of the Internet backbone in 1995.
+
+Mixing network engineering with morality will seem odd to netheads, but
+bellhead experience with public interest obligations goes back 100
+years. Theodore Vail's embrace of the moral obligations governing human
+communication made AT&T the exception as countries nationalized their
+telephone companies. The course of communication in this century turns on
+whether or not a Theodore Vail like ethic for IP networks emerges. The track
+record suggests hardship for both incumbent telcos and wannabe service
+providers of the over-to-top ecosystem to the extent the anarchy persists.
+
+It turns out following a moral compass maximizes enterprise value of
+communication networks. This owes to the same reasons citizens prosper in a
+moral society and suffer in an amoral one. The application of a moral code
+recognizes the service of self-interest sometimes involves maximizing
+benefits for the group rather than the individual. This remains true even
+given the flawed mechanisms and uneven track record of applying public
+interest obligations to the PSTN.
+
+The collective value of the post breakup AT&T increased six fold during the
+12 years of Judge Greene's public interest stewardship before the Telecom
+Act of 1996. The benefits of deregulation and consolidation leave the Bell
+companies trading in the same range today as they did in 1996. The question
+of whether the transition to all-IP networks produces a downward spiral or
+lifts enterprise value turns on the moral considerations driving
+interconnection, universal service, and recognizing the special status of
+voice services in society.  Declining demand for plain-old-telephone-service
+does not alter the fact voice remains the most efficient means of human
+communication and a key input to economic activity.
+
+The revenue stream available to "dumb pipes" for over-the-top services falls
+short of the return on capital necessary to justify network
+investments. Network operators will continue to rely on bellhead services
+for the bulk of revenue in all-IP networks as they did in the case of the
+PSTN. Carrier IP provisioning of services makes it easier to provide a
+consistent user interface and hide device setup complexity. An all-IP HD
+voice service can emerge as a straight line extension of the PSTN managed
+federation for standard definition voice. The long odds of finding the next
+big thing driving demand for IP network capacity nonetheless makes the
+nethead over-the-top essential to the all-IP network ecosystem. The
+complementary strengths and weaknesses of bellhead and nethead services
+allow both to coexist in an all-IP network.
+
+------------------------------
+
+Date: Mar 26, 2012 6:16 PM
+From: "Dewayne Hendricks" <dewayne@warpspeed.com>
+Subject: Linux 3.3: Finally a little good news for bufferbloat (RXCringely)
+
+Robert X. Cringely, Linux 3.3: Finally a little good news for bufferbloat
+25 Mar 2012, via Dave Farber's IP  [Note: Cringely is a pen-name for
+multiple authors, all of whom do not cringe easily.]
+
+http://www.cringely.com/2012/03/linux-3-3-finally-a-little-good-news-for-bufferbloat/
+
+While I was out chasing computer history last week, the Linux 3.3 kernel was
+released. And a very interesting release it is, though not for its vaunted
+re-inclusion of certain Android kernel hacks. I think that modest move is
+being overblown in the press.  No, Linux 3.3 appears to be the first OS to
+really take a shot at reducing the problem of bufferbloat. It's not the
+answer to this scourge, but it will help some, especially since Linux is so
+popular for high volume servers.
+
+Bufferbloat, as you'll recall from my 2011 predictions column, is the result
+of our misguided attempt to protect streaming applications (now 80 percent
+of Internet packets) by putting large memory buffers in modems, routers,
+network cards, and applications. These cascading buffers interfere with each
+other and with the flow control built into TCP from the very beginning,
+ultimately breaking that flow control, making things far worse than they'd
+be if all those buffers simply didn't exist.
+
+Bufferbloat was named by Jim Gettys of Bell Labs, who has become our chief
+defender against the scourge, attempting to coordinate what's become a
+global response to the problem.
+
+Linux 3.3 isn't the total solution to bufferbloat but it's a big step,
+particularly for servers.
+
+Prepare for technospeak.
+
+One issue is the very large ring buffers described above.  A typical device
+driver has these buffers set at 200-300 packets, a figure derived a decade
+ago as a worst case to allow devices to drive Gig-Ethernet flat-out using
+small packets. But not all packets are small, and there's the rub.
+
+Because these rings are necessarily expressed in packets, rather than in
+bytes, the length of time to transmit the packet can be radically different
+and this meant the arbitrary buffers can be up to 20 times larger than they
+need to be when sending big packets.  These rings are often constrained to
+be powers of two in size, and the size can't easily be changed at runtime
+without dropping packets [...]
+
+Dewayne-Net RSS Feed: <http://www.warpspeed.com/wordpress>
+
+------------------------------
+
+Date: Wed, 28 Mar 2012 08:45:02 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Google, Facebook, Twitter warned in privacy report" (Zack Whittaker)
+
+A UK parliamentary report has booted Google for its attitude towards
+court-ordered privacy injunctions, noting that it must comply with UK law or
+face a legislative battle.  [Source: Zack Whittaker, ZDNet,  27 Mar 2012]
+http://www.zdnet.com/blog/london/google-facebook-twitter-warned-in-privacy-report/3662
+
+------------------------------
+
+Date: Thu, 29 Mar 2012 11:48:54 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Massive crackdowns on Internet freedoms in some Arab countries?
+
+  "A bill on "information-technology crimes" with extraordinarily broad
+  wording and harsh punishments is due to come before Iraq's parliament in
+  April, once the dignitaries and television cameras at this week's Arab
+  League summit in Baghdad have departed.  The bill is one of four proposed
+  laws that could severely restrict basic freedoms. (A fifth, on
+  journalists, was passed last summer.)  Access Now, a human-rights group
+  with a focus on technology, has a report on it out today.  According to an
+  English translation from last August, it includes mandatory life sentences
+  for using computers or the internet to "compromise" the "unity" of the
+  state (Article 3), promote "ideas which are disruptive to public order"
+  (Article 4), or engage in "trafficking, promoting or facilitating the
+  abuse of drugs" (Article 5), which could include merely blogging about
+  them."  [The Economist, http://j.mp/H4W6x7]
+
+------------------------------
+
+Date: Sat, 31 Mar 2012 18:00:15 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Doug Jones/Barbara Simons, Broken Ballots: Will Your Vote Count?
+
+Broken Ballots: Will Your Vote Count?
+CSLI Publications,
+(Center for the Study of Language and Information, Stanford, California
+2012, 447+xiii pp., paperback
+
+In my opinion, this is the most thorough, well researched, and definitive
+publication on this subject that has ever been written -- despite the
+reality that it was under perpetual gestation for many years, because the
+ground under our elections has continually shifted, although often not for
+the better.  Proponents of commercial system and Internet voting undoubtedly
+will not like it, because it truly documents a reality in which the seams
+are unseemly, the depth of risks is pervasive, and the absence of meaningful
+accountability is almost unbelievable.  But it is one of the most important
+books around for those who believe in democracy.
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.76
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E8122A6CC22EXSAN02campus_--

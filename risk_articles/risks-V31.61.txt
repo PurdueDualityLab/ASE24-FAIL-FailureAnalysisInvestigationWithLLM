@@ -1,0 +1,939 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.61
+
+RISKS-LIST: Risks-Forum Digest  Sunday 15 March 2020  Volume 31 : Issue 61
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.61>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:  [WAY BACKLOGGED!!!]
+A lawsuit against ICE reveals the danger of government-by-algorithm
+  (WashPost)
+This Unpatchable Flaw Affects All Intel CPUs Released in Last 5 Years
+  (PTSecurity)
+How the Cloud Has Opened Doors for Hackers (WashPost)
+Hackers Can Clone Millions of Toyota, Hyundai, and Kia Keys (WiReD)
+Before Clearview Became a Police Tool, It Was a Secret Plaything of the Rich
+  (The New York Times)
+How Hackers and Spies Could Sabotage the Coronavirus Fight
+  (Bruce Schneier and Margaret Bourdeaux - Foreign Policy)
+Cybersecurity label for smart home devices (The Straits Times)
+South Korea warns when potential virus carriers are near (BBC)
+COVID-19, toilet paper, hoarding, and emergency preparedness (Rob Slade)
+U.S. Treasury Sanctions Individuals Laundering Cryptocurrency for Lazarus
+  Group (Treasury via geoff goodfellow)
+Black Market White Washing- Why You Shouldn't Take Legal Advice From
+  Criminals (Disruptive Labs)
+Can YouTube Quiet Its Conspiracy Theorists? (NYTimes)
+Risks of publishing web browser screenshots (MarketWatch)
+China's Geely invests $326M to build satellites for autonomous cars
+  (Reuters)
+Congress Must Stop the Graham-Blumenthal Anti-Security Bill (Gabe Goldberg)
+Empty Promises Won't Save the .ORG Takeover (EFF)
+How to clean up the mess we've made that's orbiting the Earth (The Hill)
+How fake audio, such as deepfakes, could plague business, politics
+  (Bakersfield)
+Ransomware Attacks Prompt Tough Question for Local Officials:: To Pay or
+  Not to Pay? (Pew)
+Through apps, not warrants, Locate X allows federal law enforcement to track
+  phones (Protocol)
+A hybrid AI model lets it reason about the world's physics like a child
+  (MIT Tech Review)
+This Satellite Startup Raised $110 Million To Make Your Cellphone Work
+  Everywhere (Forbes)
+Your smartphone is dirtier than a toilet seat. Here's how to disinfect it.
+  (Mashable)
+PCI Fireside Chat: Vint Cerf and Ian Bremmer (The Unstable Globe)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 6 Mar 2020 15:07:46 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: A lawsuit against ICE reveals the danger of
+  government-by-algorithm (The Washington Post)
+
+https://www.washingtonpost.com/outlook/2020/03/05/lawsuit-against-ice-reveals-danger-government-by-algorithm/
+
+``The immigration agency's New York office tweaked risk-evaluation software
+to keep thousands in jail, watchdog groups say.''
+
+------------------------------
+
+Date: Fri, 6 Mar 2020 11:45:14 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: This Unpatchable Flaw Affects All Intel CPUs Released in Last 5 Years
+  (PTSecurity)
+
+All Intel processors released in the past 5 years contain an unpatchable
+vulnerability that could allow hackers to compromise almost every
+hardware-enabled security technology that are otherwise designed to shield
+sensitive data of users even when a system gets compromised.
+
+The vulnerability, tracked as CVE-2019-0090, resides in the hard-coded
+firmware running on the ROM (read-only memory) of the Intel's Converged
+Security and Management Engine (CSME), which can't be patched without
+replacing the silicon.
+
+Intel CSME is a separate security micro-controller incorporated into the
+processors that provides an isolated execution environment protected from
+the host opening system running on the main CPU.
+
+It is responsible for the initial authentication of Intel-based systems by
+loading and verifying firmware components, root of trust based secure boot,
+and also cryptographically authenticates the BIOS, Microsoft System Guard,
+BitLocker, and other security features.
+
+Although this insufficient access control vulnerability is not new and was
+previously patched by Intel last year when the company described it just as
+a privilege escalation and arbitrary code execution in Intel CSME firmware
+modules, the extent of the flaw remained undervalued.
+
+Researchers at Positive Technologies have now found that the issue can also
+be exploited to recover the Chipset Key, a root cryptographic key or sort of
+a master password that could help unlock and compromise a chain of trust for
+other security technologies, including digital rights management (DRM),
+firmware Trusted Platform Module (TPM), and Identity Protection Technology
+(IPT).
+<https://blog.ptsecurity.com/2020/03/intelx86-root-of-trust-loss-of-trust.html#more>
+
+That means the flaw could be exploited to extract data from encrypted
+hard-drives and to bypass DRM protections and access copyright-protected
+digital content. [...]
+
+https://thehackernews.com/2020/03/intel-csme-vulnerability.html
+
+------------------------------
+
+Date: Wed, 4 Mar 2020 11:53:53 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: How the Cloud Has Opened Doors for Hackers (WashPost)
+
+Craig S. Smith, *The Washington Post*, 2 Mar 2020
+via ACM TechNews; Wednesday, March 4, 2020
+
+Corporate transfers of operations to the cloud have elevated the threat of
+hacking, as the cloud can be accessed remotely with ease. Manav Mital,
+co-founder of cloud security startup Cryal, said cloud companies manage the
+upkeep and security of physical servers, but client requirements for ease of
+access have spawned new apps and databases, and increasingly complex
+services that are difficult to manage and monitor. Although companies still
+shield private data behind firewalls and other security measures, more
+people and programs require access to data in the cloud, making it easier
+for bad actors to find potential vulnerabilities. The Ponemon Institute
+estimated that cloud breaches cost each individual company $3.92 million on
+average.
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-24260x220c61x069057&
+
+------------------------------
+
+Date: Fri, 6 Mar 2020 11:19:24 -0500
+From: Gabe Goldberg <ggoldberg@apcug.org>
+Subject: Hackers Can Clone Millions of Toyota, Hyundai, and Kia Keys (WiReD)
+
+Encryption flaws in a common anti-theft feature expose vehicles from major
+manufacturers.
+
+Even so, the researchers say that they decided to publish their findings to
+reveal the real state of immobilizer security and allow car owners to decide
+for themselves if it's enough. Protective car owners with hackable
+immobilizers might decide, for instance, to use a steering wheel lock.
+``It's better to be in a place where we know what kind of security we're
+getting from our security devices.  Otherwise, only the criminals know.''
+[Garcia quoted]
+
+https://www.wired.com/story/hackers-can-clone-millions-of-toyota-hyundai-kia-keys/
+
+That paragraph -- last in article -- is ridiculous. I once put steering
+wheel lock on a borrowed car, then realized owner hadn't given me key for
+it. Locksmith took about two minutes to pick the lock -- not needing to cut
+it off -- saying that with practice anyone can do that.
+
+------------------------------
+
+Date: Fri, 6 Mar 2020 11:39:15 -0500
+From: Gabe Goldberg <ggoldberg@apcug.org>
+Subject: Before Clearview Became a Police Tool, It Was a Secret
+  Plaything of the Rich (The New York Times)
+
+Investors and clients of the facial recognition start-up freely used the
+app on dates and at parties and to spy on the public.
+
+https://www.nytimes.com/2020/03/05/technology/clearview-investors.html
+
+------------------------------
+
+Date: Fri, 06 Mar 2020 17:57:30 +0100
+From: "Diego.Latella" <diego.latella@isti.cnr.it>
+Subject: How Hackers and Spies Could Sabotage the Coronavirus Fight
+  (Bruce Schneier and Margaret Bourdeaux, Foreign Policy)
+
+https://foreignpolicy.com/2020/02/28/hackers-spies-coronavirus-espionage/
+
+------------------------------
+
+Date: Fri, 6 Mar 2020 15:23:10 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Cybersecurity label for smart home devices (The Straits Times)
+
+https://www.straitstimes.com/singapore/cyber-security-label-for-smart-home-devices
+
+``Market research firm Gartner has estimated that the number of IoT devices
+in use globally will grow from 8.4 billion in 2017 to 20.4 billion this
+year, with twice as many consumer installations as industrial ones.  But the
+rules surrounding how IoT devices are designed for cybersecurity are lax,
+raising concerns about major privacy and security risks as such devices
+proliferate.''
+
+The `cybersecurity' label might grow larger than the device package.  When,
+or if, it does switch to an alternate rating indicator: 'Stars' or
+'Smileys'?
+
+There's always `human error' when testing for product release readiness
+characteristics: performance, reliability, function, ease of use, or device
+security/safety for example. Latent defect escape potential elevates
+deployment exploitation risk.
+
+What about correlating IoT software (or hardware) component integration
+against CVEs (https://cve.mitre.org/), and using this outcome to establish a
+`security' or `defect' escape risk rating? Given their perfect operational
+record, a HAL-9000 would be ideal for this exercise.
+
+Risk: Inaccurate `cybersecurity label' indicators misguide consumer IoT
+product purchase decisions.
+
+------------------------------
+
+Date: Thu, 5 Mar 2020 11:42:24 -0800
+From: Mark Thorson <eee@dialup4less.com>
+Subject: South Korea warns when potential virus carriers are near (BBC)
+
+And where they've been, like bars, love motels, etc.  Deanonymization of the
+data is sometimes a trivial exercise for social media users.
+
+https://www.bbc.com/news/world-asia-51733145
+
+``He was at his work in Mapo district attending a sexual harassment class. He
+contracted the virus from the instructor of the class.''
+
+------------------------------
+
+Date: Fri, 6 Mar 2020 11:55:31 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: COVID-19, toilet paper, hoarding, and emergency preparedness
+
+Toilet paper?  *Really*?
+
+Of course, I've seen the news stories showing streams of shoppers with carts
+full of toilet paper. The news stories all showed Costco, so I was hoping
+that maybe it was only Costco members who were that stupid. But, no. On my
+way home last night I stopped for some groceries and the toilet paper aisle
+in my local Save-On was pretty bare. (Not, fortunately, completely denuded,
+so my neighbours aren't completely deluded.)  (And, if you're looking, the
+Safeway had a decent stock, albeit with some bare sections.)
+
+Hoarding is a particularly insidious threat.  It's hard to protect against.
+Unless you're going to ration, how do you tell people what (and how much)
+they can and cannot buy?  (Yes, I know.  Rationing smacks of socialism, or
+some other type of non-or-anti-capitalist system.  But hoarding is the
+inherent weakness of capitalism: unrestricted, capitalism tends to
+concentrate capital, which then becomes useless.)  Now, we are not only
+faced with the coronavirus, but with the COVID-19 toilet paper meme virus.
+People see that there is a run on, or shortage of, toilet paper, so they run
+out and drive around (wasting gas) trying to buy toilet paper.  Creating a
+shortage of toilet paper.
+
+(It's particularly galling here in BC.  We have trees.  We make toilet
+paper.  By the ton.)
+
+Why toilet paper?  I mean, I defer to no one in my admiration for the stuff.
+It is one of the marvels of the modern age.  (Toilet paper, and the
+Internet.)  It has lots of uses besides that originally intended.  But it
+has no magical medicinal properties.
+
+Yes, I know.  We, in the emergency management field, have been trying, for
+years, to get people to build emergency prep kids.  Have enough supplies to
+tide you over for three days.  Or seven days.  Or, in this case, two weeks.
+Fine.  I get it.  But do you know how much toilet paper you use in two
+weeks?  You don't need to clear out stores.
+
+(I have noticed gaps in the canned beans section, and also in the soup
+aisle.  Although, for some reason, Campbell's Chunky soups are completely
+stocked.  Personally, I *like* chunky soups ...)
+
+And, if you are going to build an emergency prep kit, *during* an emergency
+is not the time to do it.  You have to put some thought into it.  How much
+toilet paper do you use in a week?  How much soup do you eat in a week?
+*Do* you eat soup?  Yes, I advise you to build an emergency prep kit.  But
+*build* one.  Don't just rush out and buy toilet paper.
+
+Besides, COVID-19 is not going to be the type of `stock up on water and
+canned beans' type of regional disaster.  You will still be able to get
+Amazon to deliver toilet paper to you if you get sick and have absolutely no
+friends in all the world to take care of you.  (They may want to drop it and
+run, and you may have to keep watch on your Ring-camera-that-is-insecure-
+because-you-haven't-changed-the-default-password-have-you to prevent
+doorstep thieves from stealing your toilet paper, but they will deliver.)
+(So, by the way, will Save-On.)  Travel is going to be a problem, and stocks
+may be a problem, and there may be lots of other problems.  But toilet paper
+is not going to be a problem.  Unless people hoard it.
+
+------------------------------
+
+Date: Tue, 3 Mar 2020 13:36:10 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: U.S. Treasury Sanctions Individuals Laundering Cryptocurrency for
+  Lazarus Group
+
+EXCERPT:
+
+The U.S. Department of the Treasury's Office of Foreign Assets Control
+(OFAC) today sanctioned two Chinese nationals involved in laundering stolen
+cryptocurrency from a 2018 cyber-intrusion against a cryptocurrency
+exchange. This cyber-intrusion is linked to Lazarus Group, a U.S.-designated
+North Korean state-sponsored malicious cybergroup.  Specifically, OFAC is
+designating Tian Yinyin (Tian) and Li Jiadong (Li), for having materially
+assisted, sponsored, or provided financial, material, or technological
+support for, or goods or services to or in support of, a malicious
+cyber-enabled activity. Tian and Li are also being designated for having
+materially assisted, sponsored or provided financial, material, or
+technological support for, or goods or services to or in support of, Lazarus
+Group.
+
+``The North Korean regime has continued its widespread campaign of extensive
+cyber-attacks on financial institutions to steal funds.  The United States
+will continue to protect the global financial system by holding accountable
+those who help North Korea engage in cybercrime.'' (Secretary Steven
+T. Mnuchin)
+
+*Tian and Li's Activities*
+
+The Democratic People's Republic of Korea (DPRK) trains cyber-actors to
+target and launder stolen funds from financial institutions. Tian and Li
+received from DPRK-controlled accounts approximately $91 million stolen in
+an April 2018 hack of a cryptocurrency exchange (referred to hereinafter as
+*the exchange*D), as well as an additional $9.5 million from a hack of
+another exchange. Tian and Li transferred the currency among addresses they
+held, obfuscating the origin of the funds.
+
+In April 2018, an employee of the exchange unwittingly downloaded
+DPRK-attributed malware through an email, which gave malicious cyber-actors
+remote access to the exchange and unauthorized access to customers' personal
+information, such as private keys used to access virtual currency wallets
+stored on the exchange's servers. Lazarus Group cyber-actors used the
+private keys to steal virtual currencies ($250 million dollar equivalent at
+date of theft) from this exchange, accounting for nearly half of the DPRK's
+estimated virtual currency heists that year.
+
+Tian ultimately moved the equivalent of more than $34 million of these
+illicit funds through a newly added bank account linked to his exchange
+account.  Tian also transferred nearly $1.4 million dollars' worth of
+Bitcoin into prepaid Apple iTunes gift cards, which at certain exchanges
+can be used for the purchase of additional Bitcoin. [...]
+
+https://home.treasury.gov/news/press-releases/sm924
+
+------------------------------
+
+Date: Tue, 3 Mar 2020 13:35:36 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Black Market White Washing- Why You Shouldn't Take Legal
+  Advice From Criminals (Disruptive Labs)
+
+Fraudsters who operate shops in criminal marketplaces are constantly
+massaging their marketing pitches to assure prospective customers (and
+lurking law enforcement) that their service is legal. It's become clear
+recently that some infosec professionals can't seem to identify these
+services as bad, so these marketing efforts may have succeeded for one
+audience.
+
+That is what happened recently when WeLeakInfo was taken down and a number
+of infosec people expressed shock and dismay that their favorite OSINT tool
+was gone. This isn't the first time a password shop was taken down, but this
+one was unusually successful at whitewashing its origins in fraud and,
+disturbingly, some professionals seemed either unaware of this or did not
+care. Some even recommended the site, or a competitor, to their industry
+peers. Those professionals risk financing the same criminal gangs they are
+paid to stop.
+
+A number of other cybercrime tools have attempted to make their way into
+mainstream use, with mixed success.
+
+DDOS-FOR-HIRE AND THE TOS FIGLEAF
+
+One example is *booter* AKA *network stresser* services. These services were
+sold on criminal marketplaces as a way to knock video game opponents offline
+with DDoS attacks. Despite a business model obviously centered around abuse
+-- shown both in advertisements and target demographic, booter owners
+believed they had an ace up their sleeve. Their ToS informed users that the
+booter was ``for legal purposes only'', as a sort of legal figleaf.  Under
+this speculative legal theory which was copied by nearly every vendor,
+booter owners assured their customers that the service was entirely legal
+and safe to use.
+
+To quote the FBI in a 2018 indictment against a booter service named
+*Downthem*. [...]
+
+https://labs.unit221b.com/2020/03/03/black-market/
+
+------------------------------
+
+Date: Wed, 4 Mar 2020 11:53:53 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Can YouTube Quiet Its Conspiracy Theorists? (NYTimes)
+
+  Jack Nicas, *The New York Times*, 2 Mar 2020
+  via ACM TechNews; Wednesday, March 4, 2020
+
+University of California, Berkeley (UC Berkeley) researchers found that
+while YouTube has reduced how often its algorithm recommends conspiracy
+theory-related videos, its progress in dealing with conspiracy theories has
+been uneven, and the service still promotes certain types of fictional
+stories. The study examined 8 million recommendations by the video-sharing
+platform over a 15-month period and found that while YouTube has almost
+completely removed some conspiracy theories from its recommendations, other
+falsehoods continue to flourish. Said UC Berkeley's Hany Farid, ``It is a
+technological problem, but it is really at the end of the day also a policy
+problem. ... If you have the ability to essentially drive some of the
+particularly problematic content close to zero, well then you can do more on
+lots of things.''
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-24260x220c68x069057&
+
+------------------------------
+
+Date: Thu, 5 Mar 2020 13:39:53 -0500
+From: David Tarabar <dtarabar@acm.org>
+Subject: Risks of publishing web browser screenshots (MarketWatch)
+
+A Fox News analyst posted a web browser screenshot on Twitter. The
+screenshot displayed the intended political info. It also displayed browser
+tabs of websites that had been previously visited - including
+*Sexy Vixen Vinyl*.
+
+https://www.marketwatch.com/story/fox-news-analyst-brit-humes-morning-internet-session-politics-stock-market-coronavirus-and-uh-sexy-vixen-vinyl-2020-03-03
+
+------------------------------
+
+Date: Tue, 3 Mar 2020 13:38:06 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: China's Geely invests $326M to build satellites for autonomous
+  cars (Reuters)
+
+China's Zhejiang Geely Holding Group said on Tuesday it was investing 2.27
+billion yuan ($326 million) in a new satellite manufacturing plant, where it
+plans to build low-orbit satellites to provide more accurate data for
+self-driving cars.
+
+Geely, one of China's most internationally-known companies due to its
+investments in Daimler, Volvo and Proton, is building the facilities in
+Taizhou, where it has car plants. *It aims to produce 500 satellites a year
+by around 2025*, with around 300 highly-skilled staff, it said in a
+statement.
+
+Geely's technology development arm, Geely Technology Group, launched
+Geespace to research, launch, and operate low-orbit satellites in 2018.
+[...]
+
+https://www.reuters.com/article/geely-china-satellite-autonomous/chinas-geely-invests-326-mln-to-build-satellites-for-autonomous-cars-idUSL4N2AV45H
+
+------------------------------
+
+Date: Wed, 04 Mar 2020 04:58:21 +0000 (UTC)
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Congress Must Stop the Graham-Blumenthal Anti-Security Bill
+
+There's a new and serious threat to both free speech and security
+online. Under a draft bill that Bloomberg recently leaked, the Attorney
+General could unilaterally dictate how online platforms and services must
+operate. If those companies don't follow the Attorney General's rules, they
+could be on the hook for millions of dollars in civil damages and even state
+criminal penalties.
+
+The bill, known as the Eliminating Abusive and Rampant Neglect of
+Interactive Technologies (EARN IT) Act, grants sweeping powers to the
+Executive Branch. It opens the door for the government to require new
+measures to screen users' speech and even backdoors to read your private
+communications -- a stated goal of one of the bill's authors.
+
+Senators Lindsey Graham (R-SC) and Richard Blumenthal (D-CT) have been
+quietly circulating a draft version of EARN IT. Congress must forcefully
+reject this dangerous bill before it is introduced.
+
+https://u15235517.ct.sendgrid.net/
+
+------------------------------
+
+
+Date: Wed, 04 Mar 2020 04:57:29 +0000 (UTC)
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Empty Promises Won't Save the .ORG Takeover
+  (Electronic Frontier Foundation)
+
+The Internet Society's (ISOC) November announcement that it intended to sell
+the Public Interest Registry (PIR, the organization that oversees the .ORG
+domain name registry) to a private equity firm sent shockwaves through the
+global NGO sector. The announcement came just after a change to the .ORG
+registry agreement -- the agreement that outlines how the registry operator
+must run the domain - that gives PIR significantly more power to raise
+registration fees and implement new measures to censor organizations'
+speech.
+
+It didn't take long for the global NGO sector to put two and two together:
+take a new agreement that gives the registry owner power to hurt NGOs;
+combine it with a new owner whose primary obligation is to its investors,
+not its users; and you have a recipe for danger for nonprofits and NGOs all
+over the world that rely on .ORG. Since November, over 800 organizations and
+24,000 individuals from all over the world have signed an open letter urging
+ISOC to stop the sale of PIR. Members of Congress, UN Special Rapporteurs,
+and US state charity regulators [pdf] have raised warning flags about the
+sale.
+
+------------------------------
+
+Date: Tue, 3 Mar 2020 13:39:08 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: How to clean up the mess we've made that's orbiting the Earth
+  (The Hill)
+
+*One company is building a space garbage truck. But experts say it will take
+more than that to rid our outer atmosphere of decades of floating debris.*
+
+We've been shooting large metal objects into space since 1957. Satellites,
+rockets, space stations, missiles. So it's no wonder that a garbage truck is
+set to launch in 2025 to start cleaning up the mess.
+
+The pioneering ClearSpace <https://clearspace.today/> device is designed to
+locate, capture and remove large items that threaten to crash into the
+satellites orbiting the planet. The problem, experts say, is that there's
+probably more than 34,000 pieces of space junk larger that 10 centimeters --
+and all of it is a hazard.
+<https://www.esa.int/Safety_Security/Space_Debris/Space_debris_by_the_numbers>
+
+Orbiting at 17,000 miles per hour, these bits of metal can pierce anything
+they hit with the velocity of a bullet.
+
+Sure, there's a lot of space in space. Our atmosphere starts at about 62
+miles above sea level and items can continue orbiting as high as 150 miles.
+But experts agree that we must think ahead. Every year, countries and
+private companies launch a steadily increasing number of satellites and
+other equipment skyward on a collective arsenal of more than 100 rockets
+every year. [...]
+https://thehill.com/changing-america/sustainability/infrastructure/482336-how-do-you-take-out-the-trash-when-youre-in
+
+------------------------------
+
+Date: Wed, 4 Mar 2020 10:21:58 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: How fake audio, such as deepfakes, could plague business, politics
+  (Bakersfield)
+
+Fake voices generated by artificial intelligence tools may be the next
+frontier in scams that could trick companies into forking over cash or fool
+voters into believing a politician said something he or she didn't.
+
+Computer-synthesized voices are not new. Anyone familiar with Amazon's Echo
+and Google's Home devices, or Apple's Siri, already knows the soothing
+female voice that answers queries.
+
+But that same technology can be adapted for devious means, said Vijay
+Balasubramaniyan, co-founder and CEO of Pindrop, a technology company that
+uses machine-learning techniques to identify voice fraud.
+
+Criminals can use publicly available video and audio of top corporate
+executives to analyze and create a fake voice of a CEO and use that in
+combination with an email hack to trick the company's executives into
+sending money. Or they can apply similar tactics to make politicians appear
+to say something they never did.
+
+At a brief demonstration during the RSA Conference in San Francisco,
+Balasubramaniyan logged on to a secure company computer network that held
+artificial intelligence algorithms able to analyze publicly available
+YouTube video and audio of major political and business leaders and produce
+a voice file of a person saying something they had never uttered.
+
+Balasubramaniyan chose President Donald Trump from a drop-down menu and
+typed in the words ``This morning American forces gave North Korea the
+bloody nose they deserve.'' into a box and hit enter. [...]
+https://www.bakersfield.com/ap/news/how-fake-audio-such-as-deepfakes-could-plague-business-politics/article_bc6b7a55-8a15-57df-90d2-5352d3980b00.html
+
+------------------------------
+
+Date: Thu, 5 Mar 2020 12:25:16 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Ransomware Attacks Prompt Tough Question for Local Officials: To
+  Pay or Not to Pay? (Pew)
+
+When cybercriminals struck Lake City, Florida, last June, city officials had
+to make a tough choice: Pay the hackers or restore systems on their own.
+
+A ransomware attack had hijacked the government's computer network and held
+it hostage for several weeks. While the attack didn't affect the police,
+fire or financial departments, it wreaked havoc on phone lines, email,
+utility records and many other services.
+
+The hackers first demanded about $750,000 in bitcoin, a cryptocurrency, from
+the small, rural city to give it back control of its network.
+
+The city tried to recover the data on its own, City Manager Joseph
+Helfenberger recalled, but that failed. Its insurance company negotiated
+with the hackers and got the ransom down to about $470,000. It recommended
+paying, and officials figured that was the best option because the city
+would have to cover only the $10,000 deductible.  ``This is not a rich
+community. They can't afford to spend money they don't have. You have to
+look at what is going to serve the community the best.''
+
+There were at least 113 successful ransomware attacks on state and local
+governments last year, according to global cybersecurity company Emsisoft,
+and in each case, officials had to figure out how to respond.
+<https://blog.emsisoft.com/en/34822/the-state-of-ransomware-in-the-us-report-and-statistics-2019/>
+
+Some states have passed laws to target cybercriminals who deploy ransomware,
+but prosecutors have rarely used them. And local officials often are left
+vulnerable.
+
+In Baltimore last May, hackers crippled thousands of computers, then
+demanded a ransom of about $76,000 in bitcoin. Democratic Mayor Bernard C.
+`Jack' Young refused to pay. Workers were unable to access online accounts
+and payment systems for weeks.
+
+The attack ended up costing the city at least $18 million -- a combination
+of lost or delayed revenue and the expense of restoring systems. Young said
+in a statement last June that the FBI advised the city not to pay, and that
+it was ``just not the way we operate. ... We won't reward criminal
+behavior.'' The mayor's office did not respond to *Stateline* requests for
+comment.  <https://twitter.com/mayorbcyoung/status/1136377418325864448>
+
+Baltimore and Lake City aren't alone. The majority of publicized ransomware
+attacks in the United States last year targeted local governments, according
+to a recent report by the National Governors Association and the National
+Association of State Chief Information Officers.
+<https://www.nga.org/center/publications/hsps-publications/stronger-together-state-and-local-cybersecurity-collaboration/>
+
+Yet no one knows how many local and state governments have been hit by a
+ransomware attack. There is no national clearinghouse that collects all that
+information. Nor is every attack publicly reported. The FBI, which tracks
+national crime data, couldn't be reached for comment before publication.
+[...]
+
+https://www.pewtrusts.org/en/research-and-analysis/blogs/stateline/2020/03/03/ransomware-attacks-prompt-tough-question-for-local-officials-to-pay-or-not-to-pay
+
+------------------------------
+
+Date: Thu, 5 Mar 2020 12:26:12 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Through apps, not warrants, Locate X allows federal law enforcement
+  to track phones (Protocol)
+
+*Federal agencies have big contracts with Virginia-based Babel Street.
+Depending on where you've traveled, your movements may be in the company's
+data.*
+
+U.S. law enforcement agencies signed millions of dollars worth of contracts
+with a Virginia company after it rolled out a powerful tool that uses data
+from popular mobile apps to track the movement of people's cell phones,
+according to federal contracting records and six people familiar with the
+software.
+
+The product, called Locate X and sold by Babel Street
+<https://www.babelstreet.com/>, allows investigators to draw a digital
+fence around an address or area, pinpoint mobile devices that were within
+that area, and see where else those devices have traveled, going back
+months, the sources told Protocol.
+
+They said the tool tracks the location of devices anonymously, using data
+that popular cell phone apps collect to enable features like mapping or
+targeted ads, or simply to sell it on to data brokers.
+
+Babel Street has kept Locate X a secret, not mentioning it in public-facing
+marketing materials and stipulating in federal contracts that even the
+existence of the data is *confidential information*.  Locate X must be
+``used for internal research purposes only,'' according to terms of use
+distributed to agencies, and law enforcement authorities are forbidden from
+using the technology as evidence -- or mentioning it at all -- in legal
+proceedings.
+<https://www.gsaadvantage.gov/ref_text/47QTCA18D0081/0V3LLR.3QTYM6_47QTCA18D0081_EISGSA2TERMS.PDF>
+
+Federal records show that U.S. Customs and Border Protection purchased
+Locate X, and the Secret Service and U.S. Immigration and Customs
+Enforcement also use the location-tracking technology, according to a
+former Babel Street employee. Numerous other government agencies have
+active contracts with Reston-based Babel Street, records show, but publicly
+available contract information does not specify whether other agencies
+besides CBP bought Locate X or other products and services offered by the
+company.
+
+None of the federal agencies, including CBP, would confirm whether they used
+the location-tracking software when contacted by Protocol. Babel Street's
+other products include an analytics tool it has widely marketed that sifts
+through streams of social media to `chart sentiment' about topics and
+brands.
+
+A former government official familiar with Locate X provided an example of
+how it could be used, referring to the aftermath of a car bombing or
+kidnapping. Investigators could draw what is known as a geo-fence around
+the site, identify mobile devices that were in the vicinity in the days
+before the attack, and see where else those devices had traveled in the
+days, weeks or months leading up to the attack, or where they traveled
+afterward.
+
+``If you see a device that a month ago was in Saudi Arabia, then you know
+maybe Saudis were involved.  It's a lead generator. You get a data point,
+and from there you use your other resources to figure out if it's valid.''
+
+A former Babel Street employee said the technology was deployed in a
+crackdown on credit card skimming
+<https://www.secretservice.gov/data/press/releases/2018/18-NOV/CMR_67-18_U.S._Secret_Service_Serves_up_Cold_Dish_of_Justice_to_Gas_Pump_Skimmers.pdf>,
+in which thieves install illegal card readers on gas station pumps,
+capturing customers' card data to use or sell online. The Secret Service was
+the lead agency in those investigations, which, according to published
+reports, led to arrests and the seizure of devices.
+
+A spokesperson for the Secret Service declined to comment on its work with
+Babel Street, saying the agency does not reveal methods used to carry out
+missions.
+
+While federal records show that CBP purchased Locate X and last year
+upgraded, paying for *premium* licenses, the records neither describe what
+Locate X does nor define the difference between a basic and premium
+license. A CBP spokesperson would not comment in detail about the use of
+the tool, but said the agency follows the law when deploying *open-source
+information*.
+
+Told of Protocol's reporting on Babel Street, Sen. Ron Wyden, a Democrat
+from Oregon who has pushed for tougher privacy legislation, questioned
+whether uses of the technology might violate the Fourth Amendment ban on
+unreasonable searches.
+
+The Supreme Court, in the landmark case Carpenter v. United States
+<https://www.supremecourt.gov/opinions/17pdf/16-402_h315.pdf>, ruled in June
+2018 that the government must obtain a search warrant to access cell-tower
+location data for individual phone accounts.  Wyden: The court ``recognized
+that the government needs a warrant to get someone's location data.  Now the
+government is using its checkbook to try to get around Carpenter. Americans
+won't stand for that kind of loophole when it comes to our Fourth Amendment
+rights.''
+
+A spokesperson for Babel Street, Lacy Talton, declined to answer specific
+questions about the company's government sales or its Locate X technology,
+but said the firm handles data carefully to comply with both the law and
+Internet terms of service. There is no indication Babel Street is doing
+anything illegal. [...]
+
+https://www.protocol.com/government-buying-location-data
+
+------------------------------
+
+Date: Mon, 9 Mar 2020 09:55:20 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: A hybrid AI model lets it reason about the world's physics
+  like a child (MIT Tech Review)
+
+A new data set reveals just how bad AI is at reasoning -- and suggests that
+a new hybrid approach might be the best way forward.
+
+*Questions, questions:* Known as CLEVRER, the data set
+<http://clevrer.csail.mit.edu/#Dataset> consists of 20,000 short synthetic
+video clips and more than 300,000 question and answer pairings that reason
+about the events in the videos. Each video shows a simple world of toy
+objects that collide with one another following simulated physics. In one,
+a red rubber ball hits a blue rubber cylinder, which continues on to hit a
+metal cylinder.
+
+The questions fall into four categories: descriptive (e.g., What shape is
+the object that collides with the cyan cylinder?), explanatory (What is
+responsible for the gray cylinder's collision with the cube?), predictive
+(Which event will happen next?), and counterfactual (Without the gray
+object, which event will not happen?). The questions mirror many of the
+concepts that children learn early on as they explore their surroundings.
+But the latter three categories, which specifically require causal reasoning
+to answer, often stump deep-learning systems.
+
+*Fail:* The data set, created by researchers at Harvard, DeepMind, and
+MIT-IBM Watson AI Lab is meant to help evaluate how well AI systems can
+reason. When the researchers tested
+<https://arxiv.org/pdf/1910.01442.pdf> several
+state-of-the-art computer vision and natural language models with the data
+set, they found that all of them did well on the descriptive questions but
+poorly on the others.
+
+*Mixing the old and the new:* The team then tried a new AI system that
+combines both deep learning
+<https://www.technologyreview.com/g/deep-learning/> and symbolic logic.
+Symbolic systems used to be all the rage before they were eclipsed
+<http://u/> by machine learning in the late 1980s. But both approaches have
+their strengths: deep learning excels at scalability and pattern
+recognition; symbolic systems are better at abstraction and reasoning.
+
+The composite system, known as a neuro-symbolic model, leverages both: it
+uses a neural network to recognize the colors, shapes, and materials of the
+objects and a symbolic system to understand the physics of their movements
+and the causal relationships between them. It outperformed existing models
+across all categories of questions.
+<https://www.technologyreview.com/s/613270/two-rival-ai-approaches-combine-to-let-machines-learn-about-the-world-like-a-child/>
+
+*Why it matters:* As children, we learn to observe the world around us,
+infer why things happened and make predictions about what will happen next.
+These predictions help us make better decisions, navigate our environments,
+and stay safe. Replicating that kind of causal understanding in machines
+will similarly equip them to interact with the world in a more intelligent
+way.
+
+https://www.technologyreview.com/f/615326/ai-neuro-symbolic-system-reasons-like-child-deepmind-ibm-mit/
+
+------------------------------
+
+Date: Tue, 3 Mar 2020 13:37:05 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: This Satellite Startup Raised $110 Million To Make Your
+  Cellphone Work Everywhere (Forbes)
+
+EXCERPT:
+
+Anyone who's been on a long hiking trip or had a car break down on a road
+trip knows that the phone connectivity you take for granted in your daily
+life can quickly disappear. Despite advances in technology, how far a voice
+or data signal can travel is still limited to how far away you are from a
+cellphone tower.
+
+The Midland, Texas-based AST & Science aims to use satellites to overcome
+those limitations. It's just raised $110 million in a series B round led by
+U.K.-based mobile provider Vodafone and Japanese e-tailer Rakuten to launch
+a mobile broadband network, called SpaceMobile, powered by satellites.
+These can connect to phones anywhere on the planet, when you're flying on an
+airplane, in a remote location, at sea -- 94anywhere, says the company's
+founder and CEO Abel Avellan.
+
+The company successfully tested its technology last year when it launched a
+prototype satellite called BlueWalker 1 in April. The satellite was able to
+successfully deliver signals to phones and demonstrate the company's
+abilities. With the new round of capital, which brings its total fundraising
+to $128 million, it will be able to ramp up production of the hundreds of
+satellites it plans to put in orbit, using a modular manufacturing approach
+to keep costs down.
+
+AST is one of several companies that's aiming to put satellites in low Earth
+orbit to provide data. SpaceX, OneWeb, Amazon and others are building large
+mega-constellations to provide broadband Internet directly to
+customers. Their target market is premium customers, taking advantage of the
+lower lag times provided by satellites to entice users away from broadband
+Internet providers such as Comcast or AT&T.
+
+By contrast, AST is targeting a different market. Rather than try to provide
+broadband Internet services, which requires building out bigger, higher-cost
+satellites and expensive ground infrastructure, it's instead partnering with
+mobile phone providers. For these providers, AST gives their customers the
+ability to use their existing devices in places that are hard to connect
+otherwise, such as in the mountains or on a cruise ship. It's a similar
+model to existing satellite phone providers like Iridium, except it
+doesn't require any proprietary hardware -- customers can use the phones
+they already own. [...]
+
+https://www.forbes.com/sites/alexknapp/2020/03/03/this-satellite-startup-raised-110-million-to-make-your-cell-phone-work-everywhere/
+
+------------------------------
+
+Date: Sat, 7 Mar 2020 09:37:13 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Your smartphone is dirtier than a toilet seat. Here's how to
+  disinfect it. (Mashable)
+
+Yep, you read that right: There are 10 times more germs on our smartphones
+than on a toilet seat. So unless you're regularly cleaning your lil'
+portable germ box, you're not really doing *that *good a job of protecting
+yourself from getting sick. In fact, we should *all *be making a habit out
+of cleaning that damn thing, with or without the new coronavirus outbreak as
+motivation.  <https://time.com/4908654/cell-phone-bacteria/>
+<https://mashable.com/article/uv-light-phone-sanitization-coronavirus-protection/>
+
+Apple offers a very detailed cleaning guideline
+<https://support.apple.com/en-us/HT207123> for iPhones, as does Google
+<https://support.google.com/pixelphone/answer/7533987?hlen> for Pixels.
+Samsung, though, doesn't offer much for its Galaxy phones. But, it's safe to
+assume that they all can be cleaned in the same way because their surfaces
+share similar features: glass screens and/or casings with oil-repellent
+(oleophobic) coating, and some degree of water resistance.
+
+That means two things: It's okay to clean your phone with a damp cloth and
+you should stick with mild cleaning solutions to avoid damaging the glass
+coating. So, unless you have a fancy UV light
+<https://mashable.com/article/uv-light-phone-sanitization-coronavirus-protection/>
+to sanitize your phone, here's how you can get it done the old-fashioned
+way.  What you need...
+
+[...]
+https://mashable.com/article/how-to-clean-smartphone-iphone-galaxy-pixel/
+
+------------------------------
+
+Date: Mon, 9 Mar 2020 09:53:23 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: PCI Fireside Chat: Vint Cerf and Ian Bremmer (The Unstable Globe)
+
+*American political scientist, Ian Bremmer
+<https://www.eurasiagroup.net/people/ibremmer>, joined Internet pioneer and
+PCI co-founder, Vint Cerf <https://peoplecentered.net/people/vint-cerf/> for
+an inaugural virtual fireside chat=9D to discussed today's evolving
+geopolitical and technological landscape.*
+
+The two explored how our increasingly interconnected world is changing
+dynamics among countries, challenging international institutions, and (at
+least temporarily) benefitting authoritarian regimes. The globe faces
+challenges -- including shifts in the influence of superpowers, polarization
+resulting from social media, and pandemics -- that require a new
+technological, political, social and institutional coherence that has yet to
+manifest.
+
+Some highlights, insights and soundbites from the conversation:
+https://medium.com/peoplecentered/the-unstable-globe-91ef6a18da1e
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.61
+************************

@@ -1,0 +1,707 @@
+RISKS-LIST: Risks-Forum Digest  Sunday 18 August 2013  Volume 27 : Issue 41
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.41.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Computer outage meets uninspected meat with no mete-outs (Doug McIlroy)
+Separate errors bring down NYTimes site and .gov TLD (Lauren Weinstein)
+Civilian GPS is vulnerable to being spoofed (Suzanne Johnson)
+Xerox scanners/photocopiers randomly alter numbers in scanned documents
+  (Robert Schaefer, Glynn Clements)
+Easter Eggs in Infrastructure Software (Paul Fenimore)
+NSA to cut sys admins by 90% (Lauren Weinstein)
+Remotely hacking/hijacking the camera on Samsung Smart TV (Lauren Weinstein)
+DC, Maryland: Speed Camera Firms Move To Hide Evidence (Richard Forno)
+The Public/Private Surveillance Partnership (Dewayne Hendricks)
+ISOC: Stand Together to Support Open Internet Access, Freedom, and Privacy
+  (David J. Farber)
+Lavabit, email service Snowden reportedly used, abruptly shuts down
+  (Dewayne Hendricks)
+"Lavabit shutdown marks another costly blemish for U.S. tech companies"
+  (Ted Samson via Gene Wirchenko)
+"Lavabit founder says he can't legally explain why he shut down
+   email service" (Ted Samson via  Gene Wirchenko)
+Feds Threaten To Arrest Lavabit Founder For Shutting Down His Service
+  (Randall)
+Subverting BIND's SRTT Algorithm: Derandomizing NS Selection (Roee Hay via
+  Lauren Weinstein)
+Re: Hackers Reveal Nasty New Car Attacks (Amos Shapir)
+Digital Crossroads: Telecommunications Law and Policy ... (PGN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 17 Aug 2013 16:23:44 -0400
+From: Doug McIlroy <doug@cs.dartmouth.edu>
+Subject: Computer outage meets uninspected meat with no mete-outs
+
+["Shipping Continued After Computer Inspection System Failed at Meat Plants"
+*The New York Times*, 17 Aug 2013, with Doug's summarizing and commenting,
+although I retitled the subject line.  Sorry.  I couldn't resist.  PGN]
+
+A nationwide system that controlled meat inspection went down for two
+days. It was recently installed, and one user is quoted as saying the
+installed system was subject to the same troubles as an early demo system
+that he was trained on.
+
+Presumably the system was built on contract, as almost all government
+systems are. Yet, the contractor is never mentioned in the article.
+
+This is a slightly different twist on a well-known risk: software vendors
+who avoid responsibility--in this case the NYT gave them a pass in the court
+of public opinion, not a court of law, but nevertheless a pass.
+
+  [Subsequent PS: After sending the note, I bethought myself of the stark
+  comparison with the stories about airplane battery fires. There the
+  emphasis was not on the owning of airlines, but on the makers of the
+  airplane and the batteries.  Doug]
+
+------------------------------
+
+Date: Wed, 14 Aug 2013 16:03:36 -0700
+From: Subject: Separate errors bring down NYTimes site and .gov TLD
+Subject: Separate errors bring down NYTimes site and .gov TLD
+
+*The New York Times* Web Site Returns After Hours Offline
+
+http://j.mp/15G1QFl  (*The New York Times* via NNSquad)
+
+  "The Web site ofd* The New York Times* was offline for about two hours on
+  Wednesday in what company officials say was a failure during regular
+  maintenance of NYTimes.com, and not the result of a cyberattack."
+
+DNSSEC administration likely cause of .gov outage
+
+http://j.mp/16lSbtP  (Fierce)
+
+  A GSA official said on background the website outage was triggered by a
+  now-resolved DNSSEC issue and the agency is "still working on analyzing
+  the whole thing." The outage, he added, did not effect [sic] users on
+  secure government networks.
+
+------------------------------
+
+Date: August 14, 2013 11:56:57 AM EDT
+From: Suzanne Johnson <fuhn@pobox.com>
+Subject: Civilian GPS is vulnerable to being spoofed (via Dave Farber)
+
+Civilian GPS is vulnerable to being spoofed -- and researchers are looking
+for ways to ensure the signals are legit.
+
+... The yacht's captain offered up his boat for the experiment after seeing
+ Humphreys give a presentation at this year's SXSW conference. The takeover
+ took place in June while the boat was traveling in the Mediterranean off
+ the coast of Italy. From a perch onboard the yacht, the spoofing
+ researchers shifted the ship's course three degrees to the north. They
+ also convinced the yacht's GPS system that the boat was underwater.
+
+Humphreys: ``[The captain] invited me to basically try kicking the tires of
+his security system.  And yeah -- they were flat.''
+
+Until now, the threat of spoofing existed mostly on paper. Humphreys's team
+had demonstrated the device in experiments with unmanned aerial
+vehicles. Those tests established that the technology can work from up to 30
+kilometers away, Humphreys says.
+
+Now the yacht experiment shows it can be used to fool a navigation system in
+the real world. This has implications for any system that relies on civilian
+GPS -- a list that includes commercial aviation, smartphones, and the stock
+market.
+
+Humphreys: ``Civilian GPS is not encrypted and not authenticated, so that
+means it's entirely predictable.  Predictability is the enemy of security.''
+
+http://www.technologyreview.com/news/517686/spoofers-use-fake-gps-signals-to-knock-a-yacht-off-course/
+
+------------------------------
+
+Date: Tue, 6 Aug 2013 10:29:44 -0400
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: Xerox scanners/photocopiers randomly alter numbers in scanned documents
+
+``In this article I present in which way scanners / copiers of the Xerox
+WorkCentre Line randomly alter written numbers in pages that are scanned.
+This is not an OCR problem (as we switched off OCR on purpose), it is a lot
+worse -- patches of the pixel data are randomly replaced in a very subtle
+and dangerous way: The scanned images look correct at first glance, even
+though numbers may actually be incorrect.''
+
+http://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning?
+
+And so it goes, as Vonnegut would say.
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886 http://www.haystack.mit.edu 781-981-5767
+
+------------------------------
+
+Date: Wed, 7 Aug 2013 23:55:58 +0100
+From: Glynn Clements <glynn@gclements.plus.com>
+Subject: Xerox scanners/photocopiers randomly alter numbers in scanned documents
+
+http://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning
+
+or:
+
+http://tinyurl.com/ouvlf96
+
+Summary: JBIG2 compression looks for repeated "patches" within the image,
+and replaces all occurrences with references to a single copy.  Except, that
+the matching isn't exact, so e.g. a 6 may be treated as a copy of a patch
+that's actually an 8.
+
+Any scanner has limits to its accuracy, and any form of lossy compression
+has some loss. But unlike e.g. JPEG, where the artifacts are often clearly
+visible, there is no indication of the degree of uncertainty involved.
+
+Possible risks:
+
+* Changes to account numbers, debiting or crediting the wrong account.
+* Changes to monetary amounts.
+* Sending police, bailiffs, demolition crew, etc to the wrong address.
+* Using the wrong part number in a safety-critical design.
+* Using the wrong dimensions or tolerances in a safety-critical design.
+* Administering the wrong dosage of a drug, or the wrong number of dosages
+  (or even the wrong drug if it's referenced by catalogue number).
+
+-- From a legal perspective, the mere fact that such scanners exist brings
+into question the authenticity of any document unless its entire history is
+known.
+
+------------------------------
+
+Date: Wed, 07 Aug 2013 09:23:48 -0600
+From: Paul Fenimore <fenimore@swcp.com>
+Subject: Easter Eggs in Infrastructure Software
+
+The US National Weather Service's website <www.weather.gov> returns a
+forecast for Manhattan when the location "evil" is searched. Finding rogue
+search results for a US Government service that is critical to safety is
+concerning enough, but when I tried to make an HTTPS connection to the
+National Weather Service's website to verify the "validity" of the results,
+I immediately received a warning that the SSL certificate is invalid. The
+cert was valid, but for Akami Technologies (07:27:A4:69), and was flagged
+for possible hijacking of the connection.  The risks? Farming out important,
+probably even critical, parts of the Weather Service's infrastructure with
+loss of control or even knowledge of what is going on, the opportunity for
+faked connections to www.weather.gov, and the introduction of incorrect
+behavior into critical code, probably for the sake of a very bad taste
+"joke".
+
+------------------------------
+
+Date: Thu, 8 Aug 2013 20:21:28 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: NSA to cut sys admins by 90%
+
+  "The National Security Agency, hit by disclosures of classified data by
+  former contractor Edward Snowden, said Thursday it intends to eliminate
+  about 90 percent of its system administrators to reduce the number of
+  people with access to secret information."
+  http://j.mp/1cyL8R4  (Reuters via NNSquad)
+
+``What could go wrong?''
+
+  [I am reminded of a meeting with U.S. Navy Admirals in June 1999,
+  representing a rather different point on the spectrum.  It was stated that
+  the Navy was planning on using only Microsoft operating systems to
+  minimize the training problems for system administrators, and also to
+  outsource most of its system administration (because it was becoming very
+  difficult to keep enough personnel with adequate sysadmin experience in
+  the Navy).  PGN]
+
+------------------------------
+
+Date: Fri, 2 Aug 2013 21:27:34 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Remotely hacking/hijacking the camera on Samsung Smart TV
+
+  "Today's high-end televisions are almost all equipped with "smart" PC-like
+  features, including Internet connectivity, apps, microphones and
+  cameras. But a recently discovered security hole in some Samsung Smart TVs
+  shows that many of those bells and whistles aren't ready for prime time.
+  The flaws in Samsung Smart TVs, which have now been patched, enabled
+  hackers to remotely turn on the TVs' built-in cameras without leaving any
+  trace of it on the screen. While you're watching TV, a hacker anywhere
+  around the world could have been watching you.  Hackers also could have
+  easily rerouted an unsuspecting user to a malicious website to steal bank
+  account information."
+    http://j.mp/146NK3m  (WPTV / CNN via NNSquad)
+
+------------------------------
+
+Date: August 7, 2013 9:37:36 AM EDT
+From: Richard Forno <rforno@infowarrior.org>
+Subject: DC, Maryland: Speed Camera Firms Move To Hide Evidence
+
+  [Via Dave Farber]
+
+http://www.thenewspaper.com/news/41/4167.asp
+
+Afraid of refunds, Washington, DC and Salisbury, Maryland conceal evidence
+that could reveal camera inaccuracy.
+
+The firms operating red light cameras and speed cameras in the District of
+Columbia and Maryland are working to suppress evidence that could be used to
+prove the innocence of a photo enforcement ticket recipient. In Washington,
+the Arizona-based vendor American Traffic Solutions has repositioned cameras
+and cropped photos so that it is impossible to determine whether another
+object or vehicle happens to be within the radar unit's field of view.
+
+The change is important since DC hearing adjudicators have been throwing out
+citations whenever another vehicle was visible, creating the possibility of
+a spurious radar reading (view ruling). The cropping also makes it extremely
+difficult to use pavement lines to perform a secondary check of the speed
+estimate provided by the radar. Lines painted on the road for this purpose
+are visible in one photo, but not the other (view first photo, view second
+photo). No video is provided to the vehicle owner.
+
+The District has also recently been installing next-generation speed cameras
+that use infrared light instead of a visible flash when photographing
+vehicles. This means drivers will have no way of knowing whether they will
+receive a ticket until weeks after the alleged violation.
+
+In Salisbury, Maryland, the city and its private speed camera contractor
+Brekford are working together to prevent the Maryland Drivers Alliance from
+confirming whether the photo enforcement program is in compliance with state
+law. There is good reason to believe it is not, as other towns that allow
+Brekford to issue tickets, including Greenbelt and Hagerstown, have been
+forced to refund illegally issued citations.
+
+At issue is whether Brekford's cameras were properly certified under
+Maryland Code Section 21-809, which requires testing on an annual basis by
+an independent lab. The law states that the results of such testing "shall
+be kept on file" along with a daily setup log. The Maryland-based motoring
+rights group simply asked for a copy of the file. The city and camera
+company now insist that the group must pay $535 to the speed camera
+contractor for the calibration certificates and logs that the municipality
+is required to keep on file. These are documents that the State Highway
+Administration makes freely available on its website.
+
+"In regards to this request, it is anticipated to take six total hours to
+gather and assemble the requested documents," Brekford wrote in a July 16
+letter to the Salisbury police chief. "The first two hours will be provided
+without charge, however the addition four hours shall be charged at the rate
+of $75.00 per hour. An additional $235.00 will be charged for the copying
+and mailing services rendered in providing the requested
+information. Additionally, Brekford does not release or provide technical
+specifications on any of our camera systems."
+
+The city also delayed responding to the request for thirty days, which the
+motorist group says is one of many violations of the state's public records
+laws. The refusal to provide basic specifications regarding the camera's
+operation is also raising eyebrows.
+
+"Basically they are saying the public is just supposed to 'trust us' when
+Brekford says their equipment is of a sort which is reliable, since they are
+withholding all documents which describe the technology," said Ron Ely, the
+Maryland Drivers Alliance chairman.
+
+[Source: Response to Maryland Public Information Request (Brekford, 16 Jul
+2013)]
+
+------------------------------
+
+Date: August 10, 2013 11:48:09 PM EDT
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: The Public/Private Surveillance Partnership
+
+  [Via Dave Farber]
+
+The Public/Private Surveillance Partnership
+Bruce Schneier, 5 Aug 2013
+<http://www.schneier.com/blog/archives/2013/08/the_publicpriva_1.html>
+
+  [Also in Bruce's latest CRYPTOGRAM,  PGN]
+
+Imagine the government passed a law requiring all citizens to carry a
+tracking device. Such a law would immediately be found unconstitutional. Yet
+we all carry mobile phones.
+
+If the National Security Agency required us to notify it whenever we made a
+new friend, the nation would rebel. Yet we notify Facebook. If the Federal
+Bureau of Investigation demanded copies of all our conversations and
+correspondence, it would be laughed at. Yet we provide copies of our e-mail
+to Google, Microsoft or whoever our mail host is; we provide copies of our
+text messages to Verizon, AT&T and Sprint; and we provide copies of other
+conversations to Twitter, Facebook, LinkedIn, or whatever other site is
+hosting them.
+
+The primary business model of the Internet is built on mass surveillance,
+and our government's intelligence-gathering agencies have become addicted to
+that data. Understanding how we got here is critical to understanding how we
+undo the damage.
+
+Computers and networks inherently produce data, and our constant
+interactions with them allow corporations to collect an enormous amount of
+intensely personal data about us as we go about our daily lives. Sometimes
+we produce this data inadvertently simply by using our phones, credit cards,
+computers and other devices. Sometimes we give corporations this data
+directly on Google, Facebook, Apple Inc.'s iCloud and so on in exchange for
+whatever free or cheap service we receive from the Internet in return.
+
+The NSA is also in the business of spying on everyone, and it has realized
+it's far easier to collect all the data from these corporations rather than
+from us directly. In some cases, the NSA asks for this data nicely. In other
+cases, it makes use of subtle threats or overt pressure. If that doesn't
+work, it uses tools like national security letters.
+
+The result is a corporate-government surveillance partnership, one that
+allows both the government and corporations to get away with things they
+couldn't otherwise.
+
+There are two types of laws in the U.S., each designed to constrain a
+different type of power: constitutional law, which places limitations on
+government, and regulatory law, which constrains corporations. Historically,
+these two areas have largely remained separate, but today each group has
+learned how to use the other's laws to bypass their own restrictions. The
+government uses corporations to get around its limits, and corporations use
+the government to get around their limits.
+
+This partnership manifests itself in various ways. The government uses
+corporations to circumvent its prohibitions against eavesdropping
+domestically on its citizens. Corporations rely on the government to ensure
+that they have unfettered use of the data they collect. ...
+
+Dewayne-Net RSS Feed: <http://www.warpspeed.com/wordpress>
+
+------------------------------
+
+Date: Sun, 4 Aug 2013 17:43:04 +0200
+From: "David J. Farber" <farber@gmail.com>
+Subject: Stand Together to Support Open Internet Access, Freedom, and Privacy
+
+Internet Society Board of Trustees Calls on the Global Internet Community to
+Stand Together to Support Open Internet Access, Freedom, and Privacy
+
+Fundamental ideals of the Internet are under threat
+
+[Berlin, Germany, 4 Aug 2013] The Internet Society Board of Trustees during
+its meeting in Berlin, Germany today called on the global Internet community
+to stand together in support of open Internet access, freedom, and
+privacy. Recently exposed information about government Internet surveillance
+programs is a wake-up call for Internet users everywhere: the fundamental
+ideals of the Internet are under threat.  The Internet Society Board of
+Trustees believes that government Internet surveillance programs create
+unacceptable risks for the future of a global, interoperable, and open
+Internet. Robert Hinden, Chair of the Board of Trustees, stated, ``Berlin is
+a city where freedom triumphed over tyranny. Human and technological
+progress are not based on building walls, and we are confident that the
+human ideals of communication and creativity will always route around these
+kinds of attempts to constrain them. We are especially disappointed that the
+very governments that have traditionally supported a more balanced role in
+Internet governance are consciously and deliberately hosting massive
+Internet surveillance programs.''
+
+In the brief period since these surveillance programs were revealed to the
+general public, the Internet Society Board stated there are already chilling
+effects on global trust and confidence on the Internet ecosystem. The fact
+that information about surveillance programs is emerging primarily from
+countries with a long history of supporting the open Internet is
+particularly disturbing. As the next billion people come online, these
+countries should be expected to demonstrate leadership in support of the
+values that underpin the global Internet. In the wake of these
+announcements, the Internet Society encourages a return to multistakeholder
+cooperation to preserve the benefits of the Internet ecosystem for all.
+
+
+The Internet Society Board of Trustees expects governments to fully engage
+with their citizens in an open dialogue on how to reconcile national
+security and the fundamental rights of individuals. Security should not be
+at the cost of individual rights and, in this context, the Board welcomes
+the initiative by some civil society organizations to promote "International
+Principles on the Application of Human Rights to Communications
+Surveillance." The Internet Society endorses these principles, and
+emphasizes the importance of proportionality, due process, legality, and
+transparent judicial oversight. The Internet Society believes that
+surveillance without any such safeguards risks undermining the
+sustainability of the open Internet.
+
+Lynn St. Amour, President and CEO of the Internet Society: ``In the spirit
+of the pioneers and early innovators of the Internet that were honored this
+week at the 2013 Internet Hall of Fame ceremony, we urge the global Internet
+community to defend against attempts by governments to fragment the Internet
+either through overt regulation or hidden surveillance programs, We must
+reassert the global spirit of community that is at the heart of the
+Internet's growth and success, and stand firm in our belief that openness
+and collaboration is the best path forward.''
+
+------------------------------
+
+Date: August 8, 2013 8:26:11 PM EDT
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Lavabit, email service Snowden reportedly used, abruptly shuts down
+
+[Note:  This item comes from friend Mike Cheponis.  DLH]
+
+http://boingboing.net/2013/08/08/lavabit-email-service-snowden.html
+
+Remember when word circulated that Edward Snowden was using Lavabit, an
+email service that purports to provide better privacy and security for users
+than popular web-based free services like Gmail? Lavabit's owner has shut
+down the service, and posted a message on the lavabit.com home page today
+about wanting to avoid "being complicit in crimes against the American
+people."  According to the statement, it appears he rejected a US court
+order to cooperate with the government in spying on users.
+
+The email service offered various security features to a claimed user base
+of 350,000, and is the first such firm to have publicly and transparently
+closed down, rather than cooperate with state surveillance programs. The
+email address Snowden (or someone sending emails on his behalf) is reported
+to have used to send invites to a press conference at Moscow's Sheremetyevo
+Airport in mid-July was a Lavabit account.
+
+Below, the full message from Lavabit's founder and operator Ladar Levison:
+
+My Fellow Users,
+
+I have been forced to make a difficult decision: to become complicit in
+crimes against the American people or walk away from nearly ten years of
+hard work by shutting down Lavabit. After significant soul searching, I have
+decided to suspend operations. I wish that I could legally share with you
+the events that led to my decision. I cannot. I feel you deserve to know
+what's going on--the first amendment is supposed to guarantee me the
+freedom to speak out in situations like this. Unfortunately, Congress has
+passed laws that say otherwise. As things currently stand, I cannot share my
+experiences over the last six weeks, even though I have twice made the
+appropriate requests.
+
+What's going to happen now? We've already started preparing the
+paperwork needed to continue to fight for the Constitution in the Fourth
+Circuit Court of Appeals. A favorable decision would allow me resurrect
+Lavabit as an American company.
+
+This experience has taught me one very important lesson: without
+congressional action or a strong judicial precedent, I would _strongly_
+recommend against anyone trusting their private data to a company with
+physical ties to the United States.
+
+Sincerely,
+Ladar Levison
+Owner and Operator, Lavabit LLC
+
+Defending the constitution is expensive! Help us by donating to the Lavabit
+Legal Defense Fund here.
+
+Update: Spencer Ackerman at the Guardian has more:
+
+Several technology companies that participate in the National Security
+Agency's surveillance dragnets have filed legal requests to lift the secrecy
+restrictions that prevent them from explaining to their customers precisely
+what it is that they provide to the powerful intelligence service -- either
+wittingly or due to a court order. Yahoo has sued for the disclosure of some
+of those court orders.
+
+The presiding judge of the secret court that issues such orders, known as
+the Fisa court, has indicated to the Justice Department that he expects
+declassification in the Yahoo case. The department agreed last week to a
+review that will last into September about the issues surrounding the
+release of that information.
+
+There are few Internet and telecommunications companies known to have
+refused compliance with the NSA for its bulk surveillance efforts, which the
+NSA and the Obama administration assert are vital to protect Americans. One
+of them is Qwest Communications, whose former CEO Joseph Nacchio --
+convicted of insider trading -- alleged that the government rejected it for
+lucrative contracts after Qwest became a rare holdout for post-9/11
+surveillance.
+
+"Without the companies' participation," former NSA codebreaker William
+Binney recently told the Guardian, "it would reduce the collection
+capability of the NSA significantly."
+
+------------------------------
+
+Date: Thu, 15 Aug 2013 11:50:59 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Lavabit shutdown marks another costly blemish for U.S. tech
+  companies" (Ted Samson)
+
+Ted Samson | InfoWorld, 09 Aug 2013
+Email provider's move will further fuel concerns that American
+companies can't be trusted to keep customer data private
+http://www.infoworld.com/t/data-security/lavabit-shutdown-marks-another-costly-blemish-us-tech-companies-224582
+
+------------------------------
+
+Date: Thu, 15 Aug 2013 12:55:18 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Lavabit founder says he can't legally explain why he shut down
+  email service (Ted Samson)
+
+Ted Samson | InfoWorld, 14 Aug 2013
+Ladar Levison says pulling plug on secure email service purportedly
+used by Edward Snowden was lesser of two evils
+http://www.infoworld.com/t/data-security/lavabit-founder-says-he-cant-legally-explain-why-he-shut-down-email-service-224924
+
+------------------------------
+
+Date: Aug 17, 2013 4:54 PM
+From: "Randall Webmail" <rvh40@insightbb.com>
+Subject: Feds Threaten To Arrest Lavabit Founder For Shutting Down His Service
+
+Better than ever, things just keep on getting ...
+
+  [More via Dewayne via Dave Farber]
+Source:
+<http://investigations.nbcnews.com/_news/2013/08/13/20008036-lavabitcom-owner-i-could-be-arrested-for-resisting-surveillance-order?lite>
+
+Feds Threaten To Arrest Lavabit Founder For Shutting Down His Service
+from the *either-you-help-us-spy-on-people-or-you're-a-criminal* dept
+
+The saga of Lavabit founder Ladar Levison is getting even more ridiculous,
+as he explains that the government has threatened him with criminal charges
+for his decision to shut down the business, rather than agree to some
+mysterious court order. The feds are apparently arguing that the act of
+shutting down the business, itself, was a violation of the order:
+
+* ... a source familiar with the matter told NBC News that James Trump, a
+senior litigation counsel in the U.S. attorney's office in Alexandria, Va.,
+sent an email to Levison's lawyer last Thursday -- the day Lavabit was
+shuttered -- stating that Levison may have "violated the court order," a
+statement that was interpreted as a possible threat to charge Levison with
+contempt of court. *
+
+[snip]
+http://www.techdirt.com/articles/20130816/14533924213/feds-threaten-to-arrest-lavabit-founder-shutting-down-his-service.shtml
+
+------------------------------
+
+Date: Wed, 14 Aug 2013 09:13:16 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Subverting BIND's SRTT Algorithm: Derandomizing NS Selection
+
+  "Today I presented at USENIX WOOT '13 a new vulnerability that we had
+  found in BIND, the most popular DNS server. Exploiting this vulnerability
+  allows to reduce the amount of effort required for an off-path (blind) DNS
+  cache poisoning attack.  The whitepaper is now publicly available,
+  together with the presentation and ISC's (the organization behind BIND)
+  notification.  In this blog post I will describe the vulnerability in a
+  less formal fashion."
+    http://j.mp/13Zbwir  (*Security Intelligence* via NNSquad)
+
+------------------------------
+
+Date: Mon, 5 Aug 2013 16:49:02 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Hackers Reveal Nasty New Car Attacks
+
+I drive a 2012 Ford Focus.  Maybe the lower models get a lower grade
+computer; the first thing I noticed when I started driving it, is that
+nothing I do happens immediately, including stepping on the gas or the
+brakes.  There is always some delay, sometimes up to a second.  I
+almost ran over a child once while I was getting used to it.
+
+------------------------------
+
+Date: Mon, 5 Aug 2013 11:40:01 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Digital Crossroads: Telecommunications Law and Policy ...
+
+I have just received a copy of
+
+  Jonathan E. Nuechterlein and Philip J. Weiser
+  Digital Crossroads: Telecommunications Law and Policy in the Internet Age
+  Second Edition
+  MIT Press, 2013
+  xix+506pp
+
+This seems to be a really valuable compendium of many of the legal and
+policy issues underlying RISKS.  The first edition of the book was published
+in 2005, and it is evident from the preface to the second edition that much
+has changed in the past eight years.  For example, the second edition adds
+new analyses relating to mobile broadband, the seeming demise of
+conventional telephony, spectrum issues, network neutrality, online video,
+and lots more.  The chapter titles give you an idea of the comprehensive
+scope of the book.
+
+  1. The Big Picture
+  2. Competition Policy in Wireline Communications
+  3. The Spectrum
+  4. Mobile Wireless Services
+  5. A Primer on Internet Technology
+  6. Net Neutrality and the Regulation of Broadband Access
+  7. Interconnection and Intercarrier Compensation
+  8. Universal Service in the Age of Broadband
+  9. Competition in the Delivery of Video Programming
+ 10. The Future of Telecommunications Competition Policy
+
+These chapters are followed by a copiously annotated 100 pages of end notes.
+
+The book is highly accessible for readers with widely diverse needs and
+interests, from casual curiosity about specific subjects to serious needs to
+understand the details.  It also seems to benefit from a dozen people
+acknowledged as proofreaders and indexers!
+
+This topic is obviously not devoid of controversy.  However, irrespective of
+any quibbles someone might have with the devils in the details, this appears
+to be a huge contribution and deserves careful reading.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.41
+************************
+
+--_002_7bb526385bf940f895a16213c1c7d60fEXHUBVM03campusnclacuk_--

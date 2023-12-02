@@ -1,0 +1,635 @@
+RISKS-LIST: Risks-Forum Digest  Sunday 24 August 2014  Volume 28 : Issue 20
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.20.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+A Better Credit Card (NYT)
+U.S. finds hacker tool "Backoff" widespread (Nicole Perlroth)
+Re: Cyberattack that hit Target affecting 1,000 US businesses (Bob Frankston)
+The New Editors of the Internet (Dan Gillmor via Dewayne Hendricks)
+Reverse-engineering censorship in China: Randomized experimentation and
+  participant observation (David Farber)
+CyberSec Coordinator Tells Why Lack of Tech Know-How Helps (Henry Baker)
+Asimov's Three Laws of Robotics Supplemented for 21st Century Care Robots
+  (Peter Dunn via ACM TechNews)
+Read This: "How Verizon lets its copper network decay to force phone
+  customers onto fiber" (Ars Technica)
+Re: Hacking Traffic Lights is Amazingly Really Easy (Edward Vielmetti)
+"Many Chrome browser extensions do sneaky things" (Jeremy Kirk via
+  Gene Wirchenko)
+Hands On with the HTC One M8 for Windows: The first OS-agnostic phone
+  (Ars Technica via Bob Frankston, Farooq Butt)
+Google: "That's not the download you're looking for..." (Lauren Weinstein)
+Re: Google Map Tracks Your Every Move ... (Dimitri Maziuk, Jonas M Luster)
+Re: Vote! You Just Might Win $50,000 (Mark Thorson)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 24 Aug 2014 11:42:58 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: A Better Credit Card (NYT)
+
+The Editorial Board, *The New York Times*, 23 Aug 2014
+http://www.nytimes.com/2014/08/24/opinion/sunday/a-better-credit-card.html?rref=opinion
+
+American banks and retailers are finally embracing credit card technology
+that has been shown to minimize fraudulent transactions in the rest of the
+world Given recent data breaches in which hackers stole the card numbers of
+millions of consumers from cash register systems at retailers like Target
+and Supervalu the change can't come soon enough.
+
+The new cards, which contain computer chips, are standard in Europe and more
+secure against hacking than the magnetic-stripe cards widely used in the
+United States. Users of chip-based cards in Europe have to enter a
+four-digit code on a keypad to complete purchases, adding another layer of
+security. Industry groups in Britain and Canada have reported that credit
+card fraud dropped sharply after banks and merchants switched to such
+cards.
+
+American credit card companies plan to issue more than 575 million
+chip-based cards by the end of 2015, and retailers like Walmart and Target
+are installing thousands of registers where the new cards can be used. But
+some banks will initially only require customers to sign for purchases when
+using chip-based cards rather than requiring the extra step of entering a
+secure code. The banks say they will add the code step once consumers become
+accustomed to using the new cards.
+
+One reason for the delay in conversion to chip-based cards is that banks
+were not willing to upgrade their systems until retailers did the same.  But
+the publicity surrounding the data breaches changed a lot of minds, as did
+the fact that stricter rules governing liability for fraud-related losses
+will take effect a little over a year from now.  Under the new rules, if one
+entity, the retailer or the credit card firm, is using the less-secure
+system, it will be held liable for losses.
+
+One big problem that chip-based cards will not address is fraud linked to
+purchases made over the Internet. Industry officials say they are working on
+various approaches to making online purchases more secure.  For example,
+credit card companies could verify the identity of online shoppers by
+sending a text message to their cellphones with a unique code when they try
+to buy something on, say, Amazon. The customer would then have to enter that
+code on Amazon to complete the transaction.  Some companies like MasterCard
+are already offering such features, but they are not in wide use.
+
+No technology can eliminate fraud. But chip-based cards can make it harder
+for criminals to profit.
+
+See also:
+Q&A: The Shift to Safer Chip-and-PIN Credit Cards, 9 Jun 2014
+http://www.nytimes.com/2014/06/06/technology/personaltech/the-shift-to-safer-chip-and-pin-credit-cards.html
+
+  [Also see the article by Ross Anderson and Steven Murdoch, EMV: Why
+  Payment Systems Fail: What lessons might we learn from the chip cards used
+  for payments in Europe, now that the U.S. is adopting them too?  Inside
+  Risks column in the June CACM:
+    http://www.csl.sri.com/neumann/insiderisks.html#233
+  PGN]
+
+------------------------------
+
+Date: Sat, 23 Aug 2014 13:19:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: U.S. finds hacker tool "Backoff" widespread (Nicole Perlroth)
+
+In an article by Nicole Perlroth in this morning's business section of *The
+New York Times*, more than a thousand U.S. businesses have been compromised
+by malware called Backoff (because that appears in its code).  Target (an
+early victim) and UPS Stores (recently) were perhaps the most publicized.
+Typically, the companies had no idea they had been hacked.  Seven companies
+that sell and manage in-store cash register systems have confirmed that
+their clients had been affected.  The Department of Homeland Security has
+suggested searching for "Backoff", and ratcheting up their security in
+limiting access by insiders, locking out would-be attackers after multiple
+failed login attempts, and increasing the length of their passwords.  [Once
+again, the fundamental weaknesses of commercial system software strikes
+again.]  *TNYT* National Edition, 23 Aug 2014, C1/C6 (PGN-ed).  [Also noted
+by Bob Gezelter.]
+
+------------------------------
+
+Date: 23 Aug 2014 12:27:47 -0400
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: Re: Cyberattack that hit Target affecting 1,000 US businesses
+
+*The Boston Globe*, 22 Aug 2014
+http://www.bostonglobe.com/business/2014/08/22/cyberattack-that-hit-target-affecting-businesses/AmsccErTlI4vLhQpUfSorL/story.html
+
+Implicit in the suggestions is the assumption of perimeter security for
+networks -- but I see that assumption as the real vulnerability. I'd like to
+see a more sophisticated approach which would focus on making systems such
+as cash registers safer by having trust that doesn't rely on such
+perimeters.  Perhaps we need a term such as VPC - Virtual Private
+Communities to emphasize that trust is among devices or, more to the point,
+applications rather than dependent upon protecting a physical network.
+
+  [Please remember: `Perimeter security' is a complete myth.  There is
+  typically no definable perimeter other than everything on the Internet,
+  and overall there is no adequate security more or less anywhere!  PGN]
+
+------------------------------
+
+Date: Saturday, August 23, 2014
+From: *Dewayne Hendricks* <dewayne@warpspeed.com>
+Subject: The New Editors of the Internet (Dan Gillmor)
+
+Dan Gillmor, *The Atlantic*, 22 Aug 2014
+http://www.theatlantic.com/technology/archive/2014/08/the-new-editors-of-the-internet/378983/
+
+In a small number of Silicon Valley conference rooms, decisions are being
+made about what people should and shouldn't see online -- without the
+accountability or culture that has long accompanied that responsibility.
+
+Bowing to their better civic natures, and the pleas of James Foley's family,
+Twitter and YouTube have pulled down videos and photos of his murder. They
+had every right to do so, and in my view they did the right thing.
+
+So why am I so uncomfortable with this? Because it's not clear what's too
+vile to host. And, even more, because Twitter and YouTube are among a tiny
+group of giant companies with greater and greater power -- and less and less
+accountability -- over what we read, hear, and watch online.
+
+Who gave them this power? We did. And if we don't take back what we've given
+away -- and what's being taken away -- we'll deserve what we get: a
+concentration of media power that will damage, if not eviscerate, our
+tradition of free expression.
+
+For the moment, it's reasonable to dismiss the widely repeated accusation
+that removing the Foley videos was an act of censorship. When Twitter worked
+with the Turkish regime to remove certain accounts, that was censorship, if
+by proxy, because it was done on the orders of a government.  And, of
+course, when governments directly block Twitter, YouTube, Facebook, and
+other services, as some do, that is direct censorship. But when Twitter and
+YouTube took down a murder-as-propaganda video, that was editing. (Show me
+evidence that the U.S. government persuaded Twitter and YouTube to do this,
+as it almost certainly did when the major payment systems cut off Wikileaks'
+funding several years ago, and I'll revise that view.)
+
+Editing, yes, but on an epic scale -- and critics are absolutely right to
+raise some stark questions. What precedent does this set? What actual
+policies are at work? Are the policies being applied consistently? If it's
+appropriate to take down these videos and pictures, why not the images of so
+many others who've been the victims of ISIS and other criminals?
+
+All are important questions, but the reason they're so important, again, is
+the clout these services exert in the information marketplace. There was
+little uproar, after all, when the anything-goes LiveLeak -- which hosts
+videos that most others find beyond the pale -- vowed not to post any ISIS
+beheading videos, on the reasonable grounds that it's wrong to help
+murderers do public relations.
+
+What makes so many free-speech protectors fret in the current situation,
+again, is not the instinct to protect an unwary public from encountering the
+worst of humanity, or to avoid helping barbarian propagandists. It is the
+slippery slope issue, and this is getting more worrisome every day with the
+growing domination of Facebook, Google, and Twitter over our media flow.
+
+They're dominant not because they've taken control, but because we've given
+them control -- and not for all bad reasons. These services are enormously
+useful and convenient. But because we aren't paying for these services, we
+users are, as the saying goes, the products being sold to advertisers. We
+have no rights beyond what the companies give us in their terms of service,
+where quaint ideas like the First Amendment have no application. When
+Facebook decides what you see in your timeline, you have no recourse --
+because you *agreed* to terms of service that are grossly one-sided and not
+constrained by the Bill of Rights.
+
+I'm a frequent Twitter user, in part because the company has for the most
+part been a strong protector of free speech. I confess to some misgivings
+about my own tendency to put so much of what I do into a proprietary service
+that increasingly makes clear that it controls the experience. Even as it
+was taking down the Foley videos, Twitter was expanding its unilateral
+tweaking of users' timelines,inserting posts that the users did not ask for
+-- a major breach in the bargain Twitter made with us from its early
+days. (I don't trust Facebook at all, and use it rarely, and have been using
+DuckDuckGo, which doesn't track users, as an alternative search engine --
+though I do use some Google services.)
+
+Journalists have been especially short-sighted in their eagerness to use
+social networks, feeding enormous amounts of content into third-party
+services they do not in any way control and which get, by far, the best of
+the bargain in the long run. Guess what, journalism companies? Facebook is
+going to be your biggest competitor in the long run. Twitter is a media
+company, too. And Google's eating your lunch every day. [..]
+
+------------------------------
+
+Date: Sat, 23 Aug 2014 10:00:34 -0400
+From: "David Farber via ip" <ip@listbox.com>
+Subject: Reverse-engineering censorship in China: Randomized experimentation
+  and participant observation
+
+http://www.sciencemag.org/content/345/6199/1251722
+
+Conclusion
+
+Censorship in China is used to muzzle those outside government who attempt
+to spur the creation of crowds for any reason -- in opposition to, in support
+of, or unrelated to the government. The government allows the Chinese people
+to say whatever they like about the state, its leaders, or their policies,
+because talk about any subject unconnected to collective action is not
+censored. The value that Chinese leaders find in allowing and then measuring
+criticism by hundreds of millions of Chinese people creates actionable
+information for them and, as a result, also for academic scholars and public
+policy analysts.
+
+------------------------------
+
+Date: Fri, 22 Aug 2014 11:03:05 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: CyberSec Coordinator Tells Why Lack of Tech Know-How Helps
+
+FYI -- Technical ignorance is an advantage?  Perhaps Michael Daniel should
+start doing brain surgery tomorrow?
+
+I thought that the Dems always valued expertise over politics...
+
+Michael Daniel exhibits the hubris of those whose VerbalSAT >> MathSAT.
+
+http://www.govinfosecurity.com/interviews/michael-daniels-path-to-white-house-i-2422
+
+Eric Chabrow, August 21, 2014
+Michael Daniel's Path to the White House
+CyberSec Coordinator Tells Why Lack of Tech Know-How Helps
+
+Michael Daniel sees his lack of technical expertise in IT security as an
+asset in his job as White House cybersecurity coordinator.
+
+"Being too down in the weeds at the technical level could actually be a
+little bit of a distraction," Daniel, a special assistant to the president,
+says in an interview with Information Security Media Group.
+
+"You can get enamored with the very detailed aspects of some of the
+technical solutions," he says.  "And, particularly here at the White House
+... the real issue is to look at the broad, strategic picture and the impact
+that technology will have."
+
+Daniel came out of obscurity in the federal bureaucracy in May 2012 - he was
+serving as the intelligence branch chief at the White House Office of
+Management and Budget - when President Obama tapped him to replace the
+administration's first cybersecurity coordinator, Howard Schmidt (see Who Is
+Michael Daniel?).
+
+In discussing his role, Daniel says understanding the economics and
+psychology of cybersecurity is a big challenge.  "At a very fundamental
+level, cybersecurity isn't just about the technology but it's also about the
+economics of cybersecurity," he says.
+
+"Intruders get in through those holes that we know about that we could fix,"
+he says.  "The question is, 'Why don't we do that?'  That clearly leads me
+to the conclusion that we really don't understand all of those economics and
+psychology [situations] well enough."
+
+In the interview, which was interrupted when he was called to the West Wing,
+Daniel discusses:
+  How his academic career and experience at OMB prepared him to become the
+  president's top adviser on cybersecurity; The range of talents needed in
+  government to boost the nation's cyberdefense; and His adeptness at
+  martial arts - he holds a black belt - and how he applies that to
+  cybersecurity.
+
+Daniel holds a bachelor's degree in public policy from Princeton University,
+a master of public policy degree from the Harvard Kennedy School of
+Government and a master in national resource planning degree from the
+National Defense University.  After graduating from Princeton in 1992,
+Daniel took a job as a research assistant at the Southern Center for
+International Studies, a think tank in Atlanta.  Upon receiving his master's
+degree from Harvard, he joined OMB as a program examiner in the operations
+and personnel branch, covering the Navy, Marine Corps and contingency
+operations programs.
+
+------------------------------
+
+Date: Fri, 22 Aug 2014 12:27:22 -0400 (EDT)
+From: "ACM TechNews" <technews@hq.acm.org>
+Subject: Asimov's Three Laws of Robotics Supplemented for 21st Century Care
+  Robots (Peter Dunn)
+
+Peter Dunn, University of Warwick, 14 Aug 2014
+via ACM TechNews, Friday, August 22, 2014
+
+Inspired by the Three Laws of Robotics first described by science fiction
+author Isaac Asimov in his story "Runaround" and as part of a European
+Commission (EC) project, University of Warwick philosopher Tom Sorell and
+University of Birmingham professor Heather Draper have created a set of six
+values that should be used to governor the behavior of robots created for
+the care of the elderly.  The six values center around the circumstances of
+the older person in need of support and are designed to be built into the
+robot's hardware and software.  The six proposed values are autonomy,
+independence, enablement, safety, privacy, and social connectedness.  Sorell
+says just as Asimov's laws influenced one another, with some taking
+precedence over the others, autonomy should be considered the paramount
+value for elder care robots.  The six values were conceived of as part of
+the EC ACCOMPANY project, and Sorell and Draper note they will continue to
+be tweaked in collaboration with engineers.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_5-c6a6x2b90bx061522&
+
+------------------------------
+
+Date: Thu, 14 Aug 2014 18:50:41 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Read This: "How Verizon lets its copper network decay to
+  force phone customers onto fiber" (Ars Technica)
+
+Ars Technica via NNSquad
+: http://arstechnica.com/information-technology/2014/08/why-verizon-is-trying-very-hard-to-force-fiber-on-its-customers/
+
+ "But the FCC is on course to let Verizon, AT&T, and other phone companies
+ stop maintaining the old Public Switched Telephone Network (PSTN) by around
+ 2020, eventually moving everyone to Voice over Internet Protocol (VoIP)
+ phone service. This shift could come with a loss of consumer protection
+ rules such as price caps and "carrier of last resort" obligations to
+ provide wireline phone service to anyone who asks for it. AT&T wants to
+ substitute wireless for wired access in about 25 percent of its territory."
+
+ - - -
+
+I'll put it more bluntly. Verizon and AT&T -- and their slimy third-party
+agents who call and call trying to convince you to switch -- are liars of
+the first degree. Plain and simple. They care not about service levels, or
+power during emergencies (during the last earthquake here in L.A., the
+*only* thing that kept working through prolonged power outages was copper --
+everything else including wireless was dead, dead, dead in a couple of
+hours). They don't want to be simple access provider ISPs, they don't want
+to provide reliable phone service, their whole profit model now is about
+giant mergers and controlling Internet content -- and charging you up the
+gazoo for services and channels you don't want. Meanwhile, thanks to their
+friendly captured FCC and state governments, they'll push everyone over to
+unreliable phone service that'll fall flat on its face the next time there's
+a serious emergency. But hey, they'll be freed from rate controls and public
+utilities boards and anything else that would slow down their rush to the
+ultimate goal -- enriching their management and mollifying their
+shareholders, while treating all of us and the Internet at large as their
+personal fiefdoms. And you know what that makes all of us.
+
+------------------------------
+
+Date: August 22, 2014 at 1:46:10 PM EDT
+From: Edward Vielmetti <edward.vielmetti@gmail.com>
+Subject: Re: Hacking Traffic Lights is Amazingly Really Easy
+
+  (Re: RISKS-28.19, via Dave Farber)
+
+The paper in question was presented at Usenix WOOT14 and is available in its
+entirety here. Thanks to the USENIX Association for its enlightened
+copyright policies that allow researchers to publish the full text of their
+papers on their own websites without interference.
+
+https://jhalderm.com/pub/papers/traffic-woot14.pdf
+
+This paper appeared in Proceedings of the 8th USENIX Workshop on Offensive
+Technologies (WOOT14), August 2014.  Green Lights Forever: Analyzing the
+Security of Traffic Infrastructure Branden Ghena, William Beyer, Allen
+Hillaker, Jonathan Pevarnek, and J. Alex Halderman Electrical Engineering
+and Computer Science Department University of Michigan {brghena, wbeyer,
+hillaker, jpevarne, jhalderm}@umich.edu
+
+Abstract
+
+The safety critical nature of traffic infrastructure requires that it be
+secure against computer-based attacks, but this is not always the case. We
+investigate a networked traffic signal system currently deployed in the
+United States and discover a number of security flaws that exist due to
+systemic failures by the designers. We leverage these flaws to create
+attacks which gain control of the system, and we successfully demonstrate
+them on the deployment in coordination with authorities. Our attacks show
+that an adversary can control traffic infrastructure to cause disruption,
+degrade safety, or gain an unfair advantage.  We make recommendations on how
+to improve existing systems and discuss the lessons learned for embedded
+systems security in general.
+
+------------------------------
+
+Date: Fri, 22 Aug 2014 14:41:27 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Many Chrome browser extensions do sneaky things" (Jeremy Kirk)
+
+Jeremy Kirk, InfoWorld, 20 Aug 2014
+A study of 48,000 Chrome extensions uncovers ad fraud, data theft,
+and other misdeeds
+http://www.infoworld.com/d/security/many-chrome-browser-extensions-do-sneaky-things-248775
+
+------------------------------
+
+Date: August 22, 2014 at 9:39:37 AM EDT
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: Hands On with the HTC One M8 for Windows: The first OS-agnostic phone | Ars Technica
+
+  (via Dave Farber)
+
+http://arstechnica.com/gadgets/2014/08/hands-on-with-the-htc-one-m8-for-windows-the-first-os-agnostic-phone/
+
+Is it too much to hope for a day when we can buy the OS independent of the
+hardware? There was a time when you couldn't buy an IBM mainframe -- you
+had to just lease it with their software. In the 1970s IBM was forced to
+sell the hardware independent of the software and, I contend, it made the
+hardware more valuable for society as a whole even if less was captured by
+IBM.
+
+There is a lot of useful hardware in those portable device (as I wrote in my
+column, http://rmf.vc/IEEESmart last year) -- it's a shame to waste it all
+by making them just phones or mobile delivery devices for app stores.
+
+The brouhaha over unlocking phones is important but it doesn't go far enough
+in giving us access to a valuable resource.
+
+------------------------------
+
+From: Farooq Butt <farooq@farooqbutt.com>
+Date: August 23, 2014 at 10:51:07 AM EDT
+Subject: Re: Hands On with the HTC One M8 for Windows: The first OS-agnostic
+  phone
+
+OS agnosticism is not a phone issue. It's all got to do with phone subsidies
+and operator economics.  But an even deeper level it's all about ownership.
+
+If you don't have any phone subsidies you generally will get unlocked retail
+phones on which you could potentially install whatever OS you want. Just
+look at the phone market in southern China for example. Lots of handsets,
+lots of weird operating systems.
+
+In the US market the presence of phone subsidies means that you can never
+have truly unlocked subsidized phones, which means you will never get many
+OS agnostic phones.  They generally all come with software preinstalled and
+locked by the operator including crapware.  This is like IBM renting you a
+mainframe.
+
+The rub is that if you want a truly unlocked phone you have to settle for
+  paying upwards of $400 at retail for a modern high performance smartphone.
+  Americans consistently vote with their wallets that that is not what they
+  want. We seem to really love our $99 locked down (and "rented")
+  smartphones.  Uber geeks of course spend their $$$ to buy unlocked phones.
+
+The bottom line is in order to have operating system agnostic handsets
+become real, you need a lot of unlocked handsets out there as a
+precondition.  Given the $99 vs $400+ cost, I doubt this will happen very
+quickly.
+
+------------------------------
+
+Date: Thu, 14 Aug 2014 15:07:48 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Google: "That's not the download you're looking for..."
+
+Google via NNSquad
+... for instance, switching your homepage or other browser settings to ones you
+don't want
+http://googleonlinesecurity.blogspot.com/2014/08/thats-not-download-youre-looking-for.htm
+
+  "Starting next week, we'll be expanding Safe Browsing protection against
+  additional kinds of deceptive software: programs disguised as a helpful
+  download that actually make unexpected changes to your computer -- for
+  instance, switching your homepage or other browser settings to ones you
+  don't want.  We'll show a warning in Chrome whenever an attempt is made to
+  trick you into downloading and installing such software. (If you still
+  wish to proceed despite the warning, you can access it from your Downloads
+  list.)"
+
+------------------------------
+
+Date: Thu, 21 Aug 2014 17:35:43 -0500
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: Google Map Tracks Your Every Move ... (R-28.19)
+
+Google tracks your android smartphone's location *if* you have location
+services turned on. And if you care to look it'll show you on the map
+exactly what location data it has collected.
+
+And it's only news if you've never posted to a social media site from your
+android smartphone. Because if you have, you know your posts show up with
+location tags attached and if you cared to think about it for a second,
+you've figured out where that location information comes from.
+
+In the meantime cellphone companies could triangulate on your cellphone
+location since long before android. And allegedly have been doing just that,
+apparently upon a mere say so from various agencies (try typing "warrantless
+metadata searches" into google), Who presumably shared the "metadata" they
+collected with other unspecified agencies as they saw fit (try "EU-US PNR
+data sharing"). And now it is all sitting in an unknown number of excel
+spreadsheets on no longer patched windows xp pcs.
+
+> GOOGLE TRACKS YOU EVERYWHERE YOU GO.
+
+Yes, indeed, google is the one you should worry about.
+
+Dimitri Maziuk, BioMagResBank, UW-Madison -- http://www.bmrb.wisc.edu
+
+------------------------------
+
+Date: Friday, August 22, 2014
+From: Jonas M Luster <jluster@jluster.org>
+Subject: Re: Google Map Tracks Your Every Move ... (R-28.19)
+
+I am sorry, but this recent hyperbole is getting a little bit too much for
+comfort.  *That* Google tracks location data is a well known opt-in
+functionality of every device running Google Maps. Yes, opt-in, because the
+"would you like submit location data to Google for tracking and
+recommendation purposes" check-box is unchecked in iOS and only the "use
+Google servers" one is checked in Android by default.
+
+It really takes a conscious effort on the device owners' side to enable
+this.
+
+Once enabled there's also a link text and a help line that links to
+https://www.google.com/settings/dashboard which allows every Google user to
+see what Google knows about them, what they track, and to export, limit,
+disallow, and delete data.
+
+The uproar seems to be about Google making available a set of amazing data
+visualization and export tools. A query like
+https://maps.google.com/locationhistory/b/0/kml?startTime08703935&endTime08703935
+will download your known location data for the past month in KML. This is
+useful in many regards, for example to reverse geotag images taken with
+cameras without GPS module or to verify gas mileage.
+
+Unlike Facebook, OKCupid, and all those other services collecting this data,
+Google is open about the collection, allows use, export, and deletion, and
+gives the user a choice of trading privacy for functionality and useful
+data.
+
+Why there is such an uproar over a well communicated opt-in feature (I
+checked Blackberry, Windows Mobile, Android, and iOS, all ask for permission
+and explain what's happening) is beyond me.
+
+------------------------------
+
+Date: Thu, 21 Aug 2014 19:44:02 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Re: Vote! You Just Might Win $50,000
+
+ > "Wouldn't we get a lot of people who know nothing about
+ > politics or the candidates jumping in and voting and just
+ > checking the box so they could get a million bucks?"
+
+If this passes, I'm moving to LA, changing my name to Mr. Lucky Ticket, and
+running in their elections.  My platform is we need many more and much
+larger prizes.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.20
+************************
+
+--_002_b2170a36c8644c4e9c6c142de7ef40ffEXHUBVM02campusnclacuk_--

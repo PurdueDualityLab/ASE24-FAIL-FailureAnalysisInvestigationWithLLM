@@ -1,0 +1,1059 @@
+precedence: bulk
+Subject: Risks Digest 28.59
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 22 April 2015  Volume 28 : Issue 59
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.59.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Sorry for the three-week gap.  VERY BUSY. PGN]
+Passenger, avionics networks still not separated in B787, A350, A380
+  (Mary Shaw)
+GAO report on FAA vulnerabilities to Cyberattack, and a news report on a
+  claimed attack method (Peter Bernard Ladkin)
+First F-35 Jets Lack Ground-Combat Punch of 1970s-Era A-10s (Gabe Goldberg)
+Driver follows GPS off demolished bridge, killing wife (Gabe Goldberg)
+Automakers Say You Don't Really Own Your Car (Gabe Goldberg)
+Tweeting Fridges and Web Controlled Rice Cookers: 9 of the Stupidest Smart
+  Home Appliances (Gabe Goldberg)
+"Smart home hacking is easier than you think" (Colin Neagle)
+Virginia decertified WinVote voting system (Jeremy Epstein)
+Australia government attacks researchers who reveal online election flaws
+  (Lauren Weinstein)
+Curious election statistical observation (danny burstein)
+Bob Wachter on Technology and Hospitals at Medium (Prashanth Mundkur)
+Lawyers smell blood in electronic medical records (Lauren Weinstein)
+`Routine maintenance' and the EMR (Robert L Wears)
+"End-To-End Web Crypto: A Broken Security Model" (Indolering)
+Banks undermine chip and PIN security (Steven Murdoch via
+  Prashanth Mundkur)
+Tewksbury police pay bitcoin ransom to hackers (Bob Frankston)
+State of the Internet (Akamai)
+The Internet Ruined April Fool's Day (The Atlantic)
+Hacked French TV network admits "blunder" that exposed YouTube password
+  (Gabe Goldberg)
+Tech companies are sending your secrets to crowdsourced armies of
+  low-paid workers (Gabe Goldberg)
+ISOS mass-defaceng websites (PGN)
+"How ICANN enabled legal Website extortion" (Cringely)
+"GitHub still recovering from massive DDoS attacks" (Jeremy Kirk)
+FBI would rather prosecutors drop cases than disclose stingray details
+  (Cyrus Farivar)
+Cyberspace and the American Dream: A Magna Carta for the Knowledge Age
+  (Daniel Berninger)
+"Lost in the clouds: 7 examples of compromised personal information"
+  (Steve Ragan)
+French Senate Backs Bid To Force Google To Disclose Search Algorithm
+  Workings (Lauren Weinstein)
+"4 no-bull facts about Microsoft's HTTP.sys vulnerability" (Serdar Yegulalp)
+Congress cannot be taken seriously on cybersecurity (Trevor Timm)
+How the New York Times is eluding censors in China (Lauren Weinstein)
+"Large-scale Google malvertising campaign hits users with exploits"
+  (Lucian Constantin)
+Insurance co. wants to track you 24/7 for a discount (CNN)
+Fire TV Stick OS 1.5 Update (Gabe Goldberg)
+Internet Naming Body Moves to Crack Down on '.sucks' (Ars)
+Good news and bad news: Android Security State of the Union 2014
+  (Lauren Weinstein)
+Re: Kali Linux security is a joke! (Henry Baker)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 16 Apr 2015 11:23:17 -0400
+From: Mary Shaw <shaw@cs.cmu.edu>
+Subject: Passenger, avionics networks still not separated in B787,
+ A350, A380
+
+In 2008, RISKS reported that the design of the B787 onboard network did not
+completely separate the passenger entertainment network from the flight
+control network; the FAA was imposing special conditions for testing.
+
+According to Wired and CNN, a new GAO report says the vulnerabilities
+persist.
+http://www.wired.com/2015/04/hackers-commandeer-new-planes-passenger-wi-fi/
+http://www.gao.gov/products/GAO-15-370
+
+Neither article cites the report, though CNN names one of the authors.
+
+The GAO site shows only one new report that seems relevant, ``FAA Needs a
+More Comprehensive Approach to Address Cybersecurity as Agency Transitions
+to NextGen seems to be mostly about the Nextgen ATC system, considering as
+one significant element the possibility of unauthorized remote access to
+aircraft avionics systems via the passenger entertainment system.''
+  http://www.gao.gov/products/GAO-15-370 This report (April 14)
+
+Mary Shaw, AJ Perlis University Professor of Computer Science, Carnegie
+Mellon University, http://cs.cmu.edu/~shaw http://orcid.org/0000-0003-1337-4557
+
+  [PGN suggests: see also
+http://tech.slashdot.org/story/15/04/15/1437211/gao-warns-faa-of-hacking-threat-to-airliners
+  ]
+
+------------------------------
+
+Date: Sat, 18 Apr 2015 10:07:36 +0200
+From: Peter Bernard Ladkin <ladkin@rvs.uni-bielefeld.de>
+Subject: GAO report on FAA vulnerabilities to Cyberattack, and a news
+  report on a claimed attack method
+
+The US Government Accounting Office has published a report on the
+vulnerability of FAA equipment and avionics to cyberattack
+http://www.gao.gov/products/GAO-15-370 . It makes three main points.  The
+third one is organisational; I am concerned here with the first two.
+
+First, the FAA has not developed and apparently doesn't intend to develop a
+threat model for its ground-based systems. Unsurprisingly, the GAO thinks it
+might be a good idea to do so.
+
+Many FAA ground-based systems are decades old and were installed in an era
+which didn't need to worry as much about cybersecurity. Many of them are
+dedicated systems, so some physical access would be required. But some are
+not. Does anyone remember the NY ATC outage a quarter century ago?
+http://catless.ncl.ac.uk/Risks/12.36.html#subj1.1 Failure of a commercial
+4ESS switch took out ATC. I seem to remember (or was it another incident?)
+ATCOs coordinating by using their private mobile phones. A DoS attack on ATC
+communications nowadays could take out a commercial switch but would have to
+take out the cellular phone comms also. So there's the first entry for the
+threat model.
+
+Second, the GAO queries the wisdom of critical avionics and passenger
+in-flight entertainment systems (IFE) sharing network resources. So did many
+of us when it was first mooted (for the Boeing 787, I seem to
+recall). Because, after all, the best start on assuring non-interference is
+physical separation of networks and good shielding. And indeed someone
+recently claimed on Fox News to be able to hack avionics through the IFE
+http://www.foxnews.com/us/2015/04/17/security-expert-pulled-off-flight-by-fbi-after-exposing-airline-tech/
+He was apparently subsequently pulled from a flight out of Denver by the
+FBI, interviewed for a number of hours and relieved of some kit.
+
+People may think: "shooting the messenger". But hang on. Roberts told Fox
+News (I quote from Fox) "We can still take planes out of the sky thanks to
+the flaws in the in-flight entertainment systems...."
+
+Here is a guy who claims publicly to be able to "take planes out of the sky"
+getting on an airplane with computer equipment. It is surely the task of
+security services to ensure he is not a threat in any way. If you were a
+passenger on that airplane, wouldn't you like at least to know he is not
+suicidal/paranoid/psychotic? In fact, wouldn't you rather he got on with a
+nice book to read and sent his kit ahead, separately, by courier?
+
+Some of this is quoted from my blog post
+http://www.abnormaldistribution.org/2015/04/18/cybersecurity-vulnerabilities-in-commercial-aviation/
+
+------------------------------
+
+Date: Wed, 15 Apr 2015 09:12:27 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: First F-35 Jets Lack Ground-Combat Punch of 1970s-Era A-10s
+
+The first F-35 jets ready for combat won't be able to protect forces in
+ground combat as well as the nearly 40-year-old A-10s the Pentagon wants to
+retire, according to the Defense Department's chief weapons tester.
+<http://www.bloomberg.com/news/articles/2014-10-02/u-s-sending-a-10-plane-to-combat-while-trying-to-kill-it>,
+
+One major problem yet to be solved is the plane's computer information
+system that's designed to alert pilots to logistical problems, he said,
+adding that he has a plan to improve it through a redesign.
+
+Gilmore said the initial F-35s will fall short because "of the combined
+effects of digital communications deficiencies, lack of infrared pointer
+capability" to distinguish friendly from hostile forces and an inability to
+confirm the Global Positioning Satellite ground coordinates programmed into
+its two air-to-ground bombs.
+
+To read the entire article, go to http://bloom.bg/1H4fWXY
+
+Can't detect problems, can't tell friendly forces from foes, can't deploy
+bombs accurately. But let's build and fly it now, redesign it later. What
+could go wrong? It's only $12.7B/year for more than 20 years.
+
+------------------------------
+
+Date: Tue, 07 Apr 2015 11:08:00 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Driver follows GPS off demolished bridge, killing wife, police say
+
+Title says it all; nothing new here...
+
+http://www.washingtonpost.com/news/morning-mix/wp/2015/03/31/driver-follows-gps-off-demolished-bridge-killing-wife-police-say/?tid=hybrid_experimentrandom_2_na
+
+...but how would self-driving cars handle this? Presumably their GPS data
+was obsolete, but accuracy of data depends on local authorities supplying
+it. Presumably robocars read road signs and notice roadway surface
+ending. Presumably...
+
+------------------------------
+
+Date: Wed, 15 Apr 2015 23:19:37 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Automakers Say You Don't Really Own Your Car
+
+If you have had problems with vehicle repair or tinkering because you were
+locked out of your vehicle's computers, if you would have engaged in a
+vehicle-related project but didn't because of the legal risk posed by the
+DMCA, or if you or your mechanic had to deal with obstacles in getting
+access to diagnostic information, then we want to hear from you -- the
+Copyright Office should hear from you, too.
+
+https://www.eff.org/deeplinks/2015/04/automakers-say-you-dont-really-own-your-car
+
+Cars as black boxes with wheels, subject to manufacturer software updates
+whenever they desire (I've heard advocated). Remember the joke about "If
+Microsoft made cars..."?
+
+------------------------------
+
+Date: Mon, 13 Apr 2015 18:19:54 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Tweeting Fridges and Web Controlled Rice Cookers:
+  9 of the Stupidest Smart Home Appliances
+
+There are a lot of incredible smart home devices out there that are worthy
+of your time and money. Some of the examples that spring immediately to mind
+include the Nest thermostat, which will save you energy and money by
+ensuring you only heat your house when needed. Then there's the Philips Hue
+Lights, which allow you to control the illumination in your home. Some will
+even save your life. The Nest Protect is an incredibly precise WiFi
+connected smoke and carbon monoxide detector.
+
+They are all useful products that will ultimately become ubiquitous because
+they're so incredibly helpful.
+
+But then there are the WiFi enabled, smartphone-powered appliances that
+aren't quite as useful. The kinds that should never see the light of
+day. Here are 9 of the worst.
+
+http://www.makeuseof.com/tag/9-stupidest-smart-home-appliances/
+
+Biggest risk here might be wasting money -- though surely some of these
+will be hack-vulnerable network entry points.
+
+------------------------------
+
+Date: Tue, 07 Apr 2015 18:20:59 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Smart home hacking is easier than you think" (Colin Neagle)
+
+Colin Neagle, Network World, 3 Apr 2015
+Scary stories of hacking Internet of Things devices are emerging, but
+how realistic is the threat?
+
+http://www.infoworld.com/article/2905290/security/smart-home-hacking-is-easier-than-you-think.html
+
+opening text:
+
+Last March, a very satisfied user of the Honeywell Wi-Fi Thermostat left a
+product review on Amazon.com that shed some light on an unexpected benefit
+of the smart home -- revenge.
+
+The reviewer wrote that his wife had left him, and then moved her new lover
+into the home they once shared, which now featured the Honeywell Wi-Fi
+thermostat. The jilted ex-husband could still control the thermostat through
+the mobile app installed on his smartphone, so he used it to make the new
+couple's lives a little less happily ever after:
+
+  ``Since this past Ohio winter has been so cold I've been messing with the
+  temp while the new love birds are sleeping. Doesn't everyone want to wake
+  up at 7 AM to a 40 degree house? When they are away on their weekend
+  getaways, I crank the heat up to 80 degrees and back down to 40 before
+  they arrive home. I can only imagine what their electricity bills might
+  be. It makes me smile. I know this won't last forever, but I can't help
+  but smile every time I log in and see that it still works. I also can't
+  wait for warmer weather when I can crank the heat up to 80 degrees while
+  the love birds are sleeping. After all, who doesn't want to wake up to an
+  80 degree home in the middle of June?''
+
+In the past year, more than 8,200 of the 8,490 Amazon users who have read
+the review deemed it "useful."
+
+------------------------------
+
+Date: Wed, 15 Apr 2015 18:17:19 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Virginia decertified WinVote voting system
+
+The Virginia State Board of Elections decertified the AVS WinVote machine,
+after releasing a brief but damning report on the vulnerabilities.  Among
+the items they identified are:
+
+* The machines use an unpatched version of Windows from 2004.
+* The machines use the WEP protocol for WiFi encryption, which has been
+  broken for over a decade.
+* The machines use a hardwired WEP encryption key ("abcde").
+* Even if configured to disable the wireless communication, the machines
+  allow numerous services, including file services.
+* The adminstrator password is "admin", which can't be changed through the
+  user interface provided to the election administrator.
+* The database is an obsolete version of Microsoft Access, with a hardwired
+  password of "shoup" (the family that owned the company).
+* The entire database can be replaced without any verification (i.e.,
+  there's no MD5 checksums).
+
+Oh, why keep piling on.
+
+More details at
+https://freedom-to-tinker.com/blog/jeremyepstein/decertifying-the-worst-voting-machine-in-the-us/
+
+Press coverage at
+http://www.theguardian.com/us-news/2015/apr/15/virginia-hacking-voting-machines-security
+http://arstechnica.com/tech-policy/2015/04/meet-the-e-voting-machine-so-easy-to-hack-it-will-take-your-breath-away/
+
+And much more.
+
+In nearly 30 years of working in security, this is the single worst system
+I've seen.  Jeremy
+
+------------------------------
+
+Date: Tue, 7 Apr 2015 20:17:50 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Australia government attacks researchers who reveal online election
+  flaws
+
+EFF via NNSquad
+https://www.eff.org/deeplinks/2015/04/new-south-wales-attacks-researchers-who-warned-internet-voting-vulnerabilities
+
+  While moving to Internet voting may sound reasonable to folks who haven't
+  paid any attention to the rampant security problems of the Internet these
+  days, it's just not feasible now. As Verified Voting notes: "Current
+  systems lack auditability; there's no way to independently confirm their
+  correct functioning and that the outcomes accurately reflect the will of
+  the voters while maintaining voter privacy and the secret ballot."
+  Indeed, the researchers' discovery was not the first indication that New
+  South Wales was not ready for an Internet voting system. Australia's own
+  Joint Standing Committee on Electoral Matters concluded last year,
+  "Australia is not in a position to introduce any large-scale system of
+  electronic voting in the near future without catastrophically compromising
+  our electoral integrity."
+
+------------------------------
+
+Date: Sat, 4 Apr 2015 09:33:01 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Curious election statistical observation
+
+http://www.kansas.com/news/politics-government/article17139890.html
+
+------------------------------
+
+Date: Fri, 10 Apr 2015 16:41:18 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: Bob Wachter on Technology and Hospitals at Medium
+
+A 5-part series of articles by Bob Wachter, a UCSF MD and author of "The
+Digital Doctor: Hope, Hype, and Harm at the Dawn of Medicine's Computer
+Age", that would be appreciated by the RISKS audience, collected here:
+  https://medium.com/@Bob_Wachter
+
+with the following titles:
+
+"How Medical Tech Gave a Patient a Massive Overdose"
+
+  Pablo Garcia went to the hospital feeling fine. Then the hospital made him
+  very sick.
+
+"Beware of the Robot Pharmacist"
+
+  In tech-driven medicine, alerts are so common that doctors and pharmacists
+  learn to ignore them -- at the patient's risk.
+
+"Why Clinicians Let Their Computers Make Mistakes"
+
+  We tend to trust our computers a lot. Perhaps too much, as one hospital
+  nurse learned the hard way.
+
+"Should Hospitals Be More Like Airplanes?"
+
+  ``Alarm fatigue at Pablo Garcia's hospital sent him into a medical
+  crisis. The aviation industry has faced the same problem -- and solved it.
+
+"How to Make Hospital Tech Much, Much Safer"
+
+  We identified the root causes of Pablo Garcia's 39-fold overdose -- and
+  ways to avoid them next time.
+
+------------------------------
+
+Date: Tue, 14 Apr 2015 09:15:07 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Lawyers smell blood in electronic medical records
+
+Computerworld via NNSquad
+http://www.computerworld.com/article/2909348/lawyers-smell-blood-in-electronic-medical-records.html
+
+  EMRs require physicians to perform their own data entry, stealing precious
+  face time with patients. What had been a note jotted into a paper record,
+  now involves a dozen or more mouse clicks to navigate a complex EMR
+  workflow.  Healthcare providers can be prone to taking shortcuts on
+  entering the data or not entering it in a timely manner, Klein said. Vital
+  sign data is often duplicated as it moves between hospital departments,
+  but it remains part of one integral patient record.  Data administrators
+  may copy and paste patient information from an older record to a newer
+  one, supposing that the data would remain the same. And the sheer
+  complexity of EMRs pose issues with accuracy, as being able to track who
+  has entered what data, and when, over time can become confusing.  "This is
+  a fire hydrant," Klein said.  "Try to take a drink out of it. That's what
+  it's like trying to read an EMR."
+
+------------------------------
+
+Date: Wed, 08 Apr 2015 14:30:52 -0400
+From: "Robert L Wears, MD, MS, PhD" <wears@ufl.edu>
+Subject: `Routine maintenance' and the EMR
+
+The entire outpatient EMR for a large multihospital system in a major US
+city had to be taken off-line after it suffered a "severe unanticipated
+issue" during a maintenance update to improve performance this weekend.
+
+Yesterday, the decision was taken to roll the system back to its pre-update
+(presumably, last-known-good) state, which was late Friday evening.
+Everything entered after that point until Monday evening has been lost and
+must be re-created and re-entered.
+
+The hospital system is trying to ascertain which patients and charts may
+have been touched during that time.  Staff are being asked to gather all
+their paper records (!) from Friday onwards to see if they are present in
+the read-only version of the system.  The live system is still not yet
+operational.
+
+Robert L Wears, MD, MS, PhD, University of Florida 1-904-244-4405 (ass't)
+Imperial College London r.wears@imperial.ac.uk +44 (0)791 015 2219
+
+------------------------------
+
+Date: Mon, 6 Apr 2015 17:29:47 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "End-To-End Web Crypto: A Broken Security Model"
+
+Indolering via NNSquad
+https://www.indolering.com/e2e-web-crypto
+
+  "Researchers have been testing the efficacy of security iconography for
+  over a decade, and the results are dismal.  The most dramatic "experiment"
+  was performed by Moxie Marlinspike in 2009.  Marlinspike removed
+  encryption from connections using a malicious Tor exit node, which also
+  removed the browser encryption icons.  Despite drawing his sample from a
+  population with above average technical acumen and paranoia, he achieved a
+  100% "success" rate; meaning that every user who visited a login page
+  logged into to their account. Marlinspike collected over 400 logins and 16
+  credit card numbers in 24 hours."
+
+------------------------------
+
+Date: Mon, 6 Apr 2015 21:00:42 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: Banks undermine chip and PIN security (Steven Murdoch)
+
+Steven J. Murdoch, The Conversation, March 30 2015
+http://theconversation.com/banks-undermine-chip-and-pin-security-because-they-see-profits-rise-faster-than-fraud-38952
+
+  Contactless cards are being promoted because it appears they cause
+  customers to spend more. Some of this could be accounted for by a shift
+  from cash to contactless, but some could also stem from a greater
+  temptation to spend more due to the absence of tangible cash in a wallet
+  as a means of budgeting.
+
+  Greater convenience leads to increased spending, which means more fees for
+  the card issuers and more profit for the merchant -- this is the real
+  reason why the PIN check was dropped from contactless cards. The risk of
+  fraud is mitigated to some degree by limiting transactions in the UK to
+  £20 (rising to £30 in September), but it's been demonstrated
+  that even these limits can be bypassed.
+
+------------------------------
+
+Date: Tue, 7 Apr 2015 08:26:29 -0400
+From: "Bob Frankston" <bob19-0501@bobf.frankston.com>
+Subject: Tewksbury police pay bitcoin ransom to hackers
+
+*The Boston Globe*
+http://www.bostonglobe.com/business/2015/04/06/tewksbury-police-pay-bitcoinransom-hackers/PkcE1GBTOfU52p31F9FM5L/story.html
+
+Tewksbury had joined the list of police departments victimized by
+"ransomware," an insidious form of Internet crime that is crippling
+computers worldwide.
+
+------------------------------
+
+Date: Tue, 31 Mar 2015 19:46:36 -0400
+From: "David Farber" <farber@gmail.com>
+Subject: State of the Internet (Akamai)
+
+http://www.akamai.com/stateoftheinternet/
+
+------------------------------
+
+Date: Wed, 1 Apr 2015 08:50:09 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "The Internet Ruined April Fool's Day" (The Atlantic)
+
+*The Atlantic* via NNSquad
+http://www.theatlantic.com/technology/archive/2015/04/how-the-internet-ruined-april-fools-day/389213/
+
+  "What that means is that, this time of year, we become trained to doubt
+  the people and institutions--news outlets, businesses, fellow humans--we
+  are meant, ideally, to trust. Everything operates in a kind of limbo of
+  credibility: Wait, is that a real thing or an April Fool's thing? How can
+  we know for sure? What would it mean to know for sure?  What is truth
+  anyway?"
+
+I agree. And I'm not sharing or resharing any "joke" items today in any of
+my venues. The more sophisticated and heavily produced these "joke" items
+become, the less amusing I'm finding them. And I can tell you from my own
+inbox, that confusion and doubt sowed on 1 April lasts throughout the
+year. Just *too much* of what was once a reasonably fun thing. Thanks a
+bunch.
+
+------------------------------
+
+Date: Mon, 13 Apr 2015 15:42:14 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Hacked French TV network admits "blunder" that exposed YouTube
+  password
+
+Can you say ``DOH''? I knew you could!
+
+Dan Goodin, Ars Technica, 12 Apr 2015
+http://arstechnica.com/security/2015/04/hacked-french-tv-network-admits-blunder-that-exposed-youtube-password/
+
+The head of the French TV network that suspended broadcasting following last
+week's hack attack has confirmed the service exposed its own passwords
+during a TV interview, but said the gaffe came only after the breach.  "We
+don't hide the fact that this is a blunder," the channel's director general
+Yves Bigot, told the AFP news service.
+
+The exposure came during an interview a rival TV service broadcast on the
+TV5Monde attack. During the questioning, a TV5Monde journalist sat in front
+of several scraps of paper hanging on a window. One of them showed the
+password of for the network's YouTube account. As Ars reported last week,
+the pass code was "lemotdepassedeyoutube," which translates in English to
+"the password of YouTube."
+
+Bigot stressed that the passwords were broadcast only after the hack attack,
+which occurred overnight Wednesday when hackers compromised TV5Monde servers
+and social networking accounts. A TV5Monde manager told AFP that the gaffe
+came in the immediate aftermath of the hack attack, when network managers
+were scrambling to quickly hand out new temporary online access codes.
+
+------------------------------
+
+Date: Wed, 01 Apr 2015 15:30:53 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Tech companies are sending your secrets to crowdsourced armies of
+  low-paid workers
+
+A couple of months ago, Laura Harper, a 44-year-old freelance writer and
+editor from Houston, Texas, got upset while reading a Jezebel story about a
+service called "Invisible Boyfriend."
+
+http://fusion.net/story/111041/crowdsourcing-and-privacy/
+
+Let us count the risks...
+
+Gabriel Goldberg, Computers and Publishing, Inc.  gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042   (703) 204-0433
+
+------------------------------
+
+Date: Tue, 7 Apr 2015 21:24:23 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: ISOS mass-defacing websites
+
+The Federal Bureau of Investigation (FBI) is warning that individuals
+sympathetic to the Islamic State of Iraq and al-Shams (ISIS) are
+mass-defacing websites using known vulnerabilities in Wordpress.  The FBI
+also issued an alert advising that criminals are hosting fraudulent
+government Web sites in a bid to collect personal and financial information
+from unwitting Web searchers.
+
+http://krebsonsecurity.com/2015/04/fbi-warns-of-fake-govt-sites-isis-defacements/
+
+------------------------------
+
+Date: Wed, 15 Apr 2015 10:08:38 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "How ICANN enabled legal Website extortion" (Cringely)
+
+Robert X. Cringely, Notes from the Field InfoWorld, 14 Apr 2015
+The .sucks domain was all fun and games until a greedy but enterprising Web
+registry decided to blackmail major corporations into paying up
+http://www.infoworld.com/article/2909535/cringely/how-icann-enabled-legal-website-extortion.html
+
+------------------------------
+
+Date: Wed, 01 Apr 2015 13:11:05 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "GitHub still recovering from massive DDoS attacks" (Jeremy Kirk)
+
+Jeremy Kirk, InfoWorld, 30 Mar 2015
+The attacks, which started Thursday, were particularly aimed at two
+GitHub-hosted projects fighting Chinese censorship
+http://www.infoworld.com/article/2903533/security/github-still-recovering-from-massive-ddos-attacks.html
+
+selected text:
+
+Software development platform GitHub said Sunday it was still experiencing
+intermittent outages from the largest cyber attack in its history but had
+halted most of the attack traffic.
+
+Starting on Thursday, GitHub was hit by distributed denial-of-service (DDoS)
+attacks that sent large volumes of Web traffic to the site, particularly
+towards two Chinese anti-censorship projects hosted there.
+
+Anthr@X wrote that it appeared advertising and tracking code used by many
+Chinese websites appeared to have been modified in order to attack the
+GitHub pages of the two software projects.
+
+"In other words, even people outside China are being weaponized to target
+things the Chinese government does not like, for example, freedom of
+speech," Anthr@X wrote.
+
+------------------------------
+
+Date: Apr 8, 2015 11:11 AM
+From: "Dewayne Hendricks" <dewayne@warpspeed.com>
+Subject: FBI would rather prosecutors drop cases than disclose stingray details
+  (Cyrus Farivar)
+
+New documents released by NYCLU shed light on Erie County's use of spying
+tool.
+Cyrus Farivar, Ars Technica, 7 Apr 2015
+http://arstechnica.com/tech-policy/2015/04/fbi-would-rather-prosecutors-drop-cases-than-disclose-stingray-details/
+
+Not only is the FBI actively attempting to stop the public from knowing
+about stingrays, it has also forced local law enforcement agencies to stay
+quiet even in court and during public hearings, too.  An FBI agreement,
+published for the first time in unredacted form on Tuesday, clearly
+demonstrates the full extent of the agency's attempt to quash public
+disclosure of information about stingrays. The most egregious example of
+this is language showing that the FBI would rather have a criminal case be
+dropped to protect secrecy surrounding the stingray.
+
+Relatively little is known about how, exactly, stingrays, known more
+generically as cell-site simulators, are used by law enforcement agencies
+nationwide, although new documents have recently been released showing how
+they have been purchased and used in some limited instances. Worse still,
+cops have lied to courts about their use. Not only can stingrays be used to
+determine location by spoofing a cell tower, they can also be used to
+intercept calls and text messages. Typically, police deploy them without
+first obtaining a search warrant.
+
+Ars previously published a redacted version of this document in February
+2015, which had been acquired by the Minneapolis Star Tribune in December
+2014. The fact that these two near-identical documents exist from the same
+year (2012) provides even more evidence that this language is boilerplate
+and likely exists in other agreements with other law enforcement agencies
+nationwide.
+
+The new document, which was released Tuesday by the New York Civil Liberties
+Union (NYCLU) in response to its March 2015 victory in a lawsuitfiled
+against the Erie County Sheriff's Office (ECSO) in Northwestern New York,
+includes this paragraph:
+
+In order to ensure that such wireless collection equipment/technology
+continues to be available for use by the law enforcement community, the
+equipment/technology and any information related to its functions, operation
+and use shall be protected from potential compromise by precluding
+disclosure of this information to the public in any manner including but not
+limited to: press releases, in court documents, during judicial hearings, or
+during other public forums or proceedings.
+
+In the version of the document previously obtained in Minnesota, the rest of
+the sentence after the phrase "limited to" was entirely redacted.  Mariko
+Hirose, a NYCLU staff attorney, told Ars that she has never seen an
+agreement like this before.
+
+"This seems very broad in scope and undermines public safety and the
+workings of the criminal justice system," she said.
+
+Your tax dollars at work
+
+The FBI letter also explicitly confirms a practice that some local
+prosecutors have engaged in previously, which is to drop criminal charges
+rather than disclose exactly how a stingray is being used. Last year,
+prosecutors in Baltimore did just that during a robbery trial there,
+Baltimore Police Detective John L. Haley cited a non-disclosure agreement,
+and he declined to describe in detail how he obtained the location of the
+suspect.  [...]
+
+------------------------------
+
+Date: Apr 15, 2015 10:07 AM
+From: "Daniel Berninger" <dan.berninger@gmail.com>
+Subject: Cyberspace and the American Dream: A Magna Carta for the Knowledge
+  Age (via Dave Farber)
+
+IP'ers might enjoy revisiting Dyson, Gilder, Keyworth, Toffler's 1994
+manifesto - Cyberspace and the American Dream: A Magna Carta for the
+Knowledge Age.
+
+The longish 7000+ word essay (see link below) anticipates the disruptions of
+the present moment to an amazing extent.
+
+The Internet remained a government project in 1994 and the Web included all
+of 3000 or so websites.
+
+The futurist group identifies the regulatory risk to computer networks as
+the primary threat to the benefits of the Knowledge Age.
+
+The past provided plenty of evidence to doubt the benefits of industrial
+policy in the domain computer networks.
+
+The FCC's implementations of telephone network industrial policy in the
+Telecom Act of 1996 failed without exception otherwise known as the telecom
+crash.
+
+The steady stream of public interest benefits generated by the information
+technology sector left computer networks classified as non-regulated
+information services.
+
+The group did not predict the Commission would vote to impose telephone
+network industrial policy on the Internet after 20 years of successful
+non-regulation (and failed regulation of the telephone network).
+
+Daniel Berninger, Founder, Voice Communication Exchange Committee
+e: dan@danielberninger.com  tel SD: +1.202.250.3838  w: www.vcxc.org
+
+Cyberspace and the American Dream: A Magna Carta for the Knowledge Age
+Esther Dyson, George Gilder, George Keyworth, and Alvin Toffler
+Future Insight, Release 1.2,  August 1994
+
+Preamble
+
+The central event of the 20th century is the overthrow of matter. In
+technology, economics, and the politics of nations, wealth -- in the form
+of physical resources -- has been losing value and significance. The powers
+of mind are everywhere ascendant over the brute force of things. [...]
+
+http://www.pff.org/issues-pubs/futureinsights/fi1.2magnacarta.html
+
+------------------------------
+
+Date: Fri, 10 Apr 2015 11:09:01 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Lost in the clouds: 7 examples of compromised personal information"
+  (Steve Ragan)
+
+Steve Ragan, CSO, Apr 6, 2015
+While having instant access to your information via the cloud is a
+major bonus to productivity and convenience, there's a risk that the
+security trade-off will be too high.
+http://www.csoonline.com/article/2906143/cloud-security/lost-in-the-clouds-easily-compromised-personal-information.html
+
+opening text:
+
+Google has indexed thousands of backup drives
+
+Each day millions of people across the globe create backups of their
+files. These backups are supposed to offer a measure of assurance that their
+files are safe, but that's not entirely true.
+
+In fact, depending on how you've configured the device, your backups are
+freely available online to anyone who knows what they're looking for.
+
+------------------------------
+
+Date: Sun, 19 Apr 2015 22:13:28 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: French Senate Backs Bid To Force Google To Disclose Search
+  Algorithm Workings
+
+French Senate Backs Bid To Force Google To Disclose Search Algorithm Workings
+
+TechCrunch via NNSquad
+http://techcrunch.com/2015/04/17/french-senate-backs-bid-to-force-google-to=
+-disclose-search-algorithm-workings
+
+  "Meanwhile in France, the upper house of parliament yesterday voted to
+  support an amendment to a draft economy bill that would require search
+  engines to display at least three rivals on their homepage. And also to
+  reveal the workings of their search ranking algorithms ..."
+
+Give in to bullies, and they'll never stop demanding more. I've been saying
+this all along, and efforts like this -- whether or not they actually become
+law -- show that even when dealing with countries in the West politicians
+are attempting to take total control of information for their own purposes
+and their own pandering political ends. They cannot be permitted to succeed
+-- the end result could make Orwell's vision of government information
+management and censorship look like a walk in the park by comparison.
+
+------------------------------
+
+Date: Thu, 16 Apr 2015 10:04:52 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "4 no-bull facts about Microsoft's HTTP.sys vulnerability"
+  (Serdar Yegulalp)
+
+The latest Web server vulnerability affects desktop systems as well
+as Microsoft products
+Serdar Yegulalp, InfoWorld, 16 Apr 2015
+http://www.infoworld.com/article/2910262/windows-security/4-no-bull-facts-about-microsofts-http-sys-vulnerability.html
+
+------------------------------
+
+Date: Sat, 18 Apr 2015 13:09:16 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Congress cannot be taken seriously on cybersecurity (Trevor Timm)
+
+Trevor Timm, *The Guardian*
+http://www.theguardian.com/commentisfree/2015/apr/18/congress-cannot-be-ta
+ken-seriously-on-cybersecurity
+
+------------------------------
+
+Date: Mon, 6 Apr 2015 20:41:37 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How the New York Times is eluding censors in China
+
+*The New York Times* via NNSquad
+http://qz.com/374299/how-the-new-york-times-is-eluding-chinas-censors/
+
+  "The New York Times' English and Chinese-language websites have been
+  blocked since an October 2012 article about the wealthy family of prime
+  minister Wen Jiabao. But according to employees in the company, outside
+  observers, and mainland Chinese readers, the Times is quietly pursuing a
+  new, aggressive strategy to reach readers in China."
+
+------------------------------
+
+Date: Fri, 10 Apr 2015 11:21:56 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Large-scale Google malvertising campaign hits users with exploits"
+  (Lucian Constantin)
+
+[The closing text about responsibility does not bode well for a solution soon.]
+
+Malvertising has been a growing problem for years
+Lucian Constantin, InfoWorld, 8 Apr 2015
+http://www.infoworld.com/article/2907215/security/largescale-google-malvertising-campaign-hits-users-with-exploits.html
+
+opening text:
+
+A large number of ads distributed by a Google advertising partner redirected
+users to Web-based exploits that attempted to install malware on users'
+computers.
+
+closing text:
+
+A 2014 investigation into malvertising by the U.S Senate concluded that "the
+online advertising industry has grown in complexity to such an extent that
+each party can conceivably claim it is not responsible when malware is
+delivered to a user's computer through an advertisement."
+
+That's because a typical online advertisement goes through five or six
+intermediaries before being displayed in a user's browser and it can be
+replaced with a malicious one at any point in that chain.  Website owners
+also have no control over what ads will be displayed on their websites, the
+U.S. Senate said.
+
+------------------------------
+
+Date: Wed, 8 Apr 2015 10:10:38 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Insurance co. wants to track you 24/7 for a discount
+
+CNN via NNSquad
+http://money.cnn.com/2015/04/08/technology/security/insurance-data-tracking/index.html
+
+  "John Hancock is partnering with Vitality, which many people probably know
+  as one of those work-related wellness programs. The program is available
+  in 30 states.  If you sign up for this, John Hancock will send you a free
+  Fitbit monitor. That's a tiny, pill-shaped device that some people wear in
+  sleek-looking bracelets to track how far they walk/run, the calories
+  burned, and the quality of sleep.  That means the insurance company would
+  know exactly when a customer does a sit-up, how far she runs -- or when
+  she's skipped the gym for a few days ... Second, that personal data --
+  your heart rate, preferred exercises, what gym you visit and when -- ends
+  up on insurance company computers. And these databases are a target for
+  hackers, who steal this information and sell it on the black market to
+  identity thieves and fraudsters.  CNNMoney has just asked John Hancock
+  where the data will be kept, and whether it will be sold to other
+  companies. The company has not provided an immediate reply."
+
+Yeah, like WHAT COULD GO WRONG? Slap it on the wrist of the nearest
+healthy 22-year-old?
+
+------------------------------
+
+Date: Tue, 14 Apr 2015 08:14:54 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Fire TV Stick OS 1.5 Update
+
+Mixed feelings, this gives me:
+
+/Your Fire TV Stick has received a software update that contains features
+requested by customers like you. The update has been applied automatically
+to your device and you will notice the new features when you next use it./
+
+There seems to be no option controlling updates. Nor for Roku boxes, nor my
+cable box. But at least that last one isn't on my home network. I've no idea
+about security/authentication for Fire Stick and Roku updates so I wonder
+how hackable they are. Same for promised/threatened automatic automotive
+software updates.
+
+And, while I requested these updates -- sigh, I see no Unsubscribe link.
+
+  [... Long message from Amazon truncated for RISKS.  Check with gabe.]
+
+------------------------------
+
+Date: Thu, 9 Apr 2015 17:59:30 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Internet Naming Body Moves to Crack Down on '.sucks'
+
+ABC via  NNSquad
+http://abcnews.go.com/Technology/wireStory/internet-naming-body-moves-crack-sucks-30211323
+
+  The Internet Corporation for Assigned Names and Numbers, or ICANN, on
+  Thursday sent a letter to the U.S. Federal Trade Commission and Canada's
+  Office of Consumer Affairs to see if the actions of company Vox Populi
+  Registry Ltd. are illegal.  ICANN initially approved of the so-called
+  top-level domain name, among nearly 600 it has added recently to expand
+  beyond common names such as ".com," ''.org" and ".us."  But it is
+  backtracking after an advisory panel made up of industry groups and
+  companies like Microsoft, Verizon and eBay complained last month.  Vox
+  Populi began accepting registrations using ".sucks" on March 30 from
+  trademark holders and celebrities before it's released to public
+  applicants. It has recommended charging $2,499 a year for the privilege,
+  and according to Vox Populi CEO John Berard, most of the names have been
+  sold by resellers for around $2,000 a year.  So far, purchased names
+  include Youtube.sucks, Bing.sucks, Visa.sucks, Bankofamerica.sucks,
+  Yahoo.sucks, Telusmobility.sucks and other major brand names.
+
+------------------------------
+
+Date: Thu, 2 Apr 2015 11:44:58 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Good news and bad news: Android Security State of the Union 2014
+
+Google via NNSquad
+Android Security State of the Union 2014
+https://static.googleusercontent.com/media/source.android.com/en/us/devices/tech/security/reports/Google_Android_Security_2014_Report_Final.pdf
+
+  "In 2014, the Android platform made numerous significant improvements in
+  platform security technology, including enabling deployment of full disk
+  encryption, expanding the use of hardware-protected cryptography, and
+  improving the Android application sandbox with an SELinuxbased Mandatory
+  Access Control system (MAC). Developers were also provided with improved
+  tools to detect and react to security vulnerabilities, including the
+  nogotofail project and the SecurityProvider.  We provided device
+  manufacturers with ongoing support for fixing security vulnerabilities in
+  devices, including development of 79 security patches, and improved the
+  ability to respond to potential vulnerabilities in key areas, such as the
+  updatable WebView in Android 5.0."
+
+I just finished reading the entire report. I must simultaneously
+congratulate Google for their work improving app security on newer versions
+of Android -- and I must express my strong disappointment that the report
+seems to effectively ignore the impact of vulnerabilities associated with
+known WebView bugs affecting vast numbers of Android users who cannot update
+their phones to the newer versions, having been abandoned in this respect by
+OEMs, mobile carriers, and/or Google itself. Nor has (as far as I know)
+Google reached out proactively to the extremely large number of affected
+Android users to warn them of these vulnerabilities and inform them about
+potential workarounds that are available in various instances.
+
+------------------------------
+
+Date: Wed, 01 Apr 2015 06:46:02 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: Kali Linux security is a joke! (Jackson, RISKS-28.58)
+
+This issue has been discussed at length on the crypto email list, and here
+are the conclusions, as I see them:
+
+* md5 itself is broken; there are better hashes around, so the
+recommendation of md5 on the Kali web page is indeed a joke (although not
+quite the same joke I originally had in mind).
+
+* https/TLS does not solve all SW distribution problems, but using it in
+conjunction with various signature mechanisms does make an attacker have to
+work harder and actively; http makes passive observation way too easy.  Once
+an attacker knows exactly what SW you have, you are much easier to attack.
+
+* http makes a MITM/DOS attack trivial; you may never get a bad piece of SW,
+but you may also never get any SW update at all.
+
+Regarding "what would Henry Baker do" when designing a SW update mechanism:
+I'm not completely sure.  The threat model for SW distribution today
+includes nation-states with "acres of Crays", with no regulatory, budget or
+location constraints, and with the entire Internet as a "free fire zone";
+this threat model may not have been anticipated by many of the SW
+distribution systems in existence today.
+
+SW distribution has been successfully attacked before (Stuxnet), and will
+continue to be attacked, because it is a Willie Sutton target -- "that's
+where the money is".
+
+http://www.leviathansecurity.com/blog/the-case-of-the-modified-binaries/
+
+"You must reboot your computer now to finish installing the latest security
+updates.  NSA/GCHQ/... thanks you for your support in their war of^Hn
+terror."
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest28.59
+************************

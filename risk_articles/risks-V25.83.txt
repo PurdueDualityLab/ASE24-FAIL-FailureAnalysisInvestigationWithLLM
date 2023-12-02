@@ -1,0 +1,626 @@
+RISKS-LIST: Risks-Forum Digest  Friday 6 November 2009  Volume 25 : Issue 83
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.83.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+"Jimmy Carter era" computer causes traffic jams (Jeremy Epstein)
+Central Traffic unControl === gridlock (David Lesher)
+Washington Metro system communications depend on single data center
+  (Jon Eisenberg)
+T-Mobile suffers major outage: nationwide or nearly so (Lauren Weinstein)
+File share leaks data on US Congress members under investigation
+  (Jeremy Epstein, PGN)
+Fugitive caught via Facebook updates (Mark Brader)
+Facebook 'Suggests Contacting Dead Friends' (Matthew Kruk)
+Massive Gene Database Planned in California (David Talbot via Jim Schindler)
+Drivers ticketed for not speaking English - misapplication of UI
+  (Frank Jimenez)
+Privacy of health care info & health insurers (Henry Baker)
+Spam forged from .gov and .mil (PGN)
+AMEX sends USB trojan keyboards in ads (David Lesher)
+Risks of Using Encryption (Roger Grimes via Gene Wirchenko)
+'Robot' computer to mark English essays (Polly Curtis via Randall)
+Is Net Neutrality a Communist Plot? "Declassified DoD Film" (Lauren Weinstein)
+Speaking of cable modem insecurity (Danny Burstein)
+Re: Toyota uncontrolled acceleration (Anton Ertl, Matt Roberds)
+Re: Danger and Paris Hilton (Peter Houppermans)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 5 Nov 2009 06:44:46 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: "Jimmy Carter era" computer causes traffic jams
+
+4 Nov 2009.  A "Jimmy Carter era" computer that controls traffic light
+timing in Montgomery County, Maryland (suburban Washington DC) failed, which
+meant that traffic lights throughout the county stopped being timed properly
+(i.e., to allow more green southbound in the mornings and northbound in the
+evenings).  Setting 750 traffic lights by hand each morning and evening is
+ineffective.
+
+I don't know what the article means by a Jimmy Carter era computer (other
+than presumably something purchased in the late 1970s), but it's fair to say
+that finding replacement parts for whatever went wrong isn't easy.  And for
+those young'uns on the list, computers in that era weren't a single chip or
+a single board - the CPU alone probably fills several 6' (1.8 meter) tall
+cabinets, with discrete components and wires.  Troubleshooting requires lots
+of training and intuition, not something you can pick up from a book...
+
+The computer had been scheduled for replacement.  Hopefully not by a Windows
+box that decides to reboot itself at inconvenient times....
+
+The RISK, I'm guessing, is of being so reliant on a piece of hardware that
+can't be readily repaired (with no backup).
+
+http://www.washingtonpost.com/wp-dyn/content/article/2009/11/04/AR2009110402413.html
+
+------------------------------
+
+Date: Thu, 5 Nov 2009 15:40:25 -0500 (EST)
+From: "David Lesher" <wb8foz@panix.com>
+Subject: Central Traffic unControl === gridlock
+
+Montgomery County MD, north of DC, has an extensive network of traffic
+controls including cameras on hundreds to thousands of traffic
+signals. (Those cameras are allegedly for motion sensing only but I have no
+proof of that; mission creep seems obvious...)
+
+They have their own fiber backbone to interconnect all this with one central
+computer.  It failed, and thus far they have not been able to restart it. As
+a result, the signals have all reverted to autonomous local operation, and
+traffic is a major mess. [This is a region where normal rush hours runs from
+0530-0930, and 1500-1900...]
+
+RISK:
+
+While they HAVE fallback control; [bravo..] here it is not all that is
+needed.  Gridlock for several days will not win any votes.
+
+Traffic signals disrupted, creating chaos in Montgomery - washingtonpost.com
+http://www.washingtonpost.com/wp-dyn/content/article/2009/11/04/AR2009110402413.html
+
+------------------------------
+
+Date: Wed, 4 Nov 2009 08:55:42 -0500
+From: "Jon Eisenberg" <JEisenbe@nas.edu>
+Subject: Washington Metro system communications depend on single data center
+  -- power failure causes multiple problems
+
+http://www.washingtonpost.com/wp-dyn/content/article/2009/11/04/AR200911
+0401104.html?hpid=newswell
+
+Jon Eisenberg, Director, Computer Science and Telecommunications Board,
+The National Academies
+
+------------------------------
+
+Date: Tue, 3 Nov 2009 17:23:42 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: T-Mobile suffers major outage: nationwide or nearly so?
+
+NNSquad - Network Neutrality Squad <nnsquad.nnsquad.org>
+
+T-Mobile suffered a major outage today.  The exact scale is still unclear,
+but clearly various areas around the U.S. were affected, including voice,
+data, and SMS.  Service currently appears to be completely up here in my
+area of L.A., though I haven't tried to use T-M in several hours and could
+have missed any outage (Update: user reports on the T-M discussion forum do
+indicate that L.A. was down at some point -- for up to four hours).
+
+Anecdotal reports suggest that service has been restored in some areas but
+not necessarily for all of voice/data/SMS, and that in some areas voice
+calls were disrupted but 3G data continued working throughout the outage.
+
+Obviously some failure of their backbone network and/or authentication
+services.  More to come.
+
+
+One other point for now.  AP is reporting that they were unable to reach the
+cell phones of various T-Mobile media spokespersons, because calls to those
+cell phones couldn't complete ... due to the T-Mobile outage itself.
+
+A lesson re network diversity, it seems.
+
+------------------------------
+
+Date: Fri, 30 Oct 2009 13:54:08 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: File share leaks data on US Congress members under investigation
+
+The Washington Post's Oct 30 lead article notes that "more than 30 lawmakers
+and several aides" are under investigation for various possible misdeeds
+associated with "defense lobbying and corporate influence peddling".
+
+What's technology relevant is that the information leaked because a report
+was (presumably accidentally) placed on an unprotected computer (not clear
+whether it was a web site, a file share, or something else).  No word on
+whether the problem was a misconfiguration (i.e., mis-set file permissions,
+whether accidentally or intentionally) or due to a bug in software that
+allowed bypassing protections.
+
+No indication that the data was encrypted... perhaps this is an opportunity
+for Congress to learn the need for more usable security systems, including
+encryption, to reduce the RISK of accidental sharing?
+
+http://www.washingtonpost.com/wp-dyn/content/article/2009/10/29/AR2009102904597.html?hpid=topnews
+
+------------------------------
+
+Date: Fri, 30 Oct 2009 13:44:58 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: File share leaks data on US Congress members under investigation
+
+Congressional investigation kimono opened?  Some not-so-senior Congressional
+employee working from home with peer-to-peer file sharing software
+apparently blew the security on the ongoing internal congressional
+investigations.
+
+http://www.comcast.net/articles/news-politics/20091030/US.Congress.Leaked.Ethics.Report/
+
+------------------------------
+
+Date: Sat, 24 Oct 2009 16:04:04 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: Fugitive caught via Facebook updates
+
+Maxi Sopo was living in Cancun, and allegedly living high on the proceeds of
+bank fraud in the US.  He maintained a Facebook entry under his own name.
+His status was public, but his profile was only accessible to his Facebook
+"friends" -- but one of them was a former US Department of Justice official.
+
+Story at:
+http://news.bbc.co.uk/2/hi/americas/8306032.stm
+http://www.guardian.co.uk/technology/2009/oct/14/mexico-fugitive-facebook-arrest
+
+Commentary and discussion at:
+http://www.schneier.com/blog/archives/2009/10/helpful_hint_fo.html
+
+------------------------------
+
+Date: Mon, 26 Oct 2009 11:28:49 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Facebook 'Suggests Contacting Dead Friends'
+
+http://news.sky.com/skynews/Home/Technology/Facebook-Changes-Upset-Users-Reconnect-Feature-Suggests-Dead-Friends/Article/200910415417724
+
+Facebook 'Suggests Contacting Dead Friends'
+12:51pm UK, Monday October 26, 2009
+
+Ruth Barnett, Sky News Online
+
+Facebook's latest revamp has upset some members by recommending they get in
+touch with friends who have died.  The social networking site, which is used
+by 300 million people worldwide, made the controversial changes at the
+weekend.
+
+One of the most prominent additions is an automatically-generated box
+suggesting the user "reconnect" with a specific person they have not
+contacted for a while.  But within hours, dozens of users reported feeling
+distressed when the new feature told them to get in touch with someone
+deceased.
+
+More than 900,000 have reacted against the changes by joining a group
+calling for the site to go "back to normal".  "Facebook just suggested that
+I reconnect with someone who passed away two years ago. That's messed up,"
+one person wrote on Twitter.  Another user, Emma, 27, was confronted by the
+image of a deceased friend when she logged into the site at the weekend.
+"Like many of his friends I haven't deleted his profile as that would feel
+weird. I'm sure thousands of Facebook users are in the same position," she
+told Sky News Online.  "When someone dies there doesn't seem to be much you
+can do about their profile.  It would be nice to keep it as a memorial but
+there is no way of acknowledging what has happened to that person.  "There
+should be a way of recognising this on their profile or Facebook should
+remove the feature altogether to avoid causing offence."
+
+Facebook does offer a "memorialisation" option and invite users to alert them to
+a death but it is not widely known or publicised.
+
+The glitch reveals the "insensitivity of the algorithm," according to
+Mashable blogger Pete Cashmore. He also found examples of the site
+suggesting ex husbands and wives.  "Facebook is investigating the
+situation," a spokeswoman for the site told Sky News Online.
+
+------------------------------
+
+Date: Tue, 20 Oct 2009 21:30:00 -0800
+From: Jim Schindler <jimschin@gmail.com>
+Subject: Massive Gene Database Planned in California (David Talbot)
+
+David Talbot, Massive Gene Database Planned in California; The data will be
+compared against electronic health records and patients' personal
+information.   *Technology Review*, 21 Oct 2009
+www.technologyreview.com/biomedicine/23777/?nlid=2446
+
+Plans for genetic analyses of 100,000 older Californians--the first time
+genetic data will be generated for such a large and diverse group--will
+accelerate research into environmental and genetic causes of disease,
+researchers say.
+
+"This is a force multiplier with respect to genome-wide association
+studies," says Cathy Schaefer, a research executive at Kaiser Permanente
+<http://www.kaiserpermanente.org/>, a health-care provider based in Oakland,
+CA, whose patients will be involved. Researchers will be able to study the
+data and seek insights into the interplay between genes, the environment,
+and disease, thanks to access to detailed electronic health records, patient
+surveys, and even records of environmental conditions where the patients
+live and work.  "The importance of this project is that it will, almost
+overnight--well, in two years--produce a very large amount of genetic and
+phenotypic data that a large number of investigators and scientists can
+begin asking questions of, rather than having to gather data first,"
+Schaefer says.
+
+The effort will make use of existing saliva samples taken from California
+patients, whose average age is 65. Their DNA will be analyzed for 700,000
+genetic variations called single-nucleotide polymorphisms, or SNPs, using
+array analysis technology from Affymetrix in Santa Clara, CA. Through the
+National Institutes of Health (NIH), the resulting information will be
+available to other researchers, along with a trove of patient data including
+patients' Kaiser Permanente electronic health records, information about the
+air and water quality in their neighborhoods, and surveys about their
+lifestyles.
+
+The result will be the largest genetic health research platform of its kind,
+says Schaefer, who directs Kaiser Permanente's research program on genes,
+the environment, and health.  The study is being undertaken together with
+the University of California, San Francisco (UCSF), with a $25 million,
+two-year NIH grant that tapped federal stimulus funds allocated earlier this
+year.
+
+The potential for study is nearly limitless. Researchers will likely seek
+the genetic influences that determine why some people suffering from, say,
+cardiovascular disease and type 2 diabetes deteriorate more rapidly than
+others; and tease out which genetic factors reduce the effectiveness of
+various drugs or, indeed, make them hazardous, Schaefer says. As doctors
+obtain more such insights, this will allow them to tailor drug regimens and
+focus resources on higher-risk patients.
+
+Given the high average age of the group, the platform will also be a boon
+to studying diseases of aging. "One might want to ask," Schaefer says, "what
+are the genetic influences on changes in blood pressure as people age, and
+how are those changes in blood pressure related to diseases of aging, like
+stroke and Alzheimer's and other cardiovascular diseases?"
+
+------------------------------
+
+Date: Sat, 24 Oct 2009 09:20:10 -0700
+From: "Frank Jimenez (franjime)" <franjime@cisco.com>
+Subject: Drivers ticketed for not speaking English - misapplication of UI
+
+Apparently, in the USA, there is a Federal Law requiring holders of
+commercial driving licenses to speak English.  However, the user interface
+for citations in the Dallas Police Department also made this option
+available when citing drivers of private vehicles.  Recently, a particular
+case was publicized in the local media, and it was later discovered that 38
+tickets had been issued improperly to non-commercial drivers.  The risk here
+is the ability to choose an option from a drop-down box that doesn't
+actually apply to a particular law enforcement situation.
+
+More details here:
+http://www.nbcdfw.com/news/local-beat/Dallas-Cop-Cites-Driver-for-Not-Speaking-English-65793662.html
+
+------------------------------
+
+Date: Thu, 29 Oct 2009 13:02:24 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Privacy of health care info & health insurers
+
+Since Congress & various states passed laws to protect our health info from
+being sold to drug companies, we thought our mail boxes would be safe from
+spam advertisements targeted to us on the basis of our health information.
+
+Apparently we were wrong.
+
+The drug companies are now paying our health insurers to send out
+advertisements for their drugs to us on the basis of our health insurance
+information.
+
+I recently received an advertisement from my insurance company for a
+shingles drug which costs a bundle just for the copay.
+
+In the letter accompanying this advertisement:
+
+  "The development and distribution of these materials is supported by Merck
+  & Co., Inc."
+
+The letter included a phone number to be dropped from the distribution of
+these advertisements.
+
+I think that this letter indicates whose pocket "our" health insurer is in,
+and it isn't ours, the customer/taxpayer.
+
+------------------------------
+
+Date: Tue, 27 Oct 2009 13:56:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Spam forged from .gov and .mil
+
+Recent "FDIC" spam messages were forged to appear to be sent from fdic.gov.
+In the past, spammers have steered clear of forging their messages from
+".gov" and ".mil" addresses due to the associated legal consequences if they
+were caught and prosecuted.  As a result, SRI is now spam-filtering .gov and
+.mil.  [PGN-ed from an SRI facilities message.]
+
+------------------------------
+
+Date: Tue, 27 Oct 2009 01:14:59 -0400
+From: David Lesher <wb8foz@panix.com>
+Subject: AMEX sends USB trojan keyboards in ads
+
+A fellow user group member reported getting a USB-fob from American Express.
+When he plugged in to a port, it attempted to send his xterm command line to
+<HTTP://VCGW.NET/..../.....> {the dots were hex digits, it appears.... [and
+PGN changed x to dot to avoid filtering]} but didn't succeed.  [It may be
+Windows and Mac compatible, but not Linux...]
+
+That address redirects to an Amex URL: <https://www201.americanexpress.com/>
+
+It identified itself on the USB chain as:
+
+  Bus 003 Device 003: ID 05ac:020b Apple, Inc. Pro Keyboard
+  [Mitsumi, A1048/US layout]
+
+Since it's clearly NOT an Apple Pro Keyboard; one wonders why the
+manufacturer <http://www.ikyp.com> chose that false identity. The masquerade
+as a keyboard might also have been to penetrate those machines that do not
+blindly mount USB storage devices.
+
+Risks:
+
+While we now look for incoming malware on the TCP/IP connections, clearly we
+need to similarly monitor the other ports as well; you can do just as much
+damage (or more) with a insider keyboard attack, given some social
+engineering. Is the power line next?
+
+[I'm somewhat reminded of the DOS era story of a voice recognition product
+demo where someone in the audience yelled "FORMAT C:" and "YES"....]
+
+This is tangential:
+<http://www.digitalsociety.org/2009/08/apple-keyboards-hacked-and-possessed/>
+
+------------------------------
+
+Date: Fri, 23 Oct 2009 14:49:32 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Risks of Using Encryption (Roger Grimes)
+
+Roger Grimes had an interesting column on security recently:
+http://www.infoworld.com/d/security-central/dont-trust-public-pc-your-digital-identity-126?source=IFWNLE_nlt_daily_2009-10-23
+
+Excerpt of particular interest:
+
+  "Similarly, I need the recipient's public key so that I can send him or
+  her encrypted content. We should never share private keys. That's why they
+  are called private. Pretty simple -- or so you would think.  More often
+  than not, if the person isn't overly familiar with PGP/SMIME, even if
+  they've been using it, they send me their private key.
+
+  Being the good citizen that I am, I delete their private key and ask again
+  for their public key, explaining that with their private key, I could be
+  them, for all digital purposes. About half the newly educated group then
+  sends back my public key back or, if they're using PGP, their private key
+  ring, which contains all their private keys. You might think that I'm
+  making this stuff up, but it's pretty much been this way with PKI and PGP
+  exchanges since they were invented. PGP's own Phil Zimmerman has often
+  written on this subject."
+
+------------------------------
+
+Date: October 23, 2009 11:04:18 EDT
+From: Randall Webmail <rvh40@insightbb.com>
+Subject: 'Robot' computer to mark English essays (Polly Curtis)
+
+  [From Dave Farber's IP, johnmac, ...]
+
+[I guess it's not so different from using grad students: autograding.  RVH]
+
+'Robot' computer to mark English essays
+Exam board denies system will be extended to GCSEs
+Union fears 'a disaster waiting to happen'
+
+The owner of one of England's three major exam boards is to introduce
+artificial intelligence-based automated marking of English exam essays in
+the UK from next month.  Pearson, the American-based parent company of
+Edexcel, is to use computers to "read" and assess essays for international
+English tests in a move that has fueled speculation that GCSEs and A-levels
+will be next.  All three exam boards are now investing heavily in
+e-assessment but none has yet perfected a form of marking essays using
+computers -- or "robots" -- that it is willing to use in mainstream
+exams. Academics and leaders in the teaching profession said that using
+machines to mark papers would create a "disaster waiting to happen".
+[Source: Polly Curtis, *The Guardian*, 25 Sep 2009; PGN-ed]
+
+  [IP Archives: https://www.listbox.com/member/archive/247/=now]
+
+------------------------------
+
+Date: Tue, 27 Oct 2009 14:18:39 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Is Net Neutrality a Communist Plot? "Declassified DoD Film"
+
+     Is Net Neutrality a Communist Plot? ("Declassified DoD Film")
+             http://lauren.vortex.com/archive/000627.html
+
+Greetings.  As a strong supporter of Net Neutrality
+(http://lauren.vortex.com/archive/000625.html), I've been increasingly
+concerned by recent accusations from some anti-neutrality forces and media
+commentators, who claim that Net Neutrality is actually an insidious and
+dangerous "communist plot" that must be destroyed at all costs.
+
+Such a characterization has seemed utterly ridiculous to me, and hopefully
+also to most other reasonable observers.
+
+However, a friend of mine working at a certain "Three-Initial Agency" (that
+must remain unnamed) recently uncovered a long-lost U.S.  government film
+that appears to shed unexpected light on accusations of a linkage between
+communist/Marxist ideologies and Net Neutrality.
+
+He managed to get the short film (only a few minutes long) rapidly
+declassified and shipped it out to me.  I've now digitized the 16mm print
+and brought it online.
+
+The complete film (with associated very brief explanatory text, etc.  that
+I've included) can be viewed at the YouTube link:
+
+   Is Net Neutrality a Communist Plot?
+   http://www.youtube.com/watch?v=4fCLFKlYW3c
+
+I must admit, the film certainly had an impact on me!
+
+Lauren Weinstein +1 (818) 225-2800 http://www.pfir.org/lauren
+Co-Founder, PFIR http://www.pfir.org and NNSquad http://www.nnsquad.org
+GCTIP Global Coalition for Transparent Internet Performance http://www.gctip.org
+PRIVACY Forum - http://www.vortex.com Lauren's Blog: http://lauren.vortex.com
+
+------------------------------
+
+Date: Fri, 23 Oct 2009 02:08:04 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Speaking of cable modem insecurity
+
+Chen, founder of a software startup called Pip.io, said he was trying to
+help a friend change the settings on his cable modem and discovered that
+Time Warner had hidden administrative functions from its customers with
+Javascript code. By simply disabling Javascript in his browser, he was able
+to see those functions, which included a tool to dump the router's
+configuration file.
+
+That file, it turned out, included the administrative login and password in
+cleartext. Chen investigated and found the same login and password could
+access the admin panels for every router in the SMC8014 series on Time
+Warner's network - a grave vulnerability, given that the routers also expose
+their web interfaces to the public-facing Internet.
+
+All of this means that a hacker who wanted to target a specific router and
+change its settings could access a customer's admin panel from anywhere on
+the net through a web browser, log in with the master password, and then
+start tinkering. Among the possibilities, the intruder could alter the
+router's DNS settings - for example, to redirect the customer's browser to
+malicious websites - or change the Wi-Fi settings to open the user's home
+network to the neighbors.
+
+------------------------------
+
+Date: Sun, 25 Oct 2009 19:59:04 GMT
+From: anton@mips.complang.tuwien.ac.at (Anton Ertl)
+Subject: Re: Toyota uncontrolled acceleration (Lesher, Risks 25.82)
+
+Motorcycles in Austria and Germany (and maybe other places) are equipped
+with kill switches that can be easily reached, in addition to having an
+ignition key.  Given the number of incidents with runaway cars one reads
+about, maybe that should be a required feature of cars, too (even with a
+traditional ignition key, there is the risk of activating the steering lock
+when shutting off the engine with it).
+
+On one of my first rides with my motorcycle, the engine tried to run away
+(probably a mechanical thing, few or no computers on that 1986 motorcycle)
+which created a few moments of horror, but then I pulled the clutch and
+activated the kill switch, and had everything under control.
+
+M. Anton Ertl http://www.complang.tuwien.ac.at/anton/home.html
+
+------------------------------
+
+Date: Mon, 26 Oct 2009 22:50:50 -0500 (CDT)
+From: Matt Roberds <mroberds@att.net>
+Subject: Re: Toyota uncontrolled acceleration (David Lesher, RISKS-25.82)
+
+The brake performance of new cars sold in the US since about 2000 is
+regulated by Federal Motor Vehicle Safety Standard 135, 49 CFR 571.135.
+(Previously it was FMVSS 105.  The analogous Canadian standards are CMVSS
+135 and CMVSS 105.)  The US standards can be navigated to from
+http://www.gpoaccess.gov/ecfr/ ; a very quick read of FMVSS 135 doesn't show
+any tests that are supposed to be done with the throttle open during the
+test.  There *are* tests that are done with the vehicle loaded to its
+maximum weight rating, both with the braking system intact and with various
+failures present.
+
+An acquaintance of mine has worked for various car manufacturers and has
+described doing brake tests that seem to be in excess of the federal
+requirements, such as testing a fully loaded vehicle descending a mountain
+in Colorado.  To the best of my recollection, however, these were also done
+with the throttle closed.
+
+Several of the other FMVSSs touch various aspects of the user interface of a
+car, including at least 101, 102, 114, and 124.  114 does cover the
+possibility of using something other than a physical key, but does not
+specify too much about its behavior.  This may be a case where the available
+products are outpacing the regulations.
+
+------------------------------
+
+Date: Wed, 21 Oct 2009 22:34:32 +0200
+From: Peter Houppermans <peter@houppermans.com>
+Subject: Re: Danger and Paris Hilton (Re: Risks 25.82, Danger-ous services)
+
+* I consider it unlikely that Paris Hilton would call tech support -
+  that's what you have assistants for.
+
+* I'm amazed nobody commented on the irony of a Microsoft company asking
+  people NOT to reboot :-).
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.83
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E1D5D30149BEXSAN02campus_--

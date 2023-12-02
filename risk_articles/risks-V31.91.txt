@@ -1,0 +1,1426 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.91
+
+RISKS-LIST: Risks-Forum Digest  Friday 29 May 2020  Volume 31 : Issue 91
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.91>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+The robots that can pick kiwi-fruit (bbc.com)
+Google warns against catch-all rules for high-risk AI (Politico)
+Smart home assistants have a staggering environmental cost (CBC Docs POV)
+New Android Flaw Affecting Over 1 Billion Phones Let Attackers Hijack Apps
+  (The Hacker News)
+GRU aiming at root access vuln in Unix-based email servers (NSA)
+Programming Languages: Developers Reveal What They Love, Loathe, and What
+  Pays Best (ZDNet)
+Politico is aggregating reports re contact tracing (Politico)
+China's Virus Apps May Outlast the Outbreak, Stirring Privacy Fears
+  (NYTimes)
+Your immunity passport future begins to materialize as airlines call for
+  digital ID tracking systems (activistpost)
+Temperature Checks and Desk Shields: CDC Suggests Big Changes to Offices
+  (NYTimes)
+The art of the distraction (via Dave Farber)
+Executive order on social media (The White House and Rob Slade)
+Twitter hides two Trump tweets glorifying violence behind warning notice
+  (CNN)
+Trump Is Doing All of This For Zuckerberg (The Atlantic)
+New ComRAT Malware Uses Gmail to Receive Commands and Exfiltrate Data
+  (The Hacker News)
+Re: Misinformation (Andy Walker)
+Re: More on the Tweeter and the Tweetee (Amos Shapir)
+Re: The Pandemic Is Exposing the Limits of Science (R. G. Newbury)
+Re: Vitamin C (R. G. Newbury, Amos Shapir, Andre Carezia)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 30 May 2020 09:33:11 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: The robots that can pick kiwi-fruit (bbc.com)
+
+https://www.bbc.com/future/bespoke/follow-the-food/the-robots-that-can-pick-kiwifruit.html
+
+"In fields around the world, ripening fruit and vegetables that should be
+getting picked, packaged and shipped to supermarkets were instead at risk of
+being left to rot in their fields. Farmers have been struggling to find the
+people they needed to harvest them."
+
+The essay cites numerous risks which the farmbot competes against age-old
+human harvesters: non-standardized crop growing techniques, farm
+terrain/geography, vine and fruit/crop structure, packaging produce for
+sale, etc.
+
+Farmbot deployment requires substantial investment to engineer, prepare, and
+maintain it. No mention of the harvest quantity destroyed or unpicked during
+operation. While substantially immune to insect infestation, software bug
+suppression remains a challenge.
+
+Industrial-scale farming has a rapacious for-profit appetite, be it animal
+or plant. Government subsidies may promote farmbot deployment as a means to
+suppress migrant worker populations.
+
+------------------------------
+
+Date: Fri, 29 May 2020 8:32:55 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Google warns against catch-all rules for high-risk AI (Politico)
+
+The European Union should adopt its existing rules for high-risk artificial
+intelligence technology rather than create a whole new rulebook from
+scratch, U.S. tech giant Google told Brussels in its feedback to the EU=92s
+White Paper for AI. =93Creating a standalone assessment scheme for AI
+systems would risk duplicating review procedures that already govern many
+higher risk products, -- the company said in a 45-page
+response<https://www.politico.eu/wp-content/uploads/2020/05/FINAL-Googles-submission-to-EC-AI-consultation.pdf>
+sent to the European Commission yesterday, adding that this would lead to
+=93needless complexity -- and weaken the Continent=92s standing in the
+global race for AI supremacy.
+
+FACIAL RECOGNITION: The Center for Data Ethics and Innovation has put
+together a handy on facial recognition, looking at its uses and potential
+implications for the technology. The main thrust? That facial recognition is
+here to stay, but that there's still not enough regulatory oversight of how
+it's currently used.
+report<https://www.politico.eu/wp-content/uploads/2020/05/Snapshot-Paper-Facial-Recognition-Technology.pdf>
+
+------------------------------
+
+Date: Fri, 29 May 2020 05:54:00 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Smart home assistants have a staggering environmental cost
+  (CBC Docs POV)
+
+There are already 66 million smart assistants in US homes and the number is
+growing daily. But what are we trading for the convenience of turning the
+lights on with our voice? #CBCdocsPOV #TheInternetofEverything
+
+Director Brett Gaylor looks for an answer with his daughter Layla as they
+learn about the processing power involved in the machine learning powering
+Alexa and the enormous amount of energy it takes.
+
+Between the massive amount of non-renewable energy required to power their
+web servers and the pollution generated by its delivery service, Amazon's
+carbon footprint continues to grow. In 2019, staff protests prompted
+shareholders to confront management, to demand a plan for climate change
+and a reduction of the company's dependence on fossil fuels.
+
+The Internet of Everything, from CBC Docs POV is a fast, funny and
+enlightening look at what happens when we opt for the convenience of
+connected ``smart'' objects, without fully understanding the
+consequences for our health, our communities, or the planet. [...]
+
+https://www.youtube.com/watch?v=3DfbRhcLHOBrE
+
+------------------------------
+
+Date: Fri, 29 May 2020 05:52:00 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: New Android Flaw Affecting Over 1 Billion Phones Let Attackers
+  Hijack Apps (The Hacker News)
+
+Remember Strandhogg?
+
+A security vulnerability affecting Android
+<https://thehackernews.com/2019/12/strandhogg-android-vulnerability.html> that
+malicious apps can exploit to masquerade as any other app installed on a
+targeted device to display fake interfaces to the users, tricking them into
+giving away sensitive information.
+
+Late last year, at the time of its public disclosure, researchers also
+confirmed that some attackers were already exploiting the flaw in the wild
+to steal users' banking and other login credentials, as well as to spy on
+their activities.
+
+The same team of Norwegian cybersecurity researchers today unveiled
+<https://promon.co/strandhogg-2-0/> details of a new critical vulnerability
+(CVE-2020-0096) affecting the Android operating system that could allow
+attackers to carry out a much more sophisticated version of Strandhogg
+attack. [...]
+https://thehackernews.com/2020/05/stranhogg-android-vulnerability.html
+
+------------------------------
+
+Date: Fri, 29 May 2020 8:11:04 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: GRU aiming at root access vuln in Unix-based email servers (NSA)
+
+NYT article:
+https://www.nytimes.com/reuters/2020/05/28/world/europe/28reuters-cyber-usa=
+-russia.html
+
+The U.S. National Security Agency on Thursday warned government partners and
+private companies about a Russian hacking operation that uses a special
+intrusion technique to target operating systems often used by industrial
+firms to manage computer infrastructure.
+https://media.defense.gov/2020/May/28/2002306626/-1/-1/0/CSA%20Sandworm%20Actors%20Exploiting%20Vulnerability%20in%20Exim%20Transfer%20Agent%2020200528.pdf
+
+A security alert published by the NSA on Thursday explains how hackers with
+GRU, Russia's military intelligence, are leveraging a software vulnerability
+in Exim, a mail transfer agent common on Unix-based operating systems, such
+as Linux. The vulnerability was patched last year, but some users have not
+updated their systems to close the security gap.
+
+Quoting Cress, ``Being able to gain root access to a bridge point into a
+network gives you so much ability and capability to read email, to navigate
+across and maneuver through the network, so it's more about the danger we're
+trying to help people understand.''
+
+------------------------------
+
+Date: Fri, 29 May 2020 12:40:40 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Programming Languages: Developers Reveal What They Love, Loathe,
+  and What Pays Best (ZDNet)
+
+Liam Tung, ZDNet, 28 May 2020 via ACM TechNews, 29 May 2020
+
+A survey of roughly 65,000 developers by coding question and answer website
+Stack Overflow found that that TypeScript has overtaken Python as the secod
+most-preferred programming language, behind Rust.  Stack Overflow credits
+TypeScript's growth to Microsoft's adoption of open source software, and to
+bigger and more complex JavaScript and Node.js codebases. The three
+least-popular coding languages in the survey were VBA, Objective-C, and
+Perl. The survey, which also looked at average salaries for developer roles,
+identified the two highest-paid developer professions in the U.S. as
+engineering managers ($152,000 annually) and site reliability engineers
+($140,000 annually). Data scientists and machine learning specialists earn
+an average of at least $115,000 in the U.S., according to the survey.
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-255e6x222971x068370&
+
+------------------------------
+
+Date: Fri, 29 May 2020 8:17:11 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Politico is aggregating reports re contact tracing (Politico)
+
+Coronavirus Apps
+
+French App Update, Stats of the Day: Now that local politicians have given
+their approval, the contact-tracing tool will go live on June 2. But if
+recent polls are anything to go by, the French are still torn about whether
+to use the app. Let's leave aside the fact that almost one out of every four
+locals does not have a smartphone. But according to a survey by Data Publica
+in early May, 59 percent of those polled said that they were in
+favor of the StopCovid app. So far, so good, right?
+<https://www.francebleu.fr/infos/politique/sondage-stop-covid-une-majorite-de-francais-inquiets-de-l-utilisation-de-leurs-donnees-par-l-1589445489
+
+But in the same survey, 51 percent of people said they were not prepared to
+download the app onto their mobile devices, with only 15 percent (that's a
+very small minority, if Morning Tech is keeping count) of those polled
+saying they would do so. What should we take from this? If the U.K. app
+trial is anything to go, uptake on these coronavirus apps may prove less
+than ideal, potentially hobbling them even before they really get going.
+by<https://twitter.com/_BeffH_/status/1265961033484718080>
+
+The U.K.'s non-app approach: While London rolled out its `track-and-trace'
+system today, the digital tracing tool was nowhere to be seen. Morning Tech
+was told the Brits still hoped to have it available sometime in June (a
+month after it was supposed to be released), but that ongoing issues about
+keeping the bluetooth on people's smartphones working when devices were in
+sleep mode was still an issue. Still, if you had any doubts about if the
+U.K. was taking the coronavirus seriously, the privacy notice in its
+`track-and-trace' system will either put your concerns to rest or make you
+even more nervous. London said it planned to hold on to people's personal
+information for 20 years -- just in case the virus came back sometime in
+the future.
+
+Dutch go with Google/Apple for app: The design team behind The Netherlands'
+contact-tracing app posted documents detailing their approach on software
+development sharing platform GitHub. The group -- made up of a mix of
+external consultants and government employees -- plan to build their app
+within Google and Apple's framework. The Dutch health ministry quietly
+assembled developers to work on an app after a gameshow-esque app-athon it
+livestreamed to choose a design team fell flat.
+<https://github.com/minvws/nl-covid19-notification-app-design>
+
+`Old wine in new bottles': That's how B=E9r Engels of Dutch digital rights
+NGO Bits of Freedom -- which declined to be part of an expert subgroup
+overseeing the app -- described the government's shifting approach. =93The
+Ministry of Health has taken the media uproar of the past few weeks around
+this app as a sign that 1) less transparency during the process means less
+criticism and 2) they'll need to change the public's perception of the app
+and now refers to the `contact-tracing app' as a `notification app', due to
+launch somewhere in July. -- Echoing an earlier intervention by the
+country's data protection watchdog, Engels said he thought that fundamental
+questions -- still had to be answered, such as whether contact-tracing apps
+really work.
+<https://www.politico.eu/article/meet-the-dutchman-aleid-wolfsen-who-cried-foul-on-europe-coronavirus-covid19-tracking-technology/>
+
+------------------------------
+
+Date: Fri, 29 May 2020 18:03:56 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: China's Virus Apps May Outlast the Outbreak, Stirring Privacy Fears
+  (NYTimes)
+
+With the disease there mostly under control, officials are looking for new
+uses for the government software that’s now on many phones.
+
+https://www.nytimes.com/2020/05/26/technology/china-coronavirus-surveillance.html
+
+  [LW: As predicted.  Governments never let go once they have a leash on
+  their citizens.  PGN]
+
+------------------------------
+
+Date: Fri, 29 May 2020 05:51:00 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Your immunity passport future begins to materialize as airlines
+  call for digital ID tracking systems (activistpost)
+
+*The world's largest airline trade group has called for immunity passports,
+thermal screening, masks, and physical distancing to be a part of the
+industry's strategy for returning to ``normal'' operations.*
+
+The International Air Transport Association (IATA), which represents 299
+airlines, recently
+issued their publication, Biosecurity for Air Transport A Roadmap for
+Restarting Aviation
+ <https://www.iata.org/en/about/members/airline-list/?>
+<https://www.iata.org/contentassets/4cb32e19ff544df590f3b70179551013/roadmap-safely-restarting-aviation.pdf>,
+which outlines their strategy to open up air travel as governments begin to
+lift travel restrictions.
+
+Under a section titled, ``The passenger experience'' and ``Temporary
+biosecurity measures,'' the IATA describes their vision of post-COVID-19
+flights. The organization calls for contact tracing, a controversial method
+of tracking the civilian population to track the spread of COVID-19.
+<https://www.thelastamericanvagabond.com/health/we-need-army-contact-tracers-meet-enforcement-arm-new-normal/>
+
+``We foresee the need to collect more detailed passenger contact information
+which can be used for tracing purposes,'' the report states. ``Where
+possible, the data should be collected in electronic form, and in advance
+of the passenger arriving at the airport including through eVisa and
+electronic travel authorization platforms.''
+
+Interestingly, this call for pre-boarding check-in using ``electronic travel
+authorization platforms'' coincides with the recent announcement of the
+Covi-Pass <https://www.covipass.com/> and the Health Pass from Clear
+<https://www.clearme.com/healthpass>, both of which call for a digital ID
+system using biometrics and storing travel, health, and identification data.
+
+Alexandre de Juniac, IATA's CEO, told Arabian Industry
+that ``a layered approach'' combining multiple measures which are ``globally
+implemented and mutually recognized by governments'' are ``the way forward
+for biosecurity.'' [...]
+
+<https://www.arabianindustry.com/aviation/news/2020/may/21/airlines-call-for-immunity-passports-ahead-of-industrys-restart-6385860/>
+https://www.activistpost.com/2020/05/your-immunity-passport-future-begins-to-materialize-as-airlines-call-for-digital-id-tracking-systems.html
+
+------------------------------
+
+Date: Thu, 28 May 2020 21:47:51 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Temperature Checks and Desk Shields: CDC Suggests Big Changes
+  to Offices (NYTimes)
+
+If followed, the guidelines would transform the everyday experience of
+employees across the country, from executives to clerical workers.
+
+https://www.nytimes.com/2020/05/28/health/coronavirus-workplace-cdc.html
+
+------------------------------
+
+Date: May 29, 2020 at 20:19:19 GMT+9
+From: Bloomberg Technology <noreply@mail.bloombergbusiness.com>
+Subject: The art of the distraction (via Dave Farber)
+
+Hi all, it's Eric. Donald Trump loves political theater. The president's
+tendency to chase drama first and foremost is obvious even what he's
+ostensibly trying to do is overhaul decades-old communications regulations.
+
+For most of the week, Trump has been raging about Twitter Inc.'s decision to
+attach fact-checking disclaimers to messages of his that make baseless
+arguments about voter fraud. On Thursday, the president signed an executive
+order designed to stop social media companies from taking any action against
+misleading or otherwise offensive posts. Such a move was needed, according
+to Trump, ``to protect and uphold the free speech rights of the American
+people.''
+
+This was the administration's most substantial attack on Section 230 of the
+1996 Communications Decency Act, a law it has had in its sights for quite
+some time. Section 230 provides some legal protections for companies from
+being sued over content their users post to their websites. The law has its
+critics from across the political spectrum; conservatives have been
+increasingly interested in stripping the protections as a way to punish
+companies for allegedly disfavoring political right. Trump's order would
+potentially narrow the Section 230's protections, and increase scrutiny of
+perceived political bias.  [...]
+
+------------------------------
+
+Date: Fri, 29 May 2020 10:12:08 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Executive order on social media (The White House)
+
+Original text:
+https://www.whitehouse.gov/presidential-actions/executive-order-preventing-
+online-censorship/ or
+https://lite.cnn.com/en/article/h_ede8f5bc92289244c181bc69b2bc093f
+
+Text with annotations and translations below:
+
+> EXECUTIVE ORDER
+> - - - - - - -
+> PREVENTING ONLINE CENSORSHIP
+
+In view of the whole situation, this is more than somewhat ironic ...
+
+> By the authority vested in me as President by the Constitution and the laws
+> of the United States of America, it is hereby ordered as follows:
+
+> Section 1. Policy. Free speech is the bedrock of American democracy. Our
+> Founding Fathers protected this sacred right with the First Amendment to
+> the Constitution. The freedom to express and debate ideas is the
+> foundation for all of our rights as a free people.
+
+No problem.
+
+> In a country that has long cherished the freedom of expression, we cannot
+> allow a limited number of online platforms to hand pick the speech that
+> Americans may access and convey on the internet. This practice is
+> fundamentally un-American and anti-democratic. When large, powerful social
+> media companies censor opinions with which they disagree, they exercise a
+> dangerous power. They cease functioning as passive bulletin boards, and
+> ought to be viewed and treated as content creators.
+
+"In America, freedom of the press is largely reserved for those who own one."
+          - A. J. Liebling
+
+> The growth of online platforms in recent years raises important questions
+> about applying the ideals of the First Amendment to modern communications
+> technology. Today, many Americans follow the news, stay in touch with
+> friends and family, and share their views on current events through social
+> media and other online platforms. As a result, these platforms function in
+> many ways as a 21st century equivalent of the public square.
+
+Ah, my beloved Internet, filled with pointless drivel ...
+
+> Twitter, Facebook, Instagram, and YouTube wield immense, if not
+> unprecedented, power to shape the interpretation of public events; to
+> censor, delete, or disappear information; and to control what people see or
+> do not see.
+
+"You must use this power only for good, never for evil ..."
+
+> As President, I have made clear my commitment to free and open debate on the
+> internet. Such debate is just as important online as it is in our
+> universities, our town halls, and our homes. It is essential to sustaining
+> our democracy.
+
+It's always good to throw in some humour in a tense situation.
+
+> Online platforms are engaging in selective censorship that is harming our
+> national discourse. Tens of thousands of Americans have reported, among
+> other troubling behaviors, online platforms "flagging" content as
+> inappropriate, even though it does not violate any stated terms of service;
+> making unannounced and unexplained changes to company policies that have the
+> effect of disfavoring certain viewpoints; and deleting content and entire
+> accounts with no warning, no rationale, and no recourse.
+
+a) There is, of course, no evidence for this assertion, but I feel in my gut
+   that it's right.
+b) Those who write their names on bathroom stalls also want laws against wall
+   cleansers.
+
+> Twitter now selectively decides to place a warning label on certain tweets
+> in a manner that clearly reflects political bias. As has been reported,
+> Twitter seems never to have placed such a label on another politician's
+> tweet. As recently as last week, Representative Adam Schiff was continuing
+> to mislead his followers by peddling the long-disproved Russian Collusion
+> Hoax, and Twitter did not flag those tweets. Unsurprisingly, its officer
+> in charge of so-called "Site Integrity" has flaunted his political bias in
+> his own tweets.
+
+"I want to be able to spread outright lies like these without retrictions."
+
+> At the same time online platforms are invoking inconsistent, irrational,
+> and groundless justifications to censor or otherwise restrict Americans'
+> speech here at home, several online platforms are profiting from and
+> promoting the aggression and disinformation spread by foreign governments
+> like China. One United States company, for example, created a search
+> engine for the Chinese Communist Party that would have blacklisted
+> searches for "human rights," hid data unfavorable to the Chinese Communist
+> Party, and tracked users determined appropriate for surveillance. It also
+> established research partnerships in China that provide direct benefits to
+> the Chinese military.  Other companies have accepted advertisements paid
+> for by the Chinese government that spread false information about China's
+> mass imprisonment of religious minorities, thereby enabling these abuses
+> of human rights. They have also amplified China's propaganda abroad,
+> including by allowing Chinese government officials to use their platforms
+> to spread misinformation regarding the origins of the COVID-19 pandemic,
+> and to undermine pro-democracy protests in Hong Kong.
+
+SQUIRREL!
+
+> As a Nation, we must foster and protect diverse viewpoints in today's
+> digital communications environment where all Americans can and should have
+> a voice. We must seek transparency and accountability from online
+> platforms, and encourage standards and tools to protect and preserve the
+> integrity and openness of American discourse and freedom of expression.
+
+But only for our side.
+
+> Sec. 2. Protections Against Online Censorship. (a) It is the policy of the
+> United States to foster clear ground rules promoting free and open debate
+> on the internet. Prominent among the ground rules governing that debate is
+> the immunity from liability created by section 230(c) of the
+> Communications Decency Act (section 230(c)). 47 U.S.C. 230(c). It is the
+> policy of the United States that the scope of that immunity should be
+> clarified: the immunity should not extend beyond its text and purpose to
+> provide protection for those who purport to provide users a forum for free
+> and open speech, but in reality use their power over a vital means of
+> communication to engage in deceptive or pretextual actions stifling free
+> and open debate by censoring certain viewpoints.
+
+"We already have a law."
+
+> Section 230(c) was designed to address early court decisions holding that,
+> if an online platform restricted access to some content posted by others,
+> it would thereby become a "publisher" of all the content posted on its
+> site for purposes of torts such as defamation. As the title of section
+> 230(c) makes clear, the provision provides limited liability "protection"
+> to a provider of an interactive computer service (such as an online
+> platform) that engages in "'Good Samaritan' blocking" of harmful
+> content. In particular, the Congress sought to provide protections for
+> online platforms that attempted to protect minors from harmful content and
+> intended to ensure that such providers would not be discouraged from
+> taking down harmful material. The provision was also intended to further
+> the express vision of the Congress that the internet is a "forum for a
+> true diversity of political discourse."  47 U.S.C. 230(a)(3). The limited
+> protections provided by the statute should be construed with these
+> purposes in mind.
+
+"We already have a law."
+
+> In particular, subparagraph (c)(2) expressly addresses protections from
+> "civil liability" and specifies that an interactive computer service
+> provider may not be made liable "on account of" its decision in "good
+> faith" to restrict access to content that it considers to be "obscene,
+> lewd, lascivious, filthy, excessively violent, harassing or otherwise
+> objectionable." It is the policy of the United States to ensure that, to
+> the maximum extent permissible under the law, this provision is not
+> distorted to provide liability protection for online platforms that -- far
+> from acting in "good faith" to remove objectionable content -- instead
+> engage in deceptive or pretextual actions (often contrary to their stated
+> terms of service) to stifle viewpoints with which they disagree. Section
+> 230 was not intended to allow a handful of companies to grow into titans
+> controlling vital avenues for our national discourse under the guise of
+> promoting open forums for debate, and then to provide those behemoths
+> blanket immunity when they use their power to censor content and silence
+> viewpoints that they dislike. When an interactive computer service
+> provider removes or restricts access to content and its actions do not
+> meet the criteria of subparagraph (c)(2)(A), it is engaged in editorial
+> conduct. It is the policy of the United States that such a provider should
+> properly lose the limited liability shield of subparagraph (c)(2)(A) and
+> be exposed to liability like any traditional editor and publisher that is
+> not an online provider.
+
+"We'd like to modify that law, without actually getting Congress to change it."
+
+> (b) To advance the policy described in subsection (a) of this section, all
+> executive departments and agencies should ensure that their application of
+> section 230(c) properly reflects the narrow purpose of the section and
+> take all appropriate actions in this regard. In addition, within 60 days
+> of the date of this order, the Secretary of Commerce (Secretary), in
+> consultation with the Attorney General, and acting through the National
+> Telecommunications and Information Administration (NTIA), shall file a
+> petition for rulemaking with the Federal Communications Commission (FCC)
+> requesting that the FCC expeditiously propose regulations to clarify:
+
+"We'd like to modify that law, without actually getting Congress to change it."
+
+> (i) the interaction between subparagraphs (c)(1) and (c)(2) of section 230,
+> in particular to clarify and determine the circumstances under which a
+> provider of an interactive computer service that restricts access to content
+> in a manner not specifically protected by subparagraph (c)(2)(A) may also
+> not be able to claim protection under subparagraph (c)(1), which merely
+> states that a provider shall not be treated as a publisher or speaker for
+> making third-party content available and does not address the provider's
+> responsibility for its own editorial decisions;
+
+"We'd like to modify that law, without actually getting Congress to change it."
+
+> (ii) the conditions under which an action restricting access to or
+> availability of material is not "taken in good faith" within the meaning
+> of subparagraph (c)(2)(A) of section 230, particularly whether actions can
+> be "taken in good faith" if they are:
+
+> (A) deceptive, pretextual, or inconsistent with a provider's terms of
+> service; or
+
+> (B) taken after failing to provide adequate notice, reasoned explanation,
+> or a meaningful opportunity to be heard; and
+
+>   (iii) any other proposed regulations that the NTIA concludes may be
+>   appropriate to advance the policy described in subsection (a) of this
+>   section.
+
+"We'd like to modify that law, without actually getting Congress to change it."
+
+> Sec. 3. Protecting Federal Taxpayer Dollars from Financing Online
+> Platforms That Restrict Free Speech. (a) The head of each executive
+> department and agency (agency) shall review its agency's Federal spending
+> on advertising and marketing paid to online platforms. Such review shall
+> include the amount of money spent, the online platforms that receive
+> Federal dollars, and the statutory authorities available to restrict their
+> receipt of advertising dollars.
+
+> (b) Within 30 days of the date of this order, the head of each agency shall
+> report its findings to the Director of the Office of Management and Budget.
+
+> (c) The Department of Justice shall review the viewpoint-based speech
+> restrictions imposed by each online platform identified in the report
+> described in subsection (b) of this section and assess whether any online
+> platforms are problematic vehicles for government speech due to viewpoint
+> discrimination, deception to consumers, or other bad practices.
+
+"If we can't change the law, we'll try and hit them in the pocketbook."
+
+> Sec. 4. Federal Review of Unfair or Deceptive Acts or Practices. (a) It is
+> the policy of the United States that large online platforms, such as
+> Twitter and Facebook, as the critical means of promoting the free flow of
+> speech and ideas today, should not restrict protected speech. The Supreme
+> Court has noted that social media sites, as the modern public square, "can
+> provide perhaps the most powerful mechanisms available to a private
+> citizen to make his or her voice heard." Packingham v. North Carolina, 137
+> S. Ct. 1730, 1737 (2017). Communication through these channels has become
+> important for meaningful participation in American democracy, including to
+> petition elected leaders. These sites are providing an important forum to
+> the public for others to engage in free expression and
+> debate. Cf. PruneYard Shopping Center v. Robins, 447 U.S. 74, 85-89
+> (1980).
+
+"We've got lots more high-sounding verbiage."
+
+> (b) In May of 2019, the White House launched a Tech Bias Reporting tool to
+> allow Americans to report incidents of online censorship. In just weeks,
+> the White House received over 16,000 complaints of online platforms
+> censoring or otherwise taking action against users based on their
+> political viewpoints.  The White House will submit such complaints
+> received to the Department of Justice and the Federal Trade Commission
+> (FTC).
+
+"I'm going to tell my base on you!"
+
+> (c) The FTC shall consider taking action, as appropriate and consistent
+> with applicable law, to prohibit unfair or deceptive acts or practices in
+> or affecting commerce, pursuant to section 45 of title 15, United States
+> Code.  Such unfair or deceptive acts or practice may include practices by
+> entities covered by section 230 that restrict speech in ways that do not
+> align with those entities' public representations about those practices.
+
+"I've got lots of random complaints that we can use to tie up your lawyers!"
+
+> (d) For large online platforms that are vast arenas for public debate,
+> including the social media platform Twitter, the FTC shall also,
+> consistent with its legal authority, consider whether complaints allege
+> violations of law that implicate the policies set forth in section 4(a) of
+> this order. The FTC shall consider developing a report describing such
+> complaints and making the report publicly available, consistent with
+> applicable law.
+
+"We'd like to modify that law, without actually getting Congress to change it."
+
+> Sec. 5. State Review of Unfair or Deceptive Acts or Practices and
+> Anti-Discrimination Laws. (a) The Attorney General shall establish a
+> working group regarding the potential enforcement of State statutes that
+> prohibit online platforms from engaging in unfair or deceptive acts or
+> practices. The working group shall also develop model legislation for
+> consideration by legislatures in States where existing statutes do not
+> protect Americans from such unfair and deceptive acts and practices. The
+> working group shall invite State Attorneys General for discussion and
+> consultation, as appropriate and consistent with applicable law.
+
+"We'd like to modify that law, without actually getting Congress to change it."
+
+> (b) Complaints described in section 4(b) of this order will be shared with
+> the working group, consistent with applicable law. The working group shall
+> also collect publicly available information regarding the following:
+
+>   (i) increased scrutiny of users based on the other users they choose to
+>   follow, or their interactions with other users;
+
+>   (ii) algorithms to suppress content or users based on indications of
+>   political alignment or viewpoint;
+
+>   (iii) differential policies allowing for otherwise impermissible
+>   behavior, when committed by accounts associated with the Chinese
+>   Communist Party or other anti-democratic associations or governments;
+
+"I've got lots of random complaints that we can use to tie up your lawyers!"
+
+>   (iv) reliance on third-party entities, including contractors, media
+>   organizations, and individuals, with indicia of bias to review content;
+>   and
+
+See "pocketbook," above.
+
+>   (v) acts that limit the ability of users with particular viewpoints to
+>   earn money on the platform compared with other users similarly situated.
+
+"We'll get you in the pocketbook, my pretty, and your little users, too!"
+
+> Sec. 6. Legislation. The Attorney General shall develop a proposal for
+> Federal legislation that would be useful to promote the policy objectives
+> of this order.
+
+"We'd like to modify that law, without actually getting Congress to change it."
+
+> Sec. 7. Definition. For purposes of this order, the term "online platform"
+> means any website or application that allows users to create and share
+> content or engage in social networking, or any general search engine.
+
+No problem.
+
+> Sec. 8. General Provisions. (a) Nothing in this order shall be construed to
+> impair or otherwise affect:
+
+>   (i) the authority granted by law to an executive department or agency,
+>   or the head thereof; or
+
+>   (ii) the functions of the Director of the Office of Management and
+>   Budget relating to budgetary, administrative, or legislative proposals.
+
+> (b) This order shall be implemented consistent with applicable law and
+> subject to the availability of appropriations.
+
+> (c) This order is not intended to, and does not, create any right or
+> benefit, substantive or procedural, enforceable at law or in equity by any
+> party against the United States, its departments, agencies, or entities,
+> its officers, employees, or agents, or any other person.
+
+"They told me I had to put this in, but I don't have to like it ..."
+
+> DONALD J. TRUMP
+> THE WHITE HOUSE,
+> May 28, 2020.
+
+------------------------------
+
+Date: Fri, 29 May 2020 08:23:15 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Twitter hides two Trump tweets glorifying violence behind warning
+  notice (CNN)
+
+https://www.cnn.com/2020/05/29/tech/trump-twitter-minneapolis/index.html
+
+  [I fully support Twitter in these actions.]
+
+------------------------------
+
+Date: Fri, 29 May 2020 15:24:48 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Trump Is Doing All of This For Zuckerberg (The Atlantic)
+
+https://www.theatlantic.com/technology/archive/2020/05/trumps-executive-order-isnt-about-twitter/612349/
+
+------------------------------
+
+Date: Fri, 29 May 2020 05:53:00 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: New ComRAT Malware Uses Gmail to Receive Commands and Exfiltrate
+  Data (The Hacker News)
+
+Cybersecurity researchers today uncovered a new advanced version of ComRAT
+backdoor, one of the earliest known backdoors used by the Turla APT group,
+that leverages Gmail's web interface to covertly receive commands and
+exfiltrate sensitive data.
+
+"ComRAT v4 was first seen in 2017 and known still to be in use as recently
+as January 2020," cybersecurity firm ESET said in a report
+<https://www.welivesecurity.com/2020/05/26/agentbtz-comratv4-ten-year-journey/>
+shared with The Hacker News. "We identified at least three targets: two
+Ministries of Foreign Affairs in Eastern Europe and a national parliament in
+the Caucasus region."
+
+Turla <https://attack.mitre.org/groups/G0010/>, also known as Snake, has
+been active for over a decade with a long history of the watering hole and
+spear-phishing campaigns against embassies and military organizations at
+least since 2004.
+
+The group's espionage platform started off as Agent.BTZ
+<https://attack.mitre.org/software/S0092/>, in 2007, before it evolved to
+ComRAT <https://attack.mitre.org/software/S0126/>, in addition to gaining
+additional capabilities to achieve persistence and to steal data from a
+local network. [...]
+
+https://thehackernews.com/2020/05/gmail-malware-hacker.html
+
+------------------------------
+
+Date: Fri, 29 May 2020 13:34:21 +0100
+From: Andy Walker <anw@cuboid.me.uk>
+Subject: Re: Misinformation (Baker, RISKS-31.90)
+
+Yes, but the response to this has been known for at least 60 years, and
+consists of biasing the samples so that the rare event occurs much more
+frequently but is given less weight.  I expect that HB's code that requires
+"at least 15000 samples" includes something rather like
+
+   if random() > 0.99 then sum += 98 else sum += 2 fi
+
+so that counting 98 occurs roughly 1% of the time.  If he replaces that
+by something like
+
+   if random() > x then sum += a else sum += b fi
+
+where a = 98*0.01/(1-x), b = 2*0.99/x, then for suitable values of x
+[eg x = 2/3] it converges much more quickly.  Indeed, for x = 198/296
+it converges immediately.  The value x = 0.99 recovers the original.
+
+   " A general Monte Carlo tenet is:  never sample from a distribution
+   " merely because it arises in the physical context of a problem, for
+   " we may be able to use a better distribution in the computations
+   " and still get the right answer. "
+	[Monte Carlo Methods, Hammersley and Handscomb, Methuen, 1956]
+
+	I'm sure that those making professional use of MC methods know
+all about "importance sampling", "antithetic variables" and the other
+tools of the trade.
+
+I don't expect anyone to be able to predict [e.g.,] the total number of
+deaths to any great accuracy in advance, but ...
+
+> This is the reason why "R0" models make no sense in the presence of
+> superspreaders -- there is no single 'R0' that captures any useful aspect of
+> the behavior of the epidemic.
+
+... I don't believe that this follows.  R0 captures, in a way that can be
+explained to the general population, whether the pandemic is showing
+exponential growth or exponential decay.  If there were only one or two
+superspreaders in the world, there might be a problem depending on whether
+or not those very rare people caught the virus and each infected millions.
+In reality, even if they are only one in a thousand, their effects can be
+spread out over the model and estimated to sufficient accuracy.  But not in
+naive ways that assume uniformity.
+
+------------------------------
+
+Date: Fri, 29 May 2020 13:36:20 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: More on the Tweeter and the Tweetee (RISKS-31.90)
+
+The NYT article notes about the proposed Trump order "lawyers quickly said
+... that he was claiming power to do something he does not have the power to
+do".
+
+Isn't that the very definition of Trump's presidency?
+
+------------------------------
+
+Date: Fri, 29 May 2020 00:29:19 -0400
+From: "R. G. Newbury" <newbury@mandamus.org>
+Subject: Re: The Pandemic Is Exposing the Limits of Science (Wilson,
+R 31 90)
+
+It is also sad to see people who should know better, using models,
+calculated from spurious data using who knows what functions, as definitive
+proof of anything. As someone said: "all models are wrong.  Some models are
+useful"
+
+The definitive explanation of models and calculations continues to be
+xjcd. I will be nit-picky in pointing out that I think the 7th item should
+be labelled 'Average garbage' and not 'Better Garbage'.
+
+https://xkcd.com/2295/
+
+------------------------------
+
+Date: Fri, 29 May 2020 00:43:06 -0400
+From: "R. G. Newbury" <newbury@mandamus.org>
+Subject: Re: Vitamin C (RISKS-31.90)
+
+Re: Having a healthy immune system: A retrospective study in Indonesia
+strongly implies that having a healthy immune system w lots of free Vitamin
+D, is a good indicator of the prognosis and outcome of suffering from Whuhan
+Flu. April 26, 2020.
+
+Money quote: When controlling for age, sex, and comorbidity, Vitamin D
+status is strongly associated with COVID-19 mortality outcome of cases.
+
+Patterns of COVID-19 Mortality and Vitamin D: An Indonesian Study
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3585561
+
+Extract:
+
+98.9% of Vitamin D deficient cases died while only 1.1% of them were active
+cases.  87.8% of Vitamin D insufficient cases died while only 12.2% of them
+were active cases. Only 4.1% of cases with normal Vitamin D levels died
+while 95.9% of them were active cases.
+
+  [This makes sense. Having a strong immune system allows the infected to
+  fight off the virus while viral load is low. Vitamin D is not a "cure" for
+  anything, but it can be a good defence. Probably true for Vitamin C too.
+  RGN]
+
+------------------------------
+
+Date: Fri, 29 May 2020 13:13:59 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Vitamin C (RISKS-31.90)
+
+The main reason doctors are not keen on prescribing vitamin C in large
+quantities, is not just the lack of benefits by drug companies.  IMHO, it
+has more to do with the risk of malpractice suits.  Can you imagine what a
+lawyer can do about a prescription, whose main promoter himself describes as
+"an overdose"?
+
+------------------------------
+
+Date: Fri, 29 May 2020 19:49:23 -0300
+From: =?UTF-8?B?QW5kcsOp?= Carezia <andre@carezia.srv.br>
+Subject: Re: Vitamin C (RISKS-31.90)
+
+July, 1949         SOUTHERN MEDICINE & SURGERY                209
+
+    The Treatment of Poliomyelitis and Other Virus Diseases with
+    Vitamin C
+
+Fred R. Klenner, M.D., Reidsville, North Carolina
+
+IN A PREVIOUS REPORT dealing with the antagonistic properties of ascorbic
+acid to the virus of atypical pneumonia, mention was made of the fact that
+other types of virus infections had responded favorably to vitamin C. This
+paper is to present these findings as well as the results of subsequent
+studies on the virus of poliomyelitis, the viruses causing measles, mumps,
+chickenpox, herpes zoster, herpes simplex and influenza. Further studies
+with the virus of atypical pneumonia will also be discussed.
+
+These observations of the action of ascorbic acid on virus diseases were
+made independently of any knowledge of previous studies using vitamin C on
+virus pathology, except for the negative report of Sabin after treating
+Rhesus monkeys experimentally infected with the poliomyelitis virus. A
+review of the literature in preparation of this paper, however, presented an
+almost unbelievable record of such studies. The years of labor in animal
+experimentation, the cost in human effort and in "grants," and the volumes
+written, make it difficult to understand how so many investigators could
+have failed in comprehending the one thing that would have given positive
+results a decade ago. This one thing was the size of the dose of vitamin C
+employed and the frequency of its administration. In all fairness it must be
+said that Jungeblut noted on several occasions that he attributed his
+failure of results to the possibility that the strength of his injectable
+"C" was inadequate. It was he who unequivocally said that ''vitamin C can
+truthfully be designated as the antitoxic and antiviral vitamin."
+
+In developing this paper it was felt that, since all virus infections were
+more or less akin, only one of this family would be considered in
+detail. Poliomyelitis, because of its prevalence and the seriousness of the
+problem it presents, was chosen as the disease to be so treated.
+
+Poliomyelitis is in most instances an acute febrile disease of sudden onset,
+with symptoms of a systemic infection which either abruptly abort or develop
+to hyperesthesia, asymmetry of reflexes and flaccid paralysis or palsies of
+muscle groups. It affects individuals of all ages, but mainly children, as
+do more common childhood diseases to which class it most likely
+belongs. Only slight contact between the carrier of the virus and the
+susceptible person suffices in some cases for the transfer of the causative
+organism. In this respect and also in that the virus can be demonstrated in
+the nasal washings as early as six days before onset of symptoms,
+poliomyelitis resembles measles. We never have an epidemic of poliomyelitis
+preceding an epidemic of measles; the opposite is frequently true. This
+grouping of the virus organisms is too often repeated not .to carry some
+significance. For example, atypical pneumonia and influenza are caused by
+closely allied viruses; so are chickenpox, herpes zoster and herpes simplex;
+so are measles, mumps and poliomyelitis. The incubation period depends on
+the mode of entry. In experimental animals. Fraser and others showed that
+the average was 6.6 days with intracerebral inoculation and ten days when
+the intravenous route was used. Howitt mentions that the virus reaches the
+nervous system sooner after intranasal than after intravenous installations.
+Transmission (Brodie, 1934) is by means of droplets from the mucous membrane
+of the upper respiratory tract.  Infection by means of raw milk, human feces
+and house flies is highly improbable.
+
+The research of Flexner, Dark and Amoss in 1914 proved that poliomyelitis is
+a disease of the entire nervous system, that the sensory ganglia are the
+seats of early and profound histological changes. The disease is significant
+mainly for the paralysis produced through injury to the motor neurons of the
+spinal cord and brain. This is caused by a special affinity of the virus for
+a certain type of nerve tissue. Experiments show the cerebral cortex to be
+the most unsatisfactory site for growth, that large amounts of the virus
+placed in this area are apt to disappear in a short time. Observations in
+monkeys and in man show that the anterior horn cells, particularly those of
+the lumbar cord, are the most favorable sites for proliferation of the
+virus.
+
+In all clinically ill patients the virus eventually travels in the course of
+its invasion by several channels. The virus can make a direct assault
+through the olfactory bulb, to the brain, medulla and spinal cord. The virus
+can enter the blood stream directly or through the lymph channels. Following
+damage to the natural protective barrier, the choroid plexus, it can make
+its way to the central nervous system, or it can be excreted back onto the
+nasal mucous membrane where it will pick up the direct route of the
+olfactory bulb.
+
+Clark, Turner and Reynolds (1926, 1927, 1929) concluded that the virus
+chiefly travels by the direct route to the brain. Lennette and Hudson (
+1935) confirmed this theory and reported their studies indicating that human
+infection is chiefly through the nasopharynx. Brodi and others showed that
+by section of the olfactory tracts in monkeys infection by the direct route
+was prevented. It is of more than mere academic interest that while the
+nasal mucosa of the monkey contains branches of the 5th and 7th cranial
+nerves and that in addition, since the virus can readily gravitate from the
+nasopharynx to the tonsil bed with its nerve supply, if the olfactory tracts
+are cut no infection will occur. The most likely explanation is that the
+olfactory is non-medullated, the neurons lie in the nasal mucosa and are
+thus exposed to the virus. The sciatic nerve (Brodi) will transport the
+virus only when it has been injured, suggesting that lack of myelin may
+render the healthy olfactory nerve vulnerable to the virus.
+
+The most important of the secondary routes of infection is by the excretion
+of the virus from the blood stream onto the nasal mucosa.  Lennette and
+Hudson (1934, 1935) demonstrated in monkeys that by sectioning the olfactory
+tracts and then inoculating by the intravenous route with the virus of
+poliomyelitis, they could prevent infection.
+
+This would fit in with the work of Jungeblut and others that the spread of
+the virus through the central nervous system is along nerve tracts, rather
+than by means of the cerebrospinal fluid, the infection to become manifest
+when the first cell group is reached, and by relays of fibers, reaches the
+mid-brain. Here numerous fiber-paths run in all directions and the virus is
+carried by both motor and sensory axons, causing disease at many levels of
+the brain and cord.
+
+Since there is always a period of septicemia in the first few days of
+poliomyelitis, it might be that this is the all-important route and that the
+virus is grown on a living tissue, the blood, and then is deposited out on
+the surface of the olfactory bulb. From this we conclude that the time to
+destroy the virus is during this incubation period which varies more with
+virulence and power of multiplication than with size of initial dose.
+
+The second flanking maneuver of importance is through the choroid plexus. It
+is the function of the choroid plexus and the pial lymphatic vessels to
+exclude the virus present in the blood from the nervous system. Once these
+protective structures are injured, however, the exclusion ceases and
+infection can follow readily. Changes in the structure or function of the
+meningeal choroid plexus complex, too slight to be detected in the
+cerebrospinal fluid or as morphological alterations, materially diminish its
+protective power. Flexner and Amoss injected large doses of the virus
+intravenously, then tested the cerebrospinal fluid and found no virus after
+the first 48 hours; virus in small amounts at the end of 72 hours; after 96
+hours evidence of free access to this system. The virus was still present 19
+days later when paralysis was beginning.
+
+Poliomyelitis in man is always more severe if exercise is taken at time of
+the infection. Here one must consider the factor of filtration of the virus
+through the choroid plexus as being increased due to the elevation of the
+vascular bed pressure. Also, that, by the acceleration of the blood flow
+caused by greater oxygen demand in physical effort, a marked increase in the
+percentage of the virus deposited on the nasal mucosa would result.
+
+We must agree with Fairbrother and Hurst that too little consideration
+has been given to the pathology of the nervous system and in particular
+to the drainage of the tissue fluids. These men confirmed the earlier
+work of Schroder, who stressed that the normal flow of these fluids is
+along the perivascular spaces from the center of the cord outward, and
+that any inflammatory exudate occupying these spaces must be swept into
+the pial meshes; further that meningeal infiltration may seem nothing
+more than a drainage of cells from the interior of the cord.
+Fairbrother and Hurst found that meningeal infiltration does not occur
+in monkeys until the perivascular infiltration beginning in the deeper
+vessels reaches the surface.
+
+The presence of the filterable microorganism or virus of poliomyelitis upon
+the mucous membrane of the nose and throat does not necessarily lead to
+infection. It may give rise to a class of healthy carriers who are
+themselves immune. Amoss and Taylor found a secretion of the mucous membrane
+capable of neutralizing or inactivating the virus, this property absent
+altogether from the secretions of some persons, in those of others present
+at one time and not at another. It is probable that in actively immune
+animals the passage of the neutralizing substance from the blood into the
+cerebrospinal fluid would continue as long as the inflammation present in
+the meninges rendered the structures easily permeable to the protein
+constituents of the blood.  This secretion X could not have the properties
+of a true antibody. The virus of poliomyelitis is intracellular from the
+time it invades the terminal cells of the olfactory system until the end of
+the disease, except when crossing the synaptic junctions between cells. This
+explains why the virus cannot be neutralized by antibodies in the
+serum. Further protection is afforded the virus by the functional barrier
+between the circulating blood and the central nervous system.
+
+Since immunization against poliomyelitis comparable to that against other
+bacterial diseases is still a matter of the future, it suggested itself that
+some antibiotic could be found that would destroy this scourge while in the
+phase of blood-stream invasion. Sabin's negative report on the value of
+ascorbic acid on the poliomyelitis virus stopped Jungeblut's work, but we
+were cognizant of its dramatic effect on the virus causing atypical
+pneumonia, and so kept up hope. These results were so consistently positive
+that we did not hesitate to try its effectiveness against all type of virus
+infections. The frequent administration of massive doses of vitamin C was so
+encouraging in the early days of the 1948 epidemic of poliomyelitis that a
+review of the literature was begun. Heaslip, in the Australian Journal of
+Experimental Biology & Medicine reported a mean urinary output of vitamin C
+under a load test of 19.9 per cent in 60 poliomyelitis cases, as contrasted
+with a mean figure of 44.3 per cent in 45 healthy contacts. This was
+suggestive of some relationship between the degree of vitamin C saturation
+and the infectious and non-infectious state. He was also able to show a
+correlation between the severity of the attack and the level of urinary
+excretion of the vitamin. This would indicate that a deficiency of vitamin C
+in the diet predisposed to infection and to severity of attack. Sabin
+reported no appreciable difference in infectivity of poliomyelitis in
+monkeys with much or no vitamin C in the diet. Many others, however, have
+reported that a "deficient vitamin C nutrition increases susceptibility to
+infection," and many others that animals dying from the effects of the
+poliomyelitis virus show a reduction of vitamin C in the tissues. Heaslip
+found a definite relationship between the severity of the infection and the
+level of vitamin C nutrition. It is consistent with accepted physiological
+action of vitamin C to expect and anti-edema effect in any given affected
+area. It is worthy of note that bacterial toxins can cause losses of from 50
+to 85 per cent of the vitamin C normally contained in the
+adrenals. Jungeblut's investigations seemed to justify the conclusion that
+vitamin C was the "antibiotic" that would destroy the virus organism. He
+stated that the prophylactic and therapeutic administration of synthetic or
+natural vitamin C had given evidence of having distinct therapeutic
+properties in experimental poliomyelitis, and that the proper injection dose
+was directly proportional to the speed of the infection and the stage at
+which the process had arrived.  Jungeblut stated in 1937 that the parental
+administration of natural vitamin C during its incubation period of
+poliomyelitis in monkeys is always followed by a distinct change in the
+severity of the disease; that after the fifth day of the disease distinctly
+larger doses are required. He realized, at that early date, that for a fast
+progressing infection such as results from the R. M. V. strain, very large
+doses -— 400 mg. crystalline C maximum in a 24-hour period -- of vitamin C
+would be required; for the Aycock virus with its slower infection potential
+small amounts of the vitamin would suffice. Even with almost infinitesimal
+amounts -— 100 mg. ascorbic acid for each 24-hour period—he was able to
+demonstrate that the non-paralytic survivors in one series was six times as
+great as in the controls. In our work we shall speak of six, ten and 20
+thousand mg. in a similar time period.
+
+Harde et al. reported that diphtheria toxin is inactivated by vitamin C
+in vitro and to a lesser extent in vivo. I have confirmed this finding,
+indeed extended it. Diphtheria can be cured in man by the
+administration of massive frequent doses of hexuronic acid (vitamin C)
+given intravenously and/or intramuscularly. To the synthetic drug, by
+mouth, there is little response, even when 1000 to 2000 mg. is used
+every two hours. This cure in diphtheria is brought about in half the
+time required to remove the membrane and give negative smears by
+antitoxin. This membrane is removed by lysis when "C" is given, rather
+than by sloughing as results with the use of the antitoxin. An
+advantage of this form of therapy is that the danger of serum reaction
+is eliminated. The only disadvantage of the ascorbic acid therapy is
+the inconvenience of the multiple injections. This concept of the
+action of vitamin C against certain toxins has led to treating other
+diseases producing exotoxins. For years it has been our knowledge that
+vitamin C in 500 to 1000 mg. doses injected I. M. would cure bacillary
+dysentery of the Shiga type. Children having 10 to 15 bloody stools per
+day have cleared in 48 hours under this schedule while at the same time
+reverting to normal feedings. This dual action of vitamin C against
+certain toxins and the virus organism becomes more intelligible with
+the work of Kligler, Warburg and others who believed that the
+detoxification effected by hexuronic acid is brought about by a direct
+combination of the vitamin with the toxin or virus, this followed by
+oxidation of the new compound which destroys both the virus or toxin
+and the vitamin. Borsook et al. decided that the main chemical action
+of ascorbic acid is as a powerful reducing agent, and the virus causing
+poliomyelitis is known to be susceptible to the oxidizing action of
+various agents. It is in point here to remark that vitamin C is an
+integral part of the oxidation-reduction system of the body, thus
+playing a definite part in natural resistance.
+
+In the poliomyelitis epidemic in North Carolina in 1948, 60 cases of this
+disease came under our care. These patients presented all or almost all of
+these signs and symptoms: Fever of 101 to 104.6°, headache, pain at the back
+of the eyes, conjunctivitis, scarlet throat; pain between the shoulders, the
+back of the neck, one or more extremity, the lumbar back; nausea, vomiting
+and constipation. In I5 of these cases the diagnosis was confirmed by lumbar
+puncture; the cell count ranging from 33 to 125. Eight had been in contact
+with a proven case; two of this group received spinal taps. Examination of
+the spinal fluid was not carried out in others for the reasons: (1) Flexner
+and Amoss had warned that "simple lumbar puncture attended with even very
+slight hemorrhage opens the way for the passage of the virus from the blood
+into the central nervous system and thus promotes infection." (2) A patient
+presenting all or almost all of the above signs and symptoms during an
+epidemic of poliomyelitis must be considered infected with this virus. (3)
+Routine lumbar puncture would have made it obligatory to report each case as
+diagnosed to the health authorities. This would have deprived myself of
+valuable clinical material and the patients of most valuable therapy, since
+they would have been removed to a receiving center in a nearby town.
+
+The treatment employed was vitamin C in massive doses. It was given like any
+other antibiotic every two to four hours. The initial dose was 1000 to 2000
+mg., depending on age. Children up to four years received the injections
+intramuscularly. Since laboratory facilitates for whole blood and urine
+determinations of the concentration of vitamin C were not available, the
+temperature curve was adopted as the guide for additional medication. The
+rectal temperature was recorded every two hours. No temperature response
+after the second hour was taken to indicate the second 1000 or 2000 mg. If
+there was a drop in fever after two hours, two more hours was allowed before
+the second dose. This schedule was followed for 24 hours. After this time
+the fever was consistently down, so the drug was given 1000 to 2000
+mg. every six hours for the next 48 hours. All patients were clinically well
+after 72 hours. After three patients had a relapse the drug was continued
+for at least 48 hours longer -— 1000 to 2000 mg. every eight to 12
+hours. Where spinal taps were performed, it was the rule to find a reversion
+of the fluid to normal after the second day of treatment.
+
+For patients treated in the home the dose schedule was 2000 mg. by needle
+every six hours, supplemented by 1000 to 2000 mg. every two hours by
+mouth. The tablet was crushed and dissolved in fruit juice.  All of the
+natural "C" in fruit juice is taken up by the body; this made us expect
+catalytic action from this medium. Ruin, 20 mg., was used with vitamin C by
+mouth in a few cases, instead of the fruit juice. Hawley and others have
+shown that vitamin C taken by mouth will show its peak of excretion in the
+urine in from four to six hours.  Intravenous administration produces this
+peak in from one to three hours. By this route however, the concentration in
+the blood is raised so suddenly that a transitory overflow into the urine
+results before the tissues are saturated. Some authorities suggest that the
+subcutaneous method is the most conservative in terms of vitamin C loss but
+this factor is overwhelmingly neutralized by the factor of pain inflicted.
+
+Two patients in this series of 60 regurgitated fluid through the nose.
+This was interpreted as representing the dangerous bulbar type. For a
+patient in this category postural drainage, oxygen administration, in
+some cases tracheotomy, needs to be instituted, until the vitamin C has
+had sufficient time to work—in our experience 36 hours. Failure to
+recognize this factor might sacrifice the chance of recovery. With
+these precautions taken, every patient of this series recovered
+uneventfully within three to five days.
+
+In the treatment of other types of virus infections the same "fluid" dose
+schedule was adopted. In herpes zoster 2000 to 3000 mg. of vitamin C was
+given every 12 hours, this supplemented by 3 000 mg. in fruit juice by mouth
+every two hours. Eight cases were treated in this series, all of
+adults. Seven experienced cessation of pain within two hours of the first
+injection and remained so without the use of any other analgesic
+medication. Seven of these cases showed drying of the vesicles within 24
+hours and were clear of lesions within 72 hours.  They received from five to
+seven injections. One patient; a diabetic, stated that she was always
+conscious of an uncomfortable feeling, but that it was not an actual
+pain. Although nine-tenths of the vesicles cleared in the usual 72-hour
+period, she was given 14 injections, the last seven of only 1000 mg. This
+extra therapy was given because of a small ulceration, an inch in diameter,
+secondarily infected by rupture of the vesicles by a corset stave prior to
+the first visit. Vitamin C apparently had no effect on this lesion, which
+was healed in two weeks under compound tincture of benzoin locally and
+penicillin and sulfadiazine by mouth. (The patient objected to taking
+penicillin by needle.) One of the patients, a man of 65, came to the office
+doubled up with abdominal pain and with a history of having taken opiates
+for the preceding 36 hours. He gave the impression of having an acute
+surgical condition. A massive array of vesicles extended from the dorsal
+nerve roots to the umbilicus, a hand's breadth wide. He was given 3000
+mg. of vitamin C intravenously and directed to return to the office in four
+to five hours. It was difficult to convince him that his abdominal pain was
+the result of his having "shingles." He returned in four hours completely
+free of pain. He was given an additional 2000 mg.  of vitamin C, and
+following the schedule given above he recovered completely in three days.
+
+In herpes simplex it is important to continue the treatment for at least 72
+hours. We have seen "fever blisters" that appeared healed after two
+injections recur when therapy was discontinued after 24 hours. Vitamin C in
+a strength of 1000 mg. per 10 c.c. of buffered solution gave no response
+when applied locally. This was true no matter how often the applications
+were made. In several cases 10 mg. of riboflavin by mouth t.i.d. in
+conjunction with the vitamin C injections appeared to cause faster healing.
+
+Chickenpox gave equally good response, the vesicles responding in the same
+manner as did those of herpes. These vesicles were crusted after the first
+24 hours, and the patient well in three to four cays. We interpreted this
+similarity of response in these three diseases to suggest that the viruses
+responsible were closely related to one another.
+
+Many cases of influenza were treated with vitamin C. The size of the
+dose and the number of Injections required were in direct proportion to
+the fever curve and to the duration of the illness. Forcing of fruit
+juice was always recommended, because of the frequency and ease of
+reinfection during certain periods of the year.
+
+The response of virus encephalitis to ascorbic acid therapy was
+dramatic. Six cases of virus encephalitis were treated and cured with
+vitamin C injections. Two cases were associated with virus pneumonia; one
+followed chickenpox, one mumps, one measles and one a combination of measles
+and mumps. In the case that followed the measles-mumps complex, definite
+evidence was found to confirm the belief that massive, frequent injections
+are necessary in treating virus infections with vitamin C. This lad of eight
+years was first seen with a temperature of 104°. He was lethargic, very
+irritable when molested.  His mother said he had gradually developed his
+present clinical picture over the preceding four or five days. His first
+symptom was anorexia which became complete 36 hours before his first
+examination. He next complained of a generalized headache, later be became
+stuporous.  Although very athletic and active, he voluntarily took to his
+bed. He was given 2000 mg. of vitamin C intravenously and allowed to return
+home because there were no available hospital accommodations. His mother was
+asked to make an hourly memorandum of his conduct until his visit set for
+the following day. Seen 18 hours after the initial injection of vitamin C,
+the memorandum revealed a quick response to the antibiotic -- after two
+hours he asked for food and ate a hearty supper, then played about the house
+as usual and then, for .several hours, he appeared to have completely
+recovered. Six hours following the initial injection, he began to revert to
+the condition of his first visit. When seen the second time temperature was
+101.6°, he was sleepy but he would respond to questions. The rude
+irritability shown prior to the first injection was strikingly absent. A
+second injection of 2000 mg. vitamin C was given intravenously and 1000
+mg. of "C" prescribed every two hours by mouth. The next day he was fever
+and symptom-free. As a precautionary measure a third 2000 mg. was given with
+direction to continue the drug by mouth for at least 48 hours. He has
+remained well since. A lad of 12 years had generalized headache a week after
+having mumps, this followed by malaise, and in 12 hours a lethargic state
+and a fever of 105°. Admitted to hospital he was given 2000 mg. of vitamin C
+then, and 1000 mg. every two hours. Following the third injection he was
+sitting up in bed, laughing, talking, begging for food and completely
+without pain. He was discharged 24 hours following admission clinically
+well. Since relapses do occur if the drug is discontinued too soon, he was
+given 2000 mg. of vitamin C every 12 hours for two additional days.
+
+The use of vitamin C in measles proved to be a medical curiosity.  During an
+epidemic vitamin C was used prophylactically and all those who received as
+much as 1000 mg. every six hours, by vein or muscle, were protected from the
+virus. Given by mouth, 1000 mg. in fruit juice every two hours was not
+protective unless it was given around the clock. It was further found that
+1000 mg. by mouth, four to six times each day, would modify the attack; with
+the appearance of Koplik's spots and fever, if the administration was
+increased to 12 doses each 24 hours, all signs and symptoms would disappear
+in 48 hours. If the drug was discontinued or reduced to three or four doses
+each 24 hours following the disappearance of Koplik's spots, within another
+48-hour period the fever, the conjunctivitis and Koplik's spots would be
+back.
+
+It was our privilege to observe this picture over and over in two little
+volunteer girls for 30 days. These "research helpers" were my own little
+daughters. The measles virus was eventually destroyed in this instance by
+continuing 12,000 mg. by mouth each 24 hours for four days. We interpreted
+this result to indicate that on withdrawing the drug with the cessation of
+signs and symptoms, a small quantity of the virus remained, which after
+another incubation period produced anew the first stage of measles; when the
+drug was continued beyond the clearing stage the virus was destroyed in
+toto. No case of post-measles bronchopneumonia was seen. The "measles-cough"
+of measles bronchitis was over with after three or four 1000 mg. injections
+of "C" at 6-hour intervals. This was true even when other medications well
+above the calculated dose range for cough had had no effect. Whenever a
+patient presented a mixed-virus infection, such as receding mumps and
+developing measles, it was found that double the calculated dose of vitamin
+C was necessary to obtain the usual results.
+
+Of mumps, 33 cases were treated with ascorbic acid. When vitamin C was given
+at the peak of the infection the fever was gone within 24 hours, the pain
+within 36 hours, the swelling in 48 to 72 hours. Two cases were complicated
+with orchitis. A young man of 23 years developed bilateral orchitis one
+Friday morning, by seven o'clock that night he was in severe pain, had a
+fever of 105" and was nursing testicles the size of tennis balls. Vitamin C
+was started at this time—1000 mg. every two hours, intravenously. The pain
+began to subside following the first injection and ceased in 12 hours. There
+was no fever after 36 hours.  The patient was out of bed feeling his old
+self after 60 hours. He had received 25,000 mg. of "C" in this 60-hour
+period. An experiment involving three cousins: One, a boy of seven, had the
+old routine of bed rest, aspirin, and warm camphor oil applications and
+iodex to the swollen glands. This child had a rough time for a week. A
+second boy, aged 11, was allowed to develop mumps to the point of maximum
+swelling without any therapy, then given vitamin C, 1000
+mg. intramuscularly, every two to four hours. This lad was entirely well in
+48 hours. To the third patient, a girl of 9, vitamin C was given on the up
+curve when the swellings were 60 per cent of the expected, and the
+temperature recorded at 102.3°. The dose was 1000 mg. of vitamin C given
+intravenously every four hours. This child was well and remained so from the
+third day of treatment.
+
+Further studies on virus pneumonia showed that the clinical response was
+better when vitamin C was given to these patients according to the dose
+schedule outlined for poliomyelitis. Where pneumonitis was demonstrated, the
+clearing of the chest film was parallel with the clinical recovery. In cases
+of consolidation of entire lobes the x-ray clearing lagged days behind the
+clinical response. In these cases 1000 mg. of "C" should be given every 12
+hours for at least a week after the patient is apparently well. There was no
+change in the results as given in a previous paper; the patients were well
+in the third day of treatment.
+
+In using vitamin C as an antibiotic no factor of toxicity need be
+considered. To confirm this observation 200 consecutive hospital patients
+were given ascorbic acid, 500 to 1000 mg. every four to six hours, for five
+to ten days. One volunteer received 100,000 mg. in a 12-day period. It must
+be remembered that 90 per cent of these patients did not have a virus
+infection to assist in destroying the vitamin. In no instance did
+examination of the blood or urine indicate any toxic reaction, and at no
+time were there any clinical manifestations of a reaction to the drug. When
+vitamin C was given by mouth one per cent of these patients vomited shortly
+after taking the drug. In half of these cases the vomiting was controlled by
+increasing the carbohydrate content of the mixture. This reaction was not
+interpreted as representing a toxic manifestation; rather it was thought to
+be due to a hypersensitive gastric mucosa. The dose was reduced from 1000 to
+100 mg. in young children showing this complex; vomiting occurred as
+before. However, in these same patients administration of massive, frequent
+doses of vitamin C by needle affected a cure of the infection without
+causing vomiting.
+
+>From a review of the literature one can safely state that in all instances
+of experimental work with ascorbic acid on the virus organism the amount of
+virus used was beyond the range of the administered dose of this vitamin. No
+one would expect to relieve kidney colic with a five-grain aspirin tablet;
+by the same logic we cannot hope to destroy the virus organism with doses of
+vitamin C of 10 to 400 mg. The results which we have reported in virus
+diseases using vitamin C as the antibiotic may seem fantastic. These
+results, however, are no different from the results we see when
+administering the sulfa, or the mold-derived drugs against many other kinds
+of infections. In these latter instances we expect and usually get 48- to
+72-hour cures; it is laying no claim to miracle-working then, when we say
+that many virus infections can be cleared within a similar time limit.
+
+Comment by R Cathcart: This paper repeatedly refers to intramuscular vitamin
+C.  My personal experience, my talking with Klenner, and with his wife,
+Annie Klenner, who served as his nurse, would indicate that he used sodium
+ascorbate.  Vitamin C as ascorbic acid is too acid for intramuscular
+injections or intravenous injections.  Commercially prepared vitamin C
+solutions for injection may be labeled ascorbic acid but are buffered.
+Unfortunately, these may still be somewhat acid.  They should never contain
+preservatives. See my article on how to make intravenous C solutions.  These
+are also appropriate for intramuscular injections.  The vitamin C when used
+orally is best in the ascorbic acid form if tolerated by the patient.  I am
+especially indebted to Annie Klenner for her descriptions of how Fred made
+the sodium ascorbate solutions for .intravenous and intramuscular use.
+
+André Carezia, Eng. de Telecomunicações,
+Carezia Consultoria - www.carezia.srv.br
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.91
+************************

@@ -1,0 +1,1040 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.39
+
+RISKS-LIST: Risks-Forum Digest  Friday 4 December 2020  Volume 32 : Issue 39
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.39>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Keyhole wasps may threaten aviation safety (phys.org)
+Boeing's 737 Max Is a Saga of Capitalism Gone Awry (NYTimes)
+This Bluetooth Attack Can Steal a Tesla Model X in Minutes (WIRED)
+China's Surveillance State Sucks Up Data. U.S. Tech Is Key Sorting It Out
+  (NYTimes)
+Secret Amazon Reports Expose the Company's Surveillance of Labor and
+  Environmental Groups (Vice)
+How 30 Lines of Code Blew Up a 27-Ton Generator (WiReD)
+The world of online chess cheating (chess.com)
+A Broken Piece of Internet Backbone Might Finally Get Fixed (WiReD)
+WarGames for real: How one 1983 exercise nearly triggered WWIII
+  (Ars Technica)
+Showing robots how to drive a car... in just a few easy lessons
+  (Techxplore.com)
+Looking for ways to prevent price collusion with AI systems
+  (Techxplore.com)
+ML Guarantees Robots' Performance in Unknown Territory (Princeton)
+AI in the Age of Cyber-Disorder (F. Rugge, Ed.)
+Is Alexa becoming antisemitic? (Vice)
+Google Search too powerful (Dan Jacobson)
+What Is the Signal Encryption Protocol? (WiReD)
+Thunderbird 78+ OpenPGP is a mess (im Garrison)
+Patients of a Vermont Hospital Are Left in the Dark After a Cyberattack
+  (NYTimes)
+Inside the Cit0Day Breach Collection (Troy Hunt)
+Accidentally broadcast screenshot shows hackers where to look
+  (Amos Shapir)
+Hackers tricked GoDaddy into helping attacks on cryptocurrency services
+  (Engadget)
+Rashida Tlaib takes on cryptocurrency (WiReD)
+Apple's security chief charged with bribery (BBC)
+iPhone zero-click Wi-Fi exploit is one of the most breathtaking hacks ever
+  (Ars Technica)
+A "moral contract" with a virus? (Rob Slade)
+Cyberattacks Discovered on Vaccine Distribution Operations (NYTimes)
+AI tool to track high-volume adverse vaccine reactions (geoff goodfellow)
+Internet's MostNotorious Botnet Has an Alarming New Trick (WiReD)
+After years of work, Congress passes 'Internet-of-Things' cybersecurity bill
+  -- and it's kind of a big deal (Cyberscoop)
+Fortifying Our Electoral System Against Attacks (CAP)
+Google Researcher Says She Was Fired Over Paper Highlighting Bias in AI
+  (NYTimes)
+Robocallers unclear on the concept ... (Rob Slade)
+"Discussion Feedback" becomes "Discussion Fee" (Dan Jacobson)
+Nice solution to password problem -- if only (Snopes via Gabe Goldberg)
+When Ships Are Abandoned, Stuck Sailors Struggle to Get By and Get Paid
+  (Atlas Obscura)
+Another way every system eventually becomes email (Randall Monroe via
+ Jan Wolitzky)
+Microsoft 365 "Productivity Score" (Rob Slade)
+Re: Microsoft Is Making a Secure PC Chip with Intel and AMD's Help
+  (Jack Christensen)
+Re: Technology To Catch HOV Lane Violators Is Coming To Virginia
+  (A Michael W Bacon)
+Re: What happens when you test TCL TVs (Richard A. DeMattia)
+Re: Whale Sculpture Stops Train From Plunge in the Netherlands (AMW Bacon)
+Re: Letter to Consumer Reports magazine (Gabe Gpldberg)
+Re: Online password '123456' more popular than ever and easy to crack
+  (Stefan Lueders, Keith Medcalf)
+Utah monolith: Internet sleuths got there, but its origins are still a
+  mystery (BBC News)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 27 Nov 2020 10:38:19 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Keyhole wasps may threaten aviation safety (phys.org)
+
+https://phys.org/news/2020-11-keyhole-wasps-threaten-aviation-safety.html
+
+w"Over a period of 39 months, invasive keyhole wasps (Pachodynerus nasidens)
+at the Brisbane Airport were responsible for 93 instances of fully blocked
+replica pitot probes -- vital instruments that measure airspeed -- according
+to a study published November 25 in the open-access journal PLOS ONE by Alan
+House of Eco Logical Australia and colleagues."
+
+The essay suggests aircraft maintenance crews cover pitot probes to prevent
+their colonization when unused.
+
+Would a power-on-self-test be able to discern if the inlet is bugged
+via fiber optic signal and sensor?
+
+------------------------------
+
+Date: Wed, 25 Nov 2020 08:30:43 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Boeing's 737 Max Is a Saga of Capitalism Gone Awry (NYTimes)
+
+https://www.nytimes.com/2020/11/24/sunday-review/boeing-737-max.html
+
+"Yet in recent decades, Boeing -- like so many American corporations --
+began shoveling money to investors and executives, while shortchanging its
+employees and cutting costs."
+
+Profit pressures undercut engineering process and problem solving culture in
+a business that was a consumer product safety icon. FAA oversight capacity,
+neutered by self-certification measures, accelerated product life cycle
+completion with compromised safety.
+
+Product safety, especially for software, and computer-based systems
+generally, implies the institutionalization of effective defect escape
+suppression mechanisms. Defects discovered earlier in a life cycle afford
+more time to consider their repair prioritization BEFORE release for
+sale. This practice assumes accountability for product life cycle process
+fulfillment. If governance profit or schedule pressures force accountability
+shirks, defects will free-flow to the customer.
+
+Unlike the medical device industry, where device problem/patient problem
+history is consolidated for public inspection by the FDA's MAUDE and TPLC
+repositories, Boeing product defect escapes emerge via accident or mishap
+investigations.
+
+Justice Louis Brandeis said, "Sunlight is said to be the best of
+disinfectants." Public visibility into Boeing's release and qualification
+processes (test plans, test results, defects) should not be necessary or
+required. Restoration of shattered public trust requires demonstrated
+capability that overachieves both consumer expectations and flight safety
+metrics.
+
+------------------------------
+
+Date: Wed, 25 Nov 2020 15:07:40 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: This Bluetooth Attack Can Steal a Tesla Model X in Minutes (WIRED)
+
+The company is rolling out a patch for the vulnerabilities, which allowed
+one researcher to break into a car in 90 seconds and drive away.
+
+Tesla has always prided itself on its so-called over-the-air updates,
+pushing out new code automatically to fix bugs and add features. But one
+security researcher has shown how vulnerabilities in the Tesla Model X's
+keyless entry system allow a different sort of update: A hacker could
+rewrite the firmware of a key fob via Bluetooth connection, lift an unlock
+code from the fob, and use it to steal a Model X in just a matter of
+minutes. [...]
+
+https://www.wired.com/story/tesla-model-x-hack-bluetooth/
+
+I also heard a rumor -- couldn't confirm with search -- that you can't play
+Tesla radio without having headlights on. True or nonsense? Model dependent?
+Bug or feature?
+
+  [See also
+  https://www.washingtonpost.com/technology/2020/11/23/tesla-modelx-hack/
+  spotted by Monty Solomon]
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 11:12:53 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: China's Surveillance State Sucks Up Data. U.S. Tech Is Key
+  Sorting It Out (NYTimes)
+
+Intel and Nvidia chips power a supercomputing center that tracks people in a
+place where government suppresses minorities, raising questions about the
+tech industry's responsibility.
+
+https://www.nytimes.com/2020/11/22/technology/china-intel-nvidia-xinjiang.html
+
+------------------------------
+
+Date: Sat, 28 Nov 2020 18:01:24 -0700
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Secret Amazon Reports Expose the Company's Surveillance of
+  Labor and Environmental Groups (Vice)
+
+Dozens of leaked documents from Amazon's Global Security Operations Center
+reveal the company's reliance on Pinkerton operatives to spy on warehouse
+workers and the extensive monitoring of labor unions, environmental
+activists, and other social movements.
+
+https://www.vice.com/en/article/5dp3yn/amazon-leaked-reports-expose-spying-warehouse-workers-labor-union-environmental-groups-social-movements?utm_source=pocket-newtab
+
+------------------------------
+
+Date: Tue, 1 Dec 2020 02:04:15 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How 30 Lines of Code Blew Up a 27-Ton Generator (WiReD)
+
+Now, if Assante had done his job properly, they were going to destroy
+it. And the assembled researchers planned to kill that very expensive and
+resilient piece of machinery not with any physical tool or weapon but with
+about 140 kilobytes of data, a file smaller than the average cat GIF shared
+today on Twitter.
+
+https://www.wired.com/story/how-30-lines-of-code-blew-up-27-ton-generator/
+
+30 lines of code = 140KB? Maybe we have to read the book to understand that.
+
+------------------------------
+
+Date: Sat, 28 Nov 2020 14:30:57 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The world of online chess cheating (Chess.com)
+
+https://www.chess.com/article/view/online-chess-cheating
+
+------------------------------
+
+Date: Wed, 2 Dec 2020 20:58:52 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A Broken Piece of Internet Backbone Might Finally Get Fixed (WiReD)
+
+Efforts to secure the Border Gateway Protocol have picked up critical
+momentum, including a big assist from Google.
+
+https://www.wired.com/story/bgp-routing-manrs-google-fix/
+
+------------------------------
+
+Date: Tue, 1 Dec 2020 20:08:49 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: WarGames for real: How one 1983 exercise nearly triggered WWIII
+  (Ars Technica)
+
+From the archives: Say hello to the KGB software model that forecasted
+mushroom clouds.
+
+"Let's play Global Thermonuclear War."
+
+Thirty-two years ago, just months after the release of the movie WarGames,
+the world came the closest it ever has to nuclear Armageddon.  In the movie
+version of a global near-death experience, a teenage hacker messing around
+with an artificial intelligence program that just happened to control the
+American nuclear missile force unleashes chaos.  In reality, a very
+different computer program run by the Soviets fed growing paranoia about the
+intentions of the United States, very nearly triggering a nuclear war.
+
+https://arstechnica.com/information-technology/2020/11/wargames-for-real-how-one-1983-exercise-nearly-triggered-wwiii/
+
+------------------------------
+
+Date: Fri, 20 Nov 2020 10:36:30 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Showing robots how to drive a car... in just a few easy lessons
+  (Techxplore.com)
+https://techxplore.com/news/2020-11-robots-car-easy-lessons.html
+
+"When we go into the world of cyber physical systems, like robots and
+self-driving cars, where time is crucial, linear temporal logic becomes a
+bit cumbersome, because it reasons about sequences of true/false values for
+variables, while STL allows reasoning about physical signals."
+
+STL == Signal Temporal Logic to accelerate AI training processes by enabling
+discernment of correct v. incorrect outcome detection.
+
+Achievement of driverless vehicle (DV) fleet deployments with guaranteed
+accident and fatality reduction risk potential requires much more than a
+technological solution.
+
+A sustained transition from human-driver-in-the-loop supremacy to
+DV-in-the-loop supremacy is required. This transition will be challenging
+for drivers, both silicon and carbon-based, especially in the earliest
+phases of widespread deployments.
+
+DV hailing app terms of service may require passengers to indemnify the
+fleet operator against class action suit in the event of accident subject to
+fleet operator-sponsored arbitration, and mandatory acceptance of terms
+before DV boarding commences. No acceptance, no ride.
+
+NHTSA regulations appear to green light DV fleet deployment. If the federal
+government generously underwrites an liability insurance pool, deployment
+will accelerate.
+
+The latest US motor vehicle traffic fatality statistics can be found here
+https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813021
+(retrieved on 20NOV2020). Whether or not STL, if integrated into the
+dv-onics, can reduce these fatalities remains to be seen.
+
+Risk: Public safety.
+
+------------------------------
+
+Date: Sun, 29 Nov 2020 14:23:31 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Looking for ways to prevent price collusion with AI systems
+  (techxplore.com)
+
+https://techxplore.com/news/2020-11-ways-price-collusion-ai.html
+
+"AI systems have found, through learned experience, that uncommunicated
+collusion can lead to higher profits. Such systems do not have to meet
+secretly in back rooms -- instead, they use logic to discover that their
+company will make more money if they charge more for products. And if all of
+their competitors are using similar systems, they can all agree to raises
+prices and hold them there, without ever having to actually agree to do
+so. Worse, because they do not break any of the rules that have been
+established to prevent human price setters from colluding, there is nothing
+the law can do to stop them. At least not right now, based on current laws."
+
+Price fixing enforcement (see https://en.wikipedia.org/wiki/Price_fixing)
+requires access to pricing decisions.
+
+A hypothetical PriceFixSnifferBot deployed by the Federal Trade Commission,
+the Consumer Finance Protection Bureau, or Securities Exchange Commission in
+the US might deter commercial enterprises from illegally exploiting (gaming)
+AI pricing systems.
+
+Can a PriceFixSnifferBot correctly identify illegal price fixing traceable
+to a non-communicated conspiracy of AI systems owned and operated by
+commercial enterprises? It would imply continuous search of business pricing
+systems across economic sectors.
+
+A likely violation of the US Constitution's 4th amendment preventing illegal
+search and seizure. Corporations, like people, are presumed innocent of
+illegality until proven guilty. A nationwide search warrant to prevent
+business price fixing across the economy? Reminiscent of a Philip K. Dick
+story plot.
+
+What might trigger a PriceFixSnifferBot to identify illegal price fixing?
+The PriceSnifferBot would have to detect evidence of an algorithmic-enabled
+pricing conspiracy. An algorithmic bias standard would be needed for it to
+allege price bias.
+
+The hypothetical algorithmic bias standard needs to equivalence the
+international system of units established for kilogram, meter, second, or
+ampere. These standards are fully dependent on the fundamental constants of
+nature (pi, Planck's constant, electron charge, etc.).  Without this
+universal reference, political influence might adjust PriceFixSnifferBot
+deployment parameters to favor certain interests.
+
+How to create an algorithm bias standard? Perhaps an analog computation, via
+a Whetstone bridge circuit with precision resistor components, could
+independently weigh a pricing system's algorithmic bias, thereby eliminating
+the human thumb from the scale.
+
+Not hard to imagine a PriceGougeBot available for off-the-shelf purchase, or
+via open source at Git. Just-in-time to juice up the year-end holiday
+shopping experience.
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 12:24:37 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: ML Guarantees Robots' Performance in Unknown Territory (Princeton)
+
+Molly Sharlach, Princeton Engineering News, 17 Nov 2020
+   via ACM TechNews, 23 Nov 20202
+
+Princeton University researchers have developed a machine learning (ML)
+technique for ensuring robots' safety and success in unfamiliar
+environments. The researchers came up with the technique by adapting ML
+frameworks from other fields to robotic movement and grasping. The new
+technique was tested in various simulations, and also validated by
+evaluating its use for obstacle avoidance using a small combination
+quadcopter/fixed-wing airplane drone that flew down a 60-foot-long corridor
+dotted with cardboard cylinders; it avoided those obstacles 90% of the time.
+The Toyota Research Institute's Hongkai Dai said, " Over the last decade or
+so, there's been a tremendous amount of excitement and progress around
+machine learning in the context of robotics, primarily because it allows you
+to handle rich sensory inputs," like images captured by a robot's camera.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-282a6x226987x070255&
+
+  ["Machine-Learning Guarantees": seems to me like an oxymoron.  PGN]
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 13:45:29 +0100
+From: "Diego.Latella" <diego.latella@isti.cnr.it>
+Subject: AI in the Age of Cyber-Disorder (F. Rugge, Ed.)
+
+You may be interested in the following ISPI-Brookings report:
+
+F. Rugge (Ed.), AI in the Age of Cyber-Disorder
+ISPI-Brookings Report 23 Nov 2020
+
+https://www.ispionline.it/it/pubblicazione/ai-age-cyber-disorder-28309
+
+------------------------------
+
+Date: Tue, 1 Dec 2020 14:02:01 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Is Alexa becoming antisemitic? (Vice)
+
+Quote: CFI Vice-Chairman Andrew Percy MP has urged Home Secretary Priti
+Patel to ``immediately investigate'' how cloud-based voice services ``select
+their material and sources,'' after learning that responses given by= the
+Amazon Alexa device ``lend credibility to antisemitic views.''  Full article
+at:
+https://cfoi.co.uk/cfi-vice-chairman-andrew-percy-mp-expresses-concern-over-amazon-alexa-responses-which-lend-credibility-to-antisemitic-views
+
+------------------------------
+
+Date: Sat, 21 Nov 2020 13:48:01 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Google Search too powerful
+
+Customer: "Yes you do sell vegan pizza. It's right there on your web page!"
+
+Staff: "We are not responsible for pages you find on our website that
+are no longer linked from our homepage. No matter if you used Google to
+find them, or other nefarious means."
+
+------------------------------
+
+Date: Mon, 30 Nov 2020 19:18:28 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: What Is the Signal Encryption Protocol? (WiReD)
+
+As the Signal protocol becomes the industry standard, it's worth
+understanding what sets it apart from other forms of end-to-end encrypted
+messaging.
+
+https://www.wired.com/story/signal-encryption-protocol-hacker-lexicon/
+
+------------------------------
+
+Date: Thu, 26 Nov 2020 11:57:39 -0800
+From: Jim Garrison <jhg@jhmg.net>
+Subject: Thunderbird 78+ OpenPGP is a mess
+
+For years there has been a 3rd-party plugin for the Mozilla Thunderbird
+email client, called Enigmail, that enables the use of GnuPG and OpenPGP
+keyrings to sign and encrypt email.  It included a fairly complete key
+management UI, and depended on an installation of the Windows port of
+OpenPGP.  This meant I could have a single keyring and share it between
+Windows, Thunderbird and Cygwin.
+
+With version 78, the folks at Mozilla made Enigmail obsolete (and
+non-functional), replacing it with built-in OpenPGP integration.  Sounds
+good, right? Wrong! The new implementation is extremely limited compared to
+Enigmail, but it has a couple of major flaws. One is inconvenient, but the
+other is a security hole big enough to drive a train through.
+
+With Enigmail, every time you wanted to sign an outgoing message, you were
+required to type in the key's passphrase.  There may have been an option to
+cache the passphrase for a few minutes, I didn't use it, but I have a dim
+memory of the timeout being quite short.
+
+Thunderbird's OpenPGP integration does things differently.  First, it uses
+its own internal keyring.  No more sharing a single keyring among different
+OpenPGP implementations.  Highly inconvenient as I now have to manage two
+identical keyrings.
+
+The real problem is in passphrase management.  When you import a private
+key, Thunderbird asks for your passphrase *and stores it*.  From that point
+forward, it does not prompt for the passphrase when using it to sign an
+outgoing email.  They claim the encryption used for the passphrases is
+"safe".
+
+There's another feature called "Master Password", but that's just security
+veneer as it is requested only once, at session startup. Most people leave
+their email client running in the background continuously.  Anyone with
+physical access to the machine can now impersonate you with ease.  And then
+there's the use case of a shared computer.  If you want PGP encryption
+without the glaring risk, you cannot use Thunderbird.
+
+I went to the Mozilla bug database to see what others have said. There are
+several bugs filed, all closed and dismissed with comments like "Just lock
+your computer. Problem solved".  I filed my own bug
+https://bugzilla.mozilla.org/show_bug.cgi?id=1679455
+
+We'll see what happens.
+
+------------------------------
+
+Date: Thu, 26 Nov 2020 17:09:39 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Patients of a Vermont Hospital Are Left in the Dark After
+  a Cyberattack (NYTimes)
+
+A wave of damaging attacks on hospitals upended the lives of patients with
+cancer and other ailments. ``I have no idea what to do.''
+
+https://www.nytimes.com/2020/11/26/us/hospital-cyber-attack.html
+
+------------------------------
+
+Date: Thu, 19 Nov 2020 20:13:42 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Inside the Cit0Day Breach Collection (Troy Hunt)
+
+https://www.troyhunt.com/inside-the-cit0day-breach-collection/
+
+23,600 hacked databases have leaked from a defunct 'data breach index' site
+Site archive of Cit0day.in has now leaked on two hacking forums after the
+service shut down in September.
+
+https://www.zdnet.com/article/23600-hacked-databases-have-leaked-from-a-defunct-data-breach-index-site/
+
+Cit0Day Breach Collection Files: How to Check If Your Email Is Compromised
+
+Previously, many reports confirmed that the Cit0Day leak has breached 13
+billion user records from 23,000 hacked databases. It is difficult to tell
+if your email is among the other accounts that were compromised.
+
+https://www.techtimes.com/articles/254314/20201119/cit0day-breach-collection-files-check-email-compromised.htm
+
+...not exactly clear what to do about this, if you've been good about using
+unique passwords for everything.
+
+------------------------------
+
+Date: Thu, 3 Dec 2020 11:09:28 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Accidentally broadcast screenshot shows hackers where to look
+
+This is not a rare incident: An image of an operator's screen suddenly
+appears in the middle of a live TV broadcast.  The funny part of this one is
+that the screenshot shows a view of a directory containing some videos, and
+a text file named "Alt F9 username and password" -- almost an open
+invitation to hackers to break into the system and, if they can figure out
+which application uses "Alt F9", to manipulate the video files there!
+
+Video at: https://youtu.be/YK0LBXV2bTs?t=7
+
+------------------------------
+
+Date: Tue, 24 Nov 2020 11:08:58 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Hackers tricked GoDaddy into helping attacks on cryptocurrency
+  services (Engadget)
+
+https://www.engadget.com/godaddy-tricked-into-helping-cryptocurrency-attack-220911454.html
+
+GoDaddy Employees Used in Attacks on Multiple Cryptocurrency Services
+https://krebsonsecurity.com/2020/11/godaddy-employees-used-in-attacks-on-multiple-cryptocurrency-services/
+
+------------------------------
+
+Date: Fri, 4 Dec 2020 18:44:48 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Rashida Tlaib takes on cryptocurrency (WiReD)
+
+U.S. Representative Rashida Tlaib, a progressive first-term lawmaker, has
+cosponsored a bill requiring stablecoins like Facebook's Libra to be issued
+by banks.
+
+https://www.wired.com/story/member-squad-takes-cryptocurrency/
+
+------------------------------
+
+Date: Tue, 24 Nov 2020 11:12:29 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Apple's security chief charged with bribery (BBC)
+
+... although it *does* sound more like the other guy was *demanding* a
+bribe, but it's still troubling and slightly ironic.
+
+https://www.bbc.com/news/technology-55052540
+
+------------------------------
+
+Date: Thu, 3 Dec 2020 08:29:21 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: iPhone zero-click Wi-Fi exploit is one of the most breathtaking
+  hacks ever (Ars Technica)
+
+iPhone zero-click Wi-Fi exploit is one of the most breathtaking hacks ever
+
+Before Apple patch, Wi-Fi packets could steal photos. No interaction
+needed. Over the air.
+
+https://arstechnica.com/gadgets/2020/12/iphone-zero-click-wi-fi-exploit-is-one-of-the-most-breathtaking-hacks-ever/
+
+------------------------------
+
+Date: Fri, 20 Nov 2020 11:46:31 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: A "moral contract" with a virus?
+
+Quebec premier Francois Legault has promised a sort of four day "visiting
+period" December 24th to 27th over Christmas, if les Quebecois will behave
+themselves nicely in the week before and after.
+http://newsletters.cbc.ca/c/1e0JJjHQpUTXDnsEwMZFgBCttS4
+
+This proposition is so bizarre it makes my head spin.  It is akin to the
+saying that expecting the world to treat you nicely because you are a good
+person is like expecting a bull not to charge you because you are a
+vegetarian.  Yes, I know that we all have COVID fatigue, and that mental
+health is an issue, but thinking that you can make this kind of deal with a
+virus reveals a profound misunderstanding of the situation.
+
+The pandemic risk is not this type of risk.  You can't make deals with it.
+It won't agree not to attack you on Tuesday if you behave properly today.
+You have to isolate, you have to wash your hands, you have to keep
+physically distant, and you have to wear a mask if you aren't physically
+distant ALL THE TIME.  Or, if you are in close contact with someone who is
+infected (even if neither you nor they know it) you will get sick.  You
+don't get to do deals.  You don't get to not wash your hands just because
+you, personally, find wearing a mask more difficult than you think other
+people do.
+
+Look, putting it in infosec terms, you don't get to click on *that*
+dangerous link, safely, just because you have *not* clicked on three
+dangerous links previously.  If you click on the link, you are going to get
+the drive-by download installed on your machine, and the blackhats are going
+to steal all your financial information, contacts, and accounts.  You have
+to keep up your guard ALL THE TIME.
+
+With this type of thinking, I am *not* looking forward to the coming months.
+The US is already in a bad way, and American Thanksgiving is coming up next
+week, right?  Take a lesson from us, in Canada.  We let our guard down for
+*our* Thanksgiving, which is in October (at the actual harvest season, not
+just a kickoff for Christmas shopping season), and we are *definitely*
+paying for it now.  If those of you in the Unexplored Southern Area party on
+Thanksgiving and then again at Christmas, there won't be any of you left by
+the time the vaccines actually come out.
+
+Look, this isn't the virus that stole Christmas.  Think of other ways to
+"get together," separately.  That's why God invented Zoom and Whatsapp and
+Facetime.  (And Jit.si.  I'm dying to try out Jit.si.  Somebody just
+installed it on our Vancouver Security SIG Slack.)  (I hate Slack.)  I'm
+pretty sure you can find someone on Doordash who will deliver turkey.  But
+don't think of packing together in a house this Christmas.  It's dangerous.
+And no "moral contract" will change that.
+
+Now go call your Mum on Whatsapp.
+
+------------------------------
+
+Date: Thu, 3 Dec 2020 12:48:31 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Cyberattacks Discovered on Vaccine Distribution Operations
+  (The NYTimes)
+
+IBM has found that companies and governments have been targeted by unknown
+attackers, prompting a warning from the Homeland Security Department.
+
+https://www.nytimes.com/2020/12/03/us/politics/vaccine-cyberattacks.html
+https://www.washingtonpost.com/world/coronavirus-vaccine-hackers-phish-ibm-cold-chain/2020/12/03/27a5b0b2-355d-11eb-9699-00d311f13d2d_story.html
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 08:05:23 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: AI tool to track high-volume adverse vaccine reactions
+
+*"Most" of the side effects are reportedly "mild and short-term."*
+
+The British government is funding the development of an artificial
+intelligence tool to track and log what it anticipates will be a "high
+volume" of adverse reactions to the upcoming COVID-19 vaccine once it
+becomes widely distributed.
+
+A "*contract award notice*
+
+<https://ted.europa.eu/udl?uri=TED:NOTICE:506291-2020:TEXT:EN:HTML&src=0>"
+posted to the European Union public procurement tracker Tenders Electronic
+Daily states that the U.K.'s Medicines and Healthcare products Regulatory
+Agency plans to deploy "an Artificial Intelligence (AI) software tool" to
+"process the expected high volume of COVID-19 vaccine Adverse Drug Reaction
+(ADRs) and ensure that no details from the ADRs' reaction text are missed."
+
+"It is not possible to retrofit the MHRA's legacy systems to handle the
+volume of ADRs that will be generated by a COVID-19 vaccine," the contract
+notice continues. "Therefore, if the MHRA does not implement the AI tool, it
+will be unable to process these ADRs effectively.
+
+"This will hinder [the MHRA's] ability to rapidly identify any potential
+safety issues with the COVID-19 vaccine and represents a direct threat to
+patient life and public health."
+
+The contract, which is worth $2 million, was awarded in September to
+Genpact (UK) Ltd. The posted announcement states that "reasons of extreme
+urgency" related to the pandemic have "accelerated the sourcing and
+implementation of a vaccine specific AI tool."
+
+COVID vaccine safety expected to be 'similar to other types of vaccines' [...]
+https://justthenews.com/politics-policy/coronavirus/uk-will-use-ai-tool-process-high-volume-expected-adverse-reactions
+
+------------------------------
+
+Date: Fri, 4 Dec 2020 02:12:16 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Internet's MostNotorious Botnet Has an Alarming New Trick
+  (WiReD)
+
+The hackers behind TrickBot have begun probing victim PCs for vulnerable
+firmware, which would let them persist on devices undetected.
+
+https://www.wired.com/story/trickbot-botnet-uefi-firmware/
+
+------------------------------
+
+Date: Thu, 3 Dec 2020 13:41:21 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: After years of work, Congress passes 'Internet-of-Things'
+  cybersecurity bill -- and it's kind of a big deal (Cyberscoop)
+
+https://www.cyberscoop.com/congress-iot-cybersecurity-bill-contractors/
+
+------------------------------
+
+Date: Thu, 3 Dec 2020 17:59:09 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Fortifying Our Electoral System Against Attacks
+  (Center for American Progress)
+
+Lessons Learned From the 2020 Presidential Election
+
+https://www.americanprogress.org/events/2020/11/30/493333/fortifying-electoral-system-attacks/
+
+------------------------------
+
+Date: Fri, 4 Dec 2020 01:45:19 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Google Researcher Says She Was Fired Over Paper Highlighting Bias
+  in AI (The NYTimes)
+
+Timnit Gebru, one of the few Black women in her field, had voiced
+exasperation over the companyâ€™s response to efforts to increase
+minority hiring.
+
+https://www.nytimes.com/2020/12/03/technology/google-researcher-timnit-gebru.html
+
+------------------------------
+
+Date: Tue, 1 Dec 2020 12:31:28 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Robocallers unclear on the concept ...
+
+Got woken up by a spam/telemarketer/vishing call today.  Obvious machine
+generated "voice" telling me it was calling from "Amazon Prime Number ..."
+
+------------------------------
+
+Date: Fri, 04 Dec 2020 01:17:28 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: "Discussion Feedback" becomes "Discussion Fee"
+
+https://github.com/github/feedback/discussions/2811
+
+> Oh no! There most certainly is no fee for creating a discussion here :-)
+
+> Thank you for letting me know - we'll look into fixing this and report back. ;-)
+
+I bet it's the old story:
+Older users choose larger fonts,
+that younger designers never expected would then exceed their tiny boxes
+and get clipped... in just the wrong places!
+
+------------------------------
+
+Date: Fri, 20 Nov 2020 18:58:12 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Nice solution to password problem -- if only
+
+Please note: We are using a passwordless system to manage Snopes
+Accounts. This means we'll email you a verification code each time you log
+in.  If you do not receive your verification code within a few minutes of
+logging in, please check your spam folder.
+
+We're using a passwordless login system for a few key reasons:
+
+1. It's momore secure. With a username and password system, users tend to
+choose a password they're comfortable with (such as their birthday or pet's
+n name) or credentials they've used for other accounts. As a result, if
+hackers get access to one account, they can gain access to many, leading to
+a *domino effect* that can put all of your information at risk. A
+passwordless system removes this threat.
+
+2. It's simpler. Since your Snopes account will be tied to your email, you
+won't need to remember complicated passwords or periodically renew your
+password to keep your information safe. All you'll need to do is remember
+the email address associated with your account to log in.
+
+3. It's becoming the norm. Many other industry leaders are moving towards
+passwordless login systems for both reasons above, so it very well may soon
+be used by other websites you frequent.
+
+https://www.snopes.com/faq/what-is-passwordless-login-and-why-does-snopes-use-it/
+
+  [What could go wrong with that?  So having your email compromised
+  automatically compromises every site using this system, what a great time
+  saver.  GG]
+
+------------------------------
+
+Date: Sun, 22 Nov 2020 15:03:45 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: When Ships Are Abandoned, Stuck Sailors Struggle to Get By
+  and Get Paid (Atlas Obscura)
+
+``We are satisfied with little, but even that little is impossible today.''
+
+When Captain Alexander Ovchinnikov took over command of the ship Gobustan in
+Istanbul, the term COVID-19 hadn't been coined yet, quarantine was was the
+stuff of apocalyptic science fiction, and few people outside of China knew
+where Wuhan was. It was December 25, 2019.  Ovchinnikov, 39, was still on
+that ship through the summer, along with 11 other crew members: The second
+engineer was Russian too, the cook was Ukranian, and the rest were from
+Azerbaijan. At least one had been on board since October 2019, and none of
+them had received a salary since January. The crew of Gobustan had been
+stuck since June 16 in the Italian port of Ravenna, on the Adriatic Sea.
+``We live like in prison.  We get up, have breakfast, do some routine
+activities, then we have dinner and go to bed,'' said Ovchinnikov. Their
+days were all the same and the stillness was shaken only by cleaning and
+maintenance activities. Sure enough, the ship was clean as a whistle.
+
+https://www.atlasobscura.com/articles/sailors-on-abandoned-ships
+
+Risks? Flags of convenience, politics, corruption, malfeasance...
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 17:54:05 -0500
+From: Jan Wolitzky <jan.wolitzky@gmail.com>
+Subject: Another way every system eventually becomes email
+
+RISKS doesn't usually post cartoons, but Randall Munroe's XKCD today is
+appropriate:
+
+  <https://xkcd.com/2389/>
+
+"I'll never install a smart home smoke detector. It's not that I don't trust
+the software--it's that all software eventually becomes email, and I know
+how I am with email."
+
+------------------------------
+
+Date: Fri, 27 Nov 2020 11:09:56 -0800
+From: Rob Slade <rslade@gmail.com>
+Subject: Microsoft 365 "Productivity Score"
+
+ Those who use Microsoft 365 can now get a "Productivity Score."  And so can
+the boss.
+https://www.independent.co.uk/life-style/gadgets-and-tech/microsoft-365-office-surveillance-productivity-b1761570.html
+
+How many times do you use email, or chat? Do you turn off the Webcam when on
+video meetings?  Employees are ranked against their peers.  Optionally, the
+boss can also share the data with Microsoft, in order to see how your
+company is doing against the competition.  Which means Microsoft gets lots
+and lots and lots of company and user data.
+
+Privacy issues, much?
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 14:32:17 -0500
+From: Jack Christensen <christensen.jack.a@gmail.com>
+Subject: Re: Microsoft Is Making a Secure PC Chip with Intel and AMD's Help
+  (RISKS-32:38)
+
+"So there are fewer people involved, and the PC is going to be more secure
+for it."
+
+Interesting statement. Open-source proponents might make exactly the
+opposite argument.
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 07:53:52 +0000
+From: A Michael W Bacon <amichaelwbacon@gmail.com>
+Subject: Re: Technology To Catch HOV Lane Violators Is Coming To Virginia
+   (Deist, RISKS-32.38)
+
+I recall a story I was told some 20 years ago while being driven along the
+road in question, that the CCTV operators overseeing the operation of the
+HOV 3+ lanes on the I395 (Shirley Highway) had observed that the passenger
+seats of many vehicles appeared to be occupied by opera divas in full song.
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 11:54:01 -0500
+From: "Richard A. DeMattia" <rademattia@sbcglobal.net>
+Subject: Re: What happens when you test TCL TVs
+
+It is truly an abomination that a line of mass-produced consumer products
+would be released with such egregious security failings.  However, in my
+world and perhaps in certain parts of the REAL world, SSH on my home cable
+router is port-forwarded to a machine that is not the television. And on my
+TCL 40S330 purchased 20-Nov-2020 ssh and telnet are both rejected at that
+host.
+
+I don't have any comment on the serving up of the file system... well hardly
+any.
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 07:31:16 +0000
+From: A Michael W Bacon <amichaelwbacon@gmail.com>
+Subject: Re: Whale Sculpture Stops Train From Plunge in the Netherlands
+  (RISKS-32.38)
+
+Taking up Brian Inglis's suggestion of a Limerick (RISKS-32.38) ...
+
+In Holland they tell a tall tale,
+Of a train that was stopped by a whale.
+It seemed quite a fluke,
+But it earned a rebuke,
+For the driver, whose train left the rail.
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 18:46:24 -0500
+From: Gabe Goldberg <gabe@gabegold.com>9
+Subject: Re: Letter to Consumer Reports magazine
+
+Right -- far too many household objects have delusions of computerhood
+(toothbrush with timer and several brushing modes, blood pressure monitor,
+electric razor charging station with multiple indicator lights, etc.). I
+actually don't mind them having localized/isolated computing power but I'm
+selective about what goes online. For example, I could connect garage door
+opener to Internet and control it with smartphone app -- but no.
+
+>> TVs should be TVs, not computers.
+
+> That's how TVs are used in our household, but the horse is already out of
+> the barn.  You could also say watches should be watches, vacuum cleaners
+> should be vacuum cleaners, phones should be phones, cars should be cars,
+> refrigerators should be refrigerators.  The issue is cooked.  What may not
+> be cooked is how we end up regulating the privacy and security
+> issues.   I hope not, in any case.
+
+> Before me is a copy of the notes for a talk I gave several times in the
+> early 1990s to groups in Europe in which one slide asks "What's the
+> difference between a computer with a television in it and a television
+> with a computer in it?" and the next answers "None".  I wanted to
+> prepare them for a networked future with active media where computing and
+> networking would be so widespread and common as to be invisible.
+
+> I can't recall that they ever got it.
+>
+> Pete Kaiser
+
+------------------------------
+
+Date: Mon, 23 Nov 2020 07:49:13 +0000
+From: Stefan Lueders <Stefan.Lueders@cern.ch>
+Subject: Re: Online password '123456' more popular than ever and easy to
+  crack (Kruk)
+
+I do not agree its conclusion. While I agree that passwords should be
+complex and long, rather passphrases, and ideally go along with second
+factor authentication, the problem in the below lies somewhere else: in the
+increasing need to register with an email address / password combination to
+even the simplest webpages to get some random content (newsletters, bulletin
+boards, etc.) such that the website owners can market those email
+addresses. The risk of exposure of personal information, if those sites are
+compromized, on that pages is zero. The password complexity (and use of 2FA)
+should be proportional to the risk --- where PII is at stake, complex
+passwords & 2FA are a must. But for a page where I am forced to register
+just with an email address to access content, like RISKS, any password can
+do.
+
+------------------------------
+
+Date: Wed, 25 Nov 2020 05:25:18 -0700
+From: "Keith Medcalf" <kmedcalf@dessus.com>
+Subject: Re: Online password '123456' more popular than ever and easy to
+  crack (Kruk, RISKS-32.38)
+
+And this points out why one should *NEVER* use a so-called "password
+manager" because they are inherently untrustworthy and have access to all
+your passwords.
+
+If you want to publish all your passwords for everyone to see, why not just
+write them on a sticky-note and stick it on your window, or send it as a
+letter to the editor of your local newspaper?  Or post them on Twitter or
+whatever the kids are using these days ...
+
+------------------------------
+
+Date: Fri, 27 Nov 2020 16:20:50 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Utah monolith: Internet sleuths got there, but its origins are
+  still a mystery (BBC News)
+
+It took just 48 hours for the first person to get there.
+
+When officials in Utah on Monday revealed they had found a shimmering, metal
+structure deep in the Red Rock desert, they refused to say exactly where.
+
+They hoped that would be enough to deter amateur adventurers from setting
+off to find it, risking getting dangerously lost in the process.
+
+But there was little chance that people would abide by this advice. By
+Wednesday, pictures were emerging on Instagram of people triumphantly posing
+with the monolith, eager to show the world that they had got there first -
+even if the wider mystery of why it is there remains unsolved.
+
+They were aided by Internet sleuths who had quickly geo-located the
+structure on Google Earth and posted the co-ordinates online.
+
+https://www.bbc.com/news/world-us-canada-55071058
+
+The risk? Trying to keep secrets.
+
+  [... and then it just disppeared...  PGN]
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.39
+************************

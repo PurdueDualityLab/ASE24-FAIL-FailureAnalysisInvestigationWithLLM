@@ -1,0 +1,601 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 25 February 2014  Volume 27 : Issue 76
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.76.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Lawmakers consider broad safety exemptions to bypass FDA regulation
+  (Kevin Fu)
+Backup botchup in library saved by friendly fired folks (Richard A. O'Keefe)
+UMD security breach exposes personal info of students, faculty, staff
+  (WJLA via Jeremy Epstein)
+`The Wild West of Privacy' (Joe Nocera via PGN)
+One of the Most Alarming Internet Proposals I've Ever Seen
+  (Lauren Weinstein)
+Glenn Greenwald: JTRIG psyops (Kurt Albershardt)
+Apparent Theft at Mt. Gox Shakes Bitcoin World - NYTimes.com
+  (David Farber)
+iPhone's Critical Security Bug: a Single Bad `Goto' (Kevin Poulsen via
+  Henry Baker)
+Apple's 'GotoFail' Security Mess Extends To Mail, Twitter, iMessage,
+  Facetime And More (*Forbes* via Lauren Weinstein)
+On the Suspicious Timing of iOS's SSL Vulnerability (John Gruber via
+  Henry Baker)
+LinkedIn agrees to obey Chinese masters' censorship demands
+  (Lauren Weinstein)
+"Target contractor says it was victim of cyber attack" (Jeremy Kirk via
+  Gene Wirchenko)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 23 Feb 2014 14:11:38 -0500
+From: Kevin Fu <kevinfu@umich.edu>
+Subject: Lawmakers consider broad safety exemptions to bypass FDA regulation
+
+US Lawmakers Seek Regulatory Exemptions for Some Mobile Medical Devices/Apps
+http://www.emergogroup.com/blog/2014/02/us-lawmakers-seek-regulatory-exemptions-some-mobile-medical-devices-and-apps
+
+If this description of the planned legislation is accurate, this would
+create disturbing loopholes that would likely compromise software safety and
+therefore patient safety.
+
+------------------------------
+
+Date: Tue, 25 Feb 2014 16:40:20 +1300
+From: "Richard A. O'Keefe" <ok@cs.otago.ac.nz>
+Subject: Backup botchup in library saved by friendly fired folks
+
+The Queenstown-Lakes District council manages a public library system with
+fourteen branches.  Last year it made several of the staff redundant.
+According to page 9 of today (15 Feb 2014)'s issue of the *Otago Daily
+Times*, '"some files" were accidentally deleted from the Wanaka file server'
+-- located in another district).  Surprise: 'the recovery process "didn't
+work as expected"'.  Fortunately, some of the redundant staff had copies of
+the lost files at home.  (What was that about "redundant"?)
+
+The manager claimed that 'the back-up and recovery process had worked well
+previously and was based on accepted practice.' (:-) She is quoted as saying
+'"We have put an extra step in place for files created in Wanaka, to include
+them in the Queenstown system back-up process as an additional safeguard."
+
+------------------------------
+
+Date: Tue, 25 Feb 2014 14:52:58 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: UMD security breach exposes personal info of students, faculty, staff
+
+http://www.wjla.com/articles/2014/02/umd-cyber-attack-exposes-personal-info-of-students-faculty-staff-100387.html
+
+Roz Plater, WJLA.com, 19 Feb 2014
+
+The University of Maryland says it had just recently doubled its number of
+IT security engineers, analysts, and security tools.  But still, hackers
+somehow managed to carry out a sophisticated attack early Tuesday morning.
+
+"It's scary," says student Ricky Bailey. "I just got the email about an hour
+ago, and I don't think people realize how serious it is just yet." In a
+letter sent on Wednesday evening, President Wallace Loh said that the
+database that was breached contained more than 300,000 records of faculty,
+staff, students, and affiliated personnel from the College Park and Shady
+Grove campuses since 1998.
+
+Those records include name, social security number, date of birth, and
+university ID number. [...]
+
+------------------------------
+
+Date: Tue, 25 Feb 2014 10:15:49 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: `The Wild West of Privacy' (Joe Nocera)
+
+Joe Nocera's op-ed column in *The New York Times* today says he thinks
+``it would be a useful exercise to call some privacy experts and ask them
+what should be in such a bill'' -- relating to desired privacy legislation.
+His top-level amplifies on these topics:
+
+ * Regulate data brokers.
+ * Give companies an incentive to prevent data breaches.
+ * No more secrets.
+
+Nocera concludes, ``As much as the companies like Google and Facebook and
+Acxiom would oppose privacy legislation, they need it -- for their sake as
+well as ours.  Sometimes government has to save business from itself.''
+
+Marc Rotenberg (head of the Electronic Privacy Information Center) is
+quoted: ``You should have the right to know what information is being
+collected about you, who has access to it, how it is being used, and to
+limit that use.  And if companies violate those rights, there should be
+consequences.''
+
+The title of the column is attributed to Barry Steinhardt (founder of
+Friends of Privacy USA): ``The United States is basically the Wild West of
+privacy.''
+
+------------------------------
+
+Date: Sat, 22 Feb 2014 21:05:11 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: One of the Most Alarming Internet Proposals I've Ever Seen
+
+            No, I Don't Trust You! -- One of the Most Alarming
+                    Internet Proposals I've Ever Seen
+               http://lauren.vortex.com/archive/001076.html
+
+If you care about Internet security, especially what we call "end-to-end"
+security free from easy snooping by ISPs, carriers, or other intermediaries,
+heads up! You'll want to pay attention to this.
+
+You'd think that with so many concerns these days about whether the likes of
+AT&T, Verizon, and other telecom companies can be trusted not to turn our
+data over to third parties whom we haven't authorized, that a plan to
+formalize a mechanism for ISP and other "man-in-the-middle" snooping would
+be laughed off the Net.
+
+But apparently the authors of IETF (Internet Engineering Task Force)
+Internet-Draft "Explicit Trusted Proxy in HTTP/2.0" (14 Feb 2014) haven't
+gotten the message ( http://j.mp/1fkCtnb [IETF] ).
+
+What they propose for the new HTTP/2.0 protocol is nothing short of
+officially sanctioned snooping.
+
+Of course, they don't phrase it exactly that way.
+
+You see, one of the "problems" with SSL/TLS connections (e.g. https:) --
+from the standpoint of the dominant carriers anyway -- is that the
+connections are, well, fairly secure from snooping in transit (assuming your
+implementation is correct ... right?)
+
+But some carriers would really like to be able to see that data in the clear
+-- unencrypted. This would allow them to do fancy caching (essentially,
+saving copies of data at intermediate points) and introduce other
+"efficiencies" that they can't do when your data is encrypted from your
+client to the desired servers (or from servers to client).
+
+When data is unencrypted, "proxy servers" are a routine mechanism for
+caching and passing on such data. But conventional proxy servers won't work
+with data that has been encrypted end-to-end, say with SSL.
+
+So this dandy proposal offers a dandy solution: "Trusted proxies" -- or, to
+be more straightforward in the terminology, "man-in-the-middle attack"
+proxies. Oh what fun.
+
+The technical details get very complicated very quickly, but what it all
+amounts to is simple enough. The proposal expects Internet users to provide
+"informed consent" that they "trust" intermediate sites (e.g. Verizon, AT&T,
+etc.) to decode their encrypted data, process it in some manner for
+"presumably" innocent purposes, re-encrypt it, then pass the re-encrypted
+data along to its original destination.
+
+Chomping at the bit to sign up for this baby? No? Good for you!
+
+Ironically, in the early days of cell phone data, when full capability
+mobile browsers weren't yet available, it was common practice to "proxy"
+so-called "secure" connections in this manner. A great deal of effort went
+into closing this security hole by enabling true end-to-end mobile crypto.
+
+Now it appears to be full steam ahead back to even worse bad old days!
+
+Of course, the authors of this proposal are not oblivious to the fact that
+there might be a bit of resistance to this "Trust us" concept.  So, for
+example, the proposal includes the assumption of mechanisms for users to
+opt-in or opt-out of these "trusted proxy" schemes.
+
+But it's easy to be extremely dubious about what this would mean in the real
+world. Can we really be assured that a carrier going through all the trouble
+of setting up these proxies would always be willing to serve users who
+refuse to agree to the proxies being used, and allow those users to
+completely bypass the proxies? Count me as skeptical.
+
+And the assumption that users can even be expected to make truly informed
+decisions about this seems highly problematic from the git-go. We might be
+forgiven for suspecting that the carriers are banking on the vast majority
+of users simply accepting the "Trust us -- we're your friendly
+man-in-the-middle" default, and not even thinking about the reality that
+their data is being decrypted in transit by third parties.
+
+In fact, the fallacies deeply entrenched in this proposal are encapsulated
+within a paragraph tucked in near the draft's end:
+
+"Users should be made aware that, different than end-to-end HTTPS, the
+achievable security level is now also dependent on the security
+features/capabilities of the proxy as to what cipher suites it supports,
+which root CA certificates it trusts, how it checks certificate revocation
+status, etc.  Users should also be made aware that the proxy has visibility
+to the actual content they exchange with Web servers, including personal and
+sensitive information."
+
+Who are they kidding? It's been a long enough slog just to get to the point
+where significant numbers of users check for basic SSL status before
+conducting sensitive transactions. Now they're supposed to become
+security/certificate experts as well?
+
+Insanity.
+
+I'm sorry gang, no matter how much lipstick you smear on this particular pig
+-- it's still a pig.
+
+The concept of "trusted proxies" as proposed is inherently untrustworthy,
+especially in this post-Snowden era.
+
+And that's a fact that you really can trust.
+
+------------------------------
+
+Date: February 25, 2014 at 9:54:28 AM EST
+From: Kurt Albershardt <kurt@nv.net>
+Subject: Glenn Greenwald: JTRIG psyops
+
+  [From Dave Farber's IP distribution]
+
+https://firstlook.org/theintercept/2014/02/24/jtrig-manipulation/
+
+``Over the last several weeks, I worked with NBC News to publish a series of
+articles about `dirty trick' tactics used by GCHQ's previously secret
+unit, JTRIG (Joint Threat Research Intelligence Group). These were based on
+four classified GCHQ documents presented to the NSA and the other three
+partners in the English-speaking `Five Eyes' alliance. Today, we at the
+Intercept are publishing another new JTRIG document, in full, entitled The
+Art of Deception: Training for Online Covert Operations.''
+
+By publishing these stories one by one, our NBC reporting highlighted some
+of the key, discrete revelations: the monitoring of YouTube and Blogger, the
+targeting of Anonymous with the very same DDoS attacks they accuse
+`hacktivists' of using, the use of `honey traps' (luring people into
+compromising situations using sex) and destructive viruses. But, here, I
+want to focus and elaborate on the overarching point revealed by all of
+these documents: namely, that these agencies are attempting to control,
+infiltrate, manipulate, and warp online discourse, and in doing so, are
+compromising the integrity of the Internet itself.
+
+Among the core self-identified purposes of JTRIG are two tactics: (1) to
+inject all sorts of false material onto the Internet in order to destroy the
+reputation of its targets; and (2) to use social sciences and other
+techniques to manipulate online discourse and activism to generate outcomes
+it considers desirable. To see how extremist these programs are, just
+consider the tactics they boast of using to achieve those ends: `false flag
+operations' (posting material to the Internet and falsely attributing it to
+someone else), fake victim blog posts (pretending to be a victim of the
+individual whose reputation they want to destroy), and posting `negative
+information' on various forums. "
+
+------------------------------
+
+Date: Tue, 25 Feb 2014 13:43:56 -0500
+From: David Farber <farber@gmail.com>
+Subject: Apparent Theft at Mt. Gox Shakes Bitcoin World (Popper/Abrams)
+
+Nathaniel Popper and Rachel Abrams, *The New York Times*, 25 Feb 2014
+http://www.nytimes.com/2014/02/25/business/apparent-theft-at-mt-gox-shakes-bitcoin-world.html?hpw&rref=technology&_r=0
+
+The most prominent Bitcoin exchange appeared to be on the verge of collapse
+late Monday, raising questions about the future of a volatile marketplace.
+
+On Monday night, a number of leading Bitcoin companies jointly announced
+that Mt. Gox, the largest exchange for most of Bitcoin's existence, was
+planning to file for bankruptcy after months of technological problems and
+what appeared to have been a major theft. A document circulating widely in
+the Bitcoin world said the company had lost 744,000 Bitcoins in a theft that
+had gone unnoticed for years. That would be about 6 percent of the 12.4
+million Bitcoins in circulation.
+
+While Mt. Gox did not respond to numerous requests for comments, and the
+companies issuing the statement scrambled to determine the exact situation
+at Mt. Gox, which is based in Japan, the news helped push the price of a
+single Bitcoin below $500 for the first time since November, when it began a
+spike that took it above $1,200. [...]
+
+DealBook: Defending Bitcoin, Andreessen Says Mt. Gox Is Like MF Global
+
+25 Feb 2014. But at the same time that the news about Mt. Gox was emerging,
+a New York firm announced plans to create an exchange that could draw the
+world's largest banks into the virtual currency market for the first time
+
+  [Dave Jevans commented out of band to PGN:
+    Let's see if the speculation matches what they eventually disclose.  If
+    they really did lose 744,000 bitcoins, it more than doubles the
+    worldwide total of 2013 bitcoin thefts, and we're only in February!]
+
+------------------------------
+
+Date: Sun, 23 Feb 2014 14:05:46 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: iPhone's Critical Security Bug: a Single Bad `Goto' (Kevin Poulsen)
+
+FYI -- But every computer scientist already knew that GOTO's are considered
+harmful !
+
+So why does anyone trust "closed source" systems anymore?
+
+I smell an NSA rat_H_H_HANT.  I checked an older Mac Safari and an iPhone 3S
+Safari, neither of which had this problem; I did find this problem on a
+later iPad Safari browser, but not on the iPad Opera browser.  This problem
+seems to be _precisely_ what NSA's "ANT" team was talking about when they
+said that they had no trouble compromising iPhones.
+
+Notice that Apple hasn't promised to fix _all_ their phones & computers
+still in service, so the net effect to Apple will be increased profits due
+to more upgrades of old phones & computers.  Somehow, Apple shouldn't be
+allowed to profit from security screwups like this one.
+
+http://www.wired.com/threatlevel/2014/02/gotofail/
+
+Behind iPhone's Critical Security Bug, a Single Bad *Goto*
+Kevin Poulsen, 22 Feb 2014
+
+Like everything else on the iPhone, the critical crypto flaw announced in
+iOS 7 yesterday turns out to be a study in simplicity and elegant design: a
+single spurious *goto* in one part of Apple's authentication code that
+accidentally bypasses the rest of it.
+
+Apple released iOS 7.0.6 yesterday to patch the bug in its implementation of
+SSL encryption --- the Internet's standard defense against eavesdropping
+and web hijacking.  The bug essentially means that when you're e-mailing,
+tweeting, using Facebook or checking your bank account from a shared
+network, like a public WiFi or anything tapped by the NSA, an attacker could
+be listening in, or even maliciously modifying what goes to your iPhone or
+iPad.
+
+But the terse description in Apple's announcement yesterday had some of the
+Internet's top crypto experts wondering aloud about the exact nature of the
+bug.  Then, as they began learning the details privately, they retreated
+into what might be described as stunned silence.  ``Ok, I know what the
+Apple bug is,'' tweeted Matthew Green, a cryptography professor at Johns
+Hopkins.  ``And it is bad.  Really bad.''
+
+By this morning, the details had surfaced on Hacker News, and Adam Langley,
+a web encryption expert at Google, posted a detailed breakdown of the bug
+based on his reading of Apple's published source code.
+
+Some software bugs are infinitely subtle and complicated. Others are
+comprehensible almost at a glance to anyone who dabbled in BASIC as a
+kid. The iOS 7 bug is in the latter group.
+
+static OSStatus
+
+SSLVerifySignedServerKeyExchange(SSLContext *ctx, bool isRsa, SSLBuffer
+  signedParams, uint8_t *signature, UInt16 signatureLen)
+
+{
+        OSStatus        err;
+        ...
+        if ((err = SSLHashSHA1.update(&hashCtx, &serverRandom)) != 0)
+                goto fail;
+        if ((err = SSLHashSHA1.update(&hashCtx, &signedParams)) != 0)
+                goto fail;
+                goto fail;  // ?????????????????????????????????????
+        if ((err = SSLHashSHA1.final(&hashCtx, &hashOut)) != 0)
+                goto fail;
+        ...
+fail:
+        SSLFreeBuffer(&signedHashes);
+        SSLFreeBuffer(&hashCtx);
+        return err;
+}
+
+Did you see it? This function is called when a iPhone connects to an
+encrypted site over SSL: it's meant to verify that the encryption key is
+being vouched for --- digitally signed --- by the operator of the website.
+
+But notice the two ``goto fail'' lines, one after the other.  The first one
+belongs there.  The second is a typo.  That extra, duplicative line diverts
+the program's execution, like a bypass stent, right past a critical
+authentication check.  The part where the digital signature is actually
+checked is dead code, never reached.
+
+The issue, Langley confirms, is indeed fixed in the new iOS 7.0.6 (which you
+should install, if you're using iOS 7.)  An update to iOS 6 pushed yesterday
+fixes the bug there as well.  Reportedly, OS X 10.9.1 is still affected by
+the vulnerability.
+
+Using ``goto'' statements in any form has long been considered a poor
+programming practice, though everyone does it anyway.
+
+The breathtaking simplicity of what's already being called #gotofail is
+spawning Snowden Era speculation that the bug was no accident at all.
+Google's Langley is having none of that.
+
+``I believe that it's just a mistake, he writes, ``and I feel very bad for
+whomever might have slipped in an editor and created it.''
+
+You can test if you're vulnerable at GotoFail.com.
+
+Kevin Poulsen is the investigations editor at Wired and author of Kingpin:
+How One Hacker Took Over the Billion-Dollar Cybercrime Underground (Crown,
+2011). His PGP fingerprint is A4BB A435 2FE1 B4A8 46E1 7AF6 DA4B 5DFA FF09
+4870.  SecureDrop: poulsenjzbufll63.onion
+
+------------------------------
+
+Date: Sun, 23 Feb 2014 18:04:49 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Apple's 'GotoFail' Security Mess Extends To Mail, Twitter,
+  iMessage, Facetime And More
+
+http://j.mp/1hITWaQ  (*Forbes* via) NNSquad
+
+  First, Apple revealed a critical bug in its implementation of encryption
+  in iOS, requiring an emergency patch. Then researchers found the same bug
+  is also included in Apple's desktop OSX operating system, a gaping Web
+  security hole that leaves users of Safari at risk of having their traffic
+  hijacked. Now one researcher has found evidence that the bug extends
+  beyond Apple's browser to other applications including Mail, Twitter,
+  Facetime, iMessage and even Apple's software update mechanism.  On Sunday,
+  privacy researcher Ashkan Soltani posted a list of OSX applications on
+  Twitter that he says he's determined use Apple's "secure transport"
+  framework, the coding library that developers depend on to build programs
+  that securely communicate online using the common encryption protocols TLS
+  and SSL. The full list, which isn't comprehensive given that Soltani only
+  analyzed the programs on his own PC, is shown below. (Soltani has
+  underlined the vulnerable application names in red.) [...]
+
+------------------------------
+
+Date: Mon, 24 Feb 2014 14:50:25 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: On the Suspicious Timing of iOS's SSL Vulnerability (John Gruber)
+
+FYI -- This particular incident should be investigated by Congress to make
+sure that any "cowboys" in the NSA get lassoed.
+
+John Gruber
+http://daringfireball.net/2014/02/apple_prism
+
+On the Timing of iOS's SSL Vulnerability and Apple's *Addition*
+to the NSA's PRISM Program
+
+Jeffrey Grossman, on Twitter, 22 Feb 2014
+
+I have confirmed that the SSL vulnerability was introduced in iOS 6.0.  It
+is not present in 5.1.1 and is in 6.0.
+
+iOS 6.0 shipped on 24 September 2012.
+
+According to slide 6 in the leaked PowerPoint deck on NSA's PRISM program,
+Apple was *added* in October 2012.
+
+These three facts prove nothing; it's purely circumstantial.  But the shoe
+fits.
+
+Sure would be interesting to know who added that spurious line of code to
+the file.  Conspiratorially, one could suppose the NSA planted the bug,
+through an employee mole, perhaps.  Innocuously, the Occam's Razor
+explanation would be that this was an inadvertent error on the part of an
+Apple engineer.  It looks like the sort of bug that could result from a
+merge gone bad, duplicating the goto fail; line.
+
+Once the bug was in place, the NSA wouldn't even have needed to find the bug
+by manually reading the source code.  All they would need are automated
+tests using spoofed certificates that they run against each new release of
+every OS.  Apple releases iOS, the NSA's automated spoofed certificate
+testing finds the vulnerability, and boom, Apple gets `added' to PRISM.
+(Wasn't even necessarily a fast turnaround -- the NSA could have discovered
+the vulnerability over the summer, while iOS 6 was in developer program beta
+testing.)
+
+Or, maybe nothing, and this is all a coincidence.
+
+I see five levels of paranoia:
+
+* Nothing.  The NSA was not aware of this vulnerability.
+* The NSA knew about it, but never exploited it.
+* The NSA knew about it, and exploited it.
+* NSA itself planted it surreptitiously.
+* Apple, complicit with the NSA, added it.
+
+Me, I'll go as far as #3.  #1 In fact, I think that's actually the optimistic
+scenario -- because we know from the PRISM slides that the NSA claims some
+ability to do what this vulnerability would allow.  So if this bug, now
+closed, #2 is not what the NSA was exploiting, it means there might exist
+some other vulnerability that remains open.
+
+``Never ascribe to malice that which is adequately explained by
+incompetence.'' -- Hanlon's Razor?
+
+Closed on iOS, that is.  As of this writing, it remains open on Mac OS X
+10.9.1.  I expect it to be closed there soon, though.
+
+------------------------------
+
+Date: Mon, 24 Feb 2014 19:33:01 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: LinkedIn agrees to obey Chinese masters' censorship demands
+
+"LinkedIn Expands in China With Local Site Limiting Content"
+http://j.mp/1h8kxLL  (*Businessweek* via NNSquad)
+
+  "LinkedIn Corp. (LNKD:US) is establishing a Chinese-language website that
+  will restrict some content to adhere to state censorship rules, moving to
+  expand in a country where U.S.  technology companies have clashed with the
+  government ... The new website puts LinkedIn deeper into a country where
+  social-media peers such as Twitter Inc. and Facebook Inc. are blocked
+  after they balked at government censorship rules. Facebook hasn't built up
+  operations in China beyond hiring contractors to help advertisers reach
+  people outside of the country, spokeswoman Debbie Frost has said. Google
+  ran afoul of Chinese authorities in 2010 for refusing to abide by local
+  censorship requirements, leading to the company shutting its unfiltered
+  search tools there and redirecting users to pages in Hong Kong."
+
+------------------------------
+
+Date: Wed, 12 Feb 2014 10:03:40 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Target contractor says it was victim of cyber attack"
+  (Jeremy Kirk)
+
+Jeremy Kirk, InfoWorld, 07 Feb 2014
+Fazio Mechanical Services, which specializes in refrigeration, said
+it maintained a 'data connection' with Target
+http://www.infoworld.com/d/security/target-contractor-says-it-was-victim-of-cyber-attack-235905
+
+A contractor for Target said Thursday it was also a victim of a cyber
+attack, supporting the retailer's claim that hackers gained entry to its
+network via a third party. [...]
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.76
+************************
+
+--_002_2d55730be27342d8a03c9d8093f15921EXHUBVM02campusnclacuk_--

@@ -1,0 +1,570 @@
+precedence: bulk
+Subject: Risks Digest 25.55
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 10 February 2009  Volume 25 : Issue 55
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.55.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+RFID Passports cloned wholesale (Dan Goodin)
+Windshields and Windows combine to provide malware vector (Mark Brader)
+FAA Notifies Employees of Personal Identity Breach (Danny Burstein)
+390,000 to access child database (Amos Shapir)
+Confidential LAPD misconduct files mistakenly posted on Internet 
+  (Danny Burstein)
+Risks of computer-gibberish names on forms (Joseph A. Dellinger)
+Mathematics and screening (Jerry Leichter)
+The privacy vs. health tradeoff (Jeremy Epstein)
+Variant of Mac Trojan Horse iServices Found in Pirated Adobe C54
+  (Monty Solomon)
+Re: Fannie Mae logic bomb (Wendell Cochran)
+Re: Tony Hoare: "Null References" (Rob Diamond, Robert P Schaefer)
+Re: Flat text is *never* what we want (Tony Finch)
+No wikipedia page (Olivier MJ Crepin-Leblond)
+What if you can't pull the plug? (Rex Sanders)
+Security Psychology (Gadi Evron)
+Call for contributions:  New Security Paradigms Workshop: NSPW
+  (Konstantin /Kosta/ Beznosov)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 6 Feb 2009 12:52:59 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: RFID Passports cloned wholesale (Dan Goodin)
+
+Using inexpensive off-the-shelf components (a Motorola RFID reader and
+antenna, and a PC) bought mostly on eBay and a self-developed Windows app,
+Chris Paget (``an information security expert'') built a mobile platform in
+his spare time that can clone large numbers of the unique RFID tag
+electronic identifiers used in U.S. passport cards and next generation
+drivers licenses.  While driving around San Francisco for 20 minutes, he was
+able to harvest two passport tags without knowledge of their owners from up
+to 30 feet away.  Demo and software at Shmoocon.  (Paget says with some
+modifications, the range could be extended to more than a mile.)  [Source:
+Dan Goodin, *The Register,* 4 Feb 2009; PGN-ed, noted by Ashish Gehani]
+  http://www.securityfocus.com/news/11544
+   [URL fixed in archive.  PGN]
+
+  See RISKS-25.08 and 25.42 for other recent items on RFID cloning.
+
+------------------------------
+
+Date: Mon,  9 Feb 2009 02:42:50 -0500 (EST)
+From: msb@vex.net (Mark Brader)
+Subject: Windshields and Windows combine to provide malware vector
+
+Fake parking tickets were placed on car windshields in several parking lots
+in Grand Forks, North Dakota.  They showed a URL to check for further
+information, but the site required a download... and you can guess the rest.
+  http://isc.sans.org/diary.html?storyid=5797
+  http://www.grandforksherald.com/articles/index.cfm?id=105232&section=news
+
+Mark Brader, Toronto, msb@vex.net
+
+[I swiped the subject line pun from someone on the Internet.]
+
+------------------------------
+
+Date: Tue, 10 Feb 2009 03:26:06 -0500 (EST)
+From: danny burstein <dannyb@panix.com>
+Subject: FAA Notifies Employees of Personal Identity Breach
+
+(from the FAA [Federal Aviation Administration] website)
+
+Washington - The FAA today notified employees that an agency computer was
+illegally accessed and employee personal identity information was stolen
+electronically. All affected employees will receive individual letters to
+notify them about the breach.  ...  Two of the 48 files on the breached
+computer server contained personal information about more than 45,000 FAA
+employees and retirees who were on the FAA's rolls as of the first week of
+February 2006.
+
+The server that was accessed was not connected to the operation of the air
+traffic control system or any other FAA operational system, and the FAA has
+no indication those systems have been compromised in any way.
+
+http://www.faa.gov/news/press_releases/news_story.cfm?newsId=10394
+
+  [Also noted by Dres Zellweger.  PGN]
+
+------------------------------
+
+Date: Tue, 27 Jan 2009 17:40:05 +0200
+From: Amos Shapir <amos083@hotmail.com>
+Subject: 390,000 to access child database
+
+"A child protection database containing the contact details for all under
+18-year-olds in England will be accessible to 390,000 staff, say ministers."
+
+Opponents had already described the proposed project as "another expensive
+data disaster waiting to happen".
+
+Full story at:
+http://news.bbc.co.uk/2/hi/uk_news/education/7850871.stm
+http://www.microsoft.com/windows/windowslive/events.aspx
+
+------------------------------
+
+Date: Sat, 7 Feb 2009 18:18:00 -0500 (EST)
+From: danny burstein <dannyb@panix.com>
+Subject: Confidential LAPD misconduct files mistakenly posted on Internet
+
+per the *LA Times*:
+
+"The Los Angeles Police Commission violated its own strict privacy policy --
+and perhaps state law -- on Friday, releasing a confidential report on the
+Internet that contained the names of hundreds of officers accused of racial
+profiling and other misconduct.  ...  "The commission and department staff
+had reviewed a paper copy of the report that did not contain the
+confidential information and assumed the electronic version would be the
+same, Tefank said."
+
+rest:
+http://www.latimes.com/news/local/la-me-lapd7-2009feb07,0,3336411.story
+
+- aside from the "oops" issue, the article also discusses the politics and
+other reasons why this info should, or shouldn't, be public in the first
+place.
+
+------------------------------
+
+Date: Thu, 5 Feb 2009 01:39:16 -0600
+From: "Joseph A. Dellinger" <geojoe@freeusp.org>
+Subject: Risks of computer-gibberish names on forms
+
+My company provides me with a cell phone to use for business purposes. I
+only use it when traveling, so it sometimes goes 2 months at a time without
+being turned on. The bill arrives monthly and has various gibberish entries
+on it. For example, the entry "Mobile Messeng:31000#2109" has been there on
+my statement every month, starting with the very first bill, at a cost of
+$10 per month. I assumed that was AT+T's charge for enabling international
+text messaging. I didn't pick and choose the features that came with the
+phone... I got what the company chose for me.
+
+Comparing cell phone bills with a cubicle neighbor today it turned out that
+only SOME people have that on their bill. So I called AT+T to ask what that
+was. Turns out $10 is the charge for the "service" of receiving a "trivia
+alert" spam text message once a month. The AT+T customer-service agent told
+me that of course since I am receiving this extremely valuable service, it
+could only be because I requested it.
+
+When I turn on that phone at the start of a new trip I generally find I have
+half a dozen or so spam text messages to wade through. And, indeed, one of
+those was always a trivia question with an invitation to reply to find out
+the answer.  As I worked through the spam erasing it, mildly annoyed at the
+hassle, I at least got to feel a slight twinge of smugness.  Hah! Do you
+actually think I'm idiot enough to fall for wheezes such as a request to
+call a toll number in the Caribbean for an "important message"?
+
+Hah indeed: the joke's on me. Merely by cloaking their theft in computerese
+gibberish they got right past my defenses.  And by the simple expedient of
+inserting the fictitious charge by computer, "so it must be right", they got
+right through AT+T's.  A quick check on the internet revealed hundreds of
+similar stories.  I wonder how many people at my company are victimized and
+still don't know it. I'd guess at a minimum several thousands. I turned the
+case over to corporate security for further investigation.
+
+------------------------------
+
+Date: Thu, 5 Feb 2009 16:36:45 -0500
+From: Jerry Leichter <leichter@lrw.com>
+Subject: Mathematics and screening
+
+Not a computer-related risk as such, but an area many participants here will
+find of interest:
+
+http://www.pnas.org/content/early/2009/02/02/0813202106
+The paper "Strong profiling is not mathematically optimal for discovering
+rare malfeasors" looks at the question of how to best screen a population
+for "terrorists".  Suppose you have a profile of likely terrorists, but that
+profile is just probabilistic, subject to both false positives and false
+negatives.  Should you use the profile to select people to be screened?  (Of
+course, there are all kinds of social and political questions here - this is
+just about the mathematical question.)
+
+You'd think the answer is "yes", and in fact it is - but there's a subtle
+problem.  "Strong screening" - the obvious approach, where you select
+someone for detailed screening with a probability at least as high as your a
+priori estimate that they are actually a threat - means that you spend many
+of your resources repeatedly screening the same innocent people.  In fact,
+the end result is shown to be no better than a simple random screening
+process.  (This is in a memory-less situation, where you don't change your
+estimate as a result of the screen - essentially what TSA does today.)
+
+Interestingly, the optimal strategy in this situation can be calculated.  It
+turns out that you want to choose people for detailed screening
+proportionally to the *square root* of your a priori estimate of how likely
+they are to be a threat.
+
+This result was apparently derived earlier in a much different setting
+(having to do with Monte Carlo methods for protein folding) but, according
+to the current author, is not widely known.  There are certainly other
+settings - various computer security mechanisms; possibly testing and bug
+finding strategies - where this would apply.
+
+------------------------------
+
+Date: Thu, 5 Feb 2009 10:52:01 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: The privacy vs. health tradeoff
+
+Some grocery stores are using the data gathered from their "loyalty cards"
+[cards that tell the store who you are and what you buy] to notify customers
+who bought products that have been recalled due to the widening peanut
+contamination affair.  At least one consumer group (Center for Science in
+the Public Interest) is urging stores to use their data this way.
+
+http://www.msnbc.msn.com/id/28802536/
+http://cspinet.org/new/200902031.html
+http://www.ocregister.com/articles/recalled-peanut-consumers-2289676-butter-loyalty
+(and many others)
+
+How do customers feel about their purchasing information being used in this
+way?  I suspect most people are positive about it - but I wonder whether it
+would be viewed quite so positively if the product in question were, say
+condoms.  "Honey, I got a call from the grocery store that the condoms have
+been recalled - who are you using condoms with?"
+
+I checked the privacy policy for one of the major grocery stores in my area
+(Giant Food - http://giantfood.com/savings/card/privacy_policy.htm ), I
+think this usage would fall within their privacy policy, since it explicitly
+allows for sending direct mail and similar communications based on
+purchases.  I suspect other privacy policies are similar.  So it would seem
+to be within their rights to contact customers about purchases they've made,
+whether peanut butter or condoms.  But regardless of policy, how would
+customers feel about it?
+
+------------------------------
+
+Date: Thu, 29 Jan 2009 01:37:04 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Variant of Mac Trojan Horse iServices Found in Pirated Adobe C54
+
+INTEGO SECURITY ALERT - January 26, 2009
+New Variant of Mac Trojan Horse iServices Found in Pirated Adobe Photoshop CS4
+Exploit: OSX.Trojan.iServices.B Trojan Horse
+Discovered: January 25, 2009
+Risk: Serious
+
+Description: Intego has discovered a new variant of the iServices Trojan
+horse that the company discovered on January 22, 2009. This new Trojan
+horse, OSX.Trojan.iServices.B, like the previous version, is found in
+pirated software distributed via BitTorrent trackers and other sites
+containing links to pirated software.  OSX.Trojan.iServices.B Trojan horse
+is found bundled with copies of Adobe Photoshop CS4 for Mac. The actual
+Photoshop installer is clean, but the Trojan horse is found in a crack
+application that serializes the program. ...
+  http://www.intego.com/news/ism0902.asp
+
+------------------------------
+
+Date: Thu, 5 Feb 2009 09:15:42 -0800
+From: Wendell Cochran <atrypa@eskimo.com>
+Subject: Re: Fannie Mae logic bomb
+
+> On the afternoon of Oct. 24, he was told he was being fired because
+> of a scripting error . . .
+
+Fired -- for a scripting error?
+
+The FBI's affidavit in support of the criminal complaint adds little:
+'MAKWANA erroneously created a computer script that changed the settings on
+the Unix servers without the proper authority of his supervisor ...'
+
+Where were controls?
+
+Other holes in the story abound.  Fallout from the logic bomb may have
+obscured Risks in management.
+
+------------------------------
+
+Date: Fri, 06 Feb 2009 19:03:33 +1100
+From: Rob Diamond <robd at langdale dotty com dotty au>
+Subject: Re: Tony Hoare: "Null References"
+
+"I haven't yet heard an apology from Fortran/C/C++/etc. creators over their
+inability to police array bounds"
+
+I think, rather, that it is Mr Baker who owes Ken Thompson and Denis Ritchie
+(the inventors of the C language) an apology.  Complaining about the lack of
+array bounds checking to the inventors of C is like complaining to Henry
+Ford about not fitting ABS brakes to the Model T.
+
+Thompson and Ritchie developed C so that they could write the very early
+versions of the Unix system (circa 1970) in a language that was
+"higher-level" than assembler. In those days memory was at an absolute
+premium since it was very expensive. I Googled for some prices, and found
+that Bell Labs paid $65,000 for the PDP-11 on which Unix was developed,
+while an extra 4k bytes of core memory cost $4,000. Doesn't sound like a lot
+of money *now*, but when I graduated as an electrical engineer in 1972 my
+starting salary was a bit over Aus $4,000 a year, so a year's salary for 4k
+bytes of memory seems expensive to me ! At that time array bounds checking
+would have been one of the last things on the C developers' minds - just
+getting an operating system going that was small enough to leave room for
+useful programs to run was an amazing achievement.
+
+I do think that it's a pity that in the more than four decades since it's
+invention the C language standard hasn't been modified to mandate array
+bounds checking - after all what's a bit more software bloat on top of the
+gigantic software bloat we have now ? But NoBody *did* modify it, and now we
+are stuck with the consequences. If only we could track down that elusive Mr
+NoBody - he's got a lot to answer for !
+
+------------------------------
+
+Date: Thu, 5 Feb 2009 12:57:03 -0500
+From: "Schaefer, Robert P  \(US SSA\)" <robert.p.schaefer@baesystems.com>
+Subject: Re: Tony Hoare: "Null References"
+
+The current set of replies to Tony Hoare: "Null References" remind me a
+little bit of Godel, a little bit of Flatland, and a little bit of Alice in
+Wonderland.
+
+You can't prove that a system is both correct and complete without going
+outside that system. In this instance, you have data, and then you have
+meta-data, where meta-data is reasoning about data. Any time you use data as
+meta-data within a system you introduce the risk of confusion between the
+two realms, but how can you ever use meta-data if not as data in another
+context? Similarly how can you relate meta-data in one context to data in
+another without having a back-reference (more meta-data) from that data in
+one context to a reasoning about that data (meta-data) in another?
+
+If you live in Godel's version of Flatland, as we appear to do, the correct
+and complete relationship between the data and meta-data contexts is
+mathematically/logically/physically impossible.  And yet we can and do
+imagine this to be mathematically/logically/physically possible, and when we
+fail in our attempt, apologize for not living up to impossible ideals. One
+may as well apologize for being human and be done with it.
+
+"There's no use trying," she said; "one can't believe impossible things."
+"I daresay you haven't had much practice," said the Queen. "When I was
+younger, I always did it for half an hour a day. Why, sometimes I've
+believed as many as six impossible things before breakfast."  - Alice in
+Wonderland.
+
+------------------------------
+
+Date: Thu, 5 Feb 2009 14:43:44 +0000
+From: Tony Finch <dot@dotat.at>
+Subject: Re: flat text is *never* what we want (Carlson, RISKS-25.54)
+
+Was: Tony Hoare: "Null References"
+
+There are plenty of well-known consequences of the problem Jay identifies:
+SQL injection, cross-site scripting, etc. I don't know of many coherent
+practical solutions, so I'd be interested in any pointers from RISKS
+readers.
+
+One of the best is Mike Samuel's proposal for secure string interpolation in
+Javascript, linked below. A more heavy-weight approach is to represent
+everything as a parse tree, so incoming data is necessarily checked for
+well-formedness as it is parsed, and outgoing data is correctly quoted by
+the pretty-printer.
+
+http://google-caja.googlecode.com/svn/changes/mikesamuel/string-interpolation-29-Jan-2008/trunk/src/js/com/google/caja/interp/index.html
+
+f.anthony.n.finch  <dot@dotat.at>  http://dotat.at/
+
+------------------------------
+
+Date: Thu, 5 Feb 2009 11:06:21 +0100
+From: "Olivier MJ Crepin-Leblond" <ocl@gih.com>
+Subject: No wikipedia page
+
+(was Re: Earthquake Alert System Failed To Work Properly, Power, RISKS-25.54)
+
+> THERE IS NO WIKIPEDIA PAGE ON THIS TOPIC, as there is little if any
+> official research.
+
+I am alarmed by such a statement.  It reminds me of an increasing trend by
+today's researchers to say that "if you can't find it in Google, it doesn't
+exist".
+
+Unless we make sure that this does not become the norm, complete sections of
+knowledge are likely to "disappear" because they are published in formats
+which have not been ported online. Rather than expanding knowledge, we are
+currently risking shrinking it.
+
+Olivier MJ Crépin-Leblond, PhD  http://www.gih.com/ocl.html
+
+------------------------------
+
+Date: Wed, 28 Jan 2009 11:25:02 -0800
+From: Rex Sanders <rsanders@usgs.gov>
+Subject: What if you can't pull the plug?
+
+Last night I literally awoke from a nightmare about my iPhone getting
+hacked, spewing spam and doing other nasty things.  The nightmare was that I
+had no way to shut it off, and no way to disconnect it from the Internet.
+
+I've stopped many misbehaving computing devices from causing more damage by
+"pushing the big red button" or "pulling the plug" (power or network
+cables).  This was a simple, direct, easy-to-do-when-panicked scheme to stop
+further damage.  Examples include printers spewing paper, runaway tape
+drives, and hacked servers.  I've had to unplug power *and* remove batteries
+from laptops, PDAs, and smart phones.
+
+Recently released devices like the Apple iPhone, MacBook Air, and MacBook
+Pro, have these features in common:
+
+- Software-controlled power switches
+- Long-life batteries that can't be removed
+- Continuous wireless Internet access via WiFi or mobile phone networks
+
+I'm not picking on Apple, their devices are just high profile examples of a
+growing trend.
+
+These devices might have some magic combination of button pushes to turn
+the device off.  I would not be able to recall these rarely used
+incantations during an emergency, and they might not work if the software
+is badly compromised or hung in tight loops.
+
+I don't normally carry around Faraday cages to cut off wireless Internet
+access, which would solve only one class of problems.
+
+I could smash them to smithereens, but that gets expensive.
+
+I love the convenience, long battery life, and ubiquitous Internet access
+of these devices.
+
+But we have a new risk from not having a positive, easy to find method of
+keeping these devices from doing more damage when all else fails.
+
+------------------------------
+
+Date: Sat, 24 Jan 2009 22:57:17 -0600 (CST)
+From: Gadi Evron <ge@linuxbox.org>
+Subject: Security Psychology
+
+I just came across a post telling of the Security and Human Behavior
+workshop (or conference).
+  http://www.crypto.com/blog/shb08/
+
+Other posts about it:
+http://www.lightbluetouchpaper.org/2008/06/30/security-psychology/
+http://www.schneier.com/blog/archives/2008/06/security_and_hu.html
+
+As some of you may be aware, I've been researching this subject for about
+two years now, and I am very excited that a conference has now happened!  It
+means I did not waste the last two years of my life after all! :)
+
+This is very exciting, and I am very thankful to these guys for making it
+happen.
+
+Here's a post I wrote about something similar, although syndicated from
+early on with an ancient post, in my exploration of the subject matter:
+http://gadievron.blogspot.com/2008/09/im-interested-but-in-you.html
+
+I hope that more researchers will start looking into this subject, which as
+of the last six months I've been calling Humexp.
+
+I am currently engaged in research looking into the Estonian cyber war from
+a social psychology perspective, which turned out to be quite
+interesting. More on that when I can share, though.
+
+------------------------------
+
+Date: Fri, 06 Feb 2009 18:18:37 -0800
+From: "Konstantin (Kosta) Beznosov" <beznosov@ece.ubc.ca>
+Subject: Call for contributions:  New Security Paradigms Workshop (NSPW)
+
+2009 New Security Paradigms Workshop
+The Queen's College, University of Oxford, UK
+September 8-11, 2009
+
+Read the full call at  http://www.nspw.org/current/cfp.shtml
+The submission deadline: April 17, 2009, 23:59 (UTC -12, or Y time).
+
+The New Security Paradigms Workshop (NSPW) is seeking papers that address
+the current limitations of information security. Today's security risks are
+diverse and plentiful--botnets, database breaches, phishing attacks,
+distributed denial-of-service attacks--and yet present tools for combatting
+them are insufficient. To address these limitations, NSPW welcomes
+unconventional, promising approaches to important security problems and
+innovative critiques of current security practice.
+
+We are particularly interested in perspectives from outside computer
+security, both from other areas of computer science (such as operating
+systems, human-computer interaction, databases, programming languages,
+algorithms) and other sciences that study adversarial relationships such as
+biology and economics. We discourage papers that offer incremental
+improvements to security and mature work that is appropriate for standard
+information security venues.
+
+To facilitate research interactions, NSPW features informal paper
+presentations, extended discussions in small and large groups, shared
+activities, and group meals, all in attractive surroundings. By encouraging
+researchers to think ``outside the box'' and giving them an opportunity to
+communicate with open-minded peers, NSPW seeks to foster paradigm shifts in
+the field of information security.
+
+Kosta Beznosov, NSPW Publicity Chair, Assistant Professor,
+Laboratory for Education and Research in Secure Systems Engineering
+Electrical and Computer Engineering, University of British Columbia
+http://lersse.ece.ubc.ca  http://www.ece.ubc.ca/~beznosov/
+4047-2332 Main Mall, Vancouver, BC, Canada V6T 1Z4 Phone: +1 604 822 9181
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.55
+************************

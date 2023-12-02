@@ -1,0 +1,1258 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.41
+
+RISKS-LIST: Risks-Forum Digest  Saturday 19 December 2020  Volume 32 : Issue 41
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.41>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+SolarWinds, SunBurst, Russians, et al. (sundry sources merged by PGN)
+Advanced Persistent Threat Compromise of Government Agencies, Critical
+  Infrastructure, and Private Sector Organizations (CISA)
+The U.S. government spent billions on a system for detecting hacks.
+  The Russians outsmarted it. (Craig Timberg and Ellen Nakashima)
+More Hacking Attacks Found as Officials Warn of Grave Risk to
+  U.S. Government (NYTimes)
+Harvard Gazette interviews Russia expert Paul Kolbe on Russian hacking of
+  government computer systems (Christina Pazzanese)
+Hyundai and Kia Woes Continue as Nearly 425,000 Vehicles Recalled Over
+  Engine Issues (The Drive)
+Boeing inappropriately coached test pilots during review of 737 Max after
+  crashes, Senate investigators say (WashPost)
+Global google services outage 12/14 -- delay in repair (Edwin Slonim)
+Military-grade camera shows risks of airborne coronavirus spread (WashPost)
+National Weather Service faces Internet bandwidth shortage, proposes access
+  limits (WashPost)
+Facebook' Tone-Deaf Attack on Apple (NYTimes)
+Exfiltrating Data from Air-Gapped Computers via Wi-Fi Signals -- Without
+  Wi-Fi Hardware (The Hacker News)
+Cheap GPS jammers a major threat to drones (RNTFND)
+Betting on the election (Rob Slade)
+Vaccinated? Show Us Your App (NYTimes)
+Devices Used In COVID-19 Treatment Can Give Errors For Patients With Dark
+  Skin (npr.org)
+An Internal Medicine Doctor and His Peers Read the Pfizer Vaccine Study and
+  See Red Flags (Naked Capitalism)
+More Differential Privacy for Ordinary Security Mavens (Rob Slade)
+Differential Privacy for Ordinary Security Mavens: noise (Rob Slade)
+Re: AI Can Run Your Work Meetings Now (Amos Shapir)
+Re: Former Israeli space security chief says aliens exist, humanity not
+  ready (Amos Shapir)
+Re: Police Drones Starting to Think for Themselves (Amos Shapir)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 19 Dec 2020
+From: Peter G Neumann <Neumann@CSL.SRI.COM>
+Subject: SolarWinds, SunBurst, Russians, et al. (sundry sources merged)
+
+WASHINGTON, 13 Dec 2020 (Reuters) - A sophisticated hacking group backed by
+a foreign government stole information from the U.S. Treasury Department and
+a U.S. agency responsible for deciding policy around the Internet and
+telecommunications, according to people familiar with the matter.
+(Reporting by Christopher Bing; Editing by Daniel Wallis)
+https://www.reuters.com/article/usa-cyber-amazoncom-idUSL1N2IT0HS
+
+Washington Post attributed it to .ru /Cozy Bear
+https://www.washingtonpost.com/national-security/russian-government-spies-are-behind-a-broad-hacking-campaign-that-has-breached-us-agencies-and-a-top-cyber-firm/2020/12/13/d5a53b88-3d7d-11eb-9453-fc36ba051781_story.html
+
+The Russian government hackers who breached a top cybersecurity firm are
+behind a global espionage campaign that also compromised the Treasury and
+Commerce departments and other government agencies, according to people
+familiar with the matter, who requested anonymity because of the sensitivity
+of the matter.
+
+The FBI is investigating the campaign by a hacking group working for the
+Russian foreign intelligence service, SVR. The group, known among
+private-sector security firms as APT29 or Cozy Bear, also hacked the State
+Department and the White House during the Obama administration.
+
+Brian Krebs blog post: SolarWinds' products were used by virtually
+everyone.
+https://krebsonsecurity.com/2020/12/u-s-treasury-commerce-depts-hacked-through-solarwinds-compromise/
+
+Reuters reported that up to 18000 of them may have downloaded the malware.
+https://www.reuters.com/article/global-cyber/global-security-teams-assess-impact-of-suspected-russian-cyber-attack-idUKKBN28O1KN
+
+Many services from Alphabet Inc, including YouTube, Gmail and Google
+Drive, were down for thousands of users across the globe on Monday.
+https://www.reuters.com/article/alphabet-outages-int/alphabets-youtube-gmail-google-drive-services-hit-by-outage-idUSKBN28O1F1
+
+The NYTimes mentions that this all started in the spring of 2020, already
+too late to stop some of the damage.
+Russian Hackers Broke Into Federal Agencies, U.S. Officials Suspect
+https://www.nytimes.com/2020/12/13/us/politics/russian-hackers-us-government-treasury-commerce.html?action=click&module=Top%20Stories&pgtype=Homepage
+
+Fireeye's analysis for the attack:
+https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html
+
+Communications at the U.S. Treasury and Commerce Departments were reportedly
+compromised by a supply chain attack on SolarWinds, a security vendor that
+helps the federal government and a range of Fortune 500 companies monitor
+the health of their IT networks. Given the breadth of the company's customer
+base, experts say the incident may be just the first of many such
+disclosures.
+
+SolarWinds hides list of high-profile customers after devastating hack
+https://www.theverge.com/2020/12/15/22176053/solarwinds-hack-client-list-russia-orion-it-compromised
+
+Some of SolarWinds' customers. Source: solarwinds.com
+According to a Reuters story
+<https://www.reuters.com/article/BigStory12/idUSKBN28N0PG>, hackers believed
+to be working for Russia have been monitoring internal email traffic at the
+U.S. Treasury and Commerce departments. Reuters reports the attackers were
+able to surreptitiously tamper with updates released by SolarWinds for its
+Orion platform
+<https://documentation.solarwinds.com/en/Success_Center/orionplatform/Content/Core-How-Orion-Works-sw1625.htm>, a suite of network management tools.
+
+In a security advisory <https://www.solarwinds.com/securityadvisory>,
+Austin, Texas based SolarWinds acknowledged its systems ``experienced a
+highly sophisticated, manual supply chain attack on SolarWinds Orion
+Platform software builds for versions 2019.4 HF 5 through 2020.2.1, released
+between March 2020 and June 2020.''
+
+In response to the intrusions at Treasury and Commerce, the Department of
+Homeland Security's *Cybersecurity and Infrastructure Security Agency* (CISA)
+took the unusual step of issuing an emergency directive
+<https://cyber.dhs.gov/ed/21-01/> ordering all federal agencies to
+immediately disconnect the affected Orion products from their networks.  [...]
+https://krebsonsecurity.com/2020/12/u-s-treasury-commerce-depts-hacked-through-solarwinds-compromise/
+
+ - - - -
+
+Partial customer listing from Brian Krebs:
+Acxiom
+Ameritrade
+AT&T
+Bellsouth Telecommunications
+Best Western Intl.
+Blue Cross Blue Shield
+Booz Allen Hamilton
+Boston Consulting
+Cable & Wireless
+Cablecom Media AG
+Cablevision
+CBS
+Charter Communications
+Cisco
+CitiFinancial
+City of Nashville
+City of Tampa
+Clemson University
+Comcast Cable
+Credit Suisse
+Dow Chemical
+EMC Corporation
+Ericsson
+Ernst and Young
+Faurecia
+Federal Express
+Federal Reserve Bank
+Fibercloud
+Fiserv
+Ford Motor Company
+Foundstone
+Gartner
+Gates Foundation
+General Dynamics
+Gillette Deutschland GmbH
+GTE
+H&R Block
+Harvard University
+Hertz Corporation
+ING Direct
+IntelSat
+J.D. Byrider
+Johns Hopkins University
+Kennedy Space Center
+Kodak
+Korea Telecom
+Leggett and Platt
+Level 3 Communications
+Liz Claiborne
+Lockheed Martin
+Lucent
+MasterCard
+McDonald's Restaurants
+Microsoft
+National Park Service
+NCR
+NEC
+Nestle
+New York Power Authority
+New York Times
+Nielsen Media Research
+Nortel
+Perot Systems Japan
+Phillips Petroleum
+Pricewaterhouse Coopers
+Procter & Gamble
+Sabre
+Saks
+San Francisco Intl. Airport
+Siemens
+Smart City Networks
+Smith Barney
+Smithsonian Institute
+Sparkasse Hagen
+Sprint
+St. John's University
+Staples
+Subaru
+Supervalu
+Swisscom AG
+Symantec
+Telecom Italia
+Telenor
+Texaco
+The CDC
+The Economist
+Time Warner Cable
+U.S. Air Force
+University of Alaska
+University of Kansas
+University of Oklahoma
+US Dept. Of Defense
+US Postal Service
+US Secret Service
+Visa USA
+Volvo
+Williams Communications
+Yahoo
+
+https://twitter.com/briankrebs/status/1340012807258042371
+
+ - - - -
+
+Russia Suspected In Major Cyberattack On U.S. Treasury, Commerce Departments
+https://www.npr.org/2020/12/14/946163194/russia-suspected-in-months-long-cyber-attack-on-federal-agencies
+
+Spreading effects of SolarWinds software supply chain compromise. The
+security effects of remote work.
+<https://thecyberwire.com/newsletters/daily-briefing/9/240>
+
+Solarwinds seems to have used a bad password for its update server:
+https://threatpost.com/solarwinds-default-password-access-sales/162327/
+
+Apparently a security research told SolarWinds that their githib repo had a
+password "SolarWinds123" and it wasn't changed even after being tipped off.
+
+There is an explanation of the hack, but not the compromise itself at
+https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html
+
+ZDNet reports that a compromise of the company's Microsoft Office 365 email
+and office productivity accounts may have provided a point of entry.
+<https://www.zdnet.com/article/sec-filings-solarwinds-says-18000-customers-are-impacted-by-recent-hack/>
+
+See also
+https://www.washingtonpost.com/opinions/russia-solarwinds-hack-us-cyber-defenses/2020/12/16/e3bfabe8-3fd2-11eb-8bc0-ae155bee4aff_story.html
+
+------------------------------
+
+Date: Fri, 18 Dec 2020 01:54:02 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Advanced Persistent Threat Compromise of Government Agencies,
+  Critical Infrastructure, and Private Sector Organizations (CISA)
+
+  [Later inf the week, the "official" CISA announcement appeared.  PGN]
+
+Advanced Persistent Threat Compromise of Government Agencies, Critical
+Infrastructure, and Private Sector Organizations
+https://us-cert.cisa.gov/ncas/alerts/aa20-352a
+
+The Cybersecurity and Infrastructure Security Agency (CISA) is aware of
+compromises of U.S. government agencies, critical infrastructure entities,
+and private sector organizations by an advanced persistent threat (APT)
+actor beginning in at least March 2020. This APT actor has demonstrated
+patience, operational security, and complex tradecraft in these
+intrusions. CISA expects that removing this threat actor from compromised
+environments will be highly complex and challenging for organizations.
+
+Technical Details
+Overview
+
+CISA is aware of compromises, which began at least as early as March 2020,
+at U.S. government agencies, critical infrastructure entities, and private
+sector organizations by an APT actor. This threat actor has demonstrated
+sophistication and complex tradecraft in these intrusions.  CISA expects
+that removing the threat actor from compromised environments will be highly
+complex and challenging. This adversary has demonstrated an ability to
+exploit software supply chains and shown significant knowledge of Windows
+networks. It is likely that the adversary has additional initial access
+vectors and tactics, techniques, and procedures (TTPs) that have not yet
+been discovered. CISA will continue to update this Alert and the
+corresponding indicators of compromise (IOCs) as new information becomes
+available.  Initial Infection Vectors [TA0001]
+
+CISA is investigating incidents that exhibit adversary TTPs consistent with
+this activity, including some where victims either do not leverage
+SolarWinds Orion or where SolarWinds Orion was present but where there was
+no SolarWinds exploitation activity observed. Volexity has also reported
+publicly that they observed the APT using a secret key that the APT
+previously stole in order to generate a cookie to bypass the Duo
+multi-factor authentication protecting access to Outlook Web App (OWA).[1
+
+Volexity attributes this intrusion to the same activity as the SolarWinds
+Orion supply chain compromise, and the TTPs are consistent between the
+two. This observation indicates that there are other initial access vectors
+beyond SolarWinds Orion, and there may still be others that are not yet
+known.  SolarWinds Orion Supply Chain Compromise
+
+SolarWinds Orion is an enterprise network management software suite that
+includes performance and application monitoring and network configuration
+management along with several different types of analyzing tools. SolarWinds
+Orion is used to monitor and manage on-premise and hosted
+infrastructures. To provide SolarWinds Orion with the necessary visibility
+into this diverse set of technologies, it is common for network
+administrators to configure SolarWinds Orion with pervasive privileges,
+making it a valuable target for adversary activity.
+
+https://us-cert.cisa.gov/ncas/alerts/aa20-352a
+
+------------------------------
+
+Date: December 17, 2020 at 5:57:28 PM GMT+9
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: The U.S. government spent billions on a system for detecting hacks.
+  The Russians outsmarted it. (Craig Timberg and Ellen Nakashima)
+
+  [Note:  This item comes from reader Randall Head.  DLH]
+
+15 Dec 2020
+<https://www.washingtonpost.com/national-security/ruusian-hackers-outsmarted-us-defenses/2020/12/15/3deed840-3f11-11eb-9453-fc36ba051781_story.html>
+
+When Russian hackers first slipped their digital Trojan horses into federal government computer systems, probably sometime in the spring, they sat dormant for days, doing nothing but hiding. Then the malicious code sprang into action and began communicating with the outside world.
+
+At that moment -- when the Russian malware began sending transmissions from
+federal servers to command-and-control computers operated by the hackers --
+an opportunity for detection arose, much as human spies behind enemy lines
+are particularly vulnerable when they radio home to report what they've
+found.
+
+Why then, when computer networks at the State Department and other federal
+agencies started signaling to Russian servers, did nobody in the
+U.S. government notice that something odd was afoot?
+
+The answer is part Russian skill, part federal government blind spot.
+
+The Russians, whose operation was discovered this month by a cybersecurity firm that they hacked, were good. After initiating the hacks by corrupting patches of widely used network monitoring software, the hackers hid well, wiped away their tracks and communicated through IP addresses in the United States rather than ones in, say, Moscow to minimize suspicions.
+
+The hackers also shrewdly used novel bits of malicious code that apparently
+evaded the U.S. government's multibillion-dollar detection system, Einstein,
+which focuses on finding new uses of known malware and also detecting
+connections to parts of the Internet used in previous hacks.
+
+But Einstein, operated by the Department of Homeland Security's
+Cybersecurity and Infrastructure Security Agency (CISA), was not equipped to
+find novel malware or Internet connections, despite a 2018 report from the
+Government Accountability Office suggesting that building such capability
+might be a wise investment. Some private cybersecurity firms do this type of
+*hunting* for suspicious communications -- maybe an IP address to which a
+server has never before connected -- but Einstein doesn't.
+
+``It's fair to say that Einstein wasn't designed properly,'' said Thomas
+Bossert, a top cybersecurity official in both the George W. Bush and Trump
+administrations. ``But that's a management failure.''
+
+CISA spokeswoman Sara Sendek said the breaches stretch back to March and
+were not caught by any intrusion detection or prevention system. As soon as
+CISA received indicators of the activity it loaded them into Einstein to
+help identify breaches on agency networks, Sendek said.
+
+CISA is providing technical assistance to affected agencies, she said.
+
+Russia has denied involvement in the intrusions.
+
+The federal government has invested heavily in securing its myriad
+computers, especially since the extent of the devastating Chinese hack of
+the Office of Personnel Management was discovered in 2015, when more than 20
+million federal employees and others had their personal information,
+including Social Security numbers, compromised.
+
+But this year's months-long hack of federal networks, discovered in recent
+days, has revealed new weaknesses and underscored some previously known
+ones, including the federal government's reliance on widely used commercial
+software that provides potential attack vectors for nation-state hackers.
+
+The FBI and DHS are investigating the scope and nature of the breaches,
+which intelligence officials believe were carried out by the Russian Foreign
+Intelligence Service (SVR). Sen. Richard Blumenthal (D-Conn.) on Tuesday
+publicly acknowledged as much, tweeting that the Senate received a
+``classified briefing on Russia's cyberattack [that] left me deeply alarmed,
+in fact downright scared.''
+
+The Russians reportedly found their way into federal systems by first
+hacking SolarWinds, a Texas-based maker of network-monitoring software, and
+then slipped the malware into automatic updates that network administrators,
+in the federal government and elsewhere, routinely install to keep their
+systems current. The company reported that nearly 18,000 of its customers
+may have been affected worldwide.
+
+More broadly, the hack highlighted the struggles of the government's
+network-monitoring systems to detect threats delivered through newly written
+malicious code communicating to servers not previously affiliated with known
+cyberattacks. This is something advanced nation-state hackers, including
+from Russia, sometimes do -- presumably because it makes intrusions harder
+to detect.
+
+The full scope of the hack remains unknown, though it's already clear that a
+growing number of agencies have been penetrated, including the departments
+of State, Treasury, Homeland Security and Commerce, and the National
+Institutes of Health. They are among victims that include consulting,
+technology, telecom, and oil and gas companies in North America, Europe,
+Asia and the Middle East.
+
+The Pentagon was assessing Tuesday whether there had been intrusions at the
+sprawling department and if so what impact they may have had, a spokesman
+said.
+
+Emails were one target of the hackers, officials said. Though it's not yet
+clear what the Russians may be intending to do with the information, their
+victims, including a variety of State Department bureaus, suggest a range of
+motives.
+
+At State, they may want to know what policymakers' plans are with respect to
+regions and issues that affect Russia's strategic interests. At Treasury,
+they may have sought insights into potential Russian targets of
+U.S. sanctions. At NIH, they may be interested in information related to
+coronavirus vaccine research.
+
+As the investigative work continues, some lawmakers are focused on probing why and how federal cybersecurity efforts have fallen short despite years of damaging hacks by Russian and Chinese spies and major federal investments in defensive technologies.
+
+Einstein, which was developed by DHS and is now operated by CISA, was
+supposed to be a backbone of federal protection of civilian agency
+computers, but the 2018 GAO report found significant weaknesses.
+
+The capability to ``identify any anomalies that may indicate a cybersecurity
+compromise'' was planned for deployment by 2022, the report said. It also
+said that network monitoring by individual agencies is spotty. Of 23 federal
+agencies surveyed, five ``were not monitoring inbound or outbound direct
+connections to outside entities,'' and 11 ``were not persistently monitoring
+inbound encrypted traffic.'' Eight ``were not persistently monitoring
+outbound encrypted traffic.''
+
+``DHS spent billions of taxpayer dollars on cyber defenses and all it got in
+return was a lemon with a catchy name,'' said Sen. Ron Wyden (D-Ore.), a
+member of the Senate Intelligence Committee. ``Despite warnings by
+government watchdogs, this administration failed to promptly deploy
+technology necessary to identify suspicious traffic and catch hackers using
+new tools and new servers.''
+
+It wasn't just this administration.
+
+  [But it does take an Einstein to get it right?  PGN]
+
+------------------------------
+
+Date: Sat, 19 Dec 2020 13:40:09 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: More Hacking Attacks Found as Officials Warn of Grave Risk to
+  U.S. Government (NYTimes)
+
+``Governments have long spied on each other but there is a growing and
+critical recognition that there needs to be a clear set of rules that put
+certain techniques off limits.  One of the things that needs to be off
+limits is a broad supply chain attack that creates a vulnerability for the
+world that other forms of traditional espionage do not.''  [Attributed to a
+Mr Smith]
+https://www.nytimes.com/2020/12/17/us/politics/russia-cyber-hack-trump.html
+
+------------------------------
+
+Date: Fri, 18 Dec 2020 8:59:11 PST
+From: Paul Saffo <paul@saffo.com>
+Subject: Harvard Gazette interviews Russia expert Paul Kolbe on Russian
+  hacking of government computer systems (Christina Pazzanese)
+
+Harvard Gazette, 16 Dec 2020
+
+Revelations of cyberattacks on U.S. likely just `tip of the iceberg'
+Espionage aimed at government, big business was `sustained, targeted,
+far-reaching', analysts say
+
+https://news.harvard.edu/gazette/story/2020/12/harvard-cybersecurity-experts-discuss-russian-breach/
+https://webcache.googleusercontent.com/search?q=cache:nd02WV_TL2kJ:https://www.solarwinds.com/fr/company/customers+&cd=5&hl=en&ct=clnk&gl=no
+
+------------------------------
+
+Date: Sun, 13 Dec 2020 18:55:02 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Hyundai and Kia Woes Continue as Nearly 425,000 Vehicles Recalled
+  Over Engine Issues (The Drive)
+
+The independent Center for Auto Safety <https://www.autosafety.org/> has
+been particularly outspoken about how owners have been treated by the two
+manufacturers.  ``Hyundai is recalling another 129k vehicles for fire risk,
+but because the current recall only covers certain Hyundai vehicles, despite
+other ones having the exact same engines, we don't think this recall is the
+end of this story,'' the center said in a tweeted statement.
+<https://twitter.com/Ctr4AutoSafety/status/1335585122410696706>
+
+``When consumers are telling their car company and their government their
+cars are catching on fire, it should not require a third-party watchdog to
+force life-saving action, but that's exactly what happene here,'' said Jason
+Levine, executive director of the Center for Auto Safety, in a press
+release.  ``Far too many Hyundai owners had their horror stories dismissed
+as freak occurrences or anomalous. Today's recall demonstrates that where
+there's smoke there's fire.''
+
+https://www.thedrive.com/news/37985/hyundai-and-kia-woes-continue-as-nearly-425000-vehicles-recalled-over-engine-issues
+
+------------------------------
+
+Date: Sat, 19 Dec 2020 11:07:51 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Boeing inappropriately coached test pilots during review of 737 Max
+  after crashes, Senate investigators say (WashPost)
+
+https://www.washingtonpost.com/local/trafficandcommuting/boeing-faa-senate/2020/12/18/b1ce57b6-414d-11eb-8db8-395dedaaa036_story.html
+
+Self-certification authority transferred to the aviation industry has
+weakened the FAA's independence and regulatory effectiveness.
+
+Delegation of certification authority to industry accelerates commercial
+operations; independent regulators impede product delivery through their
+enforcement and oversight processes.
+
+Government whistleblowers experience retaliation from their superiors
+because they refuse to "play ball" deters public safety advocacy.
+
+Self-certification and self-regulation have been promoted by the Federal
+government. "FAA Is Not Alone In Allowing Industry To Self-Regulate,"
+identifies the Interior Department Bureau of Safety and Environmental
+Enforcement -- the offshore carbon extraction practice regulator that
+contributed to the Deep Water Horizon disaster -- as another spectacular
+example. The Environmental Protection Agency and Department of Agriculture
+routinely practice "light touch" regulation or outright industrial
+capitulation to enable profit pursuit.
+https://wbhm.org/npr_story_post/2019/faa-is-not-alone-in-allowing-industry-to-self-regulate/
+
+Protecting public health and safety is a government's primary function.
+Urgent reconsideration of their elected service is appropriate when specific
+enforcement measures are regarded with impunity.
+
+------------------------------
+
+Date: Tue, 15 Dec 2020 16:26:01 +1100
+From: Edwin Slonim <eslonim@minols.com>
+Subject: Global google services outage 12/14 -- delay in repair
+
+The preliminary report contains this fascinating note in Additional Details:
+"Many of our internal users and tools experienced similar errors, which
+added delays to our outage external communication."
+
+Preliminary Incident Statement while full Incident Report is prepared.
+
+(All Times US/Pacific)
+Incident Start: 2020-12-14 03:45
+Incident End: 2020-12-14 04:35
+Duration: 50 minutes;
+Affected:
+
+   - Services: Google Cloud Platform, Google Workspace
+   - Features: Account login and authentication to all Cloud services
+   - Regions/Zones: Global
+
+Description:
+
+Google Cloud Platform and Google Workspace experienced a global outage
+affecting all services which require Google account authentication for a
+duration of 50 minutes. The root cause was an issue in our automated quota
+management system which reduced capacity for Google's central identity
+management system, causing it to return errors globally. As a result, we
+couldn't verify that user requests were authenticated and served
+errors to our users.  Customer Impact:
+
+   - GCP services (including Cloud Console, Cloud Storage, BigQuery, Google
+   Kubernetes Engine) requiring authentication would have returned an error
+   for all users.
+   - Google Workspace services (including Gmail, Calendar, Meet, Docs and
+   Drive) requiring authentication would have returned an error for all users.
+
+Additional Details:
+
+   - Many of our internal users and tools experienced similar errors, which
+   added delays to our outage external communication.
+   - We will publish an analysis of this incident once we have completed
+   our internal investigation.
+
+------------------------------
+
+Date: Fri, 11 Dec 2020 19:31:17 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Military-grade camera shows risks of airborne coronavirus spread
+ (WashPost)
+
+To visually illustrate the risk of airborne transmission, The Washington Post used an infrared camera capable of detecting exhaled breath.
+
+https://www.washingtonpost.com/investigations/2020/12/11/coronavirus-airborne-video-infrared-spread/
+
+------------------------------
+
+Date: Sun, 13 Dec 2020 20:57:04 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: National Weather Service faces Internet bandwidth shortage,
+  proposes access limits (WashPost)
+
+Agency floats a solution to problems that could hobble private companies and
+affect popular weather apps.
+
+The Weather Service held a public forum Tuesday to discuss the proposal and
+answer questions. When asked about the investment in computing
+infrastructure that would be required for these limits to not be necessary,
+agency officials said a one-time cost of about $1.5 million could avert rate
+limits. The NOAA budget for fiscal 2020 was $5.4 billion.
+
+Buchanan, however, stated the actual cost to address the issue would be
+higher because the $1.5 million “would comprise just one component
+of what has to be a multifaceted solution.”
+
+The officials at the forum also said that senior management at the Weather
+Service was aware of the relatively small cost of addressing the issue but
+that the agency faced “competing priorities.”
+
+Buchanan said data dissemination is a priority for Weather Service
+leadership but that it is *continuously weighed�* against others.
+
+When officials at the forum were asked if Congress was aware of the agency's
+data dissemination challenges, they said that they did not know.
+
+https://www.washingtonpost.com/weather/2020/12/09/nws-data-limits-internet-bandwidth/
+
+------------------------------
+
+Date: Sat, 19 Dec 2020 13:42:13 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Facebook' Tone-Deaf Attack on Apple (NYTimes)
+
+The company declared in newspaper ads that it was ``standing up to Apple.''
+It's a desperate ploy that's unlikely to work.
+
+https://www.nytimes.com/2020/12/18/opinion/facebook-apple-ads.html
+
+What's Facebook doing pretending to be on the high/moral ground in this
+fight?
+
+------------------------------
+
+Date: Wed, 16 Dec 2020 10:29:05 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Exfiltrating Data from Air-Gapped Computers via Wi-Fi Signals
+  -- Without Wi-Fi Hardware (The Hacker News)
+
+A security researcher has demonstrated that sensitive data could be
+exfiltrated from air-gapped computers via a novel technique that leverages
+Wi-Fi signals as a covert channel -- surprisingly, without requiring the
+presence of Wi-Fi hardware on the targeted systems.
+
+Dubbed "*AIR-FI* <https://arxiv.org/abs/2012.06884>," the attack hinges on
+deploying a specially designed malware in a compromised system that exploits
+"DDR SDRAM buses to generate electromagnetic emissions in the 2.4 GHz Wi-Fi
+bands" and transmitting information atop these frequencies that can then be
+intercepted and decoded by nearby Wi-Fi capable devices such as smartphones,
+laptops, and IoT devices before sending the data to remote servers
+controlled by an attacker.
+
+The findings were published today in a paper titled "AIR-FI: Generating
+Covert Wi-Fi Signals from Air-Gapped Computers" by *Dr. Mordechai Guri*
+<https://www.linkedin.com/in/mordechai-guri-081109100/?originalSubdomain=il>,
+the head of R&D at Ben-Gurion University of the Negev's Cyber-Security
+Research Center, Israel.
+
+"The AIR-FI attack [...] does not require Wi-Fi related hardware in the
+air-gapped computers," Dr. Guri outlined.  [...]
+https://thehackernews.com/2020/12/exfiltrating-data-from-air-gapped.html
+
+------------------------------
+
+Date: Thu, 17 Dec 2020 11:29:25 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Cheap GPS jammers a major threat to drones
+
+*Blog Editor's Note: We are not sure the drone and autonomous community have
+really come to grips with this issue. *
+
+*The article mentions interference with a display involving hundreds of
+drones. There have been other incidents, of course, in China and elsewhere.
+One example is the UK accident we reported on that could have resulted in a
+fatality, according to the government's investigation report
+<https://rntfnd.org/2020/07/20/gps-interference-crashed-a-survey-drone-in-the-uk-will-the-debate-resonate-in-the-us-c4isrnet-ligado/>.*
+
+*We agree with the below article that GPS/GNSS receivers should include
+better hardware and software to make them more resilient to jamming and
+spoofing.*
+
+*That's only part of the solution, though. A holistic approach is needed if
+GPS/GNSS is to be managed property. We agree with the Protect, Toughen, and
+Augment scheme advocated by the National Space-based Positioning, Navigation,
+and Timing Advisory Board.*
+<https://rntfnd.org/what-we-do/our-recommendations-gps-gnss/>
+
+*PROTECT: GPS/GNSS signals with the right kinds of laws and regulations,
+interference detection, and enforcement action, *
+
+*TOUGHEN: Receivers and users with better software and equipment, and*
+
+*AUGMENT: GPS/GNSS signals with other signals/sources of PNT information.*
+EXCERPT:
+
+*Jammers that can be bought for as little as $50 threaten commercial drones,
+but there are options.*
+
+With rotors whirring and airframes hurling through the air, drones can be
+very dangerous when flights don't go as planned. There's been much teeth
+gnashing over the FAA's measured approach to commercial drone policy
+adoption, but the fact is there are real dangers, including from bad actors
+using inexpensive GPS jammers.
+
+GPS signal jamming technology is evolving, decreasing in size and cost.
+Today, jammers can be bought online for as low as $50. Long a threat to
+military assets, jamming is now a commercial concern as commercial drone
+deliveries become a reality, and attacks are becoming pervasive globally.
+This threat now affects commercial, law enforcement, and defense drones on
+critical missions.  [...]
+https://rntfnd.org/2020/12/16/cheap-gps-jammers-a-major-threat-to-drones-zd-net/
+
+------------------------------
+
+Date: Fri, 18 Dec 2020 10:21:01 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Betting on the election
+
+Betting on elections is not legal in the US, but, with masses of offshore
+betting sites, that doesn't really prevent Americans from doing it.  You can
+bet on pretty much anything these days, as long as you can get someone else
+to take the other side of the bet.  (With the betting sites taking a cut.)
+
+For the sites, there is going to be some political analysis in setting the
+initial odds of an election, but later in the game the odds tend to reflect
+how people are betting, as the sites try to ensure that they aren't too
+exposed in the event of an unexpected outcome.  The Trumpists were out in
+force during the last election.  The odds on Trump got shorter and shorter
+as his supporters bet more and more.
+
+Betting sites don't report much, and certainly not to any central authority,
+so we don't know for sure how much money was wagered.  But it was a massive
+amount, and Trumpists lost their shirts.
+
+https://slate.com/news-and-politics/2020/12/trump-betting-markets-sportsbooks-
+offshore-2020-election-gambling.html
+
+The risks are fairly obvious ...
+
+------------------------------
+
+Date: Sun, 13 Dec 2020 18:45:40 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Vaccinated? Show Us Your App (NYTimes)
+
+Covid-19 health pass apps could help reopen businesses and restore the
+economy. They could also unfairly exclude people from travel and workplaces.
+
+Among all the tools that health agencies have developed over the years to
+fight epidemics, at least one has remained a constant for more than a
+century: paper vaccination certificates.
+
+In the 1880s, in response to smallpox outbreaks, some public schools began
+requiring students and teachers to show vaccination cards. In the 1960s,
+amid yellow fever epidemics, the World Health Organization introduced an
+international travel document, known informally as the yellow card. Even
+now, travelers from certain regions are required to show a version of the
+card at airports.
+
+But now, just as the United States is preparing to distribute the first
+vaccines for the virus, the entry ticket to the nation's reopening is set to
+come largely in the form of a digital health credential.
+
+In the coming weeks, major airlines including United, JetBlue and Lufthansa
+plan to introduce a health passport app, called CommonPass, that aims to
+verify passengers' virus test result-- and soon, vaccinations. The app will
+then issue confirmation codes enabling passengers to board certain
+international flights. It is just the start of a push for digital Covid-19
+credentials that could soon be embraced by employers, schools, summer camps
+and entertainment venues.
+
+``This is likely to be a new normal need that we’re going to have
+to deal with to control and contain this pandemic,'' said Dr. Brad Perkins,
+the chief medical officer at the Commons Project Foundation, a nonprofit in
+Geneva that developed the CommonPass app.
+
+https://www.nytimes.com/2020/12/13/technology/coronavirus-vaccine-apps.html
+
+------------------------------
+
+Date: Fri, 18 Dec 2020 10:57:26 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Devices Used In COVID-19 Treatment Can Give Errors For
+  Patients With Dark Skin (npr.org)
+
+https://www.npr.org/sections/health-shots/2020/12/16/947226068/dark-skin-can-lead-to-errors-with-pulse-oximeters-used-in-covid-19-treatment
+
+"The common fingertip devices that measures oxygen in the blood can
+sometimes give misleading readings in people with dark skin, according to a
+report Wednesday in The New England Journal of Medicine."
+
+The NEJM report "Racial Bias in Pulse Oximetry Measurement," retrieved from
+https://www.nejm.org/doi/full/10.1056/NEJMc2029240 on 17DEC2020 DOES NOT
+identify pulse oximeter suppliers or manufacturers used in their study.
+
+The NEJM report identifies ~12% "incorrect measurement" events from
+fingertip pulse oximeter devices within their patient cohort.
+
+Fingertip oximeters are applied to measure patient oxygen blood saturation,
+an important pulmonary function indicator. Under the COVID-19 pandemic, an
+estimated ~114K hospitalizations are identified (See
+https://covidtracking.com/data/charts/us-all-key-metrics, retrieved on
+17DEC2020). It is doubtful that fingertip oximeter suppliers possess the
+capacity to follow up on "incorrect measurement" reports.
+
+MDRs are routinely submitted by manufacturer representatives in response to
+injury, malfunction, death or causes arising from a host of regulated
+devices. These include pacemakers/ICDs, neuro-stimulators, periotenial
+dialysis systems, hip and knee replacements, intraocular lens, etc.  Given
+COVID-19 incidence per
+https://covid.cdc.gov/covid-data-tracker/#demographics, the FDA medical
+device report (MDR) data summarized below suggests substantial
+under-reporting.
+
+The FDA's product classification platform @
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPCD/PCDSimpleSearch.cfm
+using "oximeter" as a search key returns 13 distinct product codes: DPZ,
+DQA, DQE, GLY, MMA, MUD, NLF, NMB, NMD, OCH, PGJ, QEM, QLS.
+
+Using FDA TPLC @
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfTPLC/tplc.cfm with each
+product shows reveals DQA and MUD retrieve substantial (more than ~100)
+medical device reports between 2015-2020. These MDRs include both
+anesthesia-grade oximeters with a fiber-optic catheter, and the standalone
+fingertip gizmos purchased off-the-shelf at amazon.com for US$ 25.
+
+The DQA product codes TPLC report lsits seven (7) recalls between
+2015-2019. The latest recall was in 2019 for a nasal oximeter from Xhale
+Assurance, Inc. See
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=172753
+retrieved on 17DEC2020.
+
+The top-10 DQA device problems in CSV format are:
+
+"Device Problems","MDRs with this Device Problem","Events in those MDRs"
+"Incorrect Measurement",1685,1685
+"Display or Visual Feedback Problem",904,904
+"Device Operates Differently Than Expected",567,567
+"Failure To Run On AC/DC",392,392
+"Device Stops Intermittently",377,377
+"Low Readings",254,254
+"No Display/Image",205,205
+"Inappropriate or Unexpected Reset",198,198
+"Battery Problem",187,187
+"Sensing Intermittently",167,167
+
+The top-10 DQA patient problems traced to the device problems in CSV format
+are:
+
+"Patient Problems","MDRs with this Patient Problem","Events in those MDRs"
+"No Consequences Or Impact To Patient",3028,3028
+"No Known Impact Or Consequence To Patient",2019,2019
+"No Patient Involvement",929,929
+"No Information",118,118
+"Death",113,113
+"Injury",90,90
+"Burn(s)",71,71
+"Pressure Sores",52,52
+"Low Oxygen Saturation",37,37
+"Skin Irritation",16,16
+
+The top-10 MUD device problems in CSV format are:
+
+"Device Problems","MDRs with this Device Problem","Events in those MDRs"
+"Low Readings",82,82
+"Incorrect Measurement",28,28
+"Incorrect, Inadequate or Imprecise Resultor Readings",25,25
+"High Readings",15,15
+"Contamination /Decontamination Problem",14,14
+"Sensing Intermittently",9,9
+"Adverse Event Without Identified Device or Use Problem",9,9
+"Sensor",7,7
+"Failure to Analyze Signal",7,7
+"Loss of or Failure to Bond",6,6
+
+The top-10 MUD patient problems traced to the device problems in CSV format
+are:
+
+"Patient Problems","MDRs with this Patient Problem","Events in those MDRs"
+"No Consequences Or Impact To Patient",128,128
+"No Patient Involvement",20,20
+"No Known Impact Or Consequence To Patient",18,18
+"No Information",13,13
+"Injury",10,10
+"Burn(s)",9,9
+"Erythema",7,7
+"Skin Irritation",5,5
+"Pressure Sores",4,4
+"Death",4,4
+
+------------------------------
+
+Date: Mon, 14 Dec 2020 10:06:19 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: An Internal Medicine Doctor and His Peers Read the Pfizer Vaccine
+  Study and See Red Flags (Naked Capitalism)
+
+IM Doc, an internal medicine practitioner of 30 years, trained and worked in
+one of the top teaching hospitals in the US for most of his career before
+moving to a rural hospital in an affluent pocket of Flyover. He has been
+giving commentary from the front lines of the pandemic. Along with current
+and former colleagues, he is troubled by the PR-flier-level information
+presented to the public about the Pfizer and Moderna vaccines, at least
+prior to the release of an article in the New England Journal of Medicine on
+the Pfizer vaccine: *Safety and Efficacy of the BNT162b2 mRNA Covid-19
+Vaccine* <https://www.nejm.org/doi/full/10.1056/NEJMoa2034577>.  However, he
+did not find the study to be reassuring. He has taken the trouble of writing
+up his reservations after discussing the article with his group of nine
+physicians that meets regularly to sanity check concerns and discuss the
+impact that articles will have on their practices.  [...]
+https://www.nakedcapitalism.com/2020/12/an-internal-medicine-doctor-and-his-peers-read-the-pfizer-vaccine-study-and-see-red-flags.html
+
+------------------------------
+
+Date: Sat, 12 Dec 2020 10:36:45 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: More Differential Privacy for Ordinary Security Mavens
+
+In the first account I composed, O Mystikophilus, I began to tell of all
+that differential privacy was and could do for us.
+http://catless.ncl.ac.uk/Risks/32/40#subj18
+
+People misunderstood.
+
+Which is, perhaps, only to be expected.  After all, we still don't agree
+what privacy is.  It is pretty much impossible to get a strict and working
+definition of what privacy actually is, at least in terms that are useful in
+the information age.  Everyone has personal and subjective feelings about
+what information is and is not private.
+
+One of the best definitions I've ever come across states that privacy is
+your ability to control information about you.  And that ability has never
+been absolute.  (And I don't just mean Scott McNealy's "You have zero
+privacy anyway.  Get over it.")  We live in communities, and the people
+around you can see and hear you, see where you go, note who you talk to.
+That's been the reality since we began to be able to talk.  We can,
+temporarily, shroud ourselves, whisper to another, or get away from the
+group, but our right to privacy is not binary, in the same sense as the
+right to life or free speech.  We don't, therefore, have a "right" to
+privacy any more than we have the "right to be forgotten" in anything other
+than a purely artificial sense.
+
+This is reflected, to an extent, in our laws and constitutions.  They don't
+mention much about privacy.  In my original presentation, I was challenged
+on this statement by someone from Portugal, who said that Portugal's
+constitution *does* we have a right to privacy.  But the right to privacy
+that it mentions really only limits what the government can do with
+information about you, like the American Privacy Act of 1974.  (Since they
+were written about the same time, this is hardly surprising.)  He then said
+that the first mention of privacy in an *English* law dates to 1361.  But,
+again, *that* law says that the authorities can't look into the window of
+your house, and is much more about illegal search than it is about what we
+consider private.
+
+In a fairly major sense, differential privacy avoids all of this definition
+of privacy issue by not caring what privacy is.  Differential privacy is
+more concerned with databases, and queries on databases.  Specifically it
+looks at the problems of inference and aggregation attacks.  An inference
+attack is where you can infer, from information you are given access to,
+information that you are *not* given access to.  For example, suppose I am
+given access to a database that holds information about prices, but does not
+tell me about supply.  If I see that the price of a certain commodity is
+going up, I can infer that the supply is going down, even though I've been
+forbidden access to that data.  Aggregation is the ability to find out
+restricted information by combining available information, often from a
+variety of sources.  The whole field of open source intelligence (OSInt) is
+based on this idea.  In database security, inference and aggregation attacks
+are a long- standing problem with very few solutions.
+
+We can, of course, try to address the problem by restricting what queries
+are allowed.  We can say that individual items can't be reported, and that
+only queries on groups of data are allowed.  (Aggregation can be both attack
+and defence.)  Unless we are very careful about that, we get the situation
+where we say that you can't know Rob Slade's salary, but you can know the
+average salary of everyone in Vancouver.  But if we then allow that you can
+ask for the average salary of everyone in Vancouver *except* for Rob Slade,
+we can aggregate those two queries and infer what Rob Slade's salary is.
+
+So, what can we do about it?  Well, you remember Bell-LaPadula?  Of course
+you do.  They came up with a simple security property.  (For
+confidentiality.  They were only concerned with confidentiality.)  If you
+don't want people to know secret information, don't tell them.  If you are
+at a medium security level, you can't see any high security information, and
+you can't tell anything to people who are at a low security level.  No read
+up, no write down.  Simple.
+
+Ah, if only life were so simple.  But try to build a Bell-LaPadula computer.
+(OK yes, I know.  "Multics."  Fine.  Try and build a computer that combines
+Bell- LaPadula and Biba.  Come back when you're done.)  However, formal
+models *do* give us guidance and can be very useful in getting our minds
+around the problem.  So, in 2006, some people thought about how to protect
+against aggregation and inference attacks on databases.
+(Dwork/McSherry/Nissim/Smith, Calibrating noise to sensitivity in private
+data analysis, Proceedings of the Third conference on Theory of
+Cryptography)
+
+So, some simple principles.  Well, a person's privacy cannot be compromised
+by a statistical release if their data are not in the database.  That's
+basic.  You can't have your privacy violated if your information isn't
+there.  So, how can we make it as *if* your information isn't there?  The
+goal of differential privacy is to give each individual roughly the same
+privacy that would result from not having their data in the database.
+(Hence the "differential" part: there should be no, or next to no,
+"difference" in queries whether your data is there or not.)  So the only
+functions (mostly statistical) run on the database should not overly depend
+on the data of any one individual.
+
+And, *that* leads to the Fundamental Law of Information Recovery: in the
+most general case, privacy cannot be protected without injecting some amount
+of noise.  And as queries are made on the data of fewer people, you need
+more noise.
+
+So how do we get this to work? (to be continued ...)
+
+MORE:
+
+As I have said, differential privacy is not the type of privacy we normally
+think of when we think of privacy.  But it is related, and can be valuable.
+Coincident with starting this research and writing on differential privacy,
+I have been watching "Search and Rescue: North Shore," which is a terrific
+five part documentary series about the team and it's activities.  I believe
+it is available for streaming simply by signing up (for free) at:
+https://www.knowledge.ca/program/search-and-rescue-north-shore I highly
+recommend it.  Not only is it the gorgeous scenery of where I live, and some
+of the emergency management people I've trained with, it also has numerous
+lessons about planning, training, risk analysis, and other elements
+important to security management, security operations, and business
+continuity.  It is a wonderful example of film making.  It must have been a
+bear to edit, since they not only embedded cameramen with the teams, but, in
+a number of cases, had helmet cameras, fixed cameras inside helicopters,
+cameras fixed to quad bikes, cameras fixed to rope gear, and even aerial
+drone shots, all of which had to be spliced together to create a whole, and
+seamless, narrative.
+
+It also gives you yet another example of an inference attack.  Since it
+involves real situations, real rescues, and real people, the film-makers had
+to get permission from those involved in cases where you could clearly
+identify someone.  In some cases, that permission obviously wasn't given,
+and faces are blurred out in the final series.  This allows you to infer who
+was OK with being involved in the final product, and who was more bashful
+(or embarrassed).
+
+As previously noted, aggregation and inference attacks have been a
+persistent and intractable problem in database security.  But aggregation
+can also be used as a protection.  British Columbia's provincial health
+officer, Dr. Bonnie Henry, has done a masterful job both of managing the
+CoVID-19 pandemic, and leading the communications about it.  For months she
+has, on an almost daily basis, provided a great deal of data on the
+situation.  However, initially that data was only provided on the five major
+health regions of the province.  The reporters asking questions on "The
+Doctor Bonnie Show (co-starring Adrian Dix and Nigel Howard)" have
+consistently demanded data by towns, schools, and even individual
+neighbourhoods.  As Dr. Henry has pointed out, providing data on that level,
+when the numbers are small, would allow for inference attacks that could
+identify individuals, so only sufficiently large sets of aggregated data are
+provided, in order to preserve individual privacy.  As the numbers, of
+cases, outbreaks, and even, unfortunately, deaths, have increased, however,
+it has become possible to provide information based first on local health
+areas, and now on individual towns.  (Hopefully it won't get to the point
+where it is safe to provide data on individual neighbourhoods.)
+
+Aggregation may have to be done carefully.  There are situations, and
+certain types of data, where you may wish to have anonymization taking place
+prior to aggregation.  In those cases, you may even wish to have separate
+teams doing the anonymization and the aggregation, and a Brewer-Nash type
+firewall between those teams, so that the aggregated data may not be
+re-identified.  And, of course, the design of the anonymization and the
+design of the aggregated database in such a way that it is not possible to
+de-anonymize the data is a non-trivial task.
+
+Aggregation is not a new concept in database security.  We've been using it
+for years.  Even decades ago it was part of the notion of data warehousing,
+with the idea being that we would use lots of lots of data that had no real
+personal information and pull out insights without ever having to risk
+someone's personal privacy.  But, as with most simple answers, there are
+problems.  In many cases, data can't be completely anonymized and still
+remain useful.  And anonymization isn't limited simply to the removal of
+personally identifiable information.  Anonymization doesn't even seem to be
+enough.  The trouble is, aggregation itself seemed to lead to privacy risks.
+At one point Google made a bunch of its search data available to the public.
+The feeling was that no personal information had been involved, and
+therefore there was no risk to privacy.  However, some privacy experts
+started digging into the data, and found that, simply given the volume of
+the data, it was, in fact, fairly simple to collect searches related to an
+individual, and, in many cases, identify them.  It's also now fairly widely
+accepted (except by most of the general public, it seems) that the
+aggregation of even trivial posts on social media can result in the
+compilation of dossiers that spy agencies of the past would have gladly
+killed for.  As has been pointed out, the NSA didn't have to go to all that
+trouble to illegally collect data on Americans: they just had to read
+Facebook.
+
+So, that leads us to the Fundamental Law of Information Recovery, and noise.
+
+------------------------------
+
+Date: Thu, 17 Dec 2020 12:08:39 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Differential Privacy for Ordinary Security Mavens: noise
+
+Of the CISSP sample questions which I have collected over the decades, one
+of my very favorite is this one.:
+
+Which of the following is NOT an effective deterrent against a database
+inference attack?
+
+a.	Partitioning
+b.	Small query sets
+c.	Noise and perturbation
+d.	Cell suppression
+
+Answer: b.
+
+Why do I like it so much?  I have found that a lot of people get this one
+wrong.  Remember, you are supposed to answer the question asked, from the
+answers provided.  We were not asked, "Is it a good idea to add noise to
+your database?"  We were asked whether it would help in a specific
+situation.
+
+First off, let's get rid of a and d. Database inference attacks are an old
+and established threat against database systems, and are not subject to many
+defences.  Partitioning and cell suppression may not help much, but they do
+help.
+
+Now we are left with small query sets (b) and noise and perturbation (c).
+Lots of people choose noise and perturbation, because, well, noise.  We
+don't want to introduce errors into our databases, do we?  That has to be
+the worst (and therefore, in the wording of this question, right) answer.
+
+The thing is that small query sets are, specifically, one of the tools that
+you do use to mount inference attacks.  So small query sets are,
+specifically, NOT an effective deterrent against a database inference
+attack.
+
+And what about noise and perturbation? Well, if you are really, seriously,
+concerned about inference attacks, introducing small sources of noise and
+perturbation (very carefully) *is* a very effective protection.
+
+Sometimes we can add quite a bit of noise, and still have useful information
+(and privacy).  The social sciences have a system called "randomized
+response" for situations where you want to poll a group or population about
+embarrassing or illegal behaviour.  If you want to ask people if they have
+ever murdered someone, they'll probably just answer "no."  However, the
+randomized response system tells them to flip a coin.  If the coin comes up
+heads, answer truthfully.  If the coin comes up tails, then flip the coin
+again, and answer "yes" if heads, and "no" if tails.  Since, from outside,
+we don't know if the subjects got heads on the first coin toss, we don't
+know if they answered truthfully or not to the question.  Since this
+preserves their privacy, they are more likely to answer truthfully.  We can,
+statistically, remove the "noise" since we know that 25% of the total
+answers will be "yes" on the basis of the random coin flipping.
+
+Sometimes the noise we introduce can be done simply on the basis of
+rounding.  If we have the classic case of asking "What is the average salary
+in Vancouver?" and then asking "What is the every salary for everyone in
+Vancouver *except* Rob Slade?" then merely rounding the answers to the
+nearest thousand (or even hundred) dollars probably skews the numbers enough
+that you won't be able to calculate my salary with any degree of accuracy.
+
+The amount and type of noise that will protect privacy and yet still allow
+useful results will likely depend upon the data being collected and the
+questions being asked.
+
+------------------------------
+
+Date: Sun, 13 Dec 2020 18:33:25 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: AI Can Run Your Work Meetings Now (RISKS-32.40)
+
+George Orwell was an optimist...  Pretty soon Big Brother could not only
+watch you, he could tell exactly if* you really *loved him.
+
+------------------------------
+
+Date: Sun, 13 Dec 2020 18:12:55 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Former Israeli space security chief says aliens exist, humanity
+  not ready (RISKS-32.40)
+
+May I quote a comment to the Jpost article, as posted by "GoldMagnet":
+
+"The main thing that shows that this is false is that anyone in the
+universe convinced Trump to not say something, and that he doesn't want
+hysteria. No one has ever been able to get Trump to NOT say something."
+
+------------------------------
+
+Date: Sun, 13 Dec 2020 18:29:49 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Police Drones Starting to Think for Themselves (RISKS-32.40)
+
+"a special drone ... can follow a particular person or vehicle"
+
+This reminds me of the case of the mistaken shooting of Jean Menezes by
+officers of the London Met Police on Jul. 22, 1978
+(https://en.wikipedia.org/wiki/Shooting_of_Jean_Charles_de_Menezes).
+
+Menezes was mistakenly identified as a suspected terrorist, and then
+followed around London by detectives (all believing he was the wanted
+terrorist) until shot by a special police team while trying to board a
+train.
+
+Now it's technically possible that all of this -- misidentification,
+following, and shooting -- might be accomplished by a single drone.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.41
+************************

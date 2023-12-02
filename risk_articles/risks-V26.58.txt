@@ -1,0 +1,684 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 27 September 2011  Volume 26 : Issue 58
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.58.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+U.S. Accuses Poker Site of Fraud (Matt Richtel via PGN)
+Auditing in the News: $7.6 billion missing (Steven J. Greenwald)
+OnStar Begins Spying On Customers' GPS Location For Profit
+  (Jonathan Zdziarski via Lauren Weinstein, and via Monty Solomon)
+Data breaches affect 2 million people in Massachusetts (Hiawatha Bray via
+  Monty Solomon)
+Interesting Facebook incident (Peter Houppermans)
+Facebook Yet Again Again Again (Gene Wirchenko)
+Cell phone number acquisition (Peter Houppermans)
+Risks of cyber warfare (Jared Gottlieb)
+Re: United Airlines uses 11,000 iPads ... (David Magda, Simon Farnsworth,
+  Andrew Douglass, Geoff Kuenning)
+Thoughts about this WSJ "you've been hacked" suggestion? (Danny Burstein)
+Mark Bowden, WORM: The First Digital World War (PGN)
+REVIEW: "Above the Clouds", Kevin T. McDonald (Rob Slade)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 23 Sep 2011 15:13:18 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: U.S. Accuses Poker Site of Fraud (Matt Richtel)
+
+Source: Matt Richtel, *The New York Times*, 21 Sep 2011, B1.
+
+The Full Tilt Poker website (run offshore from the U.S., of course)
+``was not a legitimate poker company but a global Ponzi scheme," according
+to P.S Bharara, U.S. attorney.  Entrusted with $390 million of gamblers'
+money, FTP managed to transfer these funds to its owners and managers.
+The gamblers were ``taking on far more risk than they realized, even when
+they had no chips on the virtual table.''
+
+RISKS has long warned about trusting untrustworthy third parties, but this
+case brings some of the risks of cloud computing home to roost quite
+dramatically.
+
+------------------------------
+
+Date: Mon, 26 Sep 2011 21:55:01 -0400 (EDT)
+From: "Steven J. Greenwald" <sjg6@gate.net>
+Subject: Auditing in the News: $7.6 billion missing
+
+ALL of the "Big Four" accounting firms listed in the attached article do the
+same thing: send soi disant "auditors" around who look like they just
+graduated high-school but wear expensive suits and >$800 ties/shoes. And who
+work from stale checklists. And don't know what the hell they do (and never
+will). But they wear expensive clothing.
+
+I have seen the look of amazing ignorance and stupidity on the faces of
+these "auditors" so many times that it has gotten burned into my neurons to
+such a remarkable degree that if re-incarnation actually happens then while
+I might forget my own ego I will certainly never forget that idiotic look. I
+can spot it instantly, like an experienced cop can spot a drunken driver
+(the same look, actually; cops call it "drunk eyes" -- a characteristic
+beady far-off unfocused felonious stare that denotes a person totally
+non-functional, non-ethical, and out-of-touch).
+
+I could tell a few hundred horror stories about them.
+
+Like a place that only a few days ago (and which you will definitely not
+hear about in the news) that found out that, contrary to these very
+sartorially expensive auditors, they actually *didn't* do backups even
+though everyone thought they did (the software logs said so!), which came as
+a rather horrible, shocking, and sickening surprise. The operators didn't
+bother changing the tapes (but the software logs showed everything okay!)
+and therefore they wound up using the same tapes over-and-over again,
+including the ones that should have had the archival data for last year or
+so (the surveillance video in the computer room shows the operators zoned
+out and staring into space for long periods of time). Of course, the
+expensive auditors didn't actually do something as remarkably simple and
+basic as checking the written backup log for consistency -- wait a tick
+. . . WHAT backup log? Oops! (In fairness: the IT director should get the ax
+too, but that never happens.)
+
+My favorite first-hand auditor horror story though: the remarkably
+high-profile place that had ZERO access control. I do mean ZERO access
+control.  You want root access? No problem! Just connect to the system
+(remotely works just fine!) and you'd get a nice Unix root shell prompt and
+total and unaudited access. Where you could easily and with no risk at all
+rob them blind (I don't *think* it happened for some reason that still
+eludes me; just lucky, I guess). Did I mention publically available remote
+access with no access control of any sort? Not even security-by-obscurity.
+These brain dead suits from PriceWaterhouse Coopers didn't notice (did I
+*really* name that prestigious Big Four company?).
+
+Someone send an apology consultant to them.
+
+The article:
+
+Kevin Gray, Deloitte sued for $7.6 billion, accused of missing fraud (Reuters)
+http://news.yahoo.com/deloitte-sued-7-6-billion-accused-missing-fraud-215604966.html
+
+Deloitte Touche Tohmatsu Ltd , the world's largest accounting and consulting
+firm, was accused on Monday of failing to detect fraud during its audits of
+one of the biggest private mortgage firms to collapse during the
+U.S. housing crash.  A trust overseeing the bankruptcy of Taylor, Bean &
+Whitaker Mortgage Corp, or TBW, and one of the company's subsidiaries filed
+complaints in a Miami Circuit Court claiming a combined $7.6 billion in
+losses.  Deloitte "certified TBW as a solvent, viable company with accurate
+financial statements every year from 2001 to 2008," one of the complaints
+said.  "Despite Deloitte's credentials and expertise as one of the 'Big 4'
+accounting firms, those statements -- and the rosy picture they depicted of
+TBW -- were completely false," it said.  Deloitte spokesman Jonathan Gandal
+said the "claims are utterly without merit."
+
+It was the latest lawsuit to hit one of the major accounting firms over
+their role in the credit crisis.  PriceWaterhouse Coopers, KPMG and Ernst &
+Young are also facing accusations about their auditing standards by
+investors who collectively seek to recoup billions of dollars lost in the
+financial meltdown.
+
+Lee Farkas, the former chairman of Taylor, Bean and Whitaker, was sentenced
+to 30 years in prison in April for masterminding what U.S. officials
+described as one of the biggest bank frauds ever.  U.S. Justice Department
+officials said Farkas ran a $2.9 billion fraud scheme that led to TBW's
+downfall and the collapse of one of the largest U.S. regional banks,
+Colonial Bank.  The complaint filed by Neil F. Luria, a plan trustee of
+Taylor, Bean & Whitaker Trust, claims losses of approximately $6 billion. A
+second complaint by Ocala Funding, a wholly owned TBW subsidiary which
+served as a lending facility, claims losses of $1.6 billion.
+Farkas was accused of running a wide-ranging scheme to cover up large losses
+at Taylor, Bean, which was based in Ocala, Florida, by moving funds between
+accounts at Colonial Bank and also by selling mortgage loans that either did
+not exist, were worthless or had already been sold.
+
+"Deloitte missed this fraud because it simply accepted management's
+conflicting, incomplete and often last-minute explanations of
+highly-questionable transactions, even though those explanations made no
+sense and were flatly contradicted by the documents in Deloitte's
+possession," the complaint by Ocala Funding said.  "Ocala relied on Deloitte
+to detect material misstatements in the financial statements due to error or
+fraud," the complaint said.
+
+Gandal said the plaintiffs in the cases were "companies through which
+convicted felon Lee Farkas and his co-conspirators committed their crimes.
+The bizarre notion that his engines of theft are entitled to complain of
+injury from their own crimes and to sue the outside auditors they lied to
+defies common sense, not to mention the law."
+
+Several other Taylor, Bean and Colonial Bank employees who pleaded guilty
+for their roles in the fraud were also sentenced earlier this year.
+(Editing by Bernard Orr)
+
+------------------------------
+
+Date: Tue, 20 Sep 2011 10:59:14 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: OnStar Begins Spying On Customers' GPS Location For Profit (NNSquad)
+
+http://j.mp/nuv56t  (Zdziarski)
+
+  "So the GPS location of your vehicle and your vehicle's speed are going to
+  be collected by OnStar and sold to third parties. What kind of companies
+  are interested in this data? OnStar would have you believe that
+  respectable agencies, like departments of transportation and various law
+  enforcement agencies (for purposes of "public safety or traffic services"
+  - A.K.A ticket writing). I can imagine this data COULD be used for good,
+  to create traffic based analytics to improve future road construction or
+  even emergency response. But given that those types of decisions are only
+  made once a decade in most cities, OnStar isn't likely to benefit much
+  financially from "respectable" companies."
+
+ - - -
+
+The key aspects of this that are most disturbing are the apparent lack of
+any user choice in these regards (except by totally eliminating the service
+*and the data connection*!) and the provision of data to law enforcement.
+OnStar is really becoming quite problematic in key respects, and may now
+have crossed the infamous "creepy" line.
+
+Lauren Weinstein (lauren@vortex.com): http://www.vortex.com/lauren
+People For Internet Responsibility: http://www.pfir.org  Skype: vortex.com
+Network Neutrality Squad: http://www.nnsquad.org  +1 (818) 225-2800
+
+  [See also Brendan Sasso, Franken and Coons urge OnStar to reverse privacy
+  changes, *The Hill*, 22 Sep 2011.  PGN]
+  http://thehill.com/blogs/hillicon-valley/technology/183387-franken-and-coons-urge-onstar-to-reverse-privacy-changes
+
+------------------------------
+
+Date: Tue, 20 Sep 2011 22:58:56 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: OnStar Begins Spying On Customers' GPS Location For Profit
+
+Posted on September 20, 2011 by Jonathan Zdziarski
+http://www.zdziarski.com/blog/?p=1270
+
+I canceled the OnStar subscription on my new GMC vehicle today after
+receiving an e-mail from the company about their new terms and conditions.
+While most people, I imagine, would hit the delete button when receiving
+something as exciting as new terms and conditions, being the nerd sort, I
+decided to have a personal drooling session and read it instead. I'm glad I
+did. OnStar's latest T&C has some very unsettling updates to it, which
+include the ability to sell your personal GPS location information, speed,
+safety belt usage, and other information to third parties, including law
+enforcement. To add insult to a slap in the face, the company insists they
+will continue collecting and selling this personal information even after
+you cancel your service, unless you specifically shut down the data
+connection to the vehicle after canceling. ...
+
+------------------------------
+
+Date: Wed, 21 Sep 2011 15:18:19 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Data breaches affect 2 million people in Massachusetts (Hiawatha Bray)
+
+Hiawatha Bray: Firms increasingly targets for hackers, Coakley warns,
+*The Boston Globe*, 21 Sep 2011
+
+Personal information from nearly one out of three Massachusetts residents,
+from names and addresses to medical histories, has been compromised through
+data theft or loss since the beginning of 2010, according to statistics
+released yesterday by the office of Attorney General Martha Coakley.
+
+A state law enacted in 2007 requires all companies doing business in
+Massachusetts to inform consumers and state regulators about security
+breaches that might result in identity theft. That could include leaks of
+individual names along with other sensitive information, such as Social
+Security numbers or bank account, credit card, and debit card numbers. The
+law was passed in 2007, after hackers stole 45 million credit card numbers
+from Framingham-based retailer TJX Cos.
+
+Coakley said that her office is just beginning to analyze the reports to
+find out whether the law is helping to reduce data breaches. But she
+predicted the problem will get worse as more Americans store vital personal
+data on various computer networks. "There is going to be more room for
+employee error, for intentional hacking,'' Coakley said. "This is going to
+be an increasing target.''
+
+The attorney general's office has received 1,166 data breach notices since
+January 2010, including 480 between January and August of 2011.  About 2.1
+million residents were affected by the various incidents, though it's
+unknown whether any of them were actually defrauded as a result of the data
+leaks. ...
+
+http://www.boston.com/business/technology/articles/2011/09/21/two_million_mass_residents_hit_by_data_breach_leaks/
+
+------------------------------
+
+Date: Mon, 26 Sep 2011 02:52:56 +0200
+From: Peter Houppermans <ph@pncg.ch>
+Subject: Interesting Facebook incident
+
+The longer I look at Facebook, the more questions I have about it.
+
+First there is this:
+http://nikcub-static.appspot.com/logging-out-of-facebook-is-not-enough
+
+* Logging out of Facebook is not enough.  (Some members on this list may
+  remember a private discussion I had with them about the danger of Facebook
+  buttons a while back).
+
+But there appears to be more, although I have not been able to pinpoint yet
+what exactly happened.  It appears Facebook can do other things by itself
+that you would have expected to require human input.  Anyone ever heard of a
+picture being tagged in Facebook without the poster or anyone else doing it?
+
+I have been briefed on an incident where an image of person A was uploaded
+by person B (who has person A in a very small circle of friends).
+
+Subsequently, person A gets a notification that an image of them was
+uploaded.
+
+ Where it gets interesting:
+
+* Person A's account has otherwise no images associated with it.  Thus, the
+  facial biometrics that could be used to ID someone (and ferret out
+  duplicate accounts) should not be available.  The reason for the lack of
+  images was to avoid publicity -- the account is not in a real name.  In
+  hindsight, that emerged as a very good move.
+
+* Nobody appears to have tagged the image as containing person A, nor is
+  there any Facebook notification which suggests this had happened.
+
+* Person A has another, more public account, WITH images.  This received no
+  notification either.
+
+The question is thus how Facebook managed to establish the relationship.
+Personally, I'm still betting on someone tagging and then removing the tag
+(especially since it happened in a rather small group of individuals and hit
+what was in principle the wrong account), but the notification of that
+action is missing.
+
+I'm going to run some tests over the next few weeks, but I'd be interested
+to hear of any other incidents where data unexpectedly has been linked.
+Ideas welcome.
+
+------------------------------
+
+Date: Thu, 22 Sep 2011 10:10:18 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Facebook Yet Again Again Again
+
+http://www.infoworld.com/t/social-networking/facebook-makes-it-easier-ever-eavesdrop-173657
+InfoWorld Home / InfoWorld Tech Watch
+September 21, 2011
+Facebook makes it easier than ever to eavesdrop
+The new mini stream feature makes it simple to see what people are
+saying, even when they might not realize you're listening
+By Ted Samson | InfoWorld
+
+selected text:
+
+What's concerning, though, is the nature of some of the changes that
+Facebook has made to counter Google+ in this match-up. At least one feature
+is almost certainly going to generate controversy: A new mini feed, combined
+with Facebook's new Subscription options, makes it disturbingly easy to
+effectively eavesdrop on fellow Facebook friends -- that is, to peer in on
+exchanges between your Facebook friends, both with mutual pals and people
+who are complete strangers to you.  This should be of particular concern for
+all the Facebook users who use the site both to interact with real-life
+friends on a personal level, as well as family members, coworkers, and
+colleagues.
+
+------------------------------
+
+Date: Tue, 20 Sep 2011 01:54:37 +0200
+From: Peter Houppermans <ph@pncg.ch>
+Subject: Cell phone number acquisition
+
+Am I the only one who has spotted increased attempts at mobile phone
+number acquisition?
+
+At the moment, personal mobile phone numbers are the last vestige of privacy
+-- guess what sites like Facebook and even Hotmail are now asking for under
+the pretext of *cough* "extra security" *cough*?  It's not even subtle: the
+coercion is extremely aggressive, with frequent messages popping up in the
+middle of any usage to more or less harass you into providing more data
+(another one is other email addresses you may have).
+
+Now imagine you have given your number, and the price of SMS messages drops.
+Unlike any other service, SMS traffic cannot be disabled other than by
+killing the phone service itself.  The only barrier between you and spam or
+DDoS is cost.  None other.
+
+------------------------------
+
+Date: Sun, 25 Sep 2011 22:01:24 -0600
+From: jared gottlieb <Jared@netspace.net.au>
+Subject: Risks of cyber warfare
+
+The US Air Force issued a major revision to its Instruction 51-402
+(27Jul2011), changing its title and including "cyber capabilities". The
+document "Legal Review of Weapons and Cyber Capabilities" seems to require
+looking at risks:
+
+3. Contents of the Legal Review of Weapons and Cyber Capabilities. ...
+
+* 3.1.2.1. Whether the weapon or cyber capability is calculated to cause
+  superfluous injury, in violation of Article 23(e) of the Annex to Hague
+  Convention IV; and
+
+* 3.1.2.2. Whether the weapon or cyber capability is capable of being
+  directed against a specific military objective and, if not, is of a nature
+  to cause an effect on military objectives and civilians or civilian
+  objects without distinction.
+
+The scope of cyber capabilities is given as:
+
+* Cyber Capability.  For the purposes of this Instruction, an Air Force
+cyber capability requiring a legal review prior to employment is any device
+or software payload intended to disrupt, deny, degrade, negate, impair or
+destroy adversarial computer systems, data, activities or capabilities.
+Cyber capabilities do not include a device or software that is solely
+intended to provide access to an adversarial computer system for data
+exploitation.
+
+* Cyberspace Operations.  A cyberspace operation is the employment of cyber
+capabilities where the primary purpose is to achieve objectives in or
+through cyberspace. Such operations include computer network operations and
+activities to operate and defend the Global Information Grid.
+
+------------------------------
+
+Date: Tue, 20 Sep 2011 11:16:31 -0400
+From: "David Magda" <dmagda@ee.ryerson.ca>
+Subject: Re: United Airlines uses 11,000 iPads ... (RISKS 26.56)
+
+Geoff Kuenning wrote:
+
+> But of course passengers will still be prohibited from using those same
+> devices while the pilots have them turned on...
+
+As well they should IMHO.
+
+AFAICT, the most "eventful" times during flight tend to occur during take
+off and landing, and passengers should be aware of their environment in case
+an emergency happens. Similarly the pilots are not playing Angry Birds
+during take offs and landings (we hope), but rather concentrating on the
+controls of the plane.
+
+I think it's long been shown that consumer electronics don't really
+interfere with (most) aviation electronics, and that the real reason is for
+situation awareness.
+
+(Personally I don't see what the fuss is about: is it really such a big deal
+to "switch off" for twenty or so minutes at the beginning and end of a
+flight? But that's just my personality.)
+
+------------------------------
+
+Date: Tue, 20 Sep 2011 21:38:23 +0100
+From: Simon Farnsworth <simon@farnz.org.uk>
+Subject: Re: United Airlines uses 11,000 iPads ... (McDonald, RISKS-26.57)
+
+I've been in a Boeing 777 that made a heavy landing in storm conditions (not
+a crash, just a heavy landing involving several touchdowns before the plane
+finally stayed on the ground); it was sufficiently bad that improperly
+closed overhead lockers broke open, and objects (pens, paper notebooks, the
+odd netbook computer) hurled free from the lockers damaged bulkheads to the
+point where the aircraft would have to be taken out of service for repairs.
+
+Because Boeing considered this risk when the plane was designed, objects
+that flew free of the damaged overhead lockers flew down the aisle, and were
+therefore unlikely to injure anyone.
+
+The experience leads me to believe that in a crash, some hand-held devices
+would be thrown free from their operator with sufficient force to pose a
+risk of head injury to an unfortunate passenger in front, with all the
+accompanying problems when you try to evacuate the crashed airliner.
+
+------------------------------
+
+Date: Mon, 19 Sep 2011 23:07:16 -0400
+From: Andrew Douglass <andrew@douglass.org>
+Subject: Re: United Airlines uses 11,000 iPads ... (RISKS 26.56)
+
+The discussion of iPad and other wireless devices on airplanes begs a
+question that drives me crazy because it is not often enough asked: If they
+require everyone to turn off wireless capabilities to avoid interference
+with instruments and communication (I trust there is a safety argument as
+well), is this not also a confession that there IS a vulnerability? It seems
+to me that it would take little effort to construct a multi-frequency jammer
+powerful to cause serious problems. So should not the primary goal be to
+harden critical systems against interference and, once achieved, stop
+worrying about the consumer electronics?
+
+I suspect the risk of interference is indeed small, with the exception of
+the deliberate terrorist ploy I suggest. Blinding a *glass cockpit* aircraft
+in a thunderstorm could have dire consequences, especially, as we have seen,
+with flight crews' increasing dependence on automation.
+
+------------------------------
+
+Date: Thu, 22 Sep 2011 00:02:06 -0700
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: Re: United Airlines uses 11,000 iPads to take planes paperless (RISKS 26.56)
+
+> I think it's long been shown that consumer electronics don't really
+> interfere with (most) aviation electronics, and that the real reason is
+> for situation awareness.
+
+This argument doesn't even begin to hold water.  If situational awareness is
+so important, why is my neighbor prohibited from reading the newspaper on
+her iPad while it's OK for me to do the same with a physical--and physically
+larger--copy of the New York Times?  The same goes for tons of other alleged
+distractions, of course, but no passenger is less situationally aware than
+the napping one.  I suspect that every flight attendant has a story about
+someone who had to be shaken awake after every else on the plane had
+departed.
+
+> (Personally I don't see what the fuss is about: is it really such a big
+> deal to "switch off" for twenty or so minutes at the beginning and end of
+> a flight? But that's just my personality.)
+
+Disregarding the issue of whether it's appropriate to pass judgment on
+another person's choice of how to use his time, I'll answer personally: yes,
+it can be a huge deal.  It's often the case that those twenty minutes will
+come directly out of my already shortened sleep that night.
+
+Keep trying, and keep the best.
+
+------------------------------
+
+Date: Mon, 26 Sep 2011 17:08:41 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Thoughts about this WSJ "you've been hacked" suggestion?
+
+  [From a *WSJ* article explaining what your business should do if you find
+  indications you've been successfully attacked:]
+
+"Don't unplug. The natural instinct when an employee discovers he or she has
+been hacked is to power off the machine (and maybe throw it against the wall
+in frustration).
+
+"But it's the wrong move.
+
+"True, turning off the Internet connection and detaching the computer from
+the corporate network can help prevent the infection from spreading. But
+shutting the machine down can also erase valuable evidence that will help
+investigators determine what's been stolen and where it's been sent. A lot
+of malware - a catchall term for programs like viruses written and installed
+by hackers - resides in a computer's memory and not on the hard drive.
+Turning off a computer erases the memory, and with it many traces of the
+hack, security experts say."
+
+http://online.wsj.com/article/SB10001424053111904265504576566991567148576.html
+
+My opinion: that's a Feb 25, 1993, attitude. Your system is
+compromised. Smash the intruder, now. Finding the bad guy would be nice,
+   but secondary.
+
+------------------------------
+
+Date: Tue, 27 Sep 2011 16:40:27 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Mark Bowden, WORM: The First Digital World War
+
+Mark Bowden
+WORM: The First Digital World War
+Atlantic Monthly Press
+x+245
+NY NY 2011
+
+  [Published today]
+
+This is a marvelous book on the people behind the Conficker Cabal who
+reverse engineered and analyzed Conficker.  There is also a little on
+Stuxnet, reverse engineering, and related subjects.  Bowden is well known
+for Black Hawk Down, and is a compelling writer.  [Disclaimer: Several of
+the people featured in the book are my friends, colleagues, and long-time
+RISKS readers.  PGN]
+
+  See also the article in *Atlantic Monthly*:
+http://www.theatlantic.com/magazine/archive/2010/06/the-enemy-within/8098/
+
+------------------------------
+
+Date: Tue, 20 Sep 2011 16:34:54 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: REVIEW: "Above the Clouds", Kevin T. McDonald
+
+BKABVCLD.RVW   20110323
+
+"Above the Clouds", Kevin T. McDonald, 2010, 978-1-84928-031-0,
+UK#39.95
+%A   Kevin T. McDonald
+%D   2010
+%G   978-1-84928-031-0 1-84928-031-2
+%I   IT Governance
+%O   UK#39.95
+%O  http://www.amazon.com/exec/obidos/ASIN/1849280312/robsladesinterne
+  http://www.amazon.co.uk/exec/obidos/ASIN/1849280312/robsladesinte-21
+%O   http://www.amazon.ca/exec/obidos/ASIN/1849280312/robsladesin03-20
+%O   Audience n+ Tech 1 Writing 1 (see revfaq.htm for explanation)
+%P   169 p.
+%T   "Above the Clouds: Managing Risk in the World of Cloud Computing"
+
+The preface does a complicated job of defining cloud computing.  The
+introduction does provides a simpler description: cloud computing is the
+sharing of services, at the time you need them, paying for the services you
+need or use.  Different terms are listed based on what services are
+provided, and to whom.  We could call cloud computing time-sharing, and the
+providers service bureaus.  (Of course, if we did that, a number of people
+would think they'd walked into a forty- five year time-warp.)
+
+The text is oddly structured: indeed, it is hard to find any organization in
+the material at all.  Chapter one states that the cloud allows you to do
+rapid prototyping because you can use patched operating systems.  I would
+agree that properly up-to-date operating systems are a good thing, but it
+isn't made clear what this has to do with either prototyping or the cloud.
+There is a definite (and repeated) assertion that "bigger is better," but
+this idea is presented as an article of faith, rather than demonstrated.
+There is mention of the difficulty of maintaining core competencies, but no
+discussion of how you would determine that a large entity has such
+competencies.  Some of the content is contradictory: there are many
+statements to the effect that the cloud allows instant access to services,
+but at least one warning that you cannot expect cloud services to be
+instantly accessible.  Various commercial products and services are noted in
+one section, but there is almost no description or detail in regard to
+actual services or availability.
+
+Chapter two does admit that there can be some problems with using cloud
+services.  Despite this admission some of the material is strange.  We are
+told that you can eliminate capacity planning by using the cloud, but are
+immediately warned that we need to determine service levels (which is just a
+different form of capacity planning).  In terms of preparation and planning,
+chapter three does mention a numb of issues to be addressed.  Even so, it
+tends to underplay the full range of factors that can determine the success
+or failure of a cloud project.  (Much content that has been provided
+previously is duplicated here.)  There is a very brief section on risk
+management.  The process outline is fine, but the example given is rather
+flawed.  (The gap analysis fails to note that the vendor does not actually
+answer the question asked.)  SAS70 and similar reports are heavily
+emphasized, although the material fails to mention that many of the reasons
+that small businesses will be interested in the cloud will be for functions
+that are beyond the scope of these standards.  Chapter four appears to be
+about risk assessment, but then wanders into discussion of continuity
+planning, project management, testing, and a bewildering variety of only
+marginally related topics.  There is a very terse review of security
+fundamentals, in chapter five, but it is so brief as to be almost useless,
+and does not really address issues specifically related to the cloud.  The
+(very limited) examination of security in chapter six seems to imply that a
+good cloud provider will automatically provide additional security
+functions.  In certain areas, such as availability and backup, this may be
+true.  However, in areas such as access control and identity management,
+this will most probably involve additional charges/costs, and it is not
+likely that the service provider will be able to do a better job than you
+can, yourself.  A final chapter suggests that you analyze your own company
+to find functions that can be placed into the cloud.
+
+Despite the random nature of the book, the breadth of topics means it can be
+used as an introduction to the factors which should be considered when
+attempting to use cloud computing.  The lack of detail would place a heavy
+burden of research and work on those charged with planning or implementing
+such activities.  In addition, the heavily promotional tone of the work may
+lead some readers to underestimate the magnitude of the task.
+
+copyright, Robert M. Slade   2011     BKABVCLD.RVW   20110323
+rslade@vcn.bc.ca     slade@victoria.tc.ca     rslade@computercrime.org
+victoria.tc.ca/techrev/rms.htm http://www.infosecbc.org/links
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.58
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E6C080D2AEEEXSAN02campus_--

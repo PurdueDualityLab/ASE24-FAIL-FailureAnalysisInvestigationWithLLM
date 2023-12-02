@@ -1,0 +1,791 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 25 March 2015  Volume 28 : Issue 57
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.57.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Software says "'Dr' Must Be Male"! (Chris Drewe)
+Computer "glitch" meant info not shared with defense lawyers
+  (Jeremy Epstein)
+Australia's iVote subject to FREAK? (Rob Slade)
+Australia's iVote is busted already (Dave Horsfall)
+Amazon Wins Approval to Test Delivery Drones Outdoors (NYTimes)
+Scientists Seek Ban on Method of Making Gene-Edited Babies (NYTimes)
+"Unconstitutional": [India] Supreme Court Scraps Section 66A,
+  Protects Online Freedom of Speech (Lauren Weinstein)
+EFF: International Coalition Launches 'Manila Principles' to Protect
+  Freedom of Expression Worldwide (David Farber)
+Penn State Fraternity's Secret Facebook Photos May Lead to Criminal Charges
+  (NYTimes)
+Westjet Knows How To Play Along (Lyndon Nerenberg)
+Cancer genetic tests offered on websites often not all they promise to be,
+  Dana-Farber study finds (The Boston Globe via John Day)
+Web: Amazon Adds Fire TV, Stick Features (Gabe Goldberg)
+Google warns of unauthorized TLS certificates trusted by almost all OSes
+  (Ars)
+Pointing Fingers in Apple Pay Fraud (NYTimes)
+Cell towers lack emergency contact signage (Dan Jacobson)
+FCC issues RFC on CSRIC IV Cybersecurity Risk Management and Assurance
+  Recommendations (Werner U)
+FTC opens new office to protect you from the Internet of Things (Werner U)
+"GoDaddy accounts vulnerable to social engineering and Photoshop"
+  (Steve Ragan)
+Apple Pay: Bridging Online and Big Box Fraud (Krebs)
+Hacking BIOS Chips Isn't Just the NSA's Domain Anymore (Kim Zetter via
+  ACM TechNews)
+Government Spies Admit That Cyber Armageddon Is Unlikely (Slashdot)
+House Judiciary Committee tries to be cool, fails oh so miserably
+  (Lauren Weinstein)
+Researchers Uncover Way to Hack BIOS and Undermine Secure OSs (WiReD)
+Twitter puts trillions of tweets up for sale to data miners (The Guardian)
+  Henry Baker <hbaker1@pipeline.com>
+Cisco: Tor for US SnailMail needed? (Darren Pauli)
+911's deadly flaw: Lack of location data (USA Today)
+Re: As We Age, Smartphones Don't Make Us Stupid ... (Gene Wirchenko)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 19 Mar 2015 20:51:05 +0000
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Software says "'Dr' Must Be Male"!
+
+There's a column-filler item in today's local newspaper (can't see it
+on-line) about one Dr Louise Selby, a pediatrician, who registered with a
+gym club in Cambridge, England.  She found that her security code wouldn't
+allow her access to the ladies' changing room.  Problem turned out to be the
+gym's membership software, which assumed that anybody with the title 'Dr'
+was male; only work-round was for her to use another title.  The gym club
+apologised and said that it was bought-in software (not named), adding that
+they hadn't specified this feature and hoped to fix it.
+
+  [In Germany, if her husband were also a Dr, she would be Frau Doktor
+  Doktor Selby, and presumably German software would have no problem
+  with that.  PGN]
+
+------------------------------
+
+Date: Sat, 21 Mar 2015 10:10:20 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Computer "glitch" meant info not shared with defense lawyers
+
+The articles aren't completely clear to me, but it seems that a commercial
+product called I/Leads used in Washington DC brings together data from
+multiple police data sources, for required sharing with defense attorneys.
+However, the program doesn't bring all the data in that it should, meaning
+that defense attorneys were missing access to data which could have affected
+their cases.  The prosecutors are now reviewing the cases to see what was
+left out to determine it was substantive; defense attorneys say that's not
+for the prosecutors to decide.
+
+``Police described the missing information as mostly administrative and
+redundant, and prosecutors agree that some could be found in other easily
+accessible reports. But prosecutors said that omitted data also included
+detailed descriptions by officers of suspects' appearance, demeanor, and
+attitude -- information lawyers on both sides of courtroom could find
+crucial.''
+
+On the one hand, leaving out information that might be relevant is obviously
+a big problem.  On the other hand, it's only because the information is
+computerized that it's even feasible to gather all together.  Doubtless
+defense attorneys have far more information from police files now than they
+had a few decades ago, as a result of computerization.
+
+Defense attorneys are asking the court for more information about what went
+wrong.
+
+<http://www.washingtonpost.com/wp-dyn/content/article/2009/04/09/AR2009040904300.html>
+
+"U.S. District Judge Emmet G. Sullivan set a March 27 deadline for the
+U.S. Attorney's Office to report on the government's understanding of the
+extent to which the problem could affect any of about two dozen federal
+criminal cases pending before him and filed since 2011. Prosecutors were
+also told to explain decisions to disclose or not to disclose any piece of
+information that is found to have been withheld."
+
+I've seen nothing to indicate whether the problem is generic to the I/Leads
+software, or if it's something unique to the Washington DC configuration of
+the software.
+
+One item I found puzzling, but not specifically related to this problem,
+was a statement that I/Leads "which went online in 2012, is being replaced
+starting in August 2015."  That seems like an awfully short lifespan for a
+system of this sort, given the usual timelines for developing
+enterprise-type systems.
+
+http://www.washingtonpost.com/local/crime/dc-prosecutors-say-computer-glitch-may-have-caused-evidence-problems/2015/03/17/ec5c1c5e-ccca-11e4-8c54-ffb5ba6f2f69_story.html
+
+http://www.washingtonpost.com/local/crime/police-say-they-are-not-to-blame-for-information-omitted-from-reports/2015/03/18/d4ce5afe-cda9-11e4-a2a7-9517a3a70506_story.html
+
+http://www.washingtonpost.com/local/crime/federal-judge-orders-prosecutors-to-detail-dc-police-evidence-problems/2015/03/19/d58e93e6-ce53-11e4-8a46-b1dc9be5a8ff_story.html
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 10:17:30 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Australia's iVote subject to FREAK?
+
+http://www.theregister.co.uk/2015/03/22/ivote_hack/
+
+------------------------------
+
+Date: Tue, 24 Mar 2015 18:44:50 +1100 (EST)
+From: Dave Horsfall <dave@horsfall.org>
+Subject: Australia's iVote is busted already
+
+No need for me to post a follow-up to my previous message; this link says it
+all.
+
+http://www.lifehacker.com.au/2015/03/the-big-security-flaw-in-nsw-online-voting/
+
+  ``If you're one of the 66,000 people from New South Wales who voted in the
+  state election using iVote between Monday March 16 and midday on Saturday
+  March 21, your vote could have been exposed or changed without you
+  knowing.''
+
+Plus ça change, plus c'est la même chose, and all that...
+
+http://www.horsfall.org/spam.html
+
+  [See also: The New South Wales Electoral Commission (Australia) has
+  patched flaws in the electronic voting one week from the election.  Voters
+  could have their intentions changed without their awareness.
+http://www.zdnet.com/article/nsw-electoral-commission-scrambles-to-patch-ivote-flaw/
+  PGN]
+
+------------------------------
+
+Date: Thu, 19 Mar 2015 21:16:52 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Amazon Wins Approval to Test Delivery Drones Outdoors
+
+http://www.nytimes.com/2015/03/20/technology/amazon-wins-approval-to-test-delivery-drones-outdoors.html
+
+While Amazon can now move its tests from inside a warehouse, the retailer
+still has a long way to go to realize its vision of autonomous delivery
+drones.
+
+------------------------------
+
+Date: Thu, 19 Mar 2015 21:21:43 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Scientists Seek Ban on Method of Making Gene-Edited Babies
+
+http://www.nytimes.com/2015/03/20/science/biologists-call-for-halt-to-gene-editing-technique-in-humans.html
+
+A group of biologists, including the scientist who developed the technique,
+has called for a worldwide moratorium on using the method to change human
+DNA.
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 23:06:10 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "Unconstitutional": [India] Supreme Court Scraps Section 66A,
+ Protects Online Freedom of Speech
+
+NDTV via NNSquad
+http://www.ndtv.com/india-news/freedom-of-speech-online-section-66-a-is-struck-down-by-supreme-court-749104
+
+  NEW DELHI: The Supreme Court has scrapped a contentious law that was seen
+  as a major infringement of the freedom of speech online because it allowed
+  the arrest of a person for posting offensive content.  Section 66A of the
+  Information Technology Act, introduced in 2000, has been declared
+  unconstitutional.  Describing the law as "vague in its entirety," the
+  judges said, it encroaches upon "the public's right to know."
+
+------------------------------
+
+Date: Tue, 24 Mar 2015 08:38:58 -0400
+From: "David Farber via ip" <ip@listbox.com>
+Subject: EFF: International Coalition Launches 'Manila Principles' to
+  Protect Freedom of Expression Worldwide
+
+New 'Best Practice' Roadmap to Protect Rights and Promote Innovation Manila
+-- An international coalition launched the Manila Principles on Internet
+Liability today -- a roadmap for the global community to protect online
+freedom of expression and innovation around the world.
+
+Electronic Frontier Foundation (EFF) Senior Global Policy Analyst Jeremy
+Malcolm, who helped spearhead the principles: ``All communication across the
+Internet is facilitated by intermediaries: service providers, social
+networks, search engines, and more.  These services are all routinely asked
+to take down content, and their policies for responding are often muddled,
+heavy-handed, or inconsistent.  That results in censorship and the limiting
+of people's rights...  Our goal is to protect everyone's freedom of
+expression with a framework of safeguards and best practices for responding
+to requests for content removal.''  [...]
+
+The principles and supporting documents can be found online at
+https://www.manilaprinciples.org <https://www.manilaprinciples.org/>, where
+other organizations and members of the public can also express their own
+endorsement of the principles.
+
+------------------------------
+
+Date: Thu, 19 Mar 2015 21:15:47 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Penn State Fraternity's Secret Facebook Photos May Lead to Criminal
+  Charges
+
+http://www.nytimes.com/2015/03/18/us/penn-state-fraternitys-secret-facebook-photos-may-lead-to-criminal-charges.html
+
+A clandestine website -- with images of drugs, hazing and nude, unconscious
+women -- was the subject of a police inquiry that led to the suspension of a
+fraternity's chapter at Penn State.
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 19:07:52 -0700
+From: Lyndon Nerenberg <lyndon@orthanc.ca>
+Subject: Westjet Knows How To Play Along
+
+The National Post:
+http://news.nationalpost.com/2015/03/23/westjet-airlines-has-a-little-fun-with-indiscriminate-scammers-who-call-their-calgary-headquarters/
+
+ The scam artists who call you up and pretend to be offering prizes from
+WestJet Airlines Ltd. are indiscriminate -- so much so that they even call
+WestJet's headquarters in Calgary.
+
+``It proves to us beyond a shadow of a doubt that they have no idea who
+they're calling,'' WestJet spokesman Robert Palmer said in an interview.
+
+The long-running phone scam has become such an annoyance for WestJet that
+the company's employees have started to have a little fun with the
+fraudsters.
+
+Shades of the email cretins ignorant enough to spam the IETF lists ...  (I
+still get the occasional missive directed at <rfc-crammd5@orthanc.ca> - a
+corruption of the <lyndon+rfc-crammd5@orthanc.ca> contact address from a
+long(!) expired Internet.)
+
+------------------------------
+
+Date: Mar 21, 2015 11:10 AM
+From: "John Day" <jeanjour@comcast.net>
+Subject: Cancer genetic tests offered on websites often not all
+  they promise to be, Dana-Farber study finds *The Boston Globe*
+
+Big Data is the greatest threat to science since the Church went after
+Galileo for disproving a heathen. (I never did understand that.) ;-) All
+indications are that it might succeed, given we are well along the road to
+stagnation.  [via Dave Farber's IP distribution, in response to a message
+from Bob Frankston on *The Globe* article: http://goo.gl/L9sVYd.  PGN]
+
+------------------------------
+
+Date: Tue, 24 Mar 2015 13:57:07 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Web: Amazon Adds Fire TV, Stick Features
+
+- - ------ Forwarded Message --------
+Subject: 	web: Amazon Adds Fire TV, Stick Features | http://www.twice.com
+Date: 	Tue, 24 Mar 2015 13:56:09 -0400
+
+My response to friend who sent the pointer:
+
+Firestick is plugged into a TV we don't watch much so I haven't really
+worked it (between Netflix DVDs arriving and cable shows -- haven't cut cord
+yet) .
+
+http://www.twice.com/news/video/amazon-adds-fire-tv-stick-features/56502
+
+...and, of course, updates over the air -- Oh joy, another attack surface.
+Same as Roku -- on my network. I haven't heard of them being hacked, but
+still -- updates for Roku/Firestick I don't/can't control, on devices with
+software I can't see/audit. Give me source code or give me ... risks.
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+LinkedIn: http://www.linkedin.com/in/gabegold            Twitter: GabeG0
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 17:13:46 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Google warns of unauthorized TLS certificates trusted by almost all
+  OSes
+
+Ars via NNSquad
+http://arstechnica.com/security/2015/03/google-warns-of-unauthorized-tls-certificates-trusted-by-almost-all-oses/
+
+  "The bogus transport layer security certificates are trusted by all major
+  operating systems and browsers, although a fall-back mechanism known as
+  public key pinning prevented the Chrome and Firefox browsers from
+  accepting those that vouched for the authenticity of Google properties,
+  Google security engineer Adam Langley wrote in a blog post published
+  Monday. The certificates were issued by Egypt-based MCS Holdings, an
+  intermediate certificate authority that operates under the China Internet
+  Network Information Center (CNNIC). The Chinese domain registrar and
+  certificate authority, in turn, is included in root stores for virtually
+  all OSes and browsers.  The issuance of the unauthorized certificates
+  represents a major breach of rules established by certificate authorities
+  and browser makers."
+
+The only thing missing that keeps this from being a true "Groundhog Day"
+experience is "I Got You Babe" playing every morning at 6 AM.
+
+------------------------------
+
+Date: Tue, 24 Mar 2015 10:04:30 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Pointing Fingers in Apple Pay Fraud
+
+http://www.nytimes.com/2015/03/17/business/banks-find-fraud-abounds-in-apple-pay.html
+
+Some of the nation's banks are privately complaining that Apple Pay may not
+be so great after all, but the banks may largely have themselves to blame.
+
+------------------------------
+
+Date: Sun, 22 Mar 2015 13:14:17 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Cell towers lack emergency contact signage
+
+Have you ever spotted something broken on a cellar tower and tried to report
+it? As there is deliberately not any ownership signage on the entire site,
+one can only turn to government databases, which in many countries have
+location details removed as well. Millions of dollars worth of equipment
+without any contact number!
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 19:21:47 +0100
+From: Werner U <werneru@gmail.com>
+Subject: FCC issues RFC on CSRIC IV Cybersecurity Risk Management and
+ Assurance Recommendations
+
+I just came across this Public Notice at FCC.GOV issued March 19, 2015 an
+RFC (Comment Date 29 May 2015).  I don't recall if/how we've alerted the
+RISKS-community to such items in the past, but I think it might be
+appropriate to call your attention, at least, to the item.  I append the
+full text version below for your consideration and (surely necessary)
+trimming.  Regards, ---Werner
+
+CSRIC IV Cybersecurity Risk Management and Assurance Recommendations
+<https://www.fcc.gov/document/csric-iv-cybersecurity-risk-management-and-assurance-recommendations>
+(also available on website as PDF and WORD-document)
+
+   [HUGE item pruned for RISKS.  PGN]
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 19:50:56 +0100
+From: Werner U <werneru@gmail.com>
+Subject: FTC opens new office to protect you from the Internet of Things
+
+[source: The Verge, 23 Mar 2015]
+
+FTC opens new office to protect you from the Internet of Things
+http://www.theverge.com/2015/3/23/8278127/ftc-office-technology-research-investigation-otri-announced
+
+The FTC says it'll be broadening its scope with the launch of a new Office
+of Technology Research and Investigation, described by the agency as "the
+next generation in consumer protection." The new division succeeds and
+replaces the FTC's current Mobile Technology Unit, which focused on
+safeguarding children from deceptive mobile apps and overseeing other
+smartphone-centric topics.
+
+But technology never sits still. In 2015, we're faced with the growing
+Internet of Things cars that get faster with software updates and the
+expanding smart home. The FTC thinks now's the time to widen its net so that
+it may protect consumer interest across every facet of
+technology. Specifically, the OTRI will keep an eye on "privacy, data
+security, connected cars, smart homes, algorithmic transparency, emerging
+payment methods, big data, and the Internet of Things," according to the
+agency.
+
+"We believe OTRI will be an instrumental source for research and information
+on technology's impact on consumers," wrote chief technologist Ashkan
+Soltani in a blog post. Along with announcing the new office, the FTC says
+it'll be recruiting new technologists and opening up other positions as
+well. Among those is a Technology Policy Research Fellowship, which is aimed
+at recent graduates "with that rare education in both technology and
+policy." In this role, among other duties, fellows will "provide technical
+expertise to FTC attorneys and investigators" -- probably to make sure they
+never publicly say anything foolish. As part of the changes, the FTC says it
+will be inviting more staff to publish posts on its Tech@FTC blog "about
+technical research findings and technology related issues affecting
+consumers."
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 11:55:18 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "GoDaddy accounts vulnerable to social engineering and Photoshop"
+  (Steve Ragan)
+
+Steve Ragan, CSO Online*
+GoDaddy's layered verification protections defeated by a phone call
+and four hours in Photoshop
+http://www.csoonline.com/article/2898128/disaster-recovery/godaddy-accounts-vulnerable-to-social-engineering-and-photoshop.html
+
+opening text:
+
+On Tuesday, my personal account at GoDaddy was compromised. I knew it was
+coming, but considering the layered account protections used by the world's
+largest domain registrar, I didn't think my attacker would be successful.
+
+I was wrong. He was able to gain control over my account within days, and
+all he needed to do was speak to customer support and submit a Photoshopped
+ID.
+
+------------------------------
+
+Date: Sun, 22 Mar 2015 07:43:52 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Apple Pay: Bridging Online and Big Box Fraud
+
+Apple Pay: Bridging Online and Big Box Fraud
+
+Krebs via  NNSquad
+http://krebsonsecurity.com/2015/03/apple-pay-bridging-online-and-big-box-fraud/
+
+  "Lost amid the media firestorm these past few weeks about fraudsters
+  turning to Apple Pay is this stark and rather unsettling reality: Apple
+  Pay makes it possible for cyber thieves to buy high-priced merchandise
+  from brick-and-mortar stores using stolen credit and debit card numbers
+  that were heretofore only useful for online fraud."
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 12:07:30 -0400 (EDT)
+From: "ACM TechNews" <technews@hq.acm.org>
+Subject: Hacking BIOS Chips Isn't Just the NSA's Domain Anymore (Kim Zetter)
+
+ACM TechNews, Monday, March 23, 2015
+(c) 2015 INFORMATION, INC.
+This service may be reproduced for internal distribution.
+
+Kim Zetter, *WiReD* News, 20 Mar 2015
+
+Two security researchers have demonstrated proof-of-concept malware capable
+of remotely infecting the BIOS chips of multiple systems.  Xeno Kovah and
+Corey Kallenberg, former defense contractors who founded their own BIOS
+security firm, demonstrated their malware last week at the CanSecWest
+security conference in Vancouver, British Columbia.  The malware, which they
+call LightEater, uses several incursion vulnerabilities to gain access to
+the system management mode (SMM) on systems with Intel processors.  Access
+to the SMM enables the malware to gain escalated privileges above and beyond
+administrator and root-level access.  With this access, the malware can
+rewrite the contents of the BIOS chip that makes the infection persistent
+and stealthy.  From there, the malware can install rootkits, steal
+passwords, and access data on the system.  It also is capable of reading
+data from the system's memory, which means it potentially could subvert
+systems using the Tails operating system used by journalists and others
+attempting to maintain secrecy.  Kovah and Kallenberg say they have
+contacted the manufacturers of the vulnerable systems they have identified
+and patches are forthcoming.  However, there is a very weak track record of
+users applying BIOS patches even when they are made available.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_5-d820x2c8f4x059384&
+
+------------------------------
+
+Date: Fri, 20 Mar 2015 22:00:22 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Government Spies Admit That Cyber Armageddon Is Unlikely
+
+Slashdot via NNSquad
+http://yro.slashdot.org/story/15/03/21/0253243/government-spies-admit-that-cyber-armageddon-is-unlikelyhttp://yro.slashdot.org/story/15/03/21/0253243/government-spies-admit-that-cyber-armageddon-is-unlikely
+
+  So it's interesting to note a recent statement by the U.S.  intelligence
+  community that pours a bucket of cold water over all of this. According to
+  government spies the likelihood of a cyber Armageddon is "remote." And
+  this raises some unsettling questions about our ability to trust
+  government officials and why they might be tempted to fall back on such
+  blatant hyperbole.
+
+It's like many of us have been saying all along. This is mostly about money
+and power for the cyberscare-industrial complex -- not about realistic
+threat scenarios.
+
+------------------------------
+
+Date: Sat, 21 Mar 2015 10:50:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: House Judiciary Committee tries to be cool, fails oh so miserably
+
+Apparently the GOP-controlled House Judiciary Committee wants to let us all
+know how "cool" they are about Internet memes. In the process, they've
+instead demonstrated juvenile behavior in the form of a "press release" that
+would embarrass any self-respecting 8-year-old.
+
+I know what you'll be thinking -- somebody must have hacked the site.
+Apparently not.
+
+U.S. House via NNSquad
+http://judiciary.house.gov/index.cfm/2015/3/at-the-flick-of-a-switch
+
+------------------------------
+
+Date: Fri, 20 Mar 2015 12:05:40 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Researchers Uncover Way to Hack BIOS and Undermine Secure OSs
+
+Wired via NNSquad
+http://www.wired.com/2015/03/researchers-uncover-way-hack-bios-undermine-secure-operating-systems/
+
+  "Their malware, dubbed LightEater, uses the incursion vulnerabilities to
+  break into and hijack the system management mode to gain escalated
+  privileges on the system. System management mode, or SMM, is an operations
+  mode in Intel processors that firmware uses to do certain functions with
+  high-level system privileges that exceed even administrative and
+  root-level privileges, Kovah notes. Using this mode, they can rewrite the
+  contents of the BIOS chip to install an implant that gives them a
+  persistent and stealth foothold. From there, they can install root kits
+  and steal passwords and other data from the system.  But more
+  significantly, SMM gives their malware the ability to read all data and
+  code that appears in a machine's memory. This would allow their malware,
+  Kovah points out, to subvert any computer using the Tails operating
+  system--the security and privacy-oriented operating system Edward Snowden
+  and journalist Glenn Greenwald used to handle NSA documents Snowden
+  leaked. By reading data in memory, they could steal the encryption key of
+  a Tails user to unlock encrypted data or swipe files and other content as
+  it appears in memory. Tails is meant to be run from a secure USB flash
+  drive or other removable media--so that conceivably it won't be affected
+  by viruses or other malware that may have infected the computer. It
+  operates in the computer's memory and once the operating system is shut
+  down, Tails scrubs the RAM to erase any traces of its activity. But
+  because the LightEater malware uses the system management mode to read the
+  contents of memory, it can grab the data while in memory before it gets
+  scrubbed and store it in a safe place from which it can later be
+  exfiltrated. And it can do this while all the while remaining stealth."
+
+Surprised? You shouldn't be.
+
+------------------------------
+
+Date: Thu, 19 Mar 2015 08:21:07 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Twitter puts trillions of tweets up for sale to data miners
+
+*The Guardian* via NNSquad
+http://www.theguardian.com/technology/2015/mar/18/twitter-puts-trillions-tweets-for-sale-data-miners
+
+  "Computer systems are already aggregating trillions of tweets from the
+  microblogging site, sorting and sifting through countless conversations,
+  following the banter and blustering, ideas and opinions of its 288 million
+  users in search of commercial opportunities.  It is not only commercial
+  interests that are mining the data. Academics are using it to gauge the
+  mood in a football crowd, and trying to shed light on whether Premier
+  League players such as Manchester United's Radamel Falcao are overpaid -
+  with a team of researchers from Reading, Dundee and Cambridge universities
+  testing whether top-flight footballers' salaries are related purely to
+  performance on the pitch or can be boosted by popularity on social media."
+
+------------------------------
+
+Date: Thu, 19 Mar 2015 11:00:07 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Cisco: Tor for US SnailMail needed? (Darren Pauli)
+
+http://www.theregister.co.uk/2015/03/18/want_to_dodge_nsa_supply_chain_taps_ask_cisco_for_a_dead_drop/
+
+Darren Pauli, 18 Mar 2015
+Cisco posts kit to empty houses to dodge NSA chop shops;
+Kit sent to SmallCo of Nowheresville to avoid NSA interception profiles
+
+Cisco will ship boxes to vacant addresses in a bid to foil the NSA, security
+chief John Stewart says.  The dead-drop shipments help to foil a
+Snowden-revealed operation whereby the NSA would intercept networking kit
+and install backdoors before boxes reached customers.
+
+The interception campaign was revealed last May.
+
+Speaking at a Cisco Live press panel in Melbourne today, Stewart says the
+Borg will ship to fake identities for its most sensitive customers, in the
+hope that the NSA's interceptions are targeted.
+
+"We ship [boxes] to an address that's has nothing to do with the customer,
+and then you have no idea who ultimately it is going to," Stewart says.
+
+"When customers are truly worried ... it causes other issues to make
+[interception] more difficult in that [agencies] don't quite know where that
+router is going so its very hard to target - you'd have to target all of
+them.
+
+There is always going to be inherent risk."
+
+Stewart says some customers drive up to a distributor and pick up hardware
+at the door.
+
+He says nothing could guarantee protection against the NSA, however.  "If
+you had a machine in an airtight area ... I stop the controls by which I
+mitigate risk when I ship it," he says, adding that hardware technologies
+can make malicious tampering "incredibly hard".
+
+Cisco has poked around its routers for possible spy chips, but to date has
+not found anything because it necessarily does not know what NSA taps may
+look like, according to Stewart.
+
+After the hacking campaign Borg boss John Chambers wrote a letter to US
+President Barack Obama saying the spying would undermine the global tech
+industry.
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 07:53:28 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 911's deadly flaw: Lack of location data
+
+911's deadly flaw: Lack of location data
+  [Old topic here; still problematic.  PGN]
+
+http://www.usatoday.com/story/news/2015/02/22/cellphone-911-lack-location-data/23570499/
+
+------------------------------
+
+Date: Mon, 23 Mar 2015 21:19:12 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Re: As We Age, Smartphones Don't Make Us Stupid ... (LW, RISKS 28.56)
+
+Mr. Weinstein:
+
+Regarding your post "As We Age, Smartphones Don't Make Us Stupid -- They're
+Our Saviors", I have a *partial* rebuttal which will be appearing on my
+blog.
+
+I am also putting this on my blog for release on 12:03 PM PDT on Wednesday.
+(http://genew.ca/2015/03/25/re-as-we-age-smartphones-dont-make-us-stupid-theyre-our-saviors/).
+
+***** Start of Blog Post *****
+[...] Mr. Weinstein's article "As We Age, Smartphones Don't Make Us Stupid
+-- They're Our Saviors" appeared in RISKS-28.56 and on his Website at
+http://lauren.vortex.com/archive/001094.html.
+
+He starts: "Throughout human history, pretty much every development or
+invention that increased our information storage and management capabilities
+has had its loud and voracious naysayers." and gives historical examples.
+
+Another paragraph is, 'The crux of most arguments against having quick
+access to information seem to largely parallel the attempts not that many
+years ago (and in some venues, still continuing) to routinely ban
+calculators from physics and other similar subject tests, on the grounds
+that not doing the math by hand was somehow -- perhaps in a moral judgment
+"You'll go to hell!" kind of sense -- horribly cheating.'
+
+I can see his point, but I also see the other side.  The benefits of a new
+method of dealing with things can be loudly touted while the disadvantages
+are ignored.
+
+I had an example of this in university.  For one of my courses, the
+instructor stated, near the beginning of the course, that he was considering
+allowing us to use laptops on the midterm and the final exams.  No Net
+connection would be allowed, but each student could put whatever data he
+wanted on his systems.  We already would be allowed to bring whatever hard
+copy we wanted.
+
+The idea of this was very popular with the students in the back row in
+class: the ones who sat there because then they could plug in their systems.
+
+The midterm came and went.  I noticed a couple weeks after that we had not
+had the option of using computers.  Since it was of no interest to me, I
+shrugged.  The topic came up again near the end of the course.  There was a
+lot of racket from the students who wanted to use computers.  I finally
+managed to get a word in edgewise that I was concerned that an exam could
+favour computer use and that I did not think that I should have to spend
+several hundred dollars (more) to write a final.  The instructor said that
+that would be considered.  Since he was straightshooter, I left it at that.
+
+On Thursday of the first week of exams, it was time to write the final for
+this course.  I brought my course notes and assignments as well as three
+textbooks that I had and thought might be of use.  The exam looked
+reasonable, and I got to it.  I only had to refer to my materials a few
+times.  I left figuring that I had done quite well.
+
+Wait, wait, wait.
+
+A week later, I still had not seen my grade up.  I was on campus and ran
+across the instructor and asked how it was going.  He must have just
+finished the marking.  He told me (words are a close paraphrase), "I've got
+two things to tell you. In general, the students who did not use computers
+did better than those who did, and two, you got the only A+."
+
+Naturally, I was pleased with the A+, but why the difference between the two
+groups?  I puzzled over it for a few months and finally came up with what I
+think is the reason.
+
+I minored in Math, and on a course on linear programming, I was studying for
+the midterm with another student.  We were trying a question, and it just
+was not working out.  We decided to check the text.  The other student was
+looking at it for a few minutes and did not figure it out, so I asked to
+have a look.  There was a section that I thought was wrong or ambiguous.  I
+suggested reading it a bit differently than we had.  That turned out to be
+it.
+
+If we had not done this, but had instead referred to the text during the
+exam, we would have lost time.  It is no surprise to me now why students in
+the other course who used computers did not do so well.  It is one thing to
+look something up like the capital of California, but it is quite another
+when one has to understand the material that one finds more than trivially.
+
+I think that people who rely overly on computers can all too easily
+shortchange themselves.  ***** End of Blog Post *****
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.57
+************************
+
+--_002_bf68b5471c9e476ebf9c418d6d21dda9EXHUBVM01campusnclacuk_--

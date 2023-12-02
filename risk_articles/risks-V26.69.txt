@@ -1,0 +1,614 @@
+precedence: bulk
+Subject: Risks Digest 26.69
+
+RISKS-LIST: Risks-Forum Digest  Thursday 29 December 2011  Volume 26 : Issue 69
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.69.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Design Flaws Cited in Deadly Train Crash in China (Sharon Lafraniere)
+Software reliability testing for the space shuttle (David Jefferson)
+Risks and aircraft control - how does voting fit into this? (Jeremy Epstein)
+How an "anonymous" hacker disrupted a wireless demo - in 1903 (Paul Marks
+  via Lauren Weinstein)
+The Times E-Mails Millions by Mistake to Say Subscriptions Canceled
+  (Amy Chozick via Monty Solomon)
+Mistaken Verizon emergency alert scares N.J. (Danny Burstein)
+"Giving a fair shake to the eyes in the sky" (Francis Moran via Gene
+  Wirchenko)
+IMDb and Amazon vs. the "Ageless Actress" (Lauren Weinstein)
+A Dispute Over Who Owns a Twitter Account Goes to Court (John Biggs via
+  Monty Solomon)
+Re: First national Emergency Alert System (EAS) test: FAIL (David E. Price)
+Re: 'Anonymous' Stratfor Hack Reportedly Start Of Weeklong Assault
+  (Kurt Albershardt)
+Menlo Report on research ethics out for comments (Jeremy Epstein)
+Proceedings for UTC meeting (Rob Seaman)
+First STAMP/STPA Workshop (Nancy Leveson)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 28 Dec 2011 12:41:37 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Design Flaws Cited in Deadly Train Crash in China (Sharon Lafraniere)
+
+The long-awaited report on the deadly 23 Jul 2011 high-speed train crash in
+Wenzhou CHINA attributes it to a string of blunders, including serious
+design flaws in crucial equipment used to signal and control the trains that
+was purchased, evaluated, and used improperly.  Two top former officials of
+the Railway Ministry were singled out for blame.  Public outrage died down
+only after government authorities muzzled the domestic media.  The intense
+public reaction to the accident and the bungled rescue effort that followed
+are considered major reasons why the Chinese government is now instituting
+tighter controls of Internet message boards known as microblogs [and
+presumably the censorship of this issue of RISKS?].  However, the report
+is lacking in details on what actually went wrong technically -- although
+it mentions failure to notice failure to notice that lightning strikes had
+affected the equipment.  The *NYT* article is well worth reading in full.
+[Source: Sharon Lafraniere, 28 Dec 2011, *The New York Times*; PGN-ed]
+http://www.nytimes.com/2011/12/29/world/asia/design-flaws-cited-in-china-train-crash.html?hp
+
+------------------------------
+
+Date: Wed, 28 Dec 2011 09:52:15 -0800
+From: David Jefferson <d_jefferson@yahoo.com>
+Subject: Software reliability testing for the space shuttle
+
+  [This is reproduced with permission from a list devoted to election
+  integrity.  PGN]
+
+I recently ran across Richard Feynman's appendix to the Rogers Commission
+Report on the Space Shuttle Challenger Accident (published June 6, 1986),
+and one passage (quoted below) about the software in the space shuttle
+struck me. He describes what it takes to check and test for the correctness
+and reliability of the software. (NASA does not even attempt to deal with
+the software's security against attackers, presumably because it was judged
+that software in a closed system like the shuttle is not very vulnerable.)
+
+I suggest reading this with voting system software in mind. Notice in the
+3rd paragraph his point about management's temptation to curtail the amount
+of checking and testing even in the face of "perpetual" requests for
+software changes, and the need to resist that temptation. The shuttle's
+software was at that time about 250,000 lines of code -- on the same order
+as that in a voting system (e.g. a DRE).20
+
+Quoted from http://history.nasa.gov/rogersrep/v2appf.htm
+
+  Because of the enormous effort required to replace the software for such
+  an elaborate system, and for checking a new system out, no change has been
+  made to the hardware since the system began about fifteen years ago.  The
+  actual hardware is obsolete; for example, the memories are of the old
+  ferrite core type. It is becoming more difficult to find manufacturers to
+  supply such old-fashioned computers reliably and of high quality. Modern
+  computers are very much more reliable, can run much faster, simplifying
+  circuits, and allowing more to be done, and would not require so much
+  loading of memory, for the memories are much larger.
+
+The software is checked very carefully in a bottom-up fashion. First, each
+new line of code is checked, then sections of code or modules with special
+functions are verified. The scope is increased step by step until the new
+changes are incorporated into a complete system and checked. This complete
+output is considered the final product, newly released. But completely
+independently there is an independent verification group, that takes an
+adversary attitude to the software development group, and tests and verifies
+the software as if it were a customer of the delivered product. There is
+additional verification in using the new programs in simulators, etc. A
+discovery of an error during verification testing is considered very
+serious, and its origin studied very carefully to avoid such mistakes in the
+future. Such unexpected errors have been found only about six times in all
+the programming and program changing (for new or altered payloads) that has
+been done. The principle that is followed is that all the verification is
+not an aspect of program safety, it is merely a test of that safety, in a
+non-catastrophic verification. Flight safety is to be judged solely on how
+well the programs do in the verification tests. A failure here generates
+considerable concern.
+
+To summarize then, the computer software checking system and attitude is of
+the highest quality. There appears to be no process of gradually fooling
+oneself while degrading standards so characteristic of the Solid Rocket
+Booster or Space Shuttle Main Engine safety systems. To be sure, there have
+been recent suggestions by management to curtail such elaborate and
+expensive tests as being unnecessary at this late date in Shuttle
+history. This must be resisted for it does not appreciate the mutual subtle
+influences, and sources of error generated by even small changes of one part
+of a program on another. There are perpetual requests for changes as new
+payloads and new demands and modifications are suggested by the
+users. Changes are expensive because they require extensive testing. The
+proper way to save money is to curtail the number of requested changes, not
+the quality of testing for each.
+
+------------------------------
+
+Date: Thu, 29 Dec 2011 10:18:25 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Risks and aircraft control - how does voting fit into this?
+
+  [This is reproduced with permission from a list devoted to election
+  integrity.  PGN]
+
+I just listened to a very interesting 15-minute podcast discussion of risk
+in aviation control systems.  The bottom line is that in some cases, the
+control systems make mistakes and people (pilots) correct for them, but it's
+actually more frequent for people to make mistakes because they don't
+understand what's going on.  The interviewee argues that perhaps we should
+trust software and recognize that it *will* make mistakes that will kill
+some people, but fewer than would die without the software.  The podcast
+concludes with an explanation that 100 years ago, one of the railroads
+advertised that due to technological advancements only one person was being
+killed each day in train accidents, rather than 10 per day as had been the
+case!
+
+Podcast is at http://spectrum.ieee.org/podcast/aerospace/aviation/the-benefits-of-risk/
+
+I am NOT arguing that voting is the same, and it's important to recognize
+that they're talking about reliability (not security) - the key difference
+being that in reliability you're concerned about ACCIDENTAL errors causing
+failures, while in security you're concerned with INTENTIONAL errors causing
+failures.  Also, the failure calculations assume a static environment, but
+with constant software changes and constant changes to the systems that the
+software is part of it's anything but a static environment.
+
+But thinking of a voting system as a compete system - including the people,
+equipment, processes, etc. - it's interesting to consider how the accidental
+failure rate compares for an electronic system to a traditional system.
+Said another way, consider three cases:
+
+(1) The current environment, comparing an optical scan system to a DRE-based
+system, recognizing the risks of accidental bugs in the DRE software
+vs. accidental loss of optical scan ballots, accidental misprogramming of
+both, accidental loss or erasure of memory cards, etc.
+
+(2) Comparing the current environment (with either optical scan or DRE) to
+an Internet voting environment, IGNORING all security concerns for the
+Internet environment - potentially reducing the risks of accidental errors
+by pollworkers or election officials (but ignoring intentional insider
+attacks by either pollworkers or election officials).
+
+(3) Comparing the current environment to an Internet voting environment,
+again ignoring security concerns for the Internet environment, but this time
+including intentional insider attacks by pollworkers and election officials.
+
+Of course quantifying any of these is very hard, but we know the risk is
+non-zero for all of the failure cases.
+
+I don't have any answers, but wonder if eliciting the questions might help
+the public (and policymakers) understand the tradeoffs somewhat better, and
+help answer the question "if I can bank online and shop online, why can't I
+vote online", but also "if we can rely on software to fly our planes, why
+can't we rely on software to run our elections".
+
+------------------------------
+
+Date: Wed, 28 Dec 2011 12:07:26 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How an "anonymous" hacker disrupted a wireless demo - in 1903
+  (Paul Marks)
+
+Paul Marks, Dot-dash-diss: The gentleman hacker's 1903 lulz, New Scientist,
+27 Dec 2011
+http://j.mp/upslUK  [via NNSquad]
+
+   "A century ago, one of the world's first hackers used Morse code
+    insults to disrupt a public demo of Marconi's wireless telegraph."
+
+------------------------------
+
+Date: Wed, 28 Dec 2011 17:15:49 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: The Times E-Mails Millions by Mistake to Say Subscriptions Canceled
+
+The New York Times said it accidentally sent e-mails on Wednesday to more
+than eight million people who had shared their information with the company,
+erroneously informing them they had canceled home delivery of the newspaper.
+The Times Company, which initially mischaracterized the mishap as spam,
+apologized for sending the e-mails. The 8.6 million readers who received the
+e-mails represent a wide cross-section of readers who had given their
+e-mails to the newspaper in the past, said a Times Company spokeswoman,
+Eileen Murphy. ...  [Source: Amy Chozick, *The New York Times*, Media
+Decoder blogs, 28 Dec 2011]
+
+http://mediadecoder.blogs.nytimes.com/2011/12/28/times-readers-inundated-by-false-e-mail-on-subscriptions/
+
+------------------------------
+
+Date: Tue, 13 Dec 2011 09:28:53 -0500 (EST)
+From: Danny Burstein <dannyb@panix.com>
+Subject: Mistaken Verizon emergency alert scares N.J.
+
+Newark, NJ - Not quite the "War Of The Worlds" broadcast of a Martian
+invasion in New Jersey, a Verizon "emergency" alert Monday that the company
+texted to its wireless customers still jangled some nerves and triggered
+hundreds of calls from concerned residents to local and state offices.  The
+company sent the alert to customers in Middlesex, Monmouth and Ocean
+counties, warning of a "civil emergency" and telling people to "take shelter
+now." Trouble was, the message was meant to be a test but it wasn't labeled
+as such, Verizon later admitted.  [AP item]
+
+rest:
+http://www.cbsnews.com/8301-201_162-57341882/mistaken-verizon-emergency-alert-scares-n.j/
+or: http://goo.gl/ihsy5
+
+------------------------------
+
+Date: Mon, 12 Dec 2011 12:04:28 -0800
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Giving a fair shake to the eyes in the sky" (Francis Moran)
+
+Francis Moran, Giving a fair shake to the eyes in the sky
+http://blogs.itbusiness.ca/2011/12/giving-a-fair-shake-to-the-eyes-in-the-sky/
+
+This article discusses testing for colour-blindness, but the first paragraph
+deals with a risk sneaking through the cracks:
+
+  In July 2002, a FedEx Boeing 727 carrying cargo crashed on its approach
+  for a night-time landing in Tallahassee, Fl. A U.S. National
+  Transportation Safety Board investigation identified the first officer's
+  colour vision deficiency as a factor in the crash and recommended that all
+  existing colour vision testing protocols employed by the U.S. Federal
+  Aviation Administration (FAA) be reviewed. Four years later, this case,
+  and the issues which it raised about colour blindness testing in the
+  commercial aviation industry, was the subject of a panel at an
+  international workshop hosted by Saudi Arabian Airlines.
+
+------------------------------
+
+Date: Tue, 6 Dec 2011 12:31:36 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: IMDb and Amazon vs. the "Ageless Actress"
+
+           IMDb and Amazon vs. the "Ageless Actress" [NNSquad]
+               http://lauren.vortex.com/archive/000916.html
+
+The story of a lawsuit relating to IMDb (part of Amazon.com) "outing"
+the age of an actress (the plaintiff in this case, who wanted to keep
+that information private) has been bouncing around for a bit now, but
+recent developments are starting to suggest that Amazon has now
+"jumped the shark" toward the dark side of this controversy.
+
+While many observers have made light of this (so far anonymous)
+actress' concerns (after all, your age isn't "protected" data in most
+circumstances, and it's normally impossible to "unring" a bell in data
+disclosure situations), the details of this case are actually quite
+intriguing.
+
+A core issue -- and what should be a point of primary focus -- is how
+IMDb obtained the actress' age data before publishing it publicly.
+The actress asserts (and Amazon appears to confirm) that this data was
+obtained from the sign-up form the actress used to gain access to
+(fee-based) IMDbPro services.
+
+She claims that her age was requested as part of the routine sign-up
+sequence along with credit card, address, and other related data, and
+that it was not made clear that IMDb claimed the right to then use
+this information in their public database.  When she asked them to
+remove this data from public view, IMDb reportedly declined.
+
+Digging through the rather voluminous IMDb user agreements and privacy
+policy documents as they exist today at least, it's difficult for me
+to determine whether IMDb's data usage policy in this respect was
+definitively spelled out or not.
+
+My own view is that there should always be an extremely clear
+demarcation between personal information used to sign up for a
+service, vs. the information that will be used by the service beyond
+the purposes of signing up (e.g., posting in their publicly accessible
+database).  Such a notice should not just be buried in policies on
+other pages either -- it should be right up front on the sign-up page,
+as in "Please note that your age information as entered on this form
+will become part of your publicly viewable profile on IMDb."
+
+The plaintiff in the case under discussion asserts that no such notice
+was clearly provided.  Obviously this will be an issue for the court
+to determine, both in terms of the type of notice (if any) provided,
+and whether Amazon's use of the provided data was in keeping with
+their legal obligations under their Terms of Service and in all other
+relevant aspects.
+
+But now this case has taken a rather creepy turn, with Amazon loudly
+proclaiming to the court that not only should the actress not be concerned
+about her age being revealed, but that she shouldn't be able to remain
+anonymous during the case. (http://j.mp/un92Fj [Hollywood Reporter])
+
+For me at least, these assertions leave a bad taste, indeed.
+
+Reasonable persons can argue about whether an actor, actress, or anyone else
+should be concerned about their age being publicly known (age discrimination
+is a fact of life both inside and outside of Hollywood).  But for Amazon to
+take the "it's not a big deal" stance when they specifically are accused of
+being the entity that publicly published data that had previously apparently
+been carefully kept private, seems highly disingenuous at best.
+
+Where Amazon really joins with Vader and company is their push to have the
+actress' name (which they obviously already know) be publicly revealed.
+Their motive seems clear -- essentially, revenge.  If her identity is
+exposed now, Amazon would have created a fait accompli that would serve no
+purpose other than to create further distress on the part of the plaintiff.
+
+Since public linkage of identity and age are at the center of this case,
+there is no convincing reason I can see why this actress' identity should be
+revealed at this stage.  We constantly condemn firms that inappropriately
+attempt to unmask whistleblowers in court.  As far as I'm concerned, the
+plaintiff in this case falls into the same "protected identity" status as
+those whistleblowers, at this time.
+
+Ultimately, the case should revolve around a single set of issues -- did
+Amazon/IMDb inappropriately use personal information for their public
+database?  Were their Terms of Service clear regarding their use of IMDbPro
+signup data?  Did the signup forms appropriately and clearly warn potential
+subscribers how that signup data would be used by Amazon?
+
+If IMDb was honest and clear on these points, with obvious notices on the
+forms to warn users how submitted data could become public, then Amazon
+should win this case.  If IMDb misused the signup data, or did not in a
+clear and direct way warn users how signup information could go public, then
+Amazon should lose.
+
+The rest of Amazon's arguments regarding the case at this point appear to be
+largely irrelevant and diversionary, and I hope that the court seems through
+them, and concentrates on the question of Amazon's handling of personal
+information and related notification disclosures.
+
+So far, Amazon seems to be largely "blowing off" concerns about their
+behavior in this matter, and worse, is attempting to preemptively shift
+blame to the plaintiff.
+
+Amazon's stance on this -- regardless of the underlying facts regarding
+their notifications and Terms of Service -- seems arrogant at best.  This
+isn't the first time we've seen this from Amazon.  It is not becoming to
+them, and it is certainly not in the best interests of the Internet
+community at large.
+
+Lauren Weinstein (lauren@vortex.com): http://www.vortex.com/lauren
+Network Neutrality Squad: http://www.nnsquad.org
+PRIVACY Forum: http://www.vortex.com  +1(818) 225-2800
+
+------------------------------
+
+Date: Mon, 26 Dec 2011 11:16:27 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: A Dispute Over Who Owns a Twitter Account Goes to Court (John Biggs)
+
+John Biggs, *The New York Times*, 25 Dec 2011
+
+How much is a tweet worth? And how much does a Twitter follower cost?
+
+In base economic terms, the value of individual Twitter updates seems to be
+negligible; after all, what is a Twitter post but a few bits of data sent
+caroming through the Internet? But in a world where social media's influence
+can mean the difference between a lucrative sale and another fruitless cold
+call, social media accounts at companies have taken on added significance.
+
+The question is: Can a company cash in on, and claim ownership of, an
+employee's social media account, and if so, what does that mean for workers
+who are increasingly posting to Twitter, Facebook and Google Plus during
+work hours?
+
+A lawsuit filed in July could provide some answers. ...
+
+http://www.nytimes.com/2011/12/26/technology/lawsuit-may-determine-who-owns-a-twitter-account.html
+
+------------------------------
+
+Date: Thu, 22 Dec 2011 15:49:34 -0800
+From: "David E. Price" <price16@llnl.gov>
+Subject: Re: First national Emergency Alert System (EAS) test: FAIL
+
+I'm really surprised that this conclusion of test failure has not been
+vocally challenged here.
+
+If I do a penetration test on an untested network and am able to widely
+penetrate the network do you all declare my penetration test to be a
+failure?
+
+This failure conclusion mistakes failure of the Emergency Alert System local
+systems with failure of the test.
+
+In the Emergency Response community, just like in the network security
+community, a test which exposes numerous system failures is considered a
+success because it identifies problems which need to be fixed.
+
+A test of a nation-wide system which has never had end-to-end testing is not
+a failure when it finds problems, it is a BIG success. The systems failed;
+the test succeeded.
+
+Hopefully we will see even more robust end-to-end tests of the Emergency
+Alert System in the future, and hopefully they will also be a success by
+finding problems so they can be fixed until the whole system works as
+planned.
+
+There was a failure which was pointed out, but the wrong failure was
+highlighted. The FEMA website had a notice for at least two weeks prior to
+this test that many cable system customers would not see the alert banners
+they were used to seeing during local broadcast system tests because the
+method used for the nationwide test would not trigger those banners. The
+failure was that the method FEMA used to communicate this expectation did
+not effectively disseminate the information to test observers.
+
+I would have never predicted the RISK that the experts here would fail to
+challenge confusion of system failure with test failure.
+
+David E. Price SRO, CHMM, Senior Consequence Analyst for Special Projects,
+CBRNE (Chem, Bio, Rad, Nuc, and Explosives Accident/Safety Analyses)
+
+------------------------------
+
+Date: Thu, 29 Dec 2011 10:43 AM
+From: Kurt Albershardt <kurt@nv.net>
+Subject: Re: 'Anonymous' Stratfor Hack Reportedly Start Of Weeklong Assault
+
+  [From Dave Farber's  IP distribution.  PGN]
+
+> Why did they not encrypt their credit card info?  Djf
+
+It may be far more than just a blunder.  News reports indicate that card
+numbers were obtained, which is precisely what PCI-DSS 2.0 was supposed to
+prevent.  From https://www.pcisecuritystandards.org/documents/pci_dss_v2.pdf
+
+  3.4 Render PAN unreadable anywhere it is stored (including on portable
+  digital media, backup media, and in logs) by using any of the following
+  approaches:
+
+  - One-way hashes based on strong cryptography (hash must be of the entire
+  PAN)
+  - Truncation (hashing cannot be used to replace the truncated segment of PAN)
+  - Index tokens and pads (pads must be securely stored)
+  - Strong cryptography with associated key-management processes and procedures
+
+Note: It is a relatively trivial effort for a malicious individual to
+reconstruct original PAN data if they have access to both the truncated and
+hashed version of a PAN. Where hashed and truncated versions of the same PAN
+are present in an entity's environment, additional controls should be in
+place to ensure that the hashed and truncated versions cannot be correlated
+to reconstruct the original PAN.
+
+PA-DSS covers application security and may also be relevant https://www.pcisecuritystandards.org/documents/pa-dss_v2.pdf
+
+As a side note, PA-DSS 2.0 has made it pretty much impossible to create and
+certify open source card processing software.
+
+------------------------------
+
+Date: Wed, 28 Dec 2011 15:45:09 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Menlo Report on research ethics out for comments
+
+The Menlo Report is an effort from DHS S&T to establish guidelines for
+ethical network security research involving human subjects, much as the
+Belmont Report in the 1970s established guidelines for medical research.
+(See http://en.wikipedia.org/wiki/Belmont_report)
+
+The Menlo Report is now out on the Federal Register for comments.  Details
+on how to download the report and submit comments are at
+http://www.federalregister.gov/articles/2011/12/28/2011-33231/submission-for-review-and-comment-the-menlo-report-ethical-principles-guiding-information-and-communication-technology-research
+
+------------------------------
+
+Date: Wed, 7 Dec 2011 15:08:06 -0700
+From: Rob Seaman <seaman@noao.edu>
+Subject: Proceedings for UTC meeting
+
+The meeting "Decoupling Civil Timekeeping from Earth Rotation" was held in
+Exton, Pennsylvania on October 5-6, 2011.  The meeting was announced on the
+Risks Digest:
+  http://catless.ncl.ac.uk/Risks/26.50.html#subj12
+
+And preprints of the proceedings are now available from:
+  http://futureofutc.org/preprints
+
+The slides presented and the resulting group discussions are also available.
+This was an excellent meeting that has produced insightful papers and
+intriguing discussions on an obscure topic.  If the International
+Telecommunication Union votes to redefine UTC in January, the topic (and the
+related risks) won't remain obscure.
+
+Rob Seaman, National Optical Astronomy Observatory
+
+------------------------------
+
+Date: Fri, 16 Dec 2011 11:34:46 -0500
+From: Nancy Leveson  <leveson@sunnyday.mit.edu>
+Subject: First STAMP/STPA Workshop
+
+         First STAMP/STPA Workshop MIT April 17-19, 2012
+
+STAMP/STPA is a new systems thinking approach to engineering safer systems
+described in Nancy Leveson's new book "Engineering a Safer World" (MIT
+Press, January 2012). While relatively new, it is already being used in
+space, aviation, medical, defense, nuclear, automotive, food, and other
+applications.
+
+This informal workshop will bring together those interested in improving
+their approaches to safety engineering and those who are already trying this
+new approach in order to share their experiences. The first day will be a
+tutorial on STPA, the new hazard analysis technique built on the STAMP
+accident causality model. The tutorial will be taught by Prof. Leveson and
+her graduate students, who have been using STPA on my different types of
+projects. The next two days will involve informal presentations by attendees
+and small group meetings for specific industries and applications.
+
+The workshop and tutorial will be free. If you are interested in attending,
+please send an e-mail (for planning purposes) to leveson@mit.edu with the
+following information:
+     Name:
+     E-mail address or contact information:
+     Organization/job title:
+     Industry:
+     Interested in presenting? If so, what would you like to present?:
+
+Further information will be provided in January to those who respond to this
+preliminary announcement.
+
+The workshop is sponsored by the MIT Engineering Systems Division, the
+Aeronautics and Astronautics Dept., and the MIT Industrial Liaison Program
+
+Dr. Nancy G. Leveson, Professor of Aeronautics and Astronautics and
+Professor of Engineering Systems, Director, Complex Systems Research Lab
+(CSRL), MIT Room 33-334 77 Massachusetts Ave.  Cambridge, MA 02139-4307 Tel:
+617-258-0505 leveson@mit.edu URL: http://sunnyday.mit.edu
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.69
+************************

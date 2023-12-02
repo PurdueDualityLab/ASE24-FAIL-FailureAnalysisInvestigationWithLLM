@@ -1,0 +1,793 @@
+RISKS-LIST: Risks-Forum Digest  Sunday 11 November 2012  Volume 27 : Issue 08
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.08.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Elections and Hurricanes: After the Aftermath of the Math (PGN)
+Summary of my experiences on the election (Douglas W Jones)
+My election day reports (Jeremy Epstein)
+Virginia city's ballot listing Obama as republican, Romney as democrat
+  (Jeremy Epstein)
+Unusual risk for US voting machines: a spider (Valdis Kletnieks)
+Covington anomaly: mistaken attribution (PGN)
+Another misguided call for online voting (Lauren Weinstein)
+"Estonia gets to vote online. Why can't America?" (Lauren Weinstein)
+Security Researchers Warn New Jersey's Emergency E-mail	Voting Could Be
+  An Insecure, Illegal Nightmare (Matt Blaze via LW)
+Another article on evoting (Ezra Klein via LW)
+Government Services in Clouds (Chris Drewe)
+BGP error in Indonesia blocks Google in other areas (Lauren Weinstein)
+Did Skype Give a Private Company Data on Teen WikiLeaks Supporter
+  Without a Warrant? (Ryan Gallagher via Monty Solomon)
+Creative Disruption: Sandy Tells Us, *Let's Start Over* (John F. McMullen)
+Sandy: NYU hospital power outage... may have been from safety sensors
+  (Danny Burstein)
+Re: Verizon FIOS phone service (Bill Hopkins)
+Re: When your fuel pumps are below sea level... (Simson Garfinkel)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 11 Nov 2012 11:19:08 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Elections and Hurricanes: After the Aftermath of the Math
+
+One of the main goals for the conduct of elections should be to provide
+sufficient assurance throughout the entire process such that every loser can
+justifiably believe that he or she actually was not the winner -- that is,
+that there were no events, circumstances, or externalities, accountable or
+otherwise, that might have altered the results.
+
+From the perspective of RISKS and our long-standing discussions of factors
+relating to election integrity, one of the most interesting aspects in last
+week's election was that the results of the Presidential race were
+definitive enough that they did not depend on the outcomes in larger states
+such as Ohio and Florida (where the results were apparently not known
+officially until yesterday).  If the results for Obama vs Romney had been
+very close, I suspect that we would have seen prolonged law suits from both
+parties leading to the Supreme Court -- irrespective of the perceived
+initial outcome.  Overall for the election for the President and other
+offices and ballot issues as well, numerous issues arose during the
+campaigning and the voting process -- for example, relating to voter
+registration, voter disenfranchisement, voter authentication, restrictions
+on early voting, shortages of voting machines and trained election officials
+that resulted in huge lines in certain precincts, unsanctioned and
+unsupervised last-minute changes to proprietary election software, reported
+cases of vote flipping on touch screens, inconsistent party affiliations
+with unclear implications for straight-party voting, irregularities in
+issuing, validating, and counting provisional ballots, cases in which more
+votes were reported counted than ballots issued, disappearing ballots,
+inconsistencies in announcements of policies, deceptive practices, poorly
+defined policies for reviewing and recounting close races, last-minute
+attempts to create opportunities for Internet and e-mail voting in response
+to the disruptions of Hurricane Sandy (typically without adequate
+appreciation for the wide range of potential problems with which RISKS
+readers are familiar), along with many other factors such as the perception
+of even less visibility, accountability, and oversight for other than top
+races.  As I began to note in RISKS-27.06, much greater accountability,
+contingency planning, and objective oversight are needed -- along with
+considerably greater even-handedness -- to ensure that future elections will
+be able to avoid these problems and others.
+
+  [Some examples of these problems are included in subsequent reportage in
+  this issue.  PGN]
+
+------------------------------
+
+Date: Thu, 8 Nov 2012 23:10:23 +0000
+From: "Jones, Douglas W" <douglas-w-jones@uiowa.edu>
+Subject: Summary of my experiences on the election
+
+I spent election day 2012 monitoring incident reports from polling places
+around the country.  In doing this, I observed a number of patterns that
+seem worthy of note:
+
+In Florida, the root cause of many of the problem reports lies squarely in
+the lap of the state legislature.  It was the legislature that created the
+laws that led to ballots that were 10 pages long.  There were several
+distinct issues that combined to force such long ballots -- the sheer number
+of constitutional amendments and referenda on the ballot, the decision to
+print bilingual and trilingual ballots instead of limiting the number of
+languages on each piece of paper, and the printing of the entire text of
+each measure on the ballot.  The net result was that some ballot pages
+contained just one yes-no choice, and on the Miami sample ballot I tried to
+read, page 7 was solid text with no choices at all.
+
+These long ballots slowed down the voting process.  In many precincts,
+I saw reports of inadequate numbers of voting booths.  No change to voting
+technology could cure this.  Gigantic ballots simply take a long time to
+read, regardless of the technology.
+
+These long ballots choked the tabulating machines.  Today's precinct-count
+tabulators are easily able to handle a few thousand sheets of paper on
+election day, but each page scanned is likely to deposit a few paper fibers
+on the scan head, and by the end of an election, the machine needs the
+dust blown out of the paper path to prevent misreads and paper jams.  Give
+each voter a 10-page ballot instead of the usual one or two page ballot,
+and the machine really will need preventative maintenance several times
+during election day.  It is no surprise, therefore, that Florida suffered
+many scanner failures.
+
+All ballot boxes for precinct-count scanners that I've examined contain
+multiple compartments, one of which is an "emergency compartment" for use
+when the scanner fails.  In Florida, when scanners failed, the sheer volume
+of paper was enough to fill these emergency compartments to capacity,
+forcing pollworkers to improvise.
+
+And finally, most precinct-count scanners move the paper fairly slowly, at
+speeds comparable to the paper-feed speed of a typical FAX machine.  When
+feeding one-page ballots, this does not cause significant problems, but hand
+feeding successive pages of a 10-page ballot can take a substantial fraction
+of a minute, especially if the scanner is programmed to warn voters of any
+blank pages in the ballot in order to protect against inadvertent
+undervotes.  In polling places with enough voting booths, the speed at which
+ballots could be fed into the machine was reported to be a bottleneck.
+
+In my opinion, Florida's legislature can make several changes to address
+these problems: They ought to require that each ballot measure have a long
+form and a short form, with only the short form printed on the ballot.  The
+short form should be required to be composed by those proposing the ballot
+measure, so that all debate about the measure can be informed by both the
+full text and the short text from the start.  They should also consider
+capping the number of ballot measures in any election.
+
+A second cause for long lines was apparent in Virginia, where I saw numerous
+reports of equipment failures.  When the polls opened, significant numbers
+of polling places had problems getting things working.  In some cases,
+polling places were unable to open on time, and in other cases, polling
+places open= ed with only a few functional voting machines.
+
+I can only speculate about the cause of the machine failures, but I note
+that in many cases, the machines involved appear to have been purchased
+close to a decade ago and appear to have been built using laptop computer
+technology.  Election officials are used to voting machines that last
+decades.  Mechanical voting machines certainly lasted that long, and many of
+the first generation of precinct-count scanners and direct-recording
+electronic voting machines have proven to be almost as durable (I have seen
+numerous documented cases of lifetimes over 20 years).  Unfortunately, the
+technology we use in laptop computers is not generally that durable.  Liquid
+crystal displays and touch screens appear to have a useful lifetime measured
+in years, not decades.
+
+A second problem has to do with polling place procedures in the event of
+failure.  I saw too many reports of voters being turned away or made to wait
+for hours until voting equipment could be repaired.  In many states, it is
+illegal to turn away a legal voter on election day merely because the voting
+machines are broken.  Voters must be allowed to vote, and the mere fact that
+the machines are broken is no excuse.
+
+The typical procedure for meeting this requirement requires the pollworkers
+to issue emergency paper ballots in the event that the machines fail.  Any
+paper can be used, but the supplies packet for a polling place should
+include standard generic ballot forms, along with instructions directing the
+pollworkers to give a blank emergency ballot and a sample ballot to each
+voter, instructing them to write their choice for each ballot question on
+the emergency form.  At the end of the day, these emergency ballots must be
+hand counted.
+
+Yet a third cause of long lines was directly attributable to the Help
+America Vote Act of 2002.  This act required the use of state-wide voter
+registration databases.  Putting these databases in place was not trivial,
+and this election was, to a significant extent, the first full-scale test of
+the new system.  In polling places across the country, on-line tools were
+used for voter check-in.  In some cases, these tools included scanners to
+read ID information off of drivers' licenses, greatly speeding the check-in
+process.  Problem reports with the new voter registration systems fell into
+several categories:
+
+In some cases, the electronic pollbook mechanisms simply failed.  As with
+voting machines, such failures do not justify closing polling places, and
+there must be a way to allow voters to vote when this occurs.  An obvious
+fallback measure is to equip each polling place with a paper list of all
+voters registered in that polling place and train the workers how to use
+that register in the event that their machines (or communication lines)
+fail.
+
+In other cases, there were simply not enough electronic pollbooks.  Many
+election officials appear to have underestimated the time it takes to look
+up a voter, possibly because they misunderstood the trial and error nature
+of looking up a person in as database.  Am I Doug Jones, Douglas Jones,
+Douglas W. Jones or Douglas Warren Jones?  Do I live at 816 Park, 816 Park
+Rd. or 816 W. Park Rd.?  There are 16 permutations of the above, and if you
+use any of those permutations on a letter, it will arrive in my mailbox
+with no problem.  Unfortunately, many statewide voter databases do not
+have search tools that are as intelligent as my postman, and diligent
+attempts at voter identification by pollworkers can bog down.  It does not
+help that the problem can only be solved using significant local context.
+E. Park Rd. exists, but has no postal addresses.  Park Pl. exists, but has
+no addresses in the 800 block.  There are many people named Douglas Jones
+in town, and even multiple people named Douglas W. Jones, but only one at
+816 Park.
+
+And in yet other cases, the combination of database and pollworkers could
+not correctly match registered voters with their database entry, resulting
+in consequences identical to striking a legitimate voter from the voter
+rolls, an illegal act.  I cannot tell from the incident reports I saw
+whether the voters who were effected were struck because the pollworkers
+were insufficiently diligent dealing with alternative name and address
+spellings, or whether the fault was in poorly constructed database search
+tools.
+
+Alert readers will already have seen numerous media reports of vote
+flipping, and I certainly saw many reports of that on election day.  Some of
+them were actually misinterpretations of something else -- what election
+insiders refer to as fleeing voters.  With many electronic voting machines,
+the resulting incident report runs roughly as follows: "When I into the
+voting booth, a bunch of candidates were pre-selected on the face of the
+machine."  This report is then misinterpreted as evidence of some kind of
+machine rigging when it is really the result of the previous voter fleeing
+the machine without taking the final step of casting their ballot.
+
+There were also reports that were most likely caused by miscalibrated touch
+screens, leading to reports such as "when I tried to vote for Obama, Romney
+lit up" (or visa versa).  Touch screen calibration is an annoying necessity
+on resistive elastomeric membrane touch screens, and it is easy, but
+pollworkers don't always know how to do it.
+
+In just one case, however, I saw a report (in the blogosphere) of a touch
+screen voting system where the evidence suggests something far more
+sinister.  A voter who was aware of the calibration issue actually went into
+the machine and noticed the problem, and then set about a careful program of
+careful diagnosis, repeatedly selecting and deselecting candidates in order
+to measure the dimensions of the sensitive area of the screen for each
+candidate.  If that report is to be trusted, the machine in question should
+be impounded for forensic analysis, because the conclusion was that the
+border of the sensitive area between Obama and Romney had been moved,
+shrinking one while enlarging the other without changing the dimensions of
+the sensitive areas for other candidates.  That could be evidence of genuine
+fraud, and it does not fit the symptoms I associate with miscalibration.
+
+One category of incident reports was actually comforting.  These reports
+typcally reported a real failure of some kind, for example a broken machine,
+and then went on to report, with alarm, that the pollworkers had instituted
+some kind of ad-hoc procedure to deal with the failure.  The encouraging
+thing I saw was that these "ad-hoc procedures" were almost always, in fact,
+the solutions that were required by the local rules.  Many pollworkers did
+correctly open the emergency ballot compartments on scanners when those
+scanners broke.  They did scan those ballots later, when the scanners were
+repaired, and they did issue emergency paper ballots when they ran out of
+official ballots or when the electronic voting machines broke.  In short,
+when done competently, pollworker training does work.
+
+The biggest problem with spending election day monitoring incident reports
+is that all I saw, all day, was evidence of things going wrong.  As a
+result, when I finally got a chance to see the media reporting after the
+election was largely decided, I was surprised to see people saying that the
+day went surprisingly smoothly with only occasional reports of trouble.
+
+A final comment: Sadly, these incident reports are not fed back into the
+system.  The Democratic and Republican parties each manage their own
+incident reporting databases, but as far as I know, those databases are
+routinely destroyed after each election.  The Election Protection folks at
+866-Our-Vote maintain a public database, but it is largely ignored by
+officialdom.  Sadly, when I have been in a position to look at multiple
+incident reporting systems, I have rarely noticed the same incident being
+reported more than once.  This makes me suspect that the three databases
+I've mentioned above contain very little overlap.  It would be wonderful if
+they could all be published, merged and subject to a careful analysis, but I
+have no idea how to make this happen.
+
+  [The usual disclaimer: All of the opinions I expressed above are my own
+  and do not necessarily reflect the opinion of any agency or organization,
+  be it public or private.  I wish, of course, that they would slavishly
+  follow my lead except when I am wrong.]
+
+------------------------------
+
+Date: Fri, 9 Nov 2012 09:52:27 -0500
+From: Jeremy Epstein <jeremy.j.epstein@GMAIL.COM>
+Subject: My election day reports
+
+I wrote two reports about what I saw from a command center on election day.
+
+https://freedom-to-tinker.com/blog/jeremyepstein/voting-technology-issues-in-virginia-on-election-day/
+
+https://freedom-to-tinker.com/blog/jeremyepstein/joisy-on-my-mind/
+
+  [I eschew summarizing, and urge you to read Jeremy's experiences. PGN]
+
+------------------------------
+
+Date: Tue, 6 Nov 2012 14:39:10 -0500
+From: Jeremy Epstein <jeremy.j.epstein@GMAIL.COM>
+Subject: Virginia city's ballot listing Obama as republican, Romney as democrat
+
+In one Virginia locality, the electronic voting machines were programmed to
+show Obama as Republican, Romney as Democrat.  The machines were removed
+from service and they're now using paper.  But this part made me really
+nervous: "All votes that were cast Tuesday morning will be counted
+properly."  What do they mean by "properly" - was a vote for Obama a vote
+for the Democratic electors or the Republican electors?  Since some people
+vote by name and others by party, you can't tell what voters intended.  I
+have no idea how I'd count those votes if I were the judge!
+
+This is really important if Virginia is a close race.  It's not a technical
+problem - it's a ballot setup problem.
+
+http://www.wdbj7.com/news/wdbj7-story-grayson-voting-11612,0,5763810.story
+
+------------------------------
+
+Date: Thu, 08 Nov 2012 20:40:16 -0500
+From: Valdis Kletnieks <Valdis.Kletnieks@vt.edu>
+Subject: Unusual risk for US voting machines: a spider
+
+It wasn't voter fraud that delayed the election count in one U.S. town - it
+was a spider.  Rehoboth Town Clerk Kathleen Conti says one of the
+Massachusetts town's aging voting machines malfunctioned Tuesday.  Ms. Conti
+tells *The Sun Chronicle* of Attleboro that she called a technician, who
+said a spider web apparently prevented the machine's scanner from counting
+ballots. The vote count wasn't completed until Wednesday afternoon.
+Rehoboth voters favoured Republican presidential challenger Mitt Romney, who
+lives in Massachusetts.  Ms. Conti says she has been pressing to have the
+voting machines replaced for several years.  [AP item]
+
+http://www.theglobeandmail.com/news/world/us-election/a-spider-shuts-down-vote-counting-in-massachusetts-town/article5088982/
+
+  [Rob Slade commented on this item as well:
+    Yet *another* reason to distrust voting machines: Arachnophobia
+  PGN]
+
+------------------------------
+
+Date: Tue, 6 Nov 2012 11:06:52 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Covington anomaly: mistaken attribution
+
+Interesting conundrum. The political affiliation of the Obama-Biden ticket
+on voting machines in Covington, VA is listed as Republican on the voting
+machines. So question: does a vote for Obama-Biden transfer to a vote for an
+elector chosen by the Republicans or the Democrats?
+
+``City of Covington moves to paper ballots after voting machine issue
+Mistake made while voting machines were set up COVINGTON, Va.''  We're
+learning more about voting errors in the City of Covington.
+
+All voters in Covington will use have to use paper ballots.
+
+There was an error Tuesday morning with the voting machines. If you voted
+for President Obama, the machine would list the Obama-Biden ticket as
+Republican. All votes that were cast Tuesday morning will be counted
+properly.
+
+However, election officials decided to switch the City of Covington to paper
+ballots to avoid confusion."
+
+http://www.wdbj7.com/news/wdbj7-story-grayson-voting-11612,0,5763810.story
+
+------------------------------
+
+Date: Sun, 11 Nov 2012 08:27:15 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Another misguided call for online voting
+
+http://j.mp/Q66qw5  (*The New York Times* via NNSquad)
+
+  "So at a time when we can see video shot by a robot on Mars, when there
+  are cars that can drive themselves, and when we can deposit checks on our
+  smartphones without going to a bank, why do most people still have to go
+  to a polling place to vote?"
+
+I understand why people would love to vote online.  But when [almost] every
+recognized expert in the field tells you it would be a disaster, and
+fundamentals of computer security agree with them, you have to make a
+choice.  Go hi-tech with voting and turn the elections over to hackers,
+coercion, and worse, or admit that there are still a few things in life that
+are better done the old-fashioned way -- if we care about democracy, that
+is.
+
+------------------------------
+
+Date: Thu, 8 Nov 2012 16:51:34 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "Estonia gets to vote online. Why can't America?"
+
+http://j.mp/Z9j913  (*The Washington Post* via NNSquad)
+
+  "What's more, Estonia has a proportional representation voting system,
+  rather than a winner-take-all system like the United States. According to
+  Hall, research has found that electoral fraud seems to pop up more
+  frequently in winner-take-all systems - since there's more at stake for
+  the candidates."
+
+ - - -
+
+Online Voting: Just Say No!
+
+------------------------------
+
+Date: Mon, 5 Nov 2012 16:24:34 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Security Researchers Warn New Jersey's Emergency E-mail
+	Voting Could Be An Insecure, Illegal Nightmare
+
+http://j.mp/VP0GDy  (*Forbes* via NNSquad)
+
+  It took less than 24 hours for Matt Blaze, a computer science professor at
+  the University of Pennsylvania who audited voting systems for California
+  and Ohio in 2007, to start pointing out the problems with that workaround:
+  Unencrypted e-mail can be spoofed or tampered with. The computers used to
+  send the e-mail, many of which will be in public places like libraries or
+  shelters, could be compromised to change or block voters' choices. And the
+  computer that receives the e-mail may be just as vulnerable to
+  sabotage-given that voters will be sending their ballots as attached
+  files, the receiving PC will need to open attachments sent by unknown
+  users, one of the most common practices leading to malware infections.
+
+------------------------------
+
+Date: Thu, 8 Nov 2012 16:41:06 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Another article on evoting
+
+http://www.washingtonpost.com/blogs/ezra-klein/wp/2012/11/06/estonians-get-to-vote-online-why-cant-america/
+
+------------------------------
+
+Date: Tue, 06 Nov 2012 21:16:16 +0000
+From: "Chris Drewe" <e767pmk@yahoo.co.uk>
+Subject: Government Services in Clouds
+
+The UK 'Daily Telegraph' newspaper has a comment article today (6 Nov 2012)
+about Government proposals to make all of its services "digital by default",
+partly for easier accessibility, and partly for reduced operating costs; all
+fine and dandy, but as the article says, there appear to be at least three
+RISK areas here (please be aware that in the UK, almost everyone has some
+dealings with the welfare or tax authorities):
+
+* The people most in need of welfare, mainly senior citizens, are least
+  likely to be Internet users (as probably remarked before in RISKS).
+
+* All of this data needs to be stored yet readily accessible to authorised
+  users in a secure way of course, so lots of RISKS there, plus the
+  proposals include "cloud computing" -- this is our personal details...
+
+* It's a hotly-contested field, but the UK allegedly has the most Byzantine
+  taxation and welfare systems in the world, and the Government is planning
+  to start this "digital by default" programme with the Universal Credit
+  scheme, a major change to welfare provision, due to start in April 2013,
+  so that's two big changes at once.
+
+http://www.telegraph.co.uk/technology/9655931/Whitehall-has-its-head-stuck-in-the-cloud.html
+
+  [Article by Philip Johnston, 5 Nov 2012, omitted.  PGN]
+
+------------------------------
+
+Date: Tue, 6 Nov 2012 10:56:53 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: BGP error in Indonesia blocks Google in other areas
+
+http://j.mp/YSVOjW  (*CloudFlare* via NNSquad)
+
+  ``The case today was similar. Someone at Moratel likely `fat-fingered' an
+  Internet route. PCCW, who was Moratel's upstream provider, trusted the
+  routes Moratel was sending to them. And, quickly, the bad routes
+  spread. It is unlikely this was malicious, but rather a misconfiguration
+  or an error evidencing some of the failings in the BGP Trust model."
+
+------------------------------
+
+Date: Sun, 11 Nov 2012 16:10:30 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Did Skype Give a Private Company Data on Teen WikiLeaks Supporter
+ Without a Warrant? (Ryan Gallagher)
+
+Ryan Gallagher, 9 Nov 2012
+
+Skype's privacy credentials took a hit in July over a refusal to comment on
+whether it could eavesdrop on conversations. Now the Internet chat service
+is facing another privacy-related backlash-after allegedly handing over user
+data without a warrant to a private security firm investigating
+pro-WikiLeaks activists.
+
+The explosive details were contained in a report by Dutch investigative
+journalist Brenno de Winter, published on NU.nl earlier this week. Citing an
+internal police file detailing an investigation called "Operation Talang,"
+Winter wrote that PayPal was attempting to track down activists affiliated
+with the hacker collective Anonymous.  The hackers had attacked the PayPal
+website following the company's controversial decision to block payments to
+WikiLeaks in December 2010. ...
+
+http://www.slate.com/blogs/future_tense/2012/11/09/skype_gave_data_on_a_teen_wikileaks_supporter_to_a_private_company_without.html
+
+------------------------------
+
+Date: Wed, 7 Nov 2012 18:36:21 -0500
+From: "John F. McMullen" <johnmac13@gmail.com>
+Subject: Creative Disruption: Sandy Tells Us, *Let's Start Over*
+
+John F. McMullen, Sandy -- My 37th Column for the Westchester Guardian
+
+I'm sitting in a Barnes and Noble in Mohegan Lake, NY -- and it is like a
+refugee camp *because no homes in the surrounding upper Westchester / Putman
+counties in NY have power* due to Hurricane Sandy and, thus, Internet
+connection is non-existent in the homes, so people flock to public Wi-Fi
+sites. Unfortunately, this Barnes and Noble has very few public access
+electric outlets and seven to fifteen people are gathered around the ones
+that are available with multiple electric strips "daisy-chained" for laptop
+and tablet connection.
+
+Because of the multi-hundred people here (with at least half trying to
+connect), at least as many as the bookstore gets in a week, Internet
+connection is "iffy" and, even once connected, it is commonplace to be
+dropped and have to roll the dice all over again to try to connect. The
+Barnes and Noble free connection is based on an AT&T service and is usually
+fairly reliable but is obviously overwhelmed today. If one is a CableVision
+customer and is lucky enough to find one of the few seats near the window in
+the coffee area, the Optimum Wi-Fi service is reachable but those seats
+are few.
+
+As recently as five years ago, hurricanes would have kept us in our house
+-- but times have changed. It's not even enough now to have just the phone
+capability and e-mail access that most smartphones provides provide. Now
+the bookstore is filled with students doing papers and assignments;
+business people entering orders and checking systems; and other maniacal
+eccentrics, such as this writer, demanding access as a constitutional
+God-given right.
+
+There are at least 50 people on the line to get coffee and cakes, 10 times
+the normal line and the jockeying for outlets is getting worse and worse --
+how did we reach this stage where we are both so dependent and so
+vulnerable? --- and what does this mean when we are in an age when we are
+concerned about `cyberwarfare', which we are told may take out our
+electrical grid?
+
+Obviously, better computer security cannot help deal with havoc caused by
+hurricanes nor with electrical outages because of downed trees and wires
+but, when we see through this disaster, just how much more dependent we are
+now on electric power than ever before, we can only imagine what it would
+be like if someone were able to knock out the entire grid.
+
+The present outage is limited to a small, albeit highly populated, section
+of the east coast of the United States -- and, driving 5 miles over here to
+our local `refugee center',  I saw the large majority of businesses closed,
+traffic lights out of operation, and gas stations unable to pump gas. In
+New York City, the entire area south of 34th Street is without electricity
+with thousands of businesses and hundreds of thousands of individuals
+without power. One can only imagine what would be the impact of a
+nationwide electrical shutdown -- and, of course, the grid is controlled by
+computer systems.
+
+No matter what our technologists do, hackers, crackers, virus writers, etc.
+all seem to be able to get around the safeguards which they install. For
+years, the Computer Emergency Response Team (CERT -- www.cert.org) has been
+warning users about security problems in Microsoft products, particularly
+Internet Explorer and Outlook.  One is sure that Microsoft has been
+addressing these problems as it finds out about them.  Yet on Oct 2012 25,
+it issued a new report, Vulnerability Note VU#948750 -- Microsoft Outlook
+Web, explaining a system hole under which an attacker could `execute
+arbitrary scripting code'.
+
+Microsoft is certainly not the only culprit in the security area. We have
+all heard of infiltration of bank, credit card, on-line services (Yahoo,
+etc.), and even Federal Government systems -- infiltration that leads to
+identity theft, financial loss, password compromises, and vandalism -- and
+what we have heard is only the tip of the iceberg. 2600: The Hacker
+Quarterly magazine regularly publishes vulnerabilities of systems which,
+hopefully, are soon repaired by at-risk firms (A weekly radio show, *Off The
+Hook*, hosted by the editor of 2600, Emmanuel Goldstein, is heard on WBAI,
+99.5 FM and is streamed at www.2600.com).
+
+It is obvious that what our virus programs, security systems, and systems
+administrators have been doing isn't working -- at least not 100% of the
+time, and that is what is really required to protect our cyber
+infrastructure.
+
+So, what to do? Dr. Peter G. Neumann, who has been monitoring computer
+security for SRI International for forty years ,,, and has edited the Risks
+Digest since 1985, analyzing the constantly changing technology world --
+from the mainframe to the iPad -- and the security challenges that the
+constant innovation brings (for a full profile on Dr. Neumann, see the
+recent *New York Times* article) is ready for a different approach.
+http://www.nytimes.com/2012/10/30/science/rethinking-the-computer-at-80.html
+
+  [Modesty suggests I truncate the rest of this.  John, Many thanks for
+  the plug!  I strongly recommend his writings.  PGN]
+
+Creative Disruption is a continuing series examining the impact of
+constantly accelerating technology on the world around us. These changes
+normally happen under our personal radar until we find that the world as we
+knew it is no more.
+
+------------------------------
+
+Date: Sat, 10 Nov 2012 00:14:27 -0500 (EST)
+From: Danny Burstein <dannyb@panix.com>
+Subject: Sandy: NYU hospital power outage... may have been from safety sensors
+
+(Re: RISKS-27.07) When the Con Ed substation serving a large part of
+southern Manhattan was flooded out during Hurricane Sandy's storm surge, the
+hospitals mostly uneventfully went to emergency backup power.
+
+The glaring exceptions were NYU Hospital (and Bellevue).
+
+It's now starting to look like the problem at NYU was exacerbated by some
+safety switches.
+
+(The usual cautions, of course, about early reports apply)
+
+[ny times]
+
+At this point, Dr. Grossman said, he could only theorize as to why the
+generators had shut down. All but one generator is on a high floor, but the
+fuel tanks are in the basement. The flood, he said, was registered by the
+liquid sensors on the tanks, which then did what they were supposed to do in
+the event, for instance, of an oil leak. They shut down the fuel to the
+generators.
+
+http://www.nytimes.com/2012/11/10/nyregion/damage-from-hurricane-sandy-could-cost-nyu-langone-millions.html
+
+------------------------------
+
+Date: Tue, 6 Nov 2012 20:08:47 -0500
+From: "Bill Hopkins" <whopkins@wmi.com>
+Subject: Re: Verizon FIOS phone service
+
+Solomon (RISKS-27.06) mentions Verizon wired service outages.  We lost power
+locally for about 12 hours during Sandy's visit to the area.  The FIOS box
+has a battery backup to deliver telephone service "for up to eight hours" in
+a power outage.  Internet access died after a couple of minutes (the router
+is on an UPS) and I assume the TV signals did also.
+
+Phone service died in less than 8 hours, but when I plugged the FIOS box into
+another UPS, both the phone line and Internet access came back.  Things were
+stable until the power came back.
+
+Whether this would be true with a more general power failure (we could see the
+lights on further down the hill) will be the subject of a future "natural experiment."
+
+------------------------------
+
+Date: Mon, 5 Nov 2012 21:41:30 -0500
+From: Simson Garfinkel <simsong@acm.org>
+Subject: Re: When your fuel pumps are below sea level... (Burstein, R-27.07)
+
+Danny Burstein (and others) made passing reference to the 1965 blackout:
+
+I looked into this back in 1996 for an article I was writing at the time.
+Below is summarized from the notes I made back then...
+
+According to the New York Times 1965 Index, p. 323, the November 9th
+blackout of 1965 resulted in 800,000 people being stranded on the NYC
+subway; many were evacuated, but 10,000 were stranded past midnight.
+Governor Rockefeller ordered up 10,000 National Guardsmen to report to
+armories to help residents and police. Military vehicles carried elderly and
+the sick to hospitals.  All radio stations halted, but many resumed
+broadcasting within 15 minutes. 
+
+NY Telephone Col, operating at full capacity on emergency diesel generators,
+reported a record number of phone calls. 
+
+The Buffalo area darkened for only 40 minutes, but in New York City the
+blackout lasted 13 1/2 hours.
+
+The 1965 blackout followed a major 1961 blackout of Manhattan, which took
+place on June 13, a 96 degree day. During the 1961 blackout Manhattan was
+dark for between 2.5 and 4.5 hours. In 1963 Consolidated Edison assured the
+government that a recurrence of the 1961 blackout would be unlikely.
+
+Niagara Mohawk engineers said that the immediate cause of the 1965 breakdown
+was a "quarrel" between giant generators in which some got out of phase with
+others. The generators cut out one-by-one. It was difficult to restart the
+generators without power.
+
+"Once the northward power flow had been cut off through the Ontario hydro
+plant, the current reversed direction, overloading lines in much of upstate
+New York and triggering automatic cutoff devices there. Then, New England
+and New York City power systems automatically tried to fill the power
+vacuum, which imposed intolerable burden on their generating facilities and
+these plans in turn cut themselves out. That is how the failure spread."
+
+W. Sullivan discussed the blackout in light of speculation that civilization
+is doomed by its increasingly complex technology. He cited opposing views
+that such emergencies brought new proof of human ingenuity and adaptability.
+
+Computers were seen as tools for preventing future blackouts.
+
+*The New York Times* ran an editorial, Aladdin's Lamp Blacks Out. The
+editorial said, in part, "Short of a nuclear bomb, the most crippling
+affliction that can befall a modern metropolis is a total power failure.
+The blackout that crippled New York and most of the Northeast last evening
+was a dismaying reminder of the vulnerability of any community to a severing
+of its electric lifeline."
+
+On 7 Dec 1965, the Federal Power Commission issued its report on the
+november 9th power failure. It said that the power failure would not have
+occurred if the power systems involved had been following more careful
+operating policies. It said that the immediate cause of the blackout was an
+automatic shutdown of the power distribution line between the US and
+Canada. The line had circuit breakers which were set to make the line cease
+operating if the power load exceeded 375 million watts. That set point was
+chosen in 1963 and had not been reviewed. "In the time since the setting was
+determined, the average power load on the line controlled by the relay
+increased to 356 million watts, and thus ordinary upward fluctuations in
+power tripped the relay and started the whole blackout."
+
+There were many concerns at the time that the increased interconnection of
+power systems was responsible for the blackout. The Commission stated flatly
+that more, rather than fewer, interconnections between power systems in
+different areas were neededto provide reliable electrical service.
+
+The report found that emergency vehicles and been rendered unusable during
+the blackout because NYC gasoline pumps could not be run manually.  The
+Commission charged the petroleum industry with finding some means of
+operating gasoline pumps at service stations when electric power fails. The
+Commission further said that elevators in the city should be equipped with
+manual devices to move them to a landing.
+
+The report noted the possibility of a failure of the proportions involved of
+9 Nov 2012 had never been considered and said that studies were urgently
+required based on the more stringent assumptions.
+
+The day the report was released, 6 Dec 1965, southeast Texas was blacked
+out for 25 minutes.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.08
+************************
+
+--_002_d21cc6486ca04b56b9a563778af94345EXHUBVM03campusnclacuk_--

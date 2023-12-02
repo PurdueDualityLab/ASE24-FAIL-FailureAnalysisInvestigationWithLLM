@@ -1,0 +1,614 @@
+precedence: bulk
+Subject: Risks Digest 25.64
+
+RISKS-LIST: Risks-Forum Digest  Monday 20 April 2009  Volume 25 : Issue 64
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.64.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Lisa Wangness: Inaccuracies in Google Health records (Martin Ward)
+Woman killed by laptop in crash (Walter Roberson)
+San Francisco South Bay phone vandalism (PGN)
+Vesta tire-pressure warnings (Click and Clack)
+Finnish e-voting results annulled; municipalities to hold new elections (PGN)
+CIA agent testifies on risks of electronic voting (PGN)
+Conficker C Analysis from SRI (Monty Solomon)
+Japanese vending machine face recognition accepts 10-yr-old as adult
+  (Paul Saffo)
+Pro-regulation viewpoint on cyber vulnerability (via David Farber)
+"Nowt for owt" with Amazon (Chris J Brady)
+Credit-Card Activation (Kees Huyser)
+Bad authentication question (Erik Mooney)
+Re: The Security By Obscurity Myth (Dick Mills)
+Re: Driver Says GPS Unit Led Him to Edge of Cliff (jidanni)
+Re: flat text is *never* what we want (Tony Finch)
+Workshop on Service oriented Enterprise Architecture for Enterprise
+  Engineering: EDOC'09 (Selmin Nurcan)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 17 Apr 2009 15:27:42 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Lisa Wangness: Inaccuracies in Google Health records
+
+When Dave deBronkart tried to transfer his medical records from Beth Israel
+Deaconess Medical Center to Google Health, a new free service that lets
+patients keep all their health records in one place and easily share them
+with new doctors, he was stunned at what he found.
+
+Google said his cancer had spread to either his brain or spine -- a
+frightening diagnosis deBronkart had never gotten from his doctors -- and
+listed an array of other conditions that he never had, as far as he knew,
+like chronic lung disease and aortic aneurysm. A warning announced his blood
+pressure medication required "immediate attention."
+
+It turns out that Google Health uses information from billing records, which
+can be inaccurate, undated, and was never intended to be used by doctors.
+Transferring existing paper records could take years and hundreds of
+millions of dollars. Insurance data, by contrast, is already computerized
+and far easier and cheaper to download. But it is also prone to
+inaccuracies, partly because of the clunky diagnostic coding language used
+for medical billing, or because doctors sometimes label a test with the
+disease they hope to rule out, medical technology specialists say.
+
+Ironically, Beth Israel has one of the most advanced electronic medical
+records systems in the country, with clinical records carefully tended by
+doctors and accessible to patients on a secure website. But Google Health
+prefers providers send information in coded form to build the list of
+patient's medical conditions so the program can guide patients to additional
+information on the Internet about each disease using links. The neatly
+packaged billing codes are easier to link to than the mix of medical terms
+and standard language doctors use in their clinical records.
+
+[Source: Lisa Wangness, *The Boston Globe*, 13 Apr 2007]
+http://www.boston.com/news/health/articles/2009/04/13/electronic_health_records_raise_doubt/
+
+  [I used this case in beginning a keynote talk I gave on identities, trust,
+  and trustworthiness at NIST on 15 Apr 2009 for the IDtrust 2009
+  conference.  It was highly relevant, and came up several times during the
+  talk.  My slides are online on my website and on the IDtrust site.  PGN]
+    http://www.csl.sri.com/neumann/idtrust09+x4.pdf
+
+  [Incidentally, an earlier article by Stephen Smith in *The Boston Globe*,
+  9 Apr 2009, noted that more than 338 Massachusetts hospital patients
+  "suffered perilous falls, got the wrong medication, or had medical
+  instruments left inside them."  On the other hand, almost 2/3 of those
+  involved falls.  PGN]
+    http://www.boston.com/news/local/massachusetts/articles/2009/04/09/hospital_patient_mishaps_top_300/
+
+------------------------------
+
+Date: Thu, 16 Apr 2009 13:11:28 -0500
+From: Walter Roberson <roberson@hushmail.com>
+Subject: Woman killed by laptop in crash
+
+A Canadian woman driving a small car was involved in a car crash.
+Investigators found that she likely would have survived if not for her
+laptop, which had been placed unsecured in the back seat and which flew
+forward and hit her in the back of the head.
+http://www.cbc.ca/technology/story/2009/04/15/bc-surrey-laptop-crash-kills-woman.html
+
+  [It actually might make some sense for laptops to be in cases and anchored
+  with seatbelts -- particularly the new Mac Airbooks.  PGN]
+
+------------------------------
+
+Date: Fri, 10 Apr 2009 12:42:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: San Francisco South Bay phone vandalism
+
+Once again we are reminded of the fragility of our infrastructures -- this
+time fiber-optic cables and accessible manhole covers.  Ten cables were
+severed at four different locations in the wee hours of the morning of 9 Apr
+2009.  At least 50,000 landline telephone customers and many others had
+their service seriously disrupted by fiber-optic cuts that also affected
+cell-phone service and Internet connectivity in Santa Clara, Santa
+Cruz, and San Benito counties.  It impacted hospitals, businesses, banks,
+911 calls to police and fire departments, computerized medical records,
+ATMs, and ubiquitous use of credit and debit cards.  [Source: Long article
+by Nanette Asimov, Ryan Kim, and Kevin Fagan, *San Francisco Chronicle*,
+10 Apr 2009; PGN-ed]  With pervasive physical and logical vulnerabilities,
+sophisticated malware such as Conficker, and `normal accidents', we really
+need to consider our infrastructures much more holistically.
+
+------------------------------
+
+Date: Sun, 19 Apr 2009 11:06:45 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Vesta tire-pressure warnings
+
+Click and Clack (Tom and Ray on NPR's Car Talk) had a caller this morning
+saying that her Vesta tire-pressure warning system goes off whenever she
+drove on a particular stretch of highway.  After a little grilling, it turns
+out she was passing the NSA complex at Fort Meade.  C&C concluded it had to
+be Radio Frequency Interference, and wondered whether it affects only
+Vestas, or perhaps other late-model cars with the newly mandated wireless
+sensors that might operate on the same frequency.  [This was in MD.  If it
+also happens in VA (e.g., near Langley), there might be Vestal Virginians
+calling in as well.  PGN]
+
+------------------------------
+
+Date: Fri, 10 Apr 2009 12:42:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Finnish e-voting results annulled; municipalities to hold new elections
+
+http://www.effi.org/blog/2009-04-09-EVoting-Supreme-Admin-Court.html
+Electronic Frontier Finland (EFFI), 9 Apr 2009
+Kirjoittaja: Antti Vaha-Sipila, Huhtikuu 9, 2009
+
+The Supreme Administrative Court has ruled on the Finnish municipal
+elections of 28 october 2008, in which an e-voting system was piloted.
+In its decision, the court sided with the complainants, overturning an
+earlier decision of Helsinki Administrative Court, and the decisions of the
+municipal central elections committees to confirm the election results. As a
+result, the three municipalities that took part in the Finnish e-voting
+pilot must now hold new elections as soon as possible. As the e-voting pilot
+has ended and the law authorising e- voting expired in December 2008, the
+new elections will use a traditional paper ballot system.
+
+The Supreme Administrative Court decision was based on two issues: first,
+the voting instructions that the voters had received by mail were incorrect,
+and second, the user interface of the e-voting terminals was deemed to be
+flawed. The voting process utilised a smart card given to each voter, and
+upon premature removal of the card, the voting terminals gave no indication
+that the vote was not cast. As the system did not use a voter-verified paper
+ballot, voters might have been left with an impression that the vote had in
+fact been cast.
+
+It is notable that the Court did not address the general lawfulness of
+e-voting. According to the Finnish law authorising e-voting, electronic
+ballot boxes would need to be archived until the next election. These
+electronic ballot boxes contain encrypted information on who voted and
+how. This poses a risk to voter secrecy. However, the Court refused to rule
+on whether this is unlawful, or whether the electronic ballot box would need
+to be destroyed.
+
+In addition, the Court did not address the question whether an e-voting
+system would need to be more transparent. A significant amount of system
+design in the Finnish e-voting pilot were declared 'trade secrets', and the
+system source code is closed. The Court decision still leaves an open
+question whether paperless, 'black box' e-voting systems could be fielded in
+the future.
+
+  [Many other sources are cited on the EFFI website.  PGN]
+
+------------------------------
+
+Date: Sat, 11 Apr 2009 16:26:53 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: CIA agent testifies on risks of electronic voting
+
+  [Thanks to Gene Spafford for spotting this one.  PGN]
+
+ A CIA agent testified before the Election Assistance Commission.  His
+position (or perhaps the CIA's?): electronic votes are not secure and can be
+altered -- and are being altered in some locales.
+  http://www.mcclatchydc.com/226/story/64711.html
+
+------------------------------
+
+Date: Fri, 10 Apr 2009 22:39:55 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Conficker C Analysis from SRI
+
+Phillip Porras, Hassen Saidi, and Vinod Yegneswaran,
+Technical Report, Addendum
+Release Date: 08 March 2009, Last Update:   4 April 2009
+Computer Science Laboratory, SRI International, 333 Ravenswood Avenue
+Menlo Park CA 94025 USA
+
+This addendum provides an evolving snapshot of our understanding of the
+latest Conficker variant, referred to as Conficker C.  The variant was
+brought to the attention of the Conficker Working Group when one member
+reported that a compromised Conficker B honeypot was updated with a new
+dynamically linked library (DLL). Although a network trace for this
+infection is not available, we suspect that this DLL may have propagated via
+Conficker's Internet rendezvous point mechanism (Global Network Impact).
+The infection was found on the morning of Friday, 6 March 2009 (PST), and it
+was later reported that other working group members had received other DLL
+reinfections throughout the same day.  Since that point, multiple members
+have reported upgrades of previously infected machines to this latest
+variant via HTTP-based Internet rendezvous points.  We believe this latest
+outbreak of Conficker variant C began first spreading at roughly 6 p.m. PST,
+4 March 2009 (5 March UTC).
+
+In this addendum report, we summarize the inner workings and practical
+implications of this latest malicious software application produced by the
+Conficker developers.  In addition to the dual layers of packing and
+encryption used to protect A and B from reverse engineering, this latest
+variant also cloaks its newest code segments, along with its latest
+functionality, under a significant layer of code obfuscation to further
+hinder binary analysis.  Nevertheless, with a careful mixture of static and
+dynamic analysis, we attempt here to summarize the internal logic of
+Conficker C.  ...
+
+http://mtc.sri.com/Conficker/addendumC/
+
+New:  Free Detection Utilities
+
+Conficker C P2P Snort Detection Module
+http://mtc.sri.com/Conficker/contrib/plugin.html
+
+Conficker C Network Scanner
+http://mtc.sri.com/Conficker/contrib/scanner.html
+
+  [Phil Porras and his colleagues have done an amazing job in reverse
+  engineering and analyzing Conficker.  See the Malware Threat Center,
+  Cyber Threat Analytics, and BotHunter.  PGN]
+
+------------------------------
+
+Date: Fri, 17 Apr 2009 12:29:27 -0700
+From: Paul Saffo <paul@saffo.com>
+Subject: Japanese vending machine face recognition accepts 10-yr-old as adult
+
+http://mdn.mainichi.jp/mdnnews/news/20090417p2a00m0na004000c.html
+
+A 10-year-old boy in Kyoto was able to purchase cigarettes from a vending
+machine equipped with face identification technology, it has been found.
+
+Kyoto Prefectural Police conducted an experiment with the cooperation of the
+boy, who had bought cigarettes from a vending machine this February. Neither
+the Ministry of Finance, which had approved the use of such machines in lieu
+of those that read Taspo I.C. cards stored with personal identification
+information, nor the manufacturer of face identification vending machines
+have heard of other instances in which elementary school children have been
+misidentified as adults.
+
+According to police, the boy confessed that he had purchased cigarettes from
+a vending machine when he was questioned by his father about the cigarettes
+he had in his possession, and the father then contacted the juvenile
+division of Kyoto police. Early this month, police asked the boy to re-enact
+what he had done at the vending machine in question. The boy stood on the
+frame of his bicycle to move closer to the camera installed in the machine,
+pressed the "confirm" button, and was identified as an adult.
+
+Face identification vending machines determine a person's approximate age
+from the size of their eyes and mouth and their bone structure. If a buyer
+is not identified as an adult, they must present a driver's
+license. Designed to prevent minors from buying cigarettes, 5,200 such
+vending machines have been in operation across Japan since the system's use
+was approved in July.
+
+Kyoto police know of at least five instances in which junior high school
+students were misidentified as adults. "We plan to push the Ministry of
+Finance and vending machine manufacturers to make efforts to prevent minors
+from buying cigarettes from vending machines," said police.
+
+"We are currently investigating the cause," said a representative of the
+vending machine manufacturer. "We are constantly upgrading our software to
+meet increasingly tough standards. The vending machine in question has also
+been upgraded." It is unclear, however, whether the boy was able to make
+purchases after the upgrade.
+
+The legal smoking age in Japan is 20.
+
+------------------------------
+
+Date: Mon, 30 Mar 2009 10:12:42 -0400
+From: David Farber <dave@farber.net>
+Subject: Pro-regulation viewpoint on cyber vulnerability
+
+  [From someone contributing anonymously to Dave Farber's IP]
+
+A paper that speaks to market failure is at:
+http://www.csis.org/component/option,com_csis_pubs/task,view/id,5370/type,1/
+
+Given that we know that perimeter defenses are ineffective illusions in
+cyberspace, to what market should regulation be targeted to have the most
+desirable impacts?  Would it be the market for devices, operating systems,
+network infrastructure, application software and services, on-line content?
+All of the above?
+
+"A new Federal approach to cybersecurity will fail if it does not elicit
+actions that the private sector will not otherwise perform.  Government
+intervention in response to market failure can include regulation (or the
+threat of regulation) or subsidy. Both have limitations, but both are
+preferable to inaction. We are at the end of a long era of deregulation, an
+effort that was initially beneficial but it went too far in the last
+Administration. Finding a new and more balanced approach will not be
+easy. The intellectual heritage of deregulation lives in assertions such as
+any regulation to improve security will hurt innovation. Like all lobbyist
+mantras, it contains a grain of truth while being fundamentally and
+dangerously wrong.  Innovation is a complex process, and simple statements
+about cause and effect deserve only skepticism."
+
+Archives: https://www.listbox.com/member/archive/247/=now
+
+------------------------------
+
+Date: Sat, 4 Apr 2009 12:17:54 -0700 (PDT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: "Nowt for owt" with Amazon
+
+There is a saying in the North of England of 'nowt for owt' (rhyming with
+'out'). That is 'there is nothing for free.' I have just been sucked into an
+unwanted near 48-pound annual premium membership subscription by Amazon and
+there is no way to unsubscribe.
+
+I use Amazon.com to purchase various items of interest about four times a
+year. I'm never in a hurry to receive these.
+
+Just now I attempted to purchase a book and was offered the cheapest deal
+from Amazon with no packing or postage if I signed up for a 'free' trial of
+their new premium next day membership. This was easy to do,
+unsurprisingly. The p&p charges were then zeroed in my basket details - but
+then I received a response saying that payment had been declined by
+VISA. Hmm - payment for a 'free' trial offer - I smelt a rat. It also stated
+that an email had been sent - which I found was headed: "Payment Declined
+for Amazon Prime Free Trial Membership."  The rat started to smell bad.
+
+I checked my account details and noticed that I had on my account a number
+of credit cards - all but one - now out-of-date. One of these latter had
+been used for the 'free' payment - LUCKILY. The email also stated that after
+the 'free' trial that my card would be charged 47.97 pounds for a one-year
+full membership!!!!
+
+I searched the web site and could find no information about this premium
+membership - only that I had inadvertently joined it.
+
+Worryingly I could NOT find any way to unsubscribe.
+
+My only solution to this situation was to delete ALL of my cards' details
+from my account. And I resolved NEVER to use Amazon again. Their loss.
+
+By this time - and running out of my time at the Internet cafe - I was very
+angry. The rat stank to high heaven. I trusted Amazon with my VISA card
+details and they attempted to suck me into an annual - and assumedbly ever
+increasing - membership that I had no need for.
+
+Let others be warned - if you smell a rat with a web site stop and
+investigate further before submitting credit card details.
+
+------------------------------
+
+Date: Mon, 30 Mar 2009 09:12:49 +0200
+From: Kees Huyser <kees.huyser@nikhef.nl>
+Subject: Credit-Card Activation
+
+Recently, my bank was taken over by another bank. As a consequence of this
+take-over, I was issued a new credit card. The card needed to be activated
+by an 'activation code' which was sent in a separate letter a few days after
+I received the card.
+
+To activate you need to call a toll-free number, enter the number of your
+credit card, the activation code and your date of birth. I tried to activate
+twice and both times it failed without telling me the reason for failure. I
+was advised to call the bank's customer service desk.
+
+This morning I called the service desk and was asked the last eight numbers
+of the card, my full address (including the post code) and my date of
+birth. I was then told my date of birth was incorrectly recorded in the
+system and that this was the reason for activation failure.
+
+The nice lady at the service desk then activated my card without asking for
+the activation code.
+
+I'm sure you can see the holes in the system here: I can steal a card, phone
+the service desk and tell them the date of birth is not what is in their
+system (the full address and postcode is printed on both letters and thus is
+also in my possession) and have the card activated.
+
+How can the bank check my DoB over the phone? If they had asked me to give
+them the activation code at least that would mean I would have to steal two
+envelopes: the one with the CC and the one with the activation code.
+
+------------------------------
+
+Date: Fri, 17 Apr 2009 19:46:04 -0500
+From: Erik Mooney <erik@dos486.com>
+Subject: Bad authentication question
+
+So here's an entry in the Bad Website Security Question derby:
+
+"What sports team do you most like to see lose?"
+
+This appeared for online banking services for a local northeast US regional
+bank.  If one knows anything about pro sports rivalries in the Northeast,
+there's maybe two to five potential answers to that question that would
+cover 90% or more of respondents.  (And the bank even sponsors by name a pro
+sports arena in a northeast city.)
+
+At least it isn't a password-retrieval question.  It's an extra factor
+required for authentication in addition to the regular password.  So it
+can't compromise my account, but the security it provides is quite illusory.
+
+------------------------------
+
+Date: Thu, 16 Apr 2009 11:16:08 -0400
+From: David Farber <dave@farber.net>
+Subject: PIN Crackers Nab Holy Grail of Bank Card Security (WiReD)
+
+Threat Level from Wired.com
+http://blog.wired.com/27bstroke6/2009/04/pins.html
+
+Hackers have crossed into new frontiers by devising sophisticated ways to
+steal large amounts of personal identification numbers, or PINs, protecting
+credit and debit cards, says an investigator.  The attacks involve both
+unencrypted PINs and encrypted PINs that attackers have found a way to
+crack, according to an investigator behind a new report looking at the data
+breaches.  The attacks, says Bryan Sartin, director of investigative
+response for Verizon Business, are behind some of the millions of dollars in
+fraudulent ATM withdrawals that have occurred around the United States.
+"We're seeing entirely new attacks that a year ago were thought to be only
+academically possible," says Sartin. Verizon Business released a report
+Wednesday that examines trends in security breaches. "What we see now is
+people going right to the source ... and stealing the encrypted PIN blocks
+and using complex ways to un-encrypt the PIN blocks."
+
+  [From Dave Farber's IP distribution.  Thanks to Dave for many fascinating
+  items.  PGN]
+
+------------------------------
+
+Date: Mon, 30 Mar 2009 18:12:10 -0400
+From: Dick Mills <dickandlibbymills@gmail.com>
+Subject: Re: The Security By Obscurity Myth (Sebes, RISKS-25.62)
+
+In RISKS-25.61, John Sebes reiterated the expert's condemnation of security
+by obscurity (SBO).  I for one, would certainly not challenge the validity
+of what Mr. Sebes and others say -- within context.  However, I have two
+social-engineering type speculations as to why the SBO myth won't die.
+
+First and foremost, nearly all governments, businesses, and academic
+institutions continue to embrace SBO.  On the day when the news reports that
+NSA, IRS and Citibank open source all their software, and universities chip
+in with their GPA counting software; all to invite scrutiny for
+vulnerabilities, then I'll start to believe.
+
+Next, as an engineer I'm trained to always check the limiting cases.
+Suppose all the world's software, or even a substantial fraction of it, was
+made open source?  I can't even guess how many zeroes to put on the number
+of lines of code in question.  9? 12? 15?  Then, the obscurity shoe would
+shift to the other foot.  Benevolent hackers would have their efforts
+diluted to almost nothing.  Only a tiny fraction of the code would benefit
+from adequate inspection by open source enthusiasts.  Malevolent hackers
+need only find unscrutinized corners of obscure applications to find
+something to exploit.  The average number of pairs of eyes scrutinizing each
+line of code would be much less than one.  It would be disastrous.
+
+Even on a much smaller scale, say the source code of the Windows OS, it
+seems likely that malevolent hackers inspecting the code would greatly
+outnumber the benevolent ones; especially, when considering the animosity
+towards Microsoft exhibited by the open source community.  I believe that
+most of them don't *want* Windows to be secure; nor NSA nor IRS for that
+matter.
+
+Consider the plight of a manager responsible for the security of any
+attractive target software, and faced by the prospect of whether to open
+source the code.  The code *might* benefit from the efforts of benevolent
+hackers, but it would *certainly* suffer from the attentions of malevolent
+ones.
+
+Within certain context, I can easily accept the arguments against SBO and
+for open source.  The context would be a relatively small block of code
+(such as a voting machine, an encryption algorithm, or an OS kernel) and an
+open source community motivated to work, and work hard, on the benevolent
+side.  Outside that context, I'm far from being convinced that SBO is a
+myth.
+
+------------------------------
+
+Date: Mon, 06 Apr 2009 06:47:26 +0800
+From: jidanni@jidanni.org
+Subject: Re: Driver Says GPS Unit Led Him to Edge of Cliff
+
+The e-maps where I live mark anything long and shiny (creek beds,
+landslides) as "road", and anything not (roads underneath trees) as "not a
+road". This combined with no concept of "vertical discontinuity", and any
+staircase could become the "best road".
+
+At least nobody's managed to drive off the _bottom_ of my cliff (Risks
+24.13). I.e., there probably will be slightly less fatalities if the GPS
+destination is at the top of the cliff instead of the bottom.
+
+------------------------------
+
+Date: Wed, 1 Apr 2009 10:57:14 +0100
+From: Tony Finch <dot@dotat.at>
+Subject: Re: flat text is *never* what we want (Finch, RISKS-25.55)
+
+A followup to my question in RISKS-25.55 about languages and/or libraries
+that reduce the problems caused by incorrect / insecure software arising
+from type mismatches in weakly typed data represented as strings.
+
+Google has recently announced an open-source library that tackles one
+consequence of this problem: cross-site scripting. It is part of a web page
+templating system, and it embodies a lot of domain-specific knowledge about
+the syntax and nesting of the various languages found in web pages.
+
+http://googleonlinesecurity.blogspot.com/2009/03/reducing-xss-by-way-of-automatic.html
+
+------------------------------
+
+Date: Thu, 09 Apr 2009 19:54:27 +0200
+From: Selmin Nurcan <nurcan@univ-paris1.fr>
+Subject: CfP Workshop on Service oriented Enterprise Architecture for
+  Enterprise Engineering (EDOC'09)
+
+SoEA@EE'09 is organised in conjunction with the 13th International
+Enterprise Computing Conference (EDOC) on September 1st, 2009, Auckland, New
+Zealand.
+
+The goal of the SoEA@EE'09 workshop is to clarify the relationship between
+business process management and service provisioning. The objective is
+twofold:
+(i) To characterise the strong relationship existing between Business
+Process Management (BPM) and Service oriented Enterprise Architecture (SoEA)
+(ii) To develop concepts and methods to assist the engineering and the
+management of Service-Oriented Enterprise Architectures (SoEA) and their
+support systems.
+
+The Call for Papers can be downloaded from the SoEA@EE'09 Web site :
+http://crinfo.univ-paris1.fr/users/nurcan/SoEA@EE_2009/
+
+Selmin Nurcan, SoEA@EE'09 co-organiser
+
+Paper submission: May 31, 2009
+  [See the website for full details.  PGN]
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.64
+************************

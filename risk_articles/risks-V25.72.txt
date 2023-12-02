@@ -1,0 +1,571 @@
+RISKS-LIST: Risks-Forum Digest  Monday 6 July 2009  Volume 25 : Issue 72
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.72.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+More on the DC Metro collision 22 June 2009 (David Lesher, Al Stangenberger)
+Re: Train collisions (Dave Parnas via PGN)
+Earlier autopilot problem on New York City subway trains (George Mannes)
+More focus on computers in the Air France crash (Steven M. Bellovin)
+Clear clears its ownership, but not stored data (PGN)
+Use of GPS leads to wrong house being destroyed (PGN)
+Sequoia Voting Systems vs DC (David Lesher)
+A Less than Simple Flight from Rome to Heathrow (Chris J Brady)
+Train and iPod do not mix (Barry Munns)
+Billions stolen in online robbery (PGN)
+HOW many?  12.000 laptops lost PER WEEK in US airports (Peter Houppermans)
+That old "object reuse" problem ... (Rob Slade)
+Politicians, personal e-mail, and the ECPA (Bob Gezelter)
+RISKS at catless.ncl.ac.uk (Lindsay Marshall)
+Google Earth a tool for thieves and scoundrels? (John Hatpin via Mark Brader)
+Re: A new way to lose money via ATM... (Jim Haynes)
+Re: Bozeman (Andrew Koenig)
+I think we're all Bozemans on this bus (Steve Lamont)
+Abridged info on RISKS (comp.risks)
+
+------------------------------------------------------------------------
+
+Date: Thu, 25 Jun 2009 22:09:40 -0400 (EDT)
+From: "David Lesher" <wb8foz@panix.com>
+Subject: More on the DC Metro collision 22 June 2009 (Thompson, RISKS-25.71)
+
+On Monday 22 June 2009, 6-car southbound train #112 rear-ended stopped
+6-car southbound train #214, just north of Ft. Totten station. The lead
+car of 112 split open horizontally, with the frame crushed to half its
+length, and the sides/roof climbing the last 214 car.
+Since this was inbound at afternoon rush hour, the trains were far from
+full; there are 9 dead, including the operator of 112, and ~75 injured.
+
+The NTSB reports that 112 was in automatic mode, where trackside block
+limits and Central Command dictates the train's movements. An interview
+with the 214 operator disclosed that it was stopped in manual mode.
+
+Based on track and wheel markings, the operator of 112 started an
+emergency stop several hundred feet before the collision.  Despite that,
+214 was displaced 6-7 feet by the collision. (An empty 6-car train weighs
+about 460,000 lbs.)
+
+On Tuesday and Wed, NTSB ran tests on the blocks of signaling system.  On
+Wednesday, they found that a train stopped where 214 was did NOT register on
+the ATP system.
+
+Comments:
+
+It's way too early to jump to conclusions, but the above is exactly what
+100+ years of railroad signaling supposedly makes impossible. There will
+be a lot of work in the coming months to discern what happened.
+
+ref: past NTSB reports on Metro incidents. One discusses the signaling
+system; the other shows another 1000-series car similarly split by a
+collision.
+
+<http://www.ntsb.gov/publictn/2006/RAR0601.htm>
+<http://www.ntsb.gov/publictn/1996/RAR9604.htm>
+
+------------------------------
+
+Date: Fri, 26 Jun 2009 10:07:54 -0700
+From: Al Stangenberger <forags@nature.berkeley.edu>
+Subject: More on the CD Metro collision
+
+In case you missed it, NTSB issued a press release yesterday on
+investigation progress.  http://ntsb.gov/Pressrel/2009/090625.html
+
+One significant finding:
+
+> Investigators conducted tests at the accident site last night with a
+> similar train and found that when the train was stopped at the same
+> location as the stopped struck train, the train control system lost
+> detection of the test train.
+
+This is certainly only one factor in a complex incident, for example the
+operator of the leading train says he was running the train in manual mode
+all his shift - why??
+
+This will be an interesting one to watch.
+
+------------------------------
+
+Date: Tue, 23 Jun 2009 13:25:50 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Train collisions (Re: RISKS-25.71)
+
+Comment from Dave Parnas:
+  This problem already seems to be solved on German trains.  If you watch
+  them, you will see that they punch in some numbers when they pass a sign
+  along the tracks.  In this way, you know if they are not alert.
+
+On the other hand, the system is supposedly designed to make it impossible
+for a train to cross the red light indicating a train on the tracks ahead,
+with automated braking based on maintaining a safe distance between trains.
+
+Later reports seem to indicate that the signaling across one stretch
+of track was inoperative, which prevented the system from working properly.
+http://www.washingtonpost.com/wp-dyn/content/article/2009/07/01/AR2009070102369.html?hpid%3Dtopnews&sub=AR
+
+------------------------------
+
+Date: Tue, 23 Jun 2009 16:30:19 -0400
+From: George Mannes <gmannes@gmail.com>
+Subject: Earlier autopilot problem on New York City subway trains
+
+There was a train problem in the news two weeks before the DC disaster.
+[Source: Heather Haddon, Autopilot causes L trains to bypass platforms,
+*AM New York*, 10 Jun 2009]
+
+------------------------------
+
+Date: Mon, 29 Jun 2009 11:13:58 -0400
+From: "Steven M. Bellovin" <smb@cs.columbia.edu>
+Subject: More focus on computers in the Air France crash
+
+According to the Wall Street Journal, 27 Jun 2009, investigators "suspect a
+rapid chain of computer and equipment malfunctions stripped the crew of
+automation today's pilots typically rely on to control a big jetliner."
+Much of the article concerns the hypothesized sequence of events, but this
+paragraph should resonate with RISKS readers:
+
+  Unlike jetliners built in previous decades -- which required pilots to
+  frequently manipulate controls and often manually fly the planes for long
+  stretches -- newer computer-centric aircraft such as the A330 and Boeing's
+  777 are designed to operate almost entirely on automated systems. From
+  choosing engine settings and routes to smoothing out the ride during
+  turbulence and landing in low visibility, pilots essentially monitor
+  instruments and seldom interfere with computerized commands. So when those
+  electronic brains begin to act weirdly at 35,000 feet, the latest crop of
+  aviators may be less comfortable stepping in and grabbing control of the
+  airplane.
+
+There's on other point worth noting.  As has often been noted, it's rarely
+one thing that brings down a modern airliner.  The current presumed
+scenarios are known to be incomplete:
+
+  Planes can -- and occasionally do -- fly safely without pitot probes
+  functioning properly. That's why investigators believe some other
+  important factor, which hasn't been identified yet, likely contributed to
+  the crash.
+
+The plane is a system, where the different pieces interact in complex ways.
+
+------------------------------
+
+Date: Fri, 26 Jun 2009 13:18:15 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Clear clears its ownership, but not stored data
+
+Out of Business, Clear May Sell Customer Data <http://slashdot.org/>
+Posted by kdawson Friday June 26, @11:40AM
+from the but-don't-worry-it's-perfectly-safe dept.
+
+privacy <http://slashdot.org/index2.pl?fhfilter=privacy>
+
+narramissic <http://www.itworld.com/> writes "Earlier this week, the Clear
+airport security screening service ceased operations, leaving many to wonder
+what would become of the personal information, including credit card
+numbers, fingerprints, and iris scans, of Clear's customers.  And now we
+know.  The information could be sold to the provider of a similar service.
+http://www.itworld.com/security/69829/out-business-clear-may-sell-customer-data
+Until then, Clear has erased PC hard drives at its airport screening kiosks
+and is wiping employee computers, but the information is retained on its
+central databases (managed by Lockheed Martin).  Clear customer David
+Maynor, who is CTO with Errata Security in Atlanta, wants Clear to delete
+his information but that isn't happening, the company said in a note
+<http://www.flyclear.com/> posted to its Web site Thursday.  'They had your
+Social Security information, credit information, where you lived, employment
+history, fingerprint information,' said Maynor. 'They should be the only
+ones who have access to that information.'"
+
+<http://yro.slashdot.org/story/09/06/26/1435209/Out-of-Business-Clear-May-Se
+ll-Customer-Data>
+
+------------------------------
+
+Date: Thu, 11 Jun 2009 19:28:46 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Use of GPS leads to wrong house being destroyed
+
+The demolition crew was given only the GPS coordinates, and demolished the
+wrong house.  No one home, no confirmation.  Ugly case.  [PGN-ed; Thanks to
+Lauren Weinstein.]
+
+http://news.aol.com/article/mans-house-mistakenly-destroyed/523439
+
+------------------------------
+
+Date: Fri, 5 Jun 2009 23:23:12 -0400 (EDT)
+From: "David Lesher" <wb8foz@panix.com>
+Subject: Sequoia Voting Systems vs DC
+
+Sequoia Voting Systems agreed yesterday to turn over sensitive information
+to the D.C. Council about how the District's voting machines work and
+tabulate results, setting the stage for one of the most comprehensive probes
+on the reliability of electronic voting equipment.  The agreement is a
+response to the election night chaos in the September primaries, when
+Sequoia machines tabulated more ballots than there were voters, resulting in
+thousands of phantom votes. ...  [Source: Tim Craig, *The Washington Post*,
+6 Jun 2009]
+<http://www.washingtonpost.com/wp-dyn/content/article/2009/06/05/AR2009060503617_pf.html>
+
+------------------------------
+
+Date: Tue, 23 Jun 2009 08:48:18 -0700 (PDT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: A Less than Simple Flight from Rome to Heathrow
+
+I thought Heathrow was bad enough with its new multi-million pound Terminal
+5. Remember the opening fiasco of the thousands of delayed bags being
+trucked around Europe and then back again, eventually to be auctioned at
+Gatwick as unclaimed? But at least at Heathrow they always get the departure
+gates correctly displayed on the computer driven LED displays.
+
+But recently Rome FCO airport produced a first for me. The screens
+displaying departures were like huge 6 foot / 2 metre laptop screens on
+end. In detail they listed the airlines, flight codes, departure gates, and
+important information like 'now boarding.' When I discovered them upstairs
+in Terminal C, incidentally in the time-distracting shopping area, one
+screen showed up-to-date / minute by minute listings for 12.00 through to
+about 14.00, and the two screens next door had listings for 19.00 through to
+21.00 and 21.00 to 24.00. On the two latter screens some of the flights were
+listed as 'now boarding' including one for Toronto at about 20.00. However
+the actual time was 13.00. Hmm ...
+
+Interestingly a possible explanation could have been seen at the bottom left
+hand corners of the errant screens where there was that ubiquitous Windows
+'Start' button in green. I tried pressing it but the screens were not touch
+screens.
+
+Clearly Windows had crashed and apparently left the previous day's flights
+on display on the two screens. When I told an official he shrugged - like
+airport officials tend to do - and walked away. The screens stayed like that
+until I left the area at 16.30 for my BA flight to London.
+
+But as we queued at the BA flight's departure gate, to have our boarding
+passes processed, I noticed that the Windows driven screen there clearly
+stated that the flight we were about to board was on Gulf Air to Dubai. The
+BA contract staff had not noticed, so I assumed that this misinformation was
+not unusual. I was correct.
+
+However that wasn't quite the end of my computer malfunctioned
+experience. At Heathrow T5 BA/BAA, with their spanking brand new computer
+controlled baggage delivery system, they kindly delivered my hold baggage
+onto the wrong belt so that after waiting for about 30 minutes I then
+reported it missing. After interrogating their computer system the BA staff
+told me that it had not even been loaded onto the plane at Rome, that this
+was not unusual from Rome, and that it would (probably) arrive the next day
+and be delivered to my home by courier. [Incidentally it appears that
+thousands (millions?) of 'delayed' bags actually do fly around the world
+without their owners on board - but that's another risk.] However as I was
+about to leave the hall and go through customs, and in a less than happy
+mood, I spotted my lonely bag all by itself on a delivery belt at the far
+end of the baggage hall.
+
+So I guess it was all a case of a human workforce who don't care about
+giving out the wrong information, or at least in Rome FCO Airport simply not
+switching off (or rebooting) displays that were clearly giving out the
+incorrect information, together with "the principal of computer automation"
+(e.g. for baggage delivery) "that things automatically go wrong;" a mix that
+can't fail to cause an interesting experience if not one of concern. And
+this was during a simple flight from Rome to London.
+
+------------------------------
+
+Date: Fri, 19 Jun 2009 16:47:42 +1000
+From: Barry Munns <brmunns@gmail.com>
+Subject: Train and iPod do not mix (Re: Wirchenko, RISKS-25.70)
+
+Not an area I'm an expert in, but many years ago I worked as an auditor for
+the New South Wales (Australia) State Rail. As the job on occasion required
+us to walk around the maintenance workshops and railway tracks, we received
+safety training. My recollection of the training was an emphasis on not
+relying on actually hearing a train coming at you, as the sound waves mostly
+radiate sideways (not forward of the train). Hence, despite being very big
+and noisy the trains can 'sneak up on you' (even at very low speeds). Which
+is why when workers are doing track maintenance they put explosive charges
+down the track to provide an audio cue that the train is coming.
+
+So, whilst wearing an ipod didn't help the situation, walking on a railway
+track is not very clever in the first place.
+
+------------------------------
+
+Date: Fri, 3 Jul 2009 15:59:07 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Billions stolen in online robbery
+
+  [Thanks to Gunnar Peterson for spotting this one.]
+
+Space trading game Eve Online has suffered a virtual version of the credit
+crunch.  One of the game's biggest financial institutions lost a significant
+chunk of its deposits as a huge theft started a run on the bank.  One of the
+bank's controllers stole about 200billion credits and swapped them for real
+world cash of 3,115 pounds.  As news of the theft spread, many of the bank's
+customers rushed to remove their virtual cash.  ...  The scandal is not the
+first to play out in Eve Online. In early 2009 one of the game's biggest
+corporations, called Band of Brothers, was brought down by industrial
+espionage.
+http://news.bbc.co.uk/2/hi/technology/8132547.stm
+
+------------------------------
+
+Date: Tue, 30 Jun 2009 10:31:32 +0200 (CEST)
+From: Peter Houppermans <peter@houppermans.com>
+Subject: HOW many?  12.000 laptops lost PER WEEK in US airports
+
+This is probably an interesting paper to draw figures from to see if you can
+somehow convince people to (a) leave full disk crypto alone and (b) properly
+shut down a laptop when not in use, despite the lengthy boot time of a
+modern enterprise laptop lumbering under anti-virus, corporate software
+management tools and a fragmented file system.
+
+Ponemon rang up 106 big airports in 46 states to discover that Business
+travelers lose about 12,000 laptops a week in US airports.  Not all, or even
+most, are stolen by airport staff -- 40 per cent of losses occur at security
+checkpoints.  But of the laptops that are found, just 33 per cent are
+reclaimed by their owner. The rest are sold off, leaving "potentially
+millions of files containing sensitive or confidential data that may be
+accessible to a large number of airport employees and contractors."  40% of
+loss occurs at security checkpoints. Should that not be IN security
+checkpoints then?
+
+------------------------------
+
+Date: Tue, 23 Jun 2009 17:23:50 -0800
+From: Rob Slade <rMslade@shaw.ca>
+Subject: That old "object reuse" problem ...
+
+UBC graduate students and instructors visited Ghana, China (the world's
+largest electronic waste dump, in Guiyi), and India to find out what happens
+to electronic trash.  Criminals scour the hard drives for credit card
+information and other personal information.  (The electronic waste also
+pollutes the environment and poisons scavengers seeking to extract metals.)
+
+In Ghana, students bought a hard drive originally used by U.S. defence
+contractor Northrop Grumman, containing about 50 files marked as competitive
+and sensitive, including information on government contracts for the U.S.
+Department of Homeland Security.  Northrop spokesman Thomas Henson said that
+the company has a detailed procedure to dispose of electronics and the drive
+was likely stolen from a vendor that handles its disposed electronics.
+(Yeah, right.)
+
+(Maybe the Chinese don't have to hack into important computers to get
+sensitive info ...)
+
+http://www.publicaffairs.ubc.ca/media/releases/2009/mr-09-077.html
+http://www.vancouversun.com/News/team+uncovers+sensitive+defence+records/1723318/story.html
+http://www.pbs.org/frontlineworld/stories/ghana804/
+http://www.timescolonist.com/Technology/secrets+found+trash/1723812/story.ht
+ml
+http://fergdawg.blogspot.com/2009/06/ubc-journalism-students-find-sensitive.html
+
+rslade@vcn.bc.ca     slade@victoria.tc.ca     rslade@computercrime.org
+http://victoria.tc.ca/techrev/rms.htm
+http://blog.isc2.org/isc2_blog/slade/index.html http://twitter.com/rslade
+http://blogs.securiteam.com/index.php/archives/author/p1/
+
+------------------------------
+
+Date: Sun, 28 Jun 2009 14:22:45 -0500
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: Politicians, personal e-mail, and the ECPA
+
+The matter of the e-mails between Governor Mark Sanford (R-SC) and his
+paramour becoming public raises any number of questions. However, what has
+been notable in much of the press coverage is the lack of question of
+whether a crime was committed in the process of supplying them to The State
+(a South Carolina newspaper).
+
+A more detailed discussion of this affair appears in my blog under the
+under "Governor Sanford Email Disclosure: An ECPA Violation" at
+http://www.rlgsc.com/blog/ruminations/sanford-ecpa.html
+
+Robert "Bob" Gezelter, 35-20 167th Street, Suite 215,
+Flushing, New York  11358-1731  +1 (718) 463 1079   http://www.rlgsc.com
+
+------------------------------
+
+Date: Tue, 9 Jun 2009 18:56:27 +0100
+From: Lindsay Marshall <Lindsay.Marshall@newcastle.ac.uk>
+Subject: RISKS at catless.ncl.ac.uk
+
+There are now full-text RSS 1, RRS 2 and Atom feeds available from the
+risks.org website at http://catless.ncl.ac.uk/Risks/ .
+
+------------------------------
+
+Date: Mon, 29 Jun 2009 15:16:49 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: Google Earth a tool for thieves and scoundrels?
+
+X-Brightmail-Tracker
+* From: John Hatpin <RemoveThisjfhopkin@gmailAndThisToo.com>
+* Newsgroups: alt.fan.cecil-adams
+* Subject: Google Earth a tool for thieves and scoundrels?
+* Message-ID: <sfch45ht91u584ouantrdcu1mt7lfcu8ul@4ax.com>
+* Date: Mon, 29 Jun 2009 13:29:34 +0100
+* Xref: number.nntp.dca.giganews.com alt.fan.cecil-adams:1618846
+
+Just happened across this report today from an unlikely source, the BCS
+(British Computer Society):
+
+http://www.bcs.org/server.php?show=conWebDoc.27169
+
+|Thieves in Hull are thought to be using Google Earth to help them
+|steal sought after fish from people's gardens.
+|
+|Up to 12 cases of fish going missing have been reported during a
+|three-week period, with many of those missing Koi carp, worth
+|several hundred pounds each.
+|
+|Police believe the online technology is being used as it would
+|otherwise be impossible to locate gardens with fish and ponds in.
+|
+|Sam Gregory, Humberside police community support officer, said:
+|'Google shows what is in your garden and you can see people's
+|ponds. One of the properties targeted has an eight foot fence and
+|is set back from the road.'
+|
+|'The pond is in the corner and can't be seen. Unless you were
+|standing right next to the wall, you wouldn't be able to hear
+|the running water,' he added.
+|
+|Previously, Google Earth had led to the arrest of two muggers in
+|Holland after their victim saw them on Google's Street View.
+
+Firstly, it took me a while to realise that "12 cases of fish going
+missing" wasn't talking about big boxes of fish.
+
+Now, I'd heard people complaining that "Google Earth can be used by
+burglars to case out their targets", but always dismissed it as
+Luddite hysteria; this is the first time I've actually seen it to be
+the case.  Of fish.
+
+Have there been any previous instances where GE has been used by
+ne'er-do-wells to redistribute wealth nefariously?
+
+John Hatpin
+http://uninformedcomment.wordpress.com/
+
+------------------------------
+
+Date: Tue, 23 Jun 2009 19:42:46 -0500 (CDT)
+From: Jim Haynes <jhhaynes@earthlink.net>
+Subject: Re: A new way to lose money via ATM... (RISKS-25.71)
+
+I wonder why an ATM needs an operating system anyway.  Maybe we should
+go back to software as it was done in 1950 and write the instructions to
+tell the hardware what to do, no more and no less.
+
+But if it does need an operating system, there was a paper written by David
+Parnas long ago where he explained how to write software so that it was
+hierarchically modular.  That is, the kernel was as simple as possible; and
+increased functionality was achieved by adding modules on top of what was
+already there, never having to modify something underneath the modules being
+added.  Philip Levy designed an operating system for the Z-80 using these
+principles.  The result was a system that could serve anything from an
+embedded microcontroller to a multitasking workstation simply by adding the
+right set of modules as needed.  Seems like I was told that Data General had
+an operating system designed along the same lines, again so that a machine
+could span a wide range of different kinds of applications.
+
+Maybe the problem is that today memory is essentially free, so it's easier
+to throw in baggage we don't need than it is to decide just what we do need.
+
+------------------------------
+
+Date: Wed, 24 Jun 2009 09:16:23 -0400
+From: "Andrew Koenig" <ark@acm.org>
+Subject: Re: Bozeman (RISKS-25.71)
+
+When I read the article about Bozeman requiring job applicants to grant
+access to their online personae, I immediately wondered whether the same
+principle might not apply in the physical domain as well.
+
+That is, I wonder what would happen if a prospective employer were to
+require all applicants to sign a contract that assigns the applicant's
+fourth-amendment rights to the employer as a condition of consideration for
+employment.  In other words, in exchange for the company looking at your job
+application, you would agree to give the company power of attorney to
+authorize police searches of your home and possessions.
+
+Would such a contract be considered binding?  Would it even be considered
+conscionable?  If not (and I certainly hope not), what is the difference
+between such a contract and what Bozeman is doing?  In both cases it is a
+matter of using a contract to force someone to divulge information to a
+government entity that would ordinarily require a search warrant.
+
+------------------------------
+
+Date: Tue, 23 Jun 2009 18:43:50 -0700
+From: Steve Lamont <spl@ncmir.ucsd.edu>
+Subject: I think we're all Bozemans on this bus
+
+Regarding that recent story about Bozeman, Montana, requesting usernames
+and passwords for social networking sites:
+
+  http://www.montanasnewsstation.com/Global/story.asp?S=10577236
+
+They appear to have backed down and apologized.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.72
+************************

@@ -1,0 +1,849 @@
+RISKS-LIST: Risks-Forum Digest  Saturday 11 July 2015  Volume 28 : Issue 77
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.77.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Outages continue: USDA; Amazon (Alister Wm Macintyre)
+When Computers Go Down, It's Not Always a Hack (takingnote)
+An Offline NYSE. Makes Barely a Ripple in a Day's Trading (NYTimes)
+Moxie Marlinspike (WSJ)
+The Massive OPM Hack Actually Hit 25 Million People (WiReD)
+OpenSSL Patches Critical Certificate Forgery Bug (SlashDot)
+Hackdoors & Crypto Wars (Eric Geller via Henry Baker)
+Senator: OPM Hack Gave China a Spy Recruiting Database (Ben Sasse via
+  Henry Baker)
+Privacy risks in healthcare (PGN)
+EFF report on the Going Dark Senate hearing (PGN)
+Cyber criminals adopt recently patched zero-day exploit in a flash
+  (Lucian Constantin)
+Map of Cyber Attacks (Norsecorp via Alister Wm Macintyre)
+India's Supreme Court May Ban Porn Viewing, Even in Private Homes (HuFfpost)
+Facing a Selfie Election, Presidential Hopefuls Grin (NYTimes)
+Your next selfie could be your last, Russia warns (Amar Toor)
+Re: NZ Harmful Digital Communications Bill (Macintyre, O'Keefe)
+Leap Second Causes Sporadic Outages Across the Internet (Brian Inglis,
+  Bob Frankston)
+Re: Samsung is being sued in China (Wols)
+Ada Lovelace and Babbage (PGN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 9 Jul 2015 14:31:53 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Outages continue: USDA; Amazon
+
+  [More on `business as usual', as noted in RISKS-28.76.  PGN]
+
+The US Dept of Agriculture (USDA) had an outage, for about an hour.
+http://www.marketwatch.com/story/usda-website-back-online-after-outage-2015-07-09-11103195
+
+There is speculation that WSJ went down 8 Jul because it was overloaded when
+people found out about NYSE down, then went there for more info.
+
+When we see something in the news, like some kind of disaster, and we go
+looking for more info or updates, it can seem like there is an epidemic of
+that kind of story.
+
+But many of them might not be at well known places.
+
+There were 4 Internet outages in progress, as I type this e-mail, impacting
+360 websites.  One of the more well known places is Amazon.  Its outage
+started 9 Jul.  2 of the outages in North-Central Asia.  There were over
+2,000 web sites with outages in the past 24 hours.
+http://www.outageanalyzer.com/
+
+Outages can hit just about anyone.
+http://blogs.wsj.com/digits/tag/outage/
+
+Breaches continue at a high rate, and GAO has a report on a lack of
+cybersecurity within the U.S. banking industry, and by bank regulators.
+http://www.bankinfosecurity.com/gao-bank-risk-analysis-comes-up-short-a-8376
+
+The FBI announces that it prevented multiple ISIL terrorist attacks from
+occurring on July-4.
+http://www.msn.com/en-us/news/us/fbi-says-thwarted-islamic-state-inspired-attacks-on-july-4/ar-AAcLwOv?ocid=iehp
+
+------------------------------
+
+Date: Thu, 9 Jul 2015 09:29:59 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: When Computers Go Down, It's Not Always a Hack (takingnote)
+
+http://takingnote.blogs.nytimes.com/2015/07/08/when-computers-go-down-its-not-always-a-hack/
+
+We're too quick to blame hackers for failures like the one that disrupted
+trading on the New York Stock Exchange.
+
+------------------------------
+
+Date: Thu, 9 Jul 2015 08:00:27 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: An Offline NYSE. Makes Barely a Ripple in a Day's Trading (NYTimes)
+
+As the stoppage on Wednesday showed, the modern world of stock trading is
+much quicker, more complex and reliant on sophisticated computers -- and in
+many cases able to adapt.
+http://www.nytimes.com/2015/07/09/business/dealbook/an-offline-nyse-makes-barely-a-ripple-in-a-days-trading.html
+
+------------------------------
+
+Date: Fri, 10 Jul 2015 13:02:50 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Moxie Marlinspike
+
+Dreadlocked programmer has spooked the FBI by creating a tool the police
+cannot crack.  (Matt Green's students at Johns Hopkins could not break it.)
+http://www.wsj.com/articles/moxie-marlinspike-the-coder-who-encrypted-your-texts-1436486274?mod=LS1
+
+------------------------------
+
+Date: Thu, 9 Jul 2015 14:46:33 PDT
+From: Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The Massive OPM Hack Actually Hit 25 Million People
+
+http://www.wired.com/2015/07/massive-opm-hack-actually-affected-25-million/
+
+  "The team has now concluded with high confidence that sensitive
+  information, including the Social Security Numbers (SSNs) of 21.5 million
+  individuals, was stolen from the background investigation databases," OPM
+  wrote in the statement.  "This includes 19.7 million individuals that
+  applied for a background investigation, and 1.8 million non-applicants,
+  predominantly spouses or co-habitants of applicants."  The stolen
+  information includes about 1.1 million fingerprints as well as findings
+  that investigators obtained from interviews conducted with neighbors,
+  friends and family members for background checks.  Such information can be
+  highly sensitive since it can include knowledge about the drug and
+  criminal history of someone undergoing a background check as well as their
+  sexual orientation and relationships.
+
+Lauren Weinstein added:
+  And the FBI says "trust us with your encrypted communications." Uh huh.
+
+------------------------------
+
+Date: Fri, 10 Jul 2015 03:43:06 +0200
+From: Werner U <werneru@gmail.com>
+Subject: OpenSSL Patches Critical Certificate Forgery Bug (SlashDot)
+
+<http://it.slashdot.org/story/15/07/09/152257/openssl-patches-critical-certificate-forgery-bug>
+
+msm1267 <http://it.slashdot.org/%7Emsm1267> writes: *The mystery OpenSSL
+<http://openssl.org/> patch released today addresses a critical certificate
+validation issue where anyone with an untrusted TLS certificate can become
+a Certificate Authority
+<https://threatpost.com/openssl-patches-critical-certificate-validation-vulnerability/113703>.
+While serious, the good news according to the OpenSSL Project is that few
+downstream organizations have deployed the June update where the bug was
+introduced.* From the linked piece: *The vulnerability allows an attacker
+with an untrusted TLS certificate to be treated as a certificate authority
+and spoof another website. Attackers can use this scenario to redirect
+traffic, set up man-in-the-middle attacks, phishing schemes and anything
+else that compromises supposedly encrypted traffic. [Rich Salz, one of the
+developers] said there are no reports of public exploits.*
+
+------------------------------
+
+Date: Fri, 10 Jul 2015 13:59:18 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Hackdoors & Crypto Wars (Eric Geller)
+
+FYI -- Outstanding (but long) article on the whole encryption debate.
+Probably the best single article to read to understand the history & current
+state of the debate.  HB
+  [It is extraordinarily well written, concise, and comprehensive.
+  But I had to dramatically prune it for RISKS.  PGN]
+
+A question that comes to mind: "Why is Comey & the FBI & the Obama
+Administration pushing so hard on this?  The FBI & the White House certainly
+have access to computer scientists who have told them it isn't a workable
+idea, so it is odd that Comey would go so far out on this particular limb."
+
+My only answer is that Google/Apple/Facebook are extremely rich potential
+sources of campaign contributions, and sometimes it takes fear to open up
+those pocketbooks -- look how Dodd-Frank opened up the wallets of the banks!
+Once the right candidates have been safely elected, President Obama is then
+free to add to his legacy by vetoing this "hackdoor" nonsense.
+
+Follow the link to follow the links in the original article.
+
+https://www.dailydot.com/politics/encryption-crypto-war-james-comey-fbi-privacy/
+The rise of the new Crypto War
+By Eric Geller
+Jul 10, 2015, 7:00am CT | Last updated Jul 10, 2015, 2:41pm CT
+
+James B. Comey, Jr., the seventh director of the Federal Bureau of
+Investigation, is afraid of the dark.
+
+``The law hasn't kept pace with technology, and this disconnect has created
+a significant public safety problem,'' Comey said in an Oct. 16, 2014,
+speech at the Brookings Institution, an influential Washington, D.C., think
+tank.  He called the problem `going dark'.
+
+As more and more criminals presumably go dark by encrypting their phones and
+email accounts, federal agents are finding it increasingly difficult to
+intercept their communications.  The spread of easy-to-use encryption
+software and the eagerness with which tech companies promote it have deeply
+troubled the FBI.  But on that unusually warm October day, Comey also wanted
+to vent about another frustration: He felt that the bureau's proposed
+solution was being distorted.
+
+``There is a misconception that building a lawful intercept solution into a
+system requires a so-called backdoor, one that foreign adversaries and
+hackers may try to exploit.  But that isn't true.  We aren't seeking a
+backdoor approach.  We want to use the front door, with clarity and
+transparency, and with clear guidance provided by law.''
+
+He only used the word twice, but by strenuously denying that he wanted one,
+Comey had set off a fierce debate about the secret law-enforcement
+data-access portals known as backdoors.  In the months that followed, Comey,
+his deputies at the FBI, and his counterparts at other agencies would face
+relentless questioning and criticism from skeptical members of Congress,
+exasperated security researchers, and outraged privacy groups.  Despite
+Comey's protestations, many feared that the agency once known for its
+disturbing reach and systemic abuses of power in the era of J. Edgar Hoover
+was seeking a return to that fearsome omniscience in the digital age.
+
+The debate over backdoors has pitted Comey and other national-security
+officials against America's biggest tech companies, which have fired off
+letter after letter warning the government not to undermine encryption and
+the increasingly powerful security tools built into their products.  It has
+strained relations between an obscure but important government technical
+body and the security industry that used to consider it a trusted partner.
+And it has infuriated the cryptography experts and civil-liberties activists
+who have spent decades beating back government efforts to weaken the
+encryption that is now vital to all aspects of online life. [...]
+
+Crypto Wars ...
+Backdoors ...
+CALEA ...
+The return of the Crypto Wars ...
+Universally derided  ... letter to President Obama ...
+Keys Under Doormats report ...
+Divided government ...
+Eroding trust ...
+Heartbleed as a harbinger ...
+Private-sector pressure ...
+The murky way forward ...
+
+As CALEA-era arguments rear their heads again -- the same words coming out
+of new mouths -- Cindy Cohn sounded like a veteran military commander
+reluctantly gearing up once more.  ``We think the government was wrong then,
+and they're wrong now.  But we may have to spend a lot of energy to fight a
+war that we already won.''
+
+------------------------------
+
+Date: Fri, 10 Jul 2015 12:40:47 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Senator: OPM Hack Gave China a Spy Recruiting Database?
+
+"most of the people responsible for safeguarding this information had
+essentially no background in IT" OK.  Hire the best Beltway Bandit security
+firms that revolving door lobbyists can suggest.  Check!
+
+"government needs to stop the bleeding ... every sensitive database ... must
+be immediately secured" OK.  Strong encryption with Perfect Forward Secrecy.
+Load "every sensitive database in every government agency" into Apple iOS 8.
+Check!
+
+"Our government must completely reevaluate its cyber doctrine" OK.
+Immediately fire all those "cyber warriors" who thought that "deterrence"
+would work.  Check!
+
+"playing defense is a losing game" Since deterrence obviously isn't working
+(and will never work), wouldn't "stopping the bleeding" include "playing
+defense" ?  If you're not sure who to shoot at, perhaps your best strategy
+is to immediately put up better defenses ?  The last time the U.S. started
+cyber shooting, the stray cyberbullets landed back in the U.S. as STUXNET
+mutant malware.
+
+"we need to send a clear message" OK.  To whom should we send this message,
+and what should it say?  I humbly suggest: "Pretty please, Mr. Lone Wolf (or
+whoever you are), we in the U.S. live in a glass house, so we can't throw
+stones at you, but we really, really dislike what you've been doing, and
+wish that you would stop -- at least long enough for us to install some
+stronger glass."
+
+"We have to deter attacks from ever happening" Obviously, these spies were
+neither shaken nor deterred.
+
+Author: Senator Ben Sasse, 9 Jul 2015.
+https://www.wired.com/2015/07/senator-sasse-washington-still-isnt-taking-opm-breach-seriously/
+The OPM Hack May Have Given China a Spy Recruiting Database
+As a newly elected Senator, I am here to tell you a hard truth: Washington
+does not take cybersecurity seriously. ...
+China may now have the largest spy-recruiting database in history.
+
+Bottom line: If you have any family or friends who work for the government
+and put your name down on an SF-86, a foreign government might well know a
+lot more about you and your kids than you'd like.
+
+  [Excellent item...  Read it in full, and hope that Senator Sasse gets
+  listened to in the Senate!  PGN]
+
+------------------------------
+
+Date: Fri, 10 Jul 2015 17:12:11 PDT
+From: Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Privacy risks in healthcare
+
+This week, GAO Director of Information Security Gregory Wilshusen said at a
+House Science, Space, and Technology Subcommittee hearing that he isn't
+aware of any actions being taken to address the privacy risks (security
+flaws) of healthcare.gov data warehouse system, which includes SSNs,
+financial account information, and other personal information.
+
+http://science.house.gov/hearing/subcommittee-research-and-technology-and-subcommittee-oversight-hearing-opm-data-breach-tip
+
+ Recent Healthcare Information and Management Systems Society Cybersecurity
+ Survey says that 67% of the respondents reported a significant security
+ incident. http://www.himss.org/2015-cybersecurity-survey
+
+------------------------------
+
+Date: Fri, 10 Jul 2015 16:17:57 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: EFF report on the Going Dark Senate hearing
+
+https://www.eff.org/deeplinks/2015/07/top-five-takeaways-todays-hearings-encryption
+
+------------------------------
+
+Date: Thu, 09 Jul 2015 10:27:14 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Cyber criminals adopt recently patched zero-day exploit in a
+  flash" (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 29 Jun 2015
+It only took four days for a recently patched vulnerability in Flash
+Player to start being used in large-scale attacks
+http://www.infoworld.com/article/2940445/security/cyber-criminals-adopt-recently-patched-zero-day-exploit-in-a-flash.html
+
+------------------------------
+
+Date: Thu, 9 Jul 2015 16:44:07 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Map of Cyber Attacks
+
+Places where most cyber attacks were made today Jul 9:
+
+* USA
+* Mil/Gov
+* France
+* Russia
+* Ecuador
+* Liechtenstein
+* Singapore
+* Cyprus
+
+Places from which most cyber attacks originated today July-9:
+
+* China
+* USA
+* Russia
+* Bulgaria
+* Singapore
+* Mil/Gov
+* Netherlands
+* Canada
+
+See the map for more details.
+(Above listed from most attacks to smaller #s.)
+http://map.norsecorp.com/
+
+------------------------------
+
+Date: Fri, 10 Jul 2015 11:51:32 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: India's Supreme Court May Ban Porn Viewing, Even in Private Homes
+
+HuffPost via NNSquad
+http://www.huffingtonpost.com/van-winkles/indias-supreme-court-may_b_7772084.html
+
+  The land that gave us the Kama Sutra is having trouble with pornography.
+  As the Times of India reported, India's Supreme Court is unhappy with the
+  federal government's inaction in combating widespread Internet porn.
+  Taking matters into its own hands, the Court is considering a blanket ban
+  on all porn.
+
+Good luck with that, guys.
+
+------------------------------
+
+Date: Thu, 09 Jul 2015 16:28:10 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Facing a Selfie Election, Presidential Hopefuls Grin
+
+"For security teams on the campaigns, all this close contact between
+candidates and strangers can be a challenge, but in some ways it is easier
+to monitor than a traditional rope line. That is because selfies keep
+people's hands up where they can be seen."
+
+http://www.nytimes.com/2015/07/05/us/politics/facing-a-selfie-election-presidential-hopefuls-grin-and-bear-it.html
+
+...and of course, nobody requesting a selfie, holding an electronic
+gadget up to a candidate's head could have an explosive inside it. IED,
+indeed.
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Thu, 9 Jul 2015 10:01:15 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Your next selfie could be your last, Russia warns (Amar Toor)
+
+Amar Toor, *The Verge*, 8 Jul 2015
+Interior ministry launches public safety campaign after at least 100 have
+been injured in the name of selfies
+http://www.theverge.com/2015/7/8/8911197/russia-selfie-safety-campaign
+
+------------------------------
+
+Date: Thu, 9 Jul 2015 13:35:08 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: NZ Harmful Digital Communications Bill (Re: O'Keefe)
+
+In trying to solve some problems, legislators often have the (unintended ?)
+consequences of creating new ones.
+
+Is my understanding now correct, that this law may have exempted some hosts
+of the digital data (phone company, computer owners, TV News) but not the
+people making the statements that cause offense, annoyance, hurt feelings
+etc., where there are no exceptions, based on type of person making the
+unwanted statements, such as politicians, civil servants, people in other
+nations?
+
+The US Supreme Court has declared that corporations are real people, so
+press releases, advertising, billing practices etc., by corporations, might
+be offensive to some people.  If companies are not real people under NZ law,
+then maybe their feelings are not covered by this law.
+
+I wear a hearing aid.  Does that mean that any communications I hear,
+arrived digitally?
+
+Stories in newspapers and magazines typically come from computer word
+processing, and modern electronic printing systems.  Does that make them
+digital?
+
+Is info via a photo copy machine, fax machine, digital communications?
+
+If all of the above is yes, then New Zealand can now impose heavy fines &
+jail time, for many former legal activities:
+
+* Just about anything reported on police radio, or in police & DA records is
+  offensive to the accused suspects, and offending anyone is now a crime.
+  So police may need to return to systems they used before there was police
+  radio.
+
+* Judges will need to be careful not to allow the introduction of evidence
+  which went thru modern technology, like phone logs, because any suspect is
+  offended by all evidence against them, but only non-digital now is legal
+  to use against them.
+
+* Any courts, which in the past, used microphone for anyone testifying, so
+  that there is a digital record, will need to stop doing that, because it
+  is a digital communication of something which may offend the accused.
+  Court rooms may need to be rearranged to help any hard of hearing on the
+  jury.
+
+* Anyone who reports a crime or suspected crime (hurting terrorist's
+  feelings is now a crime).  Be careful when using 911 or 999.
+
+* Doctor inform a patient about a medical condition, which upsets the
+  patient.  No matter that they need to know the truth so that they can get
+  proper treatment. (Hurting anyone feelings is now a crime, if the info
+  involves digital communications.)
+
+* Conduct normal business communications of the kind of data used to
+  identify your customer, such as their credit cards. (it is now a crime to
+  communicate that data if anything digital is involved).  Nowadays that
+  info is almost always communicated electronically from retailer into
+  banking system.
+
+* Fire an employee?  That can upset the fired person.  You better not have
+  anything about this on the company's computers.  Limit the info to pen and
+  paper and verbal.  If the fired person appeals to NZ equivalent of
+  unemployment compensation or improper firing bureau, and it asks for info,
+  the reply will need to be by snail mail.  Avoid photocopy machine or fax
+  machine, because that's digital communications.
+
+* Bill collectors will be a thing of the past.  I don't think they can
+  function without computer records, robo calls.
+
+* If Donald Trump ever visits NZ, he will be jailed for his remarks about
+  Mexico (offensive to Mexicans, and others).  His defense that his remarks
+  are true, is irrelevant.  The law does not say it is illegal or legal to
+  say things which can be proven to be true or false, it says that if you
+  make ANY remarks which are offensive to ANYONE, over any communication
+  channel which by any interpretation can be called digital, even analog
+  signals, that is illegal.
+
+* Any politician who opens his or her mouth, especially in an election, or
+  debating the nation's business, probably offends someone.  Did NZ
+  politicians think to exempt themselves, as is common in USA?
+
+* In the USA, apartment leases frequently refer to laws about tenant rights,
+  then insist that as a condition of getting this apartment, the tenant
+  waives all those legal rights.  Thus the landlord has an unfettered right
+  to harass, annoy, offend any tenant.  Does NZ have a similar system, where
+  business contracts can absolve people of their legal rights?
+
+Many things posted anywhere on the Internet, lists like RISKS, no doubt
+offends someone.  Lists may need to scrub NZ subscribers from their
+membership.
+
+------------------------------
+
+Date: Fri, 10 Jul 2015 17:20:42 +1200
+From: "Richard A. O'Keefe" <ok@cs.otago.ac.nz>
+Subject: Re: NZ Harmful Digital Communications Bill
+
+I did provide a link to the text of the act, but basically, yes.
+"an online content host"
+ - must make it easy for people to complain about specific content
+   If you don't do that, you're not protected.
+ - must respond to a complaint within 48 hours
+ - must communicate with "the author of the specific content"
+   "as soon as practicable" (but within the 48 hours)
+ - if the author doesn't respond with 48 hours, the content must
+   be removed.
+
+> The US Supreme Court has declared that corporations are real people ...
+
+Under British law, companies (and ships) have been legal persons
+for centuries.  NZ law is a branch of Common Law.  However, this
+Act specifically defines "individual means a natural person".
+So yes, companies are not covered by this law.
+But the owners, officers, and employees of a company ARE.
+
+I AM NOT A LAWYER.  So when I say that
+4 "defendant ... means a person against whom an order is sought or made"
+does not say "natural person" or "individual", so it looks to *me* as
+if the defendant *can* be a juridical person, why, that opinion's
+worth every penny you paid for it.
+
+> I wear a hearing aid.  Does that mean that any communications ...
+
+I think that would have to be tested in court.
+"Digital communication -- (a) means any form of electronic
+communication"; whether a hearing aid is a form of electronic
+communication, especially if the other person is unaware of it,
+is an interesting question.
+
+This law has been in development for *years*; it's about 18 months
+since it left first draft status and entered Parliament for debate.
+
+As for stories in newspapers and magazines, a magazine I used to buy
+regularly has just this month ceased print distribution and now exists
+only on line, and the daily newspaper I read is also on line, every
+story.  So it hardly matters how the print version would be classified;
+there is definitely a version which is communicated electronically to
+the general public.
+
+> If all of the above is yes, then New Zealand can now impose heavy fines &
+jail time, for many former legal activities.
+
+In principle, yes.  Part of the Act is in force now, and the rest will
+commence when they get around to it but no later than 2 years; they've got
+to set up a new "Approved Agency" to receive complaints.
+
+Harassment (Harassment Act, 1997, see
+http://www.legislation.govt.nz/act/public/1997/0092/latest/DLM417078.html
+and defamation were already illegal.  In particular, 4(1)(d) making contact
+with [the victim] (whether by telephone, correspondence, or in any other
+way);
+
+4(1)(e) giving offensive material to [the victim], or leaving it where it
+will be found by, given to, or brought to the attention of, that person:
+
+4(1)(f) acting in any other way (i) that causes [the victim] to fear for his
+or her safety; and (ii) that would cause a reasonable person in [the
+victim]'s particular circumstances to fear for his or her safety.
+
+would seem to cover a lot of it, except that just as the Harmful Digital
+Communications Act is too broad, the Harassment Act is too narrow:
+harassment has to be "a pattern of behaviour".  Apparently one of the
+triggers for the development of the new Act was a case in which some clearly
+nasty behaviour was held not to be harassment because it only happened once.
+So the new act amends the Harassment Act to say that "doing any specified
+act to the other person that is *one continuing act* [such as placing
+offensive material about someone online] carried out over any period" also
+counts as harassment, and 4(1)(e) also now includes putting material on
+line.
+
+But I would still have thought that cyberbullying should have been covered
+as "a pattern of behaviour" under the original Harassment Act.
+
+> Just about anything reported on police radio, or in police & DA records is
+offensive to the accused suspects, and offending anyone is now a crime. ...
+
+Section 13 "Threshold for proceedings" does put some extremely vague
+limits on the seriousness of the alleged offence, and section
+19 "Orders that may be made by court" says that
+19 (5) In decided whether or not to make an order, and the form of an
+order, the court MUST take into account ...
+(b) the purpose of the communicator ...
+...
+(g) whether the communication is in the public interest ..."
+
+The response to an initial complaint is either to dismiss the case
+or to order that the offensive behaviour stop; the criminal offence
+is to disobey such an order.
+
+> Judges will need to be careful not to allow the introduction of evidence
+which went thru modern technology, like phone logs, because any suspect is
+offended by all evidence against them, but only non-digital now is legal to
+use against them.
+
+I suspect that 19 (5) (b and g) come into play here again.  But once again,
+I am not a lawyer, and my interpretation is not to be relied on.
+
+> Doctor inform a patient about a medical condition, which upsets the
+patient.
+
+I thought of that one too.
+
+> If Donald Trump ever visits NZ, he will be jailed for his remarks ...
+
+it says that if you make ANY remarks which are offensive to ANYONE, over any
+communication channel which by any interpretation can be called digital,
+even analog signals, that is illegal.
+
+If he kept on making such remarks after a court order to stop, yes.
+
+As it happens, such remarks have probably been illegal for years.
+Human Rights Act 1993, section 63, Racial harassment.
+(1) It shall be unlawful for any person to use language (whether
+written or spoken), or visual material, or physical behaviour,
+that --
+(a) expresses hostility against, or brings into contempt or
+ridicule, any other person on the ground of the colour, race, or
+ethnic or natural originals of that person; and
+(b) is hurtful or offensive to that other person (whether or not
+that is conveyed to the first-mentioned person) and
+(c) is either repeated, or of such a significant nature, that it
+has a detrimental effect on that other person in respect of any
+of the areas into which this subsection is applied by subsection (2).
+I'll spare you subsection (2), but since Trump wants to keep Mexicans
+out of the country ("access to places") or at least out of jobs
+("employment, which term includes unpaid work"), I think it's pretty
+clear that what he said was definitely illegal however disseminated.
+
+The Human Rights Act replaced the Race Relations Act 1971, which
+I believe said something similar.
+
+> Any politician who opens his or her mouth, especially in an election,...
+  Did NZ politicians think to exempt themselves, as is common in USA?
+
+Perhaps the "public interest" provision?  We may have to wait for
+a case to decide that...
+
+
+I repeat that I am not a lawyer.  I have heard an expert say with
+respect to *consumer protection* laws that you can't sign away your
+rights.  Ah.  Residential Tenancies Act 1986, section 11(3):
+	Any purported waiver by a tenant of any right or power
+	conferred upon tenants by this Act shall be of no effect.
+Other business contracts are governed by other acts, but at least
+in the case of getting an apartment, such a waiver might scare the
+tenant but is "of no effect" if it goes to law.  Indeed, the title
+of section 11 is "Act generally to apply despite contrary provisions".
+However, the landlord can waive *his* rights and powers.
+
+> Many things posted anywhere on the Internet, lists like RISKS, no doubt
+offends someone.  Lists may need to scrub NZ subscribers from their
+membership.
+
+> New Zealand law does not bind people outside New Zealand.
+
+We don't have the numbers, the wealth, or the military power to lean on
+other countries the way, for example, the USA has leaned on the NZ legal
+system.  So the RISKS Digest has nothing to fear.
+
+------------------------------
+
+Date: Thu, 9 Jul 2015 07:21:03 -0600
+From: Brian Inglis <Brian.Inglis@systematicsw.ab.ca>
+Subject: Leap Second Causes Sporadic Outages Across the Internet (R-28.76)
+
+Outages of Amazon AWS US EC2, Experian, HipChat, Instagram, Jobvite, Match,
+Netflix, Pinterest, Reddit, Tinder, Yelp, and Zions Bank were initially
+blamed on the leap second by Amazon, who later corrected their diagnosis:
+The root cause of this issue was an external Internet service provider
+incorrectly accepting a set of routes for some AWS addresses from a
+third-party who inadvertently advertised these routes.
+
+https://blog.thousandeyes.com/route-leak-causes-amazon-and-aws-outage analysis:
+
+``the root cause of this was not related to the fiber cuts, but in fact a
+route leak from Axcelx (AS33083), a data center provider in Boston. All of
+Amazon's prefixes originating in AS14618 were affected to some degree."
+
+Axcelx admits:
+"Our sincere apologies to everyone who experienced a route leak via AS33083
+of AWS. We have a new prefix-list facing Hibernia."
+
+A large chunk of AWS US EC2 node traffic appears to have been misrouted via
+Hibernia Networks to Axcelx black hole.  This failure highlighting the lack
+of BGP routing security could provide fodder for wider future DoS attacks or
+diversions for competitive or malicious reasons.  See
+http://www.washingtonpost.com/sf/business/2015/05/31/net-of-insecurity-part-2/
+(part 2 of 3)
+
+------------------------------
+
+Date: 9 Jul 2015 09:23:58 -0400
+From: "Bob Frankston" <bob2-53@bob.ma>
+Subject: Re: [risks 28.76] Re: "Leap Second Problem" and "Growing opposition
+  to the Leap Second" (RISKS-28.74)
+
+"Complacent, lazy" -- there is a real risk in using a moral framing and
+short-circuiting critical thinking. Closely related is using ones implicit
+context and use cases and proof by example.
+
+In this case we have an intrinsic problem in representation that makes
+TimeSpan(1 minute) undefined. A source of the problem is the implicit
+assumption that there is a single kind of "time". I don't want to belabor
+the issue on this list beyond pointing out that we can have a stable base
+representation and, as with time zones, we can have explicit variations that
+have an adjust for the Earth's wobble. Other uses of "time" require
+different approaches.
+
+I encounter the problem of moral framing in connectivity policy which I see
+as a structural problem but that's another topic ...
+
+------------------------------
+
+Date: Thu, 09 Jul 2015 15:11:51 +0100
+From: Wols Lists <antlists@youngman.org.uk>
+Subject: Re: Samsung is being sued in China (Werner U in RISKS-28.76)
+
+> Out of a study of 20 smartphones, Samsung and Oppo were found to be the
+> worst culprits. A model of Samsung's Galaxy Note 3 contained 44
+> pre-installed apps that could not be removed from the device, while Oppo's
+> X9007 phone had 71.
+
+I have/had a Samsung Galaxy Ace. I've renewed my contract and got a new
+phone in the last month or so. Why? Because, with only a few apps of my
+own choice installed, the phone is now so overloaded with bloatware that
+updates fail with "insufficient space on device". And that's with pretty
+much everything that CAN be moved, moved onto the 16Gb SD card.
+
+------------------------------
+
+Date: Sat, 11 Jul 2015 11:01:39 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Ada Lovelace and Babbage
+
+This morning, my wife and I went into the Chilmark Library to see the art
+works of a childhood friend.  On the New Books shelf, I stumbled onto a
+very new book -- just published this month (July 2015):
+
+   The Thrilling Adventures of LOVELACE and BABBAGE
+   The (Mostly) True Story of the First Computer
+                by Sydney Padua
+
+The third of three title pages looks something like this, with old fonts and
+many font sizes that I cannot begin to reproduce in ASCII:
+
+          !!!! Triumphant Debut of !!!!
+                      ADA
+              Countess of Lovelace,
+               the Secret Origin!
+WITH the Celebrated and Ingenious Mechanician, Professor
+                CHARLES BABBAGE
+                   and his
+           Wonderful Calculating Machine
+The Tragical Conlusion Marvelously Averted by the Formation of
+               A POCKET UNIVERSE
+  to Be the Scene of Diverse Amusing & Thrilling Adventures
+   With Humourous CUTS and Other PICTORIAL Embellishments!
+
+Sydney Padua has drawn on documents from Ada and Babbage, done some
+extraordinarily good research, augmented an amazingly clever presentation
+with extensive footnotes and some diagrams never previously published.  For
+those of you not familiar with the early history of computing, this might be
+a good place to start.  The first thirty pages are straight historical
+stuff, apparently very true to historical records -- up to a brief
+relatively unhappy ending.  However, from there on Padua has provided a
+delightful alternative (his)story.
+
+We have observed many times in The Risks Forum that some things don't change
+very rapidly.  Many elements of hardware were present in Babbage's notion of
+the Difference Engine in the mid-1800s, and many elements of programming
+were present in Ada Lovelace's then-contemporary would-be software
+constructions.
+
+Cheers!  Peter
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.77
+************************
+
+--_002_b8c40688db16439b825d4bbb46977719EXHUBVM01campusnclacuk_--

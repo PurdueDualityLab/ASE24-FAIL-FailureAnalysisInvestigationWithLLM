@@ -1,0 +1,1010 @@
+precedence: bulk
+Subject: Risks Digest 30.55
+
+RISKS-LIST: Risks-Forum Digest  Saturday 17 February 2018  Volume 30 : Issue 55
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.55>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Aerospace Eyes Pilotless Cargo Planes (Richard M Stein via Straits Times)
+White Paper Points Out Just How Irresponsible 'Responsible Encryption'
+  Is (TechDirt via Richard Forno)
+Ghost in the DCL shell: OpenVMS, touted as ultra reliable, had a
+  local root hole for 30 years (The Register)
+Hackers Find, Fix 106 Security Flaws in Air Force Bug Bounty Challenge
+  (TRK)
+"Skype can't fix a nasty security bug without a massive code rewrite"
+  (Zack Whittaker)
+That mega-vulnerability Cisco dropped is now under exploit
+  (Ars Technica)
+Understanding the Attack Vectors of CVE-2018-0101 -- Cisco ASA Remote Code
+  Execution and Denial of Service Vulnerability (Cisco)
+How a Low-Level Apple Employee Leaked Some of the iPhone's Most
+  Sensitive Code (Motherboard)
+Pirates Crack Microsoft's UWP Protection, Five Layers of DRM Defeated
+  (TorrentFreak)
+Cyberattack Caused Olympic Opening Ceremony Disruption (Nicole Perlroth)
+Samsung and Roku Smart TVs Vulnerable to Hacking (Consumer Reports)
+FinTech Revolut sends PINs via email (Toby Douglass)
+"The House That Spied on Me" (Kashmir Hill and Surya Mattu)
+House Committee votes to terminate the Election Assistance Commission
+  (The Nation)
+Spelling corrector busy changing words many pages back (Dan Jacobson)
+"Biggest Brazilian newspaper quits Facebook" (Angelica Mari)
+"Facebook's Very Revealing Text Messaging Privacy Fail" (Lauren Weinstein)
+Australian Cabinet Files (Bruce Schneier via PGN)
+With Closed-Circuit TV, Satellites And Phones, Millions Of Cameras Are
+  Watching (NPR.org via Richard M Stein)
+Someone Is Sending Amazon Sex Toys to Strangers. Amazon Has No Idea How to
+  Stop It (The Daily Beast)
+One Cause of Market Turbulence: Computer-Driven Index Funds (NYTimes
+  via Richard M Stein)
+Most People Prefer Buying Wireless Devices Through Their Smartphones
+  (TRK)
+Re: The unstoppable momentum of self-driving cars (Michael Bacon)
+Re: The Fake-Follower Factory (Jose Maria Mateos)
+Re: WHATIS Going to Happen With WHOIS? (Michael Bacon, John Beattie)
+Denver Airport AGTS marble stairs: Fall risk due to lack of contrast
+  (Shawn Merdinger)
+Contra Ovadya on post-truth (John Ohno)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 10 Feb 2018 12:00:58 +0800
+From: Richard M Stein <rmstein@ieee.org>
+Subject: Aerospace Eyes Pilotless Cargo Planes (via Straits Times)
+
+http://www.straitstimes.com/singapore/transport/st-aerospace-eyes-pilotless-cargo-planes
+
+The headline speaks for itself risk-wise. From the article:
+
+  ``Given an increasing global demand for air freight coupled with a
+  shortage in air crew, we believe that unmanned freighters will provide a
+  viable solution as well as tangible benefits such as lower cost of
+  operation, For a start, the plan is to develop a single-pilot freighter
+  instead of having two pilots in the cockpit. ... Support will be provided
+  from the ground by a second pilot who "can potentially be supporting up to
+  12 single-pilot aircraft simultaneously. ... If the pilot in the aircraft
+  is incapacitated for whatever reasons, the ground pilot takes control and
+  performs an emergency landing.''
+
+I couldn't imagine that an ACARS hack or GPS navigation spoof or operational
+flight plan bug might catastrophically divert the planned flight to
+autonomous air vehicle deployment on a fleet-wide basis? If we don't try,
+we'll never know if we can succeed?  Undoubtedly so, but until "success" is
+quantified -- an accident safety rating equal too or superior to
+human-piloted vehicles + insurance would be a start -- we'll never
+know. 
+
+------------------------------
+
+Date: February 13, 2018 at 2:39:39 PM EST
+From: Richard Forno <rforno@infowarrior.org>
+Subject: White Paper Points Out Just How Irresponsible 'Responsible
+  Encryption' Is
+
+  [via Dave Farber]
+
+In recent months, both Deputy Attorney General Rod Rosenstein and FBI
+Director Christopher Wray have been calling for holes in encryption law
+enforcement can drive a warrant through. Both have no idea how this can be
+accomplished, but both are reasonably sure tech companies can figure it out
+for them. And if some sort of key escrow makes encryption less secure than
+it is now, so be it. Whatever minimal gains in access law enforcement
+obtains will apparently offset the damage done by key leaks or criminal
+exploitation of a deliberately-weakened system.
+
+Cryptography expert Riana Pfefferkorn has released a white paper examining
+the feasibility of the vague requests made by Rosenstein and Wray. Their
+preferred term is "responsible encryption" -- a term that allows them to
+step around landmines like "encryption backdoors" or "we're making
+encryption worse for everyone!" Her paper shows "responsible encryption" is
+anything but. And, even if implemented, it will result in far less access
+(and far more nefarious exploitation) than Rosenstein and Wray think.
+
+https://www.techdirt.com/articles/20180208/11414739194/white-paper-points-out-just-how-irresponsible-responsible-encryption-is.shtml
+
+------------------------------
+
+Date: Thu, 15 Feb 2018 21:27:24 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Ghost in the DCL shell: OpenVMS, touted as ultra reliable, had a
+  local root hole for 30 years (The Register)
+
+https://www.theregister.co.uk/2018/02/06/openvms_vulnerability/
+
+  Forget Meltdown and Spectre. Someone's found a local privilege escalation
+  in the operating system world's elderly statesman OpenVMS when running it
+  on VAX and Alpha processors.  On Itanium CPUs, the same bug can be
+  exploited to crash a process ... Software running on seemingly bulletproof
+  OpenVMS systems tends to be rather business critical - the sort of code
+  you deploy and keep running forever - so updates that may disrupt
+  operations are treated with utmost care by administrators.  Introduced to
+  the world as VMS in 1977, OpenVMS today still powers a good chunk of
+  billing systems, stock exchanges, semiconductor factories, and similar
+  setups. It is touted as a reliable and secure OS for mission-critical
+  applications.
+
+------------------------------
+
+Date: Fri, 16 Feb 2018 14:27:22 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Hackers Find, Fix 106 Security Flaws in Air Force Bug Bounty
+  Challenge (TRK)
+
+In its second major bug bounty challenge in less than a year, 27 hackers
+found 106 valid security flaws on U.S. Air Force systems as part of
+*HackerOne*'s recent *Hack the Air Force 2.0 *event, the company said on
+Thursday. Hackers from the U.S., Canada, United Kingdom, Sweden,
+
+Netherlands, Belgium and Latvia participated in the 20-day challenge,
+earning $103,883 in bounties. The event began Dec. 9 in New York with a live
+hacking session, where *Department of Defense* and Air Force personnel
+worked alongside hackers to simultaneously find and fix security
+flaws. Together, they found 55 vulnerabilities in nine hours.  ``We continue
+to harden our attack surfaces based on findings of the previous challenge
+and will add lessons learned from this round,'' said *Peter Kim*, the Air
+Force's chief information security officer.  ``This reinforces the work the
+Air Force is already doing to strengthen cyber defenses and has created
+meaningful relationships with skilled researchers that will last for years
+to come.'' The event was part of the Hack the Pentagon program, which since
+launching in 2016 has fixed more than 3,000 vulnerabilities in government
+systems.  https://www.hackerone.com/
+<http://trk.cp20.com/click/mw7jj-dlkpoi-7fgw0x83/>
+https://www.businesswire.com/news/home/20180215005220/en/U.S.-Air-Force-Boosts-Security-Bug-Bounty
+<http://trk.cp20.com/click/mw7jj-dlkpoj-7fgw0x84/>
+
+106 down and ... ??? to go.
+
+------------------------------
+
+Date: Tue, 13 Feb 2018 08:50:23 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Skype can't fix a nasty security bug without a massive code
+  rewrite" (Zack Whittaker)
+
+Zack Whittaker for Zero Day, 12 Feb 2018
+The bug grants a low-level user access to every corner of the operating system.
+
+http://www.zdnet.com/article/skype-cannot-fix-security-bug-without-a-massive-code-rewrite/
+
+opening text:
+
+A security flaw in Skype's updater process can allow an attacker to gain
+system-level privileges to a vulnerable computer.
+
+The bug, if exploited, can escalate a local unprivileged user to the full
+"system" level rights -- granting them access to every corner of the
+operating system.
+
+But Microsoft, which owns the voice- and video-calling service, said it
+won't immediately fix the flaw, because the bug would require too much work.
+
+------------------------------
+
+Date: Sun, 11 Feb 2018 13:36:33 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: That mega-vulnerability Cisco dropped is now under exploit
+  (Ars Technica)
+
+Bug with maximum severity rating is generating plenty of interest among
+hackers.
+
+https://arstechnica.com/information-technology/2018/02/that-mega-vulnerability-cisco-dropped-is-now-under-exploit/
+
+------------------------------
+
+Date: Sun, 11 Feb 2018 13:45:49 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Understanding the Attack Vectors of CVE-2018-0101 --
+  Cisco ASA Remote Code Execution and Denial of Service Vulnerability
+
+https://blogs.cisco.com/security/cve-2018-0101
+
+------------------------------
+
+Date: Sat, 10 Feb 2018 10:30:14 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: How a Low-Level Apple Employee Leaked Some of the iPhone's Most
+  Sensitive Code (Motherboard)
+
+This is how a small group of friends lost control of the leaked iBoot source
+code. The story behind one of Apple's most embarrassing leaks.
+
+https://motherboard.vice.com/en_us/article/xw5yd7/how-iphone-iboot-source-code-leaked-on-github
+
+------------------------------
+
+Date: Thu, 15 Feb 2018 20:46:51 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Pirates Crack Microsoft's UWP Protection, Five Layers of DRM Defeated
+  (TorrentFreak)
+
+https://torrentfreak.com/pirates-crack-microsofts-uwp-protection-five-layers-of-drm-defeated-180215/
+
+------------------------------
+
+Date: Thu, 15 Feb 2018 22:16:41 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Cyberattack Caused Olympic Opening Ceremony Disruption
+
+Internet Breakdowns at Opening Ceremony Were Work of Hackers
+Nicole Perlroth, *The New York Times*, 13 February 2018
+https://www.nytimes.com/2018/02/12/technology/winter-olympic-games-hack.html
+
+Security researchers uncovered evidence that the attack had been in the
+works since last year. But hackers stopped short of the damage they could
+have done.
+
+  ["It appeared that hackers planned to take over the power in the stadium...
+  But officials successfully prevented [that] attack."   PGN]
+
+------------------------------
+
+Date: Thu, 8 Feb 2018 19:10:33 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Samsung and Roku Smart TVs Vulnerable to Hacking (Consumer Reports)
+
+Security and privacy testing of several brands also reveals broad-based data
+collection. How to limit your exposure.
+
+https://www.consumerreports.org/televisions/samsung-roku-smart-tvs-vulnerable-to-hacking-consumer-reports-finds/
+
+------------------------------
+
+Date: Thu, 15 Feb 2018 20:37:59 +0000
+From: Toby Douglass <toby_gs@winterflaw.net>
+Subject: FinTech Revolut sends PINs via email
+
+Revolut is a growing, successful FinTech startup.
+
+They offer a multi-currency account with no fees for currency exchange, and
+Mastercards.
+
+I have a Revolut Business account.
+
+I today ordered a Mastercard.
+
+I was asked during the ordering process to select a PIN.
+
+After completing the ordering process, the PIN was emailed to me.
+
+With that level of blundering, I am now concerned that Revolut will wake up
+one morning to find all the money has gone.
+
+------------------------------
+
+Date: Thu, 15 Feb 2018 22:07:59 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "The House That Spied on Me" (Kashmir Hill and Surya Mattu)
+
+Kashmir Hill and Surya Mattu, 7 Feb 2018
+https://gizmodo.com/the-house-that-spied-on-me-1822429852
+
+first and last paragraphs:
+
+  In December, I converted my one-bedroom apartment in San Francisco into a
+  "smart home." I connected as many of my appliances and belongings as I
+  could to the Internet: an Amazon Echo, my lights, my coffee maker, my baby
+  monitor, my kid's toys, my vacuum, my TV, my toothbrush, a photo frame, a
+  sex toy, and even my bed.
+
+  I thought the house would take care of me but instead everything in it now
+  had the power to ask me to do things. Ultimately, I'm not going to warn
+  you against making everything in your home smart because of the privacy
+  risks, although there are quite a few. I'm going to warn you against a
+  smart home because living in it is annoying as hell.
+
+------------------------------
+
+Date: Thu, 15 Feb 2018 16:57:52 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: House Committee votes to terminate the Election Assistance Commission
+  (The Nation)
+
+https://www.thenation.com/article/house-republicans-just-voted-to-eliminate-the-only-federal-agency-that-makes-sure-voting-machines-cant-be-hacked/
+
+In a 6-to-3 vote, the House Administration Committee voted along party lines
+to eliminate the Election Assistance Commission <https://www.eac.gov/>,
+which helps states run elections and is the only federal agency charged with
+making sure voting machines can't be hacked.  The EAC was created after the
+disastrous 2000 election in Florida as part of the Help America Vote Act to
+rectify problems like butterfly ballots and hanging chads.  The Committee
+also voted to eliminate the public-financing system for presidential
+elections dating back to the 1970s.
+<http://www.motherjones.com/politics/2011/12/war-voting-comes-washington>
+
+------------------------------
+
+Date: Fri, 16 Feb 2018 19:09:21 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Spelling corrector busy changing words many pages back
+
+Me again, fighter for software justice. Today we turn our attention to
+http://debbugs.gnu.org/30462 where the forces of evil think it is OK for the
+spelling corrector software to go subtly changing words 30 pages back way
+off the screen. Sigh.
+
+------------------------------
+
+Date: Mon, 12 Feb 2018 15:27:37 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Biggest Brazilian newspaper quits Facebook" (Angelica Mari)
+
+http://www.zdnet.com/article/biggest-brazilian-newspaper-quits-facebook/
+
+Angelica Mari, Brazil Tech, 12 Feb 2018
+Folha de São Paulo rebels against the company's news feed changes to
+emphasize posts from connections rather than brands.
+
+select text:
+
+Brazilian newspaper Folha de São Paulo has announced it will no longer
+post news stories to its Facebook page as a response to the company's
+changes to the News Feed algorithm.
+
+According to the Brazilian company, Facebook's policy changes to emphasize
+posts from connections rather than brands will reinforce users' tendency to
+share content they agree with, thus facilitating the creating of opinion
+bubbles. Folha argued that the changes will also increase spreading of fake
+news.
+
+"In effectively banning professional journalism from its pages in favour of
+personal content and opening space for 'fake news' to proliferate, Facebook
+became inhospitable terrain for those who want to offer quality content like
+ours," Folha's executive editor Sérgio Dávila told The Guardian.
+
+------------------------------
+
+Date: Sat, 17 Feb 2018 10:08:57 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "Facebook's Very Revealing Text Messaging Privacy Fail"
+
+Lauren's Blog
+https://lauren.vortex.com/2018/02/17/facebooks-very-revealing-text-messaging-privacy-fail
+
+As I've frequently noted, one of the reasons that it can be difficult
+to convince users to provide their phone numbers for account recovery
+and/or 2-step, multiple-factor authentication/verification login
+systems, is that many persons fear that the firms involved will abuse
+those numbers for other purposes.
+
+In the case of Google, I've emphasized that their excellent privacy
+practices and related internal controls (Google's privacy team is world
+class), make any such concerns utterly unwarranted.
+
+Such is obviously not the case with Facebook. They've now admitted that a
+"bug" caused mobile numbers provided by users for multiple-factor
+verification to also be used for spamming those users with unrelated text
+messages. Even worse, when users replied to those texts their replies
+frequently ended up being posted on their own Facebook feeds! Ouch.
+
+What's most revealing here is what this situation suggests about Facebook's
+own internal privacy practices. Proper proactive privacy design would have
+compartmentalized those phone numbers and associated data in a manner that
+would have prevented a "bug" like this from ever triggering such abuse of
+those numbers.
+
+Facebook's sloppiness in this regard has now been exposed to the entire
+world.
+
+And naturally this raises a much more general concern.
+
+What other sorts of systemic privacy design failures are buried in
+Facebook's code, waiting for other "bugs" capable of freeing them to harass
+innocent Facebook users yet again?
+
+These are all more illustrations of why I don't use Facebook. If you still
+do, I recommend continuous diligence regarding your privacy on that platform
+-- and lotsa luck -- you're going to need it!
+
+------------------------------
+
+Date: Tue, 13 Feb 2018 6:23:38 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Australian Cabinet Files (Bruce Schneier)
+
+Bruce notes that he assumes people have heard about the trove of secret
+Australian documents left in a filing cabinet that was sold on the used
+furniture market.  It's a crazy story.
+
+https://www.schneier.com/blog/archives/2018/02/cabinet_of_secr.html
+
+He suggests noting this excellent political cartoon:
+
+https://www.fairfaxstatic.com.au/content/dam/images/h/0/u/9/p/u/image.related.articleLeadwide.620x349.h0tjj1.png/1517827695178.jpg
+
+------------------------------
+
+Date: Sat, 10 Feb 2018 18:19:40 +0800
+From: Richard M Stein <rmstein@ieee.org>
+Subject: With Closed-Circuit TV, Satellites And Phones, Millions Of
+  Cameras Are Watching (NPR.org)
+
+https://www.npr.org/programs/fresh-air/2018/02/08/584237872//fresh-air-f
+
+This "Fresh Air" program interviews Robert Draper on the subject of video
+surveillance.  Surveillance supports criminal investigations via video
+capture of street crime; stored in a database for reply during trial. Hedge
+funds apply satellite imagery to track commercial shipping traffic for oil
+or coal or iron ore, or to observe shopping mall parking lots to estimate
+projected sales volume. Surveillance satellites enables environmental
+observations, and to track refugee flows that help reduce humanitarian
+calamities. US cities receive surveillance funds from the Department of
+Homeland security. Camera systems have been deployed without any particular
+purpose in mind. 
+
+As the interview states:
+
+  "DRAPER:...Maybe on the other hand, it has resulted in a deterioration of
+  privacy, a willing forfeiture of it to the point where, you know, we're
+  basically expecting to be both voyeur and exhibitionist 24/7.
+
+  "And we lose not only a sense of privation, but we also lose, you know, a
+  sense of anything that's not visual, that we, you know, can't really
+  conceive of something like - as a social scientist pointed out to me -
+  something like dignity or honor. How do you visualize that? How do you
+  capture that photographically? If it can't be seen - as, you know, the
+  millennial phrase goes, pics or it didn't happen - then maybe it's not
+  there at all. These are the kind of insidious effects of an all-surveilled
+  society that I'm still puzzling over and don't have any particular answers
+  to but which I think, you know, you see manifested in London certainly
+  more than anywhere else.
+
+  "DRAPER: Sure. I mean, what we've really been talking about is kind of
+  ground-level surveillance, Terry. But, the reality is, that barely
+  encompasses even a fraction of the degree to which we're being watched. I
+  mean, OK, there may be 106 million new surveillance cameras sold every
+  year, but Americans alone bought 2.5 million drones in 2016 for private
+  use, to say nothing of the U.S.  government's arsenal. And even farther up
+  in the heavens, there are something like 1,700 satellites that monitor our
+  activity."
+
+George Orwell is spinning in his grave. Couple video or satellite
+surveillance with telecommunications metadata and other digital breadcrumbs
+to reconstruct a day in the life of anyone.
+
+------------------------------
+
+Date: Thu, 15 Feb 2018 20:51:33 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Someone Is Sending Amazon Sex Toys to Strangers. Amazon Has No Idea
+  How to Stop It
+
+https://www.thedailybeast.com/someone-is-sending-amazon-sex-toys-to-strangers-amazon-has-no-idea-how-to-stop-it
+
+------------------------------
+
+Date: Sat, 10 Feb 2018 14:12:11 +0800
+From: Richard M Stein <rmstein@ieee.org>
+Subject: One Cause of Market Turbulence: Computer-Driven Index Funds
+ (The New York Times)
+
+https://www.nytimes.com/2018/02/09/business/etf-index-funds-market.html
+
+  "A decade ago, the center of gravity on Wall Street were raucous trading
+  desks and stock exchange floors. These days, the locus has shifted to far
+  quieter places, where computers are in charge.
+
+  "The transition has been years in the making, but its effect has been on
+  full display over the past week. After propelling the market to historic
+  highs, passive investment strategies -- which follow a simple set of rules
+  and are carried out by sophisticated computer programs, not humans -- are
+  among the factors fueling the market's recent plunge.
+
+  "This is the new reality of today's stock market: Funds that track
+  financial indexes have become a dominant force, and they can act as
+  accelerants, adding momentum to the market's rise and fall."
+
+Appears we are all working in a robotic rentier-driven economy.  Rentier: "a
+person who lives on income from property or securities."  High-frequency
+trading algorithms rule "The Street." 
+
+It seems that "Takin' Care of Business" was never easier for consortia that
+operate bot-based advertising, bot-based news generators, and robot
+rentiers. A full-cycle feedback loop  -- a self-fulfilling prophecy -- with
+maybe two buttons at most: earn profit, or disgorge profit. A real "core
+war."
+
+News generators might be programmed to skew corporate news reports,
+accentuating positive spin to compel HFT algorithms that detect the
+steepest-descent language/semantics slope, commanding a "buy more equities
+until a threshold is reached," then commence to dump and reap the
+profits. Can the SEC trace and correlate this behavior? If so, might be time
+for some perpwalks.
+
+Wonder what the next-generation of script kiddies will want for their
+birthday?
+
+------------------------------
+
+Date: Fri, 16 Feb 2018 14:28:34 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Most People Prefer Buying Wireless Devices Through Their
+  Smartphones (TRK)
+
+Costa Mesa, Calif. -- More people now prefer to buy their wireless devices
+through smartphones then by either going to a store, calling or using a
+computer, according to a new report from *J.D. Power*. The study found that
+the satisfaction of customers making new wireless device purchases is
+highest through smartphones (857 points on a 1,000-point scale), compared
+with in-store (842), telephone (836) and other online channels (823). Those
+using a smartphone spend an average of 10.6 minutes completing their online
+purchase, compared with 13.7 minutes among those using a computer or tablet.
+And they also provide higher ratings for website attributes, such as ease of
+navigation, appearance of website and ease of making an order.  ``The
+wireless market is rapidly evolving into a self-contained ecosystem in which
+all aspects of the ownership experience, from buying the device to engaging
+with customer support, is done entirely on a mobile device,'' said *Peter
+Cunningham*, J.D. Power's technology, media, and telecommunications practice
+lead.  ``While in-store customer service is still key for things like
+explaining data usage and demonstrating device operations, the speed and
+consistency of the experience delivered via mobile is clearly resonating
+with mobile customers.''
+http://www.jdpower.com/press-releases/jd-power-2018-us-wireless-purchase-experience-studies-vol-1
+<http://trk.cp20.com/click/mw7jj-dlkpom-7fgw0x87/>
+
+The risks? Mistaking convenience and viewing on small screen for reality?
+
+------------------------------
+
+Date: Sun, 11 Feb 2018 08:15:37 +0000
+From: Michael Bacon - Grimbaldus <michael.bacon@grimbaldus.com>
+Subject: Re: The unstoppable momentum of self-driving cars (RISKS-30.52)
+
+Love the pun in the title!
+
+The results of surveys are coloured by the nature of questions asked.  For
+example: "Do you think self-driving cars are better for the over-70s than
+driving themselves?" is likely to elicit a positive response across most of
+the age range.  See the example of 'how to get the answer required' at
+http://www.imdb.com/title/tt0086831/quotes from the BBC's Yes Minister
+programme (the preceding extract is slightly rude, but detailed knowledge of
+the political leanings and content British press is not really required to
+appreciate it).
+
+Whilst this is not immediately related to self-driving vehicles, recent
+analysis of UK road traffic accident data by the road safety charity
+Institute of Advanced Motorists shows that the number of serious accidents
+in 20mph zones has increased by a substantial 26% over the last year, and
+minor accidents have increased by 17%; serious casualties increased by 29%
+and minor casualties went up by 19%.
+
+Interestingly, over the same period, there was a decrease in the number of
+serious and slight accidents on 30mph (9% and 5% respectively) and 40mph
+roads (5% and 3% respectively).
+
+The cause is thought to be that driver behaviour does not change simply
+because a sign says '20' rather than '30'.  It's a not unreasonable
+supposition that, although the behaviour of a self-driving vehicle will
+change at entry to the lower speed zone, that of human-driven vehicles will
+not ... potentially increasing the number of accidents.
+
+------------------------------
+
+Date: Sat, 10 Feb 2018 18:00:00 -0500
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: Re: The Fake-Follower Factory (NYTimes, RISKS-30.54)
+
+It is actually quite easy to replicate the plots that the New York Times
+used to identify bot patterns. I did a bit of coding and these are the
+resulting scripts (Python for data gathering, R for plotting, though there
+is no particular reason the entire thing couldn't be done in either of
+them):
+
+https://github.com/rinze/nygraph_twitter
+
+This is what the final thing looks like:
+
+https://rinzewind.org/blog-en/2018/replicating-the-new-york-times-bot-twitter-analysis-with-r-and-python.html
+
+If anyone wants to start inspecting Twitter accounts, here are some tools.
+
+------------------------------
+
+Date: Sun, 11 Feb 2018 09:07:04 +0000
+From: Michael Bacon - Grimbaldus <michael.bacon@grimbaldus.com>
+Subject: Re: WHATIS Going to Happen With WHOIS? (RISKS-30.54)
+
+The article that Lance Weistein quotes makes a fundamental error in its
+statement that the EU's General Data Protection Regulation (GDPR) which
+takes effect on 25 May this year is intended to protect the privacy of EU
+citizens.
+
+The GDPR 'regulates' [Data] Controllers 'operating' within the EU and and
+Processors acting for Controllers (wheresoever those Processors are
+situate), whilst codifying 'rights' for all natural persons whose data are
+processed by those entities - regardless of their nationality or country of
+residency.  Thus, the Personal Data of an American who shops online at the
+website of UK retailer John Lewis (johnlewis.com), will enjoy the protection
+of the GDPR.
+
+Basic extra-territoriality comes in the form of the GDPR applying to non-EU
+companies which offer goods/services within the EU, for example online using
+a TLD of an EU member country ... but again regardless of the nationality of
+the individual engaged or their country of residence.
+
+In regard to the reported conflict between the requirements of the GDPR and
+ICANN, there would appear to be at least two simple routes, "consent"
+whereby the registrant agrees to publication, in something of a reversal of
+the current opt-out position, and "legitimate interests" - albeit this will
+require clear definition of those ... but they can include other parties'
+interests.
+
+Concerning is that this is happening at a late stage, with only 72 working
+days to the law taking effect ... but this reflects the situation with many
+Controllers of all sizes (at least in the UK) and the majority of Processors
+across the world.
+
+------------------------------
+
+Date: Fri, 16 Feb 2018 22:03:54 +0000
+From: John Beattie <jkb@jkbsc.co.uk>
+Subject: Re: WHATIS Going to Happen With WHOIS (RISKS-30.54)
+
+  Also GDPR
+
+I am wondering if a lot of the privacy issue could be handled by making all
+the data that originates on my devices my property.
+
+It would be fine to sell it to Google or anyone else but until I do so, its
+mine and using it would be theft.
+
+I think that mediating the transaction via the good old dollar might help
+clarify matters a bit.
+
+There are some obvious issues but designing solutions might help us
+understand better what we are doing with all these data streams.
+
+So, I suggest that if the buyer aggregates or filters streams then the new
+stream would be the property of the buyer.  That limits the ownership of the
+originator in a realistic way. Otherwise I can see that the idea is
+unrealistic.
+
+It would be interesting to include contract clauses indicating how long the
+buyer can hold the data for.  Obviously they can do what they like with
+their own streams but it would be good to put a time limit on how long the
+buyer can hold a copy of someone else's data.
+
+Some streams are more valuable than others: high frequency, low jitter, lots
+of measures in each stream element, all these would increase the value.
+
+And there are lots of other possible refinements of course - enjoy!
+
+------------------------------
+
+Date: Sun, 11 Feb 2018 14:39:28 -0500
+From: Shawn Merdinger <shawnmer@gmail.com>
+Subject: Denver Airport AGTS marble stairs: Fall risk due to lack of contrast
+
+Love DIA, great airport :)
+
+I wanted to bring to your attention a fall risk.  The area I'm referring to
+is after the TSA screening that lead down to the AGTS train -- specifically
+the marble staircase that is flanked by escalators.
+
+I believe the marble staircase has low contrast that makes it difficult to
+visually distinguish each step.  Also, on some points going down the stairs,
+the reflection and glare from overhead lighting makes it more difficult to
+see the steps.  Each step has 3 thin strips of black anti-slip tape, which
+is great for traction, but it doesn't help the visibility or contrast
+problem.
+
+I have a first-person viewpoint video of me descending the stairs that you
+can view at the link below as it's too large a file to email:
+
+Video Link:  https://drive.google.com/file/d/1IaBNRNByJt-iwwLZebSk4qwrJZS2bagi/view%Fusp%3Dsharing
+
+In past trips I have not seen many people using those marble stairs down to
+the AGTS.  I encourage you to go there and watch how people approach the
+stairs and escalators after clearing the TSA checkpoint.  Some folks will
+start to go towards the stairs..then look and see the risk...pause for a
+moment...and choose one of the the escalators instead.
+
+Please do go see for yourselves!
+
+Of note, according to the American Journal of Emergency Medicine over 1
+million Americans of all age groups are injured each year on stairs [1].
+And the CDC states falls are the leading cause of injury and death in older
+Americans [2].  Laboratory studies on how visual modifications to stairs can
+make them safer are publicly available [3].  Finally, the US Access Board
+Technical Guide for stairways recommends visual contrast for stairs [4].
+
+I do hope this finds its way to the right people at DIA, and that some
+simple measures, like better marking those marble steps will reduce the risk
+to passengers who choose to use the marble stairs, and better prepare for
+passenger flow when one or both of the escalators leading down to the AGTS
+vis in need of repair and folks have no choice but to use the marble stairs.
+
+[1]  http://www.ajemjournal.com/article/S0735-6757(17)30759-3/abstract
+[2]  https://www.cdc.gov/media/releases/2016/p0922-older-adult-falls.html
+[3]  "Analysis of lower limb movement to determine the effect of
+manipulating the appearance of stairs to improve safety: a linked
+series of laboratory-based, repeated measures studies" -
+https://www.ncbi.nlm.nih.gov/books/NBK305252/
+[4]  https://www.access-board.gov/attachments/article/1803/stairs-ABA.pdf
+
+------------------------------
+
+<Date: Tue, 13 Feb 2018 19:12:40 +0000
+From: John Ohno <john.ohno@gmail.com>
+Subject: Contra Ovadya on post-truth
+
+I originally posted this article here:
+https://medium.com/%40enkiv2/contra-ovadya-on-post-truth-83bb15acce7c
+
+Contra Ovadya on post-truth  [long item, saved for last.  PGN]
+
+https://www.buzzfeed.com/charliewarzel/the-terrifying-future-of-fake-news/ A
+recent article by Charlie Wartzel summarizing the perspective of Aviv Ovadya
+has become quite popular. This article admits that it is engaging in
+scare-mongering, but justifies this by claiming that the situation is bad
+enough that we all really should be scared. Certainly, some of the details
+are accurate, but -- as par for the course for a popular take on a
+newly-relevant subject with a long history -- there's a great deal of
+context missing.
+
+Let's first add a little historical context to defuse a bit of the
+appeal-to-authority propelling this article. Ovadya is described as having
+``predicted the 2016 fake news crisis'', on the grounds that he made a
+presentation about it in October of 2016. This is a very low bar: the
+political ramifications of propaganda circulated within
+social-media-amplified cultural bubbles was a hot topic throughout 2016, the
+same way it was at the tail end of Obama's first term (when the publication
+of *The Filter Bubble* coincided with concerns about right-wing conspiracy
+theories). *The Filter Bubble* didn't invent these concerns, either -- that
+book was a (perhaps independent) rehash of concerns about Internet news
+expressed on various mailing lists as early as 1992. The term of art back
+then for what we now call *filter bubbles* was *the daily me* -- as in, a
+hypothetical newspaper that, based on personality profiling, shows the user
+only the news stories they want to see. We can probably, with a little bit
+of effort, trace the ideas back even further; however, I first became aware
+of the *daily me* concept back in 2008, in a lecture at the Computers,
+Freedom, and Privacy conference -- and I was one of the few attending who
+wasn't already familiar with the concept, meaning that in the community at
+the intersection of tech and social justice, the political ramifications of
+fake news on social media was old news ten years ago.  Ovadya's epithet
+could be applied to anyone who was reading political coverage in mainstream
+news outlets in 2016 just as well as it could be applied to him, so his
+authority is not, by that metric, meaningful.
+
+In the absence of the authority of someone who ``predicted the fake news
+crisis'', we can critically re-examine the claims being made.
+
+The narrative Ovadya & Wartzel paint is one where a fixed, stable,
+universally accepted common ontology is being eroded by tech that
+manipulates flows of information while simultaneously making forgery easier.
+This perspective is shortsighted -- it doesn't match history, and depends
+upon some dubious assumptions about the homogeneity of culture.
+
+Humans don't live in reality, and we never have. We live in networks of
+personal mythology, occasionally shaped and guided by reality's physical
+limits on the rare occasions when those physical limits interfere with our
+abilvty to maintain false beliefs in ways that are not easily ignored. Our
+personal mythologies are a bricolage of (potentially internally
+conflicting) heuristics and factoids collected from all the people and
+media we interact with.
+
+For a few hundred years, due to the standardization of educational systems
+around canons of works deemed important, large groups of powerful people
+(the rich, the intelligentsia, and royalty) had substantially similar
+personal mythologies.  A literate westerner in the late eighteenth century
+could be reasonably expected to be deeply familiar with the bible, classical
+mythology, the works of Plato and Aristotle, and a handful of other works,
+along with being able to read and write in Latin (and probably French),
+regardless of their homeland. A literate westerner a few hundred years
+earlier would have probably been a monk who had studied the Trivium and the
+Quadrivium. From what I understand, similar highly standardized educational
+systems existed in China, established far earlier, and this system was
+geared toward state bureaucracy rather than religious institutions --
+however, I am not familiar enough with this system to describe it in detail.
+The vost important aspect of this situation is that it was not extended to
+most people -- the poor and illiterate had their own private oral
+mythologies, influenced but not fully controlled by religious and state
+institutions.
+
+Improved printing technologies (cheap enough to use for mass entertainment
+and education but expensive enough to require a surrounding institution),
+universal mandatory education, and various attempts at education
+standardization exposed a greater number of people to particular memeplexes
+favored by particular groups of powerful people.
+
+It's important to note that, in the United States, this process was part of
+a then-politically-radical democratization made possible by access to
+low-cost printing technologies by dangerous terrorist subversives like
+Benjamin Franklin. When the revolutionary war was won, printers switched
+gears from propaganda pamphlets and broadsheets to general material for the
+education of a population who needed to be brought up to the minimum
+standards people like Thomas Jefferson thought were necessary to keep a
+democratic system from falling into tyranny. While today we generally see
+this process as a good idea, we should recognize that in the eighteenth
+century in europe and the americas, popular vote was seen as two steps
+short of anarchy and mass education was not seen as a universal good: from
+an outside perspective, we're talking about dangerous political radicals
+determining the canon of an education system.
+
+Of course, books were still quite expensive until the 20th century, with the
+introduction of paperback pocket books. The 20th century also corresponded
+to the development of film, radio, and television -- popular formats that,
+like book and newspaper printing, depended upon expensive technology and
+institutions, and therefore were broadcast. This is the first point at which
+we can say that people's personal mythologies began to mostly converge: the
+point at which a handful of national TV channels, a handful of
+nationally-syndicated radio networks, a handful of large movie studios with
+strict control over theatre chains, a handful of big newspaper companies and
+book publishers, a standardized education system, and a very active
+censorship bureau controlled much of media. This period could be bookended
+on one side by the beginning of the Great Depression (when movie theatres
+became cheap mass entertainment) and on the other by the late 1960s (when
+new limitations on post office censorship and widespread access to Xerox and
+Mimeograph machines made a mass non-broadcast culture feasible -- what we
+call, variously, faxlore or zine culture).
+
+The development of online communities starting in the 80s can be seen as an
+extension of this anti-broadcast trend that I trace to the late 60s.
+There's a big overlap between early online culture and faxlore, ham, and CB
+radio culture, after all. This development has never been apolitical: as
+soon as scalable alternatives to broadcast culture appeared, people began to
+take advantage of it to create and distribute their own personal
+mythologies, and these mythologies have often had a political element (as
+with the development of discordianism starting in 1958, the radical
+political zines and newsletters on the left right and radically unseen sides
+through the 60s, punk zines in the 70s and 80s, and the faxlore origins of
+the proto-alt-right in the early 90s with anti-Clinton xeroxed
+*factsheets*). These strains made the jump first to Usenet and BBS, then
+later to the web.
+
+All of this is to say that, rather than a sudden assault on the edifice of
+consensus truth, we are looking at the tail end of a sixty-year return to
+equilibrium -- the conclusion of an anomalous century of
+relatively-homogeneous consensus reality.
+
+Usenet and the Web did something that BBSes (outside of store and forward
+networks like fidonet) and zines largely could not -- they deterritorialized
+or delocalized exposure to alternate realities. People like John Perry
+Barlow and McLuhanist media theorists put this in utopian terms, and the
+culture jamming movement put it in functional, operative terms. After all,
+the broadcast reality is often wrong, and sometimes intentionally so: fraud,
+being expensive, was the domain of the powerful, and the democratization of
+the means of fraud (or, if you prefer, the democratization of disinformation
+construction and distribution mechanisms) was seen as a net
+positive. Culture jammers hoped that the good lies and the bad lies will
+cancel each other out in open forum.
+
+When we talk about filter bubbles, the problem is not that such alternate
+realities exist. Instead, geographically-dispersed clusters of alternative
+cultures remain isolated from each other as a side effect of ranking
+algorithms. These cultures, which until the 80s corresponded to regions, now
+can cross state boundaries in difficult-to-trace ways. Because
+representative government is based on geography rather than psychography,
+this disrupts attempts to consolidate political power: it's very difficult
+to gerrymander around a primarily Internet-centric culture in such a way
+that a guaranteed win is possible.
+
+Filter bubbles produce very real problems. The human capacity to ignore
+physical reality is impressive -- only rarely does even mortal danger shake
+us (or else no veteran of active combat duty would consider themselves
+religious or patriotic, except perhaps in fairly warped ways: belief in a
+sadistic or blind-idiot god, faith that no alternative exists to a zero-sum
+politics of global annihilation). Nevertheless, in less extreme situations,
+periodic challenges to our Umwelt can indeed cause gradual change, and heavy
+exposure to diverse and conflicting alien myths can cause us to critically
+reconsider our own mythologies. Lack of exposure to alien myths means that
+the alternate realities produced by filter bubbles are just as stable as
+those previously produced by geography.
+
+When we are familiar with the perspective of the *other side*, we can
+accurately distinguish between likely and unlikely stories -- we can
+identify disinformation, even if that doesn't impact our willingness to
+spread it <https://papers.ssrn.com/sol3/papers.cfm%3Fabstract_id%3D3023545>
+But, constant and consistent exposure to the same material eats away at our
+critical response,
+<https://papers.ssrn.com/sol3/papers.cfm%3Fabstract_id%3D2958246>
+Furthermore, simply pointing out that some stories are false has unintended
+consequences.
+<https://papers.ssrn.com/sol3/papers.cfm%3Fabstract_id%3D3035384> So, it's
+vitally important that we retain that exposure. However, at the same time,
+we should not assume that such exposure will rebuild some mythic edifice of
+consensus truth: an (often justified) contrarian strain acts against the
+consensus, and the centralized power necessary for building the illusion of
+consensus can reasonably be expected to use that false consensus to bolster
+its own continued power.
+
+Wartzel's article highlights DeepFace, AudioToObama, and similar technology
+as mechanisms for supporting widespread fraud in the near future. I have a
+couple problems with these specific examples (in part because the
+technology is far from convincing, and in part because the limited scope of
+these projects and the existence of other related technologies means that
+they don't substantially lower the cost of believable fraud
+<http://enki2.tumblr.com/post/170757932569/people-are-hyping-up-deepface-so-much-but-jesus>
+but on a fundamental level, fraud is always a possibility and our sense of
+what constitutes reliable evidence depends on a folk-understanding of fraud
+technologies. Nobody could use these technologies right now to convince a
+layman, let alone an expert, but the hype and scaremongering around them
+means that in the near future video will have the same status as
+photography in terms of perceived reliability -- in other words, considered
+easily-faked.
+
+The ultimate result of this -- since video fraud is still approximately as
+expensive as it was 20 years ago -- is that more skepticism will be
+expressed about *video evidence*, and that skepticism will be expressed
+earlier. This will ultimately probably mostly impact the people who have
+the resources and motivations to actually fake video evidence. It's
+possible in the short term for people to take advantage of existing
+cultural bubbles to manipulate this skepticism toward political ends, but
+in the longer term we're merely adapting to the state of the reliability of
+video evidence in the past several decades.
+
+The time in which we live is unprecedented not for the unreliability of
+evidence but for its reliability. Again, we slowly return to equilibrium as
+political and technical competition takes advantage of short-term
+differences between the perceived and real reliability of certain kinds of
+evidence. There are real dangers associated with this manipulation, but
+they are not dangers to capital-T Truth but mundane ones -- everyday
+grifting, political spin, and propaganda. Our best tool against this
+particular variety of manipulation is to maintain the accuracy of our
+folk-ideas about evidence reliability, not to demonize toys as existential
+risks.
+
+Framing is very important. Where I agree with Wartzel and Ovadya is that
+there are serious systematic problems with the way we route information
+between people -- problems that cause political schismatism, failures of
+empathy, and in some cases direct physical danger. However, Ovadya &
+Wartzel's framing of this problem as one of attacks on consensus reality
+implies a solution with unfortunate authoritarian tinges: the
+reconsolidation of power over information. Instead, I suggest framing the
+problem as systematic bias in exposure to information, in ways that limit
+the effectiveness of our normal intellectual growth. Rather than rebuilding
+the tower, we should be breaking down the walls.
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.55
+************************

@@ -1,0 +1,635 @@
+RISKS-LIST: Risks-Forum Digest  Monday 29 October 2012  Volume 27 : Issue 05
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.05.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+NY Times article on changing voter registration addresses in WA and MD
+  (Jeremy Epstein)
+Numerous voting machines... that count the wrong candidate (Danny Burstein)
+Paper prophets: Why e-voting is on the decline in the U.S. (Timothy B. Lee
+  via Monty Solomon)
+"What's in a vote? Only your entire personal profile" (Cringely via
+  Gene Wirchenko)
+Nissan steer-by-wire cars set for showrooms by 2013 (Martyn Thomas)
+Mercedes-Benz concerned that car safety laws will crimp in-car apps,
+  Internet connectivity, etc. (Lauren Weinstein)
+Texas schools punish students refusing to be tracked with microchips
+  (Monty Solomon)
+Textbook publisher Pearson takes down 1.5M teacher and student blogs
+  With A Single DMCA Notice (Robert Schaefer)
+Cancel your service? Certainly, ma'am; 11.7 quadrillion euros, please.
+  (Mark Brader)
+Computer Viruses Are "Rampant" on Medical Devices in Hospitals
+  (David Talbot via Jim Reisert)
+The Internet isn't the only modern convenience that can get backhoed
+  (Dave Crooke)
+Credit Card Data Breach at Barnes & Noble Stores (Schmidt/Perlroth
+  via Monty Solomon)
+"Amazon's DRM drama: Whose Kindle is it anyway?" (R.X.Cringely via
+  Gene Wirchenko)
+Android apps used by millions vulnerable to password, e-mail theft
+  (Lauren Weinstein)
+"Legit Android apps rendered unsafe by poor programming, SSL misuse"
+  (Ted Samson via Gene Wirchenko)
+"Google, Microsoft, and Yahoo fix serious e-mail weakness" (Jeremy Kirk
+  via Gene Wirchenko)
+How a Google Headhunter's E-Mail Unraveled Massive Net Security Hole
+  (Lauren Weinstein)
+"What can be learned from the government's cybersecurity bungling"
+  (Christine Wong via Gene Wirchenko)
+Pakistan to monitor all phone calls, e-mail, other Internet traffic
+  (Lauren Weinstein)
+Re: "Hackers exploit Skype API to infect Windows PCs" (David Damerell)
+Re: Hotmail Password Length (Dennis E. Hamilton)
+Re: ACSAC 2012 early registration deadline is 12 Nov (Robert H'obbes' Zakon)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 13 Oct 2012 13:21:40 -0400
+From: Jeremy Epstein <jeremy.j.epstein@GMAIL.COM>
+Subject: NY Times article on changing voter registration addresses in WA and MD
+
+https://www.nytimes.com/2012/10/13/us/politics/cracks-in-maryland-and-washington-voter-databases.html
+
+Some of you saw this at EVT/WOTE and at USENIX Security, where Alex
+Halderman did live demos of how easy it is.  The NYT article actually
+understates how easy this is -- the voter registration database for WA is
+online for free (or at least it was a few months ago), and you can use that,
+given just a person's name, to find their address, DOB, and last date voted.
+I demonstrated this at an FBI cybersecurity conference (of course giving
+credit to Alex!), and they were pretty surprised.
+
+What the NYT article doesn't note is that because the public voter
+registration database shows the last date voted, it's trivial to find
+occasional voters, and use that to figure out who to target, especially if
+you're trying to swing an off-year election.
+
+This ties into the online voter registration issue for which the ACM has a
+working group.
+
+------------------------------
+
+Date: Wed, 24 Oct 2012 23:11:14 -0400 (EDT)
+From: Danny Burstein <dannyb@panix.com>
+Subject: Numerous voting machines... that count the wrong candidate
+
+North Carolina e-machine has voters choosing (they claim [a]) Romney but the
+machine records (and reports to them) a vote for Obama.
+
+And as the story continues [b]:
+
+  Guilford County Board of Elections Director George Gilbert says the
+  problem arises every election. It can be resolved after the machine is
+  re-calibrated by poll workers.  "It's not a conspiracy. It's just a
+  machine that needs to be corrected," Gilbert said.
+
+[a] have to put that cautionary disclaimer here, of course.
+
+[b]
+http://myfox8.com/2012/10/23/guilford-county-voters-say-they-voted-for-the-wrong-candidate/
+
+------------------------------
+
+Date: Tue, 23 Oct 2012 21:58:55 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Paper prophets: Why e-voting is on the decline in the U.S.
+
+Timothy B. Lee, *Ars Technica*, Oct 22 2012
+States see the virtue of paper ballots, but some lack funds to ditch e-voting.
+
+Ernest Zirkle was puzzled. The resident of Fairfield Township in Cumberland
+County, NJ, ran for a seat on his local Democratic Executive Committee on
+June 7, 2011. The official results showed him earning only nine votes,
+compared to 34 votes for the winning candidate.
+
+But at least 28 people told Zirkle they voted for him. So he and his
+wife-who also ran for an open seat and lost-challenged the result in
+court. Eventually, a county election official admitted the result was due to
+a programming error. A security expert from Princeton was called in to
+examine the machines and make sure no foul play had occurred. Unfortunately,
+when he examined the equipment on August 17, 2011, he found someone deleted
+key files the previous day, making it impossible to investigate the cause of
+the malfunction. A new election was held on September 27, and the Zirkles
+won.
+
+A decade ago, there was a great deal of momentum toward paperless electronic
+voting. Spooked by the chaos of the 2000 presidential election in Florida,
+Congress unleashed a torrent of money to buy new high-tech machines. Today,
+momentum is in the opposite direction.  Computer security researchers have
+convinced most observers that machines like the ones in Fairfield Township
+degrade the security and reliability of elections rather than enhancing
+them. Several states passed laws mandating an end to paperless
+elections. But bureaucratic inertia and tight budgets have slowed the pace
+at which these flawed machines can be retired.
+
+Luckily, no e-voting catastrophes seem to have occurred. The irregularities
+that have risen to public attention since 2006 have tended to be small-scale
+or low-stakes incidents like the one in Fairfield Township. But lack of
+high-profile failure is not an argument for complacency. If an election were
+stolen by hackers in a state that used paperless voting machines, we
+wouldn't necessarily be able to detect it. Just because a major disaster
+hasn't happened in recent elections doesn't mean it can't happen in
+2012. ...
+
+http://arstechnica.com/features/2012/10/paper-prophets-why-e-voting-is-on-the-decline-in-the-united-states/
+
+------------------------------
+
+Date: Wed, 17 Oct 2012 12:40:15 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "What's in a vote? Only your entire personal profile"
+
+Robert X. Cringely, *InfoWorld*, 17 Oct 2012
+`All politics is personal' is truer than ever in the big data era --
+especially in the hands of the Obama and Romney campaigns
+https://www.infoworld.com/t/cringely/whats-in-vote-only-your-entire-personal-profile-205149
+
+------------------------------
+
+Date: Thu, 18 Oct 2012 10:31:53 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Nissan steer-by-wire cars set for showrooms by 2013
+
+I especially liked this comment
+
+  However, it signaled it hoped to be able to ditch the safety measure in
+  the long term.  Masaharu Satou, a Nissan engineer. ``Such as in the back
+  seat, or it would be possible to steer the car with a joystick.  If we are
+  freed from that, we would be able to place the steering wheel wherever we
+  like.''  http://www.bbc.co.uk/news/technology-19979380
+
+I see a new industry opening up, of `e-chauffeurs', who drive your car
+remotely (perhaps from a centre in low-cost country) while you read the
+papers for your next meeting. Nothing could go wrong, surely?
+
+------------------------------
+
+Date: Tue, 16 Oct 2012 11:06:44 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Mercedes-Benz concerned that car safety laws will crimp in-car
+  apps, Internet connectivity, etc.
+
+  ``Apps are the next phase of evolution for the connected car, yet safety
+  laws could still completely remove or significantly limit in-vehicle
+  infotainment.'' http://j.mp/OFluyB  (mkt1985 via NNSquad)
+
+This is an area of increasing controversy.  I was a bit perturbed to see new
+commercials from a luxury car maker promoting the fact that they had
+replaced most physical controls with a touchscreen "like your phone!"  While
+in-car control systems that use voice recognition can be seen as generally
+safety-enhancing, anything that forces you to look away from driving -- like
+at a touch screen -- rather than using knobs you can control by feel -- seem
+potentially problematic.
+
+------------------------------
+
+Date: Thu, 11 Oct 2012 13:51:13 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Texas schools punish students refusing to be tracked with microchips
+
+9 October 2012
+
+A school district in Texas came under fire earlier this year when it
+announced that it would require students to wear microchip-embedded ID cards
+at all times. Now, students who refuse to be monitored say they are feeling
+the repercussions.
+
+Since 1 Oct, students at John Jay High School and Anson Jones Middle School
+in San Antonio, Texas, have been asked to attend class with photo ID cards
+equipped with radio-frequency identification (RFID) chips to track every
+pupil's location. Educators insist that the endeavor is being rolled out in
+Texas to stem the rampant truancy devastating the school's funding. If the
+program is judged successful, the RFID chips could soon come to 112 schools
+in all and affect nearly 100,000 students.
+
+Students who refuse to walk the school halls with the card in their pocket
+or around their neck claim they are being tormented by instructors, and are
+barred from participating in certain school functions. Some also said they
+were turned away from common areas like cafeterias and libraries. ...
+
+http://rt.com/usa/news/texas-school-id-hernandez-033/
+
+------------------------------
+
+Date: Tue, 16 Oct 2012 13:29:30 -0400
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: Textbook publisher Pearson takes down 1.5M teacher and student blogs
+  With A Single DMCA Notice
+
+* What are the future/scaling implications of automated checking for
+  dependencies over copyright?
+* How much of the net could realistically be shut down by DMCA action or
+  lawsuit?
+
+http://www.techdirt.com/blog/?tag=beck's+hopelessness+scale
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886  781-981-5767  http://www.haystack.mit.edu
+
+------------------------------
+
+Date: Fri, 12 Oct 2012 01:39:53 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: Cancel your service? Certainly, ma'am; 11.7 quadrillion euros, please.
+
+We've seen cases of computerized overbilling before, but by a factor
+of 10^14?
+
+In Pessac, near Bordeaux, a newly unemployed young woman named Solenne San
+Jose tried to terminate her account with Bouygues Telecom.  The phone
+company sent her a final bill for 11,721,000,000,000,000 euros -- ``so many
+zeroes that I didn't know how much it came out to.''  In fact it was 5,872
+times last year's GDP for the whole country.
+
+When she complained, the company first missed the point and offered her a
+time-payment plan.  (It would have been interesting to know the details of
+this.)  Then they said it should have been 117.21 euros, but there had been
+a "printing error, not a billing error".  And they canceled the 117.21 euros
+as well.
+
+In English:
+  http://www.bbc.co.uk/news/world-europe-19908095
+In French:
+  http://www.sudouest.fr/2012/10/10/la-facture-du-siecle-845407-2780.php
+  http://www.leparisien.fr/high-tech/bouygues-telecom-reclame-a-une-cliente-des-centaines-de-milliards-d-euros-10-10-2012-2220287.php
+
+  [Also noted by Richard Irvin Cook, noting that this amount is nearly
+  6,000 times France's annual economic output.  PGN]
+
+------------------------------
+
+Date: Wed, 17 Oct 2012 22:45:32 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Computer Viruses Are "Rampant" on Medical Devices in Hospitals
+  (David Talbot)
+
+David Talbot, *Technology Review*, 17 Oct 2012
+
+A meeting of government officials reveals that medical equipment is becoming
+riddled with malware.
+
+Computerized hospital equipment is increasingly vulnerable to malware
+infections, according to participants in a recent government panel.  These
+infections can clog patient-monitoring equipment and other software systems,
+at times rendering the devices temporarily inoperable.
+
+While no injuries have been reported, the malware problem at hospitals is
+clearly rising nationwide, says Kevin Fu, a leading expert on medical-device
+security and a computer scientist at the University of Michigan and the
+University of Massachusetts, Amherst, who took part in the panel discussion.
+
+Software-controlled medical equipment has become increasingly interconnected
+in recent years, and many systems run on variants of Windows, a common
+target for hackers elsewhere. The devices are usually connected to an
+internal network that is itself connected to the Internet, and they are also
+vulnerable to infections from laptops or other device brought into
+hospitals. The problem is exacerbated by the fact that manufacturers often
+will not allow their equipment to be modified, even to add security
+features.
+
+In a typical example, at Beth Israel Deaconess Medical Center in Boston, 664
+pieces of medical equipment are running on older Windows operating systems
+that manufactures will not modify or allow the hospital to change -- even to
+add antivirus software -- because of disagreements over whether
+modifications could run afoul of U.S. Food and Drug Administration
+regulatory reviews, Fu says.
+
+As a result, these computers are frequently infected with malware, and one
+or two have to be taken offline each week for cleaning, says Mark Olson,
+chief information security officer at Beth Israel.
+
+http://www.technologyreview.com/news/429616/computer-viruses-are-rampant-on-medical-devices/
+
+Jim Reisert AD1C, <jjreisert@alum.mit.edu>, http://www.ad1c.us
+
+------------------------------
+
+Date: Fri, 19 Oct 2012 10:31:13 -0500
+From: Dave Crooke <dcrooke@gmail.com>
+Subject: The Internet isn't the only modern convenience that can get backhoed
+
+The power just went out in a neighbouring building in the office park, but
+ours is still on .... RISKS readers would expect some unnecessary service
+disruption due to lack of backup power, perhaps telecoms, but the one thing
+that isn't working was new to me: the sensor based flush and faucet
+systems. I would have assumed these were standalone devices, but apparently
+not - there are no manual override buttons, and you guessed it, automated
+activation of the water valves by infrared sensor is apparently routed
+through a computer in the other building with no backup power.
+
+  [Dave, You think YOU had a bad day.  Check out the following outages.  PGN]
+
+http://thenextweb.com/insider/2012/10/26/major-sites-and-platforms-experiencing-outages-today-including-dropbox-and-google-app-engine/
+http://internettrafficreport.com/namerica.htm
+http://techcrunch.com/2012/10/26/google-app-engine-down-with-major-service-disruption-as-dropbox-and-tumblr-also-suffer/
+
+  [and Hurricane Sandy is expected to leave millions without power.  PGN]
+
+------------------------------
+
+Date: Oct 24, 2012 8:46 AM
+From: "Monty Solomon" <monty@roscom.com>
+Subject: Credit Card Data Breach at Barnes & Noble Stores
+
+Michael S. Schmidt and Nicole Perlroth, *The New York Times*, 23 Oct 2012
+
+Hackers have stolen credit card information for customers who shopped as
+recently as last month at 63 Barnes & Noble stores across the country,
+including stores in New York City, San Diego, Miami and Chicago, according
+to people briefed on the investigation.  The company discovered around 14
+Sep 2012 that the information had been stolen but kept the matter quiet at
+the Justice Department's request so the F.B.I. could determine who was
+behind the attacks, according to these people.  The information was stolen
+by hackers who broke into the keypads in front of registers where customers
+swipe their credit cards and enter their personal identification numbers, or
+PINs. ...
+
+http://www.nytimes.com/2012/10/24/business/hackers-get-credit-data-at-barnes-noble.html
+http://www.nytimes.com/interactive/2012/10/24/business/24barnes-and-noble-store-list.html
+http://s3.documentcloud.org/documents/481338/barnes-and-noble-store-list.pdf
+
+------------------------------
+
+Date: Wed, 24 Oct 2012 14:38:37 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Amazon's DRM drama: Whose Kindle is it anyway?" (R.X.Cringely)
+
+Robert X. Cringely, *InfoWorld*, 24 Oct 2012
+A Kindle customer thought she owned her e-books -- until she found that
+Amazon erased them overnight.
+http://www.infoworld.com/t/cringely/amazons-drm-drama-whose-kindle-it-anyway-205634
+
+------------------------------
+
+Date: Mon, 22 Oct 2012 12:04:17 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Android apps used by millions vulnerable to password, e-mail theft
+
+http://j.mp/RRuwGa  (This message on Google+)
+http://j.mp/WE5nol  (ars technica via NNSquad)
+
+  ``Android applications downloaded by as many as 185 million users can
+  expose end users' online banking and social networking credentials, e-mail
+  and instant-messaging contents because the programs use inadequate
+  encryption protections, computer scientists have found.''
+
+This rather alarming looking headline refers to this research paper:
+  http://j.mp/RRuTAn  (University of Hannover [PDF])
+
+By and large, the paper describes issues related to known SSL/TLS/PKI
+vulnerabilities and implementation/arguable user interface weaknesses that
+are rather commonly present across most platforms, not just Android.  Some
+of these could be avoided to some extent via automated code scanners (a
+technology set that is gradually coming to various environments), but the
+reality is that without severely restricting developer and site flexibility,
+there is only so far we can go toward making these systems more (but still
+not perfectly) bulletproof.  The paper also notes a number of methodological
+limitations that make a full analysis somewhat problematic.  There are
+really no big surprises here for anyone who studies crypto systems in the
+Web environment, but obviously we must work to do better.  I'll be popping
+back up for a couple of minutes on Coast to Coast AM radio tonight a bit
+after 10 PDT to discuss this.  Lauren Weinstein
+
+------------------------------
+
+Date: Tue, 23 Oct 2012 13:16:33 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Legit Android apps rendered unsafe by poor programming, SSL misuse"
+  (Ted Samson)
+
+Ted Samson, *InfoWorld*, 22 Oct 2012
+Researchers find Android shortcomings, combined with lazy
+programming, expose otherwise malware-free Android apps to data theft
+http://www.infoworld.com/t/mobile-security/legit-android-apps-rendered-unsafe-poor-programming-ssl-misuse-205418
+
+------------------------------
+
+Date: Thu, 25 Oct 2012 12:11:35 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Google, Microsoft, and Yahoo fix serious e-mail weakness"
+  (Jeremy Kirk)
+
+Jeremy Kirk, *InfoWorld*, 25 Oct 2012, Use of weak DKIM signing keys could
+allow spoofed e-mail messages to look legitimate, US-CERT warned
+https://www.infoworld.com/d/security/google-microsoft-and-yahoo-fix-serious-email-weakness-205683
+
+interesting bit:
+
+The issue came to light after Florida-based mathematician Zachary Harris was
+sent an e-mail from a Google recruiter that used only a 512-bit key,
+according to a report published Wednesday by Wired magazine.  Thinking it
+might be some clever test by Google, he factored the key, then used it to
+send a spoofed message from Sergey Brin to Larry Page, Google's founders.
+
+------------------------------
+
+Date: Wed, 24 Oct 2012 08:56:52 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "How a Google Headhunter's E-Mail Unraveled Massive Net Security Hole
+
+http://j.mp/QXeppK  (Wired via NNSquad)
+http://j.mp/QXdOnZ  (This message on Google+)
+
+  ``The problem lay with the DKIM key (DomainKeys Identified Mail) Google
+  used for its google.com e-mails. DKIM involves a cryptographic key that
+  domains use to sign e-mail originating from them - or passing through them
+  - to validate to a recipient that the header information on an e-mail is
+  correct and that the correspondence indeed came from the stated
+  domain. When e-mail arrives at its destination, the receiving server can
+  look up the public key through the sender's DNS records and verify the
+  validity of the signature.''
+
+Well, what appeared to be e-mail from a headhunter anyway.  But the irony
+here is that DKIM is much less useful in preventing these kinds of
+(spam-related, human engineering) attacks than might be thought, since (a)
+most sites -- including legit ones -- don't routinely support it, and (b)
+most email recipients are largely oblivious to any associated warnings.  So,
+while DKIM indicating a problem with mail from the citi.com domain might be
+noticed by some users running compatible MUAs (Message User Agents), mail
+coming from a forged, non-DKIM supporting domain like citi-banking.com would
+probably be accepted as reasonable by many or most recipients.  Lauren
+Weinstein
+
+------------------------------
+
+Date: Thu, 25 Oct 2012 10:07:23 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "What can be learned from the government's cybersecurity bungling"
+  (Christine Wong)
+
+One expert says whether you're the feds or an small business, a few basic
+security principles are key. He lays them out for us here.
+*IT Business, 24 Oct 2012
+http://www.itbusiness.ca/it/client/en/home/News.asp?idi172
+
+redacted opening text:
+
+Would you sleep at night knowing your business is only protected from
+cybercriminals during regular banker's hours?  ... the recent
+auditor-general's report ...  pointing out that the Canadian Cyber Incident
+Response Centre (CIRC) only monitors suspicious stuff from 8 a.m. to 4 p.m.
+
+Coincidentally, Ottawa announced shortly before the A-G's report came out
+that CIRC's hours will be extended to 15 hours per day. So if you're a
+hacker, now you only have a daily nine-hour window when no one's really
+minding the store.
+
+In fact, Liberal safety critic Francis Scarpaleggia even wondered aloud why
+CIRC isn't held to the same operating standards as, well -- a store: ``If
+7-Eleven and Couche-Tard can stay open all night, why can't the Incident
+Response Centre?''
+
+------------------------------
+
+Date: Thu, 25 Oct 2012 12:00:44 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Pakistan to monitor all phone calls, e-mail, other Internet traffic
+
+  (so they claim)
+
+  ISLAMABAD: All e-mail, telephone calls and other communications with the
+  rest of the world will begin to be monitored within 90 days at a cost of
+  million of dollars, according to a deadline given by the government to
+  operators including PTCL.  The government has assigned PTCL and other
+  operators to install monitoring equipment by the end of this year for
+  checking voice and e-mail communications from abroad and the services of
+  the country's spy agency will be used basically to check and curb
+  blasphemous and obscene websites on the Internet.  ``The regulator, the
+  Pakistan Telecommunication Authority (PTA), has assigned 14 LDIs,
+  including PTCL, to install this monitoring equipment,'' senior executive
+  vice president of the Pakistan Telecommunication Company Limited (PTCL)
+  Sikandar Naqi told *The News* on Thursday.  http://j.mp/RYUDLB
+  (thenews.com.pk via NNSquad)
+
+------------------------------
+
+Date: Thu, 25 Oct 2012 18:39:23 +0100
+From: David Damerell <damerell@chiark.greenend.org.uk>
+Subject: Re: "Hackers exploit Skype API to infect Windows PCs" (Samson,
+  R 27 04)
+
+On closer examination, all Ted Samson's story seems to say is that if a
+machine with Skype installed is compromised, the black hats can send URLs to
+malware via Skype to other people. Obviously, any program that can
+communicate a URL to another person has exactly the same "issue" - and would
+be useless if it did not - so I'm unclear on how this reflects badly on
+Skype's security, rather than on the wariness of Skype users.
+
+------------------------------
+
+Date: Wed, 24 Oct 2012 18:01:41 -0700
+From: "Dennis E. Hamilton" <dennis.hamilton@acm.org>
+Subject: Re: Hotmail Password Length (McKellar, RISKS-27.04)
+
+I agree that good random 16 character passwords not reused elsewhere are
+probably sufficient so long as the digests are never revealed.
+
+Concerning the fact that characters beyond 16 were being ignored:
+
+If the desire is to extend the usable length at some point, the first
+problem is to have folks first revert to using only the currently accepted
+16 characters and not entering discarded characters.  The change to disallow
+longer passwords will accomplish that without forcing those with longer
+passwords into a password reset ceremony.  After that, the door is open for
+extending the limit in the future, also without invalidating anyone's
+already-used password.
+
+------------------------------
+
+Date: Thu, 25 Oct 2012 07:47:47 -0400
+From: "Robert H'obbes' Zakon" <Robert@zakongroup.com>
+Subject: Re: ACSAC 2012 early registration deadline is 12 Nov
+
+How would you like to spend 3-5 days in a sunny location, learning and
+networking with fellow security colleagues, while earning continuing
+education credits?  Come join the 28th Annual Computer Security Applications
+Conference (ACSAC) and hear keynotes from NIST, Google, University of
+Cambridge (UK), and IARPA, along with 100 other presenters and trainers!
+
+Whether your interest is web security, virtualization, cryptography,
+botnets, usability, protection, privacy, or another security-related
+specialty, you are sure to find plenty to learn about and discuss with your
+colleagues at ACSAC 2012.
+
+New for this year is the Cloud Computing Workshop, and a revamped Tracer
+FIRE forensic and incident response exercise and competition.  Perennial
+favorites such as the Layered Assurance Workshop, the FISMA training track,
+and the NSPW Experience panel will also be back.  And you won't want to miss
+your RISKS mailing list moderator's own panel on the Future of Application
+Trustworthiness.
+
+Program and Registration are available at www.acsac.org.  Early registration deadline is November 12th.
+
+  [ACSAC continues to provide superb opportunities to share diverse
+  knowledge, experiences, and fundamental perspectives relating to
+  application security.  PGN]
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.05
+************************
+
+--_002_4b58aec07c5a4d96bb1b196eac350c0dEXHUBVM03campusnclacuk_--

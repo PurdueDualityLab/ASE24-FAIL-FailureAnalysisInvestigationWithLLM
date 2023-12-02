@@ -1,0 +1,904 @@
+RISKS-LIST: Risks-Forum Digest  Friday 1 November 2013  Volume 27 : Issue 58
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.58.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Healthcare.gov (Rebecca Mercuri)
+Mother Jones: How Healthcare.gov Could Be Hacked (Dana Liebelson via
+  David Bolduc)
+Healthcare.gov security assessment not complete before rollout (CNN via
+  Jeremy Epstein)
+Single Point of Failure impacts ACA Exchanges (Bob Gezelter)
+Critical embedded software bugs responsible in Toyota unintended
+  acceleration case (Prashanth Mundkur)
+Toyota's killer firmware: Bad design and its consequences (Tod Hagan)
+Toyota unintended acceleration case (Martyn Thomas)
+Diebold Charged With Bribery, Falsifying Docs, 'Worldwide Pattern of
+  Criminal Conduct' (Shannon McElyea)
+Re: Diebold Charged With Bribery, Falsifying Docs, 'Worldwide Pattern of
+  Criminal Conduct' (Jonathan S. Shapiro)
+Carmel Tunnels in Israel shut by a cyberattack -- or was it? (Jeremy Epstein)
+ACM TechNews <technews@HQ.ACM.ORG>
+Self-Driving Cars Could Save More Than 21,700 Lives, $450B a Year
+  (Lucas Mearian)
+Warily, Schools Watch Students on the Internet (Somini Sengupta via
+  Dewayne Hendricks)
+EFF: "Lavabit encryption key ruling threatens Internet privacy (Jeremy Kirk
+  via Gene Wirchenko)
+Hey Germany, remember this story? -- 2008: German Authorities Raiding Homes
+  To Find Skype Tapping Whistleblower (Lauren Weinstein)
+NSA surveillance: Merkel's phone may have been monitored 'for over 10 years'
+  (*The Guardian* via David J. Farber)
+Russia 'spied on G20 leaders with USB sticks' (Henry Baker)
+2009: Britain under attack from 20 foreign spy agencies including France
+  and Germany (Lauren Weinstein)
+IBM: Analyzing fake content on Twitter during real world events:
+  Boston Marathon bombing (Lauren Weinstein)
+"There's more than one way to uncover state secrets" (Robert X. Cringely
+  via Gene Wirchenko)
+"LinkedIn's Intro tool for iPhones could be a juicy target for attackers"
+  (Zach Miners via Gene Wirchenko)
+"PHP.net compromised and used to attack visitors" (Lucian Constantin via
+  Gene Wirchenko)
+The risk of trusting Internet security software makers to maintain safe
+  websites (Michael Weiner)
+Metric System and Math (George Jansen)
+"Biology's Brave New World" by Laurie Garrett in "Foreign Affairs"
+  (Prashanth Mundkur)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 31 Oct 2013 12:00:34 -0400
+From: Rebecca Mercuri <mercuri@acm.org>
+Subject: Healthcare.gov
+
+There's been a curious lack of discussion here in RISKS about the ongoing
+problems with the HealthCare.gov website, so I wanted to pitch some thoughts
+into the mix.  [Yes, except for RISKS-27.55, and other items in this issue.
+I've been waiting for articles such as yours and Dana Liebelson's -- which
+follows, as well as more detailed analyses of the development problems.  PGN]
+
+As soon as the problems started, it seemed to me like a DDoS attack.  Plenty
+of motive -- anyone who wants to get rid of Obamacare and make the President
+look inept. Plenty of participants -- Tea Party members, Republicans,
+disgruntled Democrats, Al Qaeda, Anonymous. Plenty of opportunity --
+detailed instructions and software for conducting an LOIC attack are easily
+found online. [DISCLAIMER: I am certainly not suggesting that anyone should
+do or did this, just saying that some probably could have tried.]
+
+The superb timing of the "problems with the Verizon hub" concurrent with the
+30 Oct 2013 Congressional hearing seem also to point to DDoS. Why isn't the
+media investigating this possibility? Actually, they briefly did. The New
+York Times reported on day 2 that unnamed "computer security specialists say
+they had ruled out a cyberattack known as a denial of service." The one
+specialist they did name, Matthew Prince, founder of Cloudflare, suggested
+"you can solve these problems by throwing more money at them." Apparently
+$180M wasn't enough cash.
+
+On 24 Oct 2013, John McAfee opined that HealthCare.gov is "basically doing a
+denial of service attack on itself." His analysis claims that "The way they
+divided the processing tasks, the user's computer is used for over 50
+programs. So, the transfer of data between the person logging on and the
+main servers is basically killing the system." An analysis in Reuters by
+independent website design expert Matthew Hancock claimed that hitting
+"apply" on Healthcare.gov "causes 92 separate files, plug-ins and other
+mammoth swarms of data to stream between the user's computer and the servers
+powering the government website."  Mammoth swarms of data in order to send a
+form? Huh? [Or should we consider this to also include the information that
+the special NSA JavaScripts are also collecting from your hard drive while
+your application is being processed?]
+
+There are a few reporters who don't totally have their heads in the sand,
+but some of those were glad fools for the government PR. Will Oremus
+predicted DoS problems in his 30 Sep 2013 (pre-launch) Slate article,
+calling it "a hacker's dream" potentially containing "loosely guarded
+sensitive information" vulnerable to data leaks. Still, even he backpedaled,
+quoting the Centers of Medicare and Medicaid Services fact sheet attesting
+to the security of the data hub. (Download this page before it disappears:
+<http://www.cms.gov/Newsroom/MediaReleaseDatabase/Fact-Sheets/2013-Fact-Sheets-Items/2013-09-11.html>)
+
+But wait a second -- wasn't it one of the supposedly secure and well-tested
+hubs that was down on 30 Oct?  And aren't there also problems with
+information leaks? According to Sean Gallagher, reporting on 30 Oct for ars
+technica, HealthCare.gov sends data to analytics providers such as Google's
+DoubleClick and Pingdom. Why? For $180M, the contractor couldn't set up a
+local XML query that determines an individual's location (from the finite
+list of US states and counties) and matches it with the available local
+health plans? They needed to use a Google mash-up for this?
+
+So is it a cyberattack or massive ineptitude or a government boondoggle?
+You decide. Probably we'll never know. In the meanwhile, I have to obtain a
+new health insurance policy, because I'm one of the millions who received a
+termination notice that our President promised wouldn't be sent out.
+
+------------------------------
+
+Date: October 25, 2013 at 8:52:08 PM EDT
+From: David Bolduc <bolduc@austin.rr.com>
+Subject: Mother Jones: How Healthcare.gov Could Be Hacked (Dana Liebelson)
+
+  [via David Farber's IP]
+
+Dana Liebelson, *Mother Jones*, 24 Oct 2013
+Security experts say the federal health insurance website is vulnerable to a
+common technique that hackers use to steal personal information.
+<http://www.motherjones.com/politics/2013/10/obamacare-healthcare-gov-hacked-clickjacking>
+
+With Healthcare.gov plagued by technical difficulties, the Obama
+administration is bringing in heavyweight coders and private companies like
+Verizon to fix the federal health exchange, pronto. But web security experts
+say the Obamacare tech team should add another pressing cyber issue to its
+to-do list: eliminating a security flaw that could make sensitive user
+information, including Social Security numbers, vulnerable to hackers.
+
+According to several online security experts, Healthcare.gov, the portal
+where consumers in 35 states are being directed to obtain affordable health
+coverage, has a coding problem that could allow hackers to deploy a
+technique called "clickjacking," where invisible links are planted on a
+legitimate web page. Using this scheme, hackers could trick users into
+giving up personal data as they enter it into the web site, potentially
+placing Americans at risk of identity theft or allowing fraudsters to file
+bogus health care claims. And it's not just the federal exchange that has
+security problems. Some of the 15 states that have established their own
+online exchanges aren't using standard encryption throughout their Obamacare
+websites -- leaving user information at risk.
+
+Here's the problem: When an American signs up for Obamacare online, they
+must enter a good deal of personal information to verify identity --
+including name, Social Security number, phone number, email address, income,
+and employer -- and identifying information for their family members. In the
+majority of states, Americans will enter this information directly into the
+Healthcare.govwebsite.
+
+Kyle Wilhoit, a threat researcher at Trend Micro, a Japanese security
+software company, studied the Healthcare.gov portal with his security team
+and found a "moderate risk" for hacking due to an easy-to-fix coding problem
+that leaves the site vulnerable to clickjacking. Nidhi Shah, who works on
+research and development for Hewlett-Packard's Web Security Research Group,
+found the same problem. This wouldn't be the first time a federal site
+experienced coding problems: Earlier this year, SAM.gov, a government
+contracting award management site, automatically revealed companies' private
+data, without a hacker lifting a finger, because of bad coding.
+
+"Common clickjacking would be a popular method to attempt to exploit [the
+site]" says Wilhoit. "Hackers could use this information in the creation of
+fake identities, fake credit cards, and fake accounts very easily." He adds
+that it's relatively easy to fix, although the fixed code would need to
+rolled out on multiple Healthcare.gov pages and potentially state websites
+as well.
+
+Asked about clickjacking concerns, the Department of Health and Human
+Services (HHS) referred Mother Jones to this security statement, which says
+that Americans don't need to worry: "If a security incident occurs, an
+Incident Response capability would be activated, which allows for the
+tracking, investigation, and reporting of incidents."
+
+Other parts of Obamacare's tech infrastructure are less vulnerable to
+attack. Although Healthcare.gov is at risk for clickjacking, sensitive
+information submitted through the website is not permanently stored in any
+centralized database (contrary to Republican fears), making it harder for
+hackers to steal Americans' data in bulk. Instead, user information is
+routed through a secure "data hub" to various federal agencies, including
+the Social Security Administration, where it can be double-checked and
+verified. Then private insurance companies are directly notified that a
+consumer has signed up and selected a health care plan.
+
+Experts say that the federal data hub that routes information to federal
+agencies is fairly secure. "A successful attack against Healthcare.gov would
+likely be a very well organized and financed attack and be spectacular
+because it would be so hard and thus so unlikely," says Christopher Budd,
+threat communications manager for Trend Micro. Chris Rasmussen, policy
+analyst for the Center for Democracy and Technology, agrees that the hub is
+"encrypted and secure."
+
+Some state Obamacare sites could be significantly more vulnerable than the
+federal portal. Healthcare.gov site uses a common form of encryption called
+Secure Sockets Layer (SSL), which prevents information from being
+intercepted by a hacker after you click "send" (SSL doesn't defend against
+most clickjacking). But the 15 states currently running their own
+independent Obamacare websites do not have explicit instructions from the
+HHS to use SSL. According to HHS, these states and the District of Columbia,
+which also has its own Obamacare site, are independently responsible for
+ensuring that they "develop standards to protect the privacy and security of
+consumers' personal information."
+
+"These state sites...represent more viable targets for direct attack" than
+the federal data hub, Budd argues. And hackers have been known to target
+state healthcare programs -- last year, over 280,000 Social Security numbers
+were stolen from Utah's Medicaid server.
+
+Hawaii, for example, does not automatically use SSL across its entire
+website, potentially leaving user information vulnerable to hackers --
+particularly if a visitor to the site is using an open wireless network,
+such as one at a coffee shop. The same is true with the online health
+exchanges created by Minnesota and Colorado. Budd notes that attacking state
+sites "rather than the more fortress-like data warehouse [like the data hub]
+can be easier to pull off with a greater chance of success."
+
+Many security experts argue that Healthcare.gov's code would quickly improve
+if it was open source -- posted publicly for other programmers to examine,
+adapt, and improve. In fact, the code for the site was originally supposed
+to be open source. But HHS removed its code from open-source websites after
+developers complained they had trouble distinguishing which code belonged to
+which part of the website. Since then, all of Healthcare.gov's coding
+mistakes have happened behind closed doors
+
+------------------------------
+
+Date: Thu, 31 Oct 2013 08:43:45 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Healthcare.gov security assessment not complete before rollout
+
+CNN is reporting that the security assessment was incomplete when the site
+was rolled out.  Since security is generally the last thing done before
+fielding, this shouldn't be surprising.  What's surprising is that so far,
+only one security vulnerability has become public -- given that the whole
+development project seems to have been poorly coordinated (i.e., without a
+strong system architecture or system integrator), I expect that there are a
+lot of security problems whether the different pieces connect together.
+
+http://www.cnn.com/2013/10/30/politics/obamacare-website-warning-memo/index.html?hpt=hp_t1
+
+------------------------------
+
+Date: Mon, 28 Oct 2013 01:27:19 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: Single Point of Failure impacts ACA Exchanges
+
+One of the hazards to modern systems is complacency. High Mean Time Between
+Failure systems fail rarely, thus there is an increasing tendency to
+discover insufficient planning for failure (several years ago, AOL had a
+multi-hour outage caused by a "router update", a fact that I noted in a past
+edition of the "Computer Security Handbook").  Networked (and cloud) systems
+are particularly vulnerable to this type of problem with communications
+infrastructure.  The ACA exchanges (HEALTHCARE.GOV and the free-standing
+state exchanges) all rely on the IRS to validate taxpayer information.
+Apparently, this data hub may not have been provisioned with sufficient
+redundancy to survive an equipment failure.  According to the Money article:
+"... Joanne Peters, a spokeswoman for the Department of Health and Human
+Services, said a vendor networking issue at Verizon subsidiary Terremark was
+to blame. Peters said the vendor had 'experienced a failure in a networking
+component," and the attempted fix crashed the system. ..."  The moral of the
+story remains: Trust but verify.  Outsourcing connectivity is not the
+problem, but ensuring availability in the face of failure requires full
+verification. All too often, there are shared points of failure which may
+not be obvious (even two telecommunications vendors may in the end be using
+the same strand of fiber).  The original article is at:
+http://money.cnn.com/2013/10/27/news/obamacare-website-malfunction/index.html
+
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Sat, 26 Oct 2013 10:04:48 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: Critical embedded software bugs responsible in Toyota unintended
+  acceleration case
+
+Toyota has reached a settlement in the first case in the US that found
+the company liable in the case of sudden unintended acceleration.
+
+http://abcnews.go.com/Business/wireStory/oklahoma-judge-settlement-reached-toyota-case-20683630?singlePage=true
+
+  "The ruling was significant because it was the first case where plaintiffs
+  argued that a car's electronics -- in this case the software connected to
+  the Camry's electronic throttle-control system -- caused the unintended
+  acceleration. The Japanese automaker recalled millions of cars, starting
+  in 2009, following claims of sudden acceleration in Toyota vehicles. It
+  has denied that electronics played any role in the problem."
+
+There is a similar ongoing federal case in California, and apparently 80
+similar cases in state courts.
+
+  "The fact that it was a jury in Oklahoma -- which is generally considered
+  a very conservative, not plaintiff-friendly state -- that doesn't bode
+  very well for Toyota," Marketos said.  [...]  A federal judge in Orange
+  County, California, is dealing with wrongful death and economic loss
+  lawsuits that have been consolidated.
+
+  Similar to the Oklahoma County case, federal lawsuits contend that
+  Toyota's electronic throttle-control system was defective and caused
+  vehicles to surge suddenly. Toyota has denied the allegation, and neither
+  the National Highway Traffic Safety Administration nor NASA found evidence
+  of electronic problems.
+
+  Wylie Aitken, an Orange County plaintiff's attorney who is a liaison with
+  the cases filed in state court against Toyota, said he thinks the Oklahoma
+  case "could be a game-changer to get the compensation the plaintiffs are
+  entitled to."
+
+A more detailed technical analysis in an EE Times article (no single-page
+link available) summarizes the results of the analysis of Toyota's source
+code by the Barr Group, an embedded systems consulting company, and other
+experts.  Their testimony was crucial in the outcome of the case, and they
+were able to come to stronger conclusions than the NHTSA and NASA could last
+December.
+
+http://www.eetimes.com/document.asp?doc_id19903
+
+  "Barr said that the 2005 Camry L4 source code and in-vehicle tests by the
+  experts confirmed that some critical variables are not protected from
+  corruption, and sources of memory corruption are present. He believes that
+  Toyota's engineers sought to protect numerous variables against software-
+  and hardware-cause corruptions, but they failed to mirror several key
+  critical variables, and they made no hardware protection available against
+  bit flips.
+
+  Stack overflow and software bugs led to memory corruption, he said. And it
+  turns out that the crux of the issue was these memory corruptions, which
+  acted "like ricocheting bullets." [...]
+
+  When asked if the whole case for unintended acceleration could be pinned
+  on the task X death, Barr replied, "The task X death in combination with
+  other task deaths." There are 24 tasks and 16 million different ways those
+  tasks can die. The experts group was able to demonstrate at least one way
+  for the software to cause unintended acceleration, but there are so many
+  other ways that could have happened.
+
+  Barr also said more than half the 24 tasks' deaths studied by the experts
+  in their experiments "were not detected by any fail safe."
+
+  After the Oklahoma trial, what steps should the NHTSA be taking?
+  Barr made some suggestions:
+
+     NHTSA needs to get Toyota to make its existing cars safe and also needs
+     to step up on software regulation and oversight. For example, FAA and
+     FDA both have guidelines for safety-critical software design (e.g.,
+     DO-178) within the systems they oversee. NHTSA has nothing. Also, NHTSA
+     recently mandated the presence and certain features of black boxes in
+     all US cars, but that rule does not go far enough. We observed that
+     Toyota's black box can malfunction during unintended acceleration
+     specifically, and this will cause the black box to falsely report no
+     braking. NHTSA's rules need to address this, e.g., by being more
+     specific about where and how the black box gets its data, so that it
+     does not have a common failure point with the engine computer.
+
+For those interested, the NHTSA/NASA report on Toyota is at:
+
+http://www.nhtsa.gov/staticfiles/nvs/pdf/NASA-UA_report.pdf
+http://www.nhtsa.gov/staticfiles/nvs/pdf/NASA_FR_Appendix_A_Software.pdf
+
+Unfortunately, it is unlikely that we will see any report from the Barr
+Group, due to confidentiality agreements they signed with Toyota.  There is
+some followup by the EE Times here:
+
+http://www.eetimes.com/author.asp?section_id6&doc_id19910
+
+P.S.: Another excellent analysis of the topic is "Toyota's killer firmware:
+Bad design and its consequences", by Michael Dunn:
+  http://www.edn.com/design/automotive/4423428/Toyota-s-killer-firmware--Bad-design-and-its-consequences
+
+------------------------------
+
+Date: Tue, 29 Oct 2013 23:51:04 -0400
+From: Tod Hagan <tod222@gmail.com>
+Subject: Toyota's killer firmware: Bad design and its consequences
+
+EDN has an article about Toyota's electronic throttle control system
+software and unintended acceleration:
+
+Toyota's killer firmware: Bad design and its consequences
+http://www.edn.com/design/automotive/4423428/Toyota-s-killer-firmware--Bad-design-and-its-consequences
+
+There's also an interesting companion discussion on Hacker News:
+https://news.ycombinator.com/item?idf36811
+
+------------------------------
+
+Date: Tue, 29 Oct 2013 15:49:21 +0000
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Toyota unintended acceleration case
+
+Some details of the software, from the plaintiff's expert witness.
+
+http://www.edn.com/design/automotive/4423428/1/Toyota-s-killer-firmware--Bad-design-and-its-consequences
+
+------------------------------
+
+Date: Fri, 25 Oct 2013 15:16:33 -0700
+From: Shannon McElyea <shannonm@gmail.com>
+Subject: Diebold Charged With Bribery, Falsifying Docs, 'Worldwide
+  Pattern of Criminal Conduct'
+
+  [Via Dave Farber's IP]
+
+The subject sounded promising, but the outcome is not so. Hats off to the
+sophistic "Citizens United" -- they will not be penalized as real, flesh
+citizens, because they are a corporation.
+
+Despite at least $1.75 million in bribes said to have been paid the company
+around the globe, nobody will go to jail for what U.S. Attorney Steven
+Dettelbach describes as their "worldwide pattern of criminal conduct,"
+because they are a corporation --- and you are not.
+
+The $50 million the company has agreed to pay is a mere fraction of the
+firm's $3billion in annual revenues. That, even though Diebold is a repeat
+offender --- which may be describing it mildly...
+
+In 2010 the company settled an SEC fraud suit for $25 million. They also
+admitted in 2008 that they had overstated 2007 election division revenue by
+some 300% in hopes of manipulating stock prices.
+
+http://truth-out.org/news/item/19623-diebold-charged-with-bribery-falsifying-docs-worldwide-pattern-of-criminal-conduct
+
+Brad Friedman, The Brad Blog, 25 Oct 2013
+
+One of the world's largest ATM manufacturers and, formerly, one of the
+largest manufacturers of electronic voting systems, has been indicted by
+federal prosecutors for bribery and falsification of documents.  The charges
+represent only the latest in a long series of criminal and/or unethical
+misconduct by Diebold, Inc. and their executives over the past decade.
+According to Cleveland's Plain Dealer, a U.S. Attorney says the latest
+charges are in response to "a worldwide pattern of criminal conduct" by the
+company....  Federal prosecutors Tuesday filed charges against Diebold Inc.,
+accusing the North Canton-based ATM and business machine manufacturer of
+bribing government officials and falsifying documents in China, Indonesia
+and Russia to obtain and retain contracts to provide ATMs to banks in those
+countries.
+
+The two-count criminal information and deferred prosecution agreement calls
+for Diebold to pay nearly $50 million in penalties: $23 million to the
+U.S. Securities and Exchange Commission, and $25 million to the Department
+of Justice.
+
+The agreement with federal prosecutors also calls for the implementation of
+rigorous internal controls that includes a compliance monitor for at least
+18 months. The government agreed to defer criminal prosecution for three
+years, and drop the charges if Diebold abides by the terms of the agreement.
+
+Despite at least $1.75 million in bribes said to have been paid the company
+around the globe, nobody will go to jail for what U.S. Attorney Steven
+Dettelbach describes as their "worldwide pattern of criminal conduct,"
+because they are a corporation --- and you are not.
+
+The $50 million the company has agreed to pay is a mere fraction of the
+firm's $3billion in annual revenues. That, even though Diebold is a repeat
+offender --- which may be describing it mildly...
+
+In 2010 the company settled an SEC fraud suit for $25 million. They also
+admitted in 2008 that they had overstated 2007 election division revenue by
+some 300% in hopes of manipulating stock prices.
+
+As earlier as 2004, thanks to documents leaked by a whistleblower, it was
+discovered that Diebold had illegally used uncertified certified hardware
+and software in California election systems and planned to lie about it to
+state investigators. The e-voting systems, repeatedly found over the years
+to be easily hacked, were decertified for use by the state at the time
+(though they are still used widely around much of the country today.)
+
+Still, nobody went to prison for any of Diebold's crimes.
+
+Their most notorious infamy was tied to their often bumbling work as the
+nation's second largest e-voting company, which produced wildly insecure and
+often inaccurate voting systems and tabulators and which they proved willing
+to lie about. The Ohio-based firm first attracted the notice, and ire, of
+Democrats in 2003 when its then CEO, Walden O'Dell, penned a fundraising
+letter on behalf of George W. Bush and the Republican Party, promising that
+he was "committed top helping Ohio deliver its electoral votes to the
+president next year."  ...
+http://truth-out.org/news/item/19623-diebold-charged-with-bribery-falsifying-docs-worldwide-pattern-of-criminal-conduct
+
+------------------------------
+
+Date: October 25, 2013 at 10:27:53 PM EDT
+From: "Jonathan S. Shapiro" <shap@eros-os.org>
+Subject: Re: Diebold Charged With Bribery, Falsifying Docs, 'Worldwide Pattern of Criminal Conduct'
+
+  [via Dave Farber's IP]
+Two reactions to the Diebold bribery item:
+
+1. We've known the *cost* of bribery. Thanks to the SEC, now we know the
+   *price* of bribery.
+
+2. The SEC is apparently selling bribery well below cost. Does that qualify
+   as "dumping?"
+
+------------------------------
+
+Date: Mon, 28 Oct 2013 13:49:12 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Carmel Tunnels in Israel shut by a cyberattack -- or was it?
+
+Associated Press reports that the Carmel Tunnels through Haifa (in northern
+Israel) were shut for 8 hours last month due to a cyberattack that disabled
+the security camera systems.
+
+http://www.usatoday.com/story/tech/2013/10/27/ap-exclusive-israeli-tunnel-hit-by-cyber-attack/3281133/
+http://www.theatlanticwire.com/global/2013/10/hackers-shut-down-tunnel-road-israel/70983/
+(And others)
+
+The authority that runs the tunnels says it was just an ordinary malfunction.
+http://www.israelnationalnews.com/News/Flash.aspx/279141#.Um6idSR8y8w
+
+Who's correct?  The risk is that perhaps it doesn't matter!
+
+------------------------------
+
+Date: Fri, 25 Oct 2013 11:31:55 -0400
+From: ACM TechNews <technews@HQ.ACM.ORG>
+Subject: Self-Driving Cars Could Save More Than 21,700 Lives, $450B a Year
+  (Lucas Mearian)
+
+ [Lucas Mearian in   Computerworld, 24 Oct 2013, via ACM TechNews
+
+Autonomous vehicles could save many lives and an enormous amount of money
+through accident avoidance and congestion reduction, among other techniques,
+according to a new study from the nonprofit Eno Center for Transportation.
+The report estimated that up to 4.2 million accidents could be prevented,
+saving 21,700 lives and $450 billion in related costs annually, if 90
+percent of the vehicles on U.S. roads were self-driving.  Collisions could
+be avoided if the computer-controlled autos could sense and anticipate road
+conditions and surrounding objects, the study determined.  Meanwhile,
+freeway and artery congestion could be cut by more than 75 percent through
+vehicle-to-vehicle and vehicle-to-infrastructure communication by autonomous
+cars and trucks.  The study's authors note that high numbers of autonomous
+vehicles must be present for such outcomes to be achieved.  "For example, if
+10 percent of all vehicles on a given freeway segment are [autonomous],
+there will likely be an [autonomous vehicle] in every lane at regular
+spacing during congested times, which could smooth traffic for all
+travelers," they point out.  However, various issues must first be addressed
+with self-driving vehicles, including the extent to which functionality
+would be automated, whether onboard computers could be made hack-proof, and
+who would be liable in the event of an accident in an autonomous car.
+http://www.computerworld.com/s/article/9243518/Self_driving_cars_could_save_more_than_21_700_lives_450B_a_year
+
+------------------------------
+
+Date: Tuesday, October 29, 2013
+From: *Dewayne Hendricks*
+Subject: Warily, Schools Watch Students on the Internet (Somini Sengupta)
+
+[Via Dave Farber's IP]
+
+Somini Sengupta, *The New York Times*, 28 Oct 2013
+http://www.nytimes.com/2013/10/29/technology/some-schools-extend-surveillance-of-students-beyond-campus.html
+
+For years, a school principal's job was to make sure students were not
+creating a ruckus in the hallways or smoking in the bathroom. Vigilance
+ended at the schoolhouse gates.  Now, as students complain, taunt and
+sometimes cry out for help on social media, educators have more
+opportunities to monitor students around the clock. And some schools are
+turning to technology to help them. Several companies offer services to
+filter and glean what students do on school networks; a few now offer
+automated tools to comb through off-campus postings for signs of danger. For
+school officials, this raises new questions about whether they should -- or
+legally can discipline children for their online outbursts.
+
+The problem has taken on new urgency with the case of a 12-year-old Florida
+girl who committed suicide after classmates relentlessly bullied her online
+and offline.  [PGN-truncated for RISKS.  See the full article.]
+
+------------------------------
+
+Date: Tue, 29 Oct 2013 09:49:14 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: EFF: "Lavabit encryption key ruling threatens Internet privacy
+  Jeremy Kirk)
+
+Jeremy Kirk, InfoWorld, 25 Oct 2013
+Asking for private SSL keys could hurt the US economy and cause
+service providers to move to other legal jurisdictions
+http://www.infoworld.com/d/security/lavabit-encryption-key-ruling-threatens-internet-privacy-eff-argues-229535
+
+------------------------------
+
+Date: Mon, 28 Oct 2013 17:08:02 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Hey Germany, remember this story? -- 2008: German Authorities
+  Raiding Homes To Find Skype Tapping Whistleblower
+
+http://j.mp/1cet4IQ  (Techdirt via NNSquad)
+
+  "Apparently a whistleblower recently leaked some evidence that German
+  authorities were using a special trojan horse software to tap Skype audio
+  conversations. The document detailing this was leaked to the German Pirate
+  Party, one of many international "Pirate Parties" that have been formed in
+  recent years to push for more reasonable government policies on a variety
+  of fronts from intellectual property to privacy and government
+  surveillance. Illegally tapping Skype conversations may be illegal, but it
+  seems that German authorities are a lot more interested in tracking down
+  who leaked the documents and have raided the homes of various German
+  Pirate Party members, confiscating computer equipment. Of course, if
+  anything, this would seem to confirm that the government was at least
+  experimenting with, if not actively using, such a trojan horse wiretapping
+  program -- and the raids have only served to generate much more attention
+  over that."
+
+False indignation is almost as "amusing" as hypocrisy, eh?
+
+------------------------------
+
+Date: Sat, 26 Oct 2013 18:46:32 -0400
+From: "David J. Farber" <farber@gmail.com>
+Subject: NSA surveillance: Merkel's phone may have been monitored 'for
+  over 10 years'
+
+http://www.theguardian.com/world/2013/oct/26/nsa-surveillance-brazil-germany-un-resolution
+
+The phone of the German chancellor, Angela Merkel, might have been monitored
+for more than 10 years, according to a report in Der Spiegel.  It said that
+her mobile telephone number had been listed by the NSA's Special Collection
+Service (SCS) since 2002 -- marked as "GE Chancellor Merkel" -- and was
+still on the list weeks before President Barack Obama visited Berlin in
+June.
+
+In an SCS document cited by the magazine, the agency said it had a "not
+legally registered spying branch" in the US embassy in Berlin, the exposure
+of which would lead to "grave damage for the relations of the United States
+to another government".
+
+From there, NSA and CIA staff were tapping communication in the Berlin's
+government district with high-tech surveillance.
+
+Quoting a secret document from 2010, Der Spiegel said such branches existed
+in about 80 locations around the world, including Paris, Madrid, Rome,
+Prague, Geneva and Frankfurt.
+
+Merkel's spokesman and the White House declined comment on the report.
+
+German secret service officials are to travel to the US next week to seek
+explanations from the White House and the National Security Agency following
+allegations that the American intelligence agency has been tapping the
+mobile phone of the chancellor, Angela Merkel.
+
+The German government's deputy spokesman, Georg Streiter, said: "We are
+talking to the Americans to clear things up as quickly as possible.  A
+high-level delegation will travel for talks with the White House and
+National Security Agency to push forward the investigation into the recent
+allegations."
+
+The delegation will include senior officials from the German secret service,
+according to German media reports.
+
+Germany and Brazil are spearheading efforts at the United Nations to protect
+the privacy of electronic communications. Diplomats from the two countries,
+which have both been targeted by the NSA, are leading efforts by a coalition
+of nations to draft a UN general assembly resolution calling for the right
+to privacy on the Internet. ...
+
+------------------------------
+
+Date: Tue, 29 Oct 2013 13:32:01 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Russia 'spied on G20 leaders with USB sticks'
+
+FYI -- I guess the USB stick giveth & also taketh away.
+
+I haven't been able to determine if this Russian USB hack used the
+much-loved autoplay/autorun (autoworm/autospy?) feature of Windows, or
+whether this USB stick contained something more sophisticated that somehow
+bypassed a disabled autorun USB port.
+
+(BTW, I believe the Chinese govt used to routinely hand out autorun CD's to
+commercial visitors that contained some sort of spying feature.)
+
+Nick Squires, Rome, Bruno Waterfield in Brussels and Peter Dominiczak,
+Russia 'spied on G20 leaders with USB sticks'; Russia used complimentary
+'Trojan horse' pen drives to spy on delegates at G20 summit ...
+29 Oct 2013
+http://www.telegraph.co.uk/news/worldnews/europe/russia/10411473/Russia-spied-on-G20-leaders-with-USB-sticks.html
+
+Russia spied on foreign powers at last month’s G20 summit by giving
+delegations USB pen drives capable of downloading sensitive information from
+laptops, it was claimed today.
+
+The devices were given to foreign delegates, including heads of state, at
+the summit near St Petersburg, according to reports in two Italian
+newspapers, La Stampa and Corriere della Sera.
+
+Downing Street said David Cameron was not given one of the USB sticks said
+to have contained a Trojan horse programme, but did not rule out the
+possibility that officials in the British delegation had received them.
+
+The Prime Minister's official spokesman said: "My understanding is that the
+Prime Minister didn't receive a USB drive because I think they were a gift
+for delegates, not for leaders."
+
+Asked if Downing Street staff were given the USBs, he said: "I believe they
+were part of the gifts for delegates."
+
+Delegations also received mobile phone recharging devices which were also
+reportedly capable of secretly tapping into emails, text messages and
+telephone calls.   [PGN-truncated for RISKS.  See the full article.]
+
+------------------------------
+
+Date: Thu, 24 Oct 2013 14:25:45 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 2009: Britain under attack from 20 foreign spy agencies including
+  France and Germany
+
+  Russia and China have been identified as having the most active spy
+  networks operating in the UK but it is understood that some European
+  countries are also involved in espionage attacks against Britain.  Details
+  of the spy plots were revealed in a government security document obtained
+  by *The Sunday Telegraph*, which states that Britain is "high priority
+  espionage target" for 20 foreign intelligence agencies.
+    http://j.mp/1afd73O  (*Telegraph* via NNSquad)
+
+Just a reminder of the gross hypocrisy in play around the world right now.
+
+------------------------------
+
+Date: Sun, 27 Oct 2013 11:25:17 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: IBM: Analyzing fake content on Twitter during real world events:
+  Boston Marathon bombing
+
+http://j.mp/HaNOah  (precog.iiitd.edu.in via NNSquad)
+
+  "Online social media has emerged as one of the prominent channels for
+  dissemination of information during real world events. Malicious content
+  is posted online during events, which can result in damage, chaos and
+  monetary losses in the real world. We analyzed one such media, i.e.,
+  Twitter, for content generated during the event of Boston Marathon Blasts,
+  that occurred on 15 Apr 2013.  A lot of fake content and malicious proles
+  originated on Twitter network during this event. The aim of this work is
+  to perform in-depth characterization of what factors influenced in
+  malicious content and proles becoming viral.  Our results showed that 29%
+  of the most viral content on Twitter, during the Boston crisis were rumors
+  and fake content; while 51% was generic opinions and comments; and rest
+  was true information"
+
+------------------------------
+
+Date: Tue, 29 Oct 2013 09:33:37 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "There's more than one way to uncover state secrets"
+  (Robert X. Cringely)
+
+Robert X. Cringely, InfoWorld, 25 Oct 2013
+NSA's ex-director tastes his own medicine when a passenger on the
+same train tweets his off-the-record statements
+http://www.infoworld.com/t/cringely/theres-more-one-way-uncover-state-secrets-29579
+
+------------------------------
+
+Date: Tue, 29 Oct 2013 09:50:59 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "LinkedIn's Intro tool for iPhones could be a juicy target for
+  attackers" (Zach Miners)
+
+Zach Miners, InfoWorld, 28 Oct 2013
+The new plug-in for the iPhone's email client raises security
+concerns, some experts say
+http://www.infoworld.com/d/security/linkedins-intro-tool-iphones-could-be-juicy-target-attackers-229602
+
+------------------------------
+
+Date: Tue, 29 Oct 2013 09:47:25 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "PHP.net compromised and used to attack visitors" (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 25 Oct 2013
+Attackers injected malicious JavaScript code into the site,
+redirecting some visitors' browsers to Flash exploits
+http://www.infoworld.com/d/security/phpnet-compromised-and-used-attack-visitors-229531
+
+------------------------------
+
+Date: Tue, 29 Oct 2013 20:30:18 +0100
+From: Michael Weiner <michael_weiner@gmx.net>
+Subject: The RISK of trusting Internet security software makers to maintain
+  safe websites
+
+This weekend, I fixed a relative's PC. I found a number of security issues
+and decided to install ESET anti-virus software. While entering credit card
+information to buy a licence of ESET on their website, I lectured my
+relative on the need to be extremely careful providing credit card
+information on the net. Only then did I notice that eshop.eset.com, the
+security company's website, provided neither a certificate, nor encryption
+when I entered the credit card data. The site took my data, but failed to
+complete the transaction.
+
+I contacted ESET's customer service 48 hours ago, asking if their site had
+been compromised and the credit card data was safe. No response.
+
+I also contacted them on Twitter. No response either. Today, however, they
+tweeted the following: "When purchasing anything #online or #banking, use
+only sites that begin with https:// The 's' is for secure." Right.
+
+How anyone can trust such companies amazes me.
+
+Michael Weiner, Vienna, Austria, michael_weiner@gmx.net
+
+------------------------------
+
+Date: Mon, 28 Oct 2013 14:11:57 +0000
+From: George Jansen <Gjansen@aflcio.org>
+Subject: Metric System and Math
+
+No doubt our clinging to the 360-degree circle also keeps us behind Finland,
+etc., in geometry.
+
+It is silly for us to resist the metric system here, but I cannot imagine
+any way in which it impedes science instruction. A week given to the units
+in an early grade is about what it takes, and after that it is a matter of
+measuring and figuring. Who looks at a test tube and says "about 3 ounces"?
+Who looks at it and says "about 25 ccs?"  In my school days, I don't recall
+ever seeing non-metric measures in the lab, and they ended before 1975.
+
+(I do remember the high school wrestling coach who told his chemistry class
+that a milligram was one million grams; but he must be long retired.)
+
+------------------------------
+
+Date: Sun, 27 Oct 2013 00:39:08 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: "Biology's Brave New World" by Laurie Garrett in "Foreign Affairs"
+
+A long update on the promise and perils of the synthetic biology and
+dual-use research, and what happens when
+
+  Suddenly, what started as a biology problem has become a matter of
+  information security.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.58
+************************
+
+--_002_45b8c621ced6443d821572b0865f796fEXHUBVM03campusnclacuk_--

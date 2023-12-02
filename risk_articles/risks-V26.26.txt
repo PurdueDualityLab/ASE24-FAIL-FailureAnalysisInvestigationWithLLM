@@ -1,0 +1,696 @@
+RISKS-LIST: Risks-Forum Digest  Weds 29 December 2010  Volume 26 : Issue 26
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.26.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Backlogged.]
+Radiation Machines Overdosing Again (Peter Bernard Ladkin)
+How medical radiation mistakes happened (Jeremy Epstein)
+UAVs needed encryption (John Long)
+FCC Acts to Preserve Internet Freedom and Openness (Monty Solomon)
+Technolog - Hackers steal Walgreens e-mail list, attack consumers
+  (Monty Solomon)
+Risks of incomplete online archives (Thomas Wicklund)
+Cell phone "emergency mode" *preventing* 911 call (Joe Thompson)
+China's MIIT Declares Most VOIP Services, Including Skype, Illegal
+  (Lauren Weinstein)
+Google Maps vs. USPS in Wisconsin (Richard S. Russell)
+Gadgets Bring New Opportunities for Hackers (Matthew Kruk)
+Risk Assessment and Failure Analysis ... (Rob Slade)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 29 Dec 2010 08:06:25 +0100
+From: Peter Bernard Ladkin <ladkin@rvs.uni-bielefeld.de>
+Subject: Radiation Machines Overdosing Again
+
+There is an article in *The NYT* today (29 Dec 2010) about machines made by
+Varian Medical Systems, which deliver so-called stereotactic radiosurgery,
+SRS.
+
+Patients have been overdosed. The article says that ``according to records
+and interviews, the SRS unit at Evanston lacked certain safety features,
+including those that might have prevented radiation from leaking outside the
+cone.''  Some cases have been put down to `operator error': ``In Missouri,
+for example, 76 patients were overradiated because a medical physicist did
+not realize that the smaller radiation beam used in radiosurgery had to be
+calibrated differently than the larger beam used for more traditional
+radiation therapy.''
+
+The article is available to registered users of the NYT WWW site at
+http://www.nytimes.com/2010/12/29/health/29radiation.html
+
+We are talking 17 years since the 1993 Leveson-Turner article on the
+Therac. Despite (we will surely hear) `measures' having been `put in place'
+to prevent such a thing from happening again, it appears to be the same-old
+same-old. As are the excuses:
+
+  Medical physicists say there is nothing inherently wrong with linear
+  accelerators that deliver general radiation therapy, as well as SRS. And,
+  they say, the overdoses might have been caught had users followed a more
+  rigorous system of checks and double-checks.  ``Tens of thousands of
+  patients have been treated with protocols properly followed and no
+  mistakes were made,'' said Dr. Frank J. Bova, a medical physicist in
+  Gainesville, Fla., and a pioneer in developing and enhancing the accuracy
+  of SRS.  ``It has changed many difficult procedures, ones with high
+  surgical risk, into one-day outpatient procedures.''
+
+I wonder. Do we see airline executives on the TV after a major aircraft
+accident saying "it's only one plane; there are hundreds/thousands of others
+just like this one flying every day without problems!"? Or Toyota: "it's
+only one (or a few cars) with bad floormats! There are thousands/millions of
+cars just like this driving every day without problems!"
+
+What is there about medical accidents which lets everyone be comparatively
+so complacent about them compared with other walks of life such as
+transportation?
+
+Isn't there are Hippocratic oath to the effect of "do no harm"? What is this
+except doing harm? Is it because the devices are operated by technicians who
+have not taken the oath, rather than doctors who have?
+
+Isn't it about time that professional engineering bodies took a public stand
+that such events are avoidable and should be avoided? That devices prone to
+accidents through "operator error" should be taken off the market and
+redesigned? To adopt the de facto standard set by the aviation industry,
+that some set party is deemed liable (in aviation: the airline) and pays
+compensation? (Obvious candidates here would be the manufacturer or the
+hospital; one would then leave it to the insurance industry to negotiate
+contributory payments from other parties, as insurance usually does.)
+
+There are three general international standards governing the development of
+safety-related systems involving programmable electronic components (and we
+may be sure these machines have programmable electronic components). IEC
+61508, and its derivatives (so far I know of an international standard for
+the process industries, a set of European standards for railway systems, and
+a draft international standard for automobiles), DO178B for aviation, and a
+separate set of standards, IEC 60601 series, for medical devices. I don't
+know 60601, but I suspect there is something seriously wrong with the way
+this whole domain is working if, two decades after Therac, laws still allow
+safety-critical devices prone to avoidable "operator error" to be used
+pervasively.
+
+Peter Bernard Ladkin, Causalis Limited and University of Bielefeld
+www.causalis.com  www.rvs.uni-bielefeld.de
+
+------------------------------
+
+Date: Wed, 29 Dec 2010 10:14:27 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: How medical radiation mistakes happened
+
+Another case where patients were given incorrect (and harmful) doses of
+radiation, this time because a linear accelerator device had been outfitted
+with a "cone" to direct radiation, but the design was such that radiation
+could leak around the edges.  *The NY Times* reports that Dr. Howard I.
+Amols, chief of clinical physics at Memorial Sloan-Kettering Cancer Center
+in New York, said some problems appeared to be ``a combination of user
+error, coupled with neither the manufacturers nor the FDA being able to
+anticipate a potential safety flaw in a `mix and match' treatment delivery
+system.''
+
+The problem is with a system made by Varian, and involves using three
+computers: "a treatment plan is developed on one computer, then transferred
+into another software system that, among other things, verifies that the
+treatment plan matches the doctor's prescription.  The data is then sent to
+a third computer that controls the linear accelerator."  There are also
+compatibility problems - Varian warned its customers that the "software did
+not recognize cone attachments on the type of linear accelerator involved in
+the Evanston accidents....  To work around that problem hospitals needed to,
+as one medical physicist put it, essentially trick the machine into thinking
+it was using a different attachment, which it did recognize. To do that,
+users had to enter additional data into the SRS system. ... Last year,
+Varian promised to devise, among other things, a decidedly low-tech
+solution: a decal to stick on the machines, warning operators to be extra
+careful in setting the radiation field."
+
+It appears that part of the problem is that there are two different
+regulatory regimes - if the machine uses radioactive isotopes it goes
+through the Nuclear Regulatory Commission, but if it uses a linear
+accelerator to create the radiation (like the Varian system in this case),
+the weaker Food and Drug Administration.
+
+The RISKS are old - cobbled together systems, or systems with
+repurposed pieces, are more likely to have mismatches that lead to
+safety failures, just as we saw with the Therac-25 over 25 years ago.
+I suspect (although the article does not hint at this) that the
+continuing pressure to increase usage of expensive machines leaves
+less time for the medical physicists to learn the machines thoroughly
+and verify the settings precisely.
+
+See also RISKS-24.47, 25.82, 25.92, 25.93, 26.02, and many others....
+dating back to 3.09.
+
+http://www.nytimes.com/2010/12/29/health/29radiation.html?_r=1&hp
+
+------------------------------
+
+Date: Tue, 21 Dec 2010 09:58:38 -0500
+From: John Long <j1long@mindspring.com>
+Subject: UAVs needed encryption
+
+It turns out that communication between ground controllers and UAVs was
+unencrypted for quite some time.  According to the article below, the
+communication could easily be intercepted using a $26 piece of equipment,
+which some had been taking advantage.  We just began encrypting that
+communication about a year ago.
+
+The risk here is not taking inexpensive precautions against a flaw you are
+aware of, and assuming your opponent is not sophisticated enough to exploit
+that flaw.
+
+http://www.strategypage.com/htmw/htiw/articles/20101201.aspx
+
+------------------------------
+
+Date: Tue, 21 Dec 2010 18:01:16 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: FCC Acts to Preserve Internet Freedom and Openness
+
+December 21, 2010
+
+FCC Acts to Preserve Internet Freedom and Openness.
+
+Action Helps Ensure Robust Internet for Consumers, Innovation, Investment,
+Economic Prosperity
+
+Washington, D.C. - The Federal Communications Commission today acted to
+preserve the Internet as an open network enabling consumer choice, freedom
+of expression, user control, competition and the freedom to innovate. ...
+
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-303746.pdf
+
+Genachowski Statement
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-303746A1.pdf
+
+Copps Statement
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-303746A2.pdf
+
+McDowell Statement
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-303746A3.pdf
+
+Clyburn Statement
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-303746A4.pdf
+
+Baker Statement
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-303746A5.pdf
+
+  [Interesting.  The two Democrats are complaining that Genachowski did not
+  go far enough, particularly toward wireless network neutrality, and the
+  two Republicans are complaining that this is too much regulation.  And
+  many others are otherwise.  PGN]
+
+------------------------------
+
+Date: Mon, 20 Dec 2010 23:21:58 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Technolog - Hackers steal Walgreens e-mail list, attack consumers
+
+http://technolog.msnbc.msn.com/_news/2010/12/10/5624759-hackers-steal-walgreens-e-mail-list-attack-consumers
+
+------------------------------
+
+Date: Mon, 20 Dec 2010 21:19:47 -0700
+From: Thomas Wicklund <tgwicklund87@gmail.com>
+Subject: Risks of incomplete online archives
+
+I recently went online looking for an article ("The Religious Success Story"
+by Jared Diamond, New York Review of Books, Nov 7, 2002).  Naturally I first
+found the New York Review of Books web site (www.nybooks.com).  However, I
+could not find the article.  It is not found by a search, not listed in the
+online contents for that issue, and not listed on the contributor page for
+Jared Diamond.  A web search turned up the article at a different web site
+on a page with a lot of links to the New York Review of Books web site --
+I'm not sure if it's a third party site or an old site of the magazine's.
+
+This left me wondering about the veracity of the reference to the article
+(I've found references to non-existent articles periodically).  However,
+finding an old print copy of a magazine is getting harder and harder.  The
+two closest public libraries didn't keep more than a year or two of this
+magazine, instead providing a reference to the web site for older issues.  I
+finally found a hard copy of the article at the local university library,
+though even there it looks like they aren't keeping more than about 10 years
+of issues in the library.  Older issues are available from off-site storage,
+but again the primary reference is to the magazine's web site.
+
+This leaves me wondering about the completeness of electronic archives.
+We've already lost the exact context of the print magazine (e.g.
+advertising) when using electronic copies, but with libraries depending more
+and more on online resources rather than keeping print archives how much
+information might be lost?  Today's online storage has solved the physical
+problems of aging paper or deteriorating microfilm, but now adds the risk
+that content can disappear without any indication that it ever existed.
+
+  [And then there is censorship...  Seasons greetings to the censored
+  and the surveilled.  PGN]
+
+------------------------------
+
+Date: Tue, 21 Dec 2010 09:55:39 -0500
+From: Joe Thompson <joe@orion-com.com>
+Subject: Cell phone "emergency mode" *preventing* 911 call
+
+Last night, on my way home from picking up dinner, I passed an accident -- a
+car overturned in the ditch on the opposite side of the highway.  No police
+or other responders had arrived, so just to be safe I decided to call it in
+and dialed 911 on my cell phone (an LG enV2).
+
+My phone went into "Emergency Mode" with no indication whether the call was
+connecting or not.  At any rate I didn't hear a voice or a ringing phone.  I
+hung up and dialed "911" again, with the same result.
+
+At that point out of habit I hit "redial" rather than dialing "911" and
+heard a phone ringing, but it was my wife who answered -- the phone does not
+add "911" to its call history, and she was the next-most-recent call.  After
+a brief moment of confusion I figured out what had happened and hung up.
+
+I dialed "911" again and this time got through to my county's
+emergency-services call center, who advised that they were aware of the
+accident already.
+
+I'm perfectly willing to entertain the possibility that I made some sort of
+simple error the first two times I dialed 911, but it concerns me that my
+cell phone apparently interfered (or at least made things non-intuitive to
+the point of interfering) at exactly the time your phone should be most
+accommodating.  The inability to redial 911 from the call history
+particularly worries me.  It's not hard to come up with a scenario in which
+someone ends up dead because of these kinds of interface misfeatures.
+
+Clearly the phone manufacturers (or at least LG) are trying to prevent
+accidental 911 calls, but I think they may have ended up preventing
+some real ones as well. -- Joe
+
+------------------------------
+
+Date: Wed, 29 Dec 2010 09:16:04 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: China's MIIT Declares Most VOIP Services, Including Skype, Illegal
+
+China's MIIT Declares Most VOIP Services, Including Skype, Illegal
+
+http://bit.ly/iiqKhV  (DigiCha)
+  [As usual, if the tiny url does not work any more, try browsing
+  on the title and don't complain to RISKS.  The full info message says
+  NO GUARANTEES ON URLs.  Happy New Year.  PGN]
+
+http://www.vortex.com/lauren +1 (818) 225-2800  PFIR: http://www.pfir.org
+NNSquad (Network Neutrality Squad): http://www.nnsquad.org
+Lauren's Blog: http://lauren.vortex.com  https://twitter.com/laurenweinstein
+
+------------------------------
+
+Date: Sun, 26 Dec 2010 21:15:54 -0600
+From: "Richard S. Russell" <richardsrussell@tds.net>
+Subject: Google Maps vs. USPS in Wisconsin
+
+The US Postal Service has a flock of standard abbreviations for street
+types. For example, it would prefer it if you referred to a county highway
+as a "COUNTY RD", and "Street" should be abbreviated "ST", while "Avenue"
+gets reduced to "AVE". (The use of all caps is commensurate with 1970s-level
+OCR capabilities; I presume the USPS is trying to make its equipment last.)
+Among the more obscure abbreviations are:
+
+ * Cove > CV
+ * Dam > DM
+ * Divide > DV
+
+Google Maps, in an effort to be helpful, will occasionally expand the USPS
+abbreviations in its database into the full spelled-out version.
+
+Wisconsin, unlike most other states, uses letters to designate county
+roads. Usually it's only a single letter, but often enuf it's 2, sometimes
+even 3.
+
+You can see where this is headed, can't you? Starting with this view:
+   http://tinyurl.com/24m4y2k
+which shows County Road DM as "Co. Rd. Dam", you can zoom in a couple of
+clicks to also discover "Co. Hwy. Cove" (really County Road CV) and
+"Co. Hwy. Divide" (really County Road DV).
+
+Richard S. Russell, 2642 Kendall Av. #2, Madison  WI  53705-3736
+608+233-5640 RichardSRussell@tds.net http://richardsrussell.livejournal.com/
+
+------------------------------
+
+Date: Mon, 27 Dec 2010 10:37:46 -0700
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Gadgets Bring New Opportunities for Hackers
+
+Ashlee Vance, Gadgets Bring New Opportunities for Hackers*,
+The New York Times*, 26 Dec 2010
+http://www.nytimes.com/2010/12/27/technology/27hack.html?_r=1&nl=todaysheadlines&emc=a25
+
+Researchers at Mocana, a security technology company in San Francisco,
+recently discovered they could hack into a best-selling Internet-ready HDTV
+model with unsettling ease.  They found a hole in the software that helps
+display Web sites on the TV and leveraged that flaw to control information
+being sent to the television. They could put up a fake screen for a site
+like Amazon.com and then request credit card billing details for a
+purchase. They could also monitor data being sent from the TV to sites.
+
+Adrian Turner, Mocana's chief executive: ``Consumer electronics makers as a
+class seem to be rushing to connect all their products to the Internet.  I
+can tell you for a fact that the design teams at these companies have not
+put enough thought into security.''
+
+------------------------------
+
+Date: Tue, 21 Dec 2010 11:20:35 -0800
+From: Rob Slade <rMslade@shaw.ca>
+Subject: Risk Assessment and Failure Analysis ...
+
+  [This is an OLD item that has never appeared in RISKS before.
+  It's a little late for the holiday season, but still timely.  PGN]
+
+Risk Assessment and Failure Analysis in Multiple Small Illumination
+Sources During Winter Conditions
+Robert M. Slade, version 1.0, 20031217
+
+Q: How many Systems Analysts does it take to change a Christmas light?
+A: None, Christmas lights are hardware.
+
+ABSTRACT
+
+In the author's immediate socio-cultural environment, the unpacking,
+testing, placement, and maintenance of Christmas lights has been mandated to
+be "man's work."  (Women will, reluctantly, direct the placement of lights,
+since it is an observed fact that a man has all the artistic sensitivity of
+a Volkswagen.  The car, not the automotive designers.)  Therefore, despite
+the complete lack of any evidence of competence in domestic "handiness," or
+knowledge of electrical appliances, the author has found himself making an
+extensive, multi- year study of failure modes in different forms of lighting
+involving multiple small light sources.
+
+This paper examines the various failure modes that have been designed as
+part of different formats of such lighting, and, being a confirmed
+pessimist, the author conjectures about possible future design failures.
+
+INTRODUCTION
+
+In the middle of winter, when fogs and rains most abound, the inhabitants of
+the north western parts of Europe, as well as much of North America, engage
+in a frenzy of activity.  The purpose of many of these exercises is unclear.
+The sociologist and cultural observer C.  S. Lewis (in an essay entitled
+"Crissmas and Exmas," published in 1947 and for some reason frequently
+attributed to the much older historian Herodotus) ventures that these
+endeavours are religious observances in honour of a god that most of the
+population does not believe exists.  On the face of it, this suggestion is
+absurd.  No alternative hypothesis has, though, withstood detailed scrutiny.
+
+We examine here the practice of the placement of additional light sources
+both within and outside domiciles and business establishments during this
+period.  Initial speculation that these sources provided necessary
+illumination has been demonstrated to be false, despite the shortening and
+weakening of daylight during this time, since a) the practice is conducted
+in parts of the world where the additional lighting is not required, b) the
+levels of illumination produced are insufficient for most work, and c) the
+light sources appear designed to fail readily, frequently, and in such a
+manner as to prevent problem rectification.
+
+ALTERNATIVE LIGHT SOURCE DESIGNS
+
+A variety of technologies has been used in the multiple light source
+practice.  These will be examined in turn.
+
+Candles
+
+Originally, the light sources used were candles.  In particular, candles
+were placed on or within decorated trees.  This gives some weight to the
+theory of religious observance, since the practitioners would obviously
+trust in God to allow them to survive the ceremony.  The candle technology
+appears to have fallen out of favour with practitioners, though.  There may
+be many reasons for this, such as the fact that modern cultured and
+artificial Christmas trees are much denser with foliage than trees used to
+be, or the fact that by the time all the candles on the tree were lit the
+first would have burned out.  (In a given evening, a typical Christmas tree
+requires a quantity of candles such that an equivalent amount of gasoline
+would drive a Volkswagen approximately fifty kilometres.)
+
+Candlelit Christmas trees are subject to catastrophic failure modes.  On the
+positive side, there is no need to perform any maintenance or testing once a
+failure has occurred.
+
+Incandescent Bulbs
+
+The designation and definition of incandescent bulbs, in regard to Christmas
+lights, is problematic, given that at least two other forms of illumination
+also use incandescent filaments, and because the word "incandescent" is
+inconvenient both to write and to spell.  For the purposes of this paper,
+incandescents will be defined as being subject to 120 volt electrical power
+requirements, and greater than 1 cm in diameter in physical size.
+Sociologically, the devotees of incandescents are considered to use
+"traditional" Christmas lights.
+
+There are, in fact, two physical sizes of incandescents.  The larger are
+approximately 4 cm in length and about 2 cm in diameter.  These are
+generally 7 watt bulbs, and are referred to as "outside" lights, although
+they may also be used on large displays in commercial establishments
+indoors, particularly where the brightness of the smaller incandescents
+would not be particularly noticeable.  (See the earlier note regarding the
+utility of Christmas light illumination.)  The smaller lights, usually known
+as "indoor" bulbs, are roughly 2.5 cm in length and a little over a
+centimetre in diameter.  In both cases the bulbs are something of a pear or
+teardrop shape.
+
+(There are a number of variations on these basic models.  Reflective or
+refractive covers may be put around or behind the bulbs, and the bulb
+sockets may support electrical appliances which run motors creating mobile
+displays such as spinning carousels or teddy bears.  These additions do not
+affect the basic failure analysis model, and so will not be considered here.
+A notable exception are "bubble lights," which use the heat of the bulb to
+create a continual cycle of evaporation and condensation in a tube of a
+water/alcohol mixture.  Bubble lights are quite rare, and are usually stated
+to be an "ironic statement in regard to kitsch" by those who are afraid to
+admit that they really like them.  However, we were unable to obtain
+sufficient data on failure rates, particularly in regard to explosive
+failure, to add them to the models under consideration.)
+
+Christmas lights are arranged in sets of "strings," with bases attached at
+intervals along a set of power cables.  Incandescent bulbs are wired in
+parallel, such that the failure of one bulb will not cause the entire string
+to fail.  However, the current draw along the power cables, particularly
+given the practice of joining strings together in one long string, requires
+that the cabling be of significant density.  (Outdoor bulbs are generally
+seven watts, and are arranged in strings of twenty five bulbs.  Therefore, a
+single cable will be carrying 175 watts, or about 1.5 amps of current.
+Outlining the eaves of a typical domicile will often require five strings,
+placing a load of 7.5 amps at the base of the long string.  In situations
+where residents illuminate trees and bushes in the yard as well, the current
+load can exceed this by a substantial margin.)  Therefore, incandescent
+strings are based on heavy gauge wire, with correspondingly heavy
+insulation.  (It should be noted that, despite the identical power
+requirements, "indoor" and "outdoor" incandescent bulbs have proportionately
+sized bases, ensuring that neither can be used in the strings of the other,
+and requiring that replacements be available for both sizes.)
+
+Incandescent strings are therefore not subject to simple failures that would
+occur in lighter equipment.  They are, though, very difficult to manipulate,
+store, and retrieve from storage.  This ensures that bulbs fail frequently
+due to mishandling during the manipulation process known as "putting the
+lights up" or the corresponding "putting the lights away."  Some light
+practitioners have therefore undertaken to putting lights (particularly
+outside lights) in place, and then leaving them there.  However, Christmas
+lights are, as noted, not designed purely for illumination: they are
+coloured, so that the ultimate effect of Christmas lights is similar to that
+of seeing a multitude of different coloured Volkswagens in a parking lot.
+The bulbs have been designed in two ways.  The first applies colour as
+coloured paint, ensuring that any bulbs left outside for long periods of
+time become scratched by branches and thus become colourless.  The later
+design is to apply the colour with a film of plastic: this design ensures
+that the film degrades with the "hot/cold" cycle that is engendered by bulbs
+that are turned on for brief periods during cold weather.  The film
+eventually flakes off, again leaving the bulbs with limited colour.
+
+Minilights
+
+Minilights use incandescent filaments, but are much smaller than the more
+traditional incandescent bulbs.  Minilight bulbs are roughly .5cm in
+diameter and 2 cm in length.  The bulbs sport two bare wires, and must be
+mounted in a separate base before being placed in a string.  There is no
+difference whatsoever in size, form, or markings regardless of whether
+minilight bulbs are 2 volt, 2.5 volt, 3, 3.5, 4, 5, 6, 7, 8, 10, or 12 volt,
+nor whether they are ordinary bulbs or "flashers."  (Flashing bulbs are
+known to trigger seizures in those subject to epilepsy, and extreme
+agitation and annoyance in most of the rest of the population, similar to
+the Netscape <blink> blink </blink> tag, or following a Volkswagen for
+thirty two miles down the freeway with the left turn flasher stuck on.)
+There is also no particular indication that a bulb is dead, other than the
+fact that it does not work.  (Traditional incandescent bulbs are generally
+large enough that the filament is visible to the naked eye, except, of
+course, if the bulb is of the painted variety.)  Despite the universal
+nature of the bulb sizes, the bases for minilights vary from string to
+string, and many strings will, in fact, have multiple incompatible sizes of
+bases that must be used in the correct sockets along that string.
+
+Minilight bulbs are strung in series.  A rough estimate of the voltage
+requirement for a string may be obtained from the number of sockets, but
+this is not a completely reliable indication.  (Many strings are, in fact,
+multiple strings, wired in parallel with each other.  Therefore, a failure
+may leave half the string usable, but use of such a string is seen as an
+admission of failure of manhood (see above in regard to gender roles in
+respect of Christmas lights).
+
+Minilight bulbs, being strung in series, would be subject to complete
+failure of a string if a single bulb were to burn out.  The bulbs are,
+therefore, designed such that the burning out of a bulb also creates a
+"burn-through" in order to maintain the electrical circuit.  As with all
+religious practices there is an attendant element of randomness: sometimes
+the burn-through works, and sometimes it doesn't.
+
+Because of the universal size, bulbs of differing voltage may be used in a
+single string, or bulbs of an inappropriate voltage may be used in a string.
+When, for example, twelve volt bulbs are used in a string wired for seven
+volt bulbs, the bulbs will work, although they will burn very dimly.  Seven
+volt bulbs may also be used in a string wired for twelve volt bulbs.  This
+practice is much more interesting.  Due to the higher temperature and
+stress, eventually a bulb will burn out.  However, due to the burn-through
+design, this will still leave the rest of the string burning and will, in
+fact, increase the brilliance of the illumination.  This also increases the
+thermal stress, though, and therefore an additional bulb will blow out in a
+lesser period of time.  After the failure of one or two more bulbs, the
+whole string goes in rapid succession: in the words of one observer, "like a
+string of firecrackers."
+
+Because of the universal bulb size, the lack of differentiation between live
+and dead bulbs, and the bulb burn-through design, failure analysis of a
+string is problematic.  There is the practice of individually removing each
+bulb and socket, removing the bulb from the socket, and replacing it with a
+bulb known to be good.  This procedure has been cited in the psychological
+literature due to its relation to serious nervous conditions that result
+when the practitioner realizes that he has been testing with a bulb that is
+actually dead, or fruitlessly comes to the end of a test of several strings
+and realizes that it was more than possible that multiple bulbs on the
+string were dead.  (This assessment is also complicated by the randomness of
+the burn-through factor noted above.)  Experienced practitioners (if they
+escape the nervous conditions noted above) find that bulbs and sockets must
+be individually removed, the bulb removed from the socket, and tested by
+placing it into a socket of a string that is known to be good.  Frequently
+as many as a quarter of the bulbs on a string must be replaced before the
+string becomes usable again, and even then a number of bulbs can be
+identified as needing to be replaced for full illumination.  (As noted,
+complete illumination has no functional purpose, but is practiced by the
+masters of the craft as a prophylactic against string failure during the
+Christmas season.)
+
+Light Ropes
+
+Light ropes combine the failure characteristics of minilights with the
+difficulty of manipulation of traditional incandescents, and add the ease of
+maintenance of spy satellites (as opposed to, say, original model
+Volkswagens).  Also, many religious leaders hold them to be an abomination
+and offence against nature.
+
+LEDs
+
+The latest technology in Christmas lights involves Light Emitting Diodes, or
+LEDs.  LEDs provide a much greater efficiency of conversion of electricity
+to light than do other forms of lighting technology.  In addition, the
+manufacturers of LED Christmas light have chosen to go the conservation
+route.  Door and Window outlining of a typical domicile can be achieved for
+the entire Christmas season (with the lights left on 24 hours per day) for
+roughly the cost of a local call on a pay phone (if you can find one, in
+these days of ubiquitous cellular phones).  Unfortunately, the level of
+illumination provided is quite low: the entire light output of several
+strings is scarcely enough to allow you to find your way around the inside
+of a Volkswagen.
+
+LEDs are wired in series, like minilights, and are designed with the same
+burn-through technology.  As well as being more efficient, LEDs are also
+said to be more durable, although this, being a new technology, has not been
+put to practical tests.  Therefore, it is felt that LED Christmas light
+strings will be longer lasting, and the manufacturers boast of a five-year
+guarantee.  This promise is marred by only two considerations.  The first is
+the low probability that the manufacturers are in any danger of having to
+provide replacements for such a low cost item.  The second is the fact that
+the light strings are also said to be resistant to a failure of a single
+bulb, but have absolutely no provision for replacement: all bulbs are
+hardwired into the string.  If a second bulb goes, you are supposed to throw
+the string away.
+
+CONCLUSION
+
+Given the failure characteristics of Christmas lights, the hypothesis of
+religious observance (similar to penitential exercises seen in other cases)
+must be supported, even in the complete absence of evidence of a belief
+system.
+
+The author wishes the readers a very Merry Christmas and a Happy New Year.
+(Failing that, the author wishes the readers a very happy Generic Mid-Winter
+Party Period.)
+
+ACKNOWLEDGMENTS
+
+This work has been supported by research performed by Erichson
+Engineering, the Vancouver Centre of Excellence of Honeywell Process
+Solutions, and Gloria J. Slade.
+
+rslade@vcn.bc.ca     slade@victoria.tc.ca     rslade@computercrime.org
+victoria.tc.ca/techrev/rms.htm blog.isc2.org/isc2_blog/slade/index.html
+http://blogs.securiteam.com/index.php/archives/author/p1/
+http://www.infosecbc.org/links http://twitter.com/rslade
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.26
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E4828401A38EXSAN02campus_--

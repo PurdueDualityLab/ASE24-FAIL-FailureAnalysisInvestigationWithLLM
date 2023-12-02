@@ -1,0 +1,596 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 22 July 2015  Volume 28 : Issue 80
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.80.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Hackers Remotely Kill a Jeep on the Highway -- With Me in It
+  (Andy Greenberg)
+Remote Exploitation of an Unaltered Passenger Vehicle (Anthony Thorn)
+Re: Self-driving cars (Dan Geer)
+Blumenthal/Markey legislation on auto security (PGN)
+More Senators' websites untrusted -- including Markey's (Henry Baker)
+Lufthansa flight has near-miss with drone near Warsaw (PGN)
+Re: Gun-Firing Drone Raises Some Eyebrows (PGN)
+Reign of terror: An online troll destroyes a family's offline life
+  (WashPost)
+Ex-Lottery Worker Convicted of Programming System To Win $14M (Werner U)
+OPM: China not to blame; all's fair (Ellen Nakashima via Henry Baker)
+RedStar OS Watermarking (Florian Grunow)
+Shocking way to stop terrorists/hackers/researchers/... (Henry Baker)
+Microsoft Will Remove Revenge Porn From Search Results
+  (Pavithra Mohan)
+Why Deleting Personal Information On The Internet Is A Fool's
+  Errand (Daniel Terdiman)
+Google Street View Exposes a Man Who Told His Wife He Quit Smoking (GQ)
+Limits at Gawker? Rules at Reddit? Wild West Web Turns a Page (NYT)
+3D-Printed Missiles (Shapeways via Henry Baker)
+Constitutional Malware (Jonathan Mayer)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 21 Jul 2015 9:09:48 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Hackers Remotely Kill a Jeep on the Highway -- With Me in It
+  (Andy Greenberg)
+
+Andy Greenberg, Security. *WiReD*, 21 Jul 2015 [noted by quite a few of you]
+
+I was driving 70 mph on the edge of downtown St. Louis when the exploit
+began to take hold.
+
+Though I hadn't touched the dashboard, the vents in the Jeep Cherokee
+started blasting cold air at the maximum setting, chilling the sweat on my
+back through the in-seat climate control system. Next the radio switched to
+the local hip hop station and began blaring Skee-lo at full volume. I spun
+the control knob left and hit the power button, to no avail. Then the
+windshield wipers turned on, and wiper fluid blurred the glass.
+
+As I tried to cope with all this, a picture of the two hackers performing
+these stunts appeared on the car's digital display: Charlie Miller and Chris
+Valasek, wearing their trademark track suits. A nice touch, I thought.
+
+"The Jeep's strange behavior wasn't entirely unexpected. I'd come to
+St. Louis to be Miller and Valasek's digital crash-test dummy, a willing
+subject on whom they could test the car-hacking research they'd been doing
+over the past year. The result of their work was ... a zero-day exploit
+... that can target Jeep Cherokees and give the attacker wirele ss control,
+via the Internet, to any of thousands of vehicles. Their code is an
+automaker's nightmare: software that lets hackers send commands through the
+Jeep's entertainment system to its dashboard functions, steering, brakes,
+and transmission, all from a laptop that may be across the country."
+
+http://www.wired.com/2015/07/hackers-remotely-kill-jeep-highway/
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 09:42:16 +0200
+From: Anthony Thorn <anthony.thorn@atss.ch>
+Subject: Remote Exploitation of an Unaltered Passenger Vehicle
+
+Watch out for details of hacking via the Internet, obtaining control of:
+brakes, accelerator, door-locking, air conditioning, wipers, steering
+(only in reverse gear,-) and location.
+
+Black Hat  presentation by Charlie Miller  &  Chris Valasek:
+Remote Exploitation of an Unaltered Passenger Vehicle
+
+...In this talk, we will show the reality of car hacking by demonstrating
+exactly how a remote attack works against an unaltered, factory
+vehicle. Starting with remote exploitation, we will show how to pivot
+through different pieces of the vehicle's hardware in order to be able to
+send messages on the CAN bus to critical electronic control units.  We will
+conclude by showing several CAN messages that affect physical systems of the
+vehicle.  By chaining these elements together, we will demonstrate the
+reality and limitations of remote car attacks.
+
+http://www.wired.com/2015/07/hackers-remotely-kill-jeep-highway/
+
+  [Lots of submissions on this topic.  See also
+http://bits.blogs.nytimes.com/2015/07/21/security-researchers-find-a-way-to-hack-cars/
+  PGN]
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 14:54:51 -0400
+From: dan@geer.org
+Subject: Re: Self-driving cars (RISKS-28.79)
+
+> Engineering a self-driving car is difficult enough. Now the public has
+> to be convinced that the technology works.
+
+In a recent speech I asked a question you might like this:
+
+"What Does the Future Hold for Cyber Security?", 19 June 2015
+
+I leave to any policy discussion the question of whether the speeds at which
+cyber security automation must run will even allow occasional interruption
+to ask some human operator for permissions to act, or must cyber kill
+decisions be automated on the argument that only when so automated can they
+respond in time?  If the latter holds, and I am certain that it will,
+science will be under the gun to encode human ethics into algorithms that
+will thereafter free run.  Put differently, I predict that it is in cyber
+security, per se, where the argument over artificial intelligence will find
+its foremost concretization.  Frankly, I very much side with Hawking, Gates,
+and Musk on such matters.  As an example of an unevalu(at)able vignette, the
+self-driving car will choose between killing its solo passenger or fifteen
+people on the sidewalk.  Many are the examples of airplane pilots
+sacrificing themselves to avoid crash landing in populated zones.  Will you
+willingly ride in an altruistic vehicle? ...
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 9:14:24 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Blumenthal/Markey legislation on auto security (not autosecurity!)
+
+Sens. Blumenthal, Markey Introduce Legislation to Protect Drivers from Auto
+Security, Privacy Risks with Standards & "Cyber Dashboard" Rating System,
+21 Jul 2014
+http://www.blumenthal.senate.gov/newsroom/press/release/sens-blumenthal-markey-introduce-legislation-to-protect-drivers-from-auto-security-privacy-risks
+
+... ``Drivers shouldn't have to choose between being connected and being
+protected," said Senator Markey. "We need clear rules of the road that
+protect cars from hackers and American families from data trackers. This
+legislation will set minimum standards and transparency rules to protect the
+data, security and privacy of drivers in the modern age of increasingly
+connected vehicles. I look forward to working with Senator Blumenthal to
+ensure auto safety and security in the 21st century."
+
+"We feel that as cars become more connected, software security becomes more
+important," said Chris Valasek, Director of Vehicle Security Research at
+IOActive and Charlie Miller, security researcher. "In addition to robust,
+well-tested software, technology for monitoring, logging, detecting, and
+possibly stopping attacks should also be implemented.  [...]
+
+  [Dan Geer wrote about auto autosecurity, where this is just auto security.
+  PGN]
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 13:26:21 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: More Senators' websites untrusted
+
+FYI -- More "recursion, noun.  See recursion".
+
+I got the following error from Firefox while trying to access proposed
+legislation on cybersecurity.
+
+Perhaps Senator Markey will learn something about encryption & certificates
+while he's at it.
+
+http://www.markey.senate.gov/news/press-releases/sens-markey-blumenthal-introduce-legislation-to-protect-drivers-from-auto-security-privacy-risks-with-standards-and-cyber-dashboard-rating-system
+
+P.S.:  You *can* download Markey's "SPY" proposed legislation here:
+http://www.markey.senate.gov/imo/media/doc/SPY%20Car%20legislation.pdf
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 9:16:00 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Lufthansa flight has near-miss with drone near Warsaw
+
+A Lufthansa plane with 108 passengers on board nearly collided with a drone
+as it approached Warsaw's main airport on Monday afternoon, the airline said
+on Tuesday.  The drone came within 100 metres (330 feet) of the Embraer
+plane when the Munich to Warsaw flight was at a height of about 760 metres,
+the airline and the Polish Air Navigation Services Agency (PANSA) said.
+
+Police are investigating, a PANSA spokesman said.
+
+The plane landed safely at 1409 GMT, a Lufthansa spokeswoman said.
+
+PANSA changed landing directions for other planes until the area was clear.
+However, police and military helicopters sent to the area did not spot the
+drone.
+
+The incident was first reported by the Aviation Herald. It cited the pilots
+as telling air traffic controllers they "should take care of your airspace"
+and "it is really quite dangerous".
+
+With the use of commercial drones for applications from filming to sports
+events and agriculture booming, the European Union is currently working on
+new regulations for drones to protect the safety and privacy of its
+citizens.
+
+The regulations are due to be presented in the autumn as part of the
+European Commission's new aviation package.
+
+Among the few member states with specific regulations, Germany
+<http://uk.reuters.com/places/germany> in June introduced new rules that
+prevent the use of drones within 1.5 km of airport perimeter fences.
+
+Anyone wishing to fly a drone beyond that exclusion zone and in controlled
+airspace must request permission from air traffic authorities and fly no
+higher than 50 metres, depending on the size of the aircraft.
+
+Drones caused alarm in France <http://uk.reuters.com/places/france> earlier
+this year when several flights were spotted operating over sensitive sites
+in Paris. [ID:nL5N0W617Y]
+
+Lufthansa CEO Carsten Spohr sees opportunities for the group in the field
+of commercial drones, saying last month Lufthansa's maintenance and pilot
+training units could provide expertise.
+
+(Reporting by Victoria Bryan
+<http://blogs.reuters.com/search/journalist.php?edition=uk&n=victoria.bryan&>
+in Berlin and Wiktor Szary in Warsaw; Editing by Mark Potter
+<http://blogs.reuters.com/search/journalist.php?edition=uk&n=mark.potter&>)
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 10:44:07 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Gun-Firing Drone Raises Some Eyebrows
+
+  *Slashdot* items [Droning On?]
+<http://tech.slashdot.org/story/15/07/16/1455223/gun-firing-drone-raises-some-eyebrows>
+
+Police Not Issuing Charges For Handgun-Firing Drone -- Feds Undecided
+<http://tech.slashdot.org/story/15/07/22/0441233/police-not-issuing-charges-for-handgun-firing-drone----feds-undecided>
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 20:52:54 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Reign of terror: An online troll destroyes a family's offline life
+
+A Virginia man attempted suicide after being accused of child rape, getting
+death threats and having his home broken into.
+http://www.washingtonpost.com/local/crime/reign-of-terror-online-trolls-destroy-a-virginia-familys-offline-life/2015/07/20/a467f9bc-19ba-11e5-93b7-5eddc056ad8a_story.html
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 19:31:23 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Ex-Lottery Worker Convicted of Programming System To Win $14M
+
+Eddie Tipton, a man who worked for the Multi-State Lottery Association, has
+been convicted of rigging a computerized lottery game so he could win the
+$14 million jackpot. Tipton wrote a computer program that would ensure
+certain numbers were picked in the lottery game, and ran it on lottery
+system machines. He then deleted it and bought a ticket from a convenience
+store. Lottery employees are forbidden to play, so he tried to get
+acquaintances to cash the winning ticket for him. Unfortunately for him,
+Iowa law requires the original ticket buyer's name to be divulged before any
+money can be paid out.
+
+<http://yro.slashdot.org/story/15/07/22/1256226/ex-lottery-worker-convicted-of-programming-system-to-win-14m>
+<http://news.yahoo.com/ex-lottery-worker-convicted-rigging-system-win-14m-161505240.html>
+<http://yro.slashdot.org/story/15/04/14/1336201/allegation-lottery-official-hacked-rng-to-score-winning-ticket>
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 08:11:22 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: OPM: China not to blame; all's fair
+
+  [FYI -- Once again, how's that deterrence thingy workin' out fer ya, Cyber
+  Command?
+  Stupid question: BTW, is there any US govt agency whose responsibility it
+  is to protect *ordinary citizens* from hackers, foreign and domestic?
+  NSA is supposed to protect the govt itself, but who protects us voters?]
+
+U.S. decides against publicly blaming China for data hack
+Ellen Nakashima, *The Washington Post*, 21 Jul 2015
+https://www.washingtonpost.com/world/national-security/us-avoids-blaming-china-in-data-theft-seen-as-fair-game-in-espionage/2015/07/21/03779096-2eee-11e5-8353-1215475949f4_story.html
+
+Months after the discovery of a massive breach of U.S. government personnel
+records, the Obama administration has decided against publicly blaming China
+for the intrusion in part out of reluctance to reveal the evidence that
+American investigators have assembled, U.S. officials said.
+
+The administration also appears to have refrained from any direct
+retaliation against China or attempt to use cyber-measures to corrupt or
+destroy the stockpile of sensitive data stolen from the Office of Personnel
+Management.
+
+``We have chosen not to make any official assertions about attribution at
+this point,'' said a senior administration official, despite the widely held
+conviction that Beijing was responsible.  The official cited factors
+including concern that making a public case against China could require
+exposing details of the United States' own espionage and cyberspace
+capabilities.  The official was among several who spoke on the condition of
+anonymity to describe internal deliberations.
+
+As a result, China has so far escaped any major consequence for what U.S.
+officials have described as one of the most damaging cyberthefts in U.S.
+government history -- an outcome that also appears to reflect an emerging
+divide in how the United States responds to commercial vs. traditional
+espionage.  [...]
+
+Ellen Nakashima is a national security reporter for *The Washington Post*.
+She focuses on issues relating to intelligence, technology and civil liberties.
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 10:57:04 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: RedStar OS Watermarking (Florian Grunow)
+
+  [More really bad ideas for James Comey & Theresa May to ape.  But why stop
+  with watermarking?  North Korea has so many more "recommendations" on
+  "communications reform" that Comey & May will find appealing.  What the
+  Norks lack in strategy, they make up in execution.]
+
+Florian Grunow, RedStar OS Watermarking
+http://www.insinuator.net/2015/07/redstar-os-watermarking/
+
+During the last few months information about one of North Korea's operating
+systems was leaked.  It is a Linux based OS that tries to simulate the look
+and feel of a Mac.  Some of its features have already been discussed on
+various blog posts and news articles.  We thought we would take a short look
+at the OS. This blog post contains some of the results.
+
+As you can imagine, most interesting for us was to investigate features that
+impact the privacy of the users.  There are some publications concerning the
+security of the OS, this is an aspect that we will not cover in this post.
+We will stick to a privacy issue that we identified in this post.  As ERNW
+has a long history of Making the World a Safer Place, we consider this topic
+an important one.  The privacy of potential users (especially from North
+Korea) may be impacted and therefore we think that the results must be made
+available for the public.  So, here we go!
+
+When analyzing the OS the first thing that came to our attention is that
+they have built an own kernel module named rtscan.  There is a binary
+running that is named opprc and a few more binaries, one that seems to
+simulate/pretend to be some kind of virus scanner (scnprc) and seems to
+share some code base with opprc.  We will concentrate on opprc in this blog
+post, as it is one of the most interesting binaries at first glance.
+
+The first thing that came to our attention when looking at the functions in
+the binary was this: gpsWatermarkingInformation.  And there are even more
+functions like this that sound interesting.  You can see a short extract in
+the picture below.
+
+So it seems that there is some watermarking functionality included.  If we
+look at the available functions there seems to be additional AES crypto
+involved.  From the available functions we can also see that there is
+watermarking available for documents, images and even audio.  By looking at
+the binary we were able to see that classic word documents are in the list
+of documents to be fingerprinted.  So we thought we will give it a shot and
+created a simple DOCX file that we copied on a USB drive and attached the
+drive to the RedStar OS.  Guess what: The MD5sum of the file changed.  We
+did not open the file with the included “Sogwang Office” or touch it
+in any way, it just changed simply making it available to the OS.  Now a
+DOCX file is basically a ZIP with multiple files included.  If you look at a
+DOCX in a hex editor you will see that there are larger areas that are
+filled with null bytes at the beginning of the file.  By looking at the same
+area again in a file that has once b een transfered to RedStar we see some
+garbage inserted into the file.  [...]
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 11:21:18 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Shocking way to stop terrorists/hackers/researchers/...
+
+  [FYI -- James Comey & Theresa May will absolutely *love* this device,
+  except they would invert the shocking condition.]
+
+Web Training Collar
+https://jaspervanloenen.com/web-training-collar/
+
+Many websites still only offer an unencrypted (HTTP) connection to their
+visitors.  The communication between the visitor's computer and the server
+hosting the website is open, and can easily be intercepted by others.
+Possible attackers can see anything the user is seeing: text, images, links
+clicked, etc.  Especially on open or public Wi-Fi networks there is always
+the chance of someone looking at your Internet usage.
+
+The Web Training Collar is aimed at Internet users who want to change this.
+If the owners of the websites don't offer a more secure connection, you can
+use the tested Pavlov-effect to condition yourself into not visiting these
+websites anymore.
+
+This is done using a dog collar that is able to apply a small electrostatic
+shock to its wearer.  A small piece of software running in the background on
+the user's computer monitors the Internet traffic and applies a corrective
+shock when needed.  The intensity of the shock increases with each
+consecutive visit to an unprotected website.
+
+All necessary code to use the Web Training Collar can be found in the github
+repository.
+
+https://github.com/javl/web-training-collar
+
+The Web Training Collar was built during medialab Setup's Controlegroep
+(control group) project.  The 25 participants of the Controlegroep have set
+up experiments to see if and how their behavior can be monitored or altered
+with the help of apps and gadgets.  The Web Training Collar uses a browser
+plugin combined with a local Flask webserver.  To control the collar from
+the computer, an Arduino Nano was used in combination with a 433Mhz
+RF-transmitter to replace the original remote control.
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 20:22:26 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Microsoft Will Remove Revenge Porn From Search Results
+  (Pavithra Mohan)
+
+Pavithra Mohan, Microsoft Will Remove Revenge Porn From Search Results
+The tech firm is the latest to advocate for victims of revenge porn
+<https://www.fastcompany.com/3048933/fast-feed/microsoft-will-remove-revenge-porn-from-search-results>
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 20:22:26 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Why Deleting Personal Information On The Internet Is A Fool's
+  Errand (Daniel Terdiman)
+
+In the wake of the Ashley Madison hack, we're continuing to learn that
+there's no such thing as 100% security on the Internet.
+<https://www.fastcompany.com/3048871/why-deleting-personal-information-on-the-internet-is-a-fools-errand>
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 08:33:40 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Google Street View Exposes a Man Who Told His Wife He Quit Smoking
+
+http://www.gq.com/story/husband-caught-smoking-on-google-street-view
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 00:21:05 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Limits at Gawker? Rules at Reddit? Wild West Web Turns a Page
+
+Digital media companies are struggling with a tough transition -- from
+underfunded start-ups to mature businesses.
+http://www.nytimes.com/2015/07/22/business/media/limits-at-gawker-rules-at-reddit-wild-west-web-turns-a-page.html
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 12:03:33 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: 3D-Printed Missiles
+
+FYI -- Yes, this article is "Sponsor-Generated Content", aka advertising.
+"The day is coming when missiles can be printed."
+
+But what Raytheon can do, so can a high school student with his 3D printer,
+or as parts ordered online from materials like stainless steel.
+http://www.shapeways.com/materials/steel
+
+Sponsor-Generated Content: To Print a Missile
+Raytheon, 19 Jul 2015
+The day is coming when missiles can be printed.
+http://thehill.com/sponsored/content/248294-to-print-a-missile
+
+  [Weed it and reap! PGN]
+
+------------------------------
+
+Date: Wed, 22 Jul 2015 10:17:07 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Constitutional Malware
+
+FYI --  The author of this paper is both a lawyer & PhD Computer Science.
+
+Excellent paper on Fourth Amendment issues, but does not evaluate First,
+Second, Third, and Fifth Amendment issues wrt to govt malware.  Furthermore,
+the author focuses solely on domestic criminal procedure, and doesn't
+evaluate national security issues.  Finally, he doesn't address at any
+length the types of SW and/or HW hacks necessary to install the malware; in
+particular, his paper sheds no light on the recent Comey "HackDoor"
+controversy.
+
+"I normatively argue that the super-warrant standard should apply to
+government hacking"
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id&33247
+
+Jonathan Mayer, J.D., Stanford Law School, 2013; Ph.D., Stanford University
+Department of Computer Science, Expected 2015.
+Constitutional Malware, 20 Jul 2015
+
+Abstract:
+
+The United States government hacks computer systems, for law enforcement
+purposes.  According to public disclosures, both the Federal Bureau of
+Investigation and Drug Enforcement Administration are increasingly resorting
+to computer intrusions as an investigative technique.  This article provides
+the first comprehensive examination of how the Constitution should regulate
+government malware.
+
+When applied to computer systems, the Fourth Amendment safeguards two
+independent values: the *integrity of a device* as against government
+breach, and the *privacy properties of data* contained in a device.  Courts
+have not yet conceptualized how these theories of privacy should be
+reconciled.
+
+Government malware forces a constitutional privacy reckoning.  Investigators
+can algorithmically constrain the information that they retrieve from a
+hacked device, ensuring they receive only data that is ­ in isolation
+­ constitutionally unprotected.  According to declassified documents, FBI
+officials have theorized that the Fourth Amendment does not apply in this
+scenario.  A substantially better view of the law, I conclude, is that *the
+Fourth Amendment's dual protections are cumulative*, not mutually
+exclusive.
+
+Applying this two-stage framework, I find that the Fourth Amendment imposes
+a warrant requirement on almost all law enforcement malware.  The warrant
+must be valid throughout the duration of the malware's operation, and *must
+provide reasonable ex post notice to a computer's owner*.  In certain
+technical configurations, the Constitution goes even further, requiring law
+enforcement to satisfy an exacting super-warrant standard.  Reviewing public
+disclosures, I find that the government has a spotty record of compliance
+with these foundational privacy safeguards.
+
+Moving beyond established doctrine and current practice, *I normatively
+argue that the super-warrant standard should apply to government hacking*.
+The same considerations that prompted heightened judicial review of
+wiretapping in the 1960s should prompt close scrutiny of law enforcement
+malware today.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.80
+************************
+
+--_002_e4fcb3b66d814ca1b43476ae9e6e11e2DB4PR07MB0704eurprd07pr_--

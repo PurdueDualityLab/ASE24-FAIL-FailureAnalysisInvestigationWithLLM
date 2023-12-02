@@ -1,0 +1,621 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 6 March 2013  Volume 27 : Issue 18
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.18.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Hyundai controller failure? (PGN)
+How much does a botnet cost? and Internet voting? (E. John Sebes)
+Major crash at Yahoo Mail de-activates millions of accounts (Chris J Brady)
+Re: Yahoo Fails to Restore Millions of Deleted E-Mails (Chris J Brady,
+  Tricia Cole)
+Yahoo Mail Hack Sending E-mails With Single Link To Rogue Websites
+  (Chris J Brady)
+Adi Shamir says prepare for "post-crypto" world (Lauren Weinstein)
+"Are you leaking too much of your real life online?" (Roger A. Grimes via
+  Gene Wirchenko)
+Users happy to allow strangers to read their e-mail (Paul Saffo)
+How SSD power faults scramble your data (Lauren Weinstein)
+"Test your SSDs or risk massive data loss, researchers warn" (Ted Samson)
+Suit: 185K Spyware Images Sent from Rental Computers (Joe Mandak via
+  Jim Reisert)
+Evernote hacked: E-mails encrypted passwords stolen (Lauren Weinstein)
+"Oracle releases emergency fix for Java zero-day exploit" (Lucian Constantin
+  via Gene Wirchenko)
+"Java zero-day holes appearing at the rate of one a day" (Woody Leonhard
+  via Gene Wirchenko)
+"Researchers link latest Java zero-day exploit to Bit9 hack"
+  (Lucian Constantin via Gene Wirchenko)
+First government-sanctioned Japanese hacking contest (Mark Thorson)
+"Facebook said to fix OAuth-based account hijacking flaw" (Lucian Constantin
+  via Gene Wirchenko)
+Many companies likely affected by hack of iOS developer forum
+  (Lucian Constantin via Gene Wirchenko)
+"DNA Gun Tags Rioters for Future Arrest" (Gene Wirchenko)
+"Researchers discover new global cyber-espionage campaign"
+  (Lucian Constantin via Gene Wirchenko)
+"Researchers find loophole in Google's two-factor authentication"
+  (Lucian Constantin via Gene Wirchenko)
+Re: Electronic health records: teething problems? (E. John Sebes,
+  Gene Wirchenko)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 26 Feb 2013 10:03:59 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Hyundai controller failure?
+
+... allegedly causes high speed chase/crash:
+
+http://www.autoblog.com/2013/02/22/hyundai-elantras-alleged-unintended-acceleration-sends-teen-po/#continued
+
+------------------------------
+
+Date: Tue, 05 Mar 2013 17:17:16 -0800
+From: "E. John Sebes" <jsebes@osdv.org>
+Subject: How much does a botnet cost? and Internet voting?
+
+Jeremy Epstein got me thinking with his blog item -- the title says it all:
+https://freedom-to-tinker.com/blog/jeremyepstein/how-much-does-a-botnet-cost-and-the-impact-on-internet-voting
+
+Then a colleague pointed out that a really easy botnet attack would be DDoS,
+and expressed some skepticism that any US elections org would be able to
+deal with it. I agreed on the latter point -- I can think of only a handful
+of county IT operations with that degree of maturity in IT security
+technology, and of course just having the technology doesn't mean that it
+always works right. :-|
+
+And on the DoS threat too -- of course this easy, as many know including
+i-voting pioneers in the government of Estonia, whose i-gov systems were
+notoriously DDoSed. So, yes, if the US ever did serious i-voting, there
+would be foreign adversaries could well be motivated simply to destabilize
+the US gov't by hosing an online election.
+
+But as Jeremy pointed out, there are also classes of adversary whose
+motivation would be have a very stable election with an outcome shifted by
+an undetected successful cyber-operation. When the target is only a few
+thousand votes in a single populous state, then it becomes very attractive
+to spend millions of dimes each to own a computer that might be casting a
+target vote. (10 cents per bot is the going rate, apparently.)
+
+NOTE TO SELF -- When we see botnet operators offering premiums on
+geo-location of available nodes, then get *even more worried*.
+
+And, yes, I am not kidding - not kidding at all - this is just one of those
+cute national security side-effects of IT security research ... in this case
+some DHS funded cyber-homeland-security work to physically map the
+Internet. The bad guys will certainly use the results to financial
+advantage. Looking to steal a couple thousand i-votes in a US election?
+Sure! You want to pay a dime each for 10 million nodes in North America, or
+a dollar each for 100,000 nodes in Florida?
+
+Scary.
+
+John Sebes, Open Source Digital Voting Foundation
+
+------------------------------
+
+Date: Sat, 2 Mar 2013 14:20:52 +0000 (GMT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Major crash at Yahoo Mail de-activates millions of accounts
+
+At about 12.00 noon today Yahoo Mail suffered a major crash of its mail
+services when a member of staff apparently invoked a process of
+de-activating thousands (if not millions) of accounts.  Subscribers suddenly
+discovered that their respective accounts had suddenly become
+de-activated. They were asked to re-activate them to regain access. On
+entering the required capcha everyone then discovered that Yahoo had deleted
+ALL e-mails and folders in those accounts - thousands (millions?) losing
+e-mails dating back over 10-15 years.  One member described this as a
+disaster for his business in tracking online orders and sales; others opined
+that it was a breach of trust in Yahoo systems - after all Yahoo advertise
+that e-mails can be 'kept forever.'  This issue brings into disrepute the
+concept of cloud storage - that is storing important documents, e-mails and
+files on distant servers. When those servers crash or go corrupt or a member
+of staff issues a 'delete' or de-activate command then all can be lost.
+C.J.Brady Once a Yahoo Classic Mail user now on Gmail
+
+------------------------------
+
+Date: Sun, 3 Mar 2013 20:28:02 +0000 (GMT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Re: Yahoo Fails to Restore Millions of Deleted E-Mails
+
+Many thousands of long term users of Yahoo Mail have had their entire set of
+folders and e-mails deleted due to an upgrading snafu on Friday / Saturday
+March 1 / 2. This includes even paying Plus members.  It appears that during
+the upgrade Yahoo technicians decided to upgrade all Classic users to the
+(largely disliked) New e-mail system. Naturally most declined this upgrade
+and so Yahoo deleted their entire accounts including all folders, e-mails
+going back 10 to 20 years, and contact lists.  I lost 13 years of folders
+and e-mails - many from long dead friends.   Many others report losing
+important documents, files and correspondence from business and personal
+contacts. One used his account to track online orders for running a delivery
+business. All have now been lost.  Naturally Yahoo is not contactable via
+anything other than a pro-forma. Naturally the pro-forma for restoring
+deleted e-mails fails to cater for this emergency.   Many members have
+requested restoration of their folders and e-mails. But they only have 24-48
+hours to do so. Then all is lost anyway.   I requested a complete
+restoration immediately. And like others we received the following
+auto-response:
+
+Mail - Messages disappeared, unknown reason [Incident: -deleted-]
+Sunday, 3 March, 2013 19:37
+From: This sender is Domain Keys verified "Yahoo! Customer Care"
+  <customercare-en@cc.yahoo-inc.com>
+To: [-deleted-]@yahoo.com
+Response
+**This is an automated response**
+
+We have attempted to restore your mailbox using the information that you
+provided. If some of the e-mails were not restored, it is because they were
+not available in the snapshot used.  After we received your request, we
+looked for a copy of what your Yahoo! Mail account looked like at a specific
+point in time just prior to your requested restore time. Your entire mailbox
+(including your Inbox and other folders) will look exactly like it did at
+the time the snapshot was taken.
+
+Since we are only able to restore your entire mailbox, there are
+some limitations to what we are able to do when restoring:
+
+- We cannot restore any specific message(s) or folder(s).
+- We cannot restore any message(s) lost while composing.
+- We cannot undo this restoration or restore messages lost because of this
+  restoration.
+- E-Mails received after the recovery date will no longer be available.
+**Please do not reply to this e-mail, as no one will receive your message.**
+
+YET NO FOLDERS NOR E-MAILS WERE RESTORED - ALL HAS BEEN LOST - 13 YEAR'S
+WORTH FOR ME, UP TO 20 YEAR'S WORTH FOR OTHERS.  This is utterly
+unacceptable. Yahoo has remained silent. Meanwhile it has been opined by
+some that Yahoo technicians are staging a protest against their CEO
+demanding that they commute to Yahoo HQ to work and not to work at home.
+
+Certainly there are co-incidences of timing. If members do not request a
+restoration withing the 24-48 hour gap then restorations cannot be carried
+out - period. Apparently Yahoo's backups do not last longer than 48
+hours. And the major snafu occurred on Saturday morning (UK-time).
+
+As far as I am concerned - and I hear rumours of others' - there will be
+many abandoning Yahoo Mail (and its other services) in the next few
+months. Certainly for many this is the final nail in the coffin of using
+Yahoo Mail.  C.J.Brady London, UK.
+
+------------------------------
+
+Date: Mon, 4 Mar 2013 11:16:01 +0000
+From: "Cole, Tricia" <TCole@corcoransunshine.com>
+Subject: Re: Yahoo Fails to Restore Millions of Deleted E-Mails
+
+I've had the exact same experience. Also spent 2 hours on the phone getting
+nowhere with so-called "customer service". Any update or other advice to
+share?  I'm beyond words to describe the frustration and sadness of this
+situation.
+
+------------------------------
+
+Date: Wed, 6 Mar 2013 08:15:15 -0800 (PST)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Yahoo Mail Hack Sending E-mails With Single Link To Rogue Websites
+
+There's this trojan virus going round that is exploiting weaknesses in
+Yahoo's security. Basically you receive an e-mail with a single URL to click
+on. his sends you to a rogue website which downloads a piece of XLS or
+Javascript onto your computer. This then steals your Yahoo login cookies and
+sends them to hackers. It also generates similar e-mails and sends them to
+everyone in your contacts address book. This is all detailed in posts to
+Yahoo Group [Y-Mail] and also at this website:
+http://www.iitp.org.nz/newsletter/article/414?utm_sourceindex
+The question is how to remove this piece of XLS or Javascript? And also how
+to avoid getting the damn thing in the first place.  And OK - I know you
+shouldn't click on links in e-mails - but folks do. And that's the social
+engineering that is being exploited - based on folks collective
+gullibility!!
+
+------------------------------
+
+Date: Tue, 26 Feb 2013 17:25:35 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Adi Shamir says prepare for "post-crypto" world
+
+http://j.mp/15hqeQf  (Threatpost via NNSquad)
+
+  One way to help shore up defenses would be to improve--or replace--the
+  existing certificate authority infrastructure, the panelists said. The
+  recent spate of attacks on CAs such as Comodo, DigiNotar and others has
+  shown the inherent weaknesses in that system and there needs to be some
+  serious work done on what can be done to fix it, they said.
+
+Some of us having been arguing for ages that the existing PKI needs to
+be replaced with a different model, but cryptography per se will still
+be increasingly important.
+
+------------------------------
+
+Date: Tue, 05 Mar 2013 09:49:27 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Are you leaking too much of your real life online?"
+  (Roger A. Grimes)
+
+Roger A. Grimes, InfoWorld, 05 Mar 2013
+Thieves and predators constantly search Facebook, Twitter, and
+Google+ for telltale information. Think before you post!
+https://www.infoworld.com/d/security/are-you-leaking-too-much-of-your-real-life-online-213835
+
+
+I live in Key Largo, Fla., a fishing and diving destination. One of my
+friends recently posted a picture of his custom, handcrafted fishing poles
+on Facebook for all his friends to see. He even included a great picture of
+the new hanging racks in his garage where he stored them. They were stolen
+later that night while he slept upstairs. [...]
+
+------------------------------
+
+Date: Mon, 4 Mar 2013 07:17:56 -0800
+From: Paul Saffo <paul@saffo.com>
+Subject: Users happy to allow strangers to read their e-mail
+
+Crowdsource your inbox and let complete strangers read your e-mail...
+
+summary article here:
+http://news.stanford.edu/news/2013/march/boost-email-productivity-030413.html
+
+Research here:
+http://hci.stanford.edu/publications/2013/EmailValet/EmailValet-CSCW2013.pdf
+
+  [Privacy, schmivacy!  I think the young folks today have NO IDEA of the
+  long-term implications of what they are doing, but it is perhaps
+  indirectly likely that they may wind up radically compromising what the
+  privacy communities have been trying to achieve in the past many decades
+  with respect to privacy rights.  The long-term losses of privacy -- and of
+  privacy protections -- are likely to be irrevocable.  PGN
+
+------------------------------
+
+Date: Fri, 1 Mar 2013 14:15:55 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How SSD power faults scramble your data
+
+http://j.mp/WmeThq  (ZDNET via NNSquad)
+
+  "In Understanding the Robustness of SSDs under Power Fault, researchers
+  Mai Zheng and Feng Qin of Ohio State and Mark Lillibridge and Joseph Tucek
+  of HP Labs look at how power faults affect flash-based SSDs. Short answer:
+  it's not pretty."
+
+------------------------------
+
+Date: Fri, 01 Mar 2013 11:23:11 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Test your SSDs or risk massive data loss, researchers warn"
+  (Ted Samson)
+
+Ted Samson, InfoWorld, 01 Mar 2013
+New study finds 13 of 15 flash-based solid-state drives suffer data
+loss or worse when they lose power
+http://www.infoworld.com/t/solid-state-drives/test-your-ssds-or-risk-massive-data-loss-researchers-warn-213715
+
+------------------------------
+
+Date: Wed, 27 Feb 2013 20:18:30 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Suit: 185K Spyware Images Sent from Rental Computers (Joe Mandak)
+
+It seems to me that rental computers are virtual petri dishes for
+identity theft.  However, I don't expect them to spy on me!
+
+Joe Mandak, Associated Press, Pittsburgh, 27 Feb 2013
+
+Spyware installed on computers leased from furniture renter Aaron's
+Inc. secretly sent 185,000 e-mails containing sensitive information --
+including pictures of nude children and people having sex -- back to the
+company's corporate computers, according to court documents filed Wednesday
+in a class-action lawsuit.
+
+According to the filings, some of the spyware e-mails contained pictures
+secretly taken by the rental computers' webcams or other sensitive
+information including Social Security numbers, social media and e-mail
+passwords, and customer keystrokes, the Federal Trade Commission determined
+last year.
+
+The attorneys also claimed Atlanta-based Aaron's hasn't properly notified at
+least 800 customers allegedly targeted by spyware made by DesignerWare, a
+company located in North East PA.
+
+http://abcnews.go.com/Technology/wireStory/ap-185k-spyware-images-aarons-computers-18610800
+
+------------------------------
+
+Date: Sat, 2 Mar 2013 10:53:45 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Evernote hacked: E-mails encrypted passwords stolen
+
+http://j.mp/12jDMgf  (SlashGear via NNSquad)
+
+  "Cloud notetaking service Evernote has been hacked, the company has
+  revealed today, with an unidentified attacker compromising servers and
+  extracting usernames, e-mail addresses, and encrypted passwords. The attack
+  has forced a mandatory password reset, meaning all users must change their
+  password before they can log back into their account, but Evernote says
+  there is no evidence of either notes being viewed by a third-party, or
+  payment details of Evernote Premium or Business users being accessed."
+
+------------------------------
+
+Date: Tue, 05 Mar 2013 12:43:09 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Oracle releases emergency fix for Java zero-day exploit"
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 4 Mar 2013
+The company broke out of its regular patching cycle for the second
+time this year to fix an actively exploited flaw
+https://www.infoworld.com/d/security/oracle-releases-emergency-fix-java-zero-day-exploit-213839
+
+------------------------------
+
+Date: Tue, 05 Mar 2013 13:33:52 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Java zero-day holes appearing at the rate of one a day"
+  (Woody Leonhard)
+
+Woody Leonhard, InfoWorld, 05 Mar 2013
+A new tongue-in-cheek tracker site drives home the point: As fast as
+Oracle can fix the current bugs, more are cropping up to take their place
+http://www.infoworld.com/t/java-programming/java-zero-day-holes-appearing-the-rate-of-one-day-213898
+
+------------------------------
+
+Date: Tue, 05 Mar 2013 12:44:26 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Researchers link latest Java zero-day exploit to Bit9 hack"
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 4 Mar 2013
+The remote access malware used in both cases is connected to the same
+control server, Symantec researchers say
+http://www.infoworld.com/d/security/researchers-link-latest-java-zero-day-exploit-bit9-hack-213798
+
+------------------------------
+
+Date: Mon, 25 Feb 2013 07:02:28 -0800
+From: Mark Thorson <eee@sonic.net>
+Subject: First government-sanctioned Japanese hacking contest
+
+10 teams compete to break into a server.  What a great idea!
+
+http://www.yomiuri.co.jp/dy/national/T130223003395.htm
+
+------------------------------
+
+Date: Wed, 27 Feb 2013 09:48:13 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Facebook said to fix OAuth-based account hijacking flaw"
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld
+The vulnerability could have allowed attackers to steal OAuth tokens
+and access Facebook account, a researcher says
+http://www.infoworld.com/d/security/facebook-said-fix-oauth-based-account-hijacking-flaw-213312
+
+------------------------------
+
+Date: Wed, 27 Feb 2013 09:53:16 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Many companies likely affected by hack of iOS developer forum
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld Home, 21 Feb 2013
+http://www.infoworld.com/d/security/many-companies-likely-affected-hack-of-popular-ios-developer-forum-213191
+
+iPhoneDevSDK confirms the site was compromised and hosted a zero-day exploit
+that was likely used to launch attacks against Twitter, Facebook, and Apple
+
+a nasty bit:
+
+Ian Sefferman, one of the iPhoneDevSDK administrators confirmed Wednesday
+that the website had been compromised, but said that he learned about it
+from the press and not the affected companies.
+
+"We were alerted through the press, via an AllThingsD article, which cited
+Facebook," he said in a message posted on the forum. "Prior to this article,
+we had no knowledge of this breach and hadn't been contacted by Facebook,
+any other company, or any law enforcement about the potential breach."
+
+------------------------------
+
+Date: Thu, 28 Feb 2013 09:39:10 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "DNA Gun Tags Rioters for Future Arrest"
+
+This prototype DNA pellet gun can penetrate clothing to tags suspects
+skin for future tracking and arrest.
+Posted February 05, 2013 to Hardware
+http://blogs.cio.com/hardware/17772/dna-gun-tags-rioters-future-arrest
+
+------------------------------
+
+Date: Fri, 01 Mar 2013 11:06:03 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Researchers discover new global cyber-espionage campaign"
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 27 Feb 2013
+Researchers discover new global cyber-espionage campaign
+A new cyber-espionage campaign dubbed MiniDuke used the recent Adobe
+Reader zero-day exploit
+https://www.infoworld.com/d/security/researchers-discover-new-global-cyber-espionage-campaign-213614
+
+------------------------------
+
+Date: Fri, 01 Mar 2013 11:08:26 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Researchers find loophole in Google's two-factor authentication"
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 26 Feb 2013
+Researchers say they have found a method to hijack Google accounts
+using application-specific passwords
+https://www.infoworld.com/d/security/researchers-find-loophole-in-googles-two-factor-authentication-213496
+
+------------------------------
+
+Date: Mon, 25 Feb 2013 10:03:16 -0800
+From: "E. John Sebes" <jsebes@osdv.org>
+Subject: Re: Electronic health records: teething problems? (Risks-27.17)
+
+A comment on electronic medical record (EMR) system failures, from one
+who worked on 1st- and 2nd-generation EMR decades ago ...
+
+Of the flaws reported here:
+http://www.philly.com/philly/entertainment/20130218_The_flaws_of_electronic_records.html
+http://www.readingchronicle.co.uk/news/roundup/articles/2013/02/16/86796-hospital-ready-to-ditch-30m-computer-system-/
+and elsewhere, many are not about core EMR functions, but rather are
+additional features that provider organizations have adopted in addition to
+core EMR.
+
+In fact, a big complaint I have about EMR systems (similar to my frequent
+rants about voting systems) is that they are large monolithic products with
+clever features designed absent customer input, and often require adopters
+to change the way that they perform their routine activities. You can
+actually say "No, I only want to use the most essential core EMR functions;
+please leave out the auto-Rx feature, the scheduling feature, the ..." and
+others in addition to those referred to above.
+
+What are the core EMR features? Well, access to medical records, to read
+them during a patient visit, and to append to them thereafter. Not Rx, not
+scheduling, not lab orders, ... and not lots of other things that might be
+sensible to also automate (possibly with a separate application) *after*
+core EMR actually worked. The problem with that "if" is that core EMR
+adoption is actually quite fraught, and including other stuff makes it
+worse.
+
+Here is the original idea from the dawn of time. .... Today, MDs look at a
+stack of paper that is part of a patient's record (not all, and maybe not
+the part important that day for that patient) before and/or during a patient
+visit. They make some notes. Later, those notes are used by medical-records
+staff to add to the record. Tomorrow, we will begin the onerous process of
+digitizing existing records. When enough of them have been digitized enough,
+then we will give MDs the ability to browse and search digital patient
+records using a computer, rather than shuffling paper. We will also give the
+MD a simple tool to record their notes, in the same essentially unstructured
+manner that they do today. Medical records staff will have to continue to
+curate MD-generated content, to ensure that an MD's office-visit notes are
+incorporated into the patient's record properly, but now
+electronically. Over time, we will add new features to help the MD use tags
+and templates to reduce the requirement for medical-records staff
+involvement, reducing the cost-of-ownership of the product, and justifying
+SW license upgrade fees. The MDs run the show, so we'll have to be careful
+to make sure these features actually work for the MD. And last but not
+least, we can expand the product line with additional products that leverage
+the EMR system, that aren't about the record per se, but some other action
+that will eventually cause a change to it: referrals, lab orders, Rx, etc.
+
+That was a fine idea for back in the day, but the original dot-com bubble
+scuttled it for quite some time. Years later, that fine idea is not what's
+happening, for many reasons, but here is the important one: "the MDs run the
+show" is no longer true -- the green-eyeshades crowd does. So the vendors
+make stuff that appeals to the bean counters, without regard for whether it
+improves or degrades the MD's provision of services.
+
+-- John Sebes, Open Source Digital Voting Foundation  jsebes@osdv.org
+
+------------------------------
+
+Date: Mon, 25 Feb 2013 13:42:58 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Re: Electronic health records: teething problems? (Risks-27.17)
+
+Prefer Not to Register?  Oh, really!
+
+In RISKS-27.17, "Electronic health records: teething problems?", there was
+an oddity in the link
+http://www.readingchronicle.co.uk/news/roundup/articles/2013/02/16/86796-hospital-ready-to-ditch-30m-computer-system-/
+
+  Care to make a comment?  You have the choice of "REGISTERED USERS LOG IN
+  HERE" AND "PREFER NOT TO REGISTER?"  The latter section has:
+
+  Prefer not to register?
+
+  Screen Name *required
+
+  E-Mail (not displayed) *required
+
+  Usernames must be 4 - 20 characters. Registration only takes a few
+  minutes. Registered users can also take part in competitions and other
+  features of the site.
+
+So much for not registering.
+
+Another weird bit is that the titles of each section are shown in capitals
+but actually are normally-cased.  Using cut-and-paste to quote means that
+the characters pasted are not those that are actually displayed.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.18
+************************
+
+--_002_4b30ce2b9203418cb46c45f415fcf54bEXHUBVM02campusnclacuk_--

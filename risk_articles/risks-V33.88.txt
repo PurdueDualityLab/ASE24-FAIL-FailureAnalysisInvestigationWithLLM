@@ -1,0 +1,719 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.88
+
+RISKS-LIST: Risks-Forum Digest  Saturday 7 October 2023  Volume 33 : Issue 88
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.88>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+False news spreads faster than the truth (Science)
+Millions of Exim mail servers exposed to zero-day RCE attacks
+ (Bleeping Computer)
+RSA, Other Crypto Systems Vulnerable to Side-Channel Attack (Cliff Saran)
+State Dept e-mails hacked (CISAC via BackgroundBriefing)
+Researcher Reveals New Techniques to Bypass Cloudflare's Firewall
+ and DDoS Protection (The Hacker News)
+23andMe User Data Stolen (WiReD)
+Kia and Hyundai Blame TikTok and Instagram For Their Cars Getting Stolen
+ (Vice)
+Rooftop Solar ongoing maintenance issues (Henry Baker)
+U.S. issues first ever fine for space junk to Dish Network (bbc.com)
+Tesla Autopilot arbitration win could set legal
+ benchmark in auto industry (TechCrunch)
+Conspiracy theories about FEMA’s Oct. 4 emergency alert test spread online
+ (The Boston Globe)
+Blackbaud agrees to $49.5 million settlement for ransomware data breach
+ (Bleeping Computer)
+North Korea's Lazarus Group Launders $900 Million in Cryptocurrency
+ (The Hacker News)
+Bankman-Fried and Crypto[currency] Go on Trial (NYTimes)
+Takeaways From a New Book on Sam Bankman-Fried (NYTimes)
+Why Silicon Valley Falls for Frauds (WiReD)
+Chinese Hackers Target Semiconductor Firms in East Asia with
+ Cobalt Strike (The Hacker News)
+Chinese self-driving car testing in California stirs controversy
+ (NBC News)
+Detroit man steals 800 gallons using Bluetooth to hack gas pumps at station
+ (Fox)
+W3LL phishing kit hijacks thousands of Microsoft 365accounts, bypasses MFA
+ (Bleeping Computer)
+NYPD Robot Gets Tryout to Patrol Times Square Subway (NYimes)
+Dead grandma locket request tricks Bing Chat's AI into solving security
+ puzzle (Ars Technica)
+AI Designs New Robot from Scratch in Seconds (Northwestern News)
+Remember Marvin the paranoid android? (Gabe Goldberg)
+Thousands of Android devices come with unkillable backdoor preinstalled
+ (Ars Technica)
+Hundreds of U.S. schools hit by potentially organized swatting hoaxes,
+ report says (Ars Technica)
+Re: Google accused of directing motorist to drive off collapsed bridge
+ (John Levine)
+Re: Cal. Gov. vetoes autonomous trucking bill (Steve Bacher)
+Quote of The Day (Adyashanti -- and Cicero)
+Quotes of The Day (Nisargadatta)
+ACM subdomain abused? (Chiki Ishikawa)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 4 Oct 2023 06:32:07 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: False news spreads faster than the truth (Science)
+
+*To stop the spread of false news, first we have to understand it.*
+
+A new study published in *Science*
+<http://science.sciencemag.org/content/359/6380/1146> finds that false news
+online travels ``farther, faster, deeper, and more broadly than the truth.''
+And the effect is more pronounced for false political news than for false
+news about terrorism, natural disasters, science, urban legends, or
+financial information.
+
+Falsehoods are 70 percent more likely to be retweeted on Twitter than the
+truth, researchers found. And false news reached 1,500 people about six
+times faster than the truth.
+
+The study, by Soroush Vosoughi and associate professor Deb Roy, both of the
+MIT Media Lab, and MIT Sloan professor Sinan Aral, is the largest-ever
+longitudinal study of the spread of false news online. It uses the term
+*false news* instead of *fake news* because the latter ``has lost all
+connection to the actual veracity of the information presented, rendering it
+meaningless for use in academic classification,'' the authors write.
+
+To track the spread of news, the researchers investigated all the true and
+false news stories verified by six independent fact-checking organizations
+that were distributed on Twitter from 2006 to 2017. They studied
+approximately 126,000 cascades -- defined as ``instances of a rumor
+spreading pattern that exhibits an unbroken retweet chain with a common,
+singular origin'' -- on Twitter about contested news stories tweeted by 3
+million people more than 4.5 million times. Twitter provided access to data
+and provided funding for the study.
+
+The researchers removed Twitter bots before running their analysis.  They
+then included the bots and ran the analysis again and found ``none of our
+main conclusions changed.''
+
+``This suggests that false news spreads farther, faster, deeper, and more
+broadly than the truth because humans, not robots, are more likely to spread
+it,'' the researchers wrote.
+
+So what to do? In an interview
+<http://mitsloanexperts.mit.edu/watch-now-the-truth-about-fake-news-with-sinan-aral-and-tim-oreilly/>
+for the MIT Sloan Experts video series, Aral said possible solutions include
+labeling fake news much as food is labeled, creating financial disincentives
+such as reducing the flow of advertising dollars to accounts that spread
+fake news, and using algorithms to find and dampen the effect of fake news.
+[...]
+
+https://mitsloan.mit.edu/ideas-made-to-matter/study-false-news-spreads-faster-truth
+
+------------------------------
+
+Date: Sat, 30 Sep 2023 04:00:02 -0700
+From: Victor Miller <victorsmiller@gmail.com>
+Subject: Millions of Exim mail servers exposed to zero-day RCE attacks
+ (Bleeping Computer)
+
+https://www.bleepingcomputer.com/news/security/millions-of-exim-mail-servers-exposed-to-zero-day-rce-attacks/
+
+  [Monty spotted this one, somewhat fewer servers!
+  Critical vulnerabilities in Exim threaten over 250k email
+  servers worldwide
+https://arstechnica.com/security/2023/09/critical-vulnerabilities-in-exim-threaten-over-250k-email-servers-worldwide/
+  PGN]
+
+------------------------------
+
+Date: Wed, 4 Oct 2023 11:27:01 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: RSA, Other Crypto Systems Vulnerable to Side-Channel Attack
+ (Cliff Saran)
+
+Cliff Saran, *Computer Weekly*, 3 Oct 2023, via ACM TechNews, 4 Oct 2023
+
+Hubert Kario at open source solutions provider Red Hat found a flaw
+dating from 1998 that enables a "padding mode" side-channel attack
+targeting RSA encryption. The exploit cracks the Transport Layer
+Security (TLS) protocol's confidentiality when used with RSA
+encryption, and researchers in 2019 highlighted the continued
+vulnerability of many Internet servers to tweaks of the original
+attack. Kario said attackers can leverage the flaw to decrypt RSA
+ciphertexts and forge signatures, and record sessions on a TLS server
+that defaults to RSA encryption key exchanges for decryption later. He
+also said hackers can apply the exploit to other interfaces that
+automatically execute RSA decryption, including Secure/Multipurpose
+Internet Mail Extensions, JavaScript Object Notation web tokens, and
+hardware tokens. Said Kario," We have identified the vulnerability in
+multiple implementations and confirmed fixes in a few of them but
+believe that most cryptographic implementations are vulnerable in
+practice."
+
+------------------------------
+
+Date: Sat, 30 Sep 2023 10:11:23 -0700
+From: Jim <jgeissman@socal.rr.com>
+Subject: State Dept e-mails hacked (CISAC via BackgroundBriefing)
+
+  With 60,000 Emails Hacked From the State Department, An Assessment of
+  the Government’s Cybersecurity
+  28 Sep 2023, https://www.backgroundbriefing.org/
+
+Then finally with the State Department revealing that 60,000 of its emails
+were hacked along with the emails of the Secretary of Commerce, we assess
+the state of the government’s cybersecurity with *Dr. Herb Lin*
+<http://cisac.fsi.stanford.edu/people/herbert_lin>, a senior research
+scholar for cyber policy and security at the Center for International
+Security and Cooperation at Stanford University. He is Chief Scientist
+Emeritus for the Computer Science and Telecommunications Board at the
+National Research Council of the National Academies and, in 2016, served on
+President Obama’s Commission on Enhancing National Cybersecurity. He was
+also a professional staff member and staff scientist for the House Armed
+Services Committee where his portfolio included defense policy and arms
+control issues.
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 11:23:57 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Researcher Reveals New Techniques to Bypass Cloudflare's Firewall
+ and DDoS Protection (The Hacker News)
+
+https://thehackernews.com/2023/10/researcher-reveal-new-technique-to.html
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 04:01:53 +0000 ()
+From: danny burstein <dannyb@panix.com>
+Subject: 23andMe User Data Stolen (WiReD)
+
+23andMe User Data Stolen in Targeted Attack on Ashkenazi Jews
+
+At least a million data points from 23andMe accounts appear to have been
+exposed on BreachForums. While the scale of the campaign is unknown,
+n23andMe says it's working to verify the data.
+
+The genetic testing company 23andMe confirmed on Friday that data from a
+subset of its users has been compromised. The company said its system were
+not breached and that attackers gathered the data by guessing the login
+credentials of a group of users and then scraping more people's information
+from a feature known as DNA Relatives. Users opt into sharing their
+information through DNA Relatives for others to see.
+
+Hackers posted an initial data sample on the platform BreachForums earlier
+this week, claiming that it contained 1 million data points exclusively
+about Ashkenazi Jews. There also seem to be hundreds of thousands of users
+of Chinese descent impacted by the leak. On Wednesday, the actor began
+selling what it claims are 23andMe profiles for between $1 and $10 per
+account, depending on the scale of the purchase. The data includes things
+like a display name, sex, birth year, and some details about genetic
+ancestry results.  [...]
+
+https://www.wired.com/story/23andme-credential-stuffing-data-stolen
+
+------------------------------
+
+Date: Sat, 30 Sep 2023 08:54:40 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Kia and Hyundai Blame TikTok and Instagram For Their Cars Getting
+ Stolen (Vice)
+
+Aaron Gordon,*Vice*, September 29, 2023
+
+Kia and Hyundai say it is not their fault that their cars are being stolen
+in an unprecedented theft surge made possible by the vehicles lacking a
+basic anti-theft technology virtually every other car has, according to a
+recent court filing. Instead, the companies point the finger at social media
+companies, such as TikTok and Instagram, where instructions on how to steal
+the cars have been widely shared an thieves show off their stolen cars.
+
+The lawyers representing the two corporations—which are owned by the same
+parent company—are not subtle about this argument. The filing—in which the
+company is arguing a roughly $200 million class-action settlement ought to
+be approved by the court—includes an entire section heading titled “Social
+Media and Intervening Third-Party Criminals Caused An Unprecedented Increase
+In Thefts.” The lawyers argue i section that because Kia and Hyundai
+vehicles have “not been the subject of significant theft” before the Kia
+Boys social media trend, social media and the people who steal the cars—and
+not the car companies—are to blame for the thefts. This argument is
+summarized in the section titled “Social Media Incited Unprecedented Rise In
+Thefts.” The filing broadly reflects both the public communications strategy
+Kia and Hyundai have used throughout this crisis and some of the national
+news headlines that have covered the story,
+
+https://www.vice.com/en/article/bvj5jv/kia-and-hyundai-blame-tiktok-and-instagram-for-their-cars-getting-stolen
+
+------------------------------
+
+Date: Mon, 02 Oct 2023 01:19:40 +0000
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Rooftop Solar ongoing maintenance issues
+
+I'm a huge fan of rooftop solar, so the following recent article really
+depressed me regarding rooftop solar's future.
+
+The problems:
+
+Alana Semuels, 26 Sep, 2023 8:42 AM EDT
+Rooftop Solar Power Has a Dark Side
+https://time.com/6317339/rooftop-solar-power-failure/
+
+* Rooftop solar installs are *custom* installations, with large upfront
+  costs
+
+* Rooftop solar systems are complex, requiring 'vigilance' and maintenance
+
+* 'truck rolls' are incredibly expensive, with too few technicians available
+
+* The 'leasing business model' for rooftop solar is bankrupt, leaving home
+  owners in the clutches of yet another monopolist PE 'rentier' (just like
+  cable and the local monopoly electric company the homeowner wanted to
+  avoid!
+
+* Solar systems degrade over time (just ask NASA's Mars Rovers !)  * the 3G
+  -> 4G/5G cellphone transition killed a lot of older rooftop installations
+
+    This particular article doesn't mention it, but electric utility
+    monopolies *hate* rooftop solar, so they spend all of their lobbying
+    money trying to kill it!
+
+  [... Huge text omitted.  PGN]
+
+------------------------------
+
+Date: Tue, 03 Oct 2023 14:45:12 +0000
+From: Richard Marlon Stein <rmstein@protonmail.com>
+Subject: U.S. issues first ever fine for space junk to Dish
+ Network (bbc.com)
+
+https://www.bbc.com/news/technology-66993647
+
+  FCC enforcement latency needs refinement.
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Tue, 3 Oct 2023 07:04:52 -0400
+Subject: Tesla Autopilot arbitration win could set legal benchmark in auto
+ industry (TechCrunch)
+
+https://techcrunch.com/2023/10/02/tesla-autopilot-arbitration-win-could-set-legal-benchmark-in-auto-industry/
+
+  [Maybe their lawyers were Chatbots.  PGN]
+
+------------------------------
+
+Date: Tue, 3 Oct 2023 19:10:25 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Conspiracy theories about FEMA’s Oct. 4 emergency alert test spread
+ online (The Boston Globe)
+
+One popular video shows a woman claiming the test will somehow switch on
+technology that has been introduced into people’s bodies.
+
+https://www.boston.com/news/technology/2023/10/03/conspiracy-theories-fema-emergency-alert-test/
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 11:49:41 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Blackbaud agrees to $49.5 million settlement for ransomware data
+ breach (Bleeping Computer)
+
+https://www.bleepingcomputer.com/news/security/blackbaud-agrees-to-495-million-settlement-for-ransomware-data-breach/
+
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 11:24:39 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: North Korea's Lazarus Group Launders $900 Million in Cryptocurrency
+ (The Hacker News)
+
+https://thehackernews.com/2023/10/north-koreas-lazarus-group-launders-900.html
+
+------------------------------
+
+Date: Tue, 3 Oct 2023 19:42:47 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Bankman-Fried and Crypto[currency] Go on Trial (NYTimes)
+
+*The New York Times* Business, 3 Oct 2023
+with Two articles under that caption:
+
+David Yaffe-Bellany and Matthew Goldstein
+The FTX founder's court battle starts Tuesday, after he's
+come to symbolize the chaos and dubiousness of the industry
+
+Erin Griffith
+Nobody is rooting harder against the onetime mogul than
+his cryptocurrency peers and rivals
+
+------------------------------
+
+Date: Mon, 2 Oct 2023 23:43:17 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Takeaways From a New Book on Sam Bankman-Fried
+ (The New York Times)
+
+“Going Infinite,” by Michael Lewis, offers a behind-the-scenes account of
+Mr. Bankman-Fried’s rise and fall.
+
+https://www.nytimes.com/2023/10/02/technology/going-infinite-michael-lewis-sbf-takeaways.html?smid=nytcore-ios-share&referringSource=articleShare
+
+------------------------------
+
+Date: Wed, 4 Oct 2023 20:36:45 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Why Silicon Valley Falls for Frauds (WiReD)
+
+FTX’s Sam Bankman-Fried will stand trial on charges of overseeing fraud that
+sucked in high-profile investors and hundreds of thousands of clients. Why
+do smart people buy into bad companies?
+
+https://www.wired.com/story/why-silicon-valley-falls-for-frauds
+
+...not so smart?
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 11:25:12 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Chinese Hackers Target Semiconductor Firms in East Asia with
+ Cobalt Strike (The Hacker News)
+
+https://thehackernews.com/2023/10/chinese-hackers-target-semiconductor.html
+
+------------------------------
+
+Date: Wed, 4 Oct 2023 14:31:460000 (UTC)
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Chinese self-driving car testing in California stirs controversy
+ (NBC News)
+
+https://www.nbcnews.com/tech/tech-news/chinese-self-driving-car-testing-china-california-pony-ai-waymo-cruise-rcna102787
+
+SAN FRANCISCO -- The race on American streets to develop self-driving cars
+has attracted increasing scrutiny in recent months, but some competitors --
+China-based tech startups -- have received little mainstream attention.
+
+China-based companies have driven hundreds of thousands of test miles on
+California's roads in recent years, according to California Department of
+Motor Vehicles records. Of the 40 companies with licenses to try out
+autonomous vehicles in California, 10 of them are firms based in China -- a
+bigger share than any other foreign country (Germany, Israel and Japan
+follow China, and each has two licensed companies in the state). The
+China-linked companies operated 124 cars in the state and drove 438,379
+miles in the most recently reported year, the 12 months ending Nov. 30,
+2022, according to reports that they filed with state authorities.''  The
+Chinese test cars haven't drawn much public attention because of the smaller
+scale of their tests compared to their U.S. competitors, including Cruise
+and Waymo, which operate fleets in major cities such as San Francisco and
+Phoenix.
+
+But scrutiny of Chinese autonomous vehicles is increasing among lawmakers,
+as U.S.-China relations have deteriorated in recent years and as
+self-driving car tech develops. Some members of Congress are pushing for a
+crackdown on the Chinese car startups, raising concerns about competition,
+data privacy and China's human rights record and echoing complaints about
+other Chinese-controlled companies, such as TikTok. And the Biden
+administration is expressing similar worries.
+
+The fears about Chinese autonomous vehicles are theoretical and
+wide-ranging: from concerns about what type of data Chinese tech companies
+are collecting to how Beijing might use a fleet of robot cars in the
+worst-case scenario of an armed conflict with the United States.  [...]
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 11:41:59 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Detroit man steals 800 gallons using Bluetooth to hack gas pumps
+ at station (Fox)
+
+https://www.fox2detroit.com/news/detroit-man-steals-800-gallons-using-bluetooth-to-hack-gas-pumps-at-station
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 11:54:06 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: W3LL phishing kit hijacks thousands of Microsoft 365accounts,
+ bypasses MFA (Bleeping Computer)
+
+https://www.bleepingcomputer.com/news/security/w3ll-phishing-kit-hijacks-thousands-of-microsoft-365-accounts-bypasses-mfa/
+
+------------------------------
+
+Date: Fri, 29 Sep 2023 23:36:44 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: NYPD Robot Gets Tryout to Patrol Times Square Subway
+ (The New York Times)
+The K5, described as a “fully autonomous” security robot, is part of a push
+by the mayor for more law-enforcement technology, which has raised concerns
+among privacy advocates.
+
+Privacy rights advocates remain skeptical. In May, the Legal Aid Society
+requested that the Police Department’s inspector general investigate the
+department’s use of surveillance technology, contending that it violated the
+Public Oversight of Surveillance Technology Act, a city law requiring the
+department to publish details about how new technology is being used and the
+data it collects.
+
+Mr. Cahn said he was wary that the K5 might eventually employ facial
+recognition technology.
+
+“If the mayor thinks there aren't enough cameras in Times Square, then he’s
+more out of touch than I realized,” Mr. Cahn said.
+
+“It’s more surveillance theater,” he added. “This is a mayor who doubles
+down on public relations stunts rather than public safety any chance he
+gets.”
+
+Major crime on the subways is down 4.5 percent, police officials said.
+
+https://www.nytimes.com/2023/09/22/nyregion/police-robot-times-square-nyc.html?smidnytcore-ios-share&referringSource=articleShare
+
+  There must be risks here somewhere...
+
+------------------------------
+
+Date: Tue, 3 Oct 2023 07:21:09 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Dead grandma locket request tricks Bing Chat's AI into
+ solving security puzzle (Ars Technica)
+
+https://arstechnica.com/information-technology/2023/10/sob-story-about-dead-grandma-tricks-microsoft-ai-into-solving-captcha/
+
+------------------------------
+
+Date: Wed, 4 Oct 2023 11:27:01 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: AI Designs New Robot from Scratch in Seconds (Northwestern Mews)
+
+*Northwestern Now* (10/02/23), via ACM TechNews
+
+A research team led by Northwestern University scientists created an
+artificial intelligence (AI) capable of designing robots from scratch
+almost immediately. The researchers prompted the algorithm to design a
+robot from a block about the size of a bar of soap, which generated a
+successful design in 26 seconds. Northwestern's Sam Kriegman said, "We
+told the AI that we wanted a robot that could walk across land. Then
+we simply pressed a button and presto!" The algorithm operates on a
+lightweight personal computer; other AI systems often require
+power-hungry supercomputers and huge datasets. The researchers
+fabricated the robot from the AI's blueprint, validating its
+real-world performance.
+
+  [But is it trustworthy: safe and sound, secure, reliable, etc.  PGN]
+
+------------------------------
+
+Date: Thu, 5 Oct 2023 15:04:50 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Remember Marvin the paranoid android?
+
+Introducing: Zoom AI Companion
+
+Meet Zoom AI Companion, your new AI assistant that helps revolutionize the
+way you work and communicate. With AI Companion, you can get help drafting
+email and chat messages, summarizing meetings and chat threads,
+brainstorming creatively and much more -- all in the simple, easy-to-use
+Zoom experience you know and love.
+
+Upgrade to Zoom One Pro to get access to AI Companion. Once you are a paid
+Zoom customer, you’ll get access to AI Companion at no additional cost.*
+[...]
+
+  "Revolutionize" isn't the first word coming to mind. Nor have I used "know
+  and love" about the Zoom "experience".
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 10:39:58 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Thousands of Android devices come with unkillable backdoor
+ preinstalled (Ars Technica)
+
+https://arstechnica.com/?p=1974179
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 00:39:37 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Hundreds of U.S. schools hit by potentially organized
+ swatting hoaxes, report says (Ars Technica)
+
+https://arstechnica.com/?p=1973632
+
+------------------------------
+
+Date: 29 Sep 2023 23:07:33 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Google accused of directing motorist to drive off
+ collapsed bridge (Kruk, RISKS-33.86)
+
+According to David Landgren <david@landgren.net>: >The obvious question to
+ask is what happens to a driver who *wasn't* using a >Google app and drove
+off the collapsed bridge and died? The only third party >who could be held
+responsible is the municipality that failed to block off >the access in a
+way that no car could get through.  And that would still >hold true
+regardless of what method of navigation the person was using. A >couple of
+large blocks of concrete would do the job.  > >Can't really fault Google
+here.
+
+If you read the articles, you'll find plenty of blame to go around.
+The bridge in question was a private one, not a public one. It had
+been blocked but someone (vandals?) had removed the blocks.
+
+The bridge had collapsed many years before and Google had been
+notified, I think more than once, that the bridge was out but had not
+updated the map.
+
+So on the one hand, Google shouldn't have sent him to the bridge. On
+the other, if he'd gotten there on his own, it's not clear he'd have
+been able to tell it was out before it was too late.
+
+------------------------------
+
+Date: Sat, 30 Sep 2023 08:00:48 -0700
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: Cal. Gov. vetoes autonomous trucking bill (RISKS-33.87)
+
+Quoth Henry Baker <hbaker1@pipeline.com>:
+
+> I hate to sound like a Luddite, but I don't think that these breathless
+> AV aficionados have completely thought all of these risks through.
+
+But aren't we on the RISKS list all Luddites, in a way?  Our guiding
+philosophy is to warn the public about the RISKS of technology and thwart it
+where possible, isn't it?
+
+  [You might recall that the Luddites believed in damaging
+  machinery, not just getting their nose in the news:
+    One of the 19th century English workmen who destroyed laborsaving
+    machinery that they thought would cause unemployment.
+  PGN]
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 07:28:52 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Quote of The Day (Adyashanti -- and Cicero)
+
+Enlightenment is a destructive process. It has nothing to do with
+becoming better or being happier. Enlightenment is the crumbling away of
+untruth. It's seeing through the facade of pretence. It's the complete
+eradication of everything we imagined to be true.
+
+https://twitter.com/_anandaonly/status/1710437279238689263
+
+  [... and this from Cicero also via Geoff::
+``The closer the collapse of an Empire, the crazier its laws."
+https://x.com/Tabassoem/status/1380106112762933250
+  PGN]
+
+------------------------------
+
+Date: Thu, 5 Oct 2023 07:22:17 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Quotes of The Day (Nisargadatta)
+
+``How little does man know of his Self [the one, immortal, formless
+substratum of all that exists], how he takes the most absurd statements
+about himself for holy Truth."
+
+``Man is told that he is the body, was born, will die, has parents, duties;
+learns to like what others like and fear what others fear. Totally a
+creature of heredity and society, he lives by memory and acts by habits."
+
+``Ignorant of his Self and his true nature, man pursues false aims and is
+always frustrated. His life and death are meaningless and painful, and
+there seems to be no way out."
+
+https://twitter.com/GnothiSea/status/1709831934476529918
+
+------------------------------
+
+Date: Sat, 7 Oct 2023 12:33:25 +0900
+From: "ISHIKAWA,chiaki" <ishikawa@yk.rim.or.jp>
+Subject: ACM subdomain abused?
+
+This morning I tried the following google search and was quite surprised.
+
+Ada toaster +site:acm.org
+
++site:sitedomainname is a google search feature to restrict the search to
+the said domain.  Instead of showing only hits from "acm.org" domain, google
+returned many commercial hits.  That was my initial thought.
+
+Well, when I looked at the google result page carefully, I learned  the
+google search feature was not broken, but it dutifully listed hit results
+from ACM.org subdomains.
+
+I mean all the hits about commercial toasters come from the SUBDOMAINs
+of ACM.org domain.
+- isoft.hosting.acm.org
+- tehran.acm.org
+- insat.hosting.acm.org
+- chitkara.acm.org
+- msmu.acm.org
+- on and on
+
+Oh well.  DNS management security is difficult and error-prone when it is
+done via dashboard of web hosting services.  Et tu, ACM?
+
+You can try the following  google search and notice the difference
+immediately.
+
+Ada toaster +site:ieee.org
+
+   [...]
+
+------------------------------
+
+Date: Sat, 1 Jul 2023 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) has moved to the ftp.sri.com site:
+   <risksinfo.html>.
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.88
+************************

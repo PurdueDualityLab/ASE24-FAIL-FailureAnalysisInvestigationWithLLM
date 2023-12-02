@@ -1,0 +1,523 @@
+precedence: bulk
+Subject: Risks Digest 29.92
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 16 November 2016  Volume 29 : Issue 92
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.92>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Secret Backdoor in Some U.S. Phones Sent Data to China, Analysts Say
+  (Matt Apuzzo and Michael S. Schmidt)
+Information Overload Chronicles: Hit Reply to All Shut Down UK
+  National Health Service (Gabe Goldberg)
+Election Math (Rebecca Mercuri)
+"Update your Belkin WeMo devices before they become botnet zombies"
+  (Lucian Constantin)
+Cameroonian Government Launches Campaign Against Social Media,
+  Calls It "A New Form of Terrorism" (GlobalVoices)
+Adult Friend Finder and Penthouse hacked in massive personal data breach
+  (The Guardian)
+$5 tool ransacks password-protected computers (Dan Goodin)
+If your iPhone screen is flickering, it might have touch disease
+  (Bogdan Popa)
+Surveillance technology has advanced far beyond the laws that govern it
+  (Ars Technica)
+Insulin pump vulnerabilities could lead to overdose (ZDnet)
+Securing the IoT (DHS)
+Re: Offensive Words Filter Data Blocked By Offensive Words Filter
+  (Kurt Fredriksson)
+Re: Executive dilemma: Approve the cloud, get a pay cut" (R. G. Newbury)
+Re: TSA biometrics (Arthur Flatau)
+Deepwater Horizon revisited (Earl Boebert)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 14 Nov 2016 15:46:56 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Secret Backdoor in Some U.S. Phones Sent Data to China, Analysts
+  Say (Matt Apuzzo and Michael S. Schmidt)
+
+Matt Apuzzo and Michael S. Schmidt, *The New York Times*, 16 Nov 2016
+http://www.nytimes.com/2016/11/16/us/politics/china-phones-software-security.html
+
+``For about $50, you can get a smartphone with a high-definition display,
+fast data service and, according to security contractors, a secret feature:
+a backdoor that sends all your text messages to China every 72 hours.
+Security contractors recently discovered pre-installed software in some
+Android phones that monitors where users go, whom they talk to and what they
+write in text messages.''
+
+``The Chinese company that wrote the software, Shanghai Adups Technology
+Company, says its code runs on more than 700 million phones, cars and other
+smart devices.  One American phone manufacturer, BLU Products, said that
+120,000 of its phones had been affected and that it had updated the software
+to eliminate the feature.''
+
+  [Al Mac also noted this article:
+    When work is off-shored, and one nation captures a monopoly on
+    manufacture, it grants them enormous power to impose their values on the
+    world.  PGN]
+  Geoff Goodfellow noted another article:
+http://www.fiercewireless.com/wireless/secret-backdoor-some-android-phones-sent-user-data-to-china-report
+  PGN]
+
+------------------------------
+
+Date: Mon, 14 Nov 2016 21:55:50 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Information Overload Chronicles: Hit Reply to All Shut Down UK
+  National Health Service
+
+One of the biggest problems in the field is two-fold: knowledge workers
+frequent send unnecessary e-mails as an acknowledgment, namely of the
+“Great!” or “Thanks!” variety, and users tend to mindlessly hit the
+reply-to-all button assuming more is more.
+
+These issues, compounded with the fact that almost no e-mail systems prevent
+users from e-mailing hundreds of thousands of people let alone including
+them in a reply, culminated with an unprecedented e-mail system meltdown
+that brought health services in the United Kingdom to a full stop.
+<http://www.frequentbusinesstraveler.com/travel-topics/united-kingdom/>
+
+Earlier today, an e-mail created by an employee at the National Health
+Service in the United Kingdom accidentally went to 840,000 employees
+there. The problem didn't stop there: multiple employees clicked *reply to
+all* and responded, thereby compounding the problem. Needless to say, the
+e-mail server crawled to a halt and probably had smoke coming out of its air
+vents.
+
+http://www.frequentbusinesstraveler.com/2016/11/information-overload-chronicles-hit-reply-to-all-shutdown-u-k-national-health-service/
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+  [Also noted by Jonathan Spira in Dave Farber's IP distribution.  PGN]
+
+------------------------------
+
+Date: Tue, 15 Nov 2016 12:08:32 -0500
+From: "DrM (Rebecca Mercuri)" <notable@mindspring.com>
+Subject: Election Math
+
+RISKS readers interested in election math might want to take a look at this:
+
+Statistical researcher, Jonathan Simon, has been comparing
+end-of-election-day polling data with the reported vote totals since
+2004. His analysis for 2016 can be seen here:
+http://codered2014.com/possible-election-rigging-seen-exit-polls/ You can
+see his charts for the Presidential race:
+http://codered2014.com/wp-content/uploads/2016/11/2016PresidentialExitPoll-VoteCountComparative.pdf
+and the Senate races:
+http://codered2014.com/wp-content/uploads/2016/11/2016USSenateExitPollVoteCountComparison.pdf
+His book (updated for 2016), can be freely downloaded from the
+codered2014.com website.
+
+Long-time election integrity advocate Bev Harris has noted the possibility
+of stealth tampering via the GEMS election management system, which
+currently tallies about 25% of the U.S. votes.  She has been recently
+raising concern about the addition of votes via fractional decimals, which
+are hidden in integer display.  You can read more about this in a 7-part
+article starting here: http://blackboxvoting.org/fraction-magic-1/
+This technique applied to siphoning off money from bank accounts [has long
+been referred to] as Salami Slicing (or Salami Embezzlement).
+
+------------------------------
+
+Date: Mon, 14 Nov 2016 21:26:43 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Update your Belkin WeMo devices before they become botnet zombies"
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 4 Nov 2016
+Update your Belkin WeMo devices before they become botnet zombies.
+Researchers have disclosed a critical vulnerability in Belkin's WeMo Switch
+and possibly other devices.
+
+http://www.infoworld.com/article/3137963/security/update-your-belkin-wemo-devices-before-they-become-botnet-zombies.html
+
+selected text:
+
+Owners of WeMo home automation devices should upgrade them to the latest
+firmware version, which was released this week to fix a critical
+vulnerability that could allow hackers to fully compromise them.
+
+Tenaglia and Tanen said Belkin was very responsive to their report and is
+one of the better IoT vendors out there when it comes to security. The
+company actually did a pretty good job of locking down the WeMo Switch on
+the hardware side, and the device is more secure than average IoT products
+on the market today, they said.
+
+  Another example of the Internet of Insecure Things.
+
+    [I long ago had a backronym for "IDIoT", but cannot find it in RISKS.
+    However, Gene just came up with a new one: "Insecurely Designed Internet
+    of Things".  PGN]
+
+------------------------------
+
+Date: Tue, 15 Nov 2016 21:33:06 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Cameroonian Government Launches Campaign Against Social Media,
+  Calls It "A New Form of Terrorism"
+
+GlobalVoices via NNSquad
+
+  The government of Cameroon has launched a campaign against social media,
+  which according to the government-controlled daily, Cameroon Tribune, is
+  "fast becoming a threat to peace and a secret instrument of manipulation"
+  promoting "character destruction, destabilisation of public opinion and
+  deformation of facts among others."
+https://globalvoices.org/2016/11/16/cameroonian-government-launches-campaign-against-social-media-calls-it-a-new-form-of-terrorism/
+
+------------------------------
+
+Date: Tue, 15 Nov 2016 17:00:08 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Adult Friend Finder and Penthouse hacked in massive personal data
+  breach
+
+Over 412 million accounts from pornography sites and s*x hookup service
+reportedly leaked as Friend Finder Networks suffers second hack in just over
+a year.
+
+https://www.theguardian.com/technology/2016/nov/14/adult-friend-finder-and-penthouse-hacked-in-largest-personal-data-breach-on-record
+
+------------------------------
+
+Date: Wed, 16 Nov 2016 16:08:00 +0100
+From: Werner U <werneru@gmail.com>
+Subject: $5 tool ransacks password-protected computers
+
+  [Peter, when reading this story you, too, might catch yourself wishing it
+  was April Fools Day...]
+
+Dan Goodin, Ars Technica, 16 Nov 2016
+Meet PoisonTap, the $5 tool that ransacks password-protected computers
+http://arstechnica.com/security/2016/11/meet-poisontap-the-5-tool-that-ransacks-password-protected-computers/
+
+The perils of leaving computers unattended just got worse, thanks to a newly
+released exploit tool that takes only 30 seconds to install a
+privacy-invading backdoor, even when the machine is locked with a strong
+password.
+
+*PoisonTap*, as the tool has been dubbed, runs freely available software on
+a $5 Raspberry Pi Zero device
+<http://arstechnica.co.uk/gadgets/2015/11/raspberry-pi-zero-sells-out-within-24-hours/>.
+Once the payment card-sized computer is plugged into a computer's USB slot,
+it intercepts all unencrypted Web traffic, including any authentication
+cookies used to log in to private accounts. PoisonTap then sends that data
+to a server under the attacker's control. The hack also installs a backdoor
+that makes the owner's Web browser and local network remotely controllable
+by the attacker.
+
+PoisonTap is the latest creation of Samy Kamkar, the engineer behind a long
+line of low-cost hacks, including a password-pilfering keylogger disguised
+as a USB charger
+<http://arstechnica.com/security/2015/01/13/meet-keysweeper-the-10-usb-charger-that-steals-ms-keyboard-strokes/>,
+a key-sized dongle that jimmies open electronically locked cars and garages
+<http://arstechnica.com/security/2015/08/meet-rolljam-the-30-device-that-jimmies-car-and-garage-doors/>,
+and a DIY stalker app that mined Google Streetview
+<http://www.theregister.co.uk/2010/08/03/google_street_view_hack/>. While
+inspiring for their creativity and elegance, Kamkar's inventions also
+underscore the security and privacy tradeoffs that arise from an
+increasingly computerized world. PoisonTap continues this cautionary theme
+by challenging the practice of password-protecting an unattended computer
+rather than shutting it off or, a safer bet still, toting it to the restroom
+or lunch room.
+
+Kamkar: "The primary motivation is to demonstrate that even on a
+password-protected computer running off of a WPA2 Wi-Fi, your system and
+network can still be attacked quickly and easily. Existing non-HTTPS website
+credentials can be stolen, and, in fact, cookies from HTTPS sites that did
+not properly set the 'secure' flag on the cookie can also be siphoned" ...
+<https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access>
+
+Unsecured home or office routers are similarly at risk. Kamkar has published
+the PoisonTap source code and additional technical details, and has also
+released a video demonstration.  <https://t.co/VZNji4Qwdo>
+
+Once the device is inserted in a locked Mac or PC (Kamkar said he hasn't
+tested PoisonTap on a Linux machine), it surreptitiously poisons the browser
+cache with malicious code that lives on well after the tool is removed. That
+makes the hack ideal for infecting computers while they are only briefly
+unattended. Here's how it works.  ...<snip-snip>....
+
+PoisonTap challenges a tradition that can be found in almost any home or
+office -- the age-old practice of briefly leaving a locked computer
+unattended. And for that reason, the ease and thoroughness of the hack may
+be understandably unsettling for some people. Still, several safeguards can
+significantly lower the threat posed by the hack. The first is to, whenever
+possible, use sites that are protected by HTTPS encryption and the
+transmission of secure cookies to prevent log-in credentials from being
+intercepted. A measure known as HTTP Strict Transport Security is better
+still, because it prevents attack techniques that attempt to downgrade HTTPS
+connections to unsecured HTTP.
+<https://en.wikipedia.org/wiki/HTTP_Secure>
+<https://www.owasp.org/index.php/SecureFlag>
+<http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security>
+
+As a result, neither Google nor Facebook pages can be triggered by computers
+infected by PoisonTap. Sadly, multi-factor authentication isn't likely to
+provide much protection because it generally isn't triggered by credentials
+provided in authentication cookies.
+
+End users, meanwhile, should at a minimum close their browsers before
+locking their computer or, if they're on a Mac, be sure to enable FileVault2
+and put their machine to sleep before walking away, since browsers are
+unable to make requests in such cases. Regularly flushing browser caches is
+also a sound, albeit imperfect, measure. For the truly paranoid, it may make
+more sense to simply bring laptops along or to turn off machines altogether.
+
+------------------------------
+
+Date: Wed, 16 Nov 2016 19:20:42 +0100
+From: Werner U <werneru@gmail.com>
+Subject: If your iPhone screen is flickering, it might have touch disease
+  (Bogdan Popa)
+
+Bogdan Popa, Softpedia, 15 Nov 2016
+Apple Insider Says iPhone 6 Plus Has a Major Bug, Company Should Start Recall
+http://news.softpedia.com/news/apple-insider-says-iphone-6-plus-has-a-major-bug-company-should-start-recall-510228.shtml
+
+WSFA 12 News cites a former Apple insider... as saying the iPhone 6 Plus was
+launched with a major bug that the company is yet to acknowledge, ...
+[which] seems to be causing issues similar to the famous *touch disease*,
+leading to screen flickering... Although it might seem like the display is
+at fault, the technician explains that this isn't the case, but that the
+main logic board should be replaced by Apple... in a global recall of the
+iPhone 6 Plus, as customers spend hundreds of dollars on repairs that
+usually involve replacing the screen, only to experience the same issue
+after a while again (and again) ... out of warranty, a ~$300 expense at
+Apple Stores.
+<http://www.wsfa.com/story/33614279/apple-insider-iphone-6-plus-is-defective-should-be-recalled>
+
+------------------------------
+
+Date: Mon, 14 Nov 2016 11:16:30 +0100
+From: Werner U <werneru@gmail.com>
+Subject: Surveillance technology has advanced far beyond the laws that
+  govern it
+
+Ars Technica Live #2 - 26 May 2016
+
+Surveillance technology has advanced far beyond the laws that govern it
+http://arstechnica.com/tech-policy/2016/05/surveillance-technology-has-advanced-far-beyond-the-laws-that-govern-it/
+
+UC Davis Law professor *Elizabeth Joh* predicts the future of high-tech
+policing.
+
+(Second episode of Ars Technica Live - video filmed in Oakland, California)
+
+...interesting conversation with UC Davis law professor Elizabeth Joh, who
+researches surveillance technology and policing.
+
+Right out of the gate, Joh made it clear that the problem isn't surveillance
+per se -- governments "need surveillance," she said, to figure out what its
+citizens require in terms of benefits, help, and security. The problem is
+when this surveillance becomes invasive, and the government inhibits freedom
+of expression and punishes unconventional behavior. How do we balance the
+need for surveillance and the need for free expression and privacy in a
+democratic society?
+
+Joh talked a lot about the future legal landscape we're creating with
+cutting-edge technologies like self-driving cars, facial recognition, and
+body cams. When you're talking about law and policy, the issue is always
+that adoption of devices like body cams tends to precede careful thought
+about what rules will govern them. After the Ferguson protests, for example,
+police departments started using body cams as an accountability measure. But
+there are no federal guidelines for how cops will use these cams. Will they
+be able to turn them off whenever they want? Who has access to the data they
+collect? Can they use facial recognition in body cams? All of these
+questions remain unanswered, yet body cams are in widespread use across the
+US.
+
+A similar problem dogs our use of DNA databases, Joh explained. The US
+government gives states financial incentives to develop databases and
+biological sample libraries with the DNA of everyone who gets arrested.
+These aren't convicts, mind you -- just anyone who gets arrested, regardless
+of whether they were released the next day or found guilty of a felony.
+Again, the question here is how to regulate these databases, as well as
+other digital databases full of our "information microbiome." The key, Joh
+argued, isn't going to be found in the courts or Congress. Instead, "public
+vigilance" is the only social force that moves fast enough to push
+government to behave responsibly with new surveillance technologies.
+
+Of course, public vigilance is only as good as public information, and if
+the public doesn't know what data law enforcement has, we can't push for
+better rules. That's why the rise of private security forces is so
+troubling.  Joh estimated that private security forces, from guards at 7-11
+to "Target's private crime lab," are 3-5 times larger than public forces.
+And they are not regulated by government in any way, which means that it's
+impossible for the public to know what kinds of data private forces are
+gathering.
+
+In the question and answer period, Joh talked about the future of
+surveillance tech in the US. Though self-driving cars may be great for
+safety, they will also log everywhere you go. Who will have access to all
+the information generated by these cars? She also believes very strongly
+that robots will become a key part of law enforcement, whether via
+surveillance drones or actual Robocop-style police officers who arrest
+people. She's also very concerned about "predictive policing," or using
+algorithms to predict where crimes will happen and who is likely to be
+involved in them. The idea of "pre-crime police" is straight out of a Philip
+K. Dick science fiction story, but it's not far from reality at this point.
+
+------------------------------
+
+Date: Wed, 16 Nov 2016 00:33:17 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Insulin pump vulnerabilities could lead to overdose (ZDnet)
+
+http://www.zdnet.com/article/insulin-pump-vulnerabilities-could-lead-to-overdose/
+
+------------------------------
+
+Date: Tue, 15 Nov 2016 14:41:18 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Securing the IoT (DHS)
+
+Strategic Principles for Securing the Internet of Things, Department of
+Homeland Security, along with a two-page IoT Fact Sheet, November 15, 2016.
+https://www.dhs.gov/securingtheIoT
+
+------------------------------
+
+Date: Mon, 14 Nov 2016 10:00:44 +0100
+From: Kurt F <kurt.fredriksson@ieee.org>
+Subject: Re: Offensive Words Filter Data Blocked By Offensive Words Filter
+
+What language does the Offensive Word belong to?  If we are to include all
+languages in the world, it will be a long list, and very little
+communication.
+
+------------------------------
+
+Date: Mon, 14 Nov 2016 11:22:51 -0500
+From: "R. G. Newbury" <newbury@mandamus.org>
+Subject: Re: Executive dilemma: Approve the cloud, get a pay cut"
+  (Linthicum, R 29 91)
+
+Apparently DL has never taken an Economics or Finance class...  *Of course*
+there will be no depreciation or interest charges if you stop using your own
+hardware. The cost just migrates up the Income Statement to the EXPENSES
+section.
+
+What you pay your cloud provider is a deduction in determining the
+"earnings". You know the bit at the front of Earnings Before etc. etc.
+Rationally, you would not elect to 'cloudify' if it cost more than the
+actual costs (interest and the real depreciation rate) of the hardware, so
+Earnings should be greater. And since you have NOT diverted capital funds
+towards purchases of hardware, more actual equity can be invested in
+increasing Income... Unless of course, the corporation actually has a
+negative Return on Investment.
+
+In which case, see United States v. Bernie Madoff, not as an example, but as
+a warning.
+
+------------------------------
+
+Date: Mon, 14 Nov 2016 11:12:35 -0600
+From: Arthur Flatau <flataua@acm.org>
+Subject: Re: TSA biometrics (Detroit CBS, RISKS-29.90
+
+I flew out of Baltimore Washington airport (BWI) on Thursday, November 10.
+There was a woman who may have been with TSA or maybe with CLEAR, who was
+trying to sign people up for CLEAR.  I was tempted as the TSA pre-check
+line was a bit long, but you had to provide a credit card for a 30 day free
+trial.  I believe that CLEAR is also new to BWI.
+
+------------------------------
+
+Date: Mon, 14 Nov 2016 15:46:56 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Deepwater Horizon revisited (Earl Boebert)
+
+http://www.theecologist.org/News/news_analysis/2988290/avoiding_catastrophe_the_lessons_of_deepwater_horizon.html
+
+  We must coldly examine how inherently dangerous systems work and how they
+  fail, writes Earl Boebert, and then apply those insights to reducing the
+  risk of failure through systems design, regulation, and education. That
+  examination must apply the most modern and effective analytic tools. To do
+  otherwise is to almost guarantee a repeat catastrophe.  [The Ecologist
+  editor.]
+
+This model will be a simplification and an idealization, and consequently a
+falsification. It is to be hoped that the features retained for discussion
+are those of greatest importance in the present state of knowledge.
+
+A recent film casts the tragic fate of the Deepwater Horizon, her crew and
+the Gulf of Mexico as resulting from a confrontation between two individuals
+which the wrong person won.
+
+What actually occurred was a classic 'emergent event', arising from the
+interaction of multiple decisions and actions, the majority of which took
+place weeks or months before the events of the film began.  [...]
+
+Whether we like it or not, complex, high-risk / high-consequence systems
+like offshore drilling exist and massive financial interests will [e]nsure
+that they are not going away any time soon. Their safety results from the
+interaction of technology, human action, and organizational dynamics, and
+that interaction is far from simple.
+
+If we as a society are to intelligently cope with them we must set aside
+glib generalizations, ideological preconceptions and Hollywood
+caricatures. We must coldly examine how such systems work and how they fail,
+and then apply those insights to reducing the risk of failure through
+systems design, regulation, and education.
+
+That examination must apply the most modern and effective analytic tools. To
+do otherwise is to almost guarantee a repeat catastrophe.
+
+  [This is highly relevant to RISKS, especially as a possible reminder to
+  the industry that bad publicity is not good for business, and that in the
+  long run proactive care would be good business.  PGN]
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.92
+************************

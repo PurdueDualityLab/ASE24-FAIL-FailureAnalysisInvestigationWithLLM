@@ -1,0 +1,941 @@
+RISKS-LIST: Risks-Forum Digest  Thursday 28 June 2012  Volume 26 : Issue 90
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.90.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+An Airbus manual describes a double hydraulic failure as 'improbable'
+  (Danny Burstein)
+San Onofre's issues appear to be result of faulty computer modeling
+  (Lauren Weinstein)
+Software Failures Responsible for 24% Of All Medical Device Recalls
+  (Robert Schaefer)
+Re: Class I Recall: Baxa Software, Potential Dosing Errors (Kevin Fu)
+Re: Medical device software update, server distributes malware (Kevin Fu)
+60% of Wikipedia entries about companies contain errors (Richard O'Keefe)
+Teenage girl posts picture of cash on Facebook, family robbed
+ within hours (Mike Flacy via Monty Solomon)
+Re: MD5 password scrambler 'no longer safe' (John Kemp, Dag-Erling Smørgrav,
+  Richard Pennington)
+LinkedIn hit with lawsuit over massive data breach (Cameron Scott via
+  Gene Wirchenko)
+Error code 451: An HTTP error for censorship? (Robert Schaefer)
+Verifying Ages Online Is a Daunting Task, Even for Experts (Lauren Weinstein)
+FBI, DEA warn IPv6 could shield criminals from police (John Gilmore)
+Technical problem at bank denies access to accounts (Martyn Thomas)
+Data lost or breached at 82.5 per cent of government IT systems in Canada
+  (Christine Wong via Gene Wirchenko)
+"Why we need a code of ethics for the Web" (Robert X. Cringely via
+  Gene Wirchenko)
+Security issue found in 64-bit virtualization software running on Intel CPUs (David Marshall via Gene Wirchenko)
+US-CERT discloses security flaw in Intel chips (Antone Gonsalves via
+  Gene Wirchenko)
+What you really need to know about cloud security (Jeff Vance via
+  Gene Wirchenko)
+What Facebook Knows (Lauren Weinstein)
+Taxing old browsers out of existence (Mark Thorson)
+Hacker group demands 'idiot tax' from payday lender (Ted Samons via
+  Gene Wirchenko)
+Stolen passwords, or chum to catch passwords?  Lastpass.com (PGN)
+Coming in your Future! - "An important message from your .bank!"
+  (Lauren Weinstein)
+Serious new MySQL security vulnerability (Lauren Weinstein)
+The Vulnerabilities Market and the Future of Security (Matthew Kruk)
+New fingerprint reader works 6 meters away (Robert Schaefer)
+Privacy Breach Discovered In Internet Address Bids (Lauren Weinstein)
+ICANN's Call For New Domain Names Brings Criticism, and $357M
+  (Lauren Weinstein)
+Remove stylesheets, US pseudo embassy becomes real embassy (Jidanni)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 20 Jun 2012 08:07:01 -0400 (EDT)
+From: Danny Burstein <dannyb@panix.com>
+Subject: An Airbus manual describes a double hydraulic failure as
+'improbable'
+
+A mechanical failure sent a JetBlue plane like this one careening wildly
+through the skies, sparking panic among the 155 people aboard the Las Vegas
+to New York flight, passengers told The Post yesterday.
+
+"It was four hours of hell," said Travis McGhie, who described how the plane
+kept lurching from side to side and going into steep turns when its
+hydraulic system failed Sunday.  ...  The side-to-side weaving was likely a
+sign that the pilots had lost lateral control, said Dave Esser, a professor
+at Embry-Riddle Aeronautical University in Florida.
+
+An Airbus manual describes a double hydraulic failure as "improbable in
+operation." ...  [*NY Post*]
+http://www.nypost.com/p/news/national/jetblue_hours_of_hell_sKTYyyOCgV9oGLeqnuIWIJ
+
+------------------------------
+
+Date: Mon, 18 Jun 2012 21:27:51 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: San Onofre's issues appear to be result of faulty computer modeling
+
+http://latimesblogs.latimes.com/lanow/2012/06/san-onofre-computer-modeling.html
+
+------------------------------
+
+Date: Thu, 21 Jun 2012 11:24:07 -0400
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: Software Failures Responsible for 24% Of All Medical Device Recalls
+
+https://threatpost.com/en_us/blogs/fda-software-failures-responsible-24-all-medical-device-recalls-062012
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886   781-981-5767   http://www.haystack.mit.edu
+
+------------------------------
+
+Date: Tue, 19 Jun 2012 23:04:00 -0400
+From: Kevin Fu <kevinfu@cs.umass.edu>
+Subject: Re: Class I Recall: Baxa Software, Potential Dosing Errors
+  (RISKS-26.85)
+
+Baxa also sells a medical compounder using a Microsoft operating system with
+the gotcha that ``any unauthorized programs installed on a Baxa product will
+void the manufacturer's warranty.''  For instance, the Baxa `Preventing
+Cyber Attacks' document explicitly cites ``OS updates and installation of
+antivirus software'' as a warranty voiding event.  This rather draconian,
+blanket mandate appears to contradict the FDA's document on `Guidance for
+Industry - Cybersecurity for Networked Medical Devices Containing
+Off-the-Shelf (OTS) Software'.
+
+------------------------------
+
+Date: Fri, 15 Jun 2012 12:41:32 -0400
+From: Kevin Fu <kevinfu@cs.umass.edu>
+Subject: Re: Medical device software update, server distributes malware
+  (Fu, RISKS-26.89)
+
+Readers contributed a couple updates OOB regarding malware and medical
+device software.
+
+Hat tip to Shawn Merdinger who points out that CareFusion appears to violate the spirit of its own legal disclaimer concerning not to "post or transmit any information or software which contains a virus, trojan horse, worm or other harmful component."  It also says, "By using the CareFusion.com web site, including any software and content contained therein, you agree that the use of the Site is entirely at your own risk.... THIS DISCLAIMER OF LIABILITY APPLIES TO DAMAGES OR INJURY CAUSED BY ... COMPUTER VIRUS." This technique reminds me of Riegel vs. Medtronic, but so much more efficient when a manufacturer can simply disclaim malware liability in medical device software.
+
+The CLEAN MX realtime database offers further details on the infection. According to CLEAN MX, the web server was infected with the "JS/Redirector.JL.1" virus for 1666.3 hours from March 23, 2012 to May 31, 2012.  Also, the Department of Homeland Security wrote to me that according to http://web-sniffer.net/, the site seems to be running an old version of .NET.
+
+http://blog.secure-medicine.org/2012/06/click-here-to-download-your-avea.html
+
+------------------------------
+
+Date: Tue, 12 Jun 2012 10:02:49 +1200
+From: "Richard O'Keefe" <ok@cs.otago.ac.nz>
+Subject: 60% of Wikipedia entries about companies contain errors
+
+If you are at all interested in the issue, I urge you to
+read the original published article, at
+http://www.prsa.org/Intelligence/PRJournal/Documents/2012DiStaso.pdf
+
+I have done so, and the *Science News* article is a fair summary of
+the findings.  I would paraphrase the original article as "Because
+the Wikipedia is rightly so well respected, it's important that
+information about companies should be correct, and our survey shows
+that PR professionals who try to get factual errors corrected often
+experience serious difficulty and long delays."
+
+The difficulty people experience in getting incorrect computerised
+information corrected is no new topic in RISKS.
+
+The one thing which _is_ misleading is the 60% figure.  You would
+think that someone had taken a sample of Wikipedia pages about
+companies and discovered that 60% of them contained (possibly minor)
+errors.  The study surveyed a sample of PR professionals.  Paraphrasing
+again, out of those who answered "yes" to "does the company you
+represent have a Wikipedia entry that you know about", 60% went on to
+answer "yes" to "does that entry contain factual errors".  The error
+rate in company entries as such remains unknown.
+
+------------------------------
+
+Date: Mon, 18 Jun 2012 10:34:43 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Teenage girl posts picture of cash on Facebook, family robbed
+ within hours (Mike Flacy)
+
+Mike Flacy, Digital Trends, 29 May 2012
+
+As mentioned by the BBC News recently, a 17-year-old girl was visiting her
+grandmother in Sydney, Australia when she took a picture of a "large sum of
+cash" while helping her grandmother count her cash savings at the home. The
+teenager posted the picture on her Facebook feed around 4 p.m. on Thursday
+May 24. Approximately seven hours later, two masked men armed with a wooden
+club and a knife entered the girl's family home 75 miles away in the town of
+Bundanoon. Upon entering the family home, the men found the 47-year-old
+mother of the girl as well as a 58-year-old man and 14-year-old boy, likely
+her father and brother.
+
+When speaking to the family, the two men wanted to talk to the girl
+about the sum of money in the picture that was posted on Facebook. ...
+
+http://www.digitaltrends.com/social-media/teenage-girl-posts-picture-of-cash-on-facebook-family-robbed-within-hours/
+http://www.bbc.co.uk/news/world-asia-18232613
+
+------------------------------
+
+From: John Kemp <john@jkemp.net>
+Date: Mon, 11 Jun 2012 08:32:55 -0400
+Subject: Re: MD5 password scrambler 'no longer safe'
+
+Original source: http://phk.freebsd.dk/sagas/md5crypt_eol.html
+
+John Kemp <john@jkemp.net> wrote:
+
+> This blog post doesn't tell us anything useful.
+
+Actually, it does, and you have missed the main point amongst the fuss
+over the recent password leaks and the irrelevant problem of MD5 collision
+attacks.
+
+> [MD5 is] probably still mostly just fine for storing passwords, provided
+> that certain other security measures are taken:
+>
+> i) Online password retries must be limited
+> ii) Passwords should be stored "salted" [...]
+> iii) Password databases should be stored securely
+
+The point of Poul-Henning's announcement is that (ii) is not sufficient in
+the event that (iii) fails. The reason is that MD5 is optimised for speed,
+so an attacker is able to use brute force to recover password plaintexts
+in reasonable time. So as well as salting you need to use many iterations
+of the hash function in order to slow down a brute-force recovery attack
+enough to make it infeasible.
+
+Recently several people have written good articles to explain this:
+http://krebsonsecurity.com/2012/06/how-companies-can-beef-up-password-security/
+http://www.f-secure.com/weblog/archives/00002095.html
+http://throwingfire.com/storing-passwords-securely/
+
+Now, PHK's MD5 crypt() uses 1000 iterations, so it is a lot more secure
+than a naive salted hash. But still, it is not secure enough given the
+performance of current computers and GPU-optimised MD5 implementations.
+
+The articles all mention bcrypt() which is based on Blowfish instead of
+MD5. It has the advantage (for this purpose) of requiring a large state
+space, so it is harder to speed it up using GPUs. They also mention
+scrypt() which is designed to use a fairly large amount of memory, more
+than fits in the CPU cache, so that its performance is limited by memory
+speed more than CPU speed - and memory technology does not speed up like
+CPUs.
+
+------------------------------
+
+Date: Mon, 11 Jun 2012 14:14:04 +0200
+From: Dag-Erling Smørgrav <des@des.no>
+Subject: Re: MD5 password scrambler 'no longer safe' (Kemp, RISKS-26.89)
+
+Allow me to inject a minimum of fact into the discussion, as someone who
+has known Poul-Henning for many years and actually took the time to read
+what he wrote and not just the regurgitation of a journalist who clearly
+does not understand the issue:
+
+Poul-Henning's point has nothing to do with real or imagined inherent
+weaknesses in MD5.  His point is that known-hash attacks against MD5 are
+too easy because MD5 is fast on modern hardware.  Neither did he claim
+any connection between the LinkedIn breach and his code; he just thought
+it was a good occasion to remind people that times change.
+
+For the record, I don't agree with him - picking a slow algorithm only
+slows the attack down arithmetically.  I believe in increasing the key
+space, which slows the attack down geometrically.  The best long-term
+solution is probably to switch from passwords to passphrases.
+
+> (i) Online password retries must be limited
+
+Irrelevant in the case of a known-hash attack, which is the premise for
+this discussion.
+
+> (ii) Passwords should be stored "salted" - i.e.. where the cleartext
+> is concatenated with a random value. In such a case, the attacker will
+> have to run an individual dictionary attack for each user's password.
+
+Poul-Henning's MD5 algorithm is indeed salted.  That doesn't matter for
+known-hash attacks, since the salt is known to the attacker.
+
+LinkedIn's password hashes were not salted, but they are now:
+
+  It is worth noting that the affected members who update their
+  passwords and members whose passwords have not been compromised
+  benefit from the enhanced security we just recently put in place,
+  which includes hashing and salting of our current password databases.
+
+The bit about "members whose passwords have not been compromised"
+worries me.  It implies that they either a) have a copy of the cleartext
+passwords and are therefore able to rehash them immediately, or b) won't
+rehash those passwords until the next time the user logs in.  I don't
+much like either option, but I dislike option b) less than option a).
+
+> (iii) Password databases should be stored securely
+
+Once again, the premise is that the hash is known to the attacker.
+
+------------------------------
+
+Date: Mon, 11 Jun 2012 15:59:00 +0100
+From: "Richard Pennington" <richardhelen@ntlworld.com>
+Subject: Re: MD5 password scrambler 'no longer safe' (Kemp, RISKS-26.89)
+
+In the third paragraph of John Kemp's piece on MD5 (RISKS 26.89), he states
+that 'When people have said that "MD5 is broken" they mean that MD5 is
+subject to "collision attacks" in which two different cleartext values can
+hash to the same value.'  This is true but not useful.  By definition, a
+hash is a digest of a message *which is, except for very short messages,
+shorter than the original message*.  So the range space of a hash is much
+smaller than its domain space, so many different possible (but not
+necessarily human-intelligible) messages map to the same hash value.  This
+is a property of the hash problem, regardless of the hash algorithm.  So
+MD5, SHA-1, and all past, present and future hash algorithms contain
+potential collisions.  However, if it is possible, given a hash value, to
+generate a source message (not necessarily the original message) which
+hashes to that value, then the hash algorithm is truly broken (as it is
+effectively not reversible).
+
+Ironically, password storage is one application where the "messages" (the
+passwords) are typically very short (i.e. shorter than their hashes);
+however, designing a hash algorithm to be completely collision-free for very
+short messages would probably introduce enough "structure" to enable a
+cryptographer to reverse-engineer the algorithm ... which would break the
+algorithm.
+
+------------------------------
+
+Date: Thu, 21 Jun 2012 10:20:34 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: LinkedIn hit with lawsuit over massive data breach (Cameron Scott)
+
+Cameron Scott, 20 Jun 2012
+LinkedIn hit with lawsuit over massive data breach
+A lawsuit seeking class-action status said the company failed to
+implement industry standard security measures
+http://www.itbusiness.ca/IT/client/en/CDN/News.asp?id=68020
+
+------------------------------
+
+Date: Thu, 14 Jun 2012 08:33:33 -0400
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: Error code 451: An HTTP error for censorship?
+
+Error code 451: an HTTP error for censorship? One would imagine that after
+legal censorship there would be either a password protected gateway or more
+simply no page to not return.
+
+XML creator Tim Bray has proposed a new HTTP error code: 451, "Legally
+restricted." The idea is to create an unambiguous code that ISPs can return
+when a user requests a page that has been censored by a court or
+government. Note the specific number of the error code. Bray thanks Ray
+Bradbury in the footnotes."
+
+Here's a sample error message:
+
+This request may not be serviced in the Roman Province of Judea due to
+Lex3515, the Legem Ne Subversionem Act of AUC755, which disallows access to
+resources hosted on servers deemed to be operated by the Judean Liberation
+Front.
+
+http://boingboing.net/2012/06/13/error-code-451-an-http-error.html
+and
+https://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-00
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886, voice:  781-981-5767  www:  http://www.haystack.mit.edu
+
+------------------------------
+
+Date: Sun, 17 Jun 2012 22:22:57 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Verifying Ages Online Is a Daunting Task, Even for Experts
+
+http://j.mp/MfX37L (*The New York Times* via NNSquad)
+
+  "Just how hard can it be to verify the age of a person online?  After all,
+  privacy experts have been complaining for years about how much advertisers
+  know about people who use the Internet.  The answer, it turns out, is very
+  hard."
+
+And even if you establish a Big Brother database and force everyone to use
+biometric IDs all the time -- people will still find ways to evade the
+systems, en masse.  The bottom line: It may not be immortality, but in key
+ways and from a practical standpoint we're all ageless on the Internet.
+
+------------------------------
+
+Date: Jun 16, 2012 8:17 PM
+From: "John Gilmore" <gnu@toad.com>
+Subject: FBI, DEA warn IPv6 could shield criminals from police
+
+[Relating to CNET Mobile via Dave Farber's IP]
+http://m.cnet.com/news/fbi-dea-warn-ipv6-could-shield-criminals-from-police/57453738
+
+Relax.  This has nothing to do with criminals.  It's cop bluster designed to
+get us to wiretap ourselves "before the cops get Congress to force us to".
+
+The actual situation is that the shortage of IPv4 addresses (plus routing
+constraints) required careful allocation of IPv4 addresses.  These needs
+were addressed through a cumbersome and intrusive global bureaucracy led by
+ICANN, ARIN, RIPE and APNIC.  Those bureaucracies ended up building a big
+database of who-has-what-addresses, containing every customer of every ISP
+who had a fixed IP address.  All sorts of cops and busybodies around the
+world got used to having that database, in order to turn arbitrary IP
+addresses into names to harass, and physical addresses where the honest
+among those people might be harassed.
+
+There's no need for such global databases of IPv6 addresses, which can be
+allocated in large chunks to ISPs and then allocated locally by the ISPs in
+any manner that pleases them and their customers.
+
+This blather from cops, via Declan who should know better, is solely to
+encourage the intrusive global bureaucracies (and their ISP customers) to
+build the same kind of database.  Not for the bureaucracies' own
+convenience; it's endless nitpicking work and always wrong.  Nor for the
+convenience of Internet users nor ISPs, who hate the existing bureaucracy
+for 'justifying' their need for niggardly dribs of IPv4 addresses.
+
+It's all for the convenience of cops.  They love systems that collect reams
+of data about everyone, guilty or innocent.  Then they can go trolling
+through that data without warrants, whenever they feel like it.  For
+example, they get hundreds of thousands of copies of your phone bills every
+month, without notice to you, just because they can, to see who you were
+calling, and from where.
+
+Tell them where to stick it.  Our identities as online communicators are
+none of the government's business.  We are innocent until proven guilty.
+FBI, DEA, NSA, and RCMP can, and should, stop their totalitarian strategies
+and tactics.  They can "Come back with a warrant", and serve it on an ISP,
+if there's a real issue about a particular IP address.
+
+Under current law, a mere subpoena to an ISP suffices to get all their
+records about you (an ISP customer), under the dubious legal theory that
+"you have no 4th Amendment protection for data about you that's held by
+somebody else" (California Bankers Association v. US, 416 U.S. 21 (1974)).
+Cops can issue subpoenas themselves, without even asking a judge.  So the
+lack of a big database about all of us is really no problem for police.
+They're just lazy.  "A policeman's job is only easy in a police state", as
+Orson Welles wrote in 1958.
+
+------------------------------
+
+Date: Fri, 22 Jun 2012 08:50:19 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Technical problem at bank denies access to accounts
+
+http://www.bbc.co.uk/news/business-18535060
+
+NatWest said it had failed overnight to solve issues that meant some
+customers could not access online accounts.  "Unfortunately we are once
+again experiencing technical issues with our systems," NatWest said on
+Friday.  As well as some NatWest customers, others with RBS and Ulster Bank
+accounts have also been affected. ...
+
+NatWest has 7.5 million personal banking customers.  The bank did not say
+how many people had been affected across the group, but Ulster Bank, which
+along with NatWest is also part of the RBS group, said 100,000 of its
+customers had been affected by "a major technical issue".
+
+------------------------------
+
+Date: Thu, 14 Jun 2012 10:14:24 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Data lost or breached at 82.5 per cent of government IT systems in
+  Canada" (Christine Wong)
+
+Christine Wong, *IT Business*, 14 Jun 2012
+http://www.itbusiness.ca/it/client/en/home/News.asp?id=3D67942
+
+Data lost or breached at 82.5 per cent of government IT systems in Canada
+A new McAfee study suggests IT managers at all levels of government in
+Canada may be overly confident about the security of their systems.
+
+This overconfidence is one risk, but there is another with statistics.
+
+opening text:
+
+Government IT managers in Canada are over-confident and reactive rather than
+proactive when it comes to protecting public data from security threats, a
+new study suggests.
+
+Although 97.5 per cent of government IT security software decision makers
+say their systems have been exposed to some sort of direct security threat
+or challenge in the past year =96 and 82.5 per cent have suffered a data
+loss or breach in the same period -- 80 per cent of them still feel
+=93confident=94 or =93very confident=94 about their ability to protect
+mission critical data.
+
+Leger Marketing surveyed 40 randomly selected IT managers responsible for
+security software decisions at the federal, provincial and municipal
+government levels. They were polled in February for security software vendor
+McAfee Canada.
+
+Now, it comes out that the sample is only 40.  Throughout the article, the
+results are stated to three significant digits when the result in the sample
+is odd.  This is abuse of statistics.
+
+------------------------------
+
+Date: Thu, 14 Jun 2012 13:39:54 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Why we need a code of ethics for the Web" (Cringely)
+
+Robert X. Cringely, *InfoWorld*, 13 Jun 2012
+Why we need a code of ethics for the Web?
+What do you do when you've stolen content from someone else's website?
+If you're FunnyJunk.com, you sue them for defamation when they call you a thief
+http://www.infoworld.com/t/cringely/why-we-need-code-of-ethics-the-web-195510
+
+The summary above says it well.  One of the comments refers to a writeup of
+some rather careless/shady reporting.
+
+------------------------------
+
+Date: Tue, 19 Jun 2012 14:50:12 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Security issue found in 64-bit virtualization software running on
+  Intel CPUs" (David Marshall)
+
+   [This link gives a bit more detail than a link that I sent yesterday.]
+
+David Marshall | InfoWorld, 18 Jun 2012
+Security issue found in 64-bit virtualization software running on Intel CPUs
+Vulnerability may be exploited for local privilege escalation or a
+guest-to-host virtual machine escape
+http://www.infoworld.com/d/virtualization/security-issue-found-in-64-bit-virtualization-software-running-intel-cpus-195746
+
+------------------------------
+
+Date: Mon, 18 Jun 2012 11:20:33 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "US-CERT discloses security flaw in Intel chips"  (Antone Gonsalves)
+
+Antone Gonsalves, *InfoWorld*, 18 Jun 2012
+US-CERT discloses security flaw in Intel chips; Vulnerability could allow
+hackers to gain control of Windows, other operating systems
+http://www.infoworld.com/d/security/us-cert-discloses-security-flaw-in-intel-chips-195725
+
+------------------------------
+
+Date: Wed, 20 Jun 2012 09:38:49 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "What you really need to know about cloud security" (Jeff Vance)
+
+Jeff Vance, *IT Business*, 18 Jun 2012
+How secure is the cloud? IT pros speak up
+http://www.itbusiness.ca/it/client/en/CDN/News.asp?id=67997
+What you really need to know about cloud security
+
+selected text (There is more interesting stuff.):
+
+One troubling trend uncovered in the Sony breach is that hackers view the
+cloud not necessarily as a target, but as a resource. Hackers used stolen
+credit cards to rent Amazon EC2 servers and launch the crippling attack on
+Sony.
+
+"Everything the cloud offers to legitimate businesses it offers to criminals
+as well," says Scott Roberts, senior intelligence specialist at Vigilant, a
+security monitoring company. "It's becoming common for cyber-criminals to
+rent cloud infrastructure to set up spambots or to build out a malware
+command and control infrastructure. At $50 or $60 a month, attackers can
+take advantage of resources that a few years ago would be too difficult and
+too expensive to build on their own."
+
+Sweet discussed a client CloudPassage worked with (who prefers to remain
+anonymous) who had development servers in the cloud. A hacker placed a
+rootkit onto one of the virtual servers. When the developers noticed
+something was off with their servers, they brought them back behind the
+corporate firewall to re-image them. Unfortunately, they brought the rootkit
+in with them, infecting their entire network.
+
+------------------------------
+
+Date: Wed, 13 Jun 2012 19:21:43 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: What Facebook Knows
+
+*Technology Review* (via NNSquad) http://j.mp/LC3gv2
+
+  "If Facebook were a country, a conceit that founder Mark Zuckerberg has
+  entertained in public, its 900 million members would make it the third
+  largest in the world.  It would far outstrip any regime past or present in
+  how intimately it records the lives of its citizens.  Private
+  conversations, family photos, and records of road trips, births,
+  marriages, and deaths all stream into the company's servers and lodge
+  there. Facebook has collected the most extensive data set ever assembled
+  on human social behavior. Some of your personal information is probably
+  part of it."
+
+And knowing that Mark Zuckerberg has ultimate say over how that data
+is used gives one such a warm and fuzzy feeling, eh?
+
+------------------------------
+
+Date: Mon, 18 Jun 2012 09:17:09 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Taxing old browsers out of existence
+
+Australian retailer applies 6.8% surcharge on orders placed using older
+versions of Internet Explorer.  Security concerns are alleged, but it's
+really about website support.
+
+http://www.maximumpc.com/article/news/aussie_e-tailer_begins_taxing_ie7_holdouts
+
+As someone who still uses Netscape and an ancient version of Safari, I'm
+deeply disturbed by this development.  I simply don't use sites that don't
+work with my browsers.  This hasn't been a big problem, except that I need
+to find a new on-line stock broker.
+
+------------------------------
+
+Date: Wed, 20 Jun 2012 09:27:36 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Hacker group demands 'idiot tax' from payday lender" (Ted Samson)
+
+http://www.infoworld.com/t/hacking/hacker-group-demands-idiot-tax-payday-lender-195964
+Ted Samson, *InfoWorld*, 20 Jun 20 2012
+Hacker group demands 'idiot tax' from payday lender
+Rex Mundi exposes thousands of customer details after payday lender
+AmeriCash refuses to fork over ransom
+
+opening paragraph:
+
+Hacker group Rex Mundi has made good on its promise to publish thousands of
+loan-applicant records it swiped from AmeriCash Advance after the payday
+lender refused to fork over between $15,000 and $20,000 as an extortion fee
+-- or, in Rex Mundi's terms, an "idiot tax."
+
+------------------------------
+
+Date: Tue, 12 Jun 2012 11:25:49 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Stolen passwords, or chum to catch passwords?  Lastpass.com
+
+Regarding the (alleged) 6M+ stolen passwords from LinkedIn:
+
+They may really be stolen passwords, but suppose we put up a site that said:
+
+"See if your password to <Organization's name here> was stolen.  Please
+enter your password here and the encrypted version will be matched against
+the list of stolen passwords: _______"
+
+You are likely to get a lot of fish to bite on that hook.  You can identify
+the fish by their IP or their cookies.
+
+Such a site?  https://lastpass.com/linkedin/
+
+There were two kinds of sites that offered to check your password as to
+whether it was in the captured list.  One kind accepted a plaintext password
+and generated the hashed password; the other only accepted a hashed password
+(which it told you how to create).
+
+Actually, that particular site probably had honest intentions.  However, it
+pointed out this problem of submitting a password and suggested that users
+look at the page's source code to confirm that the plaintext password was
+not transmitted (as though most people can figure this out).
+
+HOWEVER, even submitting your hashed password to a site is still unsafe.  If
+the site can determine who submits it (by IP, cookies, referring link, etc.)
+and can thereby guess the account of the submitter, and is able to know
+(now, or later) the paintext password for that hash, then the account is
+compromised.
+
+The problem ("Let me test your password to see if it is
+compromised/safe/secure") is real and is one that many, or most, users might
+not recognize.  Letting people think that sites that do this are safe may
+make opportunities for sites that have bad intent.
+
+It might be worth pointing out the papers about passwords referenced here:
+   http://www.ieee-security.org/TC/SP2012/press.html
+
+------------------------------
+
+Date: Wed, 13 Jun 2012 02:03:37 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Coming in your Future! - "An important message from your .bank!"
+
+Coming in your Future! - "An important message from your .bank!"  Dear
+valued customer of [bank name].  You've probably heard all the news about
+the great new revolutionary technology on the Internet, making your life so
+much easier with thousands of exciting new domain names!  Here at [bank
+name] we're proud to announce that we're changing our Web address from the
+old [bank name].com to the fantastic and wonderful for our customers [bank
+name].bank.  This will allow us to provide you with many new services at
+even lower cost!
+
+However, before we can start saving you money and making your life
+beautiful, we need you to verify your account information on our new [bank
+name].bank site.  This is necessary for you to continue having access to
+your funds, but will only take a minute of your time.
+
+Please click immediately on [legit looking link using obscured URL
+leading to criminal phishing site] and join the new domain name
+banking world with us!
+
+Also be sure to verify your account information at our [bank name].rewards
+and [bank name].suckers sites!
+
+We value you.
+
+  [Thank you, ICANN.  LW]
+
+------------------------------
+
+Date: Mon, 11 Jun 2012 22:43:51 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Serious new MySQL security vulnerability
+
+  "A serious security vulnerability discovered in MySQL was disclosed this
+  weekend. It basically allows anyone to bypass authentication and login
+  directly into the database. We tried on a few 64bit Ubuntu systems and
+  were able to replicate the issue (it seems that only 64 bit platforms are
+  affected)."  http://j.mp/LXunyu  (Sucuri via NNSquad)
+
+Of course, having MySQL accessible directly from the Net without connection
+restrictions is A Bad Idea in any case.
+
+------------------------------
+
+Date: Fri, 15 Jun 2012 16:17:19 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: The Vulnerabilities Market and the Future of Security
+
+http://www.forbes.com/sites/bruceschneier/2012/05/30/the-vulnerabilities-market-and-the-future-of-security/
+
+The Vulnerabilities Market and the Future of Security
+
+Recently, there have been several articles about the new market in zero-day
+exploits: new and unpatched computer vulnerabilities. It's not just software
+companies, who sometimes pay bounties to researchers who alert them of
+security vulnerabilities so they can fix them. And it's not only criminal
+organizations, who pay for vulnerabilities they can exploit. Now there are
+governments, and companies who sell to governments, who buy vulnerabilities
+with the intent of keeping them secret so they can exploit them.
+
+This market is larger than most people realize, and it's becoming even
+larger.  Forbes recently published a price list for zero-day exploits, along
+with the story of a hacker who received $250K from "a U.S. government
+contractor" (At first I didn't believe the story or the price list, but I
+have been convinced that they both are true.) Forbes published a profile of
+a company called Vupen, whose business is selling zero-day exploits. Other
+companies doing this range from startups like Netragard and Endgame to large
+defense contractors like Northrop Grumman, General Dynamics, and Raytheon.
+
+This is very different than in 2007, when researcher Charlie Miller wrote
+about his attempts to sell zero-day exploits; and a 2010 survey implied that
+there wasn't much money in selling zero days. The market has matured
+substantially in the past few years.
+
+This new market perturbs the economics of finding security
+vulnerabilities. And it does so to the detriment of us all.
+
+I've long argued that the process of finding vulnerabilities in software
+system increases overall security. This is because the economics of
+vulnerability hunting favored disclosure. As long as the principal gain from
+finding a vulnerability was notoriety, publicly disclosing vulnerabilities
+was the only obvious path. In fact, it took years for our industry to move
+from a norm of full-disclosure - announcing the vulnerability publicly and
+damn the consequences - to something called "responsible disclosure": giving
+the software vendor a head start in fixing the vulnerability. Changing
+economics is what made the change stick: instead of just hacker notoriety, a
+successful vulnerability finder could land some lucrative consulting gigs,
+and being a responsible security researcher helped. But regardless of the
+motivations, a disclosed vulnerability is one that - at least in most cases
+- is patched. And a patched vulnerability makes us all more secure.
+
+This is why the new market for vulnerabilities is so dangerous; it results
+in vulnerabilities remaining secret and unpatched. That it's even more
+lucrative than the public vulnerabilities market means that more hackers
+will choose this path. And unlike the previous reward of notoriety and
+consulting gigs, it gives software programmers within a company the
+incentive to deliberately create vulnerabilities in the products they're
+working on - and then secretly sell them to some government agency.
+
+No commercial vendors perform the level of code review that would be
+necessary to detect, and prove mal-intent for, this kind of sabotage.
+
+Even more importantly, the new market for security vulnerabilities results
+in a variety of government agencies around the world that have a strong
+interest in those vulnerabilities remaining unpatched. These range from
+law-enforcement agencies (like the FBI and the German police who are trying
+to build targeted Internet surveillance tools, to intelligence agencies like
+the NSA who are trying to build mass Internet surveillance tools, to
+military organizations who are trying to build cyber-weapons.
+
+All of these agencies have long had to wrestle with the choice of whether to
+use newly discovered vulnerabilities to protect or to attack. Inside the
+NSA, this was traditionally known as the "equities issue," and the debate
+was between the COMSEC (communications security) side of the NSA and the
+SIGINT (signals intelligence) side. If they found a flaw in a popular
+cryptographic algorithm, they could either use that knowledge to fix the
+algorithm and make everyone's communications more secure, or they could
+exploit the flaw to eavesdrop on others - while at the same time allowing
+even the people they wanted to protect to remain vulnerable. This debate
+raged through the decades inside the NSA. From what I've heard, by 2000, the
+COMSEC side had largely won, but things flipped completely around after
+9/11.
+
+The whole point of disclosing security vulnerabilities is to put pressure on
+vendors to release more secure software. It's not just that they patch the
+vulnerabilities that are made public - the fear of bad press makes them
+implement more secure software development processes. It's another economic
+process; the cost of designing software securely in the first place is less
+than the cost of the bad press after a vulnerability is announced plus the
+cost of writing and deploying the patch. I'd be the first to admit that this
+isn't perfect - there's a lot of very poorly written software still out
+there - but it's the best incentive we have.
+
+We've always expected the NSA, and those like them, to keep the
+vulnerabilities they discover secret. We have been counting on the public
+community to find and publicize vulnerabilities, forcing vendors to fix
+them. With the rise of these new pressures to keep zero-day exploits secret,
+and to sell them for exploitation, there will be even less incentive on
+software vendors to ensure the security of their products.
+
+As the incentive for hackers to keep their vulnerabilities secret grows, the
+incentive for vendors to build secure software shrinks. As a recent EFF
+essay put it, this is "security for the 1%." And it makes the rest of us
+less safe.
+
+------------------------------
+
+Date: Thu, 21 Jun 2012 15:08:01 -0400
+From: robert schaefer <rps@haystack.mit.edu>
+Subject: New fingerprint reader works 6 meters away
+
+IDair's new fingerprint reader captures prints from 6 meters away
+http://blog.al.com/breaking/2012/06/idairs_new_fingerprint_reader.html
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886  781-981-5767  http://www.haystack.mit.edu
+
+------------------------------
+
+Date: Fri, 15 Jun 2012 10:20:50 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Privacy Breach Discovered In Internet Address Bids
+
+AP: Privacy Breach Discovered In Internet Address Bids via NNSquad
+http://j.mp/MvHLMa  (AP / NPR)
+
+  "This spring, ICANN had to suspend access to its system for letting
+  bidders submit proposals after it discovered technical glitches that
+  exposed some private data. That took more than a month to fix and
+  restore. ICANN also goofed during Wednesday's announcement. It displayed
+  Arabic names left to right rather than right to left, as the language is
+  written.  The latest breach provided more fodder for critics of ICANN and
+  the name expansion. Skeptics have questioned ICANN's ability to run the
+  program smoothly in the long run, given that technical problems have
+  cropped up early on.  "If this weren't all so incredibly serious, one
+  could get quite a laugh over the concept of The Gang That Couldn't Shoot
+  Straight being in charge of this process," Lauren Weinstein, co-founder of
+  People For Internet Responsibility, said on his Privacy Forum mailing
+  list."
+
+One might have hoped that a few hundred million dollars in gTLD application
+fees might have helped to enable at least basic technical competency.
+Obviously not.
+
+------------------------------
+
+Date: Thu, 14 Jun 2012 12:27:07 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: ICANN's Call For New Domain Names Brings Criticism, and $357M
+
+http://j.mp/LnWM1i  (This message on Google+)
+http://j.mp/LnVGTb  (NPR)
+
+  Another company, Afilias, says it applied for 305 top level domains,
+  either on its own behalf or for its clients. The company currently
+  operates .info and .mobi, among other enterprises.  In a report for All
+  Things Considered, NPR's Yuki Noguchi spoke to Roland LaPlante, a senior
+  vice president at Afilias, about what companies want with the new domains.
+  "They'll have complete control over what goes on in their top level
+  domain. And that means in those domains there will be no spam, no
+  phishing, no malware, none of the other evil things that are happening on
+  the Internet today," LaPlante told Yuki. "So there's a big security
+  benefit to having your own top level domain, particularly if
+  counterfeiting has been an issue for you."
+
+I really have to call out this particular quote, because it's a classic
+example of a Big Lie in action.  It is the very *existence* of all these new
+TLDs that will enable vast new empires of spam, phishing, malware, and the
+rest, because bad players will forge and use other obfuscation techniques to
+confuse Internet users via those names.  There is no need for them to
+actually be in those TLDs for real -- and Afilias must already know this.
+
+------------------------------
+
+Date: Wed, 20 Jun 2012 02:25:40 +0800
+From: jidanni@jidanni.org
+Subject: Remove stylesheets, US pseudo embassy becomes real embassy
+
+If one removes the stylesheets, the pseudo embassy,
+http://en.wikipedia.org/wiki/American_Institute_in_Taiwan
+become the real embassy,
+http://www.facebook.com/photo.php?fbid=420427197980615&l=2f9174afad
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.90
+************************
+
+--_002_2a6226413630425a9c8dd7128164bd9aEXHUBVM02campusnclacuk_--

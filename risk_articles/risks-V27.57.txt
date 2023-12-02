@@ -1,0 +1,418 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 23 October 2013  Volume 27 : Issue 57
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.57.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Wall Street software failure & relationship to voting
+  (Jeremy Epstein)
+SecureDrop Project Will Pay To Install Media Outlets' WikiLeaks-Style
+  Submission Systems (Andy Greenberg via Gabe Goldberg)
+Authors Accept Censors' Rules to Sell in China (Andrew Jacobs via
+  Lauren Weinstein)
+MIT Tech Review: The Decline of Wikipedia (Tom Simonite via
+  Lauren Weinstein)
+`Hacker' --> `criminality' ??? (Robert Schaefer)
+Re: France summons US ambassador to answer allegations of widespread
+  NSA surveillance  (Richard A. O'Keefe)
+Re: Americans Are Way Behind in Math, Vocabulary, and Technology
+  (Richard S. Russell)
+Re: GPS map leads to border crossing and shooting (Scott Nicol)
+Unauthorized Access: The Crisis in Online Privacy and Security, by
+  Sloan and Warner (PGN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 23 Oct 2013 21:51:42 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Wall Street software failure & relationship to voting
+
+  [Also posted to Freedom to Tinker, slightly PGN-ed for RISKS.]
+
+An article in *The Register* explains what happened in the 1 Aug 2012 Wall
+Street glitch that cost Knight Capital $440M, resulted in a $12M fine, and
+nearly bankrupted Knight Capital (forcing them to merge with someone
+else).  In short, there were 8 servers that handled trades; 7 of them were
+correctly upgraded with new software, but the 8th was not.  A particular
+type of transaction triggered the updated code, which worked properly on the
+upgraded servers.  On the non-upgraded server, the transaction triggered an
+obsolete piece of software, which behaved altogether differently.  The
+result was large numbers of incorrect "buy" transactions.
+
+The bottom line is that the cause of the failure was lack of careful
+procedures in how the software was deployed, coupled with a poor design
+choice that allowed a new feature to reuse a previously used obsolete
+option, which meant that the trigger caused an unanticipated result (instead
+of being ignored of causing an error).
+
+So, what does this have to do voting?  It's not hard to imagine an Internet
+voting scheme using 8 servers, and even if the software doesn't have
+security flaws per se, a botched upgrade like this might work just fine for
+7/8 of the voters, and silently fail for the 1/8.  If the procedures aren't
+in place to check all of the systems (and such procedures apparently didn't
+exist at Knight Capital), a functional check might not detect a mismatch.
+
+This experience emphasizes that proper operation isn't *just* having the
+software itself being built correctly -- it's also having it fielded
+properly.  In a way, this is similar to the DC Internet voting experiment --
+in that case, there was a bug in the software, but that particular bug
+wouldn't have been exploitable if it hadn't been for a mistake in how the
+software was fielded, replacing one version of a software library with a
+different version that had an exploitable bug.  [This is not to suggest that
+this was the only bug in the DC voting software, or that Internet voting is
+safe, just tying to the particular exploit that happened.]
+
+Background:
+http://www.theregister.co.uk/2013/10/23/lone_sysadmin_caused_462_meeellion_wall_street_crash/
+http://www.usatoday.com/story/money/business/2013/10/16/knight-capital-sec-12-million-fine/2993661/
+
+------------------------------
+
+Date: Wed, 23 Oct 2013 12:01:20 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: SecureDrop Project Will Pay To Install Media Outlets' WikiLeaks-Style
+  Submission Systems (Andy Greenberg)
+
+Andy Greenberg, *Forbes*, 15 Oct 2013
+
+The non-profit Freedom of the Press Foundation (FPF) announced the launch of
+SecureDrop, a piece of open-source software designed to serve as an
+anonymous submission systems for media organizations. And to encourage news
+outlets to install it, the Foundation has offered to send one of
+SecureDrop's creators, security consultant James Dolan, to willing news
+outlets to help install it, in some cases even paying for the necessary
+hardware.
+
+SecureDrop, which like WikiLeaks depends on the anonymity software Tor to
+hide leakers' identities, was developed from the open-source software
+DeadDrop, initially created by the late coder and activist Aaron Swartz
+along with Dolan and Wired editor Kevin Poulsen.
+
+http://www.forbes.com/sites/andygreenberg/2013/10/15/securedrop-project-will-pay-to-install-media-outlets-wikileaks-style-submission-systems/
+
+------------------------------
+
+Date: Tue, 22 Oct 2013 21:58:40 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Authors Accept Censors' Rules to Sell in China (Andrew Jacobs)
+
+  "Foreign writers who agree to submit their books to China's fickle
+  censorship regime say the experience can be frustrating. Qiu Xiaolong, a
+  St. Louis-based novelist whose mystery thrillers are set in Shanghai, said
+  Chinese publishers who bought the first three books in his Inspector Chen
+  series altered the identity of pivotal characters and rewrote plot lines
+  they deemed unflattering to the Communist Party. Most egregiously, he
+  said, publishers insisted on removing any references to Shanghai,
+  replacing it with an imaginary Chinese metropolis called H city because
+  they thought an association with violent crime, albeit fictional, might
+  tarnish the city's image."
+    http://j.mp/1dh4BGA  (New York Times via NNSquad)
+
+    [The article also notes the extensive redaction of a biography of
+    reformist leader Deng Xiaoping written by Ezra F. Vogel.  I presume
+    this issue of RISKS will also be censored or redacted in China. PGN]
+
+------------------------------
+
+Date: Tue, 22 Oct 2013 22:22:59 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject:  MIT Tech Review: The Decline of Wikipedia (Tom Simonite)
+
+  "Yet Wikipedia and its stated ambition to "compile the sum of all human
+  knowledge" are in trouble. The volunteer workforce that built the
+  project's flagship, the English-language Wikipedia-and must defend it
+  against vandalism, hoaxes, and manipulation-has shrunk by more than a
+  third since 2007 and is still shrinking. Those participants left seem
+  incapable of fixing the flaws that keep Wikipedia from becoming a
+  high-quality encyclopedia by any standard, including the project's
+  own. Among the significant problems that aren't getting resolved is the
+  site's skewed coverage: its entries on Pokemon and female porn stars are
+  comprehensive, but its pages on female novelists or places in sub-Saharan
+  Africa are sketchy. Authoritative entries remain elusive. Of the 1,000
+  articles that the project's own volunteers have tagged as forming the core
+  of a good encyclopedia, most don't earn even Wikipedia's own
+  middle-ranking quality scores.  The main source of those problems is not
+  mysterious. The loose collective running the site today, estimated to be
+  90 percent male, operates a crushing bureaucracy with an often abrasive
+  atmosphere that deters newcomers who might increase participation in
+  Wikipedia and broaden its coverage."
+    http://j.mp/1a6l6UL  (MIT via NNSquad)
+
+------------------------------
+
+Date: Tue, 22 Oct 2013 13:32:54 -0400
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: `Hacker' --> `criminality' ???
+
+In the eyes of the court, calling yourself a hacker is equivalent to
+admitting criminality:
+
+http://yro.slashdot.org/story/13/10/22/153259/call-yourself-a-hacker-lose-your-4th-amendment-rights
+
+http://www.digitalbond.com/blog/2013/10/22/call-yourself-a-hacker-lose-your-4th-amendment-rights/
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886 781-981-5767  http://www.haystack.mit.edu
+
+------------------------------
+
+Date: Wed, 23 Oct 2013 18:18:14 +1300
+From: "Richard A. O'Keefe" <ok@cs.otago.ac.nz>
+Subject: Re:  France summons US ambassador to answer allegations of
+  widespread NSA surveillance
+
+http://catless.ncl.ac.uk/Risks/27.56.html#subj9 tells us that the French
+government are unhappy about the NSA.  Let's see where the logic takes us.
+
+1. Blowing up a vehicle in a foreign city and killing an unarmed civilian is
+   a terrorist act.
+
+2. An organisation that trains, equips, and commands such an act is a
+   terrorist organisation.
+
+3. Anyone who contributes to the funding of such an organisation is
+   supporting a terrorist organisation.
+
+4. Anyone who supports a terrorist organisation is a legitimate target of
+   surveillance in the war against terror.
+
+5. In 1985, the French government carried out such a terrorist act in the
+   largest city of my country.
+   http://en.wikipedia.org/wiki/Sinking_of_the_Rainbow_Warrior
+
+6. Therefore every French taxpayer is a legitimate target of surveillance
+   and the French government have no grounds for complaint.
+
+Of *course* there are flaws in this (except for 5, which is a legally
+established fact).  But it's frighteningly plausible if you don't stop
+to think.  And it's exactly the kind of "reasoning" that is easy to
+embody in computer software.  (Maybe I should have written these claims
+using OWL...)  Is there anyone, other perhaps than the inhabitants of a
+few villages in PNG and Vanuatu, that we _can't_ cover this way?
+
+------------------------------
+
+Date: Mon, 21 Oct 2013 22:08:47 -0500
+From: "Richard S. Russell" <richardsrussell@tds.net>
+Subject: Re: Americans Are Way Behind in Math, Vocabulary, and Technology
+  (Davidson, RISKS-27.56)
+
+If American kids had to take their reading and writing tests in Spanish
+rather than English, we wouldn't expect them to do very well, since Spanish
+isn't the first language for most of them.
+
+Yet we expect them to take science and math tests which are written using
+metric units -- the international "language" of technology. And we SHOULD
+expect this! The sad part is that, while metric units are the first language
+of measurement for 95% of the world's population, they remain a foreign
+tongue to almost every American, with commensurate results.
+
+Ben Franklin advocated the metric system. Congress adopted the Metric
+Conversion Act of 1975, and it looked as if we were finally on our way.  But
+then Ronald Reagan was elected president, took the solar panels off the
+White House roof, and declared that there was no way any government
+reporting to him was going to dictate measurement rules to business.  "Let
+the free market decide", he insisted. And metrication came to a dead halt.
+
+We continue to pay the price today, not only in substandard education but
+also in failure to manufacture to the kind of international standards that
+might earn us foreign markets. Plus which, ACHU* makes us dumber, almost as
+if we had to do all our math using Roman numerals.
+
+  * Accidental Collection of Heterogeneous Units -- don't mislabel it the
+  "English system". First off, it's not a system (no design), it's an
+  accident.  2nd, the English have come to their senses and metricated
+  decades ago. And for gosh sake don't call it the "American system",
+  because then all the super-patriots will insist that it's a matter of
+  national honor to stick to it.
+
+Richard S. Russell, 2642 Kendall Av. #2, Madison WI 53705-3736 608+233-5640
+http://richardsrussell.livejournal.com/  If God had wanted us to use the
+metric system, he would have given us 10 fingers.  Ashleigh Brilliant
+
+------------------------------
+
+Date: Tue, 22 Oct 2013 10:53:33 -0400
+From: Scott Nicol <scott.nicol@gmail.com>
+Subject: Re: GPS map leads to border crossing and shooting (DeRobertis,
+  RISKS-27.56)
+
+In RISKS-27.56, Anthony DeRobertis writes:
+
+> This is the most misleading Subject: line I can remember having appeared in
+> RISKS.
+
+Hyperbole in RISKS subject lines? Inconceivable!
+
+I cross borders often and it is never routine. I've been "delayed" 6 times
+(that I recall) at the US/Canada border, even though I had my papers in
+order. Some of those were probably due to fitting a profile, other times
+because I won the let's-randomly-check-somebody lottery. If you come
+without papers, you've won the lottery by default. Anything can happen once
+they pull you aside and start digging.
+
+The border crossing guard won't likely take your story at face value. Even
+between friendly nations like Canada and the US, there are plenty of things
+that could result in something much more serious than a delay when crossing
+the border.
+
+You look Mexican. Your last name is Mohammed. You look like a terrorist.
+You don't sound or look like a Canadian. You are not a Canadian citizen,
+where's your US visitor visa?
+
+Or you have kids in your car. Where is the other parent? Why does that kid
+not look like you? Is that baby really yours?
+
+Perhaps you're carrying contraband? Cuban cigars? Kinder Eggs?
+
+http://www.cbc.ca/news/canada/manitoba/kinder-surprise-egg-seized-at-u-s-border-1.1023347
+http://www.cbp.gov/xp/cgov/newsroom/news_releases/national/2012_nr/apr_2012/04052012.xml
+
+Drugs? Some medications with codeine are available over the counter in
+Canada, but only legal with a prescription in the US. You are carrying
+marijuana, or your buddy in the passenger seat is, or a friend stuffed some
+under a seat cushion last week. The US will seize your car on the spot, but
+you don't have to worry about transportation because you'll get a free ride
+in the back seat of a government car.
+
+You have a prior criminal record. You have been barred from entering the
+US. You have a warrant in the US. You have too much beer in the trunk of
+your car.
+
+Regardless if they let you through or turn you around, you'll have to go
+through customs on return to Canada and you can run into the same set of
+problems, and even more because there are legal reasons why you may not be
+allowed to leave (you are out on bail, probation, parole) or return
+(single-entry visa) to Canada.
+
+And yes turning around means going through Canadian customs, because the US
+customs house is on US soil. What could possibly go wrong? What if you
+aren't admissible to Canada or the US? How do you think people get stuck in
+limbo in airport terminals?
+
+------------------------------
+
+Date: Tue, 22 Oct 2013 16:42:07 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Unauthorized Access: The Crisis in Online Privacy and Security
+  (Sloan and Warner)
+
+Robert H. Sloan and Richard Warner
+Unauthorized Access: The Crisis in Online Privacy and Security
+CRC Press, 2014
+xxiii+374
+
+Robert Sloan is a professor of computer science, and Richard Warner is a law
+professor, which would seem to make a nice collaboration.  However, this
+book is explicitly aimed primarily at legal and policy folks, rather than
+techies.  The back jacket says that this book ``proposes specific solutions
+to public policy issues pertaining to online privacy and security.''  It is
+highly readable, and could be very helpful for those who are not yet aware
+of the serious issues it raises and the remedies it proposes.
+
+On the other hand, it seems much less specific in discussing the
+implications of many of the security problems (such as pervasive
+vulnerabilities and exploits) whose existence might make some of the legal
+and policy issues less effective, or whose remediation might possibly make
+the recommended fixes less necessary.  Also, there seem to be many inherent
+weaknesses in best practices (not just in those proposed), as well as likely
+limitations in legal remedies that might still exist despite the authors'
+recommendations.  A second edition might dig further into some of these
+additional considerations.  However, their recommendations certainly deserve
+serious consideration -- especially given the poor state of the technology
+for security, integrity, reliability, and so on.  Overall, policy and law
+are important -- if properly enforced.  At the same time, they are not
+enough by themselves -- especially in the absence of meaningful
+trustworthiness of systems, networks, and people.
+
+I have a few quibbles with the title of the book that may be familiar to
+long-time RISKS readers, first with `Unauthorized Access', and second with
+`Online Privacy and Security'.  As we should learn from studying exploits
+such as the Internet Worm and the Snowden affair, many of our problems in
+this area involve Authorized Access rather than Unauthorized Access,
+especially relating to policies, ethics, and the law.  For example, as I
+noted in RISKS-12.15 relating to the Internet Worm, no authorization was
+required to exploit the sendmail debug option, the finger daemon buffer
+overflow, freely open-to-the-world .rhosts files, and explicitly readable
+encrypted password files.  This fact seriously muddied the waters in a
+prosecution that was based on Exceeding Authority when no authority was
+actually required.  Similarly, denial-of-service attacks frequently require
+no authority, even when they manage to exploit fundamental flaws in
+security.  Worse yet, privacy violations often exist outside the purview of
+computer system authentication and access controls, in which case it is not
+at all clear what is actually `unauthorized' once the information involved
+has become extrinsic to the systems in which it originated.  Thus, offline
+privacy is perhaps just at least as problematic as online privacy, while
+offline security seems to be more of a fantasy.  Besides, as I noted in my
+Inside Risks column, The Foresight Saga, Redux (Comm.ACM 55, 10, Oct 2012,
+http://www.csl.sri.com/neumann/cacm228/pdf), although the best may be the
+enemy of the good, the good may not be good enough.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.57
+************************
+
+--_002_bd090e2a1b7b49c1ba28392765a98f6aEXHUBVM03campusnclacuk_--

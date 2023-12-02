@@ -1,0 +1,464 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 18 August 2015  Volume 28 : Issue 88
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.88.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Supreme Court's Free-Speech Expansion Has Far-Reaching Consequences
+  (Adam Liptak)
+IRS `Get Transcript' hacked (PGN)
+SPARK want to shut down the paging service (Richard A. O'Keefe)
+The Google Search That Made the CIA Spy on the US Senate (Jason Leopold)
+Sundar Pichai is now Google CEO, but Wikipedia is fighting over his
+  school (Indian Express via Lauren Weinstein)
+More thoughts on a Wikipedia alternative (Lauren Weinstein)
+Re: Sundar Pichai is now Google CEO, but Wikipedia is fighting over his
+  school (Ron Teitelbaum)
+"Bug-free code: Another computer security lie" (Roger A. Grimes)
+Re: Space Ship Two crash investigation results (Don Norman, Roderick A Rees)
+Re: gmail policy on BCCs, related to Mass. pot dispensary (John Levine)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 18 Aug 2015 08:13:28 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Supreme Court's Free-Speech Expansion Has Far-Reaching Consequences
+  (Adam Liptak)
+
+Adam Liptak, *The New York Times*, 18 Aug 2015 (PGN-ed)
+http://www.nytimes.com/2015/08/18/us/politics/courts-free-speech-expansion-has-far-reaching-consequences.html
+
+A [unanimous, but with four concurring opinions] June 2015 Supreme Court
+decision [reversing the judgment of the Court of Appeals and remanding the
+case. relating to posted signs] is already being felt around the country,
+and critics say it could endanger all sorts of laws intended to protect the
+public.
+
+Robert Post, the dean of Yale Law School and an authority on free speech,
+said the decision was so bold and so sweeping that the Supreme Court could
+not have thought through its consequences. The decision's logic, he said,
+endangered all sorts of laws, including ones that regulate misleading
+advertising and professional malpractice.  ``Effectively, this would roll
+consumer protection back to the 19th century.'' [...]
+
+Whether viewed with disbelief, alarm, or triumph, there is little question
+that the decision, Reed v. Town of Gilbert (Arizona), marks an important
+shift toward treating countless laws that regulate speech with exceptional
+skepticism.
+
+  [The Court's opinion is here:
+    http://www.supremecourt.gov/opinions/14pdf/13-502_9olb.pdf
+  Before anyone suggests that this item might have no bearing on
+  computer-related risks, and thus that this item might not be relevant to
+  RISKS because the signs in question might not be computerized, you might
+  think what bearing this decision might have on imposing or not imposing
+  restrictions on computer-based signs and indeed the entire Internet (and
+  not just the Internet of Signs -- pretty soon we might even be regulating
+  the Internet of Sighs).  PGN]
+
+------------------------------
+
+Date: Mon, 17 Aug 2015 13:58:33 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: IRS `Get Transcript' hacked
+
+The IRS announced today that an `extensive review' of the Get Transcript Web
+application data breach found additional taxpayers might have been
+affected. The IRS will be sending letters to the affected individuals this
+month.
+
+``The IRS will begin mailing letters in the next few days to about 220,000
+taxpayers where there were instances of possible or potential access to 'Get
+Transcript' taxpayer account information. As an additional protective step,
+the IRS will also be mailing letters to approximately 170,000 other
+households alerting them that their personal information could be at risk
+even though identity thieves failed in efforts to access the IRS system.''
+
+http://www.irs.gov/uac/Newsroom/Additional-IRS-Statement-on-the-Get-Transcript-Incident
+
+  [Jada Smith has an article in *The New York Times* this morning:
+  Cyberattack Exposes I.R.S. Tax Returns:
+
+    Using Social Security numbers, birth dates, street addresses and other
+    personal information obtained elsewhere, the criminals completed a
+    multistep authentication process and requested the tax returns and other
+    filings, the I.R.S. said.  Information from those forms was used to file
+    fraudulent returns, the I.R.S. said, and the agency sent nearly $50
+    million in refunds before it detected the scheme.
+
+  ``Obtained elsewhere''?  That is mostly public information.  This stuff is
+  not secret, and should not be assumed to be secret or used as
+  authenticators.  PGN]
+
+      [S(n)ide comment: The IRS's website uses `IRS', *not* `I.R.S.'.
+      RISKS has always preferred ACRONYMS without P.E.R.I.O.D.S.  Period.
+      PGN]
+
+------------------------------
+
+Date: Tue, 18 Aug 2015 19:00:07 +1200
+From: "Richard A. O'Keefe" <ok@cs.otago.ac.nz>
+Subject: SPARK want to shut down the paging service
+
+Years ago the phone system in New Zealand used to be part of the Post
+Office.  It was split off in 1987 and privatised in 1990, then broken into
+three pieces in 2008, separating retail, wholesale, and network.  The lines
+company is called Chorus.  Telecom renamed itself to SPARK a year ago.  (I'm
+sure I don't want sparks in my phones; how about you?)
+
+As well as landline phone services, mobile services, broadband, and so on,
+SPARK operate a paging service.  Business users have largely abandoned
+pagers for mobile phones, but
+  - the Fire Service uses pagers
+  - the St John Ambulance service use pagers
+  - the Coastguard use pagers
+  - most district health boards use pagers.
+They use pagers to tell people in an emergency that they are needed and what
+they are needed for.
+
+Unfortunately, the loss of business users mean that the paging system is no
+longer profitable, and the fact that SPARK is a privately-owned company
+responsible to its foreign owners means that SPARK announced that they want
+to shut down the paging service completely mid next year.  They say they are
+happy to help pager customers move to mobile-based alternatives.
+
+While mobile phones may be a *newer* technology than pagers, for the needs
+of the emergency services they are not a *superior* technology.  The
+following advantages have been claimed for pagers:
+
+ - Much longer battery life
+
+ - People can turn their phone off to get some sleep but leave their pager
+   one (see "longer battery life") in case of emergency (my phone gets
+   "spammed" by the network operator with text messages, so leaving one's
+   phone on isn't that good an option)
+
+ - Pagers operate on a lower frequency, so penetrate even quite large
+   buildings better than mobiles
+
+ - Pagers have much wider coverage than mobiles.  Again, this is due to the
+   low frequency (155MHz).  I can drive 15 minutes from the centre of
+   Dunedin and be in an area with no mobile phone coverage at all.  This
+   point is *vital* for rural emergency services.  Most _people_ live in
+   cities or large towns, so are covered, but if you explore for example
+   http://www.vodafone.co.nz/network/coverage/ you will discover that large
+   *areas* of New Zealand have no 4G, no 3G, and no 2G coverage.
+
+ - Text messages experience much higher delays than pager messages.  (When
+   you need emergency services, you need them fast.)  I personally have
+   experienced text messages arriving over an hour "late".
+
+ - When there is a disaster (as in the earthquakes we've had), the mobile
+   phone network gets overloaded, but the pager service just keeps going.
+
+Apparently anyone can intercept pager messages, but then in a rural town,
+anyone can hear the emergency siren, so for _this_ application, big deal.
+(Actually, sirens are being retired.)
+
+According to http://www.geekzone.co.nz/sbiddle/8834
+"for time critical messaging the reality is we just don't have a modern
+solution that can replace the paging network."
+
+------------------------------
+
+Date: Tue, 18 Aug 2015 07:49:07 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: The Google Search That Made the CIA Spy on the US Senate
+  (Jason Leopold)
+
+A misconfigured Google search appliance may have been what helped make the
+Senate torture report possible (allowing the Senate staffers to see the
+Panetta review they weren't supposed to see).
+
+Long article, based on FOIA documents.
+
+Jason Leopold, VICE News, 14 Aug 2015
+The Google Search That Made the CIA Spy on the US Senate
+https://news.vice.com/article/the-google-search-that-made-the-cia-spy-on-the-us-senate
+
+  Nicholas Weaver, a researcher with the International Computer Science
+  Institute in Berkeley, reviewed some of the CIA documents for VICE
+  News. He said the computer network the CIA set up was essentially a "big
+  common fileserver, but with different roles and access controls, so a
+  [Senate] person could only read [Senate] stuff, and CIA only CIA stuff,
+  and there was a shared folder that both could read. So it wasn't really
+  two separate networks connected by a firewall, but a common fileserver
+  with separate roles."
+
+  "It appears there are a bunch of workstations, printers, a shared
+  database, a shared fileserver, and a shared Google search appliance,"
+  Weaver said. "Otherwise, it's completely disconnected from the rest of the
+  world." [...]
+
+  What the Cyber Blue Team discovered is that the Google search tool was
+  misconfigured when Centra Technology installed it in 2009. The OIG's
+  report about the incident noted that it wasn't the first time the CIA had
+  to address a vulnerability issue with the Google search tool.
+
+  "In November 2012, the RDI team learned of a vulnerability with the Google
+  appliance, related to configuration settings that had been in place since
+  the initial installation in November 2009," the OIG's report says. "[The
+  Office of Inspector General] reviewed an April 2013 email between members
+  of the RDINet IT staff detailing the existing settings, which indicated an
+  access control deficiency for search results. The RDI IT team updated the
+  Google appliance in April 2013 to reflect this change. Prior to this
+  update, the settings provided to the [Office of Inspector General] showed
+  that the Google appliance was not configured to enforce access rights or
+  search permissions within RDINet and its holdings."
+
+  Weaver explained that the Cyber Blue Team concluded the Google appliance
+  "wasn't enforcing permissions properly, and revealing accessible locations
+  for the [CIA] files."
+
+------------------------------
+
+Date: Tue, 18 Aug 2015 08:41:10 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Sundar Pichai is now Google CEO, but Wikipedia is fighting over his
+  school
+
+NNSquad, *Indian Express*
+http://indianexpress.com/article/technology/social/as-sundar-pichai-becomes-google-ceo-wikipedia-fights-over-his-school/
+
+  And yes the edits are continuing. So far Pichai's wikipedia page has seen
+  over 354 edits in the last week alone, and the number of users who have
+  edited Pichai's page stands at 406.  If you see the graph on the edit
+  stats page for Pichai, you will notice how the graph spikes once August
+  2015 starts, the month when he was announced as Google's new CEO.  While
+  some of us might have a good laugh over this 'edit-war', the issue raises
+  concerns over how 'collective wisdom' online is often guided by its
+  inherent biases.  In this case, the desire to claim the new Google CEO as
+  a member of one particular Chennai school has reduced the whole exercise
+  of Wikipedia's democratic freedoms to a farcical exercise.
+
+Wikipedia is not an encyclopedia, it's an anonymous brawl.  I'd like to see
+Google help to sponsor a long-term project to create a new online
+encyclopedia that would consist almost entirely of fully attributed entries
+-- that means, showing the real names of the real people who wrote them --
+and included peer review whenever possible and appropriate. It's time to
+move beyond the Wikipedia "anybody can declare themselves to be an anonymous
+expert about anything" model. The quality of Google's search results moving
+forward would not only benefit if this proposal reached fruition, but the
+entire Internet community would benefit as well.
+
+------------------------------
+
+Date: Tue, 18 Aug 2015 09:43:50 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: More thoughts on a Wikipedia alternative
+
+https://plus.google.com/+LaurenWeinstein/posts/gDkmfYoZLiR
+
+A bit more on this since my original comments earlier today seem to have
+attracted considerable attention. I am of course aware of Google's
+relatively brief "Knol" project, announced in 2007, opened in 2008, then
+closed and deleted in 2012. Any dispassionate reading of Knol's history
+strongly suggests that there was nothing inherently wrong with the concept,
+but that it was rendered impractical at the time mainly due to rabid attacks
+by Google haters and Wikipedia fanboys. But with the accelerating failure of
+Wikipedia along a range of vectors, it's more clear than ever that a model
+involving attributed, authoritative articles is absolutely necessary. And it
+is my suspicion that the fundamental nature of Wikipedia will prevent it
+from making the kinds of major course corrections that might help decelerate
+its decline. Whether a new alternative -- learning from Knol rather than
+jettisoning the concept -- might be best operated by Google or merely funded
+by them (and others) is an open question. Personally, a model I prefer would
+have Google operating this alternative -- leveraging already available
+infrastructure -- in cooperation with an internal/external oversight board
+to help defuse the haters. But one way or another, we need to start moving
+beyond the Wikipedia model, and we need to do that now.
+
+------------------------------
+
+Date: Tue, 18 Aug 2015 13:10:28 -0400
+From: "Ron Teitelbaum" <ron@usmedrec.com>
+Subject: Re: Sundar Pichai is now Google CEO, but Wikipedia is fighting over
+  his school (Lauren Weinstein)
+
+What really gets me is the lack of expert review.  They have this philosophy
+that if the media doesn't cover something it doesn't exist.  While I
+understand the need to have reliable and verifiable sources for information
+this leaves a huge amount of very valuable information out.  Information
+that people in a particular field would easily verify.  Examples include
+open source software and new language development.  While there is some
+coverage about open source block busters, the smaller projects are mostly
+used but not written about.  I tried to explain to editors that some of the
+software they use to run Wikipedia wouldn't even qualify but got nowhere.
+Developers use mailing lists, blogs, news aggregators (like /.) and social
+media to discuss developments.  What media is left to cover software doesn't
+cover it but that doesn't mean it doesn't exist or is not important.  Some
+very interesting software history was deleted recently and although I tried
+to explain the Internet bit rot, that once interesting things hosted on old
+computers are quickly disappearing from the Internet, but that didn't help
+either.
+
+I completely agree with you that having a volunteer encyclopedia with real
+users and names that includes real subject matter experts as moderators
+would be far preferable to the current Wikipedia model.  Paying high level
+people (experts in a field) to participate and write content would also be
+extremely valuable.
+
+------------------------------
+
+Date: Mon, 17 Aug 2015 10:16:35 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Bug-free code: Another computer security lie" (Roger A. Grimes)
+
+Roger A. Grimes, InfoWorld, 4 Aug 2015
+The computer security industry has a dirty secret: If an 'independent' code
+review says a product is totally secure, you aren't hearing the full story.
+http://www.infoworld.com/article/2956215/security/bug-free-code-computer-security-lie.html
+
+  [No surprise to RISKS readers, but apparently a great surprise to many
+  others.  PGN]
+
+------------------------------
+
+Date: Mon, 17 Aug 2015 11:41:30 -0700
+From: Don Norman <dnorman@ucsd.edu>
+Subject: Re: Space Ship Two crash investigation results (Wolff, R-28.87)
+
+I disagree with Wolff's statement. Strenuously. The Spaceship was badly
+designed, just as NTSB said.  Yes, pilots (or other operators of devices)
+might have to perform an unsafe action.  But there are standard designs that
+help mitigate accidental deployment.  Here are two simple examples:
+
+1. A protective cover. Many installations have a safety cover. Thus, in
+   military aircraft where a button might eject the pilot or ignite an
+   explosive to destroy security information, (or where a single switch
+   disconnects all power), the use of a simple cover that must be opened
+   first helps reduce the chance of accidental activation.
+
+2. A detent. Being aircraft have a throttle control which stops the forward
+   motion of the throttle when it reaches a limit that might cause damage to
+   the engine. But if the pilot would, for some reason, prefer to stay alive
+   even if it destroys the engine, extra force allows the throttle to move
+   beyond the setting.
+
+There are several other ways i can think of that might have worked in the
+SpaceShip2, but the solution should only be designed with full information
+about the spaceship, its operating characteristics, and other constraints.
+
+Wolff's statement that the pilots should understand the consequences of
+their actions is very sensible and logical. And that's why we have so many
+accidents: engineers think sensibly and logically and are completely unaware
+of how people really behave. As I tell people over and over again, logic is
+an artificial way of thinking, invented by philosophers and
+mathematicians. if it were how we thought and behaved, it wouldn't have had
+to be invented and it wouldn't be so difficult to learn.
+
+The same problem happens with security issues. Onerous password requirements
+imposed by security administrators are bypassed by people who write them
+down. Sure, I use 1Password, but it only works on websites, and more and
+more places want passwords in ways that are not recognized by 1Password.  As
+I have pointed out at security conferences, it is the most dedicated
+employee who violates the rules -- otherwise they couldn't get their job
+done.
+
+Sigh, this lesson has to be repeated over and over and over again. (The good
+side is that my books are always relevant.)
+
+Don Norman, Prof. and Director, DesignLab, UC San Diego  http://www.jnd.org/
+dnorman@ucsd.edu  designlab.ucsd.edu/  www.jnd.org
+https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=dnorman@ucsd.edu>
+
+------------------------------
+
+Date: Tue, 18 Aug 2015 10:02:05 -0700
+From: Roderick A Rees <rarees@frontier.com>
+Subject: Re: Space Ship Two crash investigation results (Macintyre, R-28.83)
+
+The comments on this, in various publications, have so far argued about
+whether the faulty landing gear actuation should be held against the pilot
+or the design.  I suggest that it should be against the design, because
+unintended actuation can be largely eliminated by making the control a
+guarded switch.  I recall a similar potential problem in a helicopter, when
+both pilots and engineer officers argued that a switch controlling release
+of underslung loads should be guarded because it was immediately next to a
+switch that was routinely toggled during shutdown, so that a tired or
+distracted pilot could easily toggle the wrong switch.  Headquarters said
+nonsense, it had never happened and therefore would never happen; and then
+it did happen, releasing a pyrotechnic on to the concrete.  fortunately it
+was not armed, but it could have been, at great cost -- all to save a trivial
+amount for safety.
+
+------------------------------
+
+Date: 18 Aug 2015 00:10:27 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: gmail policy on BCCs, related to Mass. pot dispensary (Sigut)
+
+Aw, come on.  If you're sending to a list of 200 people, you need some way
+to manage additions, drops, and bounces.  I can assure you from painful
+experience that people who think they are doing it adequately by hand are
+mistaken.
+
+Setting up a Google email group that allows only the group owner to post takes
+about two minutes.  Why is that "not a real alternative"?
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.88
+************************

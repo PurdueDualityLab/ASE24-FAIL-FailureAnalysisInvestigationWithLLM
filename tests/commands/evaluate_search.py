@@ -9,26 +9,6 @@ class RisksDigestScraper:
     BASE_URL = "http://catless.ncl.ac.uk/Risks"
 
     VOLUME_YEAR_MAPPING = {
-        1: (1985, 1986),
-        2: (1986, 1986),
-        3: (1986, 1986),
-        4: (1986, 1987),
-        5: (1987, 1987),
-        6: (1987, 1988),
-        7: (1988, 1988),
-        8: (1989, 1989),
-        9: (1989, 1990),
-        10: (1990, 1991),
-        11: (1991, 1991),
-        12: (1991, 1991),
-        13: (1992, 1992),
-        14: (1992, 1993),
-        15: (1993, 1994),
-        16: (1994, 1995),
-        17: (1995, 1996),
-        18: (1996, 1997),
-        19: (1997, 1998),
-        20: (1998, 2000),
         21: (2000, 2002),
         22: (2002, 2003),
         23: (2003, 2005),
@@ -41,7 +21,7 @@ class RisksDigestScraper:
         30: (2016, 2018),
         31: (2019, 2020),
         32: (2020, 2021),
-        33: (2022, 2023)
+        33: (2022, 2023),
     }
 
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -121,11 +101,3 @@ class RisksDigestScraper:
 
     def run(self, args: argparse.Namespace):
         return self.scrape_articles(args)
-
-# Example usage in a different module:
-# if __name__ == "__main__":
-#     parser = argparse.ArgumentParser(description="RISKS Digest Scraper")
-#     scraper = RisksDigestScraper()
-#     scraper.prepare_parser(parser)
-#     args = parser.parse_args()
-#     scraper.run(args)

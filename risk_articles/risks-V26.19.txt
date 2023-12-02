@@ -1,0 +1,603 @@
+precedence: bulk
+Subject: Risks Digest 26.19
+
+RISKS-LIST: Risks-Forum Digest  Thursday 28 October 2010  Volume 26 : Issue 19
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.19.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Backlogged.  Very busy.]
+"Missile Mishap Revives Alarm Over Nuclear Arsenal" (Gabe Goldberg)
+Aptly-Named HMS Astute Nuclear Submarine Runs Aground (Mark Thorson)
+Cognitive networking (Tom Simonite)
+Medical errors in Colorado (DKRoss)
+A jail risk of 2^31 in Colorado (Jared Gottlieb)
+Financial market automated amplification of trades (Jeremy Epstein)
+Fear the baa of the Firesheep (Matthew Kruk)
+Google spied on British e-mails and computer passwords (Matthew Kruk)
+How many nukes do we have? Ummm.... (Danny Burstein)
+DC Internet voting trial (Jeremy Epstein)
+Washington D.C. Internet voting experiment risks (Sean Greene)
+Voting machines with incredibly poorly written software (Philip Listowsky)
+Hacker almost derailed Mandela election in South Africa (Chris Leeson)
+Las Vegas Slots Machines vs. Electronic Voting Machines (Gene Wirchenko)
+Stuxnet (Bruce Schneier)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 27 Oct 2010 17:40:35 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: "Missile Mishap Revives Alarm Over Nuclear Arsenal"
+
+27 Oct 2010 -- Computer glitches, hardware failures and unexplained
+communication outages happen all the time. But when the affected systems
+control nuclear-armed missiles, it gets a little scary.
+
+That's why Saturday's brief malfunction at F.E. Warren Air Force Base in
+Wyoming, disconnecting 50 intercontinental ballistic missiles of the
+450-ICBM-strong U.S. arsenal from their human controllers, has raised
+concerns just two years after a Defense Department panel said there had been
+"an atrophy of the Air Force's nuclear mission."
+
+"It is yet another indication of the risk associated with having these types
+of weapons around," said Stephen Young, a senior analyst at the Union of
+Concerned Scientists, which advocates a reduction in the atomic arsenals of
+the U.S. and other nuclear-armed states.
+
+http://www.aolnews.com/nation/article/missile-mishap-revives-alarm-over-nuclear-arsenal/19691995
+
+------------------------------
+
+Date: Sun, 24 Oct 2010 14:18:45 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Aptly-Named HMS Astute Nuclear Submarine Runs Aground
+
+Early reports suggest the maps were out of date.  I suppose just before the
+crash, the GPS system said something like "Turn starboard 10 degrees.".
+
+http://www.dailymail.co.uk/news/article-1323285
+
+------------------------------
+
+Date: Wed, 27 Oct 2010 11:22:51 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Cognitive networking
+
+  [Basically, the security and privacy concerns here are enormous.
+  The vulnerabilities are ubiquitous, and the risks are widespread.
+  Misuses of baby monitoring are only a small part of the problem!  PGN]
+
+Wednesday, October 20, 2010
+A Cell-Phone Network without a License
+A trial system offers calling, texting, and data by weaving signals around
+the chatter of baby monitors and cordless phones.
+
+By Tom Simonite
+<http://www.technologyreview.com/communications/26581/?p1=A4>
+
+A trial cell-phone network in Fort Lauderdale, Florida, gets by without
+something every other wireless carrier needs: its own chunk of the
+airwaves. Instead, xG Technology, which made the network, uses base stations
+and handsets of its own design that steer signals through the unrestricted
+900-megahertz band used by cordless phones and other short-range devices.
+
+It's a technique called "cognitive" radio, and it has the potential to make
+efficient use of an increasingly limited resource: the wireless spectrum. By
+demonstrating the first cellular network that uses the technique, xG hopes
+to show that it could help wireless carriers facing growing demand but a
+relatively fixed supply of spectrum.
+
+Its cognitive radios are built into both the base stations of the trial
+network, dubbed xMax, and handsets made for it. Every radio scans for clear
+spectrum 33 times a second. If another signal is detected, the handset and
+base station retune to avoid the other signal, keeping the connection
+alive. Each of the six base stations in xG's network can serve devices in a
+2.5-mile radius, comparable to an average cell-phone tower.
+
+"In Fort Lauderdale, our network covers an urban area with around 110,000
+people, and so we're seeing wireless security cameras, baby monitors, and
+cordless phones all using that band," says Rick Rotondo, a vice president
+with xG, which is headquartered in Sarasota, Florida. "Because our radios
+are so agile, though, we can deliver the experience of a licensed cellular
+network in that unlicensed band."
+
+  [From Scott McNeil via Dewayne Hendricks via Dave Farber's IP, among other
+  sources.  PGN]
+
+------------------------------
+
+Date: Tue, 19 Oct 2010 7:36:03 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Medical errors in Colorado
+
+   [Thanks to dkross]
+
+Unthinkable errors by doctors and surgeons -- such as amputating the wrong
+leg or removing organs from the wrong patient -- occur more frequently than
+previously believed, a new study suggests.  Over a period of 6.5 years,
+doctors in Colorado alone operated on the wrong patient at least 25 times
+and on the wrong part of the body in another 107 patients, according to the
+study, which appears in the Archives of Surgery.
+
+So-called wrong-patient and wrong-site procedures accounted for about 0.5
+percent of all medical mistakes analyzed in the study. Although these
+serious errors are rare overall, the numbers seen in the study are
+"considerably higher" than previous estimates, researchers say.
+
+http://www.cnn.com/2010/HEALTH/10/18/health.surgery.mixups.common/index.html?hpt=T2
+
+------------------------------
+
+Date: Sat, 9 Oct 2010 11:56:46 -0600
+From: jared gottlieb <jared@netspace.net.au>
+Subject: A jail risk of 2^31 in Colorado
+
+Summary: A server reaches a limit of 2^31 records and real-time alerts
+ceased for a number of persons being electronically monitored in lieu of
+jail
+
+"Boulder County Jail officials are planning to meet next week with a
+Boulder-based company that provides GPS, alcohol and electronic monitoring
+for offenders at about 900 correctional agencies nationwide after it left
+thousands of people unsupervised during a technical failure this week."  "BI
+Inc., 6400 Lookout Road, experienced a problem with one of its offender
+monitoring servers at 7:29 a.m. Tuesday, temporarily disabling the server's
+notification system and delaying violation notifications to customers,
+according to BI spokeswoman Monica Hook.  The problem was fixed about 12
+hours later, according to Hook, and the BI staff notified customers within
+minutes of discovering the issue. The monitoring system continued to operate
+and gather information while it was down, but the transmissions were delayed
+until the system was restored, according to Hook. All offender activity
+logged while the server was down still was processed, and alerts that might
+have occurred during that time were sent to the agencies when the system was
+back up, Hook said."
+
+"The technical glitch happened when one of BI's servers exceeded its
+threshold of 2.1 billion records, according to company officials. The
+problem is now resolved, and BI has expanded its database threshold to more
+than 1 trillion records. The company also is developing a warning system
+that will alert BI in the future if it nears the limit, said Patrick Hyde, a
+BI spokesman. The offenders and suspects on the BI monitoring system did not
+know their devices were down at the time, Hyde said, and there were no major
+problems reported as a result of the technical failure."
+
+Boulder (Colorado USA) *Daily Camera* newspaper, http://
+www.dailycamera.com/news/ci_16278273, 7 October 2010
+
+  [So now it will fail at 2^40 records.  Plan ahead!  PGN]
+
+------------------------------
+
+Date: Mon, 18 Oct 2010 09:30:48 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Financial market automated amplification of trades
+
+We've become accustomed to network attackers developing new attacks to
+circumvent defenses.  Some of the really clever attacks use amplification -
+figuring out how to use the system against itself, in a way that takes away
+the need for the attacker to do so much work.  For example, if an attacker
+can send a message to a server that causes the server to send out a thousand
+messages, then the attacker can launch a Denial of Service attack more
+simply.  (There was an attack of this sort at the network protocol level
+some years ago, although I've forgotten the details.)
+
+Now we're seeing that amplification approach in the financial space in
+Norway, where two day traders figured out how to manipulate the markets in
+such a way as to cause robot buyers/sellers to do the dirty work, that they
+can then benefit from.  "The two men worked out how the computerized system
+would react to certain trading patterns -- allowing them to influence the
+price of low-volume stocks."  Although the article gives no indication of
+how they did it, the day traders ``gave false and misleading signals about
+supply, demand and prices'', which caused the robots to take action -- which
+the day traders then took advantage of.
+
+They've been convicted and given jail sentences and fines.
+
+Of course the risk is that when you automate anything, you have to
+consider how an adversary may take advantage of that automation!
+
+http://www.ft.com/cms/s/0/f9d1a74a-d6f3-11df-aaab-00144feabdc0.html?ftcamp=rss
+
+------------------------------
+
+Date: Wed, 27 Oct 2010 11:18:41 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Fear the baa of the Firesheep
+
+Rob Coppinger, Mocking the social notworks. *The Inquirer*, 27 Oct 2010
+http://www.theinquirer.net/inquirer/news/1811527/fear-baa-firesheep
+
+More Firesheep fun is to be had as one of its creators has blogged to say
+that future versions are still to come.  The extension for Firefox that is
+Firesheep caused a wave of Internet gibbering when it was released at the
+weekend and shown to allow people to grab personal data from social
+networking websites.  As of yesterday, over 120,000 people had downloaded
+the app, and probably not for highly moral purposes, either.
+
+Firesheep was created by Ian Gallagher, an IT worker in the insecurity
+field, and his pal Eric Butler, a freelance web applications software
+developer based in Seattle. They wanted to raise the issue of HTTP session
+hijacking, which has been known to be a problem for at least six years, and
+is the basis of how Firesheep works.  In a moment of understatement, not
+something Americans are known for, Butler said on his blog on 26 Oct, "I
+thought there might be moderate interest."
+
+Butler goes on to criticise website owners for just encrypting the initial
+use of the username and password and not the subsequent cookie that's
+returned. To protect against the vulnerability that Firesheep exploits would
+simply require websites to support full encryption everywhere. Alas, the big
+beasts of the Internet jungle haven't been bothered.
+
+To quote Butler, "These sites fail to protect you because after you've
+authenticated, you're issued a cookie that identifies you throughout your
+browsing session." He should have added, "these so called professionals that
+make schoolboy errors".
+
+Apparently pleased with his new-found fame and the widespread interest in
+Firesheep, Butler said, "Keep an eye on this blog as well as my Twitter feed
+for updates on these issues and other new features." We certainly will, with
+slightly more than casual interest.
+
+  [Baa bumbug?  PGN]
+
+------------------------------
+
+Date: Sat, 23 Oct 2010 15:50:54 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Google spied on British e-mails and computer passwords
+
+Passwords and entire e-mail messages from households across Britain have
+been copied by Google in a major privacy breach.  The company has admitted
+it downloaded personal data from wireless networks when its Street View
+vehicles drove down residential roads taking photographs.  One privacy
+campaigner described the intrusion as "absolutely scandalous" and called on
+Google to launch a full inquiry into the affair.  [Source: David Barrett,
+*The Telegraph* (UK), 23 Oct 2010; PGN-ed] Computer
+http://www.telegraph.co.uk/technology/google/8083008/Google-spied-on-British-emails-and-computer-passwords.html
+
+  [Google has acknowledged that this happened in at least 30 countries
+  (including the U.S.), beginning five years ago.  A 27 Oct 2010 news item
+  by Mike Swift in *The Daily News* (a paper distributed free in two
+  California counties surrounding my SRI office) said that the U.S. Federal
+  Trade Commission has dropped its privacy probe, having become satisfied
+  with Google's announced recently policy changes-- "a decision that was
+  blasted by online privacy advocates." PGN]
+
+------------------------------
+
+Date: Wed, 27 Oct 2010 22:33:06 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: How many nukes do we have? Ummm....
+
+http://www.theatlantic.com/politics/archive/2010/10/power-failure-shuts-down-squadron-of-nuclear-missiles/65207/
+
+[Note that later versions of the story (same url) changed the cause from a
+power failure to some sort of ping-flood.]
+
+------------------------------
+
+Date: Mon, 18 Oct 2010 10:30:49 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: DC Internet voting trial
+
+In RISKS-26.18, I summarized the results to date on the District of Columbia
+Internet voting trial.  Here's an update:
+
+Sometime during the week of 4 Oct 2010, the DC Board of Elections and Ethics
+resumed the trial (I don't have accurate notes when).  On 8 Oct, there was a
+hearing of a DC City Council committee, where Dr. Alex Halderman from the
+University of Michigan revealed that in addition to playing the "fight
+song", their team (made up of Dr. Halderman, two of his students, and one of
+his colleagues from the IT department) had:
+
+(1) Modified all ballots already cast in the mock election to select
+write-in candidates such as HAL 9000 and other robots and computers.
+(2) Modified the software so all future votes would also be cast for
+their write-in candidates.
+(3) Modified the software so they could see all future votes and who cast them.
+(4) Obtained the (unencrypted) voter IDs and PINs (effectively
+usernames and passwords) for all 900+ authorized voters (*).
+(5) Gained control of the routing infrastructure (as a result of
+default passwords being unchanged), so they could redirect or block
+network traffic. (**)
+(6) Gained access to security cameras in the BoEE which were not protected.
+
+(*) These were the IDs for the real November 2010 election, not for
+the mock election being tested.
+(**) The Michigan team subsequently changed these passwords when they
+found evidence of attacks from China and Iran also in progress.  They
+did not suggest that this was a targeted attack against the election,
+but rather general probing and manipulation of network infrastructure.
+
+At the hearing, DC BoEE announced that the system would be used in the Nov
+2010 election for distribution of blank ballots, but would not allow
+submission of return ballots.  Ballots may be returned by postal mail,
+email, or FAX.  (Of course all of these also have risks.)  BoEE also plans
+to move forward with ballot return, although the timelines they gave were
+unclear.
+
+Not revealed at the hearing, but discussed in other contexts, Dr. David
+Jefferson of Lawrence Livermore Labs and chair of VerifiedVoting.org
+discovered that ballots submitted by Macintosh users were blank, but no
+warning was given.  Subsequent to the trial period, the instructions for
+voting were modified to recommend use of Adobe Acrobat (rather than other
+PDF readers) for marking the ballot.
+
+Opinion: The DC BoEE response says that "the toothpaste is out of the tube"
+and Internet voting is an inevitability, and that the lesson "lesson learned
+is not to be more timid, but more aggressive about solving the problem".
+There's no reason to believe that fixing this set of problems is adequate -
+in fact, we know from 40 years of experience in testing systems that
+penetrate and patch doesn't work.  Simply wishing for better technology
+isn't going to get us there, and using a real election as a testbed for
+experimentation isn't the answer.  The problem isn't just the implementation
+- in fact, I suspect that the quality of the software here was higher than
+in most other Internet voting systems.  The problem is that Internet voting
+is fundamentally broken (with the possible exception of end-to-end systems -
+which have other problems) -- unlike e-banking, e-commerce, or
+e-most-anything-else, there's no way for a voter to verify that her vote was
+received and counted properly.  We can't count on pro bono teams like
+Halderman's to come back and test future Internet election systems -- it's
+time to put this idea aside for a decade and let science advance before
+trying more experiments with real votes.
+
+References:
+
+Video of the hearing at t http://vimeo.com/15691179
+Coverage best in the NY Times at
+http://www.nytimes.com/2010/10/09/us/politics/09vote.html?_r=1
+
+WashPost online coverage at
+http://www.washingtonpost.com/wp-dyn/content/article/2010/10/08/AR2010100806300.html
+(not included in the print edition)
+
+Alex Halderman's blog at
+http://www.freedom-to-tinker.com/blog/jhalderm/hacking-dc-internet-voting-pilot
+has some information, with more to come.
+
+DC BoEE response
+http://dcboee.us/dvm/ps_hacker_response.htm
+
+------------------------------
+
+Date: Fri, 22 Oct 2010 7:09:19 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Washington D.C. Internet voting experiment risks (Sean Greene)
+
+  [Please excuse some overlap with Jeremy's note.  PGN]
+
+Sean Greene, D.C. hacking raises questions about future of online voting,
+*Stateline* <http://www.stateline.org/live>, 22 Oct 2010
+The Pew Center on the States <http://www.pewcenteronthestates.org/>
+
+For the upcoming election, Washington, D.C., was preparing to allow some
+voters to send their ballots in over the Internet. It's a good thing
+election officials tested the system first.
+<http://www.dcboee.org/popup.asp?url=/pdf_files/nr_588.pdf>
+
+Just two days after the District of Columbia Board of Elections and
+Ethics opened the application for the public to experiment with this
+fall, the system was hacked.
+<http://www.freedom-to-tinker.com/blog/jhalderm/hacking-dc-internet-voting-pilot>
+
+Unbeknownst to D.C. officials, a team of computer scientists from the
+University of Michigan took control of the Web site, and changed the code to
+make it play the school's fight song.
+<http://www.cse.umich.edu/~jhalderm/pub/dc/thanks/>
+
+The fight-song gag was the part of the hacking that elections officials
+discovered themselves. More troubling is what they didn't notice.
+
+That was revealed at a recent D.C. Council committee hearing, where J. Alex
+Halderman, a University of Michigan professor who led the hacking effort in
+order to demonstrate the system's security flaws, testified that his team
+had in fact wrested complete control over the elections board's
+server. Halderman produced 937 pages of names, addresses and PIN numbers of
+test voters who had signed up to try out the system. Had it been a real
+election, Halderman said, he could have changed the votes on ballots or
+revealed voters' supposedly secret choices on the Internet.  Additionally,
+Halderman's crew wasn't the only one rooting around in the D.C. system. They
+noticed other attacks occurring, originating in China and Iran.
+
+In response, the elections board decided to shelve the idea of having voters
+submit ballots online. Eligible voters in the military and others living
+overseas can still use the system to receive blank ballots, rather than
+waiting for them in the mail. But they'll have to print the ballots out and
+mail them back to Washington.
+
+While the D.C. episode was a setback for voting over the Internet, elections
+experts disagree on what it means for the future. Some say the District's
+experience demonstrates what computer scientists have been saying for years
+-- that the Internet in its current state cannot allow for secure online
+voting. Others, including D.C.'s top elections official, still see potential
+in online voting. In fact, the state of Arizona
+<https://www.azsos.gov/election/military/default.aspx> and eight counties in
+West Virginia aren't giving up plans to go ahead with their own online
+voting experiments on 2 Nov 2010.
+
+------------------------------
+
+Date: Tue, 26 Oct 2010 18:13:47 -0400
+From: "Philip Listowsky" <listowsk@yu.edu>
+Subject: Voting machines with incredibly poorly written software
+
+The video attached to this "voter problems" story actually contains
+something more disturbing than the allegations in the story itself:
+  http://www.fox5vegas.com/news/25511115/detail.html
+
+To wit: the person in charge of the polls says that there is no problem with
+the fact that the touch screen sensing a finger touching "English" accepts
+that input and proceeds to the next screen (where the ballot is), and if the
+person who just selected English hasn't removed their finger "quickly
+enough", whatever candidates name was under the same section of screen is
+instantaneously checked off, inadvertently.
+
+Now this, IS a comp.risk !
+
+Dr. Philip Listowsky, Computer Science Department, Yeshiva University NY
+
+  [Lauren Weinstein notes: "No problem"?  No, that's no problems *that they
+  know about*!]
+
+------------------------------
+
+Date: Thu, 28 Oct 2010 10:56:19 +0100
+From: "Chris Leeson" <Chris.Leeson@atosorigin.com>
+Subject: Hacker almost derailed Mandela election in South Africa
+
+[Sources: *The Register*/BBC]
+  http://www.theregister.co.uk/2010/10/27/sa_election_hack/
+  http://www.bbc.co.uk/news/world-africa-11630092
+
+According to a recently published book, an unknown hacker gained control of
+the Election Commission computer during the 1994 election and attempted to
+manipulate the vote in favour of three right-wing parties.  The break-in was
+discovered and the results switched a manual count of votes taken at the
+cost of a two-day delay.  Ironically, the delay caused the ANC to fear that
+the vote was being rigged against them.
+
+------------------------------
+
+Date: Wed, 13 Oct 2010 19:38:15 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Las Vegas Slots Machines vs. Electronic Voting Machines
+
+  A five-point comparison:
+    http://eatliver.com/i.php?n=6266
+
+  [Gene has reminded us of this comparison, which I don't think we have
+  highlighted here before.  Perhaps simplistic, it nevertheless illustrates
+  the stark contrasts in scrutiny vs proprietary software, inspections,
+  background security checks, equipment certification, and dispute handling
+  that make nonauditable electronic voting machines a realistic nightmare.
+  See my note on Jeff Burbank's EVT/WOTE 2010 talk and his book, License to
+  Steal (RISKS-26.14), which points out that even the oversight in Nevada is
+  not enough.  However, the abysmal lack of integrity in these voting
+  systems makes the contrast much more infuriating.  PGN]
+    [typo corrected in archive copy]
+
+------------------------------
+
+Date: Fri, 15 Oct 2010 03:17:12 -0500
+From: Bruce Schneier <schneier@SCHNEIER.COM>
+Subject: Stuxnet
+
+Computer security experts are often surprised at which stories get picked up
+by the mainstream media. Sometimes it makes no sense. Why this particular
+data breach, vulnerability, or worm and not others? Sometimes it's
+obvious. In the case of Stuxnet, there's a great story.
+
+As the story goes, the Stuxnet worm was designed and released by a
+government--the U.S. and Israel are the most common suspects--specifically
+to attack the Bushehr nuclear power plant in Iran. How could anyone not
+report that? It combines computer attacks, nuclear power, spy agencies and a
+country that's a pariah to much of the world. The only problem with the
+story is that it's almost entirely speculation.
+
+Here's what we do know: Stuxnet is an Internet worm that infects Windows
+computers. It primarily spreads via USB sticks, which allows it to get into
+computers and networks not normally connected to the Internet. Once inside a
+network, it uses a variety of mechanisms to propagate to other machines
+within that network and gain privilege once it has infected those
+machines. These mechanisms include both known and patched vulnerabilities,
+and four "zero-day exploits": vulnerabilities that were unknown and
+unpatched when the worm was released. (All the infection vulnerabilities
+have since been patched.)
+
+Stuxnet doesn't actually do anything on those infected Windows computers,
+because they're not the real target. What Stuxnet looks for is a particular
+model of Programmable Logic Controller (PLC) made by Siemens (the press
+often refers to these as SCADA systems, which is technically
+incorrect). These are small embedded industrial control systems that run all
+sorts of automated processes: on factory floors, in chemical plants, in oil
+refineries, at pipelines--and, yes, in nuclear power plants. These PLCs are
+often controlled by computers, and Stuxnet looks for Siemens SIMATIC
+WinCC/Step 7 controller software.
+
+If it doesn't find one, it does nothing. If it does, it infects it using yet
+another unknown and unpatched vulnerability, this one in the controller
+software. Then it reads and changes particular bits of data in the
+controlled PLCs. It's impossible to predict the effects of this without
+knowing what the PLC is doing and how it is programmed, and that programming
+can be unique based on the application. But the changes are very specific,
+leading many to believe that Stuxnet is targeting a specific PLC, or a
+specific group of PLCs, performing a specific function in a specific
+location--and that Stuxnet's authors knew exactly what they were targeting.
+
+It's already infected more than 50,000 Windows computers, and Siemens has
+reported 14 infected control systems, many in Germany. (These numbers were
+certainly out of date as soon as I typed them.) We don't know of any
+physical damage Stuxnet has caused, although there are rumors that it was
+responsible for the failure of India's INSAT-4B satellite in July. We
+believe that it did infect the Bushehr plant. [...]
+
+[by Bruce Schneier, Chief Security Technology Officer, BT, Excerpted and
+PGN-ed from CRYPTO-GRAM, OCTOBER 15, 2010, http://www.schneier.com]
+<http://www.schneier.com/crypto-gram.html>
+
+  [Bruce's site and cryptogram are full of goodies for security-minded
+  folks.   PGN]
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.19
+************************

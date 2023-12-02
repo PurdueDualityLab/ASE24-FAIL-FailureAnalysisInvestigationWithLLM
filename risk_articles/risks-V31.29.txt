@@ -1,0 +1,594 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.29
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 11 June 2019  Volume 31 : Issue 29
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.29>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+U.S. Customs and Border Protection says photos of travelers into and out of
+  the country were recently taken in a data breach (WashPost)
+How AI Could Be Weaponized to Spread Disinformation (NYTimes)
+Major HSM vulnerabilities impact banks, cloud providers, governments (ZDNet)
+Hawaiian Airlines' software glitch blamed for flight delays, cancellations
+  (Hawaii News Now)
+GPS Degraded Across Much of U.S., ADS-B Impacted (rntfnd)
+The Catch-22 that broke the Internet (Brian Barrett)
+For two hours, a large chunk of European mobile traffic was rerouted through
+  China (Catalin Cimpanu)
+Spam, Anti-Spam, Data, and Drugs (Paul Vixie)
+Amazon's Home Surveillance Company Is Putting Suspected Petty Thieves in its
+  Advertisements (Vice)
+Project ExplAIn - interim report Rob Slade)
+Facial recognition in schools: keep them safe? (NYTimes)
+Database of 3D objects stolen (The Register)
+Careless bitcoin blackmail (Jose Maria Mateos)
+Google has warned U.S. of security risks from banning Huawei (ISC2)
+Some Real News About Fake News (David A. Graham, Dave Crocker)
+Re: U.S. visas now need five years of your social media (Amos Shapir)
+Re: Phishing calls (Dmitri Maziuk, John Levine)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 10 Jun 2019 14:35:58 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: U.S. Customs and Border Protection says photos of travelers into
+  and out of the country were recently taken in a data breach (WashPost)
+
+https://www.washingtonpost.com/news/national/wp/2019/06/10/u-s-customs-and-border-protection-says-photos-of-travelers-into-and-out-of-the-country-were-recently-taken-in-a-data-breach/
+
+------------------------------
+
+Date: Sun, 9 Jun 2019 11:53:45 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: How AI Could Be Weaponized to Spread Disinformation (NYTimes)
+
+The New York Times, 7 Jun 2019
+
+The world's top artificial intelligence labs are honing technology that can
+mimic how humans write, which could one day help disinformation campaigns go
+undetected by generating huge amounts of subtly different messages.
+
+https://www.nytimes.com/interactive/2019/06/07/technology/ai-text-disinformation.html
+
+------------------------------
+
+Date: Mon, 10 Jun 2019 18:06:58 +0000
+From: David Balenson <david.balenson@sri.com>
+Subject: Major HSM vulnerabilities impact banks, cloud providers, governments
+  (ZDNet)
+
+https://www.zdnet.com/article/major-hsm-vulnerabilities-impact-banks-cloud-providers-governments/
+
+------------------------------
+
+Date: Mon, 10 Jun 2019 16:51:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Hawaiian Airlines' software glitch blamed for flight delays,
+  cancellations (Hawaii News Now)
+
+https://www.hawaiinewsnow.com/2019/06/09/hawaiian-airlines-interisland-flights-delayed-due-software-issue/
+
+------------------------------
+
+Date: June 11, 2019 at 12:53:23 AM GMT+9
+From: geoff goodfellow <geoff@iconia.com>
+Subject: GPS Degraded Across Much of U.S., ADS-B Impacted (rntfnd)
+
+Blog Editor's Note: Even as a Presidential Advisory Board was discussing GPS
+as the Gold Standard for satellite-based navigation last week, the system
+may have been operating in a degraded mode.
+
+On Sunday the Federal Aviation Administration held a teleconference to
+discuss the issue that seems to have persisted for several days.  While not
+`failing', GPS signal quality seems to have degraded and this is impacting
+some equipment and services. Specifically, the aviation safety Automatic
+Dependent Surveillance Broadcast system has been impacted across much of the
+United States. FAA has posted the following map depicting the areas
+impacted:
+
+These problems have delayed and canceled flights, possibly by the thousands.
+The FAA seems to have addressed some of this problem by issuing waivers for
+some aircraft to fly without operable ADS-B safety systems, as long as they
+stay on pre-planned routes and below 28,000 ft altitude.
+
+Speculation on some on-line forums point to specific manufacturers'
+equipment and aircraft that are primarily effected. Previous degradation in
+GPS signal quality, such as the SVN-23 caused problem in January 2016, have
+shown that equipment from different vendors react differently to the
+problem. Some are unaffected, some go offline, and some just perform poorly.
+
+The January 2016 SVN-23 degradation caused much of the nation's ADS-B system
+to be unavailable for much of the day. Other receivers and systems were
+impacted also. Cellular networks, first responder systems, digital
+broadcast, and numerous other systems were impacted.
+
+Watchstanders at the U.S. Coast Guard Navigation Center seemed unaware of
+the problem early Monday morning, but promised to investigate and respond.
+
+Much of the information for this post was gleaned from the below posting on
+Hackaday.com...  [...]
+
+https://rntfnd.org/2019/06/10/gps-degraded-across-much-of-us-ads-b-impacted/
+
+------------------------------
+
+Date: Sat, 8 Jun 2019 23:10:10 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: The Catch-22 that broke the Internet (Brian Barrett)
+
+Brian Barrett, wired.com, 8 Jun 2019
+Google's big outage also blocked access to the tools Google needed to fix it.
+
+Excerpt:
+
+  Which is exactly what played out on Sunday. Google says its engineers were
+  aware of the problem within two minutes. And yet!  ``Debugging the problem
+  was significantly hampered by failure of tools competing over use of the
+  now-congested network,'' the company wrote in a detailed postmortem.
+  ``Furthermore, the scope and scale of the outage, and collateral damage to
+  tooling as a result of network congestion, made it initially difficult to
+  precisely identify impact and communicate accurately with customers.''
+
+https://arstechnica.com/information-technology/2019/06/the-catch-22-that-broke-the-internet/
+  [Source: https://www.wired.com/story/google-cloud-outage-catch-22/ ??? PGN]
+
+------------------------------
+
+Date: Sun, 09 Jun 2019 18:31:36 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: For two hours, a large chunk of European mobile traffic was
+  rerouted through China (Catalin Cimpanu)
+
+Catalin Cimpanu for Zero Day | June 7, 2019
+It was China Telecom, again. The same ISP accused last year of "hijacking
+the vital Internet backbone of western countries."
+
+https://www.zdnet.com/article/for-two-hours-a-large-chunk-of-european-mobile-traffic-was-rerouted-through-china/
+
+opening text:
+
+For more than two hours on Thursday, June 6, a large chunk of European
+mobile traffic was rerouted through the infrastructure of China Telecom,
+China's third-largest telco and Internet service provider (ISP).
+
+The incident occurred because of a BGP route leak at Swiss data center
+colocation company Safe Host, which accidentally leaked over 70,000 routes
+from its internal routing table to the Chinese ISP.
+
+The Border Gateway Protocol (BGP), which is used to reroute traffic at the
+ISP level, has been known to be problematic to work with, and BGP leaks
+happen all the time.
+
+However, there are safeguards and safety procedures that providers usually
+set up to prevent BGP route leaks from influencing each other's networks.
+
+  [So why have I read multiple articles about BGP problems?  I remember when
+  we covered BGP during my BCS degree, and it seemed to me at the time to be
+  somewhat questionable security-wise.  Regarding BGP, I am pleased to be
+  right and would rather be wrong.]
+
+------------------------------
+
+Date: Mon, 10 Jun 2019 23:48:22 +0000
+From: Paul Vixie <paul@redbarn.org>
+Subject: Spam, Anti-Spam, Data, and Drugs
+
+Paul Vixie (CEO, Farsight Security), I Want a New Drug, 3 Jun 2019 Infosec
+https://www.infosecurity-magazine.com/infosec/i-want-a-new-drug-1-1-1/
+
+  [Included in totality, with permission at my request.  
+  Possible lessons regarding legal risks.  PGN]
+
+Slightly over 20 years ago, I co-founded the first anti-spam company, called
+MAPS. It was 'spam' spelled backwards, and also the Mail Abuse Prevention
+System.  My co-founder was Dave Rand, and we were quite sure that the low
+cost of sending e-mail would cause an explosion of network abuse, where
+unethical advertisers would cheerfully externalize their costs onto the
+overall economy, and equally sure that spam would be like a noxious weed
+that overruns its ecosystem, because nothing eats it. We were, sadly,
+correct.  Even more sadly, lawsuits against us by unethical advertisers cost
+millions of dollars, such that we ultimately had to sell the company just to
+pay our own lawyers.  Lessons learned? First, no good deed goes
+unpunished. Second, check the water temperature before diving in.
+
+Somewhere along the line we started to joke that spam was like a drug, and
+spammers were addicts, and they would do anything, up to and including
+selling their own children to sex traffickers, if it meant they could spam
+for one more day.  This may seem overly severe if you weren't in the
+security business at the time and you didn't see the depths of depravity to
+which unethical advertisers swam in order to bypass any and all controls
+against their work.  With two decades of perspective, I can certainly see it
+as `gallows humor' and maybe not as darkly funny today as it seemed at the
+time. I share this story with you to give you a glimpse into the minds of a
+couple of perennial do- gooders as we lost the Internet's first culture war.
+But also to familiarize you with the meme, `X is like a drug.'
+
+Because, data is like a drug. It's not as some say, `the new
+oil,' because while oil moves nations, it won't pivot an entire
+economy from top to bottom.  Only a handful of megacorporations and their
+supply chains thrive or die on changes in the market for oil. Data, by
+comparison, affects everybody. Like a drug, it can reform and pervert what
+were stable systems or morality, literally making good people do bad things,
+which they somehow justify. Also, there is no escape for the non-addicts; we
+are at constant risk in every zone of our personal and professional lives
+due to the insatiable need for more data by addicts and their enablers. They
+will take our data no matter what depths of depravity they must swim to, and
+their justification for it will sound like cheap equivocations to the
+non-addicts who are their victims.
+
+In the new virtual economy, value chains are not anchored by physical
+assets, and what a company can deliver is quite a bit more diverse than what
+they can get paid for. When I first heard that if I wasn't paying for a
+product, then I was the product, I knew it was so. I've tried to find some
+friend at Google who can charge me money to remember everything they know
+about me and use it to provide me services but never share that data with
+anyone else.  Unfortunately, there is no amount of money I could pay to
+Google that would be worth as much to them as the many uses they can make of
+my personal information. There won't be a Private Google for me or for any
+of us, any more than the online news and other services I pay subscription
+fees for can offer me an ad-free experience or keep my personal information
+entirely private.
+
+However, unopposed trends accelerate, and right now the General Data
+Protection Regulation (GDPR) is the only thing slowing the world's sell-off
+of whatever actual privacy any of us still have left, and I am not at all
+sanguine about Ireland's slow-rolling protection of the American technical
+industry's anti-privacy practices[1]. We must, every person, every family,
+every company, every state and every nation, diligently notice and defend
+against every data predator and every privacy abuse no matter how benign it
+may seem. If you're shredding your junk mail to defend your family against
+identity theft but then playing Pokemon Go during idle times as you go about
+your daily business, then you're hugging a tree without noticing the fire
+engulfing the forest around you. Many of the companies who can observe your
+activities will leverage your data to constrain your future choices in small
+ways which add up to a form of `digital serfdom' for you in the aggregate.
+
+Closer to home and immediately to hand, I am dumping my company's online
+expense reporting platform, after warning them several times, and getting
+only lame and misleading answers each time. They've turned on what they call
+`Smart Scan' for all our employees, and have removed any control for turning
+it off again, and this has been called a `policy change.'  What this means
+is that the personally identifiable information of our employees as they
+travel the world was simply too valuable for them to leave in our hands --
+they can't compete in the global data marketplace if they don't extract
+every possible one or zero from any information that comes into their
+orbit. Note that this is a paid commercial service, and I would pay more to
+keep our employees' privacy safe, but that option has not been and will not
+be offered to us. For the moment, this means we'll go back to e-mailed
+spreadsheets, while we audit the privacy policies of potential new online
+expense reporting services.
+
+Sadly, last time we did a search with such audits, every single provider we
+evaluated, failed, usually for more than one cause. This may help explain
+why I've lost my capability to be astonished by the findings in this year's
+Verizon Data Breach Investigations Report[2] (DBIR). It's a stunning piece
+of work and should be compelling in its own right. However, the data we're
+losing piecemeal due to surveillance capitalism is of gargantually greater
+magnitude than the data we're losing due to criminal breaches of our online
+infrastructure, and should concern all of us far more. I fear that we are
+all numb, and if we ponder the circumstances of our privacy it's to wonder
+where it will end or how it can end. Perhaps a motorcycling holiday in
+Scotland will restore my capacity for outrage. I'll try that and get back to
+you.
+
+[1] https://www.politico.com/story/2019/04/24/ireland-data-privacy-1270123
+[2] https://enterprise.verizon.com/resources/reports/dbir/2019/introduction/
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 16:54:10 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Amazon's Home Surveillance Company Is Putting Suspected Petty
+  Thieves in its Advertisements (Vice)
+
+Ring, Amazon's doorbell company, posted a video of a woman suspected of a
+crime and asked users to call the cops with information.
+
+https://www.vice.com/en_us/article/pajm5z/amazon-home-surveillance-company-ring-law-enforcement-advertisements
+
+------------------------------
+
+Date: Sun, 9 Jun 2019 09:30:17 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Project ExplAIn - interim report
+
+An interim report on Project ExplAIn, from the Alan Turing Institute and the
+UK Information Commissioner's Office, has been released.
+  https://ico.org.uk/media/2615039/project-explain-20190603.pdf
+The purpose of this project, according to the ICO, is to develop `practical
+guidance' for organizations on complying with UK data protection law when
+using artificial intelligence decision-making systems.
+
+This report is potentially very important, and probably deserves more
+attention than one, quick, reactionary post in reply.  However, at a first
+glance:
+
+I am somewhat heartened by the realization, and emphasis, right up front,
+that one size definitely does not fit all with regard to artificial
+intelligence, even in regard to generic guidance and policy.  But that does
+put into question the value of a 30 page report.
+
+Under the subheading of "Why is The Alan Turing Institute working on this?",
+the issue of "Explainability" is raised.  Explainability is fairly easy in
+programs using expert system approaches.  However as one gets into areas
+such as genetic programming and neural networks explainability becomes much
+more difficult to assess with any certainty.  These are areas where we,
+essentially, *expect* the machines to surprise us with programs and
+decisions that we couldn't come up with on our own.  (A later mention of
+this in regard to the "citizen juries" seems to amount to an opinion survey.
+In addition, the choice of "accuracy" over explainability seems to indicate
+a misunderstanding that explainability is one of the only measures we have
+for the reliability of accuracy.  Still later in the report the issue of
+this dichotomy is raised but dismissed.)
+
+Under the subheading of "What is an AI decision?", there is an
+acknowledgment that AI is a catch-all term for a range of technologies.
+However, the section then goes on to emphasize machine learning, which may
+limit the overall scope and outcome.  The document then goes on to discuss
+GDPR, seemingly without directly raising the issue of privacy.  However, at
+this point it does not address the technical issue of the danger of using
+unedited masses of "real" data for the development and testing of AI
+systems, specifically those using machine learning technologies.  The lack
+of this consideration is concerning, in regard to the overall value of the
+final outcomes of the report.
+
+Ultimately, this interim report is a disappointment.  The methodology seems
+to be little more than an opinion survey, and a number of important areas in
+regard to guidance on pursuing work with AI systems seems to be either out
+of scope or dismissed.
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 15:22:04 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Facial recognition in schools: keep them safe? (NYTimes)
+
+This week my daughter's school became the first in the nation to pilot
+facial-recognition software. The technology's potential is chilling.
+https://www.nytimes.com/2019/06/07/opinion/lockport-facial-recognition-schools.html
+
+------------------------------
+
+Date: Sat, 08 Jun 2019 20:41:47 -0400
+From: "Arthur T." <Risks201906.10.atsjbt@xoxy.net>
+Subject: Database of 3D objects stolen (The Register)
+
+UAB Planner5D "spent years and millions of dollars compiling the dataset"
+which was made too-easily accessible on its site, protected only by their
+TOS. They're suing the company who scraped the data and Facebook, who funded
+that company and also used the data.
+
+https://www.theregister.co.uk/2019/06/07/facebook_ai_3d_models_princeton_lawsuit/
+
+------------------------------
+
+Date: Sat, 8 Jun 2019 06:10:36 -0400
+From: =?iso-8859-1?Q?Jos=E9_Mar=EDa?= Mateos <chema@rinzewind.org>
+Subject: Careless bitcoin blackmail
+
+Remember that new spam / blackmail form that sent you one of your old
+passwords and said that your machine had been hacked and you had been
+recorded while visiting a porn site, and demanded a payment in bitcoin?
+
+Not surprisingly, spam filters started blocking all that garbage
+immediately; the threat is always written in the same way, so one can assume
+Bayes works reasonably well. Of course, the next step to try to avoid this
+is to replace the entire text with an image containing the text itself.
+
+An image that says that the bitcoin address to which the payment needs to be
+sent is case-sensitive, so one would rather copy and paste it.
+
+But how am I supposed to pay now?
+
+------------------------------
+
+Date: Sun, 09 Jun 2019 21:04:17 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Google has warned U.S. of security risks from banning Huawei (ISC2)
+
+https://community.isc2.org/t5/Industry-News/Google-has-warned-US-of-security-risks-from-banning-Huawei/m-p/23408
+
+'Google said that by stopping it from doing business with Huawei, the U.S.
+risks creating two kinds of Android operating system -- the genuine version
+and a hybrid one, said the FT report, adding, "The hybrid one is likely to
+have more bugs in it than the Google one, and so could put Huawei phones
+more at risk of being hacked, not least by China."'
+
+------------------------------
+
+Date: June 8, 2019 at 9:53:32 PM GMT+9
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Some Real News About Fake News (David A. Graham)
+
+David A. Graham, *The Atlantic*, 7 Jun 2019, via Dave Farber
+
+It's not just making people believe false things -- a new study suggests
+it's also making them less likely to consume or accept information.
+
+https://www.theatlantic.com/ideas/archive/2019/06/fake-news-republicans-democrats/591211/
+
+The rise of fake news in the American popular consciousness is one of the
+remarkable growth stories in recent year -- a dizzying climb to make any
+Silicon Valley unicorn jealous. Just a few years ago, the phrase was
+meaningless. Today, according to a new Pew Research Center study, Americans
+rate it as a larger problem than racism, climate change, or terrorism.
+
+But remarkable though that may seem, it's not actually what's most
+interesting about the study. Pew finds that Americans have deeply divergent
+views about fake news and different responses to it, which suggest that the
+emphasis on misinformation might actually run the risk of making people,
+especially conservatives, less well informed. More than making people
+believe false things, the rise of fake news is making it harder for people
+to see the truth.
+
+Pew doesn't define what it calls `made-up news', which is a reasonable
+choice in the context of a poll, but matters a great deal in interpreting
+it. The term has come to mean different things to different people. It was
+coined to describe deliberately false articles created by Potemkin news
+sites and spread on social media. But in a deliberate effort to muddy the
+waters, President Donald Trump began labeling news coverage that was
+unfavorable to him `fake news'.  (Indeed, Pew finds that Americans blame
+politicians and their aides, more than the press, activist groups, or
+foreign actors, for the problem of made-up news.) Now when Trump's
+supporters refer to `fake news', they often seem to mean mainstream news
+they dislike, whereas when others do so, they mean bogus information spread
+by fringe actors.
+
+If Pew's data are taken to mean that people find this latter category more
+dangerous than climate change, that is almost certainly an overreaction. As
+the political scientist Brendan Nyhan wrote in February, summarizing the
+state of research in the field:
+
+Relatively few people consumed this form of content directly during the 2016
+campaign, and even fewer did so before the 2018 election. Fake news
+consumption is concentrated among a narrow subset of Americans with the most
+conservative news diets. And, most notably, no credible evidence exists that
+exposure to fake news changed the outcome of the 2016 election.
+
+Pew finds a significant gap between Democrats' and Republicans' views on the
+seriousness of the problem with made-up news, though:
+
+This looks a lot like a split over the definition of fake news, rather than
+the actual problem. Put differently, Republicans may well be responding not
+to out-and-out fakery, but to bias -- real or perceived -- in news
+coverage. It would make sense that conservatives would be primed to accept
+the idea of widespread bias in the press after a decades-long campaign
+against the credibility of the mainstream press. Indeed, Republicans are
+about three times more likely than Democrats (58 percent versus 20 percent)
+to say that journalists create a lot of fake news, though they still assign
+more blame to both politicians and activist groups.
+
+How do people respond when they sense fake news? Here again, the partisan
+splits are notable. [...]
+
+------------------------------
+
+Date: June 9, 2019 at 9:29:12 PM GMT+9
+From: Dave Crocker <dcrocker@bbiw.net>
+Subject: Some Real News About Fake News (RISKS-31.29)
+
+  [Also via Dave Farber]
+
+It's not just making people believe false things -- a new study suggests
+it's also making them less likely to consume or accept information.
+
+Consider the possibility that the Atlantic article is, itself, fake news about research done by Pew.
+
+As always, the Pew folk did a careful bit of survey research and used
+appropriate language in describing it.  Surveys mostly are good for finding
+out about people's feelings and attitudes.  They are almost always terrible
+at determining "cause" and as we regularly see, can be challenging at
+predicting actual behavior.
+
+I quoted the Atlantic's summary of the article, above, because Pew doesn't
+say anything about "making people believe".  And because the Atlantic
+perpetuates the myth that consumers of information are relatively passive,
+whereas the reality is that we choose what we consume.  (The Atlantic does
+note that people report doing more fact-checking.)
+
+There is always plenty of legitimate information available.  And there is
+plenty of legitimate information about information sources that regularly
+produce fake news.  So if someone regularly sees fake news, it's because
+they choose to.
+
+Most of us, most of the time, decide what we want to believe and then seek
+confirmation of it.  It's actually hard work and significant angst to look
+for diverse sources of serious information, thoughtfully consider what is
+provided, and then judge it flexibly.
+
+We need to understand why folk choose to consume fake news and we aren't
+going to find that out with a survey.
+
+------------------------------
+
+Date: Sun, 9 Jun 2019 13:44:53 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: U.S. visas now need five years of your social media (RISKS-31.28)
+
+It seems that this question on the visa request form has the same role of
+other questions, such as "are you a Nazi / Communist" -- They do not really
+want an answer, since the true answer is rather easy to obtain, and is not
+really a solid reason to deny a visa; but it's a question that real
+criminals and terrorists are likely to lie on, so they can charge them with
+lying on a federal form if caught.
+
+------------------------------
+
+Date: Sat, 8 Jun 2019 10:28:04 -0500
+From: Dmitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: Phishing calls (Slade, RISKS-31.28)
+
+The other day my wife got a call very similar to what Rob describes.  She
+hung up too, of course, logged on to the bank's site, and found a slew of
+charges from a supermarket chain in another state, all in different stores,
+all under $100.
+
+The problem is robocalls crying wolf.
+
+------------------------------
+
+Date: 8 Jun 2019 15:46:48 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Phishing calls (Slade, RISKS-31.28)
+
+All Visa cards start with 4 but the second digit varies depending on
+the bank.  Mine start with 40, 46, and 49.
+
+There's a 10% chance that any particular card starts with 45, so they got
+lucky.  This is typical for robophish, make up details and crank out the
+calls until the details match those of a sucker.
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.29
+************************

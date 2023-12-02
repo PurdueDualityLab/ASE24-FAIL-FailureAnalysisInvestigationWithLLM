@@ -1,0 +1,614 @@
+RISKS-LIST: Risks-Forum Digest  Sunday 24 February 2013  Volume 27 : Issue 17
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.17.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Rush Holt on the Oscar Voting (PGN)
+NASA loses, then restores contact with space station (Jim Reisert)
+London Underground blacked out in 2003 (Chris Drewe)
+English Closed Captions of a speech given in spanish (David Tarabar)
+The Long or Short of the TESLA Tale (Broder vs Musk via PGN)
+Electronic health records: teething problems? (DKross)
+Gaming the System (Catherine Rampell)
+Chinese Army Unit Is Seen as Tied to Hacking Against U.S. (NYTimes)
+``Malicious Mandiant Security Report in Circulation'' (Joji Hamada via
+  Jim Reisert)
+VERY Cold boot attacks on Androids (Anthony Thorn)
+"Why Java APIs aren't the same as a Harry Potter novel" (Gene Wirchenko)
+YouTube restores video of crash blocked by NASCAR (Lauren Weinstein)
+ISP six-strikes starts tomorrow, and the expected results are ...
+  (Lauren Weinstein)
+IEEE: Can You Trust an Amazon Review? (Lauren Weinstein)
+"Nowhere to hide: Video location tech has arrived" (Bill Snyder via
+  Gene Wirchenko)
+Bad idea: Firefox Will Soon Block Third-Party Cookies (Lauren Weinstein)
+Re: Infiltrate anybody, one-click easy (Al Macintyre, Tom Van Vleck)
+Microsoft seeks patent for spy tech for Skype (Lauren Weinstein,
+  Dossy Shiobara, David Pollak)
+18th International Workshop on Formal Methods for Industrial Critical
+  Systems: FMICS 2013, Call for papers (Diego Latella)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 23 Feb 2013 15:40:58 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Rush Holt on the Oscar Voting
+
+Rush Holt, Star-Ledger Guest Columnist, 22 Feb 2013
+Oscars put online voting problems back in the spotlight: Opinion
+http://blog.nj.com/njv_guest_blog/2013/02/oscars_put_voting_problems_bac.html
+
+Unfortunately, it went poorly, for reasons that shed light on the inherent
+difficulty of conducting secure, accessible, credible elections online.
+
+Problems for Oscar voters began at the beginning: logging in. Voters were
+required to create special, complex passwords, but when they tried to log in
+to the Oscar website, many found their passwords rejected.  After
+re-entering passwords several times, voters were locked out of the site
+entirely and forced to call a help line. Many then had to wait for new
+passwords, delivered by snail-mail.
+
+Even relatively young and tech-savvy voters weren't immune. As 42-year-old
+documentarian Morgan Spurloch told the Hollywood Reporter, ``There's even
+some young farts like myself that are having problems.''
+
+These problems should sound familiar in New Jersey. Our state just conducted
+its own ad hoc experiment with online voting: Days before November's
+election, as many of us struggled to recover from Hurricane Sandy, voters
+displaced by the storm were told they could vote by e-mail.
+
+The result was chaos. Election clerks reported e-mail systems that were
+overwhelmed. In one county, voters were instructed to e-mail ballot requests
+to a Hotmail account. Many didn't know that, by law, their e-mail vote was
+only a place-holder and that they also had to mail a paper ballot. Others
+didn't fully understand that, because their ballot needed to be linked to
+their e-mail address to verify eligibility, voting online meant sacrificing
+the right to a private ballot. Ultimately, election officials postponed the
+voting deadline beyond Election Day to give voters time to overcome
+unpredicted obstacles.
+
+  [Rush Holt has been one of the most vocal members of Congress on the
+  issues relating to voting system integrity, security, privacy, and so on.
+  However, to RISKS readers, voting by e-mail should seem to be one of the
+  worst possible alternatives, irrespective of how much is riding on any
+  particular election.  You have to trust too many parts of the overall
+  process, too many people with insider opportunities for rigging,
+  compromised servers, too many opportunities for mistakes, hardships,
+  failures, denial of service and man-in-the-middle attacks, and much more.
+  PGN]
+
+------------------------------
+
+Date: Tue, 19 Feb 2013 14:03:22 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: NASA loses, then restores contact with space station
+
+Another relay malfunction.  First New Orleans, now space!
+
+"A main data relay system malfunctioned, and the computer that controls the
+station's critical functions switched to a backup, NASA officials said in a
+statement. However, the station was still was unable to communicate with the
+Tracking and Data Relay satellite network that serves as the outpost's link
+to NASA's Mission Control center on the ground."
+
+http://www.space.com/19854-nasa-space-station-contact-restored.html
+
+Jim Reisert AD1C, <jjreisert@alum.mit.edu>, http://www.ad1c.us
+
+------------------------------
+
+Date: Sun, 17 Feb 2013 21:50:27 +0000
+From: "Chris Drewe" <e767pmk@yahoo.co.uk>
+Subject: London Underground blacked out in 2003
+
+  [Re: Super Bowl Blackout (McGill, RISKS-27.16)]
+
+On 28 Aug 2003, parts of London, UK, had a power outage which affected much
+of the Underground (subway) during the evening rush-hour (a Google search
+for "2003 London blackout" produces loads of info); various factors appeared
+to be involved, but the direct cause was reported as a 1 Amp over-current
+relay being erroneously fitted instead of a 5 Amp one two years before (via
+a current-scaling transformer, of course).  I'm not sure if there are any
+similarities with the Super Bowl event, but as someone said, the usual
+non-expert comment was "why wasn't it tested thoroughly?", to which the
+answer is: how do you rig up a multi-megawatt load bank to a public
+electricity supply..?
+
+  [Note: This outage is noted by Phil Thornley in RISKS-22.91 London
+  blackout caused by incorrect relay fitting, and subsequently by Peter Amey
+  in RISKS-22.97.  I include Chris's item here as another reminder of the
+  importance of remembering history in RISKS.  PGN]
+
+------------------------------
+
+Date: Thu, 14 Feb 2013 18:11:26 -0500
+From: David Tarabar <dtarabar@acm.org>
+Subject: English Closed Captions of a speech given in spanish
+
+Marco Rubio gave a live response to the President's State of the Union
+Address on 12-Feb. He also taped a Spanish translation of the speech that
+was released to the media. Abc.com posted the Spanish language version and
+enabled Closed Captioning (CC). The CC was obviously automated, because the
+resulting 'translation' was a garbled mess of English words.
+
+Stephen Colbert -- a comedian who plays a political pundit on TV -- used
+these captions as the basis for a segment of the Colbert Report.
+
+http://www.colbertnation.com/the-colbert-report-videos/423832/february-13-2013/spanish-state-of-the-rubio
+
+(As of the morning 14-Feb, abc.com still enabled CC on the speech, but
+as of this evening the CC option had been removed.)
+
+------------------------------
+
+Date: Thu, 14 Feb 2013 19:37:30 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The Long or Short of the TESLA Tale?
+
+In *The New York Times*, John M. Broder reported that that the Tesla Model S
+electric car he was test-driving repeatedly ran out of juice, partly because
+cold weather reduces the battery's range by about 10 percent.
+
+Charles Lane, The electric car mistake, *The Washington Post*, 11 Feb 2013
+quotes Tesla chief executive Elon Musk, claiming that Broder's report is a
+fake, and that the vehicle log showed Broder didn't charge fully, and took
+an [unmentioned] long detour.
+<http://www.washingtonpost.com/opinions/charles-lane-obamas-electric-car-mistake/2013/02/11/441b39f6-7490-11e2-aa12-e6cf1d31106b_story.html>
+
+*The Times* stands by Broder.
+
+http://www.theatlanticwire.com/technology/2013/02/elon-musks-data-doesnt-back-his-claims-new-york-times-fakery/62149/
+http://wheels.blogs.nytimes.com/2013/02/14/that-tesla-data-what-it-says-and-what-it-doesnt/
+
+------------------------------
+
+Date: Mon, 18 Feb 2013 9:34:43 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Electronic health records: teething problems?
+
+  [With thanks to Dr. D. Kross.  PGN]
+
+"Everyone knew there would be teething problems the first few weeks, but
+they've never stopped. We've started scheduling fewer patients because of
+the time they take to process. The air can turn blue when a senior
+consultant finds himself fiddling with a computer instead of seeing
+patients."
+http://www.philly.com/philly/entertainment/20130218_The_flaws_of_electronic_records.html
+http://www.readingchronicle.co.uk/news/roundup/articles/2013/02/16/86796-hospital-ready-to-ditch-30m-computer-system-/
+
+------------------------------
+
+Date: Sun, 17 Feb 2013 10:18:48 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Gaming the System (Catherine Rampell)
+
+  [Sometimes it pays to read the fine print.  A loophole in the professor's
+  grading system lead an entire class to skip the final, guaranteeing
+  them all A's.  People are wily!  Dan Farmer]
+
+Catherine Rampell, *The New York Times*, 14 Feb 2013 [Valentine's Day]
+http://economix.blogs.nytimes.com/2013/02/14/gaming-the-system/?src=rechp
+
+Dollars to doughnuts.
+
+*Inside Higher Ed* had a fascinating article a couple days ago about some
+college students who unanimously boycotted their final exam and all got A
+[grades] under a grading curve loophole. It's a great example of game theory
+at work.
+
+In several computer science courses at Johns Hopkins University, the grading
+curve was set by giving the highest score on the final an A, and then
+adjusting all lower scores accordingly. The students determined that if they
+collectively boycotted, then the highest score would be a zero, and so
+everyone would get an A. Amazingly, the students pulled it off.
+
+  [Foreshortened for RISKS, but the last paragraph is worth noting, quoting
+  the Professor, Peter Froehlich:]
+
+``I have changed my grading scheme to include that everybody has 0 points
+means that everybody gets 0 percent, and I also added a clause stating that
+I reserve the right to give everybody 0 percent if I get the impression that
+the students are trying to `game' the system again.''
+
+------------------------------
+
+Date: Tue, 19 Feb 2013 9:54:35 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Chinese Army Unit Is Seen as Tied to Hacking Against U.S.
+
+David E. Sanger, David Barboza, Nicole Perlroth, *The New York Times*
+http://www.nytimes.com/2013/02/19/technology/chinas-army-is-seen-as-tied-to-hacking-against-us.html?pagewanted=all
+http://j.mp/136pc6D
+
+  "The building off Datong Road, surrounded by restaurants, massage parlors
+  and a wine importer, is the headquarters of P.L.A. Unit 61398.  A growing
+  body of digital forensic evidence - confirmed by American intelligence
+  officials who say they have tapped into the activity of the army unit for
+  years - leaves little doubt that an overwhelming percentage of the attacks
+  on American corporations, organizations and government agencies originate
+  in and around the white tower."
+
+------------------------------
+
+Date: Thu, 21 Feb 2013 23:22:01 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: ``Malicious Mandiant Security Report in Circulation'' (Joji Hamada)
+
+Written by Joji Hamada, Symantec Employee
+
+  "The report, APT1: Exposing One of China's Cyber Espionage Units,
+  published by Mandiant earlier this week has drawn worldwide attention by
+  both the security world and the general public. This interest is due to
+  the conclusion the report has drawn regarding the origin of targeted
+  attacks, using advanced persistent threats (APT), performed by a certain
+  group of attackers dubbed the Comment Crew. You can read Symantec’s
+  response to the report here."
+
+  "Today, Symantec has discovered someone performing targeted attacks is
+  using the report as bait in an attempt to infect those who might be
+  interested in reading it."
+
+http://www.symantec.com/connect/blogs/malicious-mandiant-report-circulation
+
+  [This might be somewhat self-serving, especially if Symantec's business is
+  booming as a result of many prominent companies coming out of the closet
+  to admit that they too were victims...  PGN]
+
+------------------------------
+
+Date: Tue, 19 Feb 2013 09:26:24 +0100
+From: Anthony Thorn <anthony.thorn@atss.ch>
+Subject: VERY Cold boot attacks on Androids
+
+Thilo Mueller and Michael Spreitzenbarth at Uni Erlangen have published a
+report and tools to perform cold boot attacks on Android smartphones.
+
+They describe (https://www1.informatik.uni-erlangen.de/frost) cooling the
+phone in a freezer for an hour before proceeding.  Freezing RAM chips to
+read their content is not new, nor are cold boot attacks; here a concept has
+been proved and the tools made available.
+
+FROST illustrates that attacks (threats) that appeared very difficult and
+expensive and hence impracticable and negligible can suddenly become
+practical and real risks.
+
+My conclusion is that attacks which are logically possible must be taken
+seriously as risks - even if they are currently difficult.
+
+Last but not least, I found the pun irresistible, and in the spirit of
+Risks!
+
+------------------------------
+
+Date: Fri, 15 Feb 2013 09:57:44 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Why Java APIs aren't the same as a Harry Potter novel"
+
+Oracle seeks to convince appeals court that Google's use of 37 lines of code
+is akin to plagiarizing a blockbuster literary work.  InfoWorld, 14 Feb 2013
+http://www.infoworld.com/t/application-development/why-java-apis-arent-the-same-harry-potter-novel-212891
+
+------------------------------
+
+Date: Sat, 23 Feb 2013 20:05:02 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: YouTube restores video of crash blocked by NASCAR
+
+http://j.mp/15FxO8h  (*The Washington Post* via NNSquad)
+
+  "Our partners and users do not have the right to take down videos from
+  YouTube unless they contain content which is copyright infringing, which
+  is why we have reinstated the videos."
+
+YouTube has reinstated the video(s) [which I mentioned earlier today] noting
+that NASCAR did not have the right to remove them on copyright infringement
+grounds.  Good work by the YouTube team.
+
+------------------------------
+
+Date: Sun, 24 Feb 2013 13:15:28 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: ISP six-strikes starts tomorrow, and the expected results are ...
+
+ISP six-strikes starts tomorrow, and the expected results are ...
+http://j.mp/W47lA7  (Torrent Freak via NNSquad)
+
+  "The much-discussed U.S. six strikes anti-piracy scheme is expected to go
+  live on Monday. The start date hasn't been announced officially by the CCI
+  but a source close to the scheme confirmed the plans."
+
+Expected results:
+
+1) Legit users are harassed due to IP address mix-ups, etc.  Remember
+   you must pay to file an appeal.
+
+2) Proxy services see a massive up-tick in use.
+
+3) Public Wi-Fi access points in small stores, etc. are decimated.
+
+4) Relatively visible Torrent-based systems are even more rapidly
+   replaced with completely underground and well-hidden systems.
+
+5) In relatively short order, the MPAA et al. will be back with their
+   Congressional supporters again demanding that the Internet be remade
+   to protect their obsolete 20th century profit center models, no
+   matter what the costs.
+
+------------------------------
+
+Date: Sat, 23 Feb 2013 16:02:17 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: IEEE: Can You Trust an Amazon Review?
+
+http://j.mp/15F3OcF  (*IEEE Spectrum* via NNSquad)
+
+  "Reviewers are gaming the system at Amazon and elsewhere for mischief,
+  politics, and profit."
+
+------------------------------
+
+Date: Thu, 21 Feb 2013 10:18:00 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Nowhere to hide: Video location tech has arrived" (Bill Snyder)
+
+Bill Snyder, *InfoWorld*, 21 Feb 2013
+New technologies are turning Web videos and photos into tools that will
+  destroy your privacy
+http://www.infoworld.com/d/the-industry-standard/nowhere-hide-video-location-tech-has-arrived-213184
+
+------------------------------
+
+Date: Sat, 23 Feb 2013 13:50:26 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Bad idea: Firefox Will Soon Block Third-Party Cookies
+
+  "Stanford researcher Jonathan Mayer has contributed a Firefox patch that
+  will block third-party cookies by default. It's now on track to land in
+  version 22."  http://j.mp/YM28Jh  (Slashdot via NNSquad)
+
+No meaningful privacy enhancements will be provided to users by this
+change, but contrary to what Mozilla is saying, it *will* break many
+standard functions of many standard Web sites.  Another "politically
+correct" step by Mozilla that actually makes users' lives more
+difficult.
+
+------------------------------
+
+Date: Thu, 14 Feb 2013 22:02:39 -0600
+From: "Al Mac Wow" <macwheel99@wowway.com>
+Subject: Re: Infiltrate anybody, one-click easy (Summit, RISKS-27.16)
+
+We customers, of anti-virus and other PC security software, we are sheep.
+We buy whatever is offered, we do not make demands or even pretty please
+requests that future editions of the protection provide specific
+improvements.  Not enough of us ask for the same thing.
+
+I want the code which I key in to activate this upgrade printed large enough
+so I do not have to use a magnifying glass, or other aids, so the characters
+are readable, for my aging eyes.
+
+I want e-mail protection which says ... this hyper link is not what its text
+claims to be.  This attachment saying it came from company-X or government
+agency-X did not in fact come from that organization.
+
+I want a browser click on ... this site is suspicious.  Then there is a pull
+down options ... we select porn, hate site, selling clearly illegal product
+or service, promoting assassination of our leaders, whatever the grievance,
+or space to enter a comment if other than one of the above.  Then another
+option, where we select who to report it to, such as local police, FBI, FTC,
+our ISP, the ACLU, whatever.  When they get the "suspicious" reports, we
+have already categorized for them, what we think the problem, our identity,
+our GPS where we were when we saw it.
+
+When we have a company network, the e-mail should go through a different
+brand name anti-virus, anti-phishing protection than what is on the
+individual PCs of the network, so one catches what the other protection
+misses.
+
+When individual PCs try to connect to the company network, run security
+software check ... do you have the latest security?  Is it working?  Has it
+been patched?  Do you have a virus?  If any answer wrong, then you are
+disconnected from the network, your boss is notified, and a technician is
+dispatched to your location to fix your PC.
+
+Do you have the same company PC doing your company banking, and that PC
+engaged in other Internet activity, like e-mail?  Fire the manager who
+decided that was appropriate behavior.
+
+Firewalls and anti-protection should check what's going out, as well as
+what's coming in.  Here is confidential personal info going out.  Is it
+going to a previously authorized location?
+
+Al Mac (WOW) = Alister William Macintyre
+
+------------------------------
+
+Date: Fri, 15 Feb 2013 10:48:22 -0500
+From: Tom Van Vleck <thvv@multicians.org>
+Subject: Re: Infiltrate anybody, one-click easy (Summit, RISKS-27.16)
+
+I heartily agree with Steve Summit's posting in RISKS 27:16.
+
+I advise my friends and family "don't click on links in e-mail messages,"
+but I know they do -- because I see the results when they get hacked.
+
+The programs now invoked by e-mail clients to display web pages and
+attachments trust those items completely.  I wish we could introduce some
+caution and intelligence into this path.
+
+For display of links in messages, I'd like to use a specialized web
+page mail-link browser that's passed information like "this obfuscated
+URL came from a mail message, ostensibly from wellsfargo.com, sent via
+a mail server in Russia."  (I got one of these recently.)  The browser
+could consider multiple factors when deciding how to show the content.
+It might, for example, display an alert border; disable Flash, Java,
+Javascript; disable or indicate IFRAMEd content, etc.
+
+Similarly, I'd like the option to send file attachments to a sandboxed
+program that just displayed text contents.
+
+------------------------------
+
+Date: Thu, 21 Feb 2013 09:05:51 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Microsoft seeks patent for spy tech for Skype
+
+   "A technology called Legal Intercept that Microsoft hopes to patent
+    would allow the company to secretly intercept, monitor and record
+    Skype calls. And it's stoking privacy concerns."
+    (*Computerworld* via NNSquad)  http://j.mp/WV2pKr
+
+------------------------------
+
+Date: Feb 21, 2013 10:37 AM
+From: "Dossy Shiobara" <dossy@panoptic.com>
+Subject: Re: Microsoft Patents Skype Interception Tool (via Dave Farber)
+
+From an intellectual property perspective, wouldn't it make a lot of sense
+for a company to patent or otherwise protect snooping and/or
+security-related technology to prevent others (bad actors, competitors,
+etc.) from implementing the functionality and using it?
+
+While the chilling effect of the privacy implications are a concern, this
+kind of patent seems like an obvious defensive strategy, as well?
+
+------------------------------
+
+Date: Feb 21, 2013 11:20 AM
+From: "David Pollak" <dpp@athena.com>
+Subject: Re Microsoft Patents Skype Interception Tool (via Dave Farber)
+
+FWIW, I described a Skype interception tool on this list 6+ years ago. I
+wonder if my description counts as prior art to the patent.
+
+------------------------------
+
+Date: Fri, 15 Feb 2013 11:52:18 +0100
+From: Diego Latella <Diego.Latella@isti.cnr.it>
+Subject: 18th International Workshop on Formal Methods for Industrial
+  Critical Systems: FMICS 2013, Call for papers
+
+                           FMICS 2013
+                  18th International Workshop on
+          Formal Methods for Industrial Critical Systems
+                      September 23-24, 2013
+                          Madrid (Spain)
+                    Co-located with SEFM 2013
+               http://lvl.info.ucl.ac.be/Fmics2013
+    [truncated for RISKS; see the URL for the full announcement.  PGN]
+
+Call for Papers
+
+The aim of the FMICS workshop series is to provide a forum for researchers
+who are interested in the development and application of formal methods in
+industry.  In particular, FMICS brings together scientists and engineers who
+are active in the area of formal methods and interested in exchanging their
+experiences in the industrial usage of these methods. The FMICS workshop
+series also strives to promote research and development for the improvement
+of formal methods and tools for industrial applications.
+
+Topics of interest include (but are not limited to):
+* Design, specification,  code generation and testing  based on formal
+  methods.
+* Methods,  techniques  and   tools  to  support  automated  analysis,
+  certification, debugging,  learning, optimization and transformation
+  of complex, distributed, real-time systems and embedded systems.
+* Verification  and validation  methods that  address  shortcomings of
+  existing  methods  with respect  to  their industrial  applicability
+  (e.g., scalability and usability issues).
+* Tools for the development of formal design descriptions.
+* Case studies  and experience  reports on industrial  applications of
+  formal methods, focusing on lessons learned or identification of new
+  research directions.
+* Impact of the adoption of  formal methods on the development process
+  and associated costs.
+* Application  of  formal methods  in  standardization and  industrial
+  forums.
+
+Submissions must describe authors' original research work and their
+results. Contributions should not exceed 15 pages formatted according to the
+LNCS style (Springer), and should be submitted as Portable Document Format
+(PDF) files using the EasyChair submission site:
+https://www.easychair.org/conferences/?conf=fmics2013
+
+Paper submissions by May 3rd.
+
+Chairs:
+Michael Dierkes (Rockwell Collins, France)
+Charles Pecheur (Université catholique de Louvain, Belgium)
+
+Dott. Diego Latella - Senior Researcher - CNR/ISTI, Via Moruzzi 1, 56124
+Pisa, IT (http:www.isti.cnr.it)
+FM&&T Laboratory (http://fmt.isti.cnr.it)
+http://www.isti.cnr.it/People/D.Latella - phone: +39 0503152982 - mob:
++39 348 8283101 - fax +39 0503152040
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.17
+************************
+
+--_002_f4cc862263f2482d8fb9aba4cf05a90fEXHUBVM03campusnclacuk_--

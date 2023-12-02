@@ -1,0 +1,1171 @@
+precedence: bulk
+Subject: Risks Digest 30.58
+
+RISKS-LIST: Risks-Forum Digest  Thursday 15 March 2018  Volume 30 : Issue 58
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.58>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Beware the IDES OF RISKS, in two weeks worth of postings!]
+Root Cause Behind Downtown Line Glitch Still Unknown (Straits Times)
+GPS Isn't Very Secure. Here's Why We Need A Backup (WiReD)
+Hedge Funds That Use AI Just Had Their Worst Month Ever (Bloomberg)
+AI-Aided Cameras Mean No More Car Mirrors, No More Blind Spots (Spectrum)
+"Researchers find security flaws in popular smart cameras" (ZDNet)
+"IT beware: University finds new 4G security holes" (Evan Schuman via
+  Gene Wirchenko)
+Spooks' Superposition Principle (Henry Baker)
+GitHub Survived the Biggest DDoS Attack Ever Recorded (Lily Hay Newman)
+Memcached-fueled 1.3 Tbps attacks (Drew Dean)
+Major data breach at Marine Forces Reserve impacts thousands (Gabe Goldberg)
+Report highlights how deep packet inspection could be subverted by
+  cybercriminals (Tara Seals via geoff goodfellow)
+"More privacy-busting bugs found in popular VPN services" (Zack Whittaker)
+More on Google and Military Drones (Lauren Weinstein)
+Egyptian jamming of Sinai cell phones affects Israel, Gaza (Dan Williams)
+All of Oculus's Rift headsets have stopped working due to an
+  expired certificate (TechCrunch)
+Officer sent to wrong address by 911 system -- and dies (Paul Saffo)
+Years After Sept. 11, Critical Incidents Still Overload Emergency
+  Radios (via NPR.org)
+The European electrical grid is having time problems (danny burstein)
+In reported breakthrough, Israeli tech can now unlock any phone
+  (Times of Israel)
+Israeli AI software whips expert lawyers in contract analysis (ditto)
+Egyptian Military Activity Affecting Israeli Cell Networks (Hamodia
+  via Mike Rechtman)
+Cryptocurrency Thief Stole 7 Bitcoins from Steve Wozniak (Fortune)
+"Australians used bitcoin to pay AU$50k-worth of fake ATO tax
+  debts in 2017" (ZDNet)
+Clocks in telephones at higher altitudes don't actually run faster
+  (Dan Jacobson)
+Bug in HP Remote Management Tool Leaves Servers Open to Attack (Threatpost)
+Cisco's Talos Intelligence Group Blog: Vulnerability Spotlight:
+  Adobe Acrobat Reader DC Document ID Remote Code Execution Vulnerability
+  (Talos)
+Apple acknowledges serious iOS bug linked to Telugu character (The Hindu)
+Adversarial patches: colorful circles that convince machine-learning
+  vision system to ignore everything else (BoingBoing)
+Left-right mouse mapping programs and permanent effects (Dan Jacobson)
+In the US v. Microsoft Supreme Court Case, an Old Law Leaves Few Good
+  Options (WiReD)
+Chinese mom 'locked out' of phone for incredible 47 years (ECNS)
+Usual infile-outfile clobber accident (Dan Jacobson)
+MoviePass CEO proudly says the app tracks your location before and
+  after movies (TechCrunch)
+A first look at browser-based Cryptojacking ( Eskandari et al.
+  via Jose Maria Mateos)
+"After Oracle WebLogic miner attack, critical Apache Solr bug is now
+  targeted" (ZDNet)
+"Has Alexa snapped? Why your Echo sometimes does creepy things"
+  (David Gewirtz)
+"Ransomware for robots is the next big security nightmare" (Danny Palmer)
+Most Americans See Artificial Intelligence as a Threat to Jobs
+  -- Just Not Theirs (Niraj Chokshi)
+New tracking technology could make lost belongings a thing of the past
+  (The Washington Post via Gabe Goldberg)
+Apple: Former Engineer Will Unlock iPhone For $15.000 (Fortune)
+"Google's DoubleClick outage should force marketers to ask some hard
+  questions" (Larry Dignan)
+Alexa briefly lost its voice on Friday (The Verge)
+Malicious software hits Connecticut court system's computers
+  (The Boston Globe)
+Regulation of Internet Companies?!? (Chris Drewe)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 03 Mar 2018 09:52:49 +0800
+From: Richard M Stein <rmstein@ieee.org>
+Subject: Root Cause Behind Downtown Line Glitch Still Unknown
+  (Straits Times)
+
+http://www.straitstimes.com/singapore/transport/root-cause-behind-downtown-line-glitch-still-unknown
+
+  "Slower journeys for commuters throughout the day as work to restore
+  system continued."
+
+Singapore's Downtown Line (DTL) incident, apparently of non-deterministic
+origin, crippled train service used by ~470K passengers for weekday transit.
+These incidents accrue into a significant productivity impact.
+Technologically-enabled transportation imbrues commuters with elevated risk.
+http://www.straitstimes.com/singapore/transport/ridership-on-downtown-line-increased-by-more-than-50-per-cent-following-dtl3
+
+Triage skills are essential to root cause incidents arising in
+production. Piecing together a system's state transition event history, and
+the input/output conditions compelling those transitions requires
+comprehensive, interdisciplinary skills and effective tools. 
+
+A simulation that integrates non-deterministic stimulus can proactively
+identify anomalous events, and their origin, before production release.
+These anomalies can be prioritized for repair. Unknown whether or not SBS
+Transit, the DTL operator, applies a simulation for signaling system
+qualification purposes.
+
+------------------------------
+
+Date: Sun, 4 Mar 2018 00:54:37 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: GPS Isn't Very Secure. Here's Why We Need A Backup (WiReD)
+
+Earth got a warning shot on January 25, 2016. On that day, Air Force
+engineers were scheduled to kill off a GPS satellite named SVN-23—the oldest
+in the navigation constellation. SVN-23 should have just gone to rest in
+peace.  But when engineers took it offline, its disappearance triggered,
+according to the National Institute of Standards and Technology, a software
+bug that left the timing of some of the remaining GPS satellites -- 15 of
+them -- off by 13.7 microseconds.
+
+That's not a lot to you. If your watch is off by 13.7 microseconds, you'll
+make it to your important meeting just fine. But it wasn't so nice for the
+first-responders in Arizona, Pennsylvania, Connecticut, and Louisiana, whose
+GPS devices wouldn't lock with satellites. Nor for the FAA ground
+transceivers that got fault reports. Nor the Spanish digital TV networks
+that had receiver issues. Nor the BBC digital radio listeners, whose British
+broadcast got disrupted. It caused about 12 hours of problems -- none too
+huge, all annoying. But it was a solid case study for what can happen when
+GPS messes up.
+
+The 24 satellites that keep GPS services running in the US aren't especially
+secure; they're vulnerable to screw-ups, or attacks of the cyber or
+corporeal kind. And as more countries get closer to having their own fully
+functional GPS networks, the threat to our own increases. Plus, GPS
+satellites don't just enable location and navigation services: They also
+give ultra-accurate timing measurements to utility grid operators, stock
+exchanges, data centers, and cell networks. To mess them up is to mess those
+up.  So private companies and the military are coming to terms with the
+consequences of a malfunction -- and they're working on backups. [...]
+
+http://www.wired.com/story/spoof-jam-destroy-why-we-need-a-backup-for-gps
+
+------------------------------
+
+Date: Tue, 13 Mar 2018 17:26:40 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Hedge Funds That Use AI Just Had Their Worst Month Ever (Bloomberg)
+
+Chalk one up for the humans.
+
+Hedge funds that use artificial intelligence and machine learning in their
+trading process posted the worst month on record in February, according to a
+Eurekahedge index that's tracked the industry from 2011.
+The first equity correction in two years upended their strategies as
+once-reliable cross-asset correlations shifted.
+<http://www.bloomberg.com/news/articles/2018-03-05/easy-allocation-models-doomed-as-diversification-breaks-down
+
+While computerized programs are feared for their potential to render human
+traders obsolete, the AI quants lagged behind their discretionary
+counterparts. The AI index fell 7.3 percent last month, compared to a 2.4
+percent decline for the broader Hedge Fund Research index.
+
+http://www.bloomberg.com/news/articles/2018-03-12/robot-takeover-stalls-in-worst-slump-for-ai-funds-on-record
+
+Risks -- indeed.
+
+------------------------------
+
+Date: Fri, 2 Mar 2018 01:04:33 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: AI-Aided Cameras Mean No More Car Mirrors, No More Blind Spots
+  (IEEE Spectrum)
+
+According to the World Health Organization, more than 1.25-million people
+around the world die from road accidents each year. Consequently, the United
+Nations has set a target of halving this number by 2020. A new technology
+being readied for its debut could be a step forward in achieving that
+ambitious goal: greatly improved automotive video cameras meant to replace
+mirrors on vehicles.
+
+In its annual R&D Open House on 14 February, Mitsubishi Electric described
+the development of what it believes is the industry's highest-performance
+rendition of mirrorless car technology. According to the company, today's
+conventional camera-based systems featuring motion detection technology can
+detect objects up to about 30 meters away and identify them with a low
+accuracy of 14 percent. By comparison, Mitsubishi's new mirrorless
+technology extends the recognition distance to 100 meters with an 81 percent
+accuracy.
+
+“Motion detection can't see objects if they are a long distance away,” says
+Kazuo Sugimoto, Senior Manager, at Mitsubishi Electric's Image Analytics and
+Processing Technology Group, Information Technology R&D Center in Kamakura,
+55 km south of Tokyo. “So we have developed an AI-based object-recognition
+technology that can instantly detect objects up to about 100 meters away.”
+
+To achieve this, the Mitsubishi system uses two technology processes
+consecutively. A computational visual-cognition model first mimics how
+humans focus on relevant regions and extract object information from the
+background even when the objects are distant from the viewer.
+
+The extracted object data is then fed to Mitsubishi's compact deep learning
+AI technology dubbed Maisart. The AI has been taught to classify objects
+into distinct categories: trucks; cars; and other objects such as lane
+markings. The detected results are then superimposed onto video that appears
+on a monitor for the driver to view.
+
+Currently, this superimposing results in objects being displayed with
+colored rectangles surrounding them. For instance, a blue rectangle
+designates an approaching truck, a yellow rectangle an oncoming car.  “But
+this can be done in a number of ways,” says Sugimoto. “We are now testing
+out various ideas to find the best method for drivers.”
+
+http://spectrum.ieee.org/cars-that-think/transportation/advanced-cars/mitsubishi-electric-develops-highperformance-aibased-mirrorless-car-technology
+
+The risks? Maybe too much displayed, data overload? Displays looking like
+video games? or maybe it'll be brilliant.
+
+------------------------------
+
+Date: Wed, 14 Mar 2018 09:17:35 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Researchers find security flaws in popular smart cameras"
+
+Danny Palmer, ZDNet, 13 Mar 2018
+Researchers have discovered that cyber-attackers can remotely gain control
+of an IoT camera, allowing them to spy on users and more.
+http://www.zdnet.com/article/security-vulnerabilities-in-these-popular-smart-cameras-let-hackers-turn-them-into-surveillance/
+
+------------------------------
+
+Date: Wed, 14 Mar 2018 08:49:18 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "IT beware: University finds new 4G security holes"
+
+Researchers from Purdue University and the University of Iowa have
+found quite a few new security holes in the popular 4G mobile networks.
+http://www.computerworld.com/article/3262549/mobile-wireless/it-beware-university-finds-new-4g-security-holes.html
+
+The Zen of Mobile
+
+Evan Schuman, Computerworld, 12 Mar 2018
+
+opening text:
+
+IT has enough to worry about with traditional data breach issues, but now
+researchers from Purdue University and the University of Iowa have found
+quite a few new security holes in the popular 4G mobile networks.
+
+The potentially worst hole detailed in the study is an authentication
+synchronization failure attack. The danger? It allows bad guys to read
+incoming and outgoing messages from an employee, permits "stealthy denial"
+of selected services and "location of history poisoning," which simply means
+it can manipulate location ready to give false information to systems using
+location for identity authentication.
+
+------------------------------
+
+Date: Fri, 02 Mar 2018 14:38:10 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Spooks' Superposition Principle
+
+It's possible that multiple *different* ultrasonic spying devices may have
+interfered with one another in the recent Cuba incident!
+
+(Spy v Spy)*nonlinear => Intermodulation Distortion + Oops!
+
+This obviously violated the spooks' Hypocratic Oath:
+  First, Do No Harmonics!          [Hypocritical comment!  PGN]
+http://spqr.eecs.umich.edu/papers/YanFuXu-Cuba-CSE-TR-001-18.pdf
+
+On Cuba, Diplomats, Ultrasound, and Intermodulation Distortion
+University of Michigan Tech Report CSE-TR-001-18
+Chen Yan 1 , Kevin Fu 2 , and Wenyuan Xu 1
+  1 Department of Systems Science and Engineering, Zhejiang University
+  2 Computer Science & Engineering, University of Michigan
+
+1 Mar 2018
+
+Abstract
+
+This technical report analyzes how ultrasound could have led to the AP news
+recordings of metallic sounds reportedly heard by diplomats in Cuba.
+Beginning with screen shots of the acoustic spectral plots from the AP news,
+we reverse engineered ultrasonic signals that could lead to those outcomes
+as a result of intermodulation distortion and non-linearities of the
+acoustic transmission medium.  We created a proof of concept eavesdropping
+device to exfiltrate information by AM modulation over an inaudible
+ultrasonic carrier.  When a second inaudible ultrasonic source interfered
+with the primary inaudible ultrasonic source, intermodulation distortion
+created audible byproducts that share spectral characteristics with audio
+from the AP news.  Our conclusion is that if ultrasound played a role in
+harming diplomats in Cuba, then a plausible cause is intermodulation
+distortion between ultrasonic signals that unintentionally synthesize
+audible tones.  In other words, acoustic interference without malicious
+intent to cause harm could have led to the audible sensations in Cuba.
+
+------------------------------
+
+Date: March 4, 2018 at 11:21:04 AM EST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: GitHub Survived the Biggest DDoS Attack Ever Recorded
+  (Lily Hay Newman)
+
+Lily Hay Newman, *WiReD*, 1 Mar 2018, via Dave Farber
+http://www.wired.com/story/github-ddos-memcached/
+
+On Wednesday, at about 12:15 pm ET, 1.35 terabits per second of traffic hit
+the developer platform GitHub all at once.  It was the most powerful
+distributed denial of service attack recorded to date -- and it used an
+increasingly popular DDoS method, no botnet required.
+
+------------------------------
+
+Date: Thu, 1 Mar 2018 14:25:36 -0800
+From: Drew Dean <ddean@csl.sri.com>
+Subject: Memcached-fueled 1.3 Tbps attacks (Re: The Akamai Blog)
+
+Yes, UDP is easy to spoof, but the real risk here is why is spoofed UDP
+getting past the firewall and to memcached in the first place?
+
+------------------------------
+
+Date: Sat, 3 Mar 2018 00:18:18 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Major data breach at Marine Forces Reserve impacts thousands
+
+The personal information of thousands of Marines, sailors and civilians,
+including bank account numbers, was compromised in a major data spillage
+emanating from U.S. Marine Corps Forces Reserve.
+
+Roughly 21,426 people were impacted when an unencrypted email with an
+attachment containing personal confidential information was sent to the
+wrong email distribution list Monday morning.
+
+http://www.marinecorpstimes.com/news/your-marine-corps/2018/02/28/major-data-breach-at-marine-forces-reserve-impacts-thousands/
+
+The risk? Personal information loose in files too easy to
+randomly/incorrectly attach, email systems not scanning for sensitive
+information being sent, people.
+
+------------------------------
+
+Date: Mon, 12 Mar 2018 23:37:58 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Report highlights how deep packet inspection could be subverted by
+  cybercriminals (Tara Seals)
+
+Tara Seals, FierceWireless, 12 Mar 2018
+http://www.fiercewireless.com/dpi-espionage-campaign-targets-turkish-dissidents
+
+A series of deep packet inspection (DPI) middleboxes developed by Sandvine
+PacketLogic (formerly known as Procera) are apparently being misused by
+state-sponsored cybercriminals for espionage purposes and for commercial
+gain.
+
+<http://citizenlab.ca/2018/03/bad-traffic-sandvines-packetlogic-devices-deploy-government-spyware-turkey-syria/
+According to a Citizen Lab internet scan, DPI boxes on Turk Telekom's
+network are being used to redirect hundreds of mobile and fixed users in
+Turkey and Syria to spyware when those users attempt to download certain
+legitimate Windows applications. Visitors to official vendor websites,
+including Avast Antivirus, CCleaner, Opera, and 7-Zip, were observed being
+silently redirected to malicious versions bundled with the StrongPity
+spyware, as were those who downloaded a wide range of applications from CBS
+Interactive's Download.com and FinFisher.
+
+<http://securelist.com/on-the-strongpity-waterhole-attacks-targeting-italian-and-belgian-encryption-users/76147/
+<http://www.finfisher.com/FinFisher/index.html
+
+The scans of Turkey revealed that this redirection was happening in at least
+five provinces, and Citizen Lab believes the efforts were being carried out
+by the ISP at the behest of the Turkish government.
+
+``Based on publicly available information we found on Wi-Fi router pages, at
+least one targeted IP address appears to serve YPG (Kurdish militia) users,
+YPG has been the target of a Turkish government air and ground offensive
+which began in January 2018.  Areas not controlled by the YPG also appear to
+be targeted, including the area around Idlib city.''
+
+The Citizen Lab also found similar middleboxes in the Telecom Egypt network
+being used to hijack Egyptian internet users' unencrypted web connections en
+masse. In this case, the boxes were being used to redirect the users to
+affiliate ads and browser cryptocurrency mining scripts in an effort to line
+the criminals' pockets.
+
+This kind of redirection can be done via network injection: A DPI middlebox
+operates over connections between a target and an internet site he or she is
+visiting. If the connection is unauthenticated (e.g., HTTP and not HTTPS),
+then the middlebox can be used to tamper with data to inject a spoofed
+response from the internet site. The spoofed response may contain redirects
+to exploits or spyware to infect and monitor the target.
+
+The Citizen Lab said that it matched characteristics of the network
+injection in Turkey and Egypt to Sandvine PacketLogic devices.
+
+``We developed a fingerprint for the injection we found in Turkey, Syria,
+and Egypt and matched our fingerprint to a second-hand PacketLogic device
+that we procured and measured in a lab setting,'' the group said in an
+announcement. [...]
+
+http://www.fiercewireless.com/dpi-espionage-campaign-targets-turkish-dissidents
+
+------------------------------
+
+Date: Tue, 13 Mar 2018 10:50:38 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "More privacy-busting bugs found in popular VPN services"
+  (Zack Whittaker)
+
+Zack Whittaker for Zero Day | 13 Mar 2018
+The bugs can leak real-world IP addresses, which in some cases can identify
+individual users and determine a user's location.
+http://www.zdnet.com/article/more-privacy-busting-bugs-found-in-popular-vpn-services/
+
+------------------------------
+
+Date: Tue, 6 Mar 2018 09:08:25 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: More on Google and Military Drones
+
+A bit more of my thoughts on Google's military drone AI effort.
+
+One issue that often comes up in such discussions is the difference between
+defensive vs. offensive technologies. I remember having discussions about
+topics like this at RAND many, many years ago (not drones of course, but
+tech efforts that ostensibly aimed at troop defense rather than offense, for
+example). The upshot was that in the final analysis, it was impossible to
+"wall off" one from the other.  That is, tech designed for the former always
+ended up contributing to the latter, either directly or indirectly (I've had
+Pentagon types say this to me explicitly, explaining that this is part of
+why they fund what seem to be purely defensive efforts -- they know there
+will be an offensive side payoff).
+
+With image analysis and target identification, this connection seems
+even more direct.
+
+A counter-argument is that better target analysis could in theory help
+avoid civilian collateral damage. But I don't believe that is actually
+generally true in practice given the nature of the kinds of targets
+that drones are used again. These targets tend to be deep in civilian
+areas and travel with civilians (including children, other family
+members, etc., who typically have no choice about such matters).  No
+drone-based image analysis can separate these. Pentagon planners for
+years have used drones for attacks with the explicit understanding
+that significant civilian losses are part and parcel of such attacks,
+and any tech that increases the viability of drone-based attacks will
+increase such losses.
+
+------------------------------
+
+Date: Wed, 7 Mar 2018 20:15:22 -0500
+From: danny burstein <dannyb@panix.com>
+Subject: Egyptian jamming of Sinai cell phones affects Israel, Gaza
+  (Dan Williams)
+
+Dan Williams, Reuters, 7 Mar 2018
+
+JERUSALEM, March 7 (Reuters) - Israel and Egypt were working to halt
+disruptions to mobile phone service after Egyptian jamming against Sinai
+insurgents caused outages in neighbouring Israel and the Gaza Strip, Israeli
+officials said on Wednesday.
+
+Under President Abdel Fattah al-Sisi, Egypt has quietly cooperated with
+Israel on security in the Sinai, a desert peninsula demilitarised as part of
+their U.S.-sponsored 1979 peace treaty but where Cairo's forces now operate
+freely.
+
+The jamming appeared to catch Israel by surprise, however, prompting what
+its communications minister said were talks across the border to resolve
+what he called a "crisis".
+
+rest:
+http://af.reuters.com/article/africaTech/idAFL5N1QP267
+
+Egypt's military did not immediately comment.
+
+Cairo launched a major sweep of Sinai jihadis loyal to Islamic State on 9
+Feb 2018.  Israeli officials said that on 21 Feb Egyptian forces began
+jamming a range of cellphone frequencies in Sinai, disrupting reception in
+Israel and Gaza.
+
+"We've never seen anything this intensive or protracted. Even the
+Palestinians have been coming to us, appealing to make it stop," one Israeli
+official told Reuters on condition of anonymity. Phones had been disrupted
+as far away as Jerusalem and northern Israel, depending on weather, the
+official said.
+
+An Egyptian official who also asked not to be identified confirmed
+electronic warfare was being waged in the Sinai. "Obviously, we want to stop
+terrorists from communicating," he told Reuters.
+
+The official denied that Israel was the intended target of the jamming, but
+he said some Sinai insurgents were suspected of using smuggled Israeli SIM
+cards, close enough to the border to link up with Israeli cellphone
+reception, "which means that we may need to work against a wide range of
+frequencies".
+
+Several Palestinian residents of Gaza, the densely populated enclave on the
+Egyptian border, told Reuters they had been experiencing problems with phone
+service.
+
+A source at one of the two Palestinian mobile phone companies said its
+services were disrupted for a day in the past week in southern Gaza but that
+the problem had been resolved.
+
+Israeli cellphone provider Partner said several hundred of its customers had
+complained about reception problems, but that its 4G network was working
+well.  Other leading Israeli providers, Cellcom and Pelephone, did not
+immediately respond to requests for comment.
+
+Interviewed by Israel's Army Radio, Communications Minister Ayoob Kara said:
+"Without getting into details, for the first time in the south we have been
+experiencing an uncomfortable situation".
+
+But he said understandings were reached "after a very important meeting
+across the border" on Tuesday, and he believed the disruptions would end
+within the next three days.
+
+Gadi Yarkoni, a mayor representing Israeli communities near Gaza, criticised
+the Communications Ministry and threatened to sue the phone companies,
+saying the failure to fix disruptions "shows disrespect for the residents of
+the Gaza periphery".
+
+The Multinational Force & Observers (MFO), an international body set up
+under the Israel-Egypt peace agreement to monitor the Sinai, declined to
+comment.
+
+(Additional reporting by Steven Scheer in Jerusalem and John Davison in
+Cairo Writing by Dan Williams Editing by Jeffrey Heller)
+
+------------------------------
+
+Date: Thu, 8 Mar 2018 19:38:18 +0000
+From: Li Gong <li.gong@sri.com>
+Subject: All of Oculus's Rift headsets have stopped working due to an
+  expired certificate (TechCrunch)
+
+https://beta.techcrunch.com/2018/03/07/all-of-oculuss-rift-headsets-have-stopped-working-due-to-an-expired-certificate/
+
+------------------------------
+
+Date: Thu, 8 Mar 2018 15:54:41 -0800
+From: Paul Saffo <paul@saffo.com>
+Subject: Officer sent to wrong address by 911 system -- and dies
+
+911 call led Clinton police to the wrong home.
+That mistake led to an officer's death.
+http://www.kansascity.com/news/local/crime/article204015984.html
+
+It is unclear if the mistake was the result of human error or a faulty
+computer system.
+
+"The 911 call that came in was somehow attached to that (Clinton) address,"
+Lowe said during a Wednesday afternoon press conference. "We're confident
+that is not part of this incident (in Clinton), but the fact remains they
+were called to that residence. ... In order to determine nothing adverse was
+going on in that residence, they had to make sure everything was OK. That's
+when the tragic incident took place."
+
+------------------------------
+
+Date: Tue, 13 Mar 2018 21:10:36 +0800
+From: Richard M Stein <rmstein@ieee.org>
+Subject: Years After Sept. 11, Critical Incidents Still Overload Emergency
+  Radios (via NPR.org)
+
+http://www.npr.org/2018/03/12/591906701/18-years-after-sept-11-critical-incidents-still-overload-emergency-radios
+
+  "Digital radio promises greater capacity, but it is sometimes the subject
+  of complaints from some police and first responders, who say the systems
+  can become finicky during large-scale events.
+
+  "Officers' frustration with the radios got so bad, they started a social
+  media campaign to pressure Motorola Solutions to come back to Cincinnati
+  and make fixes. The company did, and Hils says the radios are more
+  reliable now.  But he still doesn't completely trust the new generation of
+  radios in critical incidents, when many people are trying to communicate
+  at the same time.
+
+  "There's even a webpage , run by an engineer and owner of an emergency
+  radio systems company in
+
+  California, that collects news media accounts of technical problems with
+  newer digital systems.
+
+  "But the manufacturers and other defenders of digital radio say the real
+  problem tends to be user error, not the technology itself. In Broward
+  County, de Zayas says police and other first responders need "good
+  end-user education."
+
+  "Agencies need to train their public safety personnel on how to use their
+  radios," says de Zayas. "Constant and continuous training on how to use
+  the radio."
+
+Is this really a case of UIAI -- user is an idiot? Certain features are
+buggy, certain bugs are features, if you use the gear correctly? With
+deterministic behavior a guessing game -- apparently -- does public safety
+truly benefit?
+
+------------------------------
+
+Date: Wed, 7 Mar 2018 16:08:30 -0500
+From: danny burstein <dannyb@panix.com>
+Subject: The European electrical grid is having time problems
+
+So eyup, you *can* claim you're late 'cuz your clock had the wrong time...
+
+[European news]
+
+Continuing frequency deviation in the Continental European Power System
+originating in Serbia/Kosovo: Political solution urgently needed in addition
+to technical ...
+
+Some clocks are based on the frequency of the power system, and thus run
+late when the frequency decreases, or run too fast, when the system is in
+over-frequency. Such clocks are typically radio-, oven clocks or clocks for
+programming the heating system. These types of electric clocks show now a
+delay around six minutes.
+
+rest:
+
+http://www.entsoe.eu/news-events/announcements/announcements-archive/Pages/New
+s/2018-03-06-press-release-continuing-frequency-deviation-in-the-continental-european-power-system.aspx
+
+  [Monty Solomon noted this item:
+  Clocks Slow in Europe? Blame Kosovo-Serbia Row
+  An old dispute between the Balkan neighbors over power supplies made
+  residents of countries like Portugal and Poland late.
+http://www.nytimes.com/2018/03/08/world/europe/kosovo-serbia-clocks-europe.html
+  PGN]
+
+------------------------------
+
+Date: Fri, 2 Mar 2018 01:00:13 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: In reported breakthrough, Israeli tech can now unlock any phone
+  (The Times of Israel)
+
+Apple responds to claims that Cellebrite can now break into latest iPhone by
+telling customers to upgrade to latest iOS.
+http://www.timesofisrael.com/in-reported-breakthrough-israeli-tech-can-now-unlock-any-phone/
+
+------------------------------
+
+Date: Sun, 4 Mar 2018 23:34:13 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Israeli AI software whips expert lawyers in contract analysis
+  (The Times of Israel)
+
+Technology developed by LawGeex had a 94% accuracy rate vs 85% for
+experienced lawyers, multinational study shows
+
+Artificial intelligence software developed by an Israeli startup has proved
+in an international study to be quicker and more accurate at analyzing legal
+documents than experienced lawyers.
+
+http://www.timesofisrael.com/israeli-ai-software-whips-expert-lawyers-in-contract-analysis/
+
+The risk? Unemployed lawyers? Overly trusting AI?
+
+I'd like to feed current vendor privacy statements and terms of service into
+an analyzer -- but what would be the point, since nobody will modify them
+based on such evaluations/comments. Though perhaps automated analysis would
+give objective arguments for changes. Agreeing on "objective" would be the
+challenge.
+
+------------------------------
+
+Date: Wed, 7 Mar 2018 07:28:24 +0000
+From: Mike Rechtman <MichaelR@land.gov.il>
+Subject: Egyptian Military Activity Affecting Israeli Cell Networks
+
+7 Mar2018
+
+Israeli cellular networks have been experiencing interference since
+Wednesday, the Communications Ministry said Thursday -- and the reason is
+due to Egyptian military activity in Sinai. The Egyptians are apparently
+jamming cellular networks in northern Sinai as part of their campaign
+against Islamist groups in the region, the Ministry said, responding to the
+complaints it has received in the 24-hour period between Wednesday and
+Thursday afternoon.
+
+http://hamodia.com/2018/02/22/officials-egyptian-military-activity-affecting-israeli-cell-networks/
+
+------------------------------
+
+Date: Sun, 4 Mar 2018 02:02:07 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Cryptocurrency Thief Stole 7 Bitcoins from Steve Wozniak (Fortune)
+
+http://fortune.com/2018/02/27/apple-steve-wozniak-bitcoin-theft/
+
+The risk? Old scams working on new technologies/assets. And not using
+old-school tools like escrow.
+
+------------------------------
+
+Date: Wed, 14 Mar 2018 09:28:02 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Australians used bitcoin to pay AU$50k-worth of fake ATO tax
+  debts in 2017"
+
+http://www.zdnet.com/article/australians-used-bitcoin-to-pay-au50k-worth-of-fake-ato-tax-debts-in-2017/
+The Australian Taxation Office has warned of scammers impersonating the ATO
+and demanding cryptocurrency as a form of payment, revealing AU$50,000 was
+handed over last year in bitcoin.  Asha McLean, 14 Mar 2018
+
+------------------------------
+
+Date: Fri, 02 Mar 2018 20:55:15 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Clocks in telephones at higher altitudes don't actually run faster
+
+> Naturally, finding these problems took a minimum of hours and often days,
+> weeks, or even months. In one case an entire team of engineers was pulled
+> off a project to diagnose a bug, at a cost of tens of thousands of dollars.
+
+"Clocks in phones at high altitudes always ran faster than those close to
+sea level!", I told the desktop landline telephone designers. Wow, clock
+chip affected by altitude! All discovered by Junior, the Science Wiz, me!
+
+...Until one day I unplugged a sea level phone, messed with the time, and
+plugged it back in. Oh, it got time corrections every minute from the
+switching office and promptly corrected itself. -- A feature that more older
+rural switching offices lacked.
+
+------------------------------
+
+Date: Mon, 5 Mar 2018 17:27:40 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Bug in HP Remote Management Tool Leaves Servers Open to Attack
+  (Threatpost)
+
+Hewlett Packard Enterprise has patched a vulnerability in its remote
+management hardware called Integrated Lights-Out 3 that is used in its
+popular line of HP ProLiant servers. The bug allows an attacker to launch an
+unauthenticated remote denial of service attack that could contribute to a
+crippling on vulnerable datacenters under some conditions.
+
+http://threatpost.com/bug-in-hp-remote-management-tool-leaves-servers-open-to-attack/130189/
+
+------------------------------
+
+Date: Mon, 5 Mar 2018 17:28:32 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Cisco's Talos Intelligence Group Blog: Vulnerability Spotlight:
+  Adobe Acrobat Reader DC Document ID Remote Code Execution Vulnerability
+
+Today, Talos is releasing details of a new vulnerability within Adobe
+Acrobat Reader DC. Adobe Acrobat Reader is the most popular and most
+feature-rich PDF reader. It has a big user base, is usually a default PDF
+reader on systems and integrates into web browsers as a plugin for rendering
+PDFs. As such, tricking a user into visiting a malicious web page or sending
+a specially crafted email attachment can be enough to trigger this
+vulnerability.
+
+A specific Javascript script embedded in a PDF file can cause the document
+ID field to be used in an unbounded copy operation leading to stack-based
+buffer overflow when opening a specially crafted PDF document in Adobe
+Acrobat Reader DC 2018.009.20044. This stack overflow can lead to return
+address overwrite which can result in arbitrary code execution. In order to
+trigger this vulnerability, the victim would need to open the malicious file
+or access a malicious web page.
+
+http://blog.talosintelligence.com/2018/02/vulnerability-spotlight-adobe-acrobat.html
+
+------------------------------
+
+Date: Tue, 06 Mar 2018 06:45:24 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Apple acknowledges serious iOS bug linked to Telugu character
+  (The Hindu)
+
+http://www.thehindu.com/business/Industry/article22772456.ece
+
+"Apple has admitted that the iOS 11.2.5 has a serious bug which is
+capable of crashing apps and Apple devices via iMessage, saying that it
+was working on to fix it.
+
+The vulnerability was discovered earlier this week and involves sending
+an Indian language character (in Telugu) to devices that crashes an
+iPhone..."
+
+Ah, reminds me of (Kannada this time)
+http://debbugs.gnu.org/cgi/bugreport.cgi?bug=30193
+
+"The deadliest file in Emacs history
+
+Gentleman, I reveal to you the deadliest file in the history
+of Emacs.
+
+It is so deadly that it must be QP encoded, else, well,
+
+Fatal error 11: Segmentation fault"
+
+------------------------------
+
+Date: Fri, 2 Mar 2018 18:34:34 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Adversarial patches: colorful circles that convince machine-learning
+  vision system to ignore everything else (BoingBoing)
+
+http://boingboing.net/2018/01/08/what-banana.html
+
+The risk? Human beings vs. technology.
+
+------------------------------
+
+Date: Tue, 06 Mar 2018 17:47:29 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Left-right mouse mapping programs and permanent effects
+
+In Openstreemap, there are two powerful editors, one "left hand drive"
+(left mouse button), one "right hand drive".
+Due to "muscle memory" switching back and forth may affect how you use
+other unrelated mapping programs too, in a bad way...
+http://forum.openstreetmap.org/viewtopic.php?id=61550
+
+------------------------------
+
+Date: Sun, 4 Mar 2018 23:22:27 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: In the US v. Microsoft Supreme Court Case, an Old Law Leaves
+  Few Good Options (WiReD)
+
+On Tuesday, the Supreme Court heard oral argument in United States v.
+Microsoft, a case that many observers believe could have significant
+ramifications for how cloud computing and other technology companies
+interact with the US government. If it were up to the justices themselves,
+however, those implications would end up being short-lived.
+
+The dispute concerns the reach of the Stored Communications Act, a 1986 law
+that regulates the ability for the US government to obtain emails and other
+communications from technology companies. In July 2016, the Second Circuit
+Court of Appeals, a prominent federal appellate court that sits in New York,
+ruled that a warrant obtained under the SCA does not allow the government to
+require the production of emails stored by Microsoft overseas -- in this
+case, on a server in Ireland -- because the relevant provision of the
+statute does not apply *extraterritorially* to reach foreign-stored data.
+
+http://www.wired.com/story/us-v-microsoft-supreme-court-oral-argument
+
+The risks? Lawyers, lawsuits, judges, Congress...
+
+------------------------------
+
+Date: Tue, 06 Mar 2018 06:27:39 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Chinese mom 'locked out' of phone for incredible 47 years (ECNS)
+
+http://www.ecns.cn/m/2018/03-05/294535.shtml
+
+She had to wait an incredible 25,114,980 minutes to try her password again
+in order to activate her phone. That's almost 47.78 years.
+
+It was disabled because her two-year-old son played with her phone and
+entered wrong pins multiple times.
+
+"I have many important files, photos and contacts in the phone," the
+worried Lu said. "I don't want to reboot it. Am I supposed to wait for
+some 40 years? I will be too old to talk then."
+
+------------------------------
+
+Date: Mon, 05 Mar 2018 05:46:45 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Usual infile-outfile clobber accident
+
+$ uname
+Linux
+$ ls
+a.pdf b.pdf
+#Let's make text versions too.
+$ pdftotext *.pdf
+$ file *
+a.pdf: PDF
+b.pdf: text
+$ pdftotext --help
+Usage: pdftotext [options] <PDF-file> [<text-file>]
+
+Oops.
+
+------------------------------
+
+Date: Mon, 5 Mar 2018 18:15:57 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: MoviePass CEO proudly says the app tracks your location before and
+  after movies
+
+via NNSquad
+http://techcrunch.com/2018/03/05/moviepass-ceo-proudly-says-the-app-tracks-your-location-before-and-after-movies/
+
+  "We get an enormous amount of information," Lowe continued.  "We watch how
+  you drive from home to the movies. We watch where you go afterwards." It's
+  no secret that MoviePass is planning on making hay out of the data
+  collected through its service. But what I imagined, and what I think most
+  people imagined, was that it would be interesting next-generation data
+  about ticket sales, movie browsing, A/B testing on promotions in the app
+  and so on. I didn't imagine that the app would be tracking your location
+  before you even left your home, and then follow you while you drive back
+  or head out for a drink afterwards. Did you? It sure isn't in the
+  company's privacy policy, which in relation to location tracking discloses
+  only a "single request" when selecting a theater, which will "only be used
+  as a means to develop, improve, and personalize the service." Which part
+  of development requires them to track you before and after you see the
+  movie?
+
+------------------------------
+
+Date: Fri, 09 Mar 2018 09:01:11 -0500
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: Browser-based Cryptojacking (Eskandari et al.)
+
+A first look at browser-based Cryptojacking
+Shayan Eskandari, Andreas Leoutsarakos, Troy Mursch, Jeremy Clark
+http://arxiv.org/abs/1803.02887v1
+
+Abstract: In this paper, we examine the recent trend towards in-browser
+mining of cryptocurrencies; in particular, the mining of Monero through
+Coinhive and similar code- bases. In this model, a user visiting a website
+will download a JavaScript code that executes client-side in her browser,
+mines a cryptocurrency, typically without her consent or knowledge, and pays
+out the seigniorage to the website. Websites may consciously employ this as
+an alternative or to supplement advertisement revenue, may offer premium
+content in exchange for mining, or may be unwittingly serving the code as a
+result of a breach (in which case the seigniorage is collected by the
+attacker). The cryptocurrency Monero is preferred seemingly for its
+unfriendliness to large-scale ASIC mining that would drive browser-based
+efforts out of the market, as well as for its purported privacy features.
+
+In this paper, we survey this landscape, conduct some measurements to
+establish its prevalence and profitability, outline an ethical framework for
+considering whether it should be classified as an attack or business
+opportunity, and make suggestions for the detection, mitigation and/or
+prevention of browser-based mining for non- consenting users.
+
+------------------------------
+
+Date: Fri, 09 Mar 2018 09:55:04 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "After Oracle WebLogic miner attack, critical Apache Solr bug
+  is now targeted" (ZDNet)
+
+http://www.zdnet.com/article/after-oracle-weblogic-miner-attack-critical-apache-solr-bug-is-now-targeted/
+After Oracle WebLogic miner attack, critical Apache Solr bug is now targeted
+Money-hungry hackers have used over 1,400 unpatched Apache Solr
+servers to install a cryptocurrency miner.
+By Liam Tung | March 9, 2018 -- 14:12 GMT (06:12 PST) | Topic: Security
+
+[selected text]
+
+Marinho notes that IBM InfoSphere version 11.5, JBoss Data Grid versions
+7.0.0, 7.1.0, JBoss Enterprise Application Platform (EAP) versions 6, 7,
+7.0.8, and JBoss Enterprise Portal Platform version 6 may also be vulnerable
+to this attack because it exploits a vulnerability in a shared library.
+
+------------------------------
+
+Date: Fri, 09 Mar 2018 10:04:45 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Has Alexa snapped? Why your Echo sometimes does creepy things"
+  (David Gewirtz)
+
+David Gewirtz for DIY-IT, ZDNet, 9 Mar 2018
+Why does Alexa sometimes misinterpret sounds? We dive deep into the
+digital assistant's inner workings to show you.
+http://www.zdnet.com/article/has-alexa-snapped-why-alexa-sometimes-laughs-or-does-other-creepy-things/
+
+selected text:
+
+Let's cover the back story pretty fast, since it's been written about
+elsewhere. Alexa has been known to suddenly exhibit weird behaviors.  In
+January, I wrote about how Alexa suddenly started to speak without being
+woken up by a wake word.
+
+A few weeks ago, tech columnist Farhad Manjoo wrote in the New York Times
+about how his Alexa startled him in bed one night by screaming.  All across
+the Internet this week, we've been hearing stories about Alexas breaking out
+with unbidden, evil-sounding laughter.  What's happening?
+
+------------------------------
+
+Date: Fri, 09 Mar 2018 10:08:57 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Ransomware for robots is the next big security nightmare"
+  (Danny Palmer)
+
+Danny Palmer, ZDnet, 9 Mar 2018
+Researchers found they were able to infect robots with ransomware; in the
+real world such attacks could be highly damaging to businesses if robotic
+security isn't addressed.
+http://www.zdnet.com/article/ransomware-for-robots-is-the-next-big-security-nightmare/
+
+------------------------------
+
+Date: Sat, 10 Mar 2018 13:04:57 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Most Americans See Artificial Intelligence as a Threat to Jobs --
+ Just Not Theirs (Niraj Chokshi)
+
+Niraj Chokshi, *The New York Times*, 6 Mar 2018
+The vast majority of Americans expect artificial intelligence to lead to job
+losses in the coming decade, but few see it coming for their own position.
+
+http://www.nytimes.com/2018/03/06/us/artificial-intelligence-jobs.html
+
+The risk? People not understanding what "artificial" and "intelligence"
+mean.
+
+------------------------------
+
+Date: Sat, 10 Mar 2018 13:21:58 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: New tracking technology could make lost belongings a thing of
+  the past (Christopher Elliott)
+
+Christopher Elliott, *The Washington Post*, 1 Mar 2018
+http://www.washingtonpost.com/lifestyle/travel/new-tracking-technology-could-make-lost-belongings-a-thing-of-the-past/2018/02/28/f7a7e59c-18cc-11e8-92c9-376b4fe57ff7_story.html?utm_term=.c16996ca7988
+
+I wrote to author:
+
+Trackers, IoT, oh my...
+
+Regarding your column about trackers for keeping track of everything (keys,
+luggage, kids, etc.) -- you neglected critical privacy/security issues. The
+IoT industry seems intent on repeating the mistake made in developing the
+early Internet: not including robust reliability/privacy/security. Horror
+stories about exposures in lightbulbs, thermostats, baby monitors, and other
+fancy gadgets show that this technology must be evaluated/adopted cautiously
+and conservatively. Who knows how reliable/private/robust all the
+devices/services you mentioned are? And what might risks be in revealing
+people's/objects' locations?
+
+Considering known breaches at supposedly responsible large and
+well-established organizations (stores, credit reporting agencies, banks,
+government agencies) I'm not willing to trust startups with anything that
+matters.
+
+You'd do well mentioning technology's dark side when you cover it.
+
+------------------------------
+
+Date: Sat, 10 Mar 2018 14:25:43 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Apple: Former Engineer Will Unlock iPhone For $15.000 (Fortune)
+
+http://fortune.com/2018/03/06/apple-unlock-iphone/
+
+Misleading headline -- it costs $15,000 for 300 unlocks!
+
+------------------------------
+
+Date: Wed, 14 Mar 2018 09:34:55 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Google's DoubleClick outage should force marketers to ask
+  some hard questions" (Larry Dignan)
+
+Larry Dignan. ZDNet, 14 Mar 2018
+
+  Two risks in one: the original problem and the consequences of dealing
+  with a [near-?]monopoly.
+
+http://www.zdnet.com/article/googles-doubleclick-outage-should-force-marketers-to-ask-some-hard-questions/
+DoubleClick for Publishers has suffered five service disruptions in 13 days
+in March. When the ad tech stack is largely controlled by Google little
+things like reliability really matter. More transparency into what Google's
+DoubleClick is needed.
+
+selected text:
+
+Google's control of the ad stack isn't optimal, but when DoubleClick's
+reliability fails Web publishers' dependence on the search giant becomes all
+too apparent.
+
+Of course, Google has some time to resolve its DoubleClick service problems.
+Where are marketers going to go?
+
+------------------------------
+
+Date: Sat, 10 Mar 2018 21:55:52 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Alexa briefly lost its voice on Friday (The Verge)
+
+Alexa briefly lost its voice on Friday
+http://www.theverge.com/circuitbreaker/2018/3/2/17071634/amazon-alexa-loses-voice-aws-outage
+
+------------------------------
+
+Date: Sun, 11 Mar 2018 15:18:17 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Malicious software hits Connecticut court system's computers
+  (The Boston Globe)
+
+http://www.boston.com/news/local-news/2018/03/09/malicious-software-hits-connecticut-court-systems-computers
+
+------------------------------
+
+Date: Mon, 12 Mar 2018 21:41:07 +0000
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Regulation of Internet Companies?!?
+
+Haven't seen anything about this in RISKS so far this year, but recently
+there have been calls from various people among the great and good claiming
+that Internet companies (e.g., Apple, Facebook, Google, et al.) have become
+too big and powerful so must be regulated.  This was a big topic at the
+World Economic Forum meeting in Davos in January this year, and arguments
+continue, for instance in two of todays' UK newspapers (March 12th):
+
+http://www.dailymail.co.uk/sciencetech/article-5489853/Tim-Berners-Lee-says-internet-weaponised-scale.html
+
+https://www.telegraph.co.uk/technology/2018/03/11/london-mayor-sadiq-khan-tells-tech-giants-not-law/
+
+Looks like lots of RISKS here; who decides what any regulations actually
+say, and how to enforce them?  Different governments have different
+criteria, so either there's going to have to be widespread international
+agreement (seems unlikely), or the world is split into different regions
+with different regulatory regimes (another Great Firewall of China?).
+
+Of course some of the campaigning is from existing media businesses so
+there's an element of vested interests here.  One line of argument is that
+computer companies have effectively become utilities so should be regulated
+like them, though as one commentator said, would you prefer your gas company
+to be run like Google, or Google to be run like your gas company?  And then
+there's the can of worms that is taxation...
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.58
+************************

@@ -1,0 +1,471 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.18
+
+RISKS-LIST: Risks-Forum Digest  Friday 29 April 2022  Volume 33 : Issue 18
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.18>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+How Software Saved a Stealth Fighter Jet -- and Its Pilot -- from Crashing
+ in Alaska (PopSci)
+Older Honda and Acura models hit by Y2K+22 bug that resets clocks 20 years
+ in the past (The Verge)
+The risks of attacks that involve poisoning training data for
+ machine-learning models (techxplore.com)
+Power Use Reveals Harmful Chips Hidden on Circuit Boards (New Scientist)
+Chip Startups Using Light Instead of Wires Gain Speed, Investments (Reuters)
+NextDoor report on "Amazon Fresh store Just Walk Out" (Gabe Goldberg)
+CNN+ giving full refund, notices of this are going to spam in Gmail
+ (Lauren Weinstein)
+An Old-Fashioned Economic Tool Can Tame Pricing Algorithms (SciAm)
+Bitcoin Is Unlikely to Go Green (Peter Coy)
+Must Watch Video: Carl Sagan on Technology, Society, and Politics, 1996
+ Lauren Weinstein)
+Random Twitter Chatter (PGN)
+How to Break Twitter (Lauren Weinstein)
+Gwyneth Paltrow, Mila Kunis are pushing women to invest in NFTs (WashPost)
+US + 60 Partners Launch Declaration for the Future of the Internet
+ (The White House)
+CoVID possibilities and risk management (Rob Slade)
+Re: What Can Hackers Do With Stolen Source Code? (dmitri maziuk)
+Re: Driverless Cars Can Be Tricked into Seeing Red Traffic Lights
+ (Martyn Thomas)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 20 Apr 2022 11:55:08 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: How Software Saved a Stealth Fighter Jet -- and Its Pilot --
+ from Crashing in Alaska (PopSci)
+
+Rob Verger, *Popular Science*, 18 Apr 2022, via ACM TechNews, 20 Apr 2022
+
+The U.S. Air Force Safety Center confirmed that the Automatic Ground
+Collision Avoidance System (Auto GCAS), developed by Lockheed Martin, NASA,
+and the U.S. Air Force Research Laboratory, saved the life of an F-22 pilot
+flying in Alaska in June 2020. The pilot was operating the jet in Instrument
+Meteorological Conditions and experienced spatial disorientation. When the
+F-22 was at an altitude of 13,520 feet above sea level and traveling about
+600 mph with its nose pointed downwards, the onboard Auto GCAS software
+initiated an automatic fly-up, steering the plane out of its rapid
+descent. The system finished the recovery process when the aircraft was
+about 2,600 feet above ground.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e77dx2333f7x073609&
+
+------------------------------
+
+Date: Mon, 25 Apr 2022 12:53:13 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Older Honda and Acura models hit by Y2K+22 bug that resets
+ clocks 20 years in the past (The Verge)
+
+The problem might not be fixed until August of this year.
+
+https://www.theverge.com/2022/1/8/22873403/honda-acuras-y2k22-bug-clocks-reset-2002
+
+  Yup -- my 2007 Honda Accord forgot to change to DST this year and I can't
+  set clock to correct time. Planned obsolescence; they surely figure people
+  will replace cars when clock is wrong.
+
+    [Be grateful that if the car thinks it is 2002, then the engine might
+    not run if the car thinks it was not built for another five years.  Just
+    sip a little YN2K (wine tokay) and everything will seem better.  But not
+    YL driving.  PGN]
+
+------------------------------
+
+Date: Tue, 26 Apr 2022 16:46:52 +0800
+From: "Richard Stein" <rmstein@ieee.org>
+Subject: The risks of attacks that involve poisoning training data for
+ machine-learning models (techxplore.com)
+
+https://techxplore.com/news/2022-04-involve-poisoning-machine.html
+
+"Researchers at Google, National University of Singapore, Yale-NUS College,
+and Oregon State University have recently carried out a study evaluating the
+risks of these type of attacks, which essentially entail 'poisoning' machine
+learning models to reconstruct the sensitive information hidden within their
+parameters or predictions. Their paper, pre-published on arXiv, highlights
+the alarming nature of these attacks and their ability to bypass existing
+cryptographic privacy tools."
+
+------------------------------
+
+Date: Wed, 20 Apr 2022 11:55:08 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Power Use Reveals Harmful Chips Hidden on Circuit Boards
+ (New Scientist)
+
+Matthew Sparkes, *New Scientist*, 18 Apr 2022, via ACM TechNews, 20 Apr 2022
+
+A circuit board's power consumption can reveal malicious tampering designed
+to facilitate Trojan attacks to steal sensitive data or crash a device when
+triggered. Huifeng Zhu and colleagues at Washington University created the
+PDNPulse test to analyze a printed circuit board's power consumption in
+order to identify tampering by comparing it to a device known to be secure.
+PDNPulse looks for small variations in such a so-called "fingerprint" of
+power consumption, based on measurement at several points. Using the test,
+the researchers were able to detect Trojan modifications on various circuit
+boards with perfect accuracy. While no firm evidence has been found to prove
+a circuit board-based Trojan attack has actually happened, Theodore
+Markettos at the UK's University of Cambridge said he believes in the
+concept's feasibility.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e77dx233401x073609&
+
+  [NOTE: Huifeng Zhu is a PhD candidate with 14 publications.]
+
+  [Theo Markettos is the principal author of the Thunderclap paper.  He
+  commented to me that he actually had not yet seen Xhu's paper, and as
+  quoted was referring to ASIC design in general, not PCB design.  He wrote
+  me: "The paper, which seemingly hasn't been peer reviewed, highlights a
+  plausible threat in that malicious board fabrication can 'brown out'
+  selected parts of the circuit, and cause potentially exploitable
+  malfunctions.  The paper does present interesting ways to analyze
+  anomalies in board fabrication.  Theo"   PGN]
+
+------------------------------
+
+Date: Wed, 27 Apr 2022 12:09:33 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Chip Startups Using Light Instead of Wires Gain Speed, Investments
+ (Reuters)
+
+Jane Lanhee Lee, Reuters, 26 Apr 2022
+via ACM TechNews, 27 Apr 2022
+
+Momentum and capital are building for startups developing chips that process
+data via light rather than wires. Ayar Labs, which is developing silicon
+photonics technology that harnesses photons in chips, said it had raised
+$130 million from investors, including chip behemoth Nvidia. Other startups
+using silicon photonics to construct quantum computers, supercomputers, and
+chips for driverless vehicles also are attracting major investment. "What
+the Ayar Labs guys do so well...is they solved the data interconnect problem
+for traditional high-performance [computing]," said Peter Barrett at venture
+capital firm Playground Global. "But it's going to be a while before we have
+pure digital photonic compute for non-quantum systems."
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e829x2336afx073784&
+
+ [What about denial-of-service attacks?  reliability?  interference?  PGN]
+
+------------------------------
+
+Date: Sun, 24 Apr 2022 00:54:34 -0400
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: NextDoor report on "Amazon Fresh store Just Walk Out"
+
+Someone posted:
+
+Amazon Fresh -- BEWARE "Just Walk Out" Went on Tuesday to check out the new
+Amazon Fresh store in Fairfax and try out their "Just Walk Out". It is a
+complete failure. It charged us for two packages of expensive steaks that we
+picked up to look at and then put back. It also charged us for a box of
+strawberries that we didn't touch and didn't catch a jar of olives that we
+did get. Then expected a receipt emailed to us by the time we walked to our
+car. Instead we didn't get an actual receipt until five hours later. So you
+have *no* way to verify before you leave the parking lot that you got
+charged accurately. Fortunately we got through on the phone to a very
+helpful customer service person (800-250-0688) and got the incorrect charges
+reversed. But why go through this hassle.  If you try this new store just go
+through the normal checkout line!  10440-10450 Fairfax Boulevard, Fairfax VA
+
+  [...plenty more gripes from others.]
+
+    [Amaz-off rather that Amaz-on?  PGN]
+
+------------------------------
+
+Date: Thu, 28 Apr 2022 08:07:51 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: CNN+ giving full refund, notices of this are going to spam in Gmail
+
+CNN+ is giving a full refund to original payment methods by May 28.
+HOWEVER, Gmail appears to be sending the email explaining this to Spam
+in many (or all) cases.
+
+------------------------------
+
+Date: Wed, 27 Apr 2022 12:01:32 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: An Old-Fashioned Economic Tool Can Tame Pricing Algorithms (SciAm)
+
+https://www.scientificamerican.com/article/an-old-fashioned-economic-tool-can-tame-pricing-algorithms/
+
+"Price-setting algorithms play a major role in today's economy. But some
+experts worry that, without careful checks, these programs might
+inadvertently learn to discriminate against minority groups and possibly
+collude to artificially inflate prices. Now a new study suggests that an
+economic tool dating back to ancient Rome could help curb this very modern
+concern."
+
+Pricing models can exploit big datasets to personalize consumer prices for
+goods and services. But price controls that include a "willingness to pay"
+parameter can mitigate predatory algorithms.
+
+------------------------------
+
+Date: Mon, 25 Apr 2022 13:48:57 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Bitcoin Is Unlikely to Go Green (Peter Coy)
+
+Peter Coy, *The New York Times*, Sunday Review, 24 Apr 2022 [PGN-excerpted]
+
+The Willpower to reduce crypto[currency]'s carbon footprint is muted.
+
+Pressure on Bitcoin to switch from proof of work to proof of stake *which
+requires much less power) is coming from several directions.  The difference
+between the two is like the difference in height between the world's tallest
+building and a single screw.  ...  For bitcoin to change direction would
+require "almost like a constitutional convention of sorts.  Inertia usually
+wins." (Ryan Selkis, co-founder of Messari)
+
+------------------------------
+
+Date: Sat, 23 Apr 2022 14:52:20 -0700
+From: "Lauren Weinstein" <lauren@vortex.com>
+Subject: Must Watch Video: Carl Sagan on Technology, Society, and Politics,
+ 1996
+
+This is the last interview that the late Carl Sagan had with Charlie Rose,
+on May 27, 1996. The seek position I have selected is specifically where he
+speaks on the dangers of political control of technology, which (as usual
+for him) is incredibly prescient. But the entire interview is strongly
+recommended. He was one of the greatest minds in my lifetime. -L
+
+https://youtu.be/U8HEwO-2L4w?t=90
+
+------------------------------
+
+Date: Wed, 27 Apr 2022 15:46:51 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Random Twitter Chatter
+
+World's richest jerk blocks Public Citizen, and is already making alarming
+comments about Twitter.
+https://www.wionews.com/world/musk-criticises-twitters-censorship-lawyer-gadde-after-taking-over-microblogging-site-474295
+
+Twitter employees fear their safety after comments by Musk draw online mobs
+https://www.washingtonpost.com/technology/2022/04/27/musk-twitter-attacks/
+
+Musk is not supposed to disparage Twitter while trying to buy it. He's
+doing it anyway.
+https://www.nbcnews.com/business/business-news/elon-musk-slams-twitter-after-acquisition-deal-announced-rcna26244
+
+------------------------------
+
+Date: Thu, 28 Apr 2022 08:27:05 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How to Break Twitter
+
+Breaking Twitter is easy: If you restore toxic content, you drive away
+advertisers. If you move to a subscription model -- even without toxic
+content but especially with -- you won't get enough subscribers to be
+self-sustaining. Result: No more Twitter -- which may be the plan.
+
+------------------------------
+
+Date: Sun, 24 Apr 2022 14:39:44 -0400
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Gwyneth Paltrow, Mila Kunis are pushing women to invest in NFTs
+ (WashPost)
+
+Gwyneth Paltrow, Mila Kunis and other celebs are pushing women to invest in
+NFTs, which some see a revival of self-serving feminism.
+
+Gwyneth Paltrow and Mila Kunis joined a Zoom in January to encourage
+5,000 women in the audience to break into the male-dominated world of
+crypto.
+
+``We have watched a lot of these bros get together and earn a lot of
+money.'' said Paltrow, sporting a black turtleneck, sun-kissed glow and a
+disarming smile. ``We deserve to be in this space just as much.''
+
+Kunis had recently launched a cartoon series with her husband, Ashton
+Kutcher, that uses NFTs, a digital deed often used to sell digital art that
+exploded into a $25 billion market. “We are so conditioned as women to be
+risk-averse, `` Kunis said. “I want to take risks and what happens.'' [..]
+
+Like the girlboss, these NFT brands mix hustle culture with the language of
+social justice, blurring the line between community and commerce, and
+dangling empowerment as a customer acquisition strategy.
+
+Randi Zuckerberg, the older sister of Meta's chief executive, told the BFF
+crowd that six months ago, she was just like them.
+
+``I was skeptical, I was confused. Fast-forward to now, I now own more than
+100 NFTs!", Zuckerberg said, comparing NFTs of digital art to collecting
+designer handbags.r handbags.  [...]
+
+The BFF Zoom event from January promised to answer whether NFTs were
+all a scam.  But there was little discussion about volatility.
+
+A few minutes into the Zoom conference, Morin pointed to an NFT collection
+that sold for $69 million at Christie's, telling the crowd, most of whom
+reported having little knowledge of the industry.  ``This is the type of
+wealth that's possible for people that are participating in this new
+ecosystem.''
+
+https://www.washingtonpost.com/technology/2022/04/06/women-crypto-nft/
+
+  [Funny, I never told my financial advisor I wanted to "take risks, see what
+  happens".]
+
+------------------------------
+
+Date: Thu, 28 Apr 2022 10:43:36 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: US + 60 Partners Launch Declaration for the Future of the Internet
+ (The White House)
+
+28 Apr 2022
+
+https://www.whitehouse.gov/wp-content/uploads/2022/04/Declaration-for-the-Future-for-the-Internet_Launch-Event-Signing-Version_FINAL.pdf
+<https://www.whitehouse.gov/briefing-room/statements-releases/2022/04/28/fact-sheet-united-states-and-60-global-partners-launch-declaration-for-the-future-of-the-internetl>
+
+The Internet has been revolutionary. It provides unprecedented opportunities
+for people around the world to connect and to express themselves, and
+continues to transform the global economy, enabling economic opportunities
+for billions of people. Yet it has also created serious policy challenges.
+Globally, we are witnessing a trend of rising digital authoritarianism where
+some states act to repress freedom of expression, censor independent news
+sites, interfere with elections, promote disinformation, and deny their
+citizens other human rights. At the same time, millions of people still face
+barriers to access and cybersecurity risks and threats undermine the trust
+and reliability of networks.
+
+Those endorsing the Declaration include Albania, Andorra, Argentina,
+Australia, Austria, Belgium, Bulgaria, Cabo Verde, Canada, Colombia, Costa
+Rica, Croatia, Cyprus, Czech Republic, Denmark, Dominican Republic, Estonia,
+the European Commission, Finland, France, Georgia, Germany, Greece, Hungary,
+Iceland, Ireland, Israel, Italy, Jamaica, Japan, Kenya, Kosovo, Latvia,
+Lithuania, Luxembourg, Maldives, Malta, Marshall Islands, Micronesia,
+Moldova, Montenegro, Netherlands, New Zealand, Niger, North Macedonia,
+Palau, Peru, Poland, Portugal, Romania, Senegal, Serbia, Slovakia, Slovenia,
+Spain, Sweden, Taiwan, Trinidad and Tobago, the United Kingdom, Ukraine, and
+Uruguay.  [... and the United States]
+
+  [In any event, it is nice that the White House has recognized the
+  significance of Initial Caps in the second word in "The Internet"!
+  as it has long been in RISKS.   PGN]
+
+------------------------------
+
+Date: Thu, 28 Apr 2022 06:32:41 -0700
+From: Rob Slade <rslade@gmail.com>
+Subject: CoVID possibilities and risk management
+
+Very late yesterday, I got an email from my little brother, informing me
+that he, and his wife, tested positive for CoVID.  I last saw my little
+brother fourteen days ago.  I don't have any of the common signs or symptoms
+of CoVID.  No cough, no fever, and I still smell and taste things just fine.
+I have not been tested: these days I have no idea if I even qualify to
+**get** tested.  I assume I am on the extreme outside edge of the
+possibility of infection or contagion, and I'm not even sure if "14 days" is
+still the recommended quarantine time.
+
+As blind, random chance, and my generally non-existent social life, would
+have it, **yesterday** I had grief group, a monthly lunch group, and an
+informal, bi-weekly coffee time with the tenants here.  **Today** I have Old
+Guys Coffee Morning and a Bible study at my emergency backup church.  (I
+have already sent a warning, and a query as to whether they [both groups]
+want me to stay away.)  I have warned the groups I was with yesterday.  I
+have sent a query to the pharmacy as to whether I yet qualify for "rapid"
+CoVID tests.  (I haven't yet started to research whether there is any
+possibility of getting tested any other way.)  I have sent a warning to a
+friend I had lunch with just after I saw my little brother, and Number Two
+Step-Daughter and Number One Grandson, with whom I had dinner a few days
+ago.  And a warning to my main church, where I served coffee at Easter
+service just after I last saw my little brother, and subsequently taught a
+Sunday School class for the whole Sunday School ...
+
+(Yesterday I also had a practice session with BSidesVancouver, but that was
+over Hopin, so I doubt there was any risk, there.  If I *do*, by some
+extreme chance, get CoVID, and have to miss CanSecWest, after I get better I
+will drive to Ontario and kill my little brother ...)
+
+------------------------------
+
+Date: Sat, 23 Apr 2022 19:31:58 -0500
+From: "dmitri maziuk" <dmitri.maziuk@gmail.com>
+Subject: Re: What Can Hackers Do With Stolen Source Code? (Cosell,
+ RISKS-33.17)
+
+> An attacker with source code will double check each strcmp for a buffer
+> overflow.
+
+Considering that we're talking Bing and Cortana here, if their authors still
+used strcmp, leaked source code is not their biggest problem. This isn't XX
+century code from back when we didn't know any better, Cortana in particular
+was released a good decade after secure coding became the thing.
+
+Quick look at the original article that the main concern with that hack is
+that the sources (may) also include code signing keys and those are much
+more valuable than any "C string library" calls that may or may not exist in
+the code.
+
+------------------------------
+
+Date: Mon, 25 Apr 2022 19:06:43 +0100
+From: "Martyn Thomas" <martyn@mctar.uk>
+Subject: Re: Driverless Cars Can Be Tricked into Seeing Red Traffic Lights
+ (Ward, RISKS-33.17)
+
+> Cars with drivers can *also* be caused to stop by shining a laser into the
+> windscreen.
+
+But can they be tricked into driving through red lights? And would the
+logging in the driverless car show that the software thought the light was
+green, with resulting liability and reputational damage?
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.18
+************************

@@ -1,0 +1,719 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 8 September 2010 Volume 26 : Issue 15
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.15.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+NTSB on WMATA (David Lesher)
+Software glitches, systemic failure and airplane crashes together
+  (Peter Wayner)
+"iPod trance" increases traffic risk to pedestrians (Mike Martin)
+German goverment ID already cracked (Peter Houppermans)
+Malware Used to Steal South Korean Military Secrets (Monty Solomon)
+Risks: Tabloid Hack Attack on Royals, and Beyond (Gabe Goldberg)
+Scary e-mail -- invite from Facebook (Ted Lee)
+Facebook: Backfire to Come? (Gene Wirchenko)
+Twitter to log every click on every link in every tweet (Lauren Weinstein)
+Ford's car-monitoring software (Chris D.)
+Risks of Not Following Standards (Robert McMillan via Gene Wirchenko)
+A Strong Password Isn't the Strongest Security (Randall Stross via
+  Monty Solomon)
+Really, no *really* aggressive "anti-virus" software (Paul Robinson)
+Found 4 security problems at a bank (Mark Fineman)
+Re: WSJ: What Do Online Advertisers Know About You? (Mark Fineman)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 14 Aug 2010 09:21:36 -0400
+From: David Lesher <wb8foz@panix.com>
+Subject: NTSB on WMATA
+
+WARNING -- LONG!
+
+NTSB on WMATA Crash [DCA-09-MR-007] (Risks-25.79)
+
+On 27 July, 2010 NTSB held a public hearing to announce their report on the
+22 May 2009 Metro crash of train #112 into #214.
+
+The report is technical, long, detailed, and leaves few parties untainted.
+Foremost, NTSB found the primary cause was "a failure of the track circuit
+modules, built by GRS/Alstom Signaling Inc., that caused the automatic train
+control system to lose detection of train 214"... The second cause was
+WMATA's failure to use tools they created after another detection
+failure/near miss in 2005. There are many more aspects detailed.
+
+I urge anyone involved in RISKS-topics to invest the time in reading the
+full report [final version due out soon] and exhibits, but I'll attempt a
+synopsis. Even it won't be short.
+
+WMATA uses bog-standard AC track signaling, around for over one hundred
+years. Basically, an audio frequency signal is injected across the rails [by
+a transmitter module] at one end of a several hundred foot block of track;
+if it's detected [receiver module] at the far end [receiver module], the
+block is empty & an output relay is held energized; if it is NOT, either a
+train is shorting Rail 1 to Rail 2, or something has failed; that track is
+considered occupied. In short, it should be fail-safe; broken wires, cracked
+rails, blown fuses etc all drop the relay.
+
+From those core inputs, the automatic train control system manages trains to
+maintain safe & desired spacing. Even in "manual" mode; the train operator
+can not do better than slowly creep into an occupied block.
+
+What happened in 2005 in the Potomac tunnel just before Rosslyn was... this
+failed. A running train almost tail-ended one stopped in the tunnel, and the
+one behind *it* also did likewise. [1] After a lot of work, WMATA
+engineering thought it was a cable fault, and after repositioning them,
+could not replicate the problem. As one consequence, the WMATA chief
+signaling engineer created a test well beyond GRS/Alstom's; his used a test
+shunt [short between rails] at three places per block [not just one], at
+each end and in the middle.
+
+In 2009, at Ft. Totten, the same problem occurred on a curve. Because of the
+limited line-of-sight she had, the 112 operator's emergency stop command
+only reduced the collision from being at >55mph to ~40mph. 112's lead car
+collapsed, and 9 including the operator died.
+
+After weeks of work by WMATA Engineering & NTSB [who was on-site for 68
+days], they found that the audio frequency transmitter stage was breaking
+into parasitic oscillation at the peak of its waveform. That noise was
+coupling through the common power supply and the metal rack over to the
+receiver. (Even with the field wiring disconnected, the receiver said
+"unoccupied.") Further work showed "loss of shunt" cases were occurring
+hundreds of times *per day* and had been for years. But one cause of these
+was the GRS parasitic; found on hundreds of other track circuits across the
+system, all using the same generation of modules, as had Rosslyn.
+
+But while that was the core of the technical causes, it was only the first
+step of NTSB's findings. Over the winter, they had held an evidentiary
+hearing about the case. During that, the Chairman of the WMATA Board of
+Directors testified that roughly, safety was not their problem; they just
+set policy.
+
+Perhaps as a result of that statement, the NTSB issued not just 15-odd
+Recommendations to WMATA (and many to other parties), but one VERY pointed
+and explicit one directly to the WMATA Board; to step up and take charge of
+a creating a "safety culture" at the WMATA. As one example of how it is now,
+the organization is so balkanized that the chief signaling engineer heard
+only in post-accident interviews that not one of the questioned maintenance
+technicians had ever heard of his enhanced test. It seemingly had never been
+promulgated.
+
+Since no WMATA Board members were even present for the Recommendations, the
+NTSB Chairwoman told the (present) current interim General Manager that she
+and the Members would go with him when he met his Board.
+
+In short, while there were technical causes to the accident, the bigger
+issue is no one in charge seemed concerned about rider or worker
+safety. WMATA holds the dubious record for unresolved NTSB Recommendations
+from past fatalities.
+
+I wish these were new risks; but they are anything but.
+
+One result of this is there is now significant Hill interest in establishing
+and enforcing federal transit safety regulations. Until now, transit lines
+such as WMATA & NYCTA have not fallen under FRA regulations.
+
+Links: [from <http://ntsb.gov/events/boardmeeting.htm> page]
+
+Synopsis
+<http://ntsb.gov/Publictn/2010/RAR1002.htm>
+Presentations
+<http://ntsb.gov/events/2010/Washington-DC-Metro/presentations.htm>
+Docket, with megabtyes of data.
+<http://www.ntsb.gov/Dockets/RailRoad/DCA09MR007/default.htm>
+
+[1] WMATA carries ~800,000 person-trips per day. If there is anything to
+grateful for, it is that the inevitable collision took place in the open on
+the Red Line, and in the off-peak direction. Fire/Rescue had good access and
+got accolades from NTSB. If instead, the collision had been within the
+Potomac tube during crush hour, there could easily have been hundreds
+killed; each six-car train carries ~1000 people.
+
+  [Just thinking about such a crash in the tube freaks me.... that's
+  1500-1800 people in the two trains. The crash would immediately kill say
+  200+, but the resulting fire would do in another 500+. The tube is NOT
+  sprinklered.  DL]
+
+------------------------------
+
+Date: Tue, 31 Aug 2010 11:06:20 -0400
+From: Peter Wayner <pcw2@flyzone.com>
+Subject: Software glitches, systemic failure and airplane crashes together
+
+http://www.usatoday.com/travel/flights/2010-08-31-1Acockpits31_ST_N.htm
+
+Flaws in flight simulator training helped trigger some of the worst airline
+accidents in the past decade, according to a USA TODAY analysis of federal
+accident records.  More than half of the 522 fatalities in U.S. airline
+accidents since 2000 have been linked to problems with simulators, devices
+that are used nearly universally to train the nation's airline pilots, the
+records show.
+
+Simulator training is credited with saving thousands of lives. But the
+problem, according to National Transportation Safety Board (NTSB) case files
+and safety experts, is that in rare but critical instances they can trick
+pilots into habits that lead to catastrophic mistakes.
+
+  ["More than half" seems to me overblown.  PGN]
+
+------------------------------
+
+Date: Sun, 05 Sep 2010 21:11:22 -0400
+From: mike_martin@mail.com
+Subject: "iPod trance" increases traffic risk to pedestrians
+
+The number of pedestrians killed on New South Wales roads in the 2010
+ calendar year to date, 53, is up 25 per cent over the same period last year
+ although the overall rate of road deaths has dropped. Concern is growing
+ about the "iPod zombie trance" that people get into when listening to
+ mobile music devices. This past weekend there were reports of at least six
+ pedestrians hit by vehicles on the state's roads. Two of them died, one hit
+ by a bus and the other by an ambulance that had its warning lights flashing
+ and its siren sounding.
+
+Pedestrian Council of Australia spokesman Harold Scruby is quoted as saying:
+
+"'Death by iPod' is a relatively new phenomenon so it may be slow in showing
+up because it can sometimes be a year between the fatality and the coroner's
+finding. But we should be asking ourselves why are total road deaths
+declining while pedestrian fatalities continue to escalate? Maybe listening
+devices could be part of the explanation.''
+
+The Automobile Association in the UK issued a statement last month
+expressing concern that people were "increasingly guilty of focusing more on
+Google Maps while walking the streets than paying attention to the world
+around them".
+http://www.smh.com.au/digital-life/mp3s/pedestrian-death-rise-blamed-on-ipods-20100905-14w4d.html
+
+Loss of situational awareness poses risks regardless of what people are
+doing. When they are driving a vehicle or even walking in the streets,
+consequences can be fatal.
+http://crave.cnet.co.uk/mobiles/zombie-ipod-pedestrians-endangered-by-mobile-oblivion-says-aa-50000277/#ixzz0yhrj96oa
+
+------------------------------
+
+Date: Fri, 03 Sep 2010 10:35:59 +0200
+From: Peter Houppermans <peter@houppermans.com>
+Subject: German goverment ID already cracked
+
+Surely this is some sort of record.
+
+  "Public broadcaster ARD's show 'Plusminus' teamed up with the known hacker
+  organization 'Chaos Computer Club' (CCC) to find out how secure the
+  controversial new radio-frequency (RFID) chips were. The report shows how
+  they used the basic new home scanners that will go along with the cards
+  (for use with home computers to process the personal data for official
+  government business) to demonstrate that scammers would have few problems
+  extracting personal information. This includes two fingerprint scans and a
+  new six-digit PIN meant to be used as a digital signature for official
+  government business and beyond."
+  http://yro.slashdot.org/article.pl?sid=10/09/02/1747213:
+
+------------------------------
+
+Date: Sat, 21 Aug 2010 19:38:15 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Malware Used to Steal South Korean Military Secrets
+
+A lawmaker has uncovered that 1,715 files containing South Korean military
+secrets, including war plans against North Korea, were stolen from infected
+Army-issued computers.
+
+http://news.softpedia.com/news/Malware-Used-to-Steal-South-Korean-Military-Secrets-153153.shtml
+
+------------------------------
+
+Date: Wed, 01 Sep 2010 14:28:08 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Risks: Tabloid Hack Attack on Royals, and Beyond
+
+In Nov 2005, three senior aides to Britain's royal family noticed odd things
+happening on their mobile phones. Messages they had never listened to were
+somehow appearing in their mailboxes as if heard and saved. Equally peculiar
+were stories that began appearing about Prince William in one of the
+country's biggest tabloids, News of the World.
+
+https://www.nytimes.com/2010/09/05/magazine/05hacking-t.html?hp
+
+------------------------------
+
+Date: Sat, 14 Aug 2010 21:21:02 -0500
+From: Ted Lee <TMPLee@MR.Net>
+Subject: Scary e-mail -- invite from Facebook
+
+I just received an invitation from Facebook on behalf of somebody I know to
+join.  (I do not, and do not intend to, have a Facebook account.)  I haven't
+heard back from him whether he actually sent it, but it doesn't really
+matter.  Near the end of the email is the line "Other people you may know on
+Facebook:" followed by eight names and pictures.  Seven of the names and
+pictures are indeed of people I know and except for one correspond with more
+or less frequently.  (That one was of someone I didn't recognize, but I
+searched my email archives and indeed found one email from him.)  As best I
+can remember, I have never received a Facebook invite from any of them.  How
+could Facebook possibly know with such accuracy who I correspond with on the
+Internet?  A couple of the people I interact with both via email and
+newsgroups, but several definitely only via email.  I hope there's an
+obvious explanation that someone who uses Facebook would know (like, for
+instance, if it insisted that you share your address book with it) but
+whether it's obvious or not it's pretty darn scary.
+
+------------------------------
+
+Date: Tue, 07 Sep 2010 12:16:00 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Facebook: Backfire to Come?
+
+Robert McMillan, Spammers get the boot with Facebook's new remote logout; The
+social-networking company is rolling out a new security feature that lets
+users see which computers and devices are logged into their Facebook
+accounts.  7 Sep 2010
+http://www.itbusiness.ca/it/client/en/home/news.asp?id=59072
+
+Facebook users will soon have a new way of knocking spammers out of
+legitimate accounts.  The social-networking company is rolling out a new
+security feature that lets users see which computers and devices are logged
+into their Facebook accounts, and then removing the ones that they don't
+want to have access. ...
+
+  Why could a spammer using a stolen account not regularly monitor for other
+  logins under the account and knock them off?
+
+------------------------------
+
+Date: Wed, 1 Sep 2010 21:16:07 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Twitter to log every click on every link in every tweet
+
+Twitter to log every click on every link in every tweet
+http://bit.ly/bYtPsp  (Google Buzz)
+
+ "Soon, Twitter will be collecting data on which Twitter users click any
+  links in any Twitter streams. They will also be able to collect IP address
+  info for any user (even non-Twitter users) who click on any link in any
+  Twitter message via the Twitter Web interface."  ...
+
+  [From Network Neutrality Squad.  PGN]
+
+------------------------------
+
+Date: Sun, 22 Aug 2010 18:13:08 +0100
+From: "Chris D." <e767pmk@yahoo.co.uk>
+Subject: Ford's car-monitoring software
+
+here's an item in this weekend's newspaper about the Ford company offering a
+driving economy check for Ford car owners (in the UK, may apply in other
+countries too): http://www.ford.co.uk/OwnerServices/FordEconoCheck
+Basically, they fit a logging device to your car, then you drive round as
+normal for a week while it records when and where you've driven, then it's
+mailed back to Ford for analysis.  They tell you if you're driving too
+aggressively or leaving the engine idling too long, etc. and give you tips
+on how to improve your fuel economy.
+
+All well and good, but then the newspaper reviewer advocates this as a great
+idea for law enforcement -- "If the police and insurers ever get this type
+of information, some serial-offender motorists could be providing damning
+evidence that might invalidate their policies or land them in court.  For
+the law-abiding majority, EconoCheck will work in your favour... responsible
+motorists will have data sheets that show they drive sensibly..."
+
+http://www.telegraph.co.uk/motoring/columnists/mike-rutherford/7950309/Mr-Money-Big-Brother-is-watching.html
+
+Lots of data-protection and security alarm bells ringing here, with the
+usual RISKS of genuine mistakes, blackmail, and so on.  What are the
+standards for the legal validity of the data, and do innocent people have to
+prove their innocence?
+
+------------------------------
+
+Date: Tue, 31 Aug 2010 15:12:43 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Risks of Not Following Standards (Robert McMillan)
+
+Robert McMillan, Cisco patches bug that caused partial Internet blackout; A
+Duke University experiment inadvertently uncovered a bug in Cisco IOS XR.
+InfoWorld Home, 30 Aug 2010 | IDG News Service
+http://www.infoworld.com/d/networking/cisco-patches-bug-caused-partial-internet-blackout-811?source=IFWNLE_nlt_sec_2010-08-31
+
+Selected text:
+
+In a security advisory released just hours after the incident, Cisco
+confirmed that an incident disclosed the bug. "An advertisement of an
+unrecognized but valid BGP attribute resulted in resetting of several BGP
+neighbors on 27 August 2010. This advertisement was not malicious but
+inadvertently triggered this vulnerability," Cisco said in its advisory.
+Duke University assistant professor Xiaowei Yang declined to explain the
+point of her experiment, but she said that all of the data that her team
+sent was "100 percent standard compliant."
+
+In an interview [on 30 Aug], Zmijewski said that while Cisco's buggy
+software caused the problems, the Duke team running the experiment should
+have been more careful. "The days of academics playing with a live network
+are kind of gone now," he said. "I think it would be foolhardy to try
+something like this in the future. ... I'm amazed that this happened in the
+first place."
+
+------------------------------
+
+Date: Sun, 5 Sep 2010 09:09:33 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: A Strong Password Isn't the Strongest Security (Randall Stross)
+
+Randall Stross, A Strong Password Isn't the Strongest Security,
+*The New York Times*, 4 Sep 2010
+
+  "Make your password strong, with a unique jumble of letters, numbers and
+  punctuation marks. But memorize it - never write it down. And, oh yes,
+  change it every few months."
+
+These instructions are supposed to protect us. But they don't.
+
+Some computer security experts are advancing the heretical thought that
+passwords might not need to be "strong," or changed constantly.  They say
+onerous requirements for passwords have given us a false sense of protection
+against potential attacks. In fact, they say, we aren't paying enough
+attention to more potent threats.
+
+Here's one threat to keep you awake at night: Keylogging software, which is
+deposited on a PC by a virus, records all keystrokes - including the
+strongest passwords you can concoct - and then sends it surreptitiously to a
+remote location. ...
+  http://www.nytimes.com/2010/09/05/business/05digi.html
+
+    [Also noted by Matthew Kruk, who quoted another para:
+  Donald A. Norman, a co-founder of the Nielsen Norman Group, a design
+  consulting firm in Fremont, Calif., makes a similar case. In "When
+  Security Gets in the Way," an essay published last year, he noted the
+  password rules of Northwestern University, where he then taught. It was a
+  daunting list of 15 requirements. He said unreasonable rules can end up
+  rendering a system less secure: users end up writing down passwords and
+  storing them in places that can be readily discovered.  "These
+  requirements keep out the good guys without deterring the bad guys," he
+  said.
+    PGN]
+
+------------------------------
+
+Date: Sun, 15 Aug 2010 02:43:41 -0700 (PDT)
+From: Paul Robinson <paul@paul-robinson.us>
+Subject: Really, no *really* aggressive "anti-virus" software [LONG]
+
+I thought I should pass this along because as with almost every type of
+"software" developed the first ones tend to be crude and the others get more
+refined, I felt I should report this to make people aware of it.
+
+I've seen aggressive anti-virus software, especially in the so-called "free
+trial" models, most typically in the extent of being aggressive in claiming
+one's system is horribly infected, with viruses, spyware, malware, and every
+other piece of worthless or harmful software there is, telling you how
+terribly bad everything is on your system, and holding its hand out waiting
+for a tip in the form of demanding you buy the product to fix the multitude
+of problems it's claimed it found.
+
+This rationale of raising the threat level of everything that is on your
+system that is even in the slightest bit out of line to the level of an
+unmitigated disaster requiring immediate repair (by purchasing the product,
+of course) or even worse disaster will result, extends to the newest crop of
+"fix up" software in which it also looks for things like registry errors,
+old and unnecessary modules of half-installed, partially-installed or
+partly-uninstalled applications, in the program declares that every error,
+mistake or misconfiguration it can find or think of telling you about is
+about as dangerous to your system as if it was installed by BP or is the
+software equivalent of its Gulf of Mexico oil spill.
+
+Nothing necessarily wrong with this, it reminds me of the days of carnival
+barkers announcing how you can win a fortune in prizes in what were often
+rigged games, and newsboys on street corners screaming out lurid headlines
+to get people to buy the paper, except, of course, the software product
+always tends to be even more overly alarmist, even to the point in some AV
+or PC tune-up products of claiming browser cookies for various advertising
+sites - used for tracking, but otherwise harmless - to be a source of
+danger.  That, and one other issue I'll get to later.
+
+I helped out one customer who had a really aggressive product that kept
+claiming her laptop was full of viruses and spyware and screaming how she
+really, I mean *really* needed to buy the product before her computer was
+sold off as part of a botnet to spammers in China or it melted down from the
+heat generated by the infected software on her computer.
+
+I'm not sure if anti-virus software makers think that making their software
+as obnoxiously irritating as possible is going to make more sales, but there
+is a "point of diminishing returns" when the anti-virus software becomes so
+demanding of a tip like an aggressive waiter in a restaurant that you'll
+choose to go to a different eatery and never go back there again.
+
+The software equivalent of this, of course, is the uninstall function.  Back
+in the MSDos days you simply uninstalled a program by deleting its
+directory, possibly removing a path statement in AUTOEXEC.BAT and that might
+be it.
+
+Now, install and uninstall of the typical Windows application has so many
+features and options that there are install packages like Installshield and
+Wise Installer in order to make sure the developer hasn't forgotten anything
+the app needs and to make sure when the user is uninstalling the application
+that it's cleanly removed so pieces don't get left behind and unnecessary or
+now incorrect registry entries are removed.  In fact, it's the failure of
+some uninstallers to either properly do this, do all that is necessary to
+completely uninstall the program, or do it correctly that PC tune-up
+programs fix these sort of errors.
+
+That is, regular applications tend to provide an uninstall feature and will
+uninstall themselves when requested.  Uninstalling a trial-version of an an
+anti-virus, software tune-up or similar application is basically an
+unmitigated disaster for the maker of that product - they didn't get paid
+for telling you about your problems - and they try very hard to prevent this
+from happening.  A typical application - even a demonstration program -
+puts an entry in the install/uninstall registry list so you can use
+"add/remove programs" in Control Panel (at least for versions of Windows
+through XP; I'm not sure what the program removal tool is called on Vista as
+I really don't understand it much and I've never used Windows 7).
+
+A number of these "anti virus" or tune-up applications won't put an entry in
+add/remove programs.  Obviously, they do not want you to shut up their
+screaming banshee applications without paying for them, they want you to buy
+them off!
+
+So going back to the lady with the aggressive anti-virus on her laptop, it
+didn't have an uninstall but I figured out where it was and basically ripped
+it out by the throat, deleted its directory and related files and if
+anything showed up as missing during a reboot, remove references to those
+files too.
+
+That was about two years ago.
+
+So my sister calls me last week because for the first time now she has an
+"anti-virus" program that is warning her about a bunch of problems on her
+system, and even refusing to let her install the Internet telephony
+application Skype.  Basically this program is telling her that almost
+everything is infected and she needs to fix it (by buying the full version
+of this "anti-virus" program, natch.)  I'll explain why I put "anti-virus"
+in quotes in a moment.
+
+I take a visit over to her place and find some "anti-virus" product whose
+name I can't remember exactly, but I think it was something like System
+Protector, or something like that. She doesn't even know how this program
+got on her computer.  Basically it was a one-trick pony, telling how just
+about everything on the system was infected with a virus that was attempting
+to "send your credit card numbers over the Internet" to someone in Russia or
+one of the various countries well known for credit card fraud.
+
+It's blocking just about everything as being infected.  My sister called me
+because she was having trouble being able to use her computer - from all the
+warning messages of this so-called "anti-virus" software - or being able to
+use the Internet.
+
+So it's going along and telling me about all the stuff on the system that is
+horribly infected with viruses that are trying to send my credit card
+information over the Internet to who knows where and how it can stop this if
+only I "upgrade" to the paid version, I'm trying to figure out how to shut
+it up so we can actually use the computer.
+
+The third most significant thing that made me suspicious was, to the extent
+I could find the equivalent of add-remove programs in Windows Vista, this
+program is, of course, not present; but nothing new here, this happens often
+with many of these kinds of programs.  The second thing was its splash/main
+screen which simply had its name, it had no other branding than then name of
+the program (which again I'm calling System Protector because I can't
+remember its name).  Every other real anti-virus application has a company
+brand in addition to the product name, e.g. Symantec, McAfee, Kapersky, etc.
+Nothing with this one.
+
+But what got me most suspicious was its claims that essentially everything
+is trying to export credit card numbers to unsavory characters in lawless
+parts of the globe.  Not everything is doing this and claiming it is clearly
+the worst kind of alarmist hysteria. My sister runs behind a firewall, there
+couldn't be that many things infected as System Protector claimed.
+
+It started when I can't access CMD.EXE, because "it's been infected with a
+virus that is trying to transmit credit card numbers" etc. and won't allow
+me to run it, but I can fix this by purchasing the full version, etc.  It
+even prevents Adobe Flash from trying to install an upgrade, so maybe it's
+not all bad.  Of course, I have no idea why a download from Adobe's website
+has a virus trying to send credit card numbers, but the program must know
+what it's talking about, right?  I basically can't use the Run command,
+because everything I'd try to run is, you guessed it, trying to forward
+credit card numbers to Afghanistan.
+
+When I could not run Regedt32 because the program thought it was forwarding
+my Visa and MasterCard information to Osama Bin Laden, I came to the
+realization that basically this wasn't an anti-virus program, it was a
+trojan faking an anti-virus and holding your computer for ransom until you
+buy the full version of their so-called "anti-virus" whereupon you'll be
+lulled into a false sense of security since it will now stop telling you
+you're infected.  It's the high-tech version of selling counterfeit
+prescriptions in which you think you're getting a necessary medication but
+you're actually buying something that is, at best a do-nothing sugar pill or
+possibly something full of harmful chemicals.
+
+It is basically blocking anything you could use to disable, remove or shut
+it down without paying for its useless "protection."  After some effort I
+realize I can stop it by rebooting into Safe Mode. Now while I can't find
+what directory "System Protector" is stored in, I can run Regedt32 and
+discover that there is an entry in the Run Once and Run entries consisting
+of a name in Chinese!  So the so-called "anti-virus" has fixed itself to be
+restarted any time the computer is rebooted (other than in Safe Mode,
+fortunately).
+
+So while I couldn't remove the application because I couldn't figure out how
+to translate the Chinese characters into a directory, I was able to evacuate
+it from Run Once or Run, and when the computer was restarted, the
+"anti-virus" was gone; I had stopped its execution.
+
+One of the things I referred to earlier was the old days of newspaper
+vendors hawking lurid headlines to get you to buy their paper.  But at least
+they weren't blocking your way and refusing to let you leave unless you buy
+a copy.  This is clearly extortion disguised as legitimate software
+protection.
+
+The obvious risks are first, that someone will believe this and pay them,
+maybe becoming a victim of who-knows-what; if they can fool you into
+thinking it's a legitimate anti-virus tool, it might have any number of nice
+features including actually being a botnet manager or who knows what.  If
+they ripped you off one way, no reason they can't find a way to rip you off
+another way, and maybe another.  Second, since it surely isn't going to find
+any real viruses, it will give someone a fake sense of security by thinking
+they're protected.
+
+As I said, this one was crude and way too obvious, but I suspect that there
+will be other programs similar to this in the future which will be more
+refined and harder to spot as fakes, and I felt people should be aware of
+this sort of thing looming on the horizon.
+
+And people used to wonder why I never use Internet Explorer and always have
+a hardware firewall in place.  I don't use anti-virus software and have
+never gotten an infection.  While maybe I'm just lucky or careful, it's
+been over 15 years of using the Internet nearly every day and the number of
+times I've gotten infected on my computers has been and is still zero.
+
+------------------------------
+
+Date: Tue, 31 Aug 2010 12:08:35 -0400
+From: Mark Fineman <mark53916@gmail.com>
+Subject: Found 4 security problems at a bank
+
+  [This may be a timed-out e-mail address.  PGN]
+
+I found 4 security problems at on a bank's website.  There were 3 security
+problems that came up (due to the flawed mechanism that the bank has for
+reporting security problems).  I coincidentally found a 4th problem that may
+also be a security problem.
+
+Here are the problems:
+
+Initial security problem:
+
+1. When logged on to the banking site and trying to send a message to the
+ bank it is possible for the session for the message sending to timeout.
+ That browser window says that the user timed out and he has to log in again
+ to send the message.  While not actually saying that the user was logged
+ out of his main banking session, most users would assume that they were and
+ it was safe to leave the terminal.  However, in fact the user may not have
+ been logged out of the main banking session and can actually do banking or
+ send a message without logging in again.
+
+Problems found while trying to report the problem to the bank:
+
+2. The message center messages can't be used to report security problems.
+
+3. When you use the phone to report a security problem, you are asked to
+   prove you are a customer by giving your account number, even though you
+   might not want to give your account number because of the security
+   problem.  Also the human response that says you have to call a phone
+   number to report the security problem should have contained a token that
+   allows someone to confirm over the phone that he is a customer, AS SHOWN
+   BY him getting the token which requires the user to enter his banking
+   information.
+
+4. There is no way to report a security problem if you are not a customer.
+
+I also found that the bank's message system incorrectly processes the
+included original message in reply to threads.  In particular, each
+apostrophe seems to get changed into two apostrophes, although there might
+be another factor involve in this doubling.  I consider this a security
+problem since it indicates that text is being process someplace, rather than
+merely being blindly included with an include string stuck at the start of
+each line.  This type of processing often turns out to indicate a security
+hole whereby text winds up getting executed with bad results.
+
+------------------------------
+
+Date: Tue, 31 Aug 2010 11:44:44 -0400
+From: Mark Fineman <mark53916@gmail.com>
+Subject: Re: WSJ: What Do Online Advertisers Know About You? (Jones, R-26.14)
+
+Tim Jones, *Wall Street Journal*, 4 Aug 2010
+
+In addition to the comments in the article, the technique usually makes it
+possible for the 3rd, 4th, and 5th parties involved to violate the 1st
+(user's) party's privacy, the privacy agreement that the 2nd party (the
+site) has made with the 1st party, and the privacy agreements that the
+actual advertisers (4th or 5th party or beyond) have made with the 1st
+party.
+
+Underlying principle: Of course this information personally identifies the
+1st party - that is why the ad has been placed here in the first place.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.15
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E3BF3BC8B20EXSAN02campus_--

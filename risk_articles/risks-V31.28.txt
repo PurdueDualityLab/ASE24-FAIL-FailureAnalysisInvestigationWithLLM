@@ -1,0 +1,1259 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.28
+
+RISKS-LIST: Risks-Forum Digest  Friday 7 June 2019  Volume 31 : Issue 28
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.28>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+SpaceX's Starlink Could Change The Night Sky Forever, And Astronomers Are
+  Not Happy (Forbes.com)
+Quest Diagnostics Says Up to 12 Million Patients May Have Had Financial,
+  Medical, Personal Information Breached (NBC-NY)
+885 Million Records Exposed Online- Bank Transactions, Social Security
+  Numbers, and More (Topic Box)
+Networking issues take down Google Cloud in parts of the U.S. and Europe,
+  YouTube and Snspchat also affected (GeekWire)
+New RCE vulnerability impacts nearly half of the Internet's email servers
+  (Catalin Cimpanu)
+Millions of machines affected by command execution flaw in Exim mail server
+  (Ars Technica)
+With Technology, Institutions Have Made 'Most Effective Means of Social
+  Control in the History of Our Species' (Edward Snowden)
+Schools Are Deploying Massive Digital Surveillance Systems. The Results Are
+  Alarming (EdWeek)
+Warnings of world-wide worm attacks are the real deal, new exploit shows
+  (Ars Technica)
+Microsoft deprecates passwords (Ars Technica)
+US Army testing jam-resistant GPS in Europe (Joe Gould)
+Flying Robotaxis Prepare for Takeoff (Bloomberg)
+The richest 10% of households now represent 70% of all U.S. wealth
+  (Market Watch)
+GitHub shocks top developer: Access to 5 years' work inexplicably blocked
+  (Liam Tung)
+Former Head of Pentagon's Secret UFO Program Has Some Strange Stories to
+  Tell (Live Science)
+Deaths on Mt. Everest; Is social media partly to blame? (The Atlantic)
+U.S. Visa Applicants Required To Turn Over Social Media (The Hill)
+One way to tackle the nuclear waste prob: redefine the labels
+  (danny burstein)
+FCC Affirms Robocall Blocking By Default to Protect Consumers (FCC)
+Privacy Fears Split German Government on Use of Alexa Data as Evidence
+  (Fortune)
+Apple's 'Find My' Feature Uses Some Very Clever Cryptography (WiReD)
+'Sign In With Apple' Protects You in Ways Google and Facebook Don't (WiReD)
+NSA warns Microsoft Windows users to update systems to protect against
+  cyber-vulnerability (The Hill)
+US visas now need five years of your social media ... (Rob Slade)
+What He Learned Trying To Secure Congressional Campaigns (Idle Words)
+Trump urges customers to drop AT&T to punish CNN over its coverage of him
+  (WashPost)
+How Limbic Capitalism Preys on Our Addicted Brains (Quillette)
+This ID Scanner Company is Collecting Sensitive Data on Millions of
+   Bar-goers (Medium)
+VR Systems remotely accessed Durham county computer before 2016 election
+  (Kim Zetter)
+Election Rules Are an Obstacle to Cybersecurity of Presidential Campaigns
+  (NYTimes)
+More on Mueller and Interference (Time)
+Phishing calls (Rob Slade)
+Boeing Built Deadly Assumptions Into 737 Max, Blind to a Late (NYTimes)
+Re: 737 MAX AoA Indications (Ladkin, Karish, Ladkin)
+Re: 737 MAX: Boeing dodges responsibility, with help from the FAA (Karish)
+Re: GM Gives All Its Vehicles a New Soul (Jared Gottlieb)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 3 Jun 2019 17:23:16 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: SpaceX's Starlink Could Change The Night Sky Forever, And
+  Astronomers Are Not Happy (Forbes.com)
+
+https://www.forbes.com/sites/jonathanocallaghan/2019/05/27/spacexs-starlink-could-change-the-night-sky-forever-and-astronomers-are-not-happy
+
+A companion piece by Caleb A. Scharf can be found at
+https://blogs.scientificamerican.com/life-unbounded/the-death-of-astronomy/
+
+Years ago, light pollution from ground sources (sodium or mercury halogen
+lamps in street lights) pushed the world's best optical telescope
+observatory sites into remote locations.
+
+Astronomers now have to consider erasure of satellite-generated image
+streaks from deep-space observations of multi-billion year old galactic
+structures. Estimates of 1 in 3 images may require touch-up from LEOS
+radiation that enter and leave telescopic field of view.
+
+Constellations of Low Earth Orbit Satellites (LEOS), possibly numbering
+~12-15K LEOS, if Amazon.com's 3,000 Kuiper Project constellation flies with
+12,000 Starlinks, can reflect sunlight at dawn/dust and microwave radiation
+into ground-based telescope observations. The 10.7-12.7 GHz band is
+particularly important for radio astronomy, and also for satellite
+communications.
+
+"With Starlink, we are expecting at least 100 satellites to be visible at
+any one time [at any location on Earth]," says Baskill. "Soon, even those
+fortunate to experience a truly dark site will find it filled with a haze of
+metal, slowly swarming across the night sky."
+
+Probably low risk: LEO shrouds a NEO (near-Earth orbit) asteroid (NEA,
+actually) from detection. Difficult n-body problem to accurately simulate.
+
+https://en.wikipedia.org/wiki/Near-Earth_object
+documents detection statistics for asteroids and comets.
+
+------------------------------
+
+Date: Mon, 3 Jun 2019 18:20:43 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Quest Diagnostics Says Up to 12 Million Patients May Have Had
+  Financial, Medical, Personal Information Breached (NBC-NY)
+
+This includes credit-card numbers and bank-account information...
+
+EXCERPT:
+
+Quest Diagnostics, one of the biggest blood testing providers in the
+country, warned Monday that nearly 12 million of its customers may have had
+personal, financial and medical information breached due to an issue with
+one of its vendors.
+
+In a filing with securities regulators, Quest said it was notified that
+between Aug. 1, 2018, and March 30, 2019, that someone had unauthorized
+access to the systems of AMCA, a billing collections vendor.
+
+"(The) information on AMCA's affected system included financial
+information (e.g., credit card numbers and bank account information),
+medical information and other personal information (e.g., Social Security
+Numbers)," Quest said in the filing.
+
+While customers' broad medical information might have been compromised,
+Quest said AMCA did not have access to actual lab test results, and so
+therefore that data was not impacted...
+
+[...]
+https://www.nbcnewyork.com/news/local/Quest-Diagnostics-12-Million-People-Data-Breach-510754611.html
+
+https://www.bloomberg.com/news/articles/2019-06-03/quest-says-millions-of-patient-records-exposed-in-billing-hack
+
+------------------------------
+
+Date: Tue, 28 May 2019 17:55:03 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: 885 Million Records Exposed Online- Bank Transactions, Social
+  Security Numbers, and More (Topic Box)
+
+EXCERPT:
+
+Several million records said to include bank account details, Social
+Security digits, wire transactions, and other mortgage paperwork, were
+found publicly accessible on the server of a major U.S. financial service
+company.
+
+More than 885 million records in total were reportedly exposed, according to
+Krebs on Security. The data was taken offline on Friday.  Ben Shoval, a
+real-estate developer, reportedly discovered the files online and notified
+security reporter Brian Krebs. Krebs said that he contacted the server's
+owner, First American Corporation, prior to reporting the incident.
+
+A leading title insurance and settlement services provider, First American
+is a large company headquartered in California with more than 18,000
+employees. Its total assets in 2017 were reported at over $9.5 billion.
+
+A company spokesperson told Gizmodo it learned about the issue on Friday and
+that the unauthorized access was caused by a design defect in one its
+production applications. It immediately blocked external access to the
+documents, they said, and began evaluating, with the help of an outside
+forensics firm, what effect, if any, the exposure had on the security of its
+customers' information...
+
+https://ip.topicbox.com/groups/ip/T7c8fecd125a07f5c/885-million-records-exposed-online-bank-transactions-social-security-numbers-and-more
+
+------------------------------
+
+Date: Mon, 3 Jun 2019 13:46:09 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Networking issues take down Google Cloud in parts of the U.S. and
+  Europe, YouTube and Snspchat also affected (GeekWire)
+
+Six weeks after Google dubiously claimed it ran the most reliable cloud
+computing service of the Big Three cloud providers, a widespread networking
+issue took out Google Cloud service on the East Coast of the U.S. and parts
+of Europe Sunday, according to the company status page and frustrated users
+on Twitter.
+
+https://www.geekwire.com/2019/networking-issues-take-google-cloud-parts-u-s-europe-youtube-snapchat-also-affected/
+
+------------------------------
+
+Date: Thu, 06 Jun 2019 10:58:32 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: New RCE vulnerability impacts nearly half of the Internet's email
+  servers (Catalin Cimpanu)
+
+Catalin Cimpanu for Zero Day | 5 Jun 2019
+New RCE vulnerability impacts nearly half of the Internet's email servers
+Exim vulnerability lets attackers run commands as root on remote email servers.
+https://www.zdnet.com/article/new-rce-vulnerability-impacts-nearly-half-of-the-internets-email-servers/
+
+opening text:
+
+A critical remote command execution (RCE) security flaw impacts over half of
+the Internet's email servers, security researchers from Qualys have revealed
+today.
+
+The vulnerability affects Exim, a mail transfer agent (MTA), which is
+software that runs on email servers to relay emails from senders to
+recipients.
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 10:20:55 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Millions of machines affected by command execution flaw in Exim
+  mail server (Ars Technica)
+
+In some cases, it's trivial for remote attackers to execute commands with root privileges.
+
+https://arstechnica.com/information-technology/2019/06/millions-of-machines-affected-by-command-execution-flaw-in-exim-mail-server/
+
+------------------------------
+
+Date: Wed, 5 Jun 2019 06:51:43 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: With Technology, Institutions Have Made 'Most Effective Means of
+  Social Control in the History of Our Species' (Edward Snowden)
+
+NSA whistleblower says "new platforms and algorithms" can have direct
+effect on human behavior.
+
+EXCERPTS:
+
+NSA whistleblower Edward Snowden said Thursday that people in systems of
+power have exploited the human desire to connect in order to create systems
+of mass surveillance.  Snowden appeared at Dalhousie University in Halifax,
+Nova Scotia via livestream from Moscow to give a keynote address for the
+Canadian university's Open Dialogue Series.  Right now, he said, humanity is
+in a sort of "atomic moment" in the field of computer science.  "We're in
+the midst of the greatest redistribution of power since the Industrial
+Revolution, and this is happening because technology has provided a new
+capability," Snowden said.  "It's related to influence that reaches everyone
+in every place," he said.  "It has no regard for borders. Its reach is
+unlimited, if you will, but its safeguards are not."
+
+Without such defenses, technology is able to affect human behavior.
+Institutions can "monitor and record private activities of people on a scale
+that's broad enough that we can say it's close to all-powerful," said
+Snowden. They do this through "new platforms and algorithms," through which
+"they're able to shift our behavior. In some cases they're able to predict
+our decisions -- and also nudge them -- to different outcomes. And they do
+this by exploiting the human need for belonging."  "We don't sign up for
+this," he added, dismissing the notion that people know exactly what they
+are getting into with social media platforms like Facebook.
+
+"How many of you who have a Facebook account actually read the terms of
+service?" Snowden asked. "Everything has hundreds and hundreds of pages of
+legal jargon that we're not qualified to read and assess --and yet they're
+considered to be binding upon us."  "It is through this sort of unholy
+connection of technology and sort of an unusual interpretation of contract
+law," he continued, "that these institutions have been able to transform
+this greatest virtue of humanity -- which is this desire to interact and to
+connect and to cooperate and to share -- to transform all of that into a
+weakness."
+
+"And now," he added, "these institutions, which are both commercial and
+governmental, have built upon that and... have structuralized that and
+entrenched it to where it has become now the most effective means of social
+control in the history of our species."  "Maybe you've heard about it,"
+Snowden said. "This is mass surveillance."  [...]
+
+https://www.commondreams.org/news/2019/05/31/edward-snowden-technology-institutions-have-made-most-effective-means-social-control
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 11:57:38 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Schools Are Deploying Massive Digital Surveillance Systems. The
+  Results Are Alarming (EdWeek)
+
+https://www.edweek.org/ew/articles/2019/05/30/schools-are-deploying-massive-digital-surveillance-systems.html
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 10:26:59 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Warnings of world-wide worm attacks are the real deal, new exploit
+  shows (Ars Technica)
+
+Latest Metasploit module is being kept private, but time is running out.
+
+https://arstechnica.com/information-technology/2019/06/new-bluekeep-exploit-shows-the-wormable-danger-is-very-very-real/
+
+------------------------------
+
+Date: Wed, 5 Jun 2019 00:25:19 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Microsoft deprecates passwords (Ars Technica)
+
+Bucking a major trend, company speaks out against the age-old practice.
+
+Microsoft is finally catching on to a maxim that security experts have
+almost universally accepted for years: periodic password changes are likely
+to do more harm than good.
+
+In a largely overlooked post published late last month, Microsoft said it
+was removing periodic password changes from the security baseline settings
+it recommends for customers and auditors. After decades of Microsoft
+recommending passwords be changed regularly, Microsoft employee Aaron
+Margosis said the requirement is an “ancient and obsolete mitigation of very
+low value.”
+
+The change of heart is largely the result of research that shows passwords
+are most prone to cracking when they're easy for end users to remember, such
+as when they use a name or phrase from a favorite movie or book. Over the
+past decade, hackers have mined real-world password breaches to assemble
+dictionaries of millions of words. Combined with super-fast graphics cards,
+the hackers can make huge numbers of guesses in off-line attacks, which
+occur when they steal the cryptographically scrambled hashes that represent
+the plaintext user passwords.
+
+https://arstechnica.com/information-technology/2019/06/microsoft-says-mandatory-password-changing-is-ancient-and-obsolete/
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 07:50:42 -0700
+From: Paul Saffo <paul@saffo.com>
+Subject: US Army testing jam-resistant GPS in Europe (Joe Gould)
+
+Eyeing Russia, Army fields jam-resistant GPS in Europe
+https://www.c4isrnet.com/show-reporter/c4isrnet-conference/2019/06/06/eyeing-russia-army-fields-jam-resistant-gps-in-europe/
+
+WASHINGTON — With an eye on sophisticated Russian jamming and spoofing
+technology, the U.S. Army will field test jam-resistant position, navigation
+and timing gear with the 2nd Cavalry Regiment in Germany this September.
+
+The decision comes amid a pattern of Russia jamming or disrupting all sorts
+of communications vital to Western forces in recent years, from mobile phone
+networks during exercises to electronic warfare against U.S. operations on
+the ground in Syria. NATO affirmed that Russia jammed GPS signals during its
+Trident Juncture exercise in November in Europe's High North region.
+
+The Army will field a system called Mounted Assured Positioning, Navigation
+and Timing, or MAPS, on some of the regiment's vehicles — news first
+reported by Inside the Army. The system uses the Selective Availability
+Anti-Spoofing Module for GPS, a chip-scale atomic clock for timing an
+anti-jamming antenna to distribute position, navigation and timing
+information across a unit's mission equipment.
+
+Russia's electronic warfare capability fueled the fielding to the 2nd
+Cavalry Regiment, Army Col. Nicholas Kioutas, the service's project manager
+for positioning, navigation and timing, said on the sidelines of the
+C4ISRNET Conference held in Arlington, Virginia, June 6.
+
+“Right now what we can learn is how the equipment can hold up, because
+unless we're being specifically jammed, we won't be able to tell what
+happened,” Kioutas said of the upcoming fielding. “We're constantly taking
+those systems and stress-testing them and trying to upgrade them, so it's
+not like that's the static system and we're done.
+
+The Army is using a flexible acquisitions vehicle called an Other
+Transaction Authority with three vendors to develop the second generation of
+MAPS. Program office is asking vendors to provide it with their best
+technological developments, which is a reflection of the service's less
+prescriptive approach to capability development.
+
+“We want industry to show us how to fight a different way,” Kioutas said,
+adding later, “We said, ‘bring us your best capabilities,' we didn't say
+what those should be.”
+
+The Army plans to experiment with using assured PNT systems as sensors.  One
+use would be for a group of linked systems to read the way a jamming signal
+strikes them to conclude where the jammer is located. “That'll be an
+additional capability down the road that we'll exploit,” Kioutas said.
+
+The program office is also developing Dismounted Assured Positioning,
+Navigation and Timing, or DAPS, for the Army's version of a smartphone, the
+integrated dismounted leader situational awareness system Nett Warrior.
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 05:53:58 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Flying Robotaxis Prepare for Takeoff (Bloomberg)
+
+More than a half-dozen companies have working prototypes of passenger
+drones. ...
+
+After decades playing supporting roles in sci-fi fantasies such as The
+Jetsons or Blade Runner, robotaxis are poised to work their way into
+everyday life. A host of companies has flown autonomous or semiautonomous
+electric aircraft that can take off vertically from almost anywhere, and the
+first commercial models are scheduled to hit the market next year. Here are
+a half-dozen that might soon fly you from your home to the office, airport,
+or a night on the town...
+
+https://www.bloomberg.com/news/articles/2019-06-05/flying-robotaxis-prepare-for-takeoff
+
+------------------------------
+
+Date: Sat, 1 Jun 2019 16:30:23 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: The richest 10% of households now represent 70% of all U.S. wealth
+  (Market Watch)
+
+Share of top 1% wealthiest increased to nearly 32% in 2018 from 23% in 1989
+
+EXCERPT:
+
+The rich are getting richer. It is a refrain that has certainly been uttered
+before, and likely will again, as Deutsche Bank Securities' chief economist
+points out that the gap between the haves and have-nots in the U.S. is,
+indeed, widening.
+
+Deutsche Bank's Torsten Sl=C3=B8k says that the distribution of household
+wealth in America has become even more disproportionate over the past
+decade, with the richest 10% of U.S. households representing 70% of all
+U.S. wealth in 2018, compared with 60% in 1989, according to a recent study
+by researchers at the Federal Reserve.
+
+The study finds that the share of wealth among the richest 1% increased to
+32% from 23% over the same period.
+
+To make a finer point, Fed researchers say the increase in wealth among the
+top 10% is largely a result of that cohort obtaining a larger concentration
+of assets: ``The share of assets held by the top 10% of the wealth
+distribution rose from 55% to 64% since 1989, with asset shares increasing
+the most for the top 1% of households. These increases were mirrored by
+decreases for households in the 50-90th percentiles of the wealth
+distribution,'' Fed researchers said.
+
+Sl=C3=B8k said the financial crisis has played a significant part in this
+growing gap, which resulted in the Federal Reserve stepping in to stem a
+massive ripple of losses through the global financial system as the housing
+market imploded.
+
+As a result, the Fed lowered interest rates, which had the knock-on effect
+of pushing easy money into the hands of the already-wealthy...
+
+[...]
+https://www.marketwatch.com/story/the-richest-10-of-households-now-represent-70-of-all-us-wealth-2019-05-24
+
+------------------------------
+
+Date: Thu, 06 Jun 2019 10:50:16 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: GitHub shocks top developer: Access to 5 years' work inexplicably
+  blocked (Liam Tung)
+
+Liam Tung, ZDNet, 6 Jun 2019
+GitHub shocks top developer: Access to 5 years' work inexplicably blocked
+Three incidents in the past week illustrate the sometimes unavoidable
+risks involved in relying on cloud providers.
+https://www.zdnet.com/article/github-shocks-top-developer-access-to-5-years-work-inexplicably-blocked/
+
+selected text:
+
+Microsoft's code-sharing site GitHub has caused a scare for developer Jason
+Rohrer after the company, without explanation or warning, blocked him from
+all his code repositories.
+
+The developer yesterday posted a warning on Twitter about the potential risk
+to developers of using GitHub ``for your life's work'' after he was abruptly
+locked out, apparently following a single complaint from another user.
+
+Despite the apology from Friedman and after having received an email from
+GitHub support, Rohrer is still in the dark about why his account was
+blocked, preventing him from accessing the 5,000 commits and the 23
+repositories that he's created over the past five years.
+
+``The biggest problem here was that I wasn't even emailed when my account was
+blocked. GitHub emails me notifications all the time. For such an active
+account with such a deep history, taking it down in a silent POOF with no
+notification? I was greeted with a 404,'' he wrote.
+
+Cloud-hosting outfit DigitalOcean caused an uproar last week after blocking
+the account of small AI firm called Raisup. DigitalOcean locked the account
+after detecting what it thought was malicious code from Raisup's account.
+
+As Raisup CTO Nicolas Beauvais explained on Twitter, that supposedly
+malicious code was a actually a legit Python script it periodically uses to
+manage its databases.
+
+``We lost everything, our servers, and more importantly one year of database
+backups. We now have to explain to our clients, Fortune 500 companies why we
+can't restore their account,'' said Beauvais.
+
+Finally, Google this week had some explaining to do regarding Sunday's
+extensive four-hour outage, which impacted Google services as well as firms
+that rely on Google Cloud.
+
+A configuration change destined for a small group of servers in one region
+was wrongly applied by a machine or human to a larger number of servers
+across several neighboring regions. It resulted in regions having less than
+half their network capacity.
+
+------------------------------
+
+Date: Fri, 31 May 2019 17:23:50 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Former Head of Pentagon's Secret UFO Program Has Some Strange
+  Stories to Tell (Live Science)
+
+EXCERPT:
+
+The former leader of the U.S. government's top-secret UFO program has
+stories to tell, and he is sharing some of them for the first time in a new
+documentary.
+
+Intelligence officer Luis Elizondo served as the former director of the
+Pentagon's Advanced Aerospace Threat Identification Program (AATIP), an
+initiative launched in 2007 to study reports of UFO encounters. Elizondo
+departed the agency in 2011; in 2017, he spoke with reporters at The New
+York Times, confirming the existence of the shadowy agency and describing
+its mission.
+
+Now, Elizondo is pulling back the curtain on his tenure with the AATIP,
+which he left because of a lackluster official response to the agency's
+findings, and their unwillingness to address potential risks from UFOs,
+according to the new show *Unidentified: Inside America's UFO
+Investigation*, premiering May 31 on the History Channel at 10 p.m ET/9
+p.m. CT. [UFO Watch: 8 Times the Government Looked for Flying Saucers]
+
+No, there isn't a big reveal that UFOs were alien spacecraft all along. But
+delving into long-hidden accounts of UFO investigations will hopefully
+encourage people -- and authorities -- to overcome long-standing stigmas and
+talk more openly about these mysterious aircraft, some of which may pose a
+bigger threat than we realize, Elizondo told Live Science...
+
+[...]
+https://www.livescience.com/65596-ufo-pentagon-history-channel.html
+
+------------------------------
+
+Date: Wed, 5 Jun 2019 17:20:55 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Deaths on Mt. Everest; Is social media partly to blame?
+  (The Atlantic)
+
+Margret Grebowicz, Everest Is Over, *The Atlantic*, 5-June-2019
+
+  Today's `Everest selfie' gives a new dimension to this monomania, at
+  precisely the moment when successful climbers appear before the public
+  like addicts, or robots programmed to live out some mysterious inner
+  directive. Critics characterize the legions of privileged amateurs who now
+  ascend Everest as dilettantes who dishonor the mountain, endanger others,
+  and move this most solitary and personal experience to the realm least
+  appropriate for it: social media.
+
+https://www.theatlantic.com/health/archive/2019/06/mount-everest-has-lost-its-magic/591025/
+
+------------------------------
+
+Date: Fri, 31 May 2019 17:39:13 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: U.S. Visa Applicants Required To Turn Over Social Media (The Hill)
+
+EXCERPT:
+
+The Trump administration will implement a new policy Friday asking most
+applicants for U.S. visas to provide information on their use of social
+media, a U.S. Department of State official tells Hill.TV
+
+Most visa applicants, including temporary visitors, will be required to
+list their social media identifiers in a drop down menu along with other
+personal information.
+
+Applicants will have the option to say that they do not use social media if
+that is the case. The official noted that if a visa applicant lies about
+social media use that they could face ``serious immigration consequences''
+as a result.
+
+For now, the drop down menu only includes major social media websites, but
+the official said applicants soon will be able to list all sites that they
+use.
+
+``This is a critical step forward in establishing enhanced vetting of
+foreign nationals seeking entry into the United States.  As we've seen
+around the world in recent years, social media can be a major forum for
+terrorist sentiment and activity. This will be a vital tool to screen out
+terrorists, public safety threats, and other dangerous individuals from
+gaining immigration benefits and setting foot on U.S.  soil.''  ...
+
+https://thehill.com/hilltv/rising/446336-trump-admin-to-ask-most-us-visa-applicants-for-social-media-information
+
+------------------------------
+
+Date: Wed, 5 Jun 2019 15:05:38 -0400
+From: danny burstein <dannyb@panix.com>
+Subject: One way to tackle the nuclear waste prob: redefine the labels
+
+Kind of related to RISKS, namely in the politically influenced
+redefinitioning.
+
+> Newsgroups: panix.chat.politics
+> Subject: one way to tackle the nuclear waste prob:  redefine the labels
+
+[Gov. of Washington State press release]
+
+Inslee and Ferguson statement on Trump Administration actions to undercut
+nuclear cleanup at Hanford
+
+Today, the Trump Administration unilaterally changed the definition of
+high-level waste stored at Hanford and other nuclear waste sites across the
+country, opening the door for the federal government to walk away from its
+obligation to clean up millions of gallons of toxic, radioactive waste at
+Hanford. Washington currently holds 60 percent of the nation's high-level
+waste with 56 million gallons stored in 177 underground storage tanks at
+Hanford.  [...]
+
+<https://www.governor.wa.gov/news-media/inslee-and-ferguson-statement-trump-administration-actions-undercut-nuclear-cleanup>
+
+------------------------------
+
+Date: Thu, 6 Jun 2019 23:55:12 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: FCC Affirms Robocall Blocking By Default to Protect Consumers (FCC)
+
+https://www.fcc.gov/document/fcc-affirms-robocall-blocking-default-protect-consumers
+
+https://docs.fcc.gov/public/attachments/DOC-357852A1.txt
+https://docs.fcc.gov/public/attachments/DOC-357852A1.pdf
+
+Media Contact:
+Will Wiquist, (202) 418-0509
+will.wiquist@fcc.gov
+
+For Immediate Release
+
+FCC AFFIRMS ROBOCALL BLOCKING BY DEFAULT TO HELP PROTECT CONSUMERS
+
+Commission Also Seeks Comment on Requiring Caller ID Authentication
+Implementation and Use of Authentication Standards for Blocking
+
+WASHINGTON, June 6, 2019—The Federal Communications Commission today
+voted to make clear that voice service providers may aggressively block
+unwanted robocalls before they reach consumers.
+
+Specifically, the Commission approved a Declaratory Ruling to affirm
+that voice service providers may, as the default, block unwanted calls
+based on reasonable call analytics, as long as their customers are
+informed and have the opportunity to opt out of the blocking.  This
+action empowers providers to protect their customers from unwanted
+robocalls before those calls even reach the customers' phones.  While
+many phone companies now offer their customers call blocking tools on an
+opt-in basis, the Declaratory Ruling clarifies that they can provide
+them as the default, thus allowing them to protect more consumers from
+unwanted robocalls and making it more cost-effective to implement call
+blocking programs.
+
+The ruling also clarifies that providers may offer their customers the
+choice to opt-in to tools that block calls from any number that does not
+appear on a customer's contact list or other “white lists.”  This option
+would allow consumers to decide directly whose calls they are willing to
+receive.  Consumer white lists could be based on the customer's own
+contact list, updated automatically as consumers add and remove contacts
+from their smartphones.
+
+The Commission also adopted a Notice of Proposed Rulemaking that
+proposes requiring voice service providers to implement the SHAKEN/STIR
+caller ID authentication framework, if major voice service providers
+fail to do so by the end of this year.  It also seeks comment on whether
+the Commission should create a safe harbor for providers that block
+calls that are maliciously spoofed so that caller ID cannot be
+authenticated and that block calls that are “unsigned.”
+
+With adoption of this item, the Commission continues its multi-pronged
+strategy to combat unwanted and illegal robocalls.  The Declaratory
+Ruling will go into effect upon release of the item on FCC.gov.  The
+deadline for submitting comments in response to the Notice of Proposed
+Rulemaking will be established upon publication in the Federal Register.
+
+Action by the Commission June 6, 2019 by Declaratory Ruling and Third
+Further Notice of Proposed Rulemaking (FCC 19-51).  Chairman Pai,
+Commissioners Carr and Starks approving.  Commissioners O'Rielly and
+Rosenworcel approving in part and dissenting in part.  Chairman Pai,
+Commissioners O'Rielly, Carr, Rosenworcel, and Starks issuing separate
+statements.
+
+  [Oh Really?  Yes.  O'Reilly.  PGN]
+
+CG Docket No. 17-59; WC Docket 17-97
+
+Media Relations: (202) 418-0500 / ASL: (844) 432-2275 / TTY: (888)
+835-5322 / Twitter: @FCC / www.fcc.gov
+
+This is an unofficial announcement of Commission action.  Release of the
+full text of a Commission order constitutes official action.  See MCI v.
+FCC, 515 F.2d 385 (D.C. Cir. 1974).
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 00:15:44 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Privacy Fears Split German Government on Use of Alexa Data as
+  Evidence (Fortune)
+
+Smart home devices such as Amazon's Echo and virtual assistants such as
+Alexa or Apple's Siri can provide a lot of information about a person --
+when they're at home, what they're interested in and potentially even what
+they're saying. So it's no surprise that criminal investigators are
+interested in their potential.
+
+In Germany, the issue is setting up a clash between the interior ministry --
+the country's equivalent to the U.S. Department of Homeland Security -- and
+the justice ministry, which keeps an eye on the constitutionality of what
+other departments are up to.
+
+The federal interior ministry is preparing to back a proposal from the state
+of Schleswig-Holstein to make evidence from smart devices and virtual
+assistants admissible in court, the RND news organization reported
+Wednesday. The idea is to make the information available to investigators of
+serious crimes and terrorist threats.
+
+“Our view is that digital traces have become increasingly important. We are
+talking about traces that come from connected devices such as smart fridges
+but also voice-controlled devices such as smart speakers,” a spokesman for
+the interior ministry told the Financial Times.
+
+Unconstitutional?
+
+However, the justice ministry does not appear to be on board. Gerd Billen,
+the ministry's state secretary, said “law enforcement must be up-to-date,
+but there are limits set by the protection of the most personal spaces, and
+the freedom of accused people not to incriminate themselves. These limits
+must not be circumvented by any technology.”
+
+http://fortune.com/2019/06/06/germany-alexa-court-evidence/
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 00:12:18 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Apple's 'Find My' Feature Uses Some Very Clever Cryptography (WiReD)
+
+When Apple executive Craig Federighi described a new location-tracking
+feature for Apple devices at the company's Worldwide Developer Conference
+keynote on Monday, it sounded -- to the sufficiently paranoid, at least—like
+-- both a physical security innovation and a potential privacy disaster. But
+while security experts immediately wondered whether Find My would also offer
+a new opportunity to track unwitting users, Apple says it built the feature
+on a unique encryption system carefully designed to prevent exactly that
+sort of tracking -- even by Apple itself.
+
+In upcoming versions of iOS and macOS, the new Find My feature will
+broadcast Bluetooth signals from Apple devices even when they're offline,
+allowing nearby Apple devices to relay their location to the cloud. That
+should help you locate your stolen laptop even when it's sleeping in a
+thief's bag. And it turns out that Apple's elaborate encryption scheme is
+also designed not only to prevent interlopers from identifying or tracking
+an iDevice from its Bluetooth signal, but also to keep Apple itself from
+learning device locations, even as it allows you to pinpoint yours.
+
+https://www.wired.com/story/apple-find-my-cryptography-bluetooth/
+
+------------------------------
+
+Date: Fri, 7 Jun 2019 00:14:08 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: 'Sign In With Apple' Protects You in Ways Google and Facebook Don't
+  (WiReD)
+
+At Apple's Worldwide Developers Conference on Monday, the company debuted a
+slew of products and services, including a new Mac Pro that's part raw
+computing power, part cheese grater. But one new feature, mentioned in
+passing, could have an outsized impact on user security and privacy for
+years to come. Apple now has its own single-sign-on scheme -- and it's a
+major reimagining of how such a mechanism can work.
+
+You've seen single-sign-on before, even if you don't use it. It's the
+technology that lets you use your Google or Facebook login to access other
+third-party services, instead of needing to set a unique username and
+password for each one. They centralize a group of accounts around a more
+secure login that you're more likely to actively monitor and maintain,
+rather than a one-off account that you set with a weak password, save a
+credit card into, and then never think about again.
+
+Sign In with Apple looks similar enough to those alternatives at a glance,
+giving the option to use your Apple ID as a unified login wherever
+developers integrate it. But as part of its broader, years-long privacy
+push, Apple has added some extra protections that distinguish its version.
+
+https://www.wired.com/story/sign-in-with-apple-sso-google-facebook/
+
+------------------------------
+
+Date: Tue, 4 Jun 2019 16:56:17 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: NSA warns Microsoft Windows users to update systems to protect
+  against cyber-vulnerability (The Hill)
+
+https://thehill.com/policy/cybersecurity/446963-nsa-warns-microsoft-windows-users-to-update-systems-to-protect-against
+
+------------------------------
+
+Date: Tue, 4 Jun 2019 17:35:42 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: US visas now need five years of your social media ...
+
+Well, I don't think it's any secret that I am of the opinion that social
+media isn't exactly important.
+https://community.isc2.org/t5/Welcome/The-quot-Community-quot/m-p/10594
+
+Which makes the US decision to require "five years" of social media account
+information when applying for a visa all the more bizarre.
+https://nakedsecurity.sophos.com/2019/06/04/us-visa-applicants-required-to-hand-over-social-media-info/
+
+First: sorry, "five years"?  What five years?  Five years of postings?
+(Given it's an online form, that's unlikely.)  Accounts I've started in the
+past five years?  (Does that mean my Twitter account is exempt because it's
+older than that?)  Accounts I've used in the past five years?  (Does that
+mean that my Facebook account, which I haven't posted to in the past five
+years, is exempt?)  Or do you want the Facebook account because I've had to
+use it occasionally because people who posted what they thought was a public
+message couldn't figure out Facebook's byzantine aggregation of rights and
+permissions?
+
+What's considered social media?  The Facebook I don't use?  The Twitter I
+do?  The extra Twitter account that I only use for posting notices for our
+local chapter?  The extra, extra Twitter account that I use (professionally)
+for noting and researching spam, malware, and other unsavoury Twitter
+accounts?  The Whatsapp account that I created in order to test Whatsapp,
+and now use, infrequently, to send update notices to Gloria because that
+phone account has limited text messages?
+
+Should I include the Instagram that's in my name, but which Gloria uses
+because she likes to keep up with the kids, but she didn't want to create
+her own account, and I only look at when she tells me about something
+worthwhile?
+
+How about the Flickr account which I created more than five years ago, and
+last posted anything on more than five years ago, but which I send
+publishers to when they demand a photo to put next to something they are
+going to publish?
+
+Or should I create a number of new, sanitized social media accounts for
+applying for visas when I go the the States?  (Don't tell me that all kinds
+of people aren't going to be doing this ...)  OK, so far they aren't
+demanding passwords, so it's only public postings that they can look at,
+but, after all, this is supposed to be "social" media ...
+
+Do I get to tell whoever is processing my visa application that anything
+referring to "Friday" is not to be taken seriously?  (Come to think of it,
+that wouldn't do any good anyway, since anyone in a civil service job is
+bound to have had their sense of humour surgically removed, and wouldn't get
+any of the infosec jokes anyway ...)
+
+Is the ISC2 "community" a social media site?
+
+Are the Amish forbidden from applying for visas?
+
+Is this the thin edge of the wedge for "Total Information Awareness" again?
+
+Do you really think terrorists are going to post their plans on the same
+social media accounts that they are going to give the government?  (Yeah,
+yeah, but the really dumb ones can be caught in other ways, like adding a
+question to the form that says, "Are you planning on carrying out any
+terrorist attacks while in the United States?")  Do you think that DHS has
+people or AI skilled enough to identify fake accounts given on the forms and
+use forensic linguistics to link those to actual accounts really used by the
+applicant?  (Honestly?  You think that's likely?)
+
+Oh, and everything I've said here is private, right?
+
+------------------------------
+
+Date: Wed, 5 Jun 2019 00:37:20 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: What He Learned Trying To Secure Congressional Campaigns
+  (Idle Words)
+
+Author writes:
+
+You know how it happens. You try to secure one Congressional campaign, and
+then another, and pretty soon you can't stop. You'll fly across the country
+just to brief a Green Party candidate in a district the Republicans carried
+by 60 points. You want more, more, always looking for that next fix.
+
+This is the situation I found myself in from late 2017 to 2018, when I was
+part of an effort that delivered a basic, hour-long campaign security
+training to 41 Democratic Congressional campaigns. It was exciting! I
+traveled the country like Johnny Yubikey, distributing little blue security
+tokens from a sack. The campaigns ranged from beyond-long-shot candidates
+running from their den, all the way up to some nationally prominent
+figures. I took a selfie with Bernie! I wrote an opinion piece in the
+Washington Post!
+
+https://idlewords.com/2019/05/what_i_learned_trying_to_secure_congressional_campaigns.htm
+
+------------------------------
+
+Date: Mon, 3 Jun 2019 16:07:18 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Trump urges customers to drop AT&T to punish CNN over its coverage
+  of him (WashPost)
+
+Trump urges customers to drop AT&T to punish CNN over its coverage of him
+
+The president has been vocal in his opposition to a AT&T-Time Warner merger,
+which critics contend is motivated by his ire toward CNN.
+
+https://www.washingtonpost.com/business/2019/06/03/trump-urges-customers-drop-att-punish-cnn-over-its-coverage-him/
+
+------------------------------
+
+Date: Wed, 5 Jun 2019 17:53:17 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: How Limbic Capitalism Preys on Our Addicted Brains (Quillette)
+
+https://quillette.com/2019/05/31/how-limbic-capitalism-preys-on-our-addicted-brains/
+
+Limbic capitalism, a neologism, "refers to a technologically advanced but
+socially regressive business system in which global industries, often with
+the help of complicit governments and criminal organizations, encourage
+excessive consumption and addiction. They do so by targeting the limbic
+system, the part of the brain responsible for feeling and for quick
+reaction, as distinct from dispassionate thinking."
+
+Limbic capitalism monetizes and exploits the brain's reservoir of dopamine
+to build dependence. Mobile apps prey upon unsuspecting or vulnerable
+populations by over-stimulating dopamine dependency.
+
+I wonder if governments will eventually begin to rank and regulate mobile
+apps dopamine delivery on minute-by-minute basis, or per app event, and use
+this information to build another MSA? A mobile app "rationing" system (or
+tax) might materialize to forcibly curtail dopamine addiction.
+
+A cold-turkey solution might be most effective to cut addition. With
+antitrust drums beating louder in Congress, the call to regulate screen time
+might be on the horizon.
+
+https://www.washingtonpost.com/news/powerpost/paloma/the-technology-202/2019/06/04/the-technology-202-apple-may-not-be-able-to-escape-political-peril-in-washington-anymore
+
+https://www.washingtonpost.com/news/powerpost/paloma/the-technology-202/2019/06/03/the-technology-202-silicon-valley-braces-for-potential-antitrust-battle-with-washington/
+
+Risk: Regulatory capture by dopamine addicted politicians dilutes
+legislative efforts to reign in limbic capitalism.
+
+------------------------------
+
+Date: Thu, 6 Jun 2019 23:33:01 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: This ID Scanner Company is Collecting Sensitive Data on Millions of
+  Bar-goers (Medium)
+
+https://onezero.medium.com/id-at-the-door-meet-the-security-company-building-an-international-database-of-banned-bar-patrons-7c6d4b236fc3
+
+------------------------------
+
+Date: Wed, 5 Jun 2019 12:17:17 -0700
+From: "Peter G. Neumann" <peter.neumann@sri.com>
+Subject: VR Systems remotely accessed Durham county computer before 2016
+  election (Kim Zetter)
+
+https://twitter.com/KimZetter/status/1136329187340374017
+
+------------------------------
+
+Date: Thu, 6 Jun 2019 16:00:37 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Election Rules Are an Obstacle to Cybersecurity of Presidential
+  Campaigns (NYTimes)
+
+One year out from the 2020 elections, presidential candidates face legal
+roadblocks to acquiring the tools and assistance necessary to defend against
+the cyberattacks and disinformation campaigns that plagued the 2016
+presidential campaign.
+
+Federal laws prohibit corporations from offering free or discounted
+cybersecurity services to federal candidates. The same law also blocks
+political parties from offering candidates cybersecurity assistance because
+it is considered an “in-kind donation.”
+
+The issue took on added urgency this week after lawyers for the Federal
+Election Commission advised the commission to block a request by a Silicon
+Valley company, Area 1 Security, which sought to provide services to 2020
+presidential candidates at a discount. The commission is expected to decide
+on Area 1's request at a public meeting on Thursday.
+
+Cybersecurity and election experts say time is running out for campaigns to
+develop tough protections.
+
+https://www.nytimes.com/2019/06/06/technology/ftc-rules-cyberattacks.html
+
+What He Learned Trying To Secure Congressional Campaigns (Idle Words)
+
+https://idlewords.com/2019/05/what_i_learned_trying_to_secure_congressional_campaigns.htm
+
+------------------------------
+
+Date: Mon, 3 Jun 2019 11:33:05 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: More on Mueller and Interference (Time)
+
+http://time.com/5597514/robert-mueller-statement/
+
+"I will close by reiterating the central allegation of our indictments --
+that there were multiple, systematic efforts to interfere in our election.
+
+  2. Intrusions Targeting the Administration of U.S. Elections
+
+  In addition to targeting individuals involved in the Clinton Campaign, GRU
+  officers also targeted individuals and entities involved in the
+  administration of the elections. Victims included U.S. state and local
+  entities, such as state boards of elections (SBOEs), secretaries of state,
+  and county governments, as well as individuals who worked for those
+  entities.  The GRU also targeted private technology firms responsible for
+  manufacturing and administering election-related software and hardware,
+  such as voter registration software and electronic polling stations.
+
+------------------------------
+
+Date: Wed, 5 Jun 2019 12:10:41 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Phishing calls
+
+I was awakened by a phone call this morning.  Obviously recorded, probably
+computer generated.
+
+Telling me that there were spurious charges on my Visa card.
+
+Right off there were indications that this was a fraud.  First off, it
+didn't identify the issuing bank, and identified the card by saying the
+number started with 45.  (*All* Visa cards start with 45 ...)  Also, while
+the message was recorded or generated, there was no change in tone when the
+message got to identifying the charges.  Recorded calls using something out
+of a database usually have a slight change in tone at that point.  (I
+figured it was a bit of a gamble telling me that I had a charge from Amazon
+for $300 and one from Google Play for $1,000, since I might deal with those
+entities, but I suppose the risk is small.)
+
+I was supposed to stay on the line for a security agent, but I didn't feel
+like playing games with them.  I assume someone would have been trying to
+get info that they could then use to actually perpetrate a fraud on my card.
+
+A bit later I went to the bank.  They obviously knew about the calls and the
+ script.  (And confirmed that there were no charges or flags on our card.)
+
+------------------------------
+
+Date: Sat, 1 Jun 2019 17:04:51 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Boeing Built Deadly Assumptions Into 737 Max, Blind to a Late
+  Design Change (NYTimes)
+
+https://www.nytimes.com/2019/06/01/business/boeing-737-max-crash.html
+
+------------------------------
+
+Date: Sat, 1 Jun 2019 10:36:03 +0200
+From: Peter Bernard Ladkin <ladkin@causalis.com>
+Subject: Re: 737 MAX AoA Indications (Karish, RISKS-31.27)
+
+Chuck Karish opines in RISKS-31.27 that Boeing's statement, that
+angle-of-attack (AoA) indicator and the "AOA Disagree" alert are not
+necessary for the safe operation of the Boeing 737 MAX, "misrepresents the
+situation". Karish opines "the AOA Disagree alert is a vital indication to
+the pilots that MCAS is malfunctioning and that corrective action is
+needed."
+
+One can ask the operators themselves, the pilots. When the Boeing statement
+was released, I asked some senior pilots for major airlines, with whom I
+have been corresponding for some decades, what they thought. There are two
+components to the Boeing statement, which it is useful to separate:
+
+1). AoA indication is not necessary for the safe operation of the Boeing 737
+MAX.
+
+2). The "AOA Disagree" alert on the Primary Flight Display (PFD) is not
+necessary for the safe operation of the Boeing 737 MAX.
+
+Concerning 1), the pilots who responded generally agree that AoA indication
+is not necessary, and does not help much if at all, when flying commercial
+transport aircraft.
+
+JT 610 and ET-302 are not the first accidents concerning which the question
+of AoA indication in commercial transports has arisen. In their final report
+on the 2009 accident to AF 447, an Air France A330 lost over the South
+Atlantic during a flight from Brazil to France, the BEA recommended "that
+EASA and the FAA evaluate the relevance of requiring the presence of an
+angle of attack indicator directly accessible to pilots on board aeroplanes".
+(See Section 4.2.2 of the Final Report at
+https://www.bea.aero/docspa/2009/f-cp090601.en/pdf/f-cp090601.en.pdf)
+
+AoA indication on commercial transports has been debated for far longer than
+this.  For example, there was an article about it nearly twenty years ago in
+Boeing Aero magazine #12, March 2000:
+http://www.boeing.com/commercial/aeromagazine/aero_12/attack.html
+
+Given the decades of such engineering and operational debate about it
+amongst all stakeholders, it would have surprised me had Boeing said
+something misleading about 1).
+
+Concerning 2), a senior pilot, qualified on the Boeing 737 (all varieties)
+and undergoing the required recurrent training, pointed out that having an
+"AoA disagree" indication does not change flight crew response to the
+aerodynamic situation at all. The Boeing 737 MAX checklist for an "AoA
+disagree" indication warns that AS and altitude information might disagree
+or be unreliable. That's it (I am told). That information is already present
+on the PFDs, in rather more prominent form than the "AoA disagree"
+alert. And the stick shaker might also activate, as it did during the
+accidents to JT-610 and ET-302. The stick shaker is a very tactile warning
+of being in an approach-to-stall regime and that crew should pay immediate
+attention to AS. He concluded that an "AoA disagree" alert indeed counts as
+supplementary information, and not as necessary information. That directly
+contradicts Karish's opinion that it is "vital".
+
+Boeing's statement seems completely consistent with their, and other
+experts', long-standing engineering and operational judgment about AoA
+indications and alerting on commercial transport aircraft. One may disagree
+with those engineering and operational judgments. But the trope of
+"regulatory capture", suggested by Karish, doesn't enter into it at all.
+
+------------------------------
+
+Date: Sat, 1 Jun 2019 03:38:32 -0700
+From: Chuck Karish <chuck.karish@gmail.com>
+Subject: Re: 737 MAX AoA Indications (Karish, RISKS-31.28)
+
+In his response to my post in RISKS.31-27, Prof. Ladkin does not address the
+clause that gives that post its meaning: "Once the MCAS takes control of the
+airplane away from the pilots". Boeing built the MCAS because they
+anticipated that pilots would not be able to safely operate the 737 MAX
+airplane manually in certain flight conditions. While an experienced pilot
+might not need a working AOA indicator to fly the airplane, the MCAS does
+need it. Installation of the MCAS made the AOA indicators safety critical.
+
+------------------------------
+
+Date: Sat, 1 Jun 2019 18:20:06 +0200
+From: Peter Bernard Ladkin <ladkin@causalis.com>
+Subject: Re: 737 MAX AoA Indications (Karish, RISKS-31.28)
+
+That assertion is incorrect. Both crews were theoretically able to control
+their aircraft until comparatively late in the development of each
+upset. Indeed, this is illustrated by the flight of PK-LQP immediately
+preceding JT 610, where the selfsame phenomenon manifested and the crew
+completed the flight safely.
+
+I add the caveat "until comparatively late" because there is some question
+whether, during the development of the upset situation in both flights, the
+aircraft entered a regime in which they could not be manually retrimmed
+because of aerodynamic forces inhibiting pilot movement of the trim
+wheel. That is not a fault in itself - such regimes are "a fact of
+[aerodynamic] life", according to a distinguished aerodynamicist
+colleague. However, there is continued discussion as to how and why the
+crews could have got into that regime, if indeed they did.
+
+These accidents were not deterministic. It is not as if, when MCAS cut in
+because of the sensor malfunction, the crew became powerless and the flights
+were doomed. There has been extensive discussion in pilot forums as to what
+went on, why it went on, and how and why the respective crews might have
+reacted differently. And presumably there is considerable discussion of this
+matter within the accident investigations themselves.
+
+> Boeing built the MCAS because they anticipated that pilots would not be
+> able to safely operate the 737 MAX airplane manually in certain flight
+> conditions.
+
+That is not so. See
+https://abnormaldistribution.org/index.php/2019/04/30/ieee-spectrum-on-possible-software-involvement-in-two-recent-airliner-crashes/
+for the reason I was given as to why the MCAS function was added to the STS.
+
+> While an experienced pilot might not need a working AOA indicator to fly
+> the airplane, the MCAS does need it.
+
+The MCAS function needs a working AoA sensor.
+
+> Installation of the MCAS made the AOA
+> indicators safety critical.
+
+No, not cockpit indications such as AoA display or "AOA Disagree" alert.
+
+The correct operation of the AoA sensor itself is "safety-critical" in
+informal terms. Formally, the AoA sensor is, on the Boeing 737 MAX, a
+non-redundant causal component of a subsystem with a malfunction severity of
+"hazardous". (Whether the classification as "hazardous" was/is appropriate
+is another question arising from the accidents.)
+
+------------------------------
+
+Date: Sat, 1 Jun 2019 14:08:06 -0700
+From: Chuck Karish <chuck.karish@gmail.com>
+Subject: Re: 737 MAX: Boeing dodges responsibility, with help from the FAA
+  (Ladkin, RISKS-31.28)
+
+In my submission to RISKS-31.27 I was a bit too critical of Boeing's May 5
+press release. The MCAS doesn't depend on the "angle of attack indicator"
+for safety, it depends directly on the angle of attack sensor. In the
+context of the then-current uproar the press release was misdirection
+rather than mischaracterization.
+
+------------------------------
+
+Date: Sun, 2 Jun 2019 12:25:09 -0600
+From: jared gottlieb <jared@netspace.net.au>
+Subject: Re: GM Gives All Its Vehicles a New Soul (RISKS-31.27)
+
+Are over-the-air (OTA) updates new functionality? Link to Consumer's Reports
+article from April 2018 is
+https://www.consumerreports.org/automotive-technology/automakers-embrace-over-the-air-updates-can-we-trust-digital-car-repair/
+with a brief mention of security. Link to GM Canada, at least a year old, is
+https://www.onstar.com/ca/en/software_terms/ is informative.
+
+One question reading the T&C is whether the vehicle pulls the updates or the
+more risky push from a central server. Doesn't negate the risk of buggy new
+software (as compared to buggy old software) nor the annoyance of unwanted
+features updates.
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.28
+************************

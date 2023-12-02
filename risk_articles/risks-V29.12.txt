@@ -1,0 +1,433 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 25 November 2015  Volume 29 : Issue 12
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.12.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Laser damages pilot's eye (The Guardian)
+Data breach in Georgia could affect 6 million voters (MYAJC)
+Tech group rejects post-Paris call for data encryption backdoors (Volz)
+After Lenovo now Dell PCs and Laptops are shipping with rogue root level CA
+  (Techworm)
+Dell provides cert removal tool nightmare (Ars Technica)
+SSL Safer (SHA2TEST.com)
+The Right to Tinker With Cars' Software (NYTimes)
+Dyre for Win 10 (Help Net & Heimdal)
+Federal privacy law lags far behind personal-health technologies (WashPo)
+The 911 System Isn't Ready for the iPhone Era (NYTimes)
+Bank fined: automated electronic foreign exchange trading misconduct
+  (DFS.NY via The Conversation)
+IRS cyber security challenges (GAO & Gov Info Security)
+Net of Insecurity (Craig Timberg)
+Government minister poses with his password on a PostIt note
+  (Diomidis Spinellis)
+Multiple Paris Attackers were on US Watch Lists (Free Beacon)
+Re: Beware of ads that use inaudible sound... (Chris Drew)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 24 Nov 2015 3:46:28 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Laser damages pilot's eye
+
+http://www.theguardian.com/world/2015/nov/23/ba-pilots-eye-damaged-by-military-laser-shone-into-cockpit-at-heathrow
+
+------------------------------
+
+Date: Thu, 19 Nov 2015 21:20:51 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Data breach in Georgia could affect 6 million voters
+
+http://www.myajc.com/news/news/state-regional-govt-politics/data-breach-in-georgia-could-affect-6-million-vote/npQj8/
+
+  Georgia Secretary of State Brian Kemp acknowledged Wednesday that his
+  office last month illegally disclosed the Social Security numbers and
+  other private information of more than 6 million registered voters.  Kemp
+  said the data went to 12 organizations who regularly subscribe to "voter
+  lists" maintained by the state, and he was adamant that the "clerical
+  error" did not compromise Georgia's voter registration system.  But the
+  problem didn't become public until two voters filed a class-action lawsuit
+  alleging a massive data breach ... "This is a very serious breach
+  involving a huge number of Georgia residents," Vladeck said in an
+  email. "The types of information released -- especially SSNs and driver
+  license records (which generally have addresses, dates of birth, pictures
+  and other uniquely identifying information) -- are very, very valuable to
+  identity thieves." ... While the AJC and others -- including the Georgia
+  GOP and the Democratic Party of Georgia -- have since complied with the
+  request, at least one organization -- the Libertarian Party -- had not as
+  of Wednesday afternoon.  "I am out at my daughter's shooting competition,"
+  the Libertarian Party's Doug Craig said in a text when asked whether he
+  would return the disc. "Going to tomorrow ... maybe."
+
+You *really* think anyone returned the disks before copying off the
+contents?  REALLY?
+
+------------------------------
+
+Date: Mon, 23 Nov 2015 14:40:03 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Tech group rejects post-Paris call for data encryption backdoors
+
+Dustin Volz, Reuters, 19 Nov 2015
+
+The Information Technology Industry Council (representing Apple, Google,
+Microsoft, and dozens of other blue-chip tech companies): Weakening
+encryption to help the government monitor electronic communications in the
+name of national security "simply does not make sense,"
+
+http://www.reuters.com/article/2015/11/19/us-tech-encryption-idUSKCN0T82SS20151119#yuz2fj8mOmAbbxZo.97
+http://www.reuters.com/article/2015/11/19/us-tech-encryption-idUSKCN0T82SS20151119#gQS27WZkYLzT4mgw.99
+
+------------------------------
+
+Date: Mon, 23 Nov 2015 09:56:03 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: After Lenovo now Dell PCs and Laptops are shipping with rogue
+  root level CA
+
+  Nord has made a webpost describing eDellRoot. He says that though the
+  action performed by eDellRoot are not known at present, it may be in the
+  same category as Superfish. He says, "the eDellRoot certificate is a
+  trusted root that expires in 2039 and is intended for "All" purposes.
+  Notice that this is more powerful than the clearly legitimate DigiCert
+  certificate just above it, which spikes more curiosity."  The problem with
+  this rogue root level CA is that it is not know what spying activities it
+  will perform unlike the Superfish in Lenovo which was known to inject
+  adware into Lenovo PCs and Laptops without the users consent.
+  http://www.techworm.net/2015/11/dell-pcs-laptops-ship-with-edellroot.html
+
+  [See also
+https://www.duosecurity.com/static/pdf/Dude,_You_Got_Dell_d.pdf
+<https://www.duosecurity.com/static/pdf/Dude,_You_Got_Dell_d.pdf>
+  PGN]
+
+------------------------------
+
+Date: Mon, 23 Nov 2015 23:25:09 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Dell provides cert removal tool nightmare
+
+Dell apologizes for HTTPS certificate fiasco, provides removal tool
+
+http://arstechnica.com/security/2015/11/dell-apologizes-for-https-certificate-fiasco-provides-removal-tool/
+
+  Dell officials have apologized for shipping PCs with a certificate that
+  made it easy for attackers to cryptographically impersonate
+  HTTPS-protected websites and issued a software tool that removes the
+  transport layer security credential from affected machines.
+
+------------------------------
+
+Date: Sun, 22 Nov 2015 12:16:38 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: SSL Safer
+
+Heads-up regarding certificate changes coming first of the 2016 year.
+
+Go to this link:
+http://sha2test.com/
+You should see this result:
+Your browser supports SHA-2 SSL Certificates
+
+The certificate changes do *not* apply just to browsers, but if that test
+works your OS is probably ok, too.  (SSL certificate changes affect other
+applications, also.)
+
+and read that site above for more info, or:
+https://www.google.com/search?hl=en&as_q=SHA-1+certificate+change+2016&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occtany&safe=images&as_filetype=&as_rights&as_q=SHA-1+certificate+change+2016&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&as_filetype=&as_rights
+
+------------------------------
+
+Date: Tue, 24 Nov 2015 06:59:25 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: The Right to Tinker With Cars' Software (NYTimes)
+
+  FYI -- Hopefully, this decision re: auto SW will set off a new round of
+  innovation similar to what happened to digital networking after the
+  Carterfone decision.  HB
+  http://arstechnica.com/tech-policy/2008/06/carterfone-40-years/
+
+Barry Meier and Jad Mouawadnov. *The New York Times*, 22 Nov 2015
+For Auto Enthusiasts, the Right to Tinker With Cars' Software
+
+http://www.nytimes.com/2015/11/23/business/for-auto-enthusiasts-the-right-to-tinker-with-cars-software.html
+
+Car owners in the United States can soon play Volkswagen engineer, courtesy
+of the federal government.
+
+Last month, officials gave auto enthusiasts who want to beef up their car's
+performance the right to tinker with vehicle software without incurring the
+legal wrath of car makers.  The decision was one of many changes to a federal
+copyright law, including allowing people to jailbreak their mobile phones
+and reprogram older video games.
+
+Digital-rights activists have applauded the changes, which are scheduled to
+take effect next year.  But environmental regulators and car makers have
+warned that the decision opens a new front in a cat-and-mouse game with car
+lovers who soup up their engines -- perhaps violating emissions standards.
+[...]
+
+A version of this article appears in print on November 23, 2015, on page B1
+of the New York edition with the headline: Car Buffs Get the Keys to
+Software.
+
+------------------------------
+
+Date: Sun, 22 Nov 2015 14:17:52 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Dyre for Win 10 (Help Net & Heimdal)
+
+With each new Win flavor, the bad ware community figures out how to corrupt
+that also.
+
+A new version of the Dyre/Dyreza banking Trojan is ready for Win 10 and
+Microsoft Edge, the browser to eventually replace IE.
+
+This new version is out just in time for bad actors to steal from holiday
+shoppers, as it can take on just about any OS or browser.
+
+Dyreza is "Crime as a service network", to get into the bank accounts of
+anyone who accesses one of the 80,000 web sites they have infected, and also
+add them to the malware spam delivery botnetwork.
+
+http://www.net-security.org/malware_news.php?id156
+
+------------------------------
+
+Date: Sun, 22 Nov 2015 20:48:53 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Federal privacy law lags far behind personal-health technologies
+
+https://www.washingtonpost.com/news/to-your-health/wp/2015/11/17/federal-privacy-law-lags-far-behind-personal-health-technologies/
+
+------------------------------
+
+Date: Tue, 24 Nov 2015 09:21:21 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: The 911 System Isn't Ready for the iPhone Era
+
+http://www.nytimes.com/2015/11/23/opinion/the-911-system-isnt-ready-for-the-iphone-era.html
+
+First responders are still relying on an emergency system based on dangerously outmoded technology.
+
+------------------------------
+
+Date: Fri, 20 Nov 2015 10:20:07 +1100
+From: Andrew Waugh <andrew.waugh@gmail.com>
+Subject: Bank fined: automated electronic foreign exchange trading misconduct
+
+The NYDFS press release explaining the misconduct in detail...
+http://www.dfs.ny.gov/about/press/pr1511181.htm
+
+"In certain instances, Barclays used this Last Look system to automatically
+reject client orders that would be unprofitable for the bank because of
+subsequent price swings during milliseconds-long latency (`hold') periods.
+Furthermore, when clients questioned Barclays about these rejected trades,
+Barclays failed to disclose the reason that the trades were being rejected,
+instead citing technical issues or providing vague responses."
+
+A description of the misconduct intended for the general public:
+
+https://theconversation.com/21st-century-bank-fraud-demands-a-new-generation-of-it-experts-50967
+
+------------------------------
+
+Date: Sun, 22 Nov 2015 17:09:17 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: IRS cyber security challenges (GAO & Gov Info Security)
+
+In the USA, the Internal Revenue Service (IRS) is under constant criticism
+thanks to a variety of government investigations uncovering a stream of new
+scandals.  There is an Office of Inspector General (OIG) at the Dept of the
+Treasury, devoted exclusively to investigating the IRS.
+https://www.treasury.gov/tigta/
+
+Many gov agencies are underfunded.  When the choice is not doing their core
+mission, or keeping their security perfect, they choose the core mission,
+which explains many bad security reports, a steady annual growth in
+breaches, and other incidents.  That's why the US Government Accountability
+office (GAO) has found cyber security lacking in many gov agencies.
+
+http://www.gao.gov/products/GAO-16-194T
+
+The GAO found that the IRS is missing security patches going back to 2011,
+continues to use weak passwords, inadequate audit trails, or monitoring.
+
+http://www.govinfosecurity.com/gao-taxpayer-data-at-increased-risk-a-8685
+
+Some of the IRS's trouble arrived thanks to the US Supreme Court ruling in
+Citizen's United, giving nonprofits more rights than had been in IRS
+regulations, written by the US Dept of Treasury.  Republicans in Congress
+were so angry with IRS draconian treatment of conservative groups seeking
+nonprofit status, after Citizen's United, that they cut the IRS budget as
+punishment.  This means the IRS may as well forget about any security
+upgrades, to avoid sacrificing its core mission.
+
+------------------------------
+
+Date: November 24, 2015 at 6:17:24 AM EST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Net of Insecurity (Craig Timberg)
+
+Craig Timberg, in *The Washington Post* (via DH via Dave Farber)
+This is a multi-part project on the Internet's inherent vulnerabilities and
+why they may never be fixed.
+
+Part 1: A Flaw in the Design
+http://www.washingtonpost.com/sf/business/2015/05/30/net-of-insecurity-part-1/
+
+Part 2: The long life of a quick 'fix'
+http://www.washingtonpost.com/sf/business/2015/05/31/net-of-insecurity-part-2/
+
+Part 3: A disaster foretold - and ignored
+http://www.washingtonpost.com/sf/business/2015/06/22/net-of-insecurity-part-3/
+
+Part 4: Hacks on the highway
+http://www.washingtonpost.com/sf/business/2015/07/22/hacks-on-the-highway/
+
+Part 5: The kernel of the argument
+http://www.washingtonpost.com/sf/business/2015/11/05/net-of-insecurity-the-kernel-of-the-argument/
+
+Read the eBook. "The Threatened Net: How the Internet Became a Perilous Place"
+https://ganxy.com/i/107994/the-washington-post/the-threatened-net-how-the-web-became-a-perilous-place
+
+------------------------------
+
+Date: Mon, 23 Nov 2015 01:02:57 +0200
+From: Diomidis Spinellis <dds@aueb.gr>
+Subject: Government minister poses with his password on a PostIt note
+
+A picture making the rounds in the social media in Greece has a deputy
+government minister posing in front of a computer monitor featuring a PostIt
+note with his user name and password [1].  The yellow note contains the text
+"USER: YPOURGOS [minister]" and "123456", presumably as his password, listed
+under it.  The official in question is Nikos Toskas, the Deputy Minister for
+the Interior responsible for the police and the country's intelligence
+agency. Toskas has served the Greek army as well as NATO positions abroad as
+a high rank officer.  The 9 Mpixel photograph adorned the official's CV on
+the ministry's web site. After the brouhaha it was apparently cropped to
+remove the monitor with the offending PostIt note [2].
+
+[1] https://twitter.com/gveltsi/status/668415790228643845
+[2] http://www.yptp.gr/index.php?option=ozo_content&perform=view&idB87&Itemid@7&lang=GR&lang=?option=ozo_search&lang=EN&lang=GR?option=ozo_search&lang=EN&lang=GR?option=ozo_search&lang=EN
+
+------------------------------
+
+Date: Sat, 21 Nov 2015 14:36:39 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Multiple Paris Attackers were on US Watch Lists (Free Beacon)
+
+The US maintains many lists of people suspected of being a threat to US
+National Security, to US persons, and other trouble.  Even deadbeat Dads are
+on some of these lists.  Four of the perpetrators of the Paris Attacks were
+listed in a U.S. intelligence community counterterrorism database before the
+attacks, and one was on a U.S. no-fly list.  The $64 million question is
+whether the US had shared those databases with EU authorities, so that they
+could think twice before letting those people arrive, without any hassles.
+[PGN-ed from what AlMac sent]
+
+http://freebeacon.com/national-security/multiple-paris-attackers-were-on-u-s-watch-lists/
+
+See also related items:
+http://freebeacon.com/national-security/audit-homeland-security-faces-major-performance-issues/
+The US Office of Inspector General (OIG) conducted a computer audit of US
+Department of Homeland Security (DHS) and found serious issues.
+https://www.oig.dhs.gov/assets/Mgmt/2016/OIG-16-08-Nov15.pdf
+
+------------------------------
+
+Date: Thu, 19 Nov 2015 22:08:19 +0000
+From: Chris Drew <e767pmk@yahoo.co.uk>
+Subject: Re: Beware of ads that use inaudible sound... (RISKS-29.10)
+
+At risk of stating the obvious: one thing that I found when I worked in
+telecomms was how collecting revenues for services in traditional ways is a
+mighty costly activity.  Telecomms and other utility businesses have to sign
+up customers (and maybe do creditworthiness checks) for a contract
+initially, measure their useage, periodically compile a bill to notify them
+of what they owe, get the money off them, chase up late/non-payers, handle
+any disputes, deal with taxes if applicable, etc. which is a big
+administrative overhead.
+
+For internet-based services it's probably a lot easier to offer a service
+free of charge to all-comers, then count the clicks-through and analyse
+usage, and sell onwards the marketing intelligence thus gained -- no need
+to have any direct contact with end-users.  This is what people expect
+nowadays anyway; it's improbable that search engines and social-networking
+web sites would have thrived if users had to pay bills to use them.
+(Presumably this is why some newspapers and magazines are now issued free of
+charge, it's easier to fund them entirely out of advertising than by selling
+them and having to handle the cash.)
+
+The alternative to capitalism is having services provided by Governments.
+It's interesting to speculate how today's Internet (and smartphones, etc.)
+may have developed if telecomms service was still provided by PTTs
+(post/telephone/telegraph administrations) as it was in most countries
+before the 1980s.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.12
+************************

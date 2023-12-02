@@ -1,0 +1,442 @@
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.29
+
+RISKS-LIST: Risks-Forum Digest  Friday 25 September 2020  Volume 32 : Issue 29
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.29>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Tesla network outage -- massive (Electrek and The Sun)
+5G Wireless May Lead to Inaccurate Weather Forecasts (Rutgers Today)
+Major Instagram App Bug Could've Given Hackers Remote Access to Your Phone
+  (The Hacker News)
+Tribune staff furious as cybersecurity test email makes cruel promises
+  (WashPost)
+World's Biggest DataBreaches and Hacks (Information Is Beautiful)
+UK COVID-19 test booking website bugs tell some user no test slots are
+  available (Schools Week)
+Pandemic spurs journalists to go it alone via email (Axios)
+Re: Old TV caused village broadband outages for 18 months (Attila the Hun)
+Re: Unsecured Microsoft Bing Server Exposed Users' Search Queries and
+  Location (paul wallich)
+Re: D.C.'s New Area Code Will Be... 771 (John Levine)
+Re: UK Companies House (Peter Bernard Ladkin)
+Re: Boeing cuts flight training pilots, will outsource jobs overseas: Link
+  fix (Steve Klein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 23 Sep 2020 08:05:25 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Tesla network outage -- massive (Electrek and The Sun)
+
+*TESLA's network completely dropped in a massive outage on Wednesday that
+left drivers unable to connect to their cars.*
+
+According to Electrek, internal systems were fully down and around 11am ET,
+users couldn't connect their vehicles to the mobile app.
+
+<https://electrek.co/2020/09/23/tesla-suffers-complete-network-outage-internal-systems-and-connectivity-features-down/>
+
+The outage -- which appeared to be global -- is said to be one of the "most
+wide-ranging" in Tesla's history...
+
+https://www.the-sun.com/news/1521051/tesla-network-outage-down-elon-musk-cars-connectivity/
+
+Connectivity was reportedly returning for some users' cars.
+<https://www.the-sun.com/topic/electric-cars/>
+
+------------------------------
+
+Date: Fri, 25 Sep 2020 13:11:35 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: 5G Wireless May Lead to Inaccurate Weather Forecasts
+  (Rutgers Today)
+
+5G Wireless May Lead to Inaccurate Weather Forecasts
+Rutgers Today, 24 Sep 2020 via AM TechNews 25 Sep 2020
+
+A study by Rutgers University researchers found upcoming 5G wireless
+networks that expedite cellphone service may lead to inaccurate weather
+forecasts. Signals from 5G frequency bands could leak into the band used by
+weather sensors on satellites that quantify atmospheric water vapor. The
+Rutgers team used computer modeling to examine the impact of unintended 5G
+leakage into an adjacent frequency band in predicting the 2008 Super Tuesday
+Tornado Outbreak in the South and Midwestern regions of the U.S. The
+modeling found 5G leakage of -15 to -20 decibel Watts impacted the accuracy
+of rainfall forecasting by up to 0.9 millimeters during the tornado
+outbreak, and also affected forecasting of temperatures near ground level by
+up to 2.34 degrees Fahrenheit. Rutgers' Narayan B. Mandayam said, "If we
+want leakage to be at levels preferred by the 5G community, we need to work
+on more detailed models as well as antenna technology, dynamic reallocation
+of spectrum resources, and improved weather forecasting algorithms that can
+take into account 5G leakage."
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-272d2x2251b5x065481&
+
+------------------------------
+
+Date: Thu, 24 Sep 2020 08:24:15 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Major Instagram App Bug Could've Given Hackers Remote Access to
+  Your Phone (The Hacker News)
+
+Ever wonder how hackers can hack your smartphone remotely?
+
+In a report shared with The Hacker News today, Check Point researchers
+disclosed details about a *critical vulnerability*
+<https://www.facebook.com/security/advisories/cve-2020-1895> in Instagram's
+Android app that could have allowed remote attackers to take control over a
+targeted device just by sending victims a specially crafted image.
+
+What's more worrisome is that the flaw not only lets attackers perform
+actions on behalf of the user within the Instagram app -- including spying
+on victim's private messages and even deleting or posting photos from their
+accounts -- but also execute arbitrary code on the device.
+
+According to an *advisory*
+<https://m.facebook.com/security/advisories/cve-2020-1895> published by
+Facebook, the heap overflow security issue (tracked as CVE-2020-1895, CVSS
+score: 7.8) impacts all versions of the Instagram app prior to
+128.0.0.26.128, which was released on February 10 earlier this year.
+
+"This [flaw] turns the device into a tool for spying on targeted users
+without their knowledge, as well as enabling malicious manipulation of their
+Instagram profile," Check Point Research said in *an analysis published
+today.
+<https://blog.checkpoint.com/2020/09/24/instahack-how-researchers-were-able-to-take-over-the-instagram-app-using-a-malicious-image/>*
+
+"In either case, the attack could lead to a massive invasion of users'
+privacy and could affect reputations -- or lead to security risks that are
+even more serious."
+
+After the findings were reported to Facebook, the social media company
+addressed the issue with a patch update released six months ago. The public
+disclosure was delayed all this time to allow the majority of Instagram's
+users to update the app, thereby mitigating the risk this vulnerability may
+introduce.
+
+Although Facebook confirmed there were no signs that this bug was exploited
+globally, the development is another reminder of why it's essential to keep
+apps up to date and be mindful of the permissions granted to them.  A Heap
+Overflow Vulnerability.  [...]
+
+https://thehackernews.com/2020/09/instagram-android-hack.html
+
+------------------------------
+
+Date: Thu, 24 Sep 2020 09:46:03 +0200
+From: Peter Houppermans <peter@houppermans.net>
+Subject: Tribune staff furious as cybersecurity test email makes cruel
+  promises (WashPost)
+
+Source: https://www.washingtonpost.com/media/2020/09/23/tribune-bonus-email-phishing-hoax/
+
+"Employees of the Tribune Publishing Company were momentarily thrilled
+Wednesday after they received a company email announcing that they were each
+getting a bonus of up to $10,000, to 'thank you for your ongoing commitment
+to excellence.'
+
+To see how big their bonus would be, they just had to click on a link that's
+well, that's when they learned they had failed the test.  This test ran into
+a history of furloughs and layoffs, and thus created considerable anger
+amongst staff.
+
+This leads to a number of interesting questions:
+
+1.  Employees: given this history, just how likely was the contents of that
+email?  The fact that many clicked illustrated that a phishing campaign
+using this exact contents for real *would have worked*.  This is PRECISELY
+how such scams work.
+
+2.  If the case of a real email hoax or phishing attempt, who would the
+staff have blamed for the consequences such as ransomware shutting the
+company down and potentially causing even more layoffs?  I assume the wrath
+would than go to the people who did this test?
+
+3.  What else could this company have done to prove this point?
+
+There is not enough information to assess if the company ran a staff security awareness training beforehand, but it certainly appears to be required.
+
+------------------------------
+
+Date: Wed, 23 Sep 2020 12:21:51 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: World's Biggest DataBreaches and Hacks (Information Is Beautiful)
+
+https://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/
+
+------------------------------
+
+Date: Fri, 25 Sep 2020 13:58:27 +0100
+From: Matthew Pittman <matthew@pittman.me.uk>
+Subject: UK COVID-19 test booking website bugs tell some user no test slots
+  are available (Schools Week)
+
+https://schoolsweek.co.uk/anger-as-government-admits-test-and-trace-website-coding-error/
+
+This article has a good description of the bug(s), but the implication (that
+some infected people were being told there were no test slots available)
+have not, as far as I can tell, been explored in depth by mainstream media.
+
+It seems to me that if even a modest number of infected people were turned
+away and were not subsequently tested then there is a very good chance that
+a few generations of contacts down the track some infected patients will
+inevitably die.  To me this means that the software defect was a material
+factor in loss of human life.
+
+The article contains an analysis of testing by Adam Leon Smith, chair of the
+software testing specialist group of British Computer Society, The Chartered
+Institute for IT.  I'm reading between the lines when I suggest that it
+sounds like this part of the web was basically untested.
+
+There have been other articles in the press following up the connection with
+Deloitte, apparently the prime contractor for the testing service, but none
+I could find had the detail of this description.
+
+I have not fact checked the linked article.
+
+------------------------------
+
+Date: Thu, 24 Sep 2020 08:18:52 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Pandemic spurs journalists to go it alone via email (Axios)
+
+A slew of high-profile journalists have recently announced they are leaving
+newsrooms to launch their own, independent brands, mostly via email
+newsletters.
+
+Context: Many of those writers, working with new technology companies like
+Substack, TinyLetter, Lede, or Ghost, have made the transition amid the
+pandemic.
+
+   - The pandemic strained the finances of traditional newsrooms and
+   publications and sent most journalists to work from home.
+
+   - "I think many people in the journalism world saw how quickly their
+   business fortunes can change during COVID and decided they would rather
+   run their own business as opposed to be dependent on another businesses'
+   ebbs and flows," says Alex Kantrowitz, former Buzzfeed reporter turned
+   author of the Big Technology newsletter on Substack.
+   <https://bigtechnology.substack.com/>
+
+Driving the news: Several prominent businesses and technology or political
+journalists have left their news companies to launch their own newsletters,
+including:
+
+   - Alex Kantrowitz (formerly of Buzzfeed), Casey Newton (formerly of The
+   Verge), Josh Constine (formerly of TechCrunch), Andrew Sullivan (formerly
+   of New York Magazine), Emily Atkin (formerly of The New Republic), Anne
+   Helen Petersen (formerly of Buzzfeed) and Matt Taibbi, (formerly of
+   Rolling Stone).
+
+   - They join a wider cohort of journalists and pundits that have started
+   independent newsletters in the past few years, including Ben Thompson
+   (Stratechery <https://stratechery.com/>) and Bill Bishop (Sinocism
+   <https://sinocism.com/>).
+
+By the numbers:  [...]
+https://www.axios.com/pandemic-spurs-journalists-to-go-it-alone-via-email-613ca2d5-e8d5-4235-9582-48cc028e9d8b.html
+
+------------------------------
+
+Date: Wed, 23 Sep 2020 09:30:15 +0100
+From: Attila the Hun <attilathehun1900@tiscali.co.uk>
+Subject: Re: Old TV caused village broadband outages for 18 months
+  (BBC, RISKS-32.29)
+
+A longer article on the matter included the following:
+
+  "However, despite Openreach's triumphant claims, villagers
+   including Mr and Mrs Rees's own son, Aled, insisted yesterday
+   that their Internet problems persisted, long after the offending
+   television had been scrapped.
+
+Aled Rees told The Telegraph: ``This Mr Jones must be smoking something
+funny if he thinks it's got anything to do with the TV.  My parents had only
+had the TV a few months.  The problems in the village had been going on for
+much longer than that and are continuing today, even after they got rid of
+the TV.
+
+``I've no idea why Openreach are saying this -- they've got to blame
+somebody and they're not going to blame themselves.''
+
+Eirian Hughes, 63, said: ``This story is just a smokescreen, and the fact
+is, it's costing too much to connect to fibre. The broadband service is
+rubbish.''
+
+Farmer Geraint Jones, 60, said the connection speed was still ``worse than
+appalling.''
+
+An Openreach spokesman said: ``It's true to say the villagers were already
+having to put up with broadband on an old slower copper network -- but the
+faulty TV was clearly interfering with the existing service and we're
+delighted to have solved that particular mystery.
+
+``We're pleased to say the village is now in line to be upgraded imminently
+to superfast broadband which will improve matters even more.''
+
+I think the last statement might be more than a little suggestive.
+
+------------------------------
+
+Date: Wed, 23 Sep 2020 10:01:48 -0400
+From: paul wallich <pw@panix.com>
+Subject: Re: Unsecured Microsoft Bing Server Exposed Users' Search
+  Queries and Location (RISKS-32.28)
+
+> The logging database, however, doesn't include any personal details such as
+> names or addresses.
+
+If you have GPS coordinates, device details and query strings, it should be
+possible to de-anonymize quite a lot of that database using other
+sources. Even more risky (perhaps) is the possibility that de-anonymization
+would be mistaken (e.g. as a result of GPS margin of error). For a
+surveillance state this is particularly pernicious because of the habit
+search engines now have of putting additional words in their users' search
+boxes. So someone might get tagged for a search they didn't even
+intentionally make.
+
+------------------------------
+
+Date: 23 Sep 2020 14:43:24 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: D.C.'s New Area Code Will Be... 771 (RISKS-32.28)
+
+This is pretty impressive considering that there are over 7 million numbers
+allocated to 202, and only about 1.2 million people who live or work in the
+District. When I look at tables that show what numbers are allocated to what
+carriers, I see vast ranges to mobile carriers and to CLECs, who now mostly
+provide VoIP numbers. So perhaps there are a few people who want cool 202
+numbers even though they really live somewhere else.
+
+>... I wonder how many area codes NANPA ... when we'll need four-digit area
+>codes. Or hexadecimal >phone keypads, or phone numbers including */#. (Yes,
+>latter two are jokes -- mostly)
+
+You don't have to guess, it's on their web site:
+
+https://www.nationalnanpa.com/reports/April_2020_NANP_Exhaust_Analysis%20Final.pdf
+
+Based on current trends, it will be later than 2050 which is as far away as
+their models go. There was a burst of demand when mobile phones were new,
+and when CLECs were setting up modem banks. (At the time they had to
+allocate a 10,000 number block even if the CLEC only needed a handful of
+numbers, a problem since fixed.) But things have slowed down a lot since
+everyone now has a phone, and modems are found only in burglar alarms and
+history museums.  -- Regards, John Levine, johnl@taugh.com, Primary
+Perpetrator of "The Internet for Dummies", Please consider the environment
+before reading this e-mail. https://jl.ly
+
+------------------------------
+
+Date: Wed, 23 Sep 2020 13:28:05 +0200
+From: Peter Bernard Ladkin <ladkin@causalis.com>
+Subject: Re: UK Companies House (Stein, RISKS-32.28)
+
+> "The UK's Companies House comprises a core system of record that
+> authenticates business ownership and persons of significant control (PSC)
+> -- corporate directors."
+
+There are two things wrong with this statement. First, the main point of
+Companies House is to incorporate and dissolve limited companies. The system
+of record is its second task. From its Website: "We incorporate and dissolve
+limited companies. We register company information and make it available to
+the public." https://www.gov.uk/government/organisations/companies-house
+
+Second, PSCs are not necessarily directors. Directors of a limited company
+have always been a part of the publicly-available company record held by
+Companies House.  The introduction of the category of PSC and the legal
+requirement for their public identification in April 2016 is a significant
+part of enhanced UK company transparency. Germany, a country with a
+reputation for careful control of companies, does not (yet) require a
+declaration of PSCs.
+
+PSCs are people (real people, not just legal individuals) who:
+
+* Directly or indirectly hold more than 25% of the shares (all UK limited
+  companies issue shares; that is how a company is owned); or
+* Directly or indirectly hold more than 25% of the voting rights; or
+* Directly or indirectly hold the right to appoint or remove a majority of
+  directors; or
+* Otherwise have the right to exercise, or actually exercising, significant
+  influence or control; or
+* Have the right to exercise, or actually exercise, significant influence or
+  control over the activities of a trust or firm which is not a legal
+  entity, but would itself satisfy any of the first four conditions if it
+  were an individual.  (See, for example,
+  https://www.waterfront.law/blog/persons-of-significant-control )
+
+I think it would enhance any country's transparency about companies to have
+a requirement for identifying PSCs. The report on the UK Government
+consultation on how to enhance company transparency further, referenced by
+Stein, does show that a requirement for identifying PSCs is not enough.
+
+I will note that the previously-booming London property market has long been
+recognised as an area in which large amounts of money are thought to be
+*laundered*, and that market has nothing to do with Companies House.
+
+Disclosure: I am majority owner and Director of a UK company registered at
+Companies House, and I am CEO ("Gesch\344ftsf\374hrer") of a German
+company fully owned by the English one.
+
+------------------------------
+
+Date: Fri, 25 Sep 2020 09:05:20 -0400
+From: Steve Klein <steven@klein.us>
+Subject: Re: Boeing cuts flight training pilots, will outsource jobs
+  overseas: Link fix (The Stand)
+
+The posted link is http, and should be https.  FIX:
+
+https://www.thestand.org/2020/09/boeing-cuts-flight-training-pilots-will-outsource-jobs-overseas/
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.29
+************************

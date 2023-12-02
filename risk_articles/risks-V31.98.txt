@@ -1,0 +1,596 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.98
+
+RISKS-LIST: Risks-Forum Digest  Friday 12 June 2020  Volume 31 : Issue 98
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.98>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Election fiasco: Georgia on my mind (NYTimes via PGN)
+Babylon Health app error allowed UK users to watch videos of  other
+  patients' private doctor visits (CBC-CA)
+How his photo ended up breaking Android phones (BBC News)
+Unusual rodent engine problem has suddenly become 'super common' (Freep)
+Honda confirms its network has been hit by cyber-attack (ZDNet)
+New CrossTalk attack impacts Intel's mobile, desktop, and server CPUs
+  (ZDNet)
+Australian beverage company hit by cyber-attack (SHM-AU)
+UPnP flaw exposes millions of network devices to attacks over the Internet
+  (Ars Technica)
+IoT Security Is a Mess. Privacy 'Nutrition' Labels Could Help (WiReD)
+Apple publishes free resources to improve password security (ZDNet)
+Satellites Are Capturing the Protests, and Just About Everything Else on
+  Earth (Bloomberg)
+Multiple US agencies have purchased this mysterious mobile eavesdropping
+  device (TechRadar)
+Telecom security firm flags 'potentially huge' vulnerabilities in Internet
+  infrastructure (Laurens Cerulus)
+FBI warns hackers are targeting mobile banking apps (The Hill)
+OpenAI's Text Generator Is Going Commercial (WiReD)
+Zoom disables accounts of former Tiananmen Square student leader (FT)
+Amazon bans police use of face recognition tech for one year (CNBC)
+Data from 15M phones shows some Americans are gathering at pre-pandemic
+  levels (NBC News)
+The hidden detectors looking for guns and knives (BBC)
+Trump Order Confronts Big Tech Bias
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 12 Jun 2020 14:09:25 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Election fiasco: Georgia on my mind
+
+  [PGN title, with apologies to Hoagy Carmichel]
+
+Nick Corasaniti and Stephanie Saul,
+In Georgia Election Havoc, a Costly Bet on Tech Led to Meltdown
+*The New York Times* front page and page A16, 12 Jun 2020
+
+"As Georgia election officials prepared to roll out an over-$100M high-tech
+voting system last year, good-government groups, a federal judge and
+election security experts warned of its perils.  The new system, they
+argued, was too convoluted, too expensive, too big -- and was still
+insecure."
+
+  "The problem seems to have been a perfect storm (overused metaphor, but
+     apt here) of new equipment, hasty training and a crush of tasks
+     associated with both getting the mail ballots out the door and
+     processed AND with running an in-person voting operation."
+    (Charles Stewart III)
+  "A lot of people saw this coming ... There are a lot more things that can
+     go wrong."  (Andrew Appel)
+  "A Rube Goldberg contraption" (Marilyn Marks)
+
+* Power demands blew fuses in aging polling places.
+* Some equipment never could power up.
+* Inability to boot equipment [once powered up].
+* PIN authorizations, physical cards.
+* Technicians who never explained the problems they fixed (on the fly).
+* In one location, only four poll workers instead of 12.
+* Inadequate training.
+* Dominion staff had to "replace only 20 components" among 30,000 machines
+  considered a success story!
+* Dominion's Democracy 5.5 system used in this election had failed
+  certification in Texas last year.
+* The computerized ballot-marking systems in other states were known
+  to cause problems in other states, due to user error, poor training,
+  infrastructure challenges, and "the occasional software issue".
+
+This is just one more fiasco in a year already marked by fiascos.
+November does not augur well.
+
+This election might remind RISKS readers of Murphy's Law.  However,
+in this case
+  "Anything that can go wrong will go wrong."
+might be recast as
+  "Everything that can go wrong did go wrong."
+
+So, asks a long-time RISKS reader,
+  "What's wrong with hand-marked paper ballots?"
+
+------------------------------
+
+Date: Tue, 9 Jun 2020 22:53:41 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Babylon Health app error allowed UK users to watch videos of
+  other patients' private doctor visits (CBC-CA)
+
+https://www.cbc.ca/news/canada/calgary/babylon-health-app-1.5605570
+
+------------------------------
+
+Date: Wed, 10 Jun 2020 14:34:21 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How his photo ended up breaking Android phones (BBC News)
+
+Gaurav Agrawal, a scientist and amateur photographer living in San Diego,
+couldn't believe it when he suddenly started seeing a photograph he took
+last summer popping up on the news.  He took it at St Mary Lake in Glacier
+National Park, Montana, one "magical evening" in August 2019.  He shared the
+snap on photo platform Flickr and thought no more about it.
+
+However, a glitch meant that when the image was set as wallpaper, it caused
+some Android phones to fail.  The handsets would switch on and off
+repeatedly, requiring a factory reset which meant all data on them was
+wiped.
+
+https://www.bbc.com/news/technology-52978884
+
+------------------------------
+
+Date: Tue, 9 Jun 2020 10:21:50 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Unusual rodent engine problem has suddenly become 'super common'
+  (Freep)
+
+There was once a little mouse that caused a big problem.
+
+The critter crawled up in the wheel well of a parked car, made his way over
+the brakes and up into the engine. Most rodents would stop there, it's a
+nice nesting spot. But this fella had other plans.
+
+He kept going until he was inside the dashboard and couldn't get out.
+There, he died (I didn't say it would be a happy story). The rancid and
+revolting odor compelled the car owner to bring it to Avis Ford in
+Southfield, where service technicians made the unsavory discovery.
+
+"Usually you find a wiring harness for the engine or the fuel injection
+system that is all chewed up," said Avis Ford's Service Manager Larry
+Sirgany. "We'll find a car that's been sitting for a couple weeks and it
+will have a big nasty nest in there too."
+
+Over the years, Sirgany has found plenty of flora and fauna in car engines.
+There are grass and twig nests and dead -- sometimes alive -- vermin and
+lots of chewed wires. The resulting damage is costly to fix.
+
+But this spring, amid the stay home order during the coronavirus pandemic,
+the rodent ruination to engines has been exceptionally high in some places.
+
+"I've seen a solid dozen to 15 cars with damage in the last six weeks,"
+Sirgany said. "Typically, I would have two per month this time of year."
+
+*Hundreds in repairs* [...]
+
+https://www.freep.com/story/money/cars/2020/06/09/rats-rodents-nest-parked-cars-coronavirus/3156961001/
+
+------------------------------
+
+Date: Wed, 10 Jun 2020 03:01:48 +0900
+From: Dave Farber <farber@gmail.com>
+Subject: Honda confirms its network has been hit by cyber-attack (ZDNet)
+
+https://www.zdnet.com/article/honda-confirms-its-network-has-been-hit-by-cyber-attack/
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Tue, 9 Jun 2020 20:19:15 -0400
+Subject: New CrossTalk attack impacts Intel's mobile, desktop, and server CPUs
+  (ZDNet)
+
+Academics detail a new vulnerability named CrossTalk that can be used to leak data across Intel CPU cores.
+
+https://www.zdnet.com/article/new-crosstalk-attack-impacts-intels-mobile-desktop-and-server-cpus/
+
+------------------------------
+
+Date: Tue, 9 Jun 2020 22:06:35 +0000
+From: John Colville <John.Colville@uts.edu.au>
+Subject: Australian beverage company hit by cyber-attack (SHM-AU)
+
+http://www.smh.com.au/technology/drinks-giant-lion-hit-by-cyber-attack-as-hackers-target-corporate-australia-20200609-p550pu.html
+
+------------------------------
+
+Date: Fri, 12 Jun 2020 07:40:11 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: UPnP flaw exposes millions of network devices to attacks over the
+  Internet (Ars Technica)
+
+Unsafe for more than a decade, universal plug and play strikes again.
+
+https://arstechnica.com/information-technology/2020/06/upnp-flaw-exposes-millions-of-network-devices-to-attacks-over-the-internet/
+
+------------------------------
+
+Date: Tue, 9 Jun 2020 20:08:12 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: IoT Security Is a Mess. Privacy 'Nutrition' Labels Could Help (WiReD)
+
+Just like with foods that display health information the package,
+researchers are exploring a tool that details how connected devices manage
+data.
+
+The Internet-of-things security crisis has been building for more than a
+decade, with unprotected, unpatchable gadgets fueling botnets, getting
+attacked for nation state surveillance, and just generally being a weak link
+for networks. Given that IoT security seems unlikely to magically improve
+anytime soon, researchers and regulators are rallying behind a new approach
+to managing IoT risk. Think of it as nutrition labels for embedded devices.
+
+https://www.wired.com/story/iot-security-privacy-labels/
+
+------------------------------
+
+Date: Tue, 9 Jun 2020 20:19:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple publishes free resources to improve password security (ZDNet)
+
+The new tools are meant to help the developers of password managers and
+Apple hopes the tools will reduce the instances where users chose their own
+password rather than rely on the password manager.
+
+https://www.zdnet.com/article/apple-publishes-free-resources-to-improve-password-security/
+
+------------------------------
+
+Date: Wed, 10 Jun 2020 09:43:53 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Satellites Are Capturing the Protests, and Just About Everything
+  Else on Earth (Bloomberg)
+
+*This year has brought immense change, much of it immortalized in
+high-resolution images from space.*
+
+As protesters gathered in Washington over the weekend, their march across
+the city was documented by photography satellites flying overhead. One
+particular image stood out and made its way to various television
+newscasts. It showed the the bright yellow *Black Lives Matter* mural that
+had been painted on two blocks of asphalt near the White House. It was
+visual proof that the protests and their message had, in a sense, made their
+way to space.
+
+The company that took the photo, Planet Labs Inc., has hundreds of
+satellites floating around Earth, enough that it can snap at least one photo
+of every spot on the planet every day, according to the startup. Such
+imagery used to be rare, expensive and controlled by governments. Now,
+Planet has built what amounts to a real-time accounting system of the earth
+that just about anyone can access by paying a fee.
+
+Over the next couple months, Planet is embarking on a project that will
+dramatically increase the number of photos it takes and improve the quality
+of the images by 25% in terms of resolution.  To do that, the company is
+lowering the orbits of some of its larger, high-resolution satellites and
+launching a half-dozen more devices. As a result, Planet will go from
+photographing locations twice a day to as many as 12 times a day in some
+places.
+
+Customers will also be able to aim the satellites where they want using an
+automated system developed by Planet. ``The schedule is shipped to the
+satellite, and it knows the plan it needs to follow,'' said Jim Thomason,
+the vice president of products at Planet.
+
+Advancements like this in satellite imaging would have seemed unbelievable
+to the folks who started working on such research in earnest in the 1960s.
+Back then, the U.S. had a top-secret operation that entailed putting
+satellites into orbit, snapping pictures and then ejecting canisters of film
+from the satellites that tumbled back to Earth to be caught midair by a
+plane. Analysts would then develop the film and pore over the images looking
+for Soviet missile sites and other military operations. This Rube
+Goldbergian process didn't always work well, but it did ultimately result in
+the U.S. learning that the Russian missile program was not as advanced as
+officials had feared.  [...]
+
+https://www.bloomberg.com/news/articles/2020-06-09/black-lives-matter-dc-street-art-captured-by-satellite-in-orbit
+https://www.msn.com/en-us/news/technology/satellites-are-capturing-the-protests-and-just-about-everything-else-on-earth/ar-BB15eV19
+
+------------------------------
+
+Date: Wed, 10 Jun 2020 09:44:50 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Multiple US agencies have purchased this mysterious mobile
+  eavesdropping device (TechRadar)
+
+Multiple US federal agencies have obtained a mysterious new eavesdropping
+device thought to be designed to monitor 4G-enabled mobile phones.
+
+Very little is known about the *Crossbow* device, other than it iterates on
+the Stingray ISMI-catchers manufactured by Harris, used to trace location
+data and listen in on phone calls.
+<https://www.techradar.com/news/governments-will-use-location-data-to-map-spread-of-coronavirus>
+
+While devices of this kind are used by law enforcement and intelligence
+across the globe, the air of mystery around the kit and a lack of
+transparency over the way in which it is being deployed has given rise to
+concern it could be used to infringe upon civil liberties.
+
+   - This WhatsApp feature will land your phone number in Google search
+   results
+<https://www.techradar.com/news/using-this-whatsapp-feature-will-land-your-phone-number-in-google-search-results>
+   - Google Incognito mode is not as private as you might like to think
+<https://www.techradar.com/news/google-incognito-mode-is-not-as-private-as-you-might-like-to-think>
+   - Contact tracing apps from Apple and Google 'will not collect location
+   data'
+<https://www.techradar.com/uk/news/contact-tracing-apps-from-apple-and-google-will-not-collect-location-data>
+
+Procurement documents show the US Marshals placed an order with Harris for
+Crossbow devices worth $1.7 million, while the US Army and Navy made
+similar purchases worth circa $380,000.
+
+*Mobile surveillance*
+
+ISMI-catchers, or international mobile subscriber identity-catchers, are
+able to mimic the qualities of a cellphone tower and, by this mechanism,
+record the SIM card identity, eavesdrop on calls, access text messages and
+capture location data. [...]
+
+https://global.techradar.com/en-za/news/multiple-us-agencies-have-purchased-this-mysterious-mobile-eavesdropping-device
+
+------------------------------
+
+Date: Wed, 10 Jun 2020 14:41:00 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Telecom security firm flags 'potentially huge' vulnerabilities in
+  Internet infrastructure (Laurens Cerulus)
+
+Laurens Cerulus, Politico
+
+BRUSSELS -- A key protocol for Internet traffic is riddled with
+vulnerabilities that pose risks to telecom operators, including the
+potential to bring down websites and allow fraudsters to set up fake
+traffic, a telecom security firm said Wednesday.
+
+The protocol ``contains a number of vulnerabilities threatening both mobile
+operators and their clients. As a result, attackers can interfere with
+network equipment and leave an entire city without communications,
+impersonate users to access various resources, and use network services at
+the expense of the operator or subscribers,'' Positive Technologies said in
+a new report.
+<https://www.politico.eu/wp-content/uploads/2020/06/POLITICO-Positive-Technologies-report-Threat-vector-GTP-June-2020.pdf>
+
+The widespread GTP protocol is used across the board by telecom companies
+and Internet service providers to manage Internet traffic. It is also used
+in core parts of Internet networks, meaning the vulnerabilities are likely
+to persist in coming years as operators build new 5G infrastructure that
+still relies on 4G core networks.
+
+``It's not like vulnerabilities in software. In the case of GTP, it is a
+kind of architectural deficiency. It's harder to eliminate,'' said Dmitry
+Kurbatov, chief technology officer at Positive Technologies. The firm
+performed security tests on dozens of networks in 2018-2019 and found
+``every network tested was vulnerable'' to exploits through the protocol.
+
+The vulnerabilities can be used to target servers with denial-of-service
+attacks, allow hackers to set up so-called man-in-the-middle attacks that
+trick people into thinking they are visiting legitimate websites, and even
+allow operators to send fraudulent traffic to other operators, Kurbatov
+said.
+
+------------------------------
+
+Date: Thu, 11 Jun 2020 09:57:09 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: FBI warns hackers are targeting mobile banking apps (The Hill)
+
+The FBI on Wednesday warned that malicious cyber actors were targeting
+mobile banking apps in an attempt to steal money as more Americans have
+moved to online banking during the coronavirus pandemic.
+
+In a public service announcement, the FBI noted it expects to see hackers
+exploit mobile banking platforms, which have seen a 50 percent surge in use
+since the beginning of the pandemic.
+<https://www.ic3.gov/media/2020/200610.aspx>
+
+``With city, state, and local governments urging or mandating social
+distancing, Americans have become more willing to use mobile banking as an
+alternative to physically visiting branch locations.  The FBI expects cyber
+actors to attempt to exploit new mobile banking customers using a variety of
+techniques, including app-based banking trojans and fake banking apps.''
+
+The FBI specifically pointed to threat of banking trojans, which involve a
+malicious virus hiding on a user's mobile device until a legitimate banking
+app is downloaded. Once the real app is on the device, the banking trojan
+then overlays the app, tricking the user into clicking on it and inputting
+their banking login credentials.
+
+Fake banking apps were also cited as a threat, with users in danger of
+being tricked into downloading malicious apps that also steal sensitive
+banking information.
+
+In order to combat these threats, the FBI recommended that Americans only
+download banking apps from official app stores or from banking websites and
+that banking app users enable two-factor authentication on their accounts
+and use strong passwords.  [...]
+https://thehill.com/policy/cybersecurity/502148-fbi-warns-hackers-are-targeting-mobile-banking-apps
+
+------------------------------
+
+Date: Thu, 11 Jun 2020 19:41:13 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: OpenAI's Text Generator Is Going Commercial (WiReD)
+
+The research institute was created to steer AI away from harmful uses.  Now
+it's competing with tech giants to sell a cloud-computing service to
+businesses.
+
+Last spring, artificial intelligence research institute OpenAI said it had
+made software so good at generating text—including fake news articles --
+that it was too dangerous to release. That line in the sand was soon erased
+when two recent master's grads recreated the software and OpenAI released
+the original, saying awareness of the risks had grown and it hadn't seen
+evidence of misuse.
+
+Now the lab is back with a more powerful text generator and a new pitch: Pay
+us to put it to work in your business. Thursday, OpenAI launched a cloud
+service that a handful of companies are already using to improve search or
+provide feedback on answers to math problems. It's a test of a new way of
+programming AI and the lab's unusual business model.
+
+https://www.wired.com/story/openai-text-generator-going-commercial/
+
+------------------------------
+
+Date: Thu, 11 Jun 2020 09:58:10 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Zoom disables accounts of former Tiananmen Square student leader
+
+*Chinese dissidents in US targeted after announcing plans for video call
+commemorating 1989 massacre*
+
+Zoom disabled the accounts of a group of Chinese dissidents in the US after
+they used its video conference service to commemorate the Tiananmen Square
+massacre.
+
+Zoom's role in shutting down the meeting, which was hosted and organised by
+activists in the US but included participants dialing in from China, will
+increase fears about the platform's security and how it will respond to
+government censorship requests.
+
+Zoom's video chat service has exploded in popularity since lockdowns were
+introduced across the globe to slow the spread of Covid-19. The company,
+which is listed on Nasdaq, has a large operation in China: almost a third
+of its workers are based in the country and much of its research and
+development takes place there. It also has servers in China.
+
+The annual Tiananmen Square commemoration was hosted on Zoom by a group of
+Chinese activists in the US, including Wang Dan, one of the most prominent
+leaders of the pro-democracy student movement that was crushed by the
+Chinese army in Beijing on June 4 1989.
+
+Mr Wang's team shared screenshots with the *Financial Times* of his Zoom
+call being canceled twice and two of his team's paid Zoom accounts being
+disabled. The cancellations started just as the meetings were due to begin
+on the morning of June 4 in Washington, where Mr Wang is based. He added
+that as of Thursday, the accounts remained disabled. [...]
+
+https://www.ft.com/content/f24bc9c6-ed95-4b31-a011-9e3fcd9cf006
+
+  [Lauren Weinstein noted this:
+    Zoom closes account of U.S.-based Chinese activist after Tiananmen event
+    (Axios): Zoom is effectively an arm of the Chinese communist government.
+    You should not be using it, there are many alternatives. -L
+https://www.axios.com/zoom-closes-chinese-user-account-tiananmen-square-f218fed1-69af-4bdd-aac4-7eaf67f34084.html
+   PGN]
+
+------------------------------
+
+Date: Wed, 10 Jun 2020 14:48:44 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Amazon bans police use of face recognition tech for one year (CNBC)
+
+https://www.cnbc.com/2020/06/10/amazon-bans-police-use-of-facial-recognition-technology-for-one-year.html
+
+------------------------------
+
+Date: Thu, 11 Jun 2020 22:04:53 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Data from 15M phones shows some Americans are gathering at
+  pre-pandemic levels (NBC News)
+
+Cellphone location data shows where people are leaving home and coming near other people.
+
+https://www.nbcnews.com/news/us-news/analysis-data-15m-phones-shows-some-americans-are-gathering-pre-n1229636
+
+------------------------------
+
+Date: Fri, 12 Jun 2020 11:53:42 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: The hidden detectors looking for guns and knives (BBC)
+
+https://www.bbc.com/news/business-52734768
+
+Security screens are inconvenient; they slow consumer foot traffic to
+benefit public safety.
+
+Enter real-time AI to assess the shape and density of concealed objects in
+high-foot traffic areas (transportation terminals, entertainment venues,
+office doorways). Potted plants frequently conceal metal and temperature
+detectors. Some detectors apply passive (non-ionizing) radiation to resolve
+features.
+
+Add facial recognition to auto-profile using Clearview AI to resolve
+(erroneously or not, given unknown false{positive, negative}) a name,
+address, social media linkage, etc.
+
+Significant, possibly panoptic, auto-profile ingress/egress go/no-go
+processing can promote complacency among security personnel, and raise alarm
+fatigue risk. Reducing human security footprint (aka business operational
+expense) is apparently a key motive fueling the business.
+
+Surveillance-enabling technologies seek to displace Barney beagle and other
+manual inspection deterrents. Over-reliance on deployed technology, without
+demonstrable public safety benefits (as measured by false positive/negative
+outcome, etc. versus human inspection) may prove catastrophic.
+
+------------------------------
+
+Date: Wed, 10 Jun 2020 14:55:24 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Trump Order Confronts Big Tech Bias (Whitehouse)
+
+<https://www.whitehouse.gov/presidential-actions/executive-order-preventing-online-censorship/>*
+
+President Trump finally issued an *Executive Order targeting viewpoint
+discrimination by Big Tech social media companies. The Order grows out of
+Trump's summit on this thorny issue last July. Topping the list of targets
+are Facebook, Twitter, Instagram, YouTube and Google, but there are many
+other possibilities.
+
+This form of discrimination is very much uncharted legal territory. The
+chosen central concept for Big Tech wrongdoing is censorship, as the EO is
+titled *Executive Order on Preventing Online Censorship*. This choice in
+itself is a strategic legal decision.
+
+The Order is basically a hunting license for federal agencies. There are
+two distinct parts. The first is basically laying out a number of legal
+arguments. If you are not familiar with the legal issues this may seem like
+empty rhetoric, but it is actually the opposite. The lawyers who wrote this
+order are preparing to stand before a judge.
+
+In fact the Order begins by focusing on the present law, which protects Big
+Tech from liability when they publish someone else's content. Here is the
+opening paragraph on that legal issue. Note that it is presented as a
+Federal policy.  [...]
+
+https://papundits.wordpress.com/2020/06/11/trump-order-confronts-big-tech-bias/
+
+------------------------------
+
+Date: Mon, 1 Jun 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.98
+************************

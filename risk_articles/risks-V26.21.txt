@@ -1,0 +1,641 @@
+precedence: bulk
+Subject: Risks Digest 26.21
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 16 November 2010  Volume 26 : Issue 21
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.21.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Domain Exploitation Society Celebrates "Swinging" New Top-Level Domains
+  (Lauren Weinstein)
+"Uncrackable" G2 Android Phone Successfully and Permanently Rooted
+  -- and Why This Matters! (Lauren Weinstein)
+Hazards of information leakage to youtube: a real story (Chiaki Ishikawa)
+Facebook's new chat/e-mail feature apparently records everything...
+  (Lauren Weinstein)
+Once you hit send, you can forget privacy (Joseph P. Kahn via Monty Solomon)
+Albert Gonzalez, The Great Cyberheist (James Verini via PGN)
+Rise of VoIP systems open new market for exploitation (Charles Wood)
+Re: A Strong Password Isn't the Strongest Security (Earl Nolan)
+Re: Something has been going right in the fight against spam (David E. Ross)
+Spam volume is indeed down (Peter B Ladkin)
+Re: J. Alex Halderman, Hacking DC, Freedom to Tinker (Erik Mooney)
+Re: Banks Rush to Fix Security Flaws in Wireless Apps (Michael Kowalchuk)
+Re: Remote starter risk (Randal L. Schwartz, Gene Wirchenko)
+Re: U.S. Daylight Saving Time ends with bug in iOS4 (Chris Kantarjiev)
+Re: Texting Stinks? (Alexandre Peshansky)
+Re: Cellphone's Missing Dot Kills Two People ... (A.E. Siegman)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 13 Nov 2010 19:23:09 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Domain Exploitation Society Celebrates "Swinging" New Top-Level Domains
+
+                Bulletin: Domain Exploitation Society Celebrates
+                       "Swinging" New Top-Level Domains
+                  http://lauren.vortex.com/archive/000780.html
+
+Frostbite Falls, Minn. (ZAP) -- The Minnesota-based Society for Leveraged
+Internet Mercenary Exploitation Domains (SLIMED) expressed enthusiastic
+satisfaction with leading domain registrar Go Daddy's decision to feature
+the new ".co" [sic] Top-Level Domain (TLD) as the default on its home page (
+http://www.godaddy.com ) today, reducing to "trash" status the old,
+obsolete, useless, silly, obscene, disgraceful, painful, purulent, and less
+expensive ".com" TLD that all consumers already understand.
+
+"This decision by Go Daddy to emphasize .co [sic] signals the real beginning
+of the TLD gold rush -- with literally thousands of new TLDs promised over
+the next few years by Internet Control Authorities," said Boris Puteo,
+SLIMED media affairs and financial director, at an interview today during a
+celebratory gala at the ultra-exclusive "Masa" restaurant in New York City.
+
+"TLDs are like gold," said Puteo, "even better than gold in fact, since you
+can't force people to buy bullion, but you've got everyone over a barrel
+when it comes to protective domain registrations!"
+
+Puteo refuted claims that the coming deluge of new TLDs will carry enormous
+costs and confuse consumers, while opening avenues for vast numbers of new
+phishing scams and spam attacks, without bringing any real positive value to
+ordinary Internet users.
+
+"If people can't figure out the difference between .co [sic] and .com,
+they're just, well, sic [sic!] in the head.  Why can't these bleeding heart,
+pencil-necked geeks stop rocking the boat ( http://bit.ly/dh6zOf [Lauren's
+Blog] ) and just get back into their cubicles and their damned programming
+-- oh excuuuse me, I mean "softwaaare engineeeering!" said Mr. Puteo, "Just
+leave the moola magic to us!"
+
+SLIMED's Puteo also noted that an illuminating and very short new YouTube
+video ( http://bit.ly/yt-tld-process ) was now available for viewing --
+showing the Top-Level Domain consideration procedure in action, and
+incontrovertibly demonstrating the complex, serious, lucid, and deliberative
+process involved in TLD approvals.
+
+"Top-Level Domains really swing!  And while I probably shouldn't be telling
+you this yet, SLIMED is hoping to make a deal with Burundi so that we can
+sell ".bi" TLD domains to everyone who swings both ways!  God, I love the
+Internet!" Puteo added.
+
+------------------------------
+
+Date: Tue, 9 Nov 2010 12:01:44 -0800
+From: Lauren Weinstein <privacy@vortex.com>
+Subject: "Uncrackable" G2 Android Phone Successfully and Permanently Rooted
+   -- and Why This Matters!
+
+                "Uncrackable" G2 Android Phone Successfully and
+                   Permanently Rooted -- and Why This Matters!
+                  http://lauren.vortex.com/archive/000778.html
+
+Greetings.  Almost exactly a month ago, in "New Android Phone (Falsely)
+Accused of Containing a 'Malicious Root Kit'" ( http://bit.ly/alTj4v
+[Lauren's Blog] ) -- I noted the situation with the new T-Mobile G2 Android
+phone (aka HTC Vision), where a new protection scheme had been employed by
+the manufacturer to (try) prevent "rooting" (also known as "jailbreaking").
+I also expressed my hope that "permanent rooting" efforts in progress would
+be successful.
+
+As I discussed, I view having complete control over my cell phones as being
+important for privacy and security reasons -- and in terms of overall user
+freedoms as well.  A "locked-down" device cannot be relied upon to run the
+systems and applications of users' choosing.  And while there are certainly
+those persons who disagree with me on this point, I consider these freedoms
+to be extremely important in an age of ever increasing and widely
+distributed technologies.
+
+So I'm very pleased to report that as of this morning, the G2 has been
+successfully and permanently rooted ( http://bit.ly/bzUQVM [xda-developers]
+), opening the door to specialized applications and the running of the
+excellent "CyanogenMod" enhanced systems ( http://www.cyanogenmod.com ).
+Incredible work guys!
+
+As it turns out, it was quickly established that the G2 was not using a
+firmware rewrite system, but rather was employing the protected mode of
+JEDEC Embedded MMC memory (eMMC).  Temporary rooting of the device was
+possible from early on since the underlying Linux kernel was caching changes
+related to user root attempts, but the eMMC protection mechanism was
+preventing those changes from ever being successfully written to flash
+system memory -- so all such changes were lost at the next boot of the
+phone.
+
+For the last month I've been lurking on various Web sites and a key IRC
+channel, watching a core group of dedicated hackers (and I'm using "hackers"
+in the original, positive sense of the word), as they gradually teased their
+way into the phone's systems -- truly a joy to watch.  One individual in
+particular, with a "handle" that would be recognized by any fan of the
+original "Star Trek" series, deserves special commendation indeed.
+
+The level of technical expertise exhibited by this group is extraordinary.
+And no matter how much you think you know about these systems, it's
+definitely a learning experience to view these reverse-engineering efforts
+in progress.  (By the way, did you know that many modern cell phones' radio
+modems can be controlled via a superset of the ancient -- more than 30 years
+old! -- Hayes modem "AT" command set?  Yep.  True innovation can live a long
+life indeed!)
+
+It seems likely that this same basic rooting technique will be useful -- at
+least for now -- when dealing with some other new HTC Android phones hitting
+the streets.
+
+I'm not suggesting that everyone needs to root their cell phones.  There are
+operational risks in doing so -- such as the possibility of "bricking" your
+phone (making it nonoperational) if you screw up.  Nor does everyone need
+the ability to run the sorts of applications and systems that require
+rooting.
+
+That being said, I do consider having the *choice* of running such software
+to be an important one, and the concept of devices that lock out user choice
+is frankly offensive to me.
+
+The conflicting world views represented by various flavors of closed systems
+-- vs. open systems -- will certainly trigger continuing struggles, not just
+in the mobile device world, but in technology generally as we move toward
+ever more complex and "cloud-aware" systems.
+
+But to distill this all down to a simple sound bite, as far as consumers of
+technology are concerned:
+
+   "Open Wins."
+
+Lauren Weinstein http://www.vortex.com/lauren Tel: +1 (818) 225-2800
+PFIR (People For Internet Responsibility): http://www.pfir.org
+NNSquad (Network Neutrality Squad): http://www.nnsquad.org
+
+------------------------------
+
+Date: Fri, 12 Nov 2010 03:25:34 +0900
+From: "ISHIKAWA,chiaki" <ishikawa@yk.rim.or.jp>
+Subject:  Hazards of information leakage to youtube: a real story
+
+Compared with what happened with Wikileaks, the following story may not be
+that interesting in general, but there are still a few lessons.
+
+Internet certainly brings new twists.
+
+A real story: Synopsis
+
+A video was made during a traffic violation and catching of the perpetrator
+by law enforcement officers on their vehicle.
+
+An edited version of the video was duplicated many times (17 times from a
+news report) at the local law-enforcement office as a TRAINING MATERIAL for
+other law-enforcement officers (!). A copy was made and sent to local
+prosecutor's office for the purpose of charging the perpetrator eventually.
+
+Later, though, the perpetrator's charge was dropped due obviously to
+political pressure (is the foregone conclusion in the press.)
+
+Now the story had an interesting twist.
+
+An irate officer in a different branch of the law-enforcement agency, which
+handles such traffic violations, released the video of the dangerous
+violation on YOUTUBE (!)  of all the places.
+
+No one knows how he got the video yet. (But producing 17 copies for training
+is not a such a good idea if the video was going to be used in a court
+proceeding although the charge was dropped later.)  Now it seems that the
+video on youtube was from the training video.
+
+The government was mollified, and police asked the local office of Google,
+who owns youtube, to find out the IP address from which the video was
+posted.
+
+(Well, I thought all the youtube servers are in North America basically.  It
+turned out that local police office asked Google local branch to selectively
+pick up the IP address from the youtube server logs so that the the relevant
+IP addresses are available.  The local office of Google COMPLIED AFTER a
+court order was produced. )
+
+Some old lessons that we can glean out.
+
+- Poor Handling of sensitive data in an office, and law enforcement agency
+  of all the places.
+
+  Before it was known that 17 copies were made for training purposes in an
+  unencrypted form (from what I read), both the local prosecutor's office
+  and law enforcement agency's were trying hard to clear their names, but
+  there must have been the feeling of "there you go" when the existence of
+  17 copies for training purposes created at the law enforcement agency
+  became known. The prosecutor's office had a very strict data handling
+  procedure and their report was that the leakage from their office is very
+  unlikely if not impossible.
+
+- Server side data in a foreign country may be revealed to your
+  disadvantage. The man who put the video on youtube probably didn't expect
+  the IP address of an internet cafe-like establishment where the video was
+  posted to be known so quickly.  He probably thought Google, being in a
+  foreign country, may not reveal such information to a request from local
+  police easily.
+
+  Cloud computing, and out-sourcing in general may not be such a great idea
+  if we need to go across country borders.
+
+  Anyway, with a friendly court order, it may be that YOUR search habit may
+  be known to the law enforcement agency as far as I can judge from the way
+  the local branch of Google acted at this time. (If you are a male, and
+  happen to reach the page of a Japanese cross-dressing shop or studio (?)
+  when you are looking for "Artemis", an EU initiative for embedded computer
+  systems, tough luck. Pray that Google does not reveal the log :-)
+
+Cast of Characters:
+
+Now the REALLY INTERESTING part is that this REAL story was played by the
+following actors. A le Carre or Forsyth may be able to concoct a better
+novel from these elements.
+
+Perpetrator: A Chinese captain who manned a fishing boat that entered a
+   territorial water near a group of small islands claimed by Japan. (The
+   islands are near 25 degrees 45' North, 123 degrees 31' East)
+
+Law Enforcement Agency: Japanese Coast Guard
+
+Traffic Violation: The Chinese captain smashed his boat into two Japanese
+   Coast Guard Boats (twice) violently when the coast guard boat warned in
+   Chinese and plodded the Chinese boat to go out of the claimed water. Sea
+   Shepherd boat looked like a sheep in comparison.
+
+Local Prosecutor's office: located in Ishigaki Jima (a relatively large
+  island) near where the smashing and apprehension took place.
+
+Mollified Government: the Japanese Government, of course.
+
+Political pressure: the rumor has it that the Japanese cabinet wanted to
+  keep the things behind the closed door by not irritating Chinese
+  nationalists who claim the territorial right on the same region, and thus
+  avoiding the costly banning of export of rare metal material from China to
+  Japan, and other temporal inconveniences which have been noticed by
+  Japanese business and industry after the arrest of the Chinese captain.
+  Somehow the Ishigaki local prosecutor's office dropped the charge against
+  the Chinese captain and released him along his boat. (The rest of the crew
+  had been freed much earlier.)
+
+An irate officer who released the video to youtube: he is a boat officer at
+   the office of Japan Coast Guard in Kobe about 1500 km from Ishigaki Jima
+   island.  How he obtained the video is anyone's guess.  Obviously Internet
+   is a great boon to a whistle blower like him.  He confessed to his
+   superior after the IP address was traced to an internet Manga cafe which
+   he seems to have used.  He seems to have contacted a local newspaper or
+   TV reporter citing the people's right to know a few days before
+   admission.
+
+   The video in full was not released officially even to the members of
+   parliament who wanted to know what was going on.  Only a select few
+   members saw the abridged version of the video in a closed session so far.
+   The video has been on Japanese TV news in the last several days.
+
+An interesting story with the new twist added by the Internet.
+
+------------------------------
+
+Date: Mon, 15 Nov 2010 10:47:19 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Facebook's new chat/e-mail feature apparently records everything...
+
+Facebook's new chat/e-mail feature apparently records everything you say
+
+Based on *preliminary information* I heard from the Facebook launch
+announcement today for their new "chat/e-mail" system (Facebook keeps
+insisting that it isn't really e-mail), users will *not* have the
+ability to declare chats or related conversations to be "off the
+record" -- everything will apparently be recorded.  Individual users
+will have the ability to archive or delete their *own* copies of
+transcripts, but it appears that there is explicitly *not* a
+functionality similar to Google's "off the record" chat feature, which
+permits users to declare that their conversations with given
+individuals should not be routinely preserved.  "It just didn't make
+sense for us," were pretty much the words that Zuckerberg used in
+response to a question on this topic.
+
+We'll have to wait for more info, but this could be a major privacy
+problem in the making.
+
+------------------------------
+
+Date: Mon, 15 Nov 2010 09:29:38 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Once you hit send, you can forget privacy (Joseph P. Kahn)
+
+Joseph P. Kahn, *The Boston Globe*, 15 Nov 2010
+
+The e-mail was clearly misguided in its interpretation of
+intellectual-property rights and the Internet. It was also dismissive,
+unapologetic, and, if made public, potentially far more embarrassing to
+sender than recipient.
+
+If? Try when.
+
+A recent testy e-mail from Cooks Source managing editor Judith Griggs to
+freelance writer and blogger Monica Gaudio read, in part, "you should be
+happy we didn't just 'lift' your whole article and put someone else's name
+on it!'' Gaudio posted the e-mail online, and it went viral. When it did,
+one question about Griggs's judgment eclipsed all others: How could anyone
+assume a communication like that would remain private?
+
+With minor variations, the same could be asked of others making news
+recently with their private-made-public communications, ones that quickly
+spread to social-media websites like Facebook and Twitter, to gossip sites
+like Gawker and Deadspin, and to mainstream media sites like Poynter Online
+- to the chagrin of those who composed them.
+
+Tucker Carlson, who edits *The Daily Caller*, a political-journalism
+website, posed as suspended MSNBC host Keith Olbermann in e-mails to a
+Philadelphia columnist last week, then claimed he did not expect that his
+prank e-mails would be published.
+
+Campaign staffers for gubernatorial candidate Tim Cahill, the state
+treasurer, e-mailed state Lottery officials last summer urging them to
+launch a taxpayer-funded ad campaign likely to benefit him.
+
+Harvard Law School student Stephanie Grace's e-mail to friends about
+affirmative action and race touched off a furor on the Harvard campus this
+year.
+
+The NFL is investigating accusations that pro football star Brett Favre sent
+explicit photos and messages to several women, most notably a New York Jets
+sideline reporter who worked for the team when he played there. Dozens of
+golfer Tiger Woods's text messages to one of his mistresses, Joslyn James,
+were posted on her website in March, tarnishing Woods's image and
+contributing to his divorce.
+
+What part of ``Forward With Attachments'' do these people not seem to
+understand? ...
+
+http://www.boston.com/ae/media/articles/2010/11/15/once_you_hit_send_you_can_forget_privacy/
+
+------------------------------
+
+Date: Tue, 9 Nov 2010 19:32:34 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Albert Gonzalez, The Great Cyberheist (James Verini, NYT)
+
+  A long article by James Verini in the Sunday *NYT* Magazine section
+  reviews the case of Albert Gonzalez (RISKS-25.26, 25.32, 25.77, 25.98).
+  http://nyti.ms/bDG1RQ
+
+------------------------------
+
+Date: Mon, 15 Nov 2010 12:39:46 +0800
+From: Charles Wood <j.charles.wood@gmail.com>
+Subject: Rise of VoIP systems open new market for exploitation (Re: R-26.20)
+
+I manage a number of VOIP servers. And I too have noticed a surge in
+brute-force attacks. Almost all of which are REGISTER attempts.
+
+These generally are very simple name and extension scan with simple password
+lists. The beauty of the attack is that only one account needs to be
+compromised before unlimited calls are made Assuming internal routing rules
+ain't so good.
+
+Properly set up VOIP servers now include rate limitation as part of the
+default scripts. It's the Asterisk derived servers that are set up by the
+home user or the office junior that seem to be the problem. A typical
+exploit is to connect by SIP and then dial out via the target's landline
+interface - very common with Asterisk - or dial out by the upstream VOIP
+wholesaler.
+
+With all servers, the real problem is that passwords are often insecure.
+Usually deliberately so, so that the customer can remember them. This means
+that even though RFC2617 http digest authentication is used, the attacker
+just needs to keep hammering away till something gives.  Publishing your sip
+phone number makes it even easier as there is a known user to test passwords
+against.
+
+Personally I enforce use of cryptographically strong password.
+
+------------------------------
+
+Date: Tue, 9 Nov 2010 18:45:23 -0800
+From: Earl Nolan <earl@nolans.us>
+Subject: Re: A Strong Password Isn't the Strongest Security (Sampson, R-26.16)
+
+I am surprised that I don't see more mentions of using an open source and
+free tool such as PasswordSafe <http://passwordsafe.sourceforge.net/>.
+
+It generates strong passwords, allows for a different password for every
+account.  All I have to remember is the pass-phrase to unlock my safe.
+
+------------------------------
+
+Date: Wed, 10 Nov 2010 13:18:40 -0800
+From: "David E. Ross" <david@rossde.com>
+Subject: Re: Something has been going right in the fight against spam (R-26.20)
+
+The volumes of spam arriving at my inbox and spam captured by my ISP's
+filter (from which I can recover false positives) have both dropped
+dramatically in recent months.  This was NOT because of a reduction in spam
+or the elimination of any botnets.
+
+Instead, this reduction in spam resulted from my ISP installing a
+"pre-filter".  The pre-filter trashes any E-mail message from a
+non-registered domain or from a non-assigned IP address.  These messages are
+irretrievably trashed and cannot be recovered.  After all, there should be
+no false positives when checking for an invalid domain or IP address.
+
+Of course, this pre-filter might also trash legitimate messages from munged
+addresses.  However, why would someone munge their address in a private
+communication?
+
+David E. Ross <http://www.rossde.com/>
+
+------------------------------
+
+Date: Tue, 16 Nov 2010 10:30:57 +0100
+From: Peter Bernard Ladkin <ladkin@rvs.uni-bielefeld.de>
+Subject: Spam volume is indeed down (Kamens, Risks 26.20)
+
+The BBC reports on November 15 2010 in
+http://www.bbc.co.uk/news/technology-11757347 that spam volumes are down in
+the three months from August 2010. The article suggests that is because of
+law enforcement services shutting down botnets and big users of such nets.
+
+Peter Bernard Ladkin, Causalis Limited and University of Bielefeld
+www.causalis.com  www.rvs.uni-bielefeld.de
+
+  [PGN says: I'm still running about 3000 a day between me and RISKS that
+  are filtered, and still hundreds more that have to be deleted by hand.  I
+  am increasingly grateful for all contributors who use the "notsp" in the
+  subject line of your submissions.  I'm increasingly dependent thereupon.]
+
+------------------------------
+
+Date: Mon, 15 Nov 2010 13:13:28 -0600
+From: Erik Mooney <erik@dos486.com>
+Subject: Re: J. Alex Halderman, Hacking DC, Freedom to Tinker
+
+Great writeup on the shell-injection vulnerability in the absentee voting
+machine.  It occurs to me that this hole is actually the oldest in the book:
+a case of treating data as executable code.  A file extension should be
+data, yet thanks to the convenience of string concatenation, it becomes
+executable instructions on the command line.
+
+------------------------------
+
+Date: Sat, 13 Nov 2010 00:37:46 -0500
+From: Michael Kowalchuk <mrk@emarkay.com>
+Subject: Re: Banks Rush to Fix Security Flaws in Wireless Apps (R 26 20)
+
+Not only are "the apps are storing a user's information in the memory of a
+cellphone" but I have been absolutely dumbfounded with the "security"
+inherent with these "smartphones". For example, browser cookies and caches
+are not easily cleared, call and text histories are saved from day one, and
+login, email and other master passwords are easily "typed-in once then
+forgotten". It seems that the users have forgotten, and are encouraged to
+forget by the interface, basic security awareness.
+
+Something has failed us greatly when concern about being able easily monitor
+and optionally clear any personally entered or downloaded data in these
+tools is rarely voiced!
+
+Also, have you ever seen someone who has lost their phone? Not only are they
+devastated and powerless, but they suddenly become catatonic when you ask,
+"Of course, all your data is backed up, isn't it"?
+
+------------------------------
+
+Date: Wed, 10 Nov 2010 12:45:11 -0800
+From: merlyn@stonehenge.com (Randal L. Schwartz)
+Subject: Re: Remote starter risk (RISKS-26.20)
+
+>>>>>   <e-p@nc.rr.com> writes:
+> A woman died and and her husband was hospitalized after someone in the house
+> accidentally pressed the "remote-start" button for her car in their garage
+> in Raleigh NC.
+>   http://www.wral.com/news/news_briefs/story/8586538/
+
+This story was updated later:
+
+  http://www.wral.com/news/local/story/8589199/
+
+  Police initially reported that someone unintentionally pressed the
+  remote-start button for the car. They later determined that the car was
+  accidentally left running.  Wake County Medical Director Dr. Brent Myers
+  said cases like this are all too common in winter. Several people die each
+  year, usually from using heaters or letting their vehicles warm up in
+  enclosed spaces.
+
+Randal L. Schwartz - Stonehenge Consulting Services, Inc. - +1 503 777 0095
+<merlyn@stonehenge.com> <URL:http://www.stonehenge.com/merlyn/>
+
+  [Typo corrected in archive.  PGN]
+
+------------------------------
+
+Date: Wed, 10 Nov 2010 13:03:10 -0800
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Re: Remote starter risk (RISKS-26.20)
+
+Another risk:
+
+In the comments to the linked article, methinks posted:
+
+"These journalists have got to change their ways. This woman's identity was
+not released for a reason. By say that the house is located haf a block from
+a particular intersection and showing a picture of it, then anyone who knows
+them is going to find out from the news instead of a loved one. The same
+thing happened with the clerk in Fayetteville. They printed all sort of
+information so that it was real easy to figure out who it was. No respect at
+all for the victims and their loved ones. Limit the info printed until the
+police release names."
+
+------------------------------
+
+Date: Wed, 10 Nov 2010 12:52:39 -0800
+From: Chris Kantarjiev <cak@dimebank.com>
+Subject: Re: U.S. Daylight Saving Time ends with bug in iOS4
+
+Android has exhibited a similar bug for at least two DST change cycles; I
+was bitten by it when we "sprang forward" in the US last March. I was not
+alone in filing a bug, but no one at Google appears interested in fixing it.
+
+http://code.google.com/p/android/issues/detail?id=7155
+
+------------------------------
+
+Date: Tue, 16 Nov 2010 19:25:50 +0000
+From: Alexandre Peshansky <Alex.Peshansky@einstein.yu.edu>
+Subject: Re: Texting Stinks? (RISKS-26.20)
+
+No wonder the item seemed familiar - the actual accident happened on 10 Jul
+2009, and the item on nbcnewyork.com was last updated on July 12, 2009 (with
+news of a lawsuit, one may presume).  I guess no news is good news ;-)
+
+Alexandre Peshansky, Snr. Bioinformatics Analyst, ICTR/RIC
+Albert Einstein College of Medicine of Yeshiva University (718) 430-2440
+
+  [Drat!  You're absolutely correct.  See "Teenager Falls Into Manhole While
+  Texting" (Michael Barkoviak via Monty Solomon), RISKS-25.73, 16 July 2009.]
+
+------------------------------
+
+Date: Fri, 12 Nov 2010 08:00:06 -0800
+From: AES <siegman@stanford.edu>
+Subject: Re: Cellphone's Missing Dot Kills Two People ... (Wirchenko, R-26.20)
+
+Dots don't kill people.  People, and knives, and stupid cultural beliefs and
+attitudes, kill people.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.21
+************************

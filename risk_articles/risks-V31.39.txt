@@ -1,0 +1,596 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.39
+
+RISKS-LIST: Risks-Forum Digest  Thursday 29 August 2019  Volume 31 : Issue 39
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.39>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+"Why positive train control is vulnerable to a cyber-attack"
+  (D G. Rossiter)
+Frequency-sensitive trains and the lack of failure-mode analysis
+  (Clive Page)
+Inside America's Dysfunctional Trillion-Dollar Fighter-Jet Program
+  (Valerie Insinna via Richard Stein)
+Sometimes simplicity is dangerous ... (Rob Slade)
+A Bitter Divorce Battle on Earth Led to Claims of a Crime in Space (NYTimes)
+Premier's office accidentally publishes name of secret agent (TheAge)
+WeWork's Wi-Fi network is laughably easy to hack (Fast Company)
+Wake Up! Your House Is Calling (NYTimes)
+OpenAI releases larger GPT-2 dataset. Can it write fake news better
+  than a human? (Boing Boing)
+SecurityWatch: Backstabbing, Disinformation, and Bad Journalism:
+  The State of the VPN Industry (PCMag)
+Security Researchers Find Several Bugs in Nest Security Cameras (VICE)
+Found: World-readable database used to secure buildings around the globe
+  (Ars Technica)
+Credit card privacy matters: Apple Card vs. Chase Amazon Prime Rewards Visa
+  (WashPost)
+Regis University's technology systems targeted by malicious threat
+  likely from outside the country (Denver Post)
+A Harvard freshman says he was denied entry to the U.S. over
+  social media posts made by his friends (WashPost)
+Ring, the doorbell-camera firm, has partnered with 400 police
+  forces, extending surveillance reach (WashPost)
+FBI seeks to monitor Facebook, oversee mass social media data
+  collection (Charlie Osborne)
+Facebook's big win: Will this ruling have global impact on how
+  your data is used? (Cathrin Schaer)
+Re: Playing God: Japan temple puts faith in robot priest (Amos Shapir)
+Re: Phishing spam is getting better (Amos Shapir)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 25 Aug 2019 20:48:40 +0000
+From: "D G. Rossiter" <d.g.rossiter@cornell.edu>
+Subject: "Why positive train control is vulnerable to a cyber-attack"
+
+http://trn.trains.com/news/news-wire/2019/08/23-why-positive-train-control-is-vulnerable-to-a-cyber-attack
+
+Positive Train Control (PTC) is a federally-mandated replacement of
+traditional rail signaling on the largest railroads with a network of on-
+and off-train electronics to space trains and prevent collisions or
+runaways.  Railroads are installing PTC on nearly 57,848 route miles and on
+19,912 locomotives.
+
+``Unlike other critical infrastructure, such as energy or water management
+systems, rail networks have avoided regulations as lawmakers have focused
+recent efforts on safety due to high profile crashes,'' says Jesus Molina,
+director of business development, for Waterfall Security Solutions.  ``There
+is no question that a PTC rollout without managing the cybersecurity risk
+will open new attack vectors due to increased connectivity and new software
+added to the networks and onboard train, In these cases, PTC may actually
+decrease the safety of passengers due to an unacceptable increased risk of
+cyberattacks that may lead to accidents.''
+
+``The use of IT-focused security tools, in particular, software tools such
+as firewalls to protect control critical networks is a huge mistake, and
+with increasingly connected rail networks, it is becoming a dangerous trend.
+The focus of critical control networks is to be reliable and safe, and IT
+tools meant to protect data and confidentiality are not suitable to defend
+them. The most secure rail sites are not concerned with the steadily
+increasing sophistication of cyber-attacks, nor with the steadily increasing
+rate of disclosure of new attack vulnerabilities in control systems,
+network, firewalls and other security software, This is because the most
+secure sites protect their automation systems from cyber-attacks physically,
+with hardware-based solutions such as unidirectional security gateways.''
+
+  In other words, this networked solution is not being treated as one linked
+  to a physical reality, i.e., moving trains.  DGR
+
+------------------------------
+
+Date: Mon, 26 Aug 2019 23:20:14 +0100
+From: Clive Page <clivegpage@gmail.com>
+Subject: Frequency-sensitive trains and the lack of failure-mode analysis
+
+On 9 Aug 2019 around 4:53pm, lightning struck a transmission cable in
+south-eastern England.  This had the unexpected result that a gas-fired
+power station and a large wind-farm detected grid anomalies and
+disconnected.  This loss of generating capacity made the frequency drop from
+its nominal 50 Hz, reaching 48.8 Hz for a few seconds.  To restore it, the
+grid control system cut power to about 1.1 million people for up to 50
+minutes.  A report from OFGEM, the Government regulator describes the events
+in more detail.
+https://www.ofgem.gov.uk/system/files/docs/2019/08/incident_report_lfdd_-_summary_-_final.pdf
+
+The railway system was much more badly affected, even though the traction
+and signaling power had been maintained.  Most services from London to
+Bedford, Cambridge, and Peterborough depend on electric trains built in
+Germany by Siemens about two years ago.  It now turns out that these trains
+stop if the frequency drops below 49 Hz.  About 60 of them were running at
+the time: unfortunately only half of them could be restarted by the driver,
+the others had to be visited by a technician which took many hours.  Many
+stranded passengers had to walk along the tracks to the nearest station.
+Even the inter-city services could not run as the lines were so badly
+blocked by stalled suburban trains.  Practically no trains ran on these
+lines until the next day and in total over 1200 train services were canceled
+or delayed.
+
+I found this a surprising failure because pretty much all domestic and
+commercial equipment is designed to work on a wide range of frequencies,
+especially to cope with both 50 and 60 Hz regions of the world.  The UK's
+National Grid Code says that the mains frequency could be as high as 52 Hz
+or as low as 47 Hz "in exceptional circumstances".  So it is unfortunate
+that a train would be so sensitive to a 1.2 Hz deviation.  Indeed with
+hindsight, one feels that a train that trips out at 49 Hz and then requires
+a technician to reset it is a very poor design and could easily lead, as
+this did, to a widespread system failure.
+
+It seems to me that in several industries failure mode analysis is no longer
+being performed adequately.  Taking the crash of AF447 in 2009: the initial
+cause was that both pitot tubes froze up.  The second failure was that the
+autopilots disconnected, leaving inexperienced pilots to cope unaided with
+flying in the middle of the night at maximum altitude over a tropical storm
+with some of their speed sensors not working.  In their panic they first
+stalled and then crashed the plane, even though all they really needed to do
+to the controls was absolutely nothing.  There are so many ways of measuring
+the speed of a plane that the loss of two sensors should not, in my opinion,
+lead to the autopilots simply giving up.  Pilots depend on them so much that
+they ought to degrade more gracefully.  A thorough failure-mode analysis
+might have brought up the possibility that in conditions where one pitot
+tube iced up, the second one might too, and that inexperienced pilots might
+then panic.
+
+The recent crashes of the 737 Max planes show a similar inability to
+consider the effects of a failure mode that is obvious to everyone in
+hindsight.  Identifying all these failure modes in advance obviously takes
+more expertise and foresight - but is that really too much to ask of the
+relevant experts?
+
+------------------------------
+
+Date: Sun, 25 Aug 2019 17:57:03 -0700
+From: Richard Stein <rmstein@ieee.org>
+Subject: Inside America's Dysfunctional Trillion-Dollar Fighter-Jet Program
+  (Valerie Insinna)
+
+  [Excellent long article excerpted -- first para culled by PGN, the second
+  by RS, in which `Winter' refers to Vice Admiral Mat Winter.  The
+  subsequent analysis is Richard's.  (A snitch in *Times* sways Stein?)
+  PGN]
+
+Valerie Insinna, *The New York Times*, 21 Aug 2019
+https://www.nytimes.com/2019/08/21/magazine/f35-joint-strike-fighter-program.html
+
+On the morning of June 23, 2014, an F-35 burst into flames just moments
+before its pilot was set to take off on a routine training mission. He heard
+a loud bang and felt the engine slow as warning indicators began flashing
+`fire' and other alerts signaled that systems in the plane were shutting
+down. Witnesses at Eglin Air Force Base near Pensacola, Fla., reported
+seeing the pilot escape from the cockpit and run away from the fighter jet,
+which was engulfed in thick plumes of black smoke. It was the first major
+mishap involving a F-35 Joint Strike Fighter, and it couldn't have happened
+at a worse time.  [...]
+
+"Winter also made it a priority to push for drastic streamlining in the
+process for testing new software in the F-35. Under the existing procedures,
+the Pentagon can require test flights for more than 300 different factors or
+functions when a new software load is installed.  Winter worked to cut that
+down to a single validation flight, to test just the software and the
+systems it affects, rather than retesting the performance of the whole
+aircraft. A trial program staffed with a team of Air Force and Lockheed
+coders proved that the method works and doesn't put pilots at risk, and
+Winter's rapid software development strategy is now being implemented. But
+moving to an agile software approach for the F-35 presents a huge challenge
+for the sluggish and bureaucratic military acquisition system, and there's
+no blueprint for how to integrate it alongside the traditional processes for
+developing and testing hardware."
+
+In http://catless.ncl.ac.uk/Risks/28/47#subj4, Henry Baker noted several
+operational flight plan (OFP) readiness issues that could compromise F-35
+system performance, mission and pilot safety.
+
+Software stacks possess latent defects waiting discovery under appropriate
+stimulus conditions. Truncated OFP qualification (regression test) limits
+detection potential. The test assets may be exhausted in their capacity to
+discover latent defects.
+
+Payload exchange among the F-35 subsystems can often reveal anomalous
+behavior, especially if the content is partially corrupt or inconsistent.
+Subsystem test stimulus restriction is most cost effective, but at what
+cost, to whom and when will the benefit be realized?
+
+In earlier programs (~1970-1980 or so), The Air Force insisted on full,
+end-to-end OFP qualification for any change. That the costs (schedule and
+performance) have ballooned beyond estimates, and now preclude comprehensive
+qualification coverage, is cause for concern and apparently represents a
+significant operational risk.
+
+------------------------------
+
+Date: Sun, 25 Aug 2019 10:28:40 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Sometimes simplicity is dangerous ...
+
+We, in security, hate complexity.
+
+Complexity is the enemy of security.
+
+KISS, for us, isn't just an admirable principle, it's almost a way of life.
+We want to keep things as simple as possible, since they are going to get
+complex enough eventually anyway, and we *hate* that.
+
+But sometimes life is just complex, and there's nothing we can do about it.
+
+So, what has prompted this rumination on my part?
+
+Well, suddenly everyone has become aware that the Amazon rainforest is
+burning.  This isn't new, of course.  We should have been aware that the
+rainforest was burning some time ago.  It's been burning for quite a while.
+But, hey, so what?  There have been forest fires in other places, and we've
+survived.  And most of us don't even know anyone who speaks Portuguese, so
+what's the problem?
+
+To understand that, you need to know about geology.
+
+There are different types of soils in the world.  They have different
+components, one of which is regolith.  Regolith is the breakdown product of
+the underlying rock.  It contributes elements which, in turn, fix or release
+nutrients that plants need to grow.  There are different soils, but they all
+have regolith.
+
+Except for tropical soil.
+
+The soil in the Amazon rainforest has so little contribution from regolith
+that it doesn't matter.  So how do things grow, without the nutrient boost?
+
+To understand that, you need to understand biology and ecology.
+
+Trees grow in the tropical rainforest.  Other plants grow on the trees.
+Because they have no roots, they collect water in pouches and cups.  The
+water, as well as watering the plant, collects and kills bugs to get
+nutrients that those plants use to grow.  The insects eat fruit and leaves
+up in the trees.  Other animals eat fruit and drop the husks and leaves down
+to the ground.  The leaf litter gets cut up by ants who use it to farm mold.
+Et cetera, et cetera until we get back to the trees.  All of the huge
+complicated process has to go on to provide nutrients for the tropical soil,
+without which none of it lives.
+
+That's why ten percent of the *total* biodiversity on the planet is in the
+Amazon alone.  They need it.
+
+Stand in a hemlock forest, and all you have is the canopy above you.  Except
+for the dead branches that poke you and grab your clothes, there is nothing
+to impede you below that.  Tropical rainforests have five separate and
+distinct layers, starting at the top canopy.
+
+But what does this have to do with the fires?
+
+Well, we (most of us) live in temperate rainforests.  We don't understand
+the problem with forest fires.  Fires go on all the time.  Fires are
+actually useful in some ways.  In the eastern forests, the First Nations
+used to set fires to make the land more productive.  In the west, we know
+that, even if we weren't throwing cigarette butts around with gay abandon,
+the storms from the ocean (that bring the rain), also bring thunderstorms,
+and therefore lightning, and therefore, even without us, forest fires are a
+natural part of the forest growth, ecology, and procession.
+
+That's not the case in tropical rainforests.
+
+In temperate rainforests, after the fire goes through, all we have to do is
+plant douglas fire, and, within a few years, the trees are taller than we
+are and there are mice and salal and mule deer and blackberries and bears
+are pooping in the woods fertilizing the douglas fir.
+
+(And we have to hurry to plant the douglas fir, because, if we don't, five
+minutes after the fire goes through alder starts growing.  We'll still have
+a forest, just with a different economic value.)
+
+That's not the case in tropical rainforests.
+
+After a fire, you can't just plant some trees.  You've got this whole
+complex system that means that the fact that some insect you can't even name
+is missing means that *that* frog doesn't pollinate *that* bush which
+doesn't feed *that* fish and the whole thing falls apart.  (Or, more likely,
+doesn't start in the first place.)
+
+In the tropical forest, after a fire, the grass (and crops, if you plant
+them), grow spectacularly.  The first year.  The second year, the grass is
+great.  The third year, it's pretty good.  After that, it's crap.  Because
+the system isn't putting anything back into the soil.
+
+In the temperature rainforest, the rains come from the ocean.  (Remember?)
+Even if we burned down all the trees, the rains would still come.  Not in
+the tropical rainforest.  Most of the rain comes from the forest itself.
+The trees are lifting tons of water into the atmosphere every day.  It takes
+energy.  And that's part of the reason that tropical rainforests have so
+much rain, and are four or five degrees cooler than tropical savannah.
+
+If we leave burned areas in the tropics alone, they might recover.  But,
+whereas in the temperate rainforests it takes years, in the tropics it takes
+an equivalent number of millennia.  The soil is dead, the land is in
+drought, and isolated stands of forest will probably die, unless they are
+miles in extent.
+
+OK, now look at a map of the world.  Can you find the Amazon?  Remember that
+not all of that bump is, in fact, the Amazon.  Not even all of Brazil is all
+Amazon.
+
+ And that part of that bump recycles 20% of all the oxygen in the
+atmosphere.  And when we lose that oxygen recycling capacity, we lose that
+carbon sequestration capacity, all that rain, and that biodiversity (and all
+the undiscovered pharmaceuticals it contains).  And it won't grow back.
+
+That's why a few fires in another country far away are important ...
+
+------------------------------
+
+Date: Mon, 26 Aug 2019 09:22:31 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: A Bitter Divorce Battle on Earth Led to Claims of a Crime in Space
+  (NYTimes)
+
+NASA is examining a claim that an astronaut improperly accessed the bank
+account of her estranged spouse from the Space Station.
+
+https://www.nytimes.com/2019/08/23/us/nasa-astronaut-anne-mcclain.html
+
+------------------------------
+
+Date: Mon, 26 Aug 2019 09:24:03 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Premier's office accidentally publishes name of secret agent
+  (TheAge)
+
+https://www.theage.com.au/politics/queensland/premier-s-office-accidentally-publishes-name-of-secret-agent-20190822-p52juf.html
+
+------------------------------
+
+Date: Mon, 26 Aug 2019 17:32:15 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: WeWork's Wi-Fi network is laughably easy to hack (Fast Company)
+
+https://www.fastcompany.com/90391748/weworks-wi-fi-network-is-easy-to-hack
+
+------------------------------
+
+Date: Mon, 26 Aug 2019 17:41:17 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Wake Up! Your House Is Calling (NYTimes)
+
+https://www.nytimes.com/2019/08/23/realestate/wake-up-your-house-is-calling.html
+
+------------------------------
+
+Date: Mon, 26 Aug 2019 17:57:42 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: OpenAI releases larger GPT-2 dataset. Can it write fake news better
+  than a human? (Boing Boing)
+
+https://boingboing.net/2019/08/20/openai-releases-larger-gpt-2-d.html
+
+------------------------------
+
+Date: Mon, 26 Aug 2019 18:11:27 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: SecurityWatch: Backstabbing, Disinformation, and Bad Journalism:
+  The State of the VPN Industry (PCMag)
+
+https://www.pcmag.com/commentary/368081/backstabbing-disinformation-and-bad-journalism-the-state
+
+------------------------------
+
+Date: Mon, 26 Aug 2019 19:11:38 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Security Researchers Find Several Bugs in Nest Security Cameras
+  (VICE)
+
+https://www.vice.com/en_us/article/d3avxa/security-researchers-find-bugs-in-nest-cam-iq
+
+------------------------------
+
+Date: Tue, 27 Aug 2019 10:59:40 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Found: World-readable database used to secure buildings around the
+  globe (Ars Technica)
+
+https://arstechnica.com/information-technology/2019/08/found-world-readable-database-used-to-secure-buildings-around-the-globe/
+
+------------------------------
+
+Date: Wed, 28 Aug 2019 00:31:29 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Credit card privacy matters: Apple Card vs. Chase Amazon Prime
+  Rewards Visa (WashPost)
+
+In a privacy experiment, he bought one banana with the new Apple Card -- and
+another with the Amazon Prime Rewards Visa from Chase. Here's who tracked,
+mined and shared our data.
+
+https://www.washingtonpost.com/technology/2019/08/26/spy-your-wallet-credit-cards-have-privacy-problem/
+
+Good luck following these details, let alone protecting yourself from being
+tracked.
+
+------------------------------
+
+Date: Wed, 28 Aug 2019 00:49:09 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Regis University's technology systems targeted by malicious threat
+  likely from outside the country (Denver Post)
+
+Elizabeth Hernandez, *The Denver Post*, 23 Aug 2019
+
+A forensic investigation at Denver's Regis University confirmed Friday that
+the private college's technology systems were attacked by a malicious
+threat, likely from outside the country.
+
+University officials declined to say whether the situation at Regis was a
+ransomware attack, saying the matter is still under investigation.
+``Immediately upon discovering this issue, we quickly and intentionally took
+our information technology systems offline in an effort to protect the
+university and your information while we initiated an investigation and
+notified law enforcement.  We are unfortunately only the latest entity to
+face this kind of incident.''
+
+https://www.denverpost.com/2019/08/23/regis-university-cyber-attack/
+https://www.denverpost.com/2019/08/26/regis-university-cyber-attack-2/
+https://www.denverpost.com/2019/08/27/regis-university-cyber-attack-3/
+
+------------------------------
+
+Date: Wed, 28 Aug 2019 08:21:03 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: A Harvard freshman says he was denied entry to the U.S. over
+  social media posts made by his friends (WashPost)
+
+https://www.washingtonpost.com/education/2019/08/27/harvard-freshman-says-he-was-denied-entry-us-over-social-media-posts-made-by-his-friends/
+
+Deanna Paul and Susan Svrluga, 27 Aug 2019
+
+  Ismail B. Ajjawi touched down at Boston Logan International Airport on
+  Friday night, prepared to begin his freshman year at Harvard
+  University. The 17-year-old Palestinian student never left the airport.
+
+  The Harvard Crimson reported that U.S. officials detained Ajjawi for eight
+  hours. After interrogating the minor and searching his phone and computer,
+  they revoked his visa and sent him home to Lebanon.
+
+  Why?
+
+  According to a statement by Ajjawi, an immigration officer claimed she
+  ``found people posting political points of view that oppose the U.S.,'',
+  though she discovered nothing Ajjawi had posted himself.
+
+------------------------------
+
+Date: Wed, 28 Aug 2019 12:20:56 -0400
+From: Gabe Goldberg <gabe@gabegold.com>  DUP???
+Subject: Ring, the doorbell-camera firm, has partnered with 400 police
+  forces, extending surveillance reach (WashPost)
+
+The doorbell-camera company Ring has quietly forged video-sharing
+partnerships with more than 400 police forces across the United States,
+granting them access to homeowners' camera footage and a powerful role in
+what the company calls the nation's new neighborhood watch.
+
+The partnerships let police automatically request the video recorded by
+homeowners' cameras within a specific time and area, helping officers see
+footage from the company's millions of Internet-connected cameras installed
+nationwide, the company said. Officers don't receive ongoing or live-video
+access, and homeowners can decline the requests, which Ring sends via email
+thanking them for ``making your neighborhood a safer place.''
+
+The number of police deals, which has not previously been reported, is
+likely to fuel broader questions about privacy, surveillance and the
+expanding reach of tech giants and local police. The rapid growth of the
+program, which began in spring 2018, surprised some civil liberties
+advocates, who thought that fewer than 300 agencies had signed on.
+
+https://www.washingtonpost.com/technology/2019/08/28/doorbell-camera-firm-ring-has-partnered-with-police-forces-extending-surveillance-reach/
+
+------------------------------
+
+Date: Wed, 28 Aug 2019 10:39:09 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: FBI seeks to monitor Facebook, oversee mass social media data
+  collection (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 12 Aug 2019
+Plans to track social media activity will potentially clash with existing
+privacy policies.
+https://www.zdnet.com/article/fbi-seeks-to-monitor-facebook-oversee-mass-social-media-data-collection/
+
+The Federal Bureau of Investigation (FBI) is planning to aggressively
+harvest information from Facebook and Twitter, a move which is likely to
+cause a clash between the agency and social media platforms.
+
+As reported by the Wall Street Journal, the FBI has recently sought
+proposals from third-party vendors for technological solutions able to
+harvest publicly-available information in bulk from Facebook, Twitter, and
+other social media outlets.
+
+------------------------------
+
+Date: Wed, 28 Aug 2019 10:43:23 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: Facebook's big win: Will this ruling have global impact on how
+  your data is used? (Cathrin Schaer)
+
+Cathrin Schaer for The German View, ZDNet, 27 Aug 2019
+What was seen as one of the best ways to regulate social-media giants like
+Facebook has just fallen apart in a Düsseldorf court.
+https://www.zdnet.com/article/facebooks-big-win-will-this-ruling-have-global-impact-on-how-your-data-is-used/
+
+opening text:
+
+A decision by a regional court in Germany has derailed what many saw as the
+world's best chance to regulate the behavior of data-gobbling social-media
+giants like Facebook.
+
+------------------------------
+
+Date: Sun, 25 Aug 2019 17:23:14 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Playing God: Japan temple puts faith in robot priest (RISKS-31.38)
+
+I think there was a story by Isaac Asimov about an intelligent robot who
+turned religious and became a Muslim.
+
+------------------------------
+
+Date: Sun, 25 Aug 2019 17:29:16 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Phishing spam is getting better (RISKS-31.38)
+
+This should be a golden rule for anyone reading email: Never click on any
+link in an unsolicited incoming message, especially not one from your bank
+(or any other service which may have access to your money).
+
+If your bank needs you to click a link in their email message, it's *their*
+problem.
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.39
+************************

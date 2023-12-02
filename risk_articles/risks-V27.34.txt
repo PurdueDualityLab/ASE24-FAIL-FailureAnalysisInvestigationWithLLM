@@ -1,0 +1,667 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 12 June 2013  Volume 27 : Issue 34
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.34.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+NSA, FBI collecting content from Google, Facebook, other services
+  (Stephen Lawson via Gene Wirchenko)
+"NSA to everyone: Take your PRISM, it's good for you" (R.X.Cringely via
+  Gene Wirchenko)
+On PRISM and admins (PGN)
+New Xbox by NSA partner Microsoft will watch you 24/7 (William Green via
+  Henry Baker)
+Government wants to block much cell phone, etc. use in cars
+  (WiReD via Lauren Weinstein)
+Yet another Google Update affecting many sites... (Paul Wilcock)
+Robbing a Gas Station: The Hacker Way (Nicole Perlroth via Matthew Kruk)
+Peninsula woman battles DMV over alleged false conviction (Paul Saffo)
+"Patients' Medical Info Left on Bus" (Gene Wirchenko)
+Energy-efficient lighting may worsen sleep deficiencies (Johnson/Greenhouse
+  via Monty Solomon)
+Risks of spreadsheets -- and leap seconds (Gene Wirchenko)
+Re: BA plane's emergency landing at LHR caused by maintenance error
+  (Phil Smith III, Andy Cole, Dag-Erling Smorgrav, Jim Geissman)
+Re: Cowlings Coming Loose from Engines - Human Factors at Work?
+  (John C. Bauer)
+Re: The Hazards of Gambling (Martin Ward)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 07 Jun 2013 13:41:46 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: NSA, FBI collecting content from Google, Facebook, other services
+  (Stephen Lawson)
+
+Stephen Lawson, InfoWorld, 07 Jun 2013
+http://www.infoworld.com/d/the-industry-standard/reports-nsa-fbi-collecting-content-google-facebook-other-services-220285
+
+Reports: US spy agencies gather data in Internet and social network usage
+under a six-year-old program called PRISM.
+
+------------------------------
+
+Date: Mon, 10 Jun 2013 10:49:49 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "NSA to everyone: Take your PRISM, it's good for you" (Cringely)
+
+http://www.infoworld.com/t/cringely/nsa-everyone-take-your-prism-its-good-you-220344
+Robert X. Cringely, InfoWorld, 07 Jun 2013
+Is this 2013 or 1984? It's hard to tell when reports say national security
+services are delving into our private Apple, Facebook, Google, and Microsoft
+accounts
+
+------------------------------
+
+Date: Wed, 12 Jun 2013 11:31:37 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: On PRISM and admins
+
+The aftermath of this seems to be causing an enormous amount of media
+coverage, much of which is not relevant here.  However, I am struck
+by the dichotomy between two particular positions:
+
+  On one hand, Edward Snowden (again on NPR this morning) adamantly insists
+  that he had authorized access to every call.  (As usual, we can quibble
+  over what "authorized" means, especially when in some cases no
+  authorization is required!)
+
+  On the other hand, many government people and some others state that
+  Snowden's claim is impossible, implying that he must be lying, bloviating,
+  overendowing his abilities, or whatever.
+
+It seems to me that in most systems in use today (typically with many
+inherent security design flaws and exploitable software bugs, operational
+misconfigurations, subvertible audit trails, and enormous opportunities for
+insider misuse -- partly because of inadequate access controls), system
+administrators often have direct or indirect access to essentially
+everything, and perhaps even worse, they might supervisors who do not have a
+good grasp of the risks.
+
+On the *other* other hand, because of secrecy, inadequate monitoring, and
+other factors, it is often difficult to know what is really going on.
+
+The Trusted Xenix system might have been a rare potential approach to
+blocking overly powerful admins (with something like 17 different
+admin-relevant privileges and mandatory access controls), but then it was
+only a B2 system under the old Orange Book evaluation criteria and still had
+many potential vulnerabilities.
+
+Incidentally, reminiscing on George Orwell's novel *1984* (NPR noted this
+morning that sales of the book increased by 6000 percent in the past week),
+I noted that in the ubiquitous *1984* banner, Big Brother might now be
+replaced with Big Data:
+
+   Big Data Is Watching You!
+
+------------------------------
+
+Date: Fri, 07 Jun 2013 13:34:33 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: New Xbox by NSA partner Microsoft will watch you 24/7 (William Green)
+
+FYI -- Perhaps the new Tivo box can notice when I fall asleep, so that it
+can pause the playback so I won't miss anything!
+
+http://dailycaller.com/2013/06/07/new-xbox-by-nsa-partner-microsoft-will-watch-you-247/
+
+William Green, *Daily Caller*,  7 Jun 2013
+
+Possible privacy violations by Microsoft's upcoming Xbox One have come under
+new scrutiny since it was revealed Thursday that the tech giant was a
+crucial partner in an expansive Internet surveillance program conducted by
+the National Security Agency and involving Silicon Valley's biggest players.
+
+One of the console's key features is the full integration of the Kinect, a
+motion sensing camera that allows users to play games, scroll through menus,
+and generally operate the Xbox just using hand gestures. Microsoft has
+touted the camera as the hallmark of a new era of interactivity in gaming.
+
+What Microsoft has not promoted, however, is the fact that *you will not be
+able to power on the console without first enabling the Kinect*, designed to
+detect both heartbeats and eye movement. and positioning yourself in front
+of it.
+
+Disturbingly, a recently published Microsoft patent reveals the *Kinect has
+the capability to determine exactly when users are viewing ads* broadcast by
+the Xbox through its eye movement tracking.  Consistent ad viewers would be
+granted rewards, according to the patent.
+
+Perhaps the feature most worryisome to privacy advocates is the *requirement
+that the Xbox connect to the Internet at least once every 24 hours.* Many
+critics have asserted that Microsoft will follow the lead of other Silicon
+Valley companies and use their console to gather data about its users,
+particularly through the Kinect, and collect it through the online
+connection users can't avoid.
+
+Microsoft has promised that customers will be able to `pause' the camera's
+function, but have put off questions on the precise specifics of their
+privacy policies.
+
+------------------------------
+
+Date: Fri, 7 Jun 2013 12:24:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Government wants to block much cell phone, etc. use in cars (WiReD)
+
+  "Nathaniel Beuse, associate administrator for vehicle safety research at
+  the National Highway Traffic Safety Administration, says government
+  regulation coupled with standards set by automakers and the electronics
+  industry could reduce fatalities. He says we need "a technological
+  solution, some sort of innovation" in which the device or the car would
+  recognize when the driver is using a mobile device and deactivate
+  it. "This would be the ultimate solution," he says."
+  http://j.mp/13qqY5h  (Wired via NNSquad)
+
+In a word: impractical.
+
+------------------------------
+
+Date: Fri, 07 Jun 2013 09:35:18 +0100
+From: "Paul Wilcock" <paul@thebluecube.co.uk>
+Subject: Yet another Google Update affecting many sites...
+
+Another version of Google's major Penguin update hit last week! That's now
+officially confirmed, so you have you been hit?
+
+When launched last time, the update affected not only black-hat, but also
+legitimate sites, with many of them unable to recover their rankings even
+now.
+
+And as the new update has been even harder, we recommend you take our free
+Website Review to make sure your site goes through the new wave of ongoing
+Penguin updates unaffected:
+
+http://www.thebluecube.co.uk/link.php?M81558&N2&L=3&F=T
+
+------------------------------
+
+Date: Fri, 7 Jun 2013 17:15:17 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Robbing a Gas Station: The Hacker Way (Nicole Perlroth)
+
+http://bits.blogs.nytimes.com/2013/06/06/robbing-a-gas-station-the-hacker-way/?nl=todaysheadlines&emcíit_th_20130607
+
+Nicole Perlroth, Bits - Business, Innovation, Technology, Society,
+*The New York Times*, 6 Jun 2013
+
+Thieves of the future will look back on today's stick-up artists and have a
+good old belly laugh. Why would anyone ever rob a cashier with a gun, when
+all that is needed is a smartphone?
+
+Matt Bergin, a security consultant at Core Security, discovered he could
+hack a cash register remotely, popping it open, by sending two digits from
+his smartphone to the service running on the cash register's point-of-sale
+system.  No gun or holdup note was required. He was able to do so through a
+vulnerability in Xpient, which makes point-of-sale software that runs on
+cash drawers.
+
+"It was extremely trivial," Mr. Bergin said in an interview Wednesday. He
+reverse-engineered Xpient's point-of-sale system, expecting that to interact
+with it he would have to crack a password or break through a layer of
+encryption. To his surprise, he encountered neither. By simply sending a
+two-digit code from his phone to the point-of-sale system, he discovered he
+could pop open the cash register remotely.
+
+Christopher Sebes, the chief executive of Xpient, said in an interview
+Thursday that the company had issued a patch for the vulnerability, which
+Xpient customers can download to their systems. Mr. Sebes noted that
+customers who had a Windows firewall switched on would be protected from the
+hack, regardless of whether they had downloaded the patch. He also noted
+that someone could just as easily pop open a cash register by physically
+hitting the "No Sale" button on the register itself.
+
+Increasingly, criminals are finding ways to use digital tactics for physical
+theft. In February, thieves stole $45 million from thousands of New York
+City A.T.M.'s in a few hours using a few keystrokes. It was one of the
+largest heists in New York City history, the authorities said, on par with
+the 1978 Lufthansa robbery at Kennedy Airport that inspired a scene in the
+1990 film "Goodfellas."
+
+------------------------------
+
+Date: Fri, 7 Jun 2013 18:59:40 -0700
+From: "Saffo.com" <paul@saffo.com>
+Subject: Peninsula woman battles DMV over alleged false conviction
+
+Wanna bet this is a database glitch?  PS
+
+http://www.mercurynews.com/san-mateo-county-times/ci_23394630/peninsula-woman-battles-dmv-over-alleged-false-conviction
+
+Peninsula woman battles DMV over alleged false conviction
+
+Joshua Melvin <jmelvin@bayareanewsgroup.com>, 5 Jun 2013
+
+REDWOOD CITY -- Maryann Raab says she hasn't been to Florida since 1977, yet
+the DMV claims it has proof she was convicted of DUI there in 2005 and as a
+result suspended her driver's license last month.
+
+In an effort to clear things up, the Portola Valley woman's lawyer contacted
+a DMV clerk May 29 and then the agency's legal affairs office. The DMV
+response? Take it to court, they said, and so she did.
+
+Raab, 63, won a temporary hold Monday on the suspension in San Mateo County
+Superior Court, where she filed an appeal of the suspension the same
+say. Judge George Miram ordered both sides back July 11 for a hearing, which
+means the dispute is far from over.
+
+"They can't prove it, because it wasn't me," Raab said in a phone
+interview. "They'll have a pretty hard time there."
+
+Department of Motor Vehicles spokeswoman Jan Mendoza declined to discuss any
+aspect of the case.
+
+"It's an open litigation, and we don't make comment," she said.
+
+Raab was hit with a letter May 22 announcing the suspension, which was
+effective immediately, according to her appeal. The order cited a June 6,
+2005 "DUI -- Drug" conviction somewhere in Florida. It didn't provide a case
+number, any court documents or even a court or city name, the appeals says.
+
+Raab says she's never had a DUI anywhere, ever. And she claims she hasn't
+been to Florida since 1977 for a visit she barely recalls. She said since
+she lives in a rural Portola Valley, walking or taking public transit isn't
+a realistic option for her. Also, she says she's on the Mission Hospice
+board and that involves numerous meetings per week in neighboring San Mateo.
+
+Her attorney contacted a DMV clerk on May 29 to try to fix the problem. But
+the clerk said Raab's file had no other information about the Florida
+conviction. So that same day her lawyer talked to.
+
+Jennifer Berry at the DMV legal affairs office, who said the agency wouldn't
+set aside the stay, the appeal says.
+
+Instead she said "Ms. Raab's only remedy would be through the courts,"
+according to the appeal.
+
+Berry also told Raab' lawyer the DMV can't remove the conviction from the
+system because the conviction information came from the National Driver
+Register. It's a national database that lists drivers who have had their
+licenses revoked or suspended for serious violations.
+
+It wasn't immediately clear how Raab's name ended up in the database, but
+drivers' records are put in and taken out by the DMV's around the
+country. As the duration and full cost of the episode remained unknown, Raab
+said she was left feeling "pretty helpless."
+
+"There needs to be some verification," she said, referring to license
+suspensions. "How do they know it's actually you?"
+
+------------------------------
+
+Date: Fri, 07 Jun 2013 21:59:05 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Patients' Medical Info Left on Bus"
+
+  [This article is not on the newspaper's Website.  I did not consider it
+  worth typing it all in.  I will keep it for a week in case you want more
+  data.]
+
+Not all risks are computer-related even if the risk is data-related.  The
+front-page story for today (June 7, 2013) in The Daily News (Kamloops,
+British Columbia, Canada) was "Patients' Medical Info Left on Bus".
+
+a couple of sentences:
+
+  "The document on the bus was a list with 83 patients' names, health numbers
+  and other personal data."
+
+  "The letter said the bus driver retrieved the file within a few minutes and
+  turned it over to IHA."
+
+(The letter being referred to was a letter from IHA -- Interior Health
+Authority -- disclosing the breach.)
+
+------------------------------
+
+Date: Sun, 9 Jun 2013 14:39:09 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Energy-efficient lighting may worsen sleep deficiencies
+
+Carolyn Y. Johnson and Pat Greenhouse, Energy-efficient lights a threat to
+sleep?  *The Boston Globe*, 22 May 2013
+
+For years, Dr. Charles Czeisler has studied sleep. The chief of the division
+of sleep medicine at Brigham and Women's Hospital knows that the invention
+of the light bulb has profoundly altered human life and biology.
+
+But in a perspective piece published Wednesday in the journal *Nature*,
+Czeisler argues that the sleep deficiencies that have become so pervasive
+among adults and children may be threatened yet again by technological
+progress: LEDs (light-emitting diodes) that consume far less energy than
+incandescent bulbs.
+
+The reason Czeisler is wary of LEDs, which are already in our laptops,
+televisions, and cellphones, is that they are projected to become even more
+abundant as governments retire the incandescent bulb and shift toward more
+energy-efficient sources of light. That matters because it isn't just all
+artificial light that can reset our body clocks; the exact type of light
+makes a difference. ...
+
+http://www.bostonglobe.com/lifestyle/health-wellness/2013/05/22/tired-energy-efficient-lighting-may-worsen-sleep-deficiencies/kAXK0yBbQDrwN9A6kmy9vJ/story.html
+
+Energy-Efficient Lightbulbs May Have Dark Side When It Comes To Health
+8 Aug 2012
+http://www.npr.org/blogs/health/2012/08/08/158426970/energy-efficient-lightbulbs-have-a-dark-side-when-it-comes-to-health
+
+------------------------------
+
+Date: Fri, 07 Jun 2013 12:02:20 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Risks of spreadsheets -- and leap seconds (Frankston, RISKS-27.33)
+
+> ... I wonder how many financial instruments depended on the 1-2-3 bug,
+> which treated 2000 as a leap year. ...
+
+I think Frankston meant 1900, not 2000.  Mind you, there were people who
+thought that 2000 would not be a leap year.
+
+  [Quite a few other RISKS readers noted that 2000 *was* a leap year.  PGN]
+
+------------------------------
+
+Date: Fri, 7 Jun 2013 14:14:25 -0400
+From: "Phil Smith III" <lists@akphs.com>
+Subject: Re: BA plane's emergency landing at LHR caused by maintenance error
+
+A co-worker's dad retired from United as a Boeing maintenance guy; I thought
+his comments on the incident were interesting.
+
+  With the disclaimers that I have been retired for more than 10 years, and
+  do not have any experience with Airbus manufactured aircraft, I have the
+  same initial reaction as everyone else.
+
+  How did the flight crew miss a well identified hazard of the model of
+  aircraft they fly during their preflight? They most certainly received
+  detailed printed bulletins outlining the risk, including the appearance in
+  both the normal and hazardous configurations.
+
+  From what I have observed, the missing variable is the motivation of the
+  crewman assigned the preflight duties to kneel down and examine the
+  latches for proper closure. I have seen pilots make the inconvenient extra
+  effort on each and every preflight. I have also seen examples of
+  preflights that would be challenged to find a missing engine. It's up to
+  the individual, someone who may be having a bad day like we all do. Or, it
+  may have been raining during the preflight. The pilot would have gotten
+  dirty and wet looking under a dripping engine.
+
+  The same can be said for the mechanic who was tasked with completing the
+  maintenance that required opening the cowling. He did not perform his task
+  properly. While there are government mandated schedules to meet, it is up
+  to the individual to exercise the self discipline needed to complete all
+  tasks safely. Depending on the level of maintenance performed, there may
+  have been a final inspection performed by an Aircraft Inspector, a
+  different pair of eyes. For all I know, this job may have been eliminated
+  to keep ticket prices low.
+
+  Next is the design of the latches. Because the cowling is heavy and
+  flexible, it is unwieldy. The latches have a first level of attachment,
+  typically called the safety latch, that easily catches and controls the
+  cowling. It is called a safety latch because it allows a mechanic to
+  safely close the cowling without injury, not because it is safe to fly the
+  aircraft using it.
+
+  Next is the second level of attachment where the latch configuration
+  provides mechanical advantage for the mechanic to pull the cowling tight
+  against the engine frame, thus providing physical rigidity. This rigidity
+  streamlines the cowling and keeps the boundary layer of high speed air
+  from ripping it off the engine. Think of a 90 mph tornado getting under a
+  roof eave and lifting the roof. Imagine what a 600 mph wind can do to a
+  piece of sheet metal. The rigidity also stretches the cowling over engine
+  structures which provide cowling support, along with the
+  compartmentalization of the immediate engine exterior for fire
+  control. This all imparts structural strength to the cowling, much like
+  riveting fuselage skin to the circumferentials and longerons.
+
+  The final level of cowling attachment is typically in the form a quick
+  attach screw. It functions as a safety to securely lock down the second
+  level attachment lever. It would seem that the design of the cowling
+  latches does not have any visible way of observing an improperly latched
+  cowling with a quick glance, or by sliding one's hand over the latch.
+
+  Long ago, the NTSB noted that it takes three independent events coming
+  together at the same time to enable a crash. In large part, this is
+  because of the numerous redundancies designed into aircraft. It is worth
+  noting that, in this case, no crash occurred despite the loss of
+  structural parts of the aircraft.
+
+  Aircraft design and maintenance are now mature industries. The race is on
+  to reduce costs and meet mandated on-time performance metrics by utilizing
+  these build in redundancies. As with all human endeavors, determining what
+  is adequate, and how much it costs, is subject to trial and error. This
+  event seems to be on the error side of the seesaw.
+
+------------------------------
+
+Date: Fri, 7 Jun 2013 07:14:11 +0000
+From: "Andy Cole" <andy.cole3@baesystems.com>
+Subject: Re: BA plane's emergency landing at LHR ... (Page, RISKS-27.33)
+
+Further to Page's note, Reuters referenced the AAIB report into the incident
+that said:
+
+  "...fastening the fan cowl door latches usually required maintenance
+  personnel to lie on the ground to reach the latches, and that the latches
+  were difficult to see unless the person was crouching down."
+
+This would make inspection to ensure that latches are properly secured
+difficult and possibly explains the number of reported incidents.
+
+Andy Cole, Successor Whole Boat Software Lead, BAE Systems Maritime -
+Submarines Phone: +441229873334 Mobile: +44(752) 5389787
+
+------------------------------
+
+Date: Fri, 07 Jun 2013 12:12:43 +0200
+From: Dag-Erling Smorgrav <des@des.no>
+Subject: Re: BA plane's emergency landing at LHR ... (Page, RISKS.27.33)
+
+This could arguably be considered a user interface issue.  Both the A320
+family (which, confusingly, includes the A319) and its main competitor, the
+B737, have very low-slung engines.  On that particular plane, the cowl
+latches are on the bottom of the engine (I believe this varies from engine
+model to engine model), and you practically have to crawl under the engine
+to verify that they are closed.
+
+This reminds me of the DC-10 rear cargo door, where the handle could be
+forced into the closed position even if the lock was not properly engaged.
+This design error killed 346 people and injured another 11 in two separate
+incidents.
+
+------------------------------
+
+Date: Sat, 8 Jun 2013 16:36:26 -0700
+From: "Jim Geissman" <jgeissman@socal.rr.com>
+Subject: Re: BA plane's emergency landing at LHR caused by maintenance error
+
+> "A lump of metal falling from a preceding plane is now thought to have
+> caused the Concorde disaster at Paris some years ago."
+
+A few years ago my VW Passat was subject to a recall, where the dealer put a
+sheet of Kevlar in the wheel well on the side with the fuel tank, to protect
+against this very risk.  Concorde should have done the same.
+
+------------------------------
+
+Date: Mon, 10 Jun 2013 21:12:49 -0400
+From: "John C. Bauer" <johncbauer.xx@gmail.com>
+Subject: Re: Cowlings Coming Loose from Engines - Human Factors at Work?
+  (RISKS-27,32,33)
+
+If cowlings on a particular type of engine and nacelle come loose 33 times,
+then there may be more behind it than simple carelessness.  A human factors
+investigation may be indicated.  We no longer automatically ascribe
+accidents to "pilot error" without delving into the complete sequence of
+events and associated outside factors.  Similarly merely exhorting mechanics
+to be more careful may not be the right approach for this situation.
+
+------------------------------
+
+Date: Fri, 7 Jun 2013 10:07:06 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: The Hazards of Gambling (Drewe, RISKS-27.32)
+
+There are several falsehoods and fallacies in Chris Drew's response.
+
+> My favourite quote here is "a politician who robs Peter to pay Paul can
+> probably rely on Paul's vote".
+
+This is obviously false.  The economic policies proposed by the Green Party
+would benefit the vast majority of the population.  So why doesn't the Green
+Party win every election with a landslide victory?
+
+> If the Government takes money off rich people and gives it to poor people,
+> this may seem to be "fairer" and reduce inequality, but it rewards people
+> who rely on welfare and punishes those who provide for themselves
+
+Throwing a lifeline to a drowning man is "rewarding" him for falling in the
+river? While allowing the banker to keep only half of the 5M-pound bonus he
+awarded himself this year is such a severe "punishment" that nobody wants to
+be a banker? Recently the UK Government cut public services to the extent
+that 500,000 jobs were lost, in order to fund a cut in the top tax rate from
+50% to 45%.  So that the banker can now take home another 250,000 pounds of
+his bonus.  Even The Economist, that hotbed of communist sympathies, warned
+that these cuts would prolong the recession.  Which they did.
+
+> (hence in the UK a lifetime on welfare is quite a popular career option).
+
+Ask anyone on welfare whether they would rather be a banker earning
+5-million pounds per year: few would refuse.  Yet somehow, bankers need
+millions in "incentives" to get them to do the job: even when they make a
+terrible hash of it!
+
+The fallacy presented by the media is that Governments are in trouble
+because they are taking more and more from the rich and giving it to the
+poor.
+
+The reality is that over the last 40 years, productivity has almost
+*doubled* while the median wage has fallen, the poor are substantially worse
+off, and taxes on the rich are at the lowest ever: with many of the largest
+corporations paying virtually no tax.  So where has all the extra production
+gone?  It has been appropriated by the wealthy: the top 1% now own more than
+half of all the wealth in the country.
+
+The biggest and most damaging fallacy is that cutting taxes creates jobs
+while higher minimum wages will increase unemployment.
+
+This "seems" obvious but it is not how companies work.  Give them a tax
+break and it goes straight to the bottom line and executive bonuses: they
+will not employ a single extra person.  Allow them to halve the wages of all
+minimum-wage employees, and the same thing will happen.  Force them to pay
+higher wages and they may have to raise prices.  BUT since labour costs are
+less than 100% of the total price: the price rise will be smaller than the
+wage rise.  For example, a $1 increase in the minimum wage would add only 2
+cents to the cost of a hamburger.  Nobody wants prices to rise: but if the
+minimum wage doubled, and at the same time all prices rose by even as much
+as 50% then all the workers would be able to buy more, despite the higher
+prices, thereby boosting the economy and creating more jobs.
+
+Nick Hanauer directly addresses these fallacies in his Ted talk:
+http://www.youtube.com/watch?v»x2Y5HhplI
+
+The country with one of the highest tax rates, with correspondingly high
+unemployment benefits and minimum wage (Norway) also has the highest rate of
+successful business startups.
+
+As I said about gambling: for some the moral argument (in this case: paying
+your workers sweatshop wages while taking millions in bonuses is stealing)
+is stronger than the economic one.  But even those who believe that
+economics trumps morality should be convinced by the economic argument.
+
+To bring this post back into relevance to comp.risks: in the 70s the
+potential for automation and computerisation were recognised as presenting a
+challenge as to what kind of society we wanted to build.  For the first
+time in history, it would be possible to keep full employment and full
+productivity while greatly reducing working hours for everyone.
+
+What instead happened was rising productivity meant that companies could get
+away with employing fewer workers, which meant rising unemployment, and an
+increasing pool of desperately poor people willing to work for ever smaller
+wages.  Which, in turn, means that expensive robots are not needed when
+sweatshop labour can do the same job for next to nothing.
+
+In the US in 2010 a remarkable 93% of the growth in incomes accrued to the
+top 1% of the population.--Emmanuel Saez, 2nd March 2012.  Striking it
+Richer: the Evolution of Top Incomes in the United States (Updated with 2009
+and 2010 estimates).
+http://elsa.berkeley.edu/~saez/saez-UStopincomes-2010.pdf
+
+"To end extreme poverty worldwide in 20 years, Sachs calculated that the
+total cost per year would be about $175 billion.  This represents less than
+one percent of the combined income of the richest countries in the world."
+
+"In 2012, the world's 400 richest people became $241 billion richer".
+
+http://www.visionofearth.org/economics/ending-poverty/how-much-would-it-cost-to-end-extreme-poverty-in-the-world/
+
+STRL Reader in Software Engineering and Royal Society Industry Fellow
+martin@gkc.org.uk  http://www.cse.dmu.ac.uk/~mward/
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.34
+************************
+
+--_002_628eac54c2bb49b5a2fc117074598900EXHUBVM03campusnclacuk_--

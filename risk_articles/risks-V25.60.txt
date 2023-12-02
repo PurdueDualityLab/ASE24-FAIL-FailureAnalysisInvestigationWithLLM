@@ -1,0 +1,619 @@
+precedence: bulk
+Subject: Risks Digest 25.60
+
+RISKS-LIST: Risks-Forum Digest  Friday 6 March 2009  Volume 25 : Issue 60
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.60.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Health-care: The Computer Will See You Now (Anne Armstrong-Cohen via PGN)
+Turkish Airline disaster and the Altimeter (Turgut Kalfaoglu)
+Britain's Chinook helicopters unusable for years due to software (Mark Brader)
+Conviction in attempted 229 million GBP theft (Mark Brader)
+Altimeter and autopilot possible cause of plane crash near Schiphol
+  (Ben Blout)
+Normal Accidents and Black Swans (Jerry Leichter)
+Building-Security-In Maturity Model: BSIMM (Gary McGraw)
+An insider attack... in the police (Jeremy Epstein)
+Diebold delete button for erasing audit logs (Kim Zetter via PGN)
+Re-examining assumptions (Jerry Leichter)
+Credit card #s plucked out of air at FL Best Buy (David Ian Hopper
+  via Dave Farber)
+Worldpay ATM system breached (Neil Youngman)
+Re: Iridium and Cosmos satellites collide (Ivan Jager)
+Risk Contained In RISKS Posting? (David E. Price)
+Re: Wikileaks cracks key NATO document on Afghan war (Charles Wood)
+Re: Google Gaffe: Gmail Outage ... (Alain Picard)
+Verizon curiosity (Peter Zilahy Ingerman)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 6 Mar 2009 12:59:32 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Health-care: The Computer Will See You Now (Anne Armstrong-Cohen)
+
+In considering one of our classic double-edged RISKS swords, Anne
+Armstrong-Cohen in today's issue of *The New York Times* discusses the risks
+of doctors having *less* involvement with patients as a consequence of the
+push to develop paperless health-care that is heavily dependent on online
+facilities.  Yes, electronic medical records (EMRs) can avoid illegible
+handwriting and enable doctors to share patients' records more easily.  "In
+short, the computer depersonalizes medicine.  It ignores nuances that we do
+not measure but [that] clearly influence care. ...  A box clicked
+unintentionally is as detrimental as an order written illegibly -- maybe
+worse because it looks official.  ... So before we embrace the inevitable,
+there should be more discussion and study of electronic records, or at a
+minimum acknowledgment of the down side.  A hybrid may be the answer --
+perhaps electronic records should be kept only on tablet computers, allowing
+the provider to write or draw, and face the patient.  The personal
+relationships we build in primary care must remain a priority, because they
+are integral to improved health outcomes.  Let us not forget this as we put
+keyboards and screens within the intimate walls of our medical homes."
+
+As always, human intelligence is critical.  So are well-designed and easily
+usable human interfaces that allow human intelligence to prevail --
+especially in the presence of erroneous online information!
+
+------------------------------
+
+Date: Thu, 05 Mar 2009 09:58:44 +0200
+From: turgut kalfaoglu <turgut@kalfaoglu.com>
+Subject: Turkish Airline disaster and the Altimeter
+
+As you probably know, a Boeing 737-800 with 127 passengers and seven crew
+crashed near Schiphol airport in the Netherlands, killing nine and injuring
+many others.  The details are starting to emerge that the left altimeter was
+faulty, and that from 2000 feet, it notified the autopilot that they were
+suddenly at -8 feet. Autopilot immediately cut the power to the engines,
+stalling it in mid air.  Due to the weather, the pilots had to rely on their
+instruments and could not see what was wrong until the stall indicators came
+on.
+
+What I would like to know is that how software testing is done at Boeing.  I
+fail to see how the software would not spot a problem and carry out the
+landing:
+
+1) If the two altimeters are reading very different readings,
+2) If one of the altimeters switches from reading 2000 feet to -8 feet
+   instantly,
+3) If one of the altimeters reads a negative number?
+
+If the software had warned them, I'm sure these pilots would not have
+died, along with several passengers.
+
+  [Somewhat similar comment from Ben Blout.  Also, there has been extensive
+  discussion on this topic around the Net.  Having two of anything always
+  suggests the problem of what to do what they disagree.  (Les Lamport's
+  paper on Buridan's Ass comes to mind [RISKS-10.44].)  That problem
+  suggests that having THREE might be a better strategy, and seeking
+  consensus.  But sanity checking is also a good idea, and trusting absurd
+  readings is not wise.  Perhaps the biggest problem is again that
+  autopilots and people are not infallible, but the lack of synergy between
+  the two can be even more debilitating.  PGN]
+
+------------------------------
+
+Date: Thu,  5 Mar 2009 18:55:40 -0500 (EST)
+From: msb@vex.net (Mark Brader)
+Subject: Britain's Chinook helicopters unusable for years due to software
+
+  http://news.bbc.co.uk/2/hi/uk_news/7923341.stm
+It says here that in 1995 the Royal Air Force ordered Mark 3 Chinook
+helicopters "with a modified cockpit computer system in order to reduce
+costs.  But the aircraft have never been able to fly..." and the plan now is
+to downgrade them to Mark 2 models for use next year.
+
+Mark Brader, Toronto, msb@vex.net
+
+------------------------------
+
+Date: Thu,  5 Mar 2009 19:08:54 -0500 (EST)
+From: msb@vex.net (Mark Brader)
+Subject: Conviction in attempted 229 million GBP theft
+
+This case was briefly noted by Tom Van Vleck in Risks-23.81 in 2005.  In
+that year, British police made a number of arrests in the case of a plan to
+steal huge sums of money from accounts at the British office of the Sumitomo
+Mitsui bank by transferring it into their accounts in various countries.
+Their basic trick was to plant keylogger software on the bank's computers,
+exposing login names and passwords to them.
+
+The Hollywood-like plan failed only because they got the details wrong as
+they attempted the invalid transfers totaling 229,000,000 pounds sterling.
+
+The case is in the news again now because the ringleader has now been
+convicted.
+
+http://news.bbc.co.uk/2/hi/uk_news/7909595.stm
+http://news.bbc.co.uk/2/hi/uk_news/7926294.stm
+
+Mark Brader, Toronto, msb@vex.net
+
+------------------------------
+
+Date: Wed, 4 Mar 2009 12:08:45 -0500 (EST)
+From: Ben Blout <bdbnew@MIT.EDU>
+Subject: Altimeter and autopilot possible cause of plane crash near Schiphol
+
+I read an interesting article from the BBC, headlined "Altimeter 'had role'
+in air crash".  In reporting a news conference conducted by Dutch Safety
+Board chairman Pieter van Vollenhoven, the article reads in part:
+
+  ...the plane had been at an altitude of 595m (1950ft) when making its
+  landing approach to Schiphol airport.  But the altimeter recorded an
+  altitude of around ground level.  The plane was on autopilot and its
+  systems believed the plane was already touching down, he said.
+
+  The automatic throttle controlling the two engines was closed and they
+  powered down. This led to the plane losing speed, and stalling.
+
+I am surprised that an autopilot would throttle back engines based on only
+one instrument, the altimeter.  I would have assumed additional criteria
+would need to be met - perhaps having weight on the landing gear.
+
+The article raises other interested points, and can be found here:
+http://news.bbc.co.uk/2/hi/europe/7923782.stm
+
+------------------------------
+
+Date: Wed, 4 Mar 2009 12:03:14 -0500
+From: Jerry Leichter <leichter@lrw.com>
+Subject: Normal Accidents and Black Swans
+
+We've often discussed Perrow's "Normal Accidents" on this list.
+Fundamentally, Perrow characterizes systems along two axes: Degree of
+coupling and complexity or linearity vs. nonlinearity of interactions.
+Systems in the fourth quadrant - high coupling, nonlinear - are inherently
+prone to disasters.
+
+In his article at:
+	http://www.edge.org/3rd_culture/taleb08/taleb08_index.html
+
+Nassim Nicholas Taleb has a different but related analysis.  (He
+concentrates on failures in the financial markets, but the lessons are much
+broader.)  The dimensions Taleb identifies are nature of the probability
+distribution (thin-tailed versus heavy or unknown tails) and complexity of
+the cost, particularly the sensitivity of the cost of finding yourself in a
+particular state for small variations in that state.  Taleb's 4th quadrant
+is characterized by systems in which rare events dominate the total cost.
+In these systems, statistical methods fail: We don't actually know the
+probability distributions; we can only estimate them from events.  But
+getting estimates of rare events requires huge numbers of observations.
+Because most of the cost is in rare events, which never make it into our
+observations, any estimate we make of expected costs is meaningless.
+
+The connection to Perrow's work is through the complexity of cost axis.
+Both of Perrow's characterizations of his fourth quadrant go directly to
+this complexity.  Along the other axis, Perrow is specifically talking about
+rare, outlier accidents - not the small, common, and understood problems
+that systems are designed to handle, and do handle for years at a time with
+no problems.  In eliminating those, he gets exactly to the rare but costly
+events.
+
+Taleb has a book out - The Black Swan - which I haven't read - but intend to
+after reading this article.  -- Jerry
+
+------------------------------
+
+Date: Thu, 5 Mar 2009 06:17:51 -0500
+From: Gary McGraw <gem@cigital.com>
+Subject: Building-Security-In Maturity Model: BSIMM
+
+the BSIMM model went live today ahead of schedule http://bsi-mm.com. and
+the *WSJ* broke the story:
+http://blogs.wsj.com/digits/2009/03/04/new-effort-hopes-to-improve-software-security/
+
+The first phase in our endeavor to bring some science to software security
+is at a close. Our science-y approach started with some anthropology several
+months ago. We asked nine firms to tell us about their software security
+group (SSG), its inception, its activities, and the success it has
+achieved. The result is the Building Security In Maturity Model authored by
+Gary McGraw, Brian Chess (Fortify), and Sammy Migues, which is out for
+public use at http://bsi-mm.com.
+
+Please take a look at BSIMM. If you run or are active in a software security
+group, look at it like a yardstick. Consider the activities listed versus
+what your organization is doing.
+
+We want to emphasize that we could not have done this without active
+participation by the nine firms we interviewed. The data in BSIMM is their
+data. Data from the interviews we conducted were used to build the model
+from scratch. The examples included with the activities are real
+examples. After building BSIMM, we scored each organization using it.  The
+individual scorecards, although unreleasable, are fascinating. They provide
+a unique glimpse into how local culture, perhaps as much or more than
+business imperatives, drive the approach to software security.  Suffice it
+to say, for now, that the carrot is once again shown to be mightier than the
+stick.
+
+As a final note, BSIMM is a data-driven model. The model will improve when
+more real-world data are added.
+
+sammy, gem and brian
+
+------------------------------
+
+Date: Fri, 06 Mar 2009 08:34:39 -0500
+From: Jeremy Epstein
+Subject: An insider attack... in the police
+
+Even police forces aren't immune from insider attacks that compromise
+personnel information.
+
+http://www.computerworld.com/action/article.do?command=viewArticleBasic&taxonomyName=security&articleId=9129023
+
+Jaikumar Vijayan, *Computerworld*, 5 Mar 2009
+
+In a demonstration of how no organization is immune from insider threats,
+the New York City Police Pension Fund (PPF) office is notifying about 80,000
+current and former NYPD officers of the potential compromise of their
+personal information after a civilian employee recently stole storage media
+containing the data.
+
+A sample alert posted on the pension fund site identified the individual as
+an employee of the PPF and said he was arrested Feb.  27 after a security
+breach at one of the pension fund's disaster recovery sites.
+
+At the time of the arrest, the individual was discovered to be in possession
+of "certain business records" containing data about retired and active
+members of the NYPD. The compromised data included Social Security numbers,
+names, addresses and bank account information, the statement said.
+
+"Even though the property was recovered, we cannot assure you that the
+information was not compromised," the statement said regarding why it
+was sending out the notifications.  [...]
+
+Jeremy Epstein, Senior Computer Scientist, SRI International
+1100 Wilson Blvd, Suite 2800, Arlington VA  22209  703-247-8708
+
+------------------------------
+
+Date: Wed, 4 Mar 2009 11:03:24 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Diebold delete button for erasing audit logs (Kim Zetter)
+
+Kim Zetter, Diebold Voting System Has 'Delete' Button for Erasing Audit Logs
+*Wired News*, 3 Mar 2009
+
+An investigation by California's secretary of state into why a product made
+by e-voting system vendor Premier Election Solutions (formerly Diebold
+Election Systems) lost about 200 ballots in Humboldt County during the
+U.S. presidential election revealed the presence of a "clear" button in some
+versions of the machine's Global Election Management System (GEMS) software
+that allows someone to permanently erase audit logs from the system.  The
+secretary of state's report says the logs "contain--or should
+contain--records that would be essential to reconstruct operator actions
+during the vote tallying process."  The proximity of the clear button to the
+"print" and "save as" buttons raises the risk of the logs being erased
+accidentally, and the system provides no warning to operators of the danger
+of clicking on the button.  Premier/Diebold retained the button despite an
+apparent warning from a system developer, and though the button was removed
+from subsequent iterations of the software, the version with the button is
+still used in three California counties and other U.S. states.  The report
+says that under the voting system standards "each of the errors and
+deficiencies in the GEMS version 1.18.19 software...standing alone would
+warrant a finding by an Independent Testing Authority (ITA) of 'Total
+Failure' (indicated by a score of 1.0) had the flaw been detected."  The
+California report's findings bring up issues about the auditing logs on
+voting systems made by other vendors, and about what course of action states
+that use the Premier system will follow now that they are aware that their
+voting software fails to produce a sufficient audit trail to guarantee the
+integrity of an election.
+http://blog.wired.com/27bstroke6/2009/03/ca-report-finds.html
+
+------------------------------
+
+Date: Mon, 2 Mar 2009 18:47:06 -0500
+From: Jerry Leichter <leichter@lrw.com>
+Subject: Re-examining assumptions
+
+A recent paper submitted to Usenix HotSec:
+"Do Strong Web Passwords Accomplish Anything?" -
+http://www.usenix.org/events/hotsec07/tech/full_papers/florencio/florencio.pdf
+
+re-opens points that "we all know the answers to".  In this case, the
+question is just how strong a password has to be.  It's accepted wisdom that
+passwords must be taken from large character sets and be long.  However, the
+attacks that led to these conclusion were off line: That is, the attacker
+could try passwords at any speed for as long as he wanted (for example, by
+stealing the file of hashed passwords and then generating passwords and
+computing their hashes).  However, this is not a realistic attack against
+web-based systems. An on-line guessing attack can be detected and blocked
+easily.
+
+In fact, the most dangerous attacks - phishing, keylogging -- are no less
+effective against strong passwords than against weak ones.  There is an
+attack (bulk guessing against all accounts) that can be useful against weak
+passwords, but the authors show that there are alternative defenses that are
+probably much better from a UI point of view than requiring stronger
+passwords.
+
+It's all to easy to remember the results of papers without remembering the
+assumptions that went into them.  In a field such as computer science where
+order-of-magnitude changes in parameters critical to results are common over
+fairly short periods of time, this is a dangerous way to work!
+
+------------------------------
+
+Date: March 2, 2009 9:09:03 AM EST
+From: David Ian Hopper <imhopper@gmail.com>
+Subject: Credit card #s plucked out of air at FL Best Buy
+
+  [From Dave Farber's IP]
+
+Clever.  Try walking into your local Best Buy with an iPhone, and see what
+networks you can hop on...
+
+http://www.bestbuy.com/store/550/
+
+ - - ---------------
+
+The following advisory applies to customers who shopped at the Best Buy
+located at 1880 Palm Beach Lakes Blvd in West Palm Beach, FL in November and
+December 2008.
+
+An employee at Best Buy's 1880 Palm Beach Lakes Blvd in West Palm Beach, FL
+allegedly stole credit card information during November and December 2008
+using an unauthorized personal device. Best Buy learned of the theft on
+Jan. 5, 2009. With the cooperation and assistance of store management, the
+employee was identified and taken into federal custody by the Secret Service
+on Jan. 7, 2009.  That person is no longer employed by Best Buy.
+
+Although none of Best Buy's electronic systems were compromised by this
+former employee's actions, Best Buy believes that approximately 4,000 people
+could have been affected by this law enforcement authorities and all
+relevant payment card brands have been notified of the incident and Best Buy
+is fully cooperating with all investigations.
+
+In addition, Best Buy is sending letters to customers who may have been
+affected by this fraudulent activity, notifying them of the situation and
+encouraging them to review their account statements and monitor their credit
+reports. ...
+
+Archives: https://www.listbox.com/member/archive/247/=now
+
+------------------------------
+
+Date: Mon, 2 Mar 2009 08:15:22 +0000
+From: Neil Youngman <n.s.youngman@btinternet.com>
+Subject: Worldpay ATM system breached
+
+This security breach at Worldpay appears to have 2 unique features. First,
+the crackers had sufficient access to raise the limits on payment cards and
+second, the cracked cards were used in a coordinates attack by footsoldiers
+in 49 different cities worldwide.
+
+http://www.bankinfosecurity.com/articles.php?art_id=1197
+http://www.bizjournals.com/atlanta/stories/2008/12/22/daily24.html
+http://www.itpro.co.uk/609793/royal-bank-of-scotland-s-worldpay-hit-by-atm-scam
+
+------------------------------
+
+Date: Thu, 5 Mar 2009 15:15:09 -0500
+From: Ivan Jager <aij+@mrph.org>
+Subject: Re: Iridium and Cosmos satellites collide (Knowlton, RISKS-25.59)
+
+I found this article gives quite a bit of insight into how the satellites
+could have crashed: http://www.thespacereview.com/article/1314/1
+
+Basically, the US military keeps their high accuracy tracking data secret,
+and the low accuracy data they publish didn't even make Iridium 33 and
+Cosmos 2251 look like a likely collision. Of course, even the high accuracy
+data only gives a probability, and the military doesn't have enough
+resources (mostly constrained by trained personnel) to analyze all possible
+collisions. Even if they did, it seems Iridium didn't even have a plan in
+place for dealing with likely collisions. Or perhaps they were more like,
+"Lalala, we're going to pretend that can't happen because we can't afford to
+deal with it." And of course there's the Russians, who left a derelict
+satellite where it would intersect many other orbits, and launched both
+satellites which collided.  Basically, everyone involved is to blame to some
+extent.
+
+I guess sometimes it is cheaper to take risks and let everyone else deal
+with the consequences.
+
+------------------------------
+
+Date: Thu, 5 Mar 2009 09:37:16 -0800
+From: "David E. Price, SRO, CHMM" <price16@llnl.gov>
+Subject: Risk Contained In RISKS Posting?
+
+Be careful which active links you click, even in RISKS postings.
+
+The recent posting about the Wikileaks cracking of encryption of documents
+found on a U.S. Pentagon server <Wikileaks cracks key NATO document on
+Afghan war> highlights a risk in quoting URLs without adding precautionary
+statements.
+
+The original posting contained a statement saying "Altogether four
+classified or restricted NATO documents of interest on the Pentagon site
+were discovered to share the 'progress' password.  Wikileaks has decrypted
+the documents and released them in full:" followed by URLs to pages which I
+assume lead to downloadable documents.
+
+I assume this statement means that at least one the linked documents was/is
+classified, but it may indicate only a suggestive teaser. (No, I didn't
+follow the links...)
+
+Anyone who works in a classified environment and downloads one of the
+purported classified documents could have contaminated their unclassified
+computer system (and associated proxy servers and spam scanning servers,
+etc.) with classified information.
+
+This would result in a large isolation and cleanup effort, requiring at
+least the local sub-net to be taken offline for some time.
+
+David E. Price  SRO, CHMM, Senior Consequence Analyst for Special Projects,
+Global Security, Lawrence Livermore National Laboratory, P. O. Box 808  L-073
+Livermore, CA  USA  94551
+
+  [The burden of the typical unclassified RISKS reader is not on the reader.
+  The burden on a classified reader reading something classified from a
+  supposedly unclassified system is clearly not on The Risks Forum.  There
+  is also a fundamental gap -- the folks who worry about multilevel security
+  (for confidentiality and nonleakage) should also be worried about some
+  form of multilevel integrity (as in the lack of dependence on less
+  trustworthy people, programs, software, hardware, systems, networks, and
+  so on, especially in the presence of malware, phishing, ...  PGN]
+
+------------------------------
+
+Date: Tue, 3 Mar 2009 18:42:03 +0900
+From: Charles Wood <j.charles.wood@gmail.com>
+Subject: Re: Wikileaks cracks key NATO document on Afghan war
+  (Nye, RISKS-25.59)
+
+I just wonder if this is NATO experimenting with viral marketing?
+
+When you read the documents, you see a press group that has developed the
+current text of 'the message' including all the good things they want to say
+about themselves. It is basically propaganda for the troops and for release
+to interested journalists. They include a small bit about what they don't
+really like to discuss, but for which a standard and reasonable answer is
+supplied.
+
+When you look at it, there is nothing in these documents that you wouldn't
+get doled out continuously at innumerable press briefings and troop
+briefings. Nothing secret, nothing key, nothing new - rather boring press
+conference material really.
+
+What is new and unique (I think - though perhaps earlier examples exist?) is
+that the documents have been trivially located and cracked and the entire
+message passed to every interested reader on the Internet.
+
+Far more people than ever was likely now know exactly the official NATO
+position and thoughts.
+
+You don't suppose someone in NATO marketing had a bright idea do you?
+
+I have a theory that in this life, 99% of bad stuff is caused by stupidity
+and 1% by malevolence. In this case I'm prepared to even the odds quite a
+lot.
+
+------------------------------
+
+Date: Mon, 02 Mar 2009 20:41:35 +1100
+From: Alain Picard <Dr.Alain.Picard@gmail.com>
+Subject: Re: Google Gaffe: Gmail Outage ... (Spira, RISKS-25.59)
+
+Except, of course, that e-mail is a store and forward medium, and for me a
+2.5hr delay on e-mail is perfectly acceptable.  Perhaps the risk is in
+people using a technology for purposes for which it is not intended?  (in
+this case, as a substitute for instant messaging.)
+
+Gmail didn't lose any mail.  For me, having a hosted e-mail system where my
+mail doesn't get lost and is easily searchable certainly seems worth a 2.5hr
+inconvenience every few months.  It certainly seems better performance than
+every other in-house system I've used.
+
+Now, once someone hacks and takes over your GMAIL credentials, getting your
+account back.... now _that's_ a risky proposition!  :-)
+
+------------------------------
+
+
+Date: Tue, 03 Mar 2009 15:36:40 -0500
+From: "Peter Zilahy Ingerman, PhD" <pzi@ingerman.org>
+Subject: Verizon curiosity
+
+>Date: 	Tue, 03 Mar 2009 14:05:18 -0600 (CST)
+> From: Verizon Online, High Speed Internet Customer Care Team
+> <verizon.update.2@verizon.net>
+> Subject: 	Important information about your High Speed Internet Service
+
+Dear Verizon High Speed Internet Customer,
+
+On MARCH 17TH, 2009, Verizon will be performing network maintenance that
+will temporarily interrupt your Verizon High Speed Internet service for
+approximately one hour between the hours of 11:00 pm and 8:00 am local time.
+If the lights on your modem are blinking after 8:00 am local time on
+November 21st, please power cycle your modem.  To power cycle your modem,
+please do the following:
+
+- Use the power switch on the back of the modem to turn off the power
+- Wait 60 seconds
+- Turn the modem back on.
+- Wait 45 seconds to allow the modem to synchronize to the server, and then
+- try reconnecting to the Internet.
+
+Note: If your modem doesn't have an on/off switch, unplug the modem from its
+power source instead of turning the modem off.
+
+We apologize for any inconvenience this may cause and appreciate your
+cooperation.
+
+Thank you for choosing Verizon Online as your High Speed Internet service
+provider.
+
+Verizon Online Customer Care Team
+
+  [They probably also did this LAST November 20, and just changed THAT date
+  to March 17, but forgot to change the November 21 date.  PGN]
+    [Yup ... exactly what happened, I think. I remember a similar message a
+    few months ago. But I thought that Risks might enjoy it. I've stirred
+    them up for an explanation, and will let you know.  PZI]
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.60
+************************

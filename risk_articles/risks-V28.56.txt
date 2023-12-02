@@ -1,0 +1,708 @@
+RISKS-LIST: Risks-Forum Digest  Thursday 19 March 2015  Volume 28 : Issue 56
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.56.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Vigilance device fooled by horn automation (Mark Brader)
+TAFE students left in limbo by computer glitch (Dave Horsfall)
+Facebook to introduce payments in instant messages (Vindu Goel)
+Lawsuit seeks damages against automakers and their hackable cars
+  (Lucas Mearian)
+Americans' Privacy Strategies Post-Snowden (Pew Internet)
+Config error leaked Google whois data for 280K domains (Ars)
+"Researchers find same RSA encryption key used 28,000 times" (Jeremy Kirk)
+"Can you trust Canadian ISPs with your privacy?" (Nestor Arellano)
+Plans to censor South Africa internet unconstitutional? (HTXT)
+How Netflix Broke The Unbreakable Spoiler Alert (Medium.com)
+"IBM discloses vulnerability in Dropbox's Android SDK" (Serdar Yegulalp)
+Taking on the Food Industry, One Blog Post at a Time (NYTimes)
+EPA Wants to Monitor How Long Hotel Guests Spend in the Shower (Henry Baker)
+The problem with beacons ... (robert schaefer)
+"Ancient help-file format carries new CryptoWall attacks into PCs"
+  (Woody Leonhard)
+"First CASL fine hits Quebec spammer for more than $1 million"
+  (Nestor Arellano)
+"Rowhammer hardware bug threatens to smash notebook security"
+  (Serdar Yegulalp)
+"In search of: A Silicon Valley scandal, juicy and ripe"
+  (Robert X. Cringely)
+As We Age, Smartphones Don't Make Us Stupid -- They're Our Saviors
+  (Lauren Weinstein)
+Kali Linux security is a joke! (Henry Baker)
+Jurisdictional risks (William Brodie-Tyrrell)
+Re: Ian Urbina, Secret Life of Passwords (PGN)
+Re: Timestamps (Dan Jacobson)
+IS/IEC 61508 and many other standards availability (Pekka Pihlajasaari
+  via Martyn Thomas)
+Full text of new FCC Net Neutrality Rules (FCC)
+Bruce Schneier's Data and Goliath (reviewed by Richard Austin)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 12 Mar 2015 18:46:58 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: Vigilance device fooled by horn automation
+
+This press release was issued in February, but I don't think it's been
+mentioned in Risks.
+
+  http://www.ntsb.gov/news/press-releases/Pages/PR20150206.aspx
+
+On August 17, 2014, two Union Pacific freight trains collided head-on at
+Hoxie, Arkansas, killing the engine crew of one train and causing
+considerable damage.  The NTSB hasn't yet announced a probable cause, but
+they've found one thing that sure looks to me like a contributing factor: on
+one of the trains, the vigilance device did not do what it was supposed to.
+
+The vigilance device or "alerter" is the modern replacement for the
+traditional dead-man control.  It's supposed to sound a warning if none of
+the controls in the locomotive cab is operated for a certain length of time.
+If the warning is not acknowledged after a further time, the brakes are
+applied automatically.
+
+In this case, though, one of the locomotives was equipped with a "horn
+sequencer", with which a single press of a foot pedal would repeatedly sound
+the standard level-crossing warning: long-long-short-long.  In this case, in
+fact, the horn went on sounding for 4 minutes.
+
+But as far as the alerter was concerned, each blast of the horn meant
+that a control had been operated -- so it reset its timer.
+
+Mark Brader <msb@vex.net>, Toronto
+  There is no step function between "safe" and "unsafe".  Jeff Janes
+
+------------------------------
+
+Date: Wed, 18 Mar 2015 13:33:59 +1100 (EST)
+From: Dave Horsfall <dave@horsfall.org>
+Subject: TAFE students left in limbo by computer glitch
+
+Seen in the Sydney Morning Herald 16th March (and online over at
+http://www.smh.com.au/national/education/computer-woes-put-tafe-nsw-students-on-hold-over-fees-and-results-20150315-142o7t.html).
+
+``Thousands of TAFE [Technical And Further Education] students are still not
+  officially enrolled in their courses more than five weeks ago because of a
+  a computer glitch. ... The [NSW] Department of Education has revealed that
+  the new software is not functioning properly with its cost expected to
+  blow out by $90 million.''
+
+Basically, a system that was supposed to have been implemented by the end of
+last year is simply not working, with students unable to access their grades
+or fee notices, and teachers concerned about liability over accidents.
+
+Testing?  What's that?
+
+Dave Horsfall DTM (VK2KFU)  "Bliss is a MacBook with a FreeBSD server."
+http://www.horsfall.org/spam.html (and check the home page whilst you're there)
+
+------------------------------
+
+Date: Wed, 18 Mar 2015 11:55:14 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Facebook to introduce payments in instant messages (Vindu Goel)
+
+Facebook's instant messaging service can now be used to transmit money, by
+linking your debit card to the service.  Betting seems to suggest that this
+is a first step toward a more general peer-to-peer payment system.
+
+In that Facebook's Messenger app already has 500 million users each month,
+plus their acquisition of WhatsApp with another 700 million users, RISKS
+readers might well suspect that this could be a huge windfall for hucksters
+and fraudsters.
+
+[Source: Vindu Goel, *The New York Times* Business Day, B1, 18 Mar 2015,
+PGN-ed]
+
+------------------------------
+
+Date: Wed, 11 Mar 2015 07:27:39 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Lawsuit seeks damages against automakers and their hackable cars
+  (Lucas Mearian)
+
+Lucas Mearian, *ComputerWorld*, 10 Mar 2015
+
+A Senate report backs up claims that automakers haven't addressed electronic
+security: A Dallas law firm has filed a lawsuit against three major
+automakers claiming they have failed to take basic measures to secure their
+vehicles from hackers.
+http://www.computerworld.com/article/2895057/lawsuit-seeks-damages-against-automakers-and-their-hackable-cars.html
+
+------------------------------
+
+Date: Mon, 16 Mar 2015 21:06:46 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Americans' Privacy Strategies Post-Snowden
+
+http://www.pewinternet.org/2015/03/16/americans-privacy-strategies-post-snowden/
+http://www.pewinternet.org/files/2015/03/PI_AmericansPrivacyStrategies_0316151.pdf
+
+------------------------------
+
+Date: Fri, 13 Mar 2015 07:47:42 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Config error leaked Google whois data for 280K domains
+
+Ars via NNSquad
+http://arstechnica.com/security/2015/03/epic-google-snafu-leaks-hidden-whois-data-for-280000-domains/
+
+  "Google leaked the complete hidden whois data attached to more than
+  282,000 domains registered through the company's Google Apps for Work
+  service, a breach that could bite good and bad guys alike.  The 282,867
+  domains counted by Cisco Systems' researchers account for 94 percent of
+  the addresses Google Apps has registered through a partnership with
+  registrar eNom. Among the services is one that charges an additional $6
+  per year to shield from public view all personal information included in
+  domain name whois records. Rather than being published publicly, the
+  information is promised to remain in the hands of eNom except when it
+  receives a court order to turn it over.  Starting in mid 2013, a software
+  defect in Google Apps started leaking the data, including names, phone
+  numbers, physical addresses, e-mail addresses, and more. The bug caused
+  the data to become public once a domain registration was renewed. Cisco's
+  Talos Security Intelligence and Research Group discovered it on February
+  19, and five days later the leak was plugged, slightly shy of two years
+  after it first sprung."
+
+As someone who feels that all WHOIS data should be fully public except in
+exceptional circumstances (I've discussed why in the past), it's difficult
+for me to get too worked up about this on that level -- but obviously if
+you're told that information is private, it's important that it really is
+private.
+
+------------------------------
+
+Date: Wed, 18 Mar 2015 09:57:10 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Researchers find same RSA encryption key used 28,000 times"
+  (Jeremy Kirk)
+
+Jeremy Kirk, InfoWorld, 17 Mar 2015
+Another look at the impact of the FREAK flaw has turned up some
+surprising findingshttp://www.infoworld.com/article/2897717/security/researchers-find-same-rsa-encryption-key-used-28000-times.html
+
+------------------------------
+
+Date: Wed, 18 Mar 2015 09:35:03 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Can you trust Canadian ISPs with your privacy?" (Nestor Arellano)
+
+Nestor Arellano, *IT Business*, 13 Mar 2015
+http://www.itbusiness.ca/news/can-you-trust-canadian-isps-with-your-privacy/54387
+
+opening text:
+A new report from Open Media warns you should think twice before trusting
+Canadian Internet providers with your privacy, warning our ISPs are falling
+short on being transparent about how they protect their customers' privacy.
+
+------------------------------
+
+Date: Tue, 10 Mar 2015 21:40:15 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Plans to censor South Africa internet unconstitutional?
+
+HTXT via NNSquad
+http://www.htxt.co.za/2015/03/10/plans-to-censor-sa-internet-called-out-as-unconstitutional/
+
+  One major problem - besides criminalising YouTube - is that "certain
+  publications" aren't actually defined in the regulations, so they could
+  apply to any news or website - so while it may be that the regulations are
+  aimed at bringing streaming TV services inline with traditional broadcast
+  TV, the wording could include any blog, news site or Facebook page run out
+  of South Africa.
+
+------------------------------
+
+Date: Sun, 15 Mar 2015 00:01:17 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How Netflix Broke The Unbreakable Spoiler Alert
+
+https://medium.com/message/how-netflix-broke-the-unbreakable-spoiler-alert-f0215bf930cf
+
+------------------------------
+
+Date: Wed, 11 Mar 2015 18:04:57 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "IBM discloses vulnerability in Dropbox's Android SDK"
+  (Serdar Yegulalp)
+
+Serdar Yegulalp, InfoWorld, 11 Mar 2015
+The flaw allegedly affects popular Android apps like Microsoft Office
+Mobile, but Dropbox maintains its scope is limited
+http://www.infoworld.com/article/2895016/mobile-technology/ibm-discloses-droppedin-vulnerability-for-dropboxs-android-sdk.html
+
+------------------------------
+
+Date: Sat, 14 Mar 2015 18:05:54 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Taking on the Food Industry, One Blog Post at a Time
+
+http://www.nytimes.com/2015/03/15/style/taking-on-the-food-industry-one-blog-post-at-a-time.html
+
+The writer of the Food Babe blog attracts numerous fans and critics with her
+comments on the food industry.
+
+------------------------------
+
+Date: Tue, 17 Mar 2015 09:58:20 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: EPA Wants to Monitor How Long Hotel Guests Spend in the Shower
+
+FYI -- I recall European hotels that had coin-op hot water heaters a number
+of decades ago; why don't we simply bring them back?  Why must the answer
+always be a smartphone app ?
+
+http://freebeacon.com/issues/epa-wants-to-monitor-how-long-hotel-guests-spend-in-the-shower/
+
+EPA Wants to Monitor How Long Hotel Guests Spend in the Shower
+$15,000 grant creating device to `modify' guests behavior
+
+Elizabeth Harrington, *Free Beacon*, 17 Mar 2015
+
+The Environmental Protection Agency (EPA) is spending $15,000 to create a
+wireless system that will track how much water a hotel guest uses to get
+them to ``modify their behavior.''
+
+------------------------------
+
+Date: Tue, 17 Mar 2015 16:09:55 -0400
+From: robert schaefer <rps@haystack.mit.edu>
+Subject: The problem with beacons ...
+
+The problem with beacons is ``Is there a problem with beacons?''
+
+Good question.
+
+The Internet of Things is begging for infrastructure with potential. One
+aspect of that potential is the beacon, considered by marketers to be the
+"Next Frontier for Consumer Engagement", downloadable from
+  http://www.beaconstac.com/ebook/ibeacons-for-consumer-engagement
+
+Beacons emit an ID that can interact with your smart device (over
+Bluetooth), but only if there is an app for the beacon.  Beacons can be
+smarter that just emitting an ID, though I am not sure how smart, for
+example it is claimed that the beacon can access GPS information only if GPS
+is enabled.
+
+There are known attacks, see "6 Myths around Beacon Security and Privacy"
+http://blog.beaconstac.com/6-myths-around-beacon-security-and-privacy/, and
+beacons have already been hacked, in a CES sponsored scavenger hunt, where
+the beacon ID's were not encrypted in the app.  See
+http://makezine.com/2014/01/03/reverse-engineering-the-estimote/
+
+Basically the beacon is new ground for marketers, developers and hackers.
+
+(I haven't downloaded the beaconstac SDK  to look at the API, though I have requested `beta' access, and may report more, later.)
+
+The list of beacon products and vendors is growing:
+http://blog.mobstac.com/2015/03/3-new-beacon-hardware-players-to-watch-out-for/
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886   http://www.haystack.mit.edu  781-981-5767
+
+------------------------------
+
+Date: Wed, 11 Mar 2015 17:30:12 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Ancient help-file format carries new CryptoWall attacks into PCs"
+  (Woody Leonhard)
+
+Woody Leonhard, InfoWorld, 9 Mar 2015
+Ransomware attacks are using emailed CHM files opened in Windows browsers
+http://www.infoworld.com/article/2894256/security/ancient-help-file-format-carrying-new-cryptowall-attacks-on-pcs.html
+
+------------------------------
+
+Date: Wed, 11 Mar 2015 16:41:02 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "First CASL fine hits Quebec spammer for more than $1 million"
+  (Nestor Arellano)
+
+Nestor Arellano, IT Business, 6 Mar 2015
+http://www.itbusiness.ca/news/first-casl-fine-hits-quebec-spammer-for-more-than-1-million/54186
+
+opening text:
+
+The Canadian Radio-television and Telecommunications Commission (CRTC) has
+issued a notice of violation and a $1.1 million fine to Quebec-based
+Compu-Finder for breaking the Canadian anti-spam law (CASL).
+
+*ALSO*
+CASL's $1.1 million spam fine: Outlier or the new normal? (Jeff Jedras)
+
+Jeff Jedras, IT Business, 9 Mar 2015
+http://www.itbusiness.ca/news/casls-1-1-million-spam-fine-outlier-or-the-new-normal/54244
+
+------------------------------
+
+Date: Wed, 11 Mar 2015 17:18:27 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Rowhammer hardware bug threatens to smash notebook security"
+  (Serdar Yegulalp)
+
+Serdar Yegulalp, InfoWorld, 9 Mar 2015
+Google researchers blow the whistle on a hardware bug that renders
+notebooks vulnerable to a memory-based exploit
+http://www.infoworld.com/article/2894497/security/rowhammer-hardware-bug-threatens-to-smash-notebook-security.html
+
+------------------------------
+
+Date: Wed, 11 Mar 2015 17:16:24 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "In search of: A Silicon Valley scandal, juicy and ripe"
+  (Robert X. Cringely)
+
+  [They're onto us.  The same sorts of things just keep happening, and here
+  is some documentation.  <BEG>]
+
+Robert X. Cringely, InfoWorld, 9 Mar 2015
+
+Apple did what? Microsoft said that? We've heard it all before, and
+now's the time to turn around the snoozefest known as tech news
+http://www.infoworld.com/article/2893751/cringely/in-search-of-silicon-valley-scandal.html
+
+------------------------------
+
+Date: Mon, 16 Mar 2015 15:41:40 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: As We Age, Smartphones Don't Make Us Stupid -- They're Our Saviors
+
+              http://lauren.vortex.com/archive/001094.html
+
+Throughout human history, pretty much every development or invention that
+increased our information storage and management capabilities has had its
+loud and voracious naysayers.
+
+Around 370 BCE, both Socrates and Plato were already badmouthing the
+written word as inherently inferior to in-person verbal dialogue. The
+printing press, typewriter, telegraph, telephone, and Internet have
+all been targeted as the presumed bringers of universal intellectual
+decay.
+
+So it comes as no surprise that when Web search engines appeared on
+the scene -- to organize Internet-based information and make it widely
+available -- much the same tired old attack arguments were trotted out
+by the usual suspects, in the form of multitudinous "Google Is making
+Us Stupid!" articles and similar varieties of vacuous commentaries.
+
+The crux of most arguments against having quick access to information
+seem to largely parallel the attempts not that many years ago (and in
+some venues, still continuing) to routinely ban calculators from
+physics and other similar subject tests, on the grounds that not doing
+the math by hand was somehow -- perhaps in a moral judgment "You'll go
+to hell!" kind of sense -- horribly cheating.
+
+But unless the test you're taking is specifically one for mathematical
+skills, the rote manual calculation process is practically worthless
+compared with developing the necessary skills to actually analyze a
+problem and determining appropriate methodologies for reaching correct
+answers. Even a specific answer itself may often be far less relevant
+in many contexts than development and analysis of appropriate problem
+solving processes.
+
+One wonders how many potentially brilliant would-be physicists with
+wonderful analytic skills were sidelined into other professions simply
+due to not having a knack for manual math.
+
+With the rise of the mobile Net comes the latest incarnation of this
+twisted saga, the "Are smartphones making us stupid?" meme. There
+seems to be a new version of this one somewhere pretty much every few
+days.
+
+In a very real way the term "smartphone" in this context is being used
+by detractors largely as a proxy for saying "Portable Google" -- as a
+wireless retread of search engine criticisms.
+
+However, in this case the critics are even farther off the mark than
+usual, because smartphones not only don't reduce our intelligence,
+they can be our saviors as we age.
+
+Physiological studies show that our memory for much specific data
+usually begins to decline at the ripe old age of -- 20. Yeah, pretty
+depressing. But in contrast, our reasoning and analytic skills can in
+many cases continue developing throughout our lives without limit, as
+we integrate ever more experiences into the mix.
+
+And here is where the smartphone (along with the vast information
+ecosystem that supports it) really becomes something of a
+technological miracle.
+
+For there on your belt or in your purse is a little box that can act
+as an almost limitless adjunct to your own memory, to your own brain.
+
+Type on it, talk to it. Ask it questions, note its reminders.
+Smartphones can provide us with very much the exact kind of
+information that our brains gradually become less adept at recalling
+past age 20 or so.
+
+To argue that it's somehow wrong, somehow cheating or unethical or
+unnatural, to use these devices and their supporting infrastructures
+in this way, is itself as dumb and stupid as forcing a potentially
+brilliant future physicist to drop out of school because you wouldn't
+let them use a calculator.
+
+Obviously, for smartphones to be most useful at all ages, issues of
+accessibility become paramount -- matters for ground-up consideration,
+not after-the-fact excuses. Input and output methodologies, font sizes
+and contrast, all become especially important, since our vision
+typically begins to decline at the same young age as our memory. These
+are all relatively straightforward user interface design issues
+though, given the will to deal with them appropriately.
+
+It would probably be a pretty tough slog to get Plato comfortable with
+smartphones. On the other hand, he's quoted as saying: "We can easily
+forgive a child who is afraid of the dark; the real tragedy of life is
+when men are afraid of the light." And especially when it comes to
+smartphones and the immense value they can bring to us throughout our
+lives, only a fool would argue with Plato about that.
+
+------------------------------
+
+Date: Tue, 17 Mar 2015 07:37:50 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Kali Linux security is a joke!
+
+FYI -- Your best chance to hack the hackers...
+
+  "Downloading Kali Linux"
+
+  "Alert!  Always make certain you are downloading Kali Linux from official
+  sources, as well as verifying md5sums against official values.  It would
+  be easy for a malicious entity to modify a Kali install to contain
+  malicious code, and host it unofficially."
+  http://docs.kali.org/category/introduction
+
+---
+
+No kidding!
+
+So how come whenever you do apt-get install in Kali Linux, it accesses
+http://security.kali.org and http://http.kali.org ??
+
+Hasn't Kali heard about MITM attacks against http ??
+
+What's the point of verifying md5 sums against "official values", if Kali
+can't even get the "official values" securely ??
+
+------------------------------
+
+Date: Thu, 12 Mar 2015 09:54:45 +1030
+From: William Brodie-Tyrrell <william@brodie-tyrrell.org>
+Subject: Jurisdictional risks
+
+Re: Shapir, Facebook rant lands U.S. man in UAE jail (RISKS-28.55)
+
+I think it's pretty clear now that internationally at least, jurisdiction
+just means "we can get our hands on you and/or your assets".  It's typical
+hypocrisy from the USA in crying foul over UAE exercising jurisdiction
+outside their borders when they're doing far worse on flimsier grounds
+(copyright) to Kim Dotcom:
+
+https://www.techdirt.com/articles/20150227/18171630168/us-court-rules-that-kim-dotcom-is-fugitive-thus-doj-can-take-his-money.shtml
+
+William Brodie-Tyrrell   http://www.brodie-tyrrell.org/
+
+------------------------------
+
+Date: Thu, 12 Mar 2015 13:47:08 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Ian Urbina, Secret Life of Passwords
+
+This is an interesting follow-on item documenting responses Ian Urbina
+<urbina@nytimes.com> received in response to his earlier article in *The New
+York Times* magazine, which I noted in RISKS-28.37.  PGN
+
+http://www.nytimes.com/2014/11/19/magazine/the-secret-life-of-passwords.html
+nyti.ms/1C1peSU
+
+------------------------------
+
+Date: Sat, 14 Mar 2015 00:41:14 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Re: Timestamps (Newbury, RISKS-28.55)
+
+I've submitted
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bugx0239
+[rsyslog] log timestamps could be off by a whole minute.
+I'm sure they will fix it in a jiffy.
+
+------------------------------
+
+Date: Tue, 17 Mar 2015 09:21:59 +0000
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: IS/IEC 61508 and many other standards availability
+
+- - - ---- Forwarded Message --------
+Subject: 	[SystemSafety] IS/IEC 61508 availability
+Date: 	Tue, 17 Mar 2015 00:38:26 +0200
+From: 	Pekka Pihlajasaari <pekka@data.co.za>
+To: 	systemsafety@lists.techfak.uni-bielefeld.de
+
+IS/IEC 61508 availability
+
+The Government of India has made available to the public through the Public
+Resource Org nearly 20k standards including content-identical versions of
+ISO/IEC 61508 parts 0 through 7.
+
+This should satisfy the recent concerns of those looking for a cost
+effective (read free) source for the full text.
+
+Enter the search string
+site:law.resource.org "is/iec 61508" filetype:pdf
+Google for direct links to each volume.
+
+A catalogue to the material is available at the appended link.
+
+Pekka Pihlajasaari pekka@data.co.za  Data Abstraction Ltd   +27 11 484 9664
+https://law.resource.org/pub/in/manifest.in.html_
+
+------------------------------
+
+Date: Thu, 12 Mar 2015 08:57:02 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Full text of new FCC Net Neutrality Rules (Just published)
+
+FCC via NNSquad
+http://transition.fcc.gov/Daily_Releases/Daily_Business/2015/db0312/FCC-15-24A1.pdf
+
+------------------------------
+
+Date: Tue, 17 Mar 2015 18:33:37 -0600
+From: "Cipher Editor" <cipher-editor@ieee-security.org>
+Subject: Bruce Schneier's Data and Goliath (reviewed by Richard Austin)
+
+Cipher Newsletter, IEEE CIPHER, Issue 125, March 17, 2015  [EXCERPTED]
+
+Newsletter of the IEEE Computer Society's TC on Security and Privacy
+Electronic Issue 125                                          March 17, 2015
+Hilarie Orman, Editor                           Sven Dietrich, Assoc. Editor
+cipher-editor @ ieee-security.org    cipher-assoc-editor @ ieee-security.org
+
+Reviewed by Richard Austin, 12 Mar 2015
+Bruce Schneier
+"Data and Goliath: The hidden battles to capture your data and control
+  your world"
+W. W. Norton & Company 2015
+ISBN 978-0393244816
+Table of contents:  https://www.schneier.com/book-dg-toc.html
+
+By the time this review is published, I predict that Schneier's book will
+have been reviewed in multiple places and will have spent time on the NYT
+bestsellers list so I'm not going to write yet another summary of the book.
+What I am going to do is summarize what I liked about the book and why you
+should read it, share it with your friends and even send copies to your
+elected representatives.
+
+We live in a world of data - it's harvested, stored, analyzed, reported and
+used to make important decisions ranging from what ads your search engine
+highlights to the security screening you face at the airport.  And, as the
+Snowden revelations have shown, there's an extensive private/public
+infrastructure dedicated to harvesting, storing and acting on data.
+
+There's been a growing susurrus of concern about all this data gathering and
+decision making but the details have always seemed too technical and remote
+for a large majority of the people whose data is involved.  Schneier tackles
+the issues in a clear, readable presentation that is accessible to the
+general reader.
+
+He organizes the book into three parts: the first ("The World We're
+Creating") is a masterful summary of how intensive the harvesting of data
+actually is and the economic incentives that drive it; the second ("What's
+at Stake") delves into the societal implications of this surveillance-driven
+world; and the third (What to Do About it) proposes ways this data-addiction
+can be brought under control.
+
+The first two parts of the book explain our surveillance culture in detail
+and analyze the many false trade-offs (e.g., security vs. privacy) and
+collateral impacts (such as the post-Snowden reduced competitiveness of US
+products and services).  As in any such presentation, the author will have
+to face the disbelief that such things are actually happening and Schneier
+meticulously documents the sources behind his writing in a notes section
+that occupies about a third of the book.
+
+What really sets this book apart is not its detailed examination of how bad
+things are, but rather the proscriptive actions for improving the situation.
+Chapter 12 ("Principles") states the basic principles ("Security and
+Privacy", "Transparency", "Oversight and Accountability", "Resilient
+Design", "One World, One Network, One Answer") guiding the way forward in
+dealing with our surveillance problem.  The angels are in the details, of
+course, and Schneier spends the following three chapters spelling out how
+governments, corporations and people can apply them.
+
+This is a controversial book that will be both praised and vilified.  We owe
+a debt of gratitude to Bruce for bringing these issues together in one place
+and exploring them in a clear and understandable fashion.  Read this book.
+Loan it to your friends.  Send copies to your elected representatives.  But
+most importantly, think about the principles and apply them in what you do.
+Our surveillance society was not built by a cabal of faceless monsters but
+by talented professionals seeking to solve a set of problems.  We built this
+system and we can also help change it.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.56
+************************
+
+--_002_042fc0ae9f6c454f9f2fe0d4bad05c1aEXHUBVM02campusnclacuk_--

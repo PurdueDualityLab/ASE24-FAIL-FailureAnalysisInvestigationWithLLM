@@ -1,0 +1,827 @@
+precedence: bulk
+Subject: Risks Digest 29.72
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 24 August 2016  Volume 29 : Issue 72
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.72>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+CALTRANS, the FCC, and the GAO on inter-auto comms (S Candice Hoke)
+'Smart' Power Outlets Are Now Botnets (techdirt via Al Mac)
+"New Approach Needed to IT, Says NIST's Top Cyber Scientist" (ACM TechNews)
+In India users may get 3-yrs in jail for viewing torrent site, blocked URL
+  (SoftLinkWeb)
+Airlines' reservation systems (Werner U)
+France, Germany Want Encrypted App Makers to Help Stop IS (NYT)
+Closely Watched Ballots (Jon Grinspan)
+Which Way Do you Vote?  Facebook Has an Idea (Jeremy Merrill)
+NSA-linked Cisco exploit poses bigger threat than previously thought
+  (Ars Technica)
+Three relevant items on NSA hacking (PGN)
+Lawyer: Dark Web Child Porn Site Ran Better When It Was Taken Over by the
+  FBI (Motherboard)
+HTTPS and OpenVPN face new attack that can decrypt secret cookies
+  (Ars Technica)
+Why you *still* can't trust password strength meters (Naked Security)
+"When Hiding Passwords Is Stupid -- or Worse!" (LW's blog)
+Private lives are exposed as WikiLeaks spills its secrets (BigStory)
+Secret cameras record Baltimore's every move from above (Bloomberg)
+With Windows 10, Microsoft Blatantly Disregards User Choice and Privacy:
+  A Deep Dive (EFF)
+Self-driving motorcycle (WiReD via Al Mac)
+Re: Self-driving cars, accepting the moral dilemma (Martyn Thomas)
+Re: The Internet (Richard S. Russell)
+Re: Snowden Junior (John Levine)
+Re: "Android malware being spread via Google AdSense" (John Levine)
+Re: Facebook bypass adblockers/ Google ad settings/ need for
+  ad-blockers/ growing impossibility of using ad-blockers (Jay Libove)
+Should You Charge Your Phone Overnight? (NYT)
+Sleep 'resets' brain connections crucial for memory and learning
+  (Ian Sample)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 24 Aug 2016 01:34:52 +0000 (GMT)
+From: S Candice Hoke <shoke@me.com>
+Subject: CALTRANS, the FCC, and the GAO on inter-auto comms
+
+CALTRANS filed a submission to the FCC asking that the Fed agency not delay
+its approval of wireless communications between autos, disputing that the
+security & privacy risks are significant.  Law360 presented this yesterday:
+
+  Caltrans Says FCC Mustn't Delay 'Life-Saving' Car Tech.  California's
+  Department of Transportation warned the Federal Communications Commission
+  on Friday against agreeing to delay a technology allowing vehicles to
+  communicate with each other over shared wireless spectrum, saying security
+  concerns are unfounded.
+
+I'm also attaching [*] the CALTRANS submission to FCC.  As you can see,
+CALTRANS spends most of its time assessing that human error causes vast
+numbers of lives to be lost and injuries sustained on an annual basis, and
+then devotes all of 1 paragraph on page 8 to assertions that security need
+not be a concern.  The GAO report differs on security & privacy risks:
+http://www.gao.gov/products/GAO-15-775
+
+This expert review differs as well: Glancy (attached *) at 16, 17, 19-21,
+35-40; the GAO also used her as an expert for its report.  I thought you and
+RISK readers would want to know what CALTRANS is pursuing-- and ignoring.
+
+  [* Attachment omitted for RISKS.  PGN]
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 13:33:36 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: FW: 'Smart' Power Outlets Are Now Botnets (techdirt)
+
+Your 'Smart' Power Outlets Are Now Botnets Thanks To The Internet of Broken
+Things, from the I-just-hacked-your-stapler department
+
+Making fun of The Internet of Things has become a sort of national pastime
+<https://twitter.com/internetofshit?langen>, made possible by a laundry list
+of companies jumping into the space without the remotest idea what they're
+actually doing. When said companies aren't busy promoting some of the
+dumbest ideas imaginable,
+<http://ovens.reviewed.com/features/this-absurd-smart-toaster-serves-up-the-forecast-on-rye>
+they're making it abundantly clear that the security of their "smart,"
+connected products is absolutely nowhere to be found
+<https://www.techdirt.com/articles/20150824/06411532041/internet-not-so-smart-things-samsungs-latest-smart-fridge-can-expose-your-gmail-password.shtml>. And
+while this mockery is well-deserved, it's decidedly less funny once you
+realize these companies are introducing thousands of new attack vectors
+<https://www.techdirt.com/articles/20160725/09460835061/internet-things-is-security-privacy-dumpster-fire-check-is-about-to-come-due.shtml>
+in home and business network the world over.
+
+Overshadowed by the lulz is the width and depth of incompetence on display.
+Thermostats that fail to heat
+<https://www.techdirt.com/articles/20160606/08335334635/nest-may-be-first-major-casualty-hollow-internet-things-hype.shtml> your home. Door locks that
+don't protect you
+<https://www.techdirt.com/articles/20160809/13113235201/like-rest-internet-things-most-smart-locks-are-easily-hacked.shtml>
+. Refrigerators that leak Gmail credentials
+<https://www.techdirt.com/articles/20150824/06411532041/internet-not-so-smart-things-samsungs-latest-smart-fridge-can-expose-your-gmail-password.shtml>.
+Children's toys that listen to your kids' prattle,
+<https://www.techdirt.com/articles/20151130/13194232947/toy-maker-vtech-hacked-revealing-kids-selfies-chat-logs-even-voice-recordings.shtml> then
+(poorly) secure said prattle in the cloud.  Cars that could, potentially,
+result in your death
+<https://www.techdirt.com/articles/20150721/08391831712/newsflash-car-network-security-is-still-horrible-very-dangerous-joke.shtml> . The list goes on
+and on, and it grows exponentially by the week.
+
+The latest gift of The Internet of Things industry, revealed last week by
+security researchers at Bitdefender, is smart electrical sockets
+<http://motherboard.vice.com/read/smart-electrial-sockets-could-be-the-next-botnet> that can be hacked to hand over e-mail credentials, create a botnet,
+or (potentially) burn your house down by firing up connected appliances. The
+devices are sold as an amazing new tool to help create a connected home,
+allowing users to manage any device plugged into them via a smartphone
+and/or The Internet. The problem, as usual, is an (unspecified) company that
+treated security as an afterthought.  [From the full Bitdefender research
+paper]
+<https://labs.bitdefender.com/2016/08/hackers-can-use-smart-sockets-to-shut-down-critical-systems/>
+
+* Bitdefender researchers observed that the hotspot is secured with a weak
+username and password combination. Furthermore, the application does not
+alert the user to risks associated with leaving default credentials
+unchanged. Changing them can be done by clicking 'Edit' on the name of the
+smart plug from the main screen and choosing a new name and a new password.
+
+* Secondly, researchers noticed that, during configuration, the mobile app
+transfers the Wi-Fi username and password in clear text over the network.
+Also, the device-to-application communication that passes through the
+manufacturer's servers is only encoded, not encrypted. Encoding can be
+easily reversed using a scheme that is publicly available, while encryption
+keeps data secret, locked with a key available for a selected few. [...]
+
+https://www.techdirt.com/articles/20160819/07473935285/your-smart-power-outlets-are-now-botnets-thanks-to-internet-broken-things.shtml
+
+Now we all need a <http://www.bitdefender.com/box/> home cyber-security
+solution designed for IoTs.
+
+  [I must comment on AlMac's use of "IoTs".  Note that if an initialism or
+  acronym relates to a singular form, then the plural needs the "s" after
+  the appropriate literal, as in ACLs and RNGs!  So, if we were talking
+  about the multiple (plural) internets of things, the would-be plural
+  initialism would have to be "isot" or "IsoT" to distinguish "internets"
+  from "internet" -- *but not* "isots" or "isoTs" or even "IoTs" because the
+  "T" for things is already substituting for a plural form!  Ugly, but we
+  almost never see a plural internal to an acronym or initialism.
+  Irrelevant note: in a discussion I had long ago with David Huffman, he
+  jokingly suggested using the relation "but not" in logical expressions.
+  PGN]
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 11:56:02 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: "New Approach Needed to IT, Says NIST's Top Cyber Scientist"
+
+ACM TechNews, Wednesday, August 24, 2016
+
+Ron Ross, the top cybersecurity scientist at the U.S. National Institute of
+Standards and Technology, on Tuesday told the U.S. Commission on Enhancing
+National Cybersecurity the coming cybersecurity crisis can only be addressed
+by building "more trustworthy secure components and systems."  He said it is
+clear existing security measures are ineffective, given the rising number of
+successful attacks and breaches despite record cybersecurity investment.
+"You cannot protect that which you do not understand," Ross said.
+"Increased complexity translates to increased attack surface."  He said
+existing cybersecurity strategies "fail to address the fundamental
+weaknesses in system architecture and design," and the solution is to apply
+well-defined security design precepts in a life cycle-based systems
+engineering process.  Safety, reliability, and other strengths must be
+incorporated into systems from the outset, much like structurally sound
+bridges and safe aircraft are designed via a "disciplined and structured
+approach," Ross said.  Such solutions may not be suitable for every
+scenario, but he noted "they should be available to those entities that are
+critical to the economic and national security interests of the U.S.," such
+as the electric grid, manufacturing facilities, financial institutions,
+transportation vehicles, water treatment plants, and weapons systems.  He
+stressed partnerships between government, industry, and academia are
+essential to the success of this approach.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-10f18x2fa30x074185&
+
+------------------------------
+
+Date: Sun, 21 Aug 2016 09:39:09 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: In India users may get 3-yrs in jail for viewing torrent site,
+  blocked URL (SoftLinkWeb)
+
+via NNSquad
+http://softlinkweb.com/are-you-a-criminal-now-users-may-get-3-yr-in-jail-for-viewing-torrent-site-blocked-url-in-india-news-news/
+
+  The Indian government, with the help of Internet service providers, and
+  presumably under directives of court, has banned thousands of websites and
+  URLs in the last five odd years. But until now if you somehow visited
+  blocked all was fine. However, now if you try to visit such URLs and view
+  the information, you may get three-year jail sentence as well as invite a
+  fine ...
+
+Meanwhile, rapists go free or get a slap on the wrist.
+
+------------------------------
+
+Date: Tue, 23 Aug 2016 12:12:19 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Airlines' reservation systems
+
+The airlines' reservation system appears to have evolved based on some
+1960's technology IBM software marketed since the 70's as "Transaction
+Processing Facility" (TPF, last updated 10 years ago) with varied customers'
+add-on software bolted on top by each airline.  Recovering from a crash
+(i.e., restarting and resynchronizing with the rest of the networked
+aviation world 'out there') must be "a nightmare" --WU
+
+------------------------------
+
+Date: Tue, 23 Aug 2016 09:30:18 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: France, Germany Want Encrypted App Makers to Help Stop IS
+
+*The New York Times* via NNSquad
+http://www.nytimes.com/aponline/2016/08/23/world/europe/ap-eu-europe-security.html
+
+  He and German Interior Minister Thomas de Maiziere insisted they're not
+  pushing to ban encrypted services.  Instead, Cazeneuve said they want to
+  work with companies that offer such apps or services to ensure they can't
+  be abused by militants. They also expect those companies to give
+  investigators access to encrypted messages when needed.
+
+Their apparent goal: Only terrorists will have strong crypto -- they'll just
+use their own strong crypto apps -- while honest citizens like us will be
+left exposed to terrorists and other criminals by weak crypto. Sixth-graders
+could do a better job on this one than these "world leaders."
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 12:13:57 -0700
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Closely Watched Ballots (Jon Grinspan)
+
+Jon Grinspan, *The New York Times*, 24 Aug 2016
+
+Graf: There's a long history of partisan poll observers,
+      most of it quite ugly.
+
+End:  So we might occasionally pause to look back at what
+      worked, and what didn't.  We tried election observers.
+      There's a reason we left them in the past.
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 13:49:54 -0700
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Which Way Do you Vote?  Facebook Has an Idea (Jeremy Merrill)
+
+Jeremy Merrill, *The New York Times*, 24 Aug 2016
+Categorizing Users' Political Leanings
+http://www.nytimes.com/2016/08/24/us/politics/facebook-ads-politics.html
+
+"Facebook has come up with its own determination of your political
+leanings."
+
+If you are a Facebook user, go to "Facebook.com/ads/preferences" .
+Under "Interests" click on "Lifestyle and Culture" .
+Then click on "US Politics"   (or "See More" first if necessary.)
+
+------------------------------
+
+Date: Tue, 23 Aug 2016 13:45:50 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: NSA-linked Cisco exploit poses bigger threat than previously thought
+  (Ars Technica)
+
+via NNSquad
+http://arstechnica.com/security/2016/08/nsa-linked-cisco-exploit-poses-bigger-threat-than-previously-thought/
+
+  Recently released code that exploits Cisco System firewalls and has been
+  linked to the National Security Agency can work against a much larger
+  number of models than many security experts previously thought.  An
+  exploit dubbed ExtraBacon contains code that prevents it from working on
+  newer versions of Cisco Adaptive Security Appliance (ASA), a line of
+  firewalls that's widely used by corporations, government agencies, and
+  other large organizations. When the exploit encounters 8.4(5) or newer
+  versions of ASA, it returns an error message that prevents it from
+  working. Now researchers say that with a nominal amount of work, they were
+  able to modify ExtraBacon to make it work on a much newer version. The
+  finding means that ExtraBacon poses a bigger threat than many security
+  experts may have believed.
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 8:50:56 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Three relevant items on NSA hacking
+
+Bruce Schneier:
+  http://www.vox.com/2016/8/24/12615258/nsa-security-breach-hoard
+
+Steve Bellovin's blog:
+https://www.cs.columbia.edu/~smb/blog/2016-08/2016-08-24.html
+
+Margo Schlanger:
+Intelligence Legalism and the National Security Agency's Civil Liberties Gap
+http://harvardnsj.org/wp-content/uploads/2015/02/Schlanger.pdf
+
+------------------------------
+
+Date: Tue, 23 Aug 2016 10:39:52 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Lawyer: Dark Web Child Porn Site Ran Better When It Was Taken Over
+  by the FBI (Motherboard)
+
+via NNSquad
+https://motherboard.vice.com/read/lawyer-dark-web-child-porn-site-ran-better-when-it-was-taken-over-by-the-fbi
+
+  Newly filed court exhibits now suggest that the site performed
+  substantially better while under the FBI's control, with users commenting
+  on the improvements. The defense for the man accused of being the original
+  administrator of Playpen claims that these improvements led to the site
+  becoming even more popular.  "The FBI distributed child pornography to
+  viewers and downloaders worldwide for nearly two weeks, until at least
+  March 4, 2015, even working to improve the performance of the website
+  beyond its original capability," Peter Adolf, an assistant federal
+  defender in the Western District of North Carolina, writes in a motion to
+  have his client's indictment thrown out.  "As a result, the number of
+  visitors to Playpen while it was under Government control [increased] from
+  an average of 11,000 weekly visitors to approximately 50,000 per week.
+  During those two weeks, the website's membership grew by over 30%, the
+  number of unique weekly visitors to the site more than quadrupled, and
+  approximately 200 videos, 9,000 images, and 13,000 links to child
+  pornography were posted on the site," he continues.
+
+In other words, the FBI was actively engaged in causing massive additional
+harm to exploited children, irrespective of their stated goals.
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 09:03:02 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: HTTPS and OpenVPN face new attack that can decrypt secret cookies
+  (Ars Technica)
+
+via NNSquad
+http://arstechnica.com/security/2016/08/new-attack-can-pluck-secrets-from-1-of-https-traffic-affects-top-sites/
+
+  Despite the difficulty in carrying out the attack, the researchers said it
+  works in their laboratory and should be taken seriously. They are calling
+  on developers to stop using legacy 64-bit block-ciphers.  For transport
+  layer security, the protocol websites use to create encrypted HTTPS
+  connections, that means disabling the Triple DES symmetric key cipher,
+  while for OpenVPN it requires retiring a symmetric key cipher known as
+  Blowfish.  Ciphers with larger block sizes, such as AES, are immune to the
+  attack.
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 10:16:59 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Why you *still* can't trust password strength meters
+  (Naked Security)
+
+https://nakedsecurity.sophos.com/2016/08/17/why-you-still-cant-trust-password-strength-meters/
+
+------------------------------
+
+Date: Tue, 23 Aug 2016 12:46:17 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "When Hiding Passwords Is Stupid -- or Worse!"
+
+  https://lauren.vortex.com/2016/08/when-hiding-passwords-is-stupid-or-worse
+
+As I've noted a number of times previously, the fact that we still have
+accounts "secured" by passwords this far into the 21st century is pretty
+much a security abomination. Adding on multiple-factor security tokens and
+such is a big help, but passwords themselves remain a weak link in the chain
+of security, and a vast number of sites and apps rely on passwords without
+any additional authentication measures at all.
+
+Since the dawn of online systems, it has been standard practice to obscure
+the display of entered passwords by one means or another.
+
+There are basically two reasons for this. One is the obvious issue of
+someone looking over your shoulder while you're logging in.
+
+The other is steeped in computing history.
+
+Early online systems were primarily accessed with paper printing terminals
+(e.g. Teletype Model 33, IBM 2741, etc.), and leaving around or carelessly
+disposing of a printout with your password visible could be a serious
+mistake.
+
+The earliest printing terminal systems were often "half-duplex" in design,
+meaning that typed characters were echoed locally. To obscure passwords in
+this instance, the common technique was for the system to overprint a bunch
+of characters a number of times before the user entered their password over
+the resulting black blob of ink. This wasn't foolproof, but was remarkably
+effective at the time.
+
+For printers on full-duplex circuits, it was possible simply to suppress any
+echoing of the user password at all, or to print a character like asterisk
+in place of each typed character.
+
+This same basic model continues today on the Web and in app ecosystems.
+
+Entered passwords either aren't echoed, or commonly are replaced with
+asterisks. Some app systems will give you a brief glimpse of the input
+character before replacing it with an asterisk.
+
+Unfortunately, these kinds of techniques have become decreasingly useful as
+users have been encouraged or required to use ever longer, ever more complex
+passwords and passphrases, because the probability of mistyping these
+entries increases with their complexity.
+
+And it isn't just a matter of having problems logging in.
+
+The same obscuration techniques are often employed when setting or changing
+passwords, typically combined with the ever-popular "enter it again" prompt
+or field, based on the flawed theory that you'd never type the same obscured
+input in error twice and so set your password incorrectly (and locking
+yourself out) as a result.
+
+For that matter, even typing the same complex password twice in a row in an
+obscured field to set the password correctly can be an exercise in
+frustration.
+
+Recently, the trend toward obscuring input fields has been spreading to all
+manner of other entries as well, including check account data, credit card
+numbers, even dates of birth -- and much more. I've seen forms where even
+the fields for inputting your first and last names were obscured with
+asterisks!
+
+Such obfuscations wouldn't be such a significant problem if there existed a
+routine way for the user to disable them on demand.
+
+It's stupid -- bordering on insane -- to force users to jump through the
+hoops of blindly entering complicated passwords or other data when they're
+alone and there's no risk of anyone surreptitiously peering at their screen.
+
+And for users with poor typing abilities, motor skill or visual limitations,
+or other related issues, these input methodologies can be downright
+abusive. This is one of the most common complaints showing up in my inbox
+about interface issues.
+
+But wait, it gets even worse!
+
+Many user interface designers, laboring under a twisted misconception of
+security, purposely make it even more difficult for users to enter their
+passwords, by rigging their pages or apps to prevent copy/pasting of
+passwords, and/or by blocking the use of password managers, field autofill
+systems, and so on.
+
+This really isn't rocket science.
+
+Except in crucial enterprise environments or especially elevated security
+situations, it should be common practice for user interfaces to provide a
+method for the user to see their passwords or other data as they enter it if
+they choose to do so -- a simple enabling checkbox with an appropriate
+warning would suffice. And this would be the display of the entire password
+or other input, not just a flash of each letter as it's being typed.
+
+Some systems already provide this to one degree or another, but this is
+relatively unusual to find.
+
+Android for example has a little "eye" symbol next to where you enter Wi-Fi
+passwords, that can be clicked to display the password. This is good, though
+I've had many users tell me that they had no idea of what that symbol meant
+and so didn't realize that they could view their Wi-Fi passwords in that
+manner.
+
+But again, this is an exception to the more general situation of user
+interfaces across the Web and app worlds that don't provide such options.
+
+We should be striving to completely eliminate passwords from our systems,
+replacing them with more robust authentication and security models.
+
+For now though, we still must live with passwords in most cases, and the
+option should be routinely provided for users to display entered passwords
+or other obscured data when they choose to do so.
+
+And as for those user interface designers who purposely and unnecessarily
+block tools and techniques that would make it simpler for users to enter
+complex passwords -- well, since this is a family-friendly blog I won't
+mention here what I feel should really happen to them!
+
+------------------------------
+
+Date: Tue, 23 Aug 2016 09:42:14 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Private lives are exposed as WikiLeaks spills its secrets
+
+via NNSquad
+http://bigstory.ap.org/article/b70da83fd111496dbdf015acbb7987fb/private-lives-are-exposed-wikileaks-spills-its-secrets
+
+  WikiLeaks' global crusade to expose government secrets is causing
+  collateral damage to the privacy of hundreds of innocent people, including
+  survivors of sexual abuse, sick children and the mentally ill, The
+  Associated Press has found.  In the past year alone, the radical
+  transparency group has published medical files belonging to scores of
+  ordinary citizens while many hundreds more have had sensitive family,
+  financial or identity records posted to the web. In two particularly
+  egregious cases, WikiLeaks named teenage rape victims. In a third case,
+  the site published the name of a Saudi citizen arrested for being gay, an
+  extraordinary move given that homosexuality is punishable by death in the
+  ultraconservative Muslim kingdom.
+
+Julian Assange cares about only one thing: Julian Assange.  [...]
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 08:37:59 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Secret cameras record Baltimore's every move from above (Bloomberg)
+
+NNSquad
+http://www.bloomberg.com/features/2016-baltimore-secret-surveillance/
+
+  Since January, police have been testing an aerial surveillance system
+  adapted from the surge in Iraq. And they neglected to tell the public.
+
+------------------------------
+
+Date: Mon, 22 Aug 2016 07:17:18 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: With Windows 10, Microsoft Blatantly Disregards User Choice and
+  Privacy: A Deep Dive (EFF)
+
+via NNSquad
+https://www.eff.org/deeplinks/2016/08/windows-10-microsoft-blatantly-disregards-user-choice-and-privacy-deep-dive
+
+  The trouble with Windows 10 doesn't end with forcing users to download the
+  operating system. Windows 10 sends an unprecedented amount of usage data
+  back to Microsoft, particularly if users opt in to "personalize" the
+  software using the OS assistant called Cortana.  Here's a non-exhaustive
+  list of data sent back: location data, text input, voice input, touch
+  input, webpages you visit, and telemetry data regarding your general usage
+  of your computer, including which programs you run and for how long.
+
+------------------------------
+
+Date: Sun, 21 Aug 2016 18:16:20 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Self-driving motorcycle (WiReD)
+
+https://www.wired.com/2016/08/get-know-aboard-self-driving-motorcycle/
+
+I was not aware that wireless power transfer had been perfected.  Can that
+be used to power space ships into orbit?  How about aid to rescue of ships
+at sea.
+
+When a consumer sells some electricity excess, via wireless, to another
+consumer, how are the sales taxes measured?
+
+In the real world, motorists fail to give adequate air space when passing 2
+& 3 wheelers, and because of this, 2 & 3 wheelers are banned from some high
+speed highways, and need special lanes in big cities.
+
+Do the designers of self-drive-assist vehicle recognize this need to provide
+added safety margins for 2 & 3 wheelers?
+
+------------------------------
+
+Date: Sun, 21 Aug 2016 17:01:58 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Re: Self-driving cars, accepting the moral dilemma (RISKS 29.64)
+
+ > If the car is really autonomous, then any "fault" belongs to the
+ > manufacturer -- who will have to pay the damages.
+
+And who holds the data and expertise to determine whether an accident
+was caused by a "fault"?
+
+I think that the real issue is that fully automated vehicles will be in
+widespread use before there is enough evidence to be confident that they are
+safer, and that if they appear safer they will rapidly become too widespread
+to withdraw or to remediate if their software turns out to be as insecure
+and buggy as most other software is.  It's a very rare programmer who
+delivers fewer than 1 defect in a thousand lines of code -- so that's at
+least 100,000 defects in the software in a typical car.  Testing will find
+the most common failures, so those that remain will be the more obscure
+ones.  How will the accident investigators ever be able to attribute cause
+and effect?  Especially when much of the required information will be
+proprietary to the manufacturers and they are not likely to want to prove
+their own liability.
+
+------------------------------
+
+Date: Mon, 22 Aug 2016 09:59:37 -0500
+From: "Richard S. Russell" <RichardSRussell@tds.net>
+Subject: Re: The Internet (Bos, RISKS-29.71)
+
+With regard to whether to capitalize "Internet", I think your Dutch
+correspondent, Richard Bos, hits the nail on the head with the distinction
+between a unique institution (capitalize) and a general category (lower
+case).  Back when I was copy editor for my college paper and we were setting
+up our own style manual, we had the same conversation about personal titles
+like "pope" and "president". We went with what appeared to be the standard
+(at least as it seemed in the late 1960s) of lower case when referring to
+the office, however unique it was ("the pope"), but upper case for a
+specific individual ("President Johnson").
+
+But my concern is less with the capitalization of the noun than with the
+preceding article: “the”.  I ardently believe that the great virtue of the
+Internet is its universality. There *should* be only the one ("*The*
+Internet", not "*an* internet"), accessible to all people everywhere.
+That's why I loathe the very concept of parallel, duplicative, competing
+systems like China's Baidu, America's Facebook, or whatever godawful thing
+ISIS is inflicting on its captive populations.  They contribute all too
+heavily to the commercialization and siloization of information and culture,
+when the whole planet should be moving in the direction of data democracy.
+
+Richard S. Russell, 7350 Old Sauk Road, Madison  WI 53717-1213 608+841-1174
+RichardSRussell@tds.net  http://richardsrussell.livejournal.com/
+
+  ["Congress shall make no law abridging the freedom of sQFFch, or the right
+  of the people peaceably to BTTemble, and to peUJUion the government for a
+  redress of grievances (but your ISP might)."  RSR PGN-ed for cryptographic
+  purity.  RSR had the same XYZ for all 3 three-letter upper-case strings,
+  which overloaded the hidden message.)]
+
+------------------------------
+
+Date: 22 Aug 2016 16:38:48 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Snowden Junior (RISKS-29.71)
+
+>"It's Snowden Junior" - Former NSA Employees Say NSA Hack Is The Work Of A
+>  "Rogue Insider"
+
+Well, duh.
+
+I've always wondered why people assume that Snowden was the only person to
+do what he did.  The access he had was not unusual for NSA contractors, and
+he didn't need any great technical skill to collect the material he did.
+
+What we do know is that he's the only one to collect all that material, and
+then tell the press about it.  I assume the others quietly sold it to
+whichever of Russia or China paid better.
+
+------------------------------
+
+Date: 22 Aug 2016 16:33:37 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: "Android malware being spread via Google AdSense"
+
+>  [I like to quote a relevant portion so RISKS readers can determine
+>  whether
+>  they should go to the full article.  Neowin disables cut-and-paste on the
+>  article on my computer.  Let InfoWorld get the hits.]
+
+Odd, I had no problem copying text in Chrome on a Mac:
+
+It was found that the malware can actually be contracted via AdSense,
+Google's own advertising network. What is also very alarming is that
+millions of websites on The Internet, from news sites, to the smallest blog
+websites utilize the network, in order to monetize their content. Moreover,
+Svpeng is downloaded automatically as soon as the page with the
+advertisement is visited.
+
+The Kaspersky researchers found the malware on state-owned news company
+Russia Today (RT), as well as the Meduza news portal. In light of the
+discovery, the latter has already disabled AdSense advertising on their
+pages. Svpeng will disguise itself as a browser update, shown on the
+screenshot, in order to trick users into thinking that the download is safe.
+
+------------------------------
+
+Date: Wed, 24 Aug 2016 10:37:10 +0000
+From: Jay Libove <libove@felines.org>
+Subject: Re: Facebook bypass adblockers/ Google ad settings/ need for
+ ad-blockers/ growing impossibility of using ad-blockers (Bos. R-29.71)
+
+I agree almost completely with Richard (on 3rd party cookies, Google opt-out
+-- although the Google no-analytics plug-in is a valid solution, and the
+general need for ad-blockers/ tracker-blockers).  The caveat is that more
+and more websites incorrectly (or, if I were to be cynical - what, me?
+cynical?? - deliberately) tie core functionality to 3rd party cookies and
+analytics and other data collection scripts working. (That's illegal in
+Europe and anywhere else in the world following Europe's Data Protection
+Directive/ upcoming GDPR model, by the way, but allowable - if commercially
+stupid - in the US).  It's one thing for a newspaper to pop up "we see
+you're using an ad-blocker, so how would you like to pay today?" (although,
+there's still the total lack of transparency of how much the tracking and
+ads are worth to the web property vs. how much we're asked to pay to not
+suffer the intrusions), and quite another for logins to fail unless 3rd
+party cookies and/or analytics scripts are permitted.  -Jay
+
+------------------------------
+
+Date: Tue, 23 Aug 2016 01:00:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Should You Charge Your Phone Overnight? (NYT)
+
+Leaving your phone plugged in when its battery is already fully charged
+shouldn't be bad for it. Except that the act of charging can itself hurt our
+phones.
+http://www.nytimes.com/2016/08/22/technology/personaltech/charge-phone-overnight.html
+
+------------------------------
+
+Date: August 24, 2016 at 1:21:52 AM GMT+9
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Sleep 'resets' brain connections crucial for memory and learning
+  (Ian Sample)
+
+Ian Sample, *The Guardian*, 23 Aug 2016
+Discovery that sleeplessness causes neurons to become muddled with
+electrical activity could help develop new treatments for mental health
+disorders.
+
+https://www.theguardian.com/science/2016/aug/23/sleep-resets-brain-connections-crucial-for-memory-and-learning-study-reveals
+
+For Jules Verne it was the friend who keeps us waiting. For Edgar Allan Poe
+so many little slices of death. But though the reason we spend a third of
+our lives asleep has so far resisted scientific explanation, research into
+the impact of sleepless nights on brain function has shed new light on the
+mystery - and also offered intriguing clues to potential new treatments for
+depression.
+
+In a study published on Tuesday, researchers show for the first time that
+sleep resets the steady build-up of connectivity in the human brain which
+takes place in our wakeful hours. The process appears to be crucial for our
+brains to remember and learn so we can adapt to the world around us.
+
+The loss of a single night's sleep was enough to block the brain's natural
+reset mechanism, the scientists found. Deprived of rest, the brain's neurons
+seemingly became over-connected and so muddled with electrical activity that
+new memories could not be properly laid down.
+
+But Christoph Nissen, a psychiatrist who led the study at the University of
+Freiburg, is also excited about the potential for helping people with mental
+health disorders. One radical treatment for major depression is therapeutic
+sleep deprivation, which Nissen believes works through changing the
+patient's brain connectivity. The new research offers a deeper understanding
+of the phenomenon which could be adapted to produce more practical
+treatments.
+
+``Why we sleep is a fundamental question. Why do we spend so much of our
+lives in this brain state? This work shows us that sleep is a highly active
+brain process and not a waste of time. It's required for healthy brain
+function,'' said Nissen.
+
+The results are a boost for what is called the synaptic homeostasis
+hypothesis of sleep, which was developed by scientists at the University of
+Wisconsin-Madison in 2003. It explains why our brains need to rest after a
+day spent absorbing all manner of information, from the morning news and the
+state of the weather, to a chat over lunch and what we must buy for tea.
+
+Known more simply as SHY, the hypothesis states that when we are awake, the
+synapses that form connections between our brain cells strengthen more and
+more as we learn and eventually saturate our brains with information. The
+process requires a lot of energy, but sleep allows the brain to wind down
+its activity, consolidate our memories, and be ready to start again the next
+morning.
+
+Writing in the journal *Nature Communications*, Nissen describes a series of
+tests that 11 men and nine women aged 19 to 25 took part in, either after a
+good night's sleep, or after a night without sleep. On the sleepless night,
+participants played games, went for walks and cooked food, but were not
+allowed caffeine. Staff watched them throughout to make sure they stayed
+awake.
+
+In the first round of experiments, Nissen used magnetic pulses to make
+neurons fire in the volunteers' brains and cause a muscle in the left hand
+to twitch. When sleep deprived, far weaker pulses were sufficient to make
+the muscles move. This implied that sleepless brains are in a more excitable
+state, with their neurons more strongly connected than they are after a good
+night;s sleep.
+
+Nissen next turned to another form of brain stimulation to mimic the way
+neurons fire when memories are laid down. He found it harder to get the
+neurons to respond in sleep-deprived people, a sign that the process of
+writing memories was impaired by sleep loss. [...]
+
+  [Why is this RISKS-relevant?  Perhaps because people are trying to create
+  computerized models of the brain?  Perhaps because many people are trying
+  to understand and learning through AI and other approaches?  Perhaps
+  because some folks have been reportedly trying to control other people's
+  minds (MK-Ultra)?  Perhaps become some of us are so addicted to our
+  computers that we are actually losing a lot of sleep?  I don't know,
+  but this item somehow seems relevant to me.  PGN]
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.72
+************************

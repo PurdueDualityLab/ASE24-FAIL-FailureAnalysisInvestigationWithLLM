@@ -1,0 +1,1231 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.35
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 6 August 2019  Volume 31 : Issue 35
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.35>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+One reason for the 737 Max disaster? Avoiding software complexity
+  (Thomas Koenig)
+Warning over auto cyberattacks (Eric D. Lawrence)
+Tesla hit with another lawsuit over a fatal Autopilot crash (The Verge)
+This Satellite Image Shows Everything Wrong With Greenland Right Now
+  (Gizmodo)
+North Korea took $2 billion in cyberattacks to fund weapons program (U.N.)
+How China Weaponized the Global Supply Chain (National Review)
+China has started a grand experiment in AI education.  It could
+  reshape how the world learns.  (MIT Tech Review)
+44 people in China were injured when a water park wave machine
+  launched a crushing tsunami (WashPost)
+In Hong Kong Protests, Faces Become Weapons (NYTimes)
+Amazon Requires Police to Shill Surveillance Cameras in Secret Agreement
+  (VICE)
+Apple's Siri overhears your drug deals and sexual activity,
+  whistleblower says (Charlie Osborne)
+Capital One data breach compromises tens of millions of credit card
+  applications, FBI says (WashPost)
+California State Bar accidentally leaks details of upcoming exam (NBC News)
+Russian hackers are infiltrating companies via the office printer
+  (MIT Tech Review)
+A VxWorks Operating System Bug Exposes 200 Million Critical Devices (WiReD)
+Capital One Systems Breached by Seattle Woman, U.S. Says (Bloomberg)
+Another Breach: What Capital One Could Have Learned from Google's
+  "BeyondCorp"
+Paige Thompson, Capital One Hacking Suspect, Left a Trail Online (NYTimes)
+Cambridge Analytica's role in Brexit (Ted)
+The scramble to secure America's voting machines (Politico)
+The state of our elections security (Web Informant)
+A lawmaker wants to end social media addiction by killing features
+  that enable mindless scrolling (WashPost)
+Cisco in Whistleblower Payoff and PR Doublespeak Row
+  (Security Boulevard)
+Social Media Addiction Reduction Technology, or SMART, Act (Fortune)
+200-million devices some mission-critical vulnerable to remote takeover
+  (Ars Technica)
+Siemens contractor pleads guilty to planting logic bomb in company
+  spreadsheets (ZDNet)
+People forged judges' signatures to trick Google into changing results
+  (Ars Technica)
+Partial hashes broadcast in Bluetooth can be converted to phone numbers
+  (Ars Technica)
+Apple suspends human eavesdropping through Siri (Taipei Times)
+Why People Should Care About Quantum Computing (Fortune)
+Your Train Is Delayed. Why?  (NYTimes)
+Barr Revives Encryption Debate, Calling on Tech Firms to Allow for
+  Law Enforcement (NYTimes)
+Dark Web Consequences Increase from Global Rise of Police-Friendly
+  Laws (Channel Futures)
+The Hidden Costs of Automated Thinking (The New Yorker)
+We Tested Europe’s New Digital Lie Detector. It Failed.  (The Intercept)
+AI Predictive Policing (Daily Mail)
+Guardian Firewall iOS App Automatically Blocks the Trackers on Your Phone
+  (WiReD)
+Google researchers disclose vulnerabilities for 'interactionless'
+  iOS attacks (ZDNet)
+Another Breach: What Capital One Could Have Learned from Google's
+  "BeyondCorp" (Lauren's Blog)
+"A data breach forced this family to move home and change their names
+  (ZDNet)
+Brazilian president’s cellphone hacked as Car Wash scandal intrigue
+  widens (WashPost)
+Malicious 'Google' domains used in Magento card card skimmer attacks (ZDNet)
+MyDoom: The 15-year-old malware that's still being used in phishing
+  attacks in 2019 (ZDNet)
+StockX was hacked, exposing millions ofcustomers'_data (TechCrunch)
+Ikea says sorry for customer data breach (Straits Times)
+Refunds for Global Access Technical Support customers (Consumer Information)
+Business Continuity?: Kyoto Anime recovers digital recordings
+  (Chiaki Ishikawa)
+Colorado gov't. email account for reporting child abuse goes unchecked for
+  4 years (WashPost)
+Re: "Mortgage Provider Tells Savers of Zero Balances" (Chris Drewe)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 5 Aug 2019 22:03:34 +0200
+From: Thomas Koenig <tk@tkoenig.net>
+Subject: One reason for the 737 Max disaster? Avoiding software complexity
+
+The Seattle Times finally offers an explanation of why only one sensor fed
+data into the Maneuvering Characteristics Augmentation System on the Boeing
+737 Max 8 airplanes.  In both cases, it is presumed that faulty sensors fed
+wrong data into the system, which led to miscorrections of the aircraft
+attitude, to total loss of control of the aircraft and to 346 deaths.
+
+Boeing wanted to avoid software complexity.
+
+  "Boeing is changing the MAX's automated flight-control systemâs software
+  so that it will take input from both flight-control computers at once
+  instead of using only one on each flight. That might seem simple and
+  obvious, but in the architecture that has been in place on the 737 for
+  decades, the automated systems take input from only one computer on a
+  flight, switching to use the other computer on the next flight."
+
+In all previous reports (that I have read, at least) people were utterly
+baffled why only one sensor was being used.  Now it is clear why.
+
+It is also clear now why the "patch" (rather a complete rewrite, using a
+different software architecture) takes so long.
+
+Sometimes, "Keep it simple and stupid" is not the right policy...
+
+https://www.seattletimes.com/business/boeing-aerospace/newly-stringent-faa-tests-spur-a-fundamental-software-redesign-of-737-max-flight-controls/
+
+------------------------------
+
+Date: Tue, 6 Aug 2019 10:11:44 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Warning over auto cyberattacks (Eric D. Lawrence)
+
+Eric D. Lawrence, *The San Francisco Chronicle*, 6 Aug 2019, page D1
+
+  Boxed highlight: "Fiat Chrysler made a software fix in 2015 to prevent
+  hacking into Jeep Cherokees but some experts believe many vehicles are
+  still vulnerable."
+
+Warnings about connected vehicle vulnerabilities have been a steady drumbeat
+for years.  [RISKS!!!]  Now a consumer advocacy group California's Consumer
+Watchdog's 49-page report paints a dire picture and urges automakers to
+install a 50-cent kill switch that would allow vehicles to be disconnected
+from the Internet.  [PGN-ed]
+
+  "Millions of cars on the Internet running the same software means a single
+  exploit can effoect millions of vehicles simultaneously."
+
+------------------------------
+
+Date: Mon, 5 Aug 2019 17:25:12 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Tesla hit with another lawsuit over a fatal Autopilot crash
+  (The Verge)
+
+They just get too used to it. That tends to be more of an issue. It's not a
+lack of understanding of what Autopilot can do. It's [drivers] thinking they
+know more about Autopilot than they do,
+
+https://www.theverge.com/2018/5/2/17313324/tesla-autopilot-safety-statistics-elon-musk-q1-earnings
+https://www.theverge.com/2019/8/1/20750715/tesla-autopilot-crash-lawsuit-wrongful-death
+
+Pick one: EITHER it's not a lack of understanding OR they think they know
+more than they do.
+
+------------------------------
+
+Date: Sat, 3 Aug 2019 14:16:53 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: This Satellite Image Shows Everything Wrong With Greenland Right
+  Now (Gizmodo)
+
+EXCERPT:
+
+If you could sum up climate change's impact on the Arctic in one
+image, you'ld be hard pressed to find something better than this satellite
+view, which shows the meltdown of one of the largest stores of ice on Earth
+while a wildfire rages in the distance.
+
+Here it is, below, courtesy of satellite image wizard Pierre Markuse and our
+planet, which is quickly becoming a smoke-filled, waterlogged hellscape. ...
+
+https://earther.gizmodo.com/this-satellite-image-shows-everything-wrong-with-greenl-1836919989
+
+------------------------------
+
+Date: Mon, 5 Aug 2019 14:11:00 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: North Korea took $2 billion in cyberattacks to fund weapons program
+  (U.N. report)
+
+North Korea has generated an estimated $2 billion for its weapons of mass
+destruction programs using ``widespread and increasingly sophisticated''
+cyberattacks to steal from banks and cryptocurrency exchanges, according to
+a confidential U.N. report seen by Reuters on Monday.
+
+Pyongyang also ``continued to enhance its nuclear and missile programmes
+although it did not conduct a nuclear test or ICBM (Intercontinental
+Ballistic Missile) launch,'' said the report to the U.N. Security Council
+North Korea sanctions committee by independent experts monitoring compliance
+over the past six months.
+
+------------------------------
+
+Date: Mon, 5 Aug 2019 18:17:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: How China Weaponized the Global Supply Chain (National Review)
+
+https://www.nationalreview.com/magazine/2019/07/08/how-china-weaponized-the-global-supply-chain/
+
+... the introduction of Chinese cyber-capabilities, including the
+installation of digital networks at Chinese-controlled sites, typically by
+Huawei, and a subsea cable network being built by Huawei's marine unit that
+will nearly encircle the globe by the end of this year. Chinese state-owned
+companies are leading a rapid, digitally enabled consolidation of the
+logistics sector -- bringing together supply-chain functions that had
+previously been performed by separate companies, adopting centralized IT
+systems to control distribution from the doors of factories in China to the
+doors of consumers in America, and developing a wide array of technologies
+that can be used for both commercial and military purposes.
+
+The most threatening aspect of China's commercial triad is that the physical
+network of ports, ships, and terminals serves as a force multiplier for
+China's cyber-aggression. From drones that monitor operations to
+facial-recognition technologies that control access to container yards, port
+facilities provide nearly perfect cover for cyber-espionage. There's a lot
+going on in a seaport, and all of it is controlled and monitored by
+technology that feeds information over digital networks to buyers, sellers,
+regulators, financial institutions, and transportation companies. In short,
+ports are power. Power over imports and exports, power over
+economic-development policies, construction, shipbuilding, land transport,
+and electricity grids -- and power over the digital information needed to
+move goods through global supply chains that originate in China and
+Southeast Asia. These critical supply lines have increasingly come under the
+influence or control of a handful of Chinese state-owned companies.  [...]
+
+  [Monty Solomon noted this item:
+    Official Cybersecurity Review Finds U.S. Military Buying High-Risk
+    Chinese Tech (Forbes)
+https://www.forbes.com/sites/zakdoffman/2019/08/02/u-s-military-spends-millions-on-dangerous-chinese-tech-with-known-cyber-risks/
+   PGN]
+
+------------------------------
+
+Date: Sun, 4 Aug 2019 18:51:25 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: China has started a grand experiment in AI education.  It could
+  reshape how the world learns.  (MIT Tech Review)
+
+In recent years, the country has rushed to pursue *intelligent education*.
+Now its billion-dollar ed-tech companies are planning to export their vision
+overseas.
+
+Zhou Yi was terrible at math. He risked never getting into college. Then a
+company called Squirrel AI came to his middle school in Hangzhou, China,
+promising personalized tutoring. He had tried tutoring services before, but
+this one was different: instead of a human teacher, an AI algorithm would
+curate his lessons. The 13-year-old decided to give it a try. By the end of
+the semester, his test scores had risen from 50% to 62.5%. Two years later,
+he scored an 85% on his final middle school exam.
+
+``I used to think math was terrifying.  But through tutoring, I realized it
+really isn't that hard. It helped me take the first step down a different
+path.''
+
+Experts agree AI will be important in 21st-century education -- but how?
+While academics have puzzled over best practices, China hasn't waited
+around. In the last few years, the country's investment in AI-enabled
+teaching and learning has exploded. Tech giants, startups, and education
+incumbents have all jumped in. Tens of millions of students now use some
+form of AI to learn -- whether through extracurricular tutoring programs
+like Squirrel's, through digital learning platforms like 17ZuoYe, or even in
+their main classrooms. It's the world's biggest experiment on AI in
+education, and no one can predict the outcome.
+
+Silicon Valley is also keenly interested. In a report in March, the
+Chan-Zuckerberg Initiative and the Bill and Melinda Gates Foundation
+identified AI as an educational tool worthy of investment. In his 2018 book
+Rewiring Education, John Couch, Apple's vice president of education, lauded
+Squirrel AI. (A Chinese version of the book is coauthored by Squirrel's
+founder, Derek Li.) Squirrel also opened a joint research lab with Carnegie
+Mellon University this year to study personalized learning at scale, then
+export it globally.
+
+But experts worry about the direction this rush to AI in education is
+taking. At best, they say, AI can help teachers foster their students'
+interests and strengths. At worst, it could further entrench a global trend
+toward standardized learning and testing, leaving the next generation ill
+prepared to adapt in a rapidly changing world of work...
+
+https://www.technologyreview.com/s/614057/china-squirrel-has-started-a-grand-experiment-in-ai-education-it-could-reshape-how-the/
+
+------------------------------
+
+Date: Thu, 1 Aug 2019 11:19:33 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 44 people in China were injured when a water park wave machine
+  launched a crushing tsunami (WashPost)
+
+44 people in China were injured when a water park wave machine launched a
+crushing tsunami
+
+The operator was not drunk, as originally reported.
+
+https://www.washingtonpost.com/world/2019/07/31/people-were-injured-after-waterpark-wave-machine-launched-crushing-tsunami/
+
+------------------------------
+
+Date: Mon, 29 Jul 2019 18:59:50 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: In Hong Kong Protests, Faces Become Weapons (NYTimes)
+
+A quest to identify protesters and police officers has people in both groups
+desperate to protect their anonymity. Some fear a turn toward China-style
+surveillance.
+
+https://www.nytimes.com/2019/07/26/technology/hong-kong-protests-facial-recognition-surveillance.html
+
+------------------------------
+
+Date: Sun, 28 Jul 2019 14:04:05 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Amazon Requires Police to Shill Surveillance Cameras in Secret
+  Agreement (VICE)
+
+https://www.vice.com/en_us/article/mb88za/amazon-requires-police-to-shill-surveillance-cameras-in-secret-agreement
+
+------------------------------
+
+Date: Wed, 31 Jul 2019 10:40:06 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: Apple's Siri overhears your drug deals and sexual activity,
+  whistleblower says (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 30 Jul 2019
+
+Apple's Siri overhears your drug deals and sexual activity, whistleblower
+says Quality control frequently comes across recordings which should not
+have existed in the first place.
+https://www.zdnet.com/article/apples-siri-overhears-your-drug-deals-and-sexual-activity-whistleblower-says/
+
+selected text:
+
+Apple's Siri records private and confidential conversations and activities
+on a regular basis including talk relating to medical conditions, drug
+deals, and sex acts.
+
+Staff members tasked with grading how Siri responds to commands and whether
+or not the correct wake word "Hey Siri" was used before a recording occurred
+often hear explicit recordings, which are accidentally saved when the
+assistant mistakenly associates a sound as the wake word.
+
+The publication's source notes, for example, that the sound of a zipper can
+be misconstrued as a demand to wake up. In what the whistleblower says are
+"countless instances," conversations between doctors and patients, business
+deals, and both criminal and sexual activity have been captured by the smart
+assistant.
+
+The Apple Watch, in particular, has come under fire. While many recordings
+captured by Siri may only be a few seconds in length, The Guardian says that
+the watch -- with Siri enabled -- may record up to 30 seconds.
+
+------------------------------
+
+Date: Mon, 29 Jul 2019 19:14:10 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Capital One data breach compromises tens of millions of credit card
+  applications, FBI says (WashPost)
+
+https://www.washingtonpost.com/news/business/wp/2019/07/29/capital-one-data-breach-compromises-tens-of-millions-of-credit-card-applications-fbi-says/
+
+------------------------------
+
+Date: Mon, 29 Jul 2019 18:49:37 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: California State Bar accidentally leaks details of upcoming exam
+  (NBC News)
+
+https://www.nbcnews.com/news/us-news/california-state-bar-accidentally-leaks-details-upcoming-exam-n1035681
+
+------------------------------
+
+Date: Mon, 5 Aug 2019 14:12:00 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Russian hackers are infiltrating companies via the office printer
+  (MIT Tech Review)
+
+*A group of hackers linked to Russian spy agencies are using "Internet of
+things" devices like internet-connected phones and printers to break into
+corporate networks, Microsoft announced on Monday.*
+
+EXCERPT:
+
+*Fancy Bear never hibernates*: The Russian hackers, who go by names like
+Strontium, Fancy Bear, and APT28, are linked to the military intelligence
+agency GRU.
+
+The group has been active since at least 2007. They are credited with a long
+list of infamous work including breaking into the Democratic National
+Committee in 2016, the crippling NotPetya attacks against Ukraine in 2017,
+and targeting political groups in Europe and North America throughout 2018.
+
+*Insecurity of Things*: The new campaign from GRU compromised popular
+internet of things devices including a VOIP (voice over internet protocol)
+phone, a connected office printer, and a video decoder in order to gain
+access to corporate networks. Microsoft has some of the best visibility into
+corporate networks on earth because so many organizations are using Windows
+machines. Microsoft's Threat Intelligence Center spotted Fancy Bear's new
+work starting in April 2019.
+
+*The password is password*: Although things like smartphones and desktop
+computers are often top of mind when it comes to security, it's often the
+printer, camera, or decoder that leaves a door open for a hacker to
+exploit. [...]
+
+https://www.technologyreview.com/f/614062/russian-hackers-fancy-bear-strontium-infiltrate-iot-networks-microsoft-report/
+
+------------------------------
+
+Date: Mon, 29 Jul 2019 19:08:01 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A VxWorks Operating System Bug Exposes 200 Million Critical Devices
+  (WiReD)
+
+When major vulnerabilities show up in ubiquitous operating systems like
+Microsoft Windows, they can be weaponized and exploited, the fallout
+potentially impacting millions of devices. Today, researchers from the
+enterprise security firm Armis are detailing just such a group of
+vulnerabilities in a popular operating system that runs on more than 2
+billion devices worldwide. But unlike Windows, iOS, or Android, this OS is
+one you've likely never heard of. It's called VxWorks.
+
+VxWorks is designed as a secure "real-time" operating system for
+continuously functioning devices, like medical equipment, elevator
+controllers, or satellite modems. That makes it a popular choice for
+Internet of Things and industrial control products. But Armis researchers
+found a cluster of 11 vulnerabilities in the platform's networking
+protocols, six of which could conceivably give an attacker remote device
+access, and allow a worm to spread the malware to other VxWorks devices
+around the world. Roughly 200 million devices appear to be vulnerable; the
+bugs have been present in most versions of VxWorks going back to version
+6.5, released in 2006.
+
+https://www.wired.com/story/vxworks-vulnerabilities-urgent11/
+
+------------------------------
+
+Date: Mon, 29 Jul 2019 19:14:52 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Capital One Systems Breached by Seattle Woman, U.S. Says
+  (Bloomberg)
+
+https://www.bloomberg.com/news/articles/2019-07-29/capital-one-data-systems-breached-by-seattle-woman-u-s-says
+
+------------------------------
+
+Date: Tue, 30 Jul 2019 14:11:10 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Another Breach: What Capital One Could Have Learned from Google's
+  "BeyondCorp"
+
+Updating this blog post with info that non-customers of Capital One were
+also affected by the breach, etc.
+
+https://lauren.vortex.com/2019/07/30/another-breach-what-capital-one-could-have-learned-from-googles-beyondcorp
+
+------------------------------
+
+Date: Tue, 30 Jul 2019 12:27:01 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Paige Thompson, Capital One Hacking Suspect, Left a Trail Online
+  (NYTimes)
+
+https://www.nytimes.com/2019/07/30/business/paige-thompson-capital-one-hack.html
+
+Ms. Thompson, a 33-year-old software developer, made a habit of oversharing
+online. Those posts led the authorities to her door.
+
+------------------------------
+
+Date: Sun, 4 Aug 2019 6:17:10 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Cambridge Analytica's role in Brexit (Ted)
+
+  [Thanks to Paul Vixie.  PGN]
+
+https://www.ted.com/talks/carole_cadwalladr_facebook_s_role_in_brexit_and_the_threat_to_democracy
+
+------------------------------
+
+Date: Sun, 4 Aug 2019 12:12:06 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The scramble to secure America's voting machines (Politico)
+
+The U.S. faces a voting security crisis.
+
+Eric Geller, Beatrice Jin, Jordyn Hermani and Michael B. Farrell
+Politico, 4 Aug 2019
+
+Tens of millions of Americans across 14 states cast ballots last year on
+paperless voting machines -- devices that security experts say can be
+undetectably hacked and that offer no way to audit results when tampering or
+errors occur. Many voters will still be using paperless machines in 2020,
+despite warnings from intelligence leaders and cybersecurity experts that
+Russia will try to reprise its interference in the 2016 presidential
+campaign.
+
+Click here to read the results of POLITICO's survey and see our interactive
+presentation on the nationwide, state-by-state and county-by-county picture
+of U.S. voting security as 2020 approaches.
+<http://go.politicoemail.com/?qs=fd655ae1233a06b1b7f1752972e43eea46a05288d2617d3f24aa2617ab812f0bdae6d83d692c4e703f1488e207a56d87>
+
+https://www.politico.com/interactives/2019/election-security-americas-voting-machines/index.html
+
+------------------------------
+
+Date: Tue, 30 Jul 2019 13:46:18 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The state of our elections security (Web Informant)
+
+Web Informant, 30 Jul 2019
+
+The past week has seen a lot of news stories about hacking our
+elections. Today in this edition of Inside Security I take a careful look at
+what we know and the various security implications, which I cover in the
+last paragraph. It is hard to write about this without getting into
+politics, but I will try to summarize the facts. Here are two of them:
+
+— Russians have penetrated election authorities in every statehouse and
+  continue to try to compromise those networks. We have evidence that has
+  been published in the Mueller report and more recently the Senate
+  Intelligence Committee report from last week.
+
+— A second and more troublesome collection of election compromises is
+  described in a report from the San Mateo County grand jury that was also
+  posted last week. I will get to this report in a moment.
+
+For infosec professionals, the events described in these documents have been
+well known for many years. The reports talk about spear-phishing attacks on
+election officials, phony posts on social media or posts that originate from
+sock puppet organizations (such as Russian state-sponsored intelligence
+agencies), or from consultants to political campaigns that misrepresent
+themselves to influence an election.
+
+https://blog.strom.com/wp/?p=7291
+
+------------------------------
+
+Date: Tue, 30 Jul 2019 13:38:16 -0700
+From: Richard Stein <rmstein@ieee.org>
+Subject: A lawmaker wants to end social media addiction by killing features
+  that enable mindless scrolling (WashPost)
+
+https://www.washingtonpost.com/technology/2019/07/30/lawmaker-wants-end-social-media-addiction-by-killing-features-that-enable-mindless-scrolling/
+
+"Big tech has embraced a business model of addiction," Hawley, a Missouri
+Republican, said in a statement announcing the bill. "Too much of the
+'innovation' in this space is designed not to create better products, but to
+capture more attention by using psychological tricks that make it difficult
+to look away. This legislation will put an end to that and encourage true
+innovation by tech companies."
+
+iDisorder (http://catless.ncl.ac.uk/Risks/30/89#subj18.1) constitutes an
+acute public health and safety risk.
+
+Apple's opposition to 'gaze-blocker' application sales suggest they merit
+pursuit as a public health benefit. See
+https://catless.ncl.ac.uk/Risks/31/21#subj16.1.
+
+------------------------------
+
+Date: Fri, 2 Aug 2019 12:49:45 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Cisco in Whistleblower Payoff and PR Doublespeak Row
+  (Security Boulevard)
+
+Cisco Systems has settled a longstanding lawsuit in which federal and state
+agencies alleged a product was badly insecure and that the company knew
+about it for at least four years before it did anything. Not a good look.
+
+Not only that, but Cisco will compensate a whistleblowing contractor who
+says he was fired for rocking the boat. Although Cisco maintains his job was
+no longer needed.
+
+And the PR statement is, well, let’s just say nuanced.
+
+https://securityboulevard.com/2019/08/cisco-in-whistleblower-payoff-and-pr-doublespeak-row/
+
+------------------------------
+
+Date: Fri, 2 Aug 2019 16:44:32 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Social Media Addiction Reduction Technology, or SMART, Act
+  (Fortune)
+
+*Can't look away*. Speaking of new rules, a bill proposed by Sen. Josh
+Hawley dubbed the Social Media Addiction Reduction Technology, or SMART, Act
+would ban techniques used to hook people in to social media *Facebook's*
+(and many other sites) infinite scroll would be illegal, as would autoplay
+videos.  ``Big Tech has embraced addiction as a business model,'' Hawley
+tweeted. The bill obviously has along way to go before becoming a law.
+
+<https://click.newsletters.fortune.com/?qs=3d78e25a4a015e4f81ef8aa570ded719ff100f5c5c1fad1c69075643289ea7346c4d3f2108608cab99cc61c36ecf80db896e780d98394df0>
+
+  [Next to be outlawed, human nature.]
+
+------------------------------
+
+Date: Tue, 30 Jul 2019 19:13:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 200-million devices some mission-critical vulnerable to remote
+  takeover (Ars Technica)
+
+https://arstechnica.com/information-technology/2019/07/200-million-devices-some-mission-critical-vulnerable-to-remote-takeover/
+
+------------------------------
+
+Date: Sun, 28 Jul 2019 14:05:35 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Siemens contractor pleads guilty to planting logic bomb in company
+  spreadsheets (ZDNet)
+
+https://www.zdnet.com/article/siemens-contractor-pleads-guilty-to-planting-logic-bomb-in-company-spreadsheets/
+
+------------------------------
+
+Date: Tue, 30 Jul 2019 19:59:18 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: People forged judges' signatures to trick Google into changing results
+  (Ars Technica)
+
+https://arstechnica.com/tech-policy/2019/07/people-forged-judges-signatures-to-trick-google-into-changing-results/
+
+------------------------------
+
+Date: Fri, 2 Aug 2019 12:37:19 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Partial hashes broadcast in Bluetooth can be converted to phone
+  numbers (Ars Technica)
+
+https://arstechnica.com/information-technology/2019/08/apples-airdrop-and-password-sharing-features-can-leak-iphone-numbers/
+
+------------------------------
+
+Date: Sat, 3 Aug 2019 16:40:17 -0700
+From: Mark Thorson <eee@dialup4less.com>
+Subject: Apple suspends human eavesdropping through Siri (Taipei Times)
+
+A prudent move, in the wake of Amazon and Google bad PR from their
+eavesdropping activities.  The putative motive of having human listeners was
+to improve Siri's ability to respond to queries.
+
+http://www.taipeitimes.com/News/biz/archives/2019/08/03/2003719808
+
+Someone must have gotten around to asking "What could go wrong?.
+
+------------------------------
+
+Date: Mon, 29 Jul 2019 00:56:23 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Why People Should Care About Quantum Computing (Fortune)
+
+Essentially, workable quantum computing could, in theory, help solve some of
+humanity’s most pressing problems like capturing “carbon from the atmosphere
+to save the planet” and improving clean and energy and food production,
+Svore said.
+
+It’s not as if conventional computers can’t handle the calculations
+underpinning the feats Svore mentioned. It’s just that it would take a
+person’s lifetime, as opposed to the “matter of weeks or months” it would
+take a quantum computer to process the information related to the problems.
+
+https://fortune.com/2019/07/15/quantum-computing-brainstorm-tech/
+
+More vague blather, I think. There's NEVER discussion about quantum apps,
+programming, algorithms, specific applications.
+
+It's never beyond:
+
+Quantum, however, relies on mysterious so-called qbits, which can represent
+data in multiple states like a “0” or “1” at the same time; it’s a
+head-scratching idea to wrap one’s brain around, but its crucial to
+harnessing the power of quantum computing. Designing algorithms that take
+advantage of the mysterious properties of qbits can bring “billions of years
+of compute time to seconds or hours or days,” Svore said.
+
+...so let's see the algorithms -- they should be available before quantum
+hardware is built, yes?
+
+------------------------------
+
+Date: Sun, 28 Jul 2019 14:41:40 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Your Train Is Delayed. Why?  (NYTimes)
+
+Video
+https://www.nytimes.com/video/nyregion/100000005550602/subway-status-emergency.html
+
+------------------------------
+
+Date: Sun, 28 Jul 2019 14:18:58 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Barr Revives Encryption Debate, Calling on Tech Firms to Allow for
+  Law Enforcement (NYTimes)
+
+The attorney general, reopening the conversation on security vs. privacy,
+said that encryption and other measures effectively turned devices into
+“law-free zones.”
+
+https://www.nytimes.com/2019/07/23/us/politics/william-barr-encryption-security.html?smid=nytcore-ios-share
+
+  [Unfortunately, law-enforcement-only backdoors are likely to be
+  subvertible by many unauthorized folks.  Emphatic assertion keeps
+  resurfacing, despite the wisdom of the Keys Under Doormats report, by
+  folks who reject the risks of misusing systems that are likely to be
+  already unsecure, despite the desire for backdoors.  The RISKS motto seems
+  to be: Everything is likely to be compromised, if not already broken.  By
+  the way, it is not `security vs privacy'.  It is `insecurity and
+  nonprivacy'.  PGN]
+
+------------------------------
+
+Date: Sun, 28 Jul 2019 14:04:46 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Dark Web Consequences Increase from Global Rise of Police-Friendly
+  Laws (Channel Futures)
+
+https://www.channelfutures.com/mssp-insider/dark-web-consequences-increase-from-global-rise-of-police-friendly-laws
+
+------------------------------
+
+Date: Sat, 27 Jul 2019 17:49:36 -0400
+From: Dave Farber <farber@gmail.com>
+Subject: The Hidden Costs of Automated Thinking (The New Yorker)
+
+https://www.newyorker.com/tech/annals-of-technology/the-hidden-costs-of-automated-thinking
+
+------------------------------
+
+Date: 	Sat, 27 Jul 2019 09:17:40 -0400
+From: 	Dave Farber <farber@gmail.com>
+Subject: We Tested Europe’s New Digital Lie Detector. It Failed.
+  (The Intercept)
+
+https://theintercept.com/2019/07/26/europe-border-control-ai-lie-detector/
+
+------------------------------
+
+Date: Sun, 28 Jul 2019 10:19:53 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: AI Predictive Policing (Daily Mail)
+
+  [From Geoff Goodfellow]
+
+AI experts from top universities SLAM `predictive policing' tools in new
+statement and warn technology could 'fuel misconceptions and fears that
+drive mass incarceration'.
+
+   - AI experts say pre-crime algorithms are more magic than reality
+   - Algorithms designed to predict violent crime may come with
+   consequences
+   - Experts say they may vastly overstate the likelihood of pretrial
+   crime
+   - They warn its use could fuel mass incarceration and lead to harsher
+   sentences
+
+EXCERPT:
+
+Prominent thinkers in the fields of artificial intelligence say that
+predictive policing tools are not only 'useless,' but may be helping to
+drive mass incarceration.
+
+In a letter published earlier this month the experts, from MIT, Harvard,
+Princeton, NYU, UC Berkeley and Columbia spoke out on the topic in an
+unprecedented showing of skepticism toward the technology.
+<https://dam-prod.media.mit.edu/x/2019/07/16/TechnicalFlawsOfPretrial_ML>
+
+'When it comes to predicting violence, risk assessments offer more magical
+thinking than helpful forecasting,' wrote AI experts Chelsea Barabas,
+Karthik Dinakar and Colin Doyle in a New York Times op-ed.
+<https://www.nytimes.com/2019/07/17/opinion/pretrial-ai.html?utm_source=The+Appeal>
+
+Predictive policing tools, or risk assessment tools, are algorithms designed
+to predict the likelihood of someone committing crime in the future.
+
+With rapid advances in artificial intelligence, the tools have begun to find
+their way into the everyday processes of judges, who deploy them to
+determine sentencing, and police departments, who use them to allot
+resources and more.
+
+While the technology has been positioned as a way to combat crime
+preemptively, experts say its capabilities have been vastly overstated.
+
+Among the arenas most affected by the tools they say, are pretrial
+sentencing, during which people undergoing a trial may be detained based on
+their risk of committing a crime.
+
+'Algorithmic risk assessments are touted as being more objective and
+accurate than judges in predicting future violence,' write the
+researchers...
+
+https://www.dailymail.co.uk/sciencetech/article-7287341/AI-experts-release-statement-slamming-predictive-policing-digitizing-stop-frisk.html
+
+------------------------------
+
+Date: Sun, 4 Aug 2019 16:50:27 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Guardian Firewall iOS App Automatically Blocks the Trackers on Your
+  Phone (WiReD)
+
+The data economy has too often betrayed its customers, whether it's Facebook
+sharing data you didn't even realize it had, or invisible trackers that
+follow you around the web without your knowledge. But a new app launching in
+the iOS App Store today wants to help you take back some control—without
+making your life harder.
+
+The Guardian Firewall app runs in the background of an iOS device, and
+stymies data and location trackers while compiling a list of all the times
+your apps attempt to deploy them. It does so without breaking functionality
+in your apps or making them unusable. Plus, the blow by blow list gives you
+much deeper insight than you would normally have into what your phone is
+doing behind the scenes. Guardian Firewall also takes pains to avoid
+becoming another cog in the data machine itself.  You don't need to make an
+account to run the firewall, and the app is architected to box its
+developers out of user data completely.
+
+https://www.wired.com/story/guardian-firewall-ios-app/
+
+Was tempting until $100/year cost.
+
+------------------------------
+
+Date: Tue, 30 Jul 2019 13:36:01 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Google researchers disclose vulnerabilities for 'interactionless'
+  iOS attacks (ZDNet)
+
+While it is always a good idea to install security updates as soon as they
+become available, the availability of proof-of-concept code means users
+should install the iOS 12.4 release with no further delay.
+
+https://www.zdnet.com/article/google-researchers-disclose-vulnerabilities-for-interactionless-ios-attacks/
+
+------------------------------
+
+Date: Tue, 30 Jul 2019 10:40:55 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Another Breach: What Capital One Could Have Learned from Google's
+  "BeyondCorp" (Lauren's Blog)
+
+https://lauren.vortex.com/2019/07/30/another-breach-what-capital-one-could-have-learned-from-googles-beyondcorp
+
+Another day, another massive data breach. This time some 100 million people
+in the U.S., and more millions in Canada. Reportedly the criminal hacker
+gained access to data stored on Amazon's AWS systems. The fault was
+apparently not with AWS, but with a misconfigured firewall associated with a
+Capital One app, the bank whose customers were the victims of this attack.
+
+Firewalls can be notoriously and fiendishly difficult to configure
+correctly, and often present a target-rich environment for successful
+attacks. The thing is, firewall vulnerabilities are not headline news --
+they're an old story, and better solutions to providing network security
+already exist.
+
+In particular, Google's "BeyondCorp" approach
+( https://cloud.google.com/beyondcorp ) is something that every enterprise
+involved in computing should make itself familiar with. Right now!
+
+BeyondCorp techniques are how Google protects its own internal networks and
+systems from attack, with enormous success. In a nutshell, BeyondCorp is a
+set of practices that effectively puts "zero trust" in the networks
+themselves, moving access control and other authentication elements to
+individual devices and users. This eliminates the need for traditional
+firewalls (and in most instances, VPNs) because there is no longer a
+conventional firewall which, once breached, gives an attacker access to all
+the goodies.
+
+If Capital One had been following BeyondCorp principles, there would be 100+
+million less of their customers who wouldn't be in a panic today.
+
+------------------------------
+
+Date: Wed, 31 Jul 2019 10:30:36 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: "A data breach forced this family to move home and change their
+  names (ZDNet)
+
+Charlie Osborne for Zero Day | 26 Jul 2019
+
+A data breach forced this family to move home and change their names
+Sometimes a free credit report in recompense is nowhere near enough.
+https://www.zdnet.com/article/a-data-breach-forced-this-family-to-move-home-and-change-their-names/
+
+selected text:
+
+In the London Borough of Hackney, a recent case emerged when a data breach
+had far more devastating consequences than most of us would ever experience.
+
+As reported by the Hackney Gazette, a family in the area adopted a child and
+the details of who they were and where they lived were meant to be withheld
+from the birth parents.
+
+However, during the adoption process in 2016, a solicitor appointed by
+Hackney Council mistakenly included an unredacted copy of the application
+form. The publication says that the exposed, sensitive data included the
+couple's names, addresses, phone numbers, dates of birth, and occupations.
+
+The scope of the breach was serious enough that the couple spoke to both the
+council and police, and ultimately decided that moving home and changing
+their names was the safest option for their adopted child.
+
+------------------------------
+
+Date: Thu, 25 Jul 2019 19:51:11 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Brazilian president’s cellphone hacked as Car Wash scandal intrigue
+  widens (WashPost)
+
+Four men have been arrested on suspicion of breaking into cellphones of
+hundreds of officials.
+
+https://www.washingtonpost.com/world/the_americas/brazilian-president-bolsonaros-cellphone-hacked-as-carwash-scandal-intrigue-widens/2019/07/25/faab2b86-aee5-11e9-9411-a608f9d0c2d3_story.html
+
+------------------------------
+
+Date: Fri, 26 Jul 2019 10:12:53 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Malicious 'Google' domains used in Magento card card skimmer attacks
+  (ZDNet)
+
+https://www.zdnet.com/article/malicious-google-domains-used-in-magento-data-skimmer/
+
+------------------------------
+
+Date: Fri, 26 Jul 2019 10:15:08 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: MyDoom: The 15-year-old malware that's still being used in phishing
+  attacks in 2019 (ZDNet)
+
+https://www.zdnet.com/article/mydoom-the-15-year-old-malware-thats-still-being-used-in-phishing-attacks-in-2019/
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Mon, 5 Aug 2019 08:18:19 -0400
+Subject: StockX was hacked, exposing millions ofcustomers'_data (TechCrunch)
+
+https://techcrunch.com/2019/08/03/stockx-hacked-millions-records/
+
+------------------------------
+
+Date: Mon, 5 Aug 2019 10:48:58 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Ikea says sorry for customer data breach (Straits Times)
+
+https://www.straitstimes.com/singapore/ikea-says-sorry-for-customer-data-breach
+
+------------------------------
+
+Date: Thu, 1 Aug 2019 11:47:57 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Refunds for Global Access Technical Support customers
+  (Consumer Information)
+
+If you paid for technical support services from Global Access Technical
+Support (GATS), you’ll be getting a letter or an email from the Federal
+Trade Commission about a refund. You might have known the company as Global
+SConnect, Global sMind, Yubdata Tech, or Technolive.
+
+The FTC sued GATS, alleging that the company lied about partnering with
+well-known tech companies and tricked people into paying for unnecessary
+computer repairs. GATS has now paid $860,000 to settle the lawsuit.
+
+The FTC is sending refunds to people who paid money to GATS. If you get a
+check from us, cash it within 60 days. We will send refunds via PayPal to
+customers for whom we do not have a mailing address.
+
+Here’s how the PayPal refunds work: the FTC will send the customer an email
+from subscribe@subscribe.ftc.gov. Then, within 24 hours, that customer will
+also get an email directly from PayPal about the refund.  If you get those
+emails, all you have to do is type www.paypal.com into your browser, log in
+to your account (or create one), and review and accept the payment. Or
+accept payment by logging into the PayPal app.
+
+To avoid scammers who might pretend to be from the FTC or PayPal, follow
+these simple steps:
+
+ * If you get a refund email that claims to be from the FTC or PayPal, don’t
+   click on any links in the email. Instead, visit the website by typing the
+   right URL into your browser: www.ftc.gov/refunds and www.paypal.com.
+
+ * Check out FTC refunds at ftc.gov/refunds. Each case on that page has a
+   phone number you can call to check on refund payments.
+
+ * Know that the FTC never asks people to pay money or give sensitive
+   financial information to get a refund. People who say they are with the
+   FTC and ask for money are scammers.
+
+https://www.consumer.ftc.gov/blog/2019/08/refunds-global-access-technical-support-customers
+
+------------------------------
+
+Date: Wed, 31 Jul 2019 02:09:55 +0900F
+From: "ISHIKAWA,chiaki" <ishikawa@yk.rim.or.jp>
+Subject: Business Continuity?: Kyoto Anime recovers digital recordings
+
+I have been a Japanese animation fan since I was a kid growing up in
+Japan.  So this is a very prejudiced post in that direction.
+
+The arson of  Kyoto Animation company (Kyoto Anime or KyoAni for short),
+almost a terrorist attack, which killed 35 people by now has had Kyoto Anime
+scrambling to recover what remains in the server computer in the building
+which burned down.
+
+The arson is now detailed in Wikipedia.
+https://en.wikipedia.org/wiki/Kyoto_Animation_arson_attack
+
+Since the night of July 29, it has been reported that Kyoto Anime, with the
+help of experts, could salvage the digital data from the server(s) that
+remained intact in the building that burned down. (In Japanese:
+https://www.asahi.com/articles/ASM7Y6H8ZM7YPTIL03K.html )
+
+Luckily the server(s) was on the first floor and was housed in a small space
+surrounded by concrete walls in the four directions (CI's comment: I wonder
+where the door was...) and withstood the fire and the water sprayed by
+firefighters.
+
+cf. Due to the nature of the Japanese languages, I am not sure if the
+server referred to is actually a collection of servers (plural).
+
+An earlier Japan Times article in English mentioned that there *was* a
+server and the management hoped to recover the data *IFF* the server did not
+get wet during the firefighting effort.
+https://www.japantimes.co.jp/news/2019/07/29/national/kyoto-animation-hopes-recover-drawing-storyboard-data-server-arson-attack/
+
+But to me it is hard to believe that 70+ people working on a few animation
+projects could work with only a single server, but it is not the major
+contention here.
+
+First of all, I am not sure if all the digital data of anime (animation,
+that is) held by that branch was recovered or not. The article mentioned
+digital data only, and inferred some animation digital drawings were
+recovered.  An inquiry mind wants to know the answer to "Were all the
+relevant data transferred from individual PCs to the server each day?".
+Individual PCs went up in smoke literally. No hope of recovering data from
+them.
+
+One thing is crystal clear: ALL THE PAPER-BASED DRAWINGS IN THE BRANCH ARE
+GONE. PERIOD.  (Except for a piece of paper with a hand-drawn illustration
+on it: it was n the backside of a whiteboard that remained in the
+building. I saw it in a news article.)
+
+When I read the article and some earlier articles, some computer-related
+risk keywords popped up in my mind: - off-site backup, - business
+continuity, and - human resources.
+
+Here, human resources *IS* actually the most valuable one in this case, and
+the loss is felt throughout the media industry all over the world. No amount
+of off-site backup or business continuity planning that is created for
+earthquakes or typhoons (Japan's two biggest natural disasters) will be
+enough to counter the type of human-resource damage sustained by Kyoto Anime
+this time.
+
+Nevertheless, some business schools may create a case study of
+disaster-recover planning for business continuity based on the incident.
+
+Yes, to my surprise and many others', Kyoto Animation obviously failed to
+perform off-site backup (and for that matter, distributed backup of
+paper-based illustrations).  That is something to think about for the media
+company management types in the future.  (So this post *IS* computer
+risk-related after all.)
+
+At the same time, I personally feel it is a tough time for the management
+indeed for recovering the business operation especially when I read the
+comments from the surviving members of the victims such as the one I quote
+later in this post.
+
+The impact of human toll is really devastating psychologically.  Recovering
+from a crime-initiated disaster is not a purely a computer-risk issue, but
+wetware (people) issue too, especially so once the hardware, software and
+data are recovered.
+
+The following news contains comments regarding the color coordinator,
+Ms. Naomi Ishida, who has worked at Kyoto Anime for more than 20 years. A
+victim of the arson. The article is in Japanese:
+https://www3.nhk.or.jp/lnews/kyoto/20190725/2010004159.html (Ms. Ishida's
+background is explained in detail in English in the following URL:)
+https://www.animenewsnetwork.com/news/2019-07-25/kyoto-animation-colorist-naomi-ishida-passed-away-in-studio-fire/.149318
+
+Since such Japanese news comments are unlikely to be translated into English
+any time soon, here is my rough translation of that part of the news
+article. (I searched for English article that may refer to the comments of
+Ms. Ishida's parent, but only ended up with the animenewsnetwork article
+above.)
+
+My rough translation:
+
+  Ms. Naomi Ishida's mother mentioned "The police got in contact with us
+  because the DNA identification has been over and they wanted to explain
+  the result to us. When I looked at the remains, I noticed that only a
+  piece of metal of my daughter's hair accessory remained and all else
+  melted away. The fire was so severe. The whole ordeal could have been over
+  in a short while. But it is a real pity she must have suffered a lot
+  during that time."  and she added "I have not known her whereabouts after
+  the arson. The only consolation now is that I can bring her back home
+  finally..."
+
+  Her father said "I have tough time sleeping thinking about how she must
+  have suffered in pain at the last moment.  But now I am a bit relieved
+  when I learned that so many anime fans placed flowers in many places in
+  appreciation of works to which my daughter contributed.  I am now very
+  proud of her. I hope she will be drawing pictures together with her
+  colleagues in the Heaven."
+
+  Parents of other victims would have similar comments.  Surviving victims
+  need months or even years to heal from the wounds.  The psychological
+  damage is definitely large although hard to estimate.  How can a company
+  restart business operation amid such mental hardship?
+
+Personal comment: Ms. Ishida worked on animations such as Suzumiya Haruhi TV
+series and others which produced some interesting songs including the
+following one that has been played ALMOST 100 MILLION TIMES on youtube.
+
+https://www.youtube.com/watch?v=WWB01IuMvzA
+
+This particular song is in my favorite list and I play the list from time to
+time in random order during desk work. Next time the song comes up and I
+watch the animation images on PC screen whose color coordination Ms. Ishida
+produced, I would recall the words of her parents. What a pity.  Not just an
+interesting BGM song anymore...
+
+------------------------------
+
+Date: Fri, 26 Jul 2019 10:15:41 -0400
+From: George Mannes <gmannes@gmail.com>
+Subject: Colorado gov't. email account for reporting child abuse goes
+  unchecked for 4 years (WashPost)
+
+>From The Washington Post:
+
+https://www.washingtonpost.com/nation/2019/07/15/colorado-didnt-check-an-email-account-child-abuse-neglect-reports-years-five-cases-were-never-investigated/
+
+Colorado didn't check an email account for child abuse reports for
+years.  Five cases weren't investigated.
+
+By Hannah Knowles July 15
+An email account set up by the Colorado government for reports of child
+abuse and neglect went unchecked for four years, leaving more than 100
+messages about mistreatment concerns unanswered and allowing five cases
+that needed follow-up to go without investigation.
+
+The email account was set up in 2015 to support a phone hotline and then
+forgotten, allowing reports to slip through at a time when the state worked
+to increase reporting of child abuse and emphasized a speedy response to
+concerns through a 24/7 hotline. That phone number received a record number
+of calls last year, four years into a public awareness campaign aimed at
+teaching more Coloradans about the state's resources....
+
+...A May 15 internal audit discovered the problem. By the time the
+department looked at the neglected email account, 321 messages had piled
+up, including 104 about concerns that children were being abused or
+neglected, department spokeswoman Madlynn Ruble told The Washington Post.
+Many of those emails were duplicates or had already been addressed through
+other channels, Ruble said....
+
+------------------------------
+
+Date: Sun, 04 Aug 2019 19:16:33 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Re: "Mortgage Provider Tells Savers of Zero Balances"
+
+Item about a UK building society (mortgage provider) from this weekend's
+newspaper -- summary follows with my comments.
+
+  Sally Hamilton, The Mail On Sunday, 3 Aug 2019
+  Panic as Nationwide BS emails 1.3m customers to tell them they have no
+  money!
+
+https://www.dailymail.co.uk/money/saving/article-7317645/Panic-Nationwide-BS-emails-1-3m-customers-tell-no-money.html
+
+Nationwide Building Society has come under fire for emailing 1.3million
+savers with a 'summary' of their accounts showing they all had balances of
+zero.  ... data security rules meant it was unable to provide balances by
+email 'because it isn't 100 per cent secure'.  The new summary simply shows
+the types of accounts savers hold along with the interest rates paid -- and
+what balance is required to receive it. This showed... ISA accounts pay 1.1
+per cent and 1.2 per cent -- on balances of '0+ pounds'.
+
+  [Looks like another casualty of data-protection laws, but more
+  likely a case of a badly-worded message.  CD]
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.35
+************************

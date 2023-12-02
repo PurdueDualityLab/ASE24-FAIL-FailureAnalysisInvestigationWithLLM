@@ -1,0 +1,588 @@
+RISKS-LIST: Risks-Forum Digest  Friday 26 June 2015  Volume 28 : Issue 73
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.73.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+PITA: How Encryption Keys Could Be Stolen by Your Lunch (Jeremy Kirk)
+"Critical flaw in ESET products shows why spy groups are interested in
+  antivirus programs" (Lucian Constantin)
+"Samsung sneakily disables Windows Update on some PCs" (Jared Newman)
+Major Internet providers slowing traffic speeds	for thousands across U.S.
+  (The Guardian)
+High-5s for OPM from govts lusting for control of the Internet (Henry Baker)
+"Help, I'm Trapped in Facebook's Absurd Pseudonym Purgatory" (Michael Bacon)
+Bootleggers & Baptists; Spooks & Copyrights wrt anti-virus (Henry Baker)
+Allstate patents spying on driver's physio data (Henry Baker)_
+Re: Weinstein on "L.A. plans potentially disastrous switch to
+  'electronic' voting" (John Sebes)
+Re: The Titanic and the Ark (Gary Hinson)
+Re: OPM Hack: L0pht Testifies 17 Years Ago (Henry Baker)
+Cyber Security Hall of Fame ((Gene Spafford)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 22 Jun 2015 12:09:49 -0400 (EDT)
+From: "ACM TechNews" <technews@hq.acm.org>
+Subject: PITA: How Encryption Keys Could Be Stolen by Your Lunch
+  (Jeremy Kirk)
+
+Jeremy Kirk, IDG News Service, via ACM TechNews, 22 Jun 2015
+
+Israeli researchers from Tel Aviv University have developed a device that
+can be concealed within pita bread and has the ability to deduce encryption
+keys by sniffing the electromagnetic leakage from a computer.  The device is
+an example of a side-channel attack, which relies on the tiny bits of
+information that leak from computers as they perform computations.  The
+device, dubbed PITA (Portable Instrument for Trace Acquisition) by the
+researchers, was designed to target a laptop encrypted using the GnuPG 1.x
+encryption tool.  The device consists of a copper unshielded loop antenna
+and a capacitor designed to pick up the frequencies at which encryption key
+information leaks.  PITA sends out multiple ciphertexts to the targeted
+computer and then monitors the computer's electromagnetic emissions as it
+decrypts the ciphertexts.  The signals are collected on an internal microSD
+card for offline analysis, which can deduce the key from the data in a
+matter of seconds.  Such side-channel attacks can be very difficult to
+defend against and hardware solutions are unlikely to appear due to their
+cost.  A more likely method of defending against them would be modifying
+software so the information leaked when it runs will be of no use to an
+attacker.
+
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_5-dd1ex2cf6ex062958&
+
+------------------------------
+
+Date: Thu, 25 Jun 2015 00:45:11 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Critical flaw in ESET products (Lucian Constantin)
+
+[ take a deep breath, RISKS readers... and don't forget to say "Me?
+Surprised?!!? hah!" ]
+
+Lucian Constantin. InfoWorld, 25 Jun 2015
+Critical flaw in ESET products shows why spy groups are interested in
+antivirus programs
+<http://www.infoworld.com/author/Lucian-Constantin/>
+IDG News Service <http://www.idgnews.net/> | Jun 24, 2015
+
+*The flaw could allow attackers to fully compromise systems via websites,
+email, USB drives, and other methods*
+
+Several antivirus products from security firm ESET had a critical
+vulnerability that was easy to exploit and could lead to a full system
+compromise.  The discovery of the flaw, which has now been patched, comes on
+the heels of a report that intelligence agencies from the U.K. and the
+U.S. are reverse engineering antivirus products in search for
+vulnerabilities and methods to bypass detection.....
+
+The vulnerability in ESET products was discovered by Google security
+engineer Tavis Ormandy and was located in their emulator, the antivirus
+component responsible for unpacking and executing potentially malicious code
+inside a safe environment so that it can be scanned.  The ESET products
+monitor disk input and output operations and when executable code is
+detected they run it through the emulator to apply the detection
+signatures.."Because it's so easy for attackers to trigger emulation of
+untrusted code, it's critically important that the emulator is robust and
+isolated," Ormandy said in a blog post
+<http://googleprojectzero.blogspot.ro/2015/06/analysis-and-exploitation-of-eset.html>.
+
+... The vulnerability found by the Google researcher allows a remote
+attacker to execute arbitrary commands with the highest system privilege.
+The flaw is particularly dangerous because it can be exploited in many
+ways,... Because it's so easy to exploit, the flaw can be used to create a
+computer worm that spreads from one computer to another, including on
+"air-gapped" networks though USB thumb drives,..
+
+The vulnerability affects ESET Smart Security for Windows, ESET NOD32
+Antivirus for Windows, ESET Cyber Security Pro for OS X, ESET NOD32 For
+Linux Desktop, ESET Endpoint Security for Windows and OS X and ESET NOD32
+Business Edition.  The company released a scanning engine update
+<http://www.virusradar.com/en/update/info/11824> Monday to fix the flaw, so
+users should make sure they update their products. The vulnerability was
+located in the emulation routine used by a particular scanner for a specific
+malware family and didn't affect the core emulation engine, ESET
+said. ... As a result of code-rewriting efforts to improve product quality,
+the company had already corrected the flaw, and it didn't exist in ESET's
+"pre-release" engine, which is available to all customers, the company said.
+
+This is not the first time that security researchers have found serious
+vulnerabilities in antivirus products. In 2012, Ormandy found critical
+vulnerabilities in Sophos Antivirus
+<http://www.pcworld.com/article/2013580/researcher-finds-critical-vulnerabilities-in-sophos-antivirus-product.html>
+and last year he found a flaw that could be exploited to remotely disable
+the protection engine
+<http://www.pcworld.com/article/2365040/maliciously-crafted-files-can-disable-microsofts-antimalware-products.html>
+used in many Microsoft antimalware products.  Also last year, Joxean Koret,
+a researcher at Coseinc, found dozens of remotely and locally exploitable
+vulnerabilities in 14 antivirus engines.
+<http://www.computerworld.com/article/2490527/malware-vulnerabilities/many-antivirus-products-are-riddled-with-security-flaws.html>
+
+Unlike some other software applications, antivirus programs have a very
+large attack surface because they need to inspect many types of files and
+code written in different languages from various sources, including the Web
+and email; and file parsing has historically been a source of many
+vulnerabilities.  For the past several years there's been a push to limit
+the privileges of widely used software applications. Some programs like
+Google Chrome or Adobe Reader use sandboxing mechanisms, making it
+significantly harder for attackers to exploit remote code execution
+vulnerabilities.  However, antivirus products need to run with high
+privileges so they can effectively fight off threats, so it's very important
+that their code is solid...as this allow attackers to gain full control of a
+system by exploiting a single vulnerability, without having to worry about
+bypassing sandboxes or escalating privileges (according to Carsten Eiram,
+the chief research officer at vulnerability intelligence firm Risk Based
+Security); 2.5% of the flaws recorded by Risk Based Security in its
+vulnerability database last year were for security products, including
+antivirus programs. The historical rate is 2.2% (of 10,000+).
+
+The Intercept reported
+<https://firstlook.org/theintercept/2015/06/22/nsa-gchq-targeted-kaspersky/>
+Monday that in 2008 GCHQ filed requests to renew a warrant that would have
+allowed the agency to reverse engineer antivirus products from Kaspersky Lab
+to find weaknesses. The NSA also studied antivirus products to bypass their
+detection (according to Edward Snowden).
+
+Earlier this month, Kaspersky Lab announced that some of its internal
+systems were infected with a new version of a sophisticated cyberespionage
+tool called Duqu. The attackers, who the company strongly believes were
+state-sponsored, were after Kaspersky's intellectual property, including
+information on its latest technologies and ongoing investigations.
+
+"It's neither new nor surprising that intelligence agencies are reverse
+engineering security products to find vulnerabilities, as well as ways to
+bypass their intended protection mechanisms," Eiram said. "It is, however,
+pretty concerning that they are also compromising security companies in
+order to steal intellectual property."
+
+------------------------------
+
+Date: Fri, 26 Jun 2015 09:00:06 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Samsung sneakily disables Windows Update on some PCs"
+  (Jared Newman)
+
+Jared Newman, PCWorld, 25 Jun 2015
+The switch supposedly helps maintain driver compatibility, but raises
+security concerns in the process
+http://www.infoworld.com/article/2940634/security/samsung-sneakily-disables-windows-update-on-some-pcs.html
+
+opening text:
+Samsung has allegedly been disabling Windows Update on some computers, so as
+not to interfere with its own update tool.
+
+------------------------------
+
+Date: Tue, 23 Jun 2015 17:38:57 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Study: Major Internet providers slowing traffic speeds
+	for thousands across U.S.
+
+http://www.theguardian.com/technology/2015/jun/22/major-internet-providers-slowing-traffic-speeds
+
+  Major Internet providers, including AT&T, Time Warner and Verizon, are
+  slowing data from popular websites to thousands of US businesses and
+  residential customers in dozens of cities across the country, according to
+  a study released on Monday. The study, conducted by Internet activists
+  BattlefortheNet, looked at the results from 300,000 Internet users and
+  found significant degradations on the networks of the five largest
+  Internet service providers (ISPs), representing 75% of all wireline
+  households across the US.
+
+------------------------------
+
+Date: Thu, 25 Jun 2015 21:53:26 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: High-5s for OPM from govts lusting for control of the Internet
+
+FYI -- "the OPM breach would cause more damage to national security
+operations and personnel than the leaks by Edward Snowden"
+
+Those at the US NSA, UK GCHQ, Chinese govt, Russian govt, etc., are totally
+thrilled by this OPM hack, because incidents like these provide the
+political fuel for far greater govt control over the Internet.  Intelligence
+agencies all over the world, from any and all sides, gain power when govts
+move in to better "protect" their citizens from spies very like themselves.
+
+The fact that the U.S. govt is criminally negligent w.r.t. not protecting
+its employees own private data will be completely lost in all of the
+hand-wringing.  The press has not been holding politicians' feet to the fire
+on this issue, either.
+
+http://www.thedailybeast.com/articles/2015/06/24/hackers-stole-secrets-of-u-s-government-workers-sex-lives.html
+
+Hackers Stole Secrets of U.S. Government Workers' Sex Lives. 24 Jun 2015
+
+Infidelity.  Sexual fetishes.  Drug abuse.  Crushing debt.  They;re the most
+intimate secrets of U.S. government workers.  And now they;re in the hands
+of foreign hackers.
+
+It was already being described as the worst hack of the U.S. government in
+history.  And it just got much worse.
+
+A senior U.S. official has confirmed that foreign hackers compromised the
+intimate personal details of an untold number of government workers.  Likely
+included in the hackers' haul: information about workers' sexual partners,
+drug and alcohol abuse, debts, gambling compulsions, marital troubles, and
+any criminal activity.
+
+------------------------------
+
+Date: Tue, 23 Jun 2015 05:22:40 +0100
+From: Michael Bacon <michaelbacon@tiscali.co.uk>
+Subject: "Help, I'm Trapped in Facebook's Absurd Pseudonym Purgatory" (R 28.72)
+
+Facebook has clearly forgotten that: "On the Internet, no-one knows you're a
+dog"! -- says the man whose FB Profile picture is a dog, and who uses a
+pseudonym, albeit, with my given and family names below.
+
+------------------------------
+
+Date: Mon, 22 Jun 2015 20:55:03 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Bootleggers & Baptists; Spooks & Copyrights wrt anti-virus
+
+FYI -- ``If you write an exploit for an anti-virus product you're likely
+going to get the highest privileges (root, system or even kernel) with just
+one shot.''
+
+Duh!
+
+Who watches the watchers ?  (In this case virus-watchers...)
+
+"Software makers, fearing piracy, hacking and intellectual property theft,
+often forbid the practice in licensing agreements and sometimes protect the
+most sensitive inner workings of their software with encryption.
+Governments have passed laws, with digital media in mind, that strictly
+circumscribe tampering with this encryption.  Software companies have also
+sued to block reverse engineering as copyright infringement..."
+
+Strange bedfellows: intelligence agencies team with "copyright maximalists"
+(DMCA, etc.), while reverse engineering like crazy.  So much for "protecting
+the intellectual property of ordinary citizens".  Mr. Comey doth protest too
+much, methinks.
+
+Andrew Fishman and Morgan Marquis-Boire, FirstLook, 22 Jun 2015
+Popular Security Software Came Under Relentless NSA and GCHQ Attacks
+https://firstlook.org/theintercept/2015/06/22/nsa-gchq-targeted-kaspersky/
+
+The National Security Agency and its British counterpart, Government
+Communications Headquarters, have worked to subvert anti-virus and other
+security software in order to track users and infiltrate networks, according
+to documents from NSA whistleblower Edward Snowden.
+
+The spy agencies have reverse engineered software products, sometimes under
+questionable legal authority, and monitored web and email traffic in order
+to discreetly thwart anti-virus software and obtain intelligence from
+companies about security software and users of such software.  One security
+software maker repeatedly singled out in the documents is Moscow-based
+Kaspersky Lab, which has a holding registered in the U.K., claims more than
+270,000 corporate clients, and says it protects more than 400 million people
+with its products.
+
+British spies aimed to thwart Kaspersky software in part through a technique
+known as software reverse engineering, or SRE, according to a top-secret
+warrant renewal request.  The NSA has also studied Kaspersky Lab's software
+for weaknesses, obtaining sensitive customer information by monitoring
+communications between the software and Kaspersky servers, according to a
+draft top-secret report.  The U.S. spy agency also appears to have examined
+emails inbound to security software companies flagging new viruses and
+vulnerabilities.
+
+The efforts to compromise security software were of particular importance
+because such software is relied upon to defend against an array of digital
+threats and is typically more trusted by the operating system than other
+applications, running with elevated privileges that allow more vectors for
+surveillance and attack.  Spy agencies seem to be engaged in a digital game
+of cat and mouse with anti-virus software companies; the U.S. and U.K. have
+aggressively probed for weaknesses in software deployed by the companies,
+which have themselves exposed sophisticated state-sponsored malware.
+
+  [Long item truncated for RISKS.  PGN]
+
+------------------------------
+
+Date: Mon, 22 Jun 2015 16:20:09 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Allstate patents spying on driver's physio data
+
+FYI -- "George Orwell wrote this, right?", says Bob Hunter, insurance
+director for Consumer Federation of America.
+
+"The invention also teaches the monitoring and recording of data from
+onboard cameras and proximity sensors, as well as driver physiological
+monitoring systems.  Also included within the invention is predictive
+modeling of future behavior as a function of recorded data an individual
+driver compared with other drivers within a database."
+
+"This analysis can allow assessment and comparison of a variety of life
+style/health factors"
+
+We're going to need "driving gloves" and/or a "driving wheel condom" before
+driving such Allstate-equipped cars.
+
+I wonder if capturing your physio data will become a requirement for renting
+a car?
+
+Note that the exact same information may already be available to companies
+like Fitbit, who can correlate physio data with cellphone data & report to
+insurance companies like Allstate.
+
+http://www.sun-sentinel.com/health/ct-allstate-patent-data-0618-biz-20150618-story.html
+
+Insurer monitoring your heart rate?  Allstate's patent makes it possible
+*Sun Sentinel*, 18 Jun 2015
+
+A new patent secured by insurer Allstate reveals an invention that has the
+potential to evaluate drivers' physiological data, including heart rate,
+blood pressure and electrocardiogram signals, which could be recorded from
+steering wheel sensors.
+
+Becky Yerak , *The Chicago Tribune*
+https://www.google.com/patents/US20140080100
+
+An insurance company monitoring your heart rate through the steering wheel?
+Allstate's new patent opens door
+
+Could your bank or potential employer someday use data from your car?
+
+Attention tailgaters: Someday a bank or a potential employer considering
+your loan or your job application might become privy to your tendencies for
+aggressive driving.
+
+  [Anthr lng itm trnctd. P.]
+
+------------------------------
+
+Date: Tue, 23 Jun 2015 14:56:26 -0700
+From: John Sebes <jsebes@osetfoundation.org>
+Subject: Re: Weinstein on "L.A. plans potentially disastrous switch to
+  'electronic' voting" (RISKS-28.71)
+
+I respectfully disagree with Lauren's assessment of LA's Dean Logan's plans
+for future voting systems.
+
+First, let me agree on a couple points:
+1) There are several privacy and integrity issues to be addressed, and
+the devil is in the details.
+2) Whether or not the software involved is open-source does not, by
+itself, impart any amount of security, privacy, etc. for the system
+built from that source code.
+3) Internet voting is still crazy, and there is nothing, nothing at all
+about Internet voting in the plans of the LA CC-RR for electronic voting.
+
+Then, in the "however" part:
+3) LA's plans, as described in this article, are about in-person voting
+2) Open source would however help with independent assessment of whether
+those devilish details have been handled well.
+1) I myself prefer not to leap to judgment with "they never learn" but
+instead closely follow the development. My personal experience with the
+LA CC-RR organization is that they are well aware of these issues and
+quite diligent.
+
+Secondly, let me provide an explanation of why the QR-code idea is not
+by itself anything to worry about from an Internet voting perspective.
+Let's take this by steps from current practice (step 0).
+
+0) Ballot-marking devices (BMDs) in polling places, that present a voter's
+ballot in that precinct, visually, collecting voter choices, then presenting
+all the choices for voter approval (or modification) and producing a paper
+ballot of record that is: reviewed by the voter, opscanned, and later part
+of a risk-limiting audit.
+
+1) A similar BMD that operates in "vote center" mode capable of presenting
+any ballot style in the county to a voter. Just as in a precinct polling
+place there must be measures to ensure that each voter gets the proper
+ballot style, there must be similar measures in vote centers.
+
+2) A similar BMD where the "collect the voter's choices" step is a pre-load
+of voter choices done by scanning a voter-presented paper item or screen
+content item. The same steps of presenting all the choices for review, etc.,
+is followed as in (0). Local election officials might even choose to make
+the voter step through the ballot items sequentially with the pre-loaded
+choices, rather than skip to the "present all choices for approval or
+correction" step.
+
+There's nothing inherently Internet-voting-risky about this progression.
+That applies whether the paper item or screen content item is a QR code, bar
+code, or mass of human readable text that's OCR'd in the "pre load" step.
+
+There are, however, a separate set of issues about the process of a voter
+producing that paper item or screen content item, as a result of interacting
+with an "interactive sample ballot (ISB)" application that does a similar
+ballot presentation as a BMD, but produces that paper item or screen content
+item as a result. The ISB could be a native application like the Oregon
+"Alternative Format Ballot" tool that doesn't require a network
+connection. Or it could be a, ISB web application that's carefully
+constructed to deal with personal privacy and ballot anonymity issues.
+
+For a proposal of the latter system (which I contributed to) please see:
+http://ballot.ly and
+http://kng.ht/1Iz96Za
+
+That's intended to be in stark contrast to the existing online ballot
+marking tools that have some significant problems that some RISKS readers
+will be familiar with.
+
+Final point: it is possible to do this right, and I personally am confident
+that LA RR-CC will have the opportunity to do so.
+
+John Sebes
+CTO, OSET Foundation
+
+------------------------------
+
+Date: Thu, 25 Jun 2015 13:19:30 +1200
+From: "Gary Hinson" <Gary@isect.com>
+Subject: Re: The Titanic and the Ark (Bacon, RISKS-28.72)
+
+  "... very few employers seem interested in factoring [IT certifications]
+  into their hiring process."
+
+With respect, Michael, your argument doesn't hold water.  While I agree that
+real-world experience often trumps theoretical study, to disregard anyone
+out of hand merely because they possess a certificate (as you imply) is
+crazy.  What about those of us who have both?  Do you not even accept that
+someone making the effort to study and improve their knowledge,
+understanding and competence is a good thing?  The certificate itself is
+just a piece of paper, but it represents something worthwhile.  Given the
+choice, I'd personally be more confident about taking on a candidate with
+relevant certifications than one without - all else being equal.
+
+Dr Gary Hinson PhD MBA CISSP
+CEO of IsecT Ltd., New Zealand www.isect.com
+
+------------------------------
+
+Date: Fri, 26 Jun 2015 06:03:06 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: OPM Hack: L0pht Testifies 17 Years Ago
+
+FYI -- The Cassandra Files, Part Whatever.
+
+Watch this hour-long video from 1998 and weep (again).
+
+Hackers Testifying at the United States Senate, May 19, 1998 (L0pht Heavy
+Industries)
+
+L0pht Heavy Industries testifying before the United States Senate Committee
+on Governmental Affairs, Live feed from CSPAN, May 19, 1998.  Starring Brian
+Oblivion, Kingpin, Tan, Space Rogue, Weld Pond, Mudge, and Stefan von
+Neumann.
+
+This is the infamous testimony where Mudge stated we could take down the
+Internet in 30 minutes.  Although that's all the media took from it, much
+more was discussed.  See for yourself.
+
+https://www.youtube.com/watch?v=VVJldn_MmMY
+
+  [PGN testified in the same session, with similar conclusions!]
+
+------------------------------
+
+Date: Thu, 25 Jun 2015 22:06:36 -0400
+From: Gene Spafford <spaf@purdue.edu>
+Subject: Cyber Security Hall of Fame
+
+Do you know of someone who should be nominated for the Cyber Security
+Hall of Fame?
+
+You have until the end of the day July 5 to submit a nomination!
+https://www.cybersecurityhof.org <https://www.cybersecurityhof.org/>
+
+Please spread the word.
+
+Hall of Fame Inductees 2012
+	F. Lynn McNulty
+	Martin Hellman
+	Ralph Merkle
+	Whit Diffie
+	Dorothy Denning
+	Roger Schell
+	Peter Neumann
+	Carl Landwehr
+	Ron Rivest
+	Adi Shamir
+	Len Adleman
+
+Hall of Fame Inductees 2013
+	David E. Bell
+	Jim Bidzos
+	Eugene Spafford
+	James Anderson
+	Willis H. Ware
+
+Hall of Fame Inductees 2014
+	Paul Kocher
+	Vint Cerf
+	Phil Zimmerman
+	Steve Bellovin
+	Richard A. Clarke
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.73
+************************
+
+--_002_502d82da3f4c471aac661e3fb6173bd8EXHUBVM01campusnclacuk_--

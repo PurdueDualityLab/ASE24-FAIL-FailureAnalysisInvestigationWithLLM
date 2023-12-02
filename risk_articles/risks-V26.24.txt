@@ -1,0 +1,377 @@
+RISKS-LIST: Risks-Forum Digest  Friday 3 December 2010  Volume 26 : Issue 24
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.24.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Iran: Computer Malware Sabotaged Uranium Centrifuges (Kim Zetter)
+NY City: 195,055 Votes Found a month later! (Sam Roberts)
+Millions cashless in bank glitch (fjohn reinke)
+AVG Antivirus update kills Win7X64 systems (Jim Garrison)
+Missing decimal point leads to frustration (Paul Schreiber)
+Another Daylight Saving Time Bug (Frederick.Klein)
+Windows Phone 7 jailbreak tool comes, goes within a week (Lauren Weinstein)
+Re: Passenger arrested for stripping down to underwear (Dag-Erling Smørgrav)
+Risk of RISKS? (Chris D.)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 30 Nov 2010 8:00:43 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Iran: Computer Malware Sabotaged Uranium Centrifuges
+
+Kim Zetter, Iran: Computer Malware Sabotaged Uranium Centrifuges,
+*WiReD*, 29 Nov 2010 [PGN-ed]
+http://www.wired.com/threatlevel/2010/11/stuxnet-sabotage-centrifuges/
+
+In what appears to be the first confirmation that the Stuxnet malware hit
+Iran's Natanz nuclear facility, Iranian President Mahmoud Ahmadinejad said
+Monday that malicious computer code launched by `enemies' of the state had
+sabotaged centrifuges used in Iran's nuclear-enrichment program.
+
+The surprise announcement at a press conference coincided with news that two
+of Iran's top nuclear scientists had been ambushed Monday by assassins who
+killed one scientist and seriously injured the other.
+
+Iran had previously acknowledged that Stuxnet infected the personal
+computers of workers at its Bushehr nuclear power plant but had insisted
+that the malware had not infected work systems involved in the nuclear
+program, and that the program itself had not been harmed. Officials did not
+mention then whether any computers at its nuclear facility at Natanz had
+been infected.
+
+Natanz is engaged in enriching uranium that could be used to manufacture
+weapons. It was therefore believed by various computer security experts to
+have been Stuxnet's likely target.
+
+Ahmadinejad did not mention Natanz by name at Monday's press conference but
+admitted that malware had ``succeeded in creating problems for a limited
+number of our centrifuges.''
+
+According to a recent report from the United Nations/ International Atomic
+Energy Agency, Iran had temporarily halted uranium enrichment at its Natanz
+plant for unknown reasons earlier this month. Thousands of centrifuges
+reportedly stopped production as a result.
+
+Iran has had various problems over the years with equipment used in its
+nuclear facilities. The problems have delayed progress in both the country's
+nuclear power plants and the uranium-enrichment program, which Iran has
+insisted is for peaceful purposes only.
+
+Ahmadinejad said the malware that caused problems with its centrifuges was
+in software that the attackers had ``installed in electronic parts.''  He
+said the infection had been halted.
+
+``Our specialists stopped that and they will not be able to do it again,''
+he said, according to the BBC. Ahmadinejad blamed Israel and ``the West''
+for spreading the malware.
+
+The Stuxnet worm was discovered on computers in Iran in June by a Belarusian
+security firm and has infected more than 100,000 computer systems worldwide,
+most of them in Iran. The targeted code was designed to attack Siemens
+Simatic WinCC SCADA systems. The Siemens system is used in various
+facilities to manage pipelines, nuclear plants and various utility and
+manufacturing equipment.
+
+But speculation has focused on Iran's nuclear facilities -- at Bushehr,
+Natanz and other locations -- being the most likely target. The
+sophisticated malware is believed to have been created by a well-financed
+nation state, with speculation focusing on Israel and/or the United States.
+
+Security firm Symantec recently determined that the malware specifically
+targets Siemens systems that are used with frequency-converter drives made
+by two firms, one based in Iran and one in Finland. Even more specifically,
+Stuxnet targets only frequency drives from these two companies that are also
+running at high speeds -- between 807 Hz and 1210 Hz.
+
+Frequency-converter drives are used to control the speed of a device.
+Although it's not known what device Stuxnet aimed to control, it was
+designed to vary the speed of the device wildly but intermittently over a
+span of weeks, suggesting the aim was subtle sabotage meant to ruin a
+process over time but not in a way that would attract suspicion.
+
+``Using nuclear enrichment as an example, the centrifuges need to spin at a
+precise speed for long periods of time in order to extract the pure
+uranium,'' Symantec's Liam O Murchu told Threat Level earlier this month.
+``If those centrifuges stop to spin at that high speed, then it can disrupt
+the process of isolating the heavier isotopes in those centrifuges -- and
+the final grade of uranium you would get out would be a lower quality.
+
+Iran's confirmation this week that malware was behind recent problems with
+its centrifuges suggests that Stuxnet may indeed have been designed
+specifically to target Iran's nuclear program. But if this is the case, the
+assassinations on Monday could indicate that whoever targeted Iran felt the
+malware was insufficient to halt Iran's nuclear program.
+
+According to news reports, the scientists were targeted in separate but
+nearly simultaneous car bomb attacks near Shahid Beheshti University.  Majid
+Shahriari and Fereydoun Abbasi, along with their wives, were driving to work
+when assailants on motorcycles zipped by their vehicles and slapped
+magnetized explosives to the cars, which were detonated within seconds.
+
+Shahriari, who was head of an unnamed Iranian nuclear program, was
+killed. Abbasi, a high-ranking Ministry of Defense official who reportedly
+holds a Ph.D. in nuclear physics, was wounded. Both wives were wounded in
+the attacks.
+
+Two other Iranian nuclear scientists have been killed in recent years. A
+senior physics professor at Tehran University was killed in January, when a
+bomb attached to a motorcycle exploded near his car as he was leaving for
+work. A second nuclear scientist died in 2007 from gas poisoning.
+
+Ahmadinejad blamed Monday's assassination attacks on Israel and the West.
+
+``Undoubtedly, the hand of the Zionist regime and Western governments is
+involved in the assassination,'' he said, according to an Associated Press
+account of the news conference.
+
+Sunday's disclosure of U.S. State Department documents also show that Arab
+nations share the same concerns that Israel and the United States have about
+Iran's nuclear programs. The documents, given to various media outlets by
+the secret-spilling site WikiLeaks, reveal that King Abdullah of Saudi
+Arabia pleaded with the United States to stop Iran before it could develop
+an atomic weapon. Other Arab leaders were equally urgent that Iran had to be
+stopped.
+
+There have been suggestions, however, that the Iranian government itself
+could have been responsible for the attacks on the two nuclear scientists.
+
+------------------------------
+
+Date: Thu, 2 Dec 2010 11:41:38 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: NY City: 195,055 Votes Found a month later!
+
+[Source: A Month After Elections, 200,000 Votes Found; Every vote counts,
+eventually.  Sam Roberts (Uli Seit for *The New York Times*), 2 Dec 2010;
+PGN-ed, with thanks to Jeremy Epstein]
+http://cityroom.blogs.nytimes.com/2010/12/02/a-month-after-elections-200000-votes-found/?hp
+
+The city's Board of Elections routinely reminds New Yorkers that the
+election night vote count is unofficial and preliminary.  Still, the
+difference in the results from Nov. 2 and in the returns formally certified
+by the board on Wednesday seems striking: The board found 195,055 votes, or
+17 percent more votes, than were originally reported.
+
+  [The article is not clear on the details, so I'll let you interpret
+  from Kim's original.  PGN]
+
+------------------------------
+
+Date: Tue, 30 Nov 2010 09:06:07 -0500
+From: fjohn reinke <fjohn@reinke.cc>
+Subject: Millions cashless in bank glitch
+
+* One of Australia's biggest banks is scrambling to process payments to
+  millions of customers, who potentially face days of uncertainty about when
+  they will be able to access their money.
+
+* A corrupted file in the National Australia Bank's computers on Wednesday
+  jammed its payment system, hitting customers from a range of banks who
+  rely on the NAB to process payments.
+
+http://www.smh.com.au/business/millions-cashless-in-bank-glitch-20101126-18akf.html
+
+Interesting in that it demonstrates how fragile the financial "eco-system" is.
+
+As an IT guy, I assume they are talking about a corrupted database, where
+the the software develops the IT equivalent of Alzheimer's.  ("Let's see Joe
+Jones' record please." "Don't have Joe's in that slot have Sam's."
+"Tilt. Summon programmer." To which the programmer says: "<synonym for
+excrement>" and schedules rebuilding the index. That's like a Doctor's
+secretary having to go through every file folder recreating an index into
+the filing cabinet. Long and cumbersome for people. Same for computers.) The
+fact that there's a "holiday" around when the problem occurs makes me
+suspect that there was a change or testing going on. When I had a Dister
+Recovery Group, Tday Weekend was a great time for testing. Basically four
+days with minimal requirement from "real people". It's one of the most
+highly sought weekends by IT people to do "stuff". So, when ANY holiday
+comes, think of the herds of nerds globally changing stuff.  If that doesn't
+inspire you to take a little extra cash and make a few preps for at least a
+little outage, then you are truly clueless. :-)
+
+   [On 2 Dec 2010, fjohn noted another description on Australian ATM
+   outage. Disappearing Bank Accounts. Robert Wenzel
+   http://www.lewrockwell.com/wenzel/wenzel52.1.html
+   PGN]
+
+------------------------------
+
+Date: Thu, 2 Dec 2010 16:48:12 -0600
+From: Jim Garrison <Jim.Garrison@troux.com>
+Subject:  AVG Antivirus update kills Win7X64 systems
+
+http://forums.avg.com/ww-en/avg-free-forum?sec=thread&act=show&id=132999
+
+In their instructions are the lines:
+
+* If you have unfortunately met mentioned error, please follow these
+  steps: (sic)
+* If possible to boot into Safe Mode, then run System Restore before the
+  night AVG update and **reinstall AVG.** (sick)
+
+(my emphasis)
+
+Yeah, right.
+
+Also, "we have met the error and he is us" (bonus points for identifying the
+reference).
+
+------------------------------
+
+Date: Thu, 2 Dec 2010 11:07:12 -0500
+From: Paul Schreiber <paulschreiber@gmail.com>
+Subject: Missing decimal point leads to frustration
+
+Bound checking would have helped here:
+
+http://www.contracostatimes.com/ci_16720803?nclick_check=1
+
+Woodie Williams' experience may serve as a cautionary tale for those who
+have shifted to paying bills online or are thinking about it.  Williams, 79
+[in Pittsburg, California], found that a decimal point means a lot when he
+apparently left one out when paying his cable TV bill to Comcast on Nov. 8.
+Williams, a retired Contra Costa County employee, meant to pay the company
+$68.94 but actually paid $6,894 when he omitted the decimal point.  "I had
+enough money in the bank, so the payment cleared," he said.  Williams
+received a refund check Monday morning for the overpayment, but it took
+longer than he expected.
+
+------------------------------
+
+Date: Thu, 2 Dec 2010 21:31:47 +0000
+From: Frederick.Klein@emerson.com
+Subject:  Another Daylight Saving Time Bug
+
+I have an alarm clock that "knows" about daylight saving time.  This fall on
+a Sunday night at 12:15 AM (really it was Monday) I noted that the displayed
+time was 11:15.  I remembered that the old dates for time change were built
+into the clock, so the clock automatically changed the time a few weeks
+early.  I wound the time ahead to the correct 12:15 AM.
+
+The next morning I awoke and noted that it was past the set alarm time of
+6:20 AM.  Further, I noted that it was getting light and checked another
+clock that said it was after 7:20 AM.  After some consideration, I realized
+that when setting the time ahead from 11:15 PM to 12:15 AM, the date didn't
+change so I had really set it to 12:15 AM on Sunday morning.  Then, at 2 AM
+(this being Sunday in the mind of the clock), the clock set the time ahead
+again!  Also, as the clock still thought it was Sunday, the alarm wouldn't
+go off anyway (it is set to alarm only on weekdays).
+
+------------------------------
+
+Date: Wed, 1 Dec 2010 19:53:30 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Windows Phone 7 jailbreak tool comes, goes within a week
+
+Windows Phone 7 jailbreak tool comes, goes within a week  [NNSquad]
+http://bit.ly/hGc3ay  (arc technica)
+
+Exercise for readers, compare and contrast this closed attitude with that of
+Android.
+
+------------------------------
+
+Date: Tue, 30 Nov 2010 11:22:15 +0100
+From: Dag-Erling Smørgrav <des@des.no>
+Subject: Re: Passenger arrested for stripping down to underwear (R 26 23)
+
+The TSA sure didn't mind when a good-looking young woman walked through
+security in a bikini.  Nor did the press.  It's hard to find an article
+about this event that doesn't have drool stains on it, so I won't post
+any links or excerpts, but you can get the full story (complete with
+video footage and slide shows) by googling "Corinne Theile".
+
+Dag-Erling SmÃ¸rgrav - des@des.no
+
+  [PGN adds that this item was also noted by Chris D.: ``As it happens, this
+  week's newspaper features underwear with strategically-placed shield
+  panels, invented by a guy called Jeff Buske -- a Google search for his
+  name comes up with many links to this.  (Probably the closest that RISKS
+  has ever come to featuring glamour models!)'']
+
+------------------------------
+
+Date: Thu, 02 Dec 2010 21:03:37 +0000
+From: "Chris D." <e767pmk@yahoo.co.uk>
+Subject: Risk of RISKS? (RISKS-26.23)
+
+Several items contain URL-shorteners like this:
+
+>   U.S. may require jamming of cell phone use inside vehicles
+>   http://bit.ly/deUpGb  (Daily Caller)
+>   Two items on this for Secretary LaHood:
+
+I've seen it claimed that shortened URLs like bit.ly and goo.gl can be a
+RISK as they may hide something nasty, which isn't obvious as you can't see
+where the link actually ends up.
+
+  [We noted in RISKS long ago that short URLs may be ephemeral.  But I gave
+  up on trying to chase down the real URLs, because browsers can generally
+  find desired items anyway.  PGN]
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.24
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E434439ACC7EXSAN02campus_--

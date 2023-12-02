@@ -1,0 +1,779 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 12 January 2011  Volume 26 : Issue 28
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.28.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Backlogged]
+Lots of computer risks related items in the news lately (Robert Schaefer)
+Storage on the cloud is not the only risk (Geoffrey Brent)
+Risk of coffee in the cockpit (Nick Brown)
+Car Theft by Antenna (Robert Schaefer)
+Estonia prep's for CyberWar (PGN)
+"SMS of Death" Could Crash Many Mobile Phones (Robert Schaefer)
+Microsoft investigates 'phantom' Windows Phone 7 data (Robert Schaefer)
+Risks of E-health records (PGN)
+Cornell digester overflow due to "programming error" (Doug Elrod)
+FedEx: we can't deliver your package because the computer says so
+  (Jonathan Kamens)
+WSJ: Russia, China go open-source -- distrust U.S. commercial software
+  (Lauren Weinstein)
+Privacy-Enhanced Mobile Data Storage and Self-Destruct Mechanisms
+  (Lauren Weinstein)
+Stock Market Cheating Risk? (Gene Wirchenko)
+I am stupid, and it has cost me (Paul Robinson)
+Re: RISKS of reusing ID numbers (Jonathan Kamens)
+Re: WikiLeaks (Patrick Gustafson)
+Re: Radiation Machines Overdosing Again (Kevin Fu, Alexandre Peshansky)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 11 Jan 2011 07:47:36 -0500
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: Lots of computer risks related items in the news lately.
+
+Networks in hospitals may become 'regulated medical devices'.
+http://www.computerworld.com/s/article/9203761/FDA_eyes_regulation_of_wireless_networks_at_clinics_hospitals?taxonomyId=132&pageNumber=1
+
+
+News
+FDA eyes regulation of wireless networks at clinics, hospitals
+Networks could become 'regulated medical devices' because of data they carry
+
+By Lucas Mearian
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886 781-981-5767  http://www.haystack.mit.edu
+
+------------------------------
+
+Date: Sat, 01 Jan 2011 14:34:13 +1100
+From: Geoffrey Brent <gpbrent@optusnet.com.au>
+Subject: Storage on the cloud is not the only risk
+
+Jeremy Epstein (RISKS 26.27) commented on the risks of cloud storage. I
+suspect we're also going to see an increase in risks associated with
+outsourcing of processing.
+
+For instance, if you're in a delivery business and want to optimise your
+vehicle routing, you will need to perform a large number of driving-distance
+calculations. Calculating driving distance is a moderately complicated
+problem requiring use of road-net data, so you have three options. You can
+spend time and money writing your own calculator and keeping it updated - or
+you can spend several thousand dollars on a stand-alone commercial product -
+or you can write a simple function call that queries Google Maps for the
+data you need.
+
+>From discussion with others, I get the impression this is an easy risk to
+ miss. A lot of people who'd be horrified by the idea of storing
+ confidential addresses on a Google cloud service or sending them via GMail
+ would be quite blase about feeding them into a Google Maps query. My guess
+ is that it's about intent: when we use email or storage services, it's with
+ the goal of putting data somewhere, so we tend to ask "where is this
+ going?" But with a query, our intent is to *get* data, making it easier to
+ forget that the flow of information is two-way.
+
+------------------------------
+
+Date: Wed, 5 Jan 2011 09:49:11 +0100
+From: "Nick Brown" <Nick.BROWN@coe.int>
+Subject: Risk of coffee in the cockpit
+
+A United Airlines transatlantic flight from Chicago to Frankfurt was
+diverted to Toronto after the pilot dumped a cup of coffee on the plane's
+communication's equipment. This triggered a series of emergency codes,
+including one for a hijacking.
+
+I don't want to speculate what might have happened if the coffee had also
+taken out the plane's voice communication with the tower.  However, all is
+well: as long as the person in the pilot's seat can convince ATC that they
+are not, in fact, a hijacker, that alarm can be safely ignored.  (Just
+kidding: I'm sure that there are all kinds of protocols in place before the
+Air Force shoots you down.)
+
+http://edition.cnn.com/2011/TRAVEL/01/05/canada.flight.diverted/index.html
+
+------------------------------
+
+Date: Fri, 7 Jan 2011 09:42:11 -0500
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: Car Theft by Antenna
+
+Researchers beat automatic locking and ignition systems.
+No key required: A researcher shows how an attacker could start a car using
+an antenna. A signal from the car is transmitted to a computerized key,
+which is tricked into enabling the engine ignition.  ETH Zurich
+http://www.technologyreview.com/computing/27037/?a=f
+
+------------------------------
+
+Date: Wed, 5 Jan 2011 7:29:23 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Estonia prep's for CyberWar
+
+  [Thanks to Phil Porras.  PGN]
+
+Volunteer Cyber Army Emerges In Estonia
+
+In April 2007, the Baltic republic of Estonia became the first country in
+the world to experience cyberwar. Government, financial and media computer
+networks were paralyzed by a series of attacks, which authorities ultimately
+concluded originated in Russia.
+
+In the years since that cyberassault, Estonia has distinguished itself once
+again: Now it is a model for how a country might defend itself during a
+cyberwar. The responsibility would fall to a force of programmers, computer
+scientists and software engineers who make up a Cyber Defense League, a
+volunteer organization that in wartime would function under a unified
+military command.
+http://www.npr.org/2011/01/04/132634099/in-estonia-volunteer-cyber-army-defends-nation?sc=tw&cc=share
+
+------------------------------
+
+Date: Fri, 7 Jan 2011 11:54:44 -0500
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: "SMS of Death" Could Crash Many Mobile Phones
+
+Phones don't have to be smart to be vulnerable.
+http://www.technologyreview.com/communications/27021/
+
+------------------------------
+
+Date: Tue, 11 Jan 2011 07:44:43 -0500
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: Microsoft investigates 'phantom' Windows Phone 7 data
+
+Microsoft has told BBC News that it is investigating why some handsets
+running its Windows Phone 7 software are sending and receiving "phantom
+data".  Several net forums detail complaints from people that say their
+phones are automatically eating into their monthly data plans without their
+knowledge.  Some have complained that their phone sends "between 30 and 50MB
+of data" every day; an amount that would eat into a 1GB allowance in 20
+days.
+
+http://www.bbc.co.uk/news/technology-12152517
+
+robert schaefer, Atmospheric Sciences Group, MIT Haystack Observatory
+Westford, MA 01886 781-981-5767  http://www.haystack.mit.edu
+
+------------------------------
+
+Date: Tue, 4 Jan 2011 16:59:34 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Risks of E-health records
+
+  [Thanks to dkross]
+
+"Most importantly, the electronic medical record affects how we think. The
+system encourages fragmented documentation, with different aspects of a
+patient's condition secreted in unconnected fields, so it's much harder to
+keep a global synthesis of the patient in mind."
+http://well.blogs.nytimes.com/2010/12/30/the-doctor-vs-the-computer/
+
+------------------------------
+
+Date: Tue, 4 Jan 2011 12:38:36 -0800 (PST)
+From: Doug Elrod (dre1@cornell.edu)
+Subject: Cornell digester overflow due to "programming error"
+
+Cornell University's animal-remains digester recently discharged brine-like
+"effluent" into local streams.  Causes of the incident were found to
+include:
+
+- Remote re-programming by a manufacturer's representative who assumed his
+- changes would be automatically reset the next day.
+- Lack of communication between the re-programmer and local operating staff.
+- Failure modes leading to effluent reaching ventilation ducts (!), and
+- thereby leaving the building.
+
+Some details are at http://www.news.cornell.edu/stories/Dec10/VetDigester.html.
+
+------------------------------
+
+Date: Sun, 02 Jan 2011 00:58:26 -0500
+From: Jonathan Kamens <jik@kamens.us>
+Subject: FedEx: we can't deliver your package because the computer says so
+
+A GIGO story that RISKS readers may find interesting...
+
+A couple months ago, FedEx failed to deliver a package to my house three
+times in a row because no one was home.
+
+Using the door tag they left for us, I contacted them and asked them to hold
+the package at a FedEx location near my office.
+
+I went there with a picture ID and asked for the package. The told me, "That
+package isn't addressed to [my house number] [my street]. It's addressed to
+[my house number+1] [my street], and the name on it doesn't match your ID."
+
+Yes, that's right, the FedEx driver had attempted to deliver the package to
+the wrong house three times in a row. I pointed out the erroneous delivery
+attempts and told him he'd better make sure the package was redelivered to
+the correct address. He said he'd take care of it.
+
+Meanwhile, the intended recipient of the package called FedEx to find out
+what had happened to her package. They informed her that they had made three
+failed delivery attempts, followed by an attempt to hold the package for
+pickup which failed because the person who came to get it did not have a
+valid picture ID, so they had no choice but to return the package to its
+sender. The fact that the delivery attempts were made to the wrong house was
+not mentioned.
+
+She argued at length with several people, telling each of them that there
+had been no delivery attempts to her house, that she had not asked for the
+package to be held anywhere, and that if she had, she would have had a valid
+picture ID, so clearly whoever asked for the package to be held wasn't
+her. They all insisted they could not deliver the package, but she did
+finally convince one of them to give her the phone number of the person who
+made the hold request (i.e., me).
+
+We are passing acquaintances, so she recognized my phone number. She called
+me and asked what was up, and I told her what had happened.
+
+Armed with that additional information, she called FedEx back. She spoke to
+several people who were apologetic and sympathetic and yet at the same time
+insistent that there was nothing they could do. Since the computer said
+there were three failed delivery attempts and a failed hold attempt, they
+simply could not redeliver the package. No one seemed to have any idea how
+to tell the computer that the delivery attempts had been to the wrong
+address. Either that, or they were unwilling to do so (didn't want to get a
+driver in trouble? didn't want to damage the performance statistics for
+their location?).
+
+Finally, she got a supervisor to agree to deliver the package. He brought it
+over to her house in his own car, out of uniform, late that night, i.e.,
+completely outside the system. One cannot help but wonder what FedEx's
+computer says about the package now. Alas, I neglected to save the tracking
+number so I can't find out.
+
+A possibly related fact is that when the package was finally delivered, it
+was all beaten up and had been broken open and patched up in transit,
+despite the fact that it was in a brand new box when sent.
+
+I contacted FedEx's executive complaints office by email several weeks ago
+and asked them to comment on how this happened and whether supervisors
+delivering packages late at night in their own cars is standard operating
+procedure for FedEx. I got no response.
+
+------------------------------
+
+Date: Sat, 8 Jan 2011 21:05:25 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: WSJ: Russia, China go open-source -- distrust U.S. commercial software
+
+  From Network Neutrality Squad: nnsquad@nnsquad.org
+
+WSJ: Russia, China go open-source -- distrust U.S. commercial software
+http://on.wsj.com/dPoeOU  (WSJ)
+
+My favorite quotes from the piece:
+
+ "At the end of 2010, the "open-source" software movement, whose
+  activists tend to be fringe academics and ponytailed computer geeks,
+  found an unusual ally: the Russian government." ...
+ "But just a few weeks before Mr. Putin publicly endorsed open-source
+  software, FBI Director Robert Mueller toured Silicon Valley's leading
+  companies to ask their CEOs to build back doors into their software,
+  making it easier for American law enforcement and intelligence
+  gathering agencies to eavesdrop on online conversations."
+
+And a bit of dialogue that I've frequently quoted over the years from
+one of the most brilliant dark "comedy" films of all time:
+
+Russian Spy:  "Are you trying to tell me that every phone
+               in the country is tapped?"
+
+American Spy: "That's what's in my head..."
+
+Russian Spy:  "But Don!  This is AMERICA... not RUSSIA!"
+
+                    --- "The President's Analyst" (1967)
+
+Lauren Weinstein (lauren@vortex.com) http://www.vortex.com/lauren
++1 (818) 225-2800 http://www.pfir.org  http://www.nnsquad.org
+Global Coalition for Transparent Internet Performance: http://www.gctip.org
+
+------------------------------
+
+Date: Wed, 5 Jan 2011 17:25:44 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Privacy-Enhanced Mobile Data Storage and Self-Destruct Mechanisms
+
+            Urgent Call for Privacy-Enhanced Mobile Data Storage
+                       and Self-Destruct Mechanisms
+               http://lauren.vortex.com/archive/000797.html
+
+Greetings.  Once upon a time -- not so very long ago -- an individual
+arrested by law enforcement, or subjected to search at border custom
+checkpoints, would typically be carrying little more of interest than
+clothing, a purse or wallet containing limited sundry items, and more
+recently a very simple cell phone.
+
+But now many of us carry powerful computing devices that frequently contain
+immense volumes of personal and business data -- laptops, smartphones,
+tablets, flash memory thumb drives, and soon other yet to be imagined
+marvels.  While it is increasingly possible to store data only in the cloud
+for download or streaming on demand, many users still need to maintain
+significantly large amounts of data on their local devices due to data
+access speed requirements, or to assure data availability when remote data
+connections are not available.
+
+Governments in general and law enforcement in particular are increasingly
+taking the view that their detailed inspections of mobile devices, and the
+masses of data that they frequently contain, are no different in kind than a
+simple search of a suspect's or traveler's pockets.
+
+Now the California Supreme Court has alarmingly ruled that arrested
+suspects' phones -- and by extension any other devices on their person or in
+their vehicles at the time of their arrest -- can be comprehensively
+searched in detail.  This includes all contained data, without the need for
+a search warrant: "Photos, address book, Web browsing history, data stored
+in apps (including social media apps), voicemail messages, search history,
+chat logs, and more."  ( http://bit.ly/gdUj6K [CNN] )
+
+While this ruling is not without conflict vis-a-vis some rulings in other
+states, and may ultimately be decided by the U.S. Supreme Court, it still
+appears on its face to represent an enormous overreaching of law enforcement
+in a highly inappropriate manner.
+
+As I mentioned above, international travelers have long faced the risk of
+U.S. Customs not only inspecting the data on their laptops or other
+computers upon reentry to the U.S., but of having those devices arbitrarily
+confiscated for detailed inspection, data copying, and other intrusive
+investigations for prolonged periods of time.
+
+If the framers of the U.S. Constitution had been able to anticipate that
+individuals would one day carry such vast quantities of information
+representing virtually the sum totals of their business and personal lives,
+it is likely that the Fourth Amendment prohibiting unreasonable searches and
+seizures would have been written in ways that even more explicitly
+prohibited "high-tech" data device strip searches.
+
+It's very important to remember that this is not about protecting criminal
+behavior -- we're talking about the protection and preservation of
+fundamental constitutional rights, that are now being eroded by
+opportunistic overreaching on the part of authorities (whether for laudable
+motives in any given case or not).  Nor can we confidently assume that all
+future governments will even be as "benign" as our own at any given time --
+encroachments on privacy rights by government are fundamentally dangerous,
+especially for innocent, law-abiding citizens.
+
+Fortunately, we do have the means at hand to restore some sense of balance
+regarding the privacy of our personal, mobile data devices.
+
+The powerful combination of local device storage, increasingly fast
+"persistent" data connections, cloud-based data repositories, high-grade
+encryption, and associated technologies, can provide the foundation for an
+open-source framework to provide privacy-enhanced mobile data storage and
+data "self-destruction" systems to help return "search and seizure" closer
+to the concept that the Founding Fathers had in mind.
+
+So, I'm now making this urgent call for broad cooperation in the development
+of *open-source* systems and environments that would include at least the
+following initial attributes:
+
+- Provide for the "continuous and automatic" backing up of *all* mobile
+  device data (as desired) in secure off-device locations.  Such locations
+  could include cloud-based services and/or locally controlled
+  (e.g. business or home) computer systems and data arrays.  Note that under
+  current laws the precise physical location of data greatly impacts the
+  required mechanisms for government inspection or seizure of that data.
+  Mobile devices (certainly in California for now) are pretty much an open
+  book after the new Supreme Court ruling.  Various groups are working
+  toward trying to achieve harmonization of laws to provide the equivalent
+  of locally-hosted data privacy protections for cloud-based data, but
+  battles in this regard are still ahead.  Also, the ability of authorities
+  to try compel the provision of data decryption keys and related
+  information varies depending on situations, jurisdictions, and other
+  factors.
+
+- Users should be able to optionally specify degrees of data security
+  desired on a per-item basis.  For data without significant privacy-related
+  concerns, mobile device data self-destruct mechanisms could be flagged to
+  bypass that specific data (e.g. specific files, databases, etc.) under
+  particular usage scenarios.  Individual data items could also be flagged
+  for various degrees of off-device data repository security -- unencrypted
+  (e.g. publicly shared data), encrypted, or various combinations as
+  appropriate.
+
+- All communications between mobile devices and remote data repositories
+  would be encrypted.
+
+- Mobile device data self-destruct mechanisms would be designed to enable
+  ease of use in routine, unusual, and emergency situations for selected or
+  full data.  For example, a traveler about to enter U.S.  customs could use
+  a routine activation sequence to "cleanse" sensitive business data from a
+  mobile device, then restore it completely (restoration priority at the
+  control of the user) afterward.  In unusual or emergency situations, data
+  self-destruct activation may be through a unique device key sequence or
+  carefully confirmed voice command sequence.  Sequences to delete
+  off-device stored backup data in remote repositories, and methodologies
+  for remote triggering of mobile device data self-destruct (including both
+  manually triggered and "tamper triggered" sequences, would likely be
+  commensurately more complex to avoid undesired data loss, depending on the
+  level of backup data chosen and available.
+
+- Self-destruct/deletion procedures for stored data (both locally stored on
+  mobile devices and to the greatest extent possible on remote repository
+  backup data systems), would be designed to offer varying levels of
+  resistance to forensic deleted data reconstruction, as specified by users
+  for particular data and usage scenarios.
+
+I hope that's enough to get the ball rolling.  It's very important that such
+concepts be implemented in an open-source environment, and that strong,
+high-grade encryption be used throughout the framework wherever encryption
+is employed.
+
+Again, this is most definitely not about protecting illegal activities or
+criminals.  The goal is to protect us all -- and our completely legal
+personal, business, and other data -- from unreasonable acts by those
+entities who are now leveraging our advanced mobile data devices to a level
+of intrusion into our lives that is simply not in keeping with our
+fundamental rights and liberties.
+
+While I do have my own very preliminary, somewhat specific implementation
+concepts relating to this project, I'm very much inviting all comers and all
+ideas.  In terms of practical project goals, I would encourage the
+development of these principles into exploratory code as rapidly as
+possible, across a wide array of mobile platforms and supporting backup
+repository system environments.
+
+Linux, Windows, and Android are currently available to me in various
+incarnations.  Google's Cr-48 Chrome notebook would be another obvious
+implementation target platform that I would like to explore early on for the
+project, though unfortunately I do not have one of those units in hand.
+
+I am not a routine user of the Apple ecosystem, so developers comfortable in
+the Mac/iPhone world are definitely needed as well, plus Blackberry,
+Symbian, and any other common mobile platforms.
+
+Please let me know if you're interested in participating.  Any and all
+comments, questions, criticisms, and ideas are of course welcome.
+
+Thanks all.  Be seeing you.
+
+Lauren Weinstein (lauren@vortex.com) http://www.vortex.com/lauren
++1 (818) 225-2800  Twitter: https://twitter.com/laurenweinstein
+Blog: http://lauren.vortex.com   Google Buzz: http://bit.ly/lauren-buzz
+
+------------------------------
+
+Date: Thu, 06 Jan 2011 10:41:43 -0800
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Stock Market Cheating Risk?
+
+InfoWorld Home / The Industry Standard / Tech's Bottom Line
+January 06, 2011
+Hackers find new way to cheat on Wall Street -- to everyone's peril
+'Side-channel' attack on high-frequency trading networks could net a
+hacker millions of dollars in just seconds -- and leave everyone else
+that much poorer
+http://www.infoworld.com/d/the-industry-standard/hackers-find-new-way-cheat-wall-street-everyones-peril-699
+
+Opening paragraphs:
+
+High-frequency trading networks, which complete stock market transactions in
+microseconds, are vulnerable to manipulation by hackers who can inject tiny
+amounts of latency into them. By doing so, they can subtly change the course
+of trading and pocket profits of millions of dollars in just a few seconds,
+says Rony Kay, a former IBM research fellow and founder of a cPacket
+Networks, a Silicon Valley firm that develops chips and technologies for
+network monitoring and traffic analysis.
+
+Kay, an Israeli-born computer scientist and one-time Intel engineering
+manager, says the root of the problem is the increasing speed of networks;
+as they get faster and faster, our ability to actually understand events
+taking place within them isn't keeping up.  Network monitoring technology
+can detect perturbations in network traffic happening in milliseconds, but
+when changes occur in microseconds, they're not visible, he says.
+
+cPacket has developed a proof of concept showing that these "side-channel"
+attacks can be used to create tiny delays in the transmission of market data
+and trades. By manipulating specific trading activities by several
+microseconds, an attacker could gain unfair trading advantage. And because
+the operation occurs outside the range of monitoring technology, it would
+remain invisible. "We believe that such techniques pose a substantial risk
+of creating unfair trading, if used by the wrong people," Kay says.
+
+------------------------------
+
+Date: Mon, 10 Jan 2011 13:34:44 -0800 (PST)
+From: Paul Robinson <paul@paul-robinson.us>
+Subject: I am stupid, and it has cost me
+
+I was working on my new computer, which, because I have lots of data files
+on my previous computer, I have both plugged in and the old one runs
+headless.  By having them networked I can use SMB (Windows networking) to
+share files from one computer to another, I can basically use my previous
+computer as a file server.
+
+I have two external hard drives, one which is a 250 GB and the other is a 1
+TB.  The 250 is about 1/2 full as I moved my music collection over to it
+because the 160 GB drive in my old main computer was running low on space.
+
+A few weeks ago, while moving things around, El Stupido (yours truly) moves
+his computer without removing the external hard drives, which were sitting
+on top.  Maybe I can plead disability; I am working from a wheelchair and
+sometimes I forget to watch where I am.  Maybe I can plead insanity, I
+should have been thinking.  But it doesn't matter what I plead; the universe
+doesn't provide an appeals process when you make a mistake.  They both slide
+off and fall on the floor, about 2-3 feet.  But it was enough.
+
+They don't work anymore.  I plug them in, one makes noise and the other just
+clicks.  I wasn't really using the terabyte drive, but my entire music
+collection was on the 250GB.  Did I have a backup?  Well, yes and no; I had
+an older backup on DVDs but that was in the folder that got lost when I
+moved from my previous apartment.  El Stupido didn't have a backup and kept
+the drive where it could get damaged if he wasn't careful.
+
+I have no idea how many files I lost; I can estimate my entire music
+collection, probably 3,000 mp3s, WAVs, and OGGs, maybe 40 GB of files.  As
+the drive is essentially suffering from physical damage, it would have to be
+fixed in a recovery facility, probably by disassembling in a clean room.
+Cost: about $1100.00.
+
+I had deleted the current files off my other computer because I needed the
+space.  I have - or I hope I have - some of the original files on my other
+computer in the closet.
+
+I can't believe I was this stupid.  You know, it's funny; it's pointed out
+that the typical value of a hard drive is only a fraction of the value of
+the data.  Or the cost of the recovery if lost.
+
+All I can say is, make sure you have a backup, or that you have two.  A 1
+terabyte USB hard drive used to be about $100; if you look carefully you can
+now find 2 terabyte drives for that.  If you don't need that much space,
+external USB hard drive prices are as low as 10c per gigabyte, which makes
+hard drive and DVD pricing close, with DVDs at 4c/GB, the only problem being
+DVDs being small compared to the tremendous amounts of data we typically
+have around.  Small discs have an advantage that they are easier to store
+than hard drives, so that can be solved with larger discs.  Blu-Ray burners
+can be gotten for about $120 or so; 25GB Blu-Ray discs sell for about $20 in
+10-pack spindles.
+
+Like Jacob Morley in "A Christmas Carol" I carry a ponderous chain of lost
+data, and I can only offer my example in a hope that you will not repeat it.
+"Otherwise you cannot hope to escape my fate."
+
+Of course now, if you don't recognize the risks from my story, I have some
+oceanfront property in Nevada I'd like to sell you...
+
+------------------------------
+
+Date: Wed, 05 Jan 2011 06:52:25 -0500
+From: Jonathan Kamens <jik@kamens.us>
+Subject: Re: RISKS of reusing ID numbers (RISKS-26.27)
+
+I did not "miss the point" of Geoff Kuenning's incident report, but he
+clearly missed mine.
+
+Even the best-designed system for assigning tracking numbers can result
+in number reuse in situations which are either unavoidable or not the
+fault of the carrier. Kuenning's assertion that the incident he observed
+is proof of an "indefensible" design is not the only possible, or even
+necessarily the most likely, explanation for the evidence he presented.
+
+His assertion that, "It is quite plausible that two shipments could be
+confused in a situation that would be much more difficult to spot, and
+much more expensive to resolve," is also not supported by the limited
+evidence he provided. It is easy to imagine a system in which the
+carrier has ensured that even when a tracking number is reused
+relatively quickly, it is sufficiently separated by time and distance
+from the previous use that there is no ambiguity. In fact, even with a
+tracking number namespace as "small" as nine digits, given the number of
+possible origins and destinations for shipments, the odds of two
+shipments with the same tracking number having similar beginning and end
+points are vanishingly small. Finally, even though the carrier's Web
+site only shows the origin and destination cities, their internal data
+obviously shows the precise origin and destination addresses as well as
+the sender and recipient names, so in the extremely unlikely event of
+ambiguity, the resolution is as simple as calling the carrier on the
+phone, which is hardly "expensive."
+
+Kuenning's assertion that "a longer ID number is cheap to generate and
+process" is also not supported by his evidence. It could be, for
+example, that the carrier involved had far more growth and success than
+its business plan anticipated, and by the time it was carrying enough
+traffic that its tracking numbers were clearly too short, there was an
+entrenched, worldwide infrastructure using the nine-digit number which
+would be extremely expensive to retool (and nevertheless, for all we
+know the carrier may very well be in the process of retooling it).
+Sometimes technical concerns must give way to business concerns.
+
+In summary, Kuenning has presented a single incident which lends itself
+to many different, equally plausible explanations, and his insistence
+that the most RISKSy one is the only possible one is incorrect.
+
+------------------------------
+
+Date: Tue, 4 Jan 2011 11:13:36 -0600
+From: "Patrick Gustafson" <PGustafs@wms.com>
+Subject: Re: WikiLeaks (RISKS-26.27)
+
+Not a risk per se, but in your ending comment you mention "ubiquitous losses
+of personal privacy".  I'm not sure that anybody should take it for granted
+that anything done over electronic communication is private.  Maybe I'm
+being alarmist, but I worked on CALEA, and lawful intercept systems in GSM
+networks, and understand that privacy doesn't really exist. And with the
+internet, it is even easier to intercept traffic without detection (sure
+some users can, but not a significant percentage). =20
+
+But then that's why I like the Risks Digest so much.
+Paranoidly yours,
+
+patrick gustafson | principal systems engineer, wms  773-961-1083
+
+------------------------------
+
+Date: Sat, 8 Jan 2011 17:31:43 -0500
+From: Kevin Fu <kevinfu@cs.umass.edu>
+Subject: Re: Radiation Machines Overdosing Again (Ladkin, RISKS-26.26)
+
+Stanley F. Quayle writes in RISKS 26(27):
+> It might work differently elsewhere, but here in the USA, the "standard"
+> is to sue everyone: the manufacturer, the airline, the FAA, the pilots,
+> all the way down to the mechanics that last touched the airplane.
+
+Barry Gold writes in RISKS 26(27):
+> You can bet that every one of the patients
+> killed (or injured) by an accidental overdose has received compensation, or
+> soon will.
+
+Counter-intuitively, medical device manufacturers in the United States are
+largely immune to lawsuits from patients.  In Riegel v. Medtronic Inc., the
+U.S. Supreme Court ruled 8-to-1 [1] that "a medical-device manufacturer
+cannot be sued under state law by patients alleging harm from a device that
+received marketing approval from the Food and Drug Administration (FDA)
+[2]."
+
+Thus, patients have little legal recourse if harmed or killed by an approved
+device.  The Medical Device Safety Act of 2009 intended to restore some
+recourse to patients without enabling frivolous lawsuits, but was stuck in
+Waxman's Energy and Commerce Subcommittee on Health when I last attended the
+hearings.  It is unknown how the 112th Congress will weigh patient safety
+vs. corporate interests.  It's a hard problem to solve because of the need
+to balance these competing interests.  See [3,4] for related discussion.
+I'd be interested to hearing how other countries tackle this challenge.
+
+[1] "Justices Shield Medical Devices From Lawsuits" by Linda Greenhouse.  In
+   The New York Times, February 21, 2008.
+[2] "The Medical Device Safety Act of 2009" by Curfman et al.  In New
+   England Journal of Medicine, March 18, 2009.
+[3] "Semper Fidelis -- Consumer Protection for Patients with Implanted
+   Medical Devices" by William H. Maisel, In New England Journal of
+   Medicine, March 6, 2008.
+[4] "Trustworthy Medical Device Software" by Kevin Fu.  In Public Health
+   Effectiveness of the FDA 510(k) Clearance Process: Measuring Postmarket
+   Performance and Other Select Topics: Workshop Report, Institute of
+   Medicine, National Academies Press, preprint available as Appendix D of
+   http://www.nap.edu/catalog.php?record_id=13020 or
+   http://www.iom.edu/Activities/PublicHealth/510KProcess/2010-JUL-28.aspx
+
+Kevin Fu, Assistant Professor, Computer Science Department, University of
+Massachusetts Amherst 616-594-0385 http://www.cs.umass.edu/~kevinfu/
+
+------------------------------
+
+Date: Mon, 3 Jan 2011 19:13:09 +0000
+From: Alexandre Peshansky <Alex.Peshansky@einstein.yu.edu>
+Subject: Re: Radiation Machines Overdosing Again (RISKS-26.26)
+
+In RISKS-26.27 Barry Gold commented on the above article and quoted an
+anecdote from decades back about how ingenious fools are just using bigger
+hammers to defeat fool-proof design.
+
+This, in turn, reminded me of a story I lived through.
+
+In my previous life in the USSR I worked in airspace industry, on the
+factory that produced fuel pumps for jet engines.  Now, "fuel pump" may be a
+misnomer, as these were essentially mechanical computers, calculating fuel
+volume as a function of pilot's control, air temperature and engine speed
+(yes, a four-dimensional problem).  So, as you can imagine, there were a lot
+of very precisely machined parts in these pumps.  In fact, the precision was
+beyond manufacturing ability, so the pumps were assembled using so called
+"selective assembly".  The parts were sorted by size after manufacturing and
+carefully laid out in assembly trays in matching pairs.
+
+Once the engine of a fighter jet failed in flight, the plane crashed, and
+the subsequent investigation nailed seized pump.
+
+The investigators traced the pump to us, and any RISKS reader can guess what
+happened: an assembly worker used the wrong (unmatched) part.  As it did not
+fit, he used a hammer.  As this particular fluidic circuit was working in a
+very specific conditions, it was not caught during the testing...
+
+Computer risks relevance: the testing was semi-automated (I was working on
+computerization of testing equipment); my algorithms were, of course, based
+on existing testing modes and would not caught this either.  After the
+accident, I totally revised the approach and redesigned algorithms to go
+through all possible logic branches.  (By this time USSR was going down the
+drain, and I left the factory before new testing stands were implemented -
+AFAIK, they never were).
+
+Alexandre Peshansky, Snr. Bioinformatics Analyst, ICTR/RIC
+Albert Einstein College of Medicine of Yeshiva University (718) 430-2440
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.28
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E4CD832E4E5EXSAN02campus_--

@@ -1,0 +1,586 @@
+precedence: bulk
+Subject: Risks Digest 28.86
+
+RISKS-LIST: Risks-Forum Digest  Friday 14 August 2015  Volume 28 : Issue 86
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.86.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Security Researchers Hack a Car and Apply the Brakes Via Text (Samuel Gibbs)
+Vulnerability in Automobile immobiliser transponders (Anthony Thorn)
+Moscow-based antivirus firm Kaspersky Lab faked malware to harm rivals,
+  claim ex-employees (Joseph Menn)
+Harvard student loses Facebook internship after pointing out privacy flaws
+  (The Boston Globe)
+"IBM finds another Android phone bug" (Tim Greene)
+Mass. pot dispensary accidentally shares patients' email addresses
+  (Adam Vaccaro)
+FTC Files complaints against Sequoia One and Gen X Marketing Group for
+  Misuse of Financial Data (Bob Gezelter)
+If This is Accurate, It's Unbelievably Bad: "A Traffic Analysis of
+  Windows 10" (Local Ghost)
+Even when told not to, Windows 10 just can't stop talking to Microsoft
+  (Ars Technica)
+Lenovo puts crapware (malware?) in the BIOS (Chris Williams via
+  Henry Baker)
+Audit Shows Extent of Snail Mail Surveillance (Ron Nixonaug)
+Denmark's most devastating hacker attack? (Donald B. Wagner)
+Retaliation against China is the wrong reaction to OPM hack
+  (Jeffrey Carr via Henry Baker)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 14 Aug 2015 12:35:19 -0400 (EDT)
+From: ACM TechNews <technews@hq.acm.org>
+Subject: Security Researchers Hack a Car and Apply the Brakes Via Text
+  (Samuel Gibbs)
+
+Samuel Gibbs, *The Guardian*, 12 Aug 2015
+
+A serious weak point in vehicle security enables hackers to remotely control
+a vehicle, according to researchers at the University of California, San
+Diego (UCSD).  The team demonstrated the vulnerability on a Corvette by
+turning on the windshield wipers, applying the brakes, or even disabl[ing]
+them at low speed.  The flaw involves the small black dongles that are
+connected to the onboard diagnostic ports of vehicles to enable insurance
+companies and fleet operators to track them and collect data such as fuel
+efficiency and miles driven.  The researchers found the dongles could be
+hacked by sending them short-message-service text messages, which relay
+commands to the car's internal systems.  ``We acquired some of these things,
+reverse-engineered them, and along the way found that they had a whole bunch
+of security deficiencies,'' says UCSD professor Stefan Savage.  The
+researchers warn the compromised dongles enable hackers to control almost
+any aspect of the car, including steering and locks, and note that any of
+the thousands of cars equipped with the dongles were potentially vulnerable.
+The researchers will present their work this week at the Usenix security
+conference in Washington, D.C.
+http://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_5-df9dx2d22dx062537&
+
+------------------------------
+
+Date: Fri, 14 Aug 2015 11:48:46 +0200
+From: Anthony Thorn <anthony.thorn@atss.ch>
+Subject: Vulnerability in Automobile immobiliser transponders
+
+The concept of the transponder challenge and response is secure.
+Unfortunately the execution - (briefly) massively reduced entropy in the 96
+bit key, and the use of standard (per manufacturer) or no write protection
+PIN in the control unit.
+
+Two classic RISKS stories - Key entropy and "global keys".
+
+More in increasing detail:
+
+http://arstechnica.com/security/2015/08/researchers-reveal-electronic-car-lock-hack-after-2-year-injunction-by-volkswagen/
+
+In German:
+http://www.heise.de/newsticker/meldung/VW-Wegfahrsperre-Volkswagen-Hack-endlich-veroeffentlicht-2778632.html
+
+https://www.usenix.org/sites/default/files/sec15_supplement.pdf
+
+I won't go into the 2 year delay in publishing caused by an injunction...
+
+http://www.itpro.co.uk/security/20313/curious-case-volkswagens-fight-car-hacking-scientists
+
+------------------------------
+
+Date: Fri, 14 Aug 2015 09:54:10 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Report: Moscow-based antivirus firm Kaspersky Lab faked malware
+  to harm rivals, claim ex-employees (Joseph Menn)
+
+Joseph Menn, Reuters via NNSquad
+http://www.reuters.com/article/2015/08/14/us-kaspersky-rivals-idUSKCN0QJ1CR20150814
+
+  "Kaspersky Lab [may have] manipulated false positives off and on for more
+  than 10 years, with the peak period between 2009 and 2013."
+
+  Beginning more than a decade ago, one of the largest security companies in
+  the world, Moscow-based Kaspersky Lab, tried to damage rivals in the
+  marketplace by tricking their antivirus software programs into classifying
+  benign files as malicious, according to two former employees.  They said
+  the secret campaign targeted Microsoft Corp (MSFT.O), AVG Technologies NV
+  (AVG.N), Avast Software and other rivals, fooling some of them into
+  deleting or disabling important files on their customers' PCs.
+
+------------------------------
+
+Date: Thu, 13 Aug 2015 12:36:22 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Harvard student loses Facebook internship after pointing out
+  privacy flaws (*The Boston Globe*)
+
+http://www.boston.com/news/nation/2015/08/12/harvard-student-loses-facebook-internship-after-pointing-out-privacy-flaws/zASZFdUjn6PoliUiR9kVHJ/story.html
+
+------------------------------
+
+Date: Thu, 13 Aug 2015 16:37:37 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "IBM finds another Android phone bug" (Tim Greene)
+
+Tim Greene, NetworkWorld, 10 Aug 2015
+Flaw means 55 percent of Android phones are vulnerable to being taken
+over; a patch is available
+http://www.infoworld.com/article/2968403/mobile-security/ibm-finds-another-android-phone-bug.html
+
+------------------------------
+
+Date: Thu, 13 Aug 2015 19:44:10 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Mass. pot dispensary accidentally shares patients' email addresses
+  (Adam Vaccaro)
+
+Adam Vaccaro, *The Boston Globe*, 13 Aug 2015
+
+Buying medical marijuana in Massachusetts got a little less anonymous
+Thursday morning, when the state's lone pot dispensary accidentally shared
+some of its patients' email addresses with other patients.  State health
+officials are investigating.
+
+Salem's Alternative Therapies Group sent an email addressed Dear Patient, to
+157 email addresses. A copy of the email obtained by Boston.com listed the
+addresses in the CC line, meaning the recipients could see each other's
+addresses. The dispensary had meant to send the email as a blind CC, or BCC,
+which would have kept the email addresses from being seen by all.
+
+http://www.boston.com/business/news/2015/08/13/mass-pot-dispensary-accidentally-shares-patients-email-addresses/JLel4hAbjEYMzVhPV2OW4L/story.html
+
+[If the dispensary had sent the email from a gmail account, could they
+have unsent it?]
+
+------------------------------
+
+Date: Wed, 12 Aug 2015 11:43:52 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: FTC Files complaints against Sequoia One and Gen X Marketing
+  Group for Misuse of Financial Data
+
+The FTC has filed complaints against In a complaint filed last week, the
+agency said that Sequoia One for providing financial and other personal data
+to third parties, enabling fraudulent bank transactions against over 500,000
+payday loan customer accounts, reportedly resulting in excess of US$ 7.1M in
+fraudulent transactions.  The moral is as always: Be careful when providing
+bank account and PII to third parties.  The complete NY Times article is at:
+http://bits.blogs.nytimes.com/2015/08/12/when-online-loan-applications-lead-to-unauthorized-bank-account-debits
+
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Wed, 12 Aug 2015 15:20:26 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: If This is Accurate, It's Unbelievably Bad: "A Traffic Analysis of
+  Windows 10"
+
+[I really hope this is *not* accurate! - Lauren]
+
+http://localghost.org/posts/a-traffic-analysis-of-windows-10
+
+  All text typed on the keyboard is stored in temporary files, and sent
+  (once per 30 mins) to: oca.telemetry.microsoft.com.nsatc.net
+  pre.footprintpredict.com reports.wes.df.telemetry.microsoft.com There
+  isn't a clear purpose for this, considering there there's no
+  autocorrect/prediction anywhere in the OS. The implications of this are
+  significant: because this is an OS-level keylogger, all the data you're
+  trying to transmit securely is now sitting on some MS server. This
+  includes passwords and encrypted chats.  This also includes the on-screen
+  keyboard, so there is no way to authenticate to a website without MS also
+  getting your password ... Everything that is said into an enabled
+  microphone is immediately transmitted to: oca.telemetry.microsoft.com
+  oca.telemetry.microsoft.com.nsatc.net vortex-sandbox.data.microsoft.com
+  pre.footprintpredict.com i1.services.social.microsoft.com
+  i1.services.social.microsoft.com.nsatc.net telemetry.appex.bing.net
+  telemetry.urs.microsoft.com cs1.wpc.v0cdn.net statsfe1.ws.microsoft.com If
+  this weren't bad enough, this behaviour still occurs after Cortana is
+  fully disabled/uninstalled ... [and much more - Lauren]
+
+------------------------------
+
+Date: Wed, 12 Aug 2015 21:07:27 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Even when told not to, Windows 10 just can't stop talking to
+  Microsoft (Ars Technica)
+
+http://arstechnica.com/information-technology/2015/08/even-when-told-not-to-windows-10-just-cant-stop-talking-to-microsoft/
+
+  Unfortunately for privacy advocates, these controls don't appear to be
+  sufficient to completely prevent the operating system from going online
+  and communicating with Microsoft's servers.  For example, even with
+  Cortana and searching the Web from the Start menu disabled, opening Start
+  and typing will send a request to www.bing.com to request a file called
+  threshold.appcache which appears to contain some Cortana information, even
+  though Cortana is disabled. The request for this file appears to contain a
+  random machine ID that persists across reboots ...  Some of the traffic
+  looks harmless but feels like it shouldn't be happening. For example, even
+  with no Live tiles pinned to Start (and hence no obvious need to poll for
+  new tile data), Windows 10 seems to download new tile info from MSN's
+  network from time to time, using unencrypted HTTP to do so. While again
+  the requests contain no identifying information, it's not clear why
+  they're occurring at all, given that they have no corresponding tile.
+  Other traffic looks a little more troublesome. Windows 10 will
+  periodically send data to a Microsoft server named ssw.live.com. This
+  server seems to be used for OneDrive and some other Microsoft
+  services. Windows 10 seems to transmit information to the server even when
+  OneDrive is disabled and log-ins are using a local account that isn't
+  connected to a Microsoft Account. The exact nature of the information
+  being sent isn't clear--it appears to be referencing telemetry
+  settings--and again, it's not clear why any data is being sent at all.
+
+------------------------------
+
+Date: Wed, 12 Aug 2015 16:53:47 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Lenovo puts crapware -- malware? -- in the BIOS
+
+It's such a short distance between crapware in the BIOS and malware in the
+BIOS; oh, and need anyone be reminded that Lenovo machines are made in
+*China* ?
+
+Now, why anyone should trust Microsoft, either, after their Windows 10
+Privacy^H^H^H^H^H^H^H Spying Policy is beyond me.
+
+"To think a manufacturer would essentially rootkit their own machines is
+testament to how bad things have become."
+
+So much for Intel's "root of trust"...
+
+Chris Williams, *The Register*, 12 Aug 2015
+CAUGHT: Lenovo crams unremovable crapware on Windows laptops ­ by hiding
+it in the BIOS; And how Microsoft made it possible
+http://www.theregister.co.uk/2015/08/12/lenovo_firmware_nasty/
+
+Analysis
+
+Lenovo has sold laptops bundled with unremovable software that features a
+bonus exploitable security vulnerability.
+
+If the crapware is deleted, or the hard drive wiped and Windows reinstalled
+from scratch, the laptop's firmware will quietly and automatically reinstall
+Lenovo's software on the next boot-up.
+
+Built into the firmware on the laptops' motherboard is a piece of code
+called the Lenovo Service Engine (LSE).  If Windows is installed, LSE is
+executed before the Microsoft operating system is launched.
+
+LSE makes sure C:\Windows\system32\autochk.exe is Lenovo's variant of the
+autochk.exe file; if Microsoft's official version is there, it is moved out
+of the way and replaced.  The executable is run during startup, and checks
+the computer's file system to make sure it's free of any corruption.
+
+Lenovo's variant of this system file ensures LenovoUpdate.exe and
+LenovoCheck.exe are present in the operating system's system32 directory,
+and if not, it will copy the executables into that directory during boot up.
+So if you uninstall or delete these programs, the LSE in the firmware will
+bring them back during the next power-on or reboot.
+
+LenovoCheck and LenovoUpdate are executed on startup with full administrator
+access.  Automatically, and rather rudely, they connect to the internet to
+download and install drivers, a system "optimizer", and whatever else Lenovo
+wants on your computer.  Lenovo's software also phones home to the Chinese
+giant details of the running system.
+
+To pull this off, the LSE exploits Microsoft's Windows Platform Binary Table
+(WPBT) feature.  This allows PC manufacturers and corporate IT to inject
+drivers, programs and other files into the Windows operating system from the
+motherboard firmware.
+
+The WPBT is stored in the firmware, and tells Windows where in memory it can
+find an executable called a platform binary to run.  Said executable should
+take care of the job of installing files before the operating system starts.
+
+"During operating system initialization, Windows will read the WPBT to
+obtain the physical memory location of the platform binary," Microsoft's
+documentation states.
+
+"The binary is required to be a native, user-mode application that is
+executed by the Windows Session Manager during operating system
+initialization.  Windows will write the flat image to disk, and the Session
+Manager will launch the process."
+
+Crucially, the WPBT documentation stresses:
+
+  The primary purpose of WPBT is to allow critical software to persist even
+  when the operating system has changed or been reinstalled in a `clean'
+  configuration ...  Because this feature provides the ability to
+  persistently execute system software in the context of Windows, it becomes
+  critical that WPBT-based solutions are as secure as possible and do not
+  expose Windows users to exploitable conditions.
+
+Oh dear.  Secure as possible?  Not in this case: security researcher Roel
+Schouwenberg found and reported a buffer-overflow vulnerability in LSE that
+could be exploited to compromise the low-level software to gain
+administrator-level privileges.
+
+When Lenovo learned of this bug, it decided its LSE was falling foul of
+Microsoft's security guidelines for using the powerful WPBT feature ­ and
+pulled the whole thing: the LSE software is no longer included in new
+laptops.
+
+Lenovo has also pulled the LSE from new desktop machines, which phone home
+system data but do not download and install any extra software, it appears.
+
+A tool quietly released on 31 July will uninstall the engine if it is
+present in your machine.  The full list of affected desktop and notebook
+models is here, and all were shipped with Windows 7 or 8.x installed.
+Think-branded PCs did not include the LSE, we're told.
+
+http://news.lenovo.com/article_display.cfm?article_id=2013
+
+...  [Lots more omitted.  PGN]
+
+http://www.theregister.co.uk/2015/02/19/superfish_lenovo_spyware/
+
+We've asked Microsoft to explain the thinking behind its WPBT feature.  The
+Redmond giant was not available for immediate comment.
+
+------------------------------
+
+Date: Thu, 13 Aug 2015 17:49:57 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Audit Shows Extent of Snail Mail Surveillance
+
+``I think they should have to get warrants to get this information,'' said
+Frank Askin, a law professor
+
+"the ["mail cover" surveillance] program had been used by a county attorney
+and sheriff in Arizona to investigate a political opponent"
+
+http://www.nytimes.com/2015/08/14/us/copy-of-postal-service-audit-shows-extent-of-mail-surveillance.html
+
+Copy of Postal Service Audit Shows Extent of Mail Surveillance
+Ron Nixonaug. 13 Aug 2015
+
+WASHINGTON -- In what experts say is the first acknowledgment of how the
+United States Postal Service's mail surveillance program for national
+security investigations is used, the service's internal watchdog found that
+inspectors failed to follow key safeguards in the gathering and handling of
+classified information.
+
+The overall program, called *mail covers*, allows postal employees working
+on behalf of law enforcement agencies to record names, return addresses and
+other information from the outside of letters and packages before they are
+delivered to the home of a person suspected of criminal activity.
+
+The information about national security mail covers, amid heated public
+debate over the proper limits on government surveillance, was contained in
+an audit conducted by the Postal Service's inspector general last year.
+Although much of the information was public, sections about the national
+security mail covers were heavily redacted.  An unredacted copy of the
+report was provided to a security researcher in response to a Freedom of
+Information Act request this year.  The researcher, who goes by a single
+legal name, Sai, shared the report with The New York Times.
+
+https://drive.google.com/file/d/0BzmetJxi-p0VOExOZGo2V1ktWHM/view?pli=1
+
+------------------------------
+
+Date: Fri, 14 Aug 2015 19:12:04 +0200
+From: "Donald B. Wagner" <zapkatakonk@icloud.com>
+Subject: Denmark's most devastating hacker attack?
+
+http://cphpost.dk/news/it-experts-national-police-still-at-risk-from-hackers.html
+
+"Three years after Denmark's most devastating hacker attack, during which
+the national police's IT security was breached and hackers stole millions of
+confidential files over the course of several months, the IT interest
+organisation IT-Politisk Forening (IT-Pol) has warned the same thing could
+happen again."
+
+More from IT-Pol:
+http://itpol.dk/presentation-of-it-pol
+
+dr.phil. Donald B. Wagner, Jernbanegade 9B, DK-3600 Frederikssund, Denmark
+Tel. +45-3331 2581 http://donwagner.dk
+
+  [Donald also noted the following, although with no indication how
+  it might have applied to the above item...  PGN]
+
+Danish Data Protection Agency
+http://www.datatilsynet.dk/english/
+
+"The Danish Data Protection Agency conducts an annual series of inspections
+of public authorities and private companies that have received the agency's
+authorisation to process personal data. The Danish Data Protection Agency
+inspects whether the processing of data is carried out in accordance with
+the Act on Processing of Personal Data."
+
+Act on Processing of Personal Data
+http://www.datatilsynet.dk/english/the-act-on-processing-of-personal-data/read-the-act-on-processing-of-personal-data/compiled-version-of-the-act-on-processing-of-personal-data/
+
+dr.phil. Donald B. Wagner, Jernbanegade 9B, DK-3600 Frederikssund Denmark
+Tel. +45-3331 2581  http://donwagner.dk
+
+------------------------------
+
+Date: Fri, 14 Aug 2015 07:02:42 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Retaliation against China is the wrong reaction to OPM hack
+
+"a diplomatic or economic response [to OPM] only distracts from the US
+government's most pressing problem: *bolstering security measures to foil
+the next attack.*"
+
+"[Deterrence] comes from enabling security protocols that make sensitive or
+valuable data so hard to steal that the effort isn't worth the reward."
+
+http://www.csmonitor.com/World/Passcode/Passcode-Voices/2015/0804/Opinion-Retaliation-against-China-is-the-wrong-reaction-to-OPM-hack
+
+Jeffrey Carr, 4 Aug 2015
+Opinion: Retaliation against China is the wrong reaction to OPM hack
+
+Even if Beijing was responsible for breaches that exposed sensitive data on
+millions of Americans, a diplomatic or economic response only distracts from
+the US government's most pressing problem: bolstering security measures to
+foil the next attack.
+
+The Office of Personnel Management breach ­ the worst in US history ­
+is a graphic testament to the White House's ongoing inability to identify
+and secure its most critical data.
+
+In this case, it lost control of incredibly sensitive and detailed
+information on federal employees.  That's a bounty worth many millions of
+dollars to foreign intelligence services in a breach for which China is the
+"leading suspect," according to Director of National Intelligence James
+Clapper.  But even if Beijing is to blame, the way to fix the
+administration's cybersecurity problem ­ and to prevent future data
+heists that rival the OPM breach ­ isn't to retaliate against a foreign
+government.
+
+After all, we are living in a world in which this kind of digital espionage
+is the new normal.  It's the kind of thing that the National Security Agency
+wishes it could do against China.  That is, if the spy agency isn't already
+doing it.
+
+Sure, President Obama is upset about the shameful state of security in place
+at OPM, and has made limited efforts to correct security problems at
+government agencies in a 30-day "Cybersecurity Sprint."  But exacting some
+kind of diplomatic or economic toll against China seems like a key play in
+the Obama administration's plans.  According to unnamed officials quoted in
+The New York Times, Obama staff members are considering a range of options
+meant "to disrupt and deter what our adversaries are doing in cyberspace."
+
+Traditional forms of deterrence in cyberspace are only partially effective
+even when you're certain about the attacker's identity. And determining that
+with absolute certainty is tough.  Hackers working for foreign intelligence
+services are trained to hide their identities and use deception techniques
+to throw off investigators.  They can mimic tools, techniques, and
+procedures used by other hackers to make it look like a different group or
+foreign government carried out the strike.
+
+Still, administration officials and at least one large cybersecurity firm
+with ties to the government are intent on pointing the finger at China.
+There are two key reasons for this blame game: (1) In order for the US to
+respond, the responsible party must be another government; (2) Under
+international law, the standard of evidence for state responsibility is
+solely based upon "reasonableness" versus proof beyond a reasonable doubt.
+The administration hasn't publicly presented any proof that China directed
+the OPM attacks.
+
+While the US government is expert at denying, disrupting, and deterring
+kinetic actions on battlefields in each of the four domains (land, air, sea,
+and space), it still hasn't grasped that the digital battlefield is entirely
+different.  The recent Times article about retaliating against China makes
+that all too clear.
+
+http://www.nytimes.com/2015/08/01/world/asia/us-decides-to-retaliate-against-chinas-hacking.html
+
+Deterrence is possible.  But it doesn't come from force or trying to instill
+fear.  It comes from enabling security protocols that make sensitive or
+valuable data so hard to steal that the effort isn't worth the reward.
+The goal of deterrence isn't to keep bad guys out of a network, it's
+to make it next to impossible for them to acquire the assets that they're
+targeting.  Technically, that's already possible.
+
+So, instead of shifting the focus to China, Mr. Obama should take full
+responsibility for the breach (OPM being part of the Executive Office) and
+immediately start work on a fulsome solution to the government's
+cybersecurity problem.  That requires more than the Cybersecurity Sprint.
+It means a complete overhaul of how the government employs security measures
+and uses encryption technology across out all of its networks.  It means
+ferreting out additional weaknesses in security and correcting them.  It
+means identifying those responsible for making that breach possible and
+firing them.  It means apologizing to the estimated 20 million Americans
+whose personal information is forever compromised.
+
+Without those steps, nebulous talk of retaliation against China only tells
+the world the US doesn't understand the limitations of deterrence in
+cyberspace.  It shows that the US remains weak and naive when it comes to
+battling criminal hackers.  The way to demonstrate strength is to take
+actions that show the president understands the limitations and advantages
+of the cyberthreat landscape and acts accordingly.  The president and
+Congress simply need the will to make it happen.
+
+Jeffrey Carr is an internationally known author, speaker, entrepreneur, and
+the founder and president of Taia Global. Follow him on Twitter
+@jeffreycarr.
+
+Editor's note: This article was updated after publication to correct James
+Clapper's position. He is Director of National Intelligence.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.86
+************************

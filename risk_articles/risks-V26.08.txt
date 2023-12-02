@@ -1,0 +1,615 @@
+precedence: bulk
+Subject: Risks Digest 26.08
+
+RISKS-LIST: Risks-Forum Digest  Thursday 10 June 2010  Volume 26 : Issue 08
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.08.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+System failures in offshore drilling processes (Steve Loughran)
+The costs of Electronic Device Adiction (Marv Schaefer)
+Software bug cuts off medical oxygen (David Lesher)
+Wood and computers don't mix in tracking trains (Mark Brader)
+Computers and Stupidity (Sarah Jacobsson via Gene Wirchenko)
+Expensive malware appears for Microsoft's Windows Mobile (Geoff Goodfellow)
+UK Scrapping National IDs (Sam Waltz)
+Protecting Internet Security (China Daily)
+The Internet in China - Fascinating Chinese white paper (Lauren Weinstein)
+North Korean hackers steal IDs to post Cheonan rumors (Paul Saffo)
+Computerized ticketing reduces ticket writing (Jeremy Epstein)
+Everyone's a food critic (Ike DeLorenzo via Monty Solomon)
+Re: Drilling for Certainty (Robert Searle)
+Re: $42.9 million slot jackpot should have been $20 (Mark Brader)
+Re: Scientist Infects Himself With Computer Virus (Steve King)
+Re: It's not just the camera in the laptop (Jerry Leichter)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 4 Jun 2010 14:55:15 +0100
+From: Steve Loughran <steve.loughran@gmail.com>
+Subject: System failures in offshore drilling processes
+
+There's a fairly scary history of past near-miss events on US offshore oil
+drilling facilities:
+http://www.theoildrum.com/node/6543
+
+One of the points here is that the "Blow Out Preventer", the thing that
+apparently failed in April on the Deep Horizon's drilling facility, is the
+absolute last line of defence -things should not get that bad. Yet on a
+number of previous occasions they did, implying that what happened this year
+was just statistics catching up: if you spend too much time living on the
+edge, eventually you fall off.
+
+Common causes which should be familiar to us all.
+* Inadequate training of staff for them to properly undertake the risks of
+  their actions
+* Failure of warning systems (lights, etc), failures that you don't notice
+  while things are working normally, but which bite you when something does
+  actually go wrong.
+
+There was also one incident triggered by corrupted data transfer between
+"terminals", causing the drilling rig getting invalid information about
+where it should be, causing it to move. That is something where the blame
+can be laid direct the door at we software developers. Checksums: they are
+there for a reason. Even basic CRC32 checks catch most problems, and while
+MD5 and SHA-1 checksums are starting to look cryptographically weak, they
+certainly catch data corruption.
+
+------------------------------
+
+Date: Mon, 07 Jun 2010 12:35:25 -0400
+From: Marv Schaefer <bwapast@verizon.net>
+Subject: The costs of Electronic Device Adiction
+
+An interesting suite of articles is in *The New York Times*, 7 Jun 2010.
+http://www.nytimes.com/2010/06/07/technology/07brain.html?hp
+
+The articles' basic question is whether the wide abundance of electronic
+devices, particularly those requiring some degree -- however small -- of
+interaction has lead to fleeting attention spans and high degrees of
+ineffective multitasking. Studies are cited in the article that indicate
+that those who are addicted to computers, iPads, iPhones, iPod Touch,
+electronic games,&c are not only spending 10 or more hours per day hooked
+into devices, but are easily distracted, not at all efficient in changing
+from one task to another (despite their feeling that they are effective at
+multitasking) and prone to letting big things fall through the cracks. Their
+lead example in the main article, of a hooked-up entrepreneur missed an
+e-mail that offered to buy out his business, finding it only after the
+passage of several days.
+
+There's an online 'test' feature in the sidebar to 'test your focus' and
+ability to juggle tasks. Not a pretty result, that, but it is motivated by
+the growing number of people whose home computers have multiple crts, some
+of which are dedicated to e-mail, instant messaging, and social media,
+another to newsfeeds and such, and a third that could be dedicated to work
+-- in the case of the entrepreneur it's his programming environment. Beside
+him, he has his headphones, iPhone and iPad. His wife, also addicted, can't
+even make it through preparing a meal without having something burn and, in
+one case, failing several times to prepare and cook a pastry.  > Is the
+article anywhere near being accurate in representing a growing problem? How
+significant is the threat posed by electronic media addiction? We've all
+seen multiple people at the same table in restaurants -- or in joint
+sessions of Congress -- with their thumbs flying on Blackberries and even
+generic cellphones. Fatal accidents caused by texting and other electronic
+diversions (e.g., resetting GPS on the fly) are on the increase. We drove
+past a motorcyclist on the Interstate a couple of days ago, who was typing
+into a device with a monitor (I think it was a laptop) while he was
+'driving' his bike (he was in the middle lane).
+
+------------------------------
+
+Date: Thu, 03 Jun 2010 16:20:23 -0400
+From: David Lesher <wb8foz@panix.com>
+Subject: Software bug cuts off medical oxygen
+
+<http://www.firehouse.com/news/top-headlines/software-failure-linked-minn-womans-death>
+
+Software Failure Linked to Minn. Woman's Death; The woman died aboard a Red
+Wing, Minnesota, Fire Department ambulance on 22 Apr 2010, 3 Jun 2010
+
+An ongoing investigation has revealed that a software glitch likely led to a
+woman's death aboard a fire department ambulance on 22 Apr 2010, according
+to *The Pierce County Herald*.  Janice Hall was being transported to
+Minneapolis when the ambulance's onboard oxygen system unexpectedly quit,
+killing her, a Dakota County Medical Examiner's report states.  Red Wing
+Fire Chief Tom Schneider told the newspaper that the system "spontaneously
+shut itself off."
+
+The friend who sent this was a paramedic in decades past, and wondered why
+O2 flow would ever be run by anything more complex. I had no answer for
+that.  [02 = Medical oxygen; by mask or nasal cannula, but these would have
+been masks.]
+
+------------------------------
+
+Date: Mon,  7 Jun 2010 05:17:06 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: Wood and computers don't mix in tracking trains
+
+The June 2010 issue of "The Railway Magazine" includes an article about the
+systems used to keep track of locomotives and train cars in Great Britain.
+In 1973, British Rail adopted a system called TOPS (Total Operations
+Processing System), which had been originated by the Southern Pacific
+Railroad in the US and allowed the location of every car to be tracked.
+
+But when they got this going, they found that "phantom" freight cars would
+keep appearing and disappearing in the system.
+
+Investigation revealed that the cars involved were always ones with
+wooden sides, and when the wood had to be repaired, sometimes the
+repairmen would take a plank from one car and reuse it on another --
+not realizing that they should not do this *if the plank was the one
+with the car number painted on it*!  As it was, some cars had no number
+at all and others had different numbers in different places.
+
+------------------------------
+
+Date: Thu, 03 Jun 2010 11:20:15 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Computers and Stupidity (Sarah Jacobsson)
+
+I have a topper for all those GPS stupidity stories.
+[Source: Sarah Jacobsson, 3 Jun 2010]
+http://www.itbusiness.ca/it/client/en/home/news.asp?id=57836
+
+Woman who 'didn't know how to look both ways before crossing street' sues
+Google for bad directions.  She said it was dark, she had never been to the
+area before, and didn't know how to look both ways before crossing the
+street.  And now Lauren Rosenberg has gone to court, blaming Google Maps for
+bad directions.
+
+------------------------------
+
+Date: June 5, 2010 2:04:24 PM EDT
+From: the terminal of geoff goodfellow <geoff@iconia.com>
+Subject: Expensive malware appears for Microsoft's Windows Mobile
+
+  [From Dave Farber's IP distribution.  PGN]
+
+Malware embedded into legitimate-looking games designed for Windows Mobile
+has appeared, automatically dialing up foreign telephone services to ring up
+hundreds of dollars in illicit charges for users behind their backs. ...
+
+... Critics have chafed at Apple's secure software signing model and have
+praised Google's alternative Android model, which enables users to download
+software from any source, without any security model in place, at their own
+risk.
+
+The appearance of malware on Windows Mobile is particularly interesting
+because the motivation of this assault was entirely financial. That being
+the case, the fact that the malicious developers targeted Windows Mobile,
+which is almost entirely limited to the US and now trails Symbian (42%), RIM
+(21%), and Apple's iPhone OS (15%) in market share (9% over the last year),
+throws decades of Windows-based punditry on its head because "malicious
+hackers" supposedly only target the largest platform.
+
+iPhone security features deter malware
+
+Just the fact that Apple has a real security policy in place for iPhone
+mobile software in its iTunes App Store serves as a strong deterrent for
+rogue developers from even attempting to distribute malicious iPhone OS
+software like the tainted games discovered for Windows Mobile.
+
+Jim Finkle, writing for Reuters, claimed that "hackers are increasingly
+targeting smartphone users as sales of the sophisticated mobile devices have
+soared with the success of Apple Inc's iPhone and Google Inc's Android
+operating system," but in reality, any attacks aimed at iPhone users are not
+software based expressly because of Apple's strict security policy, and must
+be limited to social engineering exploits that prey upon people directly,
+rather than infecting their devices with malware.
+
+Android users (just like Mac and Windows users) have no similar security
+protection in place, and should be very careful about downloading software,
+even from legitimate appearing websites. Unlike desktop malware, which is
+somewhat limited in the scope of damage it can cause, mobile malware has the
+ability to rapidly run up very expensive mobile bills for weeks before the
+user is likely to even notice a problem.
+
+http://www.appleinsider.com/articles/10/06/04/expensive_malware_appears_for_microsofts_windows_mobile.html
+
+http://www.reuters.com/article/idUSTRE6535TS20100604
+
+Archives: https://www.listbox.com/member/archive/247/=now
+
+------------------------------
+
+Date: May 28, 2010 12:00:51 PM EDT
+From: Sam Waltz <samwaltz@member.mensa.org>
+Subject: UK Scrapping National IDs
+
+  [From Dave Farber's IP distribution.  PGN]
+http://news.bbc.co.uk/2/hi/uk_news/politics/8707355.stm
+ID card scheme 'axed in 100 days'
+
+The National Identity Card scheme will be abolished within 100 days
+with all cards becoming invalid, Home Secretary Theresa May has said.
+Legislation to axe the scheme will be the first put before parliament
+by the new government - with a target of it becoming law by August.
+
+The 15,000 people who voluntarily paid 30 pounds for a card since the 2009
+roll out in Manchester will not get a refund.  Ms May said ID card holders
+would at least have a "souvenir" of the scheme.
+
+TIMELINE
+# July 2002: Plans unveiled
+# November 2004: ID cards bill
+# March 2006: Act becomes law
+# November 2009: Cards available
+# May 2010: Scheme scrapped
+
+The Labour scheme was aimed at tackling fraud, illegal immigration and
+identity theft - but it was criticised for being too expensive and an
+infringement of civil liberties. The cards were designed to hold personal
+biometric data on an encrypted chip, including name, a photograph and
+fingerprints. The supporting National Identity Register was designed to hold
+up to 50 pieces of information.
+
+The cards already in circulation will remain legal until Parliament has
+passed the legislation to abolish them and the register. The short abolition
+bill will be pushed through Parliament as quickly as possible with the aim
+of cards being invalid by 3 Sep.
+
+Anyone who has a card or has to deal with them, such as airport security
+officials, will be told the termination date in writing. Once the cards are
+illegal, the National Identity Register will be "physically destroyed", say
+ministers. Some 60 people who were working on the scheme for the Identity
+and Passport Service in Durham have lost their jobs.
+
+Ms May said: "This bill is a first step of many that this government is
+taking to reduce the control of the state over decent, law-abiding people
+and hand power back to them. With swift Parliamentary approval, we aim to
+consign identity cards and the intrusive ID card scheme to history within
+100 days."
+
+Officials are renegotiating two contracts worth 650M pounds with companies
+who had agreed to deliver parts of the scheme. It's not clear how much the
+government will need to pay compensation, but officials say there is no
+"poisoned pill" in the deals and they expect to save 86M pounds once all
+exit costs are met.  [...]
+
+------------------------------
+
+Date: Wed, 9 Jun 2010 18:01:56 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Protecting Internet Security, *China Daily*, 8 Jun 2010
+
+  [An official Chinese government document.  TNX to Paul Saffo; PGN-ed]
+  http://www.chinadaily.com.cn/china/2010-06/08/content_9950198_7.htm
+
+Internet security is a prerequisite for the sound development and effective
+utilization of the Internet. Internet security problems are pressing
+nowadays, and this has become a problem of common concern in all countries.
+
+China also faces severe Internet security threats. Effectively protecting
+Internet security is an important part of China' s Internet administration,
+and an indispensable requirement for protecting state security and the
+public interest. The Chinese government believes that the Internet is an
+important infrastructure facility for the nation.
+
+Within Chinese territory the Internet is under the jurisdiction of Chinese
+sovereignty. The Internet sovereignty of China should be respected and
+protected. Citizens of the People's Republic of China and foreign citizens,
+legal persons and other organizations within Chinese territory have the
+right and freedom to use the Internet; at the same time, they must obey the
+laws and regulations of China and conscientiously protect Internet security.
+
+  The remaining sections are
+  * Protecting Internet security in accordance with the law
+  * Secure information flow
+  * Combating computer crime in accordance with the law.
+  * Opposing all forms of computer hacking
+
+According to incomplete statistics, more than one million IP addresses in
+China were controlled from overseas in 2009, 42,000 websites were distorted
+by hackers, 18 million Chinese computers are infected by the Conficker virus
+every month, about 30% of the computers infected globally. ...
+
+  [18M computers Re-Confickered?  I wonder how many of those are pirated
+  systems that were never updated.  PGN]
+
+------------------------------
+
+Date: Tue, 8 Jun 2010 13:30:17 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The Internet in China - Fascinating Chinese white paper
+
+  [From NNSquad.org]
+
+The Chinese government has just released a white paper covering a wide range
+of topics related to their view of the Internet.  It is *very* much
+recommended reading.  Since this paper apparently was only released
+officially as a number of separate HTML pages, I have converted and combined
+them into a single PDF document for ease of handling, and am hosting the
+file locally.
+
+"The Internet in China" (Single PDF file):
+  http://bit.ly/bGsTBK  (Lauren's Blog)
+Original HTML version:
+  http://bit.ly/cDglKq  (China.org.cn)
+
+------------------------------
+
+Date: Tue, 1 Jun 2010 10:54:41 -0700
+From: Paul Saffo <paul@saffo.com>
+Subject: North Korean hackers steal IDs to post Cheonan rumors
+
+  [Nice testimony on the ineffectuality of govt IDs and Internet identity
+  verification.  PS]
+
+[Source: Yoo Jee-ho, Lee Young-jong, Joongan Daily, 2 Jun 2010; PGN-ed]
+http://joongangdaily.joins.com/article/view.asp?aid=2921288p
+
+North Korean defectors yesterday rallied at the Chinese Embassy in Seoul to
+criticize China's shielding of the North in the Cheonan case.  North Korean
+hackers are using identity information purloined from South Koreans --
+including their resident registration numbers - to post diatribes on local
+message boards accusing the government of fabricating the probe results into
+the sinking of the warship Cheonan.
+
+An intelligence source said yesterday North Korean hackers recently
+bombarded a message board at a South Korean online community site with posts
+claiming the government had made up the accusation against Pyongyang.  The
+source said the hackers have obtained personal information through various
+channels and their servers were likely based in Beijing. In order to write
+messages on Web portals in South Korea, one must be a registered user, and
+the 13-digit resident registration numbers are required for membership. The
+hackers have tracked down those numbers and corresponding names, and used
+them to open accounts on Web sites, the source said.
+
+Authorities have been trying to crack down on rumors that the results of the
+probe into the Cheonan sinking were fabricated and used by Seoul to disgrace
+North Korea. Several netizens and left-leaning activists have been detained
+for questioning for allegedly spreading such rumors.
+
+On May 20, a multinational team of experts concluded North Korea attacked
+the Cheonan with a torpedo on March 26, killing 46 sailors on board. ...
+
+Last July, North Korea was accused of launching distributed denial of
+service, or DDoS, attacks that paralyzed key government and private
+Web sites in Seoul.
+
+Police in South Korea were busy yesterday trying to track down the origins
+of more rumors about the Cheonan sinking. Seoul police said yesterday about
+300 postcard-sized printouts were distributed in Seongdong and Nowon
+districts in northeastern Seoul claiming the Cheonan probe was bogus and
+that the Grand National Party was ready to launch war.
+
+------------------------------
+
+Date: Wed, 9 Jun 2010 18:31:10 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Computerized ticketing reduces ticket writing
+
+Fairfax County (Virginia) police are writing 28% fewer tickets because their
+new computerized system takes so long to enter tickets.  No surprise, but
+interesting that they're quantifying it and talking about it.
+
+It goes back to the old question: yes you CAN computerize it, but SHOULD you
+computerize it?
+
+http://www.washingtonpost.com/wp-dyn/content/article/2010/06/06/AR2010060603219.html
+
+------------------------------
+
+Date: Wed, 2 Jun 2010 08:11:53 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Everyone's a food critic (Ike DeLorenzo)
+
+Yelp and other online sites and their cadre of amateurs have sent nervous
+ripples through the restaurant world [Source: Ike DeLorenzo, *The Boston
+Globe*, 2 Jun 2010; PGN-ed]
+
+Restaurant dining has new bookends. The experience often begins and ends
+with the Web. Before you go out, you find a good place to eat; after you
+dine, you post a review. Millions of diners are now civilian critics,
+letting Chowhound, Yelp, Citysearch, and others in on their recent meals.
+
+The domain of criticism was once the preserve of magazines and
+newspapers. This year has seen a flurry of activity for restaurant review
+sites, and for some new approaches to public critiques. Two big players -
+the biggest actually - want in on the action. Last week, Facebook began
+mailing door stickers to restaurants asking diners to "like'' (there's no
+"dislike'') and comment about restaurants with Facebook pages. Google
+recently launched Google Place Pages, also with door stickers, which allow
+diners with smartphones to point the camera at a bar code and instantly
+display a comments page. All of this is enough to make restaurateurs worry
+about every single diner.
+
+In the same way that travelers use various websites to find evaluations of
+hotels, diners are now turning to online food sites for advice on where to
+eat. As staggeringly fast as participation in food and restaurant websites
+has grown, so has the attention being paid amateur critics. Comments and
+ratings from any one diner may, of course, be biased or even false. Many
+Internet pundits believe in something called "the wisdom of the crowd.'' The
+theory is that with many people commenting, you eventually get to the truth
+about a restaurant. As the public posts about the food, the service, the
+ambience, the bearnaise, the baguettes, a fuller and more accurate picture
+is supposed to evolve. The amateurs are not going away, which restaurateurs
+once might have hoped, and they are making chefs nervous.
+
+Yelp, a social networking site where users post their own reviews, in March
+had 31 million unique visitors, up from 20 million a month last year. Since
+Yelp launched in 2004, 10 million reviews, mostly for restaurants, have been
+written. Similar sites also show strong growth. But because they hope to
+profit from what is submitted, these sites have goals that may be at odds
+with the restaurants, and even with the commenters. Yelp and its aspirants
+are in the business of making money by brokering information.
+
+But there are suggestions - well, allegations even - that the natural
+ratings that should result are being manipulated. Kathleen Richards, a
+reporter for *The East Bay Express* in Oakland, Calif., wrote a widely
+circulated story last year about Yelp's advertising and editorial
+practices. According to Richards, Yelp sales representatives would routinely
+cold-call Bay Area restaurants asking that they agree to a yearly contract
+to advertise on Yelp ($299 per month and up). Part of the pitch involved
+promises to remove bad Yelp reviews or move them off the main page. Richards
+also presented evidence that, in some cases, bad reviews had been written by
+the Yelp sales representatives themselves to force a sale. Failing to agree
+meant prominent bad reviews. ...
+
+http://www.boston.com/lifestyle/food/articles/2010/06/02/websites_such_as_yelp_and_citysearch_are_adding_to_the_pressure_put_on_restaurants_and_their_chefs_by_amateur_critics/
+
+------------------------------
+
+Date: Mon, 31 May 2010 12:22:52 +1200
+From: searler <robert.searle@taitradio.com>
+Subject: Re: Drilling for Certainty (RISKS-26.07)
+
+[Since>] the article [appeared,] almost half of the back-log has been
+reviewed without finding anything.
+
+The tone of the article is shock-horror-outrage, but was anyone at risk of
+*suddenly* having a problem actually at risk -- I assume that this test is
+part of a set and that it would rarely be the case that *only* this test
+found a *life-threatening* anomaly.
+
+It certainly seems that the hospital should make some changes to ensure that
+  a) Every test undertaken is analysed
+  b) Un-necessary tests aren't made.
+
+Caveat: I assume that some tests are more cost-effective if they are made at
+the same time and that some of the tests do not need to be analysed if the
+other tests are negative. These tests lead to exceptions to rules a) and b)
+above (and I assume are lurking somewhere at the root of this case).
+
+------------------------------
+
+Date: Wed,  2 Jun 2010 19:31:58 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: Re: $42.9 million slot jackpot should have been $20 (RISKS-26.07)
+
+> The correct prize for an apparent $42.9 million slot machine jackpot
+> that a Thornton woman hit at a Central City casino should have been
+> $20.18, Colorado gaming regulators said ...
+
+Well, that's $20.18 better than the last time this happened to someone.
+See my item "You have won $[2^32-1]/100, no wait, we mean nothing" in
+Risks-25.61.
+
+------------------------------
+
+Date: Tue, 01 Jun 2010 16:19:14 -0400
+From: Steve King <steve@narbat.com>
+Subject: Re: Scientist Infects Himself With Computer Virus (RISKS-26.07)
+
+The article about University of Reading scientist Mark Gasson infecting
+himself (or rather, his implanted RFID chip) with a computer virus pegs my
+bogometer.  I've not been able to find any more details, though I did turn
+up the University's press release at the link below.
+
+I want to give Dr. Gasson the benefit of a doubt here. He's a senior
+research fellow at the University's Cybernetic Intelligence Research Group,
+so he *should* know better than this.  However, the press release reads like
+a bad movie plot. "Once infected, the chip corrupted the main system used to
+communicate with it. Should other devices have been connected to the system,
+the virus would have been passed on."
+
+I'd think that for this to be at all possible, it would have to be a very
+specific attack against a particular vendor's hardware or RFID communication
+stack. The idea of an RFID chip infecting arbitrary equipment is about as
+believable as the virus Jeff Goldblum used to bring down the alien
+mothership in Independence Day.
+
+Press Release:
+http://www.reading.ac.uk/sse/about/news/sse-newsarticle-2010-05-26.aspx
+
+------------------------------
+
+Date: Sun, 30 May 2010 07:46:26 -0400
+From: Jerry Leichter <leichter@lrw.com>
+Subject: Re: It's not just the camera in the laptop
+
+In RISKS-26.07, Jeremy Epstein discusses the much-reported Lower Merion
+School District "spying via laptop case".  While I agree with most of what
+he says, he does say: "Cameras that give no reliable indication of when
+they're on".  The "camera live" light on all Mac laptops - the machines
+involved here - appears to be hardware controlled.  (If there's a way to
+override that control through software, it hasn't made it into any of the
+literature.)  In fact, in the Lower Merion case, students noticed that the
+"camera live" light would turn on at random times.  When they complained,
+they were told "it's just a glitch, ignore it".  A student who wouldn't
+accept that response ultimately discovered the facts.
+
+I don't know whether *other* cameras have hardware-controlled activity
+lights, or any activity lights at all.  I suspect that even if they do now,
+cost-cutting will inevitably lead to their disappearance over time.
+
+The first desktop with an embedded microphone was introduced by Sun back in
+the '80's, as best I can recall.  There was a great deal of concern at the
+time about the risks involved - especially when it was found that a
+configuration error granted open network access to the microphone.  However,
+the machines *did* include a hardware-controlled "microphone activated"
+light, "so it's OK".
+
+In the years since, built-in microphones have become the standard - and it's
+been many years since I last saw a "microphone active" light of any sort.
+Of course, we're surrounded by microphones - in cell phones, game consoles,
+even pens.  There have been cases of government tapping through "unexpected"
+microphones (the ones in "inactive" OnStar units of cars).  I'm not aware of
+any *reports* of private clandestine listening - but I can't imagine that it
+isn't taking place.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.08
+************************

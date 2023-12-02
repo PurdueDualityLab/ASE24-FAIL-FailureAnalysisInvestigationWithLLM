@@ -1,0 +1,605 @@
+precedence: bulk
+Subject: Risks Digest 29.76
+
+RISKS-LIST: Risks-Forum Digest  Monday 12 September 2016  Volume 29 : Issue 76
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.76>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+GM recalls 4M cars because of a software fault (Martyn Thomas)
+"Volkswagen engineer behind 'defeat device' pleads guilty in US court"
+  (Charlie Osborne)
+Elon Musk Says Pending Tesla Updates Could Have Prevented Fatal Crash (NYT)
+Your Car's New Software Is Ready. Update Now? (NYT)
+Galaxy Note 7 (Martyn Thomas)
+AirAsia X flight from Sydney to Malaysia ends up in Melbourne after
+  navigational error (SMH)
+AirAsia flight bound for Malaysia landed in Melbourne after pilot error
+  (CNN)
+The Roomba did the Rumba all over the Room: Bah! (Paul Wexelblat)
+5,300 Wells Fargo employees fired over 2 million phony accounts (WCTI12)
+Phoenix Pay System Disaster Leads to Real Tears (John C. Bauer)
+"Researchers warn that hackers can DDoS 911 emergency phone service"
+  (Computerworld)
+"This USB stick will fry your unsecured computer" (Lucas Mearian)
+"Consumers have no right to buy a PC without an OS, European court rules"
+  (Peter Sayer)
+"Brazilian government could ban Waze" (Angelica Mari)
+"Apple, Fox News, and ACLU join Microsoft's fight against secret data
+  demands" (Zach Whittaker)
+"YouTube disappearing from 50 Sony Bravia sets highlights why smart TVs
+  suck" (Ian Paul)
+"Stealthy, tricky-to-remove rootkit targets Linux systems on ARM and x86"
+  (Lucian Constantin)
+Stealing login credentials from a locked PC or Mac just got easier
+  (Dan Goodin)
+"Data hoarders are shining a spotlight on past breaches" (Michael Kan)
+How Fake Stories Reported in Russia's News Media Regularly Fool Everyone
+  (Global Voices)
+Revote required; no glue code was involved (Bertrand Meyer)
+A cautionary tale about humans creating biased AI models (TechCrunch)
+Re: You Can Now Chat With Your Hotel Room, and It's Only Going to Get Better
+  (Erling Kristiansen)
+Re: Big, make that BIG, military secrets leak in Australia/France
+  (danny burstein)
+Re: Parking garage makes it easier for stalkers (RWolff)
+Re: Falsehoods and disinformation (Harlan Rosenthal)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 10 Sep 2016 15:20:55 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: GM recalls 4M cars because of a software fault
+
+*The Financial Times* reports today that GM is recalling 4.3-million cars,
+SUVs, and trucks built from 2014 onwards because of a software fault that
+causes sensors to fail to detect a crash "in rare circumstances when a
+vehicle was moving in a certain way before the impact". It would be
+interesting to know whether it was an error in the specification, the design
+or the coding, what assurance methods would have prevented or detected the
+fault, and whether any changes have been made to GM's (or its supplier's)
+software development processes as a result.
+
+------------------------------
+
+Date: Mon, 12 Sep 2016 11:51:33 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Volkswagen engineer behind 'defeat device' pleads guilty in US
+  court" (Charlie Osborne)
+
+Charlie Osborne for Between the Lines, ZDnet 12 Sep 2016
+The engineer admitted to installing devices in Volkswagen "clean diesel"
+vehicles which circumvented legal requirements for many years.
+http://www.zdnet.com/article/volkswagen-engineer-behind-defeat-device-pleads-guilty-in-us-court/
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Sun, 11 Sep 2016 23:35:56 -0400
+Subject: Elon Musk Says Pending Tesla Updates Could Have Prevented Fatal Crash
+
+The upgrades to Tesla's Autopilot system will require drivers to refrain
+from taking their hands off the wheel for long periods and will use radar to
+better identify potential obstacles in the road.
+
+http://www.nytimes.com/2016/09/12/business/elon-musk-says-pending-tesla-updates-could-have-prevented-fatal-crash.html
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Sun, 11 Sep 2016 23:40:07 -0400
+Subject: Your Car's New Software Is Ready. Update Now? (NYT)
+
+http://www.nytimes.com/2016/09/09/automobiles/your-cars-new-software-is-ready-update-now.html
+
+Automakers are taking advantage of connected cars by beaming improved
+features right into their vehicles via software upgrades.
+
+------------------------------
+
+Date: Sat, 10 Sep 2016 15:08:08 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Galaxy Note 7
+
+The FT reports today that the FAA "strongly advises passengers not to turn
+on or charge these devices on board or to stow them in any checked baggage".
+Presumably it's Ok if your carry-on baggage bursts into flames.
+
+------------------------------
+
+Date: Thu, 8 Sep 2016 08:25:45 +1000 (EST)
+From: Dave Horsfall <dave@horsfall.org>
+Subject: AirAsia X flight from Sydney to Malaysia ends up in Melbourne after
+  navigational error (SMH)
+
+http://www.smh.com.au/business/aviation/airasia-x-flight-from-sydney-to-malaysia-ends-up-in-melbourne-after-navigational-error-20160907-gratv6.html
+
+``A flight from Sydney to Malaysia ended up in Melbourne after the captain
+incorrectly entered the plane's location in its navigation system just
+before take-off, according to a safety investigation.  The AirAsia X flight
+took off from Sydney Airport just before noon on March 10 last year, heading
+to Kuala Lumpur, but soon started experiencing technical problems.''
+
+There are details such as critical systems failing, one by one, and all
+because of a single-digit entry error.
+
+------------------------------
+
+Date: Thu, 08 Sep 2016 15:51:48 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: AirAsia flight bound for Malaysia landed in Melbourne after
+  pilot error (CNN)
+
+http://edition.cnn.com/2016/09/07/aviation/airasia-melbourne-malaysia-error/
+
+... When manually entering the coordinates of the plane's position, the
+pilot incorrectly entered the longitude from a sign outside the cockpit
+window as 01519.8 east (15 degrees 19.8 minutes east) instead of 15109.8
+east (151 degrees 9.8 minutes east), the report said.  "This resulted in a
+positional error in excess of 11,000 kilometers (6,835 miles), which
+adversely affected the aircraft's navigation systems and some alerting
+systems," the report said.
+
+READ: The real reason airline computers crash
+http://money.cnn.com/2016/08/08/technology/delta-airline-computer-failure/
+
+The crew had "a number of opportunities to identify and correct the error,"
+the report said, but didn't notice the problem until after the plane became
+airborne and started tracking in the wrong direction.  Several message
+alerts and sounds suggested the error before takeoff, but the crew ignored
+them, according to the report.
+
+Once the captain and the first officer realized the mistake, they tried to
+fix the system.  But it was too late.
+
+"Attempts to troubleshoot and rectify the problem resulted in further
+degradation of the navigation system, as well as to the aircraft's flight
+guidance and flight control system," the report said.
+
+As systems failed further, the crew asked to return to Sydney and conduct a
+landing without the use of navigation systems. However, weather conditions
+in Sydney forced the plane to land in Melbourne instead...
+
+------------------------------
+
+Date: Mon, 12 Sep 2016 11:44:17 -0400
+From: Paul Wexelblat <wex@cs.uml.edu>
+Subject: The Roomba did the Rumba all over the Room: Bah!
+
+  [This little gem chronicles an autonomously incremental excrementalism
+  that was sadly self-propagating.  I have retitled a Facebook posting by
+  Jesse Newton with Kelly McQueen Newton, 9 Aug, Little Rock AR.  PGN]
+
+https://www.facebook.com/jesse.newton.37/posts/776177951574
+
+------------------------------
+
+Date: Thu, 8 Sep 2016 14:21:21 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 5,300 Wells Fargo employees fired over 2 million phony accounts
+
+via NNSquad
+http://www.wcti12.com/news/5300-wells-fargo-employees-fired-for-creating-millions-of-phony-accounts/74912454
+
+  On Thursday, federal regulators said Wells Fargo employees secretly
+  created millions of unauthorized bank and credit card accounts -- without
+  their customers knowing it -- since 2011.  The phony accounts earned the
+  bank unwarranted fees and allowed Wells Fargo employees to boost their
+  sales figures and make more money.  "Wells Fargo employees secretly opened
+  unauthorized accounts to hit sales targets and receive bonuses," Richard
+  Cordray, director of the Consumer Financial Protection Bureau, said in a
+  statement.  Wells Fargo confirmed to CNNMoney that it had fired 5,300
+  employees related to the shady behavior over the last few years. Employees
+  went to far as to create phony PIN numbers and fake email addresses to
+  enroll customers in online banking services, the CFPB said.
+
+------------------------------
+
+Date: Sun, 11 Sep 2016 14:16:57 -0400
+From: "John C. Bauer" <johncbauer.xx@gmail.com>
+Subject: Phoenix Pay System Disaster Leads to Real Tears
+
+In 2009 the then Conservative government of Canada decided to consolidate
+all public service pay administration in one location with one large system.
+(Conservatives and Liberals are actual political parties in Canada.) The
+system was to replace the pay advisors in the various departments with
+skills peculiar to the various union agreements and work practices in force
+with 550 personnel in Miramichi, New Brunswick.  In 2011 a contract was let
+to build the system.  Meanwhile the expert pay advisors mostly declined to
+move to Miramichi.  One can see the scene for a disaster being set.
+
+After some delay, part of the system was rolled out in February of this year
+(2016) by the newly elected Liberal government.  It functioned badly, i.e.,
+people were underpaid, overpaid, or not paid at all.
+
+Despite obvious problems and justified protests from the unions the system
+was rolled out further to cover 2/3 of the public service in April 2016.  At
+the same time the old system was decommissioned.
+
+Now, at the beginning of September, public servants who have not been paid
+are having to get loans, cash in retirement savings, live day to day, and
+face tax problems.
+
+The present additional costs for "fixing" the system are estimated at
+$50,000,000 and the end is not really in sight.
+
+http://ottawacitizen.com/news/national/credit-union-warns-phoenix-pay-problems-taking-increasing-toll-on-public-servants?__lsa=462d-abd6
+
+http://www.cbc.ca/news/canada/ottawa/phoenix-ottawa-timeline-1.3691812
+
+  Norman Augustine's phrase about disaster not having been left to chance
+  fits perfectly.
+
+When renewing my passport last month I casually asked the passport officer
+when he had last been paid - 9 weeks ago was the answer.
+
+I did not bother to catalog all the mis-steps in the process because I am
+certain that RISKS readers are preternaturally fitted to fill in the blanks.
+
+John Bauer, Manotick, Ontario, CANADA   613-692-4839
+
+------------------------------
+
+Date: Mon, 12 Sep 2016 12:08:05 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Researchers warn that hackers can DDoS 911 emergency phone
+  service" (Computerworld)
+
+Computerworld, 12 Sep 2016
+Researchers warned that a telephony denial of service (TDoS) attack,
+launched by a mobile phone botnet, could cripple America's 911 emergency
+call system.
+http://www.computerworld.com/article/3118703/security/researchers-warn-that-hackers-can-ddos-911-emergency-phone-service.html
+
+------------------------------
+
+Date: Mon, 12 Sep 2016 12:04:10 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "This USB stick will fry your unsecured computer" (Lucas Mearian)
+
+Lucas Mearian, Computerworld, 8 Sep 2016
+The device discharges 200 volts into the host computer
+http://www.computerworld.com/article/3118344/computer-hardware/this-usb-thumb-drive-will-fry-your-unsecured-computer.html
+
+opening text:
+
+A Hong Kong-based technology manufacturer, USBKill.com, has taken data
+security to the "Mission Impossible" extreme by creating a USB stick that
+uses an electrical discharge to fry an unauthorized computer into which it's
+plugged.
+
+------------------------------
+
+Date: Mon, 12 Sep 2016 11:58:57 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Consumers have no right to buy a PC without an OS, European
+  court rules" (Peter Sayer)
+
+Peter Sayer, Computerworld, 7 Sep 2016
+A Frenchman who sought a refund of the cost of the Windows OS bundled
+with his new laptop is out of luck
+http://www.computerworld.com/article/3117334/microsoft-windows/consumers-have-no-right-to-buy-a-pc-without-an-os-european-court-rules.html
+
+opening text:
+
+Bare-metal buyers beware: PC makers have no obligation to offer you a
+machine without an OS, the European Union's highest court has ruled.
+
+------------------------------
+
+Date: Tue, 06 Sep 2016 15:20:50 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Brazilian government could ban Waze" (Angelica Mari)
+
+Angelica Mari for Brazil Tech, ZDnet, 5 Sep  2016
+http://www.zdnet.com/article/brazilian-government-could-ban-waze/
+Proposed legislation could make alerts of traffic blitzes and radars illegal
+
+selected text:
+
+Traffic and navigation app Waze could face trouble in Brazil as proposed
+legislation could make tools that enable alerts of traffic blitzes and speed
+radars illegal.  By connecting drivers to each other, Google-owned Waze
+allows motorists to warn one another of car crashes and traffic backups, but
+also if there are police officers or radars nearby.
+
+The debate on whether the public can monitor the police and to what extent
+this can be done grabbed the headlines late last year, when Los Angeles
+police chief Charlie Beck wrote a public statement linking the killings of
+two New York police officers to Waze use by the shooter at some point before
+the crime.
+
+Writing to Google chief executive Larry Page, Beck says that Waze "poses a
+danger to the lives of police officers in the United States."
+
+The company has since responded, saying that "police partners support Waze
+and its features, including reports of police presence, because most users
+tend to drive more carefully when they believe law enforcement is nearby."
+
+      [Most?  It is the ones who do not that are the concern.]
+
+------------------------------
+
+Date: Tue, 06 Sep 2016 15:16:05 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Apple, Fox News, and ACLU join Microsoft's fight against secret
+  data demands" (Zach Whittaker)
+
+Zack Whittaker, ZDnet, 3 Sep 2016
+More than 80 signatories are putting their weight behind Microsoft's cause.
+http://www.zdnet.com/article/why-the-aclu-fox-news-and-microsoft-are-fighting-the-us-government/
+
+opening text:
+
+Dozens of US businesses, tech companies, and prominent rights groups have
+filed in support of Microsoft, which is currently suing the Justice
+Department over its use of gag orders.
+
+------------------------------
+
+Date: Tue, 06 Sep 2016 15:50:16 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "YouTube disappearing from 50 Sony Bravia sets highlights why
+  smart TVs suck" (Ian Paul)
+
+Ian Paul, PC World, 2 Sep 2016
+Smart TVs look like a great idea, but they have a serious downside as
+demonstrated by Sony's recent announcement.
+http://www.pcworld.com/article/3115730/home-tech/youtube-disappearing-from-50-sony-bravia-sets-highlights-why-smart-tvs-suck.html
+
+opening text:
+
+If ever there was a cautionary tale about why it's a bad idea to buy Smart
+TVs, this is it. Sony recently announced on its UK support site that 50
+different 2012 Bravia TV models will lose their YouTube app on September 30,
+as first reported by 9 to 5 Google.
+
+------------------------------
+
+Date: Wed, 07 Sep 2016 09:36:56 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Stealthy, tricky-to-remove rootkit targets Linux systems on
+  ARM and x86" (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 6 Sept 2016
+The Umbreon rootkit runs from user mode but hijacks libc system calls
+http://www.infoworld.com/article/3116908/malware/stealthy-tricky-to-remove-rootkit-targets-linux-systems-on-arm-and-x86.html
+
+opening text:
+
+Security researchers have identified a new family of Linux rootkits that,
+despite running from user mode, can be hard to detect and remove.
+
+------------------------------
+
+Date: Wed, 7 Sep 2016 17:57:16 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Stealing login credentials from a locked PC or Mac just got easier
+  (Dan Goodin)
+
+NNSquad
+http://arstechnica.com/security/2016/09/stealing-login-credentials-from-a-locked-pc-or-mac-just-got-easier/
+
+  Snatching the login credentials of a locked computer just got easier and
+  faster, thanks to a technique that requires only $50 worth of hardware and
+  takes less than 30 seconds to carry out.  Rob Fuller, a principal security
+  engineer at R5 Industries, said the hack works reliably on Windows devices
+  and has also succeeded on OS X, although he's working with others to
+  determine if it's just his setup that's vulnerable.  The hack works by
+  plugging a flash-sized minicomputer into an unattended computer that's
+  logged in but currently locked.  In about 20 seconds, the USB device will
+  obtain the user name and password hash used to log into the
+  computer. Fuller, who is better known by his hacker handle mubix, said the
+  technique works using both the Hak5 Turtle ($50) and USB Armory ($155),
+  both of which are USB-mounted computers that run Linux.
+
+    [Also reported by Gene Wirchenko.  PGN]
+
+------------------------------
+
+Date: Fri, 09 Sep 2016 10:35:36 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Data hoarders are shining a spotlight on past breaches"
+  (Michael Kan)
+
+Anonymous Internet users routinely collect copies of stolen databases
+Michael Kan, PC World, 8 Sep 2016
+http://www.pcworld.com/article/3118357/security/data-hoarders-are-shining-a-spotlight-on-past-breaches.html
+
+opening text:
+
+Old data breaches carried out years ago are entering into the limelight
+thanks to anonymous Internet users like Keen.  Earlier this week, Keen, a
+data collector who runs the site Vigilante.pw, helped to uncover details
+about stolen data taken from the popular porn site Brazzers.  A copy of
+almost 800,000 accounts, probably originally hacked back in 2012, fell into
+his hands.
+
+The stolen database is just one of the many Keen has on file, in fact, and
+each one can involve thousands or even millions of Internet accounts.
+Vigilante.pw continually archives past data breaches as a way to warn the
+public.  "I figured it would be a good way to raise awareness about
+breaches," Keen said in an instant message.
+
+  [Note that 2012 was when hacks occurred in the recently released Dropbox
+  and Last.fm cases noted in RISKS-29.74.  PGN]
+
+------------------------------
+
+Date: Sun, 11 Sep 2016 20:41:39 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How Fake Stories Reported in Russia's News Media Regularly Fool
+  Everyone (Global Voices)
+
+via NNSquad
+https://globalvoices.org/2016/09/12/how-fake-stories-reported-in-russias-news-media-regularly-fool-everyone/
+
+  This story was originally written in Russian and published on the website
+  Noodleremover.news. The English translation below was written by RuNet
+  Echo's Kevin Rothrock.  Just last month, something all too typical
+  happened in Russia's news media: a perfect example of where fake news
+  stories originate, how they're spread, who is responsible, and who
+  believes them.
+
+------------------------------
+
+Date: Mon, 12 Sep 2016 12:36:42 +0200
+From: Bertrand Meyer <Bertrand.Meyer@inf.ethz.ch>
+Subject: Revote required; no glue code was involved
+
+The highly sensitive rerun of the Austrian presidential elections has been
+postponed because of bad glue that caused mail-in ballot envelopes to open.
+No computer apparently involved, but an illustration of the influence of
+technology [*] on elections. See http://bit.ly/2cSMrkH, in German. An
+earlier article in *The Washington Post* mentioned the postponement as a
+possibility: http://wapo.st/2c3ozpD
+
+  [* Low technology, at that.  PGN]
+
+------------------------------
+
+Date: Sun, 11 Sep 2016 22:03:58 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: A cautionary tale about humans creating biased AI models
+
+via NNSquad
+https://techcrunch.com/2016/09/11/a-cautionary-tale-about-humans-creating-biased-ai-models/?ncid=rss&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29
+
+  Natural language models need annotations that teach the models the
+  sentiment of a tweet, for example, or that a string of words is a question
+  about the status of an online purchase.  Before a computer can know or
+  "see" these things itself, it must be shown many confident positive and
+  negative examples (aka ground truth or gold standard data). And you can
+  only get that certainty from the right human annotators.  So what happens
+  when you don't consider carefully who is annotating the data? What happens
+  when you don't account for the differing preferences, tendencies and
+  biases among varying humans? We ran a fun experiment to find out.
+
+------------------------------
+
+Date: Wed, 7 Sep 2016 21:32:01 +0200
+From: Erling Kristiansen <erling.kristiansen@xs4all.nl>
+Subject: Re: You Can Now Chat With Your Hotel Room, and It's Only Going
+  to Get Better (RISKS-29.75)
+
+There is an intriguing article about how the the US Moscow ambassador was
+eavesdropped on by means of a wall ornament donated by the Russians and hung
+in the ambassador's office. The great seal had an embedded passive RF
+resonator, illuminated by a transmitter outside the building and
+broadcasting a voice-modulated signal.
+https://decorrespondent.nl/3789/Operation-Easy-Chair-or-how-a-little-company-in-Holland-helped-the-CIA-bug-the-Russians/116534484-2a3d7f11
+
+There is also the story of how a small Dutch company designed a similar
+device for the CIA that was installed in the Soviet embassy in The Hague.
+The operation was nicknamed Easy Chair.
+
+The rather long article in mainly about the company and people involved, but
+also contains some technical information about how these devices worked.
+
+  [EK, Dank U wel for the elaboration.  PGN]
+
+------------------------------
+
+Date: Wed, 7 Sep 2016 22:16:01 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Re: Big, make that BIG, military secrets leak in Australia/France
+  (Pam, RISKS-29.75)
+
+> Unfortunately your link to the article in *The Australian* is paywalled
+> for subscribers only.  Do you have another link? Paywalled links are not
+> optimal for a wide readership.
+
+When I initially sent that article to RISKS, the URL led to the complete
+article.  (I double checked with multiple systems and browsers).  However,
+the website moved the text behind the paywall.
+
+If you pull up your favorite search engine and simply type in "submarine
+secrets australian france" (without quotes) you'll get links to plenty of
+articles, many of which will display for free.
+
+------------------------------
+
+Date: Wed, 07 Sep 2016 13:53:55 -0400
+From: "rwolff" <rwolff@lupine.ca>
+Subject: Re: Parking garage makes it easier for stalkers (RISKS-29.73)
+
+It's not necessary to tie into the DMV computers to restrict tracking to the
+authorized person. From my experience, paid parking garages issue a ticket
+at time of entry that you hand in at exit, so the collector can verify how
+long you have been parked (and therefore the appropriate payment). If a
+serial number (run through a hashing routine to avoid the stalker guessing
+the serial number based on another ticket issued close to the time of the
+target's arrival) were printed on the ticket (camera can match plate to the
+ticket issued), require the person requesting tracking to enter both the
+license plate and the number from the ticket. The person who parked the car
+but can't remember exactly where in the garage they did so will have the
+ticket in their pocket/wallet/etc., and will therefore have access to the
+number printed on it. A stalker won't have the ticket, so it would be pure
+guesswork trying to find the number (tracking application should detect and
+slow down response in cases of multiple incorrect entries - and when a
+correct number is given, tell the user not only where their car is, but that
+there have been X attempts to guess the "password").
+
+------------------------------
+
+Date: Wed, 07 Sep 2016 08:05:37 -0500 (CDT)
+From: Harlan Rosenthal <harlan.rosenthal@verizon.net>
+Subject: Re: Falsehoods and disinformation (RISKS-29.73)
+
+ Falsehood flies, and the Truth comes limping after it;    - Jonathan Swift
+
+ A lie will fly around the whole world while the truth is getting its boots
+ on - attributed to Mark Twain, but probably of less certain provenance;
+
+--- used by Terry Pratchett as " A lie can run round the world before the
+    truth has got its boots on."
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.76
+************************

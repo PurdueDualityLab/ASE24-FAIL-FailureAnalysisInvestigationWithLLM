@@ -1,0 +1,446 @@
+precedence: bulk
+Subject: Risks Digest 30.15
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 21 February 2017  Volume 30 : Issue 15
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.15>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+German parents told to destroy Cayla dolls over hacking fears
+  (BBC News)
+Self-driving cars? Only 2578 problems (Gabe Goldberg)
+The previous owners of used smart cars can still control them via the
+  cars' apps (BoingBoing)
+"Safety, Security, and Privacy Threats Posed by Accelerating Trends
+  (Helen Wright and Ben Zorn)
+"Why Humans Distrust Algorithms--and How That Can Change"
+  (Cade Massey and Joseph Simmons)
+Serious Computer Glitches Can Be Caused By Cosmic Rays (Science)
+Re: Dutch election will be counted by hand (Erling Kristiansen)
+Re: Old Intel chips (Martin Ward)
+Re: Facebook Trending (Wols)
+Re: Google and Evil (Charles Cazabon)
+Re: WiReD (John Bechtel)
+Re: The AI Threat Isn't Skynet. It's the End of the Middle Class
+  (Michael Marking)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 17 Feb 2017 11:49:51 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: German parents told to destroy Cayla dolls over hacking fears
+ (BBC News)
+
+http://www.bbc.com/news/world-europe-39002142
+
+An official watchdog in Germany has told parents to destroy a talking doll
+called Cayla because its smart technology can reveal personal data.  The
+warning was issued by the Federal Network Agency (Bundesnetzagentur), which
+oversees telecommunications.
+
+Researchers say hackers can use an unsecure bluetooth device embedded in the
+toy to listen and talk to the child playing with it.
+
+But the UK Toy Retailers Association said Cayla "offers no special risk".
+In a statement sent to the BBC, the TRA also said "there is no reason for
+alarm".
+
+------------------------------
+
+Date: Thu, 16 Feb 2017 23:57:57 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Self-driving cars? Only 2578 problems
+
+The 2,578 Problems With Self-Driving Cars
+
+Last year, a self-driving car failed about every 3 hours in California,
+according to figures filed with the state's Department of Motor Vehicles.
+
+Every January, carmakers testing self-driving cars in California have to
+detail how many times their vehicles malfunctioned during the preceding
+year.  These so-called disengagement reports detail every time a human
+safety driver had to quickly take control of their car, either due to
+hardware or software failure or because the driver suspected a problem.
+
+The reports -- detailing 2,578 failures among the nine companies that
+carried out road-testing in 2016 -- give a unique glimpse into how much
+testing the different companies are doing, where they are doing it, and what
+is going wrong.  None of this year's disengagements resulted in an accident.
+
+http://spectrum.ieee.org/cars-that-think/transportation/self-driving/the-2578-problems-with-self-driving-cars
+
+Alphabet's spin-out company Waymo still has by far the biggest testing
+program -- its 635,868 miles of testing accounted for over 95 percent of
+all miles driven by self-driving cars in California in 2016.  Waymo's fleet
+of 60 self-driving cars reported a total of 124 disengagements, 51 of them
+due to software problems. That represents a sharp reduction in
+disengagements from the previous year, from 0.8 disengagements for every
+1,000 miles of autonomous driving down to just 0.2.
+<https://medium.com/waymo/accelerating-the-pace-of-learning-36f6bc2ee1d5#.2fldeeluo>
+
+------------------------------
+
+Date: Mon, 20 Feb 2017 09:40:02 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The previous owners of used smart cars can still
+  control them via the cars' apps (BoingBoing)
+
+NNSquad
+http://boingboing.net/2017/02/20/the-previous-owners-of-used.html
+
+It's not just that smart cars' Android apps are sloppily designed and thus
+horribly insecure; they are also deliberately designed with extremely poor
+security choices: even if you factory-reset a car after it is sold as used,
+the original owner can still locate it, honk its horn, and unlock its doors.
+Again, this is by design: because auto-makers are worried about lockout and
+hacks (for example, a valet resetting your car to lock out your app), only
+the original dealer can sever the car's connection with the cloud accounts
+of the original owner.  Charles Henderson, the leader of IBM's X-Force Red
+security division presented on this risk at last week's RSA conference in
+San Francisco (you can read his essay on the subject here). His ultimate
+recommendation is this counsel of despair: unless you are very
+technologically savvy, you should only buy new cars, not used ones.  It's
+not just cars, either -- the problem extends to smart appliances,
+thermostats, and other devices. Renting a house, staying in a hotel room, or
+buying a house without replacing its appliances and HVAC systems also
+exposes you to risks from the previous users of the devices in it.
+
+    [Arthur T also noted this:
+  How Previous Owners Can Potentially Still Access Their Cars
+  Long After They've Sold Them
+  http://jalopnik.com/how-previous-owners-can-potentially-still-access-their-1792534479
+    ]
+
+------------------------------
+
+Date: Fri, 17 Feb 2017 12:25:39 -0500 (EST)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: "Safety, Security, and Privacy Threats Posed by Accelerating Trends
+  in the Internet of Things"
+
+Helen Wright, Ben Zorn, CCC Blog, 16 Feb 2017,
+via ACM TechNews, 17 Feb 2017
+
+The Internet of Things (IoT) is having a multi-trillion-dollar impact on a
+range of industries, in addition to its significant societal impact on
+energy efficiency, health, and productivity.  Although interconnected smart
+devices have unforeseen potential benefits, the IoT also comes with
+increased risk and potential for abuse.  One major challenge of having a
+proliferation of IoT devices is the increased complexity that is required to
+operate them safely and securely, which creates new safety, security,
+privacy, and usability challenges.  A recent Computing Community Consortium
+Computing in the Physical World Task Force report highlights some of the new
+challenges created by the IoT, and argues issues related to security,
+physical safety, privacy, and usability are interconnected.  However, the
+report notes more research is needed to help manage the complexity, and to
+connect usability concerns with safety, security, and privacy.
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-12ae0x211101x071860&
+
+------------------------------
+
+Date: Fri, 17 Feb 2017 12:25:39 -0500 (EST)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: "Why Humans Distrust Algorithms--and How That Can Change"
+
+Knowledge@Wharton, 13 Feb 2017
+via ACM TechNews, 17 Feb 2017
+
+University of Pennsylvania professors Cade Massey and Joseph Simmons say
+their research into humans' distrust of algorithms is rooted in people's
+tendency to avoid following consistent, evidence-based rules in favor of
+their instincts and intuition.  "People want algorithms to be perfect...even
+though what we really want is for them to simply be a little better than the
+humans," Simmons notes.  The professors say one way to get people more
+comfortable with using algorithms is to give them a measure of control.  "We
+can't get people to use algorithms 100 percent, but we can get them to use
+algorithms 99%, and that massively improves their judgments," Simmons says.
+Massey notes models and algorithms are held to a higher standard than
+people, and he and Simmons say their next research focus will be on applying
+their theories of humans' aversion to using algorithms to real-world
+scenarios.
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-12ae0x211109x071860&
+
+------------------------------
+
+Date: Sun, 19 Feb 2017 17:03:34 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Serious Computer Glitches Can Be Caused By Cosmic Rays
+
+*Science* via NNSquad
+https://science.slashdot.org/story/17/02/19/2330251/serious-computer-glitches-can-be-caused-by-cosmic-rays
+
+  A "single-event upset" was also blamed for an electronic voting error in
+  Schaerbeekm, Belgium, back in 2003.  A bit flip in the electronic voting
+  machine added 4,096 extra votes to one candidate. The issue was noticed
+  only because the machine gave the candidate more votes than were possible.
+  "This is a really big problem, but it is mostly invisible to the public,"
+  said Bharat Bhuva. Bhuva is a member of Vanderbilt University's Radiation
+  Effects Research Group, established in 1987 to study the effects of
+  radiation on electronic systems.
+
+------------------------------
+
+Date: Sat, 18 Feb 2017 10:40:02 +0100
+From: Erling Kristiansen <erling.kristiansen@xs4all.nl>
+Subject: Re: Dutch election will be counted by hand (The Guardian)
+
+Voting by paper ballots counted by hand has been
+in force for a number of years in The Netherlands. What's new is
+that the aggregation of votes into regional and national totals
+will now also be done manually. This is not very clear in the
+Guardian article.
+
+This may delay the outcome a bit. But it seems to be accepted that a
+reliable result is more important than an early one.
+
+------------------------------
+
+Date: Sat, 18 Feb 2017 10:02:19 +0000
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: Old Intel chips (RISKS-30.14)
+
+>  [I am curious about chip flaws being more common than I thought.  Is anyone
+>  is a position to knowledgeably comment about this?]
+
+It seems that the designer of a safety-critical system should specify only
+Intel chips that are *at least* four years old: so that there is some hope
+that the most damaging bugs will have been shaken out!
+
+A chip less than four years old is basically still in "alpha test".
+
+------------------------------
+
+Date: Fri, 17 Feb 2017 22:09:59 +0000
+From: Wols Lists <antlists@youngman.org.uk>
+Subject: Re: Facebook Trending (RISKS-30.11)
+
+And this will work how? When even the mainstream news agencies are in
+the habit of (unintentionally) creating fake news?
+
+I'm reminded of a Radio 4 program a loooong time ago. There was a
+particularly juicy story in the news and a journalist decided to do some
+digging to find out where it had come from. Something to do with "a crisis
+in the Cabinet" with the Prime Minister (John Major, I think) having
+difficulties.
+
+A little bit of investigation quickly traced it back. The story originated
+in an interview with a Labour Shadow Minister, being interviewed about
+something else, and being pressed to provide information he didn't have, so
+he speculated. Oh!!!
+
+So the journalist dug into that story. To discover it, likewise, came from
+an interview with another, non-Labour, politician being pressed to speculate
+about another different story.
+
+To cut a long story short, I think the journalist traced this back through
+five or six different speculative stories, before he finally came to the
+real story that started it all, that had absolutely nothing to do with the
+story currently in the news.
+
+------------------------------
+
+Date: Fri, 17 Feb 2017 15:19:24 -0600
+From: Charles Cazabon <charlesc@pyropus.ca>
+Subject: Re: Google and Evil
+
+In the previous RISKS, Geoff Kuenning noted Google's creepy
+photo-notification, but closes with:
+
+> And IMHO it certainly violates their motto of "Don't be evil."
+
+Google silently dropped the "Don't be evil" mantra many years ago.  Here's an
+Article from 2009 noting they had dropped it:
+http://www.siliconvalleywatcher.com/mt/archives/2009/04/google_quietly.php
+
+Google has been quite evil for quite a long time.
+
+------------------------------
+
+Date: Mon, 20 Feb 2017 12:21:50 +0000
+From: John Bechtel <john@bechtel.me.uk>
+Subject: Re: WiReD
+
+Tiresome as it may be that some sites have ad-blocker-blockers, they have to
+pay their bills.  Articles are what Wired sells -- why should they give
+content away?  If you don't like their requirements, don't view their
+content.  I don't see asking me to view ads or pay for access as ransomware,
+any more than I think its unfair that my supermarket charges me for
+groceries.
+
+In RISKS there's [sometimes] a note about a paywall -- this is essentially
+the same thing.
+
+------------------------------
+
+Date: Mon, 20 Feb 2017 18:21:30 +0000
+From: Michael Marking <marking@tatanka.com>
+Subject: Re: The AI Threat Isn't Skynet. It's the End of the Middle
+  Class (WiReD, RISKS-30.14)
+
+  [via Dave Farber's IP]
+
+The WiReD article [URL only, in RISKS-30.14] is misleading and incomplete,
+and to a great extent incorrectly identifies the problem, for several
+reasons.
+
+(1) The problem isn't AI, or other forms of automation, it's the use to
+which AI and automation are put and the basic mechanisms for allocating and
+deploying resources in our society.  For example, if AI were to be used to
+benefit the general population (healthcare, education, or other altruistic
+use) without an implication or requirement that anyone need profit by it,
+then one implication of the article -- that the continued destruction of the
+middle class will to a great extent be the fault of AI -– would vanish.
+Automation doesn't have to destroy jobs: we only say that, so we don't have
+to make difficult choices. We pretend that there's no choice. We simply
+don't want to deal with it. Yes, there are hardships, but as long as those
+hardships are someone else's, we don't care.
+
+As it stands, society surrenders to capital most decisions about resource
+allocation, and capital naturally acts in its own best interests. That is
+the problem.
+
+(2) The assumption that `jobs' are the only way to allocate resources is
+false. It derives from another false assumption, that the wealthy are
+morally entitled to all profits, interest, and rents. People blindly believe
+that the wealthy -- who acquired their wealth from the labours of the
+working class in the first place -- are `trapped' due to economic
+circumstances into unfortunate decisions that require job
+destruction. Nowadays, in our culture, people believe in the positive
+morality of interest (formerly, `usury') and profits and rents as surely as
+they once believed in the divine, inherited right of kings to rule over the
+lesser folk. These `rights' of the upper class, the owners, and the
+privileged have no basis in science or honest reasoning.
+
+There is plenty of work to be done, and there is plenty of wealth to feed,
+clothe, and shelter everyone, but with all of our immense knowledge we can
+think of only one way to address both issues: jobs offered by capitalists on
+the condition that they enable the capitalists to maximize their own
+accumulation of surplus value. Capitalists and landlords hold the common
+welfare hostage, demanding ransom. Once you let go of that connection, once
+you abandon that assumed precondition, many possibilities come to mind,
+including ways to deal with workers displaced by automation.
+
+The original economic sin was handing over the surplus to the few, and
+society has been in Purgatory and in Hell ever since.
+
+(3) The article wrongly implies that this is a new problem, that it started
+to show up in the 1980s. In fact, automation and machinery deployed by the
+capitalist system, which limits workers to market-minimized wages (including
+`fringe benefits' as part of a compensation package) has been forcing
+millions into poverty for centuries. Usually, the worst consequences are
+safely out of view, in the hinterlands of the empire or in the slums of our
+cities, where we aren't compelled to see them. AI is just another kind of
+capital resource, along with machine tools, farmland, workers, and pig
+iron. In their quests for profits, firms have been minimizing the costs of
+production factors for a long time. Now, however, the threat is closer to
+home.
+
+Think of the sewing machine. A sewing machine can make a family more
+independent and better off. On the other hand, sewing machines in sweatshops
+can provide poverty wages for many, profits for a few, and destroy
+handicraft industries in far-away places at the same time. The way we have
+employed technology wasn't mandatory: society had choices.  AI and other
+automation offer similar opportunities for good and for bad.
+
+Where were these concerns when the lower classes, including those in the
+colonies and neo-colonies, were being thrown out of work? Where are those
+concerns now, as the poor and working classes sink lower, year after year?
+We don't give a damn about the lot of the poor or the working class in the
+Mideast, in Latin American, in Africa, or at home, as long as we middling
+sorts get our cut of their resources and of the fruits of their labours. We
+in the middle work for the rich, on commission: we have our incentives.
+
+Meanwhile, we have been conditioned by our commercial culture into believing
+that Bernie Sanders is a socialist, that the Soviet Union was communist, and
+that we live in a democracy. (I hope that most of the readers of this list
+know that all three beliefs are false.) Society, being willingly and
+comfortably ignorant, is thus poorly equipped to discuss this problem, let
+alone to `rise up' (to use McAfee's words, quoted in the article) and to
+rectify things.
+
+Again, the problem is not AI. Long ago we handed over to the upper class the
+power to rule over us middle, working, and lower class subjects. However, as
+Aristotle put it in his Politics, ``But, although it may be difficult in
+theory to know what is just and equal, the practical difficulty of inducing
+those to forbear who can, if they like, encroach, is far greater, for the
+weaker are always asking for equality and justice, but the stronger care for
+none of these things.'' (Part 3, tr. Benjamin Jowett) We traded up, for the
+larger size problem.
+
+The problem is real. It is political, moral, social, economic, and ethical.
+But it is not technological.
+
+(BTW, the slides, by McAfee, linked from the article, are interesting, and
+worth examining, but they are short on detail and I can't draw conclusions
+from them alone. He doesn't explain how his plausible conclusion, that
+automation of routine tasks, accounts for the phenomenon with any direct or
+detailed data on specific job categories; he classifies, in the slides, jobs
+merely by high, medium, and low income. Subtext: you have to buy his new
+book. His conclusion requires a logical leap I can't bring myself to make. I
+hope that he's not equating `medium' income jobs with `middle class' jobs,
+that's not the way most researchers label those kinds of things; if that's
+what he's doing, it's very misleading. Maybe the misnomer arises in the
+WiReD reporting. Nor does he discuss possible additional social and
+financial causes for the phenomenon, causes which have been considered
+elsewhere. The first chapter of his book, co-authored with Erik
+Brynjolfsson, is on-line; it doesn't look too promising with regard to hard
+data: he deals more in summaries and conclusions than in raw data. None of
+this means that AI and other automation aren't to some extent causing the
+`spread' problem, it's merely that he doesn't make the case that the
+phenomenon is that simple. I conclude that it's an oversimplification. Kind
+of like a lot of TED talks, you can now go on home, being inspired and
+informed, knowing that you've met your obligation to go to church this week,
+but there's nothing in your own life that you, yourself, need to change, and
+nothing that you can do.)
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.15
+************************

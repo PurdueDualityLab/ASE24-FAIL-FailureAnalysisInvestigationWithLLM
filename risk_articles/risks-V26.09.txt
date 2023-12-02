@@ -1,0 +1,650 @@
+precedence: bulk
+Subject: Risks Digest 26.09
+
+RISKS-LIST: Risks-Forum Digest  Saturday 3 July 2010  Volume 26 : Issue 09
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.09.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Annual Seasonal Slowdown]
+Jumping the Walrus: When Risk Management Goes Bad  (Robert Charette)
+NYC hospital and contractor/shipper lose PII on 130,495 (Danny Burstein)
+Death with Dignity depends on one IC card field (jidanni)
+Online banking risks (Ellen Messmer via Jeremy Epstein)
+Software auto--updaters (Mabry Tyson)
+AT&T e-mail address breach (Rob McCool)
+Best practices for smart grid privacy (David Magda)
+Location services: risks of oversharing (Paul F. Roberts via Gene Wirchenko)
+Previous user's data on my "new" GPS device (George Mannes)
+Re: Computers and Stupidity (Rob Seaman)
+GPS humor (Steven Bellovin)
+Mitchell & Webb Humour Clip on Identity Theft (Gene Wirchenko)
+Risks of too much emphasis on electronic security (Tony Lima)
+When you're on vacation, your cruise line knows (Jeremy Epstein)
+So you thought Linux was safe... (Mike Rechtman)
+Let Your Phone Do the Walking? (Gene Wirchenko)
+Re: System failures in offshore drilling processes (Rob Seaman)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 2 Jul 2010 06:42:13 -0400
+From: "Robert Charette" <Charette@itabhi.com>
+Subject: Jumping the Walrus: When Risk Management Goes Bad 
+
+Back in the 1970s, there was a very popular show called "Happy Days,"
+starring Ron Howard and Henry Winkler, who played Arthur "Fonzie"
+Fonzarelli. Five years into the series, an episode aired in which Fonzie is
+shown improbably water skiing and jumping a shark to show his bravery. A few
+years later, the phrase "Jumping the Shark" came to mean that point in a
+television series where the program had reached its peak, and it was going
+to be all downhill from then on until it got canceled.
+
+I think risk management in the oil industry has reached that moment, except
+in this case, I think the appropriate phrase is "Jumping the Walrus."
+
+According to BP PLC's 582-page 2009 spill response plan for the Gulf of
+Mexico, walruses along with sea otters, sea lions, and seals are among the
+"sensitive biological resources" that could be harmed by an oil discharge
+from its operations in the Gulf. The only problem is that walruses, sea
+otters, sea lions, and seals don't happen to live in the Gulf of Mexico, and
+haven't for a considerable period of time -- like millions of years.
+
+The spill plan also lists a Japanese home shopping site as one of BP's
+primary providers of equipment for containing a spill, a dead professor as
+one of its wildlife experts to consult with in the event of spill, and other
+outrageous gaffes.
+
+BP was not alone in worrying about walruses. Chevron, ConocoPhillips, and
+ExxonMobil's oil discharge response plans in the Gulf of Mexico also listed
+those poor walruses as potential victims of a spill.
+
+The US government must have been worried about those walruses, too, since
+those in government accountable for reviewing and approving the oil
+companies' response plans didn't say a word about them. Maybe the US
+government officials at the Minerals Management Service decided that, even
+though walruses, sea otters, sea lions, and seals didn't currently live in
+the Gulf of Mexico, they might someday. Better to be safe than sorry, right?
+
+Well, the reality, of course, is that the oil companies outsourced the
+writing of their oil response plans to a consulting group, and didn't bother
+to read the plans to see if they made any sense.
+
+What worries me more is that the possibility that those responsible for risk
+management at the oil companies (and US government) did read these plans and
+didn't catch any of the errors. If that is the case, then we may have a
+deeply disturbing case of the Dunning-Kruger effect at work: the
+incompetence of oil company and government risk managers masked their
+ability to recognize their own incompetence at managing risk. 1 
+
+When drilling oil wells at ocean depths of 5,000 feet or more,
+risk-management competence is something I really want those oil companies
+and government officials that oversee them to possess.
+
+It is pretty clear that oil spill risk management wasn't taken seriously at
+all by BP, or by most of the other major oil companies drilling in the Gulf.
+In congressional hearings, oil industry officials admitted that the industry
+is poorly equipped to handle oil spills of any size in the Gulf, and that is
+why the industry tries to prevent spills from happening. The industry also
+viewed its oil-well blowout preventers as foolproof safety mechanisms, even
+though they fail regularly. However, the industry officials also admitted
+that less than 0.1% of corporate profits are spent on improving offshore
+drilling technologies, even as the risks of drilling offshore have increased
+significantly over the past decade.
+
+Oil spill risk management was not taken seriously by the US government,
+either. Even though the MMS has sponsored many, many studies into the risks
+of offshore drilling, no one seems to have bothered to read and then act on
+them. Like what used to be said about software reuse libraries, risk
+management reports were checked in but never checked out.
+
+We can only hope that risk management will be taken a wee bit more seriously
+in the future by both oil companies and the US government when it comes to
+drilling in deep water or other sensitive environmental areas, including
+those where walruses may actually live.
+
+However, I don't doubt for one minute that other industries pay other
+consulting companies to write their risk management reports as well -- and
+don't bother to read them until after something goes terribly wrong. I see
+it all the time on IT projects, for example.
+
+So, I would like to propose that in the future, whenever risk management is
+incompetently performed, done just to meet some requirement, isn't taken
+seriously, or is plain lackadaisical, we describe it with the phrase,
+"Jumping the Walrus." Maybe that will remind those involved that the
+consequences and public ridicule are likely awaiting them next.
+
+1. The Dunning-Kruger Effect basically says that incompetent people are too
+   incompetent to realize they are incompetent. See: Kruger, Justin, and
+   David Dunning. " Unskilled and unaware of it: How difficulties in
+   recognizing one's own incompetence lead to inflated self-assessments,"
+   Journal of Personality and Social Psychology, Vol. 77(6), Dec 1999,
+   1121-1134.
+
+Appeared in the 1 July 2010 Cutter Consortium Enterprise Risk Management &
+Governance (ERM&G) E-Mail Advisor - used with permission.  Robert Charette
+
+------------------------------
+
+Date: Tue, 29 Jun 2010 22:34:07 -0400 (EDT)
+From: Danny Burstein <dannyb@panix.com>
+Subject: NYC hospital and contractor/shipper lose PII on 130,495
+
+Event occurred in March, but is only now coming out.
+Per the hospital's website [a]:
+Notification from Lincoln Hospital
+
+Sometime between March 16 and 24, 2010, a weekly shipment of seven 
+duplicate compact disks (CDs) in the custody of FedEx, were lost while 
+being transported to Lincoln Hospital. These CDs were created by Siemens 
+Medical Solutions USA, Inc. ("Siemens"), a company that performs billing 
+and claims processing for Lincoln. The missing CDs contained some 
+protected health and personal information of patients including name, 
+address, social security number, medical record number, patient number, 
+health plan information, date of birth, dates of admission and discharge, 
+diagnostic and procedural codes and descriptions, and possibly a driver's 
+license number if provided.
+
+  Some more info at the US Dep't of Health and Human Services [b]:
+
+Lincoln Medical and Mental Health Center
+State:	   New York
+Business Associate Involved:	   Siemens Medical Solutions, USA, Inc.
+Approx. # of Individuals Affected:	   130,495
+Date of Breach:	   3/24/10
+Type of Breach:	   Loss
+
+a. http://www.nyc.gov/html/hhc/lincoln/html/news/public_notice_20100604.shtml
+
+b. http://www.hhs.gov/ocr/privacy/hipaa/administrative/breachnotificationrule/postedbreaches.html
+
+  [The hospital website says the CDs were "password protected". This seems
+  to be of limited value. The more detailed letter linked to from the main
+  website says that "... the CDs are not protected by a form of technology
+  that renders them unreadable..."]
+
+------------------------------
+
+Date: Sun, 20 Jun 2010 05:10:58 +0800
+From: jidanni@jidanni.org
+Subject: Death with Dignity depends on one IC card field
+
+Perhaps this field on the card's IC chip is only one bit wide.  In a worst
+case scenario, a cosmic ray comes down, flips the bit, and Grandma is a
+[Non/]Goner...
+http://www.taipeitimes.com/News/taiwan/archives/2010/06/18/2003475777 "If
+passed by the [Taiwan] legislature, the law would enable terminally ill
+individuals with hospice and palliative medical care indicated on their
+health insurance cards[' IC chip] to request that physicians do not provide
+cardiopulmonary resuscitation (CPR) in the event of a cardiac arrest, even
+if they do not have the actual certification with them."
+
+------------------------------
+
+Date: Fri, 18 Jun 2010 17:36:38 -0400
+From: Jeremy Epstein <jeremy.epstein@sri.com>
+Subject: Online banking risks (Ellen Messmer)
+
+Ellen Messmer, *Network World*, 17 Jun 2010
+http://www.networkworld.com/news/2010/061710-online-banking.html 
+
+In online banking and payments, customers' PCs have become the Achilles'
+heel of the financial industry as cyber-crooks remotely take control of the
+computers to make unauthorized funds transfers, often to faraway places.
+
+That's what happened to the town of Poughkeepsie in New York earlier this
+year to the tune of $378,000 carried out in four unauthorized funds
+transfers from the town's account at TD Bank. First discovered in January,
+the town was able to finally get the full lost amount restored by March,
+according to public records, through sometimes tense interaction with the
+bank.
+
+Though the town declines to discuss the matter, this high-dollar cyberheist,
+along with a slew of other incidents in the past year, has many bank
+officials worried. They're concerned that the customer desktop, especially
+in business banking where dollar amounts are high, is increasingly the weak
+link in the chain of trust.
+
+Other cyberheists that have reached the public eye include Hillary Machinery
+of Plano, Texas, for $801,495; Patco Construction for $588,000; Unique
+Industrial for $1.2 million; and Ferma Corp. for $447,000. Schools and
+churches aren't immune, either. One FBI report from late last year said the
+agency gets several new victim complaints each week. [...]
+
+Jeremy Epstein, SRI International, 1100 Wilson Blvd, Suite 2800
+Arlington VA  22209  jeremy.epstein@sri.com 703-247-8708
+
+------------------------------
+
+Date: Tue, 29 Jun 2010 19:46:22 -0700
+From: Mabry Tyson <Tyson@ai.sri.com>
+Subject: Software auto-updaters
+
+I'd like to see a campaign to change the nature of auto-updaters (such as MS
+Word or Adobe).
+
+I just had a piece of software run that claimed it was Adobe and wanted to
+do an update.  I saw no way of confirming it really was from Adobe or that
+it updated the Adobe software with stuff it got from Adobe.  It seems so
+ripe for abusers to spoof such programs.
+
+I would suggest that these features should only run from within the programs
+they intend to update.  So, if I start up Adobe Acrobat, it will check for
+an update and allow me to do it now, or when the app is quit, etc.  If my
+Adobe Acrobat is not yet compromised, then I can trust it (maybe!) to get a
+valid update and install it.  But I don't want some other random program
+claiming to do an Adobe Acrobat update, but actually does other things it
+shouldn't.
+
+Lots of software already allows for updates from within the application.
+Let's get rid of separate updaters and update from within.
+
+  [And I get skype messages claiming there's malware on my system
+  and please click to upgrade.  PGN]
+
+------------------------------
+
+Date: Thu, 10 Jun 2010 12:19:56 -0700 (PDT)
+From: Rob McCool <robm@robm.com>
+Subject: AT&T e-mail address breach
+
+http://www.dailytech.com/ATT+Accidentally+Shares+114000+iPad+3G+Buyers+Email+Addresses/article18670.htm
+
+Via the article:
+
+In what is one of the biggest leaks of e-mail addresses in recent history, a
+group called Goatse Security has published the personal e-mail addresses of
+114,067 iPad 3G purchasers according to Gawker.  The e-mail addresses were
+obtained in what appears to be a legal fashion by querying a public
+interface that AT&T accidentally left exposed.
+
+The names of victims immediately draw attention to the story.  Among them
+are New York Times Co. CEO Janet Robinson, Diane Sawyer of ABC News, film
+mogul Harvey Weinstein, New York City Mayor Michael Bloomberg, and even
+White House Chief of Staff Rahm Emanuel.  A number of CEOs, CFOs, and CTOs
+also had their e-mail addresses exposed by the leak.
+
+------------------------------
+
+Date: Wed, 16 Jun 2010 18:31:11 -0400
+From: David Magda <dmagda@ee.ryerson.ca>
+Subject: Best practices for smart grid privacy
+
+The Ontario Privacy Commissioner has released a document detailing the  
+best practices for protecting data:
+
+http://tinyurl.com/24q42qk
+http://www.ipc.on.ca/english/Resources/News-Releases/News-Releases-Summary/?id=968
+
+Via:
+
+http://tinyurl.com/2a3kve4
+http://blog.privcom.gc.ca/index.php/2010/06/16/you-might-be-interested-in-32/
+
+------------------------------
+
+Date: Thu, 17 Jun 2010 15:07:35 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Location services: risks of oversharing (Paul F. Roberts)
+
+Paul F. Roberts, Location services: The security risks of oversharing
+The vulnerability of Web applications and the sensitive nature of 
+personal location information will prove a disastrous combination
+InfoWorld Home / *InfoWorld Tech Watch*, 17 Jun 2010
+http://www.infoworld.com/t/mobile-security/location-services-the-security-risks-oversharing-457
+
+Selected text:
+
+As soon as a new technology gets traction, smart criminals figure out a way
+to misapply it. And one of the hottest features in the mobile world,
+location awareness, is next in line for exploitation.
+
+Services like Foursquare, Loopt, and Gowalla, which combine user-generated
+reviews with social networking, provide particularly attractive targets. The
+idea is to use your mobile device to let your followers know in real time
+what cool places you're patronizing and the excellent food you're
+eating. Stores and shop owners love it -- it's no-cost marketing in line
+with the current zeitgeist of user-driven info from people you trust.
+
+Targeted social engineering attacks that employ real-time or historical
+geolocation data. For example, an employee at a leading tech/pharma/defense
+contractor reveals, via Foursquare, his or her regular visits to the local
+coffee shop, where s/he is targeted by social engineers looking to gain
+access to the corporate network, or the victim of a real-world theft
+(laptop, mobile device) that yields sensitive data.
+
+------------------------------
+
+Date: Mon, 21 Jun 2010 01:46:25 -0400
+From: George Mannes <gmannes@gmail.com>
+Subject: Previous user's data on my "new" GPS device
+
+On Sunday afternoon I was setting up my new Father's Day present: a Garmin
+GPS-equipped wristwatch-type heart rate monitor. One of its neat features is
+that it can record all sorts of data about my runs: Distance, pace, heart
+rate, and even a map showing the route run during each workout. After I
+established the links for the Garmin to my PC--the company lets you save the
+data on your computer and/or on its Garmin Connect website--I found that
+records of five workouts from my watch had been uploaded into my new Garmin
+Connect account.
+
+This seemed odd to me, since I'd only used the watch once and I had erased
+that workout before connecting the heart-rate monitor to my PC. My first
+thought: This was dummy information pre-filled at the factory, or maybe the
+monitor had been tested before shipping. Upon closer inspection, I figured
+out that I had a slightly-used unit: Judging from the date and Google map
+that were part of each workout record, someone in Escondido, California had
+played with it briefly on Saturday, May 23, and then on May 24 had used it
+to monitor two separate 35-minute walks. My guess is that the person then
+decided he/she didn't like the Garmin and later sent it back to the online
+retailer from which my family ended up buying the unit for me.
+
+The really creepy part for me (and likely creepier for the previous user of
+the Garmin if he/she knew) is that I know exactly where that user lives.
+After I switched the Google Maps view to the aerial photo option, I could
+zoom in and see exactly which house on which street in Escondido the user
+walked out of before starting the timer. I could even see that the person
+exited the house through the back yard, not the front door.
+
+The RISKS? Well, the previous user of the Garmin, in a worst-case scenario,
+has just enabled a potential stalker. I remember reading somewhere (maybe it
+was on COMP.RISKS) about the potential dangers of entering your home
+address, rather than a nearby intersection, in the "Home" slot of GPS
+devices used for automobile navigation: Should someone steal a car with a
+GPS in it off the street or from a parking lot, the thief not only knows
+exactly where the owner lives, but also has reason to believe that the home
+is empty and unguarded.
+
+A more immediate (but less sinister) RISK, however, is to careless retailers
+who can't quite so easily get away with representing nearly new merchandise
+as absolutely new. When we called the seller to explain the situation, the
+company gave us the option of returning the unit for a brand-new one or
+keeping the current unit and taking a 20% refund. The unit seems to be
+working properly and looks new, so we took the refund. One reads a lot about
+how GPS can pose various RISKS to the user; in this case, it saved one
+user's family 30 bucks.
+
+------------------------------
+
+Date: Fri, 11 Jun 2010 23:36:28 -0700
+From: Rob Seaman <seaman@noao.edu>
+Subject: Re: Computers and Stupidity (RISKS-26.08)
+
+The GPS-while-walking story came up as a FB thread, with a consensus
+unfriendly to the walker.  Here is my response, edited for brevity:
+
+"Unintended consequences are almost by definition not clear cut. Just a few
+of the mitigating issues here:
+
+1) Following walking directions is not the same as simply going for a walk -
+   one can start out along a path that is appropriate to one's competence
+   and incrementally get further and further into trouble, perhaps well past
+   a point of no return that makes it extremely unattractive to turn
+   back. In this case the walker likely did not know that "Dear Valley
+   Drive" was a highway until she reached that point.
+
+2) One might be skeptical of the route depicted in the article - but could
+   find other paths in city and countryside from coast-to-coast with much
+   more subtle dangers for walkers. A service for drivers on roadways
+   benefits from assumptions (of maintenance and standard signage, for
+   instance) that don't apply for pedestrians.
+
+3) Motor vehicles share a minimum level of competence (or are rendered
+   illegal for public thoroughfares). Drivers must be licensed, as imperfect
+   as that process is. The class "walkers" covers a vast range of physical
+   capabilities. Perhaps we should know our own limits - but the only way to
+   calibrate this against such a service (or against a map or a friend's
+   directions) is trial and error. Each newly proffered path is a new
+   adventure.
+
+4) Given such factors, consider the implications of Leslie Lamport's classic
+   white paper, "Buridan's Principle" (http://bit.ly/6KaFJi). Given a
+   choice, a person can reach a point - must reach a point given the mean
+   value theorem - in which either of two choices is acceptable, but
+   dithering produces a catastrophe.
+
+I am positive that this one will show up on the ACM's RISKS Digest."
+
+Rob Seaman, National Optical Astronomy Observatory
+
+------------------------------
+
+Date: Fri, 2 Jul 2010 06:47:05 -0400
+From: Steven Bellovin <smb@cs.columbia.edu>
+Subject: GPS humor
+
+http://www.gocomics.com/closetohome/2010/07/02/
+		--Steve Bellovin, http://www.cs.columbia.edu/~smb
+
+  [Steve thought I might be amused by this seeming summary of many
+  past GPS RISKS items.  I thought our readers might also.  PGN]
+ 
+------------------------------
+
+Date: Thu, 01 Jul 2010 13:52:02 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Mitchell & Webb Humour Clip on Identity Theft
+
+This makes more sense than some security measures:
+  http://www.youtube.com/watch?v=CS9ptA3Ya9E
+
+  [Somewhat regressive?  But perhaps typical of popular misunderstanding
+  of the risks by RISKS non-readers.  PGN]
+ 
+------------------------------
+
+Date: Tue, 29 Jun 2010 18:33:49 -0700
+From: Tony Lima <tony.lima@csueastbay.edu>
+Subject: Risks of too much emphasis on electronic security
+
+Today I received a small order from Amazon.com.  I was happy with the item,
+but later my wife glanced at the packing slip and asked, "What IS all this
+stuff?"  A quick look proved that there was no resemblance between what was
+actually in the box and the packing slip.  Further, the packing slip
+contained the full name and address of the intended recipient. I got the
+wrong packing slip but the correct item. Without much work (whitepages.com
+and Facebook) I was able to find out the intended recipient's home phone
+number and full middle name.  I imagine a little additional work would have
+revealed even more, but somehow having the word "stalker" attached to my
+name is not appealing.
+
+The RISK?  Something we've heard all too often before.  Emphasizing
+electronic security at the expense of physical security is not a good
+tradeoff.
+
+Oh, yes, when I tried to find a link on the Amazon web site to report this
+issue, I was confronted with thousands of links, mainly to FAQ pages.  If I
+can figure out a way to contact the intended recipient of the packing slip
+without scaring them half to death, I plan to do so.
+
+Prof. Tony Lima, Dept. of Economics, CSU, East Bay, tony.lima@csueastbay.edu
+http://www.cbe.csueastbay.edu/~alima (510) 885-3889
+
+------------------------------
+
+Date: Sun, 13 Jun 2010 12:37:49 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: When you're on vacation, your cruise line knows
+
+Burglars have always taken advantage of when people are away to perform
+breakins.  A cruise line employee is charged with doing it using high tech
+assistance -- looking through cruise line reservations to find empty houses.
+The string of burglaries was identified because all of the victims were on
+Royal Caribbean cruises at the time of the breakins.  It was somewhat easier
+to identify her because she had used her access card to get into the cruise
+line's building and computers at odd hours.
+
+Of course the same technique is feasible with airline or hotel reservations,
+but I'm guessing it would be more work since people are more likely to leave
+an empty house when they go on a cruise than simply flying somewhere (which
+is less likely to be a whole family).
+
+Nothing really new - just updating an old criminal technique using new
+information gathering to "improve" the odds of success.
+
+http://www.cnn.com/2010/TRAVEL/06/11/vacationers.burglarized/index.html?hpt=T2
+
+------------------------------
+
+Date: Mon, 14 Jun 2010 21:02:53 +0300
+From: Mike Rechtman <mike@rechtman.com>
+Subject: So you thought Linux was safe...
+
+The perception that Linux is impervious to security attacks has taken a knock 
+with the revelation that a popular open source version of IRC Server has been 
+left open to attack for more than six months.
+
+http://news.techworld.com/security/3226723/linux-trojan-hits-unreal-irc-raises-malware-concerns/?olo=rss
+(Watch out for line breaks)
+
+and
+http://forums.unrealircd.com/viewtopic.php?t=6562
+
+Mike R. Home: http://alpha.mike-r.com/
+QOTD: http://alpha.mike-r.com/php/qotd.php
+
+------------------------------
+
+Date: Tue, 15 Jun 2010 13:43:34 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Let Your Phone Do the Walking?
+
+InfoWorld Home / Security Central / Security Adviser / Unintended 
+cell phone calls put privacy at risk
+June 15, 2010
+Unintended cell phone calls put privacy at risk
+Supersensitive touchscreens can lead to accidentally sharing 
+conversations with the wrong people
+http://www.infoworld.com/d/security-central/unintended-cell-phone-calls-put-privacy-risk-158?source=IFWNLE_nlt_blogs_2010-06-15
+
+Selected Paragraphs:
+
+I called my brother last week, and we had a 30-minute phone
+conversation. Over the next four days, and unbeknownst to him, his cell
+phone called me back five additional times.
+
+Once I could hear him talking work with a coworker. Another time he was
+talking with our mother. Two other times, it sounded like his wife and young
+kids were chatting. The most recent time was notable in that he was having a
+private interaction that I am pretty certain neither he nor his wife meant
+to be public.
+
+I wonder how many company conversations, work secrets, and personal affairs
+have been revealed by unintended dialing? Even more thought provoking: What
+type of feature would be needed to prevent it? I say this because my last
+two cell phones had features meant to prevent unwanted dialing, but they
+haven't proven to be 100 percent effective.
+
+------------------------------
+
+Date: Sat, 12 Jun 2010 01:03:14 -0700
+From: Rob Seaman <seaman@noao.edu>
+Subject: Re: System failures in offshore drilling processes (RISKS-26.08)
+
+I strongly agree with the spirit of Steve Loughran's observation regarding
+the responsibilities of software engineering:
+
+There was also one incident triggered by corrupted data transfer between
+"terminals", causing the drilling rig getting invalid information about
+where it should be, causing it to move. That is something where the blame
+can be laid direct the door at we software developers.  Checksums: they are
+there for a reason.
+
+But I take exception to the implication that additional bit length is always
+better for a specific application:
+
+Even basic CRC32 checks catch most problems, and while MD5 and SHA-1
+checksums are starting to look cryptographically weak, they certainly catch
+data corruption.
+
+A cyclic redundancy check is more sensitive to certain bit errors than a 2's
+complement checksum - but is therefore rendered less sensitive to other bit
+pattern errors.  Hashing is hashing, however.  Even a 16-bit hash,
+appropriately used, will catch all but 1 in 65,000 errors (significantly
+more than "most").  A 32-bit hash can detect 1 in 4 billion errors.  But how
+many errors any hash will *miss* depends on the likely frequency of errors.
+
+More frequent but shorter checksums may well be better than infrequent
+longer checksums.  The resulting design questions key more on the logistics
+of implementing a checksum (or other error detection/correction coding
+technique) than on simply asserting that SHA-1 > MD5 > CRC > sum.  In
+particular, cryptographic hashes are much more resource intensive than
+checksums.
+
+The 16-bit 1's complement checksum used by TCP/IP is surely the most widely
+deployed checksum on the planet.  Its shortcomings are primarily a question
+of enforcing compliance.  Brevity is appropriate for efficient handling of
+similarly brief messages.  The 1's complement checksum also has the nifty
+feature of being embeddable in the protected packet.
+
+Whatever the hash functions, the engineering question they share in common
+is having detected corruption, what should the system do about it?  A
+corrupted data transfer is either the result of a noisy channel or often of
+some more fundamental communications error.  Checksums are a great tool for
+detecting problems - cleaning up those problems may require manual
+intervention.
+
+Rob Seaman, National Optical Astronomy Observatory
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.09
+************************

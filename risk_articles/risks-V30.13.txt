@@ -1,0 +1,759 @@
+precedence: bulk
+Subject: Risks Digest 30.13
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 7 February 2017  Volume 30 : Issue 13
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.13>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Russians Engineer A Brilliant Slot Machine Cheat - And Casinos Have No Fix
+  (WiReD)
+TLS vulnerability in popular iOS apps allows user data to be intercepted in
+  man-in-the-middle attack (Malcolm Owen)
+Popular apps with 18 million combined downloads in the Apple App Store
+  found vulnerable to silent data interception (Greg Barbosa)
+"Dozens of iOS apps fail to secure users' data, researcher says"
+  (Michael Kan)
+Security flaws in Pentagon systems "easily" exploited by hackers
+  (Zack Whittaker)
+Data from man's pacemaker led to arson charges (Lauren Pack)
+Vizio to Pay $2.2M to Settle Charges it Illegally Collected Data from
+  TV Owners (Gabe Goldberg)
+The Truth about Unix -- my version, anyway -- for comic relief
+  (Don Norman)
+"Vulnerability in Microsoft SMBv3 protocol crashes Windows PCs"
+  (Woody Leonhard)
+"GitLab database goes out after spam attack" (Paul Krill)
+Cisco: Spam is making a big-time comeback (Tom Greene)
+How WhatsApp is fighting spam after its encryption rollout (Techcrunch)
+Trump's Vote Fraud Guru is Registered in Three States (AP)
+Re: Hackers Use New Tactic at Austrian Hotel: Locking the Doors
+  (Amos Shapir)
+Re: Network-enabled ICBMs for the USAF? (Amos Shapir)
+Re: alt-facts.net site (AT, LW)
+Re: Nim Language Draws From Best of Python, Rust, Go, and Lisp
+  (Dimitri Maziuk, Arthur Flatau, Alexander Klimov)
+Re: Quantum Computers Versus Hackers, Round One (Rob Slade, Werner U)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 6 Feb 2017 22:53:51 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Russians Engineer A Brilliant Slot Machine Cheat - And Casinos Have
+  No Fix
+
+https://www.wired.com/2017/02/russians-engineer-brilliant-slot-machine-cheat-casinos-no-fix/
+
+  "At the same time, most casinos can't afford to invest in the newest slot
+  machines, whose PRNGs use encryption to protect mathematical secrets".
+  These folks did what others have done in the past -- bought one of the
+  machines and reverse engineered it.  In this case the PRNG.
+
+Also see
+Two-armed Bandits, 7 Feb 2017 (thanks to Tom Lambert)
+This item also has an interesting sequence of following comments.
+  http://www.metafilter.com/164983/Two-armed-Bandits
+
+  ...the operatives use their phones to record about two dozen spins on a
+  [slot machine] they aim to cheat. They upload that footage to a technical
+  staff in St. Petersburg, who analyze the video and calculate the machine's
+  pattern based on what they know about the model's pseudorandom number
+  generator. Finally, the St. Petersburg team transmits a list of timing
+  markers to a custom app on the operative's phone; those markers cause the
+  handset to vibrate roughly 0.25 seconds before the operative should press
+  the spin button.
+
+No surprise to RISKS readers.  The first interesting case of this kind that
+I reported was the Harrah's Tahoe $1.7 Million payoff internal fraud.  This
+was a progressive payoff on 16 adjacent machines.  The casino seems to have
+hidden this story, but it appears to have been an inserted Trojan horse
+chip.  See the ACM SIGSOFT Software Engineering Notes, 8, 5, Oct 1983, pages
+7-8.  There are several other similar stories in our RISKS archives.  PGN
+
+------------------------------
+
+Date: Tue, 7 Feb 2017 14:21:48 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: TLS vulnerability in popular iOS apps allows user data to be
+  intercepted in man-in-the-middle attack (Malcolm Owen)
+
+  Malcolm Owen, Apple Insider, 07 Feb 2017
+
+  A number of popular apps are vulnerable to a 'man-in-the-middle' attack
+  due to poorly implemented TLS protection, an examination of apps in the
+  iOS App Store has revealed, with a security researcher claiming it is
+  possible to read data sent back to the app developer's servers for 76
+  apps. [...]
+
+http://appleinsider.com/articles/17/02/07/tls-vulnerability-in-popular-ios-apps-allows-user-data-to-be-intercepted-in-man-in-the-middle-attack
+
+This should be no surprise to those of you who read the best paper at the
+2015 IEEE SSSP:
+
+  Benjamin Beurdouche, Karthikeyan Bhargavan, Antoine Delignat-Lavaud,
+  Cedric Fournet, Markulf Kohlweiss, Alfredo Pironti, Pierre-Yves Strub, and
+  Jean Karim Zinzindohoue, A Messy State of the Union: Taming the Composite
+  State Machines of TLS, Proceedings of the 36th IEEE Symposium on Security
+  and Privacy, San Jose, CA, May 18-20, 2015.
+  https://www.smacktls.com/smack.pdf
+
+As I probably noted once before, this paper analyzes the composition of
+client-side and server-side TLS implementations, and finds flaws
+(`unexpected behaviors') including the FREAK vulnerability, in popular TLS
+implementations, and in OpenSSL and JSSE.  It is a remarkable paper, and
+well worth reading.  PGN
+
+------------------------------
+
+Date: Tue, 7 Feb 2017 10:36:39 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Popular apps with 18 million combined downloads in the Apple App
+ Store found vulnerable to silent data interception (Greg Barbosa)
+
+Greg Barbosa. Medium.com, 6 Feb 2017
+
+After scanning through the binary codes of applications in the iOS App
+Store, Will Strafach's verify.lyservice has detected that 76 popular apps in
+the store are currently vulnerable to data interception. The interception is
+possible regardless if App Store developers are using App Transport Security
+or not.  A few months ago, similar vulnerabilities were discovered with
+Experian and myFICO Mobile's iOS apps.
+<https://medium.com/@chronic_9612/76-popular-apps-confirmed-vulnerable-to-silent-interception-of-tls-protected-data-2c9a2409dd1#.gyzqn7bef>
+<https://9to5mac.com/2016/10/12/psa-security-vulnerability-discovered-update-your-experian-and-myfico-mobile-ios-apps-asap/>
+https://9to5mac.com/2017/02/06/popular-apps-with-18000000-combined-downloads-in-the-app-store-found-vulnerable-to-silent-data-interception/
+
+------------------------------
+
+Date: Tue, 07 Feb 2017 09:06:01 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Dozens of iOS apps fail to secure users' data, researcher says"
+  (Michael Kan)
+
+The developers have misconfigured the apps to accept invalid TLS
+certificates, says the security researcher who detected the app vulnerabilities
+Michael Kan, InfoWorld, 7 Feb, 2017
+http://www.infoworld.com/article/3166349/application-security/dozens-of-ios-apps-fail-to-secure-users-data-researcher-says.html
+
+selected text:
+
+Dozens of iOS apps that are supposed to be encrypting their users' data
+don't do it properly, according to a security researcher.
+
+The developers of the apps have accidentally misconfigured the
+networking-related code so it will accept an invalid Transport Layer
+Security (TLS) certificate, ...
+
+In all, the 76 apps have 18 million downloads, ...
+
+------------------------------
+
+Date: Thu, 2 Feb 2017 09:25:18 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Security flaws in Pentagon systems "easily" exploited by hackers
+  (Zack Whittaker)
+
+Zack Whittaker for Zero Day, 1 Feb 2017
+Hackers are likely exploiting the easy-to-find vulnerabilities, according
+to the security researcher who warned the Pentagon of the flaws months ago.
+<http://www.zdnet.com/article/pentagon-system-flaws-likely-under-attack-by-foreign-hackers/>
+
+Several misconfigured servers run by the US Dept. of Defense could allow
+hackers easy access to internal government systems, a security researcher
+has warned.
+
+The vulnerable systems could allow hackers or foreign actors to launch
+cyberattacks through the department's systems to make it look as though it
+originated from US networks.
+
+Dan Tentler, founder of cybersecurity firm Phobos Group, who discovered the
+vulnerable hosts, warned that the flaws are so easy to find that he
+believes he was probably not the first person to find them.
+
+"It's very likely that these servers are being exploited in the wild," he
+told me on the phone.
+
+While the Pentagon is said to be aware of the vulnerable servers, it has
+yet to implement any fixes -- more than eight months after the department
+was alerted.
+
+It's a unique case that casts doubts on the effectiveness of the Trump
+administration's anticipated executive order on cybersecurity, which aims
+to review all federal systems of security issues and vulnerabilities over a
+60-day period.
+
+The draft order was leaked last week, but it was abruptly pulled minutes
+before it was expected to be signed on Tuesday.
+
+Tentler, a critic of the plans, argued that the draft plans are "just not
+feasible."
+
+"It's laughable that an order like this was drafted in the first place
+because it demonstrates a complete lack of understanding what the existing
+problems are," he said.
+
+"The order will effectively demand a vulnerability assessment on the entire
+government, and they want it in 60 days? Just that one vulnerability
+finding from me... it's been months -- and they still haven't fixed it," he
+said.
+
+In the past year, the Pentagon became the first government department to
+ease up on computer hacking laws by allowing researchers to find and report
+bugs and flaws in systems in exchange for financial rewards.
+
+But security researchers like Tentler are still limited in how much they
+can poke around the military's public-facing systems.
+
+The department's official bug bounty governs the scope of what networks
+researchers can access. Researchers must limit their testing to two domains
+-- "defense.gov" and its subdomains, and any ".mil" subdomain.
+
+In an effort to pare down the list of hosts from "all public Department of
+Defense hosts" to "only the ones in scope," Tentler was able to identify
+several hosts which answered to the domain names in scope.
+
+"There were hosts that were discovered that had serious technical
+misconfiguration problems that could be easily abused by an attacker inside
+or outside of the country, who could want to implicate the US as culprits
+in hacking attacks if they so desire," he told me.
+
+"The flaw could allow politically motivated attacks that could implicate
+the US," he added.  [...]
+
+------------------------------
+
+Date: Tue, 7 Feb 2017 19:51:55 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Data from man's pacemaker led to arson charges (Lauren Pack)
+
+Lauren Pack, Staff Writer, *Journal News*, 27 Jan 2017
+http://www.journal-news.com/news/data-from-man-pacemaker-led-arson-charges/sDp2XXGPY1EKJkY57sureP/
+
+  Investigators used the data from a Middletown man's pacemaker to help get
+  an indictment in a fire that caused about $400,000 in damages.  Ross
+  Compton, 59, has been indicted on felony charges of aggravated arson and
+  insurance fraud for allegedly starting the fire on Sept. 19 at his Court
+  Donegal house.
+
+  Police said Compton gave statements that were inconsistent with the
+  evidence at the fire.
+
+  Compton, who has extensive medical problems, including an artificial heart
+  implant that uses an eternal pump, told police that when he saw the fire,
+  he packed some belongings in a suitcase and bags. He told police that he
+  then broke out the glass of his bedroom window with a cane and threw the
+  bags and suitcase outside before taking them to his car.
+
+  So police got a search warrant for all electronic data stored in Compton's
+  cardiac pacing device, according to court records obtained by this news
+  outlet.
+
+  The data taken from Compton's pacemaker included his heart rate, pacer
+  demand and cardiac rhythms prior to, during and after the fire.
+
+  A cardiologist who reviewed that data determined ``it is highly improbable
+  Mr. Compton would have been able to collect, pack and remove the number of
+  items from the house, exit his bedroom window and carry numerous large and
+  heavy items to the front of his residence during the short period of time
+  he has indicated due to his medical conditions,''
+
+  The fire caused about $400,000 in damages to the structure and contents of
+  the 2,000-square-foot home on Court Donegal, according to Deputy Fire
+  Chief Jeff Spaulding.
+
+------------------------------
+
+Date: Tue, 7 Feb 2017 13:52:21 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Vizio to Pay $2.2M to Settle Charges it Illegally Collected
+ Data from TV Owners
+
+  [Wow, $2.2 million penalty for spying on 11 million TVs. That's 20 cents
+  per offense.  That'll sure teach them and the industry not to trifle with
+  peoples' information.]  [And it's fives cents less than your two-bits
+  worth of information.]
+
+Washington, DC -- *Vizio*, a California-based manufacturer of
+Internet-connected "smart" televisions, has agreed to pay $2.2 million to
+settle charges by the *Federal Trade Commission* (FTC) and the New Jersey
+attorney general that it installed software on its TVs to collect viewing
+data on 11 million TVs without consumers' knowledge or consent.  The payment
+includes $1.5 million to the FTC and $1 million to the *New Jersey Division
+of Consumer Affairs*, with $300,000 of that amount suspended. The federal
+court order also requires Vizio to prominently disclose and obtain express
+consent for its data collection and sharing practices, and requires the
+company to delete data collected before March 1, 2016. According to the
+complaint, since Feb. 2014, Vizio and an affiliated company have
+manufactured smart TVs that capture second-by-second information about video
+displayed, including from cable, broadband, set-top box, DVD, over-the-air
+broadcasts and streaming devices. In addition, the agencies allege that the
+company added specific demographic information to the viewing data, such as
+sex, age, income, marital status, household size, education level, home
+ownership and household value, then sold this information to third parties.
+https://www.ftc.gov/news-events/press-releases/2017/02/vizio-pay-22-million-ftc-state-new-jersey-settle-charges-it?utm_source=govdelivery
+<http://m1e.net/c?47971208-Tdr6Qet2PSyO.%40389127753-NtSVHrcuJWdCY>
+
+------------------------------
+
+Date: Fri, 3 Feb 2017 22:45:47 -0800
+From: Don Norman <dnorman@ucsd.edu>
+Subject: The Truth about Unix -- my version, anyway -- for comic relief
+
+> I'm reminded of a famous article Don Norman wrote in 1981 about how awful
+> the UNIX shell language (which at that time was the user interface)
+> was. One of the UNIX guys pointed out that commands he complained weren't
+> "natural" were because they weren't like the PDP-10 he was used to.
+
+That statement is cute, clever, and false (or maybe it is an alternative
+fact).
+
+Don Norman (that is, I) never said Unix Shell (and APIs) were bad because
+they were unfamiliar.  I thought the underlying philosophy brilliant
+allowing people to string together lots of modules gto do powerful actions.
+I was a wizard at writing shell scripts.
+
+I said Unix was bad (actually, I said horrible) because of its lack of
+consistency.  Argument handling and specifications were different from
+routine to routine.  You had to keep looking up the syntax for all except
+the most frequently used calls in the manual, which kept getting larger and
+larger and larger. There were a zillion other examples of really
+unthoughtful design that not only had inconsistencies.
+
+There was also a distinct lack of interest in error checking, so that simple
+slips of the finger could lead to erasure of data, files, and entire
+directories (to remove all files starting with the word temp, say temp1,
+temp2,and temp3, simply type rm temp*. An accidental space character would
+transform that into rm temp * which would remove ALL files in that
+directory). Early text editors lost everything that had been done if the
+person quit the file without first saving it. ("Even experienced users have
+been known to lose their work" said the manual. Isues like these gave rise
+to the joke that "if it is documented, it isn't a bug, it is a feature.")
+
+There are lots of reasons for this, but I don't want to repeat my paper
+here. Let me simply say that after the initial shock of my paper wore off,
+the Unix creators came to agree with me and even became friends. Today's
+various flavors of Unix have overcome most of the problems. Alas, MacOS (and
+Windows) which runs on a Unix kernel, hides great power of Unix except to
+techies who can find the terminal program and pipe and redirect to their
+hearts content.
+
+The design rules that I started to develop in that paper in the 1980s are
+still true and important today. Consistency, feedback, good mappings, and a
+good conceptual model are the hallmark of good, useful design. Unix did have
+a powerful underlying conceptual model: it failed at the others. But hey,
+that was over 35 years ago!
+
+More facts: I never used a DEC (Digital) PDP-10, although I did use (and
+own) many every other DEC machine: PDP 1, 4, 7, 8, 9, 11 and Vax. I managed
+to skip the 10, which was replaced by the Vax. More importantly, it never
+occurred to me to contrast the Assembly language of these machines with
+Unix's shell script language. I fell in love with shell scripts: I never
+fell in love with assembly languages.
+
+Don Norman, Prof. and Director, DesignLab, UC San Diego
+dnorman@ucsd.edu designlab.ucsd.edu/  www.jnd.org  <http://www.jnd.org/>
+
+------------------------------
+
+Date: Mon, 06 Feb 2017 10:21:37 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Vulnerability in Microsoft SMBv3 protocol crashes Windows PCs"
+  (Woody Leonhard)
+
+Woody Leonhard, InfoWorld, 3 Feb 2017
+Computers running fully patched Windows 10, 8.1, Server 2012, and 2016 are
+hit by Blue Screens when trying to connect to an infected server
+http://www.infoworld.com/article/3165231/microsoft-windows/vulnerability-in-microsoft-smbv3-protocol-crashes-windows-pcs.html
+
+opening text:
+
+Security experts warn that it may be possible to exploit a vulnerability in
+a protocol widely used to connect Windows clients and servers to inject and
+execute malicious code on Windows computers.
+
+Computers running fully patched Windows 10, 8.1, Server 2012, or 2016 that
+try to access an infected server will crash with a Blue Screen triggered in
+mrxsmb20.sys, according to a post by Günter Born on today's Born's Tech
+and Windows World blog.
+
+------------------------------
+
+Date: Thu, 02 Feb 2017 09:26:40 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "GitLab database goes out after spam attack" (Paul Krill)
+
+Paul Krill, InfoWorld, 1 Feb 2017
+Approximately six hours of data, including issues, merge requests,
+users, comments, and snippets, will be lost as GitLab restores from a backup
+http://www.infoworld.com/article/3163471/application-development/gitlab-database-goes-out-after-spam-attack.html
+
+opening text:
+
+Code-hosting site GitLab has suffered an outage after sustaining a "serious"
+incident on Tuesday with one of its databases that has required emergency
+maintenance.
+
+The company today said it lost six hours of database data, including issues,
+merge requests, users, comments, and snippets, for GitLab.com and was in the
+process restoring data from a backup. Data was accidentally deleted,
+according to a Twitter message.
+
+------------------------------
+
+Date: Thu, 2 Feb 2017 11:38:09 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Cisco: Spam is making a big-time comeback (Tim Greene)
+
+*Adware is also on the rise, Cisco's Annual Cybersecurity Report says*
+*By Tim Greene Senior Editor, Network World*
+
+Spam is making a surprising resurgence as a threat to corporate security
+and becoming a more significant carrier of attacks as varied as spear
+phishing, ransomware and bots, according to Cisco's 2017 Annual
+Cybersecurity Report.
+
+The company's 10th such report says spam is way up. It accounts for 65% of
+all corporate email among customers who opted in to let the company gather
+data via telemetry in Cisco gear...
+
+... Adware and other threats
+
+Another growing problem is adware, whose primary purpose is to display ads
+on Web pages or pop-ups to the benefit of advertisers. In the hands of
+malicious actors, though, they can carry malicious payloads that change
+settings in browsers and operating systems, undermine security products and
+even gain full control of the host. So rather than being an annoyance,
+adware is a threat.  ``Which means the focus is going to have to come onto
+adware from the corporate side to defend whereas historically it was more of
+a nuisance,'' Antes says.
+
+The report looked at adware in 130 organizations distributed across vertical
+industries for a year and found that 75% had adware infections...
+
+[snip]
+
+http://www.networkworld.com/article/3163250/security/cisco-spam-is-making-a-big-time-comeback.html
+
+------------------------------
+
+Date: Thu, 2 Feb 2017 17:02:08 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How WhatsApp is fighting spam after its encryption rollout
+  (Techcrunch)
+
+NNSquad
+https://techcrunch.com/2017/02/02/how-whatsapp-is-fighting-spam-after-its-encryption-rollout/?ncid=rss
+
+  Rolling out end-to-end encryption raised not just political concerns, but
+  practical ones. If WhatsApp couldn't read the contents of its users'
+  messages anymore, how would it detect and fight spam on the platform?
+  WhatsApp could have become a haven for scammers pushing pills and
+  get-rich-quick schemes, which would have driven users off the platform and
+  harmed its business even more than short-term court-ordered shutdowns.
+
+------------------------------
+
+Date: Thu, 2 Feb 2017 9:01:49 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Trump's Vote Fraud Guru is Registered in Three States (AP)
+
+Gregg Phillips, whose unsubstantiated claim that the election was marred by
+3-million illegal votes was tweeted by the president, was listed on the
+rolls in Alabama, Texas and Mississippi, according to voting records and
+election officials in those states. He voted only in Alabama in November,
+records show.  [AP 30 Jan2017]
+  http://govnews.us/id/17148094264
+
+------------------------------
+
+Date: Thu, 2 Feb 2017 12:19:09 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Hackers Use New Tactic at Austrian Hotel: Locking the Doors
+  (RISKS-30.12)
+
+I find it hard to believe there is no mechanical workaround for such locks.
+What happens when the power is off?  Since hotel staff did not cut power to
+the affected rooms, does this means that in case of power cut the locks
+would stay in locked position?  (Or maybe they just never thought of that).
+
+------------------------------
+
+Date: Thu, 2 Feb 2017 12:11:50 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Network-enabled ICBMs for the USAF? (RISKS-30.12)
+
+The initial goal of DARPA when initiating the Ethernet was to establish a
+robust and secure network, so that communication to ICBMs could be
+maintained even in the event of a nuclear attack.
+
+Considering that this means that almost nothing but ICBMs was intended to be
+connected to the net, it seems we have made a full about-face...
+
+------------------------------
+
+Date: Tue, 07 Feb 2017 00:39:05 -0500
+From: "Arthur T." <Risks201701.10.atsjbt@xoxy.net>
+Subject: Re: alt-facts.net site (LW, Risks-30.11)
+
+I don't have the tools or the expertise to answer a question I've had for a
+long time. Perhaps you do. What percentage of browser exploits require the
+user to have active scripting enabled? Pretty much every serious threat I've
+read about requires it. If the percentage is as high as I think it is, I
+don't think my caution could reasonably be considered paranoia. It seems to
+me that running without active scripting can protect you against most
+zero-day exploits.
+
+I believe that the trade-off between privacy and functionality is something
+that we should each be weighing and deciding for ourselves. I've made my
+choice. I'm willing to believe that I'm mistaken about the choice of the
+average RISKS reader.
+
+------------------------------
+
+Date: Tue, 7 Feb 2017 07:34:36 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Re: alt-facts.net site (AT, RISKS-30.13)
+
+In reality, only a vanishingly small percentage of exploits depend on
+scripting these days. The reason why is simple -- the scripting systems have
+been massively hardened by the browser makers, and most modern Web sites
+depend on JavaScript and other scripting methodologies to provide primary
+functionality now without difficulty.  The only people mainly at risk now
+for scripting attacks are people who voluntarily run ancient, non-updated
+browsers. Most successful attacks today are based on credential thefts,
+which themselves are based on sophisticated phishing techniques that don't
+depend on scripting attacks at all. From a practical standpoint, the age of
+scripting exploits is past history now.
+
+------------------------------
+
+Date: Wed, 1 Feb 2017 20:57:38 -0600
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: Nim Language Draws From Best of Python, Rust, Go, and Lisp
+  (Levine, RISKS-30.11)
+
+I have to respectfully disagree: it is just as hard to match nested if/elses
+on the indentation level as it is to match the braces. It may be somewhat
+easier if it all fits on one screen -- as python scripts were originally
+intended to -- but any half decent brace-based-language editor will
+highlight matching the brace, so not really even then.
+
+What you can't safely do is pretty-print python code. With braces there's
+any number of pretty-printers that will reformat your code so that indent
+matches the braces. With python I can't even manually reformat anything
+longer than a two screenfuls without messing up the un-indent somewhere down
+below. Or at least without being very very careful not to.
+
+And of course inserting a closing brace for scope that was never opened will
+generate a compiler error just like a wrong un-indent; what you can't do is
+un-indent past the left edge of the page, so there's that.
+
+------------------------------
+
+Date: Thu, 2 Feb 2017 13:44:42 -0600
+From: Arthur Flatau <flataua@acm.org>
+Subject: Re: Nim Language Draws From Best of Python, Rust, Go, and Lisp
+  (Levine, RISKS-30.12)
+
+I like Python, but the fact that it uses indentation for grouping is one of
+the things I dislike, for two reasons.  First it is easy to re-indent C or
+Perl code with braces, for instance with emacs (my text editor of choice).
+If there are spacing typos, they can easily be removed.  This does not work
+with Python.  If I refactor some code in Python, so it needs to re-indented
+this is a largely manual process.  Not so with C or Perl.  Second, I find it
+hard to visually line up different groups in a "large" piece of code.  It
+has been my coding guideline for many years to have functions fit on a
+single screen (I saw a talk by Bjarne Stroustrup a little while ago where he
+mentioned this as well).  Even following that guideline I sometimes find it
+hard to figure out the groupings with only indentation.  This may well be,
+in part, due to my poor eyesight, but I still prefer the braces
+
+------------------------------
+
+Date: Tue, 7 Feb 2017 19:12:30 +0200
+From: Alexander Klimov <alserkli@inbox.ru>
+Subject: Re: Nim Language Draws From Best of Python, Rust, Go, and Lisp
+  (RISKS-30.12)
+
+> While it took a little while to get used to it, now I find the
+> python way works at least as well. Compilers remember the open
+> levels of indentation so they can diagnose spacing typos where you
+> return to an indentation level that was never opened, something C
+> and perl can't do since all braces look the same.
+>
+> It also avoids a whole category of hard to find bugs in C programs
+> where the indentation suggests one thing but the braces say
+> something else.
+
+To find the discrepancy, it is required to have redundancy. In languages
+with braces, there are two ways to encode the block structure, so GCC can
+notice the problem:
+
+Wmisleading-indentation warns about places where the indentation of
+the code gives a misleading idea of the block structure of the code
+to a human reader. For example, given CVE-2014-1266:
+
+    sslKeyExchange.c: In function 'SSLVerifySignedServerKeyExchange':
+    sslKeyExchange.c:629:3: warning: this 'if' clause does not
+     guard... [-Wmisleading-indentation]
+        if ((err = SSLHashSHA1.update(&hashCtx, &signedParams)) != 0)
+        ^~
+    sslKeyExchange.c:631:5: note: ...this statement, but the latter
+     is misleadingly indented as if it is guarded by the 'if'
+            goto fail;
+            ^~~~
+
+------------------------------
+
+Date: Thu, 2 Feb 2017 02:05:48 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Re: Quantum Computers Versus Hackers, Round One (Werner, RISKS-30.12)
+
+I'm a bit ambivalent myself.
+
+I've worked on this topic for about a dozen years now.  I wish someone would
+take it seriously, but this article doesn't give any indication that anyone
+is.  (Of course, that may simply be a reporter covering something he doesn't
+understand ...)
+
+I've posted a little bit on it recently:
+http://itsecurity.co.uk/2016/09/security-implications-quantum-computing/
+
+------------------------------
+
+Date: Mon, 6 Feb 2017 22:17:37 +0100
+From: Werner U <werneru@gmail.com>
+Subject: Re: Quantum Cryptography (Feb 2 in WiReD)
+
+[ reads like a prequel for "Quantum Cryptography *for Dummies*" ]
+[ worth reading, for those tracking the media coverage. ]
+[ needs some pruning, I'm afraid.]
+
+*Physicists, Lasers, and an Airplane: Taking Aim at Quantum Cryptography*
+
+<https://www.wired.com/2017/02/physicists-test-quantum-cryptography-playing-catch-photons-plane/>
+
+( #cryptography #Hacking #quantum computing #quantum mechanics )
+
+...pivoted their telescope to catch the photons, one by one. On their best
+run, they caught over 800,000 photons in just a few minutes, but it wasn't
+easy. ``Out of every 10,000 photons they sent, we'd get one,'' says Pugh, who
+studies at the University of Waterloo. ``One to a hundred of them.''
+
+The point of this high-altitude game was to test a technology known as
+quantum cryptography. For decades, experts have claimed that if executed
+properly, quantum cryptography will be more secure than any encryption
+technique used today. They also say it will be one of the lines of defense
+when quantum computers crack every existing algorithm. But it's hard to
+pull off; quantum cryptography requires precise control of individual
+photons over a long distance. Pugh's group was the first
+<https://arxiv.org/abs/1612.06396> to successfully test the technology from
+ground to airplane.
+
+It works like this: The sender transmits carefully prepared photons, over
+optical fiber or through the air, to a recipient. The recipient reads the
+photons like Morse code, with physical signals corresponding to a letter or
+a number. Instead of listening for long and short beeps, Pugh and his
+colleagues measured how the photons are oriented -- what physicists call
+polarization. In their setup, photons could be polarized in four directions,
+and the team translated that polarization into 1's and 0's: a binary message
+known as a cryptographic key. Using that key, a sender can encrypt their
+information, and only a recipient with the key can unscramble the message.
+
+Quantum cryptography is so powerful because it's physically *impossible* for
+a hacker to steal a key encoded using quantum particles. In the quantum
+world, when you measure or observe a particle, you change it. It's like
+Schrodinger's cat, which is both dead and alive when you're not looking, but
+immediately becomes one or the other when you look. If you try to measure a
+quantum key, you immediately change it -- and by design, the sender will
+know and throw the key out.  ``It's secure by the laws of nature,'' says
+physicist Thomas Jennewein, who led the work at the University of Waterloo.
+
+Commercial quantum cryptography products have been around for over 15 years,
+but they have limited range.  ``You can guarantee security between the White
+House and the Pentagon, or from the corner of one military base to
+another,'' says Caleb Christensen, the chief scientist at MagiQ
+Technologies, a Boston-area company that makes commercial quantum
+cryptography systems.  ``In the telecom business, that's way too short.''
+So far people have been able to send quantum keys just 250 miles.
+
+This tech will be important when computers become too powerful for current
+encryption algorithms. It takes today's computers far longer than the age of
+the universe to decode an encrypted message, but it'll be a cinch for
+quantum computers.  ``It might take hours or days as opposed to age of the
+universe,'' says Pugh.
+
+Still, quantum cryptography won't be tech's security savior. Most hacks
+today are due to simple human error.  ``Most times when a corporation gets
+hacked, it's not necessarily because someone went in and spliced into their
+telephone line,'' says Christensen.  ``If you lose all your secrets because
+someone phishes the e-mail of your middle management, you're not going to
+spend millions of dollars installing a quantum cryptography backbone.''
+
+For those with higher security standards, the eventual goal is to deliver
+quantum keys to a satellite, which could make it possible to send
+quantum-secured messages across the globe. Last August, the Chinese Academy
+of Sciences, collaborating with Austrian physicists, launched a satellite
+called Quantum Experiments at Space Scale, although they haven't
+successfully sent it a key.
+
+Jennewein's team has been rehearsing for a satellite mission for over three
+years. In 2013, they started by sending quantum keys to a moving truck. Now
+that they've shown they can transmit enough quantum signal through a mile of
+Earth's atmosphere, Jennewein wants to beam a key 300 miles into the air, to
+a satellite in low-Earth orbit. With proper funding, Jennewein thinks his
+team could do it in two or three years. He's optimistic: ``The airplane
+experiment is, in some respects, harder than an actual satellite,'' he says.
+``A satellite has much smoother and more predictable motion than an
+aircraft.''  Just ask Pugh.
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.13
+************************

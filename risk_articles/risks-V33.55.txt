@@ -1,0 +1,600 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.55
+
+RISKS-LIST: Risks-Forum Digest  Friday 2 December 2022  Volume 33 : Issue 55
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.55>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Blockchains, What Are They Good For? (Paul Krugman)
+Idle Crypto is the Devil's Workshop (Connel Fullenkamp)
+El Salvador's Chivo Wallet: a slapstick saga of software disaster:
+ Attack of the 50-Foot Blockchain (David Gerard)
+San Francisco Considers Allowing Use of Deadly Robots by Police (NYTimes)
+Going great in Texas: Entire City of Houston placed under boil-water notice
+ after system outage (ABC23)
+Smart inverters' vulnerability to cyberattacks needs to be identified and
+ countered, according to researchers (techxplore.com)
+We Need to Change the System That Keeps Pilots from Seeking Mental Health
+ Care (Scientific American)
+Gig workers in India are uniting to take back control from algorithms
+ (Rest of World)
+Eufy Cameras Have Been Uploading Unencrypted Footage to Cloud Without Owners
+ Knowing (Gizmodo)
+Scientists are using facial recognition software to track and protect seals
+ (Mathew Kruk)
+Alexa, is the voice-assistant industry doomed? (CBC)
+Golf Robot Putts Like a Pro (Edd Gent)
+Programming Tool Turns Handwriting into Computer Code (Louis DiPietro)
+Network-Crashing Leap Seconds to Be Abandoned by 2035, for at Least a
+ Century (Ars Technica)
+Re: The World Generates So Much Data, New Unit Measurements Were Created to
+ Keep Up (Amos Shapir)
+Re: Elon, Twitter, China, and human lives -- and more (Lauren Weinstein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: December 3, 2022 2:26:05 JST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Blockchains, What Are They Good For? (Paul Krugman)
+
+Paul Krugman, *The New York Times*, 2 Dec 2022 National Edition Opinion,
+and online 1 Dec 2022
+https://www.nytimes.com/2022/12/01/opinion/blockchains-what-are-they-good-for.html
+
+  [IMPORTANT NOTE: I have almost always eschewed including entire pay-walled
+  articles in RISKS, resorting to *fair- use* principles.  I have been
+  subscribed to the hardcopy delivery of *The NYTimes* for more years than I
+  can count, going back to 1940 when I first started reading it daily.  I
+  respect the need to keep careful newsources in business, despite some of
+  you who occasionally complain about my including paywalled URLs in RISKS.
+  Also, remember that the *Times* mantra is very distant from ``All the news
+  that fits we print'' nor ``Truth is our least important concern.''
+  HOWEVER, I think Paul (and *The NYTimes*) would not mind getting more
+  recognition for this piece, which beautifully articulates many of the
+  views previously in RISKS on blockchains and cybercurrencies that really
+  need wider attention.  (It might be worth for home-delivery nonsubscribers
+  to spend $1 a month for Internet access, or whatever the going rate is.)
+  END OF RANT.  PGN]
+
+A year ago Bitcoin and other cryptocurrencies were selling at record prices,
+with a combined market value of around $3 trillion; glossy ads featuring
+celebrities -- most infamously Matt Damon's ``Fortune Favors the Brave''
+-- filled the airwaves. Politicians, including, alas, the mayor of New York,
+raced to align themselves with what seemed to be the coming thing. Skeptics
+like yours truly were told that we just didn't get it.
+
+Since then the prices of crypto assets have plunged, while a growing number
+of crypto institutions have collapsed amid allegations of scandal. The
+implosion of FTX, which appears to have used depositors' money in an attempt
+to prop up a related trading firm, has made the most headlines, but it's
+only one entry on a growing list.
+
+We are, many people say, going through a ``crypto winter.'' But that may
+understate the case. This is looking more and more like Fimbulwinter, the
+endless winter that, in Norse mythology, precedes the end of the world -- in
+this case the crypto world, not just cryptocurrencies but the whole idea of
+organizing economic life around the famous ``blockchain.''
+
+And the real question, it seems to me, is why so many people -- not just
+na=C3=AFve small investors, but also major financial and business players --
+bought into the belief that this bad idea was the wave of the future.
+
+A blockchain is a digital ledger associated with an asset, recording the
+history of transactions in that asset -- who bought it from whom and so
+on. The asset could be a digital token like a Bitcoin, but it could also be
+a stock or even a physical thing like a shipping container. Ledgers, of
+course, are nothing new. What's distinctive about blockchains is that the
+ledgers are supposed to be decentralized: They aren't sitting on the
+computers of a single bank or other company; they're in the public domain,
+sustained by protocols that induce many people to maintain records on many
+servers.
+
+These protocols are, everyone tells me, extremely clever. I'll take their
+word for it. The question I've never heard or seen satisfactorily answered,
+however, is, ``What's the point?'' Why go to the trouble and expense of
+maintaining a ledger in many places, and basically carrying that ledger
+around every time a transaction takes place?
+
+The original rationale for Bitcoin was that it would do away with the need
+for trust -- you wouldn't have to worry about banks making off with your
+money, or governments inflating away its value. In reality, however, banks
+rarely steal their customers' assets, while crypto institutions more easily
+succumb to the temptation, and extreme inflation that destroys money's value
+generally happens only amid political chaos.
+
+Still, there was an alternative, more modest justification for using
+blockchain technology, if not necessarily for cryptocurrencies: It was
+supposed to offer a lower-cost, more secure way to keep track of
+transactions and stuff in general.
+
+But that dream appears to be dying, too.
+
+Amid all the sound and fury over FTX, I'm not sure how many people have
+noticed that the few institutions that seriously tried to make use of
+blockchains seem to be giving up.
+
+Five years ago, it was supposed to be a big deal -- a sign of mainstream
+acceptance -- when Australia's stock exchange announced that it was planning
+to use a blockchain platform to clear and settle trades. Two weeks ago, it
+quietly canceled the plan, writing off $168 million in losses.
+
+Maersk, the shipping giant, has also announced that it is winding down its
+efforts to use a blockchain to manage supply chains.
+
+A recent blog by Tim Bray, who used to work for Amazon Web Services, tells
+us why Amazon chose not to implement a blockchain of its own: It couldn't
+get a straight answer to the question, ``What useful thing does it do?''
+
+So how did this enterprise, which never stood up to scrutiny, become such a
+big deal?
+
+It was probably a combination of factors. Political ideology played a role:
+Not all crypto enthusiasts were right wingers, but distrust of banks -- we
+all know who runs them -- and government-managed money provided a hard core
+of support.
+
+The romance of high tech also played a role, with the very
+incomprehensibility of crypto discourse acting, for a while, as a selling
+point. And then, as prices soared, fear of missing out -- plus large
+outlays on marketing and political influence-buying -- brought many others
+into the bubble.
+
+It's an amazing story, and also a tragedy. It's not just the small investors
+who have lost much if not all of their life savings. The crypto bubble has
+had huge costs to society as a whole. Bitcoin mining alone uses as much
+energy as many countries; I've been trying to estimate the value of the
+resources consumed in producing fundamentally worthless tokens, and it's
+probably in the tens of billions of dollars, not counting the environmental
+damage.
+
+  [Amusingly, Dewayne left out the last two paras, which I have added. PGN]
+
+Add in the costs associated with other tokens and the resources burned up in
+abortive efforts to supply a blockchain approach to everything, and we're
+probably talking about waste on an epic scale.
+
+No doubt I'll hear from many people still insisting that I don't get it.
+But it really looks as if there never was an *it* to get.
+
+------------------------------
+
+Date: Mon, 28 Nov 2022 19:38:09 PST
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Idle Crypto is the Devil's Workshop (Connel Fullenkamp)
+
+Connel Fullenkamp (Duke prof.), *The New York Times*, 28 Nov 2022
+
+Sam Bankman-Fried's downfall is spectacular, but it's really nothing new.
+
+FTX's collapse had very little to do with either the characteristics of
+cryptocurrency in general or the specific features of the coins that FTX
+minted and distributed.  FTX failed because the people who ran the company
+didn't follow some basic rules of finance that can be difficult to enforce
+even in well-regulated markets.
+
+And Sam Bankman-Fried is neither a visionary nor a criminal mastermind.  He
+is just a human who made the same poor choice that generations of money
+managers have made before him.
+
+https://www.nytimes.com/2022/11/27/opinion/ftx-sam-bankman-fried-fullenkamp.html
+
+  [Also a good article.  PGN]
+
+------------------------------
+
+Date: Thu, 1 Dec 2022 00:37:09 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: El Salvador's Chivo Wallet: a slapstick saga of software disaster:
+ Attack of the 50-Foot Blockchain (David Gerard)
+
+The GDP of the United States ($20 trillion) is approximately a thousand
+times El Salvador's GDP ($26 billion). So this is as if the US government
+lost a quarter billion dollars to fraud due to a software error in an
+internationally publicised flagship payment project, by telling a junior
+developer to commit straight to production on his first day.
+
+https://davidgerard.co.uk/blockchain/2022/11/30/el-salvadors-chivo-wallet-disasters-a-slapstick-saga-of-software-disaster/
+
+------------------------------
+
+Date: Thu, 1 Dec 2022 07:03:53 -0700
+From: Matthew Kruk <mkrukg@gmail.com>
+Subject: San Francisco Considers Allowing Use of Deadly Robots by Police
+ (NYTimes)
+
+https://www.nytimes.com/2022/11/30/us/police-robots-san-francisco.html
+
+The San Francisco police could use robots to deploy lethal force under a
+policy advanced by city supervisors on Tuesday that thrust the city into the
+forefront of a national debate about the use of weaponized robots in
+American cities.
+
+The possibility is not merely hypothetical. In 2016, the Dallas Police
+Department ended a standoff with a gunman suspected of killing five officers
+<https://www.nytimes.com/2016/07/09/science/dallas-bomb-robot.html> by
+blowing him up with a bomb attached to a robot in what was believed to be
+the first lethal use of the technology by an American law enforcement
+agency.
+
+Supporters of the policy, advanced by the San Francisco Board of Supervisors
+by an 8-to-3 vote, said it would allow the police to deploy a robot with
+deadly force in extraordinary circumstances, such as when a mass shooter or
+a terrorist is threatening the lives of officers or civilians.
+
+  [ACM TechNews noted an item on this by Janie Har, Associated Press, 30 Nov
+   2022, via ACM TechNews, 30 Nov 2022, with no original URL.  ... despite
+   objections from civil liberties and other police oversight
+   groups. Although the San Francisco Police Department's Allison Maxie said
+   while the department currently has no armed robots, and has no plans to
+   equip robots with guns, it could deploy robots outfitted with explosive
+   charges ``to contact, incapacitate, or disorient violent, armed, or
+   dangerous suspects'' in life-threatening scenarios. City supervisors
+   revised the proposal so officers could use robots only after alternative
+   force or de-escalation tactics were tried or deemed ineffective. Critics
+   said the authorization would further militarize a police force that
+   already displays excessive aggression toward poor and minority
+   communities.  PGN]
+
+  [Also
+  https://www.theverge.com/2022/11/30/23486090/robots-deadly-force-kill-san-francisco-police-approve
+  noted by Monty Solomon.  PGN]
+
+------------------------------
+
+Date: Sun, 27 Nov 2022 21:17:33 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Going great in Texas: Entire City of Houston placed under
+ boil-water notice after system outage
+
+https://abc13.com/boil-water-advisory-city-of-houston-notice-under-advisroy-power-outage/12501616/
+
+  [Add this to the list of almost-everything-is-interconnected items.  PGN]
+
+------------------------------
+
+Date: Wed, 30 Nov 2022 00:42:47 +0000
+From: Richard Marlon Stein <rmstein@protonmail.com>
+Subject: Smart inverters' vulnerability to cyberattacks needs to be
+ identified and countered, according to researchers (techxplore.com)
+
+https://techxplore.com/news/2022-11-smart-inverters-vulnerability-cyberattacks-countered.html
+
+Yet another Internet-of-Vulnerable-Things thing.
+
+------------------------------
+
+Date: Wed, 30 Nov 2022 14:25:36 +0000
+From: Richard Marlon Stein <rmstein@protonmail.com>
+Subject: We Need to Change the System That Keeps Pilots from Seeking Mental
+ Health Care (Scientific American)
+
+https://www.scientificamerican.com/article/we-need-to-change-the-system-that-keeps-pilots-from-seeking-mental-health-care/
+
+``As travel ramps up again, our data show that many pilots refuse to seek
+health care out of fear they will be pulled from flying.''
+
+Stigmatized disclosure of mental illness for mission critical roles. What
+are the regulations that govern disclosure of mental or physical health?
+Should they be relaxed to accommodate and encourage mental health disclosure
+as an employment condition?
+
+Why is emotional issue or mental health disclosure stigmatization too big a
+deterrent for roles that place public health and safety at risk?
+
+------------------------------
+
+Date: Mon, 28 Nov 2022 15:52:04 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Gig workers in India are uniting to take back control from
+ algorithms (Rest of World)
+
+Tired of the obscurity around black box algorithms that dictate their lives,
+Indiaâs gig workers are coming up with cheap hacks to game the system.
+
+https://restofworld.org/2022/gig-workers-in-india-take-back-control-from-algorithms/
+
+Risk: nasty algorithms and companies that inflict them
+
+Remedy: clever people
+
+------------------------------
+
+Date: Tue, 29 Nov 2022 23:18:14 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Eufy Cameras Have Been Uploading Unencrypted Footage to Cloud
+ Without Owners Knowing (Gizmodo)
+
+https://gizmodo.com/eufy-security-cameras-unencrypted-footage-cloud-scandal-1849833489
+
+  [Also noted by Monty:
+https://www.theverge.com/2022/11/30/23486753/anker-eufy-security-camera-cloud-private-encryption-authentication-storage
+  PGN]
+
+------------------------------
+
+Date: Wed, 30 Nov 2022 19:18:55 -0700
+From: Matthew Kruk <mkrukg@gmail.com>
+Subject: Scientists are using facial recognition software to track and
+ protect seals (No URL)
+
+Scientists are taking a controversial technology associated with
+surveillance, and adapting it for conservation.  It's called SealNet, and
+it's a facial recognition database that's used to track the movement of
+seals.
+
+``It's sort of transforming this technology from the Big Brother concerns
+that we have in human facial recognition technology, to using it for good,''
+biologist Krista Ingram told *As It Happens* host Nil K=C3=B6ksal. ``There's
+no downside.''
+
+  [Do Dolphins have more expressive faces than seals?  PGN]
+
+------------------------------
+
+Date: Wed, 30 Nov 2022 06:40:30 -0700
+From: Matthew Kruk <mkrukg@gmail.com
+Subject: Alexa, is the voice-assistant industry doomed? (CBC)
+
+https://www.cbc.ca/news/business/alexa-voice-assistant-industry-future-1.6668142
+
+A recent report indicating that Amazon's Alexa division is on track to lose
+$10 billion U.S. this year is raising questions about the future of the
+entire voice-assistant industry.
+
+``I think there is a next-generation battle for voice assistance that will
+require very, very deep pockets to survive,'' said Andy Wu, an assistant
+professor of business administration in the strategy unit at Harvard
+Business School.
+
+  [Are you Siri-ous?  PGN]
+
+------------------------------
+
+Date: Wed, 30 Nov 2022 12:10:36 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Golf Robot Putts Like a Pro (Edd Gent)
+
+Edd Gent, IEEE Spectrum, 24 Nov 2022, via ACM TechNews, 30 Nov 2022
+
+The Golfi robot built by Annika Junker and colleagues at Germany's Paderborn
+University combines classical control engineering and machine learning to
+putt with professional golfer-level skill. Golfi captures images of the
+green through a ceiling-mounted three-dimensional camera, which feeds its
+data into a physics-based model to enable the simulation of thousands of
+random shots from different positions. A neural network employs this data to
+predict the amount of force and direction required when hitting a ball to
+get it in the hole from anywhere on the green. Junker said Golfi was
+designed to demonstrate the capability of hybrid robotic control techniques.
+
+  [Next up: Computer-controlled clubs that use the results of the robot's
+  analysis in real-time.  It might be called the Gary-Player Player.  PGN\
+
+------------------------------
+
+Date: Wed, 30 Nov 2022 12:10:36 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Programming Tool Turns Handwriting into Computer Code (Cornell)
+,
+Louis DiPietro, Cornell Chronicle, 28 Nov 2022,
+via ACM TechNews, 30 Nov 2022
+
+A team of Cornell University researchers created the Notate interface to
+translate handwriting and sketches into computer code. The pen-based
+interface enables digital notebook users to open drawing canvases and to
+handwrite diagrams within lines of traditional code. Notate is driven by a
+deep learning model, allowing notation in the handwritten diagram to
+reference textual code and vice versa. Cornell's Ian Arawjo said, ``People
+are ready for this type of feature, but developers of interfaces for typing
+code need to take note of this and support images and graphical interfaces
+inside code.''
+
+------------------------------
+
+Date: Mon, 28 Nov 2022 11:56:24 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Network-Crashing Leap Seconds to Be Abandoned by 2035, for at
+ Least a Century (Ars Technica)
+
+Kevin Purdy, Ars Technica, 22 Nov 2022, via ACM TechNews, 28 Nov 2022
+
+Parties to the International Bureau of Weights and Measures (BIPM) approved
+the cessation of the leap second for keeping Coordinated Universal Time
+starting in 2035, until at least 2135. Leap seconds have been used to bring
+Earth's rotation into alignment with atomic-precision timekeeping. In 2012
+and 2017, they triggered multi-hour network blackouts at companies including
+Reddit, Qantas, and Cloudflare. Many companies implemented a version of
+*leap-smearing* to smooth out a leap second addition into micro-seconds
+spread across the globe throughout a day. Engineers at Meta, a supporter of
+the change, said the 27 leap seconds that have been applied since their
+introduction in 1972 were ``enough for the next millennium.''
+
+------------------------------
+
+Date: Wed, 30 Nov 2022 09:55:00 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: The World Generates So Much Data, New Unit Measurements Were
+ Created to Keep Up (NPR, RISKS-33.54)
+
+PGN writes: I wonder how many people will confuse ronna and ronto
+
+As is evident by the names of all previous units which are beyond the
+*classical* range -- above kilo and below milli -- all unit names end with
+an *a* on the big-unit side and with a *o* on the small-unit side.
+
+  [Ah yes, I knew that.  But suppose your native language is one in which an
+  *a* ending is feminine (e.g., Latinate languages, Slavic, Greek), and an
+  *o* ending is typically masculine.  This might be seen by mysongenists and
+  masculine-oriented people as the opposite convention -- where men are
+  thought of as the big-units and women as the small-units.  So, I guess the
+  ronna and ronto convention nicely elevates females to big units!  PGN]
+
+------------------------------
+
+Date: Fri, 2 Dec 2022 09:39:56 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Re: Elon, Twitter, China, and human lives -- and more (PGN-ed)
+
+https://mastodon.laurenweinstein.org/@lauren/109422646824667833
+
+While China's communist government leverages Elon's #Twitter to bury the
+current mass protests in China under massive waves of spam -- making Elon's
+Twitter complicit -- we keep seeing the now usual ``We couldn't reach Twitter
+for comment, they no longer have a communications staff since Musk took
+over.''
+
+This is unacceptable, and should be illegal. Every large social media firm
+should be required by law to have a 24/7 staffed point of contact for
+reaching the firm in cases of emergencies or other important issues
+affecting people's lives. This needs to happen RIGHT NOW.
+
+Twitter staff cuts enabled spam porn deluge that drowned out China protest
+news
+https://arstechnica.com/tech-policy/2022/11/china-bots-flood-twitter-with-porn-spam-to-drown-protest-news/
+
+More China and Musk
+https://mastodon.laurenweinstein.org/@lauren/109423905988984057
+
+It is fascinating that #Twitter, now wholly controlled by Musk, has not
+taken effective steps to stop the communist Chinese government from burying
+the tweets of the Chinese people attempting to show the mass protests now
+occurring there against the government, especially when we consider that
+Tesla has a major manufacturing presence in China that only operates if the
+government there likes what Musk is doing. -L
+
+Interview quote from former head of Twitter Trust & Safety
+https://mastodon.laurenweinstein.org/@lauren/109430345950432449
+
+In an interview today, the former head of #Twitter Trust and Safety
+said: ``Trust and safety is an adaptive space.''
+
+In plain English, I would say it this way: ``The bad guys are always going
+to try be at least one step ahead of you, and if you only can react you're
+going to keep losing the battle of trust and safety for your users.''   -L
+
+Rumor: Elon's war with Apple Rumor is that Elon is delaying *Twitter Blue*
+(whatever the hell it is this week) due to his *war* with Apple. Real life
+LOL. -L
+
+Elon Musk Threatens War With Apple, Jeopardizing Vital Relationship
+https://time.com/6237357/musk-apple-twitter/
+
+A Twitter analogy
+https://mastodon.laurenweinstein.org/@lauren/109428279652717961
+
+Often it's useful when looking at the online world to analyze it using
+offline (brick and mortar) world analogies.
+
+Imagine a big store that, in the name of *free speech*, permitted hate
+speech purveyors to tack up their ugly missives all over the establishment,
+and have uniformed members of their groups inside the store yelling their
+obscene epithets at shoppers. When complaints are made to the store owner,
+he asks you ``Why are you against free speech?''
+
+While this approach would likely gain him some customers among the
+hate speech contingents, how many other customers are likely to stick
+around? How will his suppliers and vendors feel about being associated
+with him as his actions become widely publicized? -L
+
+Musk threatens to make his own phone if Twitter kicked out of app stores:
+Musk is now threatening to *make his own phone* if Twitter gets booted from
+the Apple/Google app stores (for hate speech, etc.) But, uh, there was
+already supposed to be a *Tesla Pi Phone* launching before the end of this
+year. Maybe it's stuck in a fully self-driving Tesla or with a delivery guy
+taking the Hyperloop. -L
+
+Report: Twitter stops enforcing COVID-19 misinformation policy,
+slashes CSAM team
+https://www.engadget.com/twitter-stops-enforcing-covid-19-misinformation-policy-145445252.html?src=rss
+
+Elon's essential Twitter problem:
+The essential problem for Elon's Twitter is that while certainly there
+are some who enjoy such relationships, most people (and advertisers,
+for that matter) simply don't want to hang around with jerks, online
+or off. -L
+
+Elon's Apple advertising rant
+https://mastodon.laurenweinstein.org/@lauren/109435566630389630
+Elon's ranting about #Apple apparently essentially ending their
+advertising on #Twitter is particularly fascinating. If we assume for
+the moment that he is genuinely perplexed by this and not putting on a
+show in this respect, it suggests a deep lack of understanding about
+how advertising works. Which would not be very surprising, since most
+of his other ventures essentially never advertised. But effectively,
+it's like expecting the advertisers that supported your radio station
+when it was 24/7 gospel music to stick around when it became 24/7
+explicit lyrics metal. Don't count on it. -L
+
+More on Musk/Apple rumors:
+My guess is that Musk was told Apple isn't taking any action right now and
+Musk pushed for assurances so he could start pulling in money for his fake
+blue checks for blue subscribers. If Twitter goes as predicted Apple (and
+Google) will likely ultimately be forced to act, but they wouldn't want to
+pull the plug prematurely, and I'd agree with that assessment. -L
+
+Florida sheriff calls for disfigurement of students who don't behave
+https://boingboing.net/2022/12/01/florida-sheriff-announces-old-time-punishments-like-disfigurement-are-back-for-school-kids.html
+
+Report: Twitter tries to *bribe* advertisers back to its toxic hellhole with
+100% match
+https://www.forbes.com/sites/dereksaul/2022/12/01/twitter-reportedly-unveils-lucrative-plan-to-win-back-fleeing-advertisers-as-musk-begs-people-to-tweet-more/?sh=7fb3d21e67d8
+
+House Judiciary Republicans delete 'Kanye. Elon. Trump.' tweet as rapper
+praises Hitler:
+https://www.nbcnews.com/politics/congress/house-judiciary-republicans-delete-kanye-elon-trump-tweet-rapper-prais-rcna59654
+
+  [Just for good measure, I'll toss in another source -- from Richard Forno
+  <rick@rickf.org>:  Regarding Twitter, Musk, and Trust.
+  https://cyberlaw.stanford.edu/blog/2022/11/regarding-twitter-musk-and-trust
+  PGN]
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.55
+************************

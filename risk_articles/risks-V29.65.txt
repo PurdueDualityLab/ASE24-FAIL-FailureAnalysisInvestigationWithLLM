@@ -1,0 +1,856 @@
+precedence: bulk
+Subject: Risks Digest 29.65
+
+RISKS-LIST: Risks-Forum Digest  Thursday 28 July 2016  Volume 29 : Issue 65
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.65.html>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Multiple alleged HIPAA violations result in $2.75 million settlement with
+  the University of Mississippi Medical Center (HHS)
+Widespread HIPAA vulnerabilities result in $2.7 million settlement
+  with Oregon Health & Science University (HHS)
+"Osram's Lightify smart bulbs suffer from serious security flaws"
+  (Brad Chacos)
+Mozilla off-by-one error on the Web anniversary! (Gene Wirchenko)
+No treat for you: Pets miss meals after auto-feeding app PetNet
+  glitches (Nicky Woolf)
+Scary Report from CMU on AI Robots (Marc Rotenberg)
+"Flaw with password manager LastPass could hand over control to hackers"
+  (Michael Kan)
+Donald Trump to Russia: Please Hack Hillary! (Mother Jones)
+"DNC Hack, and Lessons for Our Next President" (Motherboard)
+Donald Trump Challenges Russia to Find Hillary Clinton's Missing Emails"
+  (NYTimes)
+Can foreign powers hack our elections? (Jack Goldsmith)
+Spy Agency Consensus Grows That Russia Hacked D.N.C. (NYTimes)
+Master key used by TSA to open Safe Skies luggage locks revealed (Werner U)
+"New attack bypasses HTTPS protection on Macs, Windows, and Linux"
+  (Dan Goodin)
+Millions of Wireless Keyboards Let Hackers See What You're Typing
+  (Gizmodo)
+"Hackers can snoop and even type keystrokes from at least 8 wireless
+  keyboard vendors" (Tim Greene)
+Some unusually level-headed computer security advice (Bloomberg)
+Beware of default settings (Pro Publica)
+$1 Billion for Dollar Shave Club: Why Every Company Should Worry (NYTimes)
+"You can't turn off Cortana in the Windows 10 Anniversary Update"...
+  (Ian Paul)
+TEPCO urges Pokémon Go players to keep out of Fukushima disaster zone
+  (The Guardian)
+Nintendo Shares Drop 18% After It Reminds Investors It Did Not Develop
+  Pokémon Go (Anime)
+Re: Self-driving cars, accepting the moral dilemma (Roger Strong, PGN,
+  Al Mac, US NTSB via Al Mac)
+Re: Study: 78% of Resold Drives Still Contain Readable Personal, or Business
+  Data (Eric Sosman, Alexander Klimov)
+Re: Swiss trains fail on curious corner case (Dave Horsfall)
+Mike Hinchey Discusses "Evolving Critical Systems" (Werner U)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 27 Jul 2016 04:53:48 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Multiple alleged HIPAA violations result in $2.75 million
+  settlement with the University of Mississippi Medical Center (HHS)
+
+Multiple alleged HIPAA violations result in $2.75 million settlement with the University of Mississippi Medical Center
+
+The University of Mississippi Medical Center (UMMC) has agreed to settle
+multiple alleged violations of the Health Insurance Portability and
+Accountability Act (HIPAA) with the U.S. Department of Health and Human
+Services, Office for Civil Rights (OCR). OCR's investigation of UMMC was
+triggered by a breach of unsecured electronic protected health information
+(ePHI) affecting approximately 10,000 individuals.  During the
+investigation, OCR determined that UMMC was aware of risks and
+vulnerabilities to its systems as far back as April 2005, yet no significant
+risk management activity occurred until after the breach, due largely to
+organizational deficiencies and insufficient institutional oversight. UMMC
+will pay a penalty of $2,750,000 and adopt a corrective action plan to help
+assure future compliance with HIPAA Privacy, Security, and Breach
+Notification Rules.
+
+http://www.hhs.gov/about/news/2016/07/21/ocr-announces-275-million-settlement-multiple-alleged-hipaa-violations.html
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 04:55:49 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Widespread HIPAA vulnerabilities result in $2.7 million settlement
+  with Oregon Health & Science University (HHS)
+
+Oregon Health & Science University (OHSU) has agreed to settle potential
+violations of the Health Insurance Portability and Accountability Act of
+1996 (HIPAA) Privacy and Security Rules following an investigation by the
+U.S. Department of Health and Human Services Office for Civil Rights (OCR)
+that found widespread and diverse problems at OHSU, which will be addressed
+through a comprehensive three-year corrective action plan.  The settlement
+includes a monetary payment by OHSU to the Department for $2,700,000.
+
+OCR's investigation began after OHSU submitted multiple breach reports
+affecting thousands of individuals, including two reports involving
+unencrypted laptops and another large breach involving a stolen unencrypted
+thumb drive.  These incidents each garnered significant local and national
+press coverage. OCR's investigation uncovered evidence of widespread
+vulnerabilities within OHSU's HIPAA compliance program, including the
+storage of the electronic protected health information (ePHI) of over 3,000
+individuals on a cloud-based server without a business associate agreement.
+OCR found significant risk of harm to 1,361 of these individuals due to the
+sensitive nature of their diagnoses.
+
+http://www.hhs.gov/about/news/2016/07/18/widespread-hipaa-vulnerabilities-result-in-settlement-with-oregon-health-science-university.html
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 10:47:49 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Osram's Lightify smart bulbs suffer from serious security flaws"
+  (Brad Chacos)
+
+Brad Chacos, Senior Editor, TechHive, PC World, 27 Jul 2016
+Osram's Lightify smart bulbs suffer from several serious security flaws
+Most -- but not all -- will be fixed in August, however.
+http://www.pcworld.com/article/3101008/connected-home/osrams-lightify-smart-bulbs-suffer-from-several-serious-security-flaws.html
+
+Those smart lightbulbs you installed may just be dumbing down your home
+network's security, creating cracks that hackers can slip through to press
+attacks.
+
+Security firm Rapid7 posted a vulnerability report earlier this month:
+
+  Nine issues affecting the Home or Pro versions of Osram Lightify were
+  discovered, with the practical exploitation effects ranging from the
+  accidental disclosure of sensitive network configuration information, to
+  persistent cross-site scripting (XSS) on the web management console, to
+  operational command execution on the devices themselves without
+  authentication,
+
+    [This may give new meaning to the old question of how many people does
+    it take to change a lightbulb.  You might need at least a skilled sys
+    admin to overcome the newly installed supposedly secure controls, a
+    licensed electrician to ensure the sys admin will not be electrocuted,
+    and a supervisor to ensure that no information leakage results, not to
+    mention the procurers of the lightbulb and others indirectly involved.
+    Of course, given the Internet of Things, the sys admin might be remotely
+    working for an untrustworthy third-party company, the licensed
+    electrician operating with forged certification, and the supervisor
+    actually might be a robot (who would not count, even though it can
+    count!?), and the lightbulb might be a counterfeit or spiked with
+    special surveillance capabilities!  This has glorious opportunities for
+    RISKS, and perhaps even an April Fool's item.  PGN]
+
+------------------------------
+
+Date: Thu, 28 Jul 2016 10:30:19 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Mozilla off-by-one error on the Web anniversary!
+
+I just received an E-mail from Mozilla.  They are promoting today
+(2016-07-28) as the 10,000th day of the Web.  Sounds impressive?
+
+I had to check.  Actually, it is the 10,001st day of the Web.  It is 10,000
+days *after* the start of 1989-03-12.  Off-by-one claims another victim.
+Another reason to stick with my older version of Firefox?
+
+------------------------------
+
+Date: Thu, 28 Jul 2016 11:37:21 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: No treat for you: Pets miss meals after auto-feeding app PetNet
+  glitches (Nicky Woolf)
+
+Nicky Woolf, *The Guardian*,  27 July 2016 19.09 EDT
+
+A server issue has taken down PetNet's automatic feeding system for a number
+of users, leaving many animals without their scheduled meals PetNet's CEO,
+Carlos Herrera, said the third-party server service had been down for about
+10 hours and had no redundancy backup, but said PetNet was preparing a
+workaround.
+
+https://www.theguardian.com/technology/2016/jul/27/petnet-auto-feeder-glitch-google
+
+------------------------------
+
+Date: Mon, 25 Jul 2016 15:35:05 -0400
+From: Marc Rotenberg <rotenberg@epic.org>
+Subject: Scary Report from CMU
+
+A new report commissioned by the Department of Homeland Security forecasts
+that autonomous artificially intelligent robots are just five to 10 years
+away from hitting the mainstream -- but there's a catch.  The new breed of
+smart robots will be eminently hackable. To the point that they might be
+re-programmed to kill you.  The study, published in April, attempted to
+assess which emerging technology trends are most likely to go mainstream,
+while simultaneously serious cybersecurity problems.
+
+https://resources.sei.cmu.edu/asset_files/TechnicalReport/2016_005_001_453825.pdf
+
+------------------------------
+
+Date: Thu, 28 Jul 2016 10:38:58 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Flaw with password manager LastPass could hand over control
+  to hackers"
+
+Michael Kan, Infoworld, 27 Jul 2016
+The exploits require tricking a user to visiting a malicious website
+http://www.infoworld.com/article/3101367/security/flaw-with-password-manager-lastpass-could-hand-over-control-to-hackers.html
+
+opening text:
+
+Even password manager LastPass can be fooled. A Google security researcher
+has found a way to remotely hijack the software.
+
+It works by first luring the user to a malicious site. The site will then
+exploit a flaw in a LastPass add-on for the Firefox browser, giving it
+control over the password management software.
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 08:50:48 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Donald Trump to Russia: Please Hack Hillary!
+
+[via NNSquad]
+http://www.motherjones.com/politics/2016/07/donald-trump-russia-please-hack-hillary-clinton
+
+  Donald Trump encouraged Russian hackers to find Hillary Clinton's deleted
+  emails during a bizarre press conference on Wednesday in Miami.  "Russia,
+  if you are listening, I hope you are able to fid the 30,000 emails that
+  are missing," Trump said, referring to the emails that were not handed
+  over to investigators from Hillary Clinton's private email server. "I
+  think you'll be rewarded mightily by our press."
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 12:02:44 -0400
+From: "David Farber" <farber@gmail.com>
+Subject: "DNC Hack, and Lessons for Our Next President" (Motherboard)
+
+(Facebook Post, July 25, 2016)
+
+Thomas Rid has a good analysis on the forensics that points to Russia:
+
+https://motherboard.vice.com/read/all-signs-point-to-russia-being-behind-the-dnc-hack
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 09:02:23 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "Donald Trump Challenges Russia to Find Hillary Clinton's Missing
+  Emails"
+
+  Donald J. Trump said Wednesday that he hoped Russia had hacked Hillary
+  Clinton's email, essentially sanctioning a foreign power's cyberspying of
+  a secretary of state's correspondence.
+
+http://www.nytimes.com/2016/07/28/us/politics/donald-trump-russia-clinton-emails.html
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 9:21:41 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Can foreign powers hack our elections? (Jack Goldsmith)
+
+Jack Goldsmith, on Whether Foreign Powers Could Hack Our Elections
+Posted on ElectionLawBlog by Rick Hasen, 26 Jul 2016
+
+Is the election aspect of this hack unique?
+
+There have been reports in recent years of cyberattacks or cyberoperations
+in computer networks in other countries related to elections. Still, if this
+if a Russian (or some other foreign governmental) operation, I know of
+nothing parallel on this scale, with this impact. And yet, as I wrote this
+morning, ``the Russian hack of the DNC was small beans compared to the
+destruction of the integrity of a national election result.''  Presumably
+the DNC email hack and leak involve genuine emails. But what if the hackers
+interspersed fake but even more damning or inflammatory emails that were
+hard to disprove? What if hackers break in to computers to steal or destroy
+voter registration information? What if they disrupted computer-based voting
+or election returns in important states during the presidential election?
+The legitimacy of a presidential election might be called into question,
+with catastrophic consequences. The DNC hack is just the first wave* of
+possible threats to electoral integrity in the United States -- by foreign
+intelligence services, and others.
+
+Also see Slate:  Is the DNC Hack an Act of War?
+http://www.slate.com/articles/news_and_politics/interrogation/2016/07/is_the_dnc_hack_an_act_of_war_and_is_russia_responsible.html
+
+"Jack Goldsmith is the Henry L. Shattuck Professor at Harvard Law School,
+co-founder of Lawfare, a Senior Fellow at the Hoover Institution at Stanford
+University, and co-chair of its Working Group on National Security,
+Technology, and Law. He teaches and writes about national security law,
+presidential power, cybersecurity, international law, Internet law, foreign
+relations law, and conflict of laws. Before coming to Harvard, Professor
+Goldsmith served as Assistant Attorney General, Office of Legal Counsel from
+2003-2004, and Special Counsel to the Department of Defense from 2002-2003."
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 23:50:01 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Spy Agency Consensus Grows That Russia Hacked D.N.C.
+
+American intelligence agencies cautioned that they are uncertain whether the
+breach was an effort to manipulate the 2016 presidential election.
+http://www.nytimes.com/2016/07/27/us/politics/spy-agency-consensus-grows-that-russia-hacked-dnc.html
+
+  [Also, See op-ed by Nicholas Kristof: Putin, Trump and Our Election, in
+  today's issue of *The New York Times*.]
+
+------------------------------
+
+Date: Mon, 25 Jul 2016 16:42:29 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Master key used by TSA to open Safe Skies luggage locks revealed
+
+'On Saturday evening, during the Eleventh HOPE conference in New York City,
+three hackers released the final master key used by the Transportation
+Security Administration (TSA), which opens Safe Skies luggage locks,' writes
+CSO's Steve Ragan.  The hackers also released a 3D-printable model of the
+key.  The issue, the hackers say, isn't that some creep can riffle through
+your delicates using one of these keys, but that government key escrow is
+inherently dangerous.  Even the TSA admits that the Safe Skies locks have
+little to do with safety.  'These consumer products are convenience products
+that have nothing to do with TSA's aviation security regime,' an agency
+spokesperson said.
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 09:12:49 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "New attack bypasses HTTPS protection on Macs, Windows, and Linux"
+  (Dan Goodin)
+
+Dan Goodin, Ars Technica, 26 Jul 2016
+Hack can be carried out by operators of Wi-Fi hotspots, where HTTPs is
+needed most.
+http://arstechnica.com/security/2016/07/new-attack-that-cripples-https-crypto-works-on-macs-windows-and-linux/
+
+opening text:
+
+A key guarantee provided by HTTPS encryption is that the addresses of
+visited websites aren't visible to attackers who may be monitoring an end
+user's network traffic. Now, researchers have devised an attack that breaks
+this protection.
+
+The attack can be carried out by operators of just about any type of
+network, including public Wi-Fi networks, which arguably are the places
+where Web surfers need HTTPS the most. It works by abusing a feature known
+as WPAD -- short for Web Proxy Autodisovery --in a way that exposes certain
+browser requests to attacker-controlled code. The attacker then gets to see
+the entire URL of every site the target visits. The exploit works against
+virtually all browsers and operating systems. It will be demonstrated for
+the first time at next week's Black Hat security conference in Las Vegas in
+a talk titled Crippling HTTPS with Unholy PAC.
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 10:15:52 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Millions of Wireless Keyboards Let Hackers See What You're Typing
+
+http://gizmodo.com/millions-of-wireless-keyboards-can-let-hackers-see-what-1784315125?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+gizmodo%2Ffull+%28Gizmodo%29
+
+  A newly discovered set of wireless keyboard vulnerabilities can let
+  hackers take over your keyboard and secretly record what you type.  It's
+  called KeySniffer, and it spells death for millions of wireless,
+  radio-based keyboards.  According to security researchers at Bastille, the
+  so-called KeySniffer vulnerability affects wireless keyboards that use a
+  less secure, radio-based communication protocol rather than a Bluetooth
+  connection. The affected keyboards come from eight different hardware
+  makers and use transceiver chips or non-Bluetooth chips.  These chips are
+  cheaper than Bluetooth chips, but they also don't receive Bluetooth's
+  frequent security updates. That's a problem.
+
+My primary keyboards are all wired. On rare occasions, I use a Bluetooth
+keyboard unaffected by this specific issue.
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 19:24:34 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Hackers can snoop and even type keystrokes from at least 8
+  wireless keyboard vendors" (Tim Greene)
+
+Tim Greene, Network World, PC World, 26 Jul 2016
+http://www.pcworld.com/article/3100544/input-keyboards/hackers-can-snoop-and-even-type-keystrokes-from-at-least-8-wireless-keyboard-vendors.html
+Bastille says the KeySniffer vulnerability can be exploited from 250 feet away.
+
+opening text:
+
+A vulnerability across at least eight brands of wireless keyboards lets
+hackers read keystrokes from 250 feet away, according to wireless security
+vendor Bastille.
+
+The problem is that the keyboards transmit to their associated PCs without
+encryption, and it's just a matter of reverse engineering the signals to
+figure out how to read what keys are being hit, say Bastille researchers. An
+attacker could inject keystrokes while the keyboard is idle and the machine
+is logged in, they say, using a dongle that can be fashioned for less than
+$100.
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 20:50:32 -0400
+From: Ed Ravin <eravin@panix.com>
+Subject: Some unusually level-headed computer security advice (Bloomberg)
+
+Bloomberg Business Week ran an article on reasonable security measures you
+can take for protection against cyber threats, on a sliding scale from
+"sane" to "Snowden".  My only quibble with it is that taping up your Webcam
+should be higher on the list than subscribing to an ID theft monitoring
+service, as most of us are already getting the latter for free thanks to all
+those major credit card breaches.
+
+http://www.bloomberg.com/news/articles/2016-07-20/the-not-crazy-person-s-guide-to-online-privacy
+
+  [One of my default caveats: "Best" practices are nowhere near good enough,
+  "Reasonable" ones probably even less so.  PGN]
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 16:42:30 -0500
+From: "Alister Wm Macintyre" <macwheel99@wowway.com>
+Subject: Beware of default settings (Pro Publica)
+
+Many devices come with default settings.  Many people install devices and
+start services, unaware of these settings which could be altered to better
+protect their privacy and security.  Defaults can also have a significant
+impact on overall society and quality of civilization.
+
+https://www.propublica.org/article/set-it-and-forget-it-how-default-settings-rule-the-world
+
+The Pro Publica article discusses defaults in:
+.       Computers
+.       Phones
+.       Apps
+.       Kitchen appliances
+.       Food distribution to the public
+.       Government registration
+.       Retirement plan enrollment
+.       Other topics
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 23:46:00 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: $1 Billion for Dollar Shave Club: Why Every Company Should Worry
+
+The Internet, mass transportation, and globalization allow decentralized
+companies to be smaller and leaner and have fewer employees.
+
+http://www.nytimes.com/2016/07/27/business/dealbook/1-billion-for-dollar-shave-club-why-every-company-should-worry.html
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 10:42:50 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "You can't turn off Cortana in the Windows 10 Anniversary Update"...
+  (Ian Paul)
+
+Ian Paul, PCWorld, 26 Jul 2016
+...but you can lessen her awareness.
+http://www.pcworld.com/article/3100358/windows/you-cant-turn-off-cortana-in-the-windows-10-anniversary-update.html
+
+  [Definitely a lesson less in there.  Less and Less is More?  PGN]
+
+opening text:
+
+Microsoft made an interesting decision with Windows 10's Anniversary Update,
+which is now in its final stages of development before it rolls out on 2 Aug
+2016.
+
+Cortana, the personal digital assistant that replaced Windows 10's search
+function and taps into Bing's servers to answer your queries with contextual
+awareness, no longer has an off switch.
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 19:17:24 +0200
+From: Werner U <werneru@gmail.com>
+Subject: TEPCO urges Pokémon Go players to keep out of Fukushima disaster zone
+
+  [Might be RISKY to venture near that place ?!? ]
+
+Pokémon Go players urged not to venture into Fukushima disaster zone
+https://www.theguardian.com/technology/2016/jul/26/pokemon-go-players-fukushima-disaster-zone-nuclear
+
+Samuel Gibbs, *The Guardian*, 26 Jul 2016
+
+Tepco requests Niantic to remove Pokémon character from nuclear plant
+meltdown areas and evacuation zone
+
+Japan is asking for the Fukushima nuclear exclusion zone to be classified as
+a no-go area for Pokémon after the discovery of at least one of the
+game's characters on a power station's site.
+
+Tokyo Electric Power Company Holdings (Tepco) has requested that
+Pokémon Go developer Niantic and the Pokémon Company prevent
+Pokémon appearing in and around areas affected by the nuclear reactor
+meltdown in Fukushima to help prevent encouraging players to enter dangerous
+areas.  <https://www.theguardian.com/environment/fukushima>
+<https://www.theguardian.com/technology/pokemon-go>
+
+Tepco said it has tested the Fukushima Daiichi plant, which was partially
+destroyed by the March 2011 disaster, the nearby Fukushima Daini plant and
+the Kashiwazaki-Kariwa plant in Niigata Prefecture and found Pokémon
+<https://www.theguardian.com/technology/pokemon> on-site.
+
+Japan's nuclear regulator sent out a warning to national energy providers
+telling them to tighten security after the incursion of three teenagers into
+a nuclear power plant in Ohio in the US. Tepco has banned employees from
+playing Pokémon Go on site.
+
+The Fukushima governor, Masao Uchibori, said that it was not good that
+people might enter nuclear plants or evacuation zones designated after the
+nuclear disaster on the hunt for Pokémon and that ``the prefectural
+government will consider how to draw attention to this.''
+
+The city government of Nagasaki has already requested that Niantic remove
+Pokémon from Nagasaki Peace Park, which is maintained as a memorial to
+victims of the atomic bombing of the city in 1945. The city has also asked
+visitors to refrain from playing the game saying that ``the Peace Park is a
+place for prayer.''
+
+Niantic said it would modify the game if the company discovered problems.
+
+Japan, the home of Pokémon, had to wait for weeks after the Pokémon
+Go's original launch in Australia, owing to worries about overloaded servers
+and the commercial agreement with McDonald's for sponsored Pokémon stops.
+
+<https://www.theguardian.com/technology/2016/jul/20/pokemon-go-japan-launch-delayed-mcdonalds-sponsorship-gyms>
+
+Since the game's launch in Japan <https://www.theguardian.com/world/japan>,
+reports of minor traffic incidents including that of a Pokémon
+Go-playing male high school student and a 30-year-old man colliding on a
+street in Tokyo's Adachi Ward while riding bicycles.
+
+The Pokémon Go global craze has led South Koreans to flock to a remote
+region holocaust museums having to discourage players, naive New Zealanders
+Led to Hell's Angels clubs and police stations filled with players.  It has
+also caused car accidents, impromptu flash-mobs in the middle of New York
+streets and people to walk into the sea in pursuit of some of the more rare
+creatures.
+
+<https://www.theguardian.com/technology/2016/jul/13/pokemon-go-south-koreans-remote-area-sokcho-google-maps>,
+<https://www.theguardian.com/technology/2016/jul/13/pokemon-go-us-holocaust-museum-asks-players-to-stay-away>
+<https://www.theguardian.com/technology/2016/jul/12/pokemon-go-leads-new-zealand-players-to-hells-angels-club>
+
+Hiroshi Hase, Japanese minister of education, culture, sports, science and
+technology, said that global frenzy involving content created in Japan was
+*gratifying*, but that it's location-based nature could put gamers and
+others at risk in certain situations and urged caution.
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 19:36:15 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Nintendo Shares Drop 18% After It Reminds Investors It Did Not
+  Develop Pokémon Go
+
+   [another way Pokémon Go has gone viral.]
+
+Anime News Network
+http://en.rocketnews24.com/2016/07/27/nintendo-shares-drop-18-after-it-reminds-investors-it-did-not-develop-pokemon-go/
+
+opening text:
+
+Nintendo's shares on the Japanese stock market dropped by 18 percent on
+Monday, and is dropping as much as six percent on Tuesday, after Nintendo
+issued a report last Friday. The report noted that company expected the
+impact of the Pokémon Go game on its annual net income to be limited, and
+clarified that it did not develop the game.  The company's share prices had
+doubled since the release of the game on July 6, with a market
+capitalization of 4.5 trillion yen (US$42.5 billion) as of last
+Tuesday. Monday;s stock price drop reduced the company's market value by
+about US$6.7 billion.
+
+  [PGN NOTES: I had these items in the queue, and might as well
+  abbreviate them for the record -- even though they are old:]
+
+Sam Machkovech, *Ars Technica*, 10 Jul 2016
+Armed muggers use Pokémon Go to find victims (Sam Machkovech)
+http://arstechnica.com/gaming/2016/07/armed-muggers-use-pokemon-go-to-find-victims/
+
+Pokémon Go on iOS gets full access to your Google account
+http://arstechnica.com/gaming/2016/07/pokemon-go-on-ios-gets-full-access-to-your-google-account/
+
+Pokémon Go's creators say they didn't mean to spy on Google accounts
+http://www.recode.net/2016/7/11/12154354/pokemon-go-niantic-google-permissions
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 10:29:17 -0500
+From: "Roger Strong" <rstrong@yetmans.mb.ca>
+Subject: Re: Self-driving cars, accepting the moral dilemma (RISKS 29.64)
+
+> If the car is really autonomous, then any "fault" belongs to the
+> manufacturer and the mfgr will have to pay the damages.
+
+It's common practice for even the manufacturers' authorized repair shops to
+use cheaper aftermarket parts from other manufacturers.  Today it's
+headlights and brake pads, tomorrow it'll be the sensors used for automated
+driving.  If an accident investigation shows that a repair shop substituted
+a cheaper sensor, painted over one, or - as in two NASA probes - installed a
+sensor upside-down, I doubt the car manufacturer will accept liability.
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 14:27:48 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Self-driving car fatal accident (RISKS-29.60)
+
+You might like to look at my Ubiquity piece on self-driving vehicles,
+which was posted today:
+
+   http://ubiquity.acm.org/article.cfm?id=2974062
+
+Auto-Mation vs Partial Auto-Mation ...  Interesting quotes from Don Norman
+at the end.
+
+------------------------------
+
+Date: Sunday, July 10, 2016 11:50 PM
+From: "Alister Wm Macintyre (Wow)" <macwheel99@wowway.com>
+Subject: Re: Self-driving car fatal accident (RISKS-29.60)
+
+In the death in an auto accident where the human in the driver seat was not
+driving, he was using the Autopilot of a Tesla model S, while he watched a
+Harry Potter movie.
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 16:24:23 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: self-driving car fatal accident (RISKS-29.60)
+
+On 26 Jul 2016, the US National Transportation Safety Board
+<http://www.ntsb.gov> (NTSB) issued its preliminary report
+<http://go.usa.gov/xYjNJ> (executive summary) for the investigation of a
+fatal 7 May 2016 highway crash on US Highway 27A, near Williston, Florida.
+
+The preliminary NTSB report details the collision involving a 53-foot
+semitrailer in combination with a 2014 Freightliner Cascadia truck tractor
+and a 2015 Tesla Model S. The report states that according to system
+performance data downloaded from the car, the indicated vehicle speed was 74
+mph just prior to impact, and the posted speed limit was 65 mph.
+
+  [Al Mac observation: In the USA, police usually ticket vehicles traveling
+  at 10 mph, or more, above the speed limit Thus, traveling at 9 mph above
+  the speed limit, was probably the speed of the rest of the traffic around
+  where the collision occurred.]
+
+The car's system performance data also revealed the driver was using the
+advanced driver assistance features Traffic-Aware Cruise Control and
+Autosteer lane-keeping assistance. The car was also equipped with automatic
+emergency braking that is designed to automatically apply the brakes to
+reduce the severity of or assist in avoiding frontal collisions.
+
+The NTSB preliminary report does not contain any analysis of data and does
+not state probable cause for the crash.
+
+The continuing investigation may contribute supplements or corrections to
+this preliminary info.
+
+The NTSB executive summary and PDF detail include photos of the
+consequences, and where it happened.
+http://www.ntsb.gov/investigations/AccidentReports/Reports/HWY16FH018-Preliminary-Report.pdf >
+
+All aspects of the crash remain under NTSB investigation. While no timeline
+has been established, final reports are generally published 12 months after
+the release of a preliminary report.
+
+NHTSA also has preliminary data on this crash.  Keywords for searching NHTSA
+reports, to see if they have any more info, on this crash:
+
+Investigation: PE 16-007
+http://www-odi.nhtsa.dot.gov/acms/cs/jaxrs/download/doc/UCM530776/INOA-PE160
+07-7080.PDF
+
+------------------------------
+
+Date: Mon, 25 Jul 2016 17:22:25 -0400
+From: Eric Sosman <esosman@comcast.net>
+Subject: Re: Study: 78% of Resold Drives Still Contain Readable Personal, or
+ Business Data
+
+In RISKS-29.64, Carl Byington suggests writing zeroes to "almost all" of a
+disk prior to decomissioning.  Rather than a one-pass hand- rolled solution
+with highly predictable data, I've used Darik's Boot and Nuke (DBAN), which
+makes multiple overwriting passes with "random" data.  No doubt other
+solutions exist, too.
+
+Of course, if the disk holds *really* sensitive data, the best solution is
+physical destruction: Shatter the platters and scatter the shards,
+preferably across multiple incinerators.
+
+------------------------------
+
+Date: Wed, 27 Jul 2016 12:50:11 +0300
+From: Alexander Klimov <alserkli@inbox.ru>
+Subject: Re: Study: 78% of Resold Drives Still Contain Readable Personal
+ or Business Data (RISKS-29.64)
+
+Carl Byington wrote:
+> "dd if=/dev/zero of=/dev/sda bs=1M"
+
+Once the computer is broken, you cannot boot it to erase the disk.  The disk
+can be partially faulty and shredding becomes non-trivial.  You may want to
+send computer to repair without destructing your data.
+
+The proper way is to use full-disk encryption from the very beginning.  To
+wipe such disk you simply forget the password.
+
+By the way, there is less cryptic "shred /dev/sda" instead of "dd".
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 08:07:46 +1000 (EST)
+From: Dave Horsfall <dave@horsfall.org>
+Subject: Re: Swiss trains fail on curious corner case (notsp)
+
+[ Swiss train becomes invisible if 256 axles are counted ]
+
+I passed this along to a rail freak, and he replied that the train in
+question would have to have over 60 wagons (4 axles each), plus the loco(s).
+The sort of Swiss lines using axle counters would not encounter a freight
+train this long, but nonetheless the bug is inexcusable, as the software
+could well be exported.
+
+------------------------------
+
+Date: Tue, 26 Jul 2016 23:15:17 +0200
+From: Werner <werneru@gmail.com>
+Subject: Mike Hinchey Discusses "Evolving Critical Systems"
+  (ACM learning Center webinar on Aug 2)
+
+  To register for the next free ACM Learning Webinar
+      Visit  http://learning.acm.org/webinar/
+          "Evolving Critical Systems,"
+   presented on Tuesday, August 2 at 12 pm ET
+by Mike Hinchey, Director of Lero, the Irish Software Research Centre.
+
+Increasingly software can be considered to be critical, due to the business
+or other functionality which it supports. Upgrades or changes to such
+software are expensive and risky, primarily because the software has not
+been designed and built for ease of change. Expertise, tools and
+methodologies which support the design and implementation of software
+systems that evolve without risk (of failure or loss of quality) are
+essential. We address a research agenda for building software in
+computer-based systems that (a) is highly reliable and (b) retains this
+reliability as it evolves, either over time or at run-time and illustrate
+this with a complex example from the domain of space exploration.
+
+Duration: 60 minutes (including audience Q&A)
+
+The talk will be followed by a question-and-answer session moderated by
+Stephen Ibaraki, Chair of the ACM Professional Development Committee and
+member of the ACM Practitioner Board.
+
+(If you'd like to attend but can't make it to the virtual event, register
+now to receive a recording of the webinar when it becomes available.)
+
+Note: You can stream this and all ACM Learning Webinars on your mobile
+device, including smartphones and tablets.
+
+Presenter: Mike Hinchey,
+  Director of Lero; Professor of Software Engineering, University of Limerick
+
+Mike Hinchey is Director of Lero, the Irish Software Research Centre, a
+national research center based in eight institutions and including all of
+Ireland?s universities. Also Professor of Software Engineering at the
+University of Limerick in Ireland, at various points Hinchey has held full
+professor or visiting positions in the UK, Germany, Sweden, Japan,
+Australia, and USA. Prior to joining Lero, Hinchey was Director of the NASA
+Software Engineering Laboratory and was awarded the 2009 NASA Kerley Award
+as Innovator of the Year. The holder of 26 patents, he is the author/editor
+of more than 20 books and 200 papers on various aspects of Computer Science
+and Software Engineering. Hinchey holds a B.Sc. in Computer Science from the
+University of Limerick, an M.Sc. in Computation from the University of
+Oxford, and a Ph.D. in Computer Science from the University of Cambridge. He
+is President-Elect of the International Federation for Information
+Processing (IFIP) and Vice-Chair and Chair-Elect of IEEE UK & Ireland
+Section.
+
+Moderator: Stephen Ibaraki, Chair, ACM Professional Development Committee
+
+With a history of over 100 senior executive leadership roles, significant
+global contributions, awards and recognitions, Stephen Ibaraki is an IDG IT
+World (Canada) writer/blogger, multiple award winning serial entrepreneur
+and executive board chairman. He's founding chairman of the Global Industry
+Council (GIC), part of the United Nations (UNESCO) founded International
+Federation for Information Processing (IFIP) IP3, board vice-chairman of the
+IFIP International Professional Practice Partnership (IFIP IP3),
+vice-chairman of the international steering committee and/or advisory board
+IFIP CIE/CCIO World CIO Forum (2012 and 2014). In addition, Stephen advises
+start-ups, global fortune companies, and governments on strategy and
+technology; and has received numerous awards and accolades from high-tech
+organizations and companies. He's a founding fellow of the Canadian
+Information Processing Society (CIPS). Stephen is also very active with ACM,
+as Chair of the Professional Development Committee and a member of the ACM
+Practitioner Board.
+
+------------------------------
+
+Date: Tue, 10 May 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+    newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.65
+************************

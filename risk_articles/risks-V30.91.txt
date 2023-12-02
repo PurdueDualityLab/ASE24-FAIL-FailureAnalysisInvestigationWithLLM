@@ -1,0 +1,767 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 30.91
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 6 November 2018  Volume 30 : Issue 91
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.91>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Like clockwork: How daylight saving time stumps hospital record
+  keeping (Sydney Lupkin)
+Daylight Savings results in hospital records shutdown (New Yorker)
+How Daylight Saving Time Messes With Hospitals (Fortune)
+File-Sharing Software on State Election Servers Could Expose Them
+  to Intruders (ProPublica)
+Your brain: The next hacking frontier (TechBeacon)
+Selfie attempt results in damage to artwork by Dali and Goya (CNN)
+Facebook adding extra CGI parameters to other people's links (ycombinator)
+What it's like to use Tesla's newest self-driving tech (Gabe Goldberg)
+Why Big Tech pays poor Kenyans to programme self-driving cars (bbc.com)
+EU border `lie detector' system criticised as pseudoscience (The Guardian)
+Credit Card Chips Have Failed to Halt Fraud, Survey Shows (Fortune)
+Check this out: Radisson Hotel Group 'fesses up to `security incident'
+  (The Register)
+A new study finds potentially manipulative ads in apps for preschoolers
+  (WashPost)
+Cisco Adaptive Security Appliance Software and Cisco Firepower Threat
+  Defense Software Denial of Service Vulnerability (Cisco)
+The D in Systemd stands for 'Dammmmit!' A nasty DHCPv6 packet can pwn a
+  vulnerable Linux box. (The Register)
+T Wi-Fi kit bit by TI chip slip: Wireless gateways open to
+  hijacking via BleedingBit chipset vulnerability (The Register)
+ISP pissed at Elsevier Takedowns/blocks, so... (danny burstein)
+Re: Ethics of whom to kill (Wol)
+Re: Explainable AI Simulation for AVs (Richard Stein, Erling Kristiansen)
+Re: Toward Human-Understandable, Explainable AI (John Beattie)
+Re: Driverless cars: Who should die in a crash? (John Beattie)
+Re: The spreading scourge of broken SSL implementation (Sergio Gelato,
+  Julian Bradfield)
+Jury duty, recidivus (Rob Slade)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 4 Nov 2018 07:45:25 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Like clockwork: How daylight saving time stumps hospital record
+  keeping (Sydney Lupkin)
+
+Sydney Lupkin, Kaiser Health News, 3 Nov 2018
+
+https://www.usatoday.com/story/news/health/2018/11/03/daylight-saving-time-hospital-electronic-medical-records-emergency-fall-back/1864579002/
+
+  Modern technology has helped medical professionals perform robot-assisted
+  surgeries and sequence whole genomes. But hospital software still can't
+  handle daylight saving time.
+
+  Epic Systems, one of the most popular electronic health records software
+  systems used by hospitals, can delete records or require cumbersome
+  workarounds when clocks are set back for an hour -- prompting many
+  hospitals to opt for paper records for part of the night shift.
+
+  And it happens every year.
+
+  "It's mind-boggling," said Dr. Mark Friedberg, a senior physician policy
+  researcher at RAND. In 2018, he said, "we expect electronics to handle
+  something as simple as a time change."
+
+  "Nobody is surprised by daylight savings time. They have years to prep.
+  Only, surprise, it hasn't been fixed."
+
+------------------------------
+
+Date: Tue, 6 Nov 2018 12:05:29 -0500
+From: Steve Golson <sgolson@trilobyte.com>
+Subject: Daylight Savings results in hospital records shutdown (New Yorker)
+
+Problems with new electronic medical records system:
+
+  Last fall, the night before daylight-saving time ended, an all-user e-mail
+  alert went out. The system did not have a way to record information when
+  the hour from 1 a.m. to 1:59 a.m. repeated in the night.  This was, for the
+  system, a surprise event. The only solution was to shut down the lab
+  systems during the repeated hour. Data from integrated biomedical devices
+  (such as monitoring equipment for patients' vital signs) would be
+  unavailable and would have to be recorded by hand. Fetal monitors in the
+  obstetrics unit would have to be manually switched off and on at the top
+  of the repeated hour.
+
+The whole article is well worth reading:
+
+https://www.newyorker.com/magazine/2018/11/12/why-doctors-hate-their-computers
+
+------------------------------
+
+Date: Mon, 5 Nov 2018 17:29:20 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How Daylight Saving Time Messes With Hospitals (Fortune)
+
+The clocks went back one hour in (almost all) U.S. counties and states at 2
+A.M. on Sunday, marking the `fall back' that signals
+the end of Daylight Saving.
+<https://click.email.fortune.com/%3Fqs%3D4781bb52c80c7dabf45d7dda982bf7332691a035149964328f3b1d2019da6f49e5165b3ed7f92087ee25bd7ca483ee0d75e810ac628562c1
+And, as a report from Kaiser Health News highlights
+<https://click.email.fortune.com/%3Fqs%3D4781bb52c80c7dabc89230e068d424c4153d8f87150658730d6df86797ea708c88a662f84d5a93723c93f10be314c25b6b57d510611fb2f4
+that brings with it a whole bunch of technical headaches for hospital
+systems and their electronic record keeping systems.
+
+Modern medical innovations include the ability to transform human immune
+cells into cancer-destroying mercenaries. And yet, a one-hour shifting of
+clocks can force hospitals to temporarily switch from ostensibly newfangled
+(and expensive) electronic health records to old-fashioned paperwork. In
+fact, popularly used systems like Epic Systems software can delete records
+or require cumbersome workarounds when clocks are set back for an hour,
+according to KHN. (Epic, for its part, told the publication that, Daylight
+savings time is inherently nuanced for healthcare organizations, which is
+why we work closely with customers to provide guidance on how to most
+effectively use their system to care for their patients during this time
+period.)
+
+One hour may not seem like a whole lot of time. But it can make a big
+difference when it comes to keeping tabs on patients vitals or whether or
+not they need scheduled medication.
+
+https://view.email.fortune.com/%3Fqs%3D161a5916fd2cfcbc55f8fc149eae8b7ab098b460bce21e7b1922c7d87a7a9e9b37e1e68aa5fc8fc8eaddf8badad6ff68c28abd39418efffbeb08875c11c8ffbf5d76f3898e08b242
+
+It's not just health IT that notices; databases, security systems, anything
+logging events has to deal with a missing hour in spring and a duplicated
+hour in fall.
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 19:37:27 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: File-Sharing Software on State Election Servers Could Expose Them
+  to Intruders (ProPublica)
+
+ProPublica analysis found election computer servers in Wisconsin and
+Kentucky could be susceptible to hacking by anonymous FTP.  Wisconsin shut
+down its service after complaints.
+
+https://www.propublica.org/article/file-sharing-software-on-state-election-servers-could-expose-them-to-intruders
+
+------------------------------
+
+Date: Thu, 1 Nov 2018 20:51:13 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Your brain: The next hacking frontier (TechBeacon)
+
+This week, researchers unveiled worrying results about how easy it is to
+hack medical implants, such as brain stimulators.
+
+The claim is that hackers are a decade or two away from being able to mess
+with our memories -- the very essence of who we are. But neuro-modulation is
+a promising branch of medical science, so it would be a shame if these
+worries were overblown, right?
+
+Sci-fi it's not, they claim. In this week's Security Blogwatch, we're
+even more scared than we were yesterday.
+<https://techbeacon.com/contributors/richi-jennings>
+
+Your humble blogwatcher <http://richi.uk/> curated these bloggy bits for
+your entertainment.  Not to mention: Thought-provoking stuff about nitrogen.
+
+https://techbeacon.com/your-brain-next-hacking-frontier
+
+------------------------------
+
+Date: Sat, 3 Nov 2018 19:54:54 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Selfie attempt results in damage to artwork by Salvador Dali
+  and Francisco Goya (CNN)
+
+Not again......
+
+Amir Vera, Jennifer Hauser and Alla Eshchenko, CNN
+
+https://www.cnn.com/2018/11/03/europe/russian-women-damage-artwork/
+
+8:13 PM ET, Sat November 3, 2018
+
+A young woman trying to take a selfie knocked over two works of art at a
+gallery in Yekaterinburg, Russia, on October 27, 2018.  A picture is worth a
+thousand words, but what about a selfie?
+
+A group of women in Yekaterinburg, Russia, may find out soon after one of
+them tried to take a selfie on October 27 and accidentally knocked over a
+structure at the International Arts Center Main Avenue. The structure was
+carrying two works of art, according to the Russian Ministry of Internal
+Affairs (MIA) and state-run news agency TASS.
+
+The damaged artworks, according to TASS, include a Francisco Goya etching
+from the Los Caprichos series and Salvador Dali's interpretation of
+it. Goya's work was also part of the gallery owner's private collection.
+
+------------------------------
+
+Date: Sat, 3 Nov 2018 04:10:34 -0400
+From: Eli the Bearded <*@eli.users.panix.com>
+Subject: Facebook adding extra CGI parameters to other people's links
+  (ycombinator)
+
+https://news.ycombinator.com/item%3Fid%3D18275061
+https://community.cloudflare.com/t/facebook-now-adds-fbclid-query-string-to-urls-busting-cloudflares-cache/40355
+
+In some apparent attempt to better track user clicks, Facebook has
+started adding an extra parameter to links. This will break many
+mechanisms for caching dynamic content, as the Cloudflare discussion
+illustrates. In the case of my site it turns a URL like this:
+
+  http://abc.def/ghijklmno.cgi%3Fpqrs%3Dtuvw
+Into this:
+
+  http://abc.def/ghijklmno.cgi%3Fpqrs%3Dtuvw%26fbclid%3DxyzR0bBzJRwc-q1btq_wHCtliXasz-C66UzxCc6DuqIBAYu9setNAg-IJ1nY8
+
+(Censored to not advertise) Note how the parameter is *longer* than the
+whole original URL. And this is not something I get any benefit from, I
+do not use Facebook at all.
+
+Besides breaking caching, it will destroy any CGI already using a fbclid
+query parameter, has been breaking some links as reported in the
+ycombinator piece, and it is also likely to seriously pollute other
+people's log summaries.
+
+I have decided that is a good thing, and have configured my site to now
+generate 4xx errors in response to unexpected fbclid parameters. I don't
+want people to think they can willy-nilly add extra things to CGI requests.
+This needs to be coordinated with the target sites.
+
+Unfortunately many people will decide they do need Facebook and will
+rollover for this.
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 16:02:23 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: What it's like to use Tesla's newest self-driving tech
+
+Autopass. If the person in front of you is driving too slowly -- 45 in a 55
+mph zone, for example -- what would you do? Why, you'd pass them.
+
+Now, the Tesla can do that, too. If it notices that you're being blocked,
+and that there's room in the next lane, a notification appears on your
+screen. It informs you that if you put on your turn signal, Autopilot will
+take it from there. It does the passing maneuver smoothly and
+gracefully. (It doesn't actually return to your original lane, however --
+just changes into a faster lane, passing the slowpoke, and stays there.)
+
+How aggressive is it? That's up to you. In the onscreen settings, you can
+adjust how impatient your car is. The options are Disabled (off), Mild,
+Average, and Mad Max. In Mad Max mode, the Tesla will suggest passing if the
+guy in front of you is going even a couple of mph below the speed limit.
+
+(The Mad Max setting is characteristic of the Musk-esque sense of humor
+that's baked in to Teslas. The acceleration options on the Model S are
+labeled Chill, Standard, Sport, Insane, and Ludicrous.)
+
+https://finance.yahoo.com/news/tesla-now-self-drivingest-car-road-063800677.html
+
+Mad Max passing and Ludicrous acceleration. Just what the world needs.
+
+------------------------------
+
+Date: Mon, 5 Nov 2018 12:10:37 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Why Big Tech pays poor Kenyans to programme self-driving cars
+ (bbc.com)
+
+https://www.bbc.com/news/technology-46055595
+
+No need to build an explainable AI simulator when there's an army of
+carbon-based trainers assisting AV neural network/image recognition learning
+processes.
+
+To their credit and initiative, Samasource's staffing model remotely and
+inexpensively empowers Kenyan women. They construct the training images
+applied to condition AV reactions/behavior.
+
+"Brenda loads up an image, and then uses the mouse to trace around just
+about everything. People, cars, road signs, lane markings -- even the sky,
+specifying whether it's cloudy or bright. Ingesting millions of these images
+into an artificial intelligence system means a self-driving car, to use one
+example, can begin to 'recognise' those objects in the real world. The more
+data, the supposedly smarter the machine.
+
+"She and her colleagues sit close -- often too close -- to their monitors,
+zooming in on the images to make sure not a single pixel is tagged
+incorrectly. Their work will be checked by a superior, who will send it back
+if it's not up to scratch. For the fastest, most accurate trainers, the
+honor of having your name up on one of the many TV screens around the
+office. And the most popular perk of all: shopping vouchers."
+
+Driver social skills, per https://catless.ncl.ac.uk/Risks/30/90%23subj12
+(Shaprio), are neither integrated nor accountable. Training data set
+localized bias may influence AV obstacle reaction.
+
+A preference would be to apply training datasets that demonstrate courteous
+v. aggressive driving, professional v. amateur, or reckless v.
+cautious. Possibly based on US driving habits per Boston, Los Angeles, New
+York, Miami, Philadelphia, Sydney AU, Beijing or Shanghai PRC, etc.  Use
+real-time sequences (~50-100Hz) as training input. Clearly a very
+challenging problem.
+
+Risk: AV training strategy using discrete images discount localized
+carbon-based driver intent and precursor conditions.
+
+On 02OCT2018, the NHTSA published "A Framework for Automated Driving System
+Testable Cases and Scenarios," retrieved on 04NOV2018 from
+https://www.nhtsa.gov/document/framework-automated-driving-system-testable-cases-and-scenarios.
+This document details a range of test scenarios for automated driving system
+(ADS) response intervals from 0.1 to ~15 seconds (see document pg. 12 for
+ADS task decomposition hierarchy).
+
+This document does not establish or mandate compliance. Unclear if AV
+manufacturers will be required to disclose ADS test results based on the
+document and attach to the "car window sticker."
+
+------------------------------
+
+Date: Fri, 02 Nov 2018 07:44:21 -0400
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: EU border `lie detector' system criticised as pseudoscience
+  (The Guardian)
+
+https://www.theguardian.com/world/2018/nov/02/eu-border-lie-detection-system-criticised-as-pseudoscience
+
+The EU has been accused of promoting pseudoscience after announcing plans
+for a `smart lie-detection system' at its busiest borders in an attempt to
+identify illegal migrants.
+
+The lie detector, to be tried in Hungary, Greece and Latvia, involves the
+use of a computer animation of a border guard, personalised to the
+traveler's gender, ethnicity and language, asking questions via a webcam.
+
+The deception-detection system will analyse the micro-expressions of those
+seeking to enter EU territory to see if they are being truthful about their
+personal background and intentions. Those arriving at the border will be
+required to have uploaded pictures of their passport, visa and proof of
+funds.
+
+------------------------------
+
+Date: Mon, 5 Nov 2018 17:33:38 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Credit Card Chips Have Failed to Halt Fraud, Survey Shows (Fortune)
+
+New chip-enabled credit cards, which were rolled out to U.S. consumers
+starting in 2015, were supposed to put an end to rampant credit card fraud.
+
+So much for that.
+
+A new report from the research firm Gemini Advisory has found that, of more
+than 60 million cases of credit card theft in the last 12 months, a whopping
+93% of the stolen cards had the new chip technology.
+
+This represents a major setback for the technology, known as the EMV
+standard, which is named after the companies (Europay, Mastercard and Visa)
+that created it.
+
+45.8 million records [were] likely compromised through card-sniffing and
+point-of-sale (POS) breaches of businesses such as Saks, Lord & Taylor,
+Jason's Deli, Cheddar's Scratch Kitchen, Forever 21, and Whole Foods. To
+break it down even further, 90% or 41.6 million of those records were EMV
+chip-enabled, states the report.
+
+In theory, EMV should reduce fraud because every card transaction requires
+an encrypted connection between the chip card and the merchant's
+point-of-sale terminal. EMV is meant to replace conventional swipe
+transactions that rely on magnetic strips, which contain data that is
+relatively easy for criminals to intercept and then copy on to a new card.
+
+But while the EMV standard is supposed to ensure the card data cannot be
+captured, many merchants are failing to properly configure their systems,
+according to a Gemini Advisory executive who spoke with Fortune. (Fortune
+has also reached out to the payment processors for comment and will update
+this article accordingly.) The upshot is that criminals have been able to
+insert themselves into the transaction data steam, either by hacking into
+merchant networks or installing skimmer devices in order to capture card
+information.
+
+The stolen data is typically sold on the so-called dark web, which is where
+Gemini Advisory compiled the data for its report.
+
+http://fortune.com/2018/11/05/credit-card-chips-fail-to-halt-fraud-survey-says/
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 01:20:34 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Check this out: Radisson Hotel Group 'fesses up to `security
+  incident' (The Register)
+
+Loyalty card members deets exposed
+https://www.theregister.co.uk/2018/10/31/radisson_hotel_group_fesses_up_to_security_incident/
+
+------------------------------
+
+Date: Fri, 02 Nov 2018 07:54:23 -0400
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: A new study finds potentially manipulative ads in apps for
+  preschoolers (WashPost)
+
+https://www.washingtonpost.com/amphtml/technology/2018/10/30/new-study-finds-potentially-manipulative-ads-apps-preschoolers/
+
+Apps marketed to children 5 and younger deploy potentially manipulating
+tactics to deliver ads to children, raising questions about the ethics of
+child software design and consumer protection, according to a new study.
+
+Researchers from the University of Michigan C.S. Mott Children's Hospital
+looked at more than 100 apps, mostly from the Google Play app store, and
+found that nearly all of them had at least one type of ad, often interwoven
+into the apps' activities and games. The apps, according to the researchers,
+used a variety of methods to deliver ads to children, including commercial
+characters, pop-up ads, in-app purchases, and, in some cases, distracting
+ads, hidden ads or ads that were posed as gameplay items.
+
+The authors suggest that the deceptive and persuasive nature of the ads
+leaves children susceptible to them, because of their lack of mental
+development in controlling their impulses and attention.
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 01:46:21 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Cisco Adaptive Security Appliance Software and Cisco Firepower
+  Threat Defense Software Denial of Service Vulnerability (Cisco)
+
+A vulnerability in the Session Initiation Protocol (SIP) inspection engine
+of Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower
+Threat Defense (FTD) Software could allow an unauthenticated, remote
+attacker to cause an affected device to reload or trigger high CPU,
+resulting in a denial of service (DoS) condition.
+
+The vulnerability is due to improper handling of SIP traffic. An attacker
+could exploit this vulnerability by sending SIP requests designed to
+specifically trigger this issue at a high rate across an affected device.
+Software updates that address this vulnerability are not yet
+available. There are no workarounds that address this
+vulnerability. Mitigation options that address this vulnerability are
+available.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20181031-asaftd-sip-dos
+
+https://tools.cisco.com/security/center/downloadPDF.pdf
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 01:32:41 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: The D in Systemd stands for 'Dammmmit!' A nasty DHCPv6 packet can
+  pwn a vulnerable Linux box. (The Register)
+
+Hole opens up remote-code execution to miscreants â€“ or a crash,
+if you're lucky
+
+https://www.theregister.co.uk/2018/10/26/systemd_dhcpv6_rce/
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 01:35:50 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: T Wi-Fi kit bit by TI chip slip: Wireless gateways open to
+  hijacking via BleedingBit chipset vulnerability (The Register)
+
+Firmware security patches hit to fix critical holes in enterprise network
+access points
+
+https://www.theregister.co.uk/2018/11/01/it_bit_by_ti_chip_slipup_dubbed_bleedingbit/
+
+------------------------------
+
+Date: Sat, 3 Nov 2018 00:37:51 -0400
+From: danny burstein <dannyb@panix.com>
+Subject: ISP pissed at Elsevier Takedowns/blocks, so...
+
+Lots, make that LOTS, of slippery slopes here...
+
+[Twitter]
+
+Mike Masnick
+
+Whoa. Elsevier forces an ISP to block some websites... so the ISP also
+blocks Elsevier's websites, giving everyone who visits an explanation about
+the evils of forced censorship...
+
+<https://twitter.com/torrentfreak/status/1058427804637782016
+
+and
+
+[torrentfreak]
+
+Swedish ISP Protests "Site Blocking" by Blocking Rightsholders Website Too
+
+Ernesto on 2 Nov 2018
+
+Bahnhof has suffered a major defeat against publisher Elsevier after a court
+ordered the Swedish ISP to block a series of domain names, including
+Sci-Hub.  The decision goes against everything the company stands for but it
+can't ignore the blocking order. Instead, the ISP has gone on the offensive
+by blocking Elsevier's own website and barring the court from visiting
+Bahnhof.se.
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 01:48:19 +0000
+From: Wols Lists <antlists@youngman.org.uk>
+Subject: Re: Ethics of whom to kill (Slade, RISKS-30.90)
+
+Has Rob Slade not heard of "The exception proves the rule"? Yes I know this
+saying is horribly mis-used, but it almost certainly comes from the fact
+that it only takes ONE inconvenient fact to destroy a scientific theory.
+
+It is also an inconvenient fact that people dismiss inconvenient facts
+as "oh that's just an anecdote". But it only takes one inconvenient
+anecdote to be verifiable, at which point it becomes a data point
+capable of destroying your theory and lifetime's work.
+
+If there are a lot of anecdotes out there you cannot just dismiss and
+ignore them. That's how the ozone hole was missed by computers ignoring
+strange readings, until a scientist actually looked and thought "that's
+not right!" You need to look at the anecdotes and explain them away,
+otherwise they could well be inconvenient facts that mean you are
+completely wrong.
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 12:28:28 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: Explainable AI Simulation for AVs (Shapir Response in
+  RISKS-30.90 to Stein, RISKS-30.89)
+
+In Risks-30.90, Amos Shapir wrote: >Driving is a team effort; it seem likely
+that AVs will need to share >the roads with human drivers for quite a long
+time, and would have to >be taught some social skills, before they can blend
+in safely.
+
+I agree with you. How to telescope carbon-based motorist intent to a robot?
+Turn signals and brake lights are not always applied in a timely
+fashion. Hand signals are probably a no-op for AV vision recognition and
+interpretation. What about spilled coffee, DUI swerving, etc. per
+https://catless.ncl.ac.uk/Risks/30/82%23subj23.1 therein, which might compel
+a Trolley Problem scenario?
+
+How to construct an "anxiety" algorithm component into an AV operational
+control program? Anxiety -- anticipatory fear -- would play an important
+role in silicon-based v. carbon-based vehicle interaction. When an AV
+demonstrates safe/defensive driving techniques due to internal distraction
+via a BlueTooth or WiFi hack attack, blown tire, collision, bird poo on the
+sensors, skunk or chicken crossing the road, low fuel warning, LRU
+malfunction, or smokey road conditions due to nearby fires etc., then I'll
+believe AI has arrived.
+
+If AV capabilities mature to show benefit via NHTSA statistics, feckless
+parallel parking attempts by carbon-based drivers will make "AV Funniest
+Videos" highlight reels.
+
+In https://catless.ncl.ac.uk/Risks/30/56%23subj33.1
+transition risk arising from AV introduction. Until an AV supreme transport
+system materializes, adaptation to a "shared road" model constitutes a
+paramount public health and safety objective.
+
+The Pepsi Challenge on public health and safety benefits from AV deployment
+has a heavy thumb on the scale tipped against it.
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 20:41:20 +0100
+From: Erling Kristiansen <erling.kristiansen@xs4all.nl>
+Subject: Re: Explainable AI Simulation for AVs (Amos Shapir)
+
+And let's not forget that there are around 200 countries on our globe.
+Traffic rules vary, sometimes significantly, sometimes very subtly, from one
+country to another.  Some countries drive on the right, some on the left.
+And driver `culture' differs quite a lot. And traffic signs and road
+markings are different.
+
+And how about non-standard signs? If a human sees a warning sign with a duck
+or a cow, it is immediately obvious what it means, but what will an AV that
+was not trained on such non-official signs do? And how about signs
+containing text, that are obvious to a human, but likely make no sense to an
+AV? And stuff that may resemble a sign, but is not.
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 18:21:34 +0000
+From: John Beattie <jkb@jkbsc.co.uk>
+Subject: Re: Toward Human-Understandable, Explainable AI (RISKS-30.88)
+
+DJC writes:
+
+  But as a matter of fact -- honesty and integrity aside -- humans aren't
+  very good at knowing the grounds for their important decisions. Daniel
+  Kahneman got the Nobel Prize for studying the reality of how people
+  decide; cf. his book "Thinking, Fast And Slow".  He and his colleagues did
+  many, many experiments to expose the *real* bases for how people make
+  decisions; and those bases are often not only unknown to their subjects,
+  but impossible for them to know, because they happen in inaccessible
+  processes of their cognition.
+
+This is true and not very relevant. An AI making a decision about, for example,
+insurance or, say, an application at the local county hall needs to be able to
+show the basis for the decision.  An arbitrary decision is not acceptable.
+
+------------------------------
+
+Date: Fri, 2 Nov 2018 18:26:18 +0000
+From: John Beattie <jkb@jkbsc.co.uk>
+Subject: Re: Driverless cars: Who should die in a crash? (bbc.com)
+
+There is a basic mismatch with reality about all those hypothetical cases
+about who dies in a crash, speaking purely on engineering and commercial
+grounds.
+
+In practice, the AI will be challenged exactly as a car driver is: why did
+you do that, why didn't you do the other. FWIW, the answer will be something
+along the lines of, "The car was about to crash I didn't have time to make
+fine decisions, I just hit the brakes and turned the steering as best I
+could".
+
+No AI in a car will have the extra resources to determine the locations and
+motion of all or even some humans in the environment. It will have exactly
+and only the resources to drive the car reasonably well in most of the
+circumstances it is likely to meet.
+
+------------------------------
+
+Date: Sat, 3 Nov 2018 17:40:48 +0100
+From: Sergio Gelato <Sergio.Gelato@astro.su.se>
+Subject: Re: The spreading scourge of broken SSL implementation (RISKS-30.90)
+
+[note to moderator: feel free not to run this if other contributors have made
+the same point.]
+
+Mark Thorson complains about the growing number of HTTPS webservers that are
+incompatible with Safari on his iBook G4, pointing out that some, like
+www.google.com
+
+The sites he describes as broken require TLS 1.2. The versions of Safari that
+have been released for PowerPC Macs do not support this protocol. Given
+https://tools.ietf.org/html/draft-moriarty-tls-oldversions-diediedie-00
+the chances of reversing the trend look slim. Interposing proxy software that
+performs protocol conversion (and HSTS enforcement, etc.) on the client
+seems a better bet.
+
+The RISK here, as I see it, is of making a poor tradeoff between security,
+cost of maintenance and backwards compatibility.
+
+------------------------------
+
+Date: Mon, 5 Nov 2018 15:16:45 +0000
+From: Julian Bradfield <jcb@inf.ed.ac.uk>
+Subject: Re: The spreading scourge of broken SSL implementation (Thorson,
+  RISKS-30.90)
+
+Mark Thorson complained that there is a recent spread of broken SSL
+implementations on the Web, as he cannot access some sites from his iBook
+G4.
+
+He is partly correct, but not in the way he thinks. What he actually
+experiences is that he is using a machine and OS that only supports the
+obsolete and now deprecated TLS version 1.0 protocol - a protocol which is
+now explicitly forbidden to be supported by any site taking credit card
+payments. Therefore his browser is unable to establish a secure connection
+to sites that no longer support insecure versions, although some sites such
+as Google (and my own institution's academic site) still allow it.
+
+So what is broken? Of the three sites he mentions, one,
+https://www.ncahf.org/
+behaves correctly and returns a protocol_version alert, so that a
+decent browser (whether this includes an ancient Safari predating the
+existence of more than one TLS protocol version, I don't know) will
+display an appropriate error screen.
+
+The other two sites https://marginalrevolution.com/
+https://www.goldmine-elec-products.com/ both break the TLS protocol by
+closing the connection without sending an alert message. marginalrevolution
+also only supports weak ciphers.
+
+------------------------------
+
+Date: Sat, 3 Nov 2018 09:55:51 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Jury duty, recidivus
+
+I'm off the hook for jury duty, so my presentation joke remains intact.
+
+The jury or trial was canceled, almost literally at the last minute.
+Selection was to start on Monday, and I got a call yesterday (Friday) late
+in the afternoon.  (I almost didn't answer it, since it was on my cell,
+which I vaguely recall them asking for when I registered my confirmation.
+Almost nobody knows my cell, so I generally know who is calling, and I
+didn't recognize the number.)  After the call I realized that the person who
+claimed to be from the sheriff's office had given me almost no checkable
+information.  (I did later find find an email notifying me of the
+cancellation, so that was something.)
+
+But it did put me in mind of a possible form of jury tampering.  Anyone can
+call and claim to be from the sheriff's office.  (In Canada sheriffs handle
+court security, and some other forms of court administration, such as jury
+pool management.)  And, if there is no way for the juror to confirm, then it
+would be easy enough to get rid of jurors you don't want.  Just have them
+not show up.
+
+Of course, this risk is slight.  To gain access to information about the
+jury pool you would have to suborn a member of the sheriff's office and, if
+you could do that, there would be a number of other ways to tamper with the
+jury.
+
+Just an idle security maven thought ...
+
+  [The risk may seem slight.  However, jury tampering and juror conflicting
+  are very old lawyerly arts.  PGN]
+
+------------------------------
+
+Date: Tue, 5 May 2018 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks have done to URLs.  I have
+  tried to extract the essence.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.91
+************************

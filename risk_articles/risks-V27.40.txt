@@ -1,0 +1,417 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 31 July 2013  Volume 27 : Issue 40
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.40.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Surviving the blame game (Michelle Singletary via PGN)
+Smart Houses that are not so smart (Barry Gold)
+The risks of measuring progress by more of the same (Bob Frankston)
+Stanford University passwords compromised -- again (PGN)
+Download manager takes Web site down (Geoff Kuenning)
+"Microsoft and FBI take down malware, housed on 1.9 million computers"
+  (Lucian Constantin via Gene Wirchenko)
+"Cloud adoption suffers in the wake of NSA snooping" (David Linthicum via
+  Gene Wirchenko)
+A Blow for the Press, and for Democracy (Margaret Sullivan via
+  Monty Solomon)
+4 Russians, 1 Ukrainian charged in massive hacking (Samantha Henry via
+  Monty Solomon)
+Re: Is Your Cable Box Spying On You? (F. Barry Mulligan)
+Re: License-plate readers let police collect millions of driver records
+  (Geoff Kuenning)
+Re: And now, from the country that brought you INCIS and Novopay...
+  (Nick Brown)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 31 Jul 2013 10:07:45 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Surviving the blame game (Michelle Singletary)
+
+Michelle Singletary, *The Washington Post*, 30 Jul 2013
+The health of our economy relies on people finding and keeping jobs.  If
+there are electronic-record systems that are preventing qualified people
+from getting hired or staying employed, they [the systems, not the people
+notes PGN] need to be fixed.  That's why it's important to take note of a
+report from the National Employment Law Project, which estimates that 1.8
+million workers every year are subjected to FBI background checks that
+contain incorrect or incomplete information.  [...]
+http://www.washingtonpost.com/business/surviving-the-data-blame-game/2013/07/30/3ad80f48-f890-11e2-8e84-c56731a202fb_story.html?tid=pp_stream
+
+------------------------------
+
+Date: Tue, 30 Jul 2013 22:52:38 -0700
+From: Barry Gold <BarryDGold@ca.rr.com>
+Subject: Smart Houses that are not so smart
+
+A pair of security researchers found that so-called smart houses have
+serious security vulnerabilities.
+
+A discontinued home automation system from Insteon is connected to the
+Internet with a web server -- and did not even provide a robots.txt file to
+tell search engines to stay away.
+
+The result is that all the house controls are visible if you know the right
+keywords to search for.  The researcher was able (after contacting the
+homeowner and getting permission) to turn the lights on and off, control TV
+sets, garage doors, cameras, etc.  All the things that the owner can control
+remotely with a smartphone app.  The system is shipped from the manufacturer
+with a default setting of no username or password.
+
+Other manufacturers have similar problems. The Satis Smart Toilet can be
+controlled by anybody with an Android, the right app, and close enough to
+communicate with the toilet.
+
+More details at
+http://onforb.es/159JEcM
+http://www.forbes.com/sites/kashmirhill/2013/07/26/smart-homes-hack/?google_editors_picks=true
+
+------------------------------
+
+Date: Mon, 29 Jul 2013 16:53:13 -0400
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: The risks of measuring progress by more of the same
+
+I'm often frustrated in trying to explain that the Internet isn't just the
+web or a series of tubes. The problem is that those views work well for
+those who look at the surface and want more of what they see. It's hard to
+explain that the web and benefits come from the days of an Internet without
+borders in which we were free to experiment. Today we're back to the time
+when you had a network suitable for phone calls or other enumerated
+applications.
+
+This is not a new issue but I recently posted http://rmf.vc/CILight which
+might help people understand the issue by using a very simple example - the
+ability to maintain a relationship between two end points. If we can't do
+that then how can we innovate ahead of what offered by the incumbent
+providers? For that matter why do we use words like "provide" and "access"
+when we talk about the Internet which came from our innovation at the edge
+despite the service providers.
+
+Maybe this the about the risks of language and using words like communicate,
+information, broadband which allow us to talk without really communicating.
+
+http://frankston.com
+
+------------------------------
+
+Date: Tue, 30 Jul 2013 15:04:55 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Stanford University passwords compromised -- again
+
+Various sources have reported that Stanford University has alerted its
+network users that their accounts may have been compromised (for the second
+time in about a month), and recommended that passwords should be changed as
+a precautionary measure while the Stanford IT folks are trying to assess the
+scope of the breach.  Five days later, I've heard nothing further.  Perhaps
+a RISKS reader at Stanford can contribute an update.
+
+------------------------------
+
+Date: Mon, 29 Jul 2013 23:35:34 -0700
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: Download manager takes Web site down
+
+I run a small Web site (http://iotta.snia.org) that distributes large
+scientific files to researchers.  For unjustifiable reasons, it has an
+absurdly slow link (10 Mbits) to the outside world.  Yes, I'd like to fix
+that.
+
+Recently we observed an enormous spike in download attempts--all of which
+failed.  After investigating and contacting the responsible parties
+(fortunately, we ask our users to provide an e-mail address and most tell
+the truth) we learned that they were using "Internet Download Manager", a
+Windows application that purports to speed up and simplify downloads.  In
+this case, IDM was opening dozens of simultaneous connections, each of which
+attempted to acquire a different file.  The resulting logjam caused ALL of
+the downloads to time out, at which point the package would try again.
+Telling the users to disable IDM and be patient cured the problem.  (In the
+longer term, we'll be activating per-IP connection limits, which are an
+imperfect but helpful solution.)
+
+RISK: The TCP/IP specification is extensive and explicit, but doesn't
+address simultaneous connections from the same client.  As far as I can
+figure out, the HTTP specification doesn't offer a way for servers to
+suggest a maximum (let alone a way to enforce one).  And overeager
+developers are welcome to ignore conventions and common courtesy in an
+attempt to gain personal benefit.
+
+Geoff Kuenning   geoff@cs.hmc.edu   http://www.cs.hmc.edu/~geoff/
+
+------------------------------
+
+Date: Tue, 30 Jul 2013 14:47:50 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Microsoft and FBI take down malware, housed on 1.9 million
+  computers" (Lucian Constantin)
+
+Lucian Constantin, *ITBusiness*, 26 Jul 2013
+http://www.itbusiness.ca/article/microsoft-almost-90-percent-of-citadel-botnets-in-the-world-disrupted-in-june
+
+selected text:
+
+But one security researcher says he believes Microsoft had already been
+controlling about 1,000 of the 4,000 Citadel-related domain names, since its
+researchers were using them to track the botnets. He also adds Microsoft
+modified settings on people's computers without getting their permission, as
+it sent configuration files to infected computers connecting to the sinkhole
+servers.
+
+   [Said researcher posted https://www.abuse.ch/?pS62 about this.]
+
+------------------------------
+
+Date: Tue, 30 Jul 2013 14:55:47 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Cloud adoption suffers in the wake of NSA snooping"
+  (David Linthicum)
+
+David Linthicum, InfoWorld, 30 Jul 2013
+Due to PRISM, non-U.S. firms are avoiding Stateside cloud providers,
+but government access to cloud data can't be stopped
+http://www.infoworld.com/d/cloud-computing/cloud-adoption-suffers-in-the-wake-of-nsa-snooping-223606
+
+opening text:
+
+According to a survey by the Cloud Security Alliance, 10 percent of the
+CSA's non-U.S. members have canceled a contract with a U.S.-based cloud
+provider due to fears of U.S. government abuse of their citizens' data, a
+fear stoked by revelations of extensive spying on electronic communications
+by the U.S. National Security Agency through its PRISM program. Moreover, 56
+percent said they were now less likely to use an American company.
+
+------------------------------
+
+Date: Tue, 30 Jul 2013 23:51:52 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: A Blow for the Press, and for Democracy (Margaret Sullivan)
+
+Margaret Sullivan, *The New York Times*, 28 Jul 2013
+
+Sometimes James Risen feels like Jean Valjean, the beleaguered protagonist
+of "Les Miserables," hounded for years by the authorities.  "They just keep
+coming at me," Mr. Risen, a Times reporter in Washington, told me by phone
+last week. It has been 10 years since he learned of a secret C.I.A. program
+to interfere with Iran's quest for nuclear weapons, and six since he got an
+ominous FedEx package containing a government subpoena. Since then, it has
+been one legal hurdle after another, trying to stay out of court.
+
+Just over a week ago, another blow came: A federal appeals court panel
+ruled, 2 to 1, against his effort to avoid testifying in the government's
+case against Jeffrey Sterling, a former C.I.A. official charged with leaking
+secret information about the matter.
+
+Mr. Risen's lawyers, backed by a flotilla of press organizations and
+journalists, argue that his testimony isn't necessary and that First
+Amendment protections, combined with legal precedent, should keep him out of
+court.
+
+Unwilling to testify, Mr. Risen may end up in jail. Meanwhile, the
+distractions and the continued scrutiny of government investigators - sure
+to make sources skittish - have hurt his ability to do his job.  That's a
+shame given the importance of his work: it was Mr. Risen and his Times
+colleague Eric Lichtblau who disclosed the Bush administration's
+eavesdropping on American citizens without warrants, and the recent
+revelations of National Security Agency surveillance have built on that
+foundation.
+
+The chilling ruling by the United States Court of Appeals for the Fourth
+Circuit said that even though a journalist has promised confidentiality to a
+source, "there is no First Amendment testimonial privilege, absolute or
+qualified, that protects a reporter from being compelled to testify by the
+prosecution or the defense in criminal proceedings about criminal conduct
+that the reporter personally witnessed or participated in." National
+security necessitates that those who illegally leak classified information
+be brought to justice, the court said. It added that it saw no clear legal
+justification for treating a reporter differently than any other citizen,
+and that "other than Sterling himself, Risen is the only witness who can
+identify Sterling as a source (or not) of the illegal leak." ...
+
+http://www.nytimes.com/2013/07/28/public-editor/a-blow-for-the-press-and-for-democracy.html
+
+------------------------------
+
+Date: Fri, 26 Jul 2013 01:00:13 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 4 Russians, 1 Ukrainian charged in massive hacking (Samantha Henry)
+
+  [More on the item in RISKS-27.39]
+
+Samantha Henry, Associated Press. 25 Jul 2013
+
+NEWARK, N.J. (AP) - Four Russian nationals and a Ukrainian have been charged
+with running a sophisticated hacking organization that penetrated computer
+networks of more than a dozen major American and international corporations
+over seven years, stealing and selling at least 160 million credit and debit
+card numbers, resulting in losses of hundreds of millions of dollars.
+
+Indictments were announced Thursday in Newark, where U.S. Attorney Paul
+Fishman called the case the largest hacking and data breach scheme ever
+prosecuted in the United States.
+
+Princeton-based Heartland Payment Systems Inc., which processes credit and
+debit cards for small to mid-sized businesses, was identified as taking the
+biggest hit in a scheme starting in 2007 - the theft of more than 130
+million card numbers at a loss of about $200 million.
+
+Atlanta-based Global Payment Systems, another major payment processing
+company, had nearly 1 million card numbers stolen, with losses of nearly $93
+million, prosecutors said.
+
+The indictment did not put a loss figure on the thefts at some other major
+corporations, including Commidea Ltd., a European provider of electronic
+payment processing for retailers. The government said hackers in 2008
+covertly removed about 30 million card numbers from its computer network.
+
+About 800,000 card numbers were stolen in an attack on the Visa network, but
+the indictment did not cite any loss figure. ...
+
+http://www.boston.com/business/news/2013/07/25/russians-ukrainian-charged-massive-hacking/zj9q9jvyKAKT6FTgD7YdLI/singlepage.html
+
+------------------------------
+
+Date: Tue, 30 Jul 2013 10:10:37 -0400
+From: "F. Barry Mulligan" <mulligan@acm.org>
+Subject: Re: Is Your Cable Box Spying On You? (RISKS-27.39)
+
+For the first time in many years, I suddenly feel ahead of the technology.
+
+I have two cable boxes, one to feed the actual television and a secondary
+box to feed the (antiquated) VCR. Since they are located close to each
+other, I fabricated a sliding cover to obscure the sensor on the secondary
+box.
+
+Should these intrusive cable boxes become real products, I foresee a niche
+market for similar covers that would obscure the spy sensors while still
+allowing desired remote functions.
+
+------------------------------
+
+Date: Mon, 29 Jul 2013 23:49:54 -0700
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: Re: License-plate readers let police collect millions of driver
+  records (Alexander, RISKS-27.39)
+
+> If a car is scanned that shows a potential offence, an alert sounds and
+> displays the reason why the car is suspected to be illegal.
+
+Wow.  So failure to pay a tax is now grounds for immediate arrest.  Gotta
+catch those tax evaders right away!  It'd be unforgivably dangerous to let
+them drive another ten miles and catch them the old-fashioned way.  (Note
+that by definition, the government knows who they are, so most of them
+aren't going to be dodging the tax man for very long.)
+
+If you're "disqualified for some other offence" then anybody who happens to
+borrow your car is at risk of false arrest, at best wasting both their time
+and that of the police.  That's not what I'd call good design.
+
+And in the future, what a great tool this will be for apprehending the
+dastardly mastermind who dared to post a video of a burning poppy.
+
+Or, if you're not afraid of government overreaching, there's always the fact
+that The Sun might bribe somebody to search the records to prove that a
+particular politician was cheating on his wife.
+
+I'll take my privacy, thanks.  I can stand to live in a world with a few
+tax evaders and even the occasional faulty brakes.
+
+Geoff Kuenning   geoff@cs.hmc.edu   http://www.cs.hmc.edu/~geoff/
+
+------------------------------
+
+Date: Tue, 30 Jul 2013 00:06:02 +0200 (CEST)
+From: nick.brown@free.fr
+Subject: Re: And now, from the country that brought you INCIS and
+  Novopay... (O'Keefe, RISKS-27.39)
+
+>>The changes duly took place this year, in anticipation of the benefits of
+>>the new system...  I wonder if any of the decision-makers had heard of
+>>"counting your chickens before they're hatched"?
+
+This situation reminded me that this is the 20th anniversary of the
+publication of my favourite book about computing of all time, namely
+"Digital Woes: Why We Should Not Depend on Software" by Lauren Ruth
+Wiener. Inspired partly by stories from RISKs as well as by the author's
+personal experiences as a writer of software documentation and observer of
+the development process, this book is still as relevant today as it was in
+1993, despite containing not one reference to the World-Wide Web, or indeed,
+as far as I can recall, any other part of the Internet. Everyone who is even
+remotely connected to any software development process should read this
+book.
+
+Wiener gave examples of projects similar to this one, where exaggerated
+savings on personnel and other overheads from the new computer system were
+used to pay for the system, thus creating a double bind for executives when
+the system failed to materialise, leaving them with no staff and no money to
+re-hire them. It seems that we have learned very little in the intervening
+20 years.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.40
+************************
+
+--_002_a4e7029c156c449e9e1e68facdd8db53EXHUBVM02campusnclacuk_--

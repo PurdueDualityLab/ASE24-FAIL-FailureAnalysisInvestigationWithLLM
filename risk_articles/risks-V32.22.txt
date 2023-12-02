@@ -1,0 +1,569 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.22
+
+RISKS-LIST: Risks-Forum Digest  Monday 24 August 2020  Volume 32 : Issue 22
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.22>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Why Does California Have So Many Wildfires? (NYTimes)
+Lithium-ion battery caused Loudoun Co. house fire, nearly $1M in damages
+  (WTOP)
+Depth of White House tampering with Postal Service revealed (NYTimes)
+Washington Postal workers defy USPS orders and re-install mail sorting
+  machines (Forbes)
+Windows 10 v.2004 messes with Windows Credentials Manager (Gabe Goldberg)
+On-line banking errors revisited (Jared Gottlieb)
+How One Man Broke Through Google's Election Ad Defenses (WiReD)
+Google also blurs power tower ID plate (Dan Jacobson)
+Date and time synchronization (Paul Robinson)
+DiceKeys Creates a Master Password for Life With One Roll (WiReD)
+Re: Driverless cars are coming soon (A Michael W Bacon, Bob Wilson)
+Re: Groundbreaking new material 'could allow artificial intelligence to
+  merge with the human brain' (Richard Stein)
+Re: How Your phone is used to track you, and what you can do about
+  (Amos Shapir)
+Re: Saliva Test for Covid-19 (Peter Bernard Ladkin)
+Re: Israeli gargle trial gives COVID results in 1 sec., 95% accuracy
+  (John Levine)
+Re: U.S. COVID-19 and World War 2 mortality rates, interim comparison
+  (Henry Baker, Richard Stein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 24 Aug 2020 8:27:30 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Why Does California Have So Many Wildfires? (NYTimes)
+
+Kendra Pierre-Louis and John Schwartz, *The New York Times, 22 Aug 2020
+https://www.nytimes.com/article/why-does-california-have-wildfires.html
+  [NOTE: This article appeared originally in 2018. It was just updated.
+  PGN-ed]
+
+There are four key ingredients to the disastrous wildfire seasons
+in the West, and climate change figures prominently.
+
+------------------------------
+
+Date: Sun, 23 Aug 2020 23:39:15 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Lithium-ion battery caused Loudoun Co. house fire, nearly $1M in
+  damages (WTOP)
+
+The Loudoun County fire marshal determined a faulty lithium-ion battery in a
+remote-control car started a fire in Aldie, Virginia, on Friday that
+displaced a family of four and caused almost a million dollars in damages.
+
+The flames began at about 7 p.m. in the 25000 block of Trilobite Court.
+
+Fire and rescue crews from Kirkpatrick Farms, Dulles South, Aldie,
+Brambleton, Moorefield, Sterling and Fairfax County were dispatched. One
+person suffered minor injuries and about $958,000 of damage was caused, the
+fire department said.
+
+Lithium-ion batteries power many everyday devices, including smartphones,
+laptops, scooters, toys, even cars.
+
+Care should be taken when using them to avoid a fire or explosion, according
+to authorities.
+
+https://wtop.com/loudoun-county/2020/08/faulty-battery-causes-house-fire-in-loudoun-county/
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 18:16:02 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Depth of White House tampering with Postal Service revealed
+  (NYTimes)
+
+https://www.nytimes.com/2020/08/22/business/economy/dejoy-postmaster-general-trump-mnuchin.html
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 18:19:00 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Washington Postal workers defy USPS orders and re-install mail
+  sorting machines (Forbes)
+
+https://www.forbes.com/sites/danielcassady/2020/08/22/washington-postal-workers-defy-usps-orders-and-reinstall-mail-sorting-machines/#61d4d1b55f80
+
+------------------------------
+
+Date: Sun, 23 Aug 2020 20:24:07 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Windows 10 v.2004 messes with Windows Credentials Manager
+
+Windows 10 comes with a feature called `Credentials Manager' that stores
+your sign-in information for websites, apps, and also networks, including
+the VPN connections. Windows Credentials feature isn't new and it's been
+around for a long time, and it is designed to save your login usernames and
+passwords.
+
+Windows 10 version 2004 has a bug that interferes with Credentials Manager
+and it breaks Chrome, Edge, Windows apps, or VPN's ability to authenticate
+users or let them sign in to their accounts. Users have also reported that
+they are being logged out of their browser or apps every time they restart
+their computers.
+
+https://www.windowslatest.com/2020/08/11/windows-10-may-2020-update-breaks-down-critical-feature/
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 23:06:40 -0600
+From: jared gottlieb <jared@netspace.net.au>
+Subject: On-line banking errors revisited
+
+In 2006 the risk of on-line banking at the customer level included typos in
+the payee account number, http://catless.ncl.ac.uk/Risks/24/43#subj3.1
+
+Nowadays the scenario is fraud. Alice wants to make a payment to Bob. Eve
+spoofs an e-mail to Alice giving Eve's account details instead of Bob's. To
+address this problem of *Authorised Push Payment fraud* the UK introduced
+*Confirmation of Payee* which is an account name-checking service. That is,
+Alice when making the transfer, in addition to Bob's banking details, must
+also supply Bob's name.
+
+A risk of name-matching is reported in the Guardian:
+https://www.theguardian.com/money/2020/aug/12/spelling-out-the-problems-as-banks-name-checker-rejects-vital-payments.
+
+``Personal and company names can be written in a variety of formats,
+including initials, middle names, hyphens and ampersands. People who are
+known by a nickname or middle name in day-to-day life are likely to have
+their legal name on their bank accounts, and the trading name of a firm is
+not always the same as the account name.  Systems should be flexible enough
+to recognise a broad match with the account number.  [...] it's up to banks
+how they implement matching criteria, and some are stricter than others.''
+
+The newspaper investigated a payment rejected with a message *name does not
+match*. The sending bank used a different format than the receiving bank
+expected; in this case, placement of a comma.
+
+------------------------------
+
+Date: Sun, 23 Aug 2020 21:05:47 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How One Man Broke Through Google's Election Ad Defenses (WiReD)
+
+A Long Island search marketer found a way to exploit Google search ads and
+spread misinformation about candidates. The company pledges to fix the
+issue.
+
+https://www.wired.com/story/google-election-ad-defenses-loophole-trump-biden/
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 22:37:23 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Google also blurs power tower ID plate
+
+Here we see Google's
+"Method for detecting and blurring plate number in street view image rapidly"
+https://patents.google.com/patent/CN102831419B/en
+is a double edged sword, also accidentally blurring some power tower ID
+plates.  Potentially hindering rescue operations:
+https://goo.gl/maps/9s7BpxkV6d8mCvnL9
+
+------------------------------
+
+Date: Mon, 24 Aug 2020 01:29:23 +0000 (UTC)
+From: Paul Robinson <rfc1394@yahoo.com>
+Subject: Date and time synchronization
+
+"Then you're in trouble. The computer has a long memory."
+  Dr. Charles Dutton (David Wayne), "The Andromeda Strain" (1971)
+
+And so do I. In an article I wrote in Risks, Volume 16, Issue 70, dated 03
+Jan 1995 titled "Dates and Times Not Matching in COBOL" I discussed problems
+with date and time synchronization, i.e., if you collect time in one call
+and date in another, how do you prevent the possibility of the date changing
+after the time call is made (or the reverse, the time changing after the
+date was collected) because of the clock / date rollover at exactly
+midnight?
+
+The easiest answer is never to run jobs at midnight, but as the saying goes,
+"Every hour of the day, somewhere it's midnight." (And more than this for
+the time zones that advance 1/2 an hour.) This may not be an option and you
+have to prepare for the possibility, in systems where a request for time and
+date are not a single, atomic operation, there is a small probability that
+the date could roll over to the next day between the time request and the
+date request. Even if the probability is minuscule.
+
+In my 1995 article I pointed out how, even then, in interpreted Basic on an
+80386DX 40MHZ MSDOS machine, it could make over 3,000Å† date/time requests in
+one second. In Turbo Pascal 6, it could do over 6,000, meaning if this
+program was run near midnight every day for eight years (for the Basic
+program) or for 16 years (for the compiled program), odds are a date/time
+synchronization failure might happen once.
+
+Let'sÅ† say once in 16 years isn't good enough, it has to be pacemaker or
+nuclear plant reliable, it can't ever fail. We have to make it that this
+solution must be absolutely perfect. And we can.
+
+The person I was replying to was worried, that if you wanted
+certainty. you'd have to keep doing date/time requests in a loop. I have
+since thought of this, and came up with a solution, which requires no
+looping, requires one date request, one time request, one comparison, and
+possibly a second date and time request. And the two will be
+synchronized. And I'll prove it, not just "beyond a reasonable doubt" as is
+required for criminal convictions, but "beyond a shadow of a doubt,"
+i.e., to an absolute certainty.
+
+The assumptions are that a time request, a date request, and a comparison
+and branch can all be done in a reasonable period, e.g., completed within
+one minute (a typical computer would do all of this in probably less than
+1/1000 of a second).
+
+Here is the procedure:
+1. Get time.
+2. Get date.
+3. If the hour is not 11 (for systems that preformat time to AM/PM) or is
+   not 23, exit procedure, date and time are synchronized and nothing more
+   needs to be done.
+4. Get the time again
+5. Get the date again.
+6. If the hour is the same as the first time, use the first time and date,
+   exit, time and date are synchronized.
+7. Use the second time and date. They are synchronized.
+
+Why this procedure is absolutely bulletproof:
+
+In step 3, if the time isn't 11 (or isn't 23), the date cannot be anything
+but the same as the one when the time was collected, so the date and time
+are synchronized.
+
+In step 6, if the hour is the same in the first and second request, we use
+the first time and date request, since the day has not changed between the
+previous day request and this time. But the date could have changed after
+the second request for the time, so we don't use the second one.
+
+In step 7, the hour has changed, but it's no longer 11 (or 23), so the
+second date cannot have changed after the second time request (but it could
+have changed after the first time request), so we use the second time and
+date request.
+
+No looping, a simple integer (or 2 character) comparison, in most cases only
+1 request for date and time, and in any case, we can know with not just
+confidence, but with absolute certainty it's right.
+
+It doesn't get any better than that.
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 19:56:33 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: DiceKeys Creates a Master Password for Life With One Roll (WiReD)
+
+A new kit leaves your cryptographic destiny up to 25 cubes in a plastic box.
+
+Modern cybersecurity, done with properly paranoid best practices, requires
+meeting some tough demands: Carry a physical two-factor key to plug in and
+authenticate yourself on a new computer, but if you lose or break that tiny
+piece of plastic you could be locked out of your accounts. Use different,
+totally unguessable passwords for every website, without repeating them or
+writing them down. And even if you opt for a password manager -- as you
+should -- you'll need to remember a long master password for years, or risk
+losing access to the rest of them.
+
+Or you could reduce all of that complexity to a single roll of 25 dice into
+a plastic box. This week Stuart Schechter, a computer scientist at the
+University of California, Berkeley, is launching DiceKeys, a simple kit for
+physically generating a single super-secure key that can serve as the basis
+for creating all the most important passwords in your life for years or even
+decades to come. With little more than a plastic contraption that looks a
+bit like a Boggle set and an accompanying web app to scan the resulting dice
+roll, DiceKeys creates a highly random, mathematically unguessable key. You
+can then use that key to derive master passwords for password managers, as
+the seed to create a U2F key for two-factor authentication, or even as the
+secret key for cryptocurrency wallets. Perhaps most importantly, the box of
+dice is designed to serve as a permanent, offline key to regenerate that
+master password, crypto key, or U2F token if it gets lost, forgotten, or
+broken.
+
+https://www.wired.com/story/dicekeys-cryptography/
+
+  [One key for life?  And if it is compromised, there goes your life?  PGN]
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 09:27:22 +0100
+From: A Michael W Bacon <amichaelwbacon@gmail.com>
+Subject: Re: Driverless cars are coming soon (RISKS-32.21)
+
+On the day RISK-32.21 arrived in my inbox, *The Daily Telegraph* carried a
+letter commenting that the state of [many of] the UK's roads provides the
+chief obstacle to the [safe and effective] deployment of driverless
+vehicles. [My qualifications.]
+
+The writer points out that: "The system relies on clear road markings úÙÚÛ but
+temporary ones are left in place long after road works are finished; surface
+repairs obscure them, and inner-lane markings are worn out by heavy goods
+vehicles."
+
+These aspects are blindingly evident to all observant drivers, but not, it
+seems, to politicians and civil servants.
+
+But then, an ever-present risk is that those in government live in, see and
+experience an entirely different world to the rest of us.
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 13:26:49 -0500
+From: Bob Wilson <wilson@math.wisc.edu>
+Subject: Re: Driverless cars are coming soon (RISKS-32.21)
+
+I want to agree with Chris Drewe and push a little further, where he says
+"When I'm driving a car, the driving takes my full attention..."  Years ago
+I had a competition license entitling me to drive in certain sports car
+races. I knew that on the track my full time job was driving.  I also knew
+that on the track I was a lot safer than on the public roads: Not only was I
+wearing fire-resistant clothing all over, but my car had been inspected for
+safety before I was allowed on to the track.  In some ways even more
+important was the fact that I could believe all the other drivers knew their
+100% full-time job was driving. (And also that they, like me, had passed
+real exams, not like the toy ones for state driver's licenses, and their
+cars had also been inspected, and that all around the track flags were being
+used to tell me of conditions around the next corner...) I have always told
+my family and anyone else riding with me that my attention was first and
+foremost on my driving, and that I might well go silent in the midst of a
+conversation, and if I did they should consider what was going on around us.
+
+But cars these days are being built expressly to pull us away from safety.
+Yes, lots of neat safety features. But *infotainment* systems are being sold
+both as ways to protect us if we don't pay enough attention, so letting us
+think it is OK not to pay attention, and as ways to entertain us and thus
+make sure we don't pay attention.  Competition between car makers to see who
+can provide us the most distraction moves the industry in exactly the wrong
+direction!
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 12:58:13 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: Groundbreaking new material 'could allow artificial
+  intelligence to merge with the human brain' (RISKS-32.21)
+
+"Could" is the operative word.
+
+In https://catless.ncl.ac.uk/Risks/31/18#subj14.1, a summary of FDA MAUDE
+reports on product codes for implanted deep brain stimulation devices is
+given for the period 01JAN2017-31MAR2019.
+
+Coupling signal processing hardware and software to a high-voltage battery
+with electrodes, and implantation, may yield unexpected and unpleasant
+outcomes.
+
+Deaths, injuries, and malfunctions characterize implanted medical device
+report events. Inappropriate shocks constitute one type of device life cycle
+event tracked by the FDA's Total Product Life Cycle tools
+(https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfTPLC/tplc.cfm).  Heart
+implants (defibrillators and pacemakers) are also known to generate
+inappropriate shock events.
+
+When a therapeutic shock is delivered to living tissue, it cauterizes in
+place at the tissue-electrode interface. The tissue's impedance changes
+which can affect programmed therapeutic prescription. The electrode-tissue
+cauterization process is sometimes described by the term "electrode
+seasoning."
+
+An adjustment -- usually in a doctor's office -- is performed to correct
+device over-sense or under-sense conditions that arise from seasoned
+electrode exposure.
+
+This MAUDE MDR URL:
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=10049073&pc=MFR
+(06MAY2020 was the reported event date) describes an implanted
+neuro-stimulator (ins) malfunction event. Typical medical device report
+event description (submitted by a Medtronic representative to MAUDE on
+12MAY2020 and published in MAUDE on 01JUN2020):
+
+"It was reported that the ins was showing less than 3 months battery
+lifetime with battery level at 82% after 3 weeks being implanted. Device
+explant was scheduled, but had not been performed yet. The patient had about
+40% symptom relief for their obsessive compulsive disorder (ocd).  There
+were high impedances on the left side in a range of 5000-8000 ohms on all
+pairs involving contact 0 and monopolar contact 0. Monopolar impedance c/11
+on the right side was also high at 2122 ohms. At the time of this report,
+the patient was programmed at 3.0 ma, 120 usec pulse-width (pw) and 160 hz
+on left side and 3.4 ma, 120 usec pw, and 160 hz on the right side."
+
+Battery depletion from severe electrode seasoning likely prevented
+therapeutic stimulus application at the pre-programmed current and
+pulsewidth duration. More worrisome, from a patient quality of life
+perspective, is this report language: "Device explant was scheduled, but had
+not been performed yet." This means extraction from the patient -- more
+surgery -- is likely. Possibly the device and electrodes, will be replaced
+with a new model and electrodes at a new location(s), depending on patient
+illness, long-term prognosis, and available alternative therapies.
+
+Palliating OCD symptoms with an INS is a relatively new application.
+
+A *miracle material* for implanted electrodes might mitigate impedance
+changes by minimizing or eliminating tissue cauterization altogether.  Every
+patient will welcome fewer unplanned trips to the doctor, emergency room, or
+avoid device explantation due to malfunction or injury.
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 17:40:36 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: How your phone is used to track you, and what you can do about
+  it (RISKS-32.21)
+
+What privacy?  We never had it on the Net, and even less on smartphones.
+
+Last month, Israel's Knesset had approved a law which enables Shabak
+(General Security Service, parallel to UK's MI5 and USA's Homeland Security)
+to use phone location data for tracking COVID-19 carriers and people who
+came into contact with them.
+
+An application was ready for download (voluntary, so far) the next day.
+This fact, as well as the swiftness in passing the law, indicate that Shabak
+has had the ability to do this -- and probably has been already doing this
+covertly for a long time now; and that MK's are well aware of this.
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 11:02:36 +0200
+From: Peter Bernard Ladkin <ladkin@causalis.com>
+Subject: Re: Saliva Test for Covid-19 (RISKS-32.21 Item 22)
+
+It might mean this. Reuters reports on 2020-08-13 on initial testing of a
+saliva test for CoVid-19 at Sheba Medical Center.
+https://www.reuters.com/article/us-health-coronavirus-israel-detection/israeli-hospital-trials-super-quick-saliva-test-for-covid-19-idUSKCN25923A
+The device has been developed by company Newsight Imaging. The device
+irradiates a sample using EM of the wavelength of light, and the results are
+analysed. "Machine learning" is used to improve the analysis. No other
+technical details are given.
+
+"The center said in an initial clinical trial involving hundreds of
+patients, the new artificial intelligence-based device identified evidence
+of the virus in the body at a 95% success rate." -- whatever a "95% success
+rate" means.
+
+There are already saliva tests for Covid-19, five of them authorised by the
+US FDA under EUA. Yale University has developed one called SalivaDirect,
+which received a EUA from the FDA on August 15 or before
+https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-issues-emergency-use-authorization-yale-school-public-health
+
+A report on SalivaDirect can be found at
+https://www.scientificamerican.com/article/covid-19-spit-tests-used-by-nba-are-now-authorized-by-fda/
+
+Most of them chemically manipulate the saliva constituents. The Israeli test
+appears not to do so.
+
+------------------------------
+
+Date: 22 Aug 2020 22:28:55 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Israeli gargle trial gives COVID results in 1 sec., 95% accuracy
+  (Rechtman, RISKS-32.21)
+
+July report in Jerusalem Post:
+https://www.jpost.com/health-science/sheba-to-test-less-than-one-second-coronavirus-detection-technology-635834
+
+Reuters report:
+https://www.reuters.com/article/us-health-coronavirus-israel-detection/israeli-hospital-trials-super-quick-saliva-test-for-covid-19-idUSKCN25923A
+
+Times of Israel story:
+https://www.timesofisrael.com/in-trial-israeli-gargle-test-gives-covid-results-in-1-second-at-95-accuracy/
+
+They say it's in tests, seems promising.. The machine shines light through
+the sample and its "spectral signature" is compared with a profile that
+seems to be generated by machine learning from prior samples from infected
+and uninfected people.  Each test costs about 25c (US), machine costs a few
+hundred.
+
+I can't tell whether this is real or just gobbledygook.  The Sheba Medical
+Center where they're testing it is real, machines are made by Newsight
+Imaging, a local startup.  The hyperspectral imaging technology is not new
+but the implementation in an inexpensive chip is.
+
+------------------------------
+
+Date: Fri, 21 Aug 2020 17:57:08 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: U.S. COVID-19 and World War 2 mortality rates, interim
+  comparison (Stein, RISKS-32.21)
+
+That disease kills more than war isn't at all new or surprising.  The
+'Spanish Flu' in 1918-19 killed more world-wide than did WWI itself.
+Wikipedia says "Of those who died [in the U.S. Civil War], by far the
+leading cause of death was disease."
+
+It now appears that the diseases brought to the 'New World' by Columbus &
+successors killed far more Native Americans than any battles -- perhaps 90%
+of the Native American population circa 1500 may have been wiped out by
+European diseases by ~1700.
+
+In more ancient times, even Ghengis Khan's mass murders and genocide
+couldn't kill as fast as a garden-variety epidemic.
+
+------------------------------
+
+Date: Sat, 22 Aug 2020 09:59:10 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: U.S. COVID-19 and World War 2 mortality rates, interim comparison
+  (Baker, RISKS-32.22)
+
+Agreed. The estimated pandemic v. war death rate multiplier was
+heartbreaking to calculate. Proactive public health measures, when widely
+embraced by a population, can effectively mitigate pandemics.
+
+The mosquito has been, and remains, humankind's supreme mortal enemy.
+Timothy Winegard's "The Mosquito: A Human History of Our Deadliest Predator"
+testifies to their evolutionary effectiveness as a killer.
+
+I wonder what will become of Florida's release of a genetically engineered
+mosquito to combat dengue?
+https://www.genengnews.com/news/florida-approves-mosquito-release-to-curb-spread-of-viruses/
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.22
+************************

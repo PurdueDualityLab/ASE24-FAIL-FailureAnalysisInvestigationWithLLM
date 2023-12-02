@@ -1,0 +1,616 @@
+precedence: bulk
+Subject: Risks Digest 30.05
+
+RISKS-LIST: Risks-Forum Digest  Monday 26 December 2016  Volume 30 : Issue 05
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.05>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+BART new extension two years behind (PGN)
+Uber Booboo SNAFU, not FUBAR? (PGN)
+Who's Liable for George Hotz's Self-Driving Software?
+  (Gabe Goldberg)
+Security risk on in-flight entertainment systems (BBC via
+  Duncan Gibson)
+Recounts or no, U.S. elections still vulnerable to rigging, disruption
+  (Rubinkam/Bajak)
+For Fact-Checking Website Snopes, a Bigger Role Brings More Attacks
+  (David Streitfeld)
+Fake News Story Sets Off Israel-Pakistan Twitter Feud (AP)
+German government wants to fight "fake news" (Thomas Koenig)
+'Special' Powers Corrupt Especially!! (Werner U)
+U.S. NSA insider may be behind Russian FSB leak? (BankInfoSecurity via
+  Al Mac)
+Biz Cams into Madison MS (Al Mac)
+Patch Linux (Ars Technica via zdnet)
+Android phones by Lenovo and others may be running spyware (Michael Simon)
+Facebook banned a social justice activist for commenting on racism
+  (TechCrunch)
+Online profile pictures leave lasting impressions, researchers say (CBC)
+Before Trump's Presidency, US Privacy Board in Disarray (ABC)
+MSFT $927M tech support contract (geek wire)
+Re: US feds cyberattack US states (Steve Lamont)
+Re: Audi Cars Now Talk To Stop Lights In Vegas (Chris Drewe)
+Re: Project Wycheproof -- Crypto Check Libraries (Craig Burton)
+"Walking Wounded: Inside the U.S. Cyberwar Machine" (Michael VanPutte)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 22 Dec 2016 11:48:12 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: BART new extension two years behind
+
+BART has been extending one of its East-Bay lines south by 5.4 miles to a
+new station in South Fremont, originally supposed to open in 2014 (after
+work began in 2009).  Completion is now expect to be deferred until 2017,
+due to construction problems and computer problems.  The difficulties in the
+past two months involve upgrading the 44-year-old automated train control
+computer system and integrating it with up-to-date gadgetry on the new
+extension.  At the moment, trains on the new stretch of track show up with
+incorrect reports of locations and speeds.  (This is the first leg in
+extending BART to downtown Santa Clara and San Jose.)  [PGN-ed from an
+article in the *San Francisco Chronicle*, 22 Dec 2016]
+
+------------------------------
+
+Date: Thu, 22 Dec 2016 11:36:37 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Uber Booboo SNAFU, not FUBAR?
+
+Uber has been testing its self-driving cars in San Francisco, and running
+into problems with the state and city having not obtained the proper
+permits.  The *San Francisco Chronicle* on 21 Dec 2016 reported that the
+cars have made illegal and unsafe right turns through bike lanes, as
+witnessed by the head of the SF Bicycle Coalition.  One car also reportedly
+ran a red light.
+
+The following day 22 Dec 2016, the *Chronicle* reported that the California
+DMV revoked the registrations for the self-driving Uber Volvo XC90s, because
+they had been improperly issued -- they were not properly identified as
+"test vehicles".  Uber had been protesting that the cars were not truly
+"autonomous" because they still had a human operator, and was refusing to
+report accidents -- as required for autonomous vehicles.
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 20:48:07 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Who's Liable for George Hotz's Self-Driving Software?
+
+You could download Comma.ai's new open-source Python code
+<https://github.com/commaai/openpilot> from Github, grab the necessary
+hardware, and follow the company's instructions to add semi-autonomous
+capabilities to specific Acura and Honda model cars (with more vehicles to
+follow). Comma.ai's CEO George Hotz told /IEEE Spectrum /last week
+<http://spectrum.ieee.org/cars-that-think/transportation/self-driving/qa-why-exhacker-george-hotz-is-giving-away-selfdriving-software>
+that Comma.ai's code has safety features
+<https://github.com/commaai/openpilot/blob/master/SAFETY.md>, but what would
+happen if there's a bug and your car crashes into a building, another car,
+or a pedestrian? Self-driving-cars are notoriously difficult
+<http://spectrum.ieee.org/cars-that-think/transportation/self-driving/why-ai-makes-selfdriving-cars-hard-to-prove-safe>
+to test for safety.
+
+Hotz writes in an email, ``It's not my code, I did not release it.'' -—
+Comma.ai Inc. ``released and maintains it.''  Most legal experts that spoke
+with *IEEE Spectrum* -— and Hotz himself -— believe that if you use the
+company's code and something goes wrong, then it isn't liable for
+damages.  You are.
+
+But Consumer Watchdog <http://www.consumerwatchdog.org/> advocate John
+Simpson doesn't believe this is fair. He says Hotz ``was somewhat
+responsible'' for any damage that could occur.  Although responsibility gets
+*murkier* as more developers modify the code, he says Hotz made it public,
+and should therefore be held liable as well as the user.
+
+http://spectrum.ieee.org/cars-that-think/transportation/self-driving/whos-liable-for-george-hotzs-selfdriving-software/
+
+Liability is an interesting issue; so is software bugs and patches. I
+haven't yet installed iOS 10.2 on iPhone/iPad because of discussions of
+problems with batteries, etc.  It'll be fun evaluating when to install
+Honda.accord.coupe.6cyl next release, trading off bug and security fixes
+against warnings that the new release, say, disables the radio and swaps
+left/right turn signals.  Or bricks the car.  (Can a car be "bricked"?  It
+seems too big for that so maybe cars will be "cinderblocked" or
+"outhoused".)
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 09:46:42 +0100
+From: Duncan Gibson <duncan@thermal.esa.int>
+Subject: BBC: Security risk on in-flight entertainment systems say
+  researchers
+
+"Air passengers could be subjected to a series of "shocking" incidents if
+security flaws in cabin entertainment systems were abused, say researchers.
+
+Security experts found flaws that let them take over cabin entertainment
+systems."
+
+http://www.bbc.com/news/technology-38382826
+
+I seem to remember this was predicted on RISKS...
+
+  [Predicted?  No.  It was claimed, and is plausible in that the
+  infotainment system and the avionics share the local network (with some
+  sort of presumed firewall -- perhaps software that is not very secure,
+  like almost all other software.  See Chris Roberts and Avionics Security
+  (Schneier, RISKS-28.69).  PGN]
+
+------------------------------
+
+Date: Mon, 26 Dec 2016 11:44:16 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Recounts or no, U.S. elections still vulnerable to rigging, disruption
+  (Rubinkam/Bajak)
+
+Michael Rubinkam and Frank Bajak, AP, 26 Dec 2016
+http://hosted2.ap.org/APDEFAULT/3d281c11a96b4ad082fe88aa0db04305/Article_2016-12-26-US--Election%202016-Hacking%20The%20Vote/id-2045694a530741b6a82b9b0212cce5d3
+
+  Most Pennsylvania voters used antiquated machines that store votes
+  electronically, without printed ballots or other paper-based
+  backups. There was basically nothing to recount.
+
+See also a much longer and detailed item, quoting various RISKS contributors:
+http://hosted.ap.org/dynamic/stories/U/US_ELECTION_2016_HACKING_THE_VOTE?SITE=AP&SECTION=HOME&TEMPLATE=DEFAULT&CTIME=2016-12-26-12-12-44
+
+------------------------------
+
+Date: Mon, 26 Dec 2016 08:25:17 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: For Fact-Checking Website Snopes, a Bigger Role Brings More Attacks
+  (David Streitfeld)
+
+David Streitfeld, *The New York Times* via NNSquad
+Internet wrath turned against Snopes after it joined a coalition of websites
+that will work with Facebook to identify and flag suspicious content.
+http://www.nytimes.com/2016/12/25/technology/for-fact-checking-website-snopes-a-bigger-role-brings-more-attacks.html
+
+  One way to chart Snopes's increasing prominence is by measuring the rise
+  in fake news about the site itself.  If you believe the Internet, the
+  founder of Snopes, David Mikkelson, has a longer rap sheet than Al
+  Capone.  He was supposedly arrested for committing fraud and corruption and
+  running a pit bull ring.  In the wake of a deal that Snopes and others made
+  this month to start fact-checking for Facebook, new slurs and allegations
+  poured forth.  The underlying message of these spurious attacks is that
+  the movement to fact-check the Internet is a left-wing conspiracy whose
+  real goal is to censor the right, and therefore must be resisted at all
+  costs.
+
+------------------------------
+
+Date: Sun, 25 Dec 2016 13:24:48 -0500
+From: "Dave Farber" <farber@gmail.com>
+Subject: Fake News Story Sets Off Israel-Pakistan Twitter Feud (AP)
+
+AP item via *The New York Times*, 25 Dec 2016
+
+A fake news story has touched off a tense Twitter confrontation between
+nuclear power Pakistan and Israel, widely believed to have a nuclear arsenal
+of its own, in an episode that underlines the potentially harmful impact of
+such stories in sensitive global affairs
+
+http://www.nytimes.com/aponline/2016/12/25/world/middleeast/ap-ml-israel-pakistan-fake-news.html
+
+------------------------------
+
+Date: Mon, 26 Dec 2016 15:48:24 +0100
+From: Thomas Koenig <tkoenig@netcologne.de>
+Subject: German government wants to fight "fake news"
+
+The German government wants to set up a "center of defense against
+disinformation" to combat fake news on the Internet.  It will be part of the
+Chancellor's Office.  According to one proposal, Facebook would be obliged
+to delete fake news or face a 500 000 Euro fine per article.
+
+The risks?  Looking back, a prime candidate for "fake news" would be
+the past would have ben the New Year's Eve sexual assaults in Cologne.
+The official police reports said it didn't happen, so it must have been
+fake news, correct?
+
+Of course, there is a legal precedent in Germany for banning fake news.  The
+Decree of the President of the Reich for the protection of the German
+people, dated February the 4th, 1933, contained the passage (my translation)
+
+§9 (1) Periodicals can be banned [...]
+    7. If they contain obvious fake news, whose dissemination is likely to
+       endanger vital interest of the State
+
+http://www.bbc.com/news/world-europe-38417757
+http://www.documentarchiv.de/ns/schutz-dt-vlk.html
+
+------------------------------
+
+Date: Mon, 26 Dec 2016 03:35:18 +0100
+From: Werner U <werneru@gmail.com>
+Subject: 'Special' Powers Corrupt Especially!!
+
+Never Doubted It:  Access to 'Special' Powers over Information sources...
+... *do* get abused, sooner rather than later !
+
+*Revealed: British councils used Ripa to secretly spy on public*
+
+https://www.theguardian.com/world/2016/dec/25/british-councils-used-investigatory-powers-ripa-to-secretly-spy-on-public
+
+Anushka Asthana, *The Guardian*, 25 Dec 2016
+
+Local authorities used Regulation of Investigatory Powers Act to follow
+people, including dog walkers, over five years.  Councils were given
+permission to carry out more than 55,000 days of covert surveillance over
+five years, including spying on people walking dogs, feeding pigeons and
+fly-tipping.
+
+A mass freedom of information request has found 186 local authorities --
+two-thirds of the 283 that responded -- used the government's Regulation of
+Investigatory Powers Act (Ripa) to gather evidence via secret listening
+devices, cameras and private detectives.
+
+Among the detailed examples provided were Midlothian council using the
+powers to monitor dog barking and Allerdale borough council gathering
+evidence about who was guilty of feeding pigeons.
+
+Wolverhampton used covert surveillance to check on the sale of dangerous
+toys and car clocking; Slough to aid an investigation into an illegal puppy
+farm; and Westminster to crack down on the selling of fireworks to children.
+
+Meanwhile, Lancaster city council used the act, in 2012, for *targeted dog
+fouling enforcement* in two hotspots over 11 days.
+
+A spokeswoman pointed out that the law had since changed and Ripa could only
+now be used if criminal activity was suspected. The permissions for tens of
+thousands of days were revealed in a huge freedom of information exercise,
+carried out by the Liberal Democrats. It found that councils then launched
+2,800 separate surveillance operations lasting up to 90 days each.
+
+Critics of the spying legislation say the government said it would only be
+used when absolutely necessary to protect British people from extreme
+threats.
+<https://www.theguardian.com/uk/2009/apr/17/council-surveillance-abuse>
+
+Brian Paddick, the Lib Dem peer who represents the party on home affairs,
+said: ``It is absurd that local authorities are using measures primarily
+intended for combating terrorism for issues as trivial as a dog barking or
+the sale of theatre tickets.  Spying on the public should be a last resort
+not an everyday tool.''
+
+...lots/most snipped -- repetitive retelling of how pathetic, little
+bureaucrats abuse power....
+
+[It's tempting to guess that it was a "slow news day".]
+  [At least they are giving you the straight poop, albeit doggedly.  PGN]
+
+------------------------------
+
+Date: Sat, 24 Dec 2016 23:12:46 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: U.S. NSA insider may be behind Russian FSB leak?
+
+http://www.bankinfosecurity.com/report-shadow-brokers-leaks-trace-to-nsa-insider-a-9596
+
+------------------------------
+
+Date: Sat, 24 Dec 2016 21:21:23 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Biz Cams into Madison MS
+
+City of Madison, Mississippi, Passes Ordinance Mandating CCTV Surveillance
+By Businesses, Including Doctors And Lawyers Offices
+
+http://onlinemadison.com/Content/Default/News/Article/Cameras-required-at-Madison-businesses-facing-potential-fine-or-jail-time/-3/592/38978
+
+https://www.techdirt.com/articles/20161211/12434036250/city-passes-ordinance-mandating-cctv-surveillance-businesses-including-doctors-lawyers-offices.shtml
+
+{Does this include cameras inside toilet facilities of hotels & motels,
+which have 25 or more 'guests'?
+
+Or are the cameras required to show only the people who come and go, not all
+details of their visitations?
+
+In USA & some other nations, there is constitutional guarantee of
+confidentiality between
+
+* Doctor & Patient;
+* Lawyer & Client;
+* Priest & alleged Sinner.
+
+Will placement of cameras mean some of this can be violated via lip reading?
+
+It does not apply to businesses whose parking areas are smaller than 25
+cars, or inside are less than 2,000 feet.
+
+Does this also apply to government offices, like police station, court
+house, schools, wherever city council meets?
+
+Can all the businesses of the city participate in a discount, since many of
+them will need to buy cameras all at same time?
+
+Learning about the city of Madison MS:
+http://www.madisonthecity.com/
+https://en.wikipedia.org/wiki/Madison,_Mississippi
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 21:26:03 -0600
+From: "Alister Wm Macintyre" <macwheel99@wowway.com>
+Subject: Patch Linux (Ars Technica via zdnet)
+
+  This was from Ars Technica, 22 Nov 2016:
+  Elegant 0-day unicorn underscores "serious concerns" about Linux security
+  Scriptless exploit bypasses state-of-the-art protections baked into the OS.
+  http://arstechnica.com/security/2016/11/elegant-0day-unicorn-underscores-serious-concerns-about-linux-security/
+
+  This is from ZDnet, 9 Dec 2016:
+  Three serious Linux kernel security holes patched
+  It's time to patch your Linux servers and PCs again.
+
+The good news is developers are looking very closely at Linux's core code
+for possible security holes. The bad news is they're finding them..  At
+least the best news is that they're fixing them as soon as they're
+uncovered.
+
+http://www.zdnet.com/article/three-serious-linux-kernel-security-holes-patched/
+
+------------------------------
+
+Date: Thu, 22 Dec 2016 08:50:13 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Android phones by Lenovo and others may be running spyware
+  (Michael Simon)
+
+Michael Simon, Greenbot, 20 Dec 2016
+http://www.infoworld.com/article/3152013/android/new-report-says-android-phones-by-lenovo-and-others-may-be-running-spyware-apps.html
+
+The security hole that previously affected Blu R1 HD phones has been linked
+to more than 40 other manufacturers.
+
+When security firm Kryptowire discovered last month that Chinese firmware
+company Adups was spying on text messages, call logs, contact lists, and
+location information sent by Blu R1 HD phones in the United States, Blu
+quickly acted to plug the security hole and assure customers that their
+personal data was safe. But now it appears that the issue might be more
+widespread.
+
+Security research outfit Trustlook has uncovered numerous other
+manufacturers that may have devices containing Adups apps. While many of
+them are smaller China-based manufacturers, a few notable brands made the
+list, including Archos, ZTE and Lenovo. Trustlook's findings echo those of
+Kryptowire, in that the pre-installed apps are working behind the scenes to
+mine your data:
+
+"The app comes preinstalled on the device. It collects many types of user
+information. In addition to specifications such as IMEI, IMSI, MAC address,
+version number, and operator, this app attempts to collect user's SMS text
+messages and call logs. More troubling is that all of these procedures are
+done without user's consent and are processed in the background."
+
+------------------------------
+
+Date: Thu, 22 Dec 2016 10:59:08 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Facebook banned a social justice activist for commenting on racism
+
+via NNSquad
+https://techcrunch.com/2016/12/22/facebook-ban-leslie-mac/?ncid=rss
+
+  Ultimately, the issue seems to be that a bunch McGorry's followers
+  disagreed with Mac's post and then reported it to Facebook. Given that
+  Mac's post doesn't seem to violate any of Facebook's community standards,
+  what might have happened was that there was such a high volume of people
+  reporting the post that Facebook just automatically took it down and then
+  banned her.  "Do I think Facebook is like, we hate Leslie Mac? No," Mac
+  said. "But what their systems allow is people to attack people of color
+  with no recourse and to take those people's opinions as fact. That's where
+  the deliberacy is existing.
+
+There was absolutely nothing wrong with that post.  This is why
+"crowdsourcing" abuse flagging is so complicated and itself subject to abuse
+unless there is adequate ongoing oversight.
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 11:02:07 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Online profile pictures leave lasting impressions, researchers say
+
+via NNSquad
+http://www.cbc.ca/news/technology/online-profile-pic-first-impression-1.3904030?cmp=rss
+
+  The researchers at Cornell wanted to find out how our initial impressions
+  of someone, based only on seeing a photo of them, carry over if and when
+  we meet that person one-on-one.
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 17:48:37 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Before Trump's Presidency, US Privacy Board in Disarray
+
+ABC News via NNSquad
+http://abcnews.go.com/Technology/wireStory/trumps-presidency-us-privacy-board-disarray-44333498
+
+  A federal board responsible for protecting Americans against abuses by spy
+  agencies is in disarray just weeks before President-elect Donald Trump
+  takes office.
+
+We must protect our own privacy by all technological and other means
+at our disposal.  Trusting the government -- ANY GOVERNMENT -- to do so
+is the act of fools.
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 14:26:13 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: MSFT $927M tech support contract (geek wire)
+
+Bill Gates, one of our world's richest billionaires, gets another billion of
+taxpayer money to provide tech support for 4 million employees of DoD (US
+Dept of Defense).
+
+http://www.geekwire.com/2016/microsoft-wins-927m-support-contract-u-s-defens
+e-department/
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 10:06:31 -0800
+From: spl@tirebiter.org (Steve Lamont)
+Subject: Re: US feds cyberattack US states (RISKS-30.03)
+
+If one reads the stories, the so-called "cyberattacks" appear to be nothing
+more than `nmap' scans:
+
+  Kemp also told Diamant that DHS has yet to explain at least nine other
+  suspected network scans linked to DHS IP addresses over the last year on
+  or around important primary and presidential election dates. Kemp's call
+  for answers is amplified now by the National Association of Secretaries of
+  State, or NASS.
+
+And here might be the source of the brouhaha:
+
+  Georgia has been pushing back for months against DHS deliberations over
+  whether to classify electoral infrastructure as "critical infrastructure,"
+  on par with the financial sector or power grid. Critics say the move
+  represents federal government overreach, while proponents insist it would
+  help states better fend off election hackers. [...]
+
+  Georgia was one of the few states that did not accept a DHS offer to scan
+  state systems for digital bugs amid this year's election-season hacking
+  fears, warning that the action represented a potential federal intrusion.
+  [...]
+
+And sourcing Sean Hannity?  Um, okay.
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 22:13:36 +0000
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject:  Re: Audi Cars Now Talk To Stop Lights In Vegas
+  (RISKS-30.04)
+
+Last Christmas I had a rental car with this, though it had automatic
+transmission -- car was a SEAT Leon (European VW brand) with turbo-Diesel
+engine and one of those twin-clutch gearboxes rather than conventional
+torque converter.  Seemed to work fine for me; what I found was that if I
+braked firmly and came to a full halt, such as at a stop light, the engine
+shut off, then started instantly when I put my foot back on the gas pedal to
+move off, whereas if I braked gently and slowed to a standstill, the engine
+kept running.  Presumably the software only shut the engine off in
+favourable conditions, i.e., engine fully warmed, well-charged battery, no
+big electrical loads switched on, etc.
+
+Big problem with some rental cars is figuring how to work the radio (or
+'infotainment centre' nowadays) -- if I have trouble when sitting in the
+parking lot with the instruction manual in front of me, how the heck do I
+manage while barreling down the highway..?  :o) Also I'm not sure about
+touch-screen displays and controls in cars, which I can find a challenge in
+static conditions such as ATMs and train ticket machines.
+
+------------------------------
+
+Date: Wed, 21 Dec 2016 16:41:28 +1100
+From: Craig Burton <craig.alexander.burton@gmail.com>
+Subject: Re: Project Wycheproof -- Crypto Check Libraries (Google)
+  (RISKS-30.04)
+
+Mount Wycheproof is "the smallest mountain in the world", at 141 feet.  I
+have driven up it.  Took 15 seconds at a meandering pace.
+
+http://unofficialnetworks.com/2013/07/mt-wycheproof-world-smallest-mountain
+
+The name 'Wycheproof' originates from the local Aboriginal language,
+'wichi-poorp', meaning 'grass on a hill'.
+
+The Wycheproof area is known to have its own unique mineral, known as
+Wycheproofite.
+
+https://en.wikipedia.org/wiki/Mount_Wycheproof
+
+Hopefully Google isn't making a mountain out of a molehill!
+
+------------------------------
+
+Date: Sun, 25 Dec 2016 20:43:56 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: "Walking Wounded: Inside the U.S. Cyberwar Machine"
+  (Michael VanPutte)
+
+Here is a book I really want to read, written by someone who has been a
+long-time insider.  The book has apparently endured long delays involving
+internal pre-publication reviews (and even a congressional investigation on
+why the government wouldn't release the manuscript), but is now published.
+I believe it will be of considerable interest to RISKS readers.
+
+  Michael VanPutte
+  Walking Wounded: Inside the U.S. Cyberwar Machine
+  https://www.amazon.com/dp/1539945618/
+
+  Forget everything you know about crime, war, and espionage in cyberspace.
+  Walking Wounded takes the layman to seasoned professional on an insider's
+  journey through the secret history, technologies, and strategies
+  surrounding war and espionage in cyberspace.  Walking Wounded is not
+  another hacking book.  It takes the reader behind the scenes and recounts
+  the story of the Pentagon's love affair with technology, and how this
+  reliance makes them vulnerable to hackers.  It explains how foreign
+  intelligence services, criminals, and amateur hackers have compromised our
+  sensitive systems for three decades, while our government hackers are
+  running rampant through foreign information systems.  And it explains how
+  our national policies have made us all less secure.  Walking Wounded gives
+  the reader the tools to get beyond the hype, mythologies, and marketing
+  and understand what President Obama called, ``The most serious threat to
+  out national security.''
+
+    [This book may seem like putty in your hands, but it may also help mold
+    the minds of some new readers who might be less risks-aware than our
+    long-time readers.  I know some of you will be in you 32nd calendar year
+    of reading RISKS next week; I appreciate your steadfastness!  PGN]
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.05
+************************

@@ -1,0 +1,570 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 22 March 2016  Volume 29 : Issue 38
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.38.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+British teenager social engineers top US officials (Matt Zapotosky and
+  Ellen Nakashima via Cipher)
+More on the Apple iMessage vulnerability (Monty Solomon)
+DOJ Says It May Not Need Apple's Help to Unlock iPhone (Fortune)
+Canadian Implementation of Chip and Pin and NFC (Sheldon)
+Tapping ATM cvommunications (Krebs via Al Mac)
+Will apps become the next disability lawsuit target? (TechCrunch)
+Fifth Amendment does not cover Domestic Staff, Human or Electronic
+   (The Atlantic via Bob Gezelter)
+Re: Printer Error Triggered Bangladesh Race to Halt Cyber Heist (Drew Dean)
+Re: Ukraine Electric SANS Report (Al Mac, Rogier Wolff)
+Re: Pentagon skips tests on key component of U.S.-based missile
+  (Geoffrey Sinclair)
+Re: American Express 3rd-party breach (Richard Bos, Duncan Gibson)
+Bitcoin book and course (Monty Solomon)
+Craig Smith, The Car Hacker's Handbook: A Guide for the Penetration
+  Tester (reviewed by Richard Austin)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 22 Mar 2016 10:43:17 -0600
+From: "Cipher Editor" <cipher-editor@ieee-security.org>
+Subject: British teenager social engineers top US officials
+
+Matt Zapotosky and Ellen Nakashima, *The Washington Post*, 12 Feb 2016
+"British teen arrested in hacking of top U.S. intelligence officials"
+https://www.washingtonpost.com/world/national-security/british-teen-arrested-in-hacking-of-top-us-intelligence-officials/2016/02/12/7b87351e-d1a5-11e5-b2bc-988409ee911b_story.html
+
+The emails of the CIA director and the Director of National Intelligence
+were the victims of email hacking, and a British teenager has been arrested
+for it.  The investigation of the exploit has focused on "Crackas With
+Attitude", and they are suspected of leaking government employee information
+(see the preceding news item).
+
+The exploit may have been "old school" because it is rumored to have been
+based on convincing Verizon workers that they were talking to the victims.
+The hackers got the account access information changed so that they could
+login to the victims' email accounts.  They also claimed to have changed
+voice forwarding on one of the phones.
+
+------------------------------
+
+Date: Tue, 22 Mar 2016 08:33:54 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: More on the Apple iMessage vulnerability
+
+  [Re: Flaw in iMessage fixed in today's release of iOS 9.3 (RISKS-29.37)]
+
+Christina Garman, Matthew Green, Gabriel Kaptchuk, Ian Miers, Michael Rushanan
+Dancing on the Lip of the Volcano: Chosen Ciphertext Attacks on Apple iMessage
+https://isi.jhu.edu/~mgreen/imessage.pdf
+
+A Few Thoughts on Cryptographic Engineering: Attack of the Week:
+Apple iMessage
+http://blog.cryptographyengineering.com/2016/03/attack-of-week-apple-imessage.html
+
+------------------------------
+
+Date: Mon, 21 Mar 2016 18:39:45 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: DOJ Says It May Not Need Apple's Help to Unlock iPhone
+
+via NNSquad
+http://fortune.com/2016/03/21/doj-court-hearing-apple-postpone/
+
+  The Justice Department asked a judge on Monday to postpone a hearing
+  scheduled for the next day about whether Apple should be compelled to help
+  unlock an iPhone used by one of the San Bernardino shooters.  The surprise
+  last minute filing said that the Federal Bureau of Investigation would try
+  to access the data stored on the iPhone used by Syed Rizwan Farook through
+  alternate means, without specifying exactly how. It raises the possibility
+  of a truce between the federal government and Apple, which have waged a
+  public war over the propriety of the company helping law enforcement
+  access the data.
+
+------------------------------
+
+Date: Mon, 21 Mar 2016 23:48:08 -0400
+From: Sheldon <sheldon10101@gmail.com>
+Subject: Canadian Implementation of Chip and Pin and NFC
+
+In the US, some retailers do not ask for a signature if the purchase was
+below some amount.  Before chip and pin in Canada, that was also sometimes
+the case, especially in grocery stores and that was implemented by the card
+company.
+
+Chip and PIN credit and debit cards in Canada now include a tap facility and
+while it physically is a chip in the card, the technology is NFC similar to
+that used in smartphones and tablets rather than read only RFID so it is
+supposed to be much more secure.
+http://canada.creditcards.com/credit-card-news/contactless-payment-myths-1264.php
+
+If you want to use the tap method and it has been implemented by the
+retailer, you simply tap and hold the card against part of the retail
+terminal. Again, this is usually done by grocery stores and Walmart.
+
+This has also been implemented for bank/credit union debit cards where there
+is a limit of a $100 per transaction and after every $200 of transactions,
+you have to enter your PIN.
+
+As alternative for the customer, or if it isn't implemented then the card
+can be inserted in a slot in the terminal and you have to enter the PIN.
+
+Paying at the gas pump is a bit weird. At some pumps you can tap the card.
+Most haven't implemented this, so after swiping any loyalty card, you insert
+your chip and pin card. The terminal locks your card and then you pick a
+maximum authorization amount in $20 increments and enter the PIN.  Your card
+is then released and you remove it and pump the gas.  This method ensures
+you pay for the gas.
+
+------------------------------
+
+Date: Mon, 21 Mar 2016 17:46:47 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Tapping ATM communications
+
+Crooks have found yet another way to steal your banking info. They can
+hijack info via ethernet cable of a cash machine's phone or Internet jack,
+to gather your card information.  This risk is probably on many devices
+which accept our debit and credit cards.  Long before this is fixed, the
+crooks will have found other exploits.
+
+http://krebsonsecurity.com/2016/02/skimmers-hijack-atm-network-cables/
+http://gizmodo.com/crooks-dont-need-a-fancy-skimmer-they-can-just-tap-an-175
+8228948
+
+------------------------------
+
+Date: Sun, 20 Mar 2016 15:07:51 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Will apps become the next disability lawsuit target? (TechCrunch)
+
+(via NNSquad)
+http://techcrunch.com/2016/03/20/will-apps-become-the-next-disability-lawsuit-target/?ncid=rss&utm_sourceþedburner&utm_mediumþed&utm_campaignþed%3A+Techcrunch+%28TechCrunch%29
+
+  If space was the final frontier for Captain Kirk and the Enterprise,
+  digital-app experiences are the heavily explored frontier for a host of
+  entities. Because apps are a key link between the public and a business,
+  the accessibility of apps to individuals with disabilities, especially
+  those individuals who are blind or have low vision, is unfortunately
+  likely to become the newest contested cyber battleground for claims under
+  the Americans with Disabilities Act (ADA) and similar state and local
+  laws.
+
+Accessibility matters.
+
+------------------------------
+
+Date: Mon, 21 Mar 2016 17:45:12 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: Fifth Amendment does not cover Domestic Staff, Human or Electronic
+
+An interesting, yet not particularly well-explored question is "What happens
+when your device knows EVERYTHING?"
+
+The Electronic assistants inherently need to acquire a large volume of data
+about their owners and connections. The problem is "What is the status of
+that information?"
+
+Those who viewed British historical drama Downton Abbey got a refresher on
+how much information domestic staff see about their principals. It does not
+matter if the domestic help is human or machine. The servant knows
+everything. Domestic habits, social activities, travel, health data, dietary
+data, and many other data items.
+
+I wonder aloud whether we have the proper legal regime to manage and protect
+this data from fishing expeditions. In the United States, a principal can
+assert the 5th Amendment right not to testify against oneself. However, if
+the personal electronic servant is in possession of the information, I
+suspect that a simple subpoena or search warrant can obtain the information.
+
+This a serious question which needs to be addressed at the soonest possible
+opportunity.
+
+The Atlantic article can be found at:
+http://www.theatlantic.com/technology/archive/2016/03/self-driving-cars-and-the-looming-privacy-apocalypse/474600/
+
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Mon, 21 Mar 2016 16:06:45 -0700
+From: Drew Dean <ddean@csl.sri.com>
+Subject: Re: Printer Error Triggered Bangladesh Race to Halt Cyber Heist
+  (RISKS-29.37)
+
+The referenced Bloomberg article says: "Over Saturday and Sunday, Bangladesh
+Bank failed to reach officials in New York by phone. But by that time it was
+also a weekend in the U.S., and nobody was available."
+
+Really? The Bangladesh Central Bank had $28 Billion on deposit with the
+Federal Reserve Bank of New York, and didn't have 24x7 emergency contact
+information? Or they couldn't reach the US Embassy to have someone call
+them?
+
+One can easily hypothesize why alternative means of contacting the NY Fed
+weren't used, but "nobody was available" doesn't pass the laugh test.
+
+------------------------------
+
+Date: Tue, 22 Mar 2016 01:04:06 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: Ukraine Electric SANS Report (RISKS-29.37)
+
+Earlier I wrote <http://catless.ncl.ac.uk/Risks/29.37.html#subj10> that I
+was unable to locate the SANS / NERC E-ISAC lessons learned report, that the
+Dark Reading article was about.
+<http://www.darkreading.com/vulnerabilities---threats/lessons-from-the-ukraine-electric-grid-hack/d/d-id/1324743?_mc=RSS_DR_EDT>
+
+Here it is (PDF 29 pages 1.8 Meg)
+http://ics.sans.org/media/E-ISAC_SANS_Ukraine_DUC_5.pdf
+
+It mentions claims in news stories about the incident, identifying areas
+where some past articles were incorrect.
+
+In addition to what I wrote in my prior post, based mainly on the Dark
+Reading article:
+
+* The attackers successfully used two different SCADA hijack across
+  different types of SCADA/DMS implementations at the 3 companies. (DNS   distribution management systems.)
+
+* This report supports the mitigation recommendations in the DHS ICS-CERT
+  alert, but they go further with more.
+
+The following is a consolidated list of technical components used by the
+attackers, graphically depicted in Figure 3 (of this report):
+
+* Spearphishing to gain access to the business networks of the oblenergos
+  (the Ukraine electric companies);
+
+* Identification of BlackEnergy 3 at each of the impacted oblenergos;
+
+* Theft of credentials from the business networks;
+
+* The use of virtual private networks (VPNs) to enter the ICS network;
+
+* The use of existing remote access tools within the environment or issuing
+  commands directly from a remote station similar to an operator HMI (Human
+  Machine Interface);
+
+* Serial-to-Ethernet communications devices impacted at a firmware level16;
+
+* The use of a modified KillDisk to erase the master boot record of impacted
+  organization systems as well as the targeted deletion of some logs;
+
+* Utilizing UPS systems to impact connected load with a scheduled service
+  outage;
+
+* Telephone denial-of-service attack on the center;
+
+Footnotes in the report include links to many sources which I had not
+previously seen.
+
+------------------------------
+
+Date: Tue, 22 Mar 2016 11:32:44 +0100
+From: Rogier Wolff <wolff@bitwizard.nl>
+Subject:  Re: Ukraine Electric SANS Report (Al Mac, RISKS-29.37)
+
+> At my day job we had VPN credentials not stored anywhere unencrypted on
+> our systems, so they could not be easily stolen by normal intruders.
+
+My guess is that the same was the case in the Ukraine incident.
+
+Once you have control over a computer, you can log the keypresses. So
+hackers wait and grab the password once it is entered.
+
+This is why (imho) the "sudo" program asking for the user-password is not
+really that useful. Once a hacker have access to the "uses-sudo-regularly"
+useraccount, the hacker installs a front for "sudo" that asks for the
+password, sends it home, tells the user the password was incorrect and then
+executes the real sudo. (Sudo tries to interact with the real user, so
+having the front pass the password to sudo should be impossible/difficult).
+
+Anyway, once the hackers have control over a computer that uses the VPN,
+they similarly lie in wait for the user to enter the credentials and grab
+them while they are unencrypted.
+
+R.E.Wolff@BitWizard.nl ** http://www.BitWizard.nl/ ** +31-15-2600998
+Delftechpark 26 2628 XH  Delft, The Netherlands. KVK: 27239233
+
+------------------------------
+
+Date: Wed, 23 Mar 2016 01:23:36 +1100
+From: "Geoffrey Sinclair" <gsinclair@froggy.com.au>
+Subject: Re: Pentagon skips tests on key component of U.S.-based missile
+  (Baker, RISKS-29.37)
+
+The torpedo problem was not made public during the war but was soon known
+post war.
+
+A torpedo shot apparently cost $10,000 versus the Air Force paying $129,000
+for a DC-3 transport.  So extensive testing was costly.
+
+There were actually three problems.  All of which began to be reported in
+December 1941.  Code breaking supplied information as well.  Of course
+individual commands did take action before the official system did.
+
+Then comes using 16 torpedoes in a failed attempt to scuttle the dead in the
+water aircraft carrier USS Hornet in October 1942, 5 inch guns had to be
+used, the Japanese boarded the ship, then decided it was too far gone and
+put two of their torpedoes into it.
+
+1) The depth keeping system consistently made the torpedoes run deeper than
+set.  Tests begun in South West Pacific Command in mid 1942 revealed the
+average depth was 11 feet more than the settings.  This was confirmed in the
+US in a series of tests ordered by Admiral King in July 1942, previous
+reports had been rejected by the Ordnance Department.
+
+2) The new magnetic exploder, issued late in 1941 under strict secrecy
+rules, the people using the torpedoes found out about them after the war
+started.  Testing consisted of firing dummy warheads at a cruiser in
+equatorial waters.  No live tests were done.  The officer in charge of the
+tests, Lieutenant Commander Ralph Christie did try for an old hulk to use
+for for live tests but failed.  Later he commanded one of the US Submarine
+bases against Japan and backed the exploder against the reports of the
+captains.
+
+The exploder often prematured.  On 24 June for the Pacific Fleet submarines
+and 23 July 1943 for the destroyers came an official order to deactivate it.
+
+3) The contact exploder, the pins were not strong enough, it meant an angled
+hit exploded more often but a torpedo hitting at near right angles usually
+did not.  So the best attacks had a higher failure rate.  In mid 1943 the
+Pacific fleet tried two torpedoes against a cliff, one failed.  They then
+went to dropping dummy warhead torpedoes from a 90 foot crane onto a steel
+plate.  All right angle hits caused the pins to distort rather than cause
+detonation, a 45 degree hit had the detonator working about half the time.
+
+The immediate fix was to try and cut torpedo speed, plus look at captured
+German torpedoes.  The German contact exploder at the start of the war also
+had real problems, solved when they used the Royal Navy design.
+
+In October 1943 the Pacific Fleet arranged for six torpedoes to be fired at
+a cliff, hitting at right angles, all exploded.
+
+------------------------------
+
+Date: Tue, 22 Mar 2016 16:04:54 GMT
+From: raltbos@xs4all.nl (Richard Bos)
+Subject: Re: American Express 3rd-party breach (Al Mac, RISKS-29.37)
+
+> Does anyone sell a pocket sized faraday cage to hold our plastic, without
+> wiping it, or shocking us?  That way, no one can read the plastic until we
+> actually take it out to make a purchase.
+
+Yes, many people, though they are of varying quality. Most are used out of
+RFID paranoia rather than concerns about credit card fraud *per se*, but the
+quality ones should work for either purpose.  A web search on "credit card
+faraday cage" will provide any number of pointers, including the simple (but
+untested by me!) tip of keeping the lot in a metal throat lozenge tin. (Come
+to think of that, I have one of those lying around - I would test this but I
+don't have a credit card...)
+
+------------------------------
+
+Date: Tue, 22 Mar 2016 09:49:58 +0100
+From: Duncan Gibson <duncan@thermal.esa.int>
+Subject: Re: American Express 3rd-party breach (Al Mac, RISKS-29.37)
+
+I've been using just such a mini-wallet made by Secrid BV here in the
+Netherlands to keep RFID and Near Field cards out of harm's way.  See
+https://www.secrid.com/en/
+
+------------------------------
+
+Date: Tue, 22 Mar 2016 09:31:33 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Bitcoin book and course
+
+Bitcoin and Cryptocurrency Technologies
+Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven
+  Goldfeder with a preface by Jeremy Clark, Draft, 9 Feb 2016
+
+https://d28rh4a8wq0iu5.cloudfront.net/bitcointech/readings/princeton_bitcoin_book.pdf
+https://www.coursera.org/course/bitcointech
+
+------------------------------
+
+Date: Tue, 22 Mar 2016 10:43:17 -0600
+From: "Cipher Editor" <cipher-editor@ieee-security.org>
+Subject: Craig Smith, The Car Hacker's Handbook: A Guide for the Penetration
+  Tester (reviewed by Richard Austin)
+
+Electronic CIPHER, Issue 131, March 22, 2016
+Newsletter of the IEEE Computer Society's TC on Security and Privacy
+http://www.ieee-security.org/cipher.html
+
+		    Book Review By Richard Austin
+                          3/17/2016
+
+Craig Smith
+The Car Hacker's Handbook: A Guide for the Penetration Tester
+No Starch Press, 2016
+ISBN 978-1-59327-703
+
+A penetration test on your car?  Have we really gotten to the point where
+even our cars have networks, multiple computers, panoplies of sensors and,
+of course, software to make them all work together?  Smith assures us that
+we have and then proceeds to walk us through a solid introduction to this
+bizarre world and how things in it can be made to misbehave.
+
+Smith opens the book with a welcome chapter on threat models which orients
+the reader for the material that follows and how it might be applied by
+security professionals.  Far too many books of this type open with a frantic
+rush to get to the tools and leave the reader to contextualize and position
+the material as best they can with the usual result of a vague impression of
+a long list of tools and commands that all do something but really no idea
+of how they might fit together into a whole.
+
+The next three chapters introduce the important protocols, how communication
+within the vehicle is done, and an introduction to the diagnostic and
+logging data maintained by the vehicle (if you've ever had a "Check Engine"
+light illuminate, you've seen the "user mode" interface to this data).
+
+Chapter 5, "Reverse Engineering the CAN Bus", reflects the important point
+that these are proprietary systems and manufacturers have little incentive
+to disclose their details.  This leaves the security professional with the
+task of capturing traffic, decoding it to form theories about what is
+actually going on and then apply the theory to verify that it is somewhere
+close to correct.  Smith demonstrates use of the tools with screenshots and
+sample commands to get you started. He thoughtfully provides a
+troubleshooting guide for when you accidentally put the vehicle into a state
+where it no longer works correctly.
+
+The next chapter, "ECU Hacking", describes how to interact with a vehicle's
+ECU's (Electronic Control Units) in three ways: front door attacks using the
+manufacturer's access mechanisms; backdoor attacks using the more or less
+traditional hardware analysis techniques (dumping and disassembling
+firmware, etc.); and exploits where you discover unintentional access
+methods.
+
+Chapter 7, "Building and Using ECU Test Benches", describes how to "run" an
+ECU outside the vehicle so you can interact with it in isolation from the
+rest of the vehicle.  Smith also covers the important topic of how to
+simulate the sensor signals the ECU is expecting to process.  Working with
+the EXU outside the vehicle reduces the noise introduced by other units and
+also reduces the consequences of an "Oops!".
+
+The next chapter, "Attacking ECUS And Other Embedded Systems", gets to the
+meat of the matter in interacting with these devices.  This is an excellent
+chapter that introduces a plethora of tools and hardware accessories in a
+single place without having to scour multiple websites and online forums.
+Some of the techniques (e.g., JTAG) will be familiar if you've done hardware
+debugging but Smith's additional discussion of how these tools can be used
+to change the desired operation of embedded systems in ways an adversary
+might desire is both eye opening and invaluable.
+
+Chapter 9, "In-Vehicle Infotainment Systems", extends the discussion to that
+nice touchscreen found in many vehicles that is the interface to multiple
+applications such as navigation and climate control.
+
+The next chapter, "Vehicle-to-Vehicle Communication", provides an
+introduction to one of the more frightening possibilities in vehicle
+systems: cross-communication.  Though it might be useful for a truck loaded
+with dynamite to notify vehicles in its vicinity that it's transporting
+hazardous material, the potential mischief of false notifications or
+suppressed notifications is obvious.  This is a developing technology and
+could well use input from the security profession.  Chapter 11, "Weaponizing
+CAN Findings", describes how to "take an exploit and make it easy to use"
+(p. 193).  Smith lucidly demonstrates how to take an exploit (found during
+your research using the techniques described in the earlier chapters) and
+package it as a Metasploit payload (it doesn't get much easier to use than
+this).
+
+The next chapter, "Attacking Wireless Systems with SDR", describes how to
+use inexpensive Software Defined Radio (SDR) equipment to interact with
+vehicle systems using wireless technology.  While wide coverage radio
+transceivers may cost several thousands of dollars, a SDR costs typically
+less that $500 (SDR receivers can be found as cheaply as $30).  The systems
+used as examples are the TPMS (Tire Pressure Monitoring System) and key fobs
+(more interesting because they use cryptography).  Smith begins with a
+discussion of modulation, how information is imposed onto a radio signal,
+and moves on to receiving the signals and interpreting them.  Once you know
+the frequency, modulation and the format of the information itself, you are
+in a position to generate your own signals to trigger the desired action.
+
+Chapter 13, "Performance Tuning", describes a well-developed, application
+for modifying the operating parameters of vehicle systems to improve
+performance.  This is a masterful demonstration that these are not abstract
+possibilities but, at least in their more benign applications, already
+well-developed.
+
+Our world is rapidly being filled with things that are computers and
+communication networks but don't look like them.  And, like any other
+complex system, they expose vulnerabilities that can be exploited by a
+malicious adversary.  The consequences of suddenly killing the engines of
+several vehicles surrounding a truck carrying hazardous materials on a busy
+interstate highway are horrifying to contemplate.
+
+Smith has done a marvelous job of providing a practical introduction to the
+world of vehicle systems and the tools used to interact with them for both
+benign and malicious purposes.  The challenge for the security profession is
+to engage with the engineers designing these systems to build understanding
+of the security implications of design and implementation decisions.  With
+Smith's introduction under our belt, we will be much better prepared to
+speak their language.  Definitely a recommended read.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.38
+************************

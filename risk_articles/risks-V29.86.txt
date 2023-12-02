@@ -1,0 +1,519 @@
+precedence: bulk
+Subject: Risks Digest 29.86
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 19 October 2016  Volume 29 : Issue 86
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.86>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Automated machine-guns to be deployed at Turkish-Syrian border
+  (Michael Weiner)
+Self-driving cars shouldn't have to choose who to protect in a crash
+  (Frank Pasquale)
+Bacteria on Device Said to Infect at Least 12 Patients in Pennsylvania
+  (The NYT)
+97% of Java apps harbor a known security hole (Fortune via Lillie Coney)
+Russian Hackers Faked Gmail Password Form To Invade DNC Email System
+  (Buzzfeed via Joly MacFie)
+Krebs on IoT security (PGN)
+Re: Undetectable election hacking? (John Levine, Anthony Youngman,
+  Mark E. Smith)
+Re: Samsung discontinues Galaxy Note 7 after battery debacle
+  (Anthony Youngman, Al Mac, David Brodbeck)
+Re: Lithium batteries (Peter Miller)
+Re: The risks of getting your email address wrong (Lindsay Marshall)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: 19 October 2016 at 23:07:19 GMT+2
+From: Michael Weiner <mweiner.at@gmail.com>
+Subject: Automated machine-guns to be deployed at Turkish-Syrian border
+
+Yeni Safak, a Turkish daily, reports that a wall the Turkish government is
+building along the Turkish-Syrian border will include shooting gun towers.
+Thermal cameras and alert systems will detect anyone coming within 300
+meters of the border line. The tower will issue warnings in three languages
+to leave the area immediately. A computer-controlled machine gun will start
+firing at the person if they do not comply.
+
+  What could possibly go wrong?  It is sad that the issue of legal
+  accountability for algorithms is highlighted by such an extreme case.
+
+http://www.yenisafak.com/en/gundem/security-wall-partially-completed-on-turkeys-syrian-border-2550353
+
+  [Shooting at Turkey's <border> in a barrel (gunsight>?  NOT FUNNY.  PGN]
+
+------------------------------
+
+Date: Wed, 19 Oct 2016 8:22:17 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Self-driving cars shouldn't have to choose who to protect in a crash
+  (Frank Pasquale)
+
+Frank Pasquale, Get Off the Trolley Problem
+Slate, New America, and ASU
+http://www.slate.com/articles/technology/future_tense/2016/10/self_driving_cars_shouldn_t_have_to_choose_who_to_protect_in_a_crash.html
+
+Imagine you are driving down a two-lane road at about 45 miles per hour,
+cruising home. You see a group of kids walking home from school about 100
+yards ahead. Just as you're about to pass by them, an oncoming 18-wheeler
+swerves out of its lane and is about to hit you head on. You have seconds,
+tops, to decide: Sacrifice yourself, or hit the children so you can avoid
+the truck.
+
+I like to think that, if asked in advance, most people would choose not to
+plou
+gh into the kids. As the automation of driving advances, there's a way
+to hard-code that decision into vehicles. Many cars already detect whether a
+toddler in a driveway is about to be run over by a driver with a blind spot.
+They even beep when other vehicles are in danger of being bumped.
+Transitioning from an alert system to a hard-wired hard stop is technically
+possible. And if that's possible, so is an automatic brake that would
+prevent a driver from swerving to save herself at the expense of many
+others.
+
+But the decision can also be coded the other way -- to put the car
+occupants' interests above all others. Christoph von Hugo, Mercedes' manager
+of driver assistance systems, active safety, and ratings, appeared to push
+this vision of the future of more fully autonomous vehicles in a recent
+article in Car and Driver.  ``You could sacrifice the car, but then the
+people you've saved, you don't know what happens to them after that in
+situations that are often very complex, so you save the ones you know you
+can save.  If you know you can save at least one person, at least save that
+one. Save the one in the car.'' (Mercedes has since said that Hugo was
+*quoted incorrectly* and that ``[f]or Daimler it is clear that neither
+programmers nor automated systems are entitled to weigh the value of human
+lives. Our development work focuses on completely avoiding dilemma situation
+by, for example, implementing a risk-avoiding operating strategy in our
+vehicles.'')
+
+Some ethicists classify decisions like von Hugo's as a solution to a
+*trolley problem*, after the famous series of thought experiments presented
+by Judith Jarvis Thomson to challenge simple utilitarianism. Jarvis Thomson,
+a professor of philosophy, stylized ethical dilemmas in a series of
+hypotheticals. Would you divert an oncoming trolley away from hitting five
+schoolchildren if your decision meant it killed one person instead? Would
+you push a very heavy person over a bridge onto the tracks in front of the
+trolley to slow it down and keep it from hitting another person? The trolley
+problem was a classic example of an *intuition pump*, capable of eliciting
+responses ranging from the judicious to the zany. It's even satirized in
+memes .
+
+So how do you solve a trolley problem? Some believe the answer is to give
+car owners ever more granular control. Enlightened drivers might choose a
+general rule of *save me first* but soften it to include more
+self-sacrificial options in case of mass casualties. Or they might not. Mere
+awareness that others are not willing to sacrifice for the common good could
+tip the system toward selfishness, or worse. The same individualism that has
+undermined U.S. organ donation rates would probably be even more influential
+in driver decision-making here.
+
+So perhaps increasingly autonomous cars should abide by common rules,
+setting the same terms of safety and danger for all. The Moral Machine
+project at Massachusetts Institute of Technology is soliciting feedback on
+user responses to ethical dilemmas. With a large enough data set on how
+research subjects respond to simulated crashes, programmers might try to
+assure that car code of the future reflects our current judgments (or at
+least those of the people who participate in the Moral Machine). For
+example, if 80 percent of subjects chose self-sacrifice in the *hit the
+truck or the children* scenario at the beginning of this article, that
+could become the coded rule for such tragic choices. Programmers might also
+tilt the code in a more utilitarian direction, nudging automation toward
+better societal outcomes.  Noodling about variations on the trolley problem
+could occupy car-makers, programmers, and research subjects for years. What
+if only one child were sacrificed by a decision to avoid the truck? Do
+elderly persons deserve more, less, or the same consideration as children?
+But a better question might be: Why are automobiles traveling so close to
+pedestrians in the first place? The nonprofit safety advocacy organization
+Transportation for America has studied the enormous (and troubling)
+variation among pedestrian death rates in major American cities. The worst
+places, such as Florida suburbs and exurbs, feature urban design that makes
+it all too easy for drivers of any stripe -- man or machine -- to crash into
+pedestrians. Safety is not just a problem of code -- physical infrastructure
+matters, too. And the disastrous scenario with the 18-wheeler and the group
+of kids might never happen if proper dividers separate oncoming lanes of
+traffic.
+
+Even if those stronger barriers don't come to pass, though, worry over
+trolley problems should not freeze autonomous car initiatives. Human error
+is the root cause of thousands of traffic deaths each year. The Department
+of Transportation has rightly prioritized self-driving cars' development,
+and local authorities could do more to advance their adoption. But the
+question of who is sacrificed in tragic scenarios is not one that can be
+submerged in the general utilitarian calculus of lives saved via robot
+cars. Both law and software code have an expressive function as well,
+favoring some of our values over others.
+
+There will always be conflicts among cars, pedestrians, robots, drones, and
+bikers over the proper share of space and respect each deserves. We need
+individualistic, technical solutions to some of the problems that will
+result as new modes of driving arise and robot delivery services share
+sidewalks with people. But we also need holistic, big-picture thinking. As
+policymakers set the rules of the road for 21st-century mobility, they
+should listen to the urban planners, social scientists, and advocates who've
+spent decades thinking about how to build better, more livable
+communities. Transport isn't just a technical problem: It's a human and
+social one, with political implications far beyond arid intellectual models
+of utilitarian markets.
+
+This article is part of Future Tense, a collaboration among Arizona State
+University, New America, and Slate. Future Tense explores the ways emerging
+technologies affect society, policy, and culture. To read more, follow us on
+Twitter and sign up for our weekly newsletter.
+
+Frank Pasquale is a professor of law at the University of Maryland and
+author of The Black Box Society.
+
+  [Thanks to Marc Rotenberg for spotting this one.  PGN]
+
+------------------------------
+
+Date: Sun, 16 Oct 2016 00:07:08 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Bacteria on Device Said to Infect at Least 12 Patients in Pennsylvania
+
+A CDC inquiry found that a machine used in open-heart surgery at a hospital
+was probably tainted at the plant in Germany where it was made.
+
+http://www.nytimes.com/2016/10/14/health/bacteria-thought-to-be-from-germany-infected-at-least-12-heart-patients-6-of-whom-died.html
+
+------------------------------
+
+Date: Tue, 18 Oct 2016 15:28:40 -0400
+From: Lillie Coney <coney@lillieconey.net>
+Subject: 97% of Java apps harbor a known security hole
+
+http://fortune.com/2016/10/18/java-software-security-veracode/
+
+------------------------------
+
+Date: October 17, 2016 at 5:42:31 PM EDT
+From: Joly MacFie <joly.nyc@gmail.com>
+Subject: Russian Hackers Faked Gmail Password Form To Invade DNC Email System
+
+https://www.buzzfeed.com/sheerafrenkel/russian-hackers-faked-gmail-password-form-to-invade-dnc-emai
+
+San Francisco -- Russian hackers used emails disguised to look as Gmail
+security updates to hack into the computers of the Democratic National
+Committee (DNC) and members of Hillary Clinton's top campaign staff,
+according to a report by the SecureWorks cybersecurity company.
+
+The emails, which were sent to DNC and Clinton staff from March 10, appeared
+almost identical to the standard warnings Gmail users get asking them to
+reset their passwords, the report found. Once clicked, the links took users
+to a page that imitated a Google login page, but which was stealing their
+password information -- and downloading malware -- designed by a group of
+Russian hackers known as Fancy Bear.
+
+The emails were sent to 108 members of Democratic presidential nominee
+Hillary Clinton's campaign and 20 people clicked on them, at least four
+people clicking more than once, Secureworks' research found. The emails were
+sent to another 16 people from the DNC and four people clicked on them, the
+report said.
+
+------------------------------
+
+Date: Mon, 17 Oct 2016 4:56:30 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Krebs on IoT security
+
+What "Things" were under attack in the Krebs revelations?
+
+  https://krebsonsecurity.com/2016/10/who-makes-the-iot-things-under-attack/
+
+------------------------------
+
+Date: 15 Oct 2016 20:24:11 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Undetectable election hacking? (Smith, RISKS-29.85)
+
+> Would you use an ATM if there was only a chance that you'd get your money
+> or that your deposit would be credited to your account?
+
+If I were trying to get my car out of a parking garage, the garage took only
+cash, and closed in 15 minutes, you bet I would -- and so would you.  They
+won't wait, and neither will election calendars.
+
+While it is certainly true that there is too much cruddy automated election
+equipment, it's pure self-indulgence to imagine that anyone cares if a few
+individuals stamp their feet and refuse to vote because they don't like the
+technology.  Vastly more people in the US refuse to vote purely because they
+can't be bothered to go to the polls, and there's no way anyone can tell you
+from them.
+
+If you want to fix the voting process, you fix it by pressuring election
+officials to fix it.  It's not impossible -- here in NY we went directly
+from lever machines, which have truly awful security properties, to hand
+marked paper ballots that are scanned by machine but retained so they can be
+recounted by hand if need be.
+
+By the way, I think we need a law of discourse that says anyone who compares
+voting to bank ATMs immediately loses the argument.  The security and threat
+models are completely totally different, and the only similarity is that
+some of the machines happen to have been made by Diebold.
+
+------------------------------
+
+Date: Sat, 15 Oct 2016 22:33:36 +0100
+From: Anthony Youngman <antlists@youngman.org.uk>
+Subject: Re: Undetectable election hacking? (Sebes, RISKS-29.85)
+
+But how can an election be legitimate if OVER HALF the voters select
+party A, and yet party B wins?
+
+Or if party A gets 40% of the votes, and 60% of the seats; party B gets 30%
+of the vote and 30% of the seats; and party C gets 30% of the vote, and 10%
+of the seats?
+
+*That* is why so many people don't vote. Why should I bother, if my vote is
+so unlikely to make a difference? What's the point?  *That* is why people
+are fleeing politics in droves.
+
+(I'm a Brit. Example 1 was an election in the 1950s. Example 2 was 1982 (or
+was it 1983?))
+
+If you want people to vote, you need to convince them that the person they
+*want* to vote for, stands a *decent* chance. As it stands, most people vote
+for the "least worst" candidate, and too many people take the attitude "a
+plague on ALL your houses!".
+
+------------------------------
+
+Date: Sat, 15 Oct 2016 14:50:15 -0700
+From: "Mark E. Smith" <mymark@gmail.com>
+Subject: Re: Undetectable election hacking? ("3daygoaty" RISKS-29.85) notsp
+
+> "This is of course a divergent rant that takes us away from cyberrisks."
+
+Anyone following this discussion would be aware that when I wrote "whoever
+takes office," the risk is that due to the potential for hacking,
+unverifiable results, and Constitutional constraints, the person who takes
+office might not be the person who was elected.
+
+> "You don't vote for your own good, you vote for the good of everyone else."
+
+When the only viable choices are two evils, voting for a nonviable choice,
+casting an informal ballot, or choosing what an individual may consider to
+the be lesser of the two evils, is not for the good of anyone else, it is
+for evil anyway you look at it.
+
+> "...many Australians try to avoid voting by not registering to vote..."
+
+Australia has begun registering voters automatically.
+
+"Even if I live in a safe left wing seat and right wing votes appear to be
+for naught, the number of right wing votes conveys information and this
+affects how audacious the left wing government of this seat behaves."
+
+That's because Australia has instant run-off voting and proportional
+representation, so the number of minority votes in a given district could
+affect future elections. In the US we have winner-take-all elections, so the
+candidates or parties that lose by only getting 49% of the vote compared to
+an opponent's 51%, have as much influence (none) as those who lose by
+getting 1% of the votes to an opponent's 99%. In Australia, the losers have
+a minority voice in government, in the US losers like third parties have no
+seats and no voice whatsoever.
+
+Moreover, in the US, the so-called "left" has proven to be more
+audacious in carrying out right-wing policy than the right, starting
+more wars, taking away more freedoms, spending more money on military
+adventurism and support for foreign terrorists, and in ignoring
+domestic needs.
+
+Australians are probably more amenable to voting than US citizens because as
+a British Commonwealth, you are not expected to vote, even indirectly, for
+your monarch. The British monarchy is hereditary and not subject to a vote
+by its subjects.
+
+There is always the risk that a computer or a list reader might compare
+apples to oranges if they have incomplete data and/or are not capable of
+making such distinctions.
+
+------------------------------
+
+Date: Sat, 15 Oct 2016 23:02:30 +0100
+From: Anthony Youngman <antlists@youngman.org.uk>
+Subject: Re: Samsung discontinues Galaxy Note 7 after battery debacle
+  (Kristiansen, R 29 85)
+
+The problem is not abandoned batteries, but abandoned CHARGED batteries.
+Any battery that is short-circuited will discharge violently and possibly
+explode (it's thought that Samsung's batteries are vulnerable to being
+squeezed during manufacture, which damages the insulation between cathode
+and anode. This causes lithium crystals to form which puncture the
+insulation and cause a short circuit).
+
+I have some high-capacity AA batteries which self-discharge in weeks.  These
+would be harmless if abandoned. But many batteries are marketed with a fully
+charged shelf life of years. These are dangerous.
+
+But basically, the older the batteries when they are disposed of, the less
+charge they hold and the quicker they discharge, so the lower the risk of an
+explosion.
+
+------------------------------
+
+Date: Sun, 16 Oct 2016 06:03:24 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: Samsung discontinues Galaxy Note 7 after battery debacle
+ (Kristiansen, RISKS-29.85)
+
+Hopefully, most batteries will be dismantled and/or recycled in a safe
+manner. But it is inevitable that some will end up in places where they
+don't really belong: Landfills, incinerators, shredders, or just left or
+dropped somewhere.
+
+Improper disposal, of hazardous waste, is a familiar activity.
+http://www.thedailybeast.com/articles/2010/05/19/americas-28-most-polluted-places.html
+
+Proper disposal of hazardous materials has long been a topic understood by
+people in the industries of those materials, but often not in the minds of
+the end customers of the materials.  I think that auto batteries may be a
+good model for smart phone batteries.  The batteries industry has guidance
+on how to safely dispose of these products.  How many consumers pay
+attention?
+
+http://www.ehso.com/ehshome/batteries.php
+
+In recent memory, there had to be mass disposal of hover boards, after some
+spectacular incidents , including several house fires.  How were those
+devices disposed of, by saddened customers, and places involved in the
+recalls?
+
+In my household and possession, I have batteries for: clocks; flash lights;
+hearing aid; room fresheners; smoke detectors; UPS; and other products.
+
+When we get new parts into our autos, by some auto mechanic, there are
+regulations for the proper disposal of the old parts, oil and other fluids.
+
+There are chemicals used for cooling, which need proper disposal. PCBs?
+
+A problem comes when the end user, be it a person or a company, disposes of
+technology, in ignorance of risks to the public if they are dumped any old
+place.
+
+One of the most dangerous has been disposal of radiological materials, which
+were safe in their original gadgets, but deadly when the gadgets are
+dismantled by people ignorant of the poison inside, or aware, but ignorant
+of long term risks.
+
+* Wikipedia has a directory of notable incidents of improper disposal of
+hazardous waste.
+https://en.wikipedia.org/wiki/List_of_waste_disposal_incidents
+
+* St. Louis MO has an underground fire thanks to improper disposal of US
+government Manhattan Project era radioactive materials.  This news from a
+year ago.)
+http://www.sciencedirect.com/science/article/pii/S0265931X15301685
+http://stlouis.cbslocal.com/2015/12/31/epa-to-build-isolation-barrier-for-west-lake-landfill/
+http://www.latimes.com/nation/la-na-nuclear-fire-20151020-story.html
+
+------------------------------
+
+Date: Tue, 18 Oct 2016 16:03:30 -0700
+From: David Brodbeck <david.m.brodbeck@gmail.com>
+Subject: Re: Samsung discontinues Galaxy Note 7 after battery debacle
+  (Kristiansen, RISKS-29.85)
+
+Erling Kristiansen wrote:
+
+>  Does anybody have a feel for how real this problem is?  Will discarded
+>  batteries remain time bombs forever, or are they likely to degrade
+>  gracefully into something less hazardous after some time?"
+
+While I can't speak to all of those categories, I really don't expect
+electric car batteries to be a problem. Disposal of junked cars is already a
+HIGHLY regulated industry, with requirements for removing the fuel tank,
+lead-acid battery, etc. and properly disposing of them.  Additionally, the
+materials in the battery have value, so for batteries that large there'll be
+an economic incentive to recover them.
+
+------------------------------
+
+Date: Tue, 18 Oct 2016 16:31:10 +0100
+From: Peter Miller <Peter.Miller@glasgow.ac.uk>
+Subject: Re: Lithium batteries (Kristiansen, RISKS-29.85)
+
+Further to Erling Kristiansen's comment about lithium batteries, if you
+search using your favourite web-searcher for 'waste fire lithium' there are
+numerous reports of fires in waste handling facilities around the world
+which have been attributed to improperly disposed of lithium batteries. Most
+problems appear to be caused by consumer devices discarded as general
+municipal waste which will normally get crushed and shredded as part of the
+material handling process. Many consumers will not make the effort to (or
+are unable to) remove and safely discharge embedded lithium batteries before
+disposing of an old/unwanted small electronic gadget in the simplest and
+most convenient way possible - into the refuse (UK) / trash (US) bin. Some
+people in the waste management business have expressed concern that the
+problem will get worse as larger capacity batteries find their way into
+consumer products.
+
+------------------------------
+
+Date: Mon, 17 Oct 2016 10:27:59 +0000
+From: Lindsay Marshall <Lindsay.Marshall@newcastle.ac.uk>
+Subject: Re: The risks of getting your email address wrong
+
+I too have terrible problems with people with the same name. There are
+several Lindsay Marshalls with gmail addresses. One of them has
+lindsay.m.marshall, but never uses the dots and so it becomes
+lindsaymmarshall, and nobody sees the double m. Another has
+lindsay.marshall1, and you can see the problem there too. Using the dots
+helps of course, but many people are very skeptical when I tell them that
+the dots are all ignored by gmail so can be put anywhere to help
+readability.
+
+So I get lots of invitations to women volleyball, offers of houses to rent,
+dental appointments etc. The worst though are forums that I get signed up
+for where there is no way to delete the login and no way to alter mailing
+preferences to shut them up.
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.86
+************************

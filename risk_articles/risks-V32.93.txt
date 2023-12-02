@@ -1,0 +1,1346 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.93
+
+RISKS-LIST: Risks-Forum Digest  Monday 22 November 2021  Volume 32 : Issue 93
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.93>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+FBI e-mail system breach (Reuters)
+Do-It-Yourself artificial pancreas given approval by team of experts
+ (MedicalXpress.com)
+International Space Station nearly struck by Chinese satellite debris
+ (JPost)
+DoS Sabotage by Telegram (Bertrand Meyer)
+Palestinians Were Targeted by Israeli Firm’s Spyware, Experts Say
+ (NYTimes via Jan Wolitzky)
+Congress mandates new car technology to stop drunken driving
+ (techxplore.com)
+Thermal Grease Degradation is an underappreciated hazard (Bob Gezelter)
+Unconsidered automatic filtering creates damaging side-effects
+ (Bob Gezelter)
+QR codes, URL's, and restaurants (Jerry Leichter)
+"Political Ads During 2020 Presidential Election Cycle Collected Personal
+ Information, Spread Misleading Information" (UWash)
+Algorithmic Tracking 'Damaging Mental Health' of UK Workers (Dan Milmo)
+Scammers impersonate guest editors to get sham papers published (Nature)
+Ransomware operators have a compliance department (Matt Levine)
+Bipartisan bill would force Big Tech to offer algorithm-free feeds, search
+ results (Ars Technica via Lauren Weinstein)
+Edge and Windows 11 — the return of Microsoft's IE fiasco? (Computerworld)
+Google 2021 AI Principles Progress Update (Googleleapis)
+You've Got an Enemy at Chase! (Paul Robinson)
+UK regulator seeks to improve the privacy of video conferencing
+ (Peter Houppermans)
+Cryptocurrency, NTFs or other such digital assets faces a quantum computing
+ problem (CNET)
+Security Vulnerabilities in Computer Memories
+These Parents Built a School App. Then the City Called the Cops (WiReD)
+Cars Are Going Electric. What Happens to the Used Batteries? (WiReD)
+Open Source Doesn't Mean More Software Is Better Software (WiReD)
+The Era Of D.C.’s New (771) Area Code Has Begun (DCist)
+Hackers Targeted Apple Devices in Hong Kong for Widespread Attack (WiReD)
+This Company Tapped AI for Its Website—and Landed in Court (WiReD)
+Contract lawyers face a growing invasion of surveillance programs that
+ monitor their work (WashPost)
+The next normal: Algorithms will take over college, from admissions to
+ advising (WashPost)
+Google loses appeal against $2.7 billion antitrust fine over its
+ comparison-shopping practices in Europe (Fortune)
+Caller ID fun (Comcast)
+Debris From Test of Russian Antisatellite Weapon Forces Astronauts to
+ Shelter (NYTimes)
+Apple announces-Self Service Repair (Apple via Gabe Goldberg)
+Re: Trojan Source Bug Threatens the Security of All Code (Henry Baker)
+Re: SpaceX Under Fire After Autonomous Rocket Hits Pedestrian
+ (Mark Brader, Scott Dorsey)
+Re: spider bites, or Using Google search to deliver customers or worse
+ (John Levine)
+Facebook 3rd party single-sign-on failure (Paul Robinson)
+After a pandemic, fire season, and now floods, are you ready to get trained
+ for emergencies and disasters? (Rob Slade)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 14 Nov 2021 10:06:23 -0500
+From: Peter G Neumann
+Subject: FBI e-mail system breach
+
+https://www.reuters.com/world/us/hackers-compromise-fbis-external-email-system-bloomberg-news-2021-11-13/
+
+  [Thanks to Arik Hesseldahl.  PGN]
+
+13 Nov 2021 (Reuters) -- Hackers compromised a Federal Bureau of
+Investigation email system on Saturday and sent tens of thousands of
+messages warning of a possible cyberattack, according to the agency and
+security specialists.
+
+Fake emails appeared to come from a legitimate FBI email address ending in
+@ic.fbi.gov, the FBI said in a statement.
+
+Although the hardware impacted by the incident "was taken offline quickly
+upon discovery of the issue," the FBI said, "This is an ongoing situation."
+
+The hackers sent tens of thousands of emails warning of a possible
+cyberattack, threat-tracking organization Spamhaus Project said on its
+Twitter account.
+
+------------------------------
+
+Date: Wed, 17 Nov 2021 09:40:13 +0800
+From: "Richard Stein" <rmstein@ieee.org>
+Subject: Do-It-Yourself artificial pancreas given approval by team of
+ experts (MedicalXpress.com)
+
+https://medicalxpress.com/news/2021-11-do-it-yourself-artificial-pancreas-team-experts.html
+
+"Dominic Nutt, 54 from South West London, was diagnosed with diabetes aged
+15. He has a personalized algorithm that controls his glucose monitor and
+insulin pump automatically. He manages the process through a smartphone,
+putting in when he eats carbohydrates or exercises, as this affects his
+blood sugar."
+
+The DIY diabetic management combination confers life-sustaining convenience
+and freedom from the routine finger prick, blood glucose measurement, and
+insulin injection protocol.
+
+The artificial pancreas systems likely apply Bluetooth to communicate and
+coordinate their operation. See "Guidelines for the use of Continuous
+Glucose Monitors (CGM) and Sensors in the School Setting" retrieved from
+https://www.diabetes.org/sites/default/files/2019-06/CGM%20guidelines.pdf on
+15NOV2021 for typical deployed solution identified for juveniles.
+
+A comp.risks search returns ~100 submissions containing "bluetooth" since
+~OCT2000.
+
+One way to learn about medical device issues traced to their patients is to
+visit and type in "insulin" or "glucose monitor" in the textbox.
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPCD/PCDSimpleSearch.cfm
+
+17 TPLC product code records are returned for insulin (e.g., product code
+OZO) and 9 product code records (e.g., product code QLG) materialize. Each
+product code links to tabulations for 5 years of manufacturer device and
+patient problems submitted to the FDA as medical device reports
+(MDRs). Interpreting the MDRs is another matter: significant subject matter
+expertise required.
+
+Each MDR documents a product defect escape, with many characterized as "No
+Consequences Or Impact To Patient" or "No Clinical Signs, Symptoms or
+Conditions" -- meaning that a patient might have been involuntary compelled
+to visit their physician to check on the device's behavior and verify their
+condition.
+
+------------------------------
+
+Date: Fri, 12 Nov 2021 13:33:19 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: International Space Station nearly struck by Chinese satellite debris
+ (JPost)
+
+*Space debris has become a major concern for all satellites orbiting the
+Earth, not just the football-field-sized ISS* [...]
+https://www.jpost.com/science/international-space-station-nearly-struck-by-chinese-satellite-debris-684809
+
+------------------------------
+
+Date: Wed, 10 Nov 2021 17:26:40 +0100
+From: Bertrand Meyer <Bertrand.Meyer@inf.ethz.ch>
+Subject: DoS Sabotage by Telegram
+
+Antivax activists are not limited to the US. To promote Covid vaccination,
+the Swiss confederation is financing a set of concerts with star performers,
+free but requiring registration to control the number of participants, e.g.
+to 500 yesterday in Lausanne. It looks like anti-vaccine activists colluded
+through a Telegram group to sabotage the events, by reserving many of the
+seats with no intent to show up. As a result, fewer than 100 people (50 per
+some sources) actually attended. See https://bit.ly/3qr7Neg (French),
+https://bit.ly/30a4spf (German).
+
+------------------------------
+
+Date: Mon, 8 Nov 2021 10:23:03 -0500
+From: "Jan Wolitzky" <jan.wolitzky@gmail.com>
+Subject: Palestinians Were Targeted by Israeli Firm’s Spyware, Experts Say
+
+International hacking experts said on Monday that Palestinians belonging to
+rights groups recently outlawed by Israel had been targeted by spyware made
+by the Israeli technology firm NSO Group. The accusations put the
+relationship between the Israeli government and the company, recently
+blacklisted by the United States, under renewed scrutiny.
+
+https://www.nytimes.com/2021/11/08/world/middleeast/nso-israel-palestinians-spyware.html
+
+Also: Palestinians: Israeli NSO spyware found on officials’ phones
+
+JERUSALEM (AP) — The Palestinian Foreign Ministry on Thursday said it has
+detected spyware developed by the Israeli hacker-for-hire company NSO Group
+on the phones of three senior officials and accused Israel of using the
+military-grade Pegasus software to eavesdrop on them.
+
+The Palestinian accusations against NSO came as the embattled Israeli firm
+acknowledged that it had called off the appointment of its incoming chief
+executive in the wake of U.S. accusations that its spyware has been used by
+repressive governments around the world.
+
+Thursday’s announcement by the Foreign Ministry marked the first time
+Palestinian officials have claimed NSO software was used to spy on them.
+
+https://apnews.com/article/technology-business-israel-software-spyware-1fab8f8b88e8a7181887728e3e6bc39d
+
+------------------------------
+
+Date: Thu, 11 Nov 2021 08:56:45 +0800
+From: "Richard Stein" <rmstein@ieee.org>
+Subject: Congress mandates new car technology to stop drunken driving
+ (techxplore.com)
+
+https://techxplore.com/news/2021-11-congress-mandates-car-technology-drunken.html
+
+"Congress has created a new requirement for automakers: Find a high-tech
+way to keep drunken people from driving cars."
+
+"Each year, around 10,000 people are killed due to alcohol-related
+crashes in the U.S., making up nearly 30% of all traffic fatalities,
+according to NHTSA."
+
+But not intoxicated or abusing other substances like methamphetamine,
+opiates or marijuana?
+
+"Drugged Driving DrugFacts" from
+https://www.drugabuse.gov/publications/drugfacts/drugged-driving
+(retrieved on 11NOV2021) states, "According to the 2018 National Survey
+on Drug Use and Health (NSDUH), in 2018, 20.5 million people aged 16 or
+older drove under the influence of alcohol in the past year and 12.6
+million drove under the influence of illicit drugs."
+
+Drugged-driving represents a significant risk.
+
+[Hypothetical: If Theranos had not cratered, would a blood-test gizmo
+appear in your Tesla dashboard?]
+
+  [Risks: Trying to solve social problems with technology, a major theme in
+  running through many past RISKS issues.  PGN]
+
+------------------------------
+
+Date: Wed, 10 Nov 2021 12:04:48 -0500
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: Thermal Grease Degradation is an underappreciated hazard
+
+It has often been said that one can as easily die due to some minor
+component as an exotic event. Thermal grease on CPUs and other processors
+may be a mundane issue, but when it degrades, it can cause failures in
+systems large and small.
+
+Thermal compound ensures heat transfer from CPUs to heat sinks.  Eminently
+useful, thermal grease has a finite life, measured in significantly less
+than a decade. Grease degradation results in overheating and damage to
+processors and other components.
+
+Thermal grease failure can masquerade as many different problems, with the
+common root cause being processor overheating. One could easily think that
+the problem is elsewhere, perhaps a failed CPU, clogged fan, or failed fan;
+all of which are far more costly than the US$10 for a small syringe of
+thermal grease.
+
+An Intel article on replacing thermal grease can be found at:
+https://www.intel.com/content/www/us/en/gaming/resources/how-to-apply-thermal-paste.html
+
+------------------------------
+
+Date: Mon, 15 Nov 2021 07:38:27 -0500
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: Unconsidered automatic filtering creates damaging side-effects
+
+A real example of the old adage, "Assume makes an ass out of you and me". In
+this particular case it creates an "ume".
+
+Those implementing "bad word" filters on www sites should carefully consider
+the implications of their decisions and how their filters can have
+consequences.
+
+I recently saw a case of a social site which has apparently implemented a
+filter to remove the word "ass", presumably among other "dirty" or offensive
+words. However, the implementation matched the sequence "ass", not the word
+" ass " (no requirement for the presence of the separating spaces).
+
+Therefore, the words "passion", "association", "assume", and many others
+have the sequence "ass" removed, yielding "pion", "ociation", and "ume",
+among others.
+
+An example of how simple it is to transform proper English into something
+that sounds illiterate.
+
+------------------------------
+
+Date: Sun, 7 Nov 2021 13:03:57 -0500
+From: "Jerry Leichter" <leichter@lrw.com>
+Subject: QR codes, URL's, and restaurants
+
+For years, we've been telling people not to click on links in email.
+Companies require their employees to go through annual training, wasting
+time they could be doing useful work being told "don't click on URL's in
+email, they might be malicious."  (Of course then the same companies turn
+around and send out their own emails, complete with embedded links, to those
+same employees.)
+
+Many restaurants these days have "gone modern."  Rather than providing
+traditional menus, they put a card on the table with a QR code on it.  Scan
+it on your phone and the menu pops up in your browser.  But ... why exactly
+should you trust the URL encoded in that QR code?  You actually have less
+context to verify it than you do in typical email URL's!  Oh, sure, it's at
+a restaurant you know and trust ... but the last patron could have easily
+replaced the piece of paper the restaurant owner put there.  Sure, you *can*
+- if you have the right software -- look at the URL before viewing it.  But
+the typical URL won't be managed by the restaurant itself -- it'll be
+provided by some third party you never heard of.
+
+There are "touchless" systems that go beyond this.  Not only do you see your
+menu on your phone -- you place your order and pay for it on the Web site the
+QR code brings up.  If a URL in an email asked for your credit card
+information, you might be suspicious -- but if the restaurant's entire
+order/pay experience is through the QR code, that's just expected.  Oh, and
+to make it even better, these things often show up on your next credit bill
+as from some third party you never heard of, not the restaurant itself.
+Someone could probably skim a good fraction of payments from a restaurant
+for quite a while without either the restaurant or any customer noticing
+that something was amiss: The customer would see and pay an expected charge
+(to the wrong party, but he has no way to check); the restaurant would
+eventually notice that its receipts didn't match expectations, but tracking
+down why might take a while.
+
+These touchless, automated systems were probably in the planning stages well
+before COVID, but the pandemic has greatly speeded their adoption.  I
+haven't heard of any frauds ... but I'll be astonished if it stays that way.
+
+------------------------------
+
+Date: Wed, 10 Nov 2021 12:17:15 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: "Political Ads During 2020 Presidential Election Cycle Collected
+ Personal Information, Spread Misleading Information" (UWash)
+
+University of Washington News (11/08/21) Sarah McQuate ; Rebecca Gourley
+
+University of Washington (UW) researchers say online political ads during
+the 2020 U.S. presidential election often employed manipulative techniques,
+including spreading misinformation. The researchers scrolled through
+nearly750 news sites with a Web crawler, and studied over 1 million ads
+between September 2020 and January 2021; natural language processing
+determined almost 56,000 ads were political. UW's Miranda Wei said fake poll
+ads harvested personal information like email addresses, and attempted to
+exploit people's political leanings, "then use that information to send
+spam, malware, or just general email newsletters." The most popular
+political ad was click-bait news that typically mentioned top politicians in
+sensationalist headlines, while the actual articles contained little of
+substance. The researchers advise Web surfers to be cautious about taking
+such content at face value, and to use ad blockers.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2d5e0x22f43dx074152&
+
+------------------------------
+
+Date: Fri, 12 Nov 2021 12:30:14 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Algorithmic Tracking 'Damaging Mental Health' of UK Workers
+ (Dan Milmo)
+
+Dan Milmo, *The Guardian*, 11 Nov 2021
+via ACM TechNews, Friday, November 12, 2021
+
+A report by the UK Parliament's All-Party Parliamentary Group (AAPG) calls
+for new legislation to control the use of algorithms to monitor workers and
+set performance targets for them. The report said pervasive monitoring and
+target-setting technologies in particular "are associated with pronounced
+negative impacts on mental and physical well-being as workers experience the
+extreme pressure of constant, real-time micro-management and automated
+assessment." The group is calling for an "accountability for algorithms act"
+to ensure performance-driven regimes are evaluated to assess their impact,
+and that workers participate in the design and use of algorithm-driven
+systems.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2d630x22f53ax074337&
+
+------------------------------
+
+Date: Mon, 8 Nov 2021 10:48:02 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Scammers impersonate guest editors to get sham papers published
+
+https://www.nature.com/articles/d41586-021-03035-y
+
+------------------------------
+
+Date: Wed, 10 Nov 2021 16:27:55 -0700
+From: Joe Loughry <joe@netoir.com>
+Subject: Ransomware operators have a compliance department (Matt Levine)
+
+> From Matt Levine's *Money Stuff* newsletter on Bloomberg, 8 November 2021:
+
+  Ransomware
+
+  In October, the infamous ransomware gang known as Conti released thousands
+  of files stolen from the UK jewelry store Graff.
+
+  Now, the hackers would like the world to know that they regret their
+  decision, perhaps in part because they released files belonging to very
+  powerful people....
+
+    "We found that our sample data was not properly reviewed before being
+    uploaded to the blog," the hackers wrote in an announcement published on
+    Thursday. "Conti guarantees that any information pertaining to members
+    of Saudi Arabia, UAE, and Qatar families will be deleted without any
+    exposure and review."
+
+    "Our Team apologizes to His Royal Highness Prince Mohammed bin Salman
+    and any other members of the Royal Families whose names were mentioned
+    in the publication for any inconvenience," the hackers added.
+
+  Imagine being a big-time ransomware hacker, thinking that you're pretty
+  tough, fancying yourself a master criminal, giving yourself an
+  intimidating online alias, maybe even being able, in certain
+  circumstances, to call down violence on your enemies, and then realizing
+  one day that you'd accidentally hacked a guy who had a journalist
+  kidnapped, tortured to death and then dismembered with a bone saw for
+  criticizing him.
+
+  They are adding new compliance procedures to make sure this won't happen
+  again:
+
+    The hackers also said that other than publishing the data on their site,
+    they did not sell it or trade, and that from now on they will "implement
+    a more rigid data review process for any future operations."
+
+  We have talked before about the compliance function at ransomware
+  firms. If you run a legal company, you have a compliance department to
+  make sure that you don't do anything illegal, or at least, if your company
+  is really big, to keep the illegality within acceptable limits. If you run
+  a criminal gang, you have concerns that are different in degree but
+  directionally similar: Your whole business is doing illegal things, sure,
+  but you don't want to do too many things that are too illegal. You want to
+  do crimes that make you money, but not crimes that get you shut down. You
+  want to steal information from rich people and extort money from them. But
+  not Mohammed bin Salman! Good lord!
+
+Source: https://www.bloomberg.com/newsletters/money-stuff/latest
+
+------------------------------
+
+Date: Tue, 9 Nov 2021 14:44:48 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Bipartisan bill would force Big Tech to offer algorithm-free feeds,
+ search results
+
+  [As nutty a concept as they come.]
+
+As currently proposed, this concept is nuts. A search engine without
+prioritization is a massive, useless phone book. We're decades past that
+stage on the Net. -L
+
+https://arstechnica.com/tech-policy/2021/11/bill-proposes-algorithm-free-option-on-big-tech-platforms-may-portend-bigger-steps/
+
+------------------------------
+
+Date: Fri, 19 Nov 2021 18:34:42 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Edge and Windows 11 — the return of Microsoft's IE fiasco?
+ (Computerworld)
+
+Microsoft, are you really planning to repeat your biggest business blunder?
+
+This is no bug. This is a deliberate move throughout Windows to return
+to the past when your only real browser choice was the Microsoft choice.
+It backfired on the company then; I hope it backfires now.
+
+https://www.computerworld.com/article/3641233/edge-and-windows-11-the-return-of-microsofts-ie-fiasco.html
+
+  [Lauren Weinstein noted this take on SearchEngineLand)
+https://searchengineland.com/windows-11-update-forces-users-into-edge-regardless-of-their-default-browser-376030
+
+------------------------------
+
+Date: Thu, 18 Nov 2021 16:22:09 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Google 2021 AI Principles Progress Update
+
+https://storage.googleapis.com/gweb-uniblog-publish-prod/documents/2021_AI_Principles_Progress_Update.pdf
+
+------------------------------
+
+Date: Sat, 20 Nov 2021 09:50:35 +0000 (UTC)
+From: "Paul Robinson" <paul@paul-robinson.us>
+Subject: You've Got an Enemy at Chase!
+
+My story is entitled "You've Got an Enemy at Chase!" as while I'm not sure
+if JPMorgan Chase Bank, N.A. has ever used the slogan "You've Got a Friend
+at Chase!" they certainly have, not a method to win friends and influence
+people, but instead, the abysmal performance I experienced of the type that
+can make you believe they hate you and ARE your enemy.
+
+I discover (no pun intended, it's a Visa card) that my Chase credit card is
+missing. I think I lost it, so I'll just cancel it and have them issue a bew
+one.  So I bring up Chase.Com and  there is a big "Welcome" and "please log
+in" button. I click the button, a new prompt comes up where it asks for my
+username and password. Firefox brings up a drop-down box showing two
+options: a username I've used before in all UPPER CASE and the same username
+in all lower case. This is, in fact correct behsvior, because some websites
+have (the really stupid, in my opinion) "feature" (or maybe it's a bug) of
+case-sensitive usernames. I pick the all caps one, Firefox auto-fills the
+password field. I try it. Chase doesn't recognize my login, So I try the all
+lower case one, which Firefox auto-fills. Nope, that one doesn't work
+either.
+
+Okay, I must have the wrong password, so I click on the link "forgot
+username/password?" This brings up a new box requesting Social Security
+number (quite reasonable, I fill that in) and account number (oh s---!). I
+try leaving the account number blank, and hit the "Next" button. I get an
+angry red message above the account number box saying "Account, card or
+application number", and below the box, saying "Please tell us your account,
+card or application number to continue."  I don't know about you, but I'm
+not in the habit of writing down my account number in case I lose my card,
+and I think most people do not, either.
+
+Well, that means I can't use their website to report my card lost, so I'll
+have to call them.  Let's not forget voicemail systems are also software
+applications, just running on hardware dedicated to that purpose (and with
+the open-source PBX program Asterix, can be a PC running Linux).
+
+So I call the 800 number -- if you type "what is chase bank credit card phone
+number" Google will give you, in a nice big font -- 1 (800) 432-3117. So I
+dial the number.
+
+It asks me for my credit card number. Then it says that if I don't have the
+number, press 1. It asks me to punch in my social security
+number. Fine. Then it asks me to punch in the full 16-digit account number.
+
+There is a YouTuber named Undoomed, who critiques other people's
+videos. When the other person says something that on its face was stupid, he
+responds with, "Hey Moron! F---ing Moron!" This was one of those moments.
+
+I'll make this real simple for the morons at Chase. If your voicemail system
+has given someone a path to use when they are missing an authentication,
+you're not supposed to ask them for the very same authentication they just
+told you that they don't have.
+
+------------------------------
+
+Date: Mon, 8 Nov 2021 13:14:01 +0100
+From: "Peter Houppermans" <peter@houppermans.net>
+Subject: UK regulator seeks to improve the privacy of video conferencing
+
+In July 2020, six data protection and privacy authorities from Australia,
+Canada, Gibraltar, Hong Kong SAR, China, Switzerland and the United Kingdom
+jointly signed an open letter to video teleconferencing (VTC) companies. The
+letter highlighted concerns about whether privacy safeguards were keeping
+pace with the rapid increase in use of VTC services during the global
+pandemic, and provided VTC companies with some guiding principles to address
+key privacy risks.''
+
+https://ico.org.uk/about-the-ico/news-and-events/news-and-blogs/2021/10/joint-statement-on-global-privacy-expectations-of-video-teleconferencing-companies/
+
+Let's just say I have a fairly jaundiced view of what providers do in
+reality with such efforts, but it's not a bad thing they tart paying
+attention.
+
+In general, video conferencing got a lot easier now WebRTC functionality is
+part of most browsers, although not all implementations are great.  Firefox
+seems to be the best balance between multi platform functionality and
+avoiding Google Chrome.  You can effectively roll your own service with what
+the Jitsi team has made available at https://jitsi.org <https://jitsi.org/>,
+provided you protect the server component -- that's where all the streams
+cross.  iOS users best use their app as it has significantly less lag,
+Apple's mandated Webkit as used for Safari and Firefox appears as yet not
+quite up to the task.
+
+But I digress -- we're making progress here.
+
+------------------------------
+
+Date: Fri, 12 Nov 2021 13:23:31 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Cryptocurrency, NTFs or other such digital assets faces a quantum
+ computing problem (CNET)
+
+*Two cutting-edge technologies that promise to revolutionize entire fields
+may be on a collision course.*
+
+Cryptocurrencies hold the potential to change finance, eliminating middlemen
+and bringing accounts to millions of unbanked people around the
+world. *Quantum computers* could upend the way pharmaceuticals and materials
+are designed by bringing their extraordinary power to the process.
+
+Here's the problem: The blockchain accounting technology that powers
+cryptocurrencies could be vulnerable to sophisticated attacks and forged
+transactions if quantum computing matures faster than efforts to
+future-proof digital money.
+
+Cryptocurrencies are secured by a technology called public key cryptography.
+The system is ubiquitous, protecting your online purchases and scrambling
+your communications for anyone other than the intended recipient. The
+technology works by combining a public key, one that anyone can see, with a
+private key that's for your eyes only.
+
+If current progress continues, quantum computers will be able to crack
+public key cryptography, potentially creating a serious threat to the crypto
+world, where *some currencies are valued*
+at *hundreds of billions of dollars* <https://coinmarketcap.com/>. If
+encryption is broken, attackers can impersonate the legitimate owners of
+cryptocurrency, *NFT* or other such digital assets.  [...]
+
+<https://time.com/nextadvisor/investing/cryptocurrency/why-do-bitcoins-have-value/>
+<https://www.cnet.com/news/you-can-get-a-free-dc-x-palm-nft-tomorrow-what-to-know-about-the-digital-tokens-now/>s
+<https://www.cnet.com/tech/computing/google-quantum-supremacy-only-first-taste-of-computing-revolution/>
+https://www.cnet.com/personal-finance/crypto/cryptocurrency-faces-a-quantum-computing-problem/
+
+------------------------------
+
+Date: Wed, 17 Nov 2021 11:44:54 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Security Vulnerabilities in Computer Memories (oliver Morsch)
+
+Oliver Morsch, ETH Zurich (Switzerland), 15 Nov 2021
+via ACM TechNews, Wednesday, November 17, 2021
+
+A team of researchers from the Swiss Federal Institute of Technology, Zurich
+(ETH Zurich), the Netherlands' Vrije Universiteit Amsterdam, and
+semiconductor manufacturer Qualcomm Technologies identified major security
+flaws in dynamic random-access memory (DRAM) devices. ETH Zurich's Kaveh
+Razavi said the Rowhammer vulnerability in DRAMs, exploited by hackers to
+induce bit errors and access restricted areas inside the computer, remains
+unaddressed. Countermeasures designed to neutralize Rowhammer merely detect
+simple attacks. Razavi said the researchers' Blacksmith software, which
+systematically applies complex hammering patterns, found a successful
+exploit in each of 40 DRAM memories tested. This means current DRAM memories
+could remain hackable by Rowhammer attacks for years to come.
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2d6b4x22f6e5x074830&
+
+  [See the source:  https://comsec.ethz.ch/research/dram/blacksmith/]
+
+------------------------------
+
+Date: Sun, 7 Nov 2021 15:14:03 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: These Parents Built a School App. Then the City Called the Cops
+ (WiReD)
+
+In the weeks that followed, Landgren teamed up with fellow developers
+and parents Johan Öbrink and Erik Hellman, and the trio hatched a plan.
+They would create an open source version of the Skolplattform and
+release it as an app that could be used by frustrated parents across
+Stockholm. Building on Landgren’s earlier work, the team opened Chrome’s
+developer tools, logged into the Skolplattform, and wrote down all the
+URLs and payloads. They took the code, which called the platform’s
+private API and built packages so it could run on a phone—essentially
+creating a layer on top of the existing, glitchy Skolplattform.
+
+The result was the Öppna Skolplattformen, or Open School Platform. The
+app was released on February 12, 2021, and all of its code is published
+under an open source license on GitHub. Anyone can take or use the code,
+with very few limitations on what they can do with it. If the city
+wanted to use any of the code, it could. But rather than welcome it with
+open arms, city officials reacted with indignation. Even before the app
+was released, the City of Stockholm warned Landgren that it might be
+illegal.  [...]
+
+The police report, shared with WIRED by Landgren, references the Certezza
+security review, which was commissioned by the city and completed on
+February 17, 2021. The review concluded that the open source app wasn’t
+sending any sensitive information to third parties and didn’t pose a threat
+to users. The police report went further in clearing the Öppna
+Skolplattformen developers. “All information that Öppna Skolplattformen has
+used is public information that the City of Stockholm voluntarily
+distributed,” it said.
+
+https://www.wired.com/story/sweden-stockholm-school-app-open-source/
+
+The risk? Providing better U/I and making official IT look silly, so
+they call cops...
+
+------------------------------
+
+Date: Sun, 7 Nov 2021 15:18:22 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Cars Are Going Electric. What Happens to the Used Batteries? (WiReD)
+
+Used electric vehicle batteries could be the Achilles' heel of the
+transportation revolution—or the gold mine that makes it real.
+
+When batteries can’t be fixed or reused, the company recycles some at its
+onsite facility. It also stores batteries. Lots of them. SNT’s main
+warehouse in Oklahoma City holds hundreds of electric car batteries, stacked
+on shelves that jut 30 feet into the air. With the Bolt recall, GM will send
+SNT many more.
+
+Those batteries, and millions more like them that will eventually come off
+the road, are a challenge for the world’s electrified future.  Automakers
+are pouring billions into electrification with the promise that this
+generation of cars will be cleaner than their gas-powered predecessors. By
+the end of the decade, the International Energy Agency estimates there will
+be between 148 million and 230 million battery-powered vehicles on the road
+worldwide, accounting for up to 12 percent of the global automotive fleet.
+
+The last thing anyone wants is for those batteries to become waste.
+Lithium-ion batteries, like other electronics, are toxic, and can cause
+destructive fires that spread quickly—a danger that runs especially high
+when they are stored together. A recent EPA report found that lithium-ion
+batteries caused at least 65 fires at municiple waste facilities last year,
+though most were ignited by smaller batteries, like those made for cell
+phones and laptops. In SNT’s warehouse, bright red emergency water lines
+snake across the ceilings, a safeguard against calamity.
+
+https://www.wired.com/story/cars-going-electric-what-happens-used-batteries/
+
+A challenge for solid waste transfer stations; this is SOLID Waste.
+
+------------------------------
+
+Date: Sun, 7 Nov 2021 21:45:41 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Open Source Doesn't Mean More Software Is Better Software (WiReD)
+
+Last month, Eugen Rochko learned that the software project he started
+building during his university days, called Mastodon, is running Donald
+Trump’s new Truth Social network. This was an uncomfortable discovery,
+since, as Rochko told Vice, “If you want my personal opinion on Trump, I
+cannot stand the guy.”
+
+Rochko’s first instinct might have been to order Trump to leave
+immediately—but Rochko doesn’t control Mastodon in that sort of way. It was
+created as free, open source software with a “copy-left” license, which
+means anyone can download it, run it, and change it, on the condition that
+they continue to work under the same license and freely share the altered
+version they are operating. Not only is Trump permitted to use the software
+for his own peculiar purposes, but the free software saves a startup like
+Truth Social millions of dollars in programming expenses. All Mastodon asks
+in return is that Truth Social then pay it forward.
+
+But it turns out Trump isn’t a pay-it-forward kind of guy. On the Truth
+Social site there is currently no acknowledgment of Mastodon, and no way
+for someone to download the altered source code. Discovering this
+noncompliance gave Rochko his opening, and last week he announced that
+Mastodon had “sent a formal letter to Truth Social’s chief legal officer,
+requesting the source code to be made publicly available in compliance with
+the license,” which is known as AGPLv3. If Truth Social doesn’t comply
+within 30 days, the letter reads, the license may be permanently revoked,
+presumably by getting a court to make such an order.
+
+https://www.wired.com/story/more-software-isnt-better-software/
+
+The risks? Believing in good-faith licenses and promises...
+
+------------------------------
+
+Date: Wed, 10 Nov 2021 17:17:07 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: The Era Of D.C.’s New (771) Area Code Has Begun (DCist)
+
+The area code is what’s known as an overlay — it will co-exist with (202)
+throughout D.C., unlike old-school “splits,” in which area codes were
+assigned to specific geographic areas. What limited criticism or concern
+there was around the introduction of the (771) area code was largely based
+on sentimental attachments to the original (202), though the Anti-Digit
+Dialing League — “the premiere sensible dialing association organization” —
+argued against an overlay since splits allow people to still call each other
+using only the seven digits of their phone number, instead of having to also
+dial the area code.
+
+“Overlays continue to remain a public nuisance,” said the niche
+organization.
+
+https://dcist.com/story/21/11/10/the-era-of-dcs-new-771-area-code-has-begun/
+
+ADDL -- Anti-Digit Dialing Luddites. As a kid, I tried to convince my
+parents that our Brooklyn phone number -- TE6-0176 -- should be given out as
+all digits. I was decades ahead of NANPA.
+
+------------------------------
+
+Date: Thu, 11 Nov 2021 17:35:56 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Hackers Targeted Apple Devices in Hong Kong for Widespread Attack
+ (WiReD)
+
+Visitors to pro-democracy and media sites in the region were infected with
+malware that could download files, steal data, and more.
+
+Since at least late August, sophisticated hackers used flaws in macOS and
+iOS to install malware on Apple devices that visited Hong Kong–based media
+and pro-democracy websites. The so-called watering hole attacks cast a wide
+net, indiscriminately placing a backdoor on any iPhone or Mac unfortunate
+enough to visit one of the affected pages.
+
+Apple has patched the various bugs that allowed the campaign to unfold.
+But a report Thursday from Google's Threat Analysis Group shows how
+aggressive the hackers were and how broadly their reach extended. It's
+yet another case of previously undisclosed vulnerabilities, or
+zero-days, being exploited in the wild by attackers. Rather than a
+targeted attack that focuses on high-value targets like journalists and
+dissidents, though, the suspected state-backed group went for scale.
+
+https://www.wired.com/story/ios-macos-hacks-hong-kong-watering-hole/
+
+...so always good advice, apply updates -- don't wait to long after release.
+
+------------------------------
+
+Date: Thu, 11 Nov 2021 17:45:42 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: This Company Tapped AI for Its Website—and Landed in Court (WiReD)
+
+Under pressure to make their sites accessible to visually impaired
+users, firms turn to software. But advocates say the tech isn't always
+up to the task.
+
+Last year, Anthony Murphy, a visually impaired man who lives in Erie,
+Pennsylvania, visited the website of eyewear retailer Eyebobs using screen
+reader software. Its synthesized voice attempted to read out the page’s
+content, as well as navigation buttons and menus. Eyebobs used artificial
+intelligence software from Israeli startup AccessiBe that promised to make
+its site easier for people with disabilities to use.  But Murphy found it
+made it harder.
+
+AccessiBe says it can simplify the work of making websites accessible to
+people with impaired vision or other challenges by “replacing a costly,
+manual process with an automated, state-of-the-art AI technology.” In a
+lawsuit filed against Eyebobs in January, Murphy alleged that the
+retailer failed to provide people using screen readers equal access to
+its services and that the technology from AccessiBe—not party to the
+suit—doesn’t work as advertised.   [...]
+
+In his report on AccessiBe, Groves cited an image of a model wearing a white
+dress for sale on an ecommerce site. The alternative text provided,
+apparently generated by AccessiBe’s technology, was “Grass nature and
+summer.” In other cases, he reported, AccessiBe failed to properly add
+labels to forms and buttons.
+
+On the homepage of its website, AccessiBe promises “automated web
+accessibility.” But support documents warn customers that its machine
+learning technology may not accurately interpret webpage features if it
+“hasn’t encountered these elements enough before.”
+
+https://www.wired.com/story/company-tapped-ai-website-landed-court/
+
+"Automated" doesn't necessarily mean AI. And AI isn't necessarily I.
+
+------------------------------
+
+Date: Fri, 12 Nov 2021 00:20:01 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Contract lawyers face a growing invasion of surveillance programs
+ that monitor their work (WashPost)
+
+Attorneys say the constant workday face scans, mandated by their bosses, are
+fueling fears of over-surveillance: “I will not subject myself to this
+indignity and the invasion of my privacy in my own home."
+
+The attorneys worry that if law firms, traditionally the defenders of
+workers’ rights, are turning to the programs, why wouldn’t every other
+business?
+
+Camille Anidi, an attorney on Long Island, quickly understood the flaws
+of the facial recognition software her employers demanded she use when
+working from home. The system often failed to recognize her face or
+mistook the Bantu knots in her hair as unauthorized recording devices,
+forcing her to log back in sometimes more than 25 times a day.
+
+When she complained, she said, her bosses brushed it off as a minor
+technical issue, though some of her lighter-skinned colleagues told her they
+didn’t have the same problem — a common failing for some facial recognition
+systems, which have been shown to perform worse for people of color.
+
+So after each logout, Anidi gritted her teeth and did what she had to do:
+Re-scan her face from three angles so she could get back to a job where she
+was often expected to review 70 documents an hour.
+
+“I want to be able to do the work and would love the money, but it’s
+just that strain: I can’t look left for too long, I can’t look down, my
+dog can’t walk by, or I get logged out,” she said. “Then the company is
+looking at me like I’m the one delaying!”
+
+Facial recognition systems have become an increasingly common element of the
+rapid rise in work-from-home surveillance during the coronavirus
+pandemic. Employers argue that they offer a simple and secure way to monitor
+a scattered workforce.
+
+But for Anidi and other lawyers, they serve as a dehumanizing reminder that
+every second of their workday is rigorously probed and analyzed: After
+verifying their identity, the software judges their level of attention or
+distraction and kicks them out of their work networks if the system thinks
+they’re not focused enough.  [...]
+
+Lawyers said they had been booted out of their work if they shifted slightly
+in their chairs, looked away for a moment or adjusted their glasses or
+hair. The systems, they said, also chastised them for harmless behaviors:
+holding a coffee mug mistaken for an unauthorized camera or listening to a
+podcast or the TV.
+
+The constant interruptions have become a major annoyance in a job requiring
+long-term concentration and attention to detail, some lawyers said. But the
+errors also undercut how much work they could do, leaving some fearful it
+could affect their pay or their ability to secure work from the same firms
+later on.
+https://www.washingtonpost.com/technology/2021/11/11/lawyer-facial-recognition-monitoring/
+
+------------------------------
+
+Date: Sun, 14 Nov 2021 14:26:17 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: The next normal: Algorithms will take over college, from admissions
+ to advising (WashPost)
+
+Imagine being rejected from a university or advised out of your major
+because you’re Black, or a woman, or a first-generation college student.
+Imagine learning that these decisions were made by predictive analytics
+software that you can’t object to or opt out of. Just over a decade ago,
+this seemed unlikely. Now it seems difficult to stop.
+
+That may sound futuristic, but St. George’s Hospital Medical School in
+London deployed this technology as early as the 1980s. Administrators
+trained a predictive model using historical admissions data to determine
+who was accepted to the medical program. It was supposed to eliminate
+the biases of admissions officers; unsurprisingly, it reproduced a
+pattern of discrimination. The demographics of incoming students skewed
+heavily toward White men, forcing the school to stop the practice.
+
+Today, this is the reality faced by millions of students. This year, the
+Markup reported that more than 500 universities use a single company’s
+predictive analytics product, which assigns students an academic “risk
+score” based on variables that are supposedly associated with people’s
+ability to succeed in college — including, at many schools, race. Black
+and Latino students were consistently rated as higher risk than their
+White or Asian peers.
+
+https://www.washingtonpost.com/outlook/next-normal-algorithms-college/2021/11/12/366fe8dc-4264-11ec-a3aa-0255edc02eb7_story.html
+
+And of course, no "forensic audits" of results.
+
+------------------------------
+
+Date: Sun, 14 Nov 2021 14:30:14 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Google loses appeal against $2.7 billion antitrust fine over its
+ comparison-shopping practices in Europe (Fortune)
+
+Google has lost its appeal against the $2.7 billion antitrust fine that was
+levied against it four years ago by the European Commission.
+
+The fine was for Google’s promotion of its own comparison-shopping
+service in prominent boxes at the top of its search results—a practice
+that left competing comparison-shopping services at an unfair
+disadvantage, given Google’s near-total domination of search in Europe.
+(In Europe, unlike in the U.S., an antitrust violation can take place
+even if consumers are not demonstrably harmed, if a company’s actions
+severely harm competition.) Google was subsequently fined billions of
+euros twice more over other antitrust violations, and it launched an
+appeal in each case.
+
+On Wednesday, the European Union’s General Court—the court that hears
+appeals against decisions made by the European Commission—upheld the Google
+Shopping fine. It mostly dismissed the company’s appeal, though it did say
+the Commission had not backed up its claim that Google’s conduct had
+anticompetitive effects on the general-search market (a factor that had no
+bearing on the amount of the fine). Google has not yet said whether it will
+further appeal this decision to the Court of Justice of the EU, its last
+hope.
+
+The ruling is a huge boost to the reputation and likely future plans of
+Margrethe Vestager, the EU’s competition commissioner. Last year, the
+General Court annulled her mammoth $14.8 billion back-tax bill for Apple
+in Ireland, which was a serious blow. This time, she has prevailed,
+which could encourage her to keep hitting Google over other alleged
+violations.
+
+“Today’s judgment delivers the clear message that Google’s conduct was
+unlawful, and it provides the necessary legal clarity for the market,” the
+Commission said in a statement. “Comparison shopping delivers an important
+service to consumers, at a time when e-commerce has become more and more
+important for retailers and consumers. As digital services have become
+omnipresent in our society nowadays, consumers should be able to rely on
+them in order to make informed and unbiased choices.”
+
+https://fortune.com/2021/11/10/google-loses-appeal-eu-general-court-billion-antitrust-fine-comparison-shopping-practices-europe/
+
+Competition, what a concept.
+
+------------------------------
+
+Date: Tue, 16 Nov 2021 00:02:42 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Caller ID fun (Comcast)
+
+Comcast Rolls Out Nation’s Largest Landline Voice Verified Caller ID
+Solution to Combat Robocalls
+
+These customers will now display a Verified [V] label in the caller ID
+when a call is authenticated as not spoofed, meaning we have been able
+to confirm the call is coming from the telephone number displayed.
+
+https://corporate.comcast.com/press/releases/comcast-landline-voice-verified-caller-id-solution-to-combat-robocalls
+
+...but:
+
+Phone Call Mystery: A “V” Shows on my Caller ID -- The mysteries of the
+universe – from black holes to galaxies beyond – we’re just not sure what’s
+really out there. And, when a call arrives on our phone with the caller ID
+starting with a V + a long string of digits, we wonder what it might be.
+
+A V in your caller ID refers to a number from a telemarketing company.  It
+is likely this call is Spam.
+
+https://www.numberbarn.com/blog/phone-call-mystery-a-v-shows-on-my-caller-id/
+
+...so, to [V or not to V?
+
+Couple calls today had [V] and were legitimate. Is the difference just [ ]?
+That'll sure confuse people.
+
+------------------------------
+
+Date: Tue, 16 Nov 2021 00:05:14 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Debris From Test of Russian Antisatellite Weapon Forces Astronauts
+ to Shelter (NYTimes)
+
+The State Department said the cloud of debris from the missile strike added
+more than 1,500 pieces of sizable space junk to Earth’s orbit.
+
+https://www.nytimes.com/2021/11/15/science/russia-anti-satellite-missile-test-debris.html
+
+Target practice...
+
+------------------------------
+
+Date: Wed, 17 Nov 2021 12:34:30 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Apple announces-Self Service Repair (Apple)
+
+https://www.apple.com/newsroom/2021/11/apple-announces-self-service-repair/
+
+Interesting -- I guess it's only a "risk" if some repairs are "Kids,
+don't try this at home".
+
+But old devices might be useful for practice, if parts/tools aren't too
+expensive.
+
+------------------------------
+
+Date: Sun, 07 Nov 2021 15:28:26 +0000
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: Trojan Source Bug Threatens the Security of All Code
+
+What could possibly go wrong?
+ 
+Let's see: putting snippets of trojan code on stackoverflow, whole trojan applications on github.
+ 
+How many people use cut&paste of cli code from web pages to get stuff done ?
+ 
+And where does 'AI' learn how to program ?
+ 
+https://www.wired.com/story/ai-latest-trick-writing-computer-code/
+
+------------------------------
+
+Date: Sun,  7 Nov 2021 18:09:43 -0500 (EST)
+From: Mark Brader <msb@Vex.Net>
+Subject: Re: SpaceX Under Fire After Autonomous Rocket Hits Pedestrian
+ (The Onion)
+
+One April 1 in the year is bad enough; why do we have to have two now?
+
+------------------------------
+
+Date: Tue, 16 Nov 2021 09:38:18 -0500 (EST)
+From: kludge@panix.com (Scott Dorsey)
+Subject: Re: SpaceX Under Fire After Autonomous Rocket Hits Pedestrian
+ (The Onion)
+
+> How could anyone predict or plan for that?
+
+It turns out, and this may be a surprise to many, that some people have
+actually been launching spacecraft from Florida since 1950, and as a
+consequence there is a large body of published work on the subject.  In
+addition, NASA maintains a corrosion technology laboratory at Kennedy which
+provides data and assistance on request.
+
+"Natural Environment Corrosion Testing at the Kennedy Space Center Beachside
+Atmosphere Corrosion Testing Site," presented by Luz Calle at the 2017 DOD-
+Allied Nations Technical Corrosion Conference is a good introduction to the
+work being done in that environment.
+
+------------------------------
+
+Date: 7 Nov 2021 21:50:15 -0500
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: spider bites, or Using Google search to deliver customers or
+ worse
+
+> It appears the website has found a way to recognize the Google spider and
+> allow it to index their site but then lock out those using the search link
+> from Google.
+
+Every web request includes a user-agent string, and web spiders, at least
+the ones for legitimate search engines, have easy to recognize names like
+googlebot, bingbot, and applebot, along with a bunch I never heard of or
+didn't realize do web spidering like coccocbot, LinkedInBot, PetalBot,
+SeznamBot, and YandexBot.
+
+Web sites have been returning different results to spiders about as long as
+there have been spiders.  One reason is the one you saw, to index stuff that
+is behind paywalls, or more often freemium pages where you get a few free
+views and then it asks you to subscribe.  On web sites that use lots of
+javascript and dynamic content, the spiders don't run the javascript so if
+the site wants to be indexed, it needs to return a static version of its
+pages.
+
+Often this is annoying, but rarely malicious.  If I come to a page that asks
+for money and it's not a service I already subscribe to, I don't pay.
+
+Keep in mind that web sites can change at any time, so even if the spider
+sees the same content as regular users, there is no promise that the version
+the spider saw is the same as what you will see if you visit later.
+
+------------------------------
+
+Date: Sun, 7 Nov 2021 00:38:58 +0000 (UTC)
+From: "Paul Robinson" <paul@paul-robinson.us>
+Subject: Facebook 3rd party single-sign-on failure
+
+There was a website that one of the items covers a really contentious,
+extremely controversial, topical issue. It had a place to post a comment. At
+the bottom, below the text box, is a button labeled "Login to Post". Okay,
+so after I entered my comment, I clicked on the button. A new window opens,
+and it's Facebook Authentication, where a third party has them provide a
+login credential. So, Firefox presents the dropdowns of all the usernames
+(e-mail addresses). I select paul@paul-robinson.us, and the password is
+autofilled. (This also means it is Facebook's authenticator and not
+somewhere else, like a credential stealer.)
+
+Facebook tells me I need to authenticate, and it has sent an e-mail to my
+account, I need to enter the six-digit number. Now, e-mail sent to that
+address is auto-forwarded to my Yahoo Mail account. I open Yahoo Mail in a
+new tab, and interestingly enough, I've gotten a message that contains the
+six-digit number right in the subject, so I don't even have to open the
+message. I tab back, put in the number, click on the submit button,
+and... Firefox informs me redirection doesn't work. Try again won't. So, I
+decide to go direct to www.facebook.com, and login there.
+
+I can't even go to Facebook's home page! I get the same redirect
+error. Dammit, I don't even use Facebook! The only reason I even have a damn
+Facebook account is for just this reason, when 3rd-party websites use
+Facebook for Single-Sign-On!
+
+I decide maybe Firefox has a problem, so I decide to use Edge (Microsoft's
+replacement for Internet Exploiter). I try www.facebook.com Same error,
+can't redirect.
+
+Well, I've never had a problem with it before, but I think I know what it
+is.
+
+To defeat ad servers, in addition to using ad-block, I use the "Enhanced
+HOSTS file." There is a text file which is located at
+C:\Windows\System32\Drivers\etc\hosts. (no extension). There is a guy who
+posted on his website a very comprehensive hosts file of 141K, consisting of
+every advertising domain (like googleadservices.com) and reroutes them to
+localhost (127.0.0.1), which, since I'm not running a web server, times out
+and the advertisement isn't served. The default Windows HOSTS file is about
+1K and has maybe a dozen items. The enhanced HOSTS file at 141K has
+thousands of ad serving hosts that are blocked.
+
+So I pull the HOSTS file (renaming it) and I still get the same problem.
+Then I realize I read the message wrong, it says if I try clearing cookies
+that may fix the problem. I look up how and try it. It works! I can get to
+Facebook, so I go back to the message and try a repost. I get the
+authentication page but now, after I had authenticated as requested, it says
+I have to contact one of my "friends" on Facebook -- some of whom are
+members of this board -- and have them give me the authentication token they
+would give me.
+
+The hell with it, I'll just use create another Facebook Account under a
+different e-mail address. I'll use my Gmail account. So I do that, and I am
+logged on, so I figure I am actually logged on, the message post request
+should authenticate. Nope, it keeps asking me for my old account and the
+access code. I ask it to resend the e-mail, and I go back to Yahoo, and I
+notice this e-mail: [quote="Facebook"]
+
+  Subject: you log into Facebook from somewhere new?
+  From: Facebook <security@facebookmail.com>
+  To: Paul Robinson
+
+  Hi Paul   It looks like someone tried to log into your account on November
+  6 at 5:51 PM using Firefox for Windows 10. We blocked the login and just
+  want to make sure it was you, logging in from somewhere new.    If you
+  don't think this was you, please log into Facebook so we can walk you
+  through a few steps to keep your account safe.
+  Thanks, The Facebook team.
+
+So, let me get this straight: despite the fact I answered their damned
+challenge, I'm not allowed to log in, but if I want to correct the problem,
+I should log in to the account that it won't allow me to log in to?
+
+So I cleared cookies again, tried to post, and this time I get the Facebook
+Authentication and since I am logged in on the Gmail account, it succeeds
+and goes back to the original website I was trying to post on. The posting
+box is removed, which, I figure it was accepted, the way YouTube comments
+are subsumed into the comment block.
+
+It's not there. Usually the message shows up, or a notice that the message
+has been held pending moderation (a typical practice for extremely
+controversial topics) but that isn't there either.
+
+After everything I had to do and all the hoops I had to jump through, it's
+all for naught.
+
+------------------------------
+
+Date: Thu, 18 Nov 2021 11:06:20 -0800
+From: "Rob Slade, the doting GREATgrandpa" <rmslade@shaw.ca>
+Subject: After a pandemic, fire season, and now floods, are you ready to get
+ trained for emergencies and disasters?
+
+As I write this, I am huddled in social isolation, while armed bands are
+roving the countryside, desperately searching for the last hoards of toilet
+paper.  We are stacking the dead bodies of the victims in the forests,
+waiting for wildfire season, which now starts earlier every year, to deal
+with them, and then flood season to wash them away.  This is what disaster
+recovery has become: an attempt to use one crisis to deal with the outcomes
+of another.  I am writing this in the hopes that future generations may
+learn the folly of placing shredded or crumbled cheese into plastic bags for
+convenience, and Make Civilization Grate Again.
+
+One of the tools that we security mavens, surprisingly, in my view, don't
+put into the toolbox is that of emergency management.  We don't think about
+emergencies in advance, which is when we should think of them.  Two years
+ago we were watching the continent of Australia burn.  Then we got a global
+pandemic.  Then we, in BC, had a heat dome and a huge fire season and a town
+burned down.  Now we've got floods and mudslides and a whole town evacuated.
+Are you ready to think about disasters now?
+
+Those of us in the security communities are always interested in disasters.
+We are forever dealing with crises, both large and small, assessing risks,
+planning and comparing mitigation strategies, and looking at the management
+of it all.  When we hear of the latest disaster on the news, someone always
+challenges us to make contributions to charity.  I up the stakes.  I
+challenge everyone to get trained for disasters.
+
+Unfortunately for the point I'm trying to make, I am speaking from a
+position of privilege.  Canada has the best emergency structure in the
+world.  British Columbia has the best emergency response management system
+in Canada.  And the North Shore, where I live, has the best disaster
+training regime in BC.
+
+Emergency response, in a major disaster, is not simply a matter of having
+water, generators, blankets, and rescue dogs.  It has to do with
+organization, co-ordination, management, and, particularly, trained people.
+Most of them volunteers, since nobody can afford to pay for a full-time
+staff of all those you need to have ready in an emergency.
+
+That's where you come in.
+
+Get trained.
+
+There is some emergency-measures organization that covers your area,
+regardless of where you live.  Your local municipality probably has an
+office.  They need volunteers.  And they provide training.  If you're not
+lucky enough to live in BC, you probably have to seek out the Red Cross or
+Salvation Army.  If you *are* lucky enough to live in BC, you just need to
+go to your municipla offices and ask for the emergency management office.
+One stop volunteering.
+
+If you volunteer, you will probably get trained.  For free.  (You may also
+get additional perks.  I get my flu shots paid for every year, since I'm an
+emergency worker.)  (OK, this year that's not such a big deal ...)
+
+First of all, you'll probably get trained on what you need for you and your
+family.  What do you need to survive the first 72 hours (or seven days, or
+two weeks) following a disaster?  Do you know how much water, what type of
+food, etc, you need, in the event of a total failure of utilities and other
+factors we rely on?
+
+Then there are the skills you need to help other people.  Sometimes this
+might relate to first aid, or structural assessment of buildings after an
+earthquake, etc.  However, there are many necessary skills that are not
+quite so dramatic.  Most emergency response, believe it or not, has to do
+with paperwork.  Who is safe?  Who needs care?  Do families need to be
+reunited?  Documentation of all of this is a huge effort, which goes on long
+after the bottles of water and hot meals have been distributed.
+
+Then there are management skills, to co-ordinate all of the other skills.
+An awful lot of *charity* gets wasted because some people get too much help,
+and others don't get enough.  Someone needs to oversee the efforts.
+
+Some of the training might seem to be a bit of a waste.  You will be trained
+ in registration and referral, which is just admin.  But it also teaches you
+ that, in a major emergency, long-line rope rescues are not the major worry.
+ It's the huge amounts of admin that *must* be done.
+
+Training in all of this is available.  And, in an emergency, having trained
+people is probably more important than having stockpiles of tents.  Trained
+people can make or improvise shelter.
+
+(For those who have security related certifications, like the CISSP, ongoing
+professional education is a requirement.  A constant complaint is that
+training is expensive, and getting the credits costs too much.  I get all
+kinds of training related to business continuity and disaster recovery.  I
+get almost all of it free.)
+
+Get trained.  Volunteer.  You'll get a wealth of experience that will help
+you plan for all kinds of events, not just for major disasters, but for the
+minor incidents that plague us and our companies every day.  You'll be ready
+for the big stuff, too.  You'll be able to keep yourself and those near to
+you safe.  You'll be able to make a difference to others, certainly reducing
+suffering, and possibly saving lives.  If and when something major happens,
+you will be a part of the infrastructure necessary for the response to be
+effective.  You'll be part of the solution, rather than part of the problem.
+
+Now [...] call your local emergency management agency and volunteer.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.93
+************************

@@ -1,0 +1,610 @@
+precedence: bulk
+Subject: Risks Digest 25.88
+
+RISKS-LIST: Risks-Forum Digest  Saturday 26 December 2009  Volume 25 : Issue 88
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.88.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Insurgents Hack U.S. Drones (PGN)
+Another user interface fatal accident in Afghanistan (Mark Thorson)
+Security in the Ether: Cloud Computing? Or "Swamp" Computing?
+  (Lauren Weinstein)
+HP's facial-recognition can't recognize black people's faces (Randall Webmail)
+Alert: Twitter apparently hacked (Lauren Weinstein)
+Silent Hybrid Nearly Causes Carbon Monoxide Poisoning (Bob Gezelter)
+UAL: Another risk of weather for computer based systems (Jared Gottlieb)
+When the human model doesn't match the system model (Sean W. Smith)
+Disconnects between the Real World and Cyberspace (Bob Gezelter)
+Obscure GPS problems not just in remote areas (Jeremy Epstein)
+On the Road with a GPS System (Gene Wirchenko)
+GPS ads for captive bus riders (jidanni)
+Cruise control failed to disengage (Steve Cody)
+Re: LED Traffic Lights are efficient but cannot melt away snow (John Johnson)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 17 Dec 2009 16:28:57 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Insurgents Hack U.S. Drones
+
+Militants in Iraq have used $25.95 off-the-shelf software to intercept live
+video feeds from U.S. Predator drones, potentially providing them with
+essence, the Predator video link to the ground station is unencrypted.
+Insurgents are sniffing the link and reconstructing the video.  The
+U.S. government has known about this flaw for a decade, but ignored it,
+offering the usual litany of problems: encrypting the link would delay the
+program, cost more, and complicate operations.  ``But the Pentagon assumed
+local adversaries wouldn't know how to exploit it, the official said.''  The
+stolen video feeds also indicate that U.S. adversaries continue to find
+simple ways of counteracting sophisticated American military technologies.
+[Source: Siobhan Gorman, Yochi J. Dreazen and August Cole, $26 Software Is
+Used to Breach Key Weapons in Iraq; Iranian Backing Suspected, Wall Street
+Journal, 17 Dec 2009, front page; PGN-ed] The myth of security by obscurity
+strikes again.  http://ebird.osd.mil/ebfiles/e20091217723006.html
+
+I've seen arguments that key management would be too difficult to manage,
+although some reports say that efforts are now underway to encrypt.  Other
+arguments are that uncleared soldiers need access to the video streams, but
+that seems to confuse "encryption" and "classification".  Don't forget that
+the former does not require the information to be classified for
+confidentiality or that it is not important for integrity!  Also, the new
+Reaper drones cost over $10 million each and have the same vulnerability.
+
+Jeremy Epstein noted that *WiReD* reports that it's not just drones, but
+also regular combat aircraft - although it's harder to intercept the
+(unencrypted) signal from the regular planes.  The talk I've heard today
+that "it's not such a big deal" seems odd - if you were an insurgent, having
+a few minutes warning that there's a drone coming your direction would be
+useful data.
+http://www.wired.com/dangerroom/2009/12/not-just-drones-militants-can-snoop-on-most-us-warplanes/
+
+Also, see Bruce Schneier's essay on the topic:
+http://www.wired.com/politics/security/commentary/securitymatters/2009/12/securitymatters_1223
+
+------------------------------
+
+Date: Tue, 15 Dec 2009 20:22:41 -0800
+From: Mark Thorson <eee@sonic.net>
+Subject: Another user interface fatal accident in Afghanistan
+
+The circumstances of this incident seem very similar to the incident a few
+years ago in which changing batteries cleared the offset between the
+observer's GPS position and the target position on his Garmin.
+http://www.dailymail.co.uk/news/article-1236087
+
+When the target position is cleared, it would probably be better to
+initialize it 100 meters to the east or something, rather than right on top
+of the observer position.
+
+------------------------------
+
+Date: Thu, 24 Dec 2009 11:04:16 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Security in the Ether: Cloud Computing? Or "Swamp" Computing?
+
+Security in the Ether: Cloud Computing? Or "Swamp" Computing?
+  [From NNSquad, Network Neutrality Squad, http://www.nnsquad.org]
+
+An important article worth reading:
+
+http://bit.ly/4uYabf  (MIT Technology Review)
+
+My personal "thumbnail" view on this is that:
+
+a) Cloud Computing" holds enormous promise.
+
+b) Most of the key security and other operational issues associated with
+   cloud computing are solvable, including aspects of pervasive encryption
+   that would protect cloud computing clients from potential snooping by
+   theoretically postulated unscrupulous cloud service providers.
+
+c) The financial and intellectual resources (including basic policy
+   analysis) required to understand and solve these problems on an *a
+   priori* basis, rather than on an "after there's a mess" reactive basis,
+   are in general insufficiently emphasized and deployed.
+
+d) Given (c), not all of the current rush to cloud computing on today's
+   widely available platforms can necessarily be justified as wise,
+   particularly where sensitive and/or privacy-critical data is involved.
+
+Or in other words, Cloud Computing can be a Really Good Thing if done
+right, but let's not get the cart in front of the horse.
+
+------------------------------
+
+Date: December 21, 2009 1:29:12 PM EST
+From: Randall Webmail <rvh40@insightbb.com>
+Subject: HP's facial-recognition can't recognize black people's faces
+
+  [From Dave Farber's IP]
+This is awkward. It appears that HP's new webcams, which have facial-
+tracking software, can't recognize black faces, as evidenced in the above
+video. HP has responded:
+
+> We are working with our partners to learn more. The technology we use is
+> built on standard algorithms that measure the difference in intensity of
+> contrast between the eyes and the upper cheek and nose. We believe that
+> the camera might have difficulty "seeing" contrast in conditions where
+> there is insufficient foreground lighting.
+
+> HP Face-Tracking Webcams Don't Recognize Black People - Hp - Gizmodo  
+> (21 December 2009)
+http://gizmodo.com/5431190/hp-face+tracking-webcams-dont-recognize-black-people
+http://snipurl.com/tsfli
+
+Archives: https://www.listbox.com/member/archive/247/=now
+
+------------------------------
+
+Date: Thu, 17 Dec 2009 22:38:41 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Alert: Twitter apparently hacked
+
+Twitter has apparently been hacked.  Invalid security certificate for wrong
+site on the Twitter https: home page, Iranian Cyber Army hack page on main
+twitter.com.  This looks much like an SQL injection exploit I've dealt with
+in the past, but I don't know for sure at this point if the actual Twitter
+infrastructure has been hacked or if this is a DNS hack.
+
+Presumably this won't last long, but more info when available.
+
+Date: Fri, 18 Dec 2009 09:47:59 -0800
+
+Twitter has not officially released details on last night's hacking-related
+outage of their Web site, other than to state that it was (as many of us
+suspected) a DNS-related attack.
+
+There are some other details floating around unofficially.  Twitter's DNS
+services are provided by Dyn Inc.'s Dynect Platform.  Dyn is insisting that
+their systems were not compromised and that nobody accessed Twitter's DNS
+data without appropriate (login) credentials.
+
+This suggests (but again, this is *not* confirmed) that Twitter's account on
+Dyn was somehow itself compromised, possibly through "social engineering" or
+other techniques that resulted in the attackers gaining login access to the
+Twitter account on Dynect, allowing them to change the associated DNS data.
+(From Dyn's standpoint, this could still be considered to be "appropriate
+login credentials.")
+
+It goes without saying that the "Iranian Cyber Army" hack page is almost
+certainly a fraud, and there are no indications that Iran actually had
+anything to do with this attack (breathless statements blaming Iran being
+made by some media points notwithstanding).  By the way, I've seen this
+exact page resulting from various bot-based, non-DNS attacks in the past.
+
+Presumably more "official" statements about what transpired will be
+forthcoming at some point, after the finger-pointing slows down a bit.
+
+Of course this once again demonstrates the fragility of DNS, but that's
+hardly a headline news revelation at this stage of the game.
+
+Date: Fri, 18 Dec 2009 12:14:27 -0800
+
+Now confirming [ Ref: http://www.nnsquad.org/archives/nnsquad/msg02460.html ] 
+that the Twitter DNS diversion last night was the result of someone using
+Twitter's own login credentials to change DNS data at Dyn's site,
+according to Dyn's CTO:
+
+http://bit.ly/80Ve4Y  (Wired)
+
+So as suspected, this was not a "sophisticated" attack (e.g., DNS cache
+poisoning) but rather a conventional login attack.
+
+It is interesting to consider that apparently a single username/password
+pair was able to take Twitter's entire Web site effectively offline
+globally.
+
+At the very least one would hope that more advanced account control
+mechanisms (e.g., certificate-based access authentication) would be employed
+with critical accounts for organizations at this level.
+
+------------------------------
+
+Date: Sat, 26 Dec 2009 08:07:53 -0500
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: Silent Hybrid Nearly Causes Carbon Monoxide Poisoning
+
+The Decemeber 27, 2009 Sunday New York Times Magazine (p. 8) contains a
+Letter to the Editor from Liz Cantarine entitled "Artificial Car Noises".
+
+Ms. Cantarine describes how she accidentally left her hybrid automobile
+running in her garage. Apparently, when returning from a shopping trip, she
+became preoccupied with the packages in the trunk, and forgot to turn off
+the car. The car continued running, filing the garage space with fumes.
+
+It is an interesting problem. Synthetic noise generators are being required
+due to a hazard to visually impaired pedestrians, but this is the first
+report I have seen describing a danger to owners and their families from
+silent cars.
+
+------------------------------
+
+Date: Sun, 20 Dec 2009 15:51:55 -0700
+From: jared gottlieb <jared@netspace.net.au>
+Subject: UAL: Another risk of weather for computer based systems
+
+From the United Airlines website 20 December 2009
+
+Weather-related delays and cancellations resulted in a significantly  
+higher volume of calls into United's reservations centers. Our voice  
+recognition software was hampered by the volume, which in turn drove  
+longer wait times. We sincerely regret the inconvenience faced by our  
+guests, and are pleased to report that our voice recognition software  
+is fully up and running and wait times have been significantly  
+reduced. We are still experiencing higher than normal call volume,  
+which may result in sporadic call interruptions. 
+
+------------------------------
+
+Date: Fri, 25 Dec 2009 18:31:29 -0500
+From: "Sean W. Smith" <sws@cs.dartmouth.edu>
+Subject: When the human model doesn't match the system model
+
+The real world gives another instance of what can go wrong:
+
+A man in Epping tried to deposit $580 into an ATM but neglected to note the
+transaction had not completed and walked away without the returned cash.
+The next person pocketed the cash, but of course was identified.
+[Source: AP item, 25 Dec 2009] 
+
+Sean W. Smith   sws@cs.dartmouth.edu  www.cs.dartmouth.edu/~sws/
+Associate Professor, Department of Computer Science, Dartmouth  
+
+------------------------------
+
+Date: Sat, 26 Dec 2009 08:19:04 -0500
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: Disconnects between the Real World and Cyberspace
+
+Sometimes the real world and cyberspace are truly separate realms. The other
+day, I experienced two episodes of just such a disconnect.
+
+I was trying to verify the hours for a branch bank in the area. Checking the
+bank's www site, I discovered that the branch was not listed. Calling the
+customer service line, I was assured that if the branch was not listed, it
+must have closed.
+
+Three hours later, I visited the branch. It was quite active, with no signs
+of closing or relocation. A discussion with the officers revealed that I was
+not the first person to note the error. It had been reported to corporate,
+but for some reason the data had not been corrected.
+
+The same day, I had a similar experience with a major international
+distributor. A local branch was not listed as one of their locations, even
+though it was open and active.
+
+It is an interesting question of IT governance when a company is unable to
+keep its list of branches up to date.
+
+A longer discussion of this episode can be found in "Bricks and Mortar
+Hidden by Cyberspace". 
+http://www.rlgsc.com/blog/ruminations/bricks-and-mortar-hidden-by-cyberspace.html
+
+Robert "Bob" Gezelter, +1 (718) 463 1079   35-20 167th Street, Suite 215
+Flushing, New York  11358-1731 http://www.rlgsc.com
+
+------------------------------
+
+Date: Tue, 15 Dec 2009 16:02:12 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Obscure GPS problems not just in remote areas
+
+The discussion of GPS issues with BMWs reminded me of a recent GPS
+navigation problem I ran into using my brand-new Garmin nuvi 275T.
+
+The Garmin maps of Washington DC have an unfortunate mistake: they don't
+understand that K Street runs *under* (and parallel to) the Whitehurst
+Expressway.  The Whitehurst Expressway intersects Key Bridge (well, actually
+it runs into M Street a block from Key Bridge), but K Street does not except
+when separated by 100 vertical feet.  Specifically, if you ask the GPS for
+directions from northwest Washington DC (I was coming from the Tenleytown
+neighborhood) to Fairfax VA, it tells you to take Rock Creek Parkway south,
+exit onto K Street west, then drive along K Street and then make a left on
+Key Bridge - which is 100 feet above you.  Google Maps, on the other hand,
+gets this right.
+
+The RISK is thinking that GPS errors only occur in out-of-the-way locations.
+This is in the Georgetown neighborhood of Washington DC, hardly remote!
+
+  [Alarmin' Garmin Swarmin' Harmin' not Charmin'.  PGN]
+
+------------------------------
+
+Date: Tue, 15 Dec 2009 18:46:58 -0800
+From: Gene Wirchenko <genew@ocis.net>
+Subject: On the Road with a GPS System
+
+  [Whenever I fail to run an item you think I may have missed, please
+  resubmit (with "notsp" in the subject line, of course.  This is an
+  instance of something I apparently missed 3.5 years ago.  Sorry!!!  PGN]
+
+GPS problems have been in the news more lately, so I thought that I would
+resubmit this item.  I have since moved back to Canada.  A key point: All of
+the events that I describe happened on a trip to my mom's and back.  This is
+not a collection of events over a period of, say, months.
+
+On the Road with a GPS System
+
+There have been previous submissions of the joys of GPS systems used in
+driving.  They have been brief.  This writeup goes into much more detail and
+details more than one risk.  I wrote this in June of 2006, but have kept the
+present tense.
+
+I am a Canadian citizen, but I live in Bellingham, WA, USA and work near it.
+At the beginning of April, I went to visit my mother who was then living in
+Greenwood, BC, Canada.  At the car rental place, because neither of the cars
+available was acceptable -- perfumed cleaners are a non-computer risk some
+face -- and because I am a frequent customer, I was upgraded at no extra
+cost to a SUV, a SUV with a GPS navigator: the NeverLost system.  I did not
+get lost, but that was not entirely due to the device.
+
+I lost little time in starting to play with this new toy.
+
+I found it interesting all of the streets that were nearby.  Unfortunately,
+sometimes, the names were truncated, and in at least one case, the truncated
+name made sense as a word.  I did not see any way to adjust the
+magnification.
+
+I saw that I could ask for a course to my mother's.  Unfortunately, the
+interface was a bit confusing and rather than selecting the city of
+Greenwood, BC (the smallest incorporated city in Canada), I accidentally
+selected the then-current city and a street.  There is a street named
+Greenwood in Bellingham.  There is also one in Lynden (near to Bellingham).
+I found myself being directed to the south.  My mother's home was north and
+east.  The device was quite persistent: "Please proceed to the designated
+route."  Later, it got desperate, words to the effect of "When legal, please
+make a U-turn."  I finally shut it off.
+
+I tried again later, and it worked, mostly.  My mom lived on Kimberley
+Street.  It is one of, if not the, longest street in Greenwood.  The device
+did not know its name.  It did know many of the other streets, including the
+cross-street by my mom's then-home.  The cross-street is two short blocks
+long.  I finally programmed the device for the city centre of Greenwood.
+
+I crossed the border at Sumas.  I then proceeded to Hope.  While on the way,
+at one point I glanced at the display to see that a road was displayed to
+the right.  This was disconcerting as that was where a cliff was.  The road
+turned out to dead end.  I think it was a deactivated road, possibly the old
+highway.
+
+I usually stop at a certain gas station in Hope to buy a sandwich and drink.
+In that area, there are under- and over-passes.  The device got confused.
+It got its revenge shortly.  When I restarted the SUV, I looked at the
+display and was confused.  The USA operates on the Imperial system of
+measure, and Canada uses the metric system.  The device, recognising that it
+was in Canada, had switched to metric.  When I looked more closely, I could
+see the miles display.  It was rather smaller than the digits.
+
+The gas station is on the old highway which parallels the current highway.
+To get onto the current highway involves a few tight turns.  Some of these,
+the device knew and some it did not.  I was directed to make turns when
+there was no other road, but sometimes, the curve had no instructions.  This
+also happened when I left Keremeos, BC.
+
+The device warns about 2 Km before a turn and then just before.  The turnoff
+for the Hope-Princeton Highway had already diverged from the main highway by
+nearly one lane-width before the device announced the just before warning
+that I should turn.  I was already in the correct lane.  Had I not been in
+the correct lane, I could not have safely switched.
+
+Not long after, I looked at the time display.  As it was just after noon, I
+could not tell whether it was the time I would arrive in Greenwood or the
+time left before I would arrive in Greenwood.  Later, I found that that
+detail was documented on the card that was dangling from the unit, but many
+other things were not.
+
+While driving on the Hope-Princeton Highway, I found that many roads that
+had no names were on the display, but that some roads that had names were
+not present.
+
+The Hope-Princeton Highway does run through wilderness, and in many places,
+there are no other roads nearby.  That did not stop the device from telling
+me three times each way to "Proceed to the designated route."  The voice is
+a bit startling when it is not expected.
+
+Glancing from time to time at the time-to-go display, I got suspicious.  It
+seemed to be assuming 80 Km/h.  This is the default highway speed in BC, but
+the Hope-Princeton Highway is known for being rather curvy in places.  It
+has plenty of signs suggesting slower speeds.  At one place, the advisory is
+20 Km/h.  In the summer, one can go bombing along much of the highway.  In
+the winter, the curves get more dangerous, and you had better slow to 20
+Km/h on the worst curve.  This was near the end of breakup, so conditions
+could vary considerably.  What was the device assuming?
+
+Princeton is at the west end of "The Regional District of
+Okanagan-Similkameen".  The device displayed this from time to time clipped
+to "Okanagan-Similkameen Region".  Much of this time, it displayed this next
+to the road on the other side of the Similkameen River.  There was no
+differentiation of region or city names from street names.  That road across
+the river is called "Old Hedley Road".  When it finally was displayed, well,
+the device leaves off the road designation.  The device did not display the
+river though earlier, it had displayed much smaller creeks.
+
+Leaving the village of Keremeos, BC, the road winds up a hill.  At the
+bottom of the hill, there is a curve to the right (which the device told me
+about), a curve to the left at the top of the hill (which the device did not
+tell me about), and finally a right turn to the highway I wanted (which the
+device told me about).  The up-shot was that I was told to make a right turn
+followed by a right turn, and it did not make sense.  It was good that I
+knew the road.  Had I blindly followed the advice, I would have gone down a
+60 (or so) degree slope.
+
+In the hamlet of Cawston, BC, the device thought that the main street
+dead-ended and suggested accordingly.
+
+I get paid in US dollars, so I prefer to spend US dollars.  Therefore,
+rather than continuing through Canada, I cross at Nighthawk, WA, proceed to
+Oroville, WA, fill up with gas, and cross back into Canada at Osoyoos, BC.
+
+The device kept trying to get me to turn around.  I was wondering when it
+would give up.  While I was wondering I saw a road displayed on the device,
+but there was no road there, no sign of there ever having been a road there,
+and no sign of anything else that the device should know about (such as a
+creek).  A few miles past the border crossing, there is another road, a real
+one.  The device seems to understand the world as segments.  When I got off
+the segment, it recalculated.  The road to Oroville is a nice drive, very
+pretty.  At least one of the roads that the device shows is actually a long
+driveway.
+
+Ah, Canada.  The device was displaying Imperial.  Remember how the device
+switched measuring systems in Hope?  It switched again after I restarted the
+SUV at the gas station in Oroville.  The system in use depends not on what
+country you are in, but what country you were in when you started the
+vehicle.  I found later that one can force the setting, but I did not
+experiment to see if that locked down the measuring system used or that it
+just lasted until the next vehicle startup.  Imagine explaining to a border
+officer that you are experimenting with your GPS.  Guessing is such fun.
+
+The device also had an odd idea of which way I should go.  As far as I can
+tell, it intended to keep me on the highways.  I know of a shortcut, and I
+took it.  The device did not handle it well.  Trying to get me back "on
+course", it suggested some bad ideas.
+
+1) One road to the left comes down a hill which is steep enough that the
+road is broken into left and right branches.  The device suggested that I
+take the far branch.  This would have necessitated a turn of approximately
+150 degrees.  The near branch is about thirty degrees.
+
+2) Later, it suggested that I take a right turn -- remember that the
+previous suggestion was for a left turn? -- onto a narrow road with patched
+potholes when I was on the best road around and which led straight to the
+programmed route.
+
+3) I rejoined the programmed route and prepared to turn right.  The device
+was instructing me to turn left!
+
+One thing that I never did solve was how to get the device to just display
+without having a route programmed.  I wanted to see where I was without
+having to select a destination.
+
+The device has a safety feature that disables most of the user interface
+when the vehicle is in motion.  It was also mounted so that the person in
+the front passenger seat would not be able to see the display.  I thought
+this was rather counterproductive.
+
+When I set out to go home, I planned again to stop in Oroville for gas.
+While I did not know the exact address, I thought I could get close.  For
+some reason, the highway was not listed.  Unfortunately, the device requires
+you to select first what you want (nearest city centre, a particular city
+centre, or a particular intersection) then the city name.  The other way
+around is much more natural to me.  It also would have been much quicker as
+entering alphabetic was a slow process with no keyboard.
+
+Again, I crossed the border at Nighthawk.  I crossed into the US a final
+time.  The border between Canada and the USA is at 49 degrees north
+latitude.  For some reason, the device told me I was in the USA when it
+still displayed me at seven seconds of latitude north of the border.
+According to my estimate, I was much closer.
+
+I decided to let the device tell me how to get to Bellingham.  Understand
+that I take a short route.  Roughly, I go west, then I go south.  The system
+picked a route that was much longer and windier.  Among other places that I
+saw, the oddly appropriate Chance Road.  In Osoyoos, it was trying to keep
+me on the highways.  Here, it avoided them until the end.
+
+I did make it home safely, and I certainly see where these devices are
+useful, but much salt is needed.
+
+------------------------------
+
+Date: Fri, 18 Dec 2009 10:57:52 +0800
+From: jidanni@jidanni.org
+Subject: GPS ads for captive bus riders (Re: Sullivan, RisKS-25.87)
+
+Like the in-bus GPS "next bus stop" LED marquee boards here in Taiwan.
+Between stops they have been programmed not to waste an idle moment, but
+instead scroll "thank you for riding XYZ Bus Co." to riders
+concentrating on them to learn the next stop's name.
+At least accompanying audio just chants the stops.
+Naturally everything must be repeated for each local language too.
+
+------------------------------
+
+Date: Sun, 20 Dec 2009 13:41:37 +1100
+From: Steve Cody <steve@codygang.net>
+Subject: Cruise control failed to disengage
+
+Similar to recent reports of uncommanded acceleration, we had an incident
+where cruise control could not be disengaged.  This link should bring up
+related news items..
+http://news.google.com.au/news/more?um=1&cf=all&ned=au&cf=all&ncl=diIb-MX_41mrfpMRXwbgO6EIxST7M
+Or google news for "Cruise control Frankston"
+
+------------------------------
+
+Date: Wed, 16 Dec 2009 08:05:08 -0500
+From: John Johnson <jvj@golden.net>
+Subject: Re: LED Traffic Lights are efficient but cannot melt away snow
+
+The problem is also evident on motor vehicles with LED signal and stop lights.
+Snow is not melted away by the signal and stop lights and 
+accumulation blocks the lights.
+
+new item: 
+http://www.newser.com/story/76251/led-traffic-lights-efficient-but-cant-melt-away-snow.html
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.88
+************************

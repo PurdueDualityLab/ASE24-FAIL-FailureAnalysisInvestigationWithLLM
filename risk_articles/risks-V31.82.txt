@@ -1,0 +1,608 @@
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.82
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 13 May 2020  Volume 31 : Issue 82
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.82>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+All California voters will receive mail-in ballots for November (NYTimes)
+Agencies warn states: Internet voting is ``High Risk'' (Politico)
+7 New Flaws Affect All Thunderbolt-equipped Computers Sold in the Last 9
+  Years (WiReD)
+Teen Hacker and Crew of Evil Geniuses Accused of $24 Million Crypto Theft
+  (Bloomberg)
+How a Facebook Bug Took Down Spotify, TikTok, and Other Major iOS Apps
+  (WiReD)
+The Year the Internet Thought She Was MacKenzie Bezos (WiReD)
+Federal agencies' quiet warning on Internet voting gets a tepid response
+  from state officials (Eric Geller)
+Beware of these futuristic background checks (vox.com)
+Microsoft and Intel Think They Can Identify Malware By Its Looks (Lifewire)
+Patch Tuesday (Threatpost)
+Neuralink Will Do Human Brain Implants in CLess Than a Year (Elon Musk)
+A Portal Between Digital and Physical Worlds? It's Close to Reality
+  (Hollywood Reporter)
+As we shelter in place in the pandemic, more employers are using
+  software to track our work -- and us (NYTimes)
+COVID-19 expert- Coronavirus will rage 'until it infects everybody it
+  possibly can' (USA Today)
+Re: COVID SW model is a steaming  pile ... (Wol)
+Re: Coronavirus New York Shock- Two-Thirds Of Recent Patients
+  Infected While Staying At Home (geoff goodfellow)
+Re: Models (Roderick Rees)
+Re: Trading computer can't handle negative numbers (John Levine)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 8 May 2020 17:30:24 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: All California voters will receive mail-in ballots for November
+  (NYTimes)
+
+<https://www.nytimes.com/2020/05/08/us/coronavirus-updates.html>
+
+Gov. Gavin Newsom of California on Friday ordered ballots to be sent to the
+state's 20.6 million voters for the November election, becoming the first
+state to alter their voting plans for the general election in response to
+the public health concerns wrought by the coronavirus pandemic.
+
+------------------------------
+
+Date: Satd, 9 May 2020 12:11:13 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Agencies warn states: Internet voting is ``High Risk'' (Politico)
+
+A group of federal agencies offered their most blunt warning to date on
+Friday about the security risks of Internet voting. CISA, the FBI, the
+Election Assistance Commission and NIST combined on the guidance distributed
+to states.  ``Electronic ballot return, the digital return of a voted ballot
+by the voter, creates significant security risks to the confidentiality of
+ballot and voter data (e.g., voter privacy and ballot secrecy), integrity of
+the voted ballot, and availability of the system,'' reads the document,
+first reported by *The Guardian*.
+
+``We view electronic ballot return as high risk.'' [...]
+
+<https://www.theguardian.com/us-news/2020/may/08/us-government-internet-voting-department-of-homeland-security>.
+
+------------------------------
+
+Date: Mon, 11 May 2020 13:00:12 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: 7 New Flaws Affect All Thunderbolt-equipped Computers Sold in the
+  Last 9 Years (WiReD)
+
+EXCERPT:
+
+A cybersecurity researcher today uncovers a set of 7 new unpatchable
+hardware vulnerabilities that affect all desktops and laptops sold in the
+past 9 years with Thunderbolt, or Thunderbolt-compatible USB-C ports.
+
+Collectively dubbed 'ThunderSpy,' the vulnerabilities can be exploited in 9
+realistic evil-maid attack scenarios, primarily to steal data or read/write
+all of the system memory of a locked or sleeping computer -- even when
+drives are protected with full disk encryption.
+
+In a nutshell, if you think someone with a few minutes of physical access to
+your computer -- regardless of the location -- can cause any form of
+significant harm to you, you're at risk for an evil maid attack.
+
+According to Bj=C3=B6rn Ruytenberg of the Eindhoven University of
+Technology, the ThunderSpy attack <https://thunderspy.io/> "may require
+opening a target laptop's case with a screwdriver, [but] it leaves no trace
+of intrusion and can be pulled off in just a few minutes."
+
+In other words, the flaw is not linked to the network activity or any
+related component, and thus can't be exploited remotely. [...]
+https://thehackernews.com/2020/05/thunderbolt-vulnerabilities.html
+
+  [Gabe Goldberg noted
+    Thunderbolt Flaws Expose Millions of PCs to Hands-On Hacking (WiReD) The
+    so-called Thunderspy attack takes less than five minutes to pull off
+    with physical access to a device, and it affects any PC manufactured
+    before 2019.
+hrttps://www.wired.com/story/thunderspy-thunderbolt-evil-maid-hacking/
+
+  For earlier work on this subject, see Thunderclap:
+    http://www.thunderclap.io]
+
+------------------------------
+
+Date: Sat, 9 May 2020 11:15:36 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Teen Hacker and Crew of Evil Geniuses Accused of $24 Million Crypto
+  Theft (Bloomberg)
+
+A 15-year-old and his crew of `evil computer geniuses' stole $24 million in
+cryptocurrency, an adviser accuses.
+
+https://www.bloombergquint.com/technology/teen-hacker-and-evil-geniuses-accused-of-24-million-theft
+
+------------------------------
+
+Date: Sat, 9 May 2020 12:28:15 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How a Facebook Bug Took Down Spotify, TikTok, and Other Major iOS
+  Apps (WiReD)
+
+Thank a tiny change to a software development kit for widespread crashes
+Wednesday, including the Spotify and TikTok apps.
+
+A little after 6pm ET on 6 May, the system started blinking red for iOS
+developer Clay Jones. Like many devs, Jones uses a Google product called
+Crashlytics to keep tabs on when his app stops working. Out of nowhere, it
+registered tens of thousands of crashes. It also pointed to the cause: a
+chunk of code that Jones's app incorporates to let people log in with their
+Facebook accounts.
+
+By 6:30 pm, Jones had filed a bug report about the flaw in Facebook's
+software development kit on GitHub, the code repository. He provided
+succinct answers to a standardized form:
+
+What do you want to achieve? We are using FBSDK in our app as an
+authentication option.
+
+What do you expect to happen? I would like FBSDK to not crash.
+
+https://www.wired.com/story/facebook-sdk-ios-apps-spotify-tiktok-crash/
+
+Who can argue with that?
+
+------------------------------
+
+Date: Mon, 11 May 2020 00:33:49 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Year the Internet Thought She Was MacKenzie Bezos (WiReD)
+
+After the billionaire announced she would give away her fortune, Google's
+algorithm decided the best way to reach her was by contacting the author.
+
+https://www.wired.com/story/internet-thought-i-was-mackenzie-bezos/
+
+------------------------------
+
+Date: Mon, 11 May 2020 11:49:24 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Federal agencies' quiet warning on Internet voting gets a tepid
+  response from state officials (Eric Geller)
+
+Eric Geller, Politico, 11 May 2020
+
+A warning from federal agencies about the ``significant security risks'' of
+online voting is getting only a muted reaction from national groups
+representing election officials, while frustrating lawmakers who want to see
+even stronger admonitions about a technology that some states are already
+testing.
+
+The advisory [attached], which four federal agencies quietly sent to state
+and local governments last week, warns that casting ballots over the
+Internet ``creates significant security risks ... should be limited to
+voters who have no other means to return their ballot and have it counted.''
+``Securing the return of voted ballots via the Internet while ensuring
+ballot integrity and maintaining voter privacy is difficult, if not
+impossible, at this time,'' said the document from CISA, the FBI, the
+Election Assistance Commission and the National Institute of Standards and
+Technology. The Wall Street Journal first
+reported<https://www.wsj.com/articles/agencies-warn-states-that-internet-voting-poses-widespread-security-risks-11588975848>
+the issuance of the eight-page memo Friday, after The Guardian published a
+story on an earlier draft that had explicitly advised against purchasing the
+technology.  But while election integrity advocates praised the warning, the
+message's intended recipients reacted more tepidly.
+<https://www.theguardian.com/us-news/2020/may/08/us-government-internet-voting-department-of-homeland-security>
+<https://twitter.com/SEGreenhalgh/status/1258826700101767169>
+<https://twitter.com/davidalanlevine/status/1258820871646580736>
+
+``The states will ultimately do their own risk assessments and decide how to
+manage risk, while also ensuring access for their voters,'' Maria Benson,
+communications director for the National Association of Secretaries of
+State, told POLITICO.
+
+A spokesperson for the National Association of State Election Directors
+declined to comment, saying the organization ``doesn't have a position on
+this issue.''
+
+At the same time, lawmakers who welcomed the advisory also called for the
+Trump administration to release it publicly to raise awareness of the
+dangers surrounding Internet voting.
+
+``While I appreciate that DHS is warning election officials about the
+dangerous security risks posed by online voting, it absolutely should
+release its guidance to the public as well,'' Sen. Ron Wyden (D-Ore.), a
+leading proponent of increased election security, told POLITICO. ``Americans
+have a right to know whether their election systems are safe, or if their
+votes could depend on companies peddling digital snake oil.''
+
+CISA and its partners began working on the memo in early April, according to
+a staffer at one of the agencies involved.
+
+``It was quite an impressive effort to get federal agencies to sign off on a
+document like this in a relatively short period of time,'' said the person,
+who requested anonymity to discuss a private document.
+
+  [We still need computer systems that are massively more trustworthy,
+  with forensics-worthy monitory and oversight, respectful of privacy and
+  integrity throughout the entire election cycle.  PGN]
+
+------------------------------
+
+Date: Tue, 12 May 2020 09:58:08 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Beware of these futuristic background checks (vox.com)
+
+https://www.vox.com/recode/2020/5/11/21166291/artificial-intelligence-ai-background-check-checkr-fama
+
+"Checkr is one of many companies automating aspects of the hiring process
+and cutting down on costs. Some of these companies are using artificial
+intelligence to scan through resumes, analyze facial expressions during
+video job interviews, compare criminal records, and even judge applicants'
+social media behavior. And in a pandemic, where the companies still hiring
+are likely already seeing a surge in applications and eager to find ways to
+streamline the recruiting process, technology that makes hiring quicker and
+easier sounds appealing.
+
+"But experts have expressed skepticism about the role that AI can actually
+play in hiring. The technology doesn't always work and can exacerbate bias
+and privacy problems. Inevitably, it also raises bigger questions of how
+powerful AI should become."
+
+A person's name and date of birth comprise two profiling attributes.
+Correlating these attributes and correctly attributing innocence or
+criminality, let alone go/no-go to hire, using globally distributed
+information sources is fraught with misalignment potential.
+
+"Checkr has become a favorite of gig economy firms, including Uber,
+Instacart, Shipt, Postmates, and Lyft. On its website, Checkr argues that AI
+can ultimately drive down the cost of bringing on a new hire by helping
+process background-checks in two ways. First, the technology helps verify
+that a given criminal record belongs to the person whose background is being
+checked. Second, the AI assists in comparing the names of criminal charges
+that have different names in different places.  What might be reported as
+'petty theft' in one locale could be reported as 'petit larceny' somewhere
+else."
+
+The dictionary to align and correlate terminology, and correctly associate
+names with crimes or innocence, must be challenging to maintain especially
+across jurisdictions (nations, states, counties, etc.).
+
+How can any client customer be confident of candidate employee's
+investigation findings? Disclosure of false-negative, false-positive and
+data drop-out statistics should be mandatory, part of an SLA, for
+high-volume uses. Without this information, reliability of investigatory
+findings appears problematic.
+
+An AI-based background investigation service, without sufficient human
+oversight and audit, appears to be a convenient employer due diligence
+shirk. The 'terms of service' probably requires the client company to
+indemnify against hiring and employee outcomes based on the background
+investigation findings. GIGO.
+
+See https://catless.ncl.ac.uk/Risks/31/60#subj35.1 on algorithmic
+adjudication of marijuana case backlogs.
+
+https://catless.ncl.ac.uk/Risks/31/16#subj1.1 by Henry Baker cautions about
+AI applied by the DoD to continuously monitor individuals entrusted with
+restricted information access clearance.
+
+------------------------------
+
+Date: Wed, 13 May 2020 13:36:10 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Microsoft and Intel Think They Can Identify Malware By Its Looks
+  (Lifewire)
+
+Using deep learning to spot viruses
+
+Detecting malware, especially zero-day attacks (viruses security software
+has never encountered before) is difficult. Using, essentially, visual
+pattern matching could stop these attacks dead in their tracks.
+
+https://www.lifewire.com/microsoft-and-intel-think-they-can-identify-malware-by-its-looks-4844600
+
+Promises, promises...
+
+------------------------------
+
+Date: Wed, 13 May 2020 10:52:43 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Patch Tuesday (Threatpost)
+
+  [TNX to Steve Cheung for this one.  PGN]
+
+Guess how many vulnerabilities does MS patch tuesday fix this month
+
+1?
+
+more
+
+11?
+
+more
+
+111
+
+bingo!
+
+happy patch tuesday!
+
+https://threatpost.com/microsoft-111-bugs-may-patch-tuesday/155669/
+
+------------------------------
+
+Date: Fri, 8 May 2020 13:10:29 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Neuralink Will Do Human Brain Implants in CLess Than a Year
+  (Elon Musk)
+
+*"We are already a cyborg to some degree."*
+
+EXCERPT:
+
+For the second time in two years, entrepreneur and billionaire Elon Musk sat
+down with podcaster Joe Rogan to chat about the future of AI and its role in
+the symbiosis of man and machine.
+
+In their conversation, Musk revealed that the secretive brain stimulation
+link startup Neuralink, which he co-founded, is close to starting testing in
+actual humans.
+
+``We're not testing people yet, but I think it won't be too long,'' Musk
+told Rogan.  ``We may be able to implant a neural link in less than a year
+in a person I think.''
+
+The news comes after Musk teased in February that the brain-computer
+interface startup was working on an *awesome* new version. [...]
+
+https://futurism.com/elon-musk-neuralink-human-brain-implant
+
+------------------------------
+
+Date: Fri, 8 May 2020 13:12:05 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: A Portal Between Digital and Physical Worlds? It's Close to Reality
+  (Hollywood Reporter)
+
+Development of mirror worlds is accelerating during COVID-19 as Hollywood
+increases its virtual production, says Magnopus co-founder and CEO Ben
+Grossmann, one of THR's Top Hollywood Innovators.
+
+EXCERPT:
+
+Ben Grossmann wants to marry the physical and the digital, exploring what he
+describes as a mirror world -- a "connection between a physical place and a
+digital copy of that place, so that it becomes accessible to anyone,
+anywhere."
+
+The VFX vet is one of three Oscar winners who founded L.A.-based Magnopus,
+which has been innovating in areas like VR, AR and AI. Combining these opens
+up the potential to create what he calls a "new kind of movie theater" or
+other immersive environments: "We've been working on creating a digital twin
+of a very large site that's a few square kilometers, so that it will exist
+both in a physical world that people can go to and in a digital copy of that
+world that people can go to," he says of the site whose location is still
+under wraps. "Then we've been connecting those two worlds, so people in the
+physical world can look through a lens and see the digital world around
+them. People in the digital world will also have portals to see what the
+physical world looks like.
+
+``It's almost like a telepresence for physical people and digital people.
+We've had hundreds of people working on it for years and we still have a
+ways to go before it just works.''
+
+He believes such development will only accelerate during COVID-19.
+``Instead of just looking through a camera's lens and having a video
+conference, you can feel like you're in the same place with another person.
+This has to become a reality because right now people realize they can't
+travel, they can't spend time with other people in physical places. Even
+when they do come back, people are gonna have to behave differently.''
+[...]
+
+https://www.hollywoodreporter.com/news/a-portal-between-digital-physical-worlds-close-reality-1293374
+
+------------------------------
+
+Date: Sun, 10 May 2020 08:35:43 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: As we shelter in place in the pandemic, more employers are using
+  software to track our work -- and us (NYTimes)
+
+https://www.nytimes.com/2020/05/06/technology/employee-monitoring-work-from-home-virus.html
+
+------------------------------
+
+Date: Tue, 12 May 2020 17:38:49 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: COVID-19 expert- Coronavirus will rage 'until it infects everybody
+  it possibly can' (USA Today)
+
+EXCERPT:
+
+A high-profile infectious disease researcher warns COVID-19 is in the early
+stages of attacking the world, which makes it difficult to relax
+stay-at-home orders without putting most Americans at risk.
+
+Dr. Michael Osterholm, director of the Center for Infectious Disease
+Research and Policy at the University of Minnesota, said the initial wave
+of outbreaks in cities such as New York City, where one in five people have
+been infected, represent a fraction of the illness and death yet to come.
+
+"This damn virus is going to keep going until it infects everybody it
+possibly can," Osterholm said Monday during a meeting with the USA TODAY
+Editorial Board. "It surely won't slow down until it hits 60 to 70%" of the
+population, the number that would create *herd immunity* and halt the spread
+of the virus.
+
+Start the day smarter:Get USA TODAY's Daily Briefing in your inbox
+
+Even if new cases begin to fade this summer, it might be an indicator that
+the new coronavirus is following a seasonal pattern similar to the flu.
+
+During the 1918 flu pandemic that sickened one-third of the world's
+population, New York City and Chicago were hit hard in the first wave of
+illness that largely bypassed other cities such as Boston, Detroit,
+Minneapolis and Philadelphia. The second wave of illness was much more
+severe nationwide. [...]
+
+https://www.usatoday.com/story/news/health/2020/05/11/coronavirus-expert-michael-osterholm-warns-virus-spread-far-from-over/3108333001/
+
+------------------------------
+
+Date: Sat, 9 May 2020 09:58:22 +0100
+From: Wols Lists <antlists@youngman.org.uk>
+Subject: Re: COVID SW model is a steaming  pile ... (Baker, RISKS-31.81)
+
+> This problem makes the code unusable for scientific purposes, given that a
+> key part of the scientific method is the ability to replicate results.
+
+Are you saying that Astronomy is not a science? We can't reproduce results
+there!
+
+And actually, who cares if the PRNG is actually a true RNG. THE KEY part of
+the scientific method is the ability to accurately predict the result of
+future experiments (or to predict what we will find when we dig in to the
+past).
+
+The difficulty we have at the moment, is that we don't have enough past to
+accurately predict what we will find if we look. and we really don't want to
+run the expected future because we don't like what it is likely to be!
+
+To my mind, the correct approach here is, given a TRUE RNG, are the results
+pretty much the same from run to run (which validates the model as
+MATHEMATICALLY correct), and do the model results closely match what we
+observe (which validates the SCIENTIFIC part). The problem is, as noted
+above, the lack of past observation and fear of future observation.
+
+------------------------------
+
+Date: Sat, 9 May 2020 11:51:52 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Re: Coronavirus New York Shock- Two-Thirds Of Recent Patients
+  Infected While Staying At Home (goodfellow in RISKS-31.81)
+
+  [PGN replied to geoff's earlier message:
+    Perhaps living in an appartment complex with other folks coming and
+    going? PGN (and meant to suggest central air conditioning, as in the
+    Legionaire's Disease cases)]
+
+Unlike, say, in Europe where heating and cooling is effectuated by
+"individual" apparatuses in each room, say, by a radiator (for heat) and a
+wall or window mounted AC unit (for coolth), here in the US we
+generally/most have/use ducting/ventilating from a "central" HVAC
+place/device/unit.
+
+ERGO, it would seem that the NY "spreading" of stayed at home (multi-floored
+apartment'd) folks is most likely done by the centralized HVAC systems that
+a given building or floor has that suck up the "contaminant" from
+neighboring/other units "intake" then combine them at the central HVAC
+"plant" and then redistribute them back all all... :(
+
+------------------------------
+
+Date: Sun, 10 May 2020 10:43:37 -0700
+From: Roderick Rees <jp3vampire@gmail.com>
+Subject: Re: Models (RISKS-31.81)
+
+The nonsense of the imperial model as described by "Sue Denim" is just what
+should have been expected.  All logic, including computed logic, works by
+applying a set of procedural rules to a set of inputs which include
+descriptions, definitions and assumptions, all of which are incomplete and
+in some ways wrong; they may be useful but should always be doubted.  The
+only way to get a result that can sensibly be trusted is to Analyse the
+Requirements and other inputs before you start the calculation.  It is
+evident that such analysis was not run by Imperial (and is not common
+elsewhere, especially in commercial programs that are in competition with
+other commercial programs).
+
+------------------------------
+
+Date: 8 May 2020 20:59:49 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Trading computer can't handle negative numbers (Baker,
+  RISKS-31.81)
+
+It serves them right, because Interactive Brokers were incredibly
+irresponsible.
+
+It is no secret that futures trading is very risky, and trading oil futures
+is particularly risky as they approach the date at which the contract
+matures.  None of IB's customers are actually in the oil business, so they
+all have to close out their trades before that date since they have no way
+to take physical possession of the oil.  Futures trading is heavily
+leveraged, i.e., the customer borrows most of the money, so every futures
+broker has complex systems to ensure that customers don't borrow more than
+they'll be able to pay back.
+
+The exchange told IB a week ahead that prices might go negative.  IB decided
+that a week wasn't enough time to write and test changes to their software,
+which is reasonable, so they ignored the warning, which was not.  What they
+should have done is to close out their customers' oil futures and not trade
+them until they could update their software to handle it.  They didn't, they
+let their customers trade based on false prices and broken debt limits, so
+IB ended up holding the bag for $100M.  Bad move, totally self-inflicted
+injury.
+
+Later in the article there are some whiny quotes from IB's owner like:
+
+  [ most people had traded out of May contracts in favor of June, so there
+  were few May buyers left ] ``That's how it’s possible for these contracts
+  to go absolutely crazy and close at a price that has no economic
+  justification,'' Peterffy said.  ``The issue is whose responsibility is
+  this?''
+
+When its your customers on your platform, It's your responsibility, dude.
+
+>https://www.bloomberg.com/news/articles/2020-05-08/oil-crash-busted-a-broker-s-computers-and-inflicted-huge-losses?srnd=premium
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.82
+************************

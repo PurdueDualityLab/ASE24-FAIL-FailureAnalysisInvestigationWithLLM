@@ -1,0 +1,725 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 14 October 2015  Volume 29 : Issue 03
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.03.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Obama Won't Seek Door to Encrypted User Data (Perlroth/Sanger)
+Voting Machines and the VW Emission Controversy (Rebecca Mercuri)
+DMCA/TPP: How Do You Cross-Examine Proprietary Software? (Rebecca Wexler
+  via Henry Baker)
+Southwest Flights Grounded by Sunday Computer Glitch (Jonathan Spira)
+Leak site Cryptome accidentally leaks its own visitor IP addresses
+  (Daily Dot)
+Rickety SHA-1 dead at age 20 after long zombie illness (Dan Goodin)
+Unintentional cheating by compilers (Robert Wilson)
+Cyber Insecurity at Civil Nuclear Facilities (Henry Baker)
+Buying a new laptop causes a massive increase in Chevy truck
+  cellular data usage (Steve Golson)
+Mail merge needs to actually merge (Geoff Kuenning)
+Undercover New Hampshire police nab cellphone ban violators (Monty Solomon)
+Re: Top EU court says US privacy protections are inadequate in landmark
+  ruling (Robert Levine)
+Re: Obama administration on encryption backdoors (Amos Shapir)
+Re: EPA v VW cheatware, AI & "machine learning" (Amos Shapir)
+Outlook.com OAuth vulnerability, now fixed (JC Chu)
+Re: Your MRI machine has already been pwned (Kevin Fu)
+Re: Putting Mobile Ad Blockers to the Test (Alan Ralph)
+Apple Approves An App That Blocks Ads In Native Apps, Including Apple News
+  (Tech Crunch)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 11 Oct 2015 18:41:27 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Obama Won't Seek Door to Encrypted User Data (Perlroth/Sanger)
+
+At the bottom of the front page of today's issue of the national edition of
+*The New York Times* is a note that "Fight Ends over Data Access", see page
+A24.  The actual article is captioned "Obama Won't Seek Door to Encrypted
+User Data", and is authored by Nicole Perlroth and David Sanger.
+
+I'm not so sure the fight has `ended', but we may have a respite in the cry
+to dumb down security to enable exceptional access to plain text for law
+enforcement.  Apparently the President Obama has decided that doing so would
+only encourage certain other nations to do the same.  He may also have
+realized that it would wipe out foreign markets for the weakened security
+that would necessarily result.
+
+http://www.nytimes.com/2015/10/11/us/politics/obama-wont-seek-access-to-encrypted-user-data.html
+
+  [Caveat: I am quoted.  PGN]
+
+See also:
+https://www.washingtonpost.com/world/national-security/obama-administration-opts-not-to-force-firms-to-decrypt-data--for-now/2015/10/08/1d6a6012-6dca-11e5-aa5b-f78a98956699_story.html
+
+------------------------------
+
+Date: Mon, 12 Oct 2015 18:43:44 -0400
+From: Rebecca Mercuri <notable@mindspring.com>
+Subject: Voting Machines and the VW Emission Controversy
+
+Upon hearing the news reports about the VW emission controversy, I
+immediately thought of electronic voting machines and the warnings that I
+(and others) had made about the fallacy of automated testing. Looking back
+to my earlier writings on this subject I found that I had commented on the
+issue of assurances in testing correctness quite early and often.
+
+In the Common Criteria section of my Ph.D. dissertation (defended October
+2000) I asked: "What tests are performed in order to ensure correctness?
+When are these tests done? Who is responsible for conducting these tests?"
+In my 2001 testimony to the House Science Committee I stated the following:
+"...fully electronic systems do not allow the voter to independently verify
+that the ballot cast corresponds to that one that was actually recorded,
+transmitted or tabulated. Any programmer can write code that displays one
+thing on the screen, records something else, and prints out something else
+as an entirely different result.  ...There is no known way to ensure that
+this is not happening inside of a voting system."
+
+My 2002 IEEE Spectrum article "A Better Ballot Box" referred to an actual
+instance where the automated pre-election testing of the new electronic
+voting machines (in Palm Beach County, Florida, heart of the chad fiasco)
+was intentionally never programmed to exercise all ballot positions and may
+also have failed to flag actual problems (or deliberately programmed
+omissions) affecting vote tabulation.
+
+My 2002 written testimony to the Central District of California also
+addresses flawed self-testing voting processes, as follows: "... the
+independent testing ... is done for the vendor, not the County or State, and
+is executed on sample machines. There is no real assurance that the machines
+provided ... are identical to those that were examined ..., nor that each
+machine operates correctly throughout election use. It is entirely possible
+that machines could pass both the pre- and post-election testing, yet they
+may still operate incorrectly during the actual voting session, this despite
+all preventative, detective and corrective controls applied to the system by
+the manufacturer."
+
+Now the current VW situation is a bit more sophisticated because the
+emission system was actually controlled differently to produce appropriate
+readings when the testing was detected. Otherwise, it is rather similar to
+the voting scenario, where the vendors (and election officials) want folks
+to believe that the pre- and post-election testing actually validates how
+the equipment is operating during the election and thus provides some
+assurance of correctness. It is also important to note that devices must be
+checked both individually and independently -- a sample product provided to
+a testing entity may be contrived to produce proper results, but only
+validation of each actual unit to external data can be used to detect
+anomalies, and correctness may only be assured for the time of the testing
+(since system clock triggers can come into play as well, especially for
+elections). In the same way, only when the VW emissions testing was
+performed externally, and then compared to the automated results, was the
+disparity noted. One might even imagine a tie-in to the known locations of
+emission inspection stations, using the vehicle's GPS system, to enable a
+similar stealth "cheat" to occur!
+
+The bottom line is that we in the security field have long known that
+embedded testing mechanisms in electronic systems can be circumvented or
+designed to provide false validations of the presumed correctness of
+operations. Proper system design (such as to Common Criteria and other
+security-related standards) is intended to ferret out such problems and
+provide assurances that results are being accurately reported.
+Unfortunately, most systems (including automobiles and voting machines) are
+not required to be designed and evaluated against such stringent
+methodologies. Lacking the ability to independently examine (and recompile)
+source code, validate results, and perform spot-checks, such anomalies,
+whether deliberate or unintentional, will go on undetected.  And without
+such assurances, the testing is nothing but a charade.
+
+Rebecca Mercuri, Ph.D., Notable Software, Inc.
+
+------------------------------
+
+Date: Thu, 08 Oct 2015 15:50:00 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: DMCA/TPP: How Do You Cross-Examine Proprietary Software?
+
+FYI -- In addition to its own criminal penalties, the DMCA can also put you
+in prison by destroying your right to cross-examine software witnesses
+against you.
+
+And we're not even talking here about running afoul of "double secret" and
+secretly-interpreted legal "code" of the FISA Star Chamber.
+
+BTW, the Trans Pacific Partnership ("TPP") appears to cast DMCA-like
+restrictions into stone -- not only in the U.S., but around the globe.
+
+https://en.wikipedia.org/wiki/Confrontation_Clause
+
+Rebecca Wexler, *Slate*, Convicted by Code, 6 Oct 2015
+http://www.slate.com/blogs/future_tense/2015/10/06/defendants_should_be_able_to_inspect_software_code_used_in_forensics.html
+
+Defendants don't always have the ability to inspect the code that could help
+convict them.  Secret code is everywhere --in elevators, airplanes, medical
+devices.  By refusing to publish the source code for software, companies
+make it impossible for third parties to inspect, even when that code has
+enormous effects on society and policy.  Secret code risks security flaws
+that leave us vulnerable to hacks and data leaks.  It can threaten privacy
+by gathering information about us without our knowledge.  It may interfere
+with equal treatment under law if the government relies on it to determine
+our eligibility for benefits or whether to put us on a no-fly list.  And
+secret code enables cheaters and hides mistakes, as with Volkswagen: The
+company admitted recently that it used covert software to cheat emissions
+tests for 11 million diesel cars spewing smog at 40 times the legal limit.
+
+But as shocking as Volkswagen's fraud may be, it only heralds more of its
+kind.  It's time to address one of the most urgent if overlooked tech
+transparency issues -- secret code in the criminal justice system.  Today,
+closed, proprietary software can put you in prison or even on death row.
+And in most U.S. jurisdictions you still wouldn't have the right to inspect
+it.  In short, prosecutors have a Volkswagen problem.
+
+Take California. Defendant Martell Chubbs currently faces murder charges for
+a 1977 cold case in which the only evidence against him is a DNA match by a
+proprietary computer program.  Chubbs, who ran a small home-repair business
+at the time of his arrest, asked to inspect the software's source code in
+order to challenge the accuracy of its results.  Chubbs sought to determine
+whether the code properly implements established scientific procedures for
+DNA matching and if it operates the way its manufacturer claims.  But the
+manufacturer argued that the defense attorney might steal or duplicate the
+code and cause the company to lose money.  The court denied Chubbs' request,
+leaving him free to examine the state's expert witness but not the tool that
+the witness relied on.  Courts in Pennsylvania, North Carolina, Florida, and
+elsewhere have made similar rulings.  [lots more...]
+
+------------------------------
+
+Date: Oct 11, 2015 6:16 PM
+From: <jonathan.spira@accuramediagroup.com>
+Subject: Southwest Flights Grounded by Sunday Computer Glitch
+
+  [via Dave Farber]
+
+First UA, then AA, now Southwest over the past month or so...
+
+*Southwest Flights Delayed Nationwide Thanks to Computer Glitch*
+<http://www.frequentbusinesstraveler.com/2015/10/southwest-flights-delayed-nationwide-thanks-to-computer-glitch/>
+http://accura.cc/qrvua5
+
+"Many passengers hoping for an on-time departure of their Southwest Airlines
+flights Sunday were in for long lines at the airport and delays.
+
+``We're experiencing technology delays on southwest.com, the Southwest
+Mobile app, and in reservations centers and airports systemwide today which
+are impacting future bookings and are requiring us to follow manual
+procedures with Customers as they arrive for travel.'' [...]
+
+------------------------------
+
+Date: Sun, 11 Oct 2015 15:41:48 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Leak site Cryptome accidentally leaks its own visitor IP addresses
+  (Daily Dot)
+
+Leak site Cryptome accidentally leaks its own visitor IP addresses
+Daily Dot via NNSquad
+http://www.dailydot.com/politics/cryptome-ip-leak-john-young-michael-best/
+
+  Cryptome, the Internet's oldest document-exposure site, inadvertently
+  leaked months worth of its own IP logs and other server information,
+  potentially exposing details about its privacy-conscious users.  The data,
+  which specifically came from the Cartome sub-directory on Cryptome.org,
+  according to Cryptome co-creator John Young, made their way into the wild
+  when the site logs were included on a pair of USB sticks sent out to a
+  supporter.
+
+You can't make this stuff up.
+
+------------------------------
+
+Date: Thu, 08 Oct 2015 14:15:47 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Rickety SHA-1 dead at age 20 after long zombie illness
+
+FYI -- SHA-1 has already been dead for a number of years; all stakeholders
+need to drive their stakes through its heart NOW.
+
+NOBUS has now become ANYBUS.  Your rickety SHA-1 certs are about to give you
+severe heartburn instead of just bad breath.
+
+No TLS to say hello, goodbye!  I'm late!  I'm late!  I'm late!
+
+"Microsoft, Google and Mozilla have all announced that their respective
+browsers will stop accepting SHA-1 SSL certificates by 2017."
+
+https://en.wikipedia.org/wiki/SHA-1
+
+"researchers estimate SHA1 now underpins more than 28 percent of existing
+digital certificates"
+
+64-GPU cluster produces cheap SHA-1 collisions.
+
+``We just successfully broke the full inner layer of SHA-1.  We now think
+that the state-of-the-art attack on full SHA-1 as described in 2013 may cost
+around 100,000 dollar renting graphics cards in the cloud.  However, we
+showed that graphics cards are much faster for these attacks and we now
+estimate that a full SHA-1 collision will cost between 75,000 and 120,000
+dollar renting Amazon EC2 cloud over a few months today, in early autumn
+2015.  This implies that *collisions are already within the resources of
+criminal syndicates*, almost two years earlier than previously expected, and
+one year before SHA-1 will be marked as unsafe in modern Internet
+browsers.''
+
+https://sites.google.com/site/itstheshappening/shappening_article.pdf
+https://sites.google.com/site/itstheshappening/shappening_PR.pdf
+https://sites.google.com/site/itstheshappening/
+
+ - - -
+
+Dan Goodin, Ars Technica, 8 Oct 2015
+SHA1 algorithm securing e-commerce and software could break by year's end
+Researchers warn widely used algorithm should be retired sooner.
+http://arstechnica.com/security/2015/10/sha1-crypto-algorithm-securing-internet-could-break-by-years-end/
+
+------------------------------
+
+Date: Wed, 7 Oct 2015 16:39:16 -0500
+From: Robert Wilson <wilson@math.wisc.edu>
+Subject: Unintentional cheating by compilers
+
+In Risks 28.97 we were reminded of compilers that would recognize some
+standard benchmark source codes and produce object modules that artificially
+ran fast, e.g. skipping loops. For a while, long ago, I was benchmarking
+competitors equipment as well as our own (for data to be used in improving
+our systems, or for marketing), at a maker of small UNIX systems, and ran
+into something similar that was, however, intended as a positive
+feature. Many simple-minded benchmarks ran loops that repeated a calculation
+many times, but never pretended to use the results. So as soon as compilers
+included optimizers that ignored calculations whose results did not get
+used, the loops did not repeat and the benchmark results were improved
+amazingly, unfortunately for competitors systems as well as our own.  If
+there is a moral here it might be that what looks like cheating can be just
+a lack of forethought.
+
+------------------------------
+
+Date: Thu, 08 Oct 2015 08:16:40 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Cyber Insecurity at Civil Nuclear Facilities
+
+FYI -- Let's see; how long ago was Stuxnet, again?  Mind the 'air gap'
+between the ears...
+
+Time for millennials to learn about the "Pepsi [aka China] Syndrome":
+http://snltranscripts.jt.org/78/78ppepsi.phtml
+
+[shows control room where Carl and Brian are working, a sign on the wall
+says "NO SOFT DRINKS IN CONTROL ROOM"]
+
+  [Matt hands the Coke to Carl, but spills the soda on the control panel]
+Gee, what the- [sparks fly from the control panel, and alarms go off.]
+
+Brian: Hey Matt, the water level's dropping fast in the core.
+
+Carl: The pressure's rising in the core.
+
+Matt: Turn down that alarm, it's driving me nuts!  [Carl turns down the
+alarm.]
+
+  [explosion shakes control room]
+
+Carl: There's been an explosion in main housing.
+
+Brian: Listen, we've got to release the number three or that pump's gonna blow.
+
+Carl: If the pump blows that could mean a meltdown.
+
+Brian: What is happening?
+
+Matt: I'll tell you what's happening.  The Pepsi Syndrome.
+
+Matt: Well, the Pepsi Syndrome.  If someone spills a Pepsi on the control
+panel of a nuclear power reactor, the panel can short-circuit, and the whole
+core may melt down.
+
+Brian: But, you spilled a Coke.
+
+Matt: It doesn't matter.  Any cola does it.
+
+...
+
+Ross Denton: Well Mr. President, this is Matt Crandall.  He was chief
+engineer when the "surprise" occurred.
+
+President Jimmy Carter: Okay, Matt.  Give it to me straight.
+
+Matt: [nervous] Well, the water level began dropping in the core, and the
+pressure neared critical in coolant pump #2, and a negative function in the
+control panel prevented us from preventing the, uh, minor explosion which
+occurred in the main housing.
+
+President Jimmy Carter: Hmm.  Sounds to me a lot like a Pepsi Syndrome.
+Were there any soft drinks in the control room?  ...
+
+Considering the consequences, the recommendations are remarkably
+mealy-mouthed:
+
+"developing guidelines", "raise awareness", "engaging in dialogue",
+"encouraging anonymous information sharing"
+
+If someone were running a facility close to me that could render a
+significant fraction of my state uninhabitable for generations, I might want
+to "engage in a dialogue" with such a person and encourage them to "develop
+guidelines" to "raise awareness".
+
+Where do they get these consultants who talk like this, and more
+importantly, who pays the $$$$ for such drivel?
+
+https://www.chathamhouse.org/sites/files/chathamhouse/field/field_document/20151005CyberSecurityNuclearBaylonBruntLivingstone.pdf
+
+https://www.chathamhouse.org/sites/files/chathamhouse/field/field_document/20151005CyberSecurityNuclearBaylonBruntLivingstoneExecSum.pdf
+
+https://www.chathamhouse.org/publication/cyber-security-civil-nuclear-facilities-understanding-risks
+
+Cyber Security at Civil Nuclear Facilities: Understanding the Risks
+05 October 2015
+
+Project: International Security Department, Cyber and Nuclear Security
+
+Caroline Baylon, Research Associate, Science, Technology, and Cyber
+Security, International Security Department
+
+David Livingstone MBE DSC, Associate Fellow, International Security
+
+Roger Brunt, Nuclear Security Consultant
+
+The risk of a serious cyber attack on civil nuclear infrastructure is
+growing, as facilities become ever more reliant on digital systems and make
+increasing use of commercial off-the-shelf software, according to a new
+Chatham House report.
+
+The report finds that the trend to digitization, when combined with a lack
+of executive-level awareness of the risks involved, means that nuclear plant
+personnel may not realize the full extent of their cyber vulnerability and
+are thus inadequately prepared to deal with potential attacks.
+
+Specific findings include:
+
+* The conventional belief that all nuclear facilities are air-gapped
+  (isolated from the public Internet) is a myth.  The commercial benefits of
+  Internet connectivity mean that a number of nuclear facilities now have
+  VPN connections installed, which facility operators are sometimes unaware
+  of.
+
+* Search engines can readily identify critical infrastructure components
+  with such connections.
+
+* Even where facilities are air gapped, this safeguard can be breached with
+  nothing more than a flash drive.
+
+* Supply chain vulnerabilities mean that equipment used at a nuclear
+  facility risks compromise at any stage.
+
+* A lack of training, combined with communication breakdowns between
+  engineers and security personnel, means that nuclear plant personnel often
+  lack an understanding of key cyber security procedures.
+
+* Reactive rather than proactive approaches to cyber security contribute to
+  the possibility that a nuclear facility might not know of a cyber attack
+  until it is already substantially under way.
+
+In the light of these risks, the report outlines a blend of policy and
+technical measures that will be required to counter the threats and meet the
+challenges.
+
+Recommendations include:
+
+* Developing guidelines to measure cybersecurity risk in the nuclear
+  industry, including an integrated risk assessment that takes both security
+  and safety measures into account.
+
+* Engaging in robust dialogue with engineers and contractors to raise
+  awareness of the cyber security risk, including the dangers of setting up
+  unauthorized internet connections.
+
+* Implementing rules, where not already in place, to promote good IT hygiene
+  in nuclear facilities (for example to forbid the use of personal devices)
+  and enforcing rules where they do exist.
+
+* Improving disclosure by encouraging anonymous information sharing and the
+  establishment of industrial CERTs (Computer Emergency Response Team).
+
+* Encouraging universal adoption of regulatory standards.
+
+------------------------------
+
+Date: Tue, 6 Oct 2015 23:10:52 -0400
+From: Steve Golson <sgolson@trilobyte.com>
+Subject: Buying a new laptop causes a massive increase in Chevy truck
+  cellular data usage
+
+A few weeks ago I got a "you have used 75% of your data plan" message from
+AT&T.
+
+My family has a Mobile Share Value Plan from AT&T, where we share one big
+pot of data amongst all our devices: four iPhones and one iPad. And a truck.
+
+My wife's Chevy Colorado has a 4G/LTE cellular connection. This is what the
+GM OnStar service uses. We don't ever use the phone, but we do use the
+cellular connection for data. The system provides WiFi hotspot service
+inside the vehicle, and we can add the truck to our AT&T plan just like any
+other device. Why not just let each phone use its own 4G/LTE connection?
+Well, theoretically we should get more reliable data service, because the
+truck has a better cellular antenna and more power to its radio. Sweet!
+
+So who's the culprit that's using the high bandwidth? I figure it's got to
+be one of us binging on Netflix, but no, it's the truck! Enormous bandwidth,
+peaking at 123Mbytes per minute. It used 15Gbytes in two weeks. Using the
+AT&T records I'm able to confirm that this data traffic only occurs when my
+wife is actually driving the truck, and that it all started on August 23.
+
+What's going on? Who to call, Apple, AT&T, Chevy? I'm stumped, until my wife
+recalls that August 21 we bought her a new Apple MacBook. But what could
+buying a laptop that's only used at home have to do with a truck that only
+uses data on the road?
+
+Buying the laptop prompted me to upgrade her desktop iMac, and I enabled
+sharing her photos using iCloud.
+
+Here's the final piece of the puzzle: my wife charges her phone only when
+she is driving her truck. And when the phone is in the truck, it's on WiFi!
+The phone thinks it has lots of power *and* lots of *free* bandwidth. So
+inside the truck the iPhone starts syncing photos...
+
+The fix is to give my wife a phone charger on her bedside table. Now her
+phone charges at night, it gets synced up using our home WiFi, and
+therefore doesn't have lots of data to move when it gets in the truck.
+
+------------------------------
+
+Date: Wed, 07 Oct 2015 23:16:25 -0700
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: Mail merge needs to actually merge
+
+I have a graduating student who is busily applying for jobs.  One employer
+asked her to take a test by sending her the following heavily redacted
+e-mail [as the result of incorrect usage of a Mail Merge program]:
+
+> Subject: [redacted] Opportunity - Software Development Engineer - Online
+> Assessment Invitation: PART 2
+> From:    "[redacted] Campus Recruiting Team" <[redacted]>
+> Date:    Fri, October 2, 2015 12:15 pm
+> To:      [redacted]
+>
+> Dear [redacted],
+>
+> $data.requestorCompany has requested that you take the [redacted]
+> Software Development Engineer Assessment assessment.
+...
+> This assessment has been arranged by $data.requestorName who can be
+> contacted at $data.requestorEmail
+
+Moral: it's always wise to do a test run by masquerading as a sample user.
+
+Also, I'm definitely in favor of Assessment assessments.  As opposed to,
+I guess, non-Assessment assessments or Assessment non-assessments.
+
+    Geoff Kuenning   geoff@cs.hmc.edu   http://www.cs.hmc.edu/~geoff/
+
+------------------------------
+
+Date: Thu, 8 Oct 2015 22:17:11 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Undercover New Hampshire police nab cellphone ban violators
+
+CONCORD, NH. Michelle Tetreault's daughter didn't know what "repent" meant
+when she spotted a man with a sign around his neck warning "Repent!  The end
+is near!" But she's plenty sorry now that her mom is facing a $124 traffic
+ticket for using her cellphone to snap a picture of the man.
+
+The two were stopped at a red light in Somersworth last week when they saw
+the sign.  Moments after Tetreault gave in to her 14-year-old daughter's
+pleas to take a picture, she was pulled over and told the man with the sign
+was actually an undercover officer. She was ticketed for violating the
+state's new law against using cellphones or other electronic devices while
+driving.
+
+http://www.foxnews.com/us/2015/10/01/undercover-new-hampshire-police-nab-cellphone-ban-violators/
+
+------------------------------
+
+Date: Sun 10 Oct 2015 10:12:13
+From: Peter Neumann
+Subject: Re: Top EU court says US privacy protections are inadequate in
+  landmark ruling (Toor, RISKS-29.02)
+
+Behind the European Privacy Ruling That's Confounding Silicon Valley,
+Robert Levine, *The New York Times*, 11 Oct 2015
+
+It began with an Austrian law student in California who ``had to write about
+something,'' but has led to a decision that is roiling United States tech
+companies.
+
+http://www.nytimes.com/2015/10/11/business/international/behind-the-european-privacy-ruling-thats-confounding-silicon-valley.html?mwrsm=Email
+
+------------------------------
+
+Date: Thu, 8 Oct 2015 17:27:35 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Obama administration on encryption backdoors
+
+Does anyone else share my feeling that this has become pathetic?  They are
+discussing seriously how to install a back door on the stable and who should
+be using it -- while not only the horses are long gone, but the stable did
+not have any walls to begin with...
+
+This also applies to the European Court's "Safe Harbor" decision -- in both
+cases, participants assume, in typical Bismarck-era thinking, that there are
+people who oversee every minute detail of the internet, and that these
+people somehow fall under these governments and courts' jurisdiction and can
+be ordered about at will.
+
+  [Amos, See the first item in this issue.  PGN]
+
+------------------------------
+
+Date: Thu, 8 Oct 2015 17:35:25 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: EPA v VW cheatware, AI & "machine learning"
+
+The discussion of whether machine learning could lead systems to cheat as
+the best found path to pass tests, reminds me of a chapter of Isaac Asimov's
+"I, Robot" series.
+
+In that story, scientists try to teach a robot the Three Laws of Robotics,
+only to discover that the robot's solution to complying with the rule "a
+robot shall never harm a human being", is to bring humans to a state in
+which they could not be harmed any further -- that is, to kill them all...
+
+------------------------------
+
+Date: Sat, 10 Oct 2015 03:26:57 +0000
+From: JC Chu <jcchu@acm.org>
+Subject: Outlook.com OAuth vulnerability, now fixed
+
+A+AKA-vulnerability in the Microsoft account OAuth (a.k.a. Live Connect)
+implementation allowed malicious applications to gain access to Outlook.com
+data without going through the consent UI.  A+AKA-proof-of-concept
+application was built which demonstrated how to obtain IMAP access tokens.
+The vulnerability has been fixed in September.
+
++ADw-http://www.theregister.co.uk/2015/10/09/hotmail+AF8-hijack+AF8-hole+AF8-earns+AF8-boffin+AF8-25k+AF8-double+AF8-bug+AF8-bounty+AF8-trouble/+AD4-
++ADw-https://www.synack.com/labs/blog/how-i-hacked-hotmail/+AD4-
++ADw-https://www.synack.com/wp-content/uploads/2015/10/hacking-demo2.gif+AD4-
+
+------------------------------
+
+Date: Wed, 7 Oct 2015 12:11:34 -0400
+From: Kevin Fu <kevinfu@umich.edu>
+Subject: Re: Your MRI machine has already been pwned
+
+The good news is that newer medical devices are beginning to include better
+engineered security mechanisms.  However, legacy medical devices frequently
+lack mechanisms to prevent security and privacy risks from causing hazardous
+situations or harm.  Worse, effective detection mechanisms are scarce,
+leading to a false sense of security based on deceptive numerators of zero.
+I know of a clinical group with 150+ offices that paradoxically lost their
+ability to inspect network traffic after installing a series of firewalls.
+A common observation I hear from security researchers is that simply
+scanning one's own clinical network for vulnerabilities can cause a medical
+device to malfunction. It will take significant effort to shift from a
+culture of ``don't scan the network, the medical devices might break'' to
+``actively look for security hazards so we know our risk exposure.''  Thus,
+folks like Scott Erven and Mark Collao will continue to find medical device
+security vulnerabilities.
+
+You can find a pithy write up on this topic at the NAE FOE website:
+  On the Technical Debt of Medical Device Security
+  http://www.naefrontiers.org/File.aspx?idP750
+
+Kevin Fu, Associate Professor, EECS Department, The University of Michigan
+kevinfu@umich.edu     http://web.eecs.umich.edu/~kevinfu/
+
+------------------------------
+
+Date: Wed, 7 Oct 2015 16:23:49 +0100
+From: Alan Ralph <alan@alanralph.co.uk>
+Subject: Re: Putting Mobile Ad Blockers to the Test
+
+The interactive charts linked to *The New York Times* article that Monty
+Solomon mentioned make for stark viewing.
+(http://www.nytimes.com/interactive/2015/10/01/business/cost-of-mobile-ads.html)
+(http://www.nytimes.com/2015/10/01/technology/personaltech/ad-blockers-mobile-iphone-browsers.html)
+
+Poor Boston.com leads the pack by quite a margin, in load time, data usage
+and cost per page (on a typical mobile data plan). The website for my paper
+of choice, *The Independent* takes 4th place, much to my chagrin.
+(http://www.independent.co.uk <http://www.independent.co.uk/>),
+
+*The New York Post* however, has the distinction of being the slowest of the
+news websites sampled -- due, the chart notes, to its use of large photos.
+
+------------------------------
+
+Date: Wed, 7 Oct 2015 09:26:03 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple Approves An App That Blocks Ads In Native Apps, Including
+  Apple News
+
+http://techcrunch.com/2015/10/06/apple-approves-an-app-that-blocks-ads-in-native-apps-including-apple-news/
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.03
+************************

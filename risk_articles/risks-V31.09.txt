@@ -1,0 +1,886 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.09
+
+RISKS-LIST: Risks-Forum Digest  Sunday 3 March 2019  Volume 31 : Issue 09
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public
+Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.09>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Anticipating a deluge of false-positive medical tests
+  (Kenneth D. Mandl and Arjun K. Manrai)
+Cryptocurrency wallet caught sending user passwords to Google's spelling
+  checker (ZDNet)
+Fake Reviews: $168 buys 600+ five-star ratings online... (NBC)
+Robocalls Routed via Virtue Signaling Network? (NYTimes)
+Oscars: IBM & Surveillance AI: Clean Hands? (Henry Baker)
+"Robot love? An app to schedule sex? What is wrong with you?"
+  (Chris Matyszczyk)
+Robot workers can't go on strike but they can go up in flames
+  (Straits Times)
+Who's making money from your DNA? (bbc.com)
+The secret lives of Facebook moderators in America (The Verge)
+Subaru plans recall: Perfume could cause your car to malfunction
+  (Chicko Stuneoka)
+iPhone hacking tool being sold on eBay -- but not wiped (Forbes)
+Boeing Unveils Australian-Developed Unmanned Jet (The Guardian)
+Roscoe Bartlett: The Congressman Who Went Off the Grid (Politico)
+Your iPhone Has A Hidden List of Every Location You've Been (Gabe Goldberg)
+Re: Plastic and other threats to the planet (Martyn Thomas)
+Re: AI's continuing Big Challenge (Tom Gardner)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, Feb 27, 2019 at 12:54 AM
+From: Roger Bohn <Rbohn@ucsd.edu>
+Subject: Anticipating a deluge of false-positive medical tests
+  (Kenneth D. Mandl and Arjun K. Manrai)
+
+  [via Geoff Goodfellow]
+
+Kenneth D. Mandl, MD, MPH1,2; Arjun K. Manrai, PhD1,3
+JAMA. 2019;321(8):739-740. doi:10.1001/jama.2019.0286
+https://jamanetwork.com/journals/jama/fullarticle/2724793
+
+Excerpt:
+
+A culture of advocacy and promotion for aggressive testing may arise when a
+biomarker or its sequelae yield financial benefit to drug and device
+manufacturers, procedure-based specialties, hospitals, or laboratory testing
+services or is increasingly requested by patients. Excessive testing can
+also lead to costly and harmful care, including false-positive results,
+overdiagnoses, and unnecessary treatments. Economic pressures, obfuscated
+intentionally or inadvertently, can drive increased use of biomarkers, a
+phenomenon that could be termed `biomarkup'.
+
+The volume of per-patient biomarker measurements for screening, monitoring,
+and diagnosing is poised to increase substantially. Furthermore, many of
+these tests will be directed at consumers.1 Machine learning algorithms that
+will soon drive artificial intelligence in health care require large amounts
+of data and involve ever-expanding approaches to passively and actively
+capture patient- and clinician-generated data. The affordability of
+wearables and other connected devices is leading to continuous streams of
+`digital biomarkers' from individuals in their homes. Genomic measures in
+clinical care are expanding the number of biomarkers routinely measurable by
+a physician from a handful to potentially thousands.
+
+Another excerpt:
+
+Adjusting the threshold of a biomarker for disease definitions may
+significantly alter the population labeled with treatable conditions. For
+example, the 2013 change in the cholesterol practice guidelines increased
+the number of adults eligible for statin therapy by an estimated 12.8
+million compared with previous guideline recommendations (Figure A).
+With the global statin market approaching $23 billion, this is not a
+coincidence.  The Centers for Medicare and Medicaid Services levies
+financial penalties on health plans in which beneficiaries adhere poorly to
+filling their statin prescriptions.
+
+My comment: There have been previous waves of tests that create lots of
+false-positive.  Increasing resolution of medical imaging is one big factor;
+it led to the fad for whole body scanning.  Nor is this a new problem. 20
+years ago Andy Grove preached that ``every man should know his PSA level'',
+but PSA screening turned out to have little, or negative, value for men with
+no other symptoms of prostate problems. (He wrote an interesting article
+about his experiences in 1996, but current data is much better.
+
+http://fortune.com/1996/05/13/andy-grove-prostate-cancer-cover-story/
+
+Roger Bohn, Professor of Technology Management
+School of Global Policy and Strategy, UC San Diego
+
+  [Editorial comment: False positives and false negatives are always a
+  concern, e.g., especially in dealing with Lyme disease, where most of the
+  standard tests are inadequate.  However, false, misleading, and incomplete
+  information may be even more of a problem.  For example, I might suggest
+  that the medical profession seems to have ignored or disputed recent
+  findings that low-fat diets and exercise may be much less effective in
+  reducing cholesterol than reducing sugar and carbs:
+    Sugar Industry's Propaganda Campaign Exposed a Half-Century Later,
+    editorial in the Townsend Letter,  April 2017, p.80 and 79
+    http://www.townsendletter.com/April2017/April2017.html
+  and that statins ultimately can do very serious long-term damage:
+    The undeniable TRUTH about statins: Cholesterol-lowering drugs are
+    linked to memory loss and brain impairment
+    https://www.naturalhealth365.com/statins-drug-dangers-2798.html.  PGN]
+
+------------------------------
+
+Date: Wed, 27 Feb 2019 21:12:54 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Cryptocurrency wallet caught sending user passwords to Google's
+  spelling checker (ZDNet)
+
+  [While a spelling check of input can be useful, maybe, the default should
+  be to this being off.]
+
+Catalin Cimpanu for Zero Day, 27 Feb 2019
+Coinomi wallet bug sends users' secret passphrases to Google's Spellcheck
+API via HTTP, in plaintext.
+https://www.zdnet.com/article/cryptocurrency-wallet-caught-sending-user-passwords-to-googles-spellchecker/
+
+opening text:
+
+The Coinomi wallet app sends user passwords to Google's spellchecking
+service in clear text, exposing users' accounts and their funds to
+man-in-the-middle (MitM) attacks during which attackers can log passwords
+and later empty accounts.
+
+The issue came to light yesterday after an angry write-up by Oman-based
+programmer Warith Al Maawali who discovered it while investigating the
+mysterious theft of 90 percent of his funds.
+
+Al Maawali says that during the Coinomi wallet setup, when users select a
+password (passphrase), the Coinomi app grabs the user's input inside the
+passphrase textbox and silently sends it to Google's Spellcheck API service.
+
+"To understand what's going on, I will explain it technically," Al Maawali
+said. "Coinomi core functionality is built using Java programming
+language. The user interface is designed using HTML/JavaScript and rendered
+using integrated Chromium (Google's open-source project) based browser."
+
+Al Maawali says that just like any other Chromium-based app, it comes
+integrated with various Google-centered features, such as the automatic
+spellcheck feature for all user input text boxes.
+
+The issue appears to be that the Coinomi team did not bother to disable this
+feature in their wallet's UI code, leading to a situation where all their
+users' passwords are leaking via HTTP during the setup process.
+
+Anyone in a position to intercept web traffic from the wallet app would be
+able to see the Coinomi wallet app passphrase in cleartext.
+
+------------------------------
+
+Date: Thu, 28 Feb 2019 12:41:52 -0700
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Fake Reviews: $168 buys 600+ five-star ratings online... (NBC)
+
+Can you trust online reviews? Here's how to find the fakes.
+NBC News found thousands of questionable reviews on Amazon, Yelp, Facebook
+and Google, and purchased great reviews for a company that never did any
+work.
+
+EXCERPT:
+
+The Federal Trade Commission announced a groundbreaking lawsuit Tuesday
+against a company it accuses of paying for fake Amazon reviews. But the
+agency may have a lot more work to do if it wants to end the scourge of fake
+online reviews.
+
+An NBC News investigation found thousands of questionable reviews on Amazon,
+Yelp, Facebook and Google -- and showed that it was possible to purchase
+hundreds of positive reviews within days for a new company that had never
+done any work.
+https://www.nbcnewyork.com/news/local/I-Team-Battling-Fake-Business-Reviews-450654033.html
+https://www.nbcnews.com/better/business/does-five-star-online-review-really-mean-product-good-ncna870901
+
+On Google and Facebook, the profile photos of the reviewers helped expose
+many questionable reviews
+
+https://www.nbcnews.com/business/consumer/fake-online-reviews-here-are-some-tips-detecting-them-n447681
+
+The profiles used the likenesses of such actors and actresses Terry Crews,
+Megan Fox, Omari Hardwick and Abigail Breslin. Those celebrities all
+confirmed that they did not write the reviews in question.
+
+Jason Brown runs the consumer advocacy website reviewfraud.organd said it's
+common for fake reviewers to use images of celebrities -- often by
+accident.  "What they'll do is they'll create their account, do a Google
+search for headshots and when they're doing that to add it to their account,
+they'll get famous people by mistake," Brown said. [...]
+
+https://www.nbcnews.com/business/consumer/can-you-trust-online-reviews-here-s-how-find-fakes-n976756
+
+------------------------------
+
+Date: Sat, 02 Mar 2019 07:53:53 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Robocalls Routed via Virtue Signaling Network? (NYTimes)
+
+Why "exceptional access" is synonymous with "backdoors for black hats"
+
+Congresspersons will virtue signal all day long about robocalls, but will
+NEVER stop robocalls.  Why?  Precisely because Congresspersons utilize
+robocalls *themselves* for their own re-election campaigns.
+
+Who else loves robocalls?  Phone companies themselves.  Robocalls run up
+lucrative charges on accounts that would otherwise have *zero* traffic and
+minimum account charges.
+
+Who else loves robocalls?  NSA/intelligence agencies.  Have a 3-hop or 2-hop
+maximum from a "person of interest"?  Any undergraduate computer scientist
+can code up an algorithm to provide enough "junk calls" to fill in that
+entire "who-called-whom" adjacency matrix so that *every* person is 2 hops
+from a "person of interest".  Robocalls also enable metadata collection by
+exercising the SS7 network.  Robocalls enable the testing of "live" phone
+numbers which can later be used for SMS message scams and
+malware^H^H^H^H^H^H^HNIT ("network investigative technique") installation.
+
+Of course, what's good for the goose is good for the gander.  Exactly the
+same techniques utilized by "white hats" can also be utilized by "black
+hats" such as criminals and foreign intel agencies.
+
+https://www.nytimes.com/2019/03/01/opinion/robocall-scams.html
+
+Let's Destroy Robocalls: Finally, something worse than Donald Trump.
+
+By Gail Collins  March 1, 2019
+
+Congress may have found an issue that all Americans can rally around.
+Stopping robocalls.
+
+All right -- a little depressing that it can't be world peace or
+affordable health care.  But let's take what we can get.  If our
+elected officials could join hands and lead us into a world where
+phones are no longer an instrument of torture, maybe it'd give them
+enough confidence to march forward and, um, fund some bridge repair.
+
+Everybody has always hated telemarketers, particularly the ones trying
+to sell some shady product.  And now the miracles of technology let
+them follow you around all day.  When I'm home, I feel as if I spend
+half my time blocking robocalls on our landline.  Yet somehow a
+different number always pops up, with great news about opportunities
+to reinsure my nonexistent car at low prices or acquire a cost-free
+knee brace.
+
+The knee brace thing is a scam to get money out of Medicare, but in
+order to figure that out you'd have to engage in conversation.
+People, do not ever talk on the phone with a stranger wielding free
+knee braces.  This can be a life rule.
+
+Things are at least as bad on mobile phones, which were the lucky
+recipients of 48 billion robocalls in the United States alone last
+year.
+
+Congress has been trying to control the problem at least since 1991,
+when it passed the Telephone Consumer Protection Act.  Remember 1991?
+"Dances With Wolves" won the Oscar for best picture.  The Dow closed
+the year at 3,168.  The point I'm trying to make is that it's been a
+while.
+
+At the time the big problem was mainly telemarketers -- actual people
+who dialed your actual number and tried to talk you into buying
+something.  Under the T.C.P.A.  you could put your name on a national
+"do not call" list.  Some observers did worry about the part of the
+plan that required the list be maintained by the telemarketers
+themselves.
+
+Whoops.  In 2003 Congress gave the job to the Federal Trade
+Commission.  Then-President George W.  Bush signed the bill into law,
+rejoicing that from then on, when parents were reading to their
+children at night, they'd no longer be interrupted by "a stranger with
+a sales pitch."
+
+Then robocalls really took over the world, and one person on the other
+side of the planet could push a few buttons and disrupt "Goodnight
+Moon" from coast to coast.
+
+The F.T.C. kept saying it could take care of the problem.  ("... you
+can count on us ...")  Then the Federal Communications Commission
+created the Robocall Strike Force in 2016.  Great name!  Mediocre
+results.
+
+So here we are, tortured phone owners one and all.  Perhaps, like me,
+you've accidentally blocked some of your friends without successfully
+getting rid of the woman with the free knee brace.  Perhaps you were
+like Dr. Gary Pess, a hand surgeon who told The Times's Tara Siegel
+Bernard that he stopped answering any calls when he didn't recognize
+the number and then discovered one of them was about a person with a
+severed thumb.
+
+But good news!  We're getting some action.  I know "Congress is
+working on a bill" is not as encouraging as, say, "Let me pour you a
+drink and change the subject."  But still.
+
+In the House, Representative Frank Pallone of New Jersey has a
+proposal called Stopping Bad Robocalls, which certainly gets to the
+point.  Pallone is the chairman of the Committee on Energy and
+Commerce and it's fair to say he has a healthy chance of getting
+something done.
+
+Things are more problematic in the Senate, which, as you may have
+noticed, is barely capable of getting its act together long enough to
+salute the flag.  However, Democratic Senator Ed Markey of
+Massachusetts -- the man who helped give us that Telephone Consumer
+Protection Act in 1991 -- has teamed up with Republican Senator John
+Thune of South Dakota to sponsor a bipartisan plan.  It's called the
+Telephone Robocall Abuse Criminal Enforcement and Deterrence Act,
+which I certainly hope you noticed spells out Traced.  (Or, O.K.,
+Traceda if you wanted to be really technical.)
+
+The bill, Markey says, is "a perfect example" of lawmakers from
+opposite sides of the aisle getting together and "agreeing we don't
+want our wireless devices in our pocket to be called by total
+strangers 10, 15 times a day."
+
+Pretty low bar, yes?  Perhaps someday we will see a liberal from
+California and a conservative from Arkansas get together to fight
+against people who throw beer bottles out of their car window when
+they're in the passing lane on the highway.
+
+But let's not be cynical.  Markey says, "If this bill can't pass then
+no bill can pass," and he's probably right.  You need to root him on,
+given that the other option is falling back in your chair and moaning,
+"No bill can pass."  Come on.
+
+The idea is to make telephone companies try much harder to identify
+and block slimy robocalls.  And to bring enforcement groups together
+to find new ways to prosecute the scammers.  I know it doesn't sound
+all that dramatic, but if you want people to stop calling you every
+day with offers to repay your student loans, it's a better strategy
+than repeatedly screaming "I graduated in 1980!" into the phone.
+
+A version of this article appears in print on , on Page A19 of the New
+York edition with the headline: Let's Destroy Robocalls.
+
+------------------------------
+
+Date: Sun, 03 Mar 2019 08:55:09 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Oscars: IBM & Surveillance AI: Clean Hands?
+
+"And why beholdest thou the mote that is in thy brother's eye, but
+considerest not the beam that is in thine own eye?"
+-- Matthew 7:3 KJV
+
+"The louder he talked of his honor, the faster we counted our spoons."
+-- attributed to Ralph Waldo Emerson, James Boswell
+
+IBM is perhaps the *last* company that should be lecturing about morality
+and ethical behavior in an Oscars commercial, due to its complicity in the
+Holocaust and its continuing work on smart^H^H^H^H^Hbiased surveillance
+technologies.
+
+https://www.economicsvoodoo.com/wp-content/uploads/2012-02-27-IBMs-Role-in-the-Holocaust-What-the-New-Documents-Reveal-_-Edwin-Black.pdf
+
+IBM's Role in the Holocaust -- What the New Documents Reveal
+Edwin Black  Posted: 02/27/2012 4:08 pm EST Updated: 03/17/2015 11:59 am
+
+https://theintercept.com/2018/09/06/nypd-surveillance-camera-skin-tone-search/
+
+IBM Used NYPD Surveillance Footage to Develop Technology That
+Lets Police Search by Skin Color
+George Joseph, Kenneth Lipp September 6 2018, 11:00 a.m
+
+https://www.youtube.com/watch%3Fv%3DgNF8ObJR6K8
+
+Dear Tech: An Open Letter to the Industry
+
+https://www.youtube.com/watch%3Fv%3DeQxr46yaDJM
+
+IBM Lets Put Smart To Work
+
+https://www.youtube.com/watch%3Fv%3DCciZXbCsuxs
+
+Dear Tech Company...
+
+https://slate.com/technology/2019/02/ibm-dear-tech-oscars-ad.html
+
+Why IBM's "Dear Tech" Ad Is So Enraging
+
+Technology hasn't fallen short of its promise.  Tech companies have.
+
+By Evan Selinger  Feb 26, 201910:55 AM
+
+I thought my disgust at tech companies weaponizing commercials to dull
+our sensibilities would hit a long-lasting high after watching the
+Amazon Super Bowl commercial. ...
+
+Unfortunately, after seeing IBM's "Dear Tech" ad during the Oscars, I
+realized that perhaps the worst is yet to come.  This commercial would
+be funny if it were a deliberately ironic self-indictment of how
+little has changed for the big tech companies after the techlash.
+Instead, the love letter to technology itself, which features folks
+rattling off an aspirational wish list, is an insipid gimmick that
+does two awful and interrelated things.
+
+The infantilizing ad depicts technology as if it were an autonomous
+person, a benevolent Santa Claus figure that can give great products
+to all the good little girls and boys if they ask politely.  Mayim
+Bialik helps set the tone by writing a letter addressed to "Dear Tech"
+on a laptop.  Arianna Huffington quickly makes the conversation more
+intimate, saying, "We have a pretty good relationship."  In short
+order, other voices join the chorus to ask questions (such as, "Can we
+build A.I. without bias?") and make declarations (including, "Let's
+champion data rights as human rights") that expand upon Bialik's hope
+that the relationship can be even better.  After all, she informs us,
+tech "has the potential to do so much more."
+
+It all sounds nice.  But the message obscures the fact that technology
+hasn't fallen short of its promise.  It's recalcitrant tech companies
+that need to change.
+
+That includes IBM.  In the fall, it deflected a journalist's questions
+about whether it "secretly used footage from NYPD CCTV cameras to
+develop surveillance technology that could search for individuals
+based on bodily characteristics like age and skin tone."  Rather than
+providing information, it responded with PR about being "absolutely
+committed to responsibly advancing new technologies."
+
+The ad raises the question, "Can we build A.I. without bias?"  It's
+especially interesting to think of a variation of the query in
+relation to IBM's own marketing strategy for its supercomputer Watson.
+What I want to know is: Can tech companies sell A.I. without preying
+on our vulnerabilities and biases?
+
+Commercials for Watson personify the natural language speaking
+technology as an independent being that can rapidly internalize
+massive amounts of human expertise that's embedded in volumes of
+scientific reports and apply the knowledge to wisely make complex
+medical recommendations.  Debate, however, exists over whether
+marketing material led medical practitioners to develop unrealistic
+expectations of what the technology can do, how the technology is
+programmed, and how hard it would be to set up.  Indeed, a few years
+ago, Cory Doctorow slammed the marketing of Watson for Oncology for
+being "deceptive."  Frankly, tough questions should be asked about the
+honesty of the entire tech industry every time a product is depicted
+as more humanlike than it really is, since anthropomorphism triggers
+cognitive biases that can get in the way of us seeing things clearly.
+
+IBM isn't alone in this sunny disingenuousness.  Its competitors also
+give lip service to listening to our hopes and dreams while shutting
+down criticism that's voiced to make things better.  For instance, Joy
+Buolamwini, founder of the Algorithmic Justice League, has been
+tirelessly campaigning for "fighting bias in algorithms."  She's
+proposed viable solutions, and yet when she made a reasonable case
+that Amazon's face analysis technology, Rekognition, "exhibits gender
+and racial bias for gender classification," the company didn't thank
+her and her co-author for their service and outline a plan to improve.
+Instead, the general manager of artificial intelligence at Amazon Web
+Services was overly defensive to the point of being unduly dismissive.
+
+And then there's the problem of platitudes, an issue that's become
+pronounced in the discussion over data privacy.  Microsoft CEO Satya
+Nadella say his company wants the U.S. to adopt a privacy policy that
+treats privacy as a human right and takes its cue from the "fantastic
+start" over in Europe with the General Data Protection Regulation.
+But that leaves a whole lot of wiggle room for interpreting what it
+means to translate human rights values in concrete terms that the U.S.
+judicial system actually can enforce.  Skeptics are concerned that the
+major tech companies -- not just Microsoft, Amazon, and IBM, but also
+Google, Facebook, Twitter, and others--are now pushing for a
+watered-down federal privacy framework as a self-serving end run to
+pre-empt stronger state laws.
+
+Indeed, this is the basic problem with the feel-good appeal to human
+rights in IBM's Dear Tech commercial.  The person who championed the
+ideal may very well have specific and uncompromising principles in
+mind.  But in the messy world where actual policy is made, plenty of
+people who see the world differently can claim to be endorsing the
+sound bite.  A commercial like this one can't avoid being an empty
+marketing pitch when it represents a contested concept as a clear and
+unambiguous wish that technology can magically grant just as easily as
+Santa can satisfy a request for a new smartphone.
+
+Imagine seeing a movie starring Arianna Huffington where she improves
+human rights and civil rights, reduces poverty, and make STEM fields
+less male-dominated simply by having an intense conversation with
+technology and letting it know that that we expect more from it.  The
+absurdity would make it far more likely to be up for a Razzie than an
+Oscar.  Wishy-washy marketing masquerading as a blueprint isn't the
+same thing as the C-suite making hard commitments.  That's why,
+someday, we should hope the Academy Award for Best Documentary Feature
+goes to a film that covers the hard work and concrete ethical demands
+of the human tech employees who are pushing for responsible
+innovation.
+
+https://slate.com/technology/2019/03/joy-buolamwini-dear-tech-companies-ibm-oscars-ad.html
+
+Tech Critics Create a Powerful Response to IBM's Oscars Ad
+
+By Evan Selinger  March 01, 20199:25 AM
+
+During the Oscars, IBM ran an ad called "Dear Tech."  Afterward, I
+wrote a piece for Slate explaining my dismay.  The commercial depicts
+big challenges--biases of both AI and humans, misunderstandings
+between people, data rights, poverty, and male-dominated STEM
+fields--as issues for technology itself to fix.  This idealized and
+reified narrative loses sight of two fundamental things: Tech
+companies are creating some of the key problems here, and ethically
+minded tech workers should be commended for their attempts at finding
+solutions.
+
+In my essay, I expressed frustration at companies like Amazon for
+failing to productively engage with scholars like Joy Buolamwini of
+the MIT Media Lab.  Joy and her colleague Deborah Raji conducted
+valuable research on face analysis technology and racial bias, but the
+folks at Amazon squandered the opportunity to learn from it.
+
+Now, Joy and a great team of collaborators created an alternative to
+IBM's ad.  It's a provocative, line-by-line, video counterstatement.
+(I admit I'm biased here: Joy is a colleague of mine, and my voice is
+among those you'll hear in the video.)
+
+While the original repeats the infantilizing plea "Dear Tech," this one is
+addressed to "Dear Tech Company."  The cast might not have the star power of
+Arianna Huffington and Mayim Bialik, but it consists of people everyone
+should be aware of.  This includes Princeton University professor Ruha
+Benjamin, author of the upcoming book Race After Technology; Ethan
+Zuckerman, director of the Center for Civic Media at MIT; Kade Crockford,
+director of the Technology for Liberty Program at the ACLU of Massachusetts;
+NYU professor Meredith Broussard, author of Artificial Unintelligence: How
+Computers Misunderstand the World; UCLA professor Safiya Umoja Noble, author
+of Algorithms of Oppression: How Search Engines Reinforce Racism; MIT
+professor Sasha Costanza-Chock, author of the forthcoming book Design
+Justice and also faculty associate at the Berkman-Klein Center for Internet
+and Society at Harvard University; Rediet Abebe, co-founder of Black in AI;
+and Kristen Sheets of the Tech Workers Coalition.
+
+The point of this video: These companies do more than sell us goods
+and services.  They influence what people believe about issues ranging
+from what it means to be human to acceptable standards of eroding
+privacy and tolerable displays of asymmetric power.  The most obvious
+way that big tech companies influence public policy is through
+lobbying.  In 2018, Google spent $21.2 million on lobbying, Amazon
+$14.2 million, and Facebook $12.6 million.  But this infusion of money
+isn't the only way that technology companies shape culture.  Product
+design is a major source of their power, while PR work influences the
+public conversation about these products.  The most dangerous message
+promoted by the Dear Tech commercial is that socially responsible
+technology will be on its way simply because people are asking for it.
+This way of characterizing change suggests tech companies aren't
+incentivized to promote outcomes that are more self-serving than
+giving the public what it deserves.
+
+The new video says, "Let's make time to understand the impact of
+technology on people's lives."  It's a powerful message.  Too bad this
+ad doesn't have an Oscars-sized budget behind it.
+
+------------------------------
+
+Date: Wed, 27 Feb 2019 21:02:48 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Robot love? An app to schedule sex? What is wrong with you?"
+  (Chris Matyszczyk)
+
+Chris Matyszczyk for Technically Incorrect, ZDNet, 27 Feb 2019
+Robot love? An app to schedule sex? What is wrong with you?
+Has humanity taken the abdication of all its natural functions a little too
+far?
+
+https://www.zdnet.com/article/robot-love-an-app-to-schedule-sex-what-is-wrong-with-you/
+
+selected text:
+
+Then I sit down, open my laptop and discover that many people can't wait to
+have sex with a robot.  Not only that, but my colleague Greg Nichols even
+informs me that robot love will come as surely as the self-driving car and
+the lawless government.
+
+I pause to wonder whether I could truly fall in love with a machine.  Yes,
+I've quite appreciated a car or two in my time, but not to the extent of
+being driven to snog with one.  Yet apparently robots will, at the very
+least, soon replace the spontaneous lovers of spring and the blooming
+Orchids of Asia.
+
+The reasons offered by experts are painful to behold. We're apparently
+rather liberal with our sense of connection with another.  A plausible
+fantasy will do just fine for us.
+
+I tried to come to terms with this grave new existence, when my colleague
+Jason Perlow unfurled another technological purler.  This is something
+called LoveSync. It's an app that helps you schedule sex with your loved
+one.  It offers a button by your bedside. When you're in the mood for a
+little conjugal in flagrante, you push the button.  If your partner isn't in
+the mood to push theirs, nothing happens.  But if they are, carnal joy
+ensues.
+
+Because you don't even trust yourself to identify natural human signals
+anymore.
+
+May I ask what is wrong with you?
+
+------------------------------
+
+Date: Sun, 3 Mar 2019 10:20:50 -0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Robot workers can't go on strike but they can go up in flames
+  (Straits Times)
+
+https://www.straitstimes.com/world/europe/robot-workers-cant-go-on-strike-but-they-can-go-up-in-flames
+
+"Robots may eventually become so advanced that they can douse flames
+themselves, according to Mr Lawrie at Forrester.  "If they are sufficiently
+smart to be able to pick the produce, I'm sure they are quite smart enough
+to fight a fire," he said.
+
+Risk: Silicon-based property loss mitigation and emergency response
+management automation substituting for municipal, carbon-based fire
+departments.
+
+------------------------------
+
+Date: Sat, 2 Mar 2019 09:02:39 -0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Who's making money from your DNA? (bbc.com)
+
+http://www.bbc.com/capital/story/20190301-how-screening-companies-are-monetising-your-dna
+
+"If you've ever sent off your DNA to an ancestry or health-screening company
+for analysis, chances are your DNA data will be shared with third parties
+for medical research or even for solving crime, unless you've specifically
+asked the company not to do so.
+
+"The point was brought home in late January when it emerged that genetic
+genealogy company FamilyTreeDNA was working with the FBI to test DNA samples
+provided by law enforcement to help identify perpetrators of violent
+crime. Another DNA testing company, 23andMe, has signed a $300m deal with
+pharmaceuticals giant GSK to help it develop new drugs.
+
+"But are customers aware that third parties may have access to their DNA
+data for medical research? And do these kinds of tie-ups bring benefits --
+or should we be concerned?"
+
+Risk: Insider -- Phlebotomists might be enticed by genealogy services or
+intelligence or law enforcement agencies to surreptitiously contribute an
+extra blood sample from a routine wellness visit to a physician's office or
+hospital trip. The metadata for tracing ownership is on the sample label,
+and only a few drops of blood are necessary.
+
+------------------------------
+
+Date: Wed, 27 Feb 2019 16:34:07 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The secret lives of Facebook moderators in America (The Verge)
+
+The panic attacks started after Chloe watched a man die.
+
+She spent the past three and a half weeks in training, trying to harden
+herself against the daily onslaught of disturbing posts: the hate speech,
+the violent attacks, the graphic pornography. In a few more days, she will
+become a full-time Facebook content moderator, or what the company she works
+for, a professional services vendor named Cognizant, opaquely calls a
+“process executive.”
+
+For this portion of her education, Chloe will have to moderate a Facebook
+post in front of her fellow trainees. When it’s her turn, she walks to the
+front of the room, where a monitor displays a video that has been posted to
+the world's largest social network. None of the trainees have seen it
+before, Chloe included. She presses play.  "Someone is stabbing him, dozens
+of times, while he screams and begs for his life."
+
+The video depicts a man being murdered. Someone is stabbing him, dozens of
+times, while he screams and begs for his life. Chloe's job is to tell the
+room whether this post should be removed. She knows that section 13 of the
+Facebook community standards prohibits videos that depict the murder of one
+or more people. When Chloe explains this to the class, she hears her voice
+shaking.
+
+https://www.theverge.com/2019/2/25/18229714/cognizant-facebook-content-moderator-interviews-trauma-working-conditions-arizona
+
+The risk? Facebook.
+
+------------------------------
+
+Date: Fri, 1 Mar 2019 11:22:47 -0500
+From: George Mannes <gmannes@gmail.com>
+Subject: Subaru plans recall: Perfume could cause your car to malfunction
+  (Chicko Stuneoka)
+
+Chieko Tsuneoka, *The Wall Street Journal*, 1 Mar 2019
+This give a whole new meaning to the expression "new car smell."
+https://www.wsj.com/articles/subaru-says-its-cars-and-fabric-softener-dont-mix-11551442945
+
+Subaru Recalls Cars as Some Perfumes Cause Malfunctions: Auto maker's recall
+could affect up to 2.3 million vehicles after discovering glitches linked to
+cosmetics, other household products
+
+TOKYO -- If you drive a Subaru, you may want to avoid wearing perfume or a
+sweater treated with fabric softener -- they could prevent the engine from
+starting.  Subaru Corp. said Friday it plans to recall as many as 2.3
+million Impreza and Forester vehicles world-wide after discovering that
+certain chemical compounds released by everyday products such as cosmetics,
+fabric softener or car polish could cause parts to malfunction.
+
+These malfunctions could affect a brake-light switch that is also involved
+in starting the engine or cause a vehicle-stability warning light to flash
+unnecessarily, the Japanese auto maker said. According to the recall notice
+Subaru filed with Japanese regulators, these chemicals may create an
+insulating layer on the switches that prevents the proper flow of
+electricity.
+
+No accidents related to the problems have been reported, the company
+said. [...]
+
+------------------------------
+
+Date: Fri, 1 Mar 2019 00:11:01 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: iPhone hacking tool being sold on eBay -- but not wiped (Forbes)
+
+An Israeli-made piece of technology that can hack iPhones called the
+Cellebrite UFED is getting out of the hands of law enforcement officials and
+being sold on eBay.
+
+Worse, these secondhand devices may not have been properly "zeroed out" by
+the sellers and still contain data from previous uses. Cellebrite has warned
+customers against the practice of reselling the devices but it hasn't
+stopped them from showing up on eBay, selling for as little as $1,000.
+
+https://www.hackread.com/iphone-hacking-tool-cellebrite-being-sold-on-ebay
+
+------------------------------
+
+Date: Fri, 1 Mar 2019 12:01:10 -0500
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Boeing Unveils Australian-Developed Unmanned Jet
+
+*The Guardian*, 26 Feb 2019, via ACM TechNews, 1 Mar 2019
+
+Boeing has announced an unmanned, fighter-like jet developed and designed to
+fly alongside crewed aircraft in combat. Australia is investing $40 million
+in the prototype program, marking Boeing's biggest investment in unmanned
+systems outside the U.S. Other defense contractors are also putting more
+funding toward autonomous technology, as defense forces around the world
+look for cheaper, safer ways to maximize their resources. The Boeing system
+includes electronic warfare, intelligence, surveillance, and reconnaissance
+functions, in addition to operating like a traditional fighter jet. The
+aircraft's first flight is expected next year.
+
+https://orange.hosting.lsoft.com/trk/click%3Fref%3Dznwrbbrs9_6-1ea46x21aa0ax070896%26
+
+------------------------------
+
+Date: Sat, 2 Mar 2019 12:16:35 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Roscoe Bartlett: The Congressman Who Went Off the Grid (Politico)
+
+https://www.politico.com/magazine/story/2014/01/roscoe-bartlett-congressman-off-the-grid-101720%3Fo%3D0
+
+Interesting fellow -- wrong on most policies but right on his prime worry
+about power grid.
+
+The author's a bit confused about IBM, though, claiming:
+
+  ``it’s also that upbringing that moved him to go into public service, after a
+  science career that saw him go through IBM in its start-up years''
+
+... whereas IBM was founded in 1911 [as the Computing Tabulating Recording
+Company], and he was born 1926.
+
+  [Well, that's only an off-by-15 error, not particularly critical in
+  computer-technology parlance.  PGN]
+
+------------------------------
+
+Date: Sat, 2 Mar 2019 12:39:29 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Your iPhone Has A Hidden List of Every Location You've Been
+
+Taking a step back for a moment, Apple does qualify this Significant
+Locations section by saying that these are encrypted locations and cannot be
+read by Apple. We’ll have to take their word for that part.  But it’s not so
+much that they even qualify it like that. What’s most surprising to me is
+how clearly hidden this section is.
+
+Anyone who has ever built a digital product knows that if you’re putting
+something seven screens away from the main screen with a series of scrolls,
+clicks, and nonobvious names, you’re actively trying to hide the content
+from the end user.
+
+      Can I turn it off?
+
+If you’re uncomfortable with this list, you can simply move the Significant
+Locations switch to the off position. But if you really want to wipe it
+clean, turn it on, scroll to the bottom of the history, and select Clear
+History.
+
+This post is more of an FYI than a serious dig at Apple. At the end of the
+day, we are responsible for letting technology creep further and further
+into our lives, because we keep valuing its personalized benefits over the
+less useful but more private alternate universe.
+
+Do some digging on your own to find out what settings are turned on and
+which you’ve turned off. Find out what settings you can control and what
+exactly they're doing. You control your own tech destiny. This is just one
+quick PSA about an area of your iPhone you probably hadn't explored too
+much. Technology's ability to improve our lives in nearly all aspects is
+clear -- but we as a society are healthiest as a whole when we fully
+understand the implications of how and why it all works.
+
+https://onezero.medium.com/your-iphone-has-a-hidden-tracking-list-of-every-location-youve-been-c227a84bc4fc
+
+------------------------------
+
+Date: Wed, 27 Feb 2019 11:33:07 +0000
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Re: Plastic and other threats to the planet (RISKS-31.08)
+
+I propose a new variant of Clarke's Third Law. "Any sufficiently
+advanced civilisation is doomed".
+
+------------------------------
+
+Date: Wed, 27 Feb 2019 10:14:06 +0000
+From: Tom Gardner <tggzzz@gmail.com>
+Subject: Re: AI's continuing Big Challenge (RISKS-31.08)
+
+Unfortunately but unsurprisingly, this is an old risk.
+
+Back in the early 80s there was an early neural net (IIRC Igor Aleksander's
+WISARD). One use would have been to distinguish between tanks and cars, but
+while it worked well in the lab, it failed dismally on the Lüneburg Heath in
+north Germany.
+
+Eventually the researchers realised that the training set was of pictures of
+tanks on the Lüneburg Heath and pictures of cars from glossy magazines. The
+tank pictures had grey sky, whereas the the car pictures were in bright
+appealing sunshine, with easily understood consequences.
+
+I wonder if we will ever stop rediscovering the desirability of ensuring
+automated systems that can explain their "reasoning".
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.09
+************************

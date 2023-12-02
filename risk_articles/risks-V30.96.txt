@@ -1,0 +1,529 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 30.96
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 12 December 2018  Volume 30 : Issue 96
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.96>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+A note on submissions to RISKS (PGN)
+The War on Truth Spreads (NYTimes)
+Annoyed Baltimore Drivers Want City To Crack Down On 'Squeegee Kids'
+  (npr.org)
+Your apps know where you were last night, and they're not keeping
+  it secret (NYTimes)
+The 'Weird Events' That Make Machines Hallucinate (Linda Geddes)
+Barclays customers can now 'switch off' spending (bbc.com)
+Ships infected with ransomware, USB malware, worms (Catalin Cimpanu)
+Taylor Swift tracked stalkers with facial recognition tech at her concert
+  (The Verge)
+What Happens When You Reply All to 22,000 State Workers[?] (NYTimes)
+U.S. border officers don't always delete collected traveler data
+  (Engadget.com)
+Marriott Data Breach Is Traced to Chinese Hackers as U.S. Readies
+  Crackdown on Beijing (NYTimes)
+Starwood Hotels (PGN via Mabry Tyson)
+Why I'm done with Chrome / A Few Thoughts on Cryptographic Engineering
+  (Cryptography Engineering)
+Screen Time Changes Structure of Kids' Brains: Groundbreaking study
+  (Bloomberg)
+Re: Teen electrocuted while using headphones on plugged-in mobile phone
+  (Richard M Stein)
+Re: Toronto auto theft ... (Steve Lamont)
+Re: Rudy Giuliani Says Twitter Sabotaged His Tweet (Amos Shapir)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 10 Dec 2018 11:11:14 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: A note on submissions to RISKS
+
+                         - BEGIN RANT -
+
+OK, RISKS readers, ``I'm mad as hell, and I'm not going to take it any
+more.''  I'm really fed up with trying to edit what some of you send me,
+trying to produce nice clean readable issues of RISKS, without errors.  I'm
+not giving up on putting out RISKS issues, but the time it takes to put out
+each issue has recently been escalating.  Please don't bother to complain
+about characters that are garbled.  It's wasting your time.  I'm not
+perfect.
+
+From the very early RISKS issues in 1985, I have expressed a desire to
+receive messages with ASCII characters; later on, I made a plea to
+completely avoid attachments in Word, pdf, html, or even encoded ASCII.  I
+process RISKS e-mail with an archaic ASCII-happy mail system, because it
+hugely simplifies my ability to delete more than 80% of the incoming mail
+sight unseen (lots of spam), and then trying to cull out and lightly edit
+your *good* contributions.  Nevertheless, I still get smart quotes and smart
+apostrophes from Mac users, encodings of spaces as underscores (or some
+weird unprintable character) and equal signs from Windows systems that
+insist on encoding certain ASCII characters as non-ascii characters, rampant
+=E2=80 encodings, long lines split with an equal sign at the end of each
+line, non-ASCII From: addresses (e.g., from Mateo), copies of entire RISKS
+issues as attachments when you are responding to an item in a previous
+issue, the entire ASCII text of your would-be contributions completely
+duplicated in horribly fulsome html, rampant extra junk appended (from
+Richard Stein *), URLs that come out with %3A%2F%2F encodings, and more.
+UTF-8 might help a little, but is primarily useful for attachments that use
+it consistently.  Then, for your ease of reading, I try to unscramble overly
+long URLs and verify my attempts at creating shorter ones, and remove all
+the extra cruft created by Office-365-safelinks URL enscramblings that
+evidently offer no real security anyway.  Furthermore, I do not have time to
+cope with alternative approaches, such as your putting jpeg files on your
+website for me to view with a browser.
+
+Perhaps needless to say, I would greatly appreciate if you can spend just a
+few more moments in your submissions to have a little more concern for my
+own well-being.  ASCII is ASCII, and emacs is emacs, and I will remain a
+troglodyte in order to continue to moderate RISKS for you.  I am sorry that
+I do not readily handle all of your special characters.  Clearly, if RISKS
+had to deal with submissions in Cyrillic, Kanji, Farsi, Arabic or whatever,
+I would have to do things very differently -- or simply completely give up
+running a seriously moderated digested new group (where you can create your
+own undigestifier if you prefer).  However, if you think you have a better
+solution, please let me know.  THANKS in advance for your consideration.
+
+                         - END RANT -
+
+[* Footnote from each of Richard Stein's contributions in this issue:
+MDAwMDAwMCAgIGggICB0ICAgdCAgIHAgICBzICAgOiAgIC8gICAvICAgdyAgIHcgICB3ICAg ...
+  ad finitum -- for 77 lines of similar meaningless garbage.
+PGN]
+
+  Let's see who gags on this issue, where I have intentionally left in
+  a few outliers.
+
+------------------------------
+
+Date: Mon, 10 Dec 2018 12:33:42 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The War on Truth Spreads (NYTimes)
+
+An editorial with the above caption in the 10 Dec 2018 issue of *The New
+York Times* considers systemic incursions on freedom of the news media
+around the world, including the Philippines. Hungary. Saudi Arabia. Turkey,
+China, Russia. and even the U.S.  Internet censorship and Internet misuse
+have both played significant roles.  In short, we have vastly transcended
+even the horrors of George Orwell's *1984*.
+
+------------------------------
+
+Date: Mon, 10 Dec 2018 10:39:01 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Annoyed Baltimore Drivers Want City To Crack Down On 'Squeegee
+  Kids' (npr.org)
+
+https://www.npr.org/2018/12/09/667155718/annoyed-baltimore-drivers-want-city-to-crack-down-on-squeegee-kids
+
+How will an autonomous vehicle will address a squeegee bum assault? A horn
+toot? Redirection of windshield sprayers?
+
+------------------------------
+
+Date: Mon, 10 Dec 2018 08:55:07 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Your apps know where you were last night, and they're not keeping
+  it secret (NYTimes)
+
+Every moment of every day, mobile phone apps collect detailed location
+data.Data reviewed by The New York Times shows over 235 million locations
+captured from more than 1.2 million unique devices during a three-day period
+in 2017.
+
+Dozens of companies use smartphone locations to help advertisers and even
+hedge funds. They say it's anonymous, but the data shows how personal it is.
+
+EXCERPT:
+
+The millions of dots on the map trace highways, side streets and bike trails
+-- each one following the path of an anonymous cellphone user.
+
+One path tracks someone from a home outside Newark to a nearby Planned
+Parenthood, remaining there for more than an hour. Another represents a
+person who travels with the mayor of New York during the day and returns to
+Long Island at night.
+
+Yet another leaves a house in upstate New York at 7 a.m. and travels to a
+middle school 14 miles away, staying until late afternoon each school day.
+Only one person makes that trip: Lisa Magrin, a 46-year-old math teacher.
+Her smartphone goes with her.
+
+An app on the device gathered her location information, which was then sold
+without her knowledge. It recorded her whereabouts as often as every two
+seconds, according to a database of more than a million phones in the New
+York area that was reviewed by The New York Times. While Ms. Magrin's
+identity was not disclosed in those records, The Times was able to easily
+connect her to that dot...
+
+[...]
+https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html
+
+------------------------------
+
+Date: Mon, 10 Dec 2018 11:36:58 -0500
+From: ACM TechNews <technews-editor@acm.org>
+Subject: The 'Weird Events' That Make Machines Hallucinate (Linda Geddes)
+
+Linda Geddes, BBC News, 5 Dec 2018 via ACM TechNews, 10 Dec 2018
+
+Computers can be tricked into misidentifying objects and sounds, raising
+issues about the real-world use of artificial intelligence (AI); experts
+call such glitches `adversarial examples' or `weird events'.  Said the
+Massachusetts Institute of Technology (MIT)'s Anish Athalye, ``We can think
+of them as inputs that we expect the network to process in one way, but the
+machine does something unexpected upon seeing that input.''  In one
+experiment, Athalye's team slightly modified the texture and coloring of
+certain physical objects to fool machine learning AI into thinking they were
+something else. MIT's Aleksander Madry said the problem may be rooted partly
+in the tendency to engineer machine learning frameworks to optimize their
+performance on average. Neural networks might be fortified against outliers
+by feeding them more challenging examples of whatever scientists are trying
+to teach them.
+
+https://orange.hosting.lsoft.com/trk/click%3Fref%3Dznwrbbrs9_6-1d7a4x219197x069560%26
+
+------------------------------
+
+Date: Tue, 11 Dec 2018 13:13:05 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Barclays customers can now 'switch off' spending (bbc.com)
+
+https://www.bbc.com/news/business-46512030
+
+``The idea is to help vulnerable customers, particularly problem gamblers, or
+those in serious debt.''
+
+Cellphones, while generally indispensable for communication purposes, are
+gateway devices that can enable addictive behaviors. A compulsive gambler
+smart enough to configure a cellphone application should recognize that
+professional counseling and therapy is more effective than a voluntary, and
+easily overridden, videogame context configuration setting.
+
+A flick of the cellphone application switch precludes a bank debt card from
+being used for problematic and harmful purposes at certain `classes' of
+vendors: ``Groceries and supermarkets, restaurants, takeaways, pubs and bars,
+petrol stations, gambling - including websites, betting shops and lottery
+tickets, premium rate websites and phone lines, including TV voting,
+competitions and adult services.''
+
+Risk: Financial/lifestyle surveillance and profile disclosure via data
+breach or explicit sale.
+
+That a financial institution, not widely known for their altruism, promotes
+this application implies that an intimate profile of an addict as customer
+arises from consolidated spending patterns. Difficult to assess how this
+business intelligence might be exploited internally, or by a 3rd party if
+terms of service stipulate sale and reuse conditions.
+
+------------------------------
+
+Date: Wed, 12 Dec 2018 11:38:44 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Ships infected with ransomware, USB malware, worms
+  (Catalin Cimpanu)
+
+Catalin Cimpanu for Zero Day, 12 Dec 2018
+
+https://www.zdnet.com/article/ships-infected-with-ransomware-usb-malware-worms/
+
+Ships infected with ransomware, USB malware, worms
+Ships are the victims of cyber-security incidents more often than people
+think. Industry groups publish cyber-security guidelines to address issues.
+
+selected text:
+
+For example, the guidelines include the case of a mysterious virus infection
+of the Electronic Chart Display and Information System (ECDIS) that ships
+use for sailing.
+
+     A new-build dry bulk ship was delayed from sailing for several days
+because its ECDIS was infected by a virus. The ship was designed for
+paperless navigation and was not carrying paper charts.
+
+       [No backup!]
+
+Ships were also impacted by ransomware, sometimes directly, while in other
+incidents the ransomware hit backend systems and servers used by ships
+already in their voyage at sea.
+
+For example, in an incident detailed in the report, a shipowner reported not
+one, but two ransomware infections, both occurring due to partners, and not
+necessarily because of the ship's crew.
+
+      [And there are other examples given.]
+
+------------------------------
+
+Date: Wed, 12 Dec 2018 15:13:09 -0500
+From: =?utf-8?Q?Jos=C3=A9=20Mar=C3=ADa=20Mateos?= <chema@rinzewind.org>
+Subject: Taylor Swift tracked stalkers with facial recognition tech at her
+  concert (The Verge)
+
+https://www.theverge.com/2018/12/12/18137984/taylor-swift-facial-recognition-tech-concert-attendees-stalkers
+
+Taylor Swift held a concert at California's Rose Bowl this past May that was
+monitored by a facial recognition system. The system's target? Hundreds of
+Swift's stalkers.
+
+Swift's facial recognition system was built into a kiosk that displayed
+highlights of her rehearsals, which would secretly record onlookers' faces.
+According to Rolling Stone, which spoke with a concert security expert who
+observed the kiosk, attendees who looked at the kiosk were immediately scanned.
+Afterward, the data was sent to a `command post' in Nashville, Tennessee that
+attempted to match hundreds of images to a database of her known stalkers.
+
+José María (Chema) Mateos
+
+------------------------------
+
+Date: Tue, 11 Dec 2018 01:26:32 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: What Happens When You Reply All to 22,000 State Workers[?]
+  (NYTimes)
+
+https://www.nytimes.com/2018/12/10/us/reply-all-utah-state-workers.html
+
+Reply All, the scourge that has afflicted office workers everywhere, has hit
+22,000 government employees in Utah.
+
+------------------------------
+
+Date: Wed, 12 Dec 2018 16:39:58 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: U.S. border officers don't always delete collected traveler data
+  (Engadget.com)
+
+https://www.engadget.com/2018/12/11/cbp-officers-fail-to-delete-traveler-data
+
+``Privacy advocates aren't just concerned about warrantless device searches
+at the border because of the potential for deliberate abuse -- it's that the
+officials might be reckless. And unfortunately, there's evidence this is the
+case in the U.S. Homeland Security's Office of the Inspector General has
+released audit findings showing that Customs and Border Protection (CBP)
+officers didn't properly follow data handling procedures in numerous
+instances, increasing the chances for data leaks and hurting
+accountability.''
+
+Assembled and maintained by CBP, this honeypot of mobile device contacts,
+photos, downloads, browser history, call logs, and credit card/app profiles
+will likely attract ex-filtration attempts.
+
+A comprehensive repository of personal data that can be correlated against
+many other dark-net sources, and maliciously exploited for profit or
+criminal intent.
+
+------------------------------
+
+Date: Wed, 12 Dec 2018 10:07:20 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Marriott Data Breach Is Traced to Chinese Hackers as U.S. Readies
+  Crackdown on Beijing (NYTimes)
+
+Marriott Data Breach Is Traced to Chinese Hackers as U.S. Readies Crackdown
+on Beijing
+
+https://www.nytimes.com/2018/12/11/us/politics/trump-china-trade.html
+
+The Trump administration is expected to indict hackers and roll out import
+restrictions out of concern that Beijing will not easily change its trade,
+cyber[security? privacy? ...] and economic practices.
+
+------------------------------
+
+Date: Wed, 12 Dec 2018 16:19:45 -0800
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Starwood Hotels
+
+  [Thanks to Mabry Tyson.]
+
+https://web.archive.org/web/20151123153316/http%3A//www.cio-today.com/article/index.php%3Fstory_id%3D112003V3SRQ8
+
+21 Nov 2015 (a year or so after the initiation of the intrusion currently in
+the news)
+
+  Starwood Hotels and Resorts Worldwide Inc. is the latest known hotel
+  target of cyber-attackers. The company on Friday announced that hackers
+  had injected malware into point of sale systems at some of its hotels in
+  North America.
+
+  That malware ultimately made it possible for unauthorized parties to tap
+  into the payment card data of some hotel guests. Starwood, which operates
+  brands including Four Points by Sheraton, Aloft, Element, and Westin, now
+  joins the *Trump Hotel Collection and the Hilton chain* of hotels on the
+  list of hotel data breaches.
+
+  As soon as it discovered the breach, Starwood hired outside forensics
+  experts to investigate the depth and breadth of the attack. The result:
+  investigators discovered malware installed in the point of sale systems of
+  some of its restaurants, gift shops and other systems.  *The company said,
+  at this time it doesn't appear Starwood's guest reservation or preferred
+  guest membership systems were breached.*
+
+  ``Starwood certainly isn't the first company to be affected by point of
+  sale malware. The path from discovery to recovery is well-worn at this
+  point.  In some cases this malware has been present for *more than a
+  year.*'' While the incident may seem like a point in time, it's really a
+  lengthy campaign of data theft, Erlin said, adding that he's surprised
+  that fraudulent activity from stolen card data wasn't discovered sooner.
+
+Incidentally, a better reference on the 2015 MARRIOTT intrusion (which
+started July 2014, and ended April 2015) is this (which refers to an earlier
+malware incident in 2014):
+
+https://www.prnewswire.com/news-releases/white-lodging-releases-information-about-data-breach-investigation-at-select-food-and-beverage-outlets-300062065.html
+
+------------------------------
+
+Date: Wed, 12 Dec 2018 02:45:00 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Why I'm done with Chrome / A Few Thoughts on Cryptographic
+  Engineering (Cryptography Engineering)
+
+https://blog.cryptographyengineering.com/2018/09/23/why-im-leaving-chrome/
+
+``One argument is that Google already spies on you via cookies and its
+pervasive advertising network and partnerships, so what's the big deal if
+they force your browser into a logged-in state? One individual I respect
+described the Chrome change as `making you wear two name tags instead of
+one'.''
+
+------------------------------
+
+Date: Sun, 9 Dec 2018 16:13:57 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Screen Time Changes Structure of Kids' Brains: Groundbreaking study
+  (Bloomberg)
+
+Smartphones, tablets and video games are physically changing the brains of
+adolescents, early results from an ongoing $300 million study funded by the
+National Institute of Health have shown, according to a report by *60
+Minutes*.
+
+Scientists will follow more than 11,000 nine- to 10-year-olds for a decade
+to see how childhood experiences impact the brain and affect emotional
+development and mental health. The first bits of data suggest that the
+onslaught of tech screens has been transformative for young people -- and
+maybe not for the better.
+
+In brain scans of 4,500 children, daily screen usage of more than seven
+hours showed premature thinning of the brain cortex, the outermost layer
+that processes information from the physical world. Though the difference
+was significant from participants who spent less screen time, NIH study
+director Gaya Dowling cautioned against drawing a conclusion.  ``We don't
+know if it's being caused by the screen time. We don't know if it's a bad
+thing.  It won't be until we follow them over time that we will see if there
+are outcomes that are associated with the differences that we're seeing in
+this single snapshot.''  (according to an advance script)
+
+Early results from the study, called Adolescent Brain Cognitive Development
+(ABCD), have determined that children who spend more than two hours of
+daily screen time score lower on thinking and language tests. A major data
+release is scheduled for early 2019...
+
+https://www.bloombergquint.com/onweb/screen-time-changes-structure-of-kids-brains-60-minutes-says
+YOU CAN VIEW the (~13 min) segment here:
+https://www.cbsnews.com/news/groundbreaking-study-examines-effects-of-screen-time-on-kids-60-minutes/58aa54508d65e455307%7C40779d3379c44626b8bf140c4d5e9075%7C1
+
+------------------------------
+
+From: Richard M Stein <rmstein@ieee.org>
+Date: Sun, 9 Dec 2018 16:37:24 +0800
+Subject: Re: Teen electrocuted while using headphones on plugged-in mobile
+  phone (Lesher, RISKS-30.95)
+
+[It is not] surprising to learn about counterfeit chargers and phony
+qualification labels that certify safety. Not many consumers can distinguish
+real labels from fake, nor are they inclined when price often determines
+purchase motive. Similar problem for pharmaceuticals, auto parts, and
+aircraft parts. Makes you wonder about drug and travel safety given forgery
+incident frequency. Thx.
+
+------------------------------
+
+Date: Tue, 11 Dec 2018 14:43:59 -0800
+From: Steve Lamont <spl@tirebiter.org>
+Subject: Re: Toronto auto theft ... (RISKS-30.95)
+
+You will note if you read the story that no one has produced an actual relay
+device in evidence.  The rather murky surveillance video still shows the
+alleged miscreant carrying. . . something but whether it's a fob repeater or
+just a plastic bag containing standard burglar tools is entirely unclear to
+me.
+
+Until I see an actual device, color me skeptical.
+
+------------------------------
+
+Date: Mon, 10 Dec 2018 09:43:10 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Rudy Giuliani Says Twitter Sabotaged His Tweet (RISKS-30.95)
+
+Actually this *is* Twitter's fault!  (Though not in the way Giuliani
+thinks).  It is obvious that Giuliani was not aware that Twitter is turning
+periods in his post into links.  But did Twitter do anything to make their
+users -- especially the less technically inclined -- aware of this fact?  Is
+there a way to turn this mis-feature off?  Why did Twitter make it active by
+default, and in such a dumb way (the generated link was not valid as
+written, so it's obvious the user did not intend to enter a link there)?
+
+I have been struggling for years with Gmail's habit of inserting links into
+my incoming mail.  In a past project, I had to analyse data sent in by mail
+as rows of numbers; Gmail insists on turning some of them into links to (non
+existent) phone numbers and addresses, which greatly complicates automatic
+analysis.  (I'd love to hear from anyone who knows how to turn this off).
+
+------------------------------
+
+Date: Tue, 5 May 2018 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks have done to URLs.  I have
+  tried to extract the essence.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.96
+************************

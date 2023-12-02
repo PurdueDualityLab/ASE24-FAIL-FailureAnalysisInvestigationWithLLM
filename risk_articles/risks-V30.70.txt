@@ -1,0 +1,1446 @@
+precedence: bulk
+Subject: Risks Digest 30.70
+
+RISKS-LIST: Risks-Forum Digest  Saturday 26 May 2018  Volume 30 : Issue 70
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.70>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Boy, 9, dies in accident involving motorized room partition at his
+  Fairfax school (WashPo)  
+Don't Put That in My Heart Until You're Sure It Really Works (NYT)
+"Ex-Intel security expert: This new Spectre attack can even
+  reveal firmware secrets" (Liam Tung)
+"This malware is harvesting saved credentials in Chrome, Firefox
+  browsers" (ZDNet)
+Student awarded $36,000 for remote execution flaw in Google App Engine
+  (Charlie Osborne)
+"This cryptocurrency phishing attack uses new trick to drain wallets"
+  (Danny Palmer)
+Ex-JPMorgan Chase Blockchain Duo Unveil New Startup Clovyr (Fortune)
+ICE abandons its dream of ‘extreme vetting’ software that could
+  predict whether a foreign visitor would become a terrorist (WashPo)
+E-Mail Clients are Insecure, PGP and S/MIME 100% secure (Keith Medcalf)
+E-mail Encryption Tools Are No Longer Safe, Researchers Say (Fortune)
+Not So Pretty: What You Need to Know About E-Fail and the PGP Flaw (EFF)
+"T-Mobile bug let anyone see any customer's account details"
+  (Zack Whittaker)
+"Senator wants to know how police can locate any phone in seconds without
+  a warrant" (Zach Whittaker)
+US cell carriers are selling access to your real-time phone location data
+  (Zach Whittaker)
+Hundreds of Apps Can Empower Stalkers to Track Their Victims (NYTimes)
+"Voice squatting attacks: Hacks turn Amazon Alexa, Google Home into
+  secret eavesdroppers" (CSO Online)
+So, Umm, Google Duplex's Chatter Is Not Quite Human (Scientific American)
+Henry Kissinger Is Scared of 'Unstable' Artificial Intelligence (The Wrap)
+Service Meant to Monitor Inmates' Calls Could Track You, Too (NYT)
+Gunshot Sensors Pinpoint Destructive Fish Bombs (SciAm)
+Most GDPR emails unnecessary and some illegal, say experts (The Guardian)
+The Pentagon Has a Big Plan to Solve Identity Verification in Two Years
+  (Defense One)
+Unplug Your Echo! (Ars Technica)
+FBI dramatically overstates how many phones they can't get into (WaPo)
+"Google to remove "secure" indicator from HTTPS pages on Chrome" (ZDNet)
+Google's Selfish Ledger is an unsettling vision of Silicon Valley social
+   engineering (The Verge)
+"A flaw in a connected alarm system exposed vehicles to remote hacking"
+  (ZDNet)
+Syrian hackers who tricked reporters indicted (WashPo)
+Cisco critical flaw warning: These 10/10 severity bugs need patching now
+  (ZDNet)
+Is technology bringing history to life or distorting it? (WashPo)
+Massachusetts ponders hiring a computer to grade MCAS essays.
+  What could go wrong? (The Boston Globe)
+Grocery store censors cake with request for 'summa cum laude'
+  (The Boston Globe)
+The surprising return of the repo man (WashPo)
+Trump feels presidential smartphone security is too inconvenient
+  (Ars Technica)
+Trump Jr. and Other Aides Met With Gulf Emissary Offering Help to Win 
+  Election (NY Times)
+Re: Securing Elections (Mark E. Smith)
+Re: Dark code (Kelly Bert Manning, Richard O'Keefe)
+Fitness App Leads To Arrest For Attack On McLean Cyclist (McLean VA Patch)
+Man Is Charged With Hacking West Point and Government Websites (NYT)
+Fake Facebook accounts and online lies multiply in hours after Santa Fe
+  school shooting (WashPo)
+Re: "Warning: Dangerous Fake Emails About Google Privacy Changes" (Wol)
+Re: Not So Pretty: What You Need to Know About E-Fail and the PGP Flaw
+  (Yooly)
+Re: Deadly Convenience: Keyless Cars and Their Carbon Monoxide Toll (NYT)
+Re: Chinese GPS (Dimitri Maziuk)
+Re: The risk from robot weapons (Amos Shapir)
+Will You Be My Emergency Contact Takes On a Whole New Meaning (NYT)
+This fertility doctor is pushing the boundaries of human reproduction
+  -- with little regulation (WashPo)
+As DIY Gene Editing Gains Popularity, `Someone Is Going to Get Hurt'
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 22 May 2018 09:31:51 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Boy, 9, dies in accident involving motorized room partition at his
+  Fairfax school (WashPo)
+
+http://www.washingtonpost.com/local/public-safety/boy-9-dies-in-accident-involving-motorized-room-partition-at-his-fairfax-school/2018/05/19/8d1d0418-5b9e-11e8-b656-a5f8c2a9295d_story.html
+
+------------------------------
+
+Date: Mon, 21 May 2018 19:30:25 -0700
+From: Richard M Stein <rmstein@ieee.org>
+Subject: Don't Put That in My Heart Until You're Sure It Really Works
+  (NYTimes)
+
+http://www.nytimes.com/2018/05/20/opinion/medical-device-approval.html
+
+'The bar for approval of medical devices is too low. There is no reason we
+shouldn’t require, as we almost always do for drugs, a randomized
+placebo-controlled trial showing improvements in “hard” outcomes like
+mortality before approving them.
+
+'Unfortunately, the United States may soon make it even easier for medical
+devices to reach the patient’s bedside. The Food and Drug Administration is
+considering requiring less upfront research and instead adding increased
+oversight after a device has been introduced into the market. The argument
+is that this will spur technological innovation and perhaps help terminally
+ill patients. However, loosening regulations could extract a steep cost from
+patients and the health system.'
+
+Greater release frequency with less rigorous pre-production qualification
+criteria and test coverage is NOT a recipe for safe and viable embedded
+software stacks that drive these gizmos. Suppressing production defect
+escape potential is challenging. Proactive techniques that facilitate early
+and rapid software defect discovery capability -- such as continuous
+integration and high-speed regression -- are effective when capable test
+authors challenge software stack authors.  Alas, industry (not just embedded
+medical implants, cars, cellphones, etc.) often economize on qualification
+product life cycle stages. There are "too many bits" to test quickly and
+thoroughly. Governance decisions and gut judgment is sometimes applied with
+impunity.
+
+It appears that the FDA has gone rogue, and off-the-rails via regulatory
+capture.  A business-friendly administration promoting "caveat emptor" as
+standard operating procedure also intensifies medical device implantation
+risks. Refer to "The Danger Within Us: America's Untested, Unregulated
+Medical Device Industry and One Man's Battle to Survive It" by Jeanne Lenzer
+for an expose' of the implantable medical device industry. 
+
+If you are confronted with a "hard sell" to "go" for implantation, ask
+a few questions of your physician and the device salesperson:
+
+Are there any randomized control trials and non-industry funded studies that
+evaluate the candidate device's effectiveness in humans? Were the studies
+performed by a non-profit? Or a university? Does the entity reporting the
+study's results receive funding from the device manufacturer? Do any of the
+study's authors disclose industry ties? If so, a report that is published
+might possess skewed findings.  Is the raw data from these studies available
+for inspection? If so, try to find a consultant to review it for you and
+render an opinion.  Will the device manufacturer share their software and
+system test plans for inspection? If so, try to locate a person "skilled in
+the art of embedded software test" to evaluate the test plan, and the
+firmware test results released with the implanted device. Try to gain access
+to the manufacturer's defect tracking system to explore defect density and
+discovery rates and repair history.
+
+Does the device have a special mechanism to disable it, should it misbehave?
+If so, try to learn about how this is accomplished and ensure there are
+backup sources -- other physicians or facilities that possess this
+mechanism.
+
+How many implants have been performed in the past year? How many
+patient deaths occurred post-implantation? Never mind if the deaths
+were attributed to the device or not, find the raw count of deaths.
+
+For each post-implant death, was an FDA MAUDE report filed? How many of
+these reports where filed by medical practitioners? How many by the device
+manufacturer? Confront the salesperson to learn why, or if, there's a huge
+discrepancy between the number of deaths and the number of FDA MAUDE reports
+they or practitioners reported. That discrepancy is apparently a clue that
+the manufacturer is or has concealed important evidence about device
+capability or side-effects that can injure or kill you.
+
+Has the device been the subject of prior recalls? If so, why? Has the
+manufacturer been sued for product liability previously? Are they currently
+under litigation for liability? These questions can provide insight into
+their organization's maturity and ability to pro-actively act on
+lessons-learned.
+
+Is the device implantation under consideration being applied for "an
+off-label" application in your case? If so, why?
+
+------------------------------
+
+Date: Fri, 18 May 2018 09:24:59 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Ex-Intel security expert: This new Spectre attack can even
+  reveal firmware secrets" (Liam Tung)
+
+Liam Tung | 18 May 2018
+http://www.zdnet.com/article/ex-intel-security-expert-this-new-spectre-attack-can-even-reveal-firmware-secrets/
+
+Ex-Intel security expert: This new Spectre attack can even reveal firmware
+secrets; A new variant of Spectre can expose the contents of memory that
+normally can't be accessed by the OS kernel.
+
+opening text:
+
+Yuriy Bulygin, the former head of Intel's advanced threat team, has
+published research showing that the Spectre CPU flaws can be used to break
+into the highly privileged CPU mode on Intel x86 systems known as System
+Management Mode (SMM).
+
+------------------------------
+
+Date: Wed, 16 May 2018 09:11:51 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "This malware is harvesting saved credentials in Chrome, Firefox
+  browsers" (ZDNet)
+
+http://www.zdnet.com/article/this-malware-is-harvesting-saved-credentials-in-chrome-firefox-browsers/
+
+This malware is harvesting saved credentials in Chrome, Firefox browsers
+Researchers say the new Vega Stealer malware is currently being used 
+in a simple campaign but has the potential to go much further.
+By Charlie Osborne for Zero Day | May 14, 2018 -- 07:42 GMT (00:42 
+PDT) | Topic: Security
+
+selected text:
+
+Vega Stealer is also written in .NET and focuses on the theft of 
+saved credentials and payment information in Google Chrome. These 
+credentials include passwords, saved credit cards, profiles, and cookies.
+
+When the Firefox browser is in use, the malware harvests specific 
+files -- "key3.db" "key4.db", "logins.json", and "cookies.sqlite" -- 
+which store various passwords and keys.
+
+However, Vega Stealer does not wrap up there. The malware also takes 
+a screenshot of the infected machine and scans for any files on the 
+system ending in .doc, .docx, .txt, .rtf, .xls, .xlsx, or .pdf for 
+exfiltration.
+
+According to the security researchers, the malware is currently being 
+utilized to target businesses in marketing, advertising, public 
+relations, retail, and manufacturing.
+
+------------------------------
+
+Date: Wed, 23 May 2018 18:07:03 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Student awarded $36,000 for remote execution flaw in Google App Engine
+  (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 22 May 2018
+http://www.zdnet.com/article/google-awards-researcher-36000-for-remote-execution-flaw-in-google-app-engine/
+The discovery was made by a university student who was not aware of 
+how dangerous the vulnerability was.
+
+opening text:
+
+Google has awarded a young cybersecurity researcher $36,337 for disclosing a
+severe vulnerability in the Google App Engine.
+
+The 18-year-old student from Uruguay's University of the Republic discovered
+a critical remote code execution (RCE) bug in the system, which is a
+framework and cloud platform used for the hosting and development of web
+applications in Google data centers.
+
+------------------------------
+
+Date: Fri, 18 May 2018 09:05:54 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "This cryptocurrency phishing attack uses new trick to drain
+  wallets" (Danny Palmer)
+
+Danny Palmer | 17 May 2018
+http://www.zdnet.com/article/this-cryptocurrency-phishing-attack-uses-new-trick-to-drains-wallets/
+
+This cryptocurrency phishing attack uses new trick to drain wallets
+Campaign uses automation to empty cryptocurrency wallets and produce 
+lucrative returns.
+
+... the phishing campaign mimics the front end of the MyEtherWallet website
+for the purpose of stealing credentials, while also deploying what the
+authors call an "automated transfer system" to process the details captured
+by the fake page and transfer funds.
+
+The attack injects scripts into active web sessions and silently and 
+invisibly executes bank transfers just seconds after the user logs 
+into their cryptocurrency account.
+
+Researchers note that MyEtherWallet is an appealing target for attackers
+because it is simple to use, but its lack of security compared to other
+banks and exchanges make it a prominent target for attack.
+
+After that, the crooks look to drain accounts when the victim decrypts their
+wallet. The scam uses scripts which automatically create the fund transfer
+by pressing the buttons like a legitimate user would, all while the activity
+remains hidden -- it's the first time an attack has been seen to use this
+automated tactic.
+
+------------------------------
+
+Date: Wed, 16 May 2018 16:47:10 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Ex-JPMorgan Chase Blockchain Duo Unveil New Startup Clovyr (Fortune)
+
+Baldet, who most recently served as the bank’s blockchain program lead, is
+cofounding a new startup, Clovyr, that aims to help consumers, developers,
+and businesses explore the nascent, albeit burgeoning, world of
+blockchain-based, decentralized technologies, she tells Fortune. She is
+joined by Nielsen, former lead developer of Quorum, a JPMorgan Chase-built
+blockchain for business, who will serve as the concern’s chief technologist.
+
+Baldet unveiled a Clovyr demo at the Consensus conference in Manhattan on
+Monday afternoon. The company is in the process of fundraising.
+
+Clovyr's product, now under development, is slated to take the form of
+something akin to an app store, where people and businesses can experiment
+with a multitude of decentralized apps and services, developer toolsets, and
+underlying distributed ledgers. The cofounders envision the platform serving
+as a neutral ground, offering a browser-like dashboard for the
+blockchain-curious, through which Clovyr can provide support and other
+services to customers according to their needs.
+
+http://fortune.com/2018/05/14/blockchain-jpmorgan-chase-amber-baldet-clovyr/
+
+Just what consumers need. What could go wrong? Also, what's with "Clovyr"
+name?
+
+------------------------------
+
+Date: Thu, 17 May 2018 16:48:50 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: ICE abandons its dream of ‘extreme vetting’ software that could
+  predict whether a foreign visitor would become a terrorist (WashPo)
+
+Immigration officials originally wanted artificial intelligence that could
+continuously track foreign visitors' social media. They're giving the job to
+humans instead.
+
+http://www.washingtonpost.com/news/the-switch/wp/2018/05/17/ice-just-abandoned-its-dream-of-extreme-vetting-software-that-could-predict-whether-a-foreign-visitor-would-become-a-terrorist/
+
+------------------------------
+
+Date: Thu, 17 May 2018 15:10:11 -0600
+From: "Keith Medcalf" <kmedcalf@dessus.com>
+Subject: E-Mail Clients are Insecure, PGP and S/MIME 100% secure
+
+There is no "security" problem with either PGP or S/MIME encrypted and
+signed messages.  The problem is, as it has been since the introduction of
+the ability to embed executable code into e-mail messages (aka, Web Pages
+and Rich Text via SMTP), the shoddy and useless security state of almost all
+e-mail clients.
+
+If you turn off the [expletive deleted] (HTML code execution, etc) then
+there is no problem.  In other words, the only problem that exists is that
+which you created yourself.  So if you do something utterly stupid, you
+deserve whatever you get in return.
+
+------------------------------
+
+Date: Mon, 14 May 2018 15:06:45 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: E-mail Encryption Tools Are No Longer Safe, Researchers Say (Fortune)
+
+Throughout the many arguments over encrypted communications, there has been
+at least one constant: the venerable tools for strong email encryption are
+trustworthy. That may no longer be true.
+
+On Tuesday, well-credentialed cybersecurity researchers will detail what
+they call critical vulnerabilities in widely-used tools for applying PGP/GPG
+and S/MIME encryption. According to Sebastian Schinzel, a professor at the
+Münster University of Applied Sciences in Germany, the flaws could reveal
+the plaintext that email encryption is supposed to cover up -- in both
+current and old emails.
+
+The researchers are advising everyone to temporarily stop using plugins for
+mail clients like Microsoft Outlook and Apple Mail that automatically
+encrypt and decrypt emails -- at least until someone figures out how to
+remedy the situation. Instead, experts say, people should switch to tools
+like Signal, the encrypted messaging app that's bankrolled by WhatsApp
+co-founder Brian Acton.
+
+http://fortune.com/2018/05/14/email-encryption-tool-vulnerability-cybersecurity-warning/
+
+------------------------------
+
+Date: Tue, May 15, 2018 at 12:38 AM
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Not So Pretty: What You Need to Know About E-Fail and the PGP Flaw
+  (EFF)
+
+Erica Portnoy, Danny O'Brien, and Nate Cardozo, EFF, 14 May 2018
+http://www.eff.org/deeplinks/2018/05/not-so-pretty-what-you-need-know-about-e-fail-and-pgp-flaw-0
+
+Don't panic! But you should stop using PGP for encrypted email and switch
+to a different secure communications method for now.
+
+A group of researchers released a paper today that describes a new class of
+serious vulnerabilities in PGP (including GPG), the most popular email
+encryption standard. The new paper includes a proof-of-concept exploit that
+can allow an attacker to use the victim's own email client to decrypt
+previously acquired messages and return the decrypted content to the
+attacker without alerting the victim. The proof of concept is only one
+implementation of this new type of attack, and variants may follow in the
+coming days.
+
+Because of the straightforward nature of the proof of concept, the severity
+of these security vulnerabilities, the range of email clients and plugins
+affected, and the high level of protection that PGP users need and expect,
+EFF is advising PGP users to pause in their use of the tool and seek other
+modes of secure end-to-end communication for now.
+
+Because we are awaiting the response from the security community of the
+flaws highlighted in the paper, we recommend that for now you uninstall or
+disable your PGP email plug-in. These steps are intended as a temporary,
+conservative stopgap until the immediate risk of the exploit has passed and
+been mitigated against by the wider community. There may be simpler
+mitigations available soon, as vendors and commentators develop narrower
+solutions, but this is the safest stance to take for now. Because sending
+PGP-encrypted emails to an unpatched client will create adverse ecosystem
+incentives to open incoming emails, any of which could be maliciously
+crafted to expose ciphertext to attackers.
+
+While you may not be directly affected, the other participants in your
+encrypted conversations are likely to be. For this attack, it isn't
+important whether the sender or the receiver of the original secret message
+is targeted. This is because a PGP message is encrypted to both of their
+keys.
+
+At EFF, we have relied on PGP extensively both internally and to secure
+much of our external-facing email communications. Because of the severity
+of the vulnerabilities disclosed today, we are temporarily dialing down our
+use of PGP for both internal and external email.
+
+Our recommendations may change as new information becomes available, and we
+will update this post when that happens.
+
+How The Vulnerabilities Work
+
+PGP, which stands for Pretty Good Privacy, was first released nearly 27
+years ago by Phil Zimmermann. Extraordinarily innovative for the time, PGP
+transformed the level of privacy protection available for digital
+communications, and has provided tech-savvy users with the ability to
+encrypt files and send secure email to people they've never met. Its strong
+security has protected the messages of journalists, whistleblowers,
+dissidents, and human rights defenders for decades. While PGP is now a
+privately-owned tool, an open source implementation called GNU Privacy
+Guard (GPG) has been widely adopted by the security community in a number
+of contexts, and is described in the OpenPGP Internet standards document.
+
+The paper describes a series of vulnerabilities that all have in common
+their ability to expose email contents to an attacker when the target opens
+a maliciously crafted email sent to them by the attacker. In these attacks,
+the attacker has obtained a copy of an encrypted message, but was unable to
+decrypt it.
+
+The first attack is a direct exfiltration attack that is caused by the
+details of how mail clients choose to display HTML to the user. The
+attacker crafts a message that includes the old encrypted message. The
+new message is constructed in such a way that the mail software
+displays the entire decrypted message -- including the captured
+ciphertext -- as unencrypted text. Then the email client's HTML parser
+immediately sends or exfiltrates the decrypted message to a server
+that the attacker controls.
+
+The second attack abuses the underspecification of certain details in the
+OpenPGP standard to exfiltrate email contents to the attacker by modifying
+a previously captured ciphertext. Here are some technical details of the
+vulnerability, in plain-as-possible language:
+
+When you encrypt a message to someone else, it scrambles the information
+into ciphertext such that only the recipient can transform it back into
+readable plaintext.  But with some encryption algorithms, an attacker can
+modify the ciphertext, and the rest of the message will still decrypt back
+into the correct plaintext. This property is called malleability. This
+means that they can change the message that you read, even if they can't
+read it themselves.
+
+To address the problem of malleability, modern encryption algorithms add
+mechanisms to ensure integrity, or the property that assures the recipient
+that the message hasn't been tampered with. But the OpenPGP standard says
+that it's ok to send a message that doesn't come with an integrity check.
+And worse, even if the message does come with an integrity check, there are
+known ways to strip off that check. Plus, the standard doesn't say what to
+do when the check fails, so some email clients just tell you that the check
+failed, but show you the message anyway. ...
+
+http://dewaynenet.wordpress.com/feed/
+
+------------------------------
+
+Date: Thu, 24 May 2018 18:24:24 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "T-Mobile bug let anyone see any customer's account details"
+  (Zack Whittaker)
+
+Zack Whittaker for Zero Day | 24 May 2018
+
+http://www.zdnet.com/article/tmobile-bug-let-anyone-see-any-customers-account-details/
+
+T-Mobile bug let anyone see any customer's account details Exclusive: The
+exposed lookup tool let anyone run a customer's phone number -- and obtain
+their home address and account PIN, used to contact phone support.
+
+selected text:
+
+A bug in T-Mobile's website let anyone access the personal account details
+of any customer with just their cell phone number.
+
+The flaw, since fixed, could have been exploited by anyone who knew where to
+look -- a little-known T-Mobile subdomain that staff use as a customer care
+portal to access the company's internal tools.
+
+Although the API is understood to be used by T-Mobile staff to look up
+account details, it wasn't protected with a password and could be easily
+used by anyone.
+
+The returned data included a customer's full name, postal address, billing
+account number, and in some cases information about tax identification
+numbers.  The data also included customers' account information, such as if
+a bill is past-due or if the customer had their service suspended.
+
+The data also included references to account PINs used by customers as a
+security question when contacting phone support. Anyone could use that
+information to hijack accounts.
+
+  [Gene also contributed a previous item from Zack Whittaker om 17 May
+  on the same subject:
+http://www.zdnet.com/article/cell-phone-tracking-firm-exposed-millions-of-americans-real-time-locations/
+  I think the more recent one suffices here.  PGN]
+
+------------------------------
+
+Date: Fri, 18 May 2018 09:27:33 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Senator wants to know how police can locate any phone in
+  seconds without a warrant" (Zach Whittaker)
+
+Zack Whittaker for Zero Day | May 11, 2018
+http://www.zdnet.com/article/securus-police-cell-phones-warrantless-tracking/
+
+Senator wants to know how police can locate any phone in seconds without a
+warrant.  Real-time location data was accessible by police under "the legal
+equivalent of a pinky promise," said a senator who is demanding that the FCC
+investigate why a company, contracted to monitor calls of prison inmates,
+also allows police to track phones of anyone in the US without a warrant.
+
+The bombshell story in *The New York Times& revealed Securus, a Texas-based
+prison technology company, could track any phone "within seconds" by
+obtaining data from cellular giants -- including AT&T, Sprint, T-Mobile, and
+Verizon -- typically reserved for marketers.
+
+------------------------------
+
+Date: Fri, 18 May 2018 09:29:13 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "US cell carriers are selling access to your real-time phone
+  location data" (Zach Whittaker)
+
+Zack Whittaker, Zero Day, 14 May 2018
+http://www.zdnet.com/article/us-cell-carriers-selling-access-to-real-time-location-data/
+
+US cell carriers are selling access to your real-time phone location data
+The company embroiled in a privacy row has "direct connections" to all major
+US wireless carriers, including AT&T, Verizon, T-Mobile, and Sprint -- and
+Canadian cell networks, too.
+
+Four of the largest cell giants in the US are selling your real-time
+location data to a company that you've probably never heard about before.
+
+In case you missed it, a senator last week sent a letter demanding the
+Federal Communications Commission (FCC) investigate why Securus, a prison
+technology company, can track any phone "within seconds" by using data
+obtained from the country's largest cell giants, including AT&T, Verizon,
+T-Mobile, and Sprint, through an intermediary, LocationSmart.
+
+------------------------------
+
+Date: Sat, 19 May 2018 07:36:23 -0700
+From: Richard M Stein <rmstein@ieee.org>
+Subject: Hundreds of Apps Can Empower Stalkers to Track Their Victims
+  (The New York Times)
+
+http://mobile.nytimes.com/2018/05/19/technology/phone-apps-stalking.html
+
+  'KidGuard is a phone app that markets itself as a tool for keeping tabs on
+  children. But it has also promoted its surveillance for other purposes and
+  run blog posts with headlines like *How to Read Deleted Texts on Your
+  Lover's Phone.*
+
+  'A similar app, mSpy, offered advice to a woman on secretly monitoring her
+  husband. Still another, Spyzie, ran ads on Google alongside results for
+  search terms like *catch cheating girlfriend iPhone*.
+
+  'As digital tools that gather cellphone data for tracking children,
+  friends or lost phones have multiplied in recent years, so have the
+  options for people who abuse the technology to track others without
+  consent.'
+
+Surveillance capitalism is booming. These apps are e^(to the creepy).
+
+------------------------------
+
+Date: Fri, 18 May 2018 15:06:20 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Voice squatting attacks: Hacks turn Amazon Alexa, Google Home
+  into secret eavesdroppers" (CSO Online)
+
+http://www.csoonline.com/article/3273929/security/voice-squatting-attacks-hacks-turn-amazon-alexa-google-home-into-secret-eavesdroppers.html
+
+Voice squatting attacks: Hacks turn Amazon Alexa, Google Home into secret
+eavesdroppers.  Researchers devise new two new attacks -- voice squatting
+and voice masquerading -- on Amazon Alexa and Google Home, allowing
+adversaries to steal personal information or silently eavesdrop.
+
+Ms. Smith, CSO | 17 May 2018
+
+Ms. Smith (not her real name) is a freelance writer and programmer with a
+special and somewhat personal interest in IT privacy and security issues.
+
+opening text:
+
+Oh, goody, Amazon Alexa and/or Google Home could be hit with remote,
+large-scale "voice squatting" and "voice masquerading" attacks to steal
+sensitive user information or eavesdrop on conversations.
+
+------------------------------
+
+Date: Fri, 18 May 2018 17:56:12 -0700
+From: Richard M Stein <rmstein@ieee.org>
+Subject: So, Umm, Google Duplex's Chatter Is Not Quite Human
+  (Scientific American)
+
+http://www.scientificamerican.com/article/so-umm-google-duplexs-chatter-is-not-quite-human/
+
+  "Google’s Duplex voice assistant drew applause last week at the company’s
+  annual I/O developer conference after CEO Sundar Pichai demonstrated the
+  artificially intelligent technology autonomously booking a hair salon
+  appointment and a restaurant reservation, apparently fooling the people
+  who took the calls. But enthusiasm has since been tempered with unease
+  over the ethics of a computer making phone calls under the guise of being
+  human. Such a mixed reception has become increasingly common for Google,
+  Amazon, Facebook and other tech companies as they push AI's boundaries in
+  ways that do not always seem to consider consumer privacy or safety
+  concerns."
+
+------------------------------
+
+Date: Fri, 18 May 2018 08:27:18 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Henry Kissinger Is Scared of 'Unstable' Artificial Intelligence
+  (The Wrap)
+
+via NNSquad
+http://www.thewrap.com/henry-kissinger-is-scared-of-unstable-artificial-intelligence/
+
+  The former U.S. secretary of state is warning against the threat of
+  "unstable" artificial intelligence in a new essay in The Atlantic --
+  fearing the rapid rise of machines could lead to questions humanity is not
+  ready to tackle.
+
+------------------------------
+
+Date: Sat, 19 May 2018 17:56:25 -0700
+From: Monty Solomon <monty@roscom.com>
+Subject: Service Meant to Monitor Inmates' Calls Could Track You, Too (NYT)
+
+http://www.nytimes.com/2018/05/10/technology/cellphone-tracking-law-enforcement.html
+
+A company catering to law enforcement and corrections officers has raised
+privacy concerns with a product that can locate almost anyone's cellphone
+across the United States.
+
+------------------------------
+
+Date: Fri, 18 May 2018 17:53:59 -0700
+From: Richard M Stein <rmstein@ieee.org>
+Subject: Gunshot Sensors Pinpoint Destructive Fish Bombs (SciAm)
+
+http://www.scientificamerican.com/article/gunshot-sensors-pinpoint-destructive-fish-bombs/
+
+  "Rogue fishers around the world toss explosives into the sea and scoop up
+  bucketloads of stunned or dead fish, an illegal practice in many nations
+  that can destroy coral reefs and wreak havoc on marine biodiversity.
+  Catching perpetrators amid the vastness of the ocean has long proved
+  almost impossible, but researchers working in Malaysia have now adapted
+  acoustic sensors—originally used to locate urban gunfire—to pinpoint these
+  marine blasts within tens of meters."
+
+Example of dual-use technology for public and environmental safety
+maintenance.
+
+------------------------------
+
+Date: Mon, 21 May 2018 12:04:35 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Most GDPR emails unnecessary and some illegal, say experts
+  (The Guardian)
+
+NNSquad
+http://www.theguardian.com/technology/2018/may/21/gdpr-emails-mostly-unnecessary-and-in-some-cases-illegal-say-experts
+
+  The vast majority of emails flooding inboxes across Europe from companies
+  asking for consent to keep recipients on their mailing list are
+  unnecessary and some may be illegal, privacy experts have said, as new
+  rules over data privacy come into force at the end of this week.
+
+AND EVEN WORSE: "Warning: New European Privacy Law Has Become a
+Jackpot for Internet Crooks" -
+
+http://lauren.vortex.com/2018/05/01/warning-new-european-privacy-law-has-become-a-jackpot-for-internet-crooks
+
+------------------------------
+
+Date: Wed, 23 May 2018 13:58:50 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Pentagon Has a Big Plan to Solve Identity Verification in
+ Two Years (Defense One)
+
+The plan grew out of efforts to modernize the Defense Department's ID cards.
+
+The Defense Department is funding a project that officials say could
+revolutionize the way companies, federal agencies and the military itself
+verify that people are who they say they are and it could be available in
+most commercial smartphones within two years.
+
+The technology, which will be embedded in smartphones’ hardware, will
+analyze a variety of identifiers that are unique to an individual, such as
+the hand pressure and wrist tension when the person holds a smartphone and
+the person’s peculiar gait while walking, said Steve Wallace, technical
+director at the Defense Information Systems Agency.
+
+Organizations that use the tool can combine those identifiers to give the
+phone holder a “risk score,” Wallace said. If the risk score is low enough,
+the organization can presume the person is who she says she is and grant her
+access to sensitive files on the phone or on a connected computer or grant
+her access to a secure facility. If the score’s too high, she’ll be locked
+out.
+
+http://www.defenseone.com/technology/2018/05/pentagon-has-big-plan-solve-identity-verification-two-years/148280/
+
+------------------------------
+
+Date: Thu, 24 May 2018 17:41:32 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Unplug Your Echo! (Ars Technica)
+
+  [Thanks to Phil Porras]
+http://arstechnica.com/gadgets/2018/05/amazon-confirms-that-echo-device-secretly-shared-users-private-audio/
+
+Amazon confirmed an Echo owner's privacy-sensitive allegation on Thursday,
+after Seattle CBS affiliate KIRO-7 reported that an Echo device in Oregon
+sent private audio to someone on a user's contact list without permission.
+...."Unplug your Alexa devices right now," the user, Danielle (no last name
+given), was told by her husband's colleague in Seattle after he received
+full audio recordings between her and her husband, according to the KIRO-7
+report. The disturbed owner, who is shown in the report juggling four
+unplugged Echo Dot devices, said that the colleague then sent the offending
+audio to Danielle and her husband to confirm the paranoid-sounding
+allegation.  (Before sending the audio, the colleague confirmed that the
+couple had been talking about hardwood floors.)
+
+After calling Amazon customer service, Danielle said she received the
+following explanation and response: "'Our engineers went through all of your
+logs. They saw exactly what you told us, exactly what you said happened, and
+we're sorry.' He apologized like 15 times in a matter of 30 minutes.  'This
+is something we need to fix.'" ...  Ya think?
+
+------------------------------
+
+Date: Tue, 22 May 2018 18:15:53 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: FBI dramatically overstates how many phones they can't get into (WaPo)
+
+http://www.washingtonpost.com/world/national-security/fbi-repeatedly-overstated-encryption-threat-figures-to-congress-public/2018/05/22/5b68ae90-5dce-11e8-a4a4-c070ef53f315_story.html
+
+The FBI has repeatedly provided grossly inflated statistics to Congress and
+the public about the extent of problems posed by encrypted cellphones,
+claiming investigators were locked out of nearly 7,800 devices connected to
+crimes last year when the correct number was much smaller, probably between
+1,000 and 2,000, The Washington Post has learned.  [They've actually been
+triple-counting!  PGN]
+
+Over a period of seven months, FBI Director Christopher A. Wray cited the
+inflated figure as the most compelling evidence for the need to address what
+the FBI calls Going Dark -- the spread of encrypted software that can block
+investigators' access to digital data even with a court order.
+
+The FBI first became aware of the miscount about a month ago and still does
+not have an accurate count of how many encrypted phones they received as
+part of criminal investigations last year, officials said. Last week, one
+internal estimate put the correct number of locked phones at 1,200, though
+officials expect that number to change as they launch a new audit, which
+could take weeks to complete, according to people familiar with the work. [...]
+
+  [See EFF's take on this:
+http://www.eff.org/deeplinks/2018/05/fbi-admits-it-inflated-number-supposedly-unhackable-devices
+  PGN]
+
+------------------------------
+
+Date: Fri, 18 May 2018 09:13:42 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Google to remove "secure" indicator from HTTPS pages on Chrome"
+  (ZDNet)
+
+  [In other news, your local second-level (province, state, prefecture,
+  etc.) government announced plans to remove those curve speed caution signs
+  to make the roads safer.  Well, not actually.  They have a bit more sense
+  than Google. GW]
+
+http://www.zdnet.com/article/google-to-remove-secure-indicator-from-https-pages-on-chrome/
+
+Stephanie Condon, ZDNet, 17 May 2018 
+Google to remove "secure" indicator from HTTPS pages on Chrome
+Users should expect the web to be safe by default, Google explained.
+
+As part of its push to make the web safer, Google on Thursday said it will
+stop marking HTTPS pages as "secure."
+
+The logic behind the move, Google explained, is that "users should expect
+that the web is safe by default." It will remove the green padlock and
+"secure" wording from the address bar beginning with Chrome 69 in September.
+
+------------------------------
+
+Date: Thu, 17 May 2018 15:55:43 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Google's Selfish Ledger is an unsettling vision of Silicon Valley
+  social engineering (The Verge)
+
+Google has built a multibillion-dollar business out of knowing everything
+about its users. Now, a video produced within Google and obtained by The
+Verge offers a stunningly ambitious and unsettling look at how some at the
+company envision using that information in the future.
+
+The video was made in late 2016 by Nick Foster, the head of design at X
+(formerly Google X), and a co-founder of the Near Future Laboratory. The
+video, shared internally within Google, imagines a future of total data
+collection, where Google helps nudge users into alignment with their goals,
+custom-prints personalized devices to collect more data, and even guides the
+behavior of entire populations to solve global problems like poverty and
+disease.
+
+When reached for comment on the video, an X spokesperson provided the
+following statement to The Verge:
+
+  “We understand if this is disturbing -- it is designed to be. This is a
+  thought-experiment by the Design team from years ago that uses a technique
+  known as ‘speculative design’ to explore uncomfortable ideas and concepts
+  in order to provoke discussion and debate. It's not related to any current
+  or future products.”
+
+http://www.theverge.com/2018/5/17/17344250/google-x-selfish-ledger-video-data-privacy
+
+------------------------------
+
+Date: Fri, 18 May 2018 09:31:10 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "A flaw in a connected alarm system exposed vehicles to remote
+  hacking" (ZDNet)
+
+Zack Whittaker for Zero Day | 17 May 2018
+http://www.zdnet.com/article/flaw-connected-alarm-system-exposed-vehicles-remote-hacking/
+
+The researchers said it was easy to locate a nearby car, unlock it, and
+drive away.
+
+opening text:
+
+A bug that allowed two researchers to gain access to the backend systems of
+a popular Internet-connected vehicle management system could have given a
+malicious hacker everything they needed to track the vehicle's location,
+steal user information, and even cut out the engine.
+
+In a disclosure this week, the researchers Vangelis Stykas and George
+Lavdanis detailed a bug in a misconfigured server run by Calamp, a
+telematics company that provides vehicle security and tracking, which gave
+them "direct access to most of its production databases."
+
+------------------------------
+
+Date: Thu, 17 May 2018 20:55:36 -0700
+From: Monty Solomon <monty@roscom.com>
+Subject: Syrian hackers who tricked reporters indicted (WashPo)
+
+The pair used phishing schemes to compromise news organizations.
+
+http://www.washingtonpost.com/local/public-safety/syrian-hackers-who-allegedly-tricked-reporters-indicted/2018/05/17/069ef328-59e7-11e8-858f-12becb4d6067_story.html
+
+------------------------------
+
+Date: Fri, 18 May 2018 08:57:22 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Cisco critical flaw warning: These 10/10 severity bugs need
+  patching now" (ZDNet)
+
+Liam Tung, ZDNet, 17 May 2018
+
+http://www.zdnet.com/article/cisco-critical-flaw-warning-these-1010-severity-bugs-need-patching-now/
+
+Cisco critical flaw warning: These 10/10 severity bugs need patching now
+Cisco's software for managing software-defined networks has three critical,
+remotely exploitable vulnerabilities.
+
+------------------------------
+
+Date: Thu, 17 May 2018 21:01:00 -0700
+From: Monty Solomon <monty@roscom.com>
+Subject: Is technology bringing history to life or distorting it? (WashPo)
+
+  From a digitized JFK speech that he never gave to colorized Lincoln and
+  Holocaust photos, scholars are debating a wave of historical re-creation
+  and manipulation.
+
+http://www.washingtonpost.com/news/retropolis/wp/2018/05/10/is-technology-bringing-history-to-life-or-distorting-it/
+
+------------------------------
+
+Date: Tue, 22 May 2018 09:26:21 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Massachusetts ponders hiring a computer to grade MCAS essays.
+  What could go wrong? (The Boston Globe)
+
+http://www.bostonglobe.com/metro/2018/05/21/mass-ponders-hiring-computer-grade-mcas-essays-what-could-wrong/D7fX11PReUWzVsAAdqC1qN/story.html
+
+------------------------------
+
+Date: Tue, 22 May 2018 09:18:13 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Grocery store censors cake with request for 'summa cum laude'
+  (The Boston Globe)
+
+http://www.bostonglobe.com/news/nation/2018/05/22/grocery-store-censors-cake-with-request-for-summa-cum-laude/npFzLAzg2b7w54247o3MIO/story.html
+
+  [I won't insult long-time RISKS readers with pointers to the predecessors
+  of this item.  There are too many.  PGN]
+
+------------------------------
+
+Date: Wed, 16 May 2018 07:47:04 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: The surprising return of the repo man (WashPo)
+
+New technology and bad auto loans mean more cars are being taken back.
+
+http://www.washingtonpost.com/business/economy/the-surprising-return-of-the-repo-man/2018/05/15/26fcd30e-4d5a-11e8-af46-b1d6dc0d9bfe_story.html
+
+------------------------------
+
+Date: Tue, 22 May 2018 15:59:15 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Trump feels presidential smartphone security is too inconvenient
+  (Ars Technica)
+
+Report: President Trump clings to his Twitter phone, reluctant to allow
+security checks.
+
+http://arstechnica.com/information-technology/2018/05/trump-feels-presidential-smartphone-security-is-too-inconvenient/
+
+Security ... inconvenient. Who knew?
+
+------------------------------
+
+Date: Sat, 19 May 2018 10:22:51 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Trump Jr. and Other Aides Met With Gulf Emissary Offering Help to
+  Win Election (NY Times)
+
+NNSquad
+http://www.nytimes.com/2018/05/19/us/politics/trump-jr-saudi-uae-nader-prince-zamel.html%3Fsmid%3Dtw-nytimes%26smtyp%3Dcur
+
+  Three months before the 2016 election, a small group gathered at Trump
+  Tower to meet with Donald Trump Jr., the president's eldest son. One was
+  an Israeli specialist in social media manipulation. Another was an
+  emissary for two wealthy Arab princes. The third was a Republican donor
+  with a controversial past in the Middle East as a private security
+  contractor.
+
+------------------------------
+
+Date: Thu, 17 May 2018 10:00:20 -0700
+From: "Mark E. Smith" <mymark@gmail.com>
+Subject: Re: Securing Elections (RISKS-30.69)
+
+PGN cites Bruce Schneier:
+
+  "Elections serve two purposes. The first, and obvious, purpose is to
+  accurately choose the winner. But the second is equally important: to
+  convince the loser. To the extent that an election system is not
+  transparently and auditably accurate, it fails in that second purpose.
+  Our election systems are failing, and we need to fix them."
+
+Elections serve a third purpose, one which I think is much more important
+than accurately choosing a winner and convincing the loser: US elections are
+intended to make people think that they have a say in government when they
+don't.
+
+Some of the framers of the Constitution were concerned about the possibility
+of the "mob and rabble" eventually getting the vote and using it to obtain a
+voice in government. So they made no Constitutional provision that the
+popular vote had to be counted (Bush v. Gore 2000). They also took other
+precautions. They made Congress the sole judge of the "Elections, Returns,
+and Qualifications" of its Members, and the only venue where the loser of a
+rigged election could appeal. But by the time they file that appeal, the
+"winner" has usually already been sworn into office, and Congress doesn't
+like to remove sitting members, so if anyone is aware of an appeal that has
+been successful, I'd like very much to know about it.
+
+We are so accustomed to a losing candidate taking office, that it isn't even
+noteworthy these days. The Supreme Court can intervene to seat the loser, or
+the winner can concede and throw the election to the loser. In a democratic
+system, such events would result in a new election, not in handing over
+office to somebody who wasn't elected.
+
+These realizations and others led me to informally poll the groups of
+election integrity activists I was part of at that time, with shocking
+results. I asked if they would still vote if the only permissible voting
+machine was a flush toilet. Approximately 50% stated that they would
+continue to vote, even if they knew for a fact that their vote would not be
+counted and would be flushed away as soon as they cast their ballot. Some
+angrily accused me to trying to take away their precious right to vote, for
+which their ancestors had fought and died.
+
+So I repeated the poll online and got the same result. About 50% of voters
+appear to be concerned with casting their votes, not about whether their
+votes are actually counted, no less counted accurately.  They associate
+democracy with elections, so they believe that if they vote, whether or not
+their votes are counted accurately (or at all), they are participating in
+democracy.
+
+If votes are not counted, or are not counted accurately, voters are not
+electing anyone. But for a political system to be called democratic, voters
+would have to have a way to hold their elected officials accountable. Our
+system does this by allowing voters to cast more uncounted, miscounted, or
+overruled ballots once the incumbent's term of office is over. So if someone
+is elected, whether legitimately or fraudulently, and then decides to
+destroy the country (perhaps by nuking a few cities to end the homelessness
+and poverty problems, or some other ill-conceived ventures), the voters can
+do nothing but wait until their term in office is over, if anyone has
+survived, to try to hold them "accountable" by "electing" another
+unaccountable official.  There is no right of recall at the federal level,
+therefore no means of holding "elected" officials accountable in a timely
+way.
+
+With mail-in ballots, which seem to predominate these days, there is no
+chain-of-custody possible. The offices of election officials are closed to
+the public between the election and the certification, and official
+observers aren't always notified when votes are counted, so corrupt
+elections officials have plenty of time to manufacture phantom votes, stuff
+the electronic "ballot boxes," and manipulate the actual results to match
+the results they want. As for audits, you can't ask for an audit until after
+the election has been certified (election officials certify only that an
+election was held in accordance with law, not that it was accurate), by
+which time the fraudulent "winner" has usually already been sworn into
+office and cannot be removed except by Congress. Many Members of Congress,
+like Nancy Pelosi, believe that it is more important that constituents be
+represented, than that they be represented by the person they voted
+for. Members of Congress are very well aware that voters have no way to hold
+them accountable, so they see no difference between people being
+"represented" by candidates who will and candidates who won't actually
+represent their interests. Once you vote (and hopefully donate to the
+campaign war chests of a few billionaires), your job is done and the
+elections have been a success. People who vote believe, at a minimum, that
+there might be a slight chance that their vote could be counted and that
+someone willing to represent them might be elected, so the primary purpose
+of elections, to make people think that they have a voice in government when
+they don't, has been achieved.
+
+Even if we could somehow manage to get them, transparent, auditable
+elections wouldn't eliminate risks to democracy. Our system, under a
+Constitution where the votes don't have to be counted, the Supreme Court can
+intervene to change the outcome, and those elected can't be held
+accountable, isn't electoral democracy, it is electoral tyranny, and your
+vote is your consent.
+
+------------------------------
+
+Date: Sat, 19 May 2018 11:56:43 -0400
+From: Kelly Bert Manning <bo774@freenet.carleton.ca>
+Subject: Re: Dark code (DW, RISKS-30.69)
+
+I never had any problem getting COBOL to interact with other languages, from
+PL/I to FORTRAN, C, and assembler. If you Read the Fine Manual and followed
+the guidance it worked even before IBM Language Environment united them into
+a single run time environment. Legacy COBOL didn't have function calls, but
+those could be replaced by a parameterized subroutine call with the output
+variables as named arguments in the call parameter list.
+
+At the 2014 IEEE International Conference on Software Maintenance and
+Evolution I was struck by the absence of any interest or work in applying
+the very effective techniques developed for refactoring C and Java code to
+COBOL. I would have thought that there is a huge market for something that
+can process legacy COBOL code and refactor it into COBOL or newer languages,
+recovering and improving the design along the way.
+
+COBOL is a relatively orthogonal language. There is usually only one
+obvious or builtin way to do something, In PL/I there are usually 10
+different ways, few of which give optimal performance. Once you have
+considered
+   ADD GIN TO VERMOUTH GIVING MARTINI;
+there aren't a lot of other options beyond
+   COMPUTE MARTINI = VERMOUTH + GIN;
+
+http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp%3Fpunumber%3D6969845
+
+Working with Honeywell COBOL was something of a challenge, because byte size
+varied from 4 to 9 bits, depending on the Data Type. That could give some
+surprising 4 bit to 8 or 9 bit text conversion results when Group moves were
+interpreted as text based moves of a number of bytes. Packed Decimal data
+fields were considered to be 4 bit text, with every 9th bit a slack bit to
+restore alignment on a 9 or 36 bit boundary on those 36 bit word
+machines. Going through an IBM structured EBCDIC, binary and decimal tape
+master file deciding how to convert series of bytes to an appropriate HIS
+COBOL ASCII, binary or decimal format, depending on the context and data
+segment prefix was challenging, but doable. Ditto for the reverse process
+creating a tape to send back to the IBM computer in the same data centre.
+
+------------------------------
+
+Date: Mon, 21 May 2018 22:44:51 +1200
+From: "Richard O'Keefe" <raoknz@gmail.com>
+Subject: Re: Dark Code (DW, RISKS-30.69)
+
+The article noted by Wendy Grossman says things like "COBOL has to evolve"
+and implies that interoperation with new systems is especially different.
+
+COBOL *has* evolved.  The current standard is from 2014.  If you want to
+interoperate with Java, there are COBOL compilers that do that (like Elastic
+COBOL).  If you want to interoperate with .Net, there's NetCOBOL to do that.
+And since standard COBOL has been an OO language since 2002, those are
+better fits than you might think.  Modern compilers are catching up with the
+standards, but it always takes time.  What if you want to interoperate using
+XML or JSON?  IBM's COBOL for z/OS, release 6.2 supports XML and has JSON
+PARSE and JSON GENERATE statements.
+
+Of course modern COBOL is still COBOL underneath and while I'm OK reading
+it, I would have to be paid large sums of money to write it.  Though the
+various Eclipse plugins that exist for COBOL should make that a lot easier
+than it used to be.
+
+So if COBOL *has* evolved and *does* interoperate and *does* have modern
+development tools, what's the problem?
+
+Well, COBOL has evolved, for one thing.  I rather liked the compatibility
+remark in the Brand X documentation: a certain aspect used to be
+incompatible with the standard, but the standard has changed, and now we are
+compatible.  And COBOL interoperates: if you have a COBOL program that used
+DMS II or IMS adapting it to a different data base system won't be easy.
+There's one large COBOL system I'm aware of where out of (operating system,
+data base system, programming language) COBOL is the *best* known part
+today.
+
+As for training, COBOL is verbose in the extreme and the standards and
+reference materials combine long-windedness with less precision than I'm
+comfortable with, BUT it's really not that hard to learn.  And if people
+succeeded in writing useful programs that are still running decades later,
+that says *something* positive about the language.
+
+I suspect the problems are mostly mundane ones of poor documentation,
+inadequate test sets, institutional knowledge lost when people resigned,
+retired, or died, all of which have nothing to do with the language.
+
+------------------------------
+
+Date: Fri, 18 May 2018 16:45:12 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Fitness App Leads To Arrest For Attack On McLean Cyclist
+  (McLean, VA Patch)
+
+http://patch.com/virginia/mclean/fitness-app-leads-arrest-attack-mclean-cyclist
+
+Not quite a risk to the user -- more a public service finding him as violent
+assailant.  But more details would have been nice, e.g., how police
+identified tracker used, then person wearing it.
+
+------------------------------
+
+Date: Sat, 19 May 2018 17:54:44 -0700
+From: Monty Solomon <monty@roscom.com>
+Subject: Man Is Charged With Hacking West Point and Government Websites (NYT)
+
+http://www.nytimes.com/2018/05/10/nyregion/hacker-west-point-nyc-comptroller.html
+
+The man, who is thought to have hacked thousands of sites around the world,
+was arrested in California and could face up to 21 years in prison.
+
+"But some social media watchers said they were still surprised at the speed
+with which the Santa Fe shooting descended into information warfare.
+Sampson said he watched the clock after the suspect was first named by
+police to see how long it would take for a fake Facebook account to be
+created in the suspect's name: less than 20 minutes."
+
+If, as a hypothetical, Facebook required formal authentication of identity
+for account creation, such as confirmation of applicant's existence via a
+national birth registry, bona fide biometric comparison, and revenue/tax
+authority check, fake users would approach zero. This assumes these
+credentials are not stolen, or these government entities are not
+man-in-the-middle attack subjects.
+
+Internet anonymity would become harder to achieve along with criticism and
+free discussion of important global, national, and local issues that
+anonymity often promotes.
+
+Authentication, in a democracy, appears strongest for convicted criminals
+and individuals possessing security clearances. Expense and the law
+forestall establishment of mandatory, nation-wide authentication
+identification franchise.
+
+Will future political expedience compel adoption? An informed electorate
+should possess the wisdom and exclusive right to decide on this ominous
+subject.
+
+------------------------------
+
+Date: Sat, 19 May 2018 15:24:51 -0700
+From: Monty Solomon <monty@roscom.com>
+Subject: Fake Facebook accounts and online lies multiply in hours after
+  Santa Fe school shooting (WashPo)
+
+It has become a familiar pattern in the all-too-common aftermath of American
+school shootings: A barrage of online misinformation, seemingly designed to
+cloud the truth or win political points. But some were still surprised at
+the speed with which the Santa Fe shooting descended into information
+warfare.
+
+http://www.washingtonpost.com/news/the-switch/wp/2018/05/18/fake-facebook-accounts-and-viral-lies-multiply-in-hours-after-santa-fe-school-shooting/
+
+  [See also: Russian Trolls Instantly Spread Fake News Online About Alleged
+  Santa Fe School Shooter (Dimitrios Pagourtzis), 
+http://www.inquisitr.com/4905300/dimitrios-pagourtzis-russian-trolls-facebook-santa-fe-school-shooter/
+  PGN]
+
+------------------------------
+
+Date: Thu, 17 May 2018 11:29:20 +0100
+From: "Wol's lists" <antlists@youngman.org.uk>
+Subject: Re: "Warning: Dangerous Fake Emails About Google Privacy Changes"
+  (RISKS-30.69)
+
+I am to some extent involved (in that I have some minimal legal liability)
+in the implementation of the GDPR, and all I can say is that whole-heartedly
+approve. In Europe we seem to have this belief - apparently unheard of to
+Americans - that openness and fair dealing is much better all round.
+
+The GDPR enshrines good practice in law. It merely forces organisations to
+do what they should have been doing anyway. It also outlaws a bunch of sharp
+practices - which is why it's causing so much grief because those sharp
+practices were also common practice.
+
+The law divides into two groups, data USERS and data SUBJECTS. It places an
+obligation on data users to obtain *informed* consent. It also places an
+obligation to have a *record* of such consent. Which is why you're getting
+all these emails and letters to opt back in.
+
+Because so many permissions were granted by data SUBJECTS who didn't realise
+that the data USER had kindly pre-ticked a bunch of permission boxes giving
+the data user permission to do pretty much anything they wanted to. This
+sharp practice is now illegal.
+
+It also reinforces the right of the data SUBJECT to have any data the data
+user holds about them to be corrected or deleted (subject to other legal
+constraints, of course).
+
+In summary, if you are a decent organisation (the law doesn't apply to
+individuals), doing things properly, and keeping a decent paper trail, this
+legislation is pretty much a non-event.
+
+Of course, this summary does not account for incompetent implementation of
+the directive by politicians (par for the course, sadly), or incompetent
+CxO's who don't understand the legislation (sadly also par for the
+course). And sadly also apparently true for the person in charge of the
+directive at my organisation :-(
+
+------------------------------
+
+Date: Wed, 23 May 2018 12:47:09 -0700
+From: Yooly <naha_x@yahoo.co.jp>
+Subject: Re: Not So Pretty: What You Need to Know About E-Fail and the PGP
+  Flaw (EFF, RISKS-30.69)
+
+This is not a PGP flaw but a problem arising from using HTML in email, the
+consequence of a stupid choice made years ago. I had assumed nobody would
+bat an eye upon seeing the term "HTML" being mentioned in the same breath as
+"mail client", but fortunately I was proven wrong: Atlantic Magazine's May
+21, 2018, issue carries an article with the title "Email Is Dangerous", from
+which I quote the following:
+
+"Matt Blaze, an associate professor of computer and information science at
+the University of Pennsylvania, took to Twitter after the Efail announcement
+to say, 'I've long thought HTML email is the work of the devil, and now we
+have proof I was right. But did you people listen? You never listen.'"
+
+http://www.theatlantic.com/technology/archive/2018/05/email-is-dangerous/560780/
+
+Alternative URL, if the original URL for the article ends up broken in the message you read:
+http://shorturl.at/gltZ6
+
+Years ago, after someone had started using HTML with email, I tried to
+convince people to refrain from using software that inserted HTML into their
+messages, but this turned out to be a lost cause, so I have instead been
+focusing on protecting myself: my mail software reliably strips all
+JavaScript and HTML from messages before they end up in my Inbox - and I am
+still alive and manage to communicate via email for work and pleasure (who'd
+a'thunk?).
+
+------------------------------
+
+Date: Thu, 17 May 2018 11:09:41 -0400
+Subject: Re: Deadly Convenience: Keyless Cars and Their Carbon Monoxide Toll
+  (NYT)
+
+I have such a car myself (not a Toyota, but another brand with "keyless"
+operation).  It does have an audible and visual warning when I exit the
+running car and take the key with me. But, I've exited the car, so what good
+is the warning? I don't actually see and hear it until I get back into the
+car. What I do hear is the engine running, both before I exit and after I
+start walking. Was this model perhaps a hybrid that was in silent electric
+mode at the time? And if so, wouldn't a better check be to not re-start the
+engine without the keyfob sensed?
+
+------------------------------
+
+Date: Fri, 18 May 2018 13:33:13 -0500
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: Chinese GPS (RISKS-30.69)
+
+Nothing new there.
+
+Back in the USSR it was the subject of many jokes, e.g. a foreign spy asking
+a local about some landmark marked on his map that isn't there.  The local
+answers "these maps are garbage, see that top-secret `nucular' missile plant
+over there? -- it's right next to that".
+
+------------------------------
+
+Date: Sat, 19 May 2018 10:50:06 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: The risk from robot weapons (RISKS-30.69)
+
+During WWII, the Russians trained dogs to hide under tanks when they heard
+gunshots. Then they tied bombs to their backs and sent them to blow up
+German tanks. Or so was the plan.
+
+What the Russians did not take into account, was that the dogs were trained
+with Russian tanks, which used diesel, but the German tanks used gasoline,
+and smelled different. So when hearing gunshots, the dogs immediately ran
+under the nearest *Russian* tank.
+
+This tale is about natural intelligence, which we're suppose to understand.
+The problem with AI, especially *learning machines*, is that we can try to
+control what they do, but cannot control how they do it.
+
+So we never know, even when we get correct answers, whether the machine had
+found some logic path to the answer, or maybe the answer just *smells
+right*. In the latter case, we might be surprised when asking questions we
+do not know the right answer to.
+
+------------------------------
+
+Date: Sun, 20 May 2018 09:42:48 -0700
+From: Richard M Stein <rmstein@ieee.org>
+Subject: Will You Be My Emergency Contact Takes On a Whole New Meaning
+  (The New York Times)
+
+http://www.nytimes.com/2018/05/17/health/emergency-contacts-genetic-research.html?rref=collection/sectioncollection/health
+
+  "Will you be my emergency contact?
+
+  "When you’re dating, the question is a sign that you’ve made it to the
+  this-is-really-serious category. When you’re friends, it’s a sign that
+  you’re truly beloved or truly responsible. And if you’re related, it may
+  mean that you will now be entered into a medical study together so
+  scientists can figure out if sinus infections or anxiety run in your
+  family.
+
+  "What? That's right. Researchers have begun experimenting with using
+  emergency contacts gathered from medical records to build family trees
+  that can be used to study the heritability of hundreds of different
+  attributes, and possibly advance research into diseases and responses to
+  medications."
+
+HIPPA-restricted information becomes patient-surrendered anonymized
+information for research purposes with a right-to-use disclosure form.
+Networks of contacts await discovery for correlation with other reference
+sources. Medical insurance industry should take note enhance patient
+database surveillance activities.
+
+------------------------------
+
+Date: Sat, 19 May 2018 17:56:02 -0700
+From: Monty Solomon <monty@roscom.com>
+Subject: This fertility doctor is pushing the boundaries of human reproduction
+ -- with little regulation (WashPo)
+
+John Zhang produced a three-parent baby, implanted abnormal embryos and
+wants to help 60-year-old women have children.
+
+http://www.washingtonpost.com/national/health-science/this-fertility-doctor-is-pushing-the-boundaries-of-human-reproduction-with-little-regulation/2018/05/11/ea9105dc-1831-11e8-8b08-027a6ccb38eb_story.html
+
+------------------------------
+
+Date: Sat, 19 May 2018 17:55:46 -0700
+From: Monty Solomon <monty@roscom.com>
+Subject: As DIY Gene Editing Gains Popularity, `Someone Is Going to Get Hurt'
+  (NYTimes)
+
+http://www.nytimes.com/2018/05/14/science/biohackers-gene-editing-virus.html
+
+After researchers created a virus from mail-order DNA, geneticists sound the alarm about the genetic tinkering carried out in garages and living rooms.
+
+------------------------------
+
+Date: Tue, 5 May 2018 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks have done to URLs.  I have
+  tried to extract the essence.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.70
+************************

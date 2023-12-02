@@ -1,0 +1,575 @@
+RISKS-LIST: Risks-Forum Digest  Saturday 25 July 2015  Volume 28 : Issue 81
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.81.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Fiat Chrysler Issues Recall Over Hacking (Aaron M. Kessler)
+The Web-Connected Car Is Cool, Until Hackers Cut Your Brakes
+  (Aaron M. Kessler)
+Fiat Chrysler "connected car" bug lets hackers take over Jeep remotely (Ars)
+Re: Jeep hack: The cure can be worse than the disease if the doctor is a
+  quack (USA Today)
+Re: Hackers Remotely Kill a Jeep on the Highway (Mark Kramer)
+What's Wrong With the Internet and How We Can Fix It: Lori Emerson's
+  Interview With Internet Pioneer John Day
+When the Internet's Moderators Are Anything But (Adrian Chen)
+Facebook blocked from challenging search warrants targeting its users
+  (Lauren Weinstein)
+HP's ZDI discloses 4 new vulnerabilities in Internet Explorer
+  (Woody Leonhard)
+Bug exposes OpenSSH servers to brute-force password guessing attacks
+ (Werner U)
+Google: New research: Comparing how security experts and non-experts stay
+  safe online (GoogleOnline via Lauren Weinstein)
+What My Landlord Learned About Me From Twitter (Haley Mlotek)
+"The messy truth about BYOD" (Galen Gruman)
+Looks like a bad idea: "Self-Destructing Gmail Possible With Free Chrome
+  Extension" (ABC via LW)
+For .sucks Web domains, currency seems to be paid in reputations
+  (BetaBoston via Bob Frankston)
+Court: You Have No Right To Privacy When You Butt Dial Someone
+  (Mary Beth Quirk)
+Cellphone Ordinance Puts Berkeley at Forefront of Radiation Debate (NYT)
+Bison selfies are a bad idea: Tourist gored in Yellowstone as
+  another photo goes awry (WashPost)
+Silver Bullet 112: Green and Bellovin on Crypto Back Doors (Gary McGraw)
+DMCA Takedown Notice for 127.0.0.1 (Wikipedia)
+Verizon's evil exposed yet again: "Is Verizon Planning on Becoming an
+  All-Wireless-Only Company: Who Needs the Wires Anyway?" *HuffPost*
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 25 Jul 2015 8:01:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Fiat Chrysler Issues Recall Over Hacking (Aaron M. Kessler)
+
+An Article by Aaron M. Kessler in today's issue of *The New York Times*
+discusses a consequence of the Jeep Cherokee vulnerabilities -- very similar
+problems exist in Fiat Chrysler automobiles, resulting in the recall of 1.4
+million vehicles.
+
+Car-pay diem.
+
+------------------------------
+
+Date: Fri, 24 Jul 2015 02:44:31 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: The Web-Connected Car Is Cool, Until Hackers Cut Your Brakes
+  (Aaron M. Kessler)
+
+A pair of researchers said that they had hacked a Jeep Cherokee through its
+Internet-connected system, allowing them to take control of the engine,
+brakes and even steering.
+http://www.nytimes.com/2015/07/24/business/the-web-connected-car-is-cool-until-hackers-cut-your-brakes.html
+
+------------------------------
+
+Date: Tue, 21 Jul 2015 13:03:21 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Fiat Chrysler "connected car" bug lets hackers take over Jeep remotely
+
+http://arstechnica.com/security/2015/07/fiat-chrysler-connected-car-bug-lets-hackers-take-over-jeep-remotely/
+
+  Uconnect, a "connected car" system sold in a number of vehicles produced
+  by Fiat Chrysler for the US market, uses the Sprint cellular network to
+  connect to the Internet and allows owners to interact with their vehicle
+  over their smartphone--performing tasks like remote engine start,
+  obtaining the location of the vehicle via GPS, and activating anti-theft
+  features. But vulnerabilities in Uconnect, which Fiat Chrysler has issued
+  a patch for, made it possible for an attacker to scan Sprint's cellular
+  network for Uconnect-equipped vehicles, obtaining their location and
+  vehicle identification information.  Miller and Valasek demonstrated that
+  they could then attack the systems within the car via the IP address of
+  the vehicle, allowing them to turn the engine of the car off, turn the
+  brakes on or off, remotely activate the windshield wipers, and take
+  control of the vehicle's information display and entertainment system.
+  Miller and Valasek also found that they could take remote control of the
+  steering of their test vehicle, the aforementioned Jeep Cherokee--but only
+  while it was in reverse.
+
+Thinking about what hackers will do to *autonomous* vehicles.
+
+------------------------------
+
+Date: Fri, 24 Jul 2015 14:51:37 -0400
+From: Lance Hoffman <lanceh@gwu.edu>
+Subject: Re: Jeep hack: The cure can be worse than the disease if the doctor
+  is a quack (USA Today)
+
+  Let's see if anyone rushes to send out a bunch of USB drives with a
+  "security update" to the Chrysler owners before they get them from
+  Chrysler?  A great way to plant a time bomb.
+
+Today, the automaker will update the software in the infotainment system
+of the cars it is recalling by sending customers a USB drive that can be
+used to download new software.
+
+The cars and trucks under the recall are equipped with 8.4-inch
+touchscreens on the following models:
+
+   - 2013-2015 MY Dodge Viper specialty vehicles
+      - 2013-2015 Ram 1500, 2500 and 3500 pickups
+      - 2013-2015 Ram 3500, 4500, 5500 Chassis Cabs
+      - 2014-2015 Jeep Grand Cherokee and Cherokee SUVs
+      - 2014-2015 Dodge Durango SUVs
+      - 2015 MY Chrysler 200, Chrysler 300 and Dodge Charger sedans
+      - 2015 Dodge Challenger sports coupes
+
+"It's important to reiterate that there is no real safety threat to FCA
+owners," said Edmunds.com consumer advice editor Ron Montoya. "This week's
+hack was an isolated incident that was performed on one specific vehicle
+and it was not something that could be replicated on a mass scale."
+
+Customers who own cars subject to the recall will not need to take them to
+dealers. They will receive a USB drive in the mail. The USB drive provides
+additional security features.
+
+Owners who are not comfortable installing the software themselves can take
+their car to a dealer.
+
+Also, customers who want to check if their vehicle is affected by the
+recall can visit http://www.driveuconnect.com/software-update/ to see if
+their vehicle identification numbers is included in the recall."
+
+Lance J. Hoffman, Director, Cyber Security Policy and Research Institute
+http://www.cspri.seas.gwu.edu/ http://www.cs.seas.gwu.edu/people/faculty/99
+
+  [Quack?  Web(foot)ware? Inter(duck)net?  If it looks like an duck and
+  walks like a duck, it must need another software fix.  PGN]
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 22:23:29 -0400
+From: Mark Kramer <c28f62@theworld.com>
+Subject: Re: Hackers Remotely Kill a Jeep on the Highway (Greenberg, R-28.80)
+
+It is nice that Andy Greenberg offered himself as a "crash test dummy" for a
+hacker demonstration.
+
+I wonder if the other people sharing his bit of the St. Louis highway where
+he was going 70 MPH are as appreciative of his offer.  Loss of forward
+visibility at a random time at high speed could have resulted in injury to
+others.
+
+------------------------------
+
+Date: July 25, 2015 at 5:13:57 AM EDT
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: What's Wrong With the Internet and How We Can Fix It:
+  Lori Emerson's Interview With Internet Pioneer John Day
+
+[Note:  This item comes from friend Paul Pangaro.  DLH][via Dave Farber]
+
+Lori Emerson, 23 Jul 2015
+<http://loriemerson.net/2015/07/23/whats-wrong-with-the-internet-and-how-we-can-fix-it-interview-with-internet-pioneer-john-day/>
+
+Below is an interview I conducted with the computer scientist and Internet
+pioneer John Day via email over the last six months or so. The interview
+came about as a result of a chapter I've been working on for my Other
+Networks project, called The Net Has Never Been Neutral.  In this piece, I
+try to expand the materialist bent of media archaeology, with its investment
+in hardware and software, to networks. Specifically, I'm working through the
+importance of understanding the technical specs of the Internet to figure
+out how we are unwittingly living out the legacy of the power/knowledge
+structures that produced TCP/IP. I also think through how the Internet could
+have been and may still be utterly different. In the course of researching
+that piece, I ran across fascinating work by Day in which he argues that
+``the Internet is an unfinished demo'' and that we have become blind not
+only to its flaws but also to how and why it works the way it works. Below
+you'll see Day expand specifically on five flaws of the TCP /IP model that
+are still entrenched in our contemporary Internet architecture and, even
+more fascinating, the ways in which a more sensible structure (like the one
+proposed by the French CYCLADES group) to handle network congestion would
+have made the issue of net neutrality beside the point. I hope you enjoy and
+many, many thanks to John for taking the time to correspond with me.
+
+Emerson: You've written quite vigorously about the flaws of the TCP/IP model
+that go all the way back to the 1970s and about how our contemporary
+Internet is living out the legacy of those flaws. Particularly, you've
+pointed out repeatedly over the years how the problems with TCP were carried
+over not from the American ARPANET but from an attempt to create a transport
+protocol that was different from the one proposed by the French Cyclades
+group. First, could you explain to readers what Cyclades did that TCP should
+have done?
+
+Day: There were several fundamental properties of networks the CYCLADES crew understood that the Internet group missed:
+
+ * The Nature of Layers,
+ * Why the Layers they had were there,
+ * A complete naming and addressing model,
+ * The fundamental conditions for synchronization,
+ * That congestion could occur in networks, and
+ * A raft of other missteps most of which follow from the previous 5, but
+   some are unique.
+
+First and probably foremost was the concept of layers. Computer Scientists
+use layers to structure and organize complex pieces of software. Think of a
+layer as a black box that does something, but the internal mechanism is
+hidden from the user of the box. One example is a black box that calculates
+the 24 hour weather forecast. We put in a bunch of data about temperature,
+pressure and wind speed and out pops a 24 hour weather forecast. We don't
+have to understand how the blackbox did it. We don't have to interact with
+all the different aspects it went through to do that. The black box hides
+the complexity so we can concentrate on other complicated problems for which
+the output of the black box is input. The operating system of your laptop is
+a black box. It does incredibly complex things but you don't see what it is
+doing. Similarly, the layers of a network are organized that way. For the
+ARPANET group, BBN [erstwhile Bolt, Beranek, and Newman] built the network
+and everyone else was responsible for the hosts. To the people responsible
+for the hosts, the network of IMPs was a blackbox that delivered
+packets. Consequently, for the problems they needed to solve, their concept
+of layers focused on the black boxes in the hosts. So the Internet's concept
+of layers was focused on the layer in the Hosts where its primary purpose
+was modularity. The layers in the ARPANET hosts were the Physical Layer, the
+wire; IMP-HOST Protocol; the NCP; and the applications, such as Telnet, and
+maybe FTP. For the Internet, they were Ethernet, IP, TCP, Telnet or HTTP,
+etc. as application. It is important to remember that the ARPANET was built
+to be a production network to lower the cost of doing research on a variety
+of scientific and engineering problems.
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 22:36:40 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: When the Internet's Moderators Are Anything But
+
+The title suggests a steward of civility and decency.  However, online,
+unpaid moderators can become a force for mayhem.
+
+http://www.nytimes.com/2015/07/26/magazine/when-the-internets-moderators-are-anything-but.html?smprod=nytcore-ipad&smid=nytcore-ipad-share
+
+  [Gabe, Are you suggesting that RISKS is biased?  We're just reporting
+  it like it is...  PGN]
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 12:20:58 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Facebook blocked from challenging search warrants targeting its
+  users
+
+  Facebook does not have legal standing to challenge search warrants on
+  behalf of its users, a New York appeals court has ruled in what was the
+  biggest batch of warrants the social-media site said it ever received at
+  one time.
+
+------------------------------
+
+Date: Fri, 24 Jul 2015 10:04:24 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: HP's ZDI discloses 4 new vulnerabilities in Internet Explorer
+  (Woody Leonhard)
+
+  [1) Risk number 1 is the vulnerability.
+   2) Risk number 2 is Microsoft taking their sweet time dealing with it.
+  GW]
+
+Woody Leonhard, InfoWorld, 23 Jul 2015
+ZDI went public after extending the disclosure deadline twice with no fix
+forthcoming from Microsoft
+http://www.infoworld.com/article/2951738/patch-management/hp-s-zdi-discloses-four-new-vulnerabilities-in-internet-explorer.html
+
+HP's Zero Day Initiative (ZDI) doesn't cut much slack with its 120-day
+disclosure policy. When ZDI knocks on your door and says you have a security
+hole, you get 120 days to fix it or risk full public disclosure. That's what
+happened -- again. With ZDI and Microsoft -- again. Over Internet Explorer
+-- again. [...]
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 22:50:48 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Bug exposes OpenSSH servers to brute-force password guessing attacks
+
+Who is responsible for ensuring security and privacy in the age of the
+Internet of Things? As the number of Internet-connected devices explodes,
+Gartner estimates that 25 billion devices and objects will be connected to
+the Internet by 2020 -- security and privacy issues are poised to affect
+everyone from families with connected refrigerators to grandparents with
+healthcare wearables.
+
+In this interview, U.S. Federal Communications Commission CIO David Bray
+says control should be put in the hands of individual consumers. Speaking in
+a personal capacity, Bray shares his learnings from a recent educational
+trip to Taiwan and Australia he took as part of an Eisenhower Fellowship: "A
+common idea Bray discussed with leaders during his Eisenhower Fellowship was
+that the interface for selecting privacy preferences should move away from
+individual Internet platforms and be put into the hands of individual
+consumers." Bray says it could be done through an open source agent that
+uses APIs to broker their privacy preferences on different platforms.
+<http://www.gartner.com/technology/research/internet-of-things/>
+<https://enterprisersproject.com/article/2015/7/empower-consumers-control-their-privacy-internet-everything>
+
+itwbennett writes:
+OpenSSH servers with keyboard-interactive authentication enabled, which is
+the default setting on many systems, including FreeBSD ones, can be tricked
+to allow many authentication retries over a single connection, according to
+a security researcher who uses the online alias Kingcope, who disclosed the
+issue on his blog last week. According to a discussion on Reddit, setting
+PasswordAuthentication to 'no' in the OpenSSH configuration and using
+public-key authentication does not prevent this attack, because
+keyboard-interactive authentication is a different subsystem that also
+relies on passwords.
+<http://it.slashdot.org/story/15/07/22/1715244/bug-exposes-openssh-servers-to-brute-force-password-guessing-attacks>
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 12:27:52 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Google: New research: Comparing how security experts and
+  non-experts stay safe online
+
+http://googleonlinesecurity.blogspot.com/2015/07/new-research-comparing-how-security.html
+
+  This paper outlines the results of two surveys--one with 231 security
+  experts, and another with 294 web-users who aren't security experts--in
+  which we asked both groups what they do to stay safe online. We wanted to
+  compare and contrast responses from the two groups, and better understand
+  differences and why they may exist.
+
+I agree with all of the points made in this article, with the notable
+exception of #5 -- password managers. One of the most common "mass"
+failure points reported to me is use of password managers. I do not use
+them, and I strongly recommend that others not use them either.
+
+  [What is interesting to me is that there is ZERO overlap between the
+  "experts" and the "non-experts".  And yes, password managers are just
+  kicking the ball back to the goalie.  PGN]
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 22:36:08 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: What My Landlord Learned About Me From Twitter (NYTimes)
+
+Haley Mlotek, *The New York Times magazine, 20 Jul 2015)
+Apartment hunting in the age of social media.
+
+http://www.nytimes.com/2015/07/20/magazine/what-my-landlord-learned-about-me-from-twitter.html?smprod=nytcore-ipad&smid=nytcore-ipad-share
+
+------------------------------
+
+Date: Fri, 24 Jul 2015 10:10:17 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "The messy truth about BYOD" (Galen Gruman)
+
+  "There are lies, damned lies, statistics, ..."
+
+Galen Gruman, InfoWorld, 24 Jul 2015
+It's jeopardizing your business! It's already a passing fad! It's the
+standard in business today! Why the claims don't add up.
+http://www.infoworld.com/article/2951555/byod/the-messy-truth-about-byod.html
+
+------------------------------
+
+Date: Fri, 24 Jul 2015 14:03:59 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Looks like a bad idea: "Self-Destructing Gmail Possible
+  With Free Chrome Extension"
+
+Looks like a bad idea
+http://abcnews.go.com/Technology/destructing-gmail-free-chrome-extension/story?id=32667353
+
+  A new Chrome extension called Dmail brings its self-destructing super
+  powers to a user's Gmail inbox, allowing users to take control of the
+  messages they send even long after they've been fired off to the recipient
+  ... Messages sent to a friend who has Dmail appear in their inbox as
+  normal. The extension still works if a friend doesn't have the service.
+  They'll instead be given a Dmail link in the email which will take them to
+  the secure message.
+
+The potential for confusion or abuse with this extension strikes me as being
+quite high. Because of the manner in which it may confuse Gmail users who
+are recipients of messages through "Dmail" who have not chosen to install
+the Dmail extension, it seems possible that this extension violates the
+Gmail and/or Chrome Terms of Service.
+
+------------------------------
+
+Date: 23 Jul 2015 22:45:31 -0400
+From: "Bob Frankston" <bob19-0501@bobf.frankston.com>
+Subject: For .sucks Web domains, currency seems to be paid in reputations
+  (BetaBoston)
+
+http://www.betaboston.com/news/2015/07/23/sleazy-internet-domain-sucks-up-the-bucks/
+
+Do I need to point out again that what really sucks is the idea that you
+can't own your identity and that the web is held together by links that are
+designed to unravel for no reason other than the artificial scarcity of
+identifiers? Of course ICANN benefits by this refilling its coffers by
+harvesting our misery. That sucks.
+
+I still don't understand why we put up with the idea of making failure the
+default for something so fundamental and vital as our ability to communicate
+and maintain relationships. It's not the only problem but is one of the more
+egregious. ICANN.Sucks is a valid use of this TLD.
+
+As to the purveyors of the .SUCKs domain they are doing exactly what ICANN
+is supposed to do - monetizing people's identity and reputation.
+
+Apologies to the creators of ICANN who had the best intentions -- sometimes
+noble ideas do not work out and we need to put them to rest and move on.
+
+------------------------------
+
+Date: Fri, 24 Jul 2015 17:31:13 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Court: You Have No Right To Privacy When You Butt Dial Someone
+Mary Beth Quirk, Consumer Media LLC
+<https://consumermediallc.files.wordpress.com/2015/07/buttdialing.pdf>]
+
+Today in issues we never thought a court would weigh in on: if you
+accidentally pocket dial someone, pulling the move we all know as “butt
+dialing,” don't expect anything you say during the call you don't know
+you're making to stay private.
+
+The U.S. Court of Appeals for the Sixth Circuit in Kentucky ruled yesterday
+that a person who butt dials another party during a conversation doesn't
+have a reasonable expectation of privacy.
+
+This, because everyone knows about such accidental calls and there are a lot
+of ways to prevent such a thing from happening. That means anyone who
+happens to be listening in on the call that came in on their phone isn't
+violating privacy laws by recording that conversation, the three-judge panel
+determined.
+
+http://consumerist.com/2015/07/22/court-you-have-no-right-to-privacy-when-you-butt-dial-someone/
+
+But(t) -- I didn't mean to dial!
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Fri, 24 Jul 2015 02:09:00 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Cellphone Ordinance Puts Berkeley at Forefront of Radiation Debate
+
+A city measure requiring retailers to warn cellphone customers about
+radiation exposure is on hold pending a lawsuit from the wireless industry.
+http://www.nytimes.com/2015/07/22/us/cellphone-ordinance-puts-berkeley-at-forefront-of-radiation-debate.html
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 09:39:26 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Bison selfies are a bad idea: Tourist gored in Yellowstone as
+  another photo goes awry
+
+http://www.washingtonpost.com/news/morning-mix/wp/2015/07/23/bison-selfies-are-a-bad-idea-tourist-gored-in-yellowstone-as-another-photo-goes-awry/
+
+  [Let's let bi-sons be bi-sons!  PGN]
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 15:57:45 +0000
+From: Gary McGraw <gem@cigital.com>
+Subject: Silver Bullet 112: Green and Bellovin on Crypto Back Doors
+
+For the latest episode of Silver Bullet, we spoke to two of the fifteen
+co-authors of the Keys Under Doormats paper describing the technical peril
+of implementing crypto back doors as FBI Director Comey has suggested.
+Steve Bellovin comes at the problem with years of experience and direct
+involvement in the first crypto wars.  Matthew Green comes to the problem
+with a solid understanding of applied cryptography in real world systems.
+Have a listen:
+
+http://bit.ly/SB-crypto-wars
+
+------------------------------
+
+Date: Thu, 23 Jul 2015 07:10:06 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: DMCA Takedown Notice for 127.0.0.1
+
+FYI -- Shoot oneself in the foot; see 127.0.0.1.
+https://en.wikipedia.org/wiki/Localhost
+
+Allegedly Infringing URLs: http://127.0.0.1:4001/#/fr/
+https://i.imgur.com/V4ZAXEa.png
+https://www.chillingeffects.org/notices/10969223
+
+------------------------------
+
+Date: Fri, 24 Jul 2015 10:00:39 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Verizon's evil exposed yet again: "Is Verizon Planning on
+  Becoming an All-Wireless-Only Company: Who Needs the Wires Anyway?"
+
+HuffPost via NNSquad
+http://www.huffingtonpost.com/bruce-kushnick/is-verizon-planning-on-be_b_7866124.html
+
+  Of course almost everyone reading this has a cell phone. But, you may have
+  been misled if you believe that the wires don't matter or that wireless
+  services alone are the future.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.81
+************************
+
+--_002_626755da0e6444cb8329584dffe68e38DB3PR07MB0697eurprd07pr_--

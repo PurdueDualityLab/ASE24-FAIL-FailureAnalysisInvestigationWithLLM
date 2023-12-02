@@ -1,0 +1,453 @@
+precedence: bulk
+Subject: Risks Digest 26.95
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 25 July 2012  Volume 26 : Issue 95
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.95.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Cadillac replaces tactile buttons with tablet (Paul Wexelblat)
+Open Sesame for hotel keycards (Andy Greenberg via PGN)
+"Will the 2012 Olympics set new surveillance records?" (Claudiu Popa via
+  Gene Wirchenko)
+DARPA's hacking box disguised as a power strip (Lauren Weinstein)
+Clicking with your doctor (Bella English via Monty Solomon)
+Mother stole passwords to change children's school grades (John E. Dunn
+  via Gene Wirchenko)
+Best Typo Ever Runs A-1 in the Los Angeles Times (Tessa Stuart via
+  Monty Solomon)
+Re: Who Really Invented the Internet? (John Shoch, Dave Crocker,
+  Rebecca Mercuri, Vint Cerf via Lauren Weinstein)
+Re: Google ordered to censor 'torrent', 'megaupload' (Albert Aribaud)
+Re: Olympics security poster 'gibberish' (Chris J Brady, Dimitri Maziuk)
+Re: Taxing old browsers out of existence (Steven J Klein)
+LADC2013 - Sixth Latin-American Symposium on Dependable Computing
+  (Mohamed Kaaniche)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 24 Jul 2012 22:47:45 -0400
+From: Paul Wexelblat <wex@cs.uml.edu>
+Subject: Cadillac replaces tactile buttons with tablet
+
+Sorry I can't give more info, but I just saw a TV ad for a new, improved
+control system for new Cadillac cars - They show the old-fashioned way to
+control things, with buttons - Then they show what appears to be an
+iPad-like tablet for controls (lights/heat/radio/etc) and tout it as an
+improvement.
+
+DUH -- With the New system you're forced to take your eyes off the road to
+accomplish even the most mundane task.
+
+  [Wex, Adding more info would not add much more other than artistic
+  verisimilitude.  The concept is inherently a risky one.  It goes even
+  further than multipurpose context-dependent controls.  For example, there
+  could be serious challenges for people with vision problems, such as
+  near-sighted folks who wear glasses for distance vision while driving --
+  who cannot read screens up close without removing those glasses!  Of
+  course, bifocals or multifocals would help, but that only adds another
+  layer of requirements for context switching.  PGN]
+
+------------------------------
+
+Date: Wed, 25 Jul 2012 09:06:23 -0600
+From: Peter G Neumann
+Subject: Open Sesame for hotel keycards (Andy Greenberg)
+
+  [Andy Greenberg's item in Forbes on Mozilla developer Cody Brocious' talk
+  at BlackHat is quite intriguing, although not surprising to RISKS readers.
+  The following URL is sufficiently graphic.  PGN via Earl Boebert]
+
+http://www.forbes.com/sites/andygreenberg/2012/07/23/hacker-will-expose-potential-security-flaw-in-more-than-four-million-hotel-room-keycard-locks/
+
+This required only about $50 for equipment to exploit the lock mechanism.
+Each hotel has a unique 32-bit sitecode, which is stored at a fixed location
+in memory and requires no authentication to read.  Thus, the strength of the
+crypto can be (as is often the case) more or less irrelevant.]
+http://www.extremetech.com/computing/133448-black-hat-hacker-gains-access-to-4-million-hotel-rooms-with-arduino-microcontroller
+
+------------------------------
+
+Date: Tue, 24 Jul 2012 09:46:19 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Will the 2012 Olympics set new surveillance records?" (Claudiu Popa)
+
+Never in the history of the Olympics has there been a more publicized series
+of security blunders before the actual event.  People on terrorism watch
+lists are waved through airport security, contractors unable to hire
+qualified security personnel, busloads of Olympians temporarily lost in
+London, and a general public malaise about the whole thing are now
+permeating the global media.  ...
+
+Meanwhile and probably as a result, the UK's Security Services (MI5, MI6 and
+GCHQ) are likely implementing further technical measures to compensate for
+the physical security shortfalls.  Some such surveillance techniques will
+doubtlessly fire up privacy advocates worldwide and may even establish a
+precedent for world-class events.  Already having had a chance to review the
+proposed plans, privacy advocates are primarily concerned over the plan to
+record all electronic communication. Period. ...
+
+Claudiu Popa, president, Informatica Corp.
+http://blogs.itbusiness.ca/2012/07/will-the-2012-olympics-set-new-surveillance-records/
+
+------------------------------
+
+Date: Sat, 21 Jul 2012 22:54:56 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: DARPA's hacking box disguised as a power strip
+
+http://j.mp/SO8uWk  (Wired, via NNSquad)
+
+  "It may look like a surge protector, but it's really a remote access
+  machine that corporations can use to test security and log into branch
+  offices. Called the Power Pwn, it's a stealthier version of the little box
+  that can hack your network we wrote about last March.  Hidden inside are
+  Bluetooth and Wi-Fi adapters, along with a number of hacking and remote
+  access tools that let security experts prod and poke the network, and even
+  call home to be remotely controlled via the cellular network."
+
+     [``Mongo only Pwn in the Game of Life''? (Blazing Saddles)
+     Mayhaps we've been Rooked?  PGN]
+
+------------------------------
+
+Date: Tue, 24 Jul 2012 22:24:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Clicking with your doctor (Bella English)
+
+Bella English, Living with Screens, *The Boston Globe*, 20 Jul 2012
+
+Dr. Larry Cohan, a pediatrician who has always kept voluminous files on his
+patients from birth through college, is used to examining his young charges,
+questioning and quipping, while scribbling notes in the medical record. But
+a few years ago a third party came between him and his patients: a computer
+screen.
+
+Prodded by the federal government, doctors are replacing their paper files
+with electronic records. There have been growing pains. As efficient as the
+technology is, neither physicians nor patients want a computer screen
+separating them.
+
+"I was faced with a choice," says Cohan, who has practices in Braintree and
+Boston. "When writing my exam notes in the computer, do I turn my back on my
+patients sometimes? Or do I try to maintain eye contact and write my notes
+later, when frankly there isn't time later?" Cohan has hit upon a third way,
+which seems to work: He invites his young charges to sit in a chair near his
+desk, so he can explain things to them as he's typing notes.
+
+But e-records are only part of e-medicine. Patients are increasingly turning
+to medical websites and message boards to become "experts" on their own
+health care. Many expect to keep in e-mail touch with their physicians. And
+some patients are even involved in home e-monitoring for chronic conditions.
+
+Together, these changes - all of them fueled by our increasing reliance on
+digital devices - are fundamentally altering the doctor-patient
+relationship, nudging health care from medical settings into people's
+day-to-day lives. ...
+
+http://articles.boston.com/2012-07-20/lifestyle/32744102_1_electronic-records-patients-medicaid
+
+------------------------------
+
+Date: Wed, 25 Jul 2012 09:53:30 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Mother stole passwords to change children's school grades
+  (John E. Dunn)
+
+This comes under the category of computer risks that do not appear to be
+computer risks at first glance.  Computers are used a lot more than when I
+was in school.
+
+John E. Dunn, Article with the above title, subtitled Pennsylvania school
+assistant used passwords 110 times, *IT Business*, 24 Jul 2012
+http://www.itbusiness.ca/it/client/en/cdn/News.asp?id=68357
+
+------------------------------
+
+Date: Tue, 24 Jul 2012 18:00:38 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Best Typo Ever Runs A-1 in the Los Angeles Times (Tessa Stuart)
+
+Tessa Stuart, *Los Angeles Times*, 20 Jul 2012
+
+The *Los Angeles Times* has an excellent story in A-1 today about a
+legendary Las Vegas sheriff. 85-year-old Ralph Lamb, "The Cowboy Sheriff,"
+John M. Glionna writes, was once the most powerful man in Nevada -- feared
+by gangsters, beloved by locals, respected by fellow lawmen.
+
+It's a great read -- made even greater by what may be the best typo to ever
+run in the *L.A. Times*. ...  [and perhaps enhanced by the ubiquitous
+spelling-and-grammar curekter.  PGN]
+
+http://blogs.laweekly.com/informer/2012/07/best_typo_ever_runs_a-1_in_the.php
+
+------------------------------
+
+Date: Wed, 25 Jul 2012 02:51:08 +0000
+From: John Shoch <shoch@alloyventures.com>
+Subject: Re: Who Really Invented the Internet? (PGN, RISKS-26.94)
+
+The WSJ opinion piece was an abomination.
+
+I feel bad that an ancient quote of mine has been taken out of context, in
+support of an underlying argument with which I do not agree.
+
+There are many things wrong with this article; but to briefly summarize the
+obvious:
+
+* It was written by the former publisher of the WSJ.
+* It appeared on the Opinion page of the WSJ.
+* There were many sources of funding, around the globe, for early work on
+  data communications, packet-networking, inter-networking, and local
+  networks.
+* But, clearly, the US government (through DARPA) played an important role
+  in funding the development of the Arpanet (at BBN and elsewhere) and
+  inter-networking (at Stanford, BBN, ISI, SRI and elsewhere).
+* Beyond the direct funding of these projects, DARPA funding provided the
+  second-order benefit of training a whole cadre of graduate students, who
+  went on to contribute at many organizations.
+
+We accomplished a lot at Xerox PARC, with corporate support, in local
+networks and inter-networking; we can have a healthy debate about who
+invented what, who implemented what, and who commercialized what; but that
+should not be used to diminish the contributions of DARPA, and other
+government support of research......
+
+  [John Shoch is well-known to long-time readers as the coauthor with
+  J.A. Hupp of what seems to be the first paper on computer worms: The
+  ``Worm'' Programs -- Early Experience with a Distributed Computation,
+  Comm.ACM, 25, 3, 172--180, March 1982, also Reprinted in Peter Denning
+  (ed.), Computers Under Attack.  PGN]
+
+------------------------------
+
+Date: Tue, 24 Jul 2012 21:56:37 -0700
+From: Dave Crocker <dcrocker@bbiw.net>
+Subject: Re: Who Really Invented the Internet? (PGN, RISKS-26.94)
+
+Besides funding the underlying core packet-switching and inter-networking
+research and the development of most underlying and user-visible core
+protocols that remain in operation, the US government funded the original
+infrastructure service providers, via the National Science Foundation's
+NSFNet backbone and regions networks.  Converting these to commercial
+operations began the commercial Internet.
+
+The article was correct that the PARC team did seminal work in this space
+too -- and for a time their XNS protocols did provide the basis for a number
+of other company's networking products, including the ones I worked on at
+Ungermann-Bass -- but what we use today is a very simple, straight-line
+continuation of all that government-funded research, starting in the 60s up
+through the 90s.
+
+Much of what worked in the mid-80s, on the NSFNet/et-al Internet still works
+on today's Internet.
+
+Dave Crocker, Brandenburg InternetWorking, http://www.bbiw.net
+
+------------------------------
+
+Date: Wed, 25 Jul 2012 10:48:47 -0400
+From: RTMercuri <notable@mindspring.com>
+Subject: Re: Who Really Invented the Internet? (PGN, RISKS-26.94)
+
+On the poorly fact-checked WSJ piece, the LA Times' rebuttal is just as bad.
+
+See:
+http://articles.latimes.com/2012/jul/23/news/la-mo-who-invented-internet-20120723
+
+Everyone (at least here) knows that Ted Nelson coined the terms
+"hypertext" and "hypermedia" and began popularizing the concept back in
+1963, well before the SRI 1968 demo.
+
+  [NOTE: Doug Engelbart was already developing hypertext in the NLS system
+  at SRI in 1962, independently of Ted Nelson.  However, I believe Ted gave
+  talks about hypertext and hyperlinks even earlier than that.  I would be
+  surprised if they had not learned from each other.  PGN]
+
+------------------------------
+
+Date: Wed, 25 Jul 2012 13:17:39 -0700
+From: Lauren Weinstein
+Subject: Re: Who Really Invented the Internet? (PGN, RISKS-26.94)
+
+No credit for Uncle Sam in creating Net? Vint Cerf disagrees
+http://j.mp/Onm9Rp  (CNET)
+
+  "I would happily fertilize my tomatoes with Crovitz's assertion."
+
+------------------------------
+
+Date: Wed, 25 Jul 2012 08:43:03 +0200
+From: Albert Aribaud <albert.aribaud@free.fr>
+Subject: Re: Google ordered to censor 'torrent', 'megaupload' (RISKS-26.94)
+
+As I see that *The Register* has it wrong on at least one account.  No, the
+Cour de Cassation (the "French Supreme Court) did *not* say that Google
+could not be held responsible for people downloading illegal content; that
+was said by the Appellate Court -- I think I should mention at least two
+points:
+
+Minor one:
+
+The "French Supreme Court" (Cour de Cassation) did *not* order any
+censoring: it cannot do so. What it did was cancel ("casser", hence its
+name) an order from an appellate Court (Cour d'Appel) which had rejected
+such a censoring.
+
+The difference is that the Cour de Cassation did not enter a final decision
+on the case as such; it has decided that the case should be tried again by
+an appellate Court. This court may still find against censoring, and the
+Cour de Cassation may have to re-reexamine this issue, this time in a plenary
+session, with a chance (admittedly small) that they change their minds, for
+instance if the appellate arguments are different from the ones currently
+
+Major one, because it somewhat waters down the "censorship" point:
+
+The news is only about Google Suggestions, not Google Search results.
+Users just need to add "megaupload" (RIP) or a similar term by
+themselves, and they'll get their results.
+
+------------------------------
+
+Date: Wed, 25 Jul 2012 04:45:39 -0700 (PDT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Re: Olympics security poster 'gibberish' (Brady, RISKS-26.94)
+
+More Arabic Font Shenanigans:
+
+Westfield is a *huge* new multi-billion shopping mall near Stratford where
+the London Olympics are about to be held. The mall started to display
+'Welcome to the Olympics' posters in lots of different languages. One was
+supposed to have been in Arabic. Yet the printers got the font wrong and the
+message was 'gibberish' just like First Capital Connect did last week.
+Again, one wonders why they didn't proof read it first - using a native
+speaker of course.  http://www.bbc.co.uk/news/uk-england-london-18971686.
+
+------------------------------
+
+Date: Tue, 24 Jul 2012 20:00:06 -0500
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: Olympics security poster 'gibberish' (Brady, RISKS-26.94)
+
+... Perhaps proof-reading by a native speaker would have been an idea.
+
+As a native Russian speaker I can assure you that I can't remember one
+multilingual ad with Russian text in it on a city bus, nor a single
+English-language movie with original Russian in it (written or spoken), that
+has been proof-read by a native speaker. Best case scenario is a technically
+correct sentence constructed by someone unfamiliar with contemporary spoken
+language, and those are a rare find. Why would Arabic be any different?
+
+Dimitri Maziuk, Programmer/sysadmin BioMagResBank,
+UW-Madison -- http://www.bmrb.wisc.edu
+
+------------------------------
+
+Date: Tue, 24 Jul 2012 15:36:56 -0400
+From: Steven J Klein <steven@yourmacexpert.com>
+Subject: Re: Taxing old browsers out of existence (Baker, RISKS-26.93)
+
+> I've noticed that with every browser "update", the browser gets noticeably
+> slower.
+
+Henry Baker should consider using a webkit-based browser like Safari.
+Here's why:
+
+  We have a zero-tolerance policy for performance regressions. If a patch
+  lands that regresses performance according to our benchmarks, then the
+  person responsible must either back the patch out of the tree or drop
+  everything immediately and fix the regression.
+
+  Source: http://www.webkit.org/projects/performance/
+
+Steven Klein Computer Service  1-248-YOUR-MAC
+
+------------------------------
+
+Date: Wed, 25 Jul 2012 14:25:59 +0200
+From: Mohamed Kaaniche <Mohamed.Kaaniche@laas.fr>
+Subject: LADC2013 - Sixth Latin-American Symposium on Dependable Computing
+
+LADC2013 - Sixth Latin-American Symposium on Dependable Computing
+http://www.ft.unicamp.br/ladc2013
+Rio de Janeiro, Brazil, 1-5 April 2013
+
+LADC is the major Latin-American event dedicated to computer system
+dependability. The LADC 2013 program will present technical sessions,
+workshops, tutorials, industrial track, keynote talks from top international
+experts in the area.  LADC organization invites you to submit original
+works.
+
+In its 6th Edition, LADC is going to have its proceedings published by IEEE
+Computer Society, and indexed on IEEE Xplore.  There is also going to be a
+Best Paper Award.
+
+Papers and Practical Experience Reports must be submitted by 14 Sep 2012,
+tutorials and workshops a week later: https://submissoes.sbc.org.br.
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.95
+************************

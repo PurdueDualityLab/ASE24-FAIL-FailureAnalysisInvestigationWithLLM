@@ -1,0 +1,658 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 22 November 2011  Volume 26 : Issue 63
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.63.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Online elections (Rob Slade)
+Americans Elect (Jim Cook)
+Android leads the way in mobile malware growth (Peter Houppermans)
+Firm Sought to Install Spyware Via Faked iTunes Updates (Werner U)
+"Why Law Enforcement Can't Stop Hackers" (Meridith Levinson via
+  Gene Wirchenko)
+The Web as Backyard Fence Gone Wild (Galen Gruman via Gene Wirchenko)
+Re: Update: U.S. water plants reportedly hit by cyber attacks (Howard Webb)
+Re: 9 Million Israelis' PII hacked (Barry Jaspan)
+Slovenia attacks panoramic photography (Lauren Weinstein)
+Re: How Google, by voluntarily implementing facial blurring... (Amos Shapir)
+Protecting data for the long term with forward secrecy (Lauren Weinstein)
+Re: "Coming conundrum: Malware signed ... (David Shambroom)
+Congress Declares War on the Global Internet - Internet Replies
+  "Bring It On!" (Robert Heuman)
+Re: ANA plane goes nearly belly up ... wrong knob turned (John Stanley,
+  Larry Sheldon)
+Re: The Coming Fascist Internet (Amos Shapir)
+The Surveillance Catalog (Gabe Goldberg)
+How to persuade lawmakers to change their passwords (Chiaki Ishikawa)
+I think I got a spammed (jidanni)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 18 Nov 2011 17:17:19 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Online elections
+
+Electronic and online voting systems have been a topic of interest on this
+forum.  I thought I'd add some observations from recent experience.
+
+I belong to an organization that is holding board elections.  We used to
+have elections at the AGM, with those who couldn't attend submitting mail
+ballots.  Our "voter turnout" has always been low.  In the past few years,
+there has been an option for online voting.
+
+There have been problems in the last few years, but this year it seems the
+problems are greater.  I was one of those having difficulty voting.  I tried
+nine times, with four browsers, on two machines, before I succeeded.
+
+Wednesday (Firefox) the voting button (at that time just labeled "Button")
+had no function.  Thursday I got "Sorry, an error has occurred while
+processing your request."  No option to do anything.  When I tried to go
+back to the page, the button said "Submitting" and was inactive. When I
+tried to reload or revisit the page, the button again said "Submit," but was
+no longer active.
+
+Firefox gave me an error submitting the vote.  Safari gave me an error
+submitting the vote.  IE initially wouldn't show me the information about
+the election on the member home page: when I specified the voting URL it
+wouldn't even let me log in.  (Firefox and Safari both demanded that I log
+in twice, once for the main site, and once for the election.)
+
+I did, finally (after eight attempts on the first machine), manage to vote
+by going to a different machine (a Mac, using Safari).  I fairly sure I
+voted, because now the system says I can't vote twice.  Whether or not my
+vote was counted is a matter of faith.  But there is obviously a fairly
+severe problem.
+
+(In terms of faith in the system, I should note that this years system lacks
+a feature of the old system that was very reassuring.  The voting takes
+place over a period of approximately two weeks.  Under the old system, you
+could vote, and then go back at any time up to the end of the voting period
+and review your vote.  Granted, this reassurance still relied upon the
+supposition that the system and/or people behind it did count the votes, and
+that they did not read your voting in the meantime.  However, if it did not
+actually fulfill much of a functional requirement for confidence in the
+voting system, it did, at least, provide something of an assurance
+requirement that your vote had actually been entered [somewhere].)
+
+I'm not sure what the problem is.  It isn't with the browser or system,
+because others have voted with Win7 (64) and Firefox 8.  (It may possibly be
+with the settings: I'm fairly aggressive about privacy and security.  For
+obvious reasons.  However, this is unlikely, since I'm mainly aggressive
+with FireFox, and don't use the others much.)
+
+It can't be to do with cookies, because all three browsers failed on my main
+machine, and they don't share cookies.  It may be possible that some slip in
+the procedure did something with my IP address, hence the ability to vote on
+a different machine.  (No, wait, that shouldn't matter, because I'm behind a
+NAT ...)
+
+(I very strongly suspect, for a variety of reasons, that this new voting
+system is built on top of Sharepoint.  From past experiences I am definitely
+not a Sharepoint fan.)
+
+I should mention one other point.  There is a provision for write-in
+candidates in the system.  Today someone noted the fact that there are five
+slots for write-in candidates, but you are only supposed to vote for four
+people.  I figured it was a great piece of social engineering if you truly
+wanted to rig the vote in favour of the "official" candidates: those who are
+likely to vote for anyone other than the official candidates would be those
+most likely to spoil their ballots by putting in too many votes.  Then I
+began to wonder.  Given the problems with the rest of the system, did anyone
+think of that possibility?  Is there anything in the programming that
+actually checks to see how many people you voted for?  And, even if there
+is, is there anything that checks to make sure you don't vote for the same
+write-in candidate four times?  (Or five, if the check isn't there.)
+
+I'm beginning to wonder if we should have scrutineers.  And if the scrutineers
+should have to have full access to the Web logs ...  And the voting site
+programming ...
+
+I think that the people at our HQ are doing their best to make the election
+work, and to ensure that everyone gets to vote. (Given our abysmal voting
+turnout even *with* the online voting, which, if I remember correctly, is
+running around three percent.)  I'm sure they are working at it.  In fact I
+know they are working hard to fix the problems.
+
+I do think this fiasco makes an important point.  It's really, really hard
+to do online voting properly.  Just go to the archives and see the
+discussions on electronic and online voting.  So far, nobody has been able
+to come up with a really solid system.
+
+It's an interesting exercise in risk management.  We are a semi-private
+organization, and it's unlikely anyone is going to try and rig the
+elections.  At the moment, our biggest problem seems to be that some people
+can't vote.  But if we drop the online voting system, a lot more people will
+be unable to vote.
+
+rslade@vcn.bc.ca     slade@victoria.tc.ca     rslade@computercrime.org
+victoria.tc.ca/techrev/rms.htm http://www.infosecbc.org/links
+
+------------------------------
+
+Date: Sun, 20 Nov 2011 19:08:06 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Americans Elect (Jim Cook)
+
+Americans Elect Holds its First Vote -- and it's Broken!
+Jim Cook, IrregularTimes.com, 19 Nov 2011
+
+  [Jim Cook visited AE's Shape the Debates feature, allowing up-or-down
+  votes on selected issues.]
+
+http://irregulartimes.com/index.php/archives/2011/11/19/americans-elect-holds-its-first-vote-and-its-broken/
+http://irregulartimes.com/index.php/archives/2011/11/19/americans-elect-holds-its-first-vote-and-its-broken/comment-page-1/#comment-825660
+
+------------------------------
+
+Date: Tue, 22 Nov 2011 09:58:15 +0100
+From: Peter Houppermans <peter@houppermans.com>
+Subject: Android leads the way in mobile malware growth
+
+http://globalthreatcenter.com/?p=2492
+
+  ``What happens when anyone can develop and publish an application to the
+  Android Market? A 472% increase in Android malware samples since July
+  2011. These days, it seems all you need is a developer account, that is
+  relatively easy to anonymize, pay $25 and you can post your
+  applications.''
+
+Interesting is the growth of malicious Android apps that can acquire
+root level.  That has changed from "a few" to "just about all".
+
+Too Open Source?
+
+------------------------------
+
+Date: Tue, 22 Nov 2011 22:52:37 +0100
+From: Werner U <werneru@gmail.com>
+Subject: Firm Sought to Install Spyware Via Faked iTunes Updates
+
+Troublesome Trojans, *Der SPIEGEL*
+<http://www.spiegel.de/international/germany/0,1518,799259,00.html>
+
+A surveillance firm claims it can distribute its spyware via faked iTunes
+updates. Apple appears to have moved to eliminate the security gap, but the
+debate over trojans used by governments, both democratic and
+otherwise, continues to boil.
+
+------------------------------
+
+Date: Mon, 21 Nov 2011 15:07:51 -0800
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Why Law Enforcement Can't Stop Hackers" (Meridith Levinson)
+
+The threat that criminal hackers pose to corporate and government
+information systems has spiked in the past five years, according to the FBI,
+and shows no signs of abating. The worst part: Law enforcement is virtually
+powerless in cracking down on cybercrime.  CIO.com investigates the
+challenges law enforcement officials face in investigating and prosecuting
+hackers.  [Source: Meridith Levinson, CIO.com, 15 Nov 2011]
+  http://www.cio.com/article/694071/Why_Law_Enforcement_Can_t_Stop_Hackers
+
+------------------------------
+
+Date: Tue, 22 Nov 2011 09:51:27 -0800
+From: Gene Wirchenko <genew@ocis.net>
+Subject: The Web as Backyard Fence Gone Wild (Galen Gruman)
+   Ah, Web rumours.  Here is a good example of the effects that can result:
+
+Off with their heads! Mobile Edge's 2011 Turkey Awards
+In a year of amazing innovation and adoption of mobile tech, there
+were also some amazing duds and boneheaded moves
+[Source: Galen Gruman, *InfoWorld*, 22 Nov 2011]
+http://www.infoworld.com/d/mobile-technology/their-heads-mobile-edges-2011-turkey-awards-178441
+
+[This example starts on page 2.]
+
+The technology press. I've gone apoplectic several times this past year
+watching the parade of obviously false iPhone 5 and iPad 3 stories appear on
+practically every tech news site, as well as many general news outlets. It's
+as if the journalism community decided to hell with truth and became Weekly
+World News wannabes in their quest for that Holy Grail of page views. I need
+page views too, but I don't believe I have to fake stories or, worse, copy
+others' fake stories to get them.
+
+This abdication of professional practice -- which may have started with
+untrained bloggers but quickly became adopted by mainstream journalists --
+ironically led to a big letdown in the same media when the iPhone 4S was
+announced. The reality of the upgraded product couldn't match the fiction
+they built up over the course of a year.  Perhaps trained to believe none of
+us any more, buyers snapped up the iPhone 4S in droves, causing supplies to
+run out quickly. Ironically, it was the stock market -- that
+once-rationalizing economic force that has become an emotion-driven
+roller-coaster ride -- that reacted in the most damaging way, pummeling
+Apple's stocks when Apple said its iPhone sales had declined more than usual
+before a new release because the incessant rumors caused a higher proportion
+of buyers to wait.
+
+Even sadder, I still see iPhone 5 and iPad 3 stories in the technology
+press, not just in fanboy blogs, even after this year's embarrassing saga
+became clear. I hope readers have stopped paying attention to these turkey
+stories and their turkey publications.  These turkeys will keep gobbling
+nonsense as long as they think you're listening.
+
+------------------------------
+
+Date: Fri, 18 Nov 2011 17:00:39 -0800
+From: Howard Webb <howard.bryan.webb@gmail.com>
+Subject: Re: Update: U.S. water plants reportedly hit by cyber attacks
+
+The story was also covered by Ellen Nakashima of the Washington Post:
+
+http://www.washingtonpost.com/blogs/checkpoint-washington/post/foreign-hack=
+ers-broke-into-illinois-water-plant-control-system-industry-expert-says/201=
+1/11/18/gIQAgmTZYN_blog.html
+
+The money lines in this story are:
+
+According to the report, hackers apparently broke into a software company's
+database and retrieved user names and passwords of various control systems
+that run water plant computer equipment. Using that data, they were able to
+hack into the plant in [Springfield] Illinois, Weiss said.
+
+It's not the first time that two-step technique -- hack a security firm to
+gain the keys to enter other companies or entities -- has been used.  I
+wonder if the hacked software company gets to buy the water plant a new
+water pump, or do they get off the hook because someone gave Internet access
+to critical infrastructure and blabbed user/password info to a 3rd party.
+
+------------------------------
+
+Date: Mon, 21 Nov 2011 00:31:50 -0500
+From: Barry Jaspan <barry@jaspan.org>
+Subject: Re: 9 Million Israelis' PII hacked (RISKS-26.61)
+
+According to the Israeli Central Bureau of Statistics, the total living
+population of Israel as of May 2011 is 7.7M. The 9 million records stolen
+includes data on both living and dead residents, but roughly speaking, it
+seems like it covers "all of them."
+  http://www1.cbs.gov.il/www/hodaot2011n/11_11_101e.pdf
+
+------------------------------
+
+Date: Fri, 18 Nov 2011 15:42:10 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Slovenia attacks panoramic photography
+
+Apparently inspired by Street View face blurring,
+Slovenia attacks panoramic photography
+
+  "So how did an arbitrary technical distinction come to decide whether an
+  uncensored photograph is legal or illegal in Slovenia? The following is a
+  cautionary tale of what happens when non-technical regulators meet a
+  new-to-them technological innovation they are ill-equipped to judge. It is
+  also a case study of how Google, by voluntarily implementing facial
+  blurring in its relatively new but hugely popular Street View automated
+  360-degree panoramas, created norms in the minds of regulators that they
+  are now eager to set in stone legally. By focusing on the technical
+  details distinguishing Street View from more conventional photography
+  formats, these regulators have managed to condemn an entire emerging field
+  of photography to burdensome and invasive censorship requirements that are
+  impossible to scale without Google-sized automation resources."
+    http://j.mp/rCxkk6  (Dliberation)
+
+------------------------------
+
+Date: Sun, 20 Nov 2011 16:47:56 +0200
+From: Amos Shapir <amos083@hotmail.com>
+Subject: Re: How Google, by voluntarily implementing facial blurring...
+
+If I understand the Slovenian rules correctly (it seems that nobody does),
+in most cases publishing individual street photographs is ok, but combining
+the same photographs in a panorama is not?  What if one site contained the
+images while another the application to combine them on-line in real time?
+
+What if the image on top of the referred article at D-liberation would have
+been shot in Slovenia instead of Yemen (lets even assume that the images
+were exported out of Slovenia before the law took effect), would Slovenians
+be committing a crime by clicking on it?  The mind boggles.
+
+------------------------------
+
+Date: Tue, 22 Nov 2011 10:43:37 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Protecting data for the long term with forward secrecy
+
+http://j.mp/v0dI6W  (Google Online Security Blog)
+
+  "Forward secrecy requires that the private keys for a connection are not
+  kept in persistent storage. An adversary that breaks a single key will no
+  longer be able to decrypt months' worth of connections; in fact, not even
+  the server operator will be able to retroactively decrypt HTTPS sessions.
+  Forward secret HTTPS is now live for Gmail and many other Google HTTPS
+  services(*), like SSL Search, Docs and Google+. We have also released the
+  work that we did on the open source OpenSSL library that made this
+  possible."
+
+*Excellent* work.  Congrats to the team(s) responsible.
+
+------------------------------
+
+Date: Mon, 21 Nov 2011 01:12:56 -0500
+From: David Shambroom <wds@intersystems.com>
+Subject: Re: "Coming conundrum: Malware signed ... (Lemos, RISKS-26.62)
+
+This item from refers to code signing with certificates.  Of course, the
+public keys in certificates are used to verify signatures, not to generate
+them.  This particular confusion is a major source of headaches for me,
+personally, in dealing with my colleagues and customers at InterSystems.
+
+------------------------------
+
+Date: Sat, 19 Nov 2011 10:59:24 -0500
+From: RsH <robert.heuman@alumni.monmouth.edu>
+Subject: Re: Congress Declares War on the Global Internet - Internet Replies
+  "Bring It On!"
+
+My suggested solution, and I am in Canada, which has its IP addresses assigned
+by ARIN and its .com, .net and .org domain names assigned out of the U.S.
+according to SOPA, is to move ARIN to CRIN [Canadian Registry of Internet
+Numbers] and the Domain Name servers to Canada as well.
+
+Once outside the U.S. the SOPA rules cannot be applied the same way, since the
+jurisdiction of the U.S. Congress does NOT apply to Canada, or so we in Canada
+like to think.
+
+ARIN covers the U.S., Canada and 20 Caribbean nations. .COM, .NET and .ORG are
+used around the world, so in both cases, moving out of the U.S. is going to be
+part of the battle.
+
+As it stands, unless I misread SOPA, the Canadian and Canadian provincial and
+territorial government web sites are consider domestic U.S. sites! We CANNOT
+permit the U.S. government to shut down the Canadian government's web access
+because someone in the U.S. doesn't like a film on file at the Library of
+Parliament, or whatever other excuse may be used.
+
+------------------------------
+
+Date: Fri, 18 Nov 2011 18:59:44 -0800 (PST)
+From: John Stanley <stanley@peak.org>
+Subject: Re: ANA plane goes nearly belly up ... wrong knob turned
+
+In part, Tony B Atkinson <tony.atkinson@gb.abb.com> wrote:
+
+  The pilot has to reach behind him to access the control, it's effectively
+  out of his line of sight. Distinguishing the control is probably done by
+  feel most of the time. ...
+
+  Ahh, the benefit of hindsight.
+
+The irony of the statement is punishable. I think increasing the amount of
+visual processing a pilot has to do would be punitive.
+
+------------------------------
+
+Date: Fri, 18 Nov 2011 21:54:27 -0600
+From: Larry Sheldon <lfsheldon@gmail.com>
+Subject: Re: ANA plane goes nearly belly up ... wrong knob turned
+
+Since the days when the risk was a quick trip to Havana, I have believed the
+obvious (but so far unnoticed) answer is that air-carrier aircraft should be
+configured so the cockpit door can not be opened unless there is weight on
+the nose gear, or so that cockpit access if via a separate door to the
+outside.
+
+Yes, that means a separate toilet in the cockpit, and it means some
+provision for meals (I'd say packages that require no cabin access at all).
+
+I might even go so far as to say there can be no communication
+cabin-to-flight deck at all except "Emergency" which results in landing
+ASAP.
+
+(Flight deck-to-cabin announcements would be allowed.)
+
+------------------------------
+
+Date: Sun, 20 Nov 2011 16:59:22 +0200
+From: Amos Shapir <amos083@hotmail.com>
+Subject: Re: The Coming Fascist Internet (Weinstein, RISKS-26.61)
+
+Comparing the Internet to other rather new technologies shows that prognosis
+is not good.  Take driving as a case in point: about 20 years after the
+invention of the automobile, anyone could drive anything anywhere; now no
+one can drive anywhere unless both vehicle and driver are licensed and
+registered by some government.
+
+The Internet is even easier to control than roads, as all infrastructure is
+supplied by a few big companies, which usually comply with the government.
+China seems to be the future.
+
+------------------------------
+
+Date: Sun, 20 Nov 2011 10:23:32 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Surveillance Catalog
+
+The Surveillance Catalog, Where governments get their tools
+
+Documents obtained by The Wall Street Journal open a rare window into a new
+global market for the off-the-shelf surveillance technology that has arisen
+in the decade since the terrorist attacks of 11 Sep 2001.  The techniques
+described in the trove of 200-plus marketing documents include hacking tools
+that enable governments to break into people's computers and cellphones, and
+"massive intercept" gear that can gather all Internet communications in a
+country.
+
+The documents -- the highlights of which are cataloged and searchable here
+-- were obtained from attendees of a secretive surveillance conference held
+near Washington, D.C., last month.
+
+http://projects.wsj.com/surveillance-catalog/#/
+
+Gabriel Goldberg, Computers and Publishing, Inc. 3401 Silver Maple Place,
+Falls Church, VA 22042 (703) 204-0433 http://www.linkedin.com/in/gabegold
+
+------------------------------
+
+Date: Sat, 19 Nov 2011 12:06:03 +0900
+From: "Chiaki Ishikawa" <ishikawa@yk.rim.or.jp>
+Subject: How to persuade lawmakers to change their passwords
+
+Since this summer, there have been a series of reports of consorted attacks
+based on phishing or malware attachment in e-mails against large companies,
+government agencies and similar organizations in Japan.
+
+Obviously, there were some DoS attacks some well-known government web sites
+for the last few years.
+
+Also, companies that make military equipment were targets.  And these
+companies also make big public works such as nuclear power plants.
+
+Past summer, Mitsubishi Heavy Industries, IHI Corp, and Kawasaki Heavy
+Industries were reported as victims of such attacks. Initially, the extent
+of attack and how successful was not clear.
+
+- http://ajw.asahi.com/article/behind_news/social_affairs/AJ2011092111456
+  Signs of concerted cyberattack on Japanese defense firms
+ (This page and others mentioned here  have
+  a series of links to other recent updates.)
+
+However, after a flurry of such reports were made public in September and
+October, it became evident that at least these large companies building
+military gears were the target of concerted attacks.
+
+- http://ajw.asahi.com/article/behind_news/social_affairs/AJ2011092111555
+U.S. government concerned at hacking of Japan arms firms
+
+US has a good reason to get worried. Under license, MHI builds F-15s,
+Patriot missiles, nuclear reactor parts.  Also, IHI builds engine parts for
+the military aircrafts, Kawasaki Heavy Industries builds helicopters, etc.
+Friendly military gears created by companies whose computers are compromised
+are not something you can easily trust, eh?
+
+It seemed at least some non-top-secret proprietary data seemed to have been
+sent to external web sites.  Basically, some PCs were infected after the
+initial attack (it seems that some of them are 0-day attack from what I
+read) and from there servers were attacked and then compromised.  Once that
+happened, many PCs on the same LAN were infected.
+
+- http://ajw.asahi.com/article/behind_news/social_affairs/AJ2011100813764
+Cyber-attackers could have stolen defense contractor's passwords.
+"45 servers and 38 personal computers at 11 of MHI's facilities were
+infected with viruses. "
+
+Now I gave the benefit of doubt to the security officers or admins
+because some early reports suggested that at least some attacks were
+0-day attack or some were so advanced that even anti-virus software
+companies could not keep up with.
+Although I want high-standard for someone handling sensitive
+material, still I gave benefit of doubt.
+(After all the extent became evident however, I wonder why IDS could
+not detect some suspicious activity, though. Stringent after-the-fact
+analysis is in order here.)
+
+But along such revelations of attacks on these companies came
+the report of attack to the office of members Japanese parliament
+(called Diet for some reason. There are Upper House and Lower House).
+
+- http://ajw.asahi.com/article/behind_news/social_affairs/AJ2011110316472
+Upper House Computers also hacked.
+
+According the report and earlier ones, someone sent e-mails with a
+trojan to lawmakers' offices. First the computers of Lower House members
+were infected.
+I suspect people who need to open e-mails from unknown
+third parties such as members of parliament (an e-mail from a possible
+voter in his/her district?) are very vulnerable to this kind of attack.
+
+To make a long story short, it is now believed that a server used
+for serving the needs of offices of members were compromised eventually
+and it is possible that the ID/passwords were stolen.
+
+What struck me as a blow is the following news.
+
+- http://ajw.asahi.com/article/behind_news/social_affairs/AJ201111180049
+Only 45% of lawmakers changed passwords after cyber-attack
+
+On Oct 25th, the possibility of passwords being stolen became real.
+So lawmakers's offices were asked to change passwords immediately
+on Oct 27th.
+
+So far, so good.
+
+BUT, on Nov 2., the house secretariat visited each lawmaker's office
+one by one and asked if the password had been changed.
+It was found that ONLY 45% of the lawmakers had done so!?
+(Others either didn't or the answer was not available immediately.)
+
+Nov 14, it was made clear that ALL the passwords of Lower House members
+have been stolen (with the secretaries' of the members), 480 passwords
+in total!
+
+Mind boggling, isn't it?
+
+Open Government, you bet.
+
+Given a pre-announced or pre-agreed procedure [or even without such a
+predefined procedure in place], I wonder if it had been a proper
+measure to disable the existing account or at least change the
+passwords of all accounts from the server side on Oct 27th.
+
+If your user is a law-maker, and not an undergraduate or graduate
+student, it may be difficult to do so :-(
+
+Chiaki Ishikawa
+
+PS: Concerted attacks of this nature (and the use of 0-day attack)
+seem to suggest an involvement of national-level organization.
+
+------------------------------
+
+Date: Sun, 20 Nov 2011 07:40:51 +0800
+From: jidanni@jidanni.org
+Subject: I think I got a spammed
+
+|Date: Sat, 19 Nov 2011 15:27:47 +0100
+|From: "POLICE ANTI FRAUD UNIT"<george....@yahoo.com>
+|Subject: THE STATE POLICE DEPARTMENT.DO NOT DISREGARD THIS NOTICE,PLEASE.
+|X-Spam-Status: Yes, score=49.9 required=1.9 tests=ADVANCE_FEE_2_NEW_FORM,
+|       ADVANCE_FEE_2_NEW_FRM_MNY,ADVANCE_FEE_2_NEW_MONEY,ADVANCE_FEE_3_NEW,
+|       ADVANCE_FEE_3_NEW_FORM,ADVANCE_FEE_3_NEW_FRM_MNY,ADVANCE_FEE_3_NEW_MONEY,
+|       ADVANCE_FEE_4_NEW,ADVANCE_FEE_4_NEW_FORM,ADVANCE_FEE_4_NEW_FRM_MNY,
+|       ADVANCE_FEE_4_NEW_MONEY,ADVANCE_FEE_5_NEW,ADVANCE_FEE_5_NEW_FORM,
+|       ADVANCE_FEE_5_NEW_FRM_MNY,ADVANCE_FEE_5_NEW_MONEY,FILL_THIS_FORM,
+|       FILL_THIS_FORM_FRAUD_PHISH,FILL_THIS_FORM_LOAN,FORGED_MUA_OUTLOOK,
+|       FORGED_OUTLOOK_HTML,FORGED_OUTLOOK_TAGS,FORGED_YAHOO_RCVD,FORM_FRAUD_3,
+|       FORM_FRAUD_5,FREEMAIL_ENVFROM_END_DIGIT,FREEMAIL_FROM,FROM_MISSPACED,
+|       FROM_MISSP_DYNIP,FROM_MISSP_EH_MATCH,FROM_MISSP_FREEMAIL,FROM_MISSP_MSFT,
+|       FROM_MISSP_REPLYTO,FROM_MISSP_TO_UNDISC,FROM_MISSP_URI,FROM_MISSP_USER,
+|       FSL_CTYPE_WIN1251,FSL_NEW_HELO_USER,FSL_UA,FSL_XM_419,HTML_MESSAGE,J_NO_ME,
+|       LOTS_OF_MONEY,MIME_HTML_ONLY,MONEY_FRAUD_3,MONEY_FRAUD_5,MONEY_FRAUD_8,
+|       MONEY_FROM_MISSP,NSL_RCVD_FROM_USER,RCVD_IN_BRBL_LASTEXT,RCVD_IN_PSBL,
+|       RDNS_DYNAMIC,SUBJ_ALL_CAPS,T_FRT_BELOW2,T_LOTTO_DEPT
+|X-Spam-Languages: en
+|X-Size: 10456
+|X-File: Mail/almost-certainly-spam/new/1321732877.10157_0.ps11007
+I guess they try a multifaceted approach these days.
+
+  [Wow! A score of 49.9 is REALLY impressive!  PGN]
+    [jidanni- ah no wonder... they are now competing for a world's record.
+    And I thought it was just a SPAM 1.0 spam!]
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.63
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E76CD4E5050EXSAN02campus_--

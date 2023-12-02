@@ -1,0 +1,546 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.57
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 23 March 2021  Volume 32 : Issue 57
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.57>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Cybersecurity in retrospect: not good! (PGN on NYTimes item)
+A New York Lawmaker Wants to Ban Police Use of Armed Robots (WiReD)
+Eastern Health blames software after thousands allowed to book early vaccine
+  appointments (CBC.CA)
+How far should humans go to help species adapt? (Atlas Obscura)
+No good evidence that 5G harms humans, new studies find (Gizmodo)
+Where Are Those Shoes You Ordered? Check the Ocean Floor (WiReD)
+Hackers are exploiting a server vulnerability with a severity of 9.8
+  out of 10 (Ars Technica)
+What Happens When Our Faces Are Tracked Everywhere We Go?
+  Face Is Not Your Own (NYTimes)
+Risk transfer and Doordash (Rob Slade)
+'Expert' Hackers Used 11 Zerodays to Infect Windows, iOS, Android Users
+  (Dan Goodin)
+New publication launch: Zero Day (Kim Zetter)
+Faster fusion reactor calculations thanks to machine learning (phys.org)
+Re: Victoria University of Wellington accidentally wipes all desktop
+  computers (John Harper)
+Richard Thieme -- Mobius: A Memoir (reviewed by PGN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 20 Mar 2021 14:18:59 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Cybersecurity in retrospect: not good! (PGN on NYTimes item)
+
+  [I missed noting this article from 15 March.  It deserves mention here, in
+  the wake of the SolarWinds (RISKS-32.41-44) and Microsoft Exchange
+  (RISKS-32.53-54) hacks (attributed to Russia and China, respectively).
+  Evidently, the intelligence agencies missed massive intrusions by Russia
+  and China, forcing the administration and Congress to look for solutions,
+  including closer partnership with private industry.  PGN-pruned here with
+  just a few salient paragraphs of a 3/4-page article.  The rest is worth
+  reading.  There's lots more on what happened, what is being done, and what
+  needs to be done.  As RISKS readers know, we urgently need better software
+  on better hardware, better software engineering, better government and
+  corporate understanding of the risks and their international implications
+  -- and *much more*.  PGN]
+
+David E. Sanger, Julian E. Barnes and Nicole Perlroth
+White House Rethinks Cybersecurity After Failure to Detect Hackings:
+Looking to private companies to cope with domestic surveillance restraints
+*The New York Times*, 15 Mar 2021
+https://www.nytimes.com/2021/03/14/us/politics/us-hacks-china-russia.html
+
+The sophisticated hacks pulled off by Russia and China against a broad array
+of government and industrial targets in the U.S. -- and the failure of the
+intelligence agencies to detect them -- are driving the Biden administration
+and Congress to rethink how the nation should protect itself from growing
+cyberthreats.
+
+Both hacks exploited the same gaping vulnerability in the existing system:
+They were launched from inside the United States -- on servers run by
+Amazon, GoDaddy and smaller domestic providers -- putting them out of reach
+of the early warning system run by the National Security Agency.  The
+agency, like the CIA and other American intelligence agencies, is prohibited
+by law from conducting surveillance inside the United States, to protect the
+privacy of American citizens.  [...]  In the end, the hacks were detected
+long after they had begun not by any government agency but by private
+computer security firms.
+
+The full extent of the damage to American interests from the hacks is not
+yet clear, but the latest, attributed by Microsoft to China, is now
+revealing a second vulnerability. As Microsoft releases new patches to close
+the holes in its system, that code is being reverse-engineered by criminal
+groups and exploited to launch rapid ransomware attacks on corporations,
+industry executives said. So a race on between Microsoft's efforts to seal
+up systems, and criminal efforts to get inside those networks before the
+patches are applied.  [...]  The failures have prompted the White House to
+begin assessing options for overhauling the nation's cyber-defenses even as
+the government investigates the hacks. Some former officials believe the
+hacks show Congress needs to give the government additional powers.
+
+It was FireEye that ultimately found the SolarWinds attack organized by
+Russia, and a small Virginia firm named Volexity that revealed to Microsoft
+the fact that Chinese hackers found four previously unknown vulnerabilities
+in their systems, exposing hundreds of thousands of computer servers that
+use Microsoft Exchange software.
+
+Previous items:
+<https://www.nytimes.com/2020/12/08/technology/fireeye-hacked-russians.html>
+<https://www.nytimes.com/2021/03/06/technology/microsoft-hack-china.html>
+
+------------------------------
+
+Date: 	Mon, 22 Mar 2021 18:29:23 -0400
+From: 	Gabe Goldberg <gabe@gabegold.com>
+Subject: A New York Lawmaker Wants to Ban Police Use of Armed Robots (WiReD)
+
+Officers' use of Boston Robotics Digidog intensifies concerns about
+militarization of the police.
+
+New York City council member Ben Kallos says he watched in horror last month
+when city police responded to a hostage situation in the Bronx using Boston
+Dynamics Digidog, a remotely operated robotic dog equipped with surveillance
+cameras. Pictures of the Digidog went viral on Twitter, in part due to their
+uncanny resemblance with world-ending machines in the Netflix sci-fi series
+Black Mirror.  ...
+
+In the Bronx incident last month, police used the Digidog to gather
+intelligence on the house where two men were holding two others hostage,
+scoping out hiding places and tight corners. Police ultimately apprehended
+the suspects, but privacy advocates raised concerns about the technical
+capabilities of the robot and policies governing its use.
+
+The ACLU questioned why the Digidog was not listed on the police
+department's disclosure of surveillance devices under a city law passed last
+year. The robot was only mentioned in passing in a section on situational
+awareness cameras.  The ACLU called that disclosure ``highly inadequate'' --
+criticizing the ``weak data protection and training sections'' regarding
+Digidog.
+
+In a statement, the NYPD said it has been using robots since the 1970s to
+save lives in hostage situations and hazmat incidents. This model of robot
+is being tested to evaluate its capabilities against other models training
+sections, râregarding Digidog.in use by our Emergency Service Unit a Bomb
+Squad.
+
+In a statement, Boston Dynamics CEO Robert Playter said the company's terms
+of service prohibit attaching weapons to its robots.  ``All of our buyers,
+without exception, must agree that Spot will not be used as a weapon or
+configured to hold a weapon.  As an industry, we think robots will achieve
+long-term commercial viability only if people see robots as helpful,
+beneficial tools without worrying if they're going to cause harm.''
+
+https://www.wired.com/story/new-york-lawmaker-wants-ban-police-armed-robots/
+
+The risk? Overreacting. Prospectively reacting. Horror over surveillance?
+Shock over robots -- in use for decades -- evolving?
+
+------------------------------
+
+Date: Tue, 23 Mar 2021 10:39:25 -0600
+From: 	Matthew Kruk <mkrukg@gmail.com>
+Subject: Eastern Health blames software after thousands allowed to book
+  early vaccine appointments (CBC.CA)
+
+A problem with Eastern Health's COVID-19 vaccination appointment booking
+system has allowed about 2,800 people to schedule appointments ahead of
+schedule, according to the health authority.
+
+At a media conference Tuesday afternoon, Eastern Health president and CEO
+David Diamond said people were able to prematurely book appointments due to
+the scheduling software's design, allowing those who had access to the
+booking website to share their codes with others.
+
+"The system has allowed people to register somewhat outside of our regular
+process . book themselves, schedule themselves for vaccine appointments,"
+Diamond said.
+
+https://www.cbc.ca/news/canada/newfoundland-labrador/software-problem-early-appointments-1.5960328
+
+------------------------------
+
+Date: Tue, 23 Mar 2021 16:23:11 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How far should humans go to help species adapt? (Atlas Obscura)
+
+The idea of using gene editing to preserve natural systems seems, from a
+certain perspective, crazy. What could be less natural than a creature
+created in a lab?  And the perils of releasing gene-edited organisms --
+particularly those equipped with gene drive -- are clearly enormous.
+
+https://www.atlasobscura.com/articles/how-far-should-humans-go-to-help-species-adapt
+
+------------------------------
+
+Date: Sat, 20 Mar 2021 09:39:48 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: No good evidence that 5G harms humans, new studies find (Gizmodo)
+
+Concerns over the potential harms of 5G technology are overblown, according
+to two large new reviews of research recently published by scientists in
+Australia. Both found no clear evidence that the type of radio-frequency
+energy used by 5G mobile networks poses any danger to human health.
+
+5G is the next generation of wireless communication. It enables faster
+speeds and lower latency than LTE, and while we're already seeing that in
+action on 5G phones, it'll take years before 5G's potential to transform
+industries like autonomous cars becomes a reality.
+<https://gizmodo.com/the-state-of-5g-in-2021-are-we-there-yet-1846401219>
+
+That delayed promise hasn't stopped some people from warning that 5G will
+only accelerate the harms purportedly caused by our existing use of wireless
+technology. The evidence for any health risks from our cell phones today
+isn't particularly strong, but it's still something scientists are keeping
+an eye on. In particular, there have been many studies in the lab and on
+animals trying to figure how varying levels of radio-frequency energy could
+possibly affect the body, including the sort of energy that would be emitted
+by 5G networks.
+<https://blogs.scientificamerican.com/observations/we-have-no-reason-to-believe-5g-is-safe/>
+<https://gizmodo.com/no-a-study-didnt-just-prove-that-cellphones-cause-brai-1825776106>
+<https://gizmodo.com/a-new-report-links-cellphone-radiation-to-cancer-in-rat-1822730549>
+
+The two new papers are the work of researchers from the Australian Radiation
+Protection and Nuclear Safety Agency (ARPANSA) and the Swinburne University
+of Technology in Australia. Both were published this week in the Journal of
+Exposure Science and Environmental Epidemiology and are billed as the first
+reviews to focus on 5G specifically.  [...]
+<https://www.nature.com/articles/s41370-021-00297-6>
+<https://www.nature.com/articles/s41370-021-00307-7>
+
+https://gizmodo.com/no-good-evidence-that-5g-harms-humans-new-studies-find-1846513518
+
+------------------------------
+
+Date: Sat, 20 Mar 2021 09:27:36 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Where Are Those Shoes You Ordered? Check the Ocean Floor (WiReD)
+
+*More containers have fallen off ships in the past four months than are
+typically lost in a year. Blame heavy traffic and rolling waves.*
+
+  [Add this to the list of "supply-chain" risks.  PGN]
+
+Since the end of November, this is some of what has sunk to the bottom of
+the Pacific Ocean: vacuum cleaners; Kate Spade accessories; at least
+$150,000 of frozen shrimp; and three shipping containers full of children's
+clothes.  ``If anybody has investments in deep-sea salvage, there's some
+beautiful product down there,'' Richard Westenberger, chief financial
+officer of the children's clothing brand Carter's told a conference
+recently.
+
+You can blame the weather, a surge in US imports tied to the pandemic, or a
+phenomenon known as parametric rolling.
+
+All told, at least 2,980 containers have fallen off cargo ships in the
+Pacific since November, in at least six separate incidents. That's more than
+twice the number of containers lost annually between 2008 and 2019,
+according to the World Shipping Council.
+<https://www.worldshipping.org/Containers_Lost_at_Sea_-_2020_Update_FINAL_.pdf>
+
+Shipping companies tend to blame the weather. The Maersk *Essen*, which lost
+750 containers while sailing from China to Los Angeles in mid-January,
+``experienced heavy seas during her North Pacific crossing,'' Maersk said in
+a press statement. (The company didn't respond to WIRED's questions.) The
+Maersk *Eindhoven* experienced *heavy weather* in mid-February that
+contributed to a shipwide blackout in the middle of a storm; it lost 260
+containers. The ONE *Apus*, bound for the port of Long Beach from southern
+China, lost more than 1,800 containers during what the company called
+'gale-force winds and large swells' in November. That's expected to prove
+one of the costliest losses ever.
+
+The tough weather has been exacerbated by rising traffic to the US. US
+container imports grew 30 percent in December, compared with the same month
+a year earlier, according to IHS Markit
+<https://www.joc.com/maritime-news/container-lines/surge-us-imports-asia-january-extends-peak-2021_20210218.html>.
+``It's a boom in import cargo beyond anything we've seen before,'' says Lars
+Jensen, the CEO of SeaIntelligence Consulting, which advises clients in the
+container shipping industry.
+
+That's led to a shortage of containers, particularly empty containers stuck
+in North America when they're needed in Asia. So it's possible that
+shippers have pressed older, well-used containers into service, which are
+more likely to have defective or corroded lashing or locking mechanisms,
+says Ian Woods, a marine cargo lawyer and a partner with the firm Clyde &
+Co. Then you've got tired crews, stretched by the extra work so they're not
+able to pack and secure the containers as well as they would if well
+rested.  [...]
+https://www.wired.com/story/where-shoes-ordered-check-ocean-floor/
+
+  [Also noted by Gabe Goldberg.  PGN]
+
+------------------------------
+
+Date: Sun, 21 Mar 2021 10:05:35 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Hackers are exploiting a server vulnerability with a severity of
+  9.8 out of 10 (Ars Technica)
+
+As if the mass-exploitation of Exchange servers wasn't enough, now there's
+BIG-I
+
+https://arstechnica.com/gadgets/2021/03/to-security-pros-dread-another-critical-server-vulnerability-is-under-exploit/
+
+------------------------------
+
+Date: Sun, 21 Mar 2021 22:02:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: What Happens When Our Faces Are Tracked Everywhere We Go?
+  Face Is Not Your Own (NYTimes)
+
+When a secretive start-up scraped the Internet to build a facial-recognition
+tool, it tested a legal and ethical limit â€” and blew the future
+of privacy in America wide open.
+
+https://www.nytimes.com/interactive/2021/03/18/magazine/facial-recognition-clearview-ai.html
+
+------------------------------
+
+Date: Sat, 20 Mar 2021 12:30:03 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Risk transfer and Doordash
+
+In terms of risk management, there are our four basic strategies: risk
+avoidance, risk acceptance, risk mitigation, and risk transfer.
+
+Risk avoidance is fairly simple: if the game isn't worth the candle, don't
+do it.  If the risk, in terms of both factors of impact and probability, is
+any greater than the potential benefit, then we simply don't get involved in
+that activity or situation.  Or, more often, if the reward we aren't going
+to get from this isn't *much* greater than the risk, then we don't pursue
+the risk.
+
+Risk acceptance is more complicated.  Risk acceptance *should* be the
+calculated decision that the gain is much more than the potential loss, and
+so we will accept the risk.  However, most often risk acceptance is simply
+the fact that we *want* to do something, and we blindly accept the risk
+without knowing what that risk actually is.  The decision to drive drunk is
+based on a) the fact the we want to drink, and b) the fact that, by the time
+closing time comes, we are far too drunk to do any kind of risk calculation
+at all.  The decision to go to a party during a pandemic has everything to
+do with the fact that we are bored, and nothing to do with the probability
+of encountering someone who might be infected (currently likely around 50%),
+and the risk that, if infected, we might die (generally about 2%).
+
+(Psychology, social dynamics, and social engineering come in at this point. 
+Study after study shows that "successful," in terms of non-inherited money
+or running large corporations, people are much less risk averse and much
+more risk accepting than the general public.  This holds true even if the
+risk is demonstrably unlikely to come out in their favour.  This is unlikely
+to say anything about optimal risk strategies, since human beings have been
+tuned, by millions of years of evolution, natural selection, and avoiding
+sabre-toothed tigers in the savannah, to a certain range of risk acceptance
+and risk avoidance.  It is much more probable that is says something about
+the artificiality of modern, primarily capitalist, societies.  [The sample
+size is rather small, since we are not talking just about the one percent,
+but the vanishingly small proportion who manage to move into one percent
+from outside of it.]  It also says something ironic and contraindicating
+about CEOs of large corporations, since startups are much more risk
+accepting, having little or nothing *to* risk, while large corporations,
+having infrastructure, capital, and branding goodwill to risk, are generally
+much more risk averse.  And, again in terms of general risk acceptance, note
+that, while we remember and celebrate all the startups that go on to become
+large corporations, most startups, and many, many more than succeed, fail
+within the first year.)
+
+Risk mitigation is the bulk of what we think about when we think about risk
+management.  Mitigation is all the assessment, analysis, safeguards,
+controls, countermeasures, metrics, that we spend most of our time
+discussing, writing about, and teaching.  So I won't go into that here.
+
+Risk transfer is a way to shift our risk onto somebody else.  Most of the
+time, when we come to risk transfer, the only thing we can think of is
+insurance.  Go ahead.  Do a quick search on risk transfer on the ISC2
+"community."  Of the five items that come up, two obviously are about
+insurance, one actually is about insurance, and the remaining two just
+mention risk transfer without actually talking about it.
+
+However, the CoVID pandemic has provided us with a new example of risk
+transfer: food delivery.  We are afraid to go out--it's dangerous out
+there.  So we pay other people to go out there for us, and bring us food
+(and other necessities).  We thus transfer the risk to them.  As noted, it's
+not just meal deliveries: we now have a much greater use of grocery
+deliveries, and online shopping of all kinds.  We are staying home, in a
+dangerous time to go out, and getting other people to go out and take those
+risks for us.
+
+Although I'm grateful for the example of risk transfer (and I'm only sorry I
+thought about this too late to get it into the book), I'm not a big fan of
+food delivery, in general.  It's a big part of the "gig economy," and the
+gig economy is a massive "race to the bottom" in terms of wages and working
+standards.  (The gig economy is also, at least partly, being used by
+corporations to outsource both costs and risks, which is, again, ironic in
+view of the fact that the pandemic has also demonstrated the inherent
+brittleness of the business practice of endlessly trimming any and all
+margins in the name of "efficiency.")  Capitalism in general is currently
+driving growing inequities, and the gig economy may be pushing for the
+development of a massive underclass as there was in the eighteenth and
+nineteenth centuries (and possibly leading to violence, revolution, and war,
+as it did then).  In terms of the pandemic risk, we are seeing case clusters
+and outbreaks in fulfillment centres such as Amazon, but the delivery
+workers, of all types, are becoming the largest and most unregarded class of
+essential workers.  Unfortunately, the risk of illness to them is hard to
+probably years from now.
+
+------------------------------
+
+Date: Mon, 22 Mar 2021 11:49:18 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: 'Expert' Hackers Used 11 Zero-days to Infect Windows, iOS, Android
+  Users (Dan Goodin)
+
+Dan Goodin, Ars Technica, 18 Mar 2021, via ACM TechNews 22 Mar 2021
+
+Google's Project Zero security researchers warned that a team of hackers
+used no fewer than 11 zero-day vulnerabilities over nine months, exploiting
+compromised websites to infect patched devices running the Windows, iOS, and
+Android operating systems. The group leveraged four zero-days in February
+2020, and their ability to link multiple zero-days to expose the patched
+devices prompted Project Zero and Threat Analysis Group analysts to deem the
+attackers "highly sophisticated." Project Zero's Maddie Stone said over the
+ensuing eight months the hackers exploited seven more previously unknown iOS
+zero-days via watering-hole attacks. Blogged Stone, "Overall each of the
+exploits themselves showed an expert understanding of exploit development
+and the vulnerability being exploited."
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2a13bx2296d7x070813&
+
+------------------------------
+
+Date: Sat, 20 Mar 2021 10:14:26 -0700
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: New publication launch: Zero Day (Kim Zetter)
+
+Kim Zetter has launched a substack publication yesterday called Zero Day,
+which is focused on spies, hackers, and the intersection between
+cybersecurity and national security.
+
+Here's the first story:
+
+https://zetter.substack.com/p/would-government-monitoring-have
+
+------------------------------
+
+Date: 	Tue, 23 Mar 2021 10:33:12 +0800
+From: 	Richard Stein <rmstein@ieee.org>
+Subject: Faster fusion reactor calculations thanks to machine learning
+  (phys.org)
+
+https://phys.org/news/2021-03-faster-fusion-reactor-machine.html
+
+"The ultimate goal of research on fusion reactors is to achieve a net power
+gain in an economically viable manner. To reach this goal, large intricate
+devices have been constructed, but as these devices become more complex, it
+becomes increasingly important to adopt a predict-first approach regarding
+its operation. This reduces operational inefficiencies and protects the
+device from severe damage."
+
+"To simulate such a system requires models that can capture all the relevant
+phenomena in a fusion device, are accurate enough such that predictions can
+be used to make reliable design decisions and are fast enough to quickly
+find workable solutions."
+
+The plasma physics models and simulations become progressively tuned as
+computational infrastructure enables. The computations typically scale like
+O(N^3), possibly O(N^4) given time-dependent solutions.
+
+Applying machine learning to assist convergence, to extrapolate and
+accelerate solution discovery, enables confirmation bias.
+(https://en.wikipedia.org/wiki/Confirmation_bias)
+
+At tens of millions of degrees Kelvin, this predisposition must be correct
+to prevent a plasma diverter meltdown. Fermi solutions -- order of magnitude
+calculations -- may provide quicker guidance.
+
+------------------------------
+
+Date: 	Sun, 21 Mar 2021 18:08:14 +1300 (NZDT)
+From: 	John Harper <harper@msor.vuw.ac.nz>
+Subject: Re: Victoria University of Wellington accidentally wipes all
+  desktop computers (RISKS-32.56)
+
+The university didn't wipe all desktop computers, only the ones using
+Microsoft.  My desktop machine was one of the Linux ones and was not
+affected.  I'm very grateful to the people who look after our Linux systems.
+
+A year or two ago I told our Maths, Stats and Computing people that when I
+was writing my own PhD thesis on paper in a different university in the
+pre-LaTeX and pre-Xerox-machine era, I made a carbon copy and took it home
+every night, leaving the original in my office, in a building that had been
+rebuilt after a fire a few years earlier. Daily backups are easier to do now
+but are still useful when there is a fire, burglary, serious computer
+problem, ...
+
+Victoria Univ. of Wellington, PO Box 600, Wellington 6140, New Zealand.
+
+------------------------------
+
+Date: Mon, 22 Mar 2021 10:11:00 PDT
+From: Peter G Neumann <neumann@csl.sri.com>
+Subject: Richard Thieme -- Mobius: A Memoir
+
+Richard Thieme's *Mobius: A Memoir" is written on at least three levels of
+rhetoric (as was Moby Dick, according to Wikipedia): It is a very enjoyable
+read as an instructive spy-like novel for lay readers; it is also a wise
+book for techies, and a thoughtful challenge to Intelligence-aware insiders
+as to what is really is going on -- often invisibly.  Recognizing that a
+mobius strip is a one-dimensional surface on which we unavoidably keep
+coming back to where we started, Mobius is actually a metaphor for the
+entire novel: while doubling back on itself, this book encourages us to
+incrementally reflect on where we have been, where we might be headed, and
+when we might need to move off the treadmill.  Intriguingly, the author of
+the novel might be referred to as Mobius Dick (Richard), who in turn
+declares that the memoir is attributed to Mobius Nick (Cerk).  I really
+loved the book, but then I am both a reader for enjoyment and also a lurking
+insider.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.57
+************************

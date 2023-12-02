@@ -1,0 +1,490 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.32
+
+RISKS-LIST: Risks-Forum Digest  Saturday 9 July 2022  Volume 33 : Issue 32
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.32>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Canadian network outage misunderstatement OTD (The Guardian)
+Mass layoff looms for Japanese researchers (Science)
+Cruise's Robot Car Outages Are Jamming Up San Francisco (WiReD)
+OpenSSL Security Advisory, 5 July 2022 (OpenSSL)
+In April 2022, a team of cyberattackers attempted to breach an undersea
+ cable off the coast of Hawaii... (Twitter via geoff goodfellow)
+Japan to start jailing people for online insults (KyodoNews)
+Ransomware Switched Programming Languages From Go to Rust (ZDNet)
+Google Allowed a Sanctioned Russian Ad Company to Harvest User Data for
+ Months (Propublica)
+A huge data leak of 1 billion records exposes China's vast surveillance
+ state (TechCrunch)
+Computer glitch at American Airlines leads to triple pay (CNN via
+ Jeremy Epstein)
+My Thoughts About Google's New Blog Post Regarding Health-Related Data
+ Privacy (Lauren Weinstein)
+The major health care and cybersecurity risk of "Right-to-Repair" laws
+ (The Hill)
+Lack of Chips Puts Big Dent in Auto Sales (Neal E. Boudette)
+Humans are making it hard to listen for aliens (NBC News)
+Even in Death, Internet Explorer Lives On in South Korea (NYTimes)
+Where's the herd immunity? Our research shows why Covid is still wreaking
+ havoc (The Guardian)
+Re: China is looking for 'other Earths' to colonize (Martin D Kealey)
+Re: When customers say their money was stolen on Zelle, banks (King Ables)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 8 Jul 2022 18:57:02 -0600
+From: Jonathan Levine <jonathan.canuck.levine@gmail.com>
+Subject: Canadian network outage misunderstatement OTD (The Guardian)
+
+One of Canada's largest phone/data carriers is still experiencing a major
+outage today.  As reported in The Guardian:
+
+https://www.theguardian.com/world/2022/jul/08/internet-down-canada-rogers-mobile-network-outage
+
+But what's stunning in the piece is this statement:
+
+  "Interac, which operates an email money transfer service used by several
+  Canadian banks, said the outage was affecting its services.
+  Toronto-Dominion Bank said it was facing system issues with Interac
+  e-Transfer service."
+
+In reality, Interac isn't just some obscure interbank service; it's the
+debit payment system used by millions of Canadians -- only some of which are
+Rogers customers -- in millions of end-user transactions every day, through
+every bank in the land, and it is DOWN.  Are the people running the Interac
+network actually so clueless as to not have multihomed it via at least one
+other major network?  Apparently so.
+
+We hope that meaningful postmortems will follow.
+
+------------------------------
+
+Date: Thu, 7 Jul 2022 13:23:52 +0900
+From: Dave Farber <farber@keio.jp>
+Subject: Mass layoff looms for Japanese researchers (Science)
+
+  [This is one of the dumbest things Japan could do if they let this happen.
+  Dave]
+
+  From: Geoffrey Carr <geoffcarr@me.com>
+ The ten-year delay for this sword of Damocles is about to end...
+ https://www.science.org/content/article/mass-layoff-looms-japanese-researchers
+
+Thousands of researchers at Japanese institutes and universities may see
+their jobs disappear by next spring, an unintended result of labor
+legislation.
+
+https://www.science.org/content/article/mass-layoff-looms-japanese-researchers
+
+------------------------------
+
+Date: Fri, 8 Jul 2022 10:54:08 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Cruise's Robot Car Outages Are Jamming Up San Francisco (WiReD)
+
+https://www.wired.com/story/cruises-robot-car-outages/
+
+------------------------------
+
+Date: Fri, 8 Jul 2022 09:38:47 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: OpenSSL Security Advisory, 5 July 2022 (OpenSSL)
+
+Heap memory corruption with RSA private key operation (CVE-2022-2274)
+
+Severity: High
+
+The OpenSSL 3.0.4 release introduced a serious bug in the RSA implementation
+for X86_64 CPUs supporting the AVX512IFMA instructions.  This issue makes
+the RSA implementation with 2048 bit private keys incorrect on such machines
+and memory corruption will happen during the computation. As a consequence
+of the memory corruption an attacker may be able to trigger a remote code
+execution on the machine performing the computation.
+
+SSL/TLS servers or other servers using 2048 bit RSA private keys running on
+machines supporting AVX512IFMA instructions of the X86_64 architecture are
+affected by this issue.
+
+Note that on a vulnerable machine, proper testing of OpenSSL would fail and
+should be noticed before deployment.
+
+Users of the OpenSSL 3.0.4 version should upgrade to OpenSSL 3.0.5.
+
+OpenSSL 1.1.1 and 1.0.2 are not affected by this issue.
+
+This issue was reported to OpenSSL on 22nd June 2022 by Xi Ruoyao. The
+fix was developed by Xi Ruoyao.
+
+URL for this Security:
+  Advisory:https://www.openssl.org/news/secadv/20220705.txt
+[...]
+
+------------------------------
+
+Date: Thu, 7 Jul 2022 07:28:50 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: In April 2022, a team of cyberattackers attempted to breach an
+ undersea cable off the coast of Hawaii...
+
+https://twitter.com/WillManidis/status/1537071965608943616
+
+------------------------------
+
+Date: Thu, 7 Jul 2022 17:47:48 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Japan to start jailing people for online insults (KyodoNews)
+
+*The new law goes into effect Thursday*EXCERPT:
+
+Posting *online insults* will be punishable by up to a year in prison time
+in Japan starting Thursday, when a new law passed earlier this summer will
+go into effect.
+<https://english.kyodonews.net/news/2022/07/1590b983e681-japan-to-introduce-jail-time-tougher-penalties-for-online-insults.html>
+
+People convicted of online insults can also be fined up to 300,000 yen
+(just over $2,200). Previously, the punishment was fewer than 30 days in
+prison and up to 10,000 yen ($75).
+
+The law will be reexamined in three years to determine if it's impacting
+freedom of expression -- a concern raised by critics of the bill. Proponents
+said it was necessary to slow cyberbullying in the country.
+
+But there aren't clear definitions of what counts as an insult, Seiho Cho, a
+criminal lawyer in Japan, told CNN after the law passed. The law says an
+insult means demeaning someone without a specific fact about them -- as
+opposed to defamation, which it classifies as demeaning someone while
+pointing to a specific fact about them.  ``At the moment, even if someone
+calls the leader of Japan an idiot, then maybe under the revised law that
+could be classed as an insult,'' [...]
+
+<https://www.cnn.com/2022/06/14/asia/japan-cyberbullying-law-intl-hnk-scli/index.html>
+https://www.theverge.com/2022/7/6/23196593/japan-jail-online-insult-cyberbullying
+
+------------------------------
+
+Date: Fri, 8 Jul 2022 12:58:32 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Ransomware Switched Programming Languages From Go to Rust (ZDNet)
+
+Liam Tung, *ZDNet*, 6 Jul 2022, via ACM TechNews, 8 July 2022
+
+Microsoft security researchers have found new variants of Hive ransomware
+that were originally written in the Go coding language have been rewritten
+in Rust. The switch has been underway for a few months, as Hive's authors
+appear to be copying tactics from BlackCat ransomware, also written in
+Rust. Researchers at cyberintelligence firm Group-IB determined the Hive
+gang had converted its Linux encryptor for targeting VMware ESXi servers to
+Rust so security researchers would be less able to surveill its ransom
+discussions with victims. The Microsoft Threat Intelligence Center blogged
+that the transition also involves more complex file encryption.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2ee22x234ae3x069133&
+
+------------------------------
+
+Date: Fri, 1 Jul 2022 17:53:50 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Google Allowed a Sanctioned Russian Ad Company to Harvest User
+ Data for Months (Propublica)
+
+The Internet giant may have provided Sberbank-owned RuTarget with unique
+mobile phone IDs, IP addresses, location information and details about
+users' interests and online activity.
+
+https://www.propublica.org/article/google-russia-rutarget-sberbank-sanctions-ukraine
+
+------------------------------
+
+Date: Thu, 7 Jul 2022 19:34:36 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: A huge data leak of 1 billion records exposes China's vast
+ surveillance state (TechCrunch)
+
+Reports are that it may not have had a password for months. -L
+
+https://techcrunch.com/2022/07/07/china-leak-police-database/
+
+------------------------------
+
+Date: Thu, 7 Jul 2022 22:27:38 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Computer glitch at American Airlines leads to triple pay (CNN)
+
+No explanation of what this glitch was -- sounds to me like a garden-variety
+programming error, nothing more...
+
+https://www.cnn.com/2022/07/07/business/american-airlines-pilots-triple-pay/index.html
+
+American Airlines has agreed to pay its pilots triple their normal rate
+after a computer scheduling glitch left thousands of flights with
+understaffed cockpits.
+
+The malfunction in the scheduling program occurred early Saturday morning
+and allowed pilots to drop flights the airline was counting on them to fly
+throughout the rest of this month in order to take time off. The number of
+flights left without one or both required pilots quickly soared past the
+12,000 mark, according to the Allied Pilots Association, the pilots union at
+American, which employs roughly 13,000 APA members.  Although the triple pay
+is a one-time windfall for American's pilots, the airline has also agreed to
+permanent double-time pay for pilots who fly on peak days, which often fall
+during holiday travel periods.
+
+------------------------------
+
+Date: 	Fri, 1 Jul 2022 16:11:01 -0700
+From: 	Lauren Weinstein <lauren@vortex.com>
+Subject: My Thoughts About Google's New Blog Post Regarding Health-Related
+ Data Privacy
+
+https://lauren.vortex.com/2022/07/01/my-thoughts-about-googles-new-blog-post-regarding-health-related-data-privacy
+
+------------------------------
+
+Date: Thu, 7 Jul 2022 17:18:42 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The major health care and cybersecurity risk of "Right-to-Repair"
+ laws (The Hill)
+
+  [An interesting take on the issue.]
+
+https://thehill.com/opinion/healthcare/560741-the-major-health-care-and-cybersecurity-risk-of-right-to-repair-laws/
+
+------------------------------
+
+Date: Sat, 2 Jul 2022 17:13:51 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Lack of Chips Puts Big Dent in Auto Sales
+
+Neal E. Boudette, *The New York Times*, 2 Jul 2022
+
+The situation is likely to last another 1.5 years...
+
+------------------------------
+
+Date: Sat, 2 Jul 2022 09:54:29 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Humans are making it hard to listen for aliens ()
+
+*Increasing demands for mobile services and wireless Internet have crowded
+the radio spectrum, creating interference that can skew data and add noise
+to scientific results.*
+
+Dan Werthimer has spent more than four decades trying to eavesdrop on
+aliens.
+
+A pioneering researcher in the field of astronomy known as SETI, or the
+search for extraterrestrial intelligence.
+<https://www.nbcnews.com/mach/science/we-just-beamed-signal-space-aliens-was-bad-idea-ncna822446>,
+
+Werthimer's work involves scanning the cosmos with huge, ground-based radio
+telescopes to look for strange or unexplained signals that may have
+originated from alien civilizations.
+
+If it sounds a bit like looking for a needle in a haystack, that's because
+it sort of is.
+
+In recent years, however, the search for extraterrestrial intelligence has
+become even more complicated. Increasing demands for mobile services and
+wireless Internet have crowded the radio spectrum, creating interference
+that can skew data and add "noise" to scientific results.
+
+"Earth is just getting more and more polluted," said Werthimer, chief
+technologist at the Berkeley SETI Research Center. "With some radio bands,
+it's already impossible to do SETI because they're so full of television
+transmitters, WiFI and cellphone bands."
+
+As wireless technologies continue to grow, the problem will only get worse,
+Werthimer said, potentially jeopardizing one of the key ways that scientists
+have to search for intelligent life in the universe.
+
+Werthimer was recently one of the authors of a pre-print study led by
+Chinese researchers that identified a radio signal that several news outlets
+mistakenly reported as having characteristics of an alien civilization. The
+signal was actually found to have been radio interference, Werthimer
+clarified.  [...]
+<https://assets.researchsquare.com/files/rs-1335086/v1_covered.pdf?c=3D164546954>
+
+https://www.nbcnews.com/science/ufos-and-aerial-phenomena/humans-are-making=
+-hard-listen-aliens-rcna34752
+
+------------------------------
+
+Date: Fri, 8 Jul 2022 6:16:00 PDT
+From: Peter G Neumann <neumann@csl.sri.com>
+Subject: Even in Death, Internet Explorer Lives On in South Korea (NYTimes)
+
+  [Thanks to Richard Forno]
+
+Why a country known for blazing broadband and innovative devices remains
+tethered to a browser abandoned by most of the world long ago.
+
+Daisuke Wakabayashi and Jin Yu Young, *The New York Times*, 8 Jul 2022
+https://www.nytimes.com/2022/07/08/business/korea-internet-explorer.html
+
+SEOUL -- In South Korea, one of the world's most technologically advanced
+countries, there are few limits to what can be done conveniently online --
+except if you're using the wrong web browser.
+
+On Google Chrome, you can't make business payments online as a corporate
+customer of one of the country's largest foreign-owned banks. If you're
+using Apple's Safari, you're unable to apply for artist funding through the
+National Culture and Arts website. And if you're a proprietor of a child-
+care facility, registering your organization with the Health and Welfare
+Ministry's website is not possible on Mozilla's Firefox.
+
+In all of these cases, Microsoft's Internet Explorer, or a similar
+alternative, is the required browser.
+
+When Microsoft shut down Internet Explorer, or IE, on June 15, the company
+said it would start redirecting users to its newer Edge browser in the
+coming months. The announcement inspired jokes and memes commemorating the
+Internet of yesteryear. But in South Korea, IE is not some online artifact.
+The defunct browser is still needed for a small number of critical banking
+and government-related tasks that many people can’t live without.
+
+South Korea's fealty to Internet Explorer, 27 years after its introduction
+and now into its retirement, presents a heavy dose of irony: a country known
+for blazing broadband and innovative devices is tethered to a buggy and
+insecure piece of software abandoned by most of the world long ago.
+
+Most South Korean websites work on every browser, including Google Chrome,
+which takes up about 54 percent of the country's Internet usage. Internet
+Explorer is less than 1 percent, according to Statcounter. And yet after the
+announcement from Microsoft, there was a last-minute scramble among some
+essential sites to prepare for life after IE.
+
+The South Korean arm of the British bank Standard Chartered warned corporate
+customers in May that they would need to start using the Edge browser in IE
+mode to access Straight2Bank's Internet banking platform. Various Internet
+banking platform. Variou Korean government websites told users that some
+services would likely face disruptions if they did not switch to Edge.  [...]
+
+  [Very long item truncated for RISKS.  No surprises here for RISKS readers.
+  PGN]
+
+------------------------------
+
+Date: July 2, 2022 20:32:49 JST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Where's the herd immunity? Our research shows why Covid is still
+ wreaking havoc (The Guardian)
+
+... Living with the virus is proving much harder than the early vaccine
+success suggested: this fight is far from over
+
+Danny Altmann, *The Guardian*, 1 Jul 2022
+https://www.theguardian.com/commentisfree/2022/jul/01/herd-immunity-covid-virus-vaccine
+
+We are all so very tired of Covid-19, and there are many other crises to
+wrestle with. This pandemic has been going on since the beginning of 2020,
+and a state of hypervigilance can only be maintained for so long. And yet,
+"just live with it" looks self-evidently too thin a recipe and, currently,
+not very workable or successful with the emergence of BA.4 and BA.5 Omicron
+subvariants.
+
+According to the latest numbers, released today, the UK added more than half
+a million new Covid infections in the past week, and the estimated number of
+people with Covid in total was somewhere between 3% and 4% of the population.
+
+Many have been rather unwell and off work or school, with the associated
+disruptions to education, healthcare and other vital services. These
+infections will also inevitably add to the toll of long Covid cases.
+According to ONS data, the supposedly "mild" waves of Omicron during 2022
+have brought more than 619,000 new long Covid cases into the clinical
+caseload, promising an enduring and miserable legacy from this latest phase.
+[...]
+
+------------------------------
+
+Date: Mon, 4 Jul 2022 14:24:52 +1000
+From: Martin D Kealey <martin@kurahaupo.gen.nz>
+Subject: Re: China is looking for 'other Earths' to colonize (RISKS-33.25)
+
+Point of order from the physics dept:
+
+> China* [...]* propose launching a 3.9-foot-aperture (1.2 meters) space
+> telescope roughly 930,000 miles (1.5 million kilometers) to a
+> gravitationally stable Lagrange point between Earth and the Sun* [...]* at
+> the L2 Lagrange point
+
+L2 isn't between the earth and the sun.
+
+On the other hand L1, which *is* between the earth and the sun, isn't useful
+for exo-planet astronomy, mainly because transmissions to Earth are
+overwhelmed by the brightness of the Sun, but also because Earth occupies
+part of the desired field of view. (Of course, if you *wanted* a continuous
+fully sun-lit view of Earth, L1 would be perfect.)
+
+Moreover, both L1 and L2 are *unstable*, as a satellite at either location
+requires ongoing station-keeping, by intermittent rocket firing.
+
+------------------------------
+
+Date: Sat, 2 Jul 2022 16:23:48 -0500
+From: King Ables <kingables@yahoo.com>
+Subject: Re: When customers say their money was stolen on Zelle, banks
+ often refuse to pay (NYTimes)
+
+> Federal law requires banks to reimburse customers for unauthorized
+> electronic transfers, but they often refuse, stranding victims.
+
+Banks are not responsible because these transactions were not
+unauthorized. Victims were fooled, but voluntarily performed authorized
+transactions. No one expects their bank to refund them when they get talked
+out of $20 on a street corner. This is exactly the same.
+
+Never Zelle anyone you don't know personally, it's the same as handing them
+cash.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.32
+************************

@@ -1,0 +1,692 @@
+RISKS-LIST: Risks-Forum Digest  Thursday 23 October 2014  Volume 28 : Issue 30
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.30.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Digging out from under, with the first backlogged issue]
+Texas Hospital blames software for ebola error (Fox/Johnson via Paul Saffo)
+Release of Dallas ebola patient due to user interface error (Politico via
+  Jeremy Epstein)
+Risks of EHR software and ebola, what could possibly go wrong? (Kevin Fu)
+Safeguarding implanted medical devices. Or at least... (danny burstein)
+FDA final guidance on cybersecurity in pre-market submissions (Kevin Fu)
+FDA: Medical device cybersecurity necessary, but optional (Monty Solomon)
+Amtrak Reservations System outage (Jim O'Donnell)
+Should Airplanes Be Flying Themselves? (William Langewiesche via
+  Bob Frankston)
+Driving with voice-activated infotainment is really distracting
+  (Megan Geuss via Monty Solomon)
+Google Glass "no safer" than phones for texting while driving
+  (Katie Collins via Monty Solomon)
+Y2K redux: Why thousands of 911 calls got lost (Jeremy Epstein)
+This is what happens when 911 fails (Colin Lecher via Monty Solomon)
+The Delusions of Big Data and Other Huge Engineering Efforts
+  (Michael Jordan via Prashanth Mundkur)
+The NSA and Me, James Bamford (Monty Solomon)
+Retired NSA Technical Director Explains Snowden Docs (John Young)
+Dozens of European ATMs rooted, allowing criminals to easily cash out
+   (Robert Lemos via Monty Solomon)
+Donald MacKenzie on high-frequency trading (Prashanth Mundkur)
+Video Poker Exploitable Bug (Chuck Weinstock)
+Firedrive has gone down taking millions of files with it (Chris J Brady)
+Firedrive has gone down: more (Chris J Brady)
+Facebook Promises a Deeper Review of Its User Research (Monty Solomon)
+After blocking personal hotspot at hotel, Marriott to pay FCC $600K
+  (Cyrus Farivar via Monty Solomon)
+AT&T's congestion magically disappears when it's signing up new customers
+  (Jon Brodkin via Monty Solomon)
+Price of Bitcoin tumbles (Monty Solomon)
+At 650% interest, that online payday loan is a steal (Ars Technica)
+"Windows 9 Reportedly Skipped as Name Would Have Created Code Bugs"
+  (Jason Mick via Gene Wirchenko)
+Risks of daylight saving (Dave Horsfall)
+Re: Remote automobile shutdown shuts down emergency-room visit
+  (Kurt Seifried, Dick Mills)
+Re: Software sends Colorado driver's licenses to immigrants (Dan Geer)
+Re: *A Question of DNS Protocols* (PGN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 3 Oct 2014 06:45:56 -0700
+From: Paul Saffo <paul@saffo.com>
+Subject: Texas Hospital blames software for ebola error (Fox/Johnson)
+
+Maggie Fox and M. Alex Johnson, NBC News
+The Dallas Hospital that mistakenly sent home a man who had ebola says
+flawed software and not human error caused doctors to miss the diagnosis.
+http://www.nbcnews.com/storyline/ebola-virus-outbreak/texas-hospital-makes-changes-after-ebola-patient-turned-away-n217296
+
+Health officials and local residents have been asking how the hospital could
+have missed what would have appeared to be an obvious potential case of
+Ebola: a Liberian citizen who said he recently traveled from Liberia, with
+fever and abdominal pain.
+
+``Protocols were followed by both the physician and the nurses,'' the
+hospital said in a statement issued Thursday night.  The nurse who took
+Thomas Eric Duncan's medical history did the job correctly, the hospital
+said.  ``However, we have identified a flaw in the way the physician and
+nursing portions of our electronic health records (EHR) interacted in this
+specific case,''
+
+``In our electronic health records, there are separate physician and nursing
+workflows. The documentation of the travel history was located in the
+nursing workflow portion of the EHR, and was designed to provide a high
+reliability nursing process to allow for the administration of influenza
+vaccine under a physician-delegated standing order. As designed, the travel
+history would not automatically appear in the physician's standard
+workflow.''  In other words, the nurse wrote that Duncan had come from
+Liberia, but the doctors who examined him would not have automatically seen
+that.  And they were not prompted to ask.  [...]
+
+------------------------------
+
+Date: Fri, 3 Oct 2014 09:42:14 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Release of Dallas ebola patient due to user interface error
+
+A poor user interface led to the information about the ebola patient being
+misfiled in the computer system, which in turn meant that proper procedures
+were not used to protect against infection.  Usability is important! [...]
+
+http://www.politico.com/story/2014/10/ebola-us-dallas-hospital-flaw-111582.html?hp=l4
+
+------------------------------
+
+Date: Fri, 3 Oct 2014 15:00:25 -0400
+From: Kevin Fu <kevinfu@umich.edu>
+Subject: Risks of EHR software and ebola, what could possibly go wrong?
+
+Workflow flaws caused by Electronic Health Record (EHR) software has been
+implicated in accidental release of an ebola patient from Texas Health
+Dallas.  Bloomberg is reporting that the hospital uses EHR software from
+Epic Systems Corp.
+
+http://www.theatlantic.com/technology/archive/2014/10/the-ebola-patient-was-sent-home-because-of-an-electronic-health-record-problem/381087/
+http://www.texashealth.org/body.cfm?id29&actionﬁtail&ref71
+http://www.bloomberg.com/news/2014-10-03/electronic-record-gap-allowed-ebola-man-to-leave-hospital.html
+http://blog.secure-medicine.org/2014/10/ehr-software-and-ebola-what-could.html
+
+------------------------------
+
+Date: Fri, 17 Oct 2014 23:59:12 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Safeguarding implanted medical devices. Or at least...
+
+  ... or at least being able to reconstruct the history of whether there was an
+  outside "attack" using them.
+
+"Digital Investigation of Security Attacks on Cardiac Implantable Medical Devices"
+
+In this paper, we propose a system for postmortem analysis of lethal attack
+scenarios targeting cardiac IMDs. Such a system reconciles in the same
+framework conclusions derived by technical investigators and deductions
+generated by pathologists. An inference system integrating a library of
+medical rules is used to automatically infer potential medical scenarios
+that could have led to the death of a patient. A Model Checking based formal
+technique allowing the reconstruction of potential technical attack
+scenarios on the IMD, starting from the collected evidence, is also
+proposed. A correlation between the results obtained by the two techniques
+allows to prove whether a potential attack scenario is the source of the
+patient's death. [...]
+  http://cryptome.org/2014/10/cardiac-imd-attacks.pdf
+
+------------------------------
+
+Date: Wed, 1 Oct 2014 11:05:40 -0500
+From: Kevin Fu <kevinfu@umich.edu>
+Subject: FDA final guidance on cybersecurity in pre-market submissions
+
+This morning, the FDA released its final version of a cybersecurity guidance
+document for pre-market review of medical devices.  A second draft guidance
+document on post-market practices (e.g., vulnerability reporting) is
+expected later this year.
+
+http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm416809.htm
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 10:26:53 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: FDA: Medical device cybersecurity necessary, but optional
+
+http://arstechnica.com/security/2014/10/fda-medical-device-cybersecurity-necessary-but-optional/
+
+------------------------------
+
+Date: Sunday, October 5, 2014
+From: Jim O'Donnell <cassiodorus@gmail.com>
+Subject: Amtrak Reservations System outage
+
+ [via David Farber]  from www.amtrak.com today
+
+Full and complete text of their website at this hour:
+
+"Amtrak.com Reservations System Temporarily Unavailable due to a system-wide
+network outage. If you are traveling today, please purchase your ticket at
+the station. This system issue is not impacting operations of our trains. If
+you are booking tickets for a future date we recommend visiting the website
+at a later time. For immediate issues, please call 1-800-USA-RAIL. We
+apologize for this inconvenience and thank you for your patience as we work
+toward a resolution as quickly as possible."
+
+------------------------------
+
+Date: October 12, 2014 at 9:25:33 EDT
+From: "Bob Frankston" <bob19-0501@bobf.frankston.com>
+Subject: Should Airplanes Be Flying Themselves? (William Langewiesche)
+
+  [From Dewayne Hendricks via Dave Farber]
+
+Interesting at a number of levels in terms of human factor. Also something
+to think about with the effort to automate driving.
+
+The conclusion is that cockpit automation has made planes safer but has also
+reduced the ability of pilots to act as a manual backup system in unusual
+circumstances. Though the article didn;t mention it I can;t help but
+think of the extreme example of the 767 that glided into a successful
+landing in Canada.
+
+The Human Factor, William Langewiesche, *Vanity Fair*, Oct 2014
+
+Airline pilots were once the heroes of the skies. Today, in the quest for
+safety, airplanes are meant to largely fly themselves. Which is why the 2009
+crash of Air France Flight 447, which killed 228 people, remains so
+perplexing and significant. William Langewiesche explores how a series of
+small errors turned a state-of-the-art cockpit into a death trap. [...]
+<http://www.vanityfair.com/business/2014/10/air-france-flight-447-crash>
+
+------------------------------
+
+Date: Wed, 8 Oct 2014 08:51:54 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Driving with voice-activated infotainment is really distracting
+  (Megan Geuss)
+
+Megan Geuss, Ars Technica, 7 Oct 2014
+Test subjects also rear-ended two cars trying to use Siri behind the wheel.
+http://arstechnica.com/cars/2014/10/driving-with-voice-activated-infotainment-is-really-distracting-studies-say/
+
+------------------------------
+
+Date: Wed, 8 Oct 2014 09:02:48 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Google Glass "no safer" than phones for texting while driving
+
+Katie Collins, Ars Technica, 27 Sep 2014
+Study shows that multitasking on the road is never a good idea.
+
+http://arstechnica.com/cars/2014/09/google-glass-no-safer-than-phones-for-texting-while-driving/
+
+------------------------------
+
+Date: Wed, 22 Oct 2014 12:04:32 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Y2K redux: Why thousands of 911 calls got lost
+
+Y2K was about not expecting rollover; so too, it seems that a max counter of
+40M 911 calls caused the routing system to discard calls coming over VoIP
+phones.  Presumably the FCC report (which I have not read) has more details.
+
+Some years ago, I worked for a software company whose software shut down
+unexpectedly, when the date (which was stored as a decimal number since an
+epoch) increased to require one extra digit.  No one had tried rolling the
+clock forward (either in our development labs, or in any of our customer
+sites) to see whether there it would continue working in the future.
+
+We keep making the same mistakes...
+
+http://www.washingtonpost.com/blogs/the-switch/wp/2014/10/20/how-a-dumb-software-glitch-kept-6600-calls-from-getting-to-911/
+
+------------------------------
+
+Date: Wed, 8 Oct 2014 09:34:31 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: This is what happens when 911 fails (Colin Lecher)
+
+Colin Lecher, The Verge, 3 Oct 2014
+Our most important lifeline isn't always there when you need it
+
+On a June morning in Washington, William Leneweaver, the state's E911 IT
+projects and operations manager, was alerted to a call. A man had been
+attempting to dial emergency responders, but he couldn't get through. He was
+left listening to a "fast busy" - a pre-recorded tone.
+
+Eventually, he made contact by borrowing someone else's phone. The staff of
+the state's Vancouver call center, where the call was received, began
+investigating what might have prevented the call from going through. They
+made test calls with Sprint phones, the same provider the man had. No 911
+service. They had someone in another location make more calls. Same problem.
+...
+
+http://www.theverge.com/2014/10/3/6414949/911-call-failures-fcc
+
+------------------------------
+
+Date: Tue, 21 Oct 2014 09:19:22 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: The Delusions of Big Data and Other Huge Engineering Efforts
+ (Michael Jordan)
+
+Machine-Learning Maestro Michael Jordan on the Delusions of Big Data
+and Other Huge Engineering Efforts
+Interviewed by Lee Gomes, in IEEE Spectrum, 20 Oct 2014
+http://spectrum.ieee.org/robotics/artificial-intelligence/machinelearning-maestro-michael-jordan-on-the-delusions-of-big-data-and-other-huge-engineering-efforts
+
+------------------------------
+
+Date: Sun, 5 Oct 2014 00:12:44 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: The NSA and Me, James Bamford
+
+James Bamford, *The Intercept*, 2 Oct 2014
+https://firstlook.org/theintercept/2014/10/02/the-nsa-and-me/
+
+------------------------------
+
+Date: Thursday, October 2, 2014
+From: *John Young* <jya@pipeline.com>
+Subject: Retired NSA Technical Director Explains Snowden Docs
+
+   [From Cryptography via Dave Farber]
+ http://www.alexaobrien.com/secondsight/wb/binney.html
+
+Best account yet of the Snowden releases by a technically capable
+person. Eventually, perhaps, the other 96% will receive similar public
+disclosure to fully inform beyond opportunistic journalism.
+
+------------------------------
+
+Date: Wed, 8 Oct 2014 09:00:58 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Dozens of European ATMs rooted, allowing criminals to easily cash out
+  (Robert Lemos)
+
+Robert Lemos, Ars Technica, 7 Oct 2014
+Criminals with physical access to ATMs install malware to control flow of money.
+
+Criminals are installing fairly sophisticated malicious programs on banks'
+ATMs, allowing them to control access to the machines and easily steal cash,
+security firms Kaspersky and Interpol said in a joint statement released on
+Tuesday. ...
+
+http://arstechnica.com/security/2014/10/dozens-of-european-atms-rooted-allowing-criminals-to-easily-cash-out/
+
+------------------------------
+
+Date: Fri, 3 Oct 2014 22:54:59 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: Donald MacKenzie on high-frequency trading
+
+A great article on high-frequency trading in the LRB.
+
+'Be grateful for drizzle'
+Donald MacKenzie, London Review of Books, 11 Sep 2014
+http://www.lrb.co.uk/v36/n17/donald-mackenzie/be-grateful-for-drizzle
+
+After recounting the collapse of Knight Capital in Aug 2012 (also
+tracked in RISKS 26.97), he mentions a previously unreported incident:
+
+  Such events don't always become public. In a New York coffeehouse, a
+  former high-frequency trader told me matter-of-factly that one of his
+  colleagues had once made the simplest of slip-ups in a program: what
+  mathematicians call a `sign error', interchanging a plus and a minus. When
+  the program started to run it behaved rather like the Knight program,
+  building bigger and bigger trading positions, in this case at an
+  exponential rate: doubling them, then redoubling them, and so on.  ``It
+  took him 52 seconds to realise what was happening, something was terribly
+  wrong, and he pressed the red button, stopping the program.  By then we
+  had lost $3 million.'' The trader's manager calculated ``that in another
+  twenty seconds at the rate of the geometric progression, the trading firm
+  would have been bankrupt, and in another fifty or so seconds, our clearing
+  broker -- a major Wall Street investment bank -- would have been bankrupt,
+  because of course if we're bankrupt, our clearing broker is responsible
+  for our debts; it wouldn't have been too many seconds after that the whole
+  market would have gone.''
+
+  What is most telling about that story is that not long previously it
+  couldn't have happened. High-frequency firms are sharply aware of the
+  risks of bugs in programs, and at one time my informant's firm used an
+  automated check that would have stopped the errant program well before its
+  human user spotted that anything was wrong. However, the firm had been
+  losing out in the speed race, so had launched what my informant called `a
+  war on latency', trying to remove all detectable sources of
+  delay. Unfortunately, the risk check had been one of those sources.
+
+After discussing the various techniques (lasers, microwave links along
+geodesics, bare-metal programming, FPGAs, etc) in reducing latency
+used in HFT, he says:
+
+  If you're a certain kind of person, there's pleasure to be had in a lot of
+  this. [...]  I confess that some of the pleasure rubs off on me. It's nice
+  to study a domain of economic life that's so caught up with the physical
+  world: with wind and rain and fog, tunnels and oceans and sharks; and with
+  the geography of such unfashionable places as Aurora, Weehawken and
+  Slough.
+
+Highly recommended read.
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 18:04:30 +0000
+From: Chuck Weinstock <weinstock@sei.cmu.edu>
+Subject: Video Poker Exploitable Bug
+
+This is old news but the Wired article has lots of details that I don't
+recall hearing about before:
+
+http://www.wired.com/2014/10/cheating-video-poker/
+
+I also hadn't heard that the charges against the players were eventually
+dismissed. The article is a fascinating read.
+
+------------------------------
+
+Date: Sun, 5 Oct 2014 14:10:13 -0700
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Firedrive has gone down taking millions of files with it
+
+The Cloud is a wonderful concept. Store and share your files around the
+world, contribute jointly to documents or a project, upload your precious
+files for safe keeping, etc., and whatever.
+
+But what happens if the Cloud site that you are paying good money towards
+goes down without notice effectively losing all of those files.?
+
+That is what happened FIVE days ago to Firedrive.com.  Despite appeals for
+information from worried users (or should I say customers?), the site is
+well and truly down. Not that so-called "IsitUp" websites are reporting
+this.  Apparently the Firedrive servers are up but the Firedrive file
+storage system isn't and hasn't been for days.
+
+The Firedrive Facebook account -- with about 66,000+ 'Likes' or 'Friends' --
+is full of customers complaining that they cannot log in to get at their
+files.
+
+The scandal is that Firedrive's landing / home page says nothing about any
+outage, there have been no warnings, no announcements, no apologies, no
+emails, nothing but silence. Emails that do (supposedly) get through are
+ignored.
+
+The issue has yet to be picked up by the media.
+
+Yet this is one of the biggest Cloud storage systems on the web. Yet it has
+gone - taken with it everyone's files. And the owners remain silent.
+
+Personally I have always been wary of the Cloud concept. Folks' files are
+only as secure as a site itself. In the past few years we have seen a major
+image hosting site suddenly disappear taking millions of images with it, and
+then there was the close down of the file-sharing site in New Zealand.
+
+Firedrive is apparently hosted by Cloudfare (who remain unhelpful when
+emailed). And the owners of Firedrive and the whereabouts of the servers are
+apparently scattered around the world with postal addresses in London
+UK. Singapore, Spain, and the Bahamas (domain BS).
+
+The risk? Hmm - eggs in one basket springs to mind. Something to avoid if
+using the Cloud.
+
+C.J.Brady (who has lost now hundreds of files from Firedrive to say nothing
+of the time and money uploading them. Luckily I have a complete backup on
+my computer -- I don't trust the Cloud and never will !!!).
+
+------------------------------
+
+Date: Mon, 6 Oct 2014 01:58:38 -0700
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Firedrive has gone down: more
+
+This is now day 6 of Cloud storage Firedrive' massive outage. One customer
+reports losing 6TB of files. And there has still been no communications from
+the owners.
+
+But Firedrive is hosted at the same IP address as Cloudfare. And Cloudfare
+has its own problems.
+
+See: https://blog.cloudflare.com/route-leak-incident-on-october-2-2014/
+
+But I also understand that Firedrive has been taking payments under their
+premium plan to host many customers' files. To suddenly remove those
+services paid for without any communication is poor customer at best.
+
+This reflects upon the integrity of both Cloudfare and Firedrive.
+
+It also highlights the dangers and risks of using the Cloud (whatever that
+is) for the remote storage of files.
+
+----------------------------------------------------------------------
+
+Date: Thu, 2 Oct 2014 17:11:39 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Facebook Promises a Deeper Review of Its User Research
+
+But the social media company, which outraged users with an emotion study,
+declined to disclose its guidelines.
+http://www.nytimes.com/2014/10/03/technology/facebook-promises-a-deeper-review-of-its-user-research.html
+
+------------------------------
+
+Date: Sat, 4 Oct 2014 23:30:58 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: After blocking personal hotspot at hotel, Marriott to pay FCC $600K
+  (Cyrus Farivar)
+
+Cyrus Farivar, Ars Technica, 3 Oct 2014
+Marriott remains defiant: "We believe that the Opryland's actions were lawful."
+http://arstechnica.com/tech-policy/2014/10/after-blocking-personal-hotspot-at-hotel-marriott-to-pay-fcc-600000/
+
+------------------------------
+
+Date: Sun, 5 Oct 2014 00:15:54 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: AT&T's congestion magically disappears when it's signing up new
+ customers (Jon Brodkin)
+
+Jon Brodkin, Ars Technica, Sept 29 2014
+
+Unlimited plans throttled after 5GB, but AT&T gives new lines 100GB
+unthrottled.
+
+AT&T yesterday began offering "double the data for the same price" to new
+customers and existing customers who sign new contracts, apparently
+forgetting that its network is so congested that speeds must be throttled
+when people use too much data. ...
+
+http://arstechnica.com/information-technology/2014/09/att-congestion-magically-disappears-when-its-signing-up-new-customers/
+
+------------------------------
+
+Date: Mon, 6 Oct 2014 00:23:03 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Price of Bitcoin tumbles
+
+Even those most confident in the virtual currency are having trouble
+explaining the recent decline.
+http://dealbook.nytimes.com/2014/10/05/price-of-bitcoin-tumbles/
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 10:27:17 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: At 650% interest, that online payday loan is a steal
+
+http://arstechnica.com/tech-policy/2014/10/at-650-interest-that-online-payday-loan-is-a-steal/
+
+------------------------------
+
+Date: Mon, 06 Oct 2014 11:16:52 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Windows 9 Reportedly Skipped as Name Would Have Created Code Bugs"
+  (Jason Mick)
+
+Jason Mick (Blog) - October 3, 2014 12:08 PM
+http://www.dailytech.com/Windows+9+Reportedly+Skipped+as+Name+Would+Have+Created+Code+Bugs/article36656.htm
+
+Searches for Windows 95 and 98 typically only look for "Windows 9"
+
+selected text:
+
+Back in the 1990s, lazy coders often put checks for the first part of the OS
+name string "Windows 9".  Now like some bizarre form of Y2K, those lingering
+bits of code have returned and forced Microsoft to make a bold move,
+according to some developers claims.
+
+But the idea has been backed up by searches of popular third party
+open-source Windows plugins and software.  For example, it appears in many
+core Java packages.
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 10:55:25 +1100 (EST)
+From: Dave Horsfall <dave@horsfall.org>
+Subject: Risks of daylight saving
+
+Not sure whether this is a RISK or not, but last Sunday most of Australia
+switched to Daylight Saving Time.  A pity that the Electronic Program Guides
+didn't, at least, not up until the day before...  Even the printed TV guide
+(published that Monday) was off by an hour for Sunday!
+
+------------------------------
+
+Date: Thu, 9 Oct 2014 20:40:03 -0600
+From: Kurt Seifried <kurt@seifried.org>
+Subject: Re: Remote automobile shutdown shuts down emergency-room visit
+  (Goldberg, R-28.29)
+
+The flip side being if they had to repossess it due to nonpayment then
+there would be no chance of her being able to use it in a timely manner.
+With the remote shut down option she could for example have paid the
+outstanding balance, or possibly phoned them and asked for a compassionate
+exception (e.g., they re-enable it for an hour or something.
+
+Also there is a potential upside of this: traditionally if you sold cars to
+people who didn't have a lot of money (aka the poor), you ran a higher risk
+of having to repossess the car for nonpayment, which meant having someone
+track it down and tow it away (having seen an episode of Repo-men, this looks
+like a total pain). With the remote disabler it becomes "safer" to sell cars
+to riskier customers as you have easier recourse (just turn it off and send
+someone to collect it if they continue to refuse payment). This technology
+could make it safer to sell cars to people with riskier credit profiles.
+
+On the other hand this tech could be used to justify selling cars with
+financing to people with really risky credit purposefully like the NINJA (No
+Income No Job) loans that were so popular during the mortgage crisis because
+there's minimal downside to the lender/car dealer.
+
+If I had to bet my money I'd put it on the less happy outcome.
+
+------------------------------
+
+Date: Sun, 12 Oct 2014 11:03:19 -0400
+From: Dick Mills <dickandlibbymills@gmail.com>
+Subject  Re: Remote automobile shutdown shuts down emergency-room visit
+
+Legally, the liability of the automobile creditor sounds analogous to
+utilities who shut off power because of nonpayment.  Electric or gas cutoffs
+have resulted in death from time to time.  I presume that the risks date all
+the way back to the 1800s birth of public utilities.
+
+There must be analogous tragedies resulting from cutting off water, food
+deliveries, even Internet connections that are similar from a legal point of
+view.  I can imagine a repo man who specializes in fire trucks and
+ambulances.  More extreme, I imagine a supplier who demands payment before
+shipping biohazard supplies to West Africa.
+
+The point is that there is no defined upper limit to the risk associated
+with the consequences of nonpayment of bills.  I believe that the debtors,
+not the creditors are usually liable for those consequences..
+
+Today, many electric and gas utilities are required to observe all sorts of
+safeguards to prevent tragic outcomes from service cutoffs. There are also
+specific laws in some locations preventing software vendors from embedding
+"self help" logic bombs in their programs.  But absent such specific laws,
+there is no general liability that I am aware of.
+
+------------------------------
+
+Date: Thu, 02 Oct 2014 08:08:35 -0400
+From: dan@geer.org
+Subject: Re: Software sends Colorado driver's licenses to immigrants (R 28 28)
+
+I cannot help but compare (1) arguments that requiring voter identification
+at the polling station is racist/classist, and (2) that generalized Internet
+voting would increase turnout amongst the under-represented.  Has anyone
+written the obvious heighten-the-contrast diatribe?
+
+------------------------------
+
+Date: Thu, 9 Oct 2014 11:59:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: *A Question of DNS Protocols* (Geoff Huston)
+
+Gary Hinson noted that the URL was incorrect.
+http://www.protocoljournal.org is the main URL (my typo), but he suggested
+http://www.internetsociety.org/sites/default/files/ipj17.1_0.pdf 
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.30
+************************
+
+--_002_9ad5b78e08d44cdcbb830df9f493de8cEXHUBVM02campusnclacuk_--

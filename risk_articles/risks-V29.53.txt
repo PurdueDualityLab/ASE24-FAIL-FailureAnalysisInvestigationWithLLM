@@ -1,0 +1,974 @@
+precedence: bulk
+Subject: Risks Digest 29.53
+
+RISKS-LIST: Risks-Forum Digest  Friday 20 May 2016  Volume 29 : Issue 53
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.53.html>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Heart monitor disruption (Ars Technica)
+AV interfering with mission-critical healthcare system
+  (Dan Goodin)
+Why an Amtrak Train Derailed in Philadelphia (NYTimes)
+"Arizona may force CIOs to adopt the cloud" (David Linthicum)
+Why a staggering number of Americans have stopped using the Internet the way
+  they used to (WashPost)
+NTIA: Lack of Trust in Internet Privacy and Security May Deter Economic and
+  Other Online Activities (NNSQUAD)
+Released Emails Show Use of Unclassified Systems Was Routine (NYTimes)
+Doing security research on cars could land you in jail for life (GWU)
+Windows 10 goes full malware (Iamthecheese)
+It's Trivially Easy To Identify You Based On Records Of Your Calls
+  and Texts (erier2003)
+Critical Flaw In Symantec Antivirus Engine Makes Hacking Easy (itwbennett)
+Is the online ad bubble starting to pop? (Harvard)
+Man charged with hacking United Airlines website, stealing travel vouchers
+  (Pat Reavy)
+Details Emerge on Global Bank Heists by Hackers (NYTimes)
+"Google's driverless cars may use human flypaper in road accidents"
+  (Charlie Osborne)
+The NYPD was systematically ticketing legally parked cars, Open Data put an
+  end to it (Ben Wellington)
+117M passwords from Linked-in from 2012 are now for sale! (TechCrunch)
+OkCupid Study Reveals the Perils of Big-Data Science (WiReD)
+Wendy's Breach Affected 525 of Restaurants (Krebs)
+Video Exposes Officials' Mistakes but Can't Undo Blown Calls. Yet. (NYT)
+In Oracle v. Google, a Nerd Subculture Is on Trial (Motherboard)
+China Quietly Targets U.S. Tech Companies in Security Reviews (NYT)
+FBI Neither Confirms Nor Denies Wiretapping Amazon Echo (Matt Novak)
+Theoretical Breakthrough Made in Random Number Generation (msm1267)
+"Why Uber is watching your smartphone's battery level"
+  (Adrian Kingsley-Hughes)
+Belgian police have asked citizens to shun Facebook's "Reactions" buttons
+  (The Independent)
+Another Risk of Self-Driving Cars; Clogged Highways?!? (ABC News)
+Risks of red-light cameras and violation detection (PGN)
+Computer Science Teachers Need Cybersecurity Education (Evan Koblentz)
+Anti-tamperproof bottles aren't (Jeremy Epstein)
+The great ad-blocking arms race (TechDirt via Mark Thorson)
+Re: Big data breaches NOT found at major email services (John Levine)
+Re: Whistleblowing is overshadowed when SQL injection gives way to,
+  unauthorized access... (Fred Cohen)
+Re: The last non-Internet Generation (Chris Drewe, Dan Jacobson)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 16 May 2016 11:16:56 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Heart monitor disruption (Ars Technica)
+
+http://arstechnica.com/security/2016/05/faulty-av-scan-disrupts-patients-heart-procedure-when-monitor-goes-black/
+
+------------------------------
+
+Date: Tue, 17 May 2016 00:19:18 +0200
+From: Werner U <werneru@gmail.com>
+Subject: AV interfering with mission-critical healthcare system
+  (Dan Goodin and FDA report)
+
+Dan Goodin, Ars Technica, 16 May 2016, and FDA report)
+<http://arstechnica.com/author/dan-goodin/>
+That time a patient's heart procedure was interrupted by a virus scan
+Securing computers has never been easy.  It's especially hard in hospitals.
+<http://arstechnica.com/security/2016/05/faulty-av-scan-disrupts-patients-heart-procedure-when-monitor-goes-black/>
+
+A heart patient undergoing a medical procedure earlier this year was put at
+risk when misconfigured antivirus software caused a crucial lab device to
+hang and require a reboot before doctors could continue.
+
+The incident, described in an alert issued by the Food and Drug
+Administration highlights the darker side of using computers and computer
+networks in mission-critical environments. While a computer crash is little
+more than an annoyance for most people at home or in offices, it can have
+far more serious consequences in hospitals, power generation facilities, or
+other industrial settings.
+<https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/detail.cfm?mdrfoi__id=5487204>,
+
+The computer system at issue in the FDA alert is known under the brand name
+Merge Hemo and is sold by Hartland, Wisconsin-based Merge Healthcare.
+<http://www.merge.com/MergeHealthcare/media/documents/datasheets/cardiology/Merge_Hemo.pdf>
+It comprises a patient data module and a monitor PC that are connected by a
+serial cable.  It's used to provide doctors with real-time diagnostic
+information from a patient undergoing a procedure known as a cardiac
+catheterization
+<http://www.mayoclinic.org/tests-procedures/cardiac-catheterization/details/what-you-can-expect/rec-20202778>,
+in which doctors insert a tube into a blood vessel to see how well the
+patient's heart is working.
+
+In March, an unidentified healthcare provider "reported to Merge Healthcare
+that, in the middle of a heart catheterization procedure, the Hemo monitor
+PC lost communication with the Hemo client and the Hemo monitor went black,"
+the FDA alert stated. "Information obtained from the customer indicated that
+there was a delay of about 5 minutes while the patient was sedated so that
+the application could be rebooted. It was found that anti-malware software
+was performing hourly scans. With Merge Hemo not presenting physiological
+data during treatment, there is a potential for a delay in care that results
+in harm to the patient. However, it was reported that the procedure was
+completed successfully once the application was rebooted."....<more>...
+
+------------------------------
+
+Date: Tue, 17 May 2016 19:05:56 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Why an Amtrak Train Derailed in Philadelphia
+
+http://nyti.ms/1rRDE5Z
+
+------------------------------
+
+Date: Tue, 17 May 2016 09:29:15 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Arizona may force CIOs to adopt the cloud" (David Linthicum)
+
+David Linthicum, Cloud Computing, InfoWorld, 17 May 2016
+Go cloud or go to jail? A law sent to the governor of Arizona would force
+a review every two years of systems not using cloud technology
+http://www.infoworld.com/article/3070491/cloud-computing/arizona-may-force-cios-to-adopt-the-cloud.html
+
+selected text:
+
+Move to the cloud -- or else! That's the basic thrust of a proposed Arizona
+state law, S.B. 1434, now awaiting Governor Doug Ducey's approval or
+veto. This law would require state agencies to shift their IT resources and
+operations to the cloud (public and/or private).
+
+If adopted, this law would put an end to anticloud foot-dragging by Arizona
+state agencies. CIOs could risk jail time for noncompliance.
+
+------------------------------
+
+Date: Sat, 14 May 2016 23:31:25 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Why a staggering number of Americans have stopped using the
+  Internet the way they used to
+
+*WashPo* Via NNSquad
+https://www.washingtonpost.com/news/the-switch/wp/2016/05/13/new-government-data-shows-a-staggering-number-of-americans-have-stopped-basic-online-activities/
+
+  Nearly one in two Internet users say privacy and security concerns have
+  now stopped them from doing basic things online -- such as posting to
+  social networks, expressing opinions in forums or even buying things from
+  websites, according to a new government survey released Friday.  This
+  chilling effect, pulled out of a survey of 41,000 U.S. households who use
+  the Internet, show the insecurity of the Web is beginning to have
+  consequences that stretch beyond the direct fall-out of an individual
+  losing personal data in breach. The research suggests some consumers are
+  reaching a tipping point where they feel they can no longer trust using
+  the Internet for everyday activities.
+
+"We have met the enemy, and he is us." - Pogo.
+
+Either we fix this, or nobody does.
+
+------------------------------
+
+Date: Sun, 15 May 2016 11:01:20 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: NTIA: Lack of Trust in Internet Privacy and Security
+  May Deter Economic and Other Online Activities
+
+NTIA via NNSquad
+https://www.ntia.doc.gov/blog/2016/lack-trust-internet-privacy-and-security-may-deter-economic-and-other-online-activities
+
+  Every day, billions of people around the world use the Internet to share
+  ideas, conduct financial transactions, and keep in touch with family,
+  friends, and colleagues. Users send and store personal medical data,
+  business communications, and even intimate conversations over this global
+  network. But for the Internet to grow and thrive, users must continue to
+  trust that their personal information will be secure and their privacy
+  protected.  NTIA's analysis of recent data shows that Americans are
+  increasingly concerned about online security and privacy at a time when
+  data breaches, cybersecurity incidents, and controversies over the privacy
+  of online services have become more prominent. These concerns are
+  prompting some Americans to limit their online activity, according to data
+  collected for NTIA in July 2015 by the U.S. Census Bureau.  This survey
+  included several privacy and security questions, which were asked of more
+  than 41,000 households that reported having at least one Internet user.
+
+While our security and privacy teams have been doing great work trying
+to prevent security and privacy "nuclear wars," we've meanwhile been
+standing by while our users sink further and further into the
+quicksand bog. Effectively dead either way. Entirely our fault.
+
+------------------------------
+
+Date: Wed, 11 May 2016 09:09:48 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Released Emails Show Use of Unclassified Systems Was Routine (NYT)
+
+http://www.nytimes.com/2016/05/11/us/clinton-emails-routine-practice.html
+
+A review of tens of thousands of documents reveals that sending sensitive
+information on unclassified computer networks was not limited to Hillary
+Clinton.
+
+------------------------------
+
+Date: Wed, 11 May 2016 14:37:24 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Doing security research on cars could land you in jail for life
+
+ From GWU's CSPRI Newsletter:  May 10, 2016:
+
+Doing security research on cars could land you in jail for life. That is, if
+Michigan lawmakers get their way. "While some Canadian officials are worried
+about distracted driving in the future
+<http://r20.rs6.net/tn.jsp?f=0014LrTI0ZeXoy72xDDR8wBU4S06urBkIhej1AhdQSNxuo_urpfJzW31lN7apiWvy6K7xeBit34RMWRjv6R0gGIbLCjO629lFxxU9tGIMdK8Ue0Casm6uFYCaCj0MlwCFNSsM5Yr6NLYp0WknsKAPw3SrVrRi0wcqImN3Cpk9sCPXEOv4tmAWdXhT_ZhWG43kmSw1QEYMVhhie69J12lfD1KZNgDFo9eR66gZLH5_MhX5U=&c=Qjq4FcU9J0Ai5Oktl3tBjgL8w4CQYAuW1mLSYC6z1VKAt_aii9Y5FQ==&ch=bm9u9_-sgbaJTnXGMPtw9sNdagIChAPUK3TQZJxYeKVCqg_72uzrVQ==>,
+such as drivers being too busy having sex in self-driving cars to be
+attentive to the vehicle's 'take over' command, Michigan lawmakers are so
+worried about car hacking that they've proposed making it punishable by life
+in prison," writes
+<http://r20.rs6.net/tn.jsp?f=0014LrTI0ZeXoy72xDDR8wBU4S06urBkIhej1AhdQSNxuo_urpfJzW31lN7apiWvy6KbUJf0L3h2XsyAxuQtCirnoXswCAl6Rb5nl2NZNfZoD2OQnfMpd-iGd33E0sa4JA1nnmjgwRPRksMPM5lmTyITSEZRFwDmAV1mMKT6pLMo9S_hZHyHGpo0D55rzT5biM3WvU0469u6UJ229SHCtp0cf7Umqrsz_wBjlWnxjLGfJCQWrXUKI3vo-CJZbJJWihehGEJrUEB96AtjalHN29-OOHUZw49qnYcnjtSKJaGBUr82POm5XVSi1eZ_iWm-zgt&c=Qjq4FcU9J0Ai5Oktl3tBjgL8w4CQYAuW1mLSYC6z1VKAt_aii9Y5FQ==&ch=bm9u9_-sgbaJTnXGMPtw9sNdagIChAPUK3TQZJxYeKVCqg_72uzrVQ==>
+Darlene Storm for Computerworld. "Michigan Senators Ken Horn and Mike Kowall
+have proposed a cybersecurity bill aimed at hackers and connected and
+autonomous cars," Storm wrote.
+
+Someone should research consequences of distracted legislating.
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Thu, 19 May 2016 02:02:37 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Windows 10 goes full malware
+
+Iamthecheese <https://slashdot.org/%7EIamthecheese>, SlashDot, 18 May 2016
+<https://slashdot.org/submission/5878755/windows-10-goes-full-malware>
+
+*Microsoft is adding another chapter to the long and sordid story of its
+latest OS.
+<http://www.networkworld.com/article/2956574/microsoft-subnet/windows-10-privacy-spyware-settings-user-agreement.html>
+<https://www.theguardian.com/technology/2015/oct/30/windows-10-automatic-download-windows-7-8-pc-computers>
+
+As reported <http://archive.is/o2MFC> by Windows Magazine, closing the
+upgrade permission window by clicking the familiar red X
+<https://az623152.vo.msecnd.net/library/images/3163284.png> results in
+"approval" of the installation.  Per this
+<https://support.microsoft.com/en-us/kb/3095675> Microsoft support document,
+"If you click on OK or on the red X, you're all set for the upgrade and
+there is nothing further to do."
+
+------------------------------
+
+Date: Thu, 19 May 2016 02:14:06 +0200
+From: Werner U <werneru@gmail.com>
+Subject: It's Trivially Easy To Identify You Based On Records Of Your Calls
+  and Texts
+
+erier2003 <https://slashdot.org/%7Eerier2003>, Slashdot, 17 May 2016
+<https://slashdot.org/submission/5874905/its-trivially-easy-to-identify-you-based-on-records-of-your-calls-and-texts>
+
+Contrary to the claims of America's top spies, the details of your phone
+calls and text messages -- including when they took place and whom they
+involved -- are no less revealing than the actual contents of those
+communications.
+
+In a study published online Monday
+<http://www.dailydot.com/politics/surveillance-phone-metadata-identifiable-stanford-study/>
+in the journal Proceedings of the National Academy of Sciences, Stanford
+University researchers demonstrated how they used publicly available sources
+-- like Google searches and the paid background-check service Intelius -- to
+identify "the overwhelming majority" of their 823 volunteers based only on
+their anonymized call and SMS metadata.*
+
+------------------------------
+
+Date: Thu, 19 May 2016 02:20:04 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Critical Flaw In Symantec Antivirus Engine Makes Hacking Easy
+
+itwbennett <https://slashdot.org/%7Eitwbennett>, Slashdot, 16 May 2016
+Critical Flaw In Symantec Antivirus Engine Makes Hacking Easy
+<https://slashdot.org/submission/5874807/critical-flaw-in-symantec-antivirus-engine-makes-hacking-easy>
+
+Symantec on Monday released a fix for a flaw in its Anti-Virus Engine (AVE)
+that could allow hackers to remotely compromise computers
+<http://www.csoonline.com/article/3071390/security/a-critical-flaw-in-symantec-antivirus-engine-puts-computers-at-risk-of-easy-hacking.html>.
+All it takes is for the attacker to send an email with the exploit file as
+attachment or to convince the user to visit a malicious link. 'On Linux, Mac
+and other UNIX platforms, this results in a remote heap overflow as root in
+the Symantec or Norton process,' Google security researcher Tavis Ormandy,
+who found the flaw, said in an advisory
+<https://bugs.chromium.org/p/project-zero/issues/detail?id=820>. 'On
+Windows, this results in kernel memory corruption, as the scan engine is
+loaded into the kernel, making this a remote ring0 memory corruption
+vulnerability -- this is about as bad as it can possibly get.'
+
+------------------------------
+
+Date: Tue, 10 May 2016 16:25:42 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Is the online ad bubble starting to pop? (Harvard)
+
+http://blogs.harvard.edu/doc/2016/05/09/is-the-online-advertising-bubble-finally-starting-to-pop/
+
+------------------------------
+
+Date: Wed, 11 May 2016 14:10:29 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Man charged with hacking United Airlines website, stealing
+  travel vouchers (Pat Reavy)
+
+Pat Reavy, Deseret News, 10 May 2016
+
+SALT LAKE CITY — A Saratoga Springs man was charged Tuesday with
+hacking into the United Airlines website, stealing airline vouchers
+and selling them to other people.
+
+Ammon Cunningham, 28, was charged in 3rd District Court with computer
+crimes, theft, communications fraud and engaging in a pattern of
+unlawful activity, all second-degree felonies.
+
+From about July 2012 to September 2012, Cunningham "unlawfully
+accessed (hacked) the United Airlines website and obtained Personal
+Identification Numbers (PIN) codes for Electronic Travel Certificates
+that had been assigned to United customers but had not yet been
+redeemed by those customers," according to charging documents.
+
+After obtaining the travel vouchers, Cunningham would either use them
+for himself or sell them on Craigslist and KSL.com, the charges state.
+
+http://www.deseretnews.com/article/865653957/
+
+------------------------------
+
+Date: Sat, 14 May 2016 05:19:48 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Details Emerge on Global Bank Heists by Hackers
+
+http://www.nytimes.com/2016/05/14/business/dealbook/details-emerge-on-global-bank-heists-by-hackers.html
+
+The latest target appears to have been in Vietnam, and the intruders used
+tools similar to those used in a Sony Pictures hacking in 2014.
+
+------------------------------
+
+Date: Thu, 19 May 2016 10:03:43 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Google's driverless cars may use human flypaper in road accidents"
+
+Charlie Osborne, ZDNet, 19 May 2016
+Google's driverless cars may use human flypaper in road accidents
+Can sticky cars prevent fatal injuries to pedestrians?
+http://www.zdnet.com/article/google-plans-to-stick-you-to-driverless-cars-in-accidents/
+
+selected text:
+
+Google has filed a patent for a "sticky" adhesive coating which would take
+pedestrians along with a car in the case of an accident.
+
+You have to wonder what would happen in scenarios in which the car is
+heading into another obstacle, such as a wall or another car -- and the
+pedestrian cannot escape -- but the idea is still an interesting one to
+explore.
+
+   [Another use for this would be kidnapping.]
+      [Another unusual nontechnological solution!  PGN]
+
+------------------------------
+
+Date: Thu, 12 May 2016 16:42:53 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: The NYPD was systematically ticketing legally parked cars,
+  Open Data put an end to it (Ben Wellington)
+
+http://iquantny.tumblr.com/post/144197004989/the-nypd-was-systematically-ticketing-legally
+
+About the blog:
+
+I Quant NY is meant to give a glimpse at the possibilities of a future with
+truly open data.  I've picked at the limited number of data sets that have
+become public, and have shown that opening up data leads to a world where
+government and citizens become partners in making our City better.
+
+Along the way, it's my hope that some of the work here can be a catalyst for
+better policy decisions in New York City.  However, this is not a left or
+right leaning political blog.  It's a blog about transparency.  I do my very
+best to let the data tell its own story and get more people talking about
+data.
+
+I'm a Visiting Assistant Professor in the City & Regional Planning program
+at the Pratt Institute in Brooklyn, NY, where I teach a statistics course.
+But unlike other stats courses, this one is based on real NYC open
+data. That makes the class a lot more fun, both for our future urban
+planners and for me.  That class, and the great conversations I'd had with
+the students at Pratt, inspired this blog.
+
+------------------------------
+
+Date: Wed, 18 May 2016 18:59:56 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: 117M passwords from Linked-in from 2012 are now for sale!
+
+http://techcrunch.com/2016/05/18/117-million-linkedin-emails-and-passwords-from-a-2012-hack-just-got-posted-online/
+
+This certainly reminds us of the advice that we have seen in RISKS regarding
+multiple use a password, believing that sites are properly protecting yours,
+Simplistic work-around strategies are probably inadequate.
+
+------------------------------
+
+Date: Sat, 14 May 2016 17:18:39 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: OkCupid Study Reveals the Perils of Big-Data Science (WiReD)
+
+https://www.wired.com/2016/05/okcupid-study-reveals-perils-big-data-science/
+
+  On 8 May 2016, a group of Danish researchers publicly released a dataset
+  of nearly 70,000 users of the online dating site OkCupid, including
+  usernames, age, gender, location, what kind of relationship (or sex)
+  they're interested in, personality traits, and answers to thousands of
+  profiling questions used by the site. When asked whether the researchers
+  attempted to anonymize the dataset, Aarhus University graduate student
+  Emil O. W. Kirkegaard, who was lead on the work, replied bluntly:
+  "No. Data is already public." This sentiment is repeated in the
+  accompanying draft paper
+
+It's arrogant jerks like the asses behind this data scraping "study" --
+completely lacking any sense of ethics or responsibility -- who give
+technologists everywhere a bad name and enormously set back the important
+work of genuine data science and responsible scientists.  Small wonder that
+politicians hate us and ordinary people don't trust us.  Incredibly
+depressing.
+
+------------------------------
+
+Date: Wed, 11 May 2016 14:07:41 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Wendy's Breach Affected 525 of Restaurants
+
+Wendy's said today that an investigation into a credit card breach at the
+nationwide fast-food chain uncovered malicious software on point-of-sale
+systems at fewer than 300 of the company's 5,500 franchised stores. The
+company says the investigation into the breach is continuing, but that the
+malware has been removed from all affected locations.
+
+"Based on the preliminary findings of the investigation and other
+information, the Company believes that malware, installed through the use of
+compromised third-party vendor credentials, affected one particular point of
+sale system at fewer than 300 of approximately 5,500 franchised North
+America Wendy's restaurants, starting in the fall of 2015," Wendy's disclosed
+in their first quarter financial statement today.
+
+The findings come as many banks and credit unions feeling card fraud pain
+because of the breach have been grumbling about the extent and duration of
+the breach. Sources at multiple financial institutions say their data
+indicates that some of the breached Wendy's locations were still leaking
+customer card data as late as the end of March 2016 and into early
+April. The breach was first disclosed on this blog on January 27, 2016.
+
+http://krebsonsecurity.com/2016/05/wendys-breach-affected-5-of-restaurants/
+
+------------------------------
+
+Date: Sun, 15 May 2016 20:11:53 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Video Exposes Officials' Mistakes but Can't Undo Blown Calls. Yet.
+
+http://www.nytimes.com/2016/05/07/sports/hockey/brian-boyle-video-exposes-officials-mistakes.html
+
+Instant replay is increasingly putting pressure on officials in all sports
+to get calls correct.
+
+------------------------------
+
+Date: Sat, 14 May 2016 19:03:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: In Oracle v. Google, a Nerd Subculture Is on Trial (Motherboard)
+
+http://motherboard.vice.com/read/in-google-v-oracle-the-nerds-are-getting-owned
+
+  The problem with Oracle v. Google is that everyone actually affected by
+  the case knows what an API is, but the whole affair is being decided by
+  people who don't, from the normals in the jury box to the normals at the
+  Supreme Court--which declined to hear the case in 2015, on the advice of
+  the normals at the Solicitor General's office, who perhaps did not grasp
+  exactly how software works. In a world where Silicon Valley is coming into
+  dominance, Oracle v. Google is an unusual instance in which the nerds are
+  getting totally owned by the normals. Their judgment on the technologies
+  they have birthed is being overridden by old people in black robes; their
+  beloved traditions and mythologies around free and open source software
+  are being scoffed at by corporate stiffs in suits as inconsistent hippie
+  nonsense.
+
+Three points: (1) I think Oracle's case sucks. (2) A disclaimer: My name
+came up extremely peripherally in the original Oracle/Google trial, and I'm
+assuming it won't come up in this one.
+
+And now, (3) It's mostly our own fault that we have so much trouble being
+understood and paid attention to in situations like this. We've raised
+technical lingo to the status of cliquish religious liturgies.  Our user
+interfaces are all too frequently dismissive of ordinary user needs, much
+less the needs of the rapidly expanding segments of the population with
+special visual or other requirements. Our documentation in general is still
+written way above the heads of large percentages of our users. Overall, our
+industry's attitude is cavalier and disdainful at best -- contemptuous at
+worst. What are users called behind their backs in the lingo of our
+industry?
+
+You know the answer: LUSERS. I rest my case.
+
+------------------------------
+
+Date: Mon, 16 May 2016 23:25:22 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: China Quietly Targets U.S. Tech Companies in Security Reviews (NYT)
+
+http://www.nytimes.com/2016/05/17/technology/china-quietly-targets-us-tech-companies-in-security-reviews.html
+
+A committee with ties to the country's military and security agencies is
+requiring foreign tech giants like Apple to answer questions about
+encryption and data storage.
+
+------------------------------
+
+Date: Sat, 14 May 2016 09:29:27 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: FBI Neither Confirms Nor Denies Wiretapping Amazon Echo
+  (Matt Novak)
+
+  FYI -- "the Echo is a law enforcement dream.  Imagine if you could go back
+  in time and tell police that one day people would willingly put
+  microphones in their own homes that, with a little hacking, could be heard
+  from anywhere in the world 24/7."
+
+Matt Novak, Paleo Future, 11 May
+http://paleofuture.gizmodo.com/the-fbi-can-neither-confirm-nor-deny-wiretapping-your-a-1776092971
+
+Back in March, I filed a Freedom of Information request with the FBI asking
+if the agency had ever wiretapped an Amazon Echo.  This week I got a
+response: "We can neither confirm nor deny..."
+
+We live in a world awash in microphones.  They're in our smartphones,
+they're in our computers, and they're in our TVs.  We used to expect that
+they were only listening when we asked them to listen.  But increasingly
+we've invited our Internet-connected gadgets to be "always listening."
+There's no better example of this than the Amazon Echo.
+
+In many ways the Echo is a law enforcement dream.  Imagine if you could go
+back in time and tell police that one day people would willingly put
+microphones in their own homes that, with a little hacking, could be heard
+from anywhere in the world 24/7.  First, you'd need to explain what hacking
+was, but then they'd be like, "Nah bruh, yer pullin' my leg."  Or whatever
+the 1970s version of that wasn't, don't ask me I was born in the 80s.
+
+Years ago agencies like the FBI would need to wiretap a phone conversation
+or place bugs inside homes, practices that can be cost prohibitive and labor
+intensive.  Today, you just need some software to tap into a device's
+microphone.  And if that device is "always listening" for a command, all the
+better for someone who wants to hear what's going on.
+
+In 2016, creepy perverts are hacking computer cameras and baby monitors all
+the time just to get their sick little rocks off.  And we know that the NSA
+can still wiretap your phone even when it's not turned on.  So why wouldn't
+law enforcement agencies or intelligence agencies hack your Echo (presumably
+with a court order) to catch the baddies?
+
+The letter I received in response to my FOIA request to the FBI about the
+Amazon Echo (2016)
+
+https://i.kinja-img.com/gawker-media/image/upload/s--DB9eaBD8--/c_fit,fl_progressive,q_80,w_636/txbjqbrpqj7xrafneuyz.jpg
+
+Matt Novak is the editor of Gizmodo's Paleofuture blog
+
+------------------------------
+
+Date: Thu, 19 May 2016 02:29:38 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Theoretical Breakthrough Made in Random Number Generation
+
+[...(depending on which side you're on) this should actually turn out to
+lower certain RISKS...  ;-]
+
+msm1267, Theoretical Breakthrough Made in Random Number Generation
+<https://slashdot.org/submission/5874667/theoretical-breakthrough-made-in-random-number-generation>
+
+Two University of Texas academics have made what some experts believe is a
+breakthrough in random number generation that could have longstanding
+implications for cryptography and computer security.
+<https://threatpost.com/academics-make-theoretical-breakthrough-in-random-number-generation/118150/>
+
+David Zuckerman, a computer science professor, and Eshan Chattopadhyay, a
+graduate student, published a paper in March that will be presented in June
+at the Symposium on Theory of Computing. The paper describes how the
+academics devised a method for the generation of high quality random
+numbers. The work is theoretical, but Zuckerman said down the road it could
+lead to a number of practical advances in cryptography, scientific polling,
+and the study of other complex environments such as the climate.
+
+"We show that if you have two low-quality random sources -- lower quality
+sources are much easier to come by -- two sources that are independent and
+have no correlations between them, you can combine them in a way to produce
+a high-quality random number.  People have been trying to do this for quite
+some time. Previous methods required the low-quality sources to be not that
+low, but more moderately high quality. We improved it dramatically."
+
+------------------------------
+
+Date: Fri, 20 May 2016 10:54:05 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Why Uber is watching your smartphone's battery level"
+  (Adrian Kingsley-Hughes)
+
+Adrian Kingsley-Hughes for Hardware 2.0, ZDnet, 20 May 2016
+http://www.zdnet.com/article/why-uber-is-watching-your-smartphones-battery-level/
+
+Yes, ride-sharing firm Uber is collecting information about your
+smartphone's battery life, but it promises it's not using that information
+to make you pay higher fares, despite the fact that it knows you probably
+would.
+
+GMT (06:04 PDT) | Topic: Smartphones
+
+selected text:
+
+Did you know that ride-sharing firm Uber is collecting information about
+your smartphone's battery life?
+Computer Science Teachers Need Cybersecurity Education
+Uber's head of economic research, Keith Chen, told NPR's Shankar Vedantam
+during an episode of The Hidden Brain podcast that users of the service are
+willing to accept surge pricing increases of as much as 9.9 times if their
+smartphone's battery is close to flat.
+
+Oh, but don't worry, Chen promises that the company doesn't use this
+information to set fares.
+
+Want to block apps from being able to see your battery's charge level?  You
+can't.
+
+------------------------------
+
+Date: Mon, 16 May 2016 17:52:46 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Belgian police have asked citizens to shun Facebook's
+ "Reactions" buttons (The Independent via SlashDot)
+
+  [Belgian Thought Police - how confounding!  Many, many years ago, I
+  complained, repeatedly, to Facebook about having to push a LIKE-button to
+  keep informed about someone's utterances.... that I might want to correct,
+  contradict or counteract (use your imagination)... or when I simply was
+  worried about someone...  after that (observing the direction Facebook
+  took for a couple of months), I decided to shun ALL of Facebook - and
+  similar pathetic 'business models' !!]
+
+Facebook Monitoring Your Reactions To Serve You Ads, Warn Belgian Police
+<https://tech.slashdot.org/story/16/05/16/1411221/facebook-monitoring-your-reactions-to-serve-you-ads-warn-belgian-police>
+
+Belgian police have asked citizens to shun Facebook's "Reactions" buttons to
+protect their privacy. In February, five new "Reaction" buttons were added
+next to the "Like" button to allow people to display responses such as sad,
+wow, angry, love and haha. According to reports, police said Facebook is
+able to use the tool to tell when people are likely to be in a good mood --
+and then decide when is the best time to show them ads
+<http://www.independent.co.uk/life-style/gadgets-and-tech/news/facebook-reactions-belgian-police-warn-citizens-not-to-react-to-posts-on-social-media-a7027786.html>.
+"The icons help not only express your feelings, they also help Facebook
+assess the effectiveness of the ads on your profile," a post on Belgian's
+official police website read.
+
+The Independent reports:
+
+*"By limiting the number of icons to six, Facebook is counting on you to
+express your thoughts more easily so that the algorithms that run in the
+background are more effective," the post continues. "By mouse clicks you can
+let them know what makes you happy. "So that will help Facebook find the
+perfect location, on your profile, allowing it to display content that will
+arouse your curiosity but also to choose the time you present it. If it
+appears that you are in a good mood, it can deduce that you are more
+receptive and able to sell spaces explaining advertisers that they will have
+more chance to see you react."*
+
+------------------------------
+
+Date: Mon, 16 May 2016 18:20:12 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Another Risk of Self-Driving Cars; Clogged Highways?!?
+  (ABCnews via SlashDot)
+
+[ ...clog them worse than when *B.I.s *drive?  hmmm, let's see <reaching
+for the simulator>... Nope!  ]
+
+Will Self-Driving Cars Clog Our Highways?
+
+<https://tech.slashdot.org/story/16/05/15/223239/will-self-driving-cars-clog-our-highways>
+
+While self-driving cars may be safer and cheaper, the Associated Press
+warns they could also create massive traffic congestion
+<http://abcnews.go.com/Health/wireStory/robot-cars-drive-traffic-congestion-off-cliff-39124254>.
+"The problem, say transportation researchers, is that people will use them
+too much." One auto industry expert predicts that self-driving cars will
+increase travel by those over 65, as well as those between 16 and 24,
+resulting in at least 2 trillion extra miles being driven each year. In
+addition, "Airlines also may face new competition as people choose to travel
+by car at speeds well over 100 mph between cities a few hundred miles apart
+instead of flying," and faster commute times could mean more urban sprawl as
+workers may spread into cheaper neighborhoods that are further from the city
+center.
+
+------------------------------
+
+Date: Fri, 13 May 2016 14:27:01 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Risks of red-light cameras and violation detection
+
+Have you ever wondered how much revenue these automated red-light violation
+camera systems generate?  Here's an interesting case in point, namely, the
+San Mateo City Council trying to decide whether to renew their contract with
+Redflex.  It also indicates that the entire scheme can be challenged if the
+yellow-light cycle is too short.
+
+  For the calendar year 2015:
+    Income from fines and penalties: $598,048
+    Reported revenue                 $229,508
+    Cost of the program:
+      Redflex contractual fee:       $239,040
+      Cost of refunding 1000 tickets
+        because the yellow lights at
+        two intersections were set
+        too short:                unspecified
+
+    Note: Fines and court costs averaged $490 per case.
+          The city gets only $135.05 of the fine.
+    Note: Comparing four years before and after --
+      63% reduction in red-light related collisions
+      26% reduction in related injuries
+
+    So, on balance it seems worth it.  Let's see whether
+    the city council renews the contract.
+
+------------------------------
+
+Date: Wed, 11 May 2016 12:29:56 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: Computer Science Teachers Need Cybersecurity Education
+  (Evan Koblentz)
+
+via ACM TechNews, Wednesday, May 11, 2016
+
+Computer Science Teachers Need Cybersecurity Education, Says CSTA Industry
+Group, Evan Koblentz, *TechRepublic* 10 May 2016
+
+ACM's Computer Science Teachers Association (CTSA) is crafting a
+cybersecurity certification program for computer science teachers to provide
+tomorrow's workforce with vital knowledge and training.  CSTA executive
+director Mark Nelson says nearly 90 percent of middle school and high school
+educators who teach computer science lack computer science degrees.  This
+month, the group announced an eight-hour cybersecurity education certificate
+course, with a curriculum co-developed by CompTIA that covers
+authentication, best practices, compliance, encryption, governance,
+penetration testing, risk management, and security architecture.  Teachers
+also must complete online cybersecurity career simulations and lead students
+in real-life mentoring before receiving the certificate.  In addition,
+Nelson says CTSA will team with instructional video maker LifeJourney on
+further cybersecurity education.  Another goal is teaching gender,
+geographic, and industry diversity.  Similar educational initiatives are
+underway via the U.S. Department of Homeland Security's National Initiative
+for Cybersecurity Careers and Studies and the National Institute of
+Standards and Technology's National Initiative for Cybersecurity Education.
+However, the CSTA program stands out by being developed directly by K-12
+teachers themselves.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-f0a6x2e34dx065450&
+
+------------------------------
+
+Date: Fri, 13 May 2016 07:15:45 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Anti-tamperproof bottles aren't
+
+RISKS is usually about the risks of computing, but we frequently have a
+stated or unstated assumption about physical tampering (e.g., the images on
+police cameras are real, voting machines haven't had totals adjusted).
+Here's a reminder that given appropriate financial (and perhaps
+nationalistic) incentives, real-world anti-tamper methods aren't much use.
+
+I don't typically read about sports, but happened to read this article in
+the NYT, and was fascinated by the anti-tampering methods on the bottles
+used to hold urine samples, and the effort the Russians went to so they
+could undetectably replace the samples with "clean" urine.
+
+http://www.nytimes.com/2016/05/13/sports/russia-doping-sochi-olympics-2014.html
+
+------------------------------
+
+Date: Thu, 12 May 2016 22:49:30 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: The great ad-blocking arms race
+
+Some people use ad blockers.  Some free websites like Wired and Forbes use
+software to detect use of ad blockers and block content being served to
+them.  So, some people are using software that blocks the detection
+software.
+
+https://www.techdirt.com/articles/20160509/07311734387/reddits-technology-subreddit-ponders-banning-wired-forbes-blocking-adblock-users.shtml
+
+------------------------------
+
+Date: 11 May 2016 00:09:11 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Big data breaches NOT found at major email services
+
+Not so exclusive!
+
+Then again. not everyone who claims that he's a security expert actually
+*is* a security expert:
+
+http://www.techinsider.io/russian-hack-email-2016-5
+
+PS: In case you can't read the story, it reports that Yahoo and Mail.ru both
+claim that the dumps are fake and Mail.ru says it's a publicity stunt by the
+"expert".
+
+------------------------------
+
+Date: Wed, 11 May 2016 07:31:29 -0500
+From: Fred Cohen <fc@all.net>
+Subject: Re: Whistleblowing is overshadowed when SQL injection gives way to,
+  unauthorized access...
+
+Consider a story that goes:
+
+Whistle-blowing is overshadowed when bump key gives way to unauthorized
+access.
+
+A woman arrested for breaking into the county election offices and copying
+voting records is arrested - felony charge.
+
+The woman (a security researcher) posted a video of using a bump key to
+break in to what was, at the time, the official ballot box storage facility
+for ballots being counted during the election.
+
+At no time did anyone at the county authorize her to break into the election
+office.
+
+THEN imagine the story says:
+
+Unsettling concerns
+
+As ill-advised as it was for the woman to break into the election office
+when it had ballots yet uncounted, this raises some serious concerns about
+election security. She was able to use a bump key within a few seconds and
+cause the tumblers in the lock to align while applying slight pressure to
+the rotational aspect of the lock cylinder, resulting in the lock
+turning. She also indicated that she could have broken the window and
+bypassed the alarm using a clip lead.
+
+The county supervisor indicated that despite the brags of the woman, the
+ballots were never at risk as they are kept in a safe within the office and
+she did not access the safe.
+
+Ultimately the affair is a bad on all parties - the election building should
+have unpickable locks and unbreakable windows - but the woman shouldn't be
+breaking in to show that she can, and most certainly shouldn't be filming
+here felony actions and posting them to the Internet.
+
+My view of how this story would play would be - "felon videos break-in -
+posts to Internet - claims to be a "security researcher".
+
+When will we stop acting like 5-year-olds and grow up?
+
+Fred Cohen - 831-200-4006 - All.Net & Affiliated Companies
+http://all.net/ PO Box 811 Pebble Beach, CA 93953
+
+------------------------------
+
+Date: Wed, 11 May 2016 22:11:37 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Re: The last non-Internet Generation (RISKS-29.50-52)
+
+In the UK there's a major fuss right now -- some have claimed high-speed
+Internet access as a basic human right, while the Government has proposed a
+legal-minimum 10Mb/s soon.  At risk of stating the obvious: regular
+telephone copper wires can handle moderately-high broadband Internet over
+short distances (few miles/km) so using this in densely-populated urban
+areas is no big deal, and for faster speeds, it's easy to run optic fibre to
+neighbourhood roadside cabinets (quite probably without back-up power
+supplies, as previously noted in RISKS), with the "last mile" still with
+copper, or run fibre right to individual users.
+
+As the previous poster says, providing high-speed data links to handfuls of
+customers in remote areas is a whole other headache; as other RISKS readers
+will know better than me, there are various ways of doing this, such as
+satellites, radio from towers in flat terrain, etc., all mighty expensive on
+a per-user basis, and the major fuss is about who pays.  Central or local
+government grants from taxpayers, or a phone company levy on customers'
+bills, or..?
+
+There's the same problem with providing cellphone coverage in remote areas,
+with not enough traffic for competing companies to put up masts (towers),
+while joint ventures could violate anti-cartel laws, and a single company
+doesn't want to be forced to provide a facility which may benefit other
+companies.
+
+------------------------------
+
+Date: Wed, 18 May 2016 00:22:09 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Re: The last non-Internet Generation (Robinson, RISKS-29.52)
+
+Full coverage... but not in areas of hilly land, where pockets of no
+coverage persist.
+
+------------------------------
+
+Date: Tue, 10 May 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+    newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.52
+************************
