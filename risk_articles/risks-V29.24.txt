@@ -1,0 +1,793 @@
+RISKS-LIST: Risks-Forum Digest  Saturday 30 January 2016  Volume 29 : Issue 24
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.24.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+F-35 software overrun with bugs, DoD testing chief warns (Ars Technica)
+A plane that's become just too complicated (Ken Knowlton)
+Errors in Scientific Software May Be More Serious Than Suspected
+  (Tech Dirt via Paul Robinson)
+Cops hate encryption but the NSA loves it when you use PGP (Iain Thomson)
+2015: one in three Americans had health records hacked---all because HIPAA
+  enables endless aggregation and collection of health data (Deborah Peel)
+Documents Uncover NYPD's Vast License Plate Reader Database (Dave Farber)
+Israel's electric grid hit by severe hack attack (Dan Goodin)
+Accidental sharing -- the plague of the always-connected era (Paul Venezia)
+Microsoft says odd behavior in Outlook 2010 calendar is a feature,~
+  not a bug (Woody Leonhard)
+Hacking into Supervisors of Elections Office (Fox)
+Vanishing electronic journal (Al Stangenberger)
+Report identity theft and get a personal recovery plan at IdentityTheft.gov
+  (Al Mac)
+Re: Why no secure architectures in commodity systems? (Fred Cohen, Al Mac)
+Re: Belgian Crelan Bank loses 75.8-million dollars in CEO fraud
+  (John Levine, Al Mac)
+Re: Ballot Battles: The History of Disputed Elections in the U.S.
+  (Mark E. Smith)
+Re: date formats (Simson Garfinkel)
+Re: The Boston Globe delivery disaster caused by software (Larry Sheldon)
+Re: Documents Uncover NYPD's Vast License Plate Reader Database
+  (Thomas Leavitt)
+Re: Roger Kemp on the Lancaster Floods (Dick Mills)
+Re: Why do people keep coming to this couple's home looking for lost
+  (Al Mac)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 29 Jan 2016 11:39:01 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: F-35 software overrun with bugs, DoD testing chief warns
+
+  Ars Technica, via Tom Van Vleck -- who sent this to RISKS after walking on
+  the beach, when he heard five tremendous booms that turned out to be the
+  result of offshore supersonic testing of an F-35c.
+
+http://arstechnica.com/information-technology/2016/01/f-35-software-overrun-with-bugs-dod-testing-chief-warns/
+
+------------------------------
+
+Date: Tue, 26 Jan 2016 09:49:01 -0500
+From: Ken Knowlton <kcknowlton@aol.com>
+Subject: A plane that's become just too complicated
+
+http://www.nytimes.com/video/us/100000004164811/runaway-plane.html?emcíit_th_20160126&nl=todaysheadlines&nlide014299
+
+------------------------------
+
+Date: Tue, 26 Jan 2016 12:10:06 +0000 (UTC)
+From: Paul Robinson <paul@paul-robinson.us>
+Subject: Errors in Scientific Software May Be More Serious Than Suspected
+
+An article in Tech Dirt [1] "Frequent Errors In Scientific Software May
+Undermine Many Published Results" notes that a number of technical articles
+being submitted to scientific and technical journals for analysis and/or
+peer review may have unknown errors because the scientific analysis used to
+determine the results is often using custom software written by the
+scientist - or more likely, by his or her research assistant - who is not
+trained in writing software or may not be qualified to do so, and as a
+result, the expected error rates for such software can be expected to be
+much higher than even the typically abysmal rate of 15-20 defects per 1000
+lines of code that professionals suffer with. Or rather, I mean "that with
+which professionals suffer" since you're not supposed to end a sentence with
+a preposition.
+
+This potentially raises the odds that the results have serious, possibly
+even critical errors in the results, making them questionable or even
+downright worthless, by a large factor, and may result in serious
+misapplication of resources as some results may be badly skewed or even
+outright incorrect.
+
+[1] https://www.techdirt.com/articles/20151118/09213232856/frequent-errors-scientific-software-may-undermine-many-published-results.shtml
+
+------------------------------
+
+Date: Saturday, January 30, 2016
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Cops hate encryption but the NSA loves it when you use PGP
+  (Iain Thomson)
+
+  [Note:  This item comes from friend David Rosenthal.  DLH]
+
+Iain Thomson, The Register, 27 Jan 2016
+[PGP] lights you up like a Vegas casino, says compsci boffin
+<http://www.theregister.co.uk/2016/01/27/nsa_loves_it_when_you_use_pgp/>
+
+Although the cops and Feds wont stop banging on and on about encryption,
+the spies have a different take on the use of crypto.
+
+To be brutally blunt, they love it. Why? Because using detectable encryption
+technology like PGP, Tor, VPNs and so on, lights you up on the intelligence
+agencies' dashboards. Agents and analysts don't even have to see the
+contents of the communications -- the metadata is enough for g-men to start
+making your life difficult.
+
+"To be honest, the spooks love PGP," Nicholas Weaver, a researcher at the
+International Computer Science Institute, told the Usenix Enigma conference
+in San Francisco on Wednesday. "It's really chatty and it gives them a lot of
+metadata and communication records. PGP is the NSA's friend."
+
+Weaver, who has spent much of the last decade investigating NSA techniques,
+said that all PGP traffic, including who sent it and to whom, is
+automatically stored and backed up onto tape. This can then be searched as
+needed when matched with other surveillance data.
+
+Given that the NSA has taps on almost all of the internet's major trunk
+routes, the PGP records can be incredibly useful. It's a simple matter to
+build a script that can identify one PGP user and then track all their
+contacts to build a journal of their activities.
+
+Even better is the Mujahedeen Secrets encryption system, which was released
+by the Global Islamic Media Front to allow Al Qaeda supporters to
+communicate in private. Weaver said that not only was it even harder to use
+than PGP, but it was a boon for metadata -- since almost anyone using it
+identified themselves as a potential terrorist.
+
+"It's brilliant!" enthused Weaver. ``Whoever it was at the NSA or GCHQ who
+invented it give them a big Christmas bonus.'' [...]
+
+Dewayne-Net RSS Feed: <http://dewaynenet.wordpress.com/feed/>
+
+------------------------------
+
+Date: Wed, 27 Jan 2016 9:56:14 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: 2015: one in three Americans had health records hacked---all
+  because HIPAA enables endless aggregation and collection of health data
+
+Thanks to "Dr. Deborah Peel" <dpeelmd@patientprivacyrights.org> for this item:
+
+http://www.ibtimes.com/one-three-americans-had-their-health-records-breached-2015-hackers-follow-money-2281011
+
+Just saying---isn't this incredible betrayal of privacy (health data in EHRs
+INCLUDES all your financial data BTW).
+
+Isn't the BEST use case to end the current Internet business model of
+massive collection of ALL pii?
+
+90% of all existing data is about humans.
+Shouldn't the IoT (aggregation of non-human data) be the least of our worries?
+
+Deborah Peel, Patient Privacy Rights, (512) 732-0033
+www.patientprivacyrights.org<http://www.patientprivacyrights.org/>
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 13:23:00 -0500
+From: "Dave Farber" <farber@gmail.com>
+Subject: Documents Uncover NYPD's Vast License Plate Reader Database
+
+http://m.huffpost.com/us/entry/documents-uncover-nypds-v_b_9070270.html
+
+------------------------------
+
+Date: January 26, 2016 at 9:32:18 PM EST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Israel's electric grid hit by severe hack attack (Dan Goodin)
+
+Dan Goodin, Ars Technica, 28 Jan 2016
+http://arstechnica.com/security/2016/01/israels-electric-grid-hit-by-severe-hack-attack/
+
+Israel experienced a serious hack attack on its electrical grid that
+officials are still working to repel, the head of the country's energy
+minister said Tuesday.
+
+"The virus was already identified and the right software was already
+prepared to neutralize it," Israeli Energy Minister Yuval Steinitz told
+attendees of a computer security conference in Tel Aviv, according to this
+article published Tuesday by The Times of Israel. "We had to paralyze many
+of the computers of the Israeli Electricity Authority. We are handling the
+situation and I hope that soon, this very serious event will be over -- but
+as of now, computer systems are still not working as they should."
+
+The "severe" attack was detected on Monday as temperatures in Jerusalem
+dipped to below freezing, creating two days of record-breaking electricity
+consumption, according to The Jerusalem Post. Steinitz said it was one of
+the biggest computer-based attacks Israel's power infrastructure has
+experienced, and that it was responded to by members of his ministry and the
+country's National Cyber Bureau. The energy minister didn't identify any
+suspects behind the attack or provide details about how it was carried out.
+
+News organizations reporting Steinitz' comments gave no indication the
+attacks on Israel's power grid resulted in any power disruptions.  A
+representative for Israel's Electricity Authority said some of its computer
+systems had been shut down for two days in response to the attack.
+
+The attack comes five weeks after Ukraine's power grid was successfully
+disrupted in what's believed to be the world's first-known hacker-caused
+power outage. Researchers still aren't sure if the malware known as
+BlackEnergy was the direct cause of the blackout, but they have confirmed
+the malicious package infected at least three of the regional power
+authorities that were involved in the outage. Researchers have since said
+the attack was extremely well coordinated.
+
+  [Bill Stewart noted that Dan Goodin's article indicated that the electric
+  grid itself wasn't affected - the hack attack was against the Electricity
+  Authority, which is a regulatory agency, not the actual power production
+  organization, much less the power equipment.  PGN]
+
+http://arstechnica.com/security/2016/01/israels-electric-grid-hit-by-severe-hack-attack/?comments=1
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 21:03:34 -0800
+From: nGene Wirchenko <genew@telus.net>
+Subject: "Accidental sharing -- the plague of the always-connected era"
+  (Paul Venezia)
+
+Paul Venezia, InfoWorld, 25 Jan 2016
+In the age of social media, it's not necessarily in a company's best
+interests to provide clear and concise controls over information access.
+http://www.infoworld.com/article/3025351/cloud-computing/accidental-sharing-the-plague-of-the-always-connected-era.html
+
+selected text:
+
+Via Facebook, a friend invited me to a surprise birthday party for her
+sister last week, and I perchance ran into her a few days later.  We chatted
+about this and that, then I asked about the surprise party. Her demeanor
+changed as she described the difficulty in using Facebook to invite people
+without alerting her sister to the event.  She wasn't certain she succeeded,
+but after spending more than an hour painstakingly reviewing everything she
+could find relating to who might be able to view the event, she decided that
+she'd done all she could and fired it off.
+
+Of course, it came back to her sister anyway, possibly because someone
+inadvertently shared it on their own timeline.
+
+It's not only social media; it extends to all kinds of consolidated cloud
+services as well. This is how a father buys his child an iPad and signs in
+with his Apple ID to buy a few apps. Later on, he discovers that his child
+has seen every text message he's sent and received, every picture taken, and
+various other items that perhaps shouldn't be on his daughter's iPad. He
+only discovered this because someone called his iPhone and her iPad started
+ringing too.
+
+To a significant degree, the tech world is blind to the real-world
+frustration and damage its "conveniences" can cause.
+
+It's not realistic to expect the general population to fully understand all
+of the moving parts that can lead to problems like this, to have to inspect
+every new device, every new setting, every new app function or feature, and
+so forth.
+
+In an ideal world, the technology would adapt to our needs, not the other
+way around. Unfortunately, it seems that those who are developing that
+technology don't think that controlling access to communication is a
+priority.
+
+------------------------------
+
+Date: Thu, 28 Jan 2016 09:39:00 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Microsoft says odd behavior in Outlook 2010 calendar is a feature,
+  not a bug" (Woody Leonhard)
+
+   When edge cases bite:
+
+Woody Leonhard, InfoWorld, 27 Jan 2016
+... appointments that span midnight -- and the change is coming to
+Outlook 2013 and Outlook 2016
+http://www.infoworld.com/article/3026608/microsoft-windows/microsoft-says-odd-behavior-in-outlook-2010-calendar-is-a-feature-not-a-bug.html
+
+selected text:
+
+Poster Jon999_ in the Microsoft Answers forum describes it succinctly:
+
+  After the [new KB 3114570] update is installed, Calendar appointments that
+  span midnight (i.e., appointments that start on one day before midnight
+  and end the next day after midnight) appear in Day and Week calendar views
+  as if they were all-day appointments, as a small bar at the top of the day
+  column instead of covering the appropriate hours. Additionally, the end
+  time of such appointments shows up wrong (as 00:00, regardless of the
+  actual end time) in all views including Month view. Prior to this Update,
+  such appointments of <24 hours duration appeared as expected, covering the
+  appropriate hours. Uninstalling this update removes the error.
+
+  There were additional problems for Windows 10 users because Win10's lovely
+  forced update feature made the uninstalled update re-install itself over
+  and over.
+
+  Last week, in the same thread, Microsoft employee Gabriel Bratton dropped
+  something of a bomb. He explained that the observed behavior wasn't a bug
+  but a feature
+
+[People who schedule meetings crossing midnight were not pleased.]
+
+------------------------------
+
+Date: Wed, 27 Jan 2016 9:50:07 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Hacking into Supervisors of Elections Office
+
+Fox Channel 4 Now, WFTX Fort Myers/Cape Coral, had this item:
+http://www.fox4now.com/news/hacking-into-supervisors-of-elections-office
+
+------------------------------
+
+Date: Fri, 29 Jan 2016 13:10:05 -0800
+From: Al Stangenberger <forags@sbcglobal.net>
+Subject: Vanishing electronic journal
+
+A recent article about the controversy over the safety of foods containing
+GMO's reports questions on one Italian researcher's findings:
+http://arstechnica.com/science/2016/01/anti-gmo-research-may-be-based-on-manipulated-data/
+
+The last paragraph highlights a problem with on-line journals:
+
+> Seralini is back with a study purportedly showing that GMO-based food is
+> harmful to cows. But the journal he published it in allowed its domain
+> registration to expire, meaning the paper (and every other one in the
+> journal) has simply vanished.
+
+  Note added later: The paragraph I quoted contains a URL which specifically
+  addresses the vanishing journal issue:
+
+  http://retractionwatch.com/2016/01/27/seralini-paper-claiming-gmo-toxicity-disappears-after-journal-domain-expires/
+
+ (Thunderbird stripped out the URL when I copied the passage, another
+ minor risk, I guess.  Al)
+
+------------------------------
+
+Date: Thu, 28 Jan 2016 12:41:55 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Report identity theft and get a personal recovery plan
+  at IdentityTheft.gov
+
+I believe that there are over 1 million new ID theft victims in the USA each
+year, just with income tax fraud, and that number will probably climb ...  I
+am not yet a victim, knock wood, but I frequently have to battle social
+engineering assaults, and I have been notified of more than one breach of my
+PII.
+
+I do not know how safe it is to use this site, when some attacks are
+man-in-the-middle of Internet connections.
+
+From: Federal Trade Commission [mailto:subscribe@subscribe.ftc.gov]
+Sent: Thursday, January 28, 2016 11:49 AM
+To: macwheel99@wowway.com
+Subject: Report identity theft and get a personal recovery plan at
+IdentityTheft.gov
+
+ <http://consumer.ftc.gov?utm_source=govdelivery> Federal Trade Commission
+Consumer Information
+
+Report identity theft and get a personal recovery plan at IdentityTheft.gov
+<http://www.consumer.ftc.gov/blog/report-identity-theft-and-get-personal-recovery-plan-identitytheftgov?utm_source=govdelivery>
+
+Nicole Fleming, Consumer Education Specialist, FTC
+
+Millions of people are affected by identity theft each year. It might start
+with a mysterious credit card charge, a bill you don't recognize, or a
+letter from the IRS that says you already got your refund - even though you
+didn't.
+
+If someone uses your information to make purchases, open new accounts, or
+get a tax refund, that's identity theft. Recovering from identity theft
+often takes time and persistence. That's why today's announcement from the
+FTC is a big deal: New features at IdentityTheft.gov make it easier to
+report and recover from identity theft.
+
+------------------------------
+
+Date: Fri, 29 Jan 2016 03:17:24 -0800
+From: Fred Cohen <fc@all.net>
+Subject: Re: Why no secure architectures in commodity systems?
+
+Perhaps we should say that "truly secure computing" is an ill-defined
+term. However, without hardware support, two things are apparent:
+
+Rule 1: Who runs first wins.
+Rule 2: Rule 1 fails when the first move makes an imperfect move.
+
+It's just like chess in this way.
+
+> Presumably some consortium of government and corporate organizations could
+> fund the initial work on the premise that as volume rose on marketing
+> these relatively secure systems at commodity scale, the revenues and
+> security benefits would reward their efforts handsomely.
+
+The mechanism is called a Trusted Platform Module (TPM), and TPMs are
+present in enormous volume in commodity computers of all sorts. This is
+based on the Trusted Computing Group's efforts that stem from the work
+on cryptographic checksums for integrity protection of the 1980s and on
+a lot of other related things.
+
+> It's possible that at some point researchers determined that security
+> through software alone was at least possible, if, perhaps, really difficult,
+> but I never encountered reports of such a discovery.
+
+Again, the term "security" is ill defined. We can indeed achieve ill-defined
+outcomes with software.
+
+In effect, the hierarchy of hardware and recursive software embedding is
+the same thing. You can do as well in software as in hardware, but it's
+easier to make unbreakable enforcement mechanisms in hardware because
+you can control less complicated finite state machines to great effect
+and physically limit interactions (at the level of the digital - analog
+interaction is still present of course).
+
+> If this has happened, I would appreciate one or more pointers to the
+> relevant literature.  ...
+
+The hardware architecture is present, but the industry lacks the desire
+and ability to use it well.
+
+This starts with the problem of defining what you want (i.e., "security"
+is an ill-defined term) and continues to the problem of designing
+something that does that (complexity is problematic, particularly in
+multiprocessing / multi-threaded environments with overt and covert
+communication between things you may want to keep separated in some ways).
+
+Remember that we also tend to network these devices. Two perfectly secure
+devices (meeting some specification such as limited information flow) when
+connected may violate the flow controls of each other, thus a combination of
+"secure" things may produce an "insecure" thing. The was all shown in the
+1980s. If you want a secure system (from an information flow limiting
+perspective) you can readily have one by [physically isolating it (to some
+level of signal strength at some distance for all signal types and frequency
+ranges). But these systems are of almost no use today.
+
+The term "architecture" that you use is far more complex a thing than the
+things you are discussing. Security architecture crosses many
+boundaries. For an example you might want to look at
+http://all.net/Arch/index.html
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 20:12:21 -0600
+From: Alister Wm Macintyre <macwheel99@wowway.com>
+Subject: Re: Why no secure architectures in commodity systems? (Sizemore,
+  RISKS-28.22,23)
+
+* Michael Marking talks about insider threats in hardware design.
+
+We have had Manchurian Chips in ATM machines and voting machines.  That's
+where you can run all kinds of tests, based on the hardware design and never
+discover that some additional features have been added, unless you have some
+way to test every conceivable combination.  With voting machines, that also
+involves moving your hands in combinations which make no logical sense..
+
+In one case, a factory, manufacturing ATMs, was burglarized.  Afterwards,
+everyone assumed that the only damage was some stuff they stole.  Only
+later, it was found that they had gotten into ATM design to add additional
+features.
+
+The original design served the needs of financial institutions and their
+customers.  The new design also served the needs of crooks desiring to steal
+from the institutions and their customers.  A crook could visit the ATM, put
+in their code (unknown to the institution) and get paper out listing
+customer accounts, PIN#s, and available balances.  The crooks could put that
+info on bogus cards, then withdraw as much as the bank allows in a day,
+until customer account drained.
+
+* PGN wrote of architecture which allows legacy code to run in confined
+environments.
+
+IBM came out with such a system in the 1990s, a year or two before the
+AS/400 was launched, which also supported that.  These platforms supported
+multiple partitions with different OS, human languages.  The primary
+partition controlled how much disk space, and other hardware resources, were
+allocated to each secondary partition, each of which ran their own OS.
+These #s could be adjusted later.  There were commands we could use in one
+environment to access others.  I remember M36, which was an OS running S/36
+OS inside an AS/36.
+
+We moved to a much faster system, with better security, using less
+electricity, costing less to lease, and did not have to change any of our
+old software.  The only problem was our ERP vendor which tried to argue that
+their contract supporting perpetual upgrades, with no more $ investment, so
+long as we stayed on a 36, was no longer running on a 36.  We needed to work
+with them, because the ERP would only run on a machine with a serial # for
+which they gave us a PIN#.
+
+When we ran backup from the main partition, it included 100% of M36 as a
+single object.  Our PCs also had access to a "special drive," which was a
+partition on the AS/36.  PCs were backed up to that "special drive," with
+each backup named after PC-involved, then all of that was another single
+object in the AS/36 backup.  Restore from backup put everything back the way
+it was, at backup time.
+
+I thought it was way cool, that a multi-national company (my day job was NOT
+one) could have main partition in English for technicians to manage the
+whole system from, with other partitions in French, Spanish, Portuguese,
+etc. serving their people in other nations, without the need to hire IT
+people in those places, or use tech support, except thru HQ.  With the
+cross-partition tunnels, employees could access the familiar software and
+file structures, with the data of other corporate divisions.  There were
+aps, where you send an invoice where customers & vendors see the info in
+THEIR language.  Shipping goes thru customs @ some border crossing, and the
+paperwork is in THEIR language.
+
+Mark Thorson wrote:
+
+* I agree that a capability architecture would be preferable to the
+eggshell-thin protection model used today, but viable capability
+architectures were not available (or not with high confidence that they were
+ready) when the present architectures arose,
+
+I disagree.  The PC (micro computer) was launched in the 1970's.  Its
+architecture totally ignored what had been developed on mini-computers in
+the 1960's and mainframes before that.  I am not sure when midrange started.
+It also had that architecture.
+
+In the 1980's, companies started to connect PCs to minis, midrange, and
+mainframe, forcing us to go to the current egg shell architecture, for the
+overall company network.
+
+* and it's too late now to change the course of history.
+
+I agree.  The current approach dominates because people want the cheapest
+possible, not the most secure possible.
+
+Most people, who own and drive automobiles, learn by their second car that
+life time operation cost can be higher than purchase cost, so their shopping
+around needs to find one with good gas mileage, good warranties, good
+service, few break downs, etc.  Most people never learn that about
+computing.
+
+------------------------------
+
+Date: 26 Jan 2016 00:41:39 -0000
+From: John Levine <johnl@iecc.com>
+Subject: Re: Belgian Crelan Bank loses 75.8-million dollars in CEO fraud
+
+The BEC frauds I've seen could all have been stopped by really simple
+measures like always confirming transfers by a phone call to the phone
+number on file for the boss (not the one in the message of instructions) or
+code words that have to appear in the message.
+
+Unfortunately, there's a lot of either tunnel or magical thinking that I'm
+too busy or too important to have to pay attention to this stuff.  Oops.
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 18:53:31 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: Belgian Crelan Bank loses 75.8-million dollars in CEO fraud
+  (Levine, RISKS-29.24)
+
+I totally agree.  All BEC stories, I have seen so far, involve either:
+* Top C-people who are security brain-dead;
+* Or lower level personnel who are scared to question commands
+  apparently issued from CEO.
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 17:06:56 -0800
+From: "Mark E. Smith" <mymark@gmail.com>
+Subject: Re: Ballot Battles: The History of Disputed Elections in the U.S.
+  (Shapir, RISKS 29.23)
+
+Amos Shapir wrote, "While Mark E. Smith's ideas are laudable, I'm afraid the
+end result might be a political version of Wikipedia."
+
+And that would differ from our current system in what way?
+
+Shapir: "'The will of the people' is not a very well defined term, and
+rather unreliable.  It has been shown time and again to be very susceptible
+to cheap tricks."
+
+The same is true of juries, however most people don't seem to think that
+having elected judges make all decisions themselves would be an improvement.
+
+Shapir: "What we need is a way to make elected officials behave like
+responsible adults; I'm not sure there is a provable scheme to ensure that."
+
+There isn't. RISKS has many illustrations of how security schemes can be
+broken. Power corrupts and the more power a person is given, the more
+temptation to corruption will confront them. In order to have elected
+officials act more responsibly, it might be a good idea to start by removing
+their sovereign immunity so that they could easily be held personally
+accountable for their actions. This nation once fought a revolution to rid
+ourselves of a sovereign, but somehow forgot to discard the concept of
+sovereign immunity at the same time.
+
+The Framers agreed with you, Amos. They feared the "mob and rabble" they
+believed unfit to govern, and therefore wrote an undemocratic Constitution
+that vested power not in the people, but in big land-owners, many of whom
+had taken part in the genocide of Native Americans to obtain their land and
+whose only right to it was a charter from a foreign sovereign, and who owned
+slaves to work their land. Surely slavers and mass murderers could be
+trusted to make better decisions than ordinary people, or at least to make
+decisions that would primarily benefit other slavers and mass murderers.
+
+But even among the genocidaires and slave owners, there were some who
+foresaw that times can change and that change could not only be necessary,
+but beneficial. As Thomas Jefferson said, "The tree of liberty must be
+refreshed from time to time with the blood of patriots and tyrants." And
+that was straight from the horse's mouth, as they say.  ;)
+
+If the people are unreliable and susceptible to cheap tricks like election
+campaigns (not that the billions spent on getting out the vote is cheap),
+then why bother to have elections at all? If we want to retain elections to
+indicate that we have a democratic form a government, then we have to
+actually count the votes, to make the electoral process transparent and
+verifiable, and to give the voters the final say so that the popular vote
+cannot be ignored or overridden. Putting the lipstick of sham elections on
+the pig of tyranny will never improve the quality of life for the majority
+in this country. Giving the people a real voice in their own affairs
+might. Iceland happens to be doing very well, thank you, although I'm sure
+their democratic form of government sends shudders through the blackened
+hearts of the US military-industrial-Congressional elite.
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 21:31:43 -0500
+From: Simson Garfinkel <simsong@acm.org>
+Subject: Re: date formats
+
+> [This is another instance of the old calendar confusion between U.S. and
+> elsewhere, which keeps arising in RISKS: month/day/year vs day/month/year;
+> whereas year/month/day is less common, it is much less ambiguous, and
+> mathematically sound.  In RISKS, we long ago decided on dd/MON/year.  PGN]
+
+I recommend using ISO-8601 as a date format â€” YYYY-MM-DD.
+
+Not only does this have an advantage of being an international standard, but
+it also has the advantage of sorting properly when used in a filename.  No
+other date format sorts properly.
+
+  [Simson, This has cropped up several times in RISKS. It would be nice,
+  but you and I are among the *sort* of folks who care.  PGN]
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 18:52:19 -0600
+From: Larry Sheldon <larrysheldon@cox.net>
+Subject: Re: The Boston Globe delivery disaster caused by software (29.23)
+
+>  "delivery disaster caused by software"
+
+... caused by mismanagement, bad design, inadequate testing and probably
+many more HUMAN.
+
+In the 1960s I worked on a team that designed the first functional
+mechanical system for publishing AND DELIVERING telephone books in
+California and Nevada in some of the toughest neighborhoods from an
+algorithmic challenge viewpoint.
+
+Twisty little mazes?  Like San Francisco, and its front-doors-on-alleys and
+cockamamie street alignments?
+
+Carmel-b-the-sea?  (No house numbers.)
+
+Los Angeles with its duplicate street names (among many other things).
+
+We and our delivery contractor produces delivery lists for the
+ring-and-fling areas which might run the odd-numbers for two blocks, the
+even numbers on a side street for a block, the odd numbers in reverse order
+on that street....and so one.
+
+1960s.  IBM 7074s.  (10-decimal-digit fixed length words) In "Autocoder"
+[assembly language].  -- sed quis custodiet ipsos custodes? (Juvenal)
+
+----------------------------------------------------------------------
+
+Date: January 25, 2016 at 2:39:49 PM EST
+From: Thomas Leavitt <thomas@thomasleavitt.org>
+Subject: Re: Documents Uncover NYPD's Vast License Plate Reader Database
+
+... with the rise of Uber, and more importantly, self-driving, dispatched
+vehicles (owned by Uber or whoever), the question of how Uber and other
+services co-operate with police department surveillance efforts becomes very
+important. If most of us wind up not using our own cars to move around, and
+instead, basically call cars on demand, these license plate databases and
+tracking systems will ultimately become vastly less useful for this type of
+unwarranted (literally) surveillance.
+
+As a counter, once the police obtain access to Uber's records, they
+potentially have access to a vast wealth of other information (see article
+below) that might otherwise be difficult to obtain (such as your full
+address book, and information about your location even when not driving).
+
+Interestingly, while this seems to be a topic of conversation that everyone
+leaps to when self-driving cars and transportation on demand come up,
+several searches, several pages deep, yield nothing on the topic of police
+surveilliance and Uber.
+
+http://www.kusi.com/story/29601772/special-report-ubers-new-privacy-policy
+
+------------------------------
+
+Date: Tue, 26 Jan 2016 13:17:14 -0500
+From: Dick Mills <dickandlibbymills@gmail.com>
+Subject: Re: Roger Kemp on the Lancaster Floods
+
+In RISKS-29.22 Peter Ladkin said, "Is it progress to replace critical
+independent systems with interdependent systems subject to single points of
+failure?  Almost every standard for critical systems warns you not to do it,
+but that's what we've done."
+
+It is a symptom of overly reliable electric supply.  The longer people go
+without a significant blackout, the less important they value resilience.
+Other places in the world, reportedly Mumbai, experience up to 5 outages per
+day and their citizens and businesses are so resilient that they hardly
+notice.
+
+The remedy IMO, would be to stage deliberate blackouts as training drills.
+Pilots must drill on simulators.  Firemen must drill on their skills every
+week.  The public and commercial businesses are never offered the
+opportunity to drill and practice for electrical outages.
+
+In a blackout drill, every one of the "surprises" mentioned in Roger Kemp's
+narrative would have been exposed.   The public is then free to choose to
+improve their resilience or not, but they could no longer claim surprise.
+
+------------------------------
+
+Date: Tue, 26 Jan 2016 04:09:21 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: Why do people keep coming to this couple's home looking for
+  lost (Reisert)
+
+I wonder if it is legal for them to install jamming equipment in their home,
+to create a cell phone GPS dead zone for their property.
+They could run it except when they want to call out.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.24
+************************

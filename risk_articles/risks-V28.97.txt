@@ -1,0 +1,432 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 29 September 2015  Volume 28 : Issue 97
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.97.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+EPA v VW cheatware, AI & "machine learning" (Henry Baker)
+Volkswagen Law (Bloomberg)
+Security Standards: cars, voting, medical, critical infrastructure, etc.
+  (Alister Wm Macintyre)
+Re: VW Scandal (Robert Schaefer)
+Gaming security (Michael Albaugh)
+Storing secret crypto keys in the Amazon cloud? New attack can steal them
+  (Ars Technica)
+GCHQ operation "Karma Police" (Slashdot)
+Network scientists have discovered how social networks can create
+  the illusion that something is common when it is actually rare (MIT)
+Law Enforcement's Love/Hate Relationship with Cloud Auto Backup
+  (Lauren Weinstein)
+Hello Barbie (The Week)
+Re: U.S. and China cyber establish 'hotline' (Henry Baker)
+Re: Ad-blocking (L. Mark Stone)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 26 Sep 2015 06:46:36 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: EPA v VW cheatware, AI & "machine learning"
+
+The tech world is very excited, but also frightened, about AI & machine
+learning these days; we worry about AI/machine learning algorithms replacing
+doctors, lawyers, teachers, taxi drivers.
+
+Perhaps one of the most straightforward applications of AI & machine
+learning today would be a computer that "learns" how to control the
+emissions of a vehicle engine so that it can pass the EPA emissions tests.
+
+Consider the following conceptual model: a computer with a bunch (hundreds?)
+of sensors and a bunch of actuators (tens?) that watches over a diesel
+engine while it is being driven through a standard EPA emissions test.
+
+The computer can sense perhaps air temperature, humidity, engine speed,
+engine load, engine temperature, etc., and can control perhaps the air flow,
+the fuel flow, the flow of Adblue (aka DEF/ISO 22241), etc.  Sensors don't
+cost very much, so there may also be sensors for the engine hood/bonnet
+being open, the position of the steering wheel, etc.
+
+We now put this system through hundreds of thousand of miles of "learning"
+(millions of miles if the testing & learning can be virtualized & run in
+parallel), so that the AI/machine learning algorithm learns to optimize
+inputs like fuel and Adblue while still meeting EPA testing limits.
+
+I can guarantee you that this AI/machine learning algorithm will quickly
+notice that the best way to optimize for the EPA test is to "cheat" -- i.e.,
+to notice that when the hood/bonnet is open and the steering wheel is
+straight ahead, this would be a good time to optimize NOx and other
+emissions, while during other conditions -- hood/bonnet closed and steering
+wheel twisting back & forth (perhaps a curving country lane) -- emissions
+aren't so important relative to performance.
+
+(Perhaps someone -- Google might be in the best position with their work on
+autonomous robots and its expertise in "machine learning" for their
+self-driving cars -- is already working on such AI/machine learning
+experiments for engine optimization; I'd be interested in hearing about them
+if anyone can send me links.)
+
+So is this AI/machine learning program "unethical" wrt the EPA tests ?
+Should it be fined or go to jail ?
+
+This is no longer idle speculation, as these AI/machine learning programs
+are "recognizing" speech, gaits, faces, writing styles, etc.  Are they also
+"cheating" ?
+
+As automobiles become more complex, and as machine learning algorithms
+become more sophisticated, engine optimization computers may no longer be
+"programmed" by humans using coding techniques, but will be "taught" by
+following a long sequence of example situations and "learning" the correct
+responses.
+
+The DMCA may no longer be relevant to such computers, because *there is no
+source code* to look at, and indeed, the *binary code* may itself simply be
+a huge pile of random-looking floating point numbers in a *neural network*.
+The *only* way to check such a system will be through exhaustive (!)
+behavioral testing, as there won't be any source code to logically check for
+"cheats" and "defeats".
+
+I'm not trying to excuse the VW management that has already admitted to
+"cheating" on the EPA tests, but as a computer scientist, I'm not so sure
+where we go forward from here.  We have terrific new opportunities with
+electric and self-driving cars, so "optimizing" the government regulation of
+diesel engines may simply be re-arranging the deck chairs on the Titanic.
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 18:39:20 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Volkswagen Law
+
+Bloomberg Business Week, 28 Sep-4 Oct issue:
+
+Germany has a law, about state ownership of corporations, called the
+Volkswagen Law.  Because of it, Lower Saxony owns 20% of VW, giving its
+Prime Minister virtual veto power over VW.  Thanks to the VW law, which the
+EU has been fighting, many German companies have two boards of directors.
+There is the management board, with Executives, which answers to the
+Supervisory Board, run by the state, labor leaders, and shareholders.
+
+As yet, there is no evidence which part of VW leadership structure had
+anything to do with the emissions deception.
+
+The article does not address the car hacking cover-up.
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 14:05:05 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Security Standards: cars, voting, medical, critical
+  infrastructure, etc.
+
+I retired early this year.  Previously I managed an IBM midrange system at
+my day job.
+
+The IBM OS tracked all sorts of updates, changes into a log, which we could
+examine for suspicious activity, and I regularly checked it for potential
+breaches, and some types of human error. We had some control over how much
+activity to log, and for how many days, because of disk space constraints,
+but some things, such as changes to the OS itself, we could not change the #
+days below a certain point.  I had occasion to alter the system date, so I
+learned it was theoretically possible to erase the security log by advancing
+the date, so that all contents were now past the erase date.  It was
+impossible to erase the fact that someone had messed with the system date.
+
+For an OS log to be meaningful, some humans need to be able to dig out
+what's important from the huge volume of frequently geeky entries.
+
+All the passwords were changeable, but IBM knew how to bust their own
+security.  We found this out on the occasion of a relocation, where IBM
+techs could not reassemble everything correctly, could not get into some
+diagnostics, because of the security, which was on the hard drive which was
+not reconnecting properly.  They needed authorization from our CEO to bust
+the security.  Fortunately the CEO was watching the operation, so there was
+no delay getting this.
+
+If this is true across vendors, then there is a potential risk from former
+and present employees of the computer vendors.
+
+In my IBM Midrange world, there's a software monitoring package marketed
+under the name "Needle in Haystack" which sends alerts to IT people, when
+stuff happens which can have adverse impact on the enterprise.  If the IT
+people do not respond, in a reasonable time frame, the alerts go up the
+management ladder.
+
+I imagine that other platforms, outside the IBM world, ought to have similar
+standards.  Capture activity of a potentially suspicious nature, make it
+available to relevant people in an intelligible and timely manner.
+
+The next question is who this data belongs to, who may access it, update it
+- employees, regulators, vendors of the hardware & software.  I recently had
+something weird happen with my auto, so I was re-reading the owner's manual.
+I encountered a statement that data is captured about the vehicle
+operations, and that this data belongs to the vehicle's owner.
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 15:56:11 -0400
+From: Robert Schaefer <rps@haystack.mit.edu>
+Subject: Re: VW Scandal
+
+For those who don't have long memories, in the late 1980s, there was serious
+attention to processor benchmarking by running compilers on well known
+libraries and benchmark test programs' source code.  It was claimed that
+certain vendor's compilers (back then, compilers were often bespoke) would
+recognize the library or test program, and optimize the number crunching to
+the point where the benchmark test became worthless.  Googling the terms
+computer+benchmark+cheating shows that this is still going on today.
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 10:37:12 -0700
+From: Michael Albaugh <m.e.albaugh@gmail.com>
+Subject: Gaming security (Re: Murray comment on casino slots)
+
+You might want to keep in mind the incident (possibly multiple) of slot
+machines gaffed by the gaming board inspectors themselves.  Back in the
+1990s, but can we be sure they do not continue?
+
+  [Of course not.  The gambling machines are held to a `higher' standard,
+  but it is still not a very high one.  Remember, the best is the enemy
+  of the good, but the so-called good is nowhere near good enough.  PGN]
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 12:04:00 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Storing secret crypto keys in the Amazon cloud? New attack can
+  steal them
+
+http://arstechnica.com/security/2015/09/storing-secret-crypto-keys-in-the-amazon-cloud-new-attack-can-steal-them/
+
+  Now a separate team of researchers has constructed a new method for
+  recovering the full private key used in a modern implementation of the
+  widely used RSA crypto system. Like the 2009 work, the new research
+  implements a CPU cache attack across two Amazon accounts that happen to be
+  located on the same chip or chipset. They recently used their technique to
+  allow one Amazon instance to recover the entire 2048-bit RSA key used by a
+  separate instance, which they also happened to control. The newer
+  technique works by probing the last level cache of the Intel Xeon
+  processor chipsets used by Amazon computers.
+
+------------------------------
+
+Date: Tue, 29 Sep 2015 12:58:41 +0200
+From: Werner U <werneru@gmail.com>
+Subject: GCHQ operation "Karma Police" (Slashdot)
+
+Ars Technica's story on the revelations reported today by The Intercept that
+the UK's GCHQ has been tracking World Wide Web users since 2007 with an
+operation called "Karma Police" -- "a program that tracked Web browsing
+habits of people around the globe in what the agency itself billed as the
+'world's biggest' Internet data-mining operation, intended to eventually
+track 'every visible user on the Internet.'"
+http://yro.slashdot.org/story/15/09/25/2349201/gchq-tried-to-track-web-visits-of-every-visible-user-on-internet
+<https://theintercept.com/2015/09/25/gchq-radio-porn-spies-track-web-users-online-identities/>
+<http://arstechnica.com/security/2015/09/gchq-tried-to-track-web-visits-of-every-visible-user-on-internet/>,
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 12:00:47 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Network scientists have discovered how social networks can create
+         the illusion that something is common when it is actually rare
+
+MIT via NNSquad
+http://www.technologyreview.com/view/538866/the-social-network-illusion-that-tricks-your-mind/
+
+  Today, we get an insight into why this happens thanks to the work of
+  Kristina Lerman and pals at the University of Southern California. These
+  people have discovered an extraordinary illusion associated with social
+  networks which can play tricks on the mind and explain everything from why
+  some ideas become popular quickly to how risky or antisocial behavior can
+  spread so easily.
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 20:16:15 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Law Enforcement's Love/Hate Relationship with Cloud Auto Backup
+
+             http://lauren.vortex.com/archive/001126.html
+
+There's a story going around today regarding an individual who was arrested
+and charged with assaulting a police officer when authorities arrived over a
+noise complaint. But cellphone video recorded by the arrestee convinced a
+judge that police had assaulted him, not the other way around. What's
+particularly unusual in this case is that the arrestee's cellphone had
+"mysteriously" vanished at the police station before any video was
+discovered.
+
+So how was the exonerating video ultimately resurrected? Turns out it was
+saved up on Google servers via the phone's enabled auto backup system. So
+the phone's physical vanishing did not prevent the video from being saved to
+help prevent a serious miscarriage of justice.
+
+Lawyers and law enforcement personnel around the world are probably
+considering this story carefully tonight, and they're likely to realize that
+such automatic backup capabilities may be double-edged swords.
+
+On one hand, abusive cops can't depend on destroying evidence by making
+cellphones disappear or be "accidentally" crushed under a boot. Evidence
+favorable to the defendant might still be up on cloud servers, ready to
+reappear at any time.
+
+But this also means that we may likely also expect to see increasing numbers
+of subpoenas triggered by law enforcement, lawyers, government agencies, and
+other interested parties, wanting to go on fishing expeditions through
+suspects' cloud accounts in the hopes of finding incriminating photographic
+or video evidence that might have been auto-backed up without the knowledge
+or realization of the suspects.
+
+While few would argue that guilty suspects should go free, there is more at
+stake here.
+
+The fact of such fishing expeditions being possible may dissuade many
+persons from enabling photo/video auto backup systems in the first place --
+not because they plan to commit crimes, but just based on relatively vague
+privacy concerns. Even if the vast majority of honest persons would have no
+realistic chance of being targeted by the government for such a cloud
+search, an emotional factor is likely to be real for many innocent persons
+nonetheless.
+
+And of course, if you've turned off auto backup due to such concerns, video
+or other data that might otherwise have been available to save the day at
+some point in the future, instead may not be available at all.
+
+Adding to the complexities of this calculus is the fact that most uploaded
+videos or photos on these advanced systems are not subject to the kind of
+strong end-to-end encryption that has been the focus of ongoing
+controversies regarding proposed "back door" access to encrypted user data
+by authorities.
+
+Obviously, for photos or videos to be processed in the typical manner by
+service providers, they will be stored in the clear -- not encrypted -- at
+various stages of the service ecosystem, at least temporarily.
+
+What this all amounts to is that we're on the cusp of a brave new world when
+it comes to photos and videos automatically being protected in the cloud,
+and sometimes being unexpectedly available as a result.
+
+The issues involved will be complicated both technically and legally, and we
+have only really begun to consider their ramifications, especially in
+relationship to escalating demands by authorities for access to user data of
+all kinds in many contexts.
+
+Fasten your seatbelts.
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 18:39:20 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Hello Barbie (The Week)
+
+Toymaker Mattel is coming out with $75.00 Hello Barbie, a wi-fi enabled
+doll.  The little-girl owners shall press the belt buckle, and she'll ask
+questions, like "Where do you live?" and answer the child's questions.  I am
+only guessing at what questions might be asked, as the list probably not yet
+published where I can find it. The child's conversations with Hello Barbie
+will be stored on Toy Talk servers, allegedly only to help Mattel improve
+their speech recognition software.  But how long before Mattel sells this
+info to advertisers, or their data gets hacked?  Can Hello Barbie get
+software updates, so she can promote future Mattel toys, more Barbie
+clothing, etc.?
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 11:22:39 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: U.S. and China cyber establish 'hotline' (RISKS-28.96)
+
+Any bets about how long it will take for someone to hack this cyber 'red
+phone' / 'red skype'?
+
+------------------------------
+
+Date: Mon, 28 Sep 2015 20:55:00 +0000 (UTC)
+From: "L. Mark Stone" <lmstone@lmstone.com>
+Subject:  Re: Ad-blocking (Ross, RISKS-28.96)
+
+Mr. Ross's remarks regarding ad-blocking software in Risks 28.94 ends with
+the two questions:
+
+"Why can I not choose to block advertisements on the Internet? What is it
+about the Internet that mandates its advertisements on me, something other
+media cannot do?"
+
+Intended to highlight that the equivalent of Internet ad-blocking is allowed
+with radio, television, magazines and newspapers by turning the page,
+hitting the mute button or changing the channel, unfortunately the real
+answer to Mr. Ross's questions is "money".
+
+A quick Google search shows that Internet advertising is the largest single
+category of advertising, outpacing even television. Online advertising can
+be targeted as we know with much greater specificity than any other
+advertising outlet. Neither advertisers nor online media therefore have any
+incentive (and indeed extremely strong disincentives) to allow ad blocking
+if they have any say-so. So why would they?
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.97
+************************

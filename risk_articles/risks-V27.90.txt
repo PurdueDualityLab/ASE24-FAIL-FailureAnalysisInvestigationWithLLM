@@ -1,0 +1,715 @@
+RISKS-LIST: Risks-Forum Digest  Monday 12 May 2014  Volume 27 : Issue 90
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.90.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Jet Nearly Collided With Drone Over Florida (Channing Joseph via
+  Prashanth Mundkur)
+Press conference on Estonian Internet voting system (Halderman et al.)
+Iowa parties ponder Internet voting (Fox via Lauren Weinstein)
+Federal Agents Seek to Loosen Rules on Hacking Computers (Chris Strohm
+  via Henry Baker)
+"We are rate limiting the FCC to dialup modem speeds until they pay us
+  for bandwidth" (Lauren Weinstein)
+"FCC chief to revise plan; won't let firms segregate Web traffic
+  into fast and slow lanes" (Lauren Weinstein)
+Meet the Fed's First Line of Defense Against Cyber Attacks (Shane Harris
+  via  Prashanth Mundkur)
+"Uncle Sam's brilliant new idea: An online driver's license"
+  (Robert X. Cringely via Gene Wirchenko)
+The perils of PayWave (Richard A. O'Keefe)
+E-mails shed light on Google's work with NSA (Jaikumar Vijayan via
+  Gene Wirchenko)
+George Smiley is spinning in his grave (Henry Baker)
+Saudi blogger sentenced to 10 years in prison and 1000 lashes (BBC
+  via Lauren Weinstein)
+Photo of fingers yields fingerprints, arrest (Rex Sanders)
+Snapchat: Off the Record in a Chat App? Don't Be Sure (Jenna Wortham via
+  Monty Solomon)
+Careful With That Mouse, Eugene (Dan Jacobson)
+Federal court overturns Google v. Oracle decision, setting disastrous
+  precedent (Russell Brandom via Dewayne Hendricks)
+Re: The risks of garbage collection delays (Richard A. O'Keefe,
+  Dimitri Maziuk)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 12 May 2014 09:20:22 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject:  Jet Nearly Collided With Drone Over Florida (Channing Joseph)
+
+Traffic congestion in the skies.
+http://bigstory.ap.org/article/faa-jet-nearly-collided-drone
+
+FAA in AP News, 9 May 2014
+
+San Francisco (AP): Federal officials say a U.S. jet airliner nearly
+collided in March with an airborne drone in the sky over Tallahassee,
+Florida.
+
+Jim Williams of the Federal Aviation Administration's unmanned aircraft
+systems office acknowledged the incident Thursday at a San Francisco drone
+conference, citing it as an example of the risks posed by integrating drones
+into U.S. airspace. [...]
+
+The pilot of the 50-seat Canadair Regional Jet CRJ-200 airliner said the
+camouflage-colored drone was at an altitude of about 2,300 feet, five miles
+northeast of the airport. FAA rules state that the aircraft should be kept
+below 400 feet above ground level and should be flown a sufficient distance
+from full-scale aircraft. [...]
+
+Last week, the National Park Service issued a statement reminding visitors
+that federal regulations ban the use of drones within Yosemite National
+Park.
+
+Drone sightings there have become a nearly daily occurrence in the venerated
+national park, with the devices buzzing loudly near waterfalls, above
+meadows or over treetops as guests use them to capture otherwise
+impossible-to-get photographs of the breathtaking landscape.
+
+------------------------------
+
+Date: Mon, 12 May 2014 9:09:09 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Press conference on Estonian Internet voting system
+
+A team of independent security researchers (Alex Halderman, Harri Hursti,
+Jason Kitcat, Maggie MacAlpine, and two U. Michigan graduate students) held
+a press conference in Estonia today exposing severe security vulnerabilities
+in their Internet voting system and in the processes by which it was
+administered. They called for Estonia to withdraw the system from use before
+the European upcoming parliamentary elections, and suggested tat it would
+not be possible to fix the system, or indeed any Internet voting system, for
+a decade or more. They point out that since the Estonian system was designed
+the threat environment faced by online systems has gotten much worse, with
+not only criminals but also nation states actively compromising online
+systems today.
+
+The slides presented at the press conference, the movie they showed, and an
+audio recording of the press conference itself are all online at
+
+  https://estoniaevoting.org/press-release/
+
+[Later today, they are expected to post a video of the press conference and
+also the formal written version of their report.  But what is already
+available is very timely.  For example, see the next item.]
+
+------------------------------
+
+Date: Sat, 10 May 2014 09:38:03 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Iowa parties ponder Internet voting
+
+(Fox News via NNSquad)
+http://www.foxnews.com/politics/2014/05/10/democrats-propose-internet-voting-in-2016-making-republican-also-consider-idea/
+
+  "Democrats are thinking about using Internet balloting in 2016 to expand
+  their voter base and select a president -- prompting Republicans to
+  consider such a strategy to keep from losing ground.  Iowa Democrats
+  proposed the idea and several others during a recent Democratic National
+  Committee meeting, saying Internet balloting could expand access to their
+  unique caucus process to overseas military personnel, absentee voters and
+  others."
+
+ - - -
+
+Internet voting is of course a disastrous idea, for so many reasons (not to
+mention the underlying security problems of people's own computers that
+would be used to cast the votes). I won't even bother here to start
+referencing the many papers on this topic, including my own "Hacking the
+Vote" from years ago. Still, if the GOP wants to use this in their
+primaries, I think it might be amusing when the Iowa GOP nominee ends up
+being His Infernal Majesty Satan.
+
+------------------------------
+
+Date: Sun, 11 May 2014 09:31:39 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Federal Agents Seek to Loosen Rules on Hacking Computers
+  (Chris Strohm)
+
+FYI -- These break-ins are the electronic equivalent of FBI raids lobbing
+tear gas and kicking down doors with automatic weapons drawn.  Inevitably,
+there are some percentage of breakins at the wrong address of innocent
+people.
+
+These types of proposals are also particularly worrisome, now that we know
+that the FBI, the NSA & the FISA panels interpret ordinary words with
+meanings completely different from the way you and I would interpret them.
+As a result, it is impossible to even properly interpret the language of the
+proposals, since encoded in the words of these proposals are secret court
+interpretations of some of the words used.
+
+"When I use a word," Humpty Dumpty said, in rather a scornful tone, "it
+means just what I choose it to mean -- neither more nor less." --Lewis
+Carroll in "Through the Looking-Glass"
+
+http://www.bloomberg.com/news/2014-05-09/federal-agents-seek-to-loosen-rules-on-hacking-computers.html
+
+Chris Strohm, Federal Agents Seek to Loosen Rules on Hacking Computers,
+Bloomberg, 10 May 2014
+
+The proposal arrives at a precipitous time for a government still managing
+backlash to electronic-spying practices by the National Security Agency that
+were exposed last year by former contractor Edward Snowden.
+
+A U.S. proposal to expand the U.S. Justice Department's ability to hack
+into computers during criminal investigations is furthering tension in the
+debate over how to balance privacy rights with the need to keep the country
+safe.
+
+A committee of judges that sets national policy governing criminal
+investigations will try to sort through it all.  It's weighing a proposal
+made public yesterday that would give federal agents greater leeway to
+secretly access suspected criminals' computers in bunches, not simply one at
+a time.
+
+The underlying goal is to take rules written for searching property and
+modernize them for the Internet age.  The proposal arrives at a precipitous
+time for a government still managing backlash to electronic spying by the
+National Security Agency that was exposed last year by contractor Edward
+Snowden.
+
+``What I think we're looking for as a society is a way to investigate crime
+while limiting the exposure of information that should be kept private,''
+While the intent of the proposal is reasonable, the idea of law enforcement
+potentially placing malware on computers of innocent Americans that can
+access personal data is a cause for concern.  (Stephen Saltzburg, a law
+professor at George Washington University.)
+
+``I don't think many Americans would be comfortable with the government
+sending code onto their computers without their knowledge or consent The
+power they're seeking is certainly a broad one.''  (Nathan Freed Wessler, a
+lawyer with the American Civil Liberties Union.)
+
+  [Lots more salient stuff omitted:
+     Traditional Rules ...
+     Court Review ...
+     Long Road ...
+     30-Day Secrecy ...]
+
+Only Option
+
+The department must describe the computer it wants to target with as much
+detail as possible.  For example, an investigator may be covertly
+communicating with a suspected child molester and know an IP address, and
+then obtain a warrant to use malware to find the actual location.  In the
+case of botnets, malware might be used to try to free the compromised
+computers from a criminal's control. [...]
+
+  Please browse the URL for the omitted text.  PGN]
+
+------------------------------
+
+Date: Thu, 8 May 2014 23:18:42 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "We are rate limiting the FCC to dialup modem speeds until
+  they pay us for bandwidth"
+
+(Official Neocities Blog via NNSquad):
+https://neocities.org/blog/the-fcc-is-now-rate-limited
+
+  Since the FCC seems to have no problem with this idea, I've (through
+  correspondence) gotten access to the FCC's internal IP block, and
+  throttled all connections from the FCC to 28.8kbps modem speeds on the
+  Neocities.org front site, and I'm not removing it until the FCC pays us
+  for the bandwidth they've been wasting instead of doing their jobs
+  protecting us from the "keep America's Internet slow and expensive
+  forever" lobby.
+
+  The Ferengi Plan
+
+  The Ferengi plan is a special FCC-only plan that costs $1000 per year, and
+  removes the 28.8kbps modem throttle to the FCC.  We will happily take
+  Credit Cards, Bitcoin, and Dogecoin from crooked FCC executives that
+  probably have plenty of money from bribes on our Donations page (sorry, we
+  don't accept Latinum yet).
+
+  -- Kyle Drake
+
+ - - -
+
+An interesting application of the Ferengi "Rules of Acquisition" ...
+
+------------------------------
+
+Date: Sun, 11 May 2014 19:00:05 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "FCC chief to revise plan; won't let firms segregate Web traffic
+  into fast and slow lanes"
+
+(WSJ via NNSquad)
+http://online.wsj.com/news/article_email/SB10001424052702303627504579556200630931292-lMyQjAxMTA0MDEwMDExNDAyWj
+
+  "In the new draft, Mr. Wheeler is sticking to the same basic approach but
+  will include language that would make clear that the FCC will scrutinize
+  the deals to make sure that the broadband providers don't unfairly put
+  nonpaying companies' content at a disadvantage, according to an agency
+  official.  The official said the draft would also seek comment on whether
+  such agreements, called "paid prioritization," should be banned outright,
+  and look to prohibit the big broadband companies, such as Comcast
+  Corp. CMCSA -0.20% and AT&T Inc., T +0.11% from doing deals with some
+  content companies on terms that they aren't offering to others.
+  Mr. Wheeler's language will also invite comments on whether broadband
+  Internet service should be considered a public utility, which would
+  subject it to greater regulation."
+
+ - - -
+
+Some improvements in his plan on the surface, but not at all clear that
+they'd make much of a positive difference in practice.
+
+------------------------------
+
+Date: Wed, 7 May 2014 22:00:52 -0700
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: Meet the Fed's First Line of Defense Against Cyber Attacks
+ (Shane Harris)
+
+Interesting article on a rather unknown group, the National Incident
+Response Team, or NIRT, "the first line of defense for the central banking
+system."
+
+Shane Harris, *Foreign Policy*, 28 April 28 2014
+http://www.foreignpolicy.com/articles/2014/04/28/exclusive_meet_the_secret_fed_cyber_security_unit_keeping_trillions_of_dollars_s
+
+  The Fed's cyber security is so well regarded, in fact, that last year an
+  advisory panel comprised of chief executives from some of the country's
+  biggest commercial banks recommended putting the Fed in charge of cyber
+  security for the entire financial services industry.
+
+And they have their own 0-day team:
+
+  A former NIRT member said the group also has a team of researchers
+  dedicated to finding zero day vulnerabilities, which are flaws in computer
+  software that haven't yet been discovered by their manufacturer.
+
+------------------------------
+
+Date: Thu, 08 May 2014 11:30:37 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Uncle Sam's brilliant new idea: An online driver's license"
+  (Robert X. Cringely)
+
+Robert X. Cringely, InfoWorld, 08 May 2014
+
+The government is trying out a new identity consolidation program that it
+might hand over to a private enterprise to manage.
+What could possibly go wrong?
+http://www.infoworld.com/t/cringely/uncle-sams-brilliant-new-idea-online-drivers-license-242122
+
+------------------------------
+
+Date: Thu, 8 May 2014 17:09:19 +1200
+From: "Richard A. O'Keefe" <ok@cs.otago.ac.nz>
+Subject: The perils of PayWave
+
+The banks in New Zealand have brought in a new scheme called PayWave, where
+you can pay a bill under $80 merely by vaguely waving your credit card at
+the terminal.  http://www.visa.co.nz/personal/features/visapaywave.shtml
+
+Problem 1: my wife and I have both had the experience that we were bringing
+our cards up to the terminal in order to pay for groceries when suddenly the
+terminal said payment accepted.  Since all our accounts are on the same card
+as the credit account (not negotiable; that's just the way the card comes
+from the bank) this meant that the money was drawn from *wrong* account.
+
+http://www.stuff.co.nz/waikato-times/news/8808751/How-safe-are-paywave-cards
+has a story of someone who was apparently debited from a terminal other than
+the one she was paying from.  I have heard conflicting accounts of what the
+range of a PayWave reader is.
+
+If there is a PayWave reader and a normal chip-and-pin reader, and they are
+close together, it can be very tricky to get your card into the chip-and-pin
+reader without triggering PayWave.
+
+Problem 2: the point of PayWave is to let you make a payment effortlessly.
+In particular, without entering a PIN.  It turns out that you are allowed to
+make up to 6 PayWave payments a day.  This means that if you lose your card,
+it takes absolutely no skill for the finder to steal nearly $480 from your
+account (in goods).  Visa have a "zero liability policy", which means it
+would "just" cost me time, but Visa will lose $480 and I'm sure they'll get
+it back from customers somehow.
+
+Problem 3: we were surprised to be PayWaved because we hadn't opted in.  But
+it's worse: there is no opt out.  We rang our bank and asked for PayWave to
+be disabled for our cards, and were told that it could not be done.  Of
+course, as IT people, we all know that it *could* be done, it's just that
+someone decided they didn't want to.  ALL Visa cards issued in NZ are now
+PayWave cards, like it or not.  Even so, I don't see why a smart card
+couldn't have a "don't PayWave me" bit on it.
+
+I don't want to join the tinfoil hat brigade, but I am seriously thinking of
+keeping my cards in a metal tin.
+
+------------------------------
+
+Date: Thu, 08 May 2014 11:37:07 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: E-mails shed light on Google's work with NSA (Jaikumar Vijayan)
+
+Jaikumar Vijayan, Computerworld, 6 May 2014
+Exchanges between NSA director and Google execs suggest cooperation on
+data security
+http://www.infoworld.com/d/security/emails-shed-light-googles-work-nsa-242038
+
+opening text:
+
+Two sets of e-mails obtained by Al Jazeera America under a Freedom of
+Information Act request suggest that Google's cooperation with the NSA
+(National Security Agency) may have been less coerced than the company has
+let on.
+
+------------------------------
+
+Date: Fri, 09 May 2014 10:58:20 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: George Smiley is spinning in his grave
+
+FYI -- In the UK, as in the U.S., "oversight" = "overlook".  Economists call
+this problem "regulatory capture".  The conceit of overseers is most
+humorously described by O. Henry in his 1907 short story "The Ransom of Red
+Chief":
+
+https://en.wikipedia.org/wiki/The_Ransom_of_Red_Chief
+
+ - - -
+
+http://www.theguardian.com/uk-news/2014/may/09/edward-snowden-mps-commons-report-spying
+
+MPs: Snowden files are 'embarrassing indictment' of British spying oversight
+
+All-party committee demands reforms to make security and intelligence
+services accountable in wake of disclosures
+
+Alan Travis, *The Guardian,* 9 May 2014
+
+Edward Snowden's disclosures of the scale of mass surveillance are "an
+embarrassing indictment" of the weak nature of the oversight and legal
+accountability of Britain's security and intelligence agencies, MPs have
+concluded.
+
+A highly critical report by the Commons home affairs select committee
+published on Friday calls for a radical reform of the current system of
+oversight of MI5, MI6 and GCHQ, arguing that the current system is so
+ineffective it is undermining the credibility of the intelligence agencies
+and parliament itself.
+
+The MPs say the current system was designed in a pre-Internet age when a
+person's word was accepted without question.  "It is designed to scrutinise
+the work of George Smiley, not the 21st-century reality of the security and
+intelligence services," said committee chairman, Keith Vaz.  "The agencies
+are at the cutting edge of sophistication and are owed an equally refined
+system of democratic scrutiny.  It is an embarrassing indictment of our
+system that some in the media felt compelled to publish leaked information
+to ensure that matters were heard in parliament."  ...
+
+ - - -
+
+Home Affairs Committee - Seventeenth Report: Counter-terrorism
+
+http://www.publications.parliament.uk/pa/cm201314/cmselect/cmhaff/231/23111.htm
+
+"We do not believe the current system of oversight is effective and we have
+concerns that the weak nature of that system has an impact upon the
+credibility of the agencies accountability, and to the credibility of
+Parliament itself."
+
+------------------------------
+
+Date: Wed, 7 May 2014 18:21:00 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Saudi blogger sentenced to 10 years in prison and 1000 lashes
+
+(BBC via NNSquad): http://www.bbc.com/news/world-middle-east-27318400
+
+    A Saudi court has imprisoned blogger Raif Badawi for 10 years for
+    "insulting Islam" and setting up a liberal web forum, local media
+    report.  He was also sentenced to 1,000 lashes and ordered to pay a
+    fine of 1 million riyals ($266,133,000).
+
+ - - -
+
+What's the technical term for this? Oh, yes: BARBARIANS.
+
+   [And what is the sentence for a government committing Saudimy?  PGN]
+
+------------------------------
+
+Date: Fri, 9 May 2014 08:17:30 -0700
+From: "Rex Sanders" <rsanders@usgs.gov>
+Subject: Photo of fingers yields fingerprints, arrest
+
+http://www.santacruzsentinel.com/santacruz/ci_25725486/photo-leads-identity-theft-arrest-santa-cruz
+
+An alleged identity thief was involved in a car crash. She showed a stolen
+drivers license to the other driver, who took a photo of the license while
+the thief held it. The other driver was suspicious that the license photo
+didn't match, and gave the photo to police. Police were able to get partial
+fingerprints from the photo, which they matched to prints on file from a
+prior arrest. Police arrested the thief, but have not recovered the stolen
+drivers license.
+
+The photo is in the original newspaper article. One index fingertip is about
+90% visible, another is about 50% visible from the side.
+
+So in addition to sunglasses and camouflage face paint, should we wear
+gloves in public to preserve anonymity?
+
+------------------------------
+
+Date: Fri, 9 May 2014 00:13:20 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Snapchat: Off the Record in a Chat App? Don't Be Sure
+  (Jenna Wortham)
+
+Jenna Wortham, *The New York Times*, 8 May 2014
+
+What happens on the Internet stays on the Internet.
+
+That truth was laid bare on Thursday, when Snapchat, the popular mobile
+messaging service, agreed to settle charges by the Federal Trade Commission
+that messages sent through the company's app did not disappear as easily as
+promised.
+
+Snapchat has built its service on a pitch that has always seemed almost too
+good to be true: that people can send any photo or video to friends and have
+it vanish without a trace. That promise has appealed to millions of people,
+particularly younger Internet users seeking refuge from nosy parents, school
+administrators and potential employers.
+
+But the commission charged that there were several easy ways to save
+messages from the service, and in settling the accusations, the company
+agreed not to misrepresent the disappearing nature of its messages.
+
+The company's early popularity and hype led to a multibillion-dollar buyout
+offer last year from Facebook, which Snapchat's leaders spurned in the hope
+of something better. But the settlement announced on Thursday set a
+different tone, one that could extend to the many other start-ups that
+promise security, privacy and anonymity as an antidote to the public nature
+of Facebook and Twitter. ...
+
+http://www.nytimes.com/2014/05/09/technology/snapchat-reaches-settlement-with-federal-trade-commission.html
+
+------------------------------
+
+Date: Fri, 09 May 2014 00:19:47 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Careful With That Mouse, Eugene
+
+Often I forget what I have copied with the mouse into my computers
+"clipboard", and end up feeding long essays, recipes, letters to Mom, etc.,
+directly into the shell interpreter for execution line by line.
+
+Well, finally somebody found a way to limit the damage to just one line!:
+$ cat .bashrc
+safety_seconds=5 SECONDS=1
+PROMPT_COMMAND="if ((SECONDS==0)); then echo TOO FAST, HOLMES. Waiting \
+$safety_seconds seconds or hit ^C; sleep $safety_seconds; else SECONDS=0; fi"
+
+------------------------------
+
+Date: May 9, 2014 4:48 PM
+From: "Dewayne Hendricks" <dewayne@warpspeed.com>
+Subject: Federal court overturns Google v. Oracle decision, setting
+  disastrous precedent (Russell Brandom)
+
+Russell Brandom, *The Verge*, 9 May 2014
+
+Federal court overturns Google v. Oracle decision, setting disastrous
+precedent
+http://www.theverge.com/2014/5/9/5699958/federal-court-overturns-google-v-oracle
+
+Today, a federal court ruled that Google must pay Oracle for its use of the
+Java API in Android, setting a broad precedent that already has many legal
+scholars crying foul. If the ruling stands, it will give software companies
+copyright over their APIs, the interfaces that programs use to communicate
+with each other. The new standard is good news for Oracle, which holds the
+rights to Java and its widely used API, but potentially disastrous for
+software developers that want to build on top of APIs. If the APIs are no
+longer free to use, new services may be forced to start from scratch, making
+it astronomically more difficult to coordinate between programs.
+http://cdn1.vox-cdn.com/assets/4431835/13-1021.Opinion.5-7-2014.1.pdf
+
+APIs are one of the most important tools in modern programming, allowing
+third-party services to pull information automatically from central services
+like Google, Facebook and Twitter. (Apps like Tweetdeck, for instance, get
+your tweets by calling on Twitter's API.) In this case, Google the Android
+OS on top of a modified version of Java, but kept Java's API to make it
+easier for programmers to write for Android. Since many coders were already
+familiar with the quirks of Java's API, the decision gave them a head start
+in writing programs for Android -- but from the beginning, Oracle wanted
+Google to pay for the privilege. In May of 2012
+http://www.theverge.com/2012/5/31/3055620/oracle-java-api-not-covered-copyright-law/in/2731667
+a district court ruled that copyrighting the calls would simply tie up "a
+utilitarian and functional set of symbols," and gave Google free rein on the
+API. Oracle appealed the ruling, and two years later, a federal court has
+overturned. The next step is the Supreme Court, but it could be years before
+the issue is finally settled.
+
+Already, the ruling has drawn disapproval from IP advocates.
+<http://www.vox.com/2014/5/9/5699960/this-court-decision-is-a-disaster-for-the-software-industry>.
+Villanova law professor Michael Risch blames the court
+<http://madisonian.net/2014/05/09/oracle-v-google-reversed-framing-matters/>
+for granting too strong of a copyright, preferring a conception that allows
+for interoperability and reuse: "Google should surely be privileged to do
+what it did without having to resort to fair use." Going further, University
+of Maryland professor James Grimmelmann writes, "This is an opinion written
+by judges whose understanding of software comes from reading other judges'
+opinions about software." In even simpler terms, Sarah Jeong writes, "It's
+like getting mad at a screwdriver for looking like a screwdriver."
+https://twitter.com/grimmelm/status/464804631097659395
+https://twitter.com/sarahjeong/status/464818311763877888
+
+------------------------------
+
+Date: Thu, 8 May 2014 16:48:05 +1200
+From: "Richard A. O'Keefe" <ok@cs.otago.ac.nz>
+Subject: Re: The risks of garbage collection delays (Loughran, RISKS-27.87)
+
+Steve Loughran raised two interesting points.
+
+"Garbage collection can introduce delays".  We want two things
+from any memory management scheme, automatic or manual:
+(1) Resources are released as soon as they are no longer needed.
+(2) There are no long delays.
+
+Unfortunately, we cannot have both.  Classical reference counting means that
+a memory object is released as soon as the run time system notices there are
+no more references to it, and finalizers can be used to release external
+resources promptly.  The Limbo programming language does this.  However,
+imagine constructing a 2GB acyclic graph of objects and then nilling the
+last pointer to it.  You *must* get a long delay as each object in turn is
+purged.  There are techniques for deferring this work so that pauses are
+much smaller, but then you do not get prompt release of external objects.
+Manual memory management can be understood as a sporadically buggy
+approximation of reference counting.
+
+The answer of course, is that there are several hard real time garbage
+collection algorithms out there which DON'T have long pauses, but for that
+to be possible, they cannot release objects or references to external
+objects promptly.  So you have to make a very clear distinction between
+closing an external resource and forgetting it.  The C# 'using (Type id create) stmt' statement and the Java 'try (Type id = create) stmt' statement
+are about closing a connection to an external resource, and make no claim
+about when the memory of the object will be reclaimed.
+
+The second point he raised is "how can a remote network client distinguish
+"hung process' from "process undergoing very large GC pauses"?  The short
+answer to that is "it cannot".  There are all sorts of things, from network
+congestion, to temporarily moving out of cell phone coverage, to driving
+through an underpass, to lines being accidentally disconnected, to process
+being shifted off one processor to another for load balancing, to slowness
+of a numerical algorithm to converge, which can cause delays without the
+server process being crashed or hung.
+
+I fail to see what the point would be of burdening garbage collectors with
+sending messages out to clients when GC pauses are just one of MANY kinds of
+unpredictable but noticeable delay and the other kinds don't come with
+notification schemes.  In a distributed system, a client HAS to be prepared
+to time out a remote transaction, and HAS to be prepared to discover that it
+was a false alarm.  (Nobody ever said distributed was easy.)
+
+I suggest that the answer to the problem of GC delays in processes with 100
+GB address spaces is "don't design such systems in the first place; make big
+systems be collections of loosely coupled components that are independently
+GCed."  (For example, while an Erlang 'node' may have a single address
+space, each Erlang 'process' (thread) is independently GCed.)
+
+------------------------------
+
+Date: Thu, 08 May 2014 12:57:30 -0500
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: The risks of garbage collection delays (Loughran, RISKS-27.89)
+
+> Reference counting cannot correctly handle circular references. ...
+
+This is where get fuzzy on the "linear types" etc.: as far as I can see it
+all works only if you don't copy pointers/references. As long as every copy
+is a copy of the value and every reference exists in the same or nested
+scope, this works.
+
+Unfortunately deep copy of every value means a lot of memory copying.
+Which, according to the "LISP could do real-time garbage collection in
+the 70's" paper cited upthread was a zero-cost operation in the LISP
+machines of the 1970's but in my observable reality can actually be
+quite expensive. As far as I know the best we can do in 2010's is
+copy-on-write which makes it close to zero cost for as long as the value
+remains read-only. And if it is read-only you can declare it const and
+safely copy the reference and you're back to square 1 where copying
+references is not allowed.
+
+However, this seems to be getting way off topic for RISKS.
+
+Dimitri Maziuk
+Programmer/sysadmin
+BioMagResBank, UW-Madison -- http://www.bmrb.wisc.edu
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.90
+************************
+
+--_002_96dd4bbe566b4e5fbfdd634d8d601785EXHUBVM02campusnclacuk_--

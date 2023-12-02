@@ -1,0 +1,755 @@
+precedence: bulk
+Subject: Risks Digest 29.60
+
+RISKS-LIST: Risks-Forum Digest  Thursday 14 July 2016  Volume 29 : Issue 60
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.60.html>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [My annual slowdown over; huge backlog; multiple issues coming]
+Tesla driver dies in crash while operating on Autopilot (PGN)
+Self-driving car fatal accident (AlMac)
+US Regulators Investigating Tesla Over Use of 'Autopilot' Mode... (Slashdot)
+The Moral Dilemma of Driverless Cars: Save The Driver or Save The Crowd?
+  (SlashDot)
+"Federal agency probing Tesla's Autopilot feature after fatal crash"
+  (Stephanie Condon)
+People Want Driverless Cars with Utilitarian Ethics, Unless They're a
+  Passenger (Gabe Goldberg)
+Risks of AI too complex to make sense of (Motherboard via Werner)
+Stanford Mall robot runs over small child (Jean Nowell PGN-ed)
+Dallas Shooter Killed By Bomb Robot In Policing First (Allee Manning)
+Move over, sapient pearwood (Gizmag via paul wallich)
+"Volkswagen to pay up to $14.7 billion in US emissions scandal probe"
+  (Charlie Osborne)
+Swiss trains fail on curious corner case (PGN)
+Faulty image analysis software may invalidate 40,000 fMRI studies
+  (Bruce Horrocks)
+Web-Impac's would-be voting software deeply flawed (PGN)
+Multitasking Drains Your Brain's Energy Reserves (Quartz via SlashDot)
+Truth is in danger as new techniques used to stop journalists covering
+  the news (Eurekalert)
+"How technology disrupted the truth" (The Guardian)
+Adventures in SRE-land: Welcome to Google Mission Control (CloudPlatform)
+Your Car's Studying You Closely and Everyone Wants the Data (Bloom via
+  Gabe Goldberg)
+Uber Plans To Start Monitoring Their Drivers' Behavior (SlashDot)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 1 Jul 2016 7:23:33 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Tesla driver dies in crash while operating on Autopilot
+
+  This incident occurred on 7 May 2016, but is reported on the front page of
+  *The New York Times* in an article by Bill Vlasic and Neal Boudette on 1
+  Jul 2016.  In short, it is the first known fatal accident involving a
+  vehicle under automated control.  Joshua Brown (a Navy veteran who had
+  founded his own technology consulting firm) was the "driver".  "Neither
+  the autopilot nor the driver noticed the white side of a tractor-trailer
+  [which made a left turn in front of the Tesla] against a brightly lit sky,
+  so the brake was not applied.  The crash casts doubts on whether
+  autonomous vehicles in general can consistently make split-second,
+  life-or-death driving decisions on the highway."
+
+  Karl Brauer (a Kelley Blue Book analyst): "This is a bit of a wake-up
+  call.  People were maybe too aggressive in taking the position that we're
+  almost there, this technology is going to be in the market very soon,
+  maybe need to reassess that."
+
+  Although Elon Musk has praised the Model S as "probably better than a
+  person right now", Tesla noted on 30 Jun that its use "requires explicit
+  acknowledgment that the system is new technology."  [PGN-ed]
+
+Perfection is obviously unrealizable for any computer-based system.  But a
+death is a death, and we should do what we can to reduce every one.  Drunk
+driving is clearly a problem.  Drive-by shootings are rare events, but gun
+controls for loony-tune folks might help.  The problems are holistic (as
+usual), and there are many relevant factors.  But I would think the
+expectations on the operational risks of automated vehicles and automated
+highways will be much higher than those for conventional vehicles and their
+fallible drivers.  It will be interesting to see how the insurance industry
+assesses the difference.
+
+For example, who is liable for accidents involving self-driving or
+computer-assisted vehicles?  Law suits tend to go for deep pockets.  There
+are many issues here.  Perhaps when you buy an automated vehicle, the
+contract says the car is "experimental" and the maker explicitly disclaims
+all liability and responsibility, and requires the person in the driver's
+seat to be awake and aware.  Perhaps their lawyers would claim that the
+driver was negligent to have faith in the software/hardware system.  Even
+more intriguing might be accidents involving multiple self-driving vehicles.
+And what happens when the police insist on backdoors to be able to redirect
+or stop the vehicle for inspection or arrest?  And then there is the fantasy
+of the automated highway.
+
+Lots of issues remain to be resolved, and I suspect this will all happen --
+but hopefully very slowly and carefully.  Let's hope that the snake-oil
+salesmen peddling supposedly secure point solutions don't do the same for
+the automated highway -- as they are already doing for the Internet of
+Things.
+
+For the record, Monty Solomon noted a whole string of NYT articles on
+Tesla and related topics in early July:
+
+http://www.nytimes.com/2016/07/01/business/self-driving-tesla-fatal-crash-investigation.html
+http://www.nytimes.com/2016/07/02/business/a-fatality-forces-tesla-to-confront-its-limits.html
+http://www.nytimes.com/2016/07/02/business/international/bmw-tesla-self-driving-car-mobileye-intel.html
+http://www.nytimes.com/2016/07/04/your-money/as-self-driving-cars-hit-the-road-innovation-is-outpacing-insurance.html
+http://www.nytimes.com/2016/07/05/business/tesla-and-google-take-different-roads-to-self-driving-car.html
+http://www.nytimes.com/2016/07/07/business/us-safety-agency-investigates-another-tesla-crash-involving-autopilot.html
+http://www.nytimes.com/2016/07/08/automobiles/wheels/makers-of-self-driving-cars-ask-what-to-do-with-human-nature.html
+
+and others as well:
+
+http://m.theregister.co.uk/2016/07/08/bmw_vulns/
+http://m.theregister.co.uk/2016/06/06/mitsubishi_outlander_hack/
+http://www.nytimes.com/2016/05/20/business/audis-virtual-cockpit-moves-the-display-on-screen.html
+
+  [I'm working on a blog on this subject, which hopefully will appear
+  shortly in ACM's Ubiquity.  PGN]
+
+------------------------------
+
+Date: Sun, 10 Jul 2016 23:49:39 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Self-driving car fatal accident
+
+Human driven cars get into accidents all the time, with sometimes fatal
+results.
+
+Worldwide, over a million people are killed each year in auto crashes, where
+self-driving vehicles not involved.
+
+In the USA, 10's of thousands of people lose their lives every year, in
+highway crashes, where self-driving was not a factor.
+
+http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview
+http://asirt.org/initiatives/informing-road-users/road-safety-facts/road-crash-statistics
+
+https://en.wikipedia.org/wiki/List_of_motor_vehicle_deaths_in_U.S._by_year
+
+Now we have a death in an auto accident where the human in the driver seat
+was not driving.  He was using the Autopilot of a Tesla model S, while he
+watched a Harry Potter movie.
+
+He is now dead, because the car's camera failed to distinguish a tractor
+trailer against a bright sky, and the human was not paying attention.
+
+There are times of day I don't like to be driving in certain directions,
+because I cannot make out what a traffic light is communicating, when the
+sun is right beside it.  I hold up my hand to try to block the sun, but
+still see the traffic light.  By the time I figure it out, the lights have
+changed.
+
+According to witnesses of the Florida accident, the Tesla car went
+underneath the tractor trailer, sheering off the top half of the car, and
+continued at highway speeds, as if nothing had happened.
+
+This one story will probably get more news media attention than the tens of
+thousands of accident victims where a human was driving.
+
+Why is the news media only now covering this story, 2 months after it
+happened?
+
+http://www.nytimes.com/2016/07/01/business/self-driving-tesla-fatal-crash-investigation.html
+http://www.nytimes.com/2016/07/11/business/fatal-tesla-crash-draws-in-transportation-safety-board.html?_r=0
+
+This Florida accident is being investigated by
+
+* Florida Highway Patrol
+* NHTSA = US National Highway Traffic Safety Administration
+* NTSB = US National Transportation Safety Board
+
+http://www.nytimes.com/topic/organization/national-highway-traffic-safety-administration?inline=nyt-org
+
+http://www.nytimes.com/topic/organization/national-transportation-safety-board?inline=nyt-org
+
+http://www.bloomberg.com/news/articles/2016-07-08/driver-automation-to-be-scrutinized-in-ntsb-probe-of-tesla-crash
+
+http://www.press.org/events/npc-luncheon-ntsb-chair-christopher-hart
+
+There's been more than one crash involving semi-autonomous driving, while
+others are not yet fatal.  There's also a great deal of interest in an
+accident in Pennsylvania, where a Tesla X SUV rolled over, while the car was
+in Auto-Pilot, according to the driver.  Tesla disagrees.
+
+http://www.scientificamerican.com/article/deadly-tesla-crash-exposes-confusion-over-automated-driving/
+
+http://www.nytimes.com/2016/07/07/business/us-safety-agency-investigates-another-tesla-crash-involving-autopilot.html
+
+http://www.freep.com/story/money/cars/2016/07/05/southfield-art-gallery-owner-survives-tesla-crash/86712884/
+
+http://www.freep.com/story/money/cars/2016/07/01/experts-worry-tesla-crash/86611662/
+
+Some people claim this is not a case of a self-driving car, only a partially
+self driving.  Tesla's self-driving is pretty limited compared to Google and
+other competitors.  There are also ethical questions about the notion of
+making auto drivers the testers for beta systems, which may not yet be ready
+for all driving conditions.
+
+------------------------------
+
+Date: Fri, 1 Jul 2016 16:07:15 +0200
+From: Werner <werneru@gmail.com>
+Subject: US Regulators Investigating Tesla Over Use of 'Autopilot' Mode...
+ (SlashDot)
+
+  (Posted by BeauHD on Thursday June 30, 2016)
+<https://yro.slashdot.org/story/16/06/30/217215/us-regulators-investigating-tesla-over-use-of-autopilot-mode-linked-to-fatal-crash>
+
+quoting a report from CNBC:
+
+The U.S. National Highway Traffic Safety Administration said on Thursday it
+is opening a preliminary investigation into 25,000 Tesla Motors Model S cars
+after a fatal crash involving a vehicle using the "Autopilot" mode.  The
+agency said the crash came in a 2015 Model S operating with automated
+driving systems engaged, and "calls for an examination of the design and
+performance of any driving aids in use at the time of the crash." It is the
+first step before the agency could seek to order a recall if it believed the
+vehicles were unsafe. Tesla said Thursday the death was "the first known
+fatality in just over 130 million miles where Autopilot was activated,"
+while a fatality happens once every 60 million miles worldwide. The electric
+automaker said it "informed NHTSA about the incident immediately after it
+occurred." The May crash occurred when a tractor trailer drove across a
+divided highway, where a Tesla in autopilot mode was driving. The Model S
+passed under the tractor trailer, and the bottom of the trailer hit the
+Tesla vehicle's windshield.  Tesla quietly settled a lawsuit with a Model X
+owner who claims his car's doors would open and close unpredictably,
+smashing into his wife and other cars, and that the Model X's Auto-Pilot
+feature poses a danger in the rain.
+
+<http://www.cnbc.com/2016/06/30/us-regulators-investigating-tesla-over-use-of-automated-system-linked-to-fatal-crash.html>
+<https://yro.slashdot.org/story/16/06/29/2145207/tesla-admits-defeat-quietly-settles-model-x-lawsuit-over-usability-problems>
+
+------------------------------
+
+Date: Wed, 29 Jun 2016 21:10:25 +0200
+From: Werner <werneru@gmail.com>
+Subject: The Moral Dilemma of Driverless Cars: Save The Driver or Save The
+  Crowd? (SlashDot)
+
+(Posted by BeauHD on Tuesday June 28, 2016)
+<https://hardware.slashdot.org/story/16/06/28/2215232/the-moral-dilemma-of-driverless-cars-save-the-driver-or-save-the-crowd>
+
+ughPickens.com writes:
+
+What should a driverless car with one rider do if it is faced with the
+choice of swerving off the road into a tree or hitting a crowd of 10
+pedestrians?
+<https://news.mit.edu/2016/driverless-cars-safety-issues-0623>
+
+The answer depends on whether you are the rider in the car or someone else
+is, writes Peter Dizikes at MIT News. According to recent research most
+people prefer autonomous vehicles to minimize casualties in situations of
+extreme danger -- except for the vehicles they would be riding in. "Most
+people want to live in in a world where cars will minimize casualties," says
+Iyad Rahwan. "But everybody wants their own car to protect them at all
+costs." The result is what the researchers call a "social dilemma," in which
+people could end up making conditions less safe for everyone by acting in
+their own self-interest. "If everybody does that, then we would end up in a
+tragedy whereby the cars will not minimize casualties," says
+Rahwan. Researchers conducted six surveys, using the online Mechanical Turk
+public-opinion tool, <http://science.sciencemag.org/content/352/6293/1573>
+between June 2015 and November 2015. The results consistently showed that
+people will take a utilitarian approach to the ethics of autonomous
+vehicles, one emphasizing the sheer number of lives that could be saved. For
+instance, 76 percent of respondents believe it is more moral for an
+autonomous vehicle, should such a circumstance arise, to sacrifice one
+passenger rather than 10 pedestrians. But the surveys also revealed a lack
+of enthusiasm for buying or using a driverless car programmed to avoid
+pedestrians at the expense of its own passengers. "This is a challenge that
+should be on the mind of carmakers and regulators alike," the researchers
+write. "For the time being, there seems to be no easy way to design
+algorithms that would reconcile moral values and personal self-interest."
+<https://www.washingtonpost.com/news/energy-environment/wp/2016/06/23/save-the-driver-or-save-the-crowd-scientists-wonder-how-driverless-cars-will-choose/>
+
+------------------------------
+
+Date: Fri, 01 Jul 2016 14:37:03 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Federal agency probing Tesla's Autopilot feature after fatal crash"
+
+Stephanie Condon for Between the Lines, ZDNet, 0 Jun 2016
+The National Highway Traffic Safety Administration has opened a preliminary
+investigation into the advanced autonomous driving technology following a
+May 7 accident.
+http://www.zdnet.com/article/federal-agency-probing-teslas-autopilot-feature-after-fatal-crash/
+
+------------------------------
+
+Date: Wed, 6 Jul 2016 23:03:11 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: People Want Driverless Cars with Utilitarian Ethics, Unless
+ They're a Passenger
+
+At some point in the nearer-than-might-be-comfortable future, an autonomous
+vehicle (AV) will find itself in a situation where something has gone wrong,
+and it has two options: either it can make a maneuver that will keep its
+passenger safe while putting a pedestrian at risk, or it can make a
+different maneuver that will keep the pedestrian safe while putting its
+passenger at risk. What an AV does in situations like these will depend on
+how it's been programmed: in other words, what ethical choice its software
+tells it to make.
+
+If there were clear ethical rules that society could agree on about how AVs
+should behave when confronted with such decisions, we could just program
+those in and be done with it. However, there are a near infinite number of
+possible ethical problems, and within each one, the most ethical course of
+action can vary from person to person. Furthermore, it's not just the
+passengers who have a say in how AVs behave, but also the manufacturers, and
+more likely than not, government regulators.
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Thu, 7 Jul 2016 00:02:16 +0200
+From: Werner <werneru@gmail.com>
+Subject: Risks of AI too complex to make sense of
+
+(Motherboard,/Vice, 6 Jul 2016)
+
+"Sufficiently Advanced Technology is Indistinguishable from Magic"
+<https://duckduckgo.com/html/?q=Sufficiently Advanced Technology
+Indistinguishable from Magic>
+
+did you, too, feet like nodding knowingly with a smile when hearing,
+reading, or thinking about that meme? (Arthur C. Clarke's 3rd law)?!?
+
+but was that followed by  "White or Black Magic?!?"  thoughts?
+
+..or "Any technology distinguishable from magic is insufficiently
+advanced" (Gehm's corollary)?
+
+...don't miss the knowing smiles when reading this article :
+
+When AI Goes Wrong, We Won't Be Able to Ask It Why
+<https://motherboard.vice.com/read/ai-deep-learning-ethics-right-to-explanation?trk_source=recommended>
+(Written by Jordan Pearson, July 6, 2016)
+
+------------------------------
+
+Date: Wed, 13 Jul 2016 9:12:00 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Stanford Mall robot runs over small child (Jean Nowell)
+
+Jen Nowell, *Palo Alto Daily Post*, front page story, 13 Jun 2016
+
+Mall robot runs over tot; After two incidents, units are shut down
+
+A 16-month boy was knocked over by a security robot at Stanford Shopping
+Center in Palo Alto, which then ran over him, leaving him bruised and
+scared.
+
+The 5-foot 300-pound Knightsope K5 Robot failed to stop as it approached
+Harwin Cheng, hit him in the head, knocked him to the ground, and then ran
+over his right foot.  His mother pulled him away just as the robot was about
+to run over his left foot.
+
+The robot uses a combination of cameras and sensors ...
+
+The same robot had previously run over another child, so *all* K5
+robots have been taken out of service!!!!
+
+A logical guess for repetitive accidents of this type might be that the
+sensors are positioned to that they cannot detect standalone small children!
+
+------------------------------
+
+Date: July 9, 2016 at 6:32:28 AM EDT
+From: Hendricks Dewayne <dewayne@warpspeed.com>
+Subject: Dallas Shooter Killed By Bomb Robot In Policing First
+  (Allee Manning)
+
+  [Note:  This item comes from friend Jen Snow.  Jen's comment:
+  It is going to be an interesting next several years as technology starts
+  to change society in radical ways'.  DLH]
+
+Allee Manning, Vocativ, 8 Jul 2016
+The robot used, however, is not uncommon -- more than 350 U.S. police
+departments have them
+<http://www.vocativ.com/338397/dallas-shooting-bomb-robot/>
+
+After hours of negotiations and an exchange of gunfire, the Dallas shooting
+ended when police used a *bomb robot* to kill one of the shooting suspects
+on Thursday night. While Dallas Police Chief David Brown did not
+specifically describe the device, his language at a press conference
+indicated that it was a bomb disposal robot that ultimately killed Micah
+Xavier Johnson.
+
+"We saw no other option but to use our bomb robot and place a device on its
+extension for it to detonate where the suspect was.  Other options would
+have exposed our officers to grave danger," Johnson had told the hostage
+negotiator that police would eventually find the IEDs that he planted in the
+downtown Dallas area.
+
+The usage of this type of robotics technology to kill a civilian as a
+policing mechanism is the first of its kind in the U.S., as bomb disposal
+robots are typically used for the opposite purpose: to remove explosives
+from an area in order protect those in its immediate vicinity from the loss
+of life. Sometimes they will do so by triggering a controlled
+explosion. Normally, however, a human is not the target for those
+explosions.
+
+As Fusion reports, the use of robots weaponized with bombs for the purpose
+of killing is a practice typically reserved for the U.S. military. In *The
+Changing Character of War*, military historians outlined how MARCBOTs,
+created for the purpose of detecting the enemy's presence and/or explosives,
+was first repurposed by U.S. soldiers to kill during the war in Iraq.
+
+Bomb disposal robots (properly termed Explosive Ordnance Disposal robots)
+have been in use since 1972, when the U.S. military pioneered the
+technology. But since then, these robots, which can now be operated
+remotely, have become increasingly advanced. They've also become an
+increasingly common tool used in U.S. policing since the Department of
+Defense created a program for transferring surplus military equipment to
+these departments in 1990. The Center for the Study of the Drone discovered
+that this program has led to the procurement of these types of devices by
+over 350 police departments across the country. [...]
+
+  [See also Bomb Robot' Takes Down Dallas Gunman, but Raises Enforcement
+  Questions, noted by Monty Solomon:
+  http://www.nytimes.com/2016/07/09/science/dallas-bomb-robot.html
+  PGN]
+
+------------------------------
+
+Date: Sat, 9 Jul 2016 15:30:01 -0400
+From: paul wallich <pw@panix.com>
+Subject: Move over, sapient pearwood (Gizmag)
+
+Fantasy writer Terry Pratchett probably didn't consider his "Luggage", a
+slavishly devoted mobile trunk that sometimes ate interlopers, as something
+designers should aspire to.
+http://www.gizmag.com/olive-robot-suitcase/44085/
+
+> Olive is the brainchild of Iran-based Ikap Robotics, and although it
+> may look like a standard piece of luggage, it has a Segway-like,
+> self-balancing auto-locomotion system that maintains stability while
+> riding on two wheels by using 3D accelerometers and gyroscopes. With
+> an in-built stereoscopic camera, it can build up a visual map of its
+> surroundings and follow its owner using skeleton tracker algorithms
+> that is claimed to allow Olive to distinguish individuals even in
+> crowded environments.
+
+I'm having enough trouble trying to figure out all the potential risks of
+something like this operating mostly as intended (consider the recent
+"hoverboard" recall). Let alone what could be done if someone hacked
+"intelligent" suitcases or -- perish the thought -- produced versions with
+malevolent firmware.
+
+------------------------------
+
+Date: Thu, 30 Jun 2016 10:53:14 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Volkswagen to pay up to $14.7 billion in US emissions scandal
+  probe" (Charlie Osborne)
+
+Charlie Osborne for Between the Lines, ZDNet, 29 Jun 2016 Customer deceit
+and circumventing software has cost the automaker dearly -- and the story
+isn't over.
+http://www.zdnet.com/article/volkswagen-to-pay-up-to-14-7-billion-in-us-emissions-scandal-probe/
+
+------------------------------
+
+Date: Mon, 11 Jul 2016 10:14:13 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Swiss trains fail on curious corner case
+
+If the axle count of trains in Switzerland is a multiple of 2^8 (i.e., 256),
+their control system does not detect the existence of that train!
+
+http://i.imgur.com/DrEinPB.png
+https://twitter.com/mitsuhiko/status/752398314528731137
+
+  [Thanks to Steve Bellovin for spotting this one.  PGN]
+
+------------------------------
+
+Date: Thu, 7 Jul 2016 21:14:15 +0100
+From: Bruce Horrocks <bruce@scorecrow.com>
+Subject: Faulty image analysis software may invalidate 40,000 fMRI studies
+
+  [Please read this to the end.  PGN]
+
+A new paper [1] suggests that as many as 40,000 scientific studies that used
+Functional Magnetic Resonance Imaging (fMRI) to analyse human brain activity
+may be invalid because of a software fault common to all three of the most
+popular image analysis packages.
+
+... From the paper's significance statement:
+
+"Functional MRI (fMRI) is 25 years old, yet surprisingly its most common
+statistical methods have not been validated using real data. Here, we used
+resting-state fMRI data from 499 healthy controls to conduct 3 million task
+group analyses. Using this null data with different experimental designs, we
+estimate the incidence of significant results. In theory, we should find 5%
+false positives (for a significance threshold of 5%), but instead we found
+that the most common software packages for fMRI analysis (SPM, FSL, AFNI)
+can result in false-positive rates of up to 70%. These results question the
+validity of some 40,000 fMRI studies and may have a large impact on the
+interpretation of neuroimaging results."
+
+Two of the software related risks:
+
+a) It is common to assume that software that is widely used must be
+   reliable, yet 40,000 teams did not spot these flaws[2]. The authors
+   identified a bug in one package that had been present for 15 years.
+
+b) Quoting from the paper: "It is not feasible to redo 40,000 fMRI studies,
+   and lamentable archiving and data-sharing practices mean most could not
+   be reanalyzed either."
+
+[1] "Cluster failure: Why fMRI inferences for spatial extent have inflated
+false-positive rates" by Anders Eklund, Thomas E. Nichols and Hans
+Knufsson. <http://www.pnas.org/content/early/2016/06/27/1602413113.full>
+
+[2] That's so many you begin to wonder if this paper might itself be wrong?
+Expect to see a retraction in a future RISKS. ;-)
+
+  [Also noted by Lauren Weinstein in *The Register*:]
+http://www.theregister.co.uk/2016/07/03/mri_software_bugs_could_upend_years_of_research/
+
+  [And then there is this counter-argument, noted by Mark Thorson:
+http://blogs.discovermagazine.com/neuroskeptic/2016/07/07/false-positive-fmri-mainstream/
+
+  The author (Neuroskeptic) notes that Eklund et al. have discovered a
+  different kind of bug in AFNI, but does not apply to FSL and SPM, and does
+  not "invalidate 15 years of brain research."   PGN]
+
+------------------------------
+
+Date: Tue, 12 Jul 2016 10:59:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Web-Impac's would-be voting software deeply flawed
+
+http://finance.yahoo.com/news/revolutionary-internet-software-moves-voting-191300488.html
+
+> Web-Impac's voter software could potentially change the way Americans vote
+> and propel the United States election process into the 21st Century, and
+> Web-Impac is featuring The World Votes, which is a virtual election, live
+> and open to anyone with access to the Internet.
+
+This system reportedly has a remarkable feature that renders it ridiculous
+for any serious election.  With almost no effort, it is possible to vote as
+often as you like, and have all of your votes count.  You can delete
+cookies, or pop up a new tab, or probably other hacks, after which it
+forgets you have already voted.
+
+That would *REALLY* change the way we vote!
+
+------------------------------
+
+Date: Mon, 4 Jul 2016 18:53:53 +0200
+From: Werner <werneru@gmail.com>
+Subject: Multitasking Drains Your Brain's Energy Reserves (Quartz via
+ SlashDot)
+
+[ TANSTAAFL - but the Researchers report a not-obvious RISK-angle ]
+
+Multitasking Drains Your Brain's Energy Reserves, Researchers Say
+<https://tech.slashdot.org/story/16/07/03/1628243/multitasking-drains-your-brains-energy-reserves-researchers-say>
+(Posted by EditorDavid on Sunday July 03, 2016)
+
+quoting from an article in Quartz:
+
+"When we attempt to multitask, we don't actually do more than one
+activity at once, but quickly switch between them. And this switching is
+exhausting. It uses up oxygenated glucose in the brain, running down the
+same fuel that's needed to focus on a task...
+
+"That switching comes with a biological cost that ends up making us feel
+tired
+<http://qz.com/722661/neuroscientists-say-multitasking-literally-drains-the-energy-reserves-of-your-brain/>
+...much more quickly than if we sustain attention on one thing," says
+Daniel Levitin, professor of behavioral neuroscience at McGill
+University. "People eat more, they take more caffeine. Often what you
+really need in that moment isn't caffeine, but just a break. If you
+aren't taking regular breaks every couple of hours, your brain won't
+benefit from that extra cup of coffee."
+
+EditorDavid asks: Anyone have any anecdotal experiences that back this up?
+
+------------------------------
+
+Date: Sun, 10 Jul 2016 19:21:35 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Truth is in danger as new techniques used to stop journalists
+  covering the news
+
+NNSquad
+http://www.eurekalert.org/pub_releases/2016-07/s-tii070716.php
+
+  The truth is being suppressed across the world using a variety of methods,
+  according to a special report in the 250th issue of Index on Censorship
+  magazine.  Physical violence is not the only method being used to stop
+  news being published, says editor Rachael Jolley in the Danger in Truth:
+  Truth in Danger report. As well as kidnapping and murders, financial
+  pressure and defamation legislation is being used, the report reveals.
+  "In many countries around the world, journalists have lost their status as
+  observers and now come under direct attack."
+
+------------------------------
+
+Date: Wed, 13 Jul 2016 13:06:29 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "How technology disrupted the truth"
+
+  Now, we are caught in a series of confusing battles between opposing
+  forces: between truth and falsehood, fact and rumour, kindness and
+  cruelty; between the few and the many, the connected and the alienated;
+  between the open platform of the web as its architects envisioned it and
+  the gated enclosures of Facebook and other social networks; between an
+  informed public and a misguided mob.  What is common to these struggles --
+  and what makes their resolution an urgent matter -- is that they all
+  involve the diminishing status of truth.  This does not mean that there
+  are no truths. It simply means, as this year has made very clear, that we
+  cannot agree on what those truths are, and when there is no consensus
+  about the truth and no way to achieve it, chaos soon follows.
+  Increasingly, what counts as a fact is merely a view that someone feels to
+  be true -- and technology has made it very easy for these "facts" to
+  circulate with a speed and reach that was unimaginable in the Gutenberg
+  era (or even a decade ago). A dubious story about Cameron and a pig
+  appears in a tabloid one morning, and by noon, it has flown around the
+  world on social media and turned up in trusted news sources everywhere.
+  This may seem like a small matter, but its consequences are enormous.
+https://www.theguardian.com/media/2016/jul/12/how-technology-disrupted-the-truth
+
+------------------------------
+
+Date: Mon, 11 Jul 2016 12:45:43 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Adventures in SRE-land: Welcome to Google Mission Control
+
+  [NOTE: SRE refers to Site Reliability Engineering.  PGN]
+
+https://cloudplatform.googleblog.com/2016/07/adventures-in-SRE-land-welcome-to-Google-Mission-Control.html
+
+  But what is an SRE? According to Google Vice President of Engineering Ben
+  Treynor Sloss, who coined the term SRE, "SRE is what happens when you ask
+  a software engineer to design an operations function." In 2003, Ben was
+  asked to lead Google's existing "Production Team" which at the time
+  consisted of seven software engineers. The team started as a software
+  engineering team, and since Ben is also a software engineer, he continued
+  to grow a team that he, as a software engineer, would still want to work
+  on. Thirteen years later, Ben leads a team of roughly 2,000 SREs, and it
+  is still a team that software engineers want to work on. About half of the
+  engineers who do a Mission Control rotation choose to remain an SRE after
+  their rotation is complete.
+
+------------------------------
+
+Date: Tue, 12 Jul 2016 08:33:57 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Your Car's Studying You Closely and Everyone Wants the Data
+
+As you may have suspected, your car is spying on you. Fire up a new model
+and it updates more than 100,000 data points, including rather personal
+details like the front-seat passenger's weight. The navigation system tracks
+every mile and remembers your route to work. The vehicular brain is smart
+enough to help avoid traffic jams or score parking spaces, and soon will be
+able to log not only your itineraries but your Internet shopping patterns.
+
+To read the entire article, go to http://bloom.bg/29KIPkx
+
+------------------------------
+
+Date: Mon, 4 Jul 2016 19:31:19 +0200
+From: Werner <werneru@gmail.com>
+Subject: Uber Plans To Start Monitoring Their Drivers' Behavior (SlashDot)
+
+[ Everyone (and their dogs) want to Monitor EveryOne and EveryThing...]
+
+Uber Plans To Start Monitoring Their Drivers' Behavior
+<https://tech.slashdot.org/story/16/07/03/2111209/uber-plans-to-start-monitoring-their-drivers-behavior>
+(Posted by EditorDavid on Sunday July 03, 2016)
+
+An anonymous SlashDot reader writes:
+
+Uber "has developed a new technology that it plans on using to track
+driver behavior,
+<http://blog.sfgate.com/techchron/2016/06/29/uber-plans-to-start-tracking-driving-behavior/>
+...specifically if drivers are traveling too fast or braking too
+harshly..." according to the San Francisco Chronicle, which writes that
+"Information about how a driver is performing will be shared with Uber,
+but will also be shared with the driver, along with safety tips on how
+they can improve their performance." Uber will roll this out as an
+update to their app, using existing smartphone functionality, and "in
+some cities Uber will also monitor whether or not Uber drivers are
+picking up their phones (either to text or even just to look at maps)
+during a ride using the phone's gyroscope."
+
+Ride-sharing companies seem to be growing more and more powerful. One
+Florida county actually received a grant to offer free Uber rides to
+low-income workers, and to allow the county transit authority to arrange
+rides for those residents without a smartphone. Uber recently even
+became the "official designated driving app" for Mother's Against Drunk
+Driving, and published a graph suggesting Uber pickups correlate to a
+drop in drunk-driving arrests. And in other news, Uber rides have
+apparently even been used by a group of human traffickers to smuggle
+migrants from Central America into the United States.
+
+------------------------------
+
+Date: Tue, 10 May 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+    newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.60
+************************

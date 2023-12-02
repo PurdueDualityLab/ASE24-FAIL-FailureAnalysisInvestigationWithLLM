@@ -1,0 +1,708 @@
+precedence: bulk
+Subject: Risks Digest 27.65
+
+RISKS-LIST: Risks-Forum Digest  Thursday 19 December 2013  Volume 27 : Issue 65
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.65.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Harvard Student Charged In Bomb Hoax (CBS via Monty Solomon)
+Harvard student tried to dodge exam with bomb hoax (Bob Frankston)
+Keeping my front door off the Internet (Pertti Huuskonen)
+Do Google Glass users violate state laws against recording conversations
+  permission? (Paul Alan Levy)
+UPS program delivers unnerving surprise (David Lazarus via Mark Brader)
+Brokers Trade on Sensitive Medical Data with Little Oversight,
+  Senate Says (Elizabeth Dwoskin via Jim Reisert)
+Officials Say U.S. May Never Know Extent of Snowden's Leaks
+ (Mazzetti/Schmidt via Matthew Kruk)
+Subject: 'We cannot trust' Intel and Via's chip-based crypto,
+  FreeBSD developers say (Dan Goodin via Dewayne Hendricks)
+Someone's Been Siphoning Data Through a Huge Security Hole in the Internet
+  (Kim Zetter via Dewayne Hendricks)
+"Trolls, orcs, and spooks: The breaching of World of Warcraft"
+  (Robert X. Cringely via Gene Wirchenko)
+GCHQ Forced Secure Email Service PrivateSky to Shut Down (Dan Raywood via
+  Dewayne Hendricks)
+"Adobe patches critical vulnerabilities in Flash Player, Shockwave"
+  (Lucian Constantin via Gene Wirchenko)
+`Revenge porn' operator arrested, charged with ID theft (Joe Mullin
+  via Lauren Weinstein)
+AOL/Facebook/Google/LinkedIn/Microsoft/Twitter/Yahoo (Reform Government
+  Surveillance)
+Bots now running the Internet with 61 percent of Web traffic (Dara Kerr
+  via Dewayne Hendricks)
+"Greed isn't good: 3 reasons not to bite on the bitcoin" (Robert X. Cringely
+  via Gene Wirchenko)
+"Botched Black Tuesday patch KB 2887069 freezes, fails to configure,
+   triggers a BSoD, and/or zaps sound drivers" (Woody Leonhard via Gene W.)
+Re: Confirming the MOOC Myth (Dennis E. Hamilton)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 19 Dec 2013 01:28:06 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Harvard Student Charged In Bomb Hoax
+
+BOSTON (CBS, 17 Dec 2013) - A Harvard student has been charged in connection
+with Monday's bomb threats which shut down four Harvard buildings and
+canceled finals for many students.  The U.S. Attorney's office says Eldo
+Kim, 20, of Cambridge, e-mailed several bomb threats to offices associated
+with Harvard University, including the Harvard University Police Department
+and the *Harvard Crimson*, the student-run daily newspaper. ...
+
+http://boston.cbslocal.com/2013/12/17/harvard-student-charged-in-bomb-hoax/
+
+U.S Attorney's Complaint Against Kim
+http://cbsboston.files.wordpress.com/2013/12/kimeldoharvard.pdf
+
+------------------------------
+
+Date: 19 Dec 2013 14:49:28 -0500
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: Harvard student tried to dodge exam with bomb hoax
+
+http://goo.gl/NrZgeY
+
+It seems that the investigators simply correlated the Wi-Fi connection into
+TOR with the time of the notification.  It's a reminder of how tricky
+privacy is and how tools that seem to enable privacy create risks for those
+who use them.  I worry about all the activists who naively assume they can
+rely on tools, especially those obtained over the Web.
+
+------------------------------
+
+Date: Thu, 19 Dec 2013 14:51:55 +0200
+From: Pertti Huuskonen <bertil@gmail.com>
+Subject: Keeping my front door off the Internet
+
+Our home security provider advertises mobile clients for iPhone, Android and
+Windows phones. Their app would give access to my house security and
+automation, such as checking the inside temperature, switching lights on and
+coffee makers off, the usual. More importantly, the app would notify me when
+people arrive or leave home (identified via rfid keychain tags), and even
+remotely open the doors and switch the alarm system on / off.
+
+The app would talk to our home box via the Internet. (There is a mobile data
+link too, but it seems to be just a backup when broadband /ADSL access
+fails. It is used for operational data traffic to the security center, but
+for remote access, wired Internet seems to be preferred).
+
+Now, what do we have here: a system that can open my house to anyone and
+monitor our goings, nicely accessible over the Internet. Moreover, their
+client software runs e.g. on Androids, which are notorious for potential
+malware infestations.
+
+What could possibly go wrong...?
+
+I inquired the provider about their security mechanisms. They (reasonably)
+refused to give any information, citing them trade secrets.  They kindly
+assured me that "the system data traffic is encrypted in every way". On
+their website they offer not much more details, but note that "the fact that
+we are responsible for our own design and development all mean that the
+system is extremely secure and reliable".  There is no mention about the
+expected security of the client platforms, or suchlike.
+
+RISKS readers will see the risks, including: reliance on one company's
+internal secrets (which may be leaked), the public Internet as the data
+carrier for a security critical system, potentially risky client software
+platforms, and keeping their customers calm with opaque safety claims.
+
+While I hope these guys know what they are doing, and I'm sure they have
+considered every possible threat scenario, they have sought to harden all
+their systems for attacks, they must be aware of all the holes in the widely
+used crypting techniques and they are able to function securely on a
+platform full of holes and eavesdroppers.... would they stand a chance given
+a determined inside-informed rogue attacker?
+
+Sorry, but I will be keeping my front door off the Internet, thank you.  (I
+will, however, keep it one-way connected to the security center via the
+mobile data link. I consider the gains there larger than the risks.)
+
+-- Pertti Huuskonen (bertil@gmail.com)
+
+------------------------------
+
+Date: Monday, December 9, 2013
+From: *Paul Alan Levy*
+Subject: Do Google Glass users violate state laws against recording
+  conversations without permission? (via Dave Farber)
+
+http://pubcit.typepad.com/clpblog/2013/12/potential-liability-for-recording-conversations-by-google-glass.html
+
+Paul Alan Levy, Public Citizen Litigation Group, 1600 20th Street, NW
+Washington, D.C. 20009 (202) 588-1000 http://www.citizen.org/Page.aspx?pid=396
+
+------------------------------
+
+Date: Fri, 13 Dec 2013 22:18:09 -0500 (EST)
+From: msb@vex.net (Mark Brader)
+Subject: UPS program delivers unnerving surprise (David Lazarus)
+
+David Lazarus, Los Angeles Times, 28 Oct 2013
+In a seemingly egregious privacy violation, UPS's My Choice program taps
+into your past to cook up security questions.
+
+http://articles.latimes.com/2013/oct/28/business/la-fi-lazarus-20131029
+
+  [This is a real doozer, and is really shocking for a variety of reasons,
+  not just the privacy issues.  If you are even thinking casually about
+  subscribing to this service, PLEASE read the entire article first.  PGN]
+
+------------------------------
+
+Date: Thu, 19 Dec 2013 14:23:29 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Brokers Trade on Sensitive Medical Data with Little Oversight,
+ Senate Says (Elizabeth Dwoskin)
+
+Elizabeth Dwoskin, 18 Dec 2013
+
+Marketers maintain databases that purport to track and sell the names of
+people who have diabetes, depression, and osteoporosis, as well as how often
+women visit a gynecologist, according to a Senate report published
+Wednesday.
+
+The companies are part of a multibillion-dollar industry of `data brokers'
+that lives largely under the radar, the report says. The report by the
+Senate Commerce Committee says individuals don't have a right to know what
+types of data the companies collect, how people are placed in categories, or
+who buys the information.
+
+The report came in advance of a committee hearing on industry practices
+Wednesday afternoon.
+
+The report doesn't contain any new evidence of wrongdoing by the industry,
+but it underscores the tremendous increase in the sale and availability of
+consumer information in the digital age. An industry which began in the
+1970s collecting data from public records to help marketers send direct mail
+has become an engine of a global $120 billion digital-advertising industry,
+helping marketers deliver increasingly targeted ads across the web and on
+mobile phones.
+
+http://blogs.wsj.com/digits/2013/12/18/brokers-trade-on-sensitive-medical-data-with-little-oversight-senate-says/
+
+------------------------------
+
+Date: Sun, 15 Dec 2013 03:21:48 -0700
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Officials Say U.S. May Never Know Extent of Snowden's Leaks
+  (Mazzetti/Schmidt)
+
+Mark Mazzetti and Michael S. Schmidt, *The New York Times*, 15 Dec 2013
+
+WASHINGTON - American intelligence and law enforcement investigators have
+concluded that they may never know the entirety of what the former National
+Security Agency contractor Edward J. Snowden extracted from classified
+government computers before leaving the United States, according to senior
+government officials.
+
+Investigators remain in the dark about the extent of the data breach partly
+because the N.S.A. facility in Hawaii where Mr. Snowden worked - unlike
+other N.S.A. facilities - was not equipped with up-to-date software that
+allows the spy agency to monitor which corners of its vast computer
+landscape its employees are navigating at any given time.
+
+http://www.nytimes.com/2013/12/15/us/officials-say-us-may-never-know-extent-of-snowdens-leaks.html?nl=todaysheadlines&emc=edit_th_20131215
+
+------------------------------
+
+Date: December 10, 2013 at 9:05:32 AM EST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: 'We cannot trust' Intel and Via's chip-based crypto,
+  FreeBSD developers say
+
+Dan Goodin, Ars Technica, 10 Dec 2013
+Following NSA leaks from Snowden, engineers lose faith in hardware randomness.
+<http://arstechnica.com/security/2013/12/we-cannot-trust-intel-and-vias-chi=
+p-based-crypto-freebsd-developers-say/>
+
+Developers of the FreeBSD operating system will no longer allow users to
+trust processors manufactured by Intel and Via Technologies as the sole
+source of random numbers needed to generate cryptographic keys that can't
+easily be cracked by government spies and other adversaries.
+
+The change, which will be effective in the upcoming FreeBSD version 10.0,
+comes three months after secret documents leaked by former National Security
+Agency (NSA) subcontractor Edward Snowden said the US spy agency was able to
+decode vast swaths of the Internet's encrypted traffic. Among other ways,
+The New York Times, Pro Publica, and The Guardian reported in September, the
+NSA and its British counterpart defeat encryption technologies by working
+with chipmakers to insert backdoors, or cryptographic weaknesses, in their
+products.
+
+The revelations are having a direct effect on the way FreeBSD will use
+hardware-based random number generators to seed the data used to ensure
+cryptographic systems can't be easily broken by adversaries. Specifically,
+"RDRAND" and "Padlock"=97RNGs provided by Intel and Via respectively=97will
+no longer be the sources FreeBSD uses to directly feed random numbers into
+the /dev/random engine used to generate random data in Unix-based operating
+systems. Instead, it will be possible to use the pseudo random output of
+RDRAND and Padlock to seed /dev/random only after it has passed through a
+separate RNG algorithm known as "Yarrow." Yarrow, in turn, will add further
+entropy to the data to ensure intentional backdoors, or unpatched
+weaknesses, in the hardware generators can't be used by adversaries to
+predict their output.
+
+"For 10, we are going to backtrack and remove RDRAND and Padlock backends
+and feed them into Yarrow instead of delivering their output directly to
+/dev/random," FreeBSD developers said. "It will still be possible to access
+hardware random number generators, that is, RDRAND, Padlock etc., directly
+by inline assembly or by using OpenSSL from userland, if required, but we
+cannot trust them any more."
+
+In separate meeting minutes, developers specifically invoked Snowden's name
+when discussing the change.
+
+"Edward Snowdon [sic] -- v. high probability of backdoors in some (HW)
+RNGs," the notes read, referring to hardware RNGs. Then, alluding to the
+Dual EC_DRBG RNG forged by the National Institute of Standards and
+Technology and said to contain an NSA-engineered backdoor, the notes read:
+"Including elliptic curve generator included in NIST. rdrand in ivbridge not
+implemented by Intel... Cannot trust HW RNGs to provide good entropy
+directly. (rdrand implemented in microcode. Intel will add opcode to go
+directly to HW.) This means partial revert of some work on rdrand and
+padlock."
+
+RNGs are one of the most important ingredients in any secure cryptographic
+system. They are akin to the dice shakers used in board games that ensure
+the full range of randomness is contained in each roll. If adversaries can
+reduce the amount of entropy an RNG produces or devise a way to predict some
+of its output, they can frequently devise ways to crack the keys needed to
+decrypt an otherwise unreadable message. A weakness in the /dev/random
+engine found in Google's Android operating system, for instance, was the
+root cause of a critical exploit that recently allowed thieves to pilfer
+bitcoins out of a user's digital wallet. RDRAND is the source of random data
+provided by Ivy Bridge and later versions of Intel processors. Padlock seeds
+random data in chips made by Via. ...
+
+------------------------------
+
+Date: Thursday, December 5, 2013
+From: *Dewayne Hendricks*
+Subject: Someone's Been Siphoning Data Through a Huge Security Hole
+  in the Internet (Kim Zetter)
+
+Kim Zetter, *WiReD*, 5 Dec 2013
+<http://www.wired.com/threatlevel/2013/12/bgp-hijacking-belarus-iceland/>
+
+In 2008, two security researchers at the DefCon hacker conference
+demonstrated a massive security vulnerability in the worldwide Internet
+traffic-routing system -- a vulnerability so severe that it could allow
+intelligence agencies, corporate spies or criminals to intercept massive
+amounts of data, or even tamper with it on the fly.
+
+The traffic hijack, they showed, could be done in such a way that no one
+would notice because the attackers could simply re-route the traffic to a
+router they controlled, then forward it to its intended destination once
+they were done with it, leaving no one the wiser about what had occurred.
+
+Now, five years later, this is exactly what has occurred. Earlier this
+year, researchers say, someone mysteriously hijacked Internet traffic
+headed to government agencies, corporate offices and other recipients in
+the U.S. and elsewhere and redirected it to Belarus and Iceland, before
+sending it on its way to its legitimate destinations. They did so
+repeatedly over several months. But luckily someone did notice.
+
+And this may not be the first time it has occurred -- just the first time
+anyone has noticed.
+
+Analysts at Renesys, a network monitoring firm, said that over several
+months earlier this year someone diverted the traffic using the same
+vulnerability in the so-called Border Gateway Protocol, or BGP, that the
+two security researchers demonstrated in 2008. The BGP attack, a version of
+the classic man-in-the-middle exploit, allows hijackers to fool other
+routers into re-directing data to a system they control. When they finally
+send it to its correct destination, neither the sender nor recipient is
+aware that their data has made an unscheduled stop.
+
+The stakes are potentially enormous, since once data is hijacked, the
+perpetrator can copy and then comb through any unencrypted data freely --
+reading email and spreadsheets, extracting credit card numbers, and
+capturing vast amounts of sensitive information.
+
+The attackers initiated the hijacks at least 38 times, grabbing traffic
+from about 1,500 individual IP blocks -- sometimes for minutes, other times
+for days -- and they did it in such a way that, researchers say, it couldn't
+have been a mistake.
+
+Renesys Senior Analyst Doug Madory says initially he thought the motive was
+financial, since traffic destined for a large bank got sucked up in the
+diversion. But then the hijackers began diverting traffic intended for the
+foreign ministries of several countries he declined to name, as well as a
+large VoIP provider in the U.S., and ISPs that process the Internet
+communications of thousands of customers.
+
+Although the intercepts originated from a number of different systems in
+Belarus and Iceland, Renesys believes the hijacks are all related, and that
+the hijackers may have altered the locations to obfuscate their activity.
+
+``What makes a man-in-the-middle routing attack different from a simple
+route hijack? Simply put, the traffic keeps flowing and everything looks
+fine to the recipient,'' Renesys wrote in a blog post about the hijacks.
+``It's possible to drag specific Internet traffic halfway around the world,
+inspect it, modify it if desired, and send it on its way. Who needs
+fiberoptic taps?''  ...
+
+Dewayne-Net RSS Feed: <http://dewaynenet.wordpress.com/feed/>
+
+------------------------------
+
+Date: Tue, 10 Dec 2013 09:24:54 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Trolls, orcs, and spooks: The breaching of World of Warcraft"
+  (Robert X. Cringely)
+
+Robert X. Cringely, InfoWorld, 09 Dec 2013
+Eight Internet giants have asked Congress to rein in the NSA --
+but let's discuss the spies who may have pwned you online
+http://www.infoworld.com/t/cringely/trolls-orcs-and-spooks-the-breaching-of-world-of-warcraft-232351
+
+------------------------------
+
+Date: December 12, 2013 7:24:40 AM EST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: GCHQ Forced Secure Email Service PrivateSky to Shut Down
+  (Dan Raywood)
+
+Dan Raywood, *IB Times*, 11 Dec 2013 (DH via Dave Farber)
+Security firm CertiVox forced to pull its PrivateSky secure email product
+after GCHQ forced its hand over users' data.
+<http://www.ibtimes.co.uk/articles/529392/20131211/gchq-forced-privatesky-secure-email-service-offline.htm>
+
+PrivateSky was shut down at the beginning of the year after introducing a
+web-based version in beta and for Outlook and had "tens of thousands of
+heavily active users".
+
+Brian Spector, CEO of CertiVox, told IT Security Guru: "Towards the end of
+2012, we heard from the National Technical Assistance Centre (NTAC), a
+division of GCHQ and a liaison with the Home Office, [that] they wanted the
+keys to decrypt the customer data. We did it before Lavabit and Silent
+Circle and it was before Snowden happened.
+
+"So they had persons of interest they wanted to track and came with a Ripa
+warrant signed by the home secretary. You have to comply with a Ripa warrant
+or you go to jail.
+
+"It is the same in the USA with FISMA, and it is essentially a national
+security warrant. So in late 2012 we had the choice to make - either
+architect the world's most secure encryption system on the planet, so secure
+that CertiVox cannot see your data, or spend =A3500,000 building a backdoor
+into the system to mainline data to GCHQ so they can mainline it over to the
+NSA.
+
+"It would be anti-ethical to the values and message we are selling our
+customers in the first place."
+
+Catastrophic invasion of privacy
+
+Spector claimed that if CertiVox had complied with the warrant, it would be
+a "catastrophic invasion of privacy" of users.
+
+"Whether or not you agree or disagree with the UK and US government, this is
+how it is and you have to comply with it," he added.
+
+"We still have PrivateSky and run it internally for own use but we don't
+allow anyone to access it."
+
+He said that from the technology it has implemented a split of the root key
+in the M-Pin technology so it has one half and the user has the other.
+
+"So as far as I know we are the first to do that so if the NSA or GCHQ says
+ 'hand it over' we can comply as they cannot do anything with it until they
+ have the other half, where the customer has control of it." [...]
+
+------------------------------
+
+Date: Fri, 13 Dec 2013 09:09:58 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Adobe patches critical vulnerabilities in Flash Player, Shockwave"
+  (Lucian Constantin)
+
+Lucian Constantin, Infoworld, 11 Dec 2013
+An exploit targets one of the vulnerabilities by using Flash content
+embedded in Microsoft Word documents, Adobe warns
+Adobe patched several vulnerabilities in its Flash Player and
+Shockwave Player on Tuesday, including one for which an exploit is
+already available.
+http://www.infoworld.com/d/security/adobe-patches-critical-vulnerabilities-in-flash-player-shockwave-232468
+
+------------------------------
+
+Date: Tue, 10 Dec 2013 20:16:21 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: `Revenge porn' operator arrested, charged with ID theft (Joe Mullin)
+
+  Now, the owner of one revenge porn website is facing prison. Kevin
+  Bollaert, a 27-year-old San Diego resident, was arrested today for running
+  a website called ugotposted.com and has been charged with 31 counts of
+  identity theft, extortion, and conspiracy. The suspect is being held in
+  jail on $50,000 bail.  "This website published intimate photos of
+  unsuspecting victims and turned their public humiliation and betrayal into
+  a commodity with the potential to devastate lives," said California
+  Attorney General Kamala Harris in a statement about today's
+  arrest. "Online predators that profit from the extortion of private photos
+  will be investigated and prosecuted for this reprehensible and illegal
+  Internet activity."  Bollaert allegedly followed a business model similar
+  to a now-defunct site run out of Colorado called IsAnybodyDown. According
+  to court documents, he created ugotposted a year ago, inviting anyone to
+  post nude pictures of others. Bollaert required that along with the photo,
+  identifying information was posted, including a full name, location, age,
+  and Facebook link.  Then, Bollaert refused to take the posts down-unless
+  the pictured victims paid up.
+    http://j.mp/IOHhCE  (Ars Technica via NNSquad)
+
+------------------------------
+
+Date: Sun, 8 Dec 2013 22:52:21 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: AOL/Facebook/Google/LinkedIn/Microsoft/Twitter/Yahoo:
+	"Reform Government Surveillance"
+
+  "The undersigned companies believe that it is time for the world's
+  governments to address the practices and laws regulating government
+  surveillance of individuals and access to their information."
+    [http://reformgovernmentsurveillance.com via NNSquad]
+
+------------------------------
+
+Date: Friday, December 13, 2013
+From: *Dewayne Hendricks*
+Subject: Bots now running the Internet with 61 percent of Web traffic
+  (Dara Kerr)
+
+Dara Kerr, CNET, 12 Dec 2013
+
+Both good bots and bad bots can be found lurking online -- looking to either
+drive traffic or wreak havoc.
+http://news.cnet.com/8301-1009_3-57615501-83/bots-now-running-the-internet-with-61-percent-of-web-traffic/
+
+With much trepidation, I must report that there is a pretty good chance that
+half the visitors to this story will not be human.
+
+According to a recent study by Incapsula, more than 61 percent of all Web
+traffic is now generated by bots, a 21 percent increase over 2012.
+
+Much of this increase is due to "good bots," certified agents such as search
+engines and Web performance tools. These friendly bots saw their proportion
+of traffic increase from 20 percent to 31 percent.  Incapsula believes that
+the growth of good bot traffic comes from increased activity of existing
+bots, as well as new online services, like search engine optimization.  "For
+instance, we see newly established SEO oriented services that crawl a site
+at a rate of 30-50 daily visits or more," Incapsula wrote in a blog post.
+
+But, along with the good comes the bad. That other 30 percent of bot traffic
+is from malicious bots, including scrapers, hacking tools, spammers, and
+impersonators. However, malicious bot traffic hasn't increased much over
+2012 and spam bot activity has actually decreased from 2 percent to 0.5
+percent.
+
+Of the malicious bots, the `other impersonators' category has increased the
+most -- by 8 percent. According to Incapsula, this group of unclassified
+bots is in the higher-tier of bot hierarchy -- they have hostile intentions
+and are most likely why there's been a noted increase in cyberattacks over
+the last year.  "The common denominator for this group is that all of its
+members are trying to assume someone else's identity," Incapsula wrote. "For
+example, some of these bots use browser user-agents while others try to pass
+themselves as search engine bots or agents of other legitimate services.
+The goal is always the same -- to infiltrate their way through the website's
+security measures."
+
+Here's to hoping the bot visitors that do come to this story are of the
+benign kind.
+
+------------------------------
+
+Date: Fri, 13 Dec 2013 11:21:28 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Greed isn't good: 3 reasons not to bite on the bitcoin"
+  (Robert X. Cringely)
+
+Robert X. Cringely, InfoWorld, 13 Dec 2013
+Bitcoin is blowing up, especially among the tech set, but the virtual
+currency's strong points are also its liabilities
+http://www.infoworld.com/t/cringely/greed-isnt-good-3-reasons-not-bite-the-bitcoin-232623
+
+------------------------------
+
+Date: Tue, 17 Dec 2013 10:21:14 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Botched Black Tuesday patch KB 2887069 freezes, fails to
+  configure, triggers a BSoD, and/or zaps sound drivers" (Woody Leonhard)
+
+Woody Leonhard | InfoWorld, 16 Dec 2013
+Botched Black Tuesday patch KB 2887069 freezes, fails to configure,
+triggers a BSoD, and/or zaps sound drivers
+KB 2887069 patch went down the Automatic Update chute last week with
+an array of problems, but there are workarounds
+http://www.infoworld.com/t/microsoft-windows/botched-black-tuesday-patch-kb-2887069-freezes-fails-configure-triggers-bsod-andor-zaps-sound-drivers-232
+
+------------------------------
+
+Date: Thu, 19 Dec 2013 12:38:46 -0800
+From: "Dennis E. Hamilton" <dennis.hamilton@acm.org>
+Subject: Re: Confirming the MOOC Myth (RISKS-27.64)
+
+While there may be many who believe whatever the MOOC Myth is supposed to
+be, it is also the case that refutations based on the alleged myth can be a
+red herring that avoids some key issues.
+
+First, those who entertain MOOCs are not from the same populations as those
+who sit in our collegiate classrooms.  That strains the arguments
+considerably.
+
+Basically, MOOCs are more comparable to the availability of courses for
+audit, but accessible on-line, for free or nominal charge, whether or not
+offered on something like classroom schedules.
+
+In addition, the courses are free or subject to small fees for verification
+of identity of the participant (an experiment that I've participated in on
+Coursera).
+
+Having participated to various degrees in 7 MOOC offerings to date, leading
+to 3 completions, I have a different perspective.
+
+PROS:
+ 1. Asynchronous delivery and participation.
+
+ 2. Collegiate level material, but seldom any need for textbook expenses.
+
+ 3. Free to try, to audit, to sample, whether or not successfully completed.
+
+ 4. No penalty for do-overs and it is not unusual for multiple starts.  (My
+7 included three starts leading to completion of the Stanford Introduction
+to Cryptography, Part 1.  I would not be surprised for the eventual offering
+of Part 2 to require multiple trials of the course.)
+
+ 5. Ability to calibrate ones interest and availability against the demands
+of a course, and also determine how prepared someone is for the material or
+not.  No risk for sampling, dabbling, or converting to some sort of personal
+self-study.  (The Coursera videos are available for download and there's
+evidently a pattern of this.)
+
+ 6. Students determine what success is for them.
+
+ 7. Intervention of the contingencies of life not representing a financial
+loss.
+
+ 8. No student financial debt.
+
+ 9. Discussion forums and study-group formations that may provide some
+social and mutual discovery support.
+
+10. And, again, students determine what success is for them.  This can be an
+opportunity for a student to conquer something valuable around what failure
+means for them too.
+
+11. No harm, no foul, whatever the measure for any statement of
+accomplishment might be.
+
+12. Appeal to adult learners, independent scholars, housebound,
+geographically-distant individuals, and those who may want a tune-up or
+structured familiarization with a subject of interest, including ones
+somewhat over-qualified.
+
+13. Feedback and observations in delivery of a course can lead to immediate
+remedies and refinements for a future offering.
+
+CONS:
+
+ 1. Unavailability of staff and teaching assistants, although there are some
+courses where the on-line involvement of the lecturer is noteworthy and
+there are experiments to create Community Teaching Assistants (CTAs) among
+the participants who demonstrate their supportive use of the forums.
+
+ 2. Desire by many participants to treat MOOCs as some sort of certification
+mechanism.
+
+ 3. Technology requirements and various technical difficulties, including
+issues of accessibility.
+
+ 4. Not sufficient in themselves, so far, in reaching
+underserved/disadvantaged populations.
+
+ 5. Students determine what success is for them. (Yes, some students have a
+problem with this.  I am ignoring that non-participants and critics may have
+as well.)
+
+ 6. In-person communication and group participation not generally available.
+
+I can add that folks with poor study habits and no anticipation of and
+avoidance of last-minute difficulties will not suddenly reform in attempting
+a MOOC.  It is possible to learn from those experiences though, and that may
+be valuable in itself.
+
+For some extensive insights into how people learn, the unfamiliar approaches
+that MOOCs may require, and also the different range of preparation and
+expectations that participants bring, I recommend the introspective analysis
+of Stanford Professor Keith Devlin following three offerings of his
+"Introduction to Mathematical Thinking" course on Coursera:
+<http://mooctalk.org/>.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.65
+************************

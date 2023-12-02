@@ -1,0 +1,456 @@
+precedence: bulk
+Subject: Risks Digest 30.28
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 9 May 2017  Volume 30 : Issue 28
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.28>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Macron condemns 'massive' hacking attack (BBC)
+Twitter bots are being weaponized to spread information on the French
+  presidential campaign hack (Recode)
+How One Major Internet Company Helps Serve Up Hate on the Web (ProPublica)
+The hijacking flaw that lurked in Intel chips is worse than anyone
+  thought (Ars Technica)
+Fingerprint Authentication (Anthony Thorn)
+How Online Shopping Makes Suckers of Us All (The Atlantic)
+Draft Law Would Require Egyptian Social Media Users to Register With
+  Government (Global Voices)
+Wanna Share News on Social Media? With China's New Rules, You'll Need a
+  Permit For That. (Global Voices)
+Inside VW's Campaign of Trickery (The New York Times)
+Sextortion suspect must unlock her seized iPhone, judge rules (Ars Technica)
+Re: Man gets fined for discovering a flaw (Dave Parnas channeled via PGN)
+Re: Bobby Tables and electoral fraud (Jeremy Epstein)
+Re: Autonomous vehicle... (John Levine, John Levine)
+Re: Senseless Government Rules Could Cripple the Robo-Car Revolution
+  (Anthony Youngman)
+Re: Artificial Intelligence Prevails at Predicting Supreme Court Decisions
+  (Henry Baker)
+Re: The Lost Picture Show: Hollywood Archivists Can't Outpace Obsolescence
+  (Richard A. DeMattia)
+Re: For 18 years... stealing her identity. (Chris Drewe)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 5 May 2017 15:33:08 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Macron condemns 'massive' hacking attack (BBC)
+
+http://www.bbc.com/news/world-europe-39827244
+
+  The campaign of French presidential candidate Emmanuel Macron says it has
+  been the target of a "massive hacking attack" after a trove of documents
+  was released online. The campaign said that genuine files were mixed up
+  with fake ones in order to confuse people. It said that it was clear the
+  hackers wanted to undermine Mr Macron ahead of Sunday's second round
+  vote. The centrist will face off against far-right candidate Marine Le
+  Pen.
+
+------------------------------
+
+Date: Sat, 6 May 2017 12:56:31 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Twitter bots are being weaponized to spread information on the
+  French presidential campaign hack (Recode)
+
+via NNSquad
+Twitter bots are being weaponized to spread information on the French
+presidential campaign hack
+
+https://www.recode.net/2017/5/6/15568582/twitter-bots-macron-french-presidential-candidates-hacked-emails
+
+  Five percent of the accounts tweeting #MacronGate make up 40
+  percent of Tweets.
+
+------------------------------
+
+Date: Fri, 5 May 2017 08:56:59 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How One Major Internet Company Helps Serve Up Hate on the Web
+
+Cloudflare, a prominent San Francisco outfit, provides services to neo-Nazi
+sites like The Daily Stormer, including giving them personal information on
+people who complain about their content.
+
+https://www.propublica.org/article/how-cloudflare-helps-serve-up-hate-on-the-web
+
+------------------------------
+
+Date: Sun, 7 May 2017 11:16:20 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: The hijacking flaw that lurked in Intel chips is worse than anyone
+  thought (Ars Technica)
+
+https://arstechnica.com/security/2017/05/the-hijacking-flaw-that-lurked-in-intel-chips-is-worse-than-anyone-thought/
+
+------------------------------
+
+Date: Sat, 6 May 2017 13:15:41 +0200
+From: Anthony Thorn <anthony.thorn@atss.ch>
+Subject: Fingerprint Authentication
+
+We have already seen plenty of vulnerabilities in Fingerprint systems -
+notably including a dummy finger made from a photograph taken at a press
+conference...
+
+Don't forget that changing your password is a lot easier than changing your
+fingerprint ;-)
+
+Here is another one.  It seems that it is possible to create "a synthetic or
+real partial fingerprint that serendipitously matches one or more of the
+stored templates for a significant number of users."
+
+ref:
+http://ieeexplore.ieee.org/document/7893784/?reload=true
+
+MasterPrint: Exploring the Vulnerability of Partial Fingerprint-based
+Authentication Systems
+
+Abstract: This paper investigates the security of partial fingerprint-based
+authentication systems, especially when multiple fingerprints of a user are
+enrolled. A number of consumer electronic devices, such as smartphones, are
+beginning to incorporate fingerprint sensors for user authentication. The
+sensors embedded in these devices are generally small and the resulting
+images are, therefore, limited in size. To compensate for the limited size,
+these devices often acquire multiple partial impressions of a single finger
+during enrollment to ensure that at least one of them will successfully
+match with the image obtained from the user during authentication. Further,
+in some cases, the user is allowed to enroll multiple fingers, and the
+impressions pertaining to multiple partial fingers are associated with the
+same identity (i.e., one user). A user is said to be successfully
+authenticated if the partial fingerprint obtained during authentication
+matches any one of the stored templates. This paper investigates the
+possibility of generating a MasterPrint, a synthetic or real partial
+fingerprint that serendipitously matches one or more of the stored templates
+for a significant number of users. Our preliminary results on an optical
+fingerprint dataset and a capacitive fingerprint dataset indicate that it is
+indeed possible to locate or generate partial fingerprints that can be used
+to impersonate a large number of users. In this regard, we expose a
+potential vulnerability of partial fingerprint-based authentication systems,
+especially when multiple impressions are enrolled per finger.
+
+  [Also noted by Gabe Goldberg:
+
+    Three Indian-American researchers have shown that the fingerprint-based
+    security systems used in smartphones and other gadgets are way more
+    vulnerable to hacking than we imagined.
+  But: The researchers have not conducted any testing with real phones, and
+  security experts have pointed out that the match rate would be much lower
+  in real-life conditions, and the actual risk "difficult to quantify".
+http://www.rediff.com/getahead/report/even-your-phones-fingerprint-sensor-isnt-safe/20170503.htm
+
+  Master fingerprints can unlock almost any phone, bypassing fingerprint
+  security in seconds
+http://newstarget.com/2017-05-02-master-fingerprints-can-unlock-almost-any-phone-bypassing-fingerprint-security-in-seconds.html
+
+  Hmm. Slightly incoherent popularization, distortion, exaggeration.
+  ]
+
+------------------------------
+
+Date: Fri, 5 May 2017 09:14:31 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How Online Shopping Makes Suckers of Us All (The Atlantic)
+
+https://www.theatlantic.com/magazine/archive/2017/05/how-online-shopping-makes-suckers-of-us-all/521448/
+
+------------------------------
+
+Date: Fri, 5 May 2017 10:43:58 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Draft Law Would Require Egyptian Social Media Users to  Register
+  With Government
+
+NNSquad
+https://globalvoices.org/2017/05/05/draft-law-would-require-egyptian-social-media-users-to-register-with-government/
+
+  Sixty Egyptian members of parliament recently approved a draft law on "the
+  regulations of using and exploiting social media networks." If adopted by
+  the parliament, the law would require social media users in Egypt to
+  register with a government authority in order to use social media websites
+  including Facebook and Twitter. The law would establish a department
+  tasked with granting citizens permission to use social media.  Within six
+  months of the law's adoption, users would have to register on the
+  department's website with their real names and state ID numbers to be able
+  to use social media networks.  Failure to do so could bring punishment of
+  up to six months in jail and a fine. The six-article draft law, which was
+  circulated by local media including Youm7 and Egypt Independent, defines
+  social media as "any application that works via the Internet and is used
+  to communicate with others via voice, video messages and text."
+
+------------------------------
+
+Date: Fri, 5 May 2017 08:42:31 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Wanna Share News on Social Media? With China's New Rules,
+  You'll Need a Permit For That. (Global Voices)
+
+NNSquad
+https://globalvoices.org/2017/05/05/wanna-share-news-on-social-media-with-chinas-new-rules-youll-need-a-permit-for-that/
+
+  China's State Council Information Office released updated regulations on 2
+  May that will restrict individuals from writing and reading news stories
+  from individual blogs and social media, including Sina Weibo and
+  WeChat. Under the news rules, users will be required to obtain a permit
+  before writing or distributing news on social media.  The updated version
+  of the "Provisions for the Administration of Internet News Information
+  Service" will take effect on June 1, 2017.  Along with restrictions on
+  news reporting, the rules will also require individuals to submit real
+  identity information when subscribing to a news information service.
+
+------------------------------
+
+Date: Sun, 7 May 2017 15:46:31 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Inside VW's Campaign of Trickery (The New York Times)
+
+Inside VW's Campaign of Trickery
+https://www.nytimes.com/2017/05/06/business/inside-vws-campaign-of-trickery.html
+
+------------------------------
+
+Date: Fri, 5 May 2017 22:57:28 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Sextortion suspect must unlock her seized iPhone, judge rules
+  (Ars Technica)
+
+https://arstechnica.com/tech-policy/2017/05/judge-miami-reality-tv-star-must-unlock-her-iphone-in-extortion-case/
+
+------------------------------
+
+Date: Fri, 5 May 2017 15:13:49 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Man gets fined for discovering a flaw (RISKS-30.26)
+
+Dave Parnas noted to me that the title of this item was wrong and quite
+misleading.  The man in question was not fined for finding a flaw.  He was
+fined for using a legally restricted title.  No objections were voiced to
+his doing the calculations, but in his letters he repeatedly claimed to be
+an Engineer and the fine was explicitly about that.
+
+This has been misleadingly reported in other media.  Misleading information
+of course creeps into RISKS, and I appreciate Dave helping me to correct the
+record.  Elsewhere it was even sillier.  Dave heard a CBC program that said
+that the man was fined for using mathematics.
+
+Dave believes that, ideally, nobody should call one's self a Software
+Engineer unless they have a license that confirms their qualifications and
+the area of practice for which they are qualified.  For example, someone who
+is qualified to work as an electrical engineer is not necessarily qualified
+to design a road or to write software.  He stresses the *ideally* because
+the licensing systems that he knows do not use the proper standards for
+Software Engineering.
+
+Many U.S. states and Canadian provinces treat the title similarly to the way
+that they treat MD, Lawyer, and Architect -- requiring some sort of license.
+Dave is a Licensed Engineer (P.Eng) in Ontario.  He is licensed because he
+had an accredited Engineering degree and then passed two written exams by
+the local authorities.  His license does not state his area of practice, but
+it obliges him not to practice in areas outside his area of competence.
+
+Laws and regulations may vary from one jurisdiction to another.
+Consequently, a person qualified to work in Ontario or Sweden would not
+automatically be qualified to work in Oregon.  Dave believes that someone
+who wants to work as an Engineer in Oregon should present his or her
+professional records to the Oregon authorities, and apply for a license.
+
+------------------------------
+
+Date: Sat, 6 May 2017 16:00:13 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Re: Bobby Tables and electoral fraud
+
+Important to note that this example is from 2010, and there was never any
+confirmation that it had an impact.  Bruce Schneier discussed it briefly on
+his blog and included links to three Swedish newspaper articles that claim
+the attack failed.
+(https://www.schneier.com/blog/archives/2010/10/pen-and-paper_s.html)
+
+Not disputing that it's a potential threat; just for the record it appears
+to have been unsuccessful.
+
+The more interesting (related) case was the District of Columbia experiment
+(which was before the software was used in a real election - and as a
+result, the software was NOT used in a real election).  In that case, a
+command injection (not SQL injection) was the key to manipulating the
+election.  The flaw was discovered by Alex Halderman and his team of grad
+students at Univ of Michigan.
+
+------------------------------
+
+Date: 6 May 2017 13:07:02 -0400
+From: "John R. Levine" <johnl@iecc.com>
+Subject: Re: Autonomous vehicle... (Shapir, RISKS-30.25)
+
+Someone wrote to me and suggested that while a 100% self-driving vehicle
+would be very hard to make, 80% or 90% would be doable.  But that would be
+incredibly dangerous.  If my car is driving 90% of the time, I'm not likely
+to be paying attention on the rare occasions that it needs my help.  I'll be
+taking a nap or, as in the Tesla crash where the driver was watching a movie
+as his car drove into the side of a semi-trailer.
+
+This is already a problem on airplanes with automated systems that do almost
+all of the work, so the crew can get bored and distracted. This was arguably
+the cause of the Air France crash off Brazil, where what should have been a
+minor problem, a bad reading due to ice on a sensor, turned into a disaster
+because the pilot didn't recognize what it was.
+
+So let's say we back down to 50%, say the car can drive itself on the
+freeway but not on surface streets.  The car's coming to the exit, it sounds
+the chime a few times to tell the driver to take over.  But the driver has
+fallen asleep.  The car sounds the chimes louder, driver doesn't wake up.
+Now what?  Will we have to build a parking lot at every exit?
+
+------------------------------
+
+Date: 5 May 2017 17:44:47 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Autonomous vehicle... (Shapir, RISKS-30.25)
+
+>I think a more reasonable hack would be to put up lots of false stop signs
+>or stop lights.  An always red stoplight would be (1) inexpensive and (2)
+>tie up traffic.
+
+I'm not sure how this is a risk of technology unless the technologies are
+metal bending and light bulbs.  Fake stop signs and traffic lights would
+confuse human drivers at least as much as they'd confuse robots.
+
+The fact that we don't see fakes even after a century of stop signs and
+traffic lights (invented in 1915 and 1914 respectively) suggests that fakes
+are not a significant risk.
+
+------------------------------
+
+Date: Fri, 5 May 2017 20:44:10 +0100
+From: Anthony Youngman <antlists@youngman.org.uk>
+Subject: Re: Senseless Government Rules Could Cripple the Robo-Car
+  Revolution (WiReD via Goldberg, RISKS-30.27)
+
+> The risk? Not answering the question the article poses: So why is the
+> federal agency responsible for our road safety looking to introduce a
+> totally avoidable roadblock to automotive innovation by mandating a severely
+> flawed technological standard for vehicle communications?
+
+And why is the article pointing out that "the problem with only some cars
+supporting DSRC is that Cadillacs will be able to avoid other Cadillacs with
+DSRC but not non-Cadillacs without it", and then it advocates "let the
+manufacturers compete to find out which technology is best" -- which will
+actively encourage cars not to communicate with each other!
+
+This is reminiscent of the mobile phone situation, where any European phone
+would work in any European country because of a mandated standard, while an
+American phone might not even work in the next city down the road!
+
+The other problem I can see with the article is that it seems to advocate
+the 5G solution which I guess relies on a central switching centre. In other
+words, if I'm in the boondocks without a tower in range, I won't be able to
+communicate with the car next to me five feet away!
+
+------------------------------
+
+Date: Fri, 05 May 2017 14:12:56 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: Artificial Intelligence Prevails at Predicting Supreme Court
+  Decisions (Hutson, RISKS-30.27)
+
+Predicting Supreme Court decisions has always been pretty easy, even before
+computers.  For example, Ulmer's 1963 article "Quantitative Analysis of
+Judicial Processes" demonstrated a success rate of 95% based on just 4
+factors in search and seizure cases.  Yet this is only a year after Weiner's
+1962 article "Decision Prediction by Computers: Nonsense Cubed and Worse".
+
+With the extreme polarization of the Supreme Court nominating process,
+Supreme predictions are likely to get even easier, since "mistakes" such as
+Earl Warren and William Brennan won't likely be repeated.
+
+Due to the high stakes involved, one might want to start scanning future
+Supreme Court nominees for embedded control "chips". :-)
+
+------------------------------
+
+Date: Fri, 5 May 2017 15:44:33 -0400
+From: "Richard A. DeMattia" <rademattia@sbcglobal.net>
+Subject: Re: The Lost Picture Show: Hollywood Archivists Can't Outpace
+  Obsolescence (IEEE Spectrum)
+
+> What that means for film archivists with perhaps tens of thousands of LTO
+> tapes on hand is that every few years they must invest millions of dollars
+> in the latest format of tapes and drives and then migrate all the data on
+> their older tapes -- or risk losing access to the information altogether.
+
+It most certainly does *not* mean that. It might mean that film archivists
+must retain hardware capable of reading the obsolescent tapes.
+
+------------------------------
+
+Date: Sun, 07 May 2017 22:46:26 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Re: For 18 years... stealing her identity. (RISKS-30.27)
+
+As it happened, about 10-12 years ago the British government of the
+day was proceeding with plans for ID cards and a national identity
+database; not sure how far it got, but I remember thinking at the
+time how many instances like those above would come to light, and
+if the database could ever have been 'clean' enough to be
+worthwhile.   (UK equivalent to SSN is National Insurance
+number.   At the telecomms company where I worked, this was once
+used as an employee reference until the data protection authority
+pointed out the security risk, so a specially-created different
+number was used instead.)
+
+A 'one truth' database probably looks like a wonderful idea in a discussion
+paper or when presented at a conference, but I suspect that personal
+identity is a more nebulous concept in real life.
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.28
+************************

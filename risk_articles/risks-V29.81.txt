@@ -1,0 +1,402 @@
+precedence: bulk
+Subject: Risks Digest 29.81
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 4 October 2016  Volume 29 : Issue 81
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.81>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Internet: Quo Vadis -- Where are you going? (Karl Auerbach via
+  Geoff Goodfellow)
+Two items on election system integrity (PGN)
+Source code for IoT botnet Mirai Released Krebs 1 Oct (Werner U)
+Leaking Beeps: Here's A Reason to Kick Pagers out of Hospitals
+  (Natasha Hellberg via Werner U)
+AMPAS's Work on Digital Preservation (Lauren Weinstein)
+Re: Risks of using URLs that people imagine are spammers in posts
+  (John Levine, Keith F. Lynch, John Levine)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 3 Oct 2016 19:00:21 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Internet: Quo Vadis -- Where are you going? (Karl Auerbach)
+
+Karl Auerbach's blog:
+  http://www.cavebear.com/cavebear-blog/internet_quo_vadis/
+
+  [PGN-excerpted.  The text is Karl's, except for being PGN-ed for RISKS
+  proper-noun usage of the "Internet"]
+
+I do not believe that the Future Internet will be a Utopia.  Nor do I
+believe that the Future Internet will be like some beautiful angel, bringing
+peace, virtue, equality, and justice.
+
+  [Not visible on my screen in text at precisely this point, the text "Big
+  Brother" subliminally appeared when I copied the surrounding text into
+  this issue!  On a little inspection, it was clear that this resulted from
+  a lovely screen shot related to Orwell's "1984" to the right of the text.
+  Karl, that is VERY CLEVER!  PGN]
+
+Instead I believe that there are strong, probably irresistible, forces
+working to lock down and partition The Internet.
+
+I believe that the Future Internet will be composed of *islands*.
+
+These islands will tend to coincide with countries, cultures, or companies.
+
+There will be barriers between these islands.  And to cross those barriers
+there will be explicit bridges between various islands.
+
+Network traffic that moves over these bridges will be observed, monitored,
+regulated, limited, and taxed.
+
+The Future Internet will be used as a tool for power, control, and wealth.
+
+And to a large degree the users of this Future Internet will not care about
+this.
+
+This paper describes this future -- a future more likely than the halcyon
+world painted by others.
+
+  [Subliminally, OrWell that ends NotWell!  Island, ULand, WeAllLand
+  in the same pickle, but perhaps on different Islands.  PGN]
+
+------------------------------
+
+Date: Tue, 4 Oct 2016 13:31:51 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Two items on election system integrity
+
+1. California Governor Jerry Brown has signed a bill that permits
+   voters to take selfies with their completed ballot.
+
+http://www.marinij.com/government-and-politics/20160929/ballot-selfie-bill-by-assemblyman-levine-signed-into-law
+
+There are at least two problems with this bill.  First, ballot choices are
+supposed to be private.  Second, a voter could take multiple selfies, e.g.,
+one for one candidate and the other for another -- perhaps in hopes of
+selling his/her ballot choices multiply.  Please do not forget the 2010
+Kentucky Clay County convictions for five defendants (including a former
+circuit-court judge) over three election cycles (2002, 2004, 2006), for
+vote-buying and election rigging.  In 2006, they selectively misinformed
+voters that "click here to cast your ballot" actually cast your ballot, when
+ballot choices could still be altered by a hidden item that said "click here
+to change your ballot"; they then were able to change the ballot choices on
+those folks who believed them, as desired.  (See RISKS-25.76 and 25.77.)
+
+This is another case of let the seller beware, as well as the buyer.
+
+2. Bob Sullivan recently interviewed Harri Hursti relating to the Russians
+   reportedly hacking into voter registration databases.  The result is a
+   fascinating and very thoughtful piece.  (Harri is well known for his
+   appearance in the HBO documentary "Hacking Democracy".  Also, see
+   RISKS-23.94, 24.42, 26.91, 27.11.)
+
+https://bobsullivan.net/cybercrime/russians-attacking-u-s-election-systems-heres-the-real-risk-from-a-man-who-fought-soviet-electronic-attacks-during-the-cold-war/
+
+------------------------------
+
+Date: Mon, 3 Oct 2016 09:13:12 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Source code_for IoT botnet Mirai Released Krebs 1 Oct
+
+  [Given Real-World events and dynamics, a nasty cyberwar becomes more
+  likely in the near future...  have you come across any write-ups advising
+  folks that they need to prepare for it, and how?  the virtual-world
+  equivalent of preparing for an approaching hurricane? ...]
+
+Source Code for IoT Botnet Mirai Released
+https://krebsonsecurity.com/2016/10/source-code-for-iot-botnet-mirai-released/
+
+The source code that powers the Internet of Things (IoT) botnet responsible
+for launching the historically large distributed denial-of-service (DDoS)
+attack against KrebsOnSecurity last month has been publicly released,
+virtually guaranteeing that the Internet will soon be flooded with attacks
+from many new botnets powered by insecure routers, IP cameras, digital video
+recorders and other easily hackable devices.  The leak of the source code
+was announced Friday on the English-language hacking community *Hackforums*.
+The malware, dubbed *Mirai*, spreads to vulnerable devices by continuously
+scanning the Internet for IoT systems protected by factory default or
+hard-coded usernames and passwords.
+
+<http://krebsonsecurity.com/?s=hackforums&x=0&y=0>
+<https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/>
+
+Vulnerable devices are then seeded with malicious software that turns them
+into bots, forcing them to report to a central control server that can be
+used as a staging ground for launching powerful DDoS attacks designed to
+knock Web sites offline.  The Hackforums user who released the code, using
+the nickname *Anna-senpai*, told forum members the source code was being
+released in response to increased scrutiny from the security
+industry.  [...]
+
+Sources tell KrebsOnSecurity that Mirai is one of at least two malware
+families that are currently being used to quickly assemble very large
+IoT-based DDoS armies. The other dominant strain of IoT malware, dubbed
+*Bashlight*, functions similarly to Mirai in that it also infects systems
+via default usernames and passwords on IoT devices.
+
+According to research from security firm *Level3 Communications*, the
+Bashlight botnet currently is responsible for enslaving nearly a million IoT
+devices and is in direct competition with botnets based on Mirai. [...]
+
+Infected systems can be cleaned up by simply rebooting them -- thus wiping
+the malicious code from memory. But experts say there is so much constant
+scanning going on for vulnerable systems that *vulnerable IoT devices can be
+re-infected within minutes of a reboot*. Only changing the default password
+protects them from rapidly being reinfected on reboot. [...]
+
+My guess is that (if it's not already happening) there will soon be many
+Internet users complaining to their ISPs about slow Internet speeds as a
+result of hacked IoT devices on their network hogging all the bandwidth. On
+the bright side, if that happens it may help to lessen the number of
+vulnerable systems.
+
+On the not-so-cheerful side, there are plenty of new, default-insecure IoT
+devices being plugged into the Internet each day. *Gartner Inc.* forecasts
+<http://www.gartner.com/newsroom/id/3165317> that 6.4 billion connected
+things will be in use worldwide in 2016, up 30 percent from 2015, and will
+reach 20.8 billion by 2020. In 2016, 5.5 million new things will get
+connected each day, Gartner estimates.
+
+For more on what we can and must do about the dawning IoT nightmare, see the
+second half of this week's story, The Democratization of Censorship
+<https://krebsonsecurity.com/2016/09/the-democratization-of-censorship/>.
+In the meantime, this post
+<https://blog.sucuri.net/2016/09/iot-home-router-botnet-leveraged-in-large-ddos-attack.html>
+from *Sucuri Inc. *points to some of the hardware makers whose
+default-insecure products are powering this IoT mess.
+
+  [If you have difficulties downloading it, you might try this URL:
+    https://github.com/jgamblin/Mirai-Source-Code
+  PGN]
+
+------------------------------
+
+Date: Mon, 3 Oct 2016 06:23:23 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Leaking Beeps: Here's A Reason to Kick Pagers out of Hospitals
+  (Natasha Hellberg)
+
+Natasha Hellberg (Senior Threat Researcher)
+TrendMicro, Targeted Attacks, 26 Sep 2016,
+<http://blog.trendmicro.com/trendlabs-security-intelligence/category/targeted_attacks/>,
+Vulnerabilities
+<http://blog.trendmicro.com/trendlabs-security-intelligence/category/vulnerabilities/>
+
+Today, the Trend Micro Forward-Looking Threat Research team released the
+paper *Leaking Beeps: Unencrypted Pager Messages in the Healthcare
+Industry*, our research about a weakness we identified in pager
+technology. If you are concerned about keeping your health information
+private, I would highly recommend you read through it.  I, for one, was not
+expecting the findings we made.  Pagers are secure, right?  We've used them
+for decades, they are hard to monitor, and that's why some of our most
+trusted industries use them, including the healthcare sector.
+<http://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/are-pagers-leaking-your-patients-phi>*
+
+Nope. Wrong. All it took to see hospital information* in clear text *from
+hundreds of miles (or kilometers if you are a non-US person like me) away is
+an SDR software and a USB dongle.  Frankly, I was stunned.  The problem with
+pagers -- like many other technologies -- is that they were designed and
+developed in a bygone era, and very few people go back to see if current
+technologies easily break the trust we had in these older ones or not (by
+virtue of making ease of monitoring -- accidental or intentional --
+something easily done by a common person).
+
+...READ MORE at:
+http://blog.trendmicro.com/trendlabs-security-intelligence/leaking-beeps-heres-reason-kick-pagers-hospitals/
+
+------------------------------
+
+Date: Mon, 3 Oct 2016 09:07:29 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: AMPAS' Work on Digital Preservation
+
+via NNSquad
+https://plus.google.com/+LaurenWeinstein/posts/eA8NCxLeHaT
+
+On the topic of digital preservation and future compatibility: I want to
+point out the truly excellent work being done in this area by AMPAS (Academy
+of Motion Picture Arts and Sciences -- the Oscar folks) on preserving
+digital assets into the future. As you can imagine, with the move of
+virtually all motion picture production into digital media, this is an area
+of enormous concern to them -- and to me!  They've issued two "Digital
+Dilemma" reports to date that are important reading:
+
+DD1:
+  https://www.oscars.org/science-technology/sci-tech-projects/digital-dilemma
+DD2:
+  https://www.oscars.org/science-technology/sci-tech-projects/digital-dilemma-2
+
+I strongly recommend reading these, before it's too late.
+
+------------------------------
+
+Date: 3 Oct 2016 21:09:24 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Risks of using URLs that people imagine are spammers in posts
+  (Lynch, R 29 80)
+
+>"Russian intelligence services seem responsible for hacking German
+> political groups" cited a URL on the notorious spam website --
+> c o n s t a n t c o n t a c t . c o m
+> I expect that lots of people didn't get the digest for that reason, ...
+
+That seems unlikely.  C.C is a large email service provider whose target
+market is small businesses and non-profits, including very small ones like
+PTAs and boy scout troops.  While they certainly get their share of sleazy
+signups, in my experience they do a good job of managing what they send, and
+their mail is cleaner than competitors like Sendgrid.  The PTAs and scout
+troop members actively want the mail and would be unhappy if overeager spam
+filters discarded it.
+
+The particular message had one line of text and a URL, which is a pattern
+I've seen in vast amounts of phish and malware.  As likely as not it was the
+text+url rather than the particular domain.  I also happen to know the guy
+who hosts your mail and would be surprised if he were blocking mail based on
+oversimple domain checks.
+
+But the real problem is that you can't tell.  It disappeared, you can't tell
+why.
+
+  [The following two messages may be ignored if you are not into this
+  thread.  I thought about rejecting them, but decided that the discussion
+  was worth sharing.  PGN]
+
+------------------------------
+
+Date: Mon,  3 Oct 2016 18:32:24 -0400 (EDT)
+From: "Keith F. Lynch" <kfl@KeithLynch.net>
+Subject: Re: Risks of using URLs that people imagine are spammers in posts
+
+If you're correct, then I'm at risk of being sued for libel.  But I'm
+not worried about it, since truth is a defense.
+
+I roll my own procmail filters, and they log exactly why.  Mostly so I can
+remove any filters which are no longer catching anything.  CC is in no
+danger of being removed.  Here are some recent catches.  (I've removed
+"tact.com" so that this message doesn't trigger the same filter.)  Except
+for the Risks Digest, I've never signed up for any of these lists.  All of
+these unrequested messages are obviously advertising.  Unsolicited
+advertising email is spam by definition.  CC is a spam site.
+
+Why would anyone consent to having their mailbox stuffed with random ads?
+It's just not plausible that enough people would do so for a viable business
+model.  CC's defense is as plausible as a burglars defense that he only
+breaks into houses whose owners consented to have their windows smashed and
+their valuables taken in the middle of the night, and if on very rare
+occasions he makes a mistake and steals from a home whose owner didn't
+consent, well, he's working hard at all times to make sure it doesn't happen
+again.  Do you think any jury is that gullible?
+
+And yet people continue to believe spammer claims that everyone opted in,
+and even if they didn't, all they have to do is "just press delete" and send
+an email asking to be removed.
+
+Before I got wise, I sent several tens of thousands of remove requests, and
+signed up with a similar number of remove lists, including more than a dozen
+"universal" or "global" remove lists.  The only result?  More spam than
+ever.
+
+Each spammer ought to be locked up with a computer, until he has "just
+pressed delete" once for every spam he caused to be sent.  Twice a day he'd
+get an email saying that his meal is ready, and if he accidentally deletes
+that message, he misses that meal, so he'd have to pay attention to every
+message just like all of his victims who wanted to get any use of email have
+to.  How long would his sentence be?  Well, a billion seconds is more than
+30 years, and plenty of spammers have sent more than a billion spams.  A few
+send more than that many every day, more than a trillion over their career.
+As such, some individual spammers are responsible for a loss of useful life
+comparable to that of the 9/11 terrorists.  Instead of stealing about a
+billion seconds from each of 3000 people, they steal about 3000 seconds from
+each of a billion people.
+
+Have you noticed how difficult it's become to find anyone's email address?
+More and more people are treating it as private, so as to keep their mailbox
+from being choked with spam.  Indeed, revealing email addresses is often
+considered a data breach.
+
+Anyhow, here are my recent CC spams, as logged by procmail:
+
+  [PGN-pruned 61 of Keith's logged messages, clearly gratuitous for RISKS.]
+
+------------------------------
+
+Date: 3 Oct 2016 19:20:30 -0400
+From: "John R. Levine" <johnl@iecc.com>
+Subject: Re: Risks of using URLs that people imagine are spammers in posts
+
+Sorry to burst your bubble, but if I showed your rant to CC, I expect
+their response would be wry amusement.
+
+> Unsolicited advertising email is spam by definition.  CC is a spam site.
+
+If your standard is that you reject mail from anyone who's ever sent you
+spam, it's hard to think of any non-trivial mail system whose mail you would
+accept.  Pretty much every university in the country has sent spam to my
+users as has Comcast, Verizon, Yahoo, and of course we get tons from Gmail,
+currently mostly sleazy Indian SEO.  But if you want to block CC, go ahead,
+they won't mind.
+
+I go to MAAWG meetings with both a lot of email service providers and all of
+the large consumer mail systems.  Really, CC is not a problem.  Sure, they
+have clueless customers who scrape addresses off the net or who buy lists
+("but he said it was 100% double opt-in") and they do a reasonably good but
+not perfect job of policing those customers.  In my experience, when I
+report spam they fire the customer (for real, I have a zillion spam traps
+and if they were washing individual addresses, I'd know.)
+
+If the clueless little customers didn't use someone like CC, they'd be
+sending mail using bcc from their desktop mail program, with nobody handling
+bounces, or watching their mail quality.  Be careful what you wish for.
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.81
+************************

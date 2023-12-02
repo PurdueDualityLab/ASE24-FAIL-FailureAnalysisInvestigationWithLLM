@@ -1,0 +1,701 @@
+RISKS-LIST: Risks-Forum Digest  Monday 11 March 2013  Volume 27 : Issue 19
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.19.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Boeing 787s to create half a terabyte of data per flight (Dag-Erling Smorgrav)
+Shaw Internet customers up in arms over lost e-mails during 'interruption'
+  (Lauren Weinstein)
+Radio controlled clocks misinterpret daylight saving time warning bit
+  (Joe Loughry)
+Tor Exit Nodes Located and Mapped (Steve Schear via Dewayne Hendricks)
+9th Circuit Appeals Court: 4th Amendment Applies At The Border; Also:
+  Password Protected Files Shouldn't Arouse Suspicion (Lauren Weinstein)
+"Facebook does damage control after claims of rigged News Feed" (Zach Miners
+  via Gene Wirchenko)
+Seattle bar bans Google Glass over privacy concerns (Mark Thorson)
+"When is your data not your data? When it's in the cloud" (Bill Snyder via
+  Gene Wirchenko)
+"Maybe, just maybe, users can win the privacy war" (Galen Gruman via
+  Gene Wirchenko)
+Skype's Been Hijacked in China, and Microsoft Is O.K. With It (Businessweek
+  via David J. Farber)
+Harvard e-mail spying story (Lauren Weinstein)
+Harvard's e-mail intrusion explanation fails the smell test
+  (Lauren Weinstein)
+Re: How SSD power faults scramble your data (Geoff Kuenning)
+Re: Electronic health records: teething problems? (Arnold Weissberg)
+Re: Yahoo Mail Hack Sending E-mails With Single Link To Rogue Websites
+  (Chris Drewe, Martyn Thomas)
+Re: Major crash at Yahoo Mail de-activates millions of accounts
+  (Jonathan Kamens, Chris J Brady, Jonathan Kamens)
+Re: Trojaned blackmails from PCs. Japanese Police arrested PC owners
+  (Chiaki Ishikawa)
+Abridged info on RISKS (comp.risks)
+----------------------------------------------------------------------
+
+Date: Thu, 07 Mar 2013 13:41:07 +0100
+From: Dag-Erling Smorgrav <des@des.no>
+Subject: Boeing 787s to create half a terabyte of data per flight
+
+http://www.computerworlduk.com/news/infrastructure/3433595/boeing-787s-create-half-terabyte-of-data-per-flight-says-virgin-atlantic/
+
+  ``The latest planes we are getting, the Boeing 787s, are incredibly
+  connected. Literally every piece of that plane has an internet connection,
+  from the engines, to the flaps, to the landing gear.  [...]  We can get
+  upwards of half a terabyte of data from a single flight from all of the
+  different devices which are internet connected,'' [Virgin Atlantic IT
+  director David] Bulman said.
+
+What could *possibly* go wrong?
+
+Dag-Erling Smørgrav - des@des.no
+
+------------------------------
+
+Date: Sun, 10 Mar 2013 22:29:01 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Shaw Internet customers up in arms over lost e-mails during
+  service 'interruption'
+
+  "Shaw e-mail customers are scrambling after an interruption of Shaw's
+  e-mail services Thursday led to millions of e-mails being deleted.  About
+  70 per cent of Shaw's e-mail customers were affected when the company was
+  troubleshooting an unrelated e-mail delay problem and an attempted solution
+  caused incoming e-mails to be deleted, a spokesman told The Sunday
+  Province."  http://j.mp/13OyeK8 (*The Province* via NNSquad)
+
+"Oops."
+
+------------------------------
+
+Date: Sun, 10 Mar 2013 17:05:12 +0000
+From: Joe Loughry <joe.loughry@stx.ox.ac.uk>
+Subject: Radio controlled clocks misinterpret daylight saving time warning bit
+
+Some radio synchronised clocks in USA unexpectedly switched to Daylight
+Saving Time (DST) yesterday hours ahead of schedule.  According to the Time
+and Frequency Division of the National Institute of Standards and Technology
+(NIST), which operates radio station WWVB in Boulder, Colorado, the last two
+significant bits in the time code give a warning that DST changes tomorrow
+and the current state of DST (standard time or daylight saving time).  Some
+clocks changed to DST when the warning bit appeared.
+
+http://www.nist.gov/public_affairs/older-radio-controlled-clocks-may-adjust-early.cfm
+
+Joe Loughry, Doctoral Student in the Department of Computer Science
+St Cross College, Oxford
+
+------------------------------
+
+Date: March 10, 2013 10:11:56 AM EDT
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Tor Exit Nodes Located and Mapped
+
+[Note:  This item comes from friend Steve Schear.  DLH]
+
+Tor Exit Nodes Located and Mapped, 27 Feb 2013
+<http://hackertarget.com/tor-exit-node-visualization/>
+
+Tor Exit Nodes are the gateways where encrypted Tor traffic hits the
+Internet.  This means an exit node can be abused to monitor Tor traffic
+(after it leaves the onion network). It is in the design of the Tor network
+that locating the source of that traffic through the network should be
+difficult to determine. However if the exit traffic is unencrypted and
+contains identifying information then an exit node can be abused.
+
+The torproject therefore is dependent on a diverse and wide range of exit
+nodes. This update to an older page is where I attempt to display the exit
+nodes diversity in a Google map with Geolocation. The map was built using
+Google Maps API v3, with Marker Clusterer.
+
+The majority of exit nodes are likely not monitored and are `safe', they are
+managed by good Internet citizens who believe in the aims of the Tor
+project. However even a handful of bad nodes could be a threat as exit nodes
+are periodically changed as you use the Tor network.  Understand the
+Technology, Understand the Risks.
+
+Use of the Tor Project by activists and Human Rights Defenders can be a
+valuable tool in avoiding surveillance; however you should always have a
+good understanding of the risks and keep your traffic encrypted end to end,
+as any of these exit nodes could be watching your traffic flows.
+
+At the most basic level unless you are using encrypted protocols (HTTPS /
+SSH / TLS), the Tor traffic could be monitored. Here are two simple
+examples: [snip]
+
+Dewayne-Net RSS Feed: <http://www.warpspeed.com/wordpress>
+
+------------------------------
+
+Date: Fri, 8 Mar 2013 16:00:47 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 9th Circuit Appeals Court: 4th Amendment Applies At The Border;
+  Also: Password Protected Files Shouldn't Arouse Suspicion
+
+9th Circuit Appeals Court: 4th Amendment Applies At The Border; Also:
+Password Protected Files Shouldn't Arouse Suspicion
+  http://j.mp/X55bAB  (Techdirt via NNSquad)
+
+  "In a somewhat surprising 9th Circuit ruling (en banc, or in front of the
+  entire set of judges), the court ruled that the 4th Amendment does apply
+  at the border, that agents do need to recognize there's an expectation of
+  privacy, and cannot do a search without reason.
+
+  Furthermore, they noted that merely encrypting a file with a password is
+  not enough to trigger suspicion. This is a huge ruling in favor of privacy
+  rights."
+
+------------------------------
+
+Date: Fri, 08 Mar 2013 11:47:56 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Facebook does damage control after claims of rigged News Feed"
+  (Zach Miners)
+
+  [The risk being about how the rules can keep changing.]
+
+, InfoWorld, 5 Mar 2013
+One user reports a 1,000 percent increase in interaction after paying
+to promote a post
+http://www.infoworld.com/d/applications/facebook-does-damage-control-after-claims-of-rigged-news-feed-213849
+
+------------------------------
+
+Date: Sun, 10 Mar 2013 08:52:21 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Seattle bar bans Google Glass over privacy concerns
+
+Proprietor admits its for the free publicity of being first, too.
+
+http://news.cnet.com/8301-1023_3-57573387-93
+
+------------------------------
+
+Date: Thu, 07 Mar 2013 10:32:28 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "When is your data not your data? When it's in the cloud"
+  (Bill Snyder)
+
+Bill Snyder, *InfoWorld*, 07 Mar 2013
+With Verizon's aid, police arrest a man for storing illegal porn in
+the cloud, which raises questions about how much privacy cloud users can expect
+http://www.infoworld.com/d/the-industry-standard/when-your-data-not-your-data-when-its-in-the-cloud-213988
+
+------------------------------
+
+Date: Fri, 08 Mar 2013 12:02:58 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Maybe, just maybe, users can win the privacy war" (Galen Gruman)
+
+Galen Gruman, InfoWorld, 8 Mar 2013
+A 'silent Big Brother' information state is emerging -- and people
+are starting to realize the danger and act
+http://www.infoworld.com/d/consumerization-of-it/maybe-just-maybe-users-can-win-the-privacy-war-213222
+
+------------------------------
+
+Date: Fri, 8 Mar 2013 15:09:15 -0500
+From: "David J. Farber" <farber@gmail.com>
+Subject: Skype's Been Hijacked in China, and Microsoft Is O.K. With It -
+ Businessweek (Very good article -- link to it!!! djf)
+
+http://www.businessweek.com/articles/2013-03-08/skypes-been-hijacked-in-china-and-microsoft-is-o-dot-k-dot-with-it
+
+Jeffrey Knockel is an unlikely candidate to expose the inner workings of
+Skype's role in China's online surveillance apparatus. The 27-year-old
+computer-science graduate student at the University of New Mexico,
+Albuquerque doesn't speak Chinese, let alone follow Chinese politics. ``I
+don't really keep up with news in China that much,'' he says. But he loves
+solving puzzles. So when a professor pulled Knockel aside after class two
+years ago and suggested a long-shot project -- to figure out how the Chinese
+version of Microsoft's (MSFT) Skype secretly monitors users -- he hunkered
+down in his bedroom with his Dell (DELL) laptop and did it.
+
+Since then, Knockel, a bearded, yoga-practicing son of a retired U.S. Air
+Force officer, has repeatedly beaten the ever-changing encryption that
+cloaks Skype's Chinese service. This has allowed him to compile for the
+first time the thousands of terms -- such as Amnesty International and
+Tiananmen -- that prompt Skype in China to intercept typed messages and send
+copies to its computer servers in the country. Some messages are blocked
+altogether. The lists -- which are the subject of a presentation Knockel
+will make on Friday, March 8, at Boston University, as well as a paper he's
+writing with researchers from the University of Toronto's Citizen Lab -- shed
+light on the monitoring of Internet communications in China. Skype's
+videophone-and-texting service there, with nearly 96 million users, is known
+as TOM-Skype, a joint venture formed in 2005 with majority owner Tom Online,
+a Chinese wireless Internet company. ...
+
+------------------------------
+
+Date: Sun, 10 Mar 2013 09:39:07 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Harvard e-mail spying story
+
+  "Harvard University central administrators secretly searched the e-mail
+  accounts of 16 resident deans last fall, looking for a leak to the media
+  about the school's sprawling cheating case, according to several Harvard
+  officials interviewed by the Globe.  The resident deans sit on Harvard's
+  Administrative Board, the committee charged with handling the cheating
+  case. They were not warned that administrators planned to access their
+  accounts, and only one was told of the search shortly afterward."
+  http://j.mp/12Fvu2B  (Boston.com)
+
+------------------------------
+
+Date: Mon, 11 Mar 2013 11:27:01 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Harvard's e-mail intrusion explanation fails the smell test
+
+  "Harvard Offers Explanation for Search of E-Mail Accounts"
+
+  "Harvard University on Monday offered its first public comments on its
+  searching of staff members' e-mail accounts, saying that the
+  administration had not notified most of those employees because it wanted
+  to protect the one who inadvertently leaked confidential material to the
+  news media."   (The New York Times)
+
+OK, let's get a couple of things straight here.  First, if Harvard wants to
+assert that the Terms of Service of their e-mail system permits
+administrators to monitor the contents of e-mail, that's within their rights.
+This is not at all an uncommon arrangement for corporate e-mail systems,
+though whether or not the Harvard community would agree that it's
+appropriate in their case is a different question.  But for Harvard to try
+to suggest that their intrusion was less significant because only Subject
+lines were inspected is mealymouthed nonsense of the sort we expect from
+governments trying to excuse their own e-mail intrusions.  Subject lines
+contain a great deal of information, and for some messages represent the
+entire effective contents!  Trying to claim Subject lines are not content
+just doesn't fly.  Also, there was of course no guarantee that the Subject
+lines would indicate who had forwarded the messages of interest in this
+case, since (not exactly headline news!) it's possible to forward messages
+(and copy/past text) under completely different Subject lines.  So no matter
+how you slice it, Harvard's overall explanation doesn't seem to really pass
+the smell test very well at all.  Very disappointing from a great
+educational institution.
+
+  [1. It appears to me someone at Harvard overreacted initially,
+      especially if multiple student answers happened to be identical
+      because they were all copied from the same website, which seemed
+      to be in scope of the exam in the first place.
+   2. Subject lines are certainly content-bearing, but might be treated
+      differently -- if for example the text were encrypted, but the
+      subject line were not.  What was the expressed policy, and how
+      was it enforced?
+   3. Smell test? The whole thing smells no matter how you slice it.  PGN]
+
+------------------------------
+
+Date: Thu, 07 Mar 2013 00:31:13 -0800
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: Re: How SSD power faults scramble your data
+
+I have to confess surprise that this paper has made a number of news sites,
+for several reasons--the first being that I'm still not used to the idea
+that the mainstream is interested in this sort of research.
+
+But it's worth noting a few things.  First, the researchers worked very hard
+to produce the power failures in question.  Most installations that use SSDs
+connect them to a reliable power supply, either because they are part of a
+huge datacenter, or because they are built into a laptop that has a battery.
+So the average user is VERY unlikely to see the kinds of failures reported
+in the paper.
+
+Second, the failures weren't universal.  Some SSDs apparently incorporate
+enough internal power (probably via capacitors) to shut down cleanly when
+power is lost.  If I recall the talk correctly, the most reliable behavior
+was at both ends of the cost spectrum.
+
+Third, the test conditions were extreme.  The researchers cut power suddenly
+using a special circuit, while in the middle of writing large amounts of
+data to the drive.  Most real power failures are slower, since the
+line-power drop is smoothed by the DC power supply.  And since few people do
+continuous large writes, statistics are on your side.
+
+Fourth, we should remember hard drives aren't too happy under the same test
+conditions.  So it may not be wise to junk all your SSDs just yet.
+
+And finally, several years of research at the University of Wisconsin have
+revealed some pretty disturbing information about the reliability of
+software file systems under various failure conditions.  So it's not clear
+that power faults are the first thing we should worry about anyway (though
+I'm not ready to take a position one way or the other).
+
+FWIW, I don't use an SSD but it's purely a cost/capacity decision.
+
+    Geoff Kuenning   geoff@cs.hmc.edu   http://www.cs.hmc.edu/~geoff/
+
+I have always wished for my computer to be as easy to use as my telephone;
+my wish has come true because I can no longer figure out how to use my
+telephone.  -- Bjarne Stroustrup
+
+------------------------------
+
+Date: Wed, 6 Mar 2013 23:07:03 -0500
+From: Arnold Weissberg <aweissberg@verizon.net>
+Subject: Re: Electronic health records: teething problems? (RISKS-27.17)
+
+Re: Gene Wirchenko's note (Risks-27.18) about needing an e-mail address to
+"not register" to read an article on line, an excellent service to deal with
+this is 10 Minute Mail (10minutemail.com). This is extremely useful for
+those sites that send you a link to follow in order to access the site.  If
+that's not necessary, make one up.  I'm sure no one's checking.
+
+------------------------------
+
+Date: Sat, 09 Mar 2013 23:56:57 +0000
+From: "Chris Drewe" <e767pmk@yahoo.co.uk>
+Subject: Re: Yahoo Mail Hack Sending E-mails With Single Link To Rogue Websites
+  (RISKS-27.18)
+
+RISKS-27.18 describes various woes with Yahoo! e-mail; no
+idea if there's any connection, but today's 'Daily Telegraph'
+(Mar 9th, 2013) includes this item:
+http://www.telegraph.co.uk/technology/internet-security/9918214/BT-investigates-spike-in-Yahoo-email-spamming.html
+
+In my case: (a) I used to work for BT (nothing to do with their internet
+service) but have no connection now except as a customer and future
+pensioner; and (b) when I started sending personal e-mails in the late 1990s
+I used a company system, but soon needed my own address so set up web-based
+e767pmk@yahoo.co.uk in May 2000.  The company banned personal web mail
+access (due to virus concerns) in 2002 so for my modest e-mail traffic I
+bought a laptop and used Yahoo! e-mail with pay-as-you-go dial-up, via POP
+and SMTP with Netscape's e-mail program (don't laugh) to allow off-line mail
+reading and preparation, which is what I've done ever since, but with
+broadband since 2010.  I specifically chose BT as my ISP knowing that Yahoo!
+provides their e-mail service (as btinternet.com addresses) so that I could
+continue using my Yahoo! address, which has been pretty trouble-free, at
+least so far...
+
+Considering how e-mail is very much essential to modern life, it's a shame
+how flaky the provision is, compared to other utilities, such as plain old
+telephone service.  And how long before it's *ONLY* available in the
+'cloud'..?
+
+------------------------------
+
+Date: Fri, 08 Mar 2013 12:55:27 +0000
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Re: Yahoo Mail Hack Sending E-mails With Single Link To Rogue Websites
+ (RISKS-27.18)
+
+... And OK - I know you shouldn't click on links in e-mails - but folks do.
+
+If we can all agree this, can we please stop blaming the users - and take
+the functionality out of the e-mail client software?
+
+------------------------------
+
+Date: Thu, 07 Mar 2013 09:42:33 -0500
+From: Jonathan Kamens <jik@kamens.us>
+Subject: Re: Major crash at Yahoo Mail de-activates millions of accounts
+ (RISKS-27.18)
+
+It is strange that, in the three e-mails to RISKS about this incident, no
+reference was given to a news source independently corroborating it. It is
+also strange that five days after the supposed incident, I cannot find a
+single report about it on-line. I can't that an incident of the magnitude
+described by Mr. Brady would have gone completely unreported.
+
+I would like to hear more from Mr. Brady about where he obtained the details
+he posted about the incident, and I would like to see some independent
+corroboration. Absent such confirmation, it seems likely to me that
+Mr. Brady and others who claim to have been affected by this "crash" are
+actually victims of a more mundane sort: their accounts were broken into by
+hackers to send spam / scam / phishing e-mails; such hackers often delete all
+old e-mails and contacts to make it harder for the victims to regain access
+to their accounts and warn their contacts that to ignore the bogus e-mails
+sent from them by the hackers.
+
+This theory would seem to be bolstered by the fact that Mr. Brady himself
+sent another e-mail to RISKS, four days after his first e-mail alleging a
+major crash, essentially admitting to having clicked on a link in a phishing
+e-mail and thereby compromising his own Yahoo account.
+
+It is understanding that inaccurate items would occasionally slip through
+and end up in RISKS; it is nevertheless important for us to remain vigilant
+against them and to correct them promptly when they do occur.
+
+------------------------------
+
+Date: Thu, 7 Mar 2013 09:11:02 -0800 (PST)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Re: Major crash at Yahoo Mail de-activates millions of accounts
+  (RISKS-Digest 27.18)
+
+I have no intention of getting into a war of attrition over this issue. The
+facts - as far as I am concerned are these:
+
+* I DID NOT click on any of these trojan virus links - indeed when I get
+ such an e-mail I always send the original sender info. on what it is.
+
+* On Saturday - I and many others - suddenly had my Yahoo Classic e-mail
+account de-activated. When I activated by entering a capcha and clicking on
+Submit I found to my horror that ALL 13 year's worth of folders and e-mails
+and contacts had been deleted.
+
+* After searching the Yahoo Help pages I eventually found a pro-forma for
+requesting a complete restore. I submitted this. Nothing happened for many
+hours. I submitted it again. I received a response that all had been
+restored as per the last snapshot. In fact NOTHING had been restored.
+
+* Meanwhile I was monitoring Y-Mail on Yahoo Groups, Yahoo Answers, Twitter,
+Facebook, and other e-mail forums. There was considerable and increasing
+frustration as evidenced by numerous posts that nothing was being done by
+Yahoo to restore accounts - some Plus accounts.
+
+* I submitted my restore request again (third time). Again some hours later
+I received an e-mail stating that all had been restored. Nothing had been.
+
+* After searching the Yahoo Help pages I eventually found a Customer Service
+no. - unfortunately it was 1-800 for the USA - chargeable at international
+rates from the UK.  Then after making inquiries on various forums I was
+given an 0870 no. (premium rate) and a 0800 no. for the UK. My phone has a
+Giffgaff SIM, luckily 0800 nos. are free. I called that and was on hold for
+90 minutes. Eventually someone responded whom I could barely
+understand. Anyway after 30 minutes of nonsensical conversation the upshot
+was that I should submit yet another restore request via the Help site.
+
+* This was now 48 hours after the initial deletions (for me). The restore
+window was well-past. Yahoo only keeps backups for 48 hours at maximum.
+
+* Eventually on Tuesday I logged in and most folders, e-mails and contacts
+had been restored as they were on the previous Friday. All my e-mails for
+Saturday through to Monday had gone for good - apparently a result of the
+restore.
+
+* Additionally I compiled a list of just a few cases to send to Yahoo CS for
+them to see just how concerned their members were. This was bounced back as
+undeliverable.
+
+  [Very Long item of e-mail sent to cc-advoc@yahoo-inc.com omitted here.]
+
+------------------------------
+
+Date: Thu, 07 Mar 2013 13:17:38 -0500
+From: Jonathan Kamens <jik@kamens.us>
+Subject: Re: Major crash at Yahoo Mail de-activates millions of  accounts
+  (RISKS-27.18)
+
+On 03/07/2013 12:11 PM, Chris J Brady wrote:
+> I have no intention of getting into a war of attrition over this issue.
+
+If you are going to make serious accusations of malfeasance against a major
+corporation and its employees in a respected, public forum, you ought to be
+prepared to support or retract them.
+
+I've reviewed all the information you sent. None of it supports any of your
+claims about the cause or scope of the problem.
+
+There are numerous reasons why any single, active Yahoo account might be
+wiped and deactivated without the consent of its owner.
+
+There are numerous possible explanations other than the one you gave for why
+there might be a sudden sharp uptick in the perceived number of such
+deactivated accounts.
+
+I understand that you are angry about what happened to your account; I would
+be, too. I am sorry about what you and others have experienced.  I agree
+with you that Yahoo deserves criticism for their poor handling of the
+situation, regardless of whether it's their fault. It may turn out that it
+*was* their fault after all. Nevertheless, there is as yet no evidence of
+that, and these unfortunate events and Yahoo's poor response to them do not
+justify the statement as fact of serious, unsubstantiated allegations.
+
+------------------------------
+
+Date: Mon, 11 Mar 2013 11:25:32 +0900
+From: Chiaki Ishikawa <ishikawa@yk.rim.or.jp>
+Subject: re: Trojaned blackmails from PCs. Japanese Police arrested PC owners
+
+I reported earlier about the ordeal of a few people who were arrested by the
+police in Japan because the computer trojan/virus they somehow downloaded
+sent threatening notes to various services.  The police thought these people
+were the real perpetrators.  But the real party behind the bot/virus and the
+blackmails sent a revealing e-mail to a lawyer, and demanded the wrongly
+arrested people be freed. The e-mail contains information that was only
+available to the person sending the original black mails. As a result of
+this e-mail, and as the result of a local Police who found the trace of
+suspected unknown virus-like activity on one of the computers of the
+arrested men, the charges were dropped for all the falsely arrested people,
+and freed.  [ Trojan sent blackmails from PCs. Japanese Police arrested PC
+owners 27.10]
+
+Sorry for the long posting, but I am not sure if this news coverage is
+available in English in any detail and it is worth reporting what happens in
+this corner of the world.
+
+Now, the new twist at the end of last year.
+
+Japanese police set up a Facebook page towards the end of the last year for
+courting the information related to the wrong-doing so that they may be able
+to clue in the original identity of the perpetrator.
+
+This was the first time the Japanese police turned to SNS for this type of
+investigation. Ironically, it was all too clear that the Japanese police did
+not have the technical expertise to handle this type of the crime. The
+arrests were made just because the IP addresses recorded in the logs matched
+these people's computers despite some claimed no knowledge and even
+suggested that someone may hijacked Wi-Fi, but the police would not listen
+to it, etc.
+
+I doubt how useful the Facebook page was. Some even speculated that this
+Facebook was a ploy to irritate the perpetrator to commit more acts which
+may leak information to the real identity. (If so, it may have worked in
+either positive or negative way. See the new event described later.)
+
+Also, after the falsely arrested people were released, police leaked words
+that their investigation was blocked due to the use of TOR network through
+which the virus or bot was uploaded originally.  I was afraid that TOR was
+given a bad name just because of this incidence.  To my relief, some
+commentators on TV did stress that TOR has a place in the society for
+whistle-blowers and dissidents in dictatorial countries.
+
+(I can not access the facebook page any more. It seems to have been closed
+due to the development described below. )
+
+Still more twists this year.
+
+Just prior to the new year's day and a few days later, a couple of e-mails
+were sent to the Police and major TV and print press stating that a certain
+key piece that is pertinent to the crime is buried in a place (the first one
+suggested a mountain in the western suburb of Tokyo and the second mail
+suggested a cat in very small island just off the beach south west of
+Tokyo).  Then the police arrested a 30 years old man with a previous record
+of arrest due to a blackmail posted to a popular BBS after a copyright issue
+got nasty regarding a cartoon-like cat figure (ASCII art) escalated several
+years ago.
+
+But the reason for the arrest is not quite digital if you expect some
+advanced ICT evidence.
+
+A memory media was found inside a collar that was attached to a stray cat in
+the smallish island as claimed by the e-mail.  And the man arrested on Feb
+5th is said to have been captured earlier by one of the newly installed
+surveillance cameras on the island padding the particular cat, etc.  (But as
+far as the incriminating evidence that the collar was put by the man on this
+stray cat goes, it may not be on the video.  Despite press scrutiny, the
+police kept mum about this key point.)
+
+Another couple of evidences which the police seem to suggest: (I am culling
+these from various media articles. Unlike USA, the discovery process for
+police/prosecutor evidence to figure out how strong a case is for meriting a
+public prosecution is not done in Japan despite the lawyers demanding such
+procedure to take place. So frankly I don't know what the police in store
+until the court business proceeds very far.)
+
+(a) - the newly arrested man uses Hewlett Packard PC at a place where he is
+   hired as temp hand, and the virus/bot written in C# carried an
+   identification record which suggests it was compiled on an HP PC.
+
+  [OK, I did not know that the virus/bot used C#. But obviously police asked
+  many anti-virus makers about the origin and the nature of the
+  trojan/virus, and the words were out to the general public that the
+  virus/bot was written in C#.]
+
+(b) - There is an evidence in the log that his PC connected one of the
+   TOR connection gateways at least a few times in the past. (But it is
+   not clear what happened through the connection, etc.)
+
+The lawyer for the man has already spelled out that
+
+ - the man claims no knowledge of C#, and he wonders why anyone thought he
+   wrote the trojan/virus (written in C#).
+
+ - the man denied putting the media inside the collar that was on this
+   particular cat.
+
+Also, he was caught on a camera of a TV station a day or two before the
+arrest (it seems that the police leaked the on-going investigation leading
+to the man) and he seemed to be utterly careless. (I would have thought a
+man leaving behind such a deed would be more careful like trying to see if
+someone is trailing him now and then. But I digress.)
+
+Any readers reading RISKS worth his/her salt would see that it is so easy to
+rebut claims (a) and (b).
+
+I have a feeling that the new e-mails around the new year's and the the
+memory media placed on the cat that led to the arrest is a big joke played
+by the real perpetrator who knows the regular activity pattern of the newly
+arrested man. It would be so simple to plant the memory media in advance if
+the man is known to go such a place to pad on the popular cats in the
+island, etc.
+
+After all the mastermind behind the blackmails explained in his/her e-mail
+that the intention was to reveal the ineptitude of the Japanese police
+handling the cybercrime in general.
+
+It my fear turns correct, then the Japanese police will have no authority to
+regulate the cybercrime in the public eyes for some time to come. *That*
+will be a sad outcome of the series of events.
+
+We have to wait and see.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.19
+************************
+
+--_002_5c67930324324a8d94a8b2b5fd23f2baEXHUBVM03campusnclacuk_--

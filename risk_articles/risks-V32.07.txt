@@ -1,0 +1,804 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.07
+
+RISKS-LIST: Risks-Forum Digest  Friday 3 July 2020  Volume 32 : Issue 07
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.07>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+A Doctor Confronts Medical Errors -- And Flaws In The System That Create
+  Mistakes (npr.org)
+U.S. Watchdog's Report Faults Boeing's Disclosures on 737 Max Software
+  (NYTimes)
+U.S. Cyber-Command says foreign hackers will most likely exploit new PAN-OS
+  security bug (ZDNet)
+Education Dept. left Social Security numbers of thousands of borrowers
+  exposed for months (WashPost)
+China's Software Stalked Uighurs Earlier and More Widely (NYTimes)
+A New Ransomware Targeting Apple macOS Users Through Pirated Apps
+  (The Hacker News)
+Breaking HTTPS in the IoT: Practical Attacks For Reverse Engineers
+  (BishopFox)
+When speech assistants listen even though they shouldn't (Julia Weiler)
+Over 400 Advertisers Hit Pause On Facebook, Threatening $70 Billion
+  Juggernaut (NPR)
+How Police Secretly Took Over a Global Phone Network for Organized Crime
+  (Irish News)
+Your next BMW might only have heated seats for 3 months (CNET)
+Microsoft releases emergency security update to fix two bugs in Windows
+  codecs (ZDNet)
+Mr Potato Head sales problem (mykawartha)
+Deepfake Technology Enters the Documentary World (NYTimes)
+Fake 5G coronavirus theories have real-world consequences (WashPost)
+How automation is growing amid coronavirus outbreak and beyond
+  (Orange County Register)
+Schools already struggled with cybersecurity. Then came COVID-19 (WiReD)
+Scary New Coronavirus is Now Infecting Millions, Study Says (CNN)
+Barbara Simons Receives 2019 ACM Policy Award (ACM)
+Re: Ripple20 IP stack vulnerability may affect literally billion devices
+  (Brian Inglis)
+Re: Smells Fishy? The Fish That Prevent Iran From Hacking Israel's Water
+   System (David E. Ross)
+Re: 40 msecs to go halfway around the Earth? (Henry Baker, Michael Bacon)
+Re: Quote of The Day (Henry Baker)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 1 Jul 2020 11:31:47 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: A Doctor Confronts Medical Errors -- And Flaws In The System That
+  Create Mistakes (npr.org)
+
+https://www.npr.org/sections/health-shots/2020/06/30/885186438/a-doctor-confronts-medical-errors-and-flaws-in-the-system-that-create-mistakes
+
+Mistakes and lessons learned from medical practitioners that may resonate
+with comp.risks readers.
+
+1) "On how the checklist system used in medicine was adapted from aviation"
+
+"In the aviation industry, there was a whole development of the process
+called "the checklist." And some people date this back to 1935 when a very
+complex [Boeing] B-17 [Flying] Fortress was being tested with the head of
+the military aviation division. And it exploded, and the pilot unfortunately
+died. And when they analyzed what happened, they realized that the high-tech
+airplane was so complex that a human being could not keep track of
+everything. And that even if he was the smartest, most experienced pilot, it
+was just too much and you were bound to have an error. And so they developed
+the idea of making a checklist to make sure that every single thing you have
+to check is done. And so it put more of the onus on a system, of checking up
+on the system, rather than the pilot to keep track of everything. And the
+checklist quickly decreased the adverse events and bad outcomes in the
+aviation industry."
+
+The interview stream continues with "On how the checklist system did not
+result in improved safety outcomes when implemented in Canadian operating
+rooms" reveals how checklists can compromise safety.
+
+Software stack release life cycle and ecosystem-wide deployment (aka change
+management) are governed by standard operating procedures and checklists to
+guide governance readiness based on must-fix versus 'deferred or exempt from
+fix, add to release notes' to 'kick bits out the door' for sale.
+
+Ecosystem deployment checklists cannot do not guarantee an organization
+against data breach or ransomware incidents. Public data privacy stewardship
+and effective computer ecosystem protections are traded for profit. Law
+enforcement pursues cybercriminals more than owners/operators of deployed
+platforms recognized as vulnerable to burgeoning risk perimeters and
+recurrent incidents.
+
+2) "Electronic medical records"
+
+"[Electronic medical records] really started as a method for billing, for
+interfacing with insurance companies and medical billing with diagnosis
+codes. And that's the origin. And then it kind of retroactively was expanded
+to include the patient care. And so you see that difference now."
+
+A solution scoped to expedite fee-for-service billing (revenue capture and
+realization) transitions into the doctor's office and compromises patient
+care. EHRs transform physicians into point-of-sale entry clerks to reduce
+back-end corporate expenses (aka overhead). EHR deployment transition
+diminishes nationwide healthcare effectiveness.
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 21:55:47 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: U.S. Watchdog's Report Faults Boeing's Disclosures on 737 Max
+  Software (NYTimes)
+
+Boeing has completed a series of test flights, but a return to the skies
+will depend on more safety milestones.
+
+https://www.nytimes.com/2020/07/01/business/boeing-faa-737-max.html
+
+------------------------------
+
+Date: Tue, 30 Jun 2020 07:38:54 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: U.S. Cyber-Command says foreign hackers will most likely exploit
+  new PAN-OS security bug (ZDNet)
+
+Palo Alto Networks disclosed today a major bug that lets hackers bypass
+authentication on its firewall and corporate VPN products.
+
+https://www.zdnet.com/article/us-cyber-command-says-foreign-hackers-will-most-likely-exploit-new-pan-os-security-bug/
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 08:19:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Education Dept. left Social Security numbers of thousands of
+  borrowers exposed for months (WashPost)
+
+The U.S. Department of Education for at least six months left the Social
+Security numbers of nearly 250,000 people seeking student debt relief
+unprotected and susceptible to a data breach.
+
+https://www.washingtonpost.com/education/2020/06/30/education-dept-left-social-security-numbers-thousands-borrowers-exposed-months/
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 08:15:42 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: China's Software Stalked Uighurs Earlier and More Widely,
+  Researchers Learn (NYTimes)
+
+A new report revealed a broad campaign that targeted Muslims in China and
+their diaspora in other countries, beginning as early as 2013.
+
+https://www.nytimes.com/2020/07/01/technology/china-uighurs-hackers-malware-hackers-smartphones.html
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 11:52:05 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: A New Ransomware Targeting Apple macOS Users Through Pirated Apps
+  (The Hacker News)
+
+Cybersecurity researchers this week discovered a new type of ransomware
+targeting macOS users that spreads via pirated apps.
+
+According to several independent reports from K7 Lab malware researcher
+Dinesh Devadoss
+<https://twitter.com/dineshdina04/status/1277668001538433025>, Patrick
+Wardle <https://objective-see.com/blog/blog_0x59.html>, and Malwarebytes
+<https://blog.malwarebytes.com/mac/2020/06/new-mac-ransomware-spreading-through-piracy/>,
+the ransomware variant -- dubbed "EvilQuest" -- is packaged along with
+legitimate apps, which upon installation, disguises itself as Apple's
+CrashReporter or Google Software Update.
+
+Besides encrypting the victim's files, EvilQuest also comes with
+capabilities to ensure persistence, log keystrokes, create a reverse shell,
+and steal cryptocurrency wallet-related files.
+
+With this development, EvilQuest joins a handful of ransomware strains that
+have exclusively singled out macOS, including KeRanger
+<https://unit42.paloaltonetworks.com/new-os-x-ransomware-keranger-infected-transmission-bittorrent-client-installer/>
+and Patcher
+<https://www.welivesecurity.com/2017/02/22/new-crypto-ransomware-hits-macos/>
+[...]
+
+https://thehackernews.com/2020/07/macos-ransomware-attack.html
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 11:51:05 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Breaking HTTPS in the IoT: Practical Attacks For Reverse Engineers
+  (BishopFox)
+
+As the old joke goes, the 'S' in 'IoT' stands for security. While (Internet
+of) Things can vary *wildly* in design robustness and overall security, many
+embedded devices nowadays have at least the basic protections in place.
+Happily, the egregious security mistakes of the past are now becoming less
+and less common. Despite the stereotype, Things in the IoT aren't quite as
+bad as they used to be (pun intended).
+
+For instance, the use of insecure communications (e.g., unencrypted HTTP),
+is now only found in a minority of Bishop Fox client product assessments,
+which gives a somewhat positive (and admittedly biased) picture of IoT
+security trends. In a twist of irony, the increasingly common implementation
+of encrypted communications to repel attackers is also an obstacle for pen
+testers assessing the security of the products, since the data is now hidden
+to everyone but the client and server. Overall, it's a win for security, but
+it's required us to develop new tactics for getting into that data.
+
+In my time at Bishop Fox, I've had to overcome this problem on many, many
+hardware assessments, with Things ranging from consumer gadgets to
+networking equipment to Internet-connected industrial control systems.
+Regardless of the specific implementation, the goal at the start of every
+assessment is the same: decrypt HTTPS traffic so I can understand what the
+system is doing and why. Once I have this understanding, I can begin to
+attack the device itself, upstream services, and sometimes even other
+devices.
+
+In this post I'll show you three attack techniques for performing Man-in-the
+Middle attacks against production-grade, HTTPS-protected Things.  For these
+examples, we'll assume you're redirecting all the device's traffic through
+an HTTPS-aware proxy (like Burp), and that you have no administrative
+control over the device. All you have at the start is a view of the
+unintelligible encrypted stream, showcasing the full spectrum of unprintable
+ASCII characters: [...]
+https://labs.bishopfox.com/tech-blog/breaking-https-in-the-iot
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 10:21:42 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: When speech assistants listen even though they shouldn't
+  (Julia Weiler)
+
+Julia Weiler, Ruhr-Universitaet Bochum, Translated by Donata Zuber,
+30 June 2020
+
+  Researchers from Ruhr-Universität Bochum (RUB) and the Bochum Max Planck
+  Institute (MPI) for Cybersecurity and Privacy have investigated which
+  words inadvertently activate voice assistants. They compiled a list of
+  English, German, and Chinese terms that were repeatedly misinterpreted by
+  various smart speakers as prompts. Whenever the systems wake up, they
+  record a short sequence of what is being said and transmit the data to the
+  manufacturer. The audio snippets are then transcribed and checked by
+  employees of the respective corporation. Thus, fragments of very private
+  conversations can end up in the companies' systems.
+
+  Süddeutsche Zeitung and NDR reported on the results of the analysis on 30
+  June 2020. Examples yielded by the researchers' analysis can be found at
+  unacceptable-privacy.github.io.
+
+https://news.rub.de/english/press-releases/2020-06-30-it-security-when-speech-assistants-listen-even-though-they-shouldnt
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 09:26:05 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Over 400 Advertisers Hit Pause On Facebook, Threatening $70 Billion
+  Juggernaut (NPR)
+
+Over 400 Advertisers Hit Pause On Facebook, Threatening $70 Billion Juggernaut
+
+https://www.npr.org/2020/07/01/885853634/big-brands-abandon-facebook-threatening-to-derail-a-70b-advertising-juggernaut?utm_medium=RSS&utm_campaign=news
+
+------------------------------
+
+Date: Thu, 2 Jul 2020 09:00:20 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: How Police Secretly Took Over a Global Phone Network for Organized
+  Crime (Irish News)
+
+*Police monitored a hundred million encrypted messages sent through
+Encrochat, a network used by career criminals to discuss drug deals,
+murders, and extortion plots.*
+
+Something wasn't right. Starting earlier this year, police kept arresting
+associates of Mark, a UK-based alleged drug dealer. Mark took the security
+of his operation seriously, with the gang using code names to discuss
+business on custom, encrypted phones made by a company called Encrochat.
+For legal reasons, Motherboard is referring to Mark using a pseudonym.
+
+Because the messages were encrypted on the devices themselves, police
+couldn't tap the group's phones or intercept messages as authorities
+normally would. On Encrochat, criminals spoke openly and negotiated their
+deals in granular detail, with price lists, names of customers, and explicit
+references to the large quantities of drugs they sold, according to
+documents obtained by Motherboard from sources in and around the criminal
+world.
+
+Maybe it was a coincidence, but in the same time frame, police across the UK
+and Europe busted a wide range of criminals. In mid-June, authorities picked
+up an alleged member of another drug gang.
+<https://www.irishnews.com/news/northernirelandnews/2020/06/18/news/court-hears-police-uncovered-evidence-of-large-scale-supply-and-importation-of-drugs-on-encrypted-phone-1977585/
+
+A few days later, law enforcement seized millions of dollars worth of
+illegal drugs in Amsterdam. It was as if the police were detaining people
+from completely unrelated gangs simultaneously.  "[The police] all over it
+aren't they," the dealer wrote in one of the messages obtained by
+Motherboard. "My heads still baffled how they got on all my guys."
+<https://www.thesun.ie/news/5564093/irish-crime-gangs-drugs-seized-oranges-melons/>
+
+Unbeknownst to Mark, or the tens of thousands of other alleged Encrochat
+users, their messages weren't really secure. French authorities had
+penetrated the Encrochat network, leveraged that access to install a
+technical tool in what appears to be a mass hacking operation, and had been
+quietly reading the users' communications for months. Investigators then
+shared those messages with agencies around Europe.
+
+"I've never seen anything like this."
+
+Only now is the astonishing scale of the operation coming into focus: It
+represents one of the largest law enforcement infiltrations of a
+communications network predominantly used by criminals ever, with Encrochat
+users spreading beyond Europe to the Middle East and elsewhere. French,
+Dutch, and other European agencies monitored and investigated "more than a
+hundred million encrypted messages" sent between Encrochat users in real
+time, leading to arrests in the UK, Norway, Sweden, France, and the
+Netherlands, a team of international law enforcement agencies announced
+Thursday. [...]
+https://www.vice.com/en_us/article/3aza95/how-police-took-over-encrochat-hacked
+
+------------------------------
+
+Date: Thu, 2 Jul 2020 09:01:20 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Your next BMW might only have heated seats for 3 months (CNET)
+
+As services-based economies sweep every industry, it's time for the
+automotive realm to carry on.
+
+German luxury cars are renowned for the breadth of their options sheets. On
+one hand, this means you can get your next BMW 5 Series
+<https://www.cnet.com/news/2021-bmw-5-series-hybrid-power-price-msrp/>
+configured exactly how you want it. On the other hand, it means you'll often
+wind up paying for extra for seemingly basic things like, say, a spare tire.
+Now, BMW is raising the ante by making many car options into software
+services enabled whenever you want them. The disconcerting part? They can be
+disabled, too.
+
+In a VR presentation streamed from Germany today, BMW ran through a series
+of digital updates to its cars, including more details on the new BMW
+digital key <https://www.cnet.com/news/apple-car-keyless-entry-ios-bmw/>
+service announced with Apple at last week's WWDC and confirming that current
+model cars will be fully software upgradeable over the air, a la Tesla. The
+first such update will hit BMW Operating System 7 cars in July. Packages are
+said to be approximately 1GB in size and will take roughly 20 minutes to
+install.
+
+But, the most notable part of the day's presentation was the new plan to
+turn many options into software services. BMW mentioned everything from
+advanced safety systems like adaptive cruise and automatic high-beams to
+other, more discrete options like heated seats.
+
+These options will be enabled via the car or the new My BMW app. While some
+will be permanent and assigned to the car, others will be temporary, with
+mentioned periods ranging from three months to three years. Some,
+presumably, will be permanent, but during the stream's Q&A portion BMW
+representatives demurred on the details.
+
+So, yes, you could theoretically only pay for heated seats in the colder
+months if you like, or perhaps save a few bucks by only enabling automatic
+high-beams on those seasons when the days are shortest. [...]
+https://www.cnet.com/roadshow/news/bmw-vehicle-as-a-platform/
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 22:35:09 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Microsoft releases emergency security update to fix two bugs in
+  Windows codecs (ZDNet)
+
+Security updates have been silently deployed to customers on Tuesday through
+the Windows Store app.
+
+https://www.zdnet.com/article/microsoft-releases-emergency-security-update-to-fix-two-bugs-in-windows-codecs/
+
+------------------------------
+
+Date: Tue, 30 Jun 2020 17:48:30 -0400 (EDT)
+From: Eli the Bearded <*@qaz.wtf>
+Subject: Mr Potato Head sales problem (mykawartha)
+
+Full url:
+https://www.mykawartha.com/news-story/10054836-canadian-tire-peels-back-problem-with-mr-potato-head-glitch-in-lindsay/
+
+Short url: https://potato-head.on-a.pizza/
+
+  Canadian Tire is attributing the glitch that caused all items at Lindsay's
+  Canadian Tire to scan as a Mr. Potato Head toy to a downloading error.
+
+  Five stores in Lindsay and Whitby were impacted in the bizarre computer
+  system fritz that started around 7 a.m. Monday (June 29). A staff member
+  from Lindsay Canadian Tire who wished to remain anonymous said any item
+  the team scanned showed the same product number and information as the
+  popular toy.
+
+  Cathy Kurzbock, manager of external communications for the Canadian Tire
+  Corporation, clarified the glitch only made the names of products appear
+  the same, not the prices or the item numbers. She said the anomaly didn't
+  effect stores outside of Lindsay or Whitby.
+
+Sounds like this would have made for whimsical receipts and difficult
+returns.
+
+------------------------------
+
+Date: Wed, 1 Jul 2020 22:02:27 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Deepfake Technology Enters the Documentary World (NYTimes)
+
+A film about persecuted gays and lesbians in Chechnya uses digital
+manipulation to guard their identities without losing their humanity. The
+step raises familiar questions about nonfiction movies.
+
+https://www.nytimes.com/2020/07/01/movies/deepfakes-documentary-welcome-to-chechnya.html
+
+------------------------------
+
+Date: Thu, 2 Jul 2020 08:59:22 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Fake 5G coronavirus theories have real-world consequences
+  (WashPost)
+
+Conspiracy theories have driven people to burn cellular equipment. Telecom
+workers have had to bear the brunt of this.
+
+Telephone engineer David Snowdon was just returning to his van after an
+assignment repairing a cell site when a car sped past him, spun around and
+stopped right in front of him. Two men got out of the vehicle and asked him
+if he had anything to do with 5G <https://www.cnet.com/5g/> masts.
+
+"You better not be or there will be f*cking trouble," said one of the men,
+before kicking the door of Snowdon's van, smacking the mirror around and
+walking off.
+
+Initially, the 56-year-old from Birmingham in the UK's Midlands region
+thought that what he experienced was an isolated incident. Then he did some
+research.
+
+"The next day, I went onto Facebook and there it all was, this big 5G
+conspiracy," he said in a phone call with CNET. "I thought, I better report
+this, and when I reported it to our security team, they went, 'Yeah,
+there's been quite a few.'"
+
+Over the past four months, telecom engineers across the UK have been
+subjected to verbal and physical abuse, or targeted online harassment and
+doxxing. The U.S. Department of Homeland Security issued a warning
+<https://www.washingtonpost.com/national-security/dhs-to-advise-telecom-firms-on-preventing-5g-cell-tower-attacks-linked-to-coronavirus-conspiracy-theories/2020/05/13/6aa9eaa6-951f-11ea-82b4-c8db161ff6e5_story.html>
+to carriers about potential threat to wireless equipment here. All because
+some people are buying into the conspiracy theory that 5G is to blame for
+the coronavirus
+<https://www.cnet.com/health/coronavirus-test-how-long-does-it-take-to-get-covid-19-results-back/>
+pandemic, something that popped up just as the disease spread beyond China
+in January.
+
+5G has been a target of conspiracy theorists for as long as it's been
+around, just as with 4G and 3G before it. But what's different this time
+around is that people started linking it in various ways to COVID-19, saying
+either that the technology weakens immune systems, or even that it's
+responsible for directly transmitting the virus.
+
+Scientists around the world are in agreement that all such claims are
+categorically false. [...]
+<https://www.cnet.com/news/5g-has-no-link-to-covid-19-as-social-media-aims-to-squash-false-conspiracy-theory/>
+https://www.cnet.com/news/fake-5g-coronavirus-theories-have-real-world-consequences/
+
+------------------------------
+
+Date: Tue, 30 Jun 2020 12:50:32 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: How automation is growing amid coronavirus outbreak and beyond
+  (Orange County Register)
+
+https://www.ocregister.com/2020/06/29/how-automation-is-growing-amid-coronavirus-outbreak-and-beyond/
+
+"Even before the global pandemic, waiting in line to get prescriptions
+filled in a pharmacy was a pain. Enter NowRx, a company that started in the
+Bay Area and expanded to Orange County with sights on extending its reach to
+other regions of the state and Arizona.
+
+"The company claims it has 99% of the pharmaceuticals typically found at
+brick-and-mortar pharmacies (and online) and can deliver medication to you
+on the day or sometimes hours after your doctor submits a prescription."
+
+Pharmacists fulfill an essential role: trained to decipher a physician's
+enciphered scrawl, they also alert patients to dangerous interactions among
+prescriptions possibly overlooked by their doctor. One website that
+identifies them is drug interaction checker:
+https://reference.medscape.com/drug-interactionchecker.
+
+NowRX dispenses with consultation. Pharmacists have become too expensive and
+slow: they fill only ~100/day per person with an unacceptable error
+rate. The robo-pharmacist pushes prescriptions out at ~2000/day with
+substantially suppressed error occurrence.
+
+Will robo-pharmacists automatically identify physicians that over-prescribe
+opioids and notify the DEA? If NowRX dispenses incorrectly, and the medicine
+severely injures the patient, do their Terms of Service state the equivalent
+of "by accepting delivery, you agree to indemnify against error or injury
+after consuming or using said prescription(s)..."
+
+Note to job seekers: The essay discloses several charts projecting year 2030
+robotic solution encroachment into various industries. The top-3 robotic
+targets are agriculture/forestry/fishing, retail, and finance/insurance.
+
+------------------------------
+
+Date: Fri, 3 Jul 2020 06:17:30 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Schools already struggled with cybersecurity. Then came COVID-19
+  (WiReD)
+
+A lack of resources has made it hard to keep data secure.
+
+This time last year, Jaggar Henry was enjoying the summer like so many other
+teens. The 17-year-old had a job, was hanging out with friends on the
+weekends, and was just generally spending a lot of time online. But then, at
+the end of July, Henry combed his hair, donned a slightly oversized Oxford
+shirt, and appeared before his school district's board
+<https://www.youtube.com/watch?v=7Uemtp1cRss> in Polk County, Florida -- one
+of the larger school districts in the United States -- to outline a slew of
+security flaws he had found in its digital systems. His presentation was the
+culmination of months of work and focused on software used by more than
+100,000 students.
+
+Those vulnerabilities have been fixed, but Henry, who now works full time on
+education technology, says that his experience illustrates the challenges
+facing school districts across the United States -- and a problem that's
+grown more acute in the wake of COVID-19.
+
+The coronavirus pandemic has had major cybersecurity implications around the
+world. Tailored phishing
+<https://www.wired.com/story/coronavirus-phishing-scams/> attacks and
+contact-tracing scams
+<https://www.wired.com/story/covid-19-contact-tracing-scams> prey on fear
+and uncertainty. Fraudsters are targeting
+<https://www.wired.com/story/nigerian-scammers-unemployment-system-scattered-canary/>
+economic relief and unemployment payments. The stakes are higher than ever
+<https://www.wired.com/story/covid-19-pandemic-ransomware-long-game/> for
+ransomware attacks that target health care providers and other critical
+infrastructure. For businesses, the transition to remote work has created
+new exposures and magnified existing ones.
+<https://www.wired.com/story/coronavirus-cyberattacks-ransomware-phishing/>
+
+School districts in the United States already had significant cybersecurity
+shortcomings. They often lack dedicated funding and skilled personnel to
+continuously vet and improve cybersecurity defenses. As a result, many
+schools make basic system-setup errors or leave old vulnerabilities
+unpatched -- essentially propping a door open for hackers and scammers.
+Schools and students also face potential exposure from third-party
+education-technology firms that fail to adequately secure data in their
+platforms. [...]
+
+<https://www.wired.com/story/teen-hacker-school-software-blackboard-follett/>
+https://arstechnica.com/tech-policy/2020/07/schools-already-struggled-with-cybersecurity-then-came-covid-19/
+
+------------------------------
+
+Date: Fri, Jul 3, 2020 at 3:29 AM
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Scary New Coronavirus is Now Infecting Millions, Study Says
+  (CNN)
+
+A mutation works even faster than the original, a new study confirms.
+
+Just as we're dealing with one coronavirus epidemic, researchers are finding
+the virus has mutated to become an even faster infection machine.  "A global
+study has found strong evidence that a new form of the coronavirus has
+spread from Europe to the U.S. The new mutation makes the virus more likely
+to infect people but does not seem to make them any sicker than earlier
+variations of the virus, an international team of researchers reported
+Thursday," says CNN.
+<https://www.cnn.com/2020/07/02/health/coronavirus-mutation-spread-study/index.html>
+
+"It is now the dominant form infecting people," Erica Ollmann Saphire of the
+La Jolla Institute for Immunology and the Coronavirus Immunotherapy
+Consortium, who worked on the study, told CNN. "This is now the virus."
+
+How They Discovered the Mutation
+
+"The study, *published in the journal Cell,*
+<https://www.cell.com/action/showPdf?pii=S0092-8674%2820%2930820-5> builds
+on some earlier work the team did that was *released on a preprint server*
+<https://www.biorxiv.org/content/10.1101/2020.04.29.069054v1> earlier in the
+year. Shared information on genetic sequences had indicated that a certain
+mutant version of the virus was taking over," reports CNN. "Now the team has
+not only checked more genetic sequences, but they have also run experiments
+involving people, animals and cells in lab dishes that show the mutated
+version is more common and that it's more infectious than other versions."
+
+Bette Korber, a theoretical biologist at Los Alamos National Laboratory and
+lead author of the study, noted, "The D614G variant first came to our
+attention in early April, as we had observed a strikingly repetitive
+pattern. All over the world, even when local epidemics had many cases of
+the original form circulating, soon after the D614G variant was introduced
+into a region it became the prevalent form."
+
+"It's remarkable to me," commented Will Fischer of Los Alamos, an author on
+the study, according to *Science Daily
+<https://www.sciencedaily.com/releases/2020/07/200702144054.htm>*, "both
+that this increase in infectivity was detected by careful observation of
+sequence data alone, and that our experimental colleagues could confirm it
+with live virus in such a short time."
+Focused on the Immune Response
+
+"We are focused on the human immune response because LJI is the
+headquarters for the Coronavirus Immunotherapy Consortium (CoVIC), a global
+collaboration to understand and advance antibody treatments against the
+virus," says Saphire, who leads the Gates Foundation-supported CoVIC.
+"Saphire explains that viruses regularly acquire mutations to help them
+'escape' antibodies made by the human immune system. When a virus acquires
+many of these individual changes, it 'drifts' away from the original virus.
+Researchers call this phenomenon 'antigenic drift.' Antigenic drift is part
+of the reason you need a new flu shot each year," reports *MedicalXpress
+<https://medicalxpress.com/news/2020-07-mutation-coronavirus-dominate-globe.html>*.
+"It is extremely important for researchers to track *antigenic drift*
+<https://medicalxpress.com/tags/antigenic+drift/> as they design vaccines
+and therapeutics for COVID-19."
+
+No matter what strain of coronavirus we're fighting, it's essential we
+present a united front: wear your face mask when around people you don't
+shelter with, practice social distancing, wash your hands frequently,
+monitor your health, and to get through this pandemic at your healthiest,
+don't miss these *Things You Should Never Do During the Coronavirus
+Pandemic*.
+<https://www.msn.com/en-sg/news/other/things-you-should-never-do-during-the-coronavirus-pandemic/ss-BB13eYyy>
+https://www.eatthis.com/covid-19-mutation-study/
+
+------------------------------
+
+Date: Wed, 01 Jul 2020 17:48:51 +0200
+From: "Diego.Latella" <diego.latella@isti.cnr.it>
+Subject: Barbara Simons Receives 2019 ACM Policy Award (ACM)
+
+ACM Bulletin Archives, 1 Jul 2020
+
+Barbara Simons was named the recipient of the 2019 ACM Policy Award for
+long-standing, high-impact leadership as ACM President and founding Chair of
+ACM's U.S. Public Policy Committee (USACM, now USTPC), while making
+influential contributions to improve the reliability of and public
+confidence in election technology. Over several decades, Simons has advanced
+technology policy by founding and leading organizations, authoring
+influential publications, and effecting change through lobbying and public
+education.
+
+Now part of ACM's Technology Policy Council (TPC), which serves global
+regions, the TPC groups have continued Simons' original vision for ACM: to
+provide cogent advice and analysis to legislators and policymakers about a
+wide range of issues including cryptography, computer security, privacy, and
+intellectual property.
+
+Simons is internationally known as an expert on voting technology, an
+advocate for auditable paper-based voting systems, and author of numerous
+papers on secure election technology. Through her publications, reports,
+testimony to the U.S. Congress, and advocacy, Simons has been a key player
+in persuading election officials to shift to paper-based voting systems, and
+has contributed to proposals for reforms in election technologies.
+
+Simons served as ACM President from 1998 to 2000. Since 2008, Simons has
+served as one of two U.S. Senate appointees to the Board of Advisors of the
+U.S. Election Assistance Commission, and she was named Chair of the Board of
+Advisors subcommittee on election security in 2019. She currently also
+chairs the Board of Directors of Verified Voting, a nonpartisan nonprofit
+organization that advocates for legislation and regulation that promotes
+accuracy, transparency and verifiability of elections. She remains active
+with ACM as a member of the global Technology Policy Council and as Co-chair
+of USTPC's Voting subcommittee.
+
+  [Barbara has been a long-time contributor to efforts to achieve election
+  integrity.  This recognition is hugely well deserved.  PGN]
+
+------------------------------
+
+Date: Fri, 3 Jul 2020 09:55:17 -0600
+From: Brian Inglis <Brian.Inglis@systematicsw.ab.ca>
+Subject: Re: Ripple20 IP stack vulnerability may affect literally billion
+  devices (Ishikawa, RISKS-32.06)
+
+The cause of the "billions" appears if you follow the trail to Intel: you
+find the stack embedded in management firmware in what appear to be many
+common (all PC?) products; Intel's statement that products for which no
+future releases were planned are out of support and were not evaluated for
+any vulnerabilities; and issued it's own "CVEs" separate from the published
+"CVEs".
+
+Besides possible attempts at minimization, on the heels of ongoing
+announcements of new speculative execution vulnerabilities, mitigation
+microcode update issuances, withdrawals, and redos, I thought the whole
+point of the "CVE" database was for orgs to reuse existing ids, to simplify
+checking for existence of vulnerabilities and application of mitigation, not
+have to provide a "CVE" cross-reference table in a security announcement
+rated *CRITICAL*, covering what appears to be a number of organizational
+management components in many devices:
+https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00295.html
+(find VU#257161)
+
+------------------------------
+
+Date: Mon, 29 Jun 2020 19:55:27 -0700
+From: "David E. Ross" <david@rossde.com>
+Subject: Re: Smells Fishy? The Fish That Prevent Iran From Hacking Israel's
+  Water System (RISKS-32.06)
+
+I live in a small suburban community in Ventura County, a five-minute walk
+from the Los Angeles County line and about 10 miles from the western edge of
+the city of Los Angeles.  The population is less than 15,000.  Our water is
+not well water.  Instead, it is snow melt from northern California.  For
+Ventura and Los Angeles Counties, the California State Water Project
+aqueduct ends in the north end of the city of Los Angeles, where it is
+filtered, chlorinated, and fluoridated at the Jensen Treatment Plant.  From
+there, Ventura County's portion is piped to the Bard Reservoir.  As it
+leaves the Bard Reservoir -- and only at that location -- the water is again
+filtered, chlorinated, and thoroughly tested.  It is also treated with ozone
+to treat organics (live or otherwise) that might pass through the filters or
+be immune to chlorine.  It is then piped without further exposure to the
+environment to my house and to over 250,000 people in adjacent areas,
+
+Similar processes are involved in distributing water elsewhere in Ventura
+County and in Los Angeles County.  Nasadowski made generalizations about
+water that do not apply to a very large population in the United States.
+
+------------------------------
+
+Date: Mon, 29 Jun 2020 20:26:02 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: 40 msecs to go halfway around the Earth? (Cohen, RISKS-32.06)
+
+It's even worse than that; the speed of propagation in a fiber optic cable
+is only ~2/3 of the speed in a vacuum -- i.e., ~2/3c.  This is one of the
+reasons why some High Frequency Traders (HFT's) want laser- based 'free
+space' communications links to provide lower latency.
+
+Perhaps lies propagate faster by means of quantum 'spooky lying at a
+distance'?  Perhaps via the collapse of the 'hand wave' function?
+
+------------------------------
+
+Date: Tue, 30 Jun 2020 13:05:42 +0100
+From: Michael Bacon  <attilathehun1900@tiscali.co.uk>
+Subject: Re: 40 msecs to go halfway around the Earth? (Cohen, RISKS-32.06)
+
+﻿Regarding Fred Cohen's detailed calculation, for which I thank him, I will
+merely say in defence of my hyperbole that neither William Shakespeare nor I
+indicated along which line of longitude (or latitude) lay the course of the
+lie.
+
+------------------------------
+
+Date: Tue, 30 Jun 2020 17:09:09 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: Quote of The Day (George Orwell, 1984)
+
+An old Soviet black humor joke about constantly rewritten history:
+
+Predicting the future is easy;
+predicting the past is what's hard
+[behind the Iron Curtain].
+
+------------------------------
+
+Date: Mon, 1 Jun 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.07
+************************

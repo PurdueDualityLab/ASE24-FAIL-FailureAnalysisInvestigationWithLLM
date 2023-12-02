@@ -1,0 +1,559 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.12
+
+RISKS-LIST: Risks-Forum Digest  Friday 1 April 2022  Volume 33 : Issue 12
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.12>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+ Contents:
+This year there are apparently too many fools in the world. (PGN)
+CPAP murder mystery (Charles C. Mann)
+NYC Skyscraper's Elevator Breakdowns Strand Tenants (NYTimes)
+The never-stopping car (Geoff Kuenning)
+Please hold on to the handrails while entering or exiting the escalator
+ (Brian Roemmele via PGN)
+Hackers Steal About $600 Million in One of the Biggest Crypto Heists
+ (Blomberg)
+Cryptocurrency Cryptotheft (Reuters via Stephen J. Greenwald)
+ A Sinister Way to Beat Multifactor Authentication Is on the Rise (WiReD)
+AI-Influenced Weapons Need Better Regulation (Scientific American)
+Waymo to Send Driverless Cars Through San Francisco (WSJ)
+Hackers who crippled Viasat modems in Ukraine are still active --
+ company official (Reuters)
+Apple & Meta Gave User Data to Hackers Who Used Forged Legal Requests
+ (Bloomberg)
+Election officials targeted by phishing, according to FBI (A.J. Vicens)
+Hackers gaining subpoena power via fake emergency requests (Krebsonsecurity)
+Corporate Media Wants Copyright Law to Rewrite the Internet (EFF)
+Climate change: Wind and solar reach milestone as demand surges
+ (Ember-climate)
+The Milky Way's 'thick disk' is 2 billion years older than scientists
+ thought (Live Science)
+You're eating a credit card's worth of plastic every week, and it's altering
+ your gut makeup (GutNews)
+Re: One problem with permanent daylight saving time: Geography (Henry Baker)
+Re: URL problem on the Doug Jones op-ed (Mark Brader)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 1 Apr 2022 12:58:06 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: This year there are apparently too many fools in the world.
+
+As a consequence, I am declaring a moratorium on April Fools' Day pranks for
+this year's 1 April issue of RISKS.  We don't need any more misleading
+messages to confuse people who might already be confused, or alternatively
+spreading and amplifying false information.  Perhaps 2023 will have fewer
+people who are already fooled.
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 15:58:11 -0400 (EDT)
+From: "Charles C. Mann" <ccmann@comcast.net>
+Subject: CPAP murder mystery
+
+Recently a friend told me he was looking for a CPAP machine. For those who
+don't know, CPAP machines are vaguely snorkel-like gizmos that people with
+sleep apnea put on their faces at night to help them breathe properly and
+thus sleep properly. I don't know much about them, so I looked them up.
+
+>From what I could tell, there seem to be two new technologies that are
+coming up in the CPAP world. The first is remotely programmable CPAP
+machines. This both allows doctors to adjust the way they work and insurance
+companies to monitor whether the users are deploying them properly.
+Presumably the latter is because the machines are expensive.
+
+The second is a CPAP machine that is small and implantable. It goes into
+your body right above the breathing tube. For obvious reasons, the
+implantable version has been a hit with patients--you don't have to put this
+monstrous thing on your face at night.
+
+There are, of course, CPAP bulletin boards. I looked at one, and almost the
+first post I saw was somebody wishing his implantable CPAP machine could be
+remotely monitored, so that he wouldn't have to go to the doctor's office to
+have it adjusted. I assume this will soon happen, and that as a result there
+will be thousands of Americans who have their breathing directly connected
+to the Internet. The murder-mystery possibilities present themselves
+immediately.
+
+  [This seems like a new area of badness for the Internet of Things. I hope
+  to heaven that my assumption that the implantable devices will soon be
+  net-enabled is incorrect.  CCM]
+
+------------------------------
+
+Date: Tue, 29 Mar 2022 00:10:01 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: NYC Skyscraper's Elevator Breakdowns Strand Tenants (NYTimes)
+
+High-Rise_Hell
+
+A luxury residential building in the financial district with more than 750
+apartments has been experiencing lengthy elevator outages since the fall.
+
+The building's owners, DTH Capital, say that Con Edison must step in to
+resolve the problems, which they maintain are likely related to electrical
+surges from Con Edison equipment. The owners say they have hired teams with
+elevator, electrical and engineering expertise to get to the bottom of the
+problem, which is affecting eight elevators.  `
+
+``These experts have so far been unable to determine the source of the
+surges and believe that we will not be able to do so without the full
+collaboration and 24/7 support of Con Edison,'' DTH Capital said in a
+statement.
+
+Con Edison, in turn, says it has conducted extensive testing at the building
+and found “no indication that our power supply is deficient or compromised.
+
+https://www.nytimes.com/2022/03/28/nyregion/nyc-elevator-outage-20-exchange-place.html
+
+  I guess there's not really a problem, then.  GG
+
+------------------------------
+
+Date: Mon, 28 Mar 2022 16:58:45 -0700
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: The never-stopping car
+
+I use a car-sharing service (Zipcar) from time to time.  Today I rented a
+2020 Hyundai Elantra to go to some appointments on a rainy day.  When I got
+to the first destination, the car wouldn't lock because the engine was still
+running.  Odd...obviously I must have accidentally left the key in the
+ignition.
+
+But no; the key wasn't in the ignition.  I tried many experiments without
+success and finally went to both appointments while leaving the car in
+public parking lots, running, just hoping that since the engine was quiet
+nobody would notice how easy it was to steal.
+
+When I returned the car I called the support line; in the end they couldn't
+shut it off either but at least they were able to remotely lock the doors.
+I guess that if they didn't get a service technician to it soon, it would
+eventually run out of gas.
+
+Clearly the Hyndai designers decided to dispense with the old system of
+having the ignition key actually cut power to the engine system, and instead
+let the in-car computer do that.  And this failure clearly demonstrates why
+it's critical to have hardware failsafes for important systems.  I'm just
+glad I wasn't in a Prius with a stuck accelerator.  GK
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 19:50:12 -0700
+From: Peter G Neumann <Neumann@CSL.SRI.COM>
+Subject: Please hold on to the handrails while entering or exiting the
+ escalator (Brian Roemmele via PGN)
+
+https://twitter.com/BrianRoemmele/status/1508888318745800707
+
+The robo-suitcase on the escalator probably lacked physical and software
+requirements for the robot, lacked a suitabke system architecture, and was
+poorly programmed.  Also, the escalator was not ready for it.
+
+Dan Eakins replied to my sharing this fiasco with him:
+
+  I think with these devices that rely on computer vision systems have
+  to programmed (robots, cars, self-propelled things) not do more than
+  they are programmed to do.  So you have to train it to recognize
+  situations after it fails - maybe it was intended to go down an
+  escalator - but seems like it should have been constrained from that
+  altogether.
+
+  Every time I see those little delivery carts in downtown Mountain View
+  trying to cross an intersection, I think hmm. Maybe it isn't programmed
+  for someone who could intercept it an intersection, break it open, and eat
+  what is inside.  But maybe it would have a cameras that would be able to
+  track me down.
+
+  In Oakland CA, those delivery robots wouldn't last long at all.
+
+PGN's reaction:
+
+Typically the designer and the programmer never think along those lines.
+Reliable? perhaps.  Secure?  probably not.
+
+I suspect hijacking the robocarts for meals will quickly become a new
+micro-industry.
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 12:10:22 +0900
+From: David Farber <farber@keio.jp>
+Subject: Hackers Steal About $600 Million in One of the Biggest Crypto
+ Heists (Blomberg)
+
+https://www.bloomberg.com/news/articles/2022-03-29/hackers-steal-590-million-from-ronin-in-latest-bridge-attack
+
+* Ronin Network says thieves took Ether, USDC tokens on 23 Mar 2022.
+* Bridge hacks can threaten the ecosystem of decentralized apps
+
+Funds can be moved out of the bridge if five of the nine validators approve
+it.  The hacker managed to get hold of the private cryptographic keys
+belonging to five of the validators -- so that was enough to steal the
+crypto assets.
+
+  [Anyone who believes that 5 out of 9 is sufficiently secure when all the
+  nine of the systems involved may be inadequately secure (possibly all with
+  the same exploitable flaw) is not reading RISKS.  The same is true with
+  Byzantine agreement where completely arbitrary malicious behaviour of at
+  most k out of 3k+1 can be tolerated -- which is misguided if more than k
+  of the systems are hackable.  PGN]
+
+  [Incidentally, I received a copy of the full text from Gabe Goldberg, but
+  for some reason it came in as rampant gibberish, so I decided not to try
+  to unscramble the rest of it after what I hav added here.  PGN]
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 09:50:52 -0400
+From: "Steven J. Greenwald" <greenwald.steve@gmail.com>
+Subject: Cryptocurrency Cryptotheft
+
+https://www.reuters.com/breakingviews/hackers-turn-cryptos-strength-into-achilles-heel-2022-03-30/
+
+------------------------------
+
+Date: Fri, 1 Apr 2022 01:06:59 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject:  A Sinister Way to Beat Multifactor Authentication Is on the Rise
+ (WiReD)
+
+Lapsus$ and the group behind the SolarWinds hack have utilized prompt
+bombing to defeat weaker MFA protections in recent months.
+
+Enter MFA Prompt Bombing
+
+The strongest forms of MFA are based on a framework called FIDO2, which was
+developed by a consortium of companies to balance security and simplicity of
+use. It gives users the option of using fingerprint readers or cameras built
+into their devices or dedicated security keys to confirm that they are
+authorized to access an account. FIDO2 forms of MFA are relatively new, so
+many services for both consumers and large organizations have yet to adopt
+them.
+
+That's where older, weaker forms of MFA come in. They include one-time
+passwords sent through SMS or generated by mobile apps like Google
+Authenticator or push prompts sent to a mobile device. When someone is
+logging in with a valid password, they also must either enter the one-time
+password into a field on the sign-in screen or push a button displayed on
+the screen of their phone.
+
+It's this last form of authentication that recent reports say is being
+bypassed. One group using this technique, according to security firm
+Mandiant, is Cozy Bear, a band of elite hackers working for Russia's Foreign
+Intelligence Service. The group also goes under the names Nobelium, APT29,
+and the Dukes.
+
+``Many MFA providers allow for users to accept a phone app push notification
+or to receive a phone call and press a key as a second factor.  The
+[Nobelium] threat actor took advantage of this and issued multiple MFA
+requests to the end-user's legitimate device until the user accepted the
+authentication, allowing the threat actor to eventually gain access to the
+account.''
+
+https://www.wired.com/story/multifactor-authentication-prompt-bombing-on-the-rise/
+
+------------------------------
+
+Date: Thu, 31 Mar 2022 20:29:59 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: AI-Influenced Weapons Need Better Regulation (Scientific American)
+
+https://www.scientificamerican.com/article/ai-influenced-weapons-need-better-regulation/
+
+"The technology behind some of these weapons systems is immature and
+error-prone, and there is little clarity on how the systems function and
+make decisions. Some of these weapons will invariably hit the wrong targets,
+and competitive pressures might result in deployment of more systems that
+are not ready for the battlefield."
+
+Read that paragraph, and substitute 'weapons' for a popular AI-based product
+(driverless vehicles) and then substitute 'battlefield' with marketplace.
+
+How does one specify a "Do not harm innocent civilians" rule that holds
+creators and operators of AI systems accountable for errors and accidents?
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 09:39:02 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Waymo to Send Driverless Cars Through San Francisco (WSJ)
+
+Waymo, Google's sister company, is sending fully autonomous vehicles
+onto the streets of the city, marking its first attempt to send cars without
+any human control into a major metropolitan area.  [...]
+
+https://www.wsj.com/articles/waymo-to-send-driverless-cars-through-san-francisco-11648648800
+
+------------------------------
+
+Date: Thu, 31 Mar 2022 10:18:49 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Hackers who crippled Viasat modems in Ukraine are still active
+ -- company official (Reuters)
+
+Hackers who crippled tens of thousands of satellite modems in Ukraine and
+across Europe are still trying to hobble U.S. telecommunications company
+Viasat as it works to bring its users back online, a company official told
+Reuters.
+
+Viasat Inc. has been working to recover after a cyberattack remotely
+disabled satellite modems just as Russian forces pushed into Ukraine in the
+early hours of Feb. 24. The official said a parallel attack was launched at
+almost exactly the same time and used "high volumes of focused, malicious
+traffic" to try and overwhelm Viasat's network and was still ongoing.
+
+"We're still witnessing some deliberate attempts," the official said
+Tuesday.  He said that Viasat was so far resisting the hackers with
+defensive measures but that "we've been seeing repeated attempts by this
+attacker to alter that pattern to test those new mitigations and defenses."
+
+The official -- who spoke on the condition that he not be identified --
+briefed Reuters ahead of a report being published early Wednesday which
+outlines how the hackers systematically sabotaged satellite modems across
+Europe - and in Ukraine in particular - on the morning of Russia's invasion.
+[...]
+
+https://www.reuters.com/business/media-telecom/exclusive-hackers-who-crippled-viasat-modems-ukraine-are-still-active-company-2022-03-30/
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 09:33:29 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Apple & Meta Gave User Data to Hackers Who Used Forged Legal Requests
+ (Bloomberg)
+
+Hackers compromised the emails of law enforcement agencies.
+Data was used to enable harassment, may aid financial fraud.
+
+Apple Inc. and Meta Platforms Inc., the parent company of Facebook, provided
+customer data to hackers who masqueraded as law enforcement officials,
+according to three people with knowledge of the matter.
+
+Apple and Meta provided basic subscriber details, such as a customer's
+address, phone number and IP address, in mid-2021 in response to the forged
+emergency data requests.  Normally, such requests are only provided with a
+search warrant or subpoena signed by a judge, according to the people.
+However, the emergency requests don't require a court order.
+
+Snap Inc. received a forged legal request from the same hackers, but it
+isn't known whether the company provided data in response. It's also not
+clear how many times the companies provided data prompted by forged legal
+requests.  [...]
+
+https://www.bloomberg.com/news/articles/2022-03-30/apple-meta-gave-user-data-to-hackers-who-forged-legal-requests
+https://ca.finance.yahoo.com/news/apple-meta-gave-user-data-175918825.html
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 10:35:11 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Election officials targeted by phishing, according to FBI
+
+https://www.cyberscoop.com/election-officials-phishing-email-2022-midterms-fbi/
+
+A.J. Vicens, CYBERSCOOP, 29 Mar 2022
+
+An invoice-themed phishing campaign targeted elections officials in at least
+nine states in October 2021, according to a warning the FBI issued Tuesday.
+The attackers sought to steal login credentials and could have had sustained
+and undetected access to election administrators' systems.  Batches with
+common attachments send over three days with compromised email addresses.
+suggesting a concerted effort to target US election officials.  [PGN-ed]
+
+------------------------------
+
+Date: Tue, 29 Mar 2022 11:02:10 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Hackers gaining subpoena power via fake emergency requests
+
+Another example of the escalating spiral of defense running behind offense?
+
+https://krebsonsecurity.com/2022/03/hackers-gaining-power-of-subpoena-via-fake-emergency-data-requests/
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 16:34:14 +0000
+From: "EFFector List" <editor@eff.org>
+Subject: Corporate Media Wants Copyright Law to Rewrite the Internet (EFF)
+
+The New Filter Mandate Bill Is An Unmitigated Disaster
+
+Industry groups are pushing a new bill, the SMART Copyright Act that would
+give the Copyright Office the power to set the rules for Internet technology
+and services to address copyright infringement, with precious little
+opportunity for appeal. Remaking the Internet to serve the entertainment
+industry was a bad idea ten years ago and it's a bad idea today.
+
+Read more: https://www.eff.org/deeplinks/2022/03/new-filter-mandate-bill-unmitigated-disaster
+
+EFFector Vol. 34, No. 2  Wednesday, March 30, 2022  editor@eff.org
+A Publication of the Electronic Frontier Foundation, ISSN 1062-9424
+ [effector: n, Computer Sci. A device for producing a desired change.]
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 09:46:47 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Climate change: Wind and solar reach milestone as demand surges
+ (Ember-climate)
+
+Wind and solar generated 10% of global electricity for the first time in
+2021, a new analysis shows.  Fifty countries get more than a tenth of their
+power from wind and solar sources, according to research from Ember.
+
+<https://ember-climate.org/insights/research/global-electricity-review-2022/>,
+a climate and energy think tank.
+
+As the world's economies rebounded from the Covid-19 pandemic in 2021,
+demand for energy soared.
+
+Demand for electricity grew at a record pace. This saw a surge in coal
+power, rising at the fastest rate since 1985.  [...]
+
+https://www.bbc.com/news/science-environment-60917445
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 09:49:00 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: The Milky Way's 'thick disk' is 2 billion years older than
+ scientists thought (Live Science)
+
+Misjudging someone's age can be awkward -- especially when you're off by a
+few billion years.  The thick disk began forming stars just 0.8 billion
+years after the Big Bang.  [...]
+
+https://www.livescience.com/milky-way-thick-disc-age
+
+------------------------------
+
+Date: Wed, 30 Mar 2022 09:26:58 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: You're eating a credit card's worth of plastic every week, and it's
+ altering your gut makeup (GutNews)
+
+How much plastic is sitting on your gut? If you think the answer is zero,
+think again. A recent review suggests people consume about five grams of
+plastic particles per week — the equivalent of the weight of a credit card.
+
+Nanoplastics are any plastics less than 0.001 millimeters in size.
+Microplastics, on the other hand, are 0.001 to 5 millimeters and on some
+occasions still visible to the naked eye. Most microplastic and
+nanoplastics find their way to the human food chain from packaging waste.
+
+Plastic particles <https://www.gutnews.com/microplastics-ibd-cause/> can
+enter the body through seafood, sea salt, or drinking water. One study
+referenced in the review found people who drank the recommended 1.5 to 2
+liters of water a day from plastic bottles takes in 90,000 plastic
+particles per year from this way alone. People who opt for tap water reduce
+their ingested amount to about 40,000 plastic particles.
+
+Research exploring the number of micro-and nanoplastic particles in the
+gastrointestinal tract has shown its presence is changing the gut microbiome
+<https://gutnews.com/category/gut-biome> composition. The changes it’s
+making are linked to the emergence of metabolic diseases such as diabetes,
+obesity, or chronic liver disease.
+
+Not only are the changes in the gut microbiome apparent, but scientists
+have also broken ground on the molecular mechanisms behind the uptake of
+micro- and nanoplastic particles into gut tissue. Both microplastic and
+nanoplastic particles potentially activate mechanisms involved in local
+inflammation <https://gutnews.com/tag/inflammation> and immune response.
+Evidence has shown that nanoplastics, in particular, trigger chemical
+pathways involved in the formation of cancer.  [...]
+
+https://www.gutnews.com/microplastics-food-gut-health/
+
+  [Why is this relevant to RISKS?  Realistically, this is symptomatic of the
+  type of problem that risk models tend to overlook, which should be another
+  lesson for holistic thinkers.  PGN]
+
+------------------------------
+
+Date: Tue, 29 Mar 2022 03:49:22 +0000
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: One problem with permanent daylight saving time: Geography
+
+(A timely posting about timezones...)
+
+Only One Time Zone in China
+
+China has one official time zone, China Standard Time (CST), which is 8
+hours ahead of UTC (https://www.timeanddate.com/time/aboututc.html
+(https://www.timeanddate.com/time/china/one-time-zone.html)). In China, the
+time zone is known as Beijing Time.
+
+In Xinjiang, China's westernmost region, the Uyghur population unofficially
+uses a different local time known as Xinjiang Time or Ürümqi Time, which is
+2 hours behind CST.
+
+(Which is probably why the Uyghurs are being 're-educated' by the millions --
+because they're 'behind' ....)
+
+------------------------------
+
+Date: Mon, 28 Mar 2022 21:07:49 -0500
+From: msb@vex.net (Mark Brader)
+Subject: Re: URL problem on the Doug Jones op-ed (Brader, RISKS-33.11)
+
+I wrote:
+
+> When I tried to open this [msn.com] URL in Firefox, I got a blank
+> page.  ...
+
+A week later, when I saw this in Risks, it occurred to me that in the
+meantime I had downloaded an update to NoScript.  So I checked the
+original URL again, and if I enable JavaScript for msn.com, I can
+now open the page.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.12
+************************

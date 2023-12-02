@@ -1,0 +1,621 @@
+precedence: bulk
+Subject: Risks Digest 25.65
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 29 April 2009  Volume 25 : Issue 65
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.65.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+New cybersecurity report, National Research Council (PGN)
+CNN gets it right on swine flu scare (Jeremy Epstein)
+President Obama says 3% of GDP on R&D (PGN)
+Computer Spies Breach Fighter-Jet Project (Danny Burstein)
+Pencils, not pixels: Ireland scuttles electronic voting machines
+  (Matthew Kruk)
+Russian Voting in Berlin? (Debora Weber-Wulff)
+Second chance for French Net bill (Amos Shapir)
+US Senate bills 773 and 776 (Mabry Tyson)
+The Risk of Namespace Collision (Gene Wirchenko)
+Re: Tire-pressure warnings and RFI (Philippe Pouliquen, Bill Hopkins,
+  John Curran)
+Re: The Security By Obscurity Myth (Phil Colbourn, Steven M. Bellovin,
+  Ted Lemon, Fred Cohen)
+Firewalls are ineffective? (Fred Cohen)
+Re: "Nowt for owt" with Amazon (Julian Bradfield)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 29 Apr 2009 14:25:26 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: New National Research Council cybersecurity report (Markoff/Shanker)
+
+The United States has no clear military policy about how the nation might
+respond to a cyberattack on its communications, financial or power networks,
+a panel of scientists and policy advisers warned Wednesday, and the country
+needs to clarify both its offensive capabilities and how it would respond to
+such attacks.  The report, Technology, Policy, Law, and Ethics Regarding
+U.S. Acquisition and Use of Cyberattack Capabilities, is based on a
+three-year study by a panel assembled by the National Academy of Sciences,
+and is the first major effort to look at the military use of computer
+technologies as weapons. The potential use of such technologies offensively
+has been widely discussed in recent years, and disruptions of communications
+systems and Web sites have become a standard occurrence in both political
+and military conflicts since 2000.  [Source: John Markoff and Thom Shanker,
+Panel Warns U.S. on Cyberwar Plans, *The New York Times*, 30 Apr 2009
+[PGN-ed]
+  http://www.nytimes.com/2009/04/30/science/30cyber.html?hp
+
+  [Please browse the entire article, which includes a link to the free
+  Executive Summary of the draft NRC CSTB report, written by an impeccable
+  cast of characters; the 14 authors include Adm. William A. Owens, William
+  O. Studeman, Walter B. Slocombe, Richard Garwin, as well as some very
+  technically savvy folks such as Tom Berson, David Clark, Jerry Saltzer,
+  and Mark Seiden who are well-known to long-time RISKS readers.  Ken Dam
+  (co-chair with Owens) was also co-chair with David Clark of the report
+  Computers at Risk: Safe Computing in the Information Age (1990).  There's
+  also a long history of reports in between that deserve greater recognition
+  in policy circles, including Trust in Cyberspace (1998) and Toward a Safer
+  and More Secure Cyberspace (2007).  (Disclaimer: Although I was a
+  co-author of the 1990 and 2007 studies [a locust who emerges every 17
+  years?], the most relevant fact here is that those reports were not read
+  and understood enough by people who really needed to know, and that not
+  much has changed sufficiently in the interim.)
+
+  See also a related article earlier this week by David E. Sanger, John
+  Markoff, and Thom Shanker, U.S. Plans Attack and Defense in Cyberspace
+  Warfare, *The NYT*, 28 Apr 2009.  PGN]
+
+------------------------------
+
+Date: Tue, 28 Apr 2009 21:05:07 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: CNN gets it right on flu scare
+
+Many of us frequently lambaste the media for their scare tactics.  For a
+change, CNN got it right today, putting the flu scare in proportion.
+
+> Regular flu has killed thousands since January
+
+> There had been no confirmed deaths in the United States related to swine
+> flu as of [`until' would now be correct] Tuesday afternoon.  But another
+> virus had killed thousands of people since January and is expected to
+> keep killing hundreds of people every week for the rest of the year.
+>
+> That one? The regular flu.
+>
+> [...]  But even if there are swine-flu deaths outside Mexico -- and
+> medical experts say there very well may be -- the virus would have a long
+> way to go to match the roughly 36,000 deaths that seasonal influenza
+> causes in the United States each year.  [...]
+
+[http://www.cnn.com/2009/HEALTH/04/28/regular.flu/index.html]
+
+Now if only the media can be convinced to use the same level-headed risk
+analysis when it comes to technology risks....
+
+------------------------------
+
+Date: Mon, 27 Apr 2009 11:20:07 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: President Obama says 3% of GDP on R&D
+
+On 27 Apr 2009, President Barack Obama promised a major investment in
+research and development for scientific innovation, saying the United States
+has fallen behind others.  At a speech at the annual meeting of the National
+Academy of Sciences, he said "I believe it is not in our character, American
+character, to follow -- but to lead. And it is time for us to lead once
+again. I am here today to set this goal: we will devote more than 3 percent
+of our GDP to research and development.  We will not just meet but we will
+exceed the level achieved at the height of the space race."  [...]
+
+  [I hope some of this gets devoted to radically improving our information
+  infrastructures.  That's certainly an old running theme in RISKS.  PGN]
+
+------------------------------
+
+Date: Tue, 21 Apr 2009 02:06:40 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Computer Spies Breach Fighter-Jet Project
+
+... and Lockheed claims to be super smart about computers..
+
+Computer spies have broken into the Pentagon's $300 billion Joint Strike
+Fighter project -- the Defense Department's costliest weapons program ever
+-- according to current and former government officials familiar with the
+attacks.  Similar incidents have also breached the Air Force's
+air-traffic-control system in recent months, these people say. In the case
+of the fighter-jet program, the intruders were able to copy and siphon off
+several terabytes of data related to design and electronics systems,
+officials say, potentially making it easier to defend against the craft.
+...  The intruders entered through vulnerabilities in the networks of two or
+three contractors helping to build the high-tech fighter jet, according to
+people who have been briefed on the matter. Lockheed Martin is the lead
+contractor on the program, and Northrop Grumman Corp. and BAE Systems PLC
+also play major roles in its development.  [*Wall Street Journal*, 21 Apr 2009]
+http://online.wsj.com/article/SB124027491029837401.html
+
+------------------------------
+
+Date: Tue, 28 Apr 2009 01:02:53 -0700
+From: "Matthew Kruk" <mkruk@telus.net>
+Subject: Pencils, not pixels: Ireland scuttles electronic voting machines
+
+Pencils, not pixels: Ireland scuttles electronic voting machines --
+Faced with rising costs and growing fears of hackers, Ireland has decided to
+join a growing movement in Europe to return to old school voting practices.
+
+For sale: 7,500 electronic voting machines. Never used.  Will need retrofit
+for security. Cost: $67 million, but all offers considered. Contact Irish
+government.
+
+Bought in the midst of the booming Celtic Tiger economy, these Dutch-built
+Nedap Powervote system machines were technologically chíc. Piloted in three
+constituencies during the 2002 general election, they were expected to
+eliminate lengthy manual counts and parse votes from Ireland's complicated
+proportional representation system to give instant results.  And if Ireland
+didn't embrace e-voting, warned then Taoiseach Prime Minister Bertie Ahern
+in 2006, the country would be a laughing stock "with our stupid oul
+pencils," he said, using an Irish colloquialism for "old."  But the stupid
+oul pencils have had the last laugh. Ireland is now selling its unused
+machines, which thus far have incurred storage fees of [the equivalent of
+$4.6 million].  [Source: Michael Seaver, 26 Apr 2009, *Christian Science
+Monitor*]  <http://www.csmonitor.com>
+
+  [Also noted by Bernard Lyons.   In addition, see
+     http://techdirt.com/articles/20090427/0232024663.shtml
+  ]
+
+------------------------------
+
+Date: Wed, 29 Apr 2009 08:43:07 +0200
+From: Debora Weber-Wulff <weberwu@htw-berlin.de>
+Subject: Russian Voting in Berlin?
+
+The city of Berlin held a referendum this past weekend on a complicated
+question about whether religion can be a substitute for ethics as a
+compulsory subject in the schools. It was a bitter campaign and the maps
+showing the precinct's results clearly showed where the Berlin Wall used to
+be: Western Berlin voted "yes", Eastern Berlin voted "no", and "no" won.
+
+On Monday they had top 10 lists of the precincts that voted one way or the
+other. I thought that the top "yes" precinct, in trendy Wilmersdorf, did
+smell a bit fishy with 99,5 %. But well, okay, that's where all the Germans
+that emigrated from Russia live, and they are used to voting that way. The
+party's way or no way.
+
+Today the newspapers report on a "statistical error". The results are
+counted in the precincts and reported by telephone to the central
+office. You redial and redial and redial, until some harried person answers,
+and then you give them your results.
+
+Instead of "415 votes, 225 for yes, 188 for no, 2 invalid", what was
+recorded in the computer for this precinct was "416 votes, 414 for yes, 1
+for no, 1 invalid". And this information is automatically passed on to the
+next station.
+
+I don't see a statistical error here - I see an input validation problem and
+antiquated data input methods. And I find it disturbing that the total
+number of votes is wrong, too.
+
+Perhaps they can switch to text messages for the next election?
+
+Prof. Dr. Debora Weber-Wulff, HTW Berlin, FB 4, Internationale Medieninformatik
+10313 Berlin +49-30-5019-2320  http://www.f4.htw-berlin.de/people/weberwu/
+
+------------------------------
+
+Date: Thu, 30 Apr 2009 00:36:35 +0300
+From: Amos Shapir <amos083@hotmail.com>
+Subject: Second chance for French Net bill
+
+The BBC site reports: "A controversial French bill which could disconnect
+people caught downloading music illegally three times returns to parliament
+on Wednesday for debate."  Full story at:
+http://news.bbc.co.uk/2/hi/technology/8024475.stm
+
+Beside the usual questions and argument about IP vs. human rights, there is
+also the question of enforcement: How on earth can any legal system
+(democratic and sane one, anyway) ban a person from access to the net?
+ISP's deal with Internet accounts, which are not "persons" in the legal
+sense; I'm not a lawyer, but I cannot think of any legal mechanism which can
+make a binding and enforcible connection between these terms.
+
+------------------------------
+
+Date: Mon, 27 Apr 2009 15:37:11 -0700
+From: Mabry Tyson <Tyson@AI.sri.com>
+Subject: US Senate bills 773 and 776
+
+Two bills were introduced into the US Senate on 1 Apr 2009 that I believe
+are intended to guide cybersecurity policy for the US.
+
+* S 773 - A bill to ensure the continued free flow of commerce within the
+United States and with its global trading partners through secure cyber
+communications, to provide for the continued development and exploitation of
+the Internet and intranet communications for such purposes, to provide for
+the development of a cadre of information technology specialists to improve
+and maintain effective cybersecurity defenses against disruption, and for
+other purposes.
+
+   Full Text: http://thomas.loc.gov/cgi-bin/query/z?c111:S.773:
+(For more information, search for "S773" in category Bill Number at
+http://thomas.loc.gov/ )
+
+* S 778 - A bill to establish, within the Executive Office of the President,
+the Office of National Cybersecurity Advisor.
+  Full Text: http://thomas.loc.gov/cgi-bin/query/z?c111:S.778:
+
+The status of S773 shows that it was read twice on 1 Apr and referred to the
+Committee on Commerce, Science, and Transportation.
+(http://commerce.senate.gov/public/) It was the chairman of that committee,
+Sen. Jay Rockefeller (D-WV) that sponsored the bill.
+
+Considering this was introduced by a Democratic Committee Chairman in a
+Democratic-controlled Congress with a Democratic President, it seems likely
+that some version of it will be passed.  I urge the RISKS community to take
+a close look at the bill to see that it achieve the security we require
+without unduly compromising the privacy we are guaranteed by the
+Constitution and by Common Law.  If changes should be made, it will be
+easier to get them done sooner rather than later.
+
+Here are a few quick comments on two items that I noticed.  By no means have
+I read it all.
+
+  ===========================
+Sec 14(b): The Secretary of Commerce--
+  (1) shall have access to all relevant data concerning such networks
+without regard to any provision of law, regulation, rule, or policy
+restricting such access;
+ - --------------
+NOTE: "such networks" here refers to "Federal Government and private sector
+owned critical infrastructure information systems and networks.".  In Sec
+23, "Federal Government and United States critical infrastructure
+information systems and networks" is defined as all Federal Government
+information systems and networks plus "state, local, and nongovernmental
+information systems and networks in the United States designated by the
+President as critical infrastructure information systems and networks"
+
+In other words, it means any networks the government wants it to mean, such
+as, say, the ISP network serving your home system, or the network at your
+church.  All it takes is the President's designation.  The only reason I can
+think of for the slightly different naming ("private sector" vs "United
+States") is either sloppiness or removing the restriction that the network
+is "in the United States" and extending it to "private sector" so it might
+apply to a US company's network outside the US.
+
+My biggest concern is the "without regard to any provision of law".  Does
+this mean this law trumps all other laws?  Does it mean that the Federal
+Government claims access to (and jurisdiction over) any network, even if it
+does not otherwise comes under federal jurisdiction (through Interstate
+Commerce, etc.).
+
+ = ===========================
+SEC. 17. AUTHENTICATION AND CIVIL LIBERTIES REPORT.
+
+Within 1 year after the date of enactment of this Act, the President, or the
+President's designee, shall review, and report to Congress, on the
+feasibility of an identity management and authentication program, with the
+appropriate civil liberties and privacy protections, for government and
+critical infrastructure information systems and networks.
+  - ----------
+This is poorly (or is it expertly?) worded in that is ambiguous what
+identities are being managed.  Individuals (as indicated by the references
+to civil liberties and privacy) or systems and networks ("identity
+management...program ... for government... systems and networks")
+
+------------------------------
+
+Date: Thu, 23 Apr 2009 08:49:02 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: The Risk of Namespace Collision
+
+Initials.  Make a powerful statement about a company.  The suggestion of
+mystery.  Often get pronounced as a word.  This should be on anyone's radar.
+
+Canadian tech association offers on-demand video to foster business success
+<http://www.itbusiness.ca/it/client/en/home/News.asp?sub=true&id=52911>
+
+Paragraph 5: "CATA is tapping the software-as-a-service offering of
+Calgary-based JITR Inc. Its JET system lets any company or organization
+deliver live, high-definition video to a large and controlled audience."
+
+Is there anyone else who saw "JITR" and immediately thought "jitter".  The
+whole name could turn into "jittering".  Not the best association for
+on-line video, is it?
+
+------------------------------
+
+Date: Tue, 21 Apr 2009 08:25:42 -0400 (EDT)
+From: Philippe Pouliquen <philippe@alpha.ece.jhu.edu>
+Subject: Re: Tire-pressure warnings and RFI (PGN, RISKS-25.64)
+
+I heard the same episode of car talk and remember the car affected being the
+Nissan Versa <not Vesta *>.  I am fairly confident in my memory because the
+Versa is a vehicle that my wife and I considered buying a while back, but
+rejected because when the back seats were folded down, they made a two to
+three inch step between them and the trunk area (very impractical for
+loading large objects) that none of the other hatchbacks we looked at had.
+
+  [* My Vice is Versa <not Vesta>.  I was driving in a noisy environment.
+  Merci, Philippe, for the correction.  PGN]
+
+------------------------------
+
+Date: Mon, 20 Apr 2009 18:33:21 -0400
+From: "Bill Hopkins" <whopkins@wmi.com>
+Subject: Re: Tire-pressure warnings and RFI (PGN, RISKS-25.64)
+
+Listening to Click and Clack's NSA interference hypothesis, I was
+reminded of an earlier automotive RFI problem.
+
+Our 1968 Volvo used a voltage regulator to supply the temperature and fuel
+gauges.  Approaching a radar cop, the regulator swamped and as the engine
+overheated, the gas tank filled up (according to the needles).  It got one's
+attention.
+
+A built-in radar detector, disguised as necessary instruments!
+
+Unfortunately, the effect didn't begin until about 30 feet from the radar.
+
+------------------------------
+
+Date: Mon, 27 Apr 2009 09:56:54 -0400
+From: "John Curran" <John.Curran@mms.gov>
+Subject: Re: Tire-pressure warnings and RFI (PGN, RISKS-25.64)
+
+My wife and I flew to Denver last fall and rented a Toyota Camry.  We drove
+all over Wyoming and Montana, and in Yellowstone and Grand Teton NP the tire
+sensors showed low pressure.  When I checked the tires, they were a little
+low, but not bad.  Then the Check Engine light came when we were at Jackson
+Lodge and I called the Hertz facility at the Denver airport.  The manager
+asked me to take it to the Hertz venue in the Jackson Hole airport.  When I
+explained the issue to the manager there, he told me that telecommunications
+in the area for Vice President Cheney set off car sensors all the time.  He
+said he could give me a new car, but the warnings would probably come back.
+I was skeptical about this, but now I wonder if he was right.
+
+John Curran, MMS/OEMM Information Systems Security Officer  703-787-1712
+
+  [Shades of Sputnik and later President Reagan's Air Force One affecting
+  garage-door openers (RISKS-2.37).  PGN]
+
+------------------------------
+
+Date: Tue, 21 Apr 2009 22:34:22 +1000
+From: Phil Colbourn <philcolbourn@gmail.com>
+Subject: Re: The Security By Obscurity Myth (Mills, RISKS-25.64)
+
+In RISKS-25.64 Dick Mills suggests that if all closed source software was
+opened, there would not be enough benevolent hackers to find the bugs before
+the malevolent hackers do - concluding that it would be disastrous.
+
+I'm not convinced. Much software has been opened sourced to date, including
+significant code bases of Solaris (~10MLoC), OpenOffice (7.6MLoC) and much
+of Java (~6.5MLoC) - large code bases that are in significant use in many
+environments world-wide.
+
+Java is estimated to be installed in 5.4B devices - I imagine that this is a
+sizable target that malevolent hackers would be working on. But should they
+find a flaw and exploit it, there will be many companies and individuals
+looking to close the case quickly.
+
+It is also doubtful that all propriety software would be opened at the same
+time, allowing more eyes to look through code should they be inclined to do
+so.
+
+Microsoft software, however, is a special case as Dick indicates.
+
+Similarly, encryption algorithms also suffer from a lack of confidence due
+to closed designs. An open development process is more likely to find flaws
+sooner and therefore reduce the risk of insecure data transmission.
+
+------------------------------
+
+Date: Mon, 20 Apr 2009 18:04:38 -0400
+From: "Steven M. Bellovin" <smb@cs.columbia.edu>
+Subject: Re: The Security By Obscurity Myth (Sebes, RISKS-25.62)
+
+Many people who advocate or condemn security through obscurity misunderstand
+it.  The notion goes back to Kerckhoff's 1883 paper on military cryptography.
+He did not, however, advocate publishing the system.  Rather, he wrote "The
+system must not require secrecy and can be stolen by the enemy without
+causing trouble" (translation from
+http://www.petitcolas.net/fabien/kerckhoffs/).  That is, it should be secure
+even if compromised.
+
+The real issue is whether one gains more security by publishing (the "many
+eyes" theory) or by keeping it secret (and thus perhaps increasing the work
+effort for the attacker).  I don't think there's any one answer.  In
+cryptography, I strongly suspect that cryptanalysis is *much* harder without
+access to the algorithm -- but we also know that it's been done.  Source
+code is probably more secure if published -- but if and only if enough
+competent good guys are actually motivated to examine it.  For voting
+machines, I think that that's likely the case; for other systems, it's much
+less clear.  (We also know how long some serious security bugs have lurked
+in open source systems --
+http://www.cert.org/advisories/CA-95.03.telnet.encryption.vulnerability is
+my favorite, for many reasons.)
+
+Steve Bellovin, http://www.cs.columbia.edu/~smb
+
+------------------------------
+
+Date: Mon, 20 Apr 2009 17:17:01 -0500
+From: Ted Lemon <Ted.Lemon@nominum.com>
+Subject: Re: The Security By Obscurity Myth (Mills, RISKS-25.64)
+
+In RISKS-25.64, Dick Mills writes that he's not convinced that Security By
+Obscurity is really a myth.  He makes the point that the banks do it, so it
+must be good.  Interestingly, in a previous article in the same digest, we
+learn that banks have some really serious security problems because their
+security model for ATM card PINs is much more vulnerable than they'd
+anticipated.  Based on what I've heard of these exploits elsewhere in the
+press, their security model would have been roundly mocked if it had been
+public knowledge; in this case, clearly obscurity benefited no-one except
+the attackers.
+
+------------------------------
+
+Date: Wed, 22 Apr 2009 04:52:07 -0700
+From: Fred Cohen <fc@all.net>
+Subject: Security by obscurity - a myth?
+
+> From: Dick Mills <dickandlibbymills@gmail.com>...
+>
+> In RISKS-25.61, John Sebes reiterated the expert's condemnation of
+> security by obscurity (SBO).  I for one, would certainly not challenge the
+> validity of what Mr. Sebes and others say -- within context. ...
+
+I, on the other hand, might...
+
+The notion of security by obscurity as often portrayed as a bad thing, and
+while I certainly think that covering up weak concepts, designs,
+implementations, and executions by trying to obscure them is a bad idea, the
+facts on the ground are that very few programs are properly and formally
+specified to a level of detail where we can even determine whether or not
+they meet those specifications at all, much modern programming is
+evolutionary in nature and hooks into something else that is largely unknown
+by the programmer, most organizations I have seen are unable or unwilling to
+put in the resources to do things to a level of surety that would allow full
+disclosure of everything, and I see no reason that obscurity is any less
+valid than complexity in terms of defining the security properties of a
+system.
+
+How many from the RISKS audience would really provide me with all of the
+information that all of the people in their organization have about
+everything in the organization along with a mandate to do harm, and expect
+that I would do no better than I would do if provided with the mandate and
+none of the information?
+
+Security by obscurity is a fact of risk management, and it is often the only
+reasonable approach to mitigation of risks.
+
+Fred Cohen & Associates, 572 Leona Drive    Livermore, CA 94550
+tel/fax: 925-454-0171  http://all.net/
+
+------------------------------
+
+Date: Wed, 22 Apr 2009 04:42:28 -0700
+From: Fred Cohen <fc@all.net>
+Subject: Firewalls are ineffective? (RISKS-25.64)
+
+> Given that we know that perimeter defenses are ineffective illusions in
+> cyberspace, ...
+
+Actually, this is just plain untrue. Perimeter defenses are almost all of
+the defenses we have that actually do work - in that they do things that we
+can measure and they do them effectively. So this "given" should be taken
+away.
+
+To be clear, the fact that perimeters are "leaky" by intent, does not mean
+that they are not effective. To the extent that the writer was deceived
+about what these defenses do, the cognitive problems with people
+understanding perimeter defenses should be addresses as well.  To aide a bit
+in this...
+
+Perimeter defenses primarily operate to reduce the quantity and types of
+event sequences that cross the boundary defined by the perimeter.  As an
+example, process separation is a perimeter defense that puts a perimeter
+around a process and its resources and limits the ways in which information
+can cross that perimeter. It works very well in preventing processes from
+writing all over other processes' memory, but it does not, and is not
+intended to, prevent the use and abuse of system calls that communicate
+across the boundary. The perimeter defense associated with identification
+and authentication is defined by the authorization process. In this case,
+the perimeter might be, as an example, the division between those input
+sequences that are allowed to interface with programs other than the login
+program and other similar service programs and those that cannot. Again, it
+is effective at what it does, but it does not prevent an individual who
+takes over the keyboard from an already authorized user from using those
+interfaces. Perhaps this helps to clarify that perimeters are very often
+highly effective and reasonably well defined, and that without them we would
+be in serious trouble.
+
+Fred Cohen & Associates, 572 Leona Drive    Livermore, CA 94550
+tel/fax: 925-454-0171  http://all.net/
+
+  [Fred, They may be "almost all of the defenses we have that actually do
+  work", but considering how porous many firewalls are, that is not very
+  much of a consolation.  PGN]
+
+------------------------------
+
+Date: Tue, 21 Apr 2009 08:53:13 +0100
+From: Julian Bradfield <jcb@inf.ed.ac.uk>
+Subject: Re: "Nowt for owt" with Amazon (Brady, RISKS-25.64)
+
+I wonder what planet Chris Brady has been living on for the last few
+decades?  Almost every "free trial offer" you get through the mail or by the
+Web works by taking payment details, and then charging you at the end of the
+trial unless you positively decline. Amazon is no different - and Googling
+for "amazon prime free trial" takes you in a couple of clicks to Amazon's
+help pages telling you how to decline at the end of your free trial. Most
+likely this would also appear in an e-mail at the end of the trial, though I
+don't know whether Amazon is obliged by law to do this.  As for the "payment
+declined", I'd guess this actually just an authorization request to check
+the card validity.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.65
+************************

@@ -1,0 +1,876 @@
+precedence: bulk
+Subject: Risks Digest 30.26
+
+RISKS-LIST: Risks-Forum Digest  Sunday 30 April 2017  Volume 30 : Issue 26
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.26>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Auditors: panel exposed voter records to potential hacking
+  (Baltimore Sun)
+Russia's alleged election interference - suspects & investigators
+  (BBW)
+Russian-controlled telecom hijacks financial services' Internet
+  traffic (Ars Technica)
+Denmark: Russia has been hacking us for two years
+  (The Copenhagen Post)
+Cyber Attack in Israel reportedly used NSA tool
+  (Edwin Slonim)
+How to Detect Fake News in Real-Time (Medium)
+Tectonic plate movement and driverless cars (David Horsfall)
+Flawed electronic prescription system too entrenched to disable?
+  (Times Colonist)
+The wrong way to remove clutter in EHRs (Robert L Wears)
+Senate staffers have picture of security chip on their IDs.
+  (Ars Technica via Tom Russ)
+HSBC introduces voice passwords, all the same (Gabe Goldberg)
+Two-factor authentication (Dmitri Maziuk)
+Antivirus provider Webroot is causing trouble for customers
+  (Ars Technica)
+Man gets fined for discovering a flaw (Motheroard)
+Turkey blocks Wikipedia under law designed to protect national
+  security (The Guardian)
+EPA website removes climate science site from public view after two
+  decades (The Washington Post)
+Amazon Wants to Put a Camera and Microphone in Your Bedroom
+  (Motherboard)
+Brickerbot (Techcrunch and Gizmodo)
+Ankle Bracelet glitches (BBW)
+Hacker holds Netflix to ransom over new season of Orange Is The New
+  Black (The Guardian)
+"Bash Bunny: Big hacks come in tiny packages" (InfoWorld)
+Homographic URLs (The Guardian via PGN)
+How A False Story About A Husband And Wife Being Twins
+ Ended Up On Major News Websites (Buzzfeed)
+Princeton researchers discover why AI become racist and sexist
+  (Ars Technica)
+"Don't get bit by zombie cloud data" (Fahmida Y. Rashid)
+"DDoS attacks abusing exposed LDAP servers on the rise" (Fahimda Y. Rashid)
+Bose headphones have been spying on customers, lawsuit claims
+  (The Washington Post)
+For 18 years, she thought someone was stealing her identity.
+  Until she found her.  (The Guardian via Gabe Goldberg)
+Re: Autonomous Electric Vehicle impact on Economy (Kelly Bert Manning,
+  Charles Jackson)
+Re: Prison inmates built working PCs out of e-waste (Richard Bos)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 30 Apr 2017 11:13:37 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Auditors: panel exposed voter records to potential hacking
+  (Baltimore Sun)
+
+The Associated Press,  29 Apr 2017
+
+A legislative audit has found that Maryland's Board of Elections needlessly
+exposed the full Social Security numbers of almost 600,000 voters to
+potential hacking, risking theft of voters' identities.  A report released
+Friday also criticized the board's handling of ballot security, disaster
+preparedness, contracting and balancing its books.
+
+The Baltimore Sun reports (http://bsun.md/2pvOFMF) that state lawmakers
+called for a hearing in response to the report, which prompted strong
+reaction from critics of the board and administrator Linda Lamone.
+
+Doug Mayer, a spokesman for Gov. Larry Hogan, said the report underscores
+some of the governor's concerns about a lack of executive oversight at the
+board, where the day-to-day management is outside the administration's
+control.
+
+Lamone said most of the findings in the report have already been addressed.
+
+http://wtop.com/maryland/2017/04/auditors-panel-exposed-voter-records-to-potential-hacking/
+
+  [Lamone also is quoted: "The information the state provides to ERIC
+  doesn't include full Social Security numbers and is encrypted before it is
+  sent.  You can't get into ERIC data. There's no way."
+    She very clearly does not read RISKS.  PGN]
+
+------------------------------
+
+Date: Wed, 19 Apr 2017 09:29:26 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Russia's alleged election interference - suspects & investigators
+  (BBW)
+
+Nice graphic on players in the probe into alleged Russia interference in US
+election.
+
+For the complete illustration on 2 opposite pages, see pages 28-29 of the
+April 10-23 Bloomberg Business Wek magazine.
+
+https://www.scribd.com/article/344313129/How-Will-They-Know-And-When-Will-They-Know-It
+
+https://www.bloomberg.com/news/articles/2017-04-06/the-russia-probes-how-will-they-know-and-when-will-they-know-it
+
+------------------------------
+
+Date: Sat, 29 Apr 2017 13:24:38 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Russian-controlled telecom hijacks financial services' Internet
+  traffic (Ars Technica)
+
+via NNSquad
+https://arstechnica.com/security/2017/04/russian-controlled-telecom-hijacks-financial-services-internet-traffic/
+
+  On Wednesday, large chunks of network traffic belonging to MasterCard,
+  Visa, and more than two dozen other financial services companies were
+  briefly routed through a Russian government-controlled telecom under
+  unexplained circumstances that renew lingering questions about the trust
+  and reliability of some of the most sensitive Internet communications.
+  Anomalies in the border gateway protocol--which routes large-scale amounts
+  of traffic among Internet backbones, ISPs, and other large networks--are
+  common and usually the result of human error. While it's possible
+  Wednesday's five- to seven-minute hijack of 36 large network blocks may
+  also have been inadvertent, the high concentration of technology and
+  financial services companies affected made the incident "curious" to
+  engineers at network monitoring service BGPmon.  What's more, the way some
+  of the affected networks were redirected indicated their underlying
+  prefixes had been manually inserted into BGP tables, most likely by
+  someone at Rostelecom, the Russian government-controlled telecom that
+  improperly announced ownership of the blocks.
+
+------------------------------
+
+Date: Wed, 26 Apr 2017 09:05:08 +0200
+From: "Donald B. Wagner" <zapkatakonk@me.com>
+Subject: Denmark: Russia has been hacking us for two years
+
+*The Copenhagen Post*
+
+The defence minister, Claus Hjort Frederiksen, has revealed that Russian
+hackers have been targeting Danish Defence for the past two years, but with
+limited success.
+
+Frederiksen confirmed what was written in a new report just published by the
+Centre for Cyber Security (CFCS): that a Russian hacker group has gained
+entry to employee emails in 2015 and 2016.
+
+http://cphpost.dk/news/denmark-russia-has-been-hacking-us-for-two-years.html
+
+The Google translation of the Centre's press briefing is surprisingly good:
+
+https://translate.google.com/translate?sl=3Dda&tl=3Den&js=3Dy&prev=3D_t&hl=3Den&ie=3DUTF-8&u=3Dhttps%3A%2F%2Ffe-ddis.dk%2Fcfcs%2Fnyheder%2Farkiv%2F2017%2FPages%2FUdenlandskaktoerspionerermoddanskemyndigheder.aspx&edit-text
+
+And the translation of the original report:
+
+https://translate.google.com/translate?sl=3Dda&tl=3Den&js=3Dy&prev=3D_t&hl=
+=3Den&ie=3DUTF-8&u=3Dhttps%3A%2F%2Ffe-ddis.dk%2Fcfcs%2FCFCSDocuments%2FUnd=
+ers%25C3%25B8gelsesrapport%2520-%2520En%2520akt%25C3%25B8r%2520mange%2520a=
+ngreb.pdf&edit-text=3D
+
+  [The URLs are as they appear in my old RISKS mail reader, which I still
+  use because it has features that my macros need, and modern mailers do not
+  serve the purpose.  I'm not going to mess with the coded this time,
+  although I usually do -- and then test them to make sure they work.  PGN]
+
+------------------------------
+
+Date: Thu, 27 Apr 2017 17:32:39 +0300
+From: Edwin Slonim <eslonim@minols.com>
+Subject: Cyber Attack in Israel reportedly used NSA tool
+
+The Israeli press is reporting that "120 targets including academic
+institutions, ministries, companies and private individuals were attacked"
+in a "attack was unique in its sophistication, Franco said, with the malware
+arriving in infected Microsoft Word files attached to authentic emails from
+an authentic academic institution. Anti-virus software failed to notice the
+problem."
+
+Anonymous sources indicated that a tool reportedly developed by the NSA was
+used in the attack, and that it seems likely to have been sourced in Iran.
+
+This just goes to demonstrate what security researchers have long stated -
+that there is no possibility to have cyber tools that will remain only in
+the hands of "the good guys", and the only safe option is to make
+everything secure against government, as well as against "bad guys".
+
+http://www.haaretz.com/misc/article-print-page/.premium-1.785802 behind
+paywall)
+
+Edwin Shalom Slonim, Haifa 3107202 Israel
+ph: +972-4-826-6583 cell: +972-52-282-1906 USA: +1(718)715-0581
+
+------------------------------
+
+Date: Thu, 27 Apr 2017 20:12:13 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How to Detect Fake News in Real-Time (Medium)
+
+via NNSquad
+https://medium.com/@krishnabharat/how-to-detect-fake-news-in-real-time-9fdae0197bfd
+
+  "This made me wonder what Facebook and other platforms could have done to
+   detect these waves of misinformation in real-time. Could they have run
+   countermeasures? If detected in time could they have slowed the spread or
+   marked it as unreliable news?"
+
+The author is the now ex-Googler who led the original team that built Google
+News.
+
+------------------------------
+
+Date: Sat, 29 Apr 2017 07:26:31 +1000 (EST)
+From: Dave Horsfall <dave@horsfall.org>
+Subject: Tectonic plate movement and driverless cars
+
+Apparently driverless cars use GPS down to centimetre precision (probably
+using carrier phase detection), but given that tectonic plates moved at
+several cm/year I guess Google's cars may start crashing in a few years.
+
+(Incidentally, my spell checker suggested "drivelers" for "driverless".)
+
+Dave Horsfall DTM (VK2KFU)
+
+------------------------------
+
+Date: Tue, 25 Apr 2017 16:41:34 -0400 (EDT)
+From: Kelly Bert Manning <Kelly.Manning@ncf.ca>
+Subject: Flawed electronic prescription system too entrenched to disable?
+
+http://www.timescolonist.com/news/local/ihealth-alarm-sounds-again-in-nanaimo-1.16804895
+
+A prescription management system that many Physicians and Nurses feel is
+dangerous has been found to be too embedded in VIHA's new iHealth system to
+disable.
+
+The Root issue seems to be a failure to address the human factors
+interface. Both on data entry, and in trying to use even the largest
+rolling, self standing, workstation display to replicate the way that
+practitioners used to be able to flip through 3 ring binders until something
+caught their eye. Data entry takes much longer with a keyboard and mouse
+than with a pen and paper, slowing staff down.
+
+We also see the issue of mistaken identity come up. A Saanich man contacted
+the Provincial Privacy Commissioner because VIHA staff keep confusing him
+with someone with the same name. He says he has repeatedly had to tell
+practitioners that they were acting on the basis of someone else's file and
+making incorrect decisions. Staff were unable to find test results for him.
+
+http://vancouverisland.ctvnews.ca/it-s-very-disconcerting-island-health-mixes-up-man-s-identity-health-records-1.3307461
+
+An interesting substory is that iHealth reinvented the Electronic
+Prescription Wheel. BC has had a mandatory, no exceptions, Province Wide
+PharmaNet Registry since the mid 1990s. It was brought in as a knee jerk
+reaction to Prescriptions being the fastest growing part of the Provincial
+Health Care Budget.  For some reason iHealth decided they would develop a
+parallel system, rather than using the existing prescription registry.
+
+Failed promises of efficiency and better health are an old story.
+
+The Province wide mandatory PharmaNet system promised that it would prevent
+drug interactions. That supposed benefit was illustrated by the tale of a
+senior who had been prescribed diuretics by several different doctors,
+filled at different pharmacies. A number of pharmacies already had such
+systems, but a quarter of a century later we find pharmacists turning off
+interaction alarms because of alarm overload. People are still being harmed
+by drug interaction.
+
+The BC College of Pharmacists was ordered to stop selling Prescribing
+Profile information collected from PharmaNet. They ignored the Minister's
+polite request to cease and desist, so she made it an order.
+
+The College has published the Chart Numbers and names of a number of
+Pharmacists Disciplined for breach of privacy via PharmaNet.
+
+https://web-beta.archive.org/web/20031218202856/http://www.bcpharmacists.org/pdf/julyaugust2000.pdf
+http://web.archive.org/web/20031230224214/http://www.bcpharmacists.org/pdf/marchapril2000.pdf
+http://web.archive.org/web/20040101163903/http://www.bcpharmacists.org/pdf/mayjune99.pdf
+
+The Sep-Oct version of the Bulletin also dealt with PharmaNet Privacy abuse,
+but does not seem to be available online.
+
+A breach of PharmaNet recently resulted in identity theft for over 20,000
+people.
+
+http://www.timescolonist.com/news/local/arrest-made-in-pharmanet-privacy-breach-20-500-may-be-affected-1.13962023
+
+------------------------------
+
+Date: Tue, 25 Apr 2017 17:28:11 -0400
+From: "Robert L Wears, MD, MS, PhD" <wears@ufl.edu>
+Subject: The wrong way to remove clutter in EHRs
+
+Clinical users have long complained that electronic health record (EHR)
+systems feature screens that are so cluttered with trivia that the truly
+important is difficult to pick out.  Now one major vendor has addressed that
+problem, but in the wrong way.
+
+They recognized that patients' medication lists contain both drugs they are
+on for the long haul (e.g., for diabetes, seizures, heart disease, etc.) but
+also drugs that are short term (e.g., antibiotics for an infection).  What a
+clutter!
+
+So, they added a variable that the user must set if the drug is intended for
+long term use.  If that long term flag is not set, then the drug disappears
+from the list after a period of time has elapsed.
+
+Hmm, what could go wrong?  Only a couple of diabetics whose insulin was
+omitted, or patients with clotting disorders whose blood thinners
+disappeared, epileptics whose anticonvulsants went into the void, etc, etc.
+
+------------------------------
+
+Date: Wed, 26 Apr 2017 18:46:44 -0700
+From: Tom Russ <taruss@google.com>
+Subject: Senate staffers have picture of security chip on their IDs.
+
+... while many executive branch employees now have PIV [Personal Identity
+Verification] cards [for 2-factor authentication] with chips embedded in
+them, Senate employees get ID cards with a picture of a chip on them.
+
+https://arstechnica.com/information-technology/2017/04/picture-this-senate-staffers-id-cards-have-photo-of-smart-chip-no-security/
+
+[You can't make this up.]
+
+Tom Russ, Google Los Angeles (Venice), 340 Main St., Venice CA 90291
+
+------------------------------
+
+Date: Fri, 21 Apr 2017 18:06:23 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: HSBC introduces voice passwords, all the same
+
+HSBC says: No longer will you need to remember your PIN or Telephone Access
+Code each time you call in to telephone banking. With Voice ID, you can gain
+immediate access to your accounts by entering your account, card or Social
+Security number and simply saying "My voice is my password."
+
+http://www.us.hsbc.com/1/2/home/customer-service/voice
+
+A friend commented: I recently read how some telephone scammers try to get
+you to answer certain questions so that they can record your voice for later
+use. Sounds like this kind of system is the target.
+
+To which I replied: And all crooks need do is call HSBC customer and ask how
+they log on! They'll answer...
+
+"My voice is my password"
+
+I love it, have everyone say exactly the same brainless thing, simplify
+tricking and spoofing. Brilliant.
+
+------------------------------
+
+Date: Mon, 24 Apr 2017 17:47:12 -0500
+From: Dmitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Two-factor authentication
+
+is a good thing, right? My credit union used it for some time, it's called
+VerifyU and has options to send "security code" to one of registered phone
+numbers (SMS or robo-call) or e-mail addresses. And we were happy knowing
+someone in our credit union's IT dept. has a clue.
+
+Well, we're in a beach side resort in Costa Rica (terrible, I know). We try
+to see how much money's there, VerifyU page comes up with no e-mail
+option. Neither my wife's T-Mobile nor my AT&T phones get any signal here so
+no security code for us. "Having trouble logging in?" -- call an 800 or a
+local number. Did I mention our phones don't work?
+
+Remember back when the 2nd "factor" was a "security question" like what was
+your mother's maiden name? That was much too insecure, it allowed customers
+to actually log in. So we can't have that.
+
+(I can actually call the 1-800 number via skype as I have WiFi but if skype
+for mobile has a "dial a number" option I'm unable to find it.  Good thing I
+have a laptop, too, where that option is still available.)
+
+------------------------------
+
+Date: Tue, 25 Apr 2017 11:03:39 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Antivirus provider Webroot is causing trouble for customers
+
+A signature update just nuked hundreds of benign files needed to run
+Microsoft Windows, as well as apps that run on top of the operating
+system. Considered Windows malware and Facebook a phishing scheme. OMG
+
+https://arstechnica.com/security/2017/04/av-provider-webroot-melts-down-as-update-nukes-hundreds-of-legit-files/
+
+------------------------------
+
+Date: Tue, 25 Apr 2017 15:37:46 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Man gets fined for discovering a flaw (Motherboard)
+
+An electronics engineer says he found a flaw in traffic lights.
+The Oregon engineering board fined him for it.
+https://motherboard.vice.com/en_us/article/man-fined-dollar500-for-crime-of-writing-i-am-an-engineer-in-an-email-to-the-government
+
+------------------------------
+
+Date: Sat, 29 Apr 2017 07:51:20 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Turkey blocks Wikipedia under law designed to protect national
+  security
+
+via NNSquad
+https://www.theguardian.com/world/2017/apr/29/turkey-blocks-wikipedia-under-law-designed-to-protect-national-security
+
+  Turkey has blocked Wikipedia, the country's telecommunications watchdog
+  said on Saturday, citing a law that allows it to ban access to websites
+  deemed obscene or a threat to national security.  The move is likely to
+  further worry rights groups and Turkey's western allies, who say Ankara
+  has curtailed freedom of speech and other basic rights in the crackdown
+  that followed last year's failed coup.  "After technical analysis and
+  legal consideration ... an administrative measure has been taken for this
+  website," the BTK watchdog said in a statement on its website.
+
+------------------------------
+
+Date: Sat, 29 Apr 2017 10:29:30 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: EPA website removes climate science site from public view after two
+  decades (The Washington Post)
+
+via NNSquad
+https://www.washingtonpost.com/news/energy-environment/wp/2017/04/28/epa-website-removes-climate-science-site-from-public-view-after-two-decades/
+
+  One of the websites that appeared to be gone had been cited to challenge
+  statements made by the EPA's new administrator, Scott Pruitt. Another
+  provided detailed information on the previous administration's Clean Power
+  Plan, including fact sheets about greenhouse gas emissions on the state
+  and local levels and how different demographic groups were affected by
+  such emissions.
+
+    [I presume all of the removed items have been mirrored regularly
+    by environmental organizations???  PGN]
+
+------------------------------
+
+Date: Wed, 26 Apr 2017 09:30:24 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Amazon Wants to Put a Camera and Microphone in Your Bedroom
+
+via NNSquad
+https://motherboard.vice.com/en_us/article/amazon-echo-look-bedroom-camera
+
+  The newly announced Echo Look is a virtual assistant with a
+  microphone and a camera that's designed to go somewhere in
+  your bedroom, bathroom, or wherever the hell you get dressed.
+
+------------------------------
+
+Date: Wed, 26 Apr 2017 18:51:15 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Brickerbot
+
+This is an interesting case study (came to light this week) of a vigilante
+worm that is attacking/disabling insecure IoT devices that are susceptible
+to hijacking by DDoS botnets.
+
+https://techcrunch.com/2017/04/25/brickerbot-is-a-vigilante-worm-that-destroys-insecure-iot-devices/
+
+This is effectively destroying poorly manufactured products, produced by an
+IoT industry that doesn't care how their devices are affecting the privacy
+of their consumer or Internet victims that have to deal with their hijacked
+products as DDoS drones.
+
+Could all those victim consumers whose products are being destroyed produce
+a tech support surge that finally pushes the IoT manufacturers to improve
+their default device security.  We shall see.
+
+  [See also a long item on Janit0r in gizmodo:
+    http://gizmodo.com/this-hacker-is-my-new-hero-1794630960
+  PGN]
+
+------------------------------
+
+Date: Wed, 19 Apr 2017 10:30:42 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Ankle Bracelet glitches (BBW)
+
+In many areas we are depending on technology, where the hype far outstrips
+the technology capabilities.
+
+Many new technologies have glitches, and sometimes it takes a while to
+resolve the problems.
+
+Many companies are overwhelmed with cybersecurity alerts.  They need better
+systems to manage info from the alert systems.
+
+Many US judicial and police authorities are overwhelmed with ankle bracelet
+alerts.  The technology is not good enough for what they using it for.
+
+https://www.bloomberg.com/news/features/2017-04-06/what-s-the-maker-of-post-it-notes-doing-in-the-ankle-monitor-business-struggling
+
+http://www.telegram.com/apps/pbcs.dll/article?AID=/20120222/NEWS/102229941/0/COLUMN67
+
+Do you ever experience a loss of signal with your consumer electronics?
+
+When that happens with an ankle monitor, either the offender is arrested for
+disappearing, or gets phone call in middle of night to walk out into middle
+of street outside home, so law enforcement can get a better signal.
+
+We have seen stories in RISKS about bad GPS signals, and bogus ID pointing
+at the unlucky person whose home is same as a default used when ID cannot be
+nailed down.  That also happens with ankle monitors, giving false info about
+offender whereabouts, leading to arrest of that person for violating rules
+where they supposed to be.
+
+When the ankle bracelet system gives off false information, the offender is
+automatically considered to be at fault.
+
+A July 2015 article in Massachusetts Lawyers Weekly recounted a criminal
+defense attorney's tale of his client's device showing that he had walked
+across a lake.
+
+http://masslawyersweekly.com/2015/07/23/gps-tracking-glitches-illustrate-need-for-caution/
+
+------------------------------
+
+Date: Sun, 30 Apr 2017 07:48:22 -0400
+From: "Dave Farber" <farber@gmail.com>
+Subject: Hacker holds Netflix to ransom over new season of Orange Is The New
+  Black
+
+https://www.theguardian.com/media/2017/apr/29/hacker-holds-netflix-to-ransom-over-new-season-of-orange-is-the-new-black?CMP=Share_iOSApp_Other
+
+------------------------------
+
+Date: Tue, 25 Apr 2017 10:03:29 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Bash Bunny: Big hacks come in tiny packages" (InfoWorld)
+
+http://www.infoworld.com/article/3192084/security/bash-bunny-big-hacks-come-in-tiny-packages.html
+
+Roger A. Grimes, Columnist, InfoWorld, 25 Apr 2017
+
+With new hardware hacking devices, it's absurdly easy to attack
+organizations through the USB port of any computer on a network
+
+selected text:
+
+Today's increasingly miniaturized world is giving rise to all sorts of
+hardware devices that can hack almost any computer, device, or network.
+Plug in an item the size of a USB stick and all your hard-won protections
+could be defeated. If you haven't been paying attention to this field of
+attack, what you learn might shock you.
+
+In the interest of defending against this new threat, let's take a close
+look at one of the most versatile and popular hardware hacking devices: Bash
+Bunny by Hak5. I'm offering considerable detail here to show how easy it is
+to launch malicious attacks that bypass network defenses -- and to help
+white hats who may wish to use the device for simulated red team attacks.
+
+Bash Bunny is a Debian Linux computer with a USB interface designed
+specifically to execute payloads when plugged into a target computer. It can
+be used against Windows, MacOS, Linux, Unix, and Android computing
+devices. It features a multicolor RGB LED that indicates various statuses
+and a three-position selector switch: Two of the positions are used to
+launch payloads, while the third makes Bash Bunny appear to be a regular USB
+storage device for copying and modifying files.
+
+------------------------------
+
+Date: Wed, 19 Apr 2017 15:47:38 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Homographic URLs
+
+  [This has long been a topic in RISKS: URLs with characters that
+  aren't quite what you expect, as in a Cyrillic o in .com.  PGN]
+
+Here's a challenge for you: you click on a link in your email, and find
+yourself at the website <apple.com>. Your browser shows the green padlock
+icon, confirming it's a secure connection; and it says *Secure* next to it,
+for added reassurance. And yet, you've been phished. Do you know how?
+
+https://www.theguardian.com/technology/2017/apr/19/phishing-url-trick-hackers
+
+For a long time, domain names could only be written in Latin characters
+without diacritics, but since 1998 it's actually been possible to write them
+in other alphabets too. That's useful if you want to register a domain name
+in Chinese or Arabic script, or even just correctly spelled French or German
+-- anything that can be represented with the Unicode standard can be
+registered, even emoji -- but it's also opened up a whole new avenue of
+misdirection for malicious actors to take advantage of, by finding
+characters in other alphabets which look similar to Latin ones.
+
+The Chrome team has since decided to include the fix in Chrome 58, which
+should be available around April 25.  Mozilla, however, declined to fix it,
+arguing that it's Apple's problem to solve: ``it is sadly the responsibility
+of domain owners to check for whole-script homographs and register them.''
+
+------------------------------
+
+Date: Wed, 19 Apr 2017 22:21:14 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How A False Story About A Husband And Wife Being Twins
+ Ended Up On Major News Websites (Buzzfeed)
+
+via NNSquad
+https://www.buzzfeed.com/craigsilverman/this-false-story-about-a-husband-and-wife-discovering?utm_term=.tjX972VElm#.ejwL0b5K3j
+
+  A husband and wife go to a fertility clinic. As part of the treatment
+  process, the clinic takes DNA samples from both of them and discovers that
+  they are, in fact, fraternal twins.  It's a story seemingly guaranteed to
+  go viral, and it soon made its way onto websites around the world. The
+  Daily Mail covered it, as did Lad Bible, Elite Daily, The Independent's
+  Indy100, Huffington Post Germany, and even websites as far away as India,
+  New Zealand, Nigeria, and Israel.  They all pointed back to the same
+  source: an April 12 story in the Mississippi Herald. Some referred to the
+  Herald as a newspaper, but there's no print publication by that name, and
+  the MississippiHerald.com domain was only registered in November. The
+  reality is the story is a complete fabrication, and the Herald is part of
+  a network of fake local news sites that recently began pumping out
+  hoaxes. But the site's utterly dubious origin didn't stop large,
+  legitimate news sites from spreading its hoax to a global audience.
+
+A Google Search on this topic shows a top result indicating the story is
+fake, and two out of the three featured boxes say it's fake. The remaining
+feature box reports it as legit, as do all the other links on the first page
+below the top link.
+
+------------------------------
+
+Date: Thu, 20 Apr 2017 11:20:40 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Princeton researchers discover why AI become racist and sexist
+  (Ars Technica)
+
+via NNSquad
+https://arstechnica.com/science/2017/04/princeton-scholars-figure-out-why-your-ai-is-racist/
+
+  Ever since Microsoft's chatbot Tay started spouting racist commentary
+  after 24 hours of interacting with humans on Twitter, it has been obvious
+  that our AI creations can fall prey to human prejudice. Now a group of
+  researchers has figured out one reason why that happens.  Their findings
+  shed light on more than our future robot overlords, however.  They've also
+  worked out an algorithm that can actually predict human prejudices based
+  on an intensive analysis of how people use English online.
+
+------------------------------
+
+Date: Thu, 20 Apr 2017 10:48:58 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Don't get bit by zombie cloud data" (Fahmida Y. Rashid)
+
+Fahmida Y. Rashid, InfoWorld, 20 Apr 2017
+Data you thought you had deleted from the cloud can come back to
+haunt you. Get to know your provider's data deletion policy
+http://www.infoworld.com/article/3190131/security/dont-get-bit-by-zombie-cloud-data.html
+
+selected text:
+
+The Internet never forgets, which means data that should have been deleted
+doesn't always stay deleted. Call it "zombie data," and unless your
+organization has a complete understanding of how your cloud providers handle
+file deletion requests, it can come back to haunt you.
+
+Deleting data in the cloud differs vastly from deleting data on a PC or
+smartphone. The cloud's redundancy and availability model ensures there are
+multiple copies of any given file at any given time, and each must be
+removed for the file to be truly deleted from the cloud.  When a user
+deletes a file from a cloud account, the expectation is that all these
+copies are gone, but that really isn't the case.
+
+In some cases, providers adopt a 30-day retention policy (Gmail has a 60-day
+policy), where the file may no longer appear in the user's account but stay
+on servers until the period is up. Then the file and all its copies are
+automatically purged. Others offer users a permanent-delete option, similar
+to emptying the Recycle Bin on Windows.
+
+Service providers make mistakes. In February, forensics firm Elcomsoft found
+copies of Safari browser history still on iCloud, even after users had
+deleted the records. The company's analysts found that when the user deleted
+their browsing history, iCloud moved the data to a format invisible to the
+user instead of actually removing the data from the servers. Earlier, in
+January, Dropbox users were surprised to find files that had been deleted
+years ago reappearing in their accounts. A bug had prevented files from
+being permanently deleted from Dropbox servers, and when engineers tried to
+fix the bug, they inadvertently restored the files.
+
+------------------------------
+
+Date: Thu, 20 Apr 2017 11:00:29 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "DDoS attacks abusing exposed LDAP servers on the rise"
+  (Fahmida Y. Rashid)
+
+Fahmida Y. Rashid, InfoWorld, 13 Apr 2017
+DDoS attacks abusing exposed LDAP servers on the rise
+A pair of advisories from Ixia and Akamai illustrate how DDoS
+attackers can abuse legitimate protocols to launch ever larger
+reflection attacks
+http://www.infoworld.com/article/3189756/security/ddos-attacks-abusing-exposed-ldap-servers-on-the-rise.html
+
+Each DDoS attack seem to be larger than the last, and recent advisories from
+Akamai and Ixia indicate that attackers are stepping up their game. As
+attackers expand their arsenal of reflection methods to target CLDAP
+(Connection-less Lightweight Directory Access Protocol) and BIND, expect to
+see even larger attacks this year.
+
+Reflection attacks abuse legitimate protocols, such as NTP, DNS, and SNMP,
+to produce significantly large amounts of attack bandwidth.  Attackers send
+a request to a third-party server using a spoofed IP address, and the server
+sends back a response (which is typically much larger in size). Since the IP
+address is spoofed, the response doesn't go to the original requester, but
+to the unsuspecting victim.  Instead of building large botnets of millions
+of compromised hosts to launch a large attack, attackers can use a smaller
+number of systems to target exposed third-party servers.  [... Examples
+follow]
+
+------------------------------
+
+Date: Thu, 20 Apr 2017 07:44:06 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Bose headphones have been spying on customers, lawsuit claims
+
+via NNSquad
+https://www.washingtonpost.com/news/the-switch/wp/2017/04/19/bose-headphones-have-been-spying-on-their-customers-lawsuit-claims/
+
+  Combined with the registration information, that gave Bose access to
+  personally identifiable information that Zak and other never agreed to
+  share, the complaint says. Listening data can be very personal,
+  particularly if users are listening to podcasts or other audio files that
+  could shade in information about their political preferences, health
+  conditions or other interests, the complaint argues.  The filing also
+  alleges that Bose wasn't just collecting the information.  It was also
+  sharing it with a data mining company called Segment.io, according to
+  research conducted by Edelson, the Chicago-based law firm representing
+  Zak.
+
+    [Gene Wirchenko noted a similar BBC item:
+    "Bose sued for logging listening habits"
+    http://www.bbc.com/news/technology-39654085
+
+------------------------------
+
+Date: Fri, 21 Apr 2017 18:28:17 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: For 18 years, she thought someone was stealing her identity.
+ Until she found her.
+
+Finally, the DMV told me that I wasn't the victim of identity theft; there
+was simply another Lisa S Davis with the same birthday in New York City. Our
+records were crossed. When cops run a license, they don't check the person's
+address, signature, or social security numbers. They check the name and the
+birthday, and both the other Lisa S Davis's and mine were the same. We were,
+in the eyes of the law, one person, caught in a perfect storm of DMV and
+NYPD idiocy.
+
+https://www.theguardian.com/us-news/2017/apr/03/identity-theft-racial-justice
+
+Funny, I've entertainingly crossed paths/wires with another Gabe Goldberg
+(also a writer!) and know of several others. Maybe made-up names are the
+answer, with numbers and special characters. Maybe the artist formerly and
+once again known as Prince was on to something.
+
+------------------------------
+
+Date: Fri, 21 Apr 2017 18:34:53 -0400 (EDT)
+From: Kelly Bert Manning <Kelly.Manning@ncf.ca>
+Subject: Re: Autonomous Electric Vehicle impact on Economy (RISKS-30.24)
+
+"Will we have a bill board inside our cars, with info about the retail
+establishments along our coming route?"
+
+Don't we already have that? High end new vehicles either have built in
+displays in visors or seat backs, heads up displays or mobile hubs that
+wireless devices can connect to.
+
+Passengers on long trips have always wanted something to distract them, but
+with autonomous vehicles drivers will also be tempted to pay more attention
+to the infotainment system than to the road ahead.
+
+Connecting to "free" wifi along a recurring travel path often involves
+paging through ads to set up your connection. Many commercial web servers
+try to get your location data and tailor ads and search engine suggestions
+based on your location and movement history.
+
+I normally get my video from TELUS, not Rogers, but when I am at the local
+Renal Agency clinic or hospital I often see Rogers overlaying advertising
+for additional fee products onto the video channels.
+
+------------------------------
+
+Date: Wed, 19 Apr 2017 13:52:28 -0400
+From: Charles Jackson <clj@jacksons.net>
+Subject: Re: Autonomous vehicle... (Shapir, RISKS-30.25)
+
+> The car comes to a stop sign it's passed a hundred
+>   times before - but this time, it blows right through it.
+
+This appears to me to be an unlikely scenario.  I expect that self-driving
+cars will (1) come with a database of stop sign locations and (2) learn
+where the stop signs are on frequently traveled routes.
+
+A self-driving car should be prepared to cope with the problem created when
+an out-of-control car removes a stop sign or a tree branch covers it up.
+
+https://safety.fhwa.dot.gov/local_rural/training/fhwasa09025/ for a
+discussion of various ways that traffic signs fail.
+
+I think a more reasonable hack would be to put up lots of false stop signs
+or stop lights.  An always red stoplight would be (1) inexpensive and (2)
+tie up traffic.  Moreover, a self-driving car *should* be programmed to pay
+attention to a stop light that it has not seen before and that is not in its
+database.
+
+  [There will always be unmapped areas, as well as temporary changes that
+  reroute traffic.  The latter happens frequently.  PGN]
+
+------------------------------
+
+Date: Sat, 22 Apr 2017 21:51:31 GMT
+From: raltbos@xs4all.nl (Richard Bos)
+Subject: Re: Prison inmates built working PCs out of e-waste (RISKS-30.24)
+
+Interestingly, while there are calls for more searches and more physical
+restrictions, nobody seems to have wondered how these prisoners could
+get hold of the guard's password. It would seem to me that that was the
+more important side of the problem. A computer cable is easily
+disconnected, but carelessness about passwords is insidious.
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.26
+************************

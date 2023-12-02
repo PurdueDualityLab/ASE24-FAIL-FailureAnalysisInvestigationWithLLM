@@ -1,0 +1,559 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.74
+
+RISKS-LIST: Risks-Forum Digest  Saturday 1 July 2023  Volume 33 : Issue 74
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.74>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Android 13 "Emergency SOS" Implementations Leading to Problems
+ Peter Bernard Ladkin)
+UK police blame Android SOS feature for influx of false
+ emergency calls (The Verge)
+FAA lifts ground stop at DC-area airports after pausing
+ departures for repairs at air traffic control facility (CNN)
+Researchers Find Way to Recover Cryptographic Keys
+ by Analyzing LED Flickers (NIST)
+The cleaner did it: an uncool act. (Times Union)
+Single points of failure and the repercussions of
+ "silencing the alarm" (CNN)
+How Do Kwon, a Crypto Fugitive, Upended the Politics
+ of Montenegro (*The New York Times*)
+Petro-Canada payment problems continue, but company says it's 'making
+ progress' on fix (CBC)
+$118K water bill has name of woman who died in 2007 on
+ it; water company wants new owner to pay it (WSBTV)
+Cyberstalkers shielded by SCOTUS ruling on speech and
+ online threats (Ars Technica)
+Barred from Grocery Stores by Facial Recognition (NYTimes)
+Indigo lost $50M last year, in large part due to February 2023 cyberattack
+ (CBC)
+Europe Opens AI 'Crash Test' Centers (ACM TechNews)
+AI's Use in Elections Sets Off a Scramble for Guardrails (NYTimes)
+How Secure Are Voice Authentication Systems? (U.Waterloo)
+LastPass users furious after being locked out due to MFA resets
+ (BleepingComputer)
+"The EU AI Act: A Critical Assessment" (Lauren Weinstein)
+OpenAI, maker of ChatGPT, hit with proposed class-action
+ lawsuit alleging it stole people's data (CNN)
+Re: Is America Ready For AI-Powered Politics? (Martin Ward)
+Re: The people paid to train AI are outsourcing their work ... to
+ ... to AI (Steve Bacher)
+Re: Do chatbot avatars prompt bias in health care?
+ (Arthur Flatau)
+Re: Is America Ready For AI-Powered Politics? (David Alexander)
+Re: Tesla leak reportedly shows thousands of Full Self-Driving, safety
+ complaints (Martin Ward)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 30 Jun 2023 09:35:34 +0200
+From: "Prof. Dr. Peter Bernard Ladkin" <ladkin@techfak.de>
+Subject: Android 13 "Emergency SOS" Implementations Leading to Problems
+
+Apparently an Android OS update from Autumn 2022, offers an "Emergency SOS"
+function, whereby, when a particular key combination (one or more keys) is
+pressed 5 times, the emergency-services telephone number is called.
+
+Apparently not every manufacturer of Android-based phones has implemented
+this function appropriately. There is an article in my local newspaper, the
+Neue Westfalische Zeitung, today 2023-06-30, about "ghost calls" causing
+problems for the emergency services. The problem is not uniform. In my
+district of Bielefeld, with about 334,000 inhabitants, there are about 45
+(more) such calls a day, and in May there were about 1,500 more calls than
+usual. In the district of Paderborn, just south of us, with about 306,000
+inhabitants, there are about 100 (more) such calls a day.
+
+Each such call must be followed. First, the emergency responder calls the
+number back. If someone answers, the matter is quickly settled but this
+still takes time. If no one answers, the assumption is that the caller is
+unable to respond, which can mean a medical emergency with the caller
+unconscious; that entails that people and vehicles are sent. There aren't
+the personnel to cope with this everywhere all the time.
+
+The problem is apparently known, both by Google and by suppliers of Android
+phones. And it can be sorted. The issue then is that not all Android phones
+are automatically SW-updated; the users themselves in these cases must
+initiate an update and most people don't know about the problem (and some
+may not even care :-( ).
+
+------------------------------
+
+Date: Mon, 26 Jun 2023 15:32:19 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: UK police blame Android SOS feature for influx of false
+ emergency calls (The Verge)
+
+https://www.theverge.com/2023/6/26/23773733/android-sos-emergency-call-uk-999-first-responder-google
+
+------------------------------
+
+Date: Mon, 26 Jun 2023 15:46:18 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: FAA lifts ground stop at DC-area airports after pausing
+ departures for repairs at air traffic control facility (CNN)
+
+Flights to DC-area airports are able to resume after the Federal Aviation
+Administration lifted a ground stop made earlier Sunday evening due to
+equipment problems at an air traffic control facility in Virginia.
+
+The agency had paused departures to Reagan National, Washington Dulles
+International and Richmond International airports in Virginia as well as
+Baltimore Washington International in Maryland while repairs were made at
+the Potomac Terminal Radar Approach Control facility, according to the FAA’s
+Twitter.
+
+------------------------------
+
+Date: Wed, 28 Jun 2023 19:03:03 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Researchers Find Way to Recover Cryptographic Keys
+ by Analyzing LED Flickers (NIST)
+
+In what's an ingenious side-channel attack
+<https://csrc.nist.gov/glossary/term/side_channel_attack>, a group of
+academics has found that it's possible to recover secret keys from a device
+by analyzing video footage of its power LED.
+
+``Cryptographic computations performed by the CPU change the power
+consumption of the device which affects the brightness of the device's power
+LED,'' researchers from the Ben-Gurion University of the Negev and Cornell
+University said <https://www.nassiben.com/video-based-crypta> in a study.
+
+By taking advantage of this observation, it's possible for threat actors to
+leverage video camera devices such as an iPhone 13 or an Internet-connected
+surveillance camera to extract the cryptographic keys from a smart card
+reader.
+
+Specifically, video-based cryptanalysis is accomplished by obtaining video
+footage of rapid changes in an LED's brightness and exploiting the video
+camera's rolling shutter <https://en.wikipedia.org/wiki/Rolling_shutter>
+effect to capture the physical emanations.
+
+"This is caused by the fact that the power LED is connected directly to the
+power line of the electrical circuit which lacks effective means (e.g.,
+filters, voltage stabilizers) of decoupling the correlation with the power
+consumption," the researchers said.
+
+In a simulated test <https://eprint.iacr.org/2023/923>, it was found that
+the method allowed for the recovery of a 256-bit ECDSA key from a smart
+card by analyzing video footage of the power LED flickers via a hijacked
+Internet-connected security camera.
+
+------------------------------
+
+Date: Wed, 28 Jun 2023 17:45:58 +0200
+From: Peter Houppermans <peter@houppermans.net>
+Subject: The cleaner did it: an uncool act. (Times Union)
+
+https://www.timesunion.com/news/article/rpi-sues-cleaner-s-gaff-allegedly-=
+destroyed-18164979.php
+
+TROY -- A custodial worker switched off a super-cold freezer in = a
+Rensselaer Polytechnic Institute lab -- destroying decades of = scientific
+research and causing a least $1 million in damage, according = to a lawsuit
+filed by the university against the outside firm that employed the cleaner.
+
+------------------------------
+
+Date: Tue, 27 Jun 2023 07:37:46 -0400
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: Single points of failure and the repercussions of
+ "silencing the alarm" (CNN)
+
+Single points of failure are a risk. Alarms and error messages are a
+nuisance. Having only a single set of samples and someone clearing the alarm
+without resolving the underlying condition has consequences.
+
+As reported in the CNN article, a lawsuit has been filed by Rensselaer
+Polytechnic against a janitorial services contractor concerning a power down
+event involving a laboratory freezer.
+
+A laboratory freezer storing biological samples at Rensselaer Polytechnic
+was in need of service. Service had been called. Notices were put on the
+unit that it was awaiting service and that the unit should not be unplugged,
+but the alarm could be temporarily cleared by pressing the TEST button. A
+janitor heard the alarms and instead of following the instructions, flipped
+the circuit breaker. The temperature went from the programmed -80 C to -32
+C, irreparably damaging samples comprising 20 years of research.
+
+https://www.cnn.com/2023/06/27/us/janitor-alarm-freezer-rensselaer-polytechnic-lawsuit-new-york/index.html
+
+------------------------------
+
+Date: Sun, 25 Jun 2023 20:22:53 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How Do Kwon, a Crypto Fugitive, Upended the Politics
+ of Montenegro (*The New York Times*)
+
+Only days before an election in Montenegro, a letter from Do Kwon, the
+fugitive founder of the Luna digital coin, claimed that crypto “friends” had
+provided campaign funding to a leading candidate.
+
+Already notorious as an agent of market mayhem, the crypto industry has now
+unleashed political havoc, too, upending a critical general election in
+Montenegro, a troubled Balkan nation struggling to shake off the grip of
+organized crime and the influence of Russia.
+
+Only days before a vote on June 11, the political landscape in Montenegro
+was thrown into disarray by the intervention of Do Kwon, the fugitive head
+of a failed crypto business whose collapse last year contributed to a $2
+trillion crash across the industry.
+
+In a handwritten letter sent to the authorities from the Montenegrin jail
+where he has been held since March, Mr. Kwon claimed that he had “a very
+successful investment relationship” with the leader of the Europe Now
+Movement, the election front-runner, and that “friends in the crypto
+industry” had provided campaign funding in return for pledges of
+“crypto-friendly policies.”
+
+https://www.nytimes.com/2023/06/24/world/europe/montenegro-do-kwon-crypto.html
+
+------------------------------
+
+Date: Thu, 29 Jun 2023 14:28:55 -0600
+From: Matthew Kruk <mkrukg@gmail.com>
+Subject: Petro-Canada payment problems continue, but company
+ says it's 'making progress' on fix
+
+https://www.cbc.ca/news/business/petro-canada-1.6892706
+
+Petro-Canada says the nearly weeklong problems that customers have
+experienced with things like payment and loyalty programs at the gas
+station chain are ongoing, but it is making progress on solving them.
+
+Problems at the company started about a week ago, when on Friday reports
+suggested that parent company Suncor had been hacked. Over the weekend,
+Suncor acknowledged it had experienced a "cybersecurity incident" and
+stressed that while it was confident that no customer or employee data had
+been stolen, "some transactions with customers and suppliers may be
+impacted."
+
+------------------------------
+
+Date: Thu, 29 Jun 2023 22:51:30 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: $118K water bill has name of woman who died in 2007 on
+ it; water company wants new owner to pay it (WSBTV)
+
+https://www.wsbtv.com/news/local/atlanta/118k-water-bill-has-woman-who-died-2007s-name-it-water-company-wants-new-owner-pay-it/3FXB3TW3BBAVHFF6AXHU5XANRI/
+
+------------------------------
+
+Date: Fri, 30 Jun 2023 15:31:20 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Cyberstalkers shielded by SCOTUS ruling on speech and
+ online threats (Ars Technica)
+
+https://arstechnica.com/?p=1950612
+
+------------------------------
+
+Date: Fri, 30 Jun 2023 11:30:03 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Barred from Grocery Stores by Facial Recognition
+ (NYTimes)
+
+Adam Satariano and Kashmir Hill, *The New York Times*, 28 Jun 2023
+via ACM TechNews
+
+The use of facial recognition by private businesses is on the rise, with
+close to 400 retailers in Britain using Facewatch to alert them to return
+visits by shoplifters, problem customers, and legal adversaries. For a
+monthly cost starting at =C2=A3250 pounds (US$320), the system allows
+retailers to upload images of alleged offenders from security footage,
+adding them to a watchlist shared among nearby stores. Facewatch, which
+licenses Real Networks and Amazon's facial recognition software, checks
+people's biometric information as they walk into the store against a
+database of flagged individuals and sends smartphone alerts to retailers if
+there is a match. Big Brother Watch's Madeleine Stone said Facewatch is
+"normalizing airport-style security checks for everyday activities like
+buying a pint of milk."
+
+------------------------------
+
+Date: Wed, 28 Jun 2023 12:26:27 -0600
+From: Matthew Kruk <mkrukg@gmail.com>
+Subject: Indigo lost $50M last year, in large part due to
+ February 2023 cyberattack (CBC)
+
+https://www.cbc.ca/news/business/indigo-earnings-cyberattack-1.6891154
+
+Indigo lost $50 million in its last fiscal year as its highly publicized
+cybersecurity incident walloped what was otherwise a profitable year, the
+book retailer said Wednesday.
+
+The TSX-listed company posted financial results on Wednesday for the most
+recent quarter and full financial year up to April 1.
+
+------------------------------
+
+Date: Wed, 28 Jun 2023 11:32:47 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Europe Opens AI 'Crash Test' Centers
+
+via ACM TechNews
+
+The European Union has launched four artificial intelligence (AI)
+facilities to test and validate the safety of innovations prior to
+their market rollout. The virtual and physical sites will offer a
+testbed for AI and robotics in real-world manufacturing, healthcare,
+agricultural, and urban environments starting next year. The Technical
+University of Denmark said the facilities would function as a "safety
+filter" between European technology providers and users while
+complementing public policy. The university described the facilities
+as a digital version of Europe's crash test system for new automobiles.
+
+------------------------------
+
+Date: Mon, 26 Jun 2023 11:31:55 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: AI's Use in Elections Sets Off a Scramble for Guardrails
+ (NYTimes)
+
+Tiffany Hsu and Steven Lee Myers.*The New York Times*, 25 Jun 2023
+
+Artificial intelligence (AI)-generated political campaign materials designed
+to stoke anxiety have spurred demands for safeguards from consultants,
+election researchers, and lawmakers. In the run-up to the 2024 presidential
+race, the Republican National Committee issued a video with synthetic
+dystopian images associated with a Biden victory; the Democrats found
+AI-drafted fundraising messages often encouraged more engagement and
+donations than human-written copy. Election advocates are urging legislation
+to regulate synthetically produced ads, as social media rules and services
+that purport to police AI content have fallen short. A group of Democratic
+lawmakers has proposed legislation requiring disclaimers to accompany
+political ads with AI-generated material, and the American Association of
+Political Consultants said using deepfake content in political campaigns
+constitutes an ethics code violation.
+
+------------------------------
+
+Date: Wed, 28 Jun 2023 11:32:47 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: How Secure Are Voice Authentication Systems?
+ (U.Waterloo)
+
+University of Waterloo (Canada) (06/27/23) via ACM TechNews
+
+Computer scientists at Canada's University of Waterloo have developed an
+attack that can bypass voice authentication security systems after six
+attempts. They created a program able to remove the markers in deepfake
+audio so it is indistinguishable from authentic audio. Although their
+success rate against Amazon Connect's voice authentication system ranged
+from just 10% in a four-second attack to more than 40% in an attack of less
+than 30 seconds, their success rate was 99% after six attempts on
+less-sophisticated systems. University of Waterloo's Urs Hengartner said,
+"By demonstrating the insecurity of voice authentication, we hope that
+companies relying on voice authentication as their only authentication
+factor will consider deploying additional or stronger authentication
+measures."
+
+------------------------------
+
+Date: Sat, 24 Jun 2023 15:01:59 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: LastPass users furious after being locked out
+ due to MFA resets (BleepingComputer)
+
+LastPass users furious after being locked out due to MFA resets
+
+https://www.bleepingcomputer.com/news/security/lastpass-users-furious-after-being-locked-out-due-to-mfa-resets/
+
+------------------------------
+
+Date: Wed, 28 Jun 2023 18:16:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "The EU AI Act: A Critical Assessment"
+ -- plus my extended comments
+
+"The EU AI Act: A Critical Assessment" [plus my extended comments]
+
+My comments:
+
+Below is referenced an excellent article, and it serves to crystallize
+many of my concerns about the current rush toward specific approaches to
+AI regulation before the issues are even minimally understood, and why I
+am so concerned about negative collateral damage in these kinds of
+regulatory efforts.
+
+There is widespread agreement that regulation of AI is necessary, both
+from within and outside the industry itself, but as you've probably
+grown tired of seeing me write, "the devil is in the details". Poorly
+drafted and rushed AI regulation could easily do damage above and beyond
+the realistic concerns (that is, the genuine, non-sci-fi concerns) about
+AI itself.
+
+It's understandable that the very rapid deployments of AI systems --
+particularly generative AI -- are creating escalating anxiety regarding
+an array of related real world controversies, an emotion that in many
+cases I obviously share.
+
+However, as so often happens when governments and technologies
+intersect, the potential for rushed and poorly coordinated actions
+severely risks making these situations much worse rather than better,
+and that's an outcome to be avoided. Given what's at stake, it's an
+outcome to be avoided at all costs.
+
+I don't have any magic wands of course, but in future posts I will
+discuss aspects of what I hope are practical paths forward in these
+matters. I realize that there is a great deal of concern (and hype)
+about these issues, and I welcome your questions. I will endeavor to
+answer them as best I can. -L
+
+------------------------------
+
+Date: Fri, 30 Jun 2023 21:40:25 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: OpenAI, maker of ChatGPT, hit with proposed
+ class-action lawsuit alleging it stole people's data (CNN)
+
+https://www.cnn.com/2023/06/28/tech/openai-chatgpt-microsoft-data-sued/index.html
+
+------------------------------
+
+Date: Sun, 25 Jun 2023 11:53:50 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: Is America Ready For AI-Powered Politics? (Stein. RISKS-33.73)
+
+But dark money war chests can fund bots. What happens when social media is
+flooded by individually AI crafted propaganda messages which push a certain
+political viewpoint? When over half the "people" you are friends with on
+social media are AI bots, whose job is to use any means to convince you to
+vote for a certain political party, which has a number of very wealthy
+backers who are simply out for more tax cuts?
+
+------------------------------
+
+Date: Mon, 26 Jun 2023 12:42:17 +0000 (UTC)
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: The people paid to train AI are outsourcing their work ... to
+ AI (RISKS-33.73)
+
+The Technology Review article mentions "solving CAPTCHAS" as one of the
+tasks that AI is being trained to do.  This sounds like a Very Bad Idea.
+CAPTCHAS are meant to validate humanness.  We shouldn't be trying to teach AI
+how to defeat the system.
+
+  [On the other hand, that would suggest that CAPTCHAS
+  are doomed.  PGN]
+
+------------------------------
+
+Date: Mon, 26 Jun 2023 13:37:02 -0500
+From: Arthur Flatau <flataua@acm.org>
+Subject: Re: Do chatbot avatars prompt bias in health care?
+ (Stein, RISKS-33.73)
+
+The article is about ChatBot **avatars* and not how data is collected. In
+any case, training data sets do need to consider the patient demographics
+(age, gender, ethnicity/race, etc) in the data.  In the same way, any
+well-run clinical trial will need to consider those factors when enrolling
+patients into a trial.  This is made more difficult as many diseases and
+conditions have different incidences for people of different ages, gender
+and ethnicity/race.  Some treatments may be appropriate for younger adult
+patients and not for older adult patients (this is somewhat a proxy for
+general health).  Children may be treated differently than adults.  None of
+the issues are really unique for AI tools, but something that should be
+considered when evaluating treatments.  Training of (human) medical
+professionals need to be aware of the as well.
+
+For what it is worth, my experience with chat-bots is that at best they are
+useful for getting a human to chat with, although some can be worse than
+useless and lead you astray (before you actually have to contact a human).
+
+------------------------------
+
+Date: Tue, 27 Jun 2023 11:44:51 +0100 (BST)
+From: DAVID Alexander <davidalexander440@btinternet.com>
+Subject: Re: Is America Ready For AI-Powered Politics?
+
+Having read the item about the probability of politicians detecting an
+AI-generated email and their ensuing replies (Is America Ready For
+AI-Powered Politics?), I have an additional question to that asked by Mr
+Stein.
+
+  Q: Did the researchers carry out any kind of analysis to see if the
+  replies they received were in turn written by a Large Language Model,
+  Chat-GPT or something similar?
+
+What is sauce for the goose will probably soon (if not already) become sauce
+for the gander.
+
+And a supplementary question: How long before we have a large body of
+correspondence with no human involvement or oversight of any sort? That
+brings a new risk; real correspondence gets overlooked as it's lost in the
+'chatter'. I'm sure the readership of this list can think of other related
+risks.
+
+  [Also noted by others.  PGN]
+
+------------------------------
+
+Date: Mon, 26 Jun 2023 11:04:34 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: Tesla leak reportedly shows thousands of Full
+ Self-Driving, safety complaints (Bacher. RISKS-33.73)
+
+This "current usage" of "verbal" to mean "oral" dates back to
+at least 1591, according to the Oxford English Dictionary:
+
+ 4.a. Expressed or conveyed by speech instead of writing; stated or
+  delivered by word of mouth; oral.
+
+  1591 Horsey Trav. (Hakluyt Soc.) 241 His Majestys verball answer to
+  those two points conteyned within her Majestys letters.
+
+  1646 Hamilton Papers (Camden) 131 The gentleman‥carried nothing from
+  hence in writing; but I believe he had a verbal commission.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.74
+************************

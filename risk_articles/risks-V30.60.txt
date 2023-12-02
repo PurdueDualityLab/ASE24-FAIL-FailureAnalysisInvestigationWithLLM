@@ -1,0 +1,637 @@
+precedence: bulk
+Subject: Risks Digest 30.60
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 20 March 2018  Volume 30 : Issue 60
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.60>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Reverse-Engineers Cuban Sonic Weapon (Fu/Xu/Yan)
+"IBM's fraud-fighter is so tiny, it's almost invisible" (ZDNet)
+Uber car in autonomous mode kills pedestrian (WashPo)
+More info re: the Uber car fatality (Lauren Weinstein)
+"Self-driving Uber kills Arizona woman, autonomous tests halted"
+  (Gene Wirchenko)
+When Self-Driving Cars Can't Help Themselves, Who Takes the Wheel?
+  (NYTimes)
+U.S. Government Launches Investigation Into Hyundai And Kia Airbags
+  (NPR.ORG)
+Revealed: 50 million Facebook profiles harvested for Cambridge
+  Analytica in major data breach (The Guardian)
+Facebook apologises for search suggestions of child abuse videos
+  (The Guardian)
+Cambridge Analytica Suspends C.E.O. Amid Facebook Data Scandal
+  (NYTimes)
+3 Simple Ways We Give Up A Ton Of Very Personal Information To
+  Facebook And Random Apps (buzzfeed)
+"Seriously, It's Time to Ditch Facebook and Give Google+ a Try"
+  (Lauren Weinstein)
+Unsecured AWS S3 bucket managed by Walmart jewelry partner exposes
+  data of 1.3M customers (SecurityAffairs)
+Look-Alike Domains and Visual Confusion (Krebs on Security)
+Re: Lessons for RISKS ... (Chris Samuel)
+Re: AI-Aided Cameras (Dmitri Maziuk)
+Re: Microsoft still doesn't get it (Michael Schmitt)
+Re: New system to help commuters avoid crowds at MRT stations
+  (Geoffrey Keating)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: March 19, 2018 at 12:14:11 AM EDT
+From: Joly MacFie <joly.nyc@gmail.com>
+Subject: Reverse-Engineers Cuban Sonic Weapon (Fu/Xu/Yan)
+
+  [Via Jim Griffin/Pho]
+"bad engineering may be a more likely culprit than a sonic weapon."
+
+Kevin Fu, Wenyuan Xu and Chen Yan, IEEE Spectrum, 15 Mar 2018
+How We Reverse Engineered the Cuban *Sonic Weapon* Attack: Examining
+overlooked clues reveals how ultrasound could have caused harm in Havana
+http://spectrum.ieee.org/semiconductors/devices/how-we-reverse-engineered-the-cuban-sonic-weapon-attack
+
+Throughout last year, mysterious ailments struck dozens of U.S. and Canadian
+diplomats and their families living in Cuba. Symptoms included dizziness,
+sleeplessness, headache, and hearing loss; many of the afflicted were in
+their homes or in hotel rooms when they heard intense, high-pitched sounds
+shortly before falling ill. In February, neurologists who examined the
+diplomats concluded that the symptoms were consistent with concussion, but
+without any blunt trauma to the head. Suggested culprits included toxins,
+viruses, and a sonic weapon, but to date, no cause has been confirmed.
+
+We found the last suggestion -- a sonic weapon -- intriguing, because around
+the same time that stories about health problems in Cuba began appearing,
+our labs, at the University of Michigan Ann Arbor, and at Zhejiang
+University in China, were busy writing up our latest research on ultrasonic
+cybersecurity. We wondered, Could ultrasound be the culprit in Cuba?
+
+On the face of it, it seems impossible. For one thing, ultrasonic
+frequencies -- 20 kilohertz or higher -- are inaudible to humans, and yet
+the sounds heard by the diplomats were obviously audible. What's more, those
+frequencies don't propagate well through air and aren't known to cause
+direct harm to people except under rarefied conditions. Acoustic experts
+dismissed the idea that ultrasound could be at fault.
+
+Then, about six months ago, an editor from The Conversation sent us a link
+to a video from the Associated Press, reportedly recorded in Cuba during one
+of the attacks.
+
+The editor asked us for our reaction. In the video, you can hear a piercing,
+metallic sound -- it's not pleasant. Watching the AP video frame by frame,
+we immediately noticed a few oddities. In one sequence, someone plays a
+sound file from one smartphone while a second smartphone records and plots
+the acoustic spectrum. So already the data are somewhat suspect because
+every microphone and every speaker introduces some distortion. Moreover,
+what humans hear isn't necessarily the same as what a microphone picks up.
+Cleverly crafted sounds can lead to auditory illusions akin to optical
+illusions.  [...]
+
+[Long item truncated for RISKS. Please check out the full article.  Well
+worth reading.  PGN]
+
+------------------------------
+
+Date: Mon, 19 Mar 2018 08:44:33 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "IBM's fraud-fighter is so tiny, it's almost invisible" (ZDNet)
+
+Liam Tung, ZDNet, 19 Mar 2018
+"World's smallest computer."  But think of the uses in surveillance.
+IBM has big ambitions for its barely visible computer, including helping
+combat fraud with blockchain tech.
+http://www.zdnet.com/article/worlds-smallest-computer-ibms-fraud-fighter-is-so-tiny-its-almost-invisible/
+
+selected text:
+
+IBM has unveiled a computer so small it can slip through a salt shaker and
+could help prevent the $600bn a year trade in counterfeit drugs, gadgets,
+and cash.
+
+------------------------------
+
+Date: Mon, 19 Mar 2018 10:25:58 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Uber car in autonomous mode kills pedestrian (WashPo)
+
+via NNSquad
+http://www.washingtonpost.com/business/technology/uber-self-driving-vehicle-hits-kills-pedestrian-in-arizona/2018/03/19/59e97dfe-2b99-11e8-8dc9-3b51e028b845_story.html
+
+  Police in a Phoenix suburb say one of Uber's self-driving vehicles has
+  struck and killed a pedestrian.  Police in the city of Tempe said Monday
+  that the vehicle was in autonomous mode with an operator behind the wheel
+  when the woman walking outside of a crosswalk was hit.
+
+It doesn't matter that she wasn't in the crosswalk. Humans always have the
+right of way in such situations -- she might have been ticketed for not
+using the crosswalk, but the vehicle was still required to stop.
+
+------------------------------
+
+Date: Tue, 20 Mar 2018 08:17:16 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: More info re: the Uber car fatality
+
+via NNSquad
+http://plus.google.com/~LaurenWeinstein/posts/a51Fdz9bY64
+
+Some more info on the events surrounding the killing of a bicyclist by an
+Uber car in autonomous mode. First, it is reported that the woman was
+walking her bike across the street, and walked the bike (which also had
+plastic shopping bags hanging from it) into the lane of the Uber car away
+from crosswalks, as she attempted to finish crossing from the median.
+
+It's not clear what lighting conditions were at that location. There is no
+indication that the Uber car slowed or took any evasive action.  Outlets
+today are reporting that the safety driver was a convicted felon who served
+four years for attempted robbery in the early 2000s -- no impairment by that
+driver is reported.  Early suggestions are that the Uber car was not
+technically at fault in a legal sense, yet there's a big BUT.
+
+My analysis of such situations asks a direct question -- did the vehicle
+take actions to avoid the collision that any reasonable human driver might
+be expected to take. If you're like me, you've seen pedestrians -- or
+bicyclists -- standing on the median of a street many times, and always
+assumed that they might step out into the lane -- after all, we know they're
+going to finish crossing the street.  Many times I've slowed down or even
+moved into another lane in anticipation of their possibly stepping out.
+
+There is no indication that the Uber AI exhibited this crucial aspect of
+human common sense.
+
+------------------------------
+
+Date: Tue, 20 Mar 2018 09:49:03 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Self-driving Uber kills Arizona woman, autonomous tests halted"
+  (Comments on a Jake Smith item)
+
+Jake Smith for iGeneration, ZDNet, 19 Mar 2018
+http://www.zdnet.com/article/uber-suspends-self-driving-car-program-after-death/
+
+[Jake's text mostly duplicated above, and removed here in favor of Gene's
+questions:]
+
+      [Nasty question time:
+1) If there was someone behind the wheel, why didn't he stop the car?
+2) What is that person's liability?
+3) What does this say about the ability of a "driver" to take over
+   from an autonomous/semi-autonomous vehicle?
+      GW]
+
+------------------------------
+
+Date: Sun, 18 Mar 2018 23:44:38 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: When Self-Driving Cars Can't Help Themselves, Who Takes the Wheel?
+  (NYTimes)
+
+A car wends its way through a line of taxis in the Las Vegas rain, carefully
+steering around a tangle of sedans vying for passengers. As the black
+Lincoln MKZ gets closer, the steering wheel saws back and forth, but there's
+no one in the front seat. In fact, there's no one in the car at all.
+
+It's disquieting to be picked up by an empty car, and it's something of a
+milestone: Inside most autonomous research vehicles cruising public streets,
+there's a minder to keep a watchful eye and take control should things go
+awry. But with the MKZ, there was no human custodian. At least not one
+within view.
+
+Hundreds of miles away, Ben Shukman, a software engineer for Phantom Auto,
+was sitting in front of a phalanx of video screens in Mountain View,
+Calif. Using a live, two-way video connection along with the kind of
+steering wheel and pedals usually reserved for video games, he was driving
+the MKZ.
+
+http://www.nytimes.com/2018/03/15/business/self-driving-cars-remote-control.html
+
+Presentation this week, I'm pretty sure indicated 93% of crashes aren't
+"accidents" -- they're human error. So autonomous vehicles SHOULD be an
+improvement -- except there's no recognition of human-caused
+folly/crashes. So car errors will be ridiculous a big deal, used to
+discredit autonomous driving, nevermind that overall they're better than
+flawed/distracted/drunk/drugged/reckless/idiot humans.
+
+And, of course -- people will root cars to defeat safety.
+
+Good luck having L2/L3 humans attain situational awareness fast enough to
+deal with something the car can't handle. ESPECIALLY when it requires
+establishing a network connection for L3. ("Your safety is our top priority;
+please stand by and your emergency will be handled in the order in which it
+arrived.")
+
+SA is what keeps a competent human driver aware -- sometimes not
+consciously! -- of surroundings, such as nearby cars, including those in
+blind spots. Losing SA gets soldiers, cops, pilots, drivers killed.
+
+------------------------------
+
+Date: Sun, 18 Mar 2018 13:18:07 +0800
+From: Richard M Stein <rmstein@ieee.org>
+Subject: U.S. Government Launches Investigation Into Hyundai And Kia Airbags
+  (NPR.ORG)
+
+http://www.npr.org/sections/thetwo-way/2018/03/17/594559516/u-s-government-launches-investigation-into-hyundai-and-kia-airbags
+
+  "The National Highway Traffic Safety Administration opened an
+  investigation Friday into problems with air bags in Hyundai and Kia
+  vehicles. NHTSA says it is currently aware of six crashes in which air
+  bags failed to deploy. The crashes led to four deaths and six injuries.
+
+  "The models being investigated are 2011 Hyundai Sonatas and 2012 and 2013
+  Kia Fortes, according to a document posted on the NHTSA website. The scope
+  of the probe includes an estimated 425,000 vehicles.
+
+  "Four of the crashes in question involved Hyundai vehicles and two of the
+  crashes involved Kia vehicles, the document states. According to a
+  statement from Hyundai spokesperson Jim Trainor, the company knows of
+  three rare and unique accidents where airbag control circuitry was
+  confirmed to be damaged, and a fourth accident is under investigation.'
+
+  "The specific concern with the air bags is an electrical overstress
+  condition (EOS), which happens when an electronic device experiences a
+  current or voltage beyond its specified limit. In this case, according to
+  the NHTSA document, the device affected air bag control units supplied by
+  the auto part manufacturer ZF-TRW. The air bag control units in the
+  Hyundai models detect collisions, control the deployment of air bags and
+  can also tighten seat belts in anticipation of a crash. The NHTSA document
+  says the agency understands the 2012 and 2013 Kia Fortes being
+  investigated also used similar ZF-TRW-supplied air bag control units."
+
+6/425000 ~= .0000141(1.41 X 10^e-5) or ~0.001% incident probability.
+
+Difficult to assess if the incidents arise from non-deterministic software
+stack issue in the air bag control unit, or if it is a transient electrical
+issue. 
+
+Real-time control-system anomalies can be difficult to triage.
+Instrumentation and tooling can perturb circuit and s/w stack operation in
+subtle ways that cloud objective measurements and data acquisition.  The
+calculated incident probability apparently exceeds six-sigma control limits,
+initiating the internal Hyundai/Kia investigation and subsequent effort to
+correct a defective part.
+
+  "Hyundai was already aware of problems with air bag control units as of
+  Feb. 27, when the company filed a defect information report that led to a
+  recall of 154,751 model-year 2011 Hyundai Sonatas.
+
+  "The NHTSA's Office of Defects Investigation will be looking into whether
+  the scope of Hyundai's recall was appropriate, whether the Kia vehicles in
+  question in fact used the same or similar air bag control units and what
+  led the air bag control units to malfunction.  The investigation will also
+  look into which other manufacturers used the same or similar ZF-TRW air
+  bag control units."
+
+Hyundai acquired a part of Kia Motors following their bankruptcy, due in
+part to overstated mileage claims resulting in fines and penalties totaling
+~US$ 350M in 2007. A textbook example of "Profit without Honor."
+
+------------------------------
+
+Date: Sat, 17 Mar 2018 15:22:27 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Revealed: 50 million Facebook profiles harvested for Cambridge
+  Analytica in major data breach (The Guardian)
+
+Whistleblower describes how firm linked to former Trump adviser Steve Bannon compiled user data to target American voters
+
+http://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election
+
+------------------------------
+
+Date: Sat, 17 Mar 2018 21:42:09 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Facebook apologises for search suggestions of child abuse videos
+  (The Guardian)
+
+Searches starting *video of* returned autocomplete suggestions of sexual
+videos and child abuse content
+
+Facebook has been forced to apologise after it spent hours suggesting
+bizarre, vulgar and upsetting searches to users on Thursday night.
+
+The social network's search suggestions, which are supposed to automatically
+offer the most popular search terms to users, apparently broke around 4am in
+the UK, and started to suggest unpleasant results for those who typed in
+*video of*.
+
+Multiple users posted examples on Twitter, with the site proposing searches
+including [expurgated quotes -- unnecessarily crude for RISKS].  Others
+reported similar results in other languages.
+
+Even after the offensive search terms stopped being displayed, users still
+reported odd algorithmic suggestions, seemingly far from what Facebook would
+normally offer, such as	*zodwa wabantu videos and pics* (a South African
+celebrity) and **cristiano ronaldo hala madrid king video call*.
+
+http://www.theguardian.com/technology/2018/mar/16/facebook-apologises-child-sexual-abuse-offensive-autocomplete-terms
+
+------------------------------
+
+Date: Tue, 20 Mar 2018 13:26:56 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Cambridge Analytica Suspends C.E.O. Amid Facebook Data Scandal
+  (NYTimes)
+
+via NNSquad
+http://www.nytimes.com/2018/03/20/world/europe/cambridge-analytica-ceo-suspended.html?partner=rss
+
+  Cambridge Analytica, the political data firm with ties to President
+  Trump's 2016 campaign, suspended its chief executive, Alexander Nix, on
+  Tuesday, amid a furor over the access it gained to private information on
+  more than 50 million Facebook users.  The decision came after a television
+  broadcast in which Mr. Nix was recorded suggesting unseemly practices to
+  influence foreign elections and the furor over the access it gained to
+  private information on more than 50 million Facebook users.  The company,
+  founded by Stephen K. Bannon and Robert Mercer, a wealthy Republican
+  donor who has put at least $15 million into it, offered tools that could
+  identify the personalities of American voters and influence their
+  behavior.
+
+------------------------------
+
+Date: Tue, 20 Mar 2018 16:18:15 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 3 Simple Ways We Give Up A Ton Of Very Personal Information To
+  Facebook And Random Apps (buzzfeed)
+
+http://www.buzzfeed.com/lamvo/3-simple-ways-give-up-facebook-personal-information&
+
+------------------------------
+
+Date: Tue, 20 Mar 2018 11:05:53 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "Seriously, It's Time to Ditch Facebook and Give Google+ a Try"
+
+Lauren's Blog
+http://lauren.vortex.com/2018/03/20/seriously-its-time-to-ditch-facebook-and-give-google-a-try
+
+One might think that with the deluge of news about how Facebook has been
+manipulating you and violating your privacy -- and neglecting to tell you
+about it -- Google would be taking this opportunity to point out that their
+own Google+ social system is very much the UnFacebook.
+
+But sometimes Google is reticent about tooting their own horn. So what the
+hell, when it comes to Google+, I'm going to toot it for them.
+
+Frankly, I've never trusted Facebook, and current events seem to validate
+those concerns yet again. Facebook is fundamentally designed to exploit
+users in particularly devious and disturbing ways (please see: "Fixing
+Facebook May Be Impossible").
+http://lauren.vortex.com/2018/03/18/fixing-facebook-may-be-impossible
+
+Yet I've been quite happily communicating virtually every day with all
+manner of fascinating people about a vast range of topics over on Google+,
+since the first day of beta availability back in 2011.
+http://plus.google.com/%2BLaurenWeinstein
+
+The differences between Facebook and Google+ are numerous and
+significant. There are no ads on Google+. Nobody can buy their way into your
+feed or pay Google for priority. Google doesn't micromanage what you
+see. Google doesn't sell your personal information to any third parties.
+
+There's overall a very different kind of sensibility on G+. There's much
+less of people blabbing about the minutiae of their own lives all day long
+(well, perhaps except when it comes to cats -- I plead guilty!), and much
+more discussion of issues and topics that really matter to more
+people. There's much less of an emphasis on hanging around with those high
+school nitwits whom you despised anyway, and much more a focus on meeting
+new persons from around the world for intelligent discussions.
+
+Are there any wackos or trolls on G+? Yep, they're out there, but they never
+represent more than a small fraction of total interactions, and the tools
+are available to banish them in short order.
+
+There is much more of a sense of community among G+ users, without the "I
+hate it but I use it anyway" feeling so often expressed by Facebook
+users. Facebook posts all too often seem to be about "me" -- G+ posts more
+typically are about "us" -- and tend to be far more interesting as a result.
+
+At this juncture, the Google-haters will probably start to chime in with
+their usual bizarre conspiracy theories. Other than suggesting that they
+remove their tinfoil hats so that their scalps can breathe, I can't do much
+for them.
+
+Does Google screw up from time to time? Yes. But so does Facebook, and in
+far, far more egregious ways. Google messes up occasionally and works to
+correct what went wrong. Unfortunately, not only does Facebook make
+mistakes, but the entire philosophy of Facebook is dead wrong -- a massive,
+manipulative violation of users' personal information and communications on
+a gargantuan scale. There simply is no comparison.
+
+And I'll note here what should be obvious -- I wouldn't use G+ (or other
+Google services) if I weren't satisfied with the ways that they handle my
+data. Having consulted to Google, I have a pretty decent understanding of
+how this works, and I know many members of their world-class privacy team
+personally. If only most firms gave their customers the kinds of control
+over their data that Google does ("The Google Page That Google Haters Don't
+Want You to Know About").
+http://lauren.vortex.com/2017/04/20/the-google-page-that-google-haters-dont-want-you-to-know-about
+
+But whether or not you decide to try Google+, please don't keep playing
+along with Facebook's sick ecosystem. Facebook has been treating its users
+like suckers since day one, and there's damned little to suggest that
+they're moving in other than an increasingly awful trajectory.
+
+And that's the truth.
+
+------------------------------
+
+Date: Sun, 18 Mar 2018 22:35:23 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Unsecured AWS S3 bucket managed by Walmart jewelry partner exposes
+  data of 1.3M customers (SecurityAffairs)
+
+http://securityaffairs.co/wordpress/70381/data-breach/walmart-jewelry-partner-leak.html
+
+------------------------------
+
+Date: Sun, 18 Mar 2018 22:23:53 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Look-Alike Domains and Visual Confusion (Krebs on Security)
+
+How good are you at telling the difference between domain names you know and
+trust and impostor or look-alike domains? The answer may depend on how
+familiar you are with the nuances of internationalized domain names (IDNs),
+as well as which browser or Web application you're using.
+
+For example, how does your browser interpret the following domain? I'll give
+you a hint: Despite appearances, it is most certainly not the actual domain
+for software firm CA Technologies (formerly Computer Associates Intl Inc.),
+which owns the original ca.com domain name:
+
+http://www.%D1%81%D0%B0.com/
+http://krebsonsecurity.com/2018/03/look-alike-domains-and-visual-confusion/
+
+------------------------------
+
+Date: Sun, 18 Mar 2018 23:49:13 +1100
+From: Chris Samuel <chris@csamuel.org>
+Subject: Re: Lessons for RISKS ... (PGN. R 30.59)
+
+  [Comments on the Handley Page Victor ...]
+
+I think some things have got lost in translation there.
+
+The Victor was one of the UK's nuclear V-bombers (along with the Valiant and
+Vulcan), not a fighter aircraft.
+
+One HP.80 prototype Victor (WB771) did crash, but this was due to the
+tailplane detaching as it only had 3 bolts connecting it and all 3 failed
+due to metal fatigue.
+
+A prototype designated HP.88 was actually a 0.36 scale aerodynamic testbed
+for the Victors wings and tail and was based upon a Supermarine 510 fighter,
+which might explain the confusion.  It flew a number of times before
+crashing, which was attributed to the tailplane servo system failing.
+
+There was also a 1/3 scale RC glider which crashed on its first flight.
+
+http://www.thunder-and-lightnings.co.uk/victor/history.php
+http://en.wikipedia.org/wiki/Handley_Page_Victor
+http://aviation-safety.net/wikibase/wiki.php?id=86892
+http://www.militaryfactory.com/aircraft/detail.asp=aircraft_id%3D241
+http://www.airvectors.net/avvictor.html
+
+Chris Samuel, http://www.csamuel.org/
+
+  [Many thanks for correcting the record -- and my memory!  PGN]
+
+------------------------------
+
+Date: Sun, 18 Mar 2018 11:28:34 -0500
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: AI-Aided Cameras (Goldberg, R 30.59)
+
+This reminds me of the often quoted statistics about 80% (or 90, or some
+other very high number) of dead SCUBA divers being found with their diving
+weights still on. And then someone looked at some actual incident reports
+and found they included e.g., a guy who climbed on the boat unassisted and
+collapsed on the deck later -- before taking his weight belt off.
+
+(I also had a door open on me as I was biking past... The guy had already
+folded his door mirror, and even if the wonder-camera does still work in
+that configuration and is able to detect a bicycle in the blind spot, is it
+going to stop the driver from opening the door?  How? -- All that
+notwithstanding.)
+
+------------------------------
+
+Date: Sun, 18 Mar 2018 14:57:48 -0500
+From: Michael Schmitt <mschmitt@mac.com>
+Subject: Re: Microsoft still doesn't get it (Smith III, R 30.59)
+
+On how do you tell which domains are legitimately used by a product?
+
+Microsoft Office 2016 connects to multiple sub-domains in a large list of
+domains, including:
+
+akadns.net
+akadns6.net
+akamaiedge.net
+akamaized.net
+a-msedge.net
+apple.com
+azure.net
+azurewebsites.net
+bing.com
+bing.net
+dc-msedge.net
+e-msedge.net
+edgekey.net
+edgesuite.net
+enlighten.com
+live.com
+live.net
+microsoft.com
+msecnd.net
+msedge.net
+msn.com
+nsatc.net
+oaspapps.com
+office.com
+office.net
+onenote.com
+onenote.net
+optimizely.com
+s-msedge.net
+sharepoint.com
+sharethis.com
+skype.com
+webtrends.com
+windows.net
+
+But not azuredge.net! So good luck trying to recognize safe domains vs.
+malware in disguise.
+
+------------------------------
+
+Date: Mon, 19 Mar 2018 10:43:37 -0700
+From: Geoffrey Keating <geoffk@geoffk.org>
+Subject: Re: New system to help commuters avoid crowds at MRT stations
+   (Stein, R 30 59)
+
+Perhaps one risk of computer technology is assuming an overcomplicated
+privacy-invading solution, when a simpler solution exists.  Especially when
+there hasn't actually been any mention of the overcomplicated solution!
+
+The most obvious way to detect whether a station is crowded using a camera
+is to count heads; or, rather, to notice that the pixels of the image have
+changed from empty station colors (grey, white, yellow stripe) to the colors
+of heads (hair and skin tones).  This doesn't require any sophisticated
+processing.
+
+For WiFI, it is counterproductive to link a MAC address to its owner if all
+you want to know is how many people there are; devices which do not connect
+to the in-station wifi network will be using randomly generated MAC
+addresses but their owners still contribute to crowding.
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.60
+************************

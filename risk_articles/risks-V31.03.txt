@@ -1,0 +1,639 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.03
+
+RISKS-LIST: Risks-Forum Digest  Thursday 17 January 2019  Volume 31 : Issue 03
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.03>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+In the Shutdown, the U.S. Government Is Flirting with Cybersecurity
+  Disaster (DataCenterKnowledge)
+"Why is my keyboard connected to the cloud?" (Chris Duckett)
+USB Type-C Authentication Program Officially Launches (E-Week)
+The Super-Secure Quantum Cable Hiding in the Holland Tunnel (Jeremy Kahn)
+America's Electric Grid Has a Vulnerable Back Door -- and Russia
+  Walked Through It.  (WSJ)
+A Worldwide Hacking Spree Uses DNS Trickery to Nab Data (WiReD)
+Dark markets have evolved to use encrypted messengers/dead-drops
+  (Cory Doctorow)
+A Simple Bug Makes It Easy to Spoof Google Search Results into
+  Spreading Misinformation (Zack Whittaker)
+Pilot project demos credit cards with shifting CVV codes to stop fraud
+  (Ars Technica)
+Veterans of the News Business Are Now Fighting Fakes (NYTimes)
+When Chinese hackers declared war on the rest of us (MIT TechReview)
+200 million Chinese resumes leak in huge database breach (TheNextWeb)
+North Korean hackers infiltrate Chile's ATM network after Skype job
+  interview (ZDNet)
+Chinese Internet censors turn attention to rest of world (MIT TechReview)
+State-backed Hackers Sought and Stole Singapore Leader's Medical Data (WSJ)
+Man gets 10 years for cyberattack on Boston Children's Hospital
+  (BostonGlobe)
+The Danger of Calling Out Cyberattackers (Bloomberg)
+How a little-known Democratic firm cashed in on the wave of midterm money
+  (WashPost)
+Deepak Chopra has a prescription for what ails technology (WashPost)
+GoDaddy injecting site-breaking JavaScript into customer websites, here's a
+  fix (TechRepublic)
+"How three rude iPhone users ruined an evening" (Chris Matyszczyk)
+Re: Escalating Value of iOS Bug Bounties Hits $2M Milestone
+  (Richard Stein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 14 Jan 2019 10:52:12 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: In the Shutdown, the U.S. Government Is Flirting with Cybersecurity
+  Disaster (DataCenterKnowledge)
+
+Network security is an around-the-clock battle.  Agency cybersecurity teams
+are left with skeleton staff, and many furloughed security experts may not
+come back.
+
+https://www.datacenterknowledge.com/security/shutdown-us-government-flirting-cybersecurity-disaster
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 21:47:42 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Why is my keyboard connected to the cloud?" (Chris Duckett)
+
+Chris Duckett, ZDnet, 13 Jan 2019
+Just because you can, doesn't mean that you should.
+https://www.zdnet.com/article/why-is-my-keyboard-connected-to-the-cloud/
+
+selected text:
+
+Everything is becoming a thing connected to the Internet, but some things
+really shouldn't be.
+
+First cab off that rank should be input devices, because what sort of maniac
+thinks the advantages of a roaming cloud-based configuration outweighs the
+potential explosion in surface area to attack and compromise? That maniac is
+called Razer, and it has been connecting keyboards to its Synapse software
+for years.  At last week's CES, Razer took it a step further when it
+announced it is adding support for users to use Alexa to control their
+peripherals.  "Alexa, ask Chroma to change my lighting profile to FPS mode,"
+Razer cheerily proclaims as an example of its upcoming functionality.
+
+For this to work, the software that usually controls keyboard and mice
+settings needs to be connected to Amazon Alexa.  Also in Razer's favour is
+that it acknowledged it was responsible, which is more than can be said for
+Gigabyte.
+
+On 18 Dec 2018, SecureAuth detailed an exchange of when it discovered that
+software utilities for Gigabyte and Aorus motherboards had privilege
+escalation vulnerabilities.  "There is ring0 memcpy-like functionality
+... allowing a local attacker to take complete control of the affected
+system," SecureAuth said.  In the end, SecureAuth said Gigabyte eventually
+responded by saying its products did not have any issues.
+
+If a vendor with the experience and sales of Gigabyte responds by denying
+responsibility for its software, it doesn't bode well for smaller players.
+
+If a bad actor was looking for a shortcut into a modern Windows system,
+trying to find your way in via Microsoft's code will be time wasting when
+the Camembert-like underbelly of a modern system is likely to be crap
+software from peripheral makers.
+
+------------------------------
+
+Date: Fri, 4 Jan 2019 15:32:31 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: USB Type-C Authentication Program Officially Launches (E-Week)
+
+The USB Type-C authentication standard is moving forward in an effort to
+help protect systems against malicious USB devices.
+
+http://www.eweek.com/security/usb-type-c-to-become-more-secure-with-authentication-standard
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 08:30:42 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: The Super-Secure Quantum Cable Hiding in the Holland Tunnel
+  (Jeremy Kahn)
+
+Jeremy Kahn, Bloomberg Businessweek, 14 Jan 2019
+
+Commuters inching through rush-hour traffic in the Holland Tunnel between
+Lower Manhattan and New Jersey don't know it, but a technology likely to be
+the future of communication is being tested right outside their car windows.
+Running through the tunnel is a fiber-optic cable that harnesses the power
+of quantum mechanics to protect critical banking data from potential spies.
+
+The cable's trick is a technology called quantum key distribution, or QKD.
+Any half-decent intelligence agency can physically tap normal fiber optics
+and intercept whatever messages the networks are carrying: They bend the
+cable with a small clamp, then use a specialized piece of hardware to split
+the beam of light that carries digital ones and zeros through the line. The
+people communicating have no way of knowing someone is eavesdropping,
+because they're still getting their messages without any perceptible delay.
+
+QKD solves this problem by taking advantage of the quantum physics notion
+that light -- normally thought of as a wave -- can also behave like a
+particle.  At each end of the fiber-optic line, QKD systems, which from the
+outside look like the generic black-box servers you might find in any data
+center, use lasers to fire data in weak pulses of light, each just a little
+bigger than a single photon. If any of the pulses' paths are interrupted and
+they don't arrive at the endpoint at the expected nanosecond, the sender and
+receiver know their communication has been compromised.
+   [Long item, PGN-truncated ...]
+
+https://www.bloombergquint.com/businessweek/the-super-secure-quantum-cable-hiding-in-the-holland-tunnel#gs.Bpu8HlON
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 14:42:37 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: America's Electric Grid Has a Vulnerable Back Door -- and Russia
+  Walked Through It.  (WSJ)
+
+A (*Wall Street Journal* reconstruction of the worst known hack into the
+nation's power system reveals attacks on hundreds of small contractors
+
+https://www.wsj.com/articles/americas-electric-grid-has-a-vulnerable-back-doorand-russia-walked-through-it-11547137112
+
+------------------------------
+
+Date: Fri, 11 Jan 2019 23:50:35 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A Worldwide Hacking Spree Uses DNS Trickery to Nab Data (WiReD)
+
+Iranian hackers have been busy lately, ramping up an array of targeted
+attacks across the Middle East and abroad. And a report this week from the
+threat intelligence firm FireEye details a massive global data-snatching
+campaign, carried out over the last two years, that the firm has
+preliminarily linked to Iran.
+
+Using a classic tactic to undermine data security as it moves across the
+web, hackers have grabbed sensitive data like login credentials and business
+details from telecoms, Internet service providers, government organizations,
+and other institutions in the Middle East, North Africa, Europe, and North
+America. FireEye researchers say the targets and types of data stolen are
+consistent with Iranian government espionage interests -- and that whoever
+is behind the massive assault now has a trove of data that could fuel future
+cyberattacks for years.
+
+https://www.wired.com/story/iran-dns-hijacking/
+
+------------------------------
+
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Date: January 15, 2019 at 7:41:24 AM GMT+9
+Subject: Dark markets have evolved to use encrypted messengers/dead-drops
+  (Cory Doctorow)
+
+  [Note: This item comes from friend David Rosenthal.  DLH]
+
+Cory Doctorow, Jan 14 2019
+Dark markets have evolved to use encrypted messengers and dead-drops
+
+https://boingboing.net/2019/01/14/drone-serviced-dead-drops.html
+
+Cryptocurrencies and Tor hidden services ushered in a new golden age for
+markets in illegal goods, especially banned or circumscribed drugs: Bitcoin
+was widely (and incorrectly) viewed as intrinsically anonymous, while the
+marketplaces themselves were significantly safer and more reliable than
+traditional criminal markets, and as sellers realized real savings in losses
+due to law enforcement and related risks, the prices of their merchandise
+plummeted, while their profits soared.
+
+But much of the security of dark markets was an illusion. The anonymity of
+cryptocurrencies could often be pierced; the services themselves could be
+subverted by law enforcement in order to roll up many sellers and buyers at
+once; and the "last mile" problem of shipping illegal substances through the
+mails exposed buyers and sellers to real risks.
+
+The buyers and sellers in dark markets have responded to these revelations
+and new facts on the ground with a range of ingenious, high-tech
+countermeasures.
+
+Buyers are now more likely to conduct sales negotiations through encrypted
+messenger technologies, and each customer is assigned their own unique
+contact, staffed by a bot that can answer questions on pricing and
+availability and broker transactions. Many of these transactions now take
+place through "private cryptocurrencies" that have improved anonymity
+functions (there is a lot of development on these technologies).
+
+Delivery is now largely managed through single-use "dead drops" --
+hidden-in-plain-sight caches that are pre-seeded by sellers, who sometimes
+use low-cost Bluetooth beacons to identify them (these beacons can be
+programmed to activate only in the presence of a wifi network with a
+specific name: a seller provides the buyer with a codeword and a GPS
+coordinate; the buyer goes to the assigned place and creates a wifi network
+on their phone with the codeword for its name, and this activates the
+Bluetooth beacon that guides the buyer to their merchandise).
+
+The logistics of these dead-drops are fascinating: there's a hierarchy on
+the distribution side, with procurers who source merchandise and smuggle it
+into each region; sellers who divide the smuggled goods into portions sized
+for individual transactions, and sellers, whose "product" is just a set of
+locations and secret words that they give to buyers.
+
+The hierarchy creates the need for auditing and traitor-tracing to prevent
+the different layers from ripping each other off. Dead drops are randomly
+audited and audits are verified by reporting on the contents of unique
+printed codes that accompany each drop. Distributors post cryptocurrency
+"security" (bonds) with sellers and lose their deposits when their dead
+drops fail.
+
+In a fascinating paper on the rise of these "dropgangs," Jonathan "smuggler"
+Logan identifies some key weaknesses in the scheme, including the
+persistence of trackable coins being spent by buyers at the end of the
+transaction (dropgang members are more likely to adopt private coins than
+buyers); and the lack of the buyer-and-seller reputation systems that the
+dark markets provide.
+
+Logan proposes that this can be resolved with "proofs of sale" that would be
+published on public forums, which increases the risk from law enforcement.
+
+Logan also proposes that ultrasonic chirps may replace Bluetooth beacons,
+with per-drop codephrases doing a call-and-response to help buyers home in
+on their purchases.
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:27:24 -0500
+From: ACM TechNews <technews-editor@acm.org>
+Subject: A Simple Bug Makes It Easy to Spoof Google Search Results into
+  Spreading Misinformation (Zack Whittaker)
+
+Zack Whittaker, TechCrunch, 09 Jan 2019 via ACM TechNews, 14 Jan 2019
+
+A bug discovered in Google by security researcher Wietze Beukema can be
+exploited to generate misinformation by distributing rigged search
+results. Beukema said values from a Google search result's "knowledge graph"
+can be spliced together to spread false information, because the shareable
+URL entered into a search result can be segmented and added to the Web
+address of any other search query. A malefactor can easily put the contents
+of a knowledge card within a search result; the rigged query does not break
+HTTPS, so anyone can craft a link, send it in an email or tweet, or share it
+on Facebook without arousing the recipient's suspicions. Beukema said anyone
+can "generate normal-looking Google URLs that make controversial
+assertions," which can "either look bad on Google, or worse, people will
+accept them as being true." He also said his report of the bug to Google in
+December was closed with the company taking no corrective action.
+
+https://orange.hosting.lsoft.com/trk/click%3Fref%3Dznwrbbrs9_6-1deb4x2197c8x069056%26
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 20:12:41 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Pilot project demos credit cards with shifting CVV codes to stop fraud
+  (Ars Technica)
+
+https://arstechnica.com/information-technology/2018/12/pnc-bank-testing-dynamic-cvv-codes-to-combat-online-card-fraud/
+
+------------------------------
+
+Date: Wed, 16 Jan 2019 17:38:23 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Veterans of the News Business Are Now Fighting Fakes (NYTimes)
+
+https://www.nytimes.com/2019/01/16/business/media/media-steve-brill-fake-news.html
+
+After raising $6 million, the start-up NewsGuard, co-founded by Steve Brill,
+has signed Microsoft as its first major client. The main goal: to combat the
+spread of false stories on the Internet.
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 07:59:30 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: When Chinese hackers declared war on the rest of us
+  (MIT TechReview)
+
+via NNSquad
+https://www.technologyreview.com/s/612638/when-chinese-hackers-declared-war-on-the-rest-of-us/
+
+  Many thought the Internet would bring democracy to China.  Instead, it
+  empowered rampant government oppression, and now the censors are turning
+  their attention to the rest of the world.
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 18:07:01 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 200 million Chinese resumes leak in huge database breach
+  (TheNextWeb)
+
+via NNSquad
+
+  Last night, HackenProof published a report stating that a database
+  containing resumes of over 200 million job seekers in China was exposed
+  last month. The leaked info included not just the name and working
+  experience of people, but also their mobile phone number, email, marriage
+  status, children, politics, height, weight, driver license, and literacy
+  level as well.
+
+https://thenextweb.com/security/2019/01/11/200-million-chinese-resumes-leak-in-huge-database-breach/
+
+------------------------------
+
+Date: Thu, 17 Jan 2019 13:59:29 -0500
+From: =?utf-8?Q?Jos=C3=A9=20Mar=C3=ADa=20Mateos?= <chema@rinzewind.org>
+Subject: North Korean hackers infiltrate Chile's ATM network after Skype job
+  interview (ZDNet)
+
+  [Don't know why the headline highlights the Skype job interview. I think
+  the meat is a few paragraphs in:]
+
+According to reporters, the source of the hack was identified as a LinkedIn
+ad for a developer position at another company to which one of the Redbanc
+employees applied.
+
+The hiring company, believed to be a front for the Lazarus Group operators
+who realized they baited a big fish, approached the Redbanc employee for an
+interview, which they conducted in Spanish via a Skype call.
+
+trendTIC reports that during this interview, the Redbanc employee was asked
+to download, install, and run a file named ApplicationPDF.exe, a program
+that would help with the recruitment process and generate a standard
+application form.
+
+But according to an analysis of this executable by Vitali Kremez, Director
+of Research at Flashpoint, the file downloaded and installed PowerRatankba,
+a malware strain previously linked to Lazarus Group hacks, according to a
+Proofpoint report published in December 2017."
+
+https://www.zdnet.com/article/north-korean-hackers-infiltrate-chiles-atm-network-after-skype-job-interview/
+
+------------------------------
+
+Date: Fri, 11 Jan 2019 17:33:22 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Chinese Internet censors turn attention to rest of world
+  (MIT Tech Review)
+
+When Chinese hackers declared war on the rest of us
+
+Many thought the Internet would bring democracy to China. Instead it
+empowered rampant government oppression, and now the censors are turning
+their attention to the rest of the world.
+
+EXCERPT:
+
+Late one Wednesday in March 2015, an alarm sounded in the offices of GitHub,
+a San Francisco-based software firm. The company's offices exemplified the
+kind of Scandinavia-meets-soul-lessness style that has spread out from
+Silicon Valley to take over modern workplaces: exposed wood, open spaces,
+and lots of natural light. Most employees were preparing to leave, if they
+hadn't already. Outside, the sun had started to set and it was balmy and
+clear.
+
+Alarms weren't uncommon at GitHub. The company claims to maintain the
+largest repository of computer code in the world. It had some 14 million
+users at the time, and prides itself on maintaining its service and staying
+online. GitHub's core product is a set of editing tools that allow large
+numbers of programmers to collaborate on software and keep track of changes
+as bugs are fixed. In October 2018, Microsoft would buy it for $7.5 billion.
+
+Back in 2015, though, GitHub was still an up-and-coming, independent
+company whose success came from making it considerably easier for other
+people to create computer software. The first alarm indicated there was a
+large amount of incoming traffic to several projects stored on GitHub. This
+could be innocent -- maybe a company had just launched a big new update
+-- or something more sinister. Depending on how the traffic was clustered, more
+alarms would sound if the sudden influx was impacting service sitewide. The
+alarms sounded. GitHub was being DDoS-ed.
+
+One of the most frequent causes of any website going down is a sharp spike
+in traffic. Servers get overwhelmed with requests, causing them to crash or
+slow to a torturous grind. Sometimes this happens simply because the website
+suddenly becomes popular. Other times, as in a distributed denial of service
+(DDoS) attack, the spike is maliciously engineered. In recent years, such
+attacks have grown more common: hackers have taken to infecting large
+numbers of computers with viruses, which they then use to take control of
+the computers, enlisting them in the DDoS attack.
+
+In the company's internal chat room, GitHub engineers realized they would be
+tackling the attack *for some time*.  As the hours stretched into days, it
+became something of a competition between the GitHub engineers and whoever
+was on the other end of the attack. Working long, frantic shifts, the team
+didn't have much time to speculate about the attackers' identity.  As rumors
+abounded online, GitHub would only say, ``We believe the intent of this
+attack is to convince us to remove a specific class of content.''  About a
+20-minute drive away, across San Francisco Bay, Nicholas Weaver thought he
+knew the culprit: China.  ``We are currently experiencing the largest DDoS
+attack in GitHub's history,'' senior developer Jesse Newland wrote in a blog
+post almost 24 hours after the attack had begun. Over the next five days, as
+engineers spent 120 hours combating the attack, GitHub went down nine
+times. It was like a hydra: every time the team thought they had a handle on
+it, the attack adapted and redoubled its efforts. GitHub wouldn't comment on
+the record, but a team member who spoke to me anonymously said it was ``very
+obvious that this was something we'd never seen before.''
+
+Weaver is a network-security expert at the International Computer Science
+Institute, a research center in Berkeley, California. Together with other
+researchers, he helped pinpoint the targets of the attack: two GitHub-hosted
+projects connected to GreatFire.org, a China-based anti-censorship
+organization. The two projects enabled users in China to visit both
+GreatFire's website and the Chinese-language version of *the New York Times,
+both of which are normally inaccessible to users in China.  GreatFire,
+dubbed a foreign anti-Chinese organization by the Cyberspace Administration
+of China, had long been a target of DDoS and hacking attacks, which is why
+it moved some of its services to GitHub, where they were nominally out of
+harm's way.
+
+``Whoever was controlling the Great Cannon would use it to selectively
+insert malicious JavaScript code into search queries and advertisements
+served by Baidu, a popular Chinese search engine. That code then directed
+enormous amounts of traffic to the cannon's targets.''  By sending a number
+of requests to the servers from which the Great Cannon was directing
+traffic, the researchers were able to piece together how it behaved and gain
+insight into its inner workings. The cannon could also be used for other
+malware attacks besides denial-of-service attacks. It was a powerful new
+tool: ``Deploying the Great Cannon is a major shift in tactics, and has a
+highly visible impact,'' Weaver and his coauthors wrote... Weaver found
+something new and worrisome when he examined the attack. In a paper
+coauthored https://citizenlab.ca/2015/04/chinas-great-cannon/
+with researchers at Citizen Lab, an activist and research group at the
+University of Toronto, Weaver described a new Chinese cyberweapon that he
+dubbed the `Great Cannon'.  The Great Firewall -- an elaborate scheme of
+interrelated technologies for censoring Internet content coming from outside
+China -- was already well-known.  Weaver and the Citizen Lab researchers
+found that not only was China blocking bits and bytes of data that were
+trying to make their way into China, but it was also channeling the flow of
+data out of China. [...]
+
+MIT Tech Review
+https://www.TechnologyReview.com/s/612638/when-chinese-hackers-declared-war-on-the-rest-of-us/
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 14:54:50 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: State-backed Hackers Sought and Stole Singapore Leader's Medical
+  Data (WSJ)
+
+Unprecedented breach led to theft of personal details of a quarter of the
+city-state's population, inquiry finds
+
+https://www.wsj.com/articles/state-backed-hackers-sought-and-stole-singapore-leaders-medical-data-11547109852
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 23:22:34 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Man gets 10 years for cyberattack on Boston Children's Hospital
+  (BostonGlobe)
+
+https://www.boston.com/news/local-news/2019/01/11/martin-gottesfeld-boston-childrens-hospital
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:34:56 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: The Danger of Calling Out Cyberattackers (Bloomberg)
+
+"A bizarre $100 million lawsuit shows that companies can be collateral
+damage when governments publicly blame other countries for hacks."
+
+https://www.bloomberg.com/opinion/articles/2019-01-11/mondelez-lawsuit-shows-the-dangers-of-attributing-cyberattacks
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 09:22:22 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: How a little-known Democratic firm cashed in on the wave of midterm
+  money (WashPost)
+
+D.C.-based Mothership Strategies rose in four years to become one of the
+top-paid consulting firms of the fall elections.
+
+https://www.washingtonpost.com/politics/how-a-little-known-democratic-firm-cashed-in-on-the-wave-of-midterm-money/2019/01/08/f91b04bc-fef5-11e8-862a-b6a6f3ce8199_story.html
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 11:03:47 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Deepak Chopra has a prescription for what ails technology (WashPost)
+
+https://www.washingtonpost.com/technology/2019/01/10/deepak-chopra-has-prescription-what-ails-technology
+
+"Chopra's prescription for what ails technology is more technology, just
+used in a different way. It goes way beyond meditation apps."
+
+The hackneyed aphorism that "more is better" should be replaced by an
+admonition to "close the wallet, turn off, and get some rest."
+
+Sliding sales resonate louder with any for-profit entity than Chopra's
+enunciation.
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 10:34:06 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: GoDaddy injecting site-breaking JavaScript into
+  customer websites, here's a fix (TechRepublic)
+
+via NNSquad
+https://www.techrepublic.com/article/godaddy-injecting-site-breaking-javascript-into-customer-websites-heres-a-fix/
+
+  Kromin notes that he is ``not against web host providers monitoring how
+  their servers are running, [but that] Injecting JavaScript into pages
+  being served is far from passive and ... a violation of trust between the
+  web host and the customer.''
+
+------------------------------
+
+Date: Sun, 13 Jan 2019 21:53:59 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "How three rude iPhone users ruined an evening" (Chris Matyszczyk)
+
+Chris Matyszczyk, ZDnet, 13 Jan 2019)
+How three rude iPhone users ruined an evening
+Is it now entirely acceptable to play videos on your phone in public,
+full volume and without headphones? It seems to be.
+https://www.zdnet.com/article/how-three-rude-iphone-users-ruined-an-evening/
+
+------------------------------
+
+Date: Sat, 12 Jan 2019 17:49:33 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: Escalating Value of iOS Bug Bounties Hits $2M Milestone
+  (Goldberg, RISKS-31.02)
+
+"An Apple iOS remote jailbreak that can be achieved with no clicks required
+by the end user while maintaining persistence on the device, even after it
+is rebooted" implies a sinister payload.
+
+The rising zero-day price tag is apparently a good thing, no? Perhaps
+indicating that all the low-hanging, zero-day fruit have been harvested?
+
+Or, is it the case that the specific zero-day end-point breach path is so
+desirous that the purchaser will shell for exploit proof?
+
+Must be a high-priority target to specify a particular exploitation
+path. Apparently because it would be difficult to trace, detect or identify
+via a device's anti-virus or malware sniffing stack?
+
+Uncertain what constitutes "high-priority" in this case, unless Apple is
+expressing exploit curiosity existence, or investigations have reached an
+exploratory impasse.
+
+As a BS guess to achieve this exploit:
+
+Using either IMEI/MAC identifiers, or a target telephone number, a live
+device's network stack (TCP/IP or telecom signaling system) would probably
+have to initiate an exec(2) or invoke a signal handler to load a sibling
+payload from a known buffer address that's been force-fed into and written
+to the file system. How to achieve this without invoking a dynamic link
+loader is a mystery to me. This file then can be reloaded/initiated through
+some follow up protocol signal to effectively su(1) on the smellphone.
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.03
+************************

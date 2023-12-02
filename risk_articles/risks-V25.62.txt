@@ -1,0 +1,665 @@
+Sent: 01 April 2009 15:03
+Subject: Risks Digest 25.62
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 1 April 2009  Volume 25 : Issue 62
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.62.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+GPS Outages Feared (Mike Tashker)
+Conficker (Ned Potter via PGN)
+A Peering risk (Chris Leeson)
+Google Calendar as a single point of failure? (Jeremy Epstein)
+Safety and man/machine interactions: Traffic crossings (Jerry Leichter)
+The Chinese iTunes Gift Voucher Trick (Monty Solomon)
+The Police don't send chain letters (Richard O'Keefe)
+UK considering generalised use of deep packet inspection (Toby Douglass)
+Software Related Accident: Pipe-Laying Equipment (David Smith)
+Spam as an indicator of network health (jidanni)
+When Clouds go Bad: Losing Data in MobileMe (Nick Rothwell)
+Only allow 1, 2, and 100 year domain name registration (jidanni)
+Re: ESTA visa waiver online (Chris J Brady)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 1 Apr 2009 11:59:21 -0700
+From: Mike Tashker <tashkerm@transdecsys.com>
+Subject: GPS Outages Feared
+
+In a press conference today (1 April 2009), a spokesman for the U.S. Air
+Force GPS Wing has confirmed fears that a worldwide outage of GPS service is
+likely.  The current system may reach peak capacity before the launch of the
+next-generation Global Positioning System Space Segment satellites, known as
+GPS Block III, in 2014.
+
+"The huge proliferation of civilian hand-held, cellphone, and vehicle-based
+GPS equipment has taxed available bandwidth on the existing satellite
+constellation beyond our expectations," said Major Stan Ford Parkinson. "We
+expect that the transceivers in the Block III satellites will handle the
+load through 2040.  But there's a likelihood of a gap -- a rolling worldwide
+GPS 'brown-out' -- between now and the first launches."
+
+The Air Force is planning a competitive procurement to study the potentially
+catastrophic effects on transportation and other industries that could occur
+as early as 2011.  This appears to be a good use of stimulus funds,
+especially if it stimulates some more far-sighted thinking.
+
+Mike Tashker
+
+------------------------------
+
+Date: Thu, 26 Mar 2009 9:18:20 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Conficker
+
+Ned Potter, Conficker Computer Worm Threatens Chaos
+Or Is It Just an April Fool's Joke? Security Groups Unite to Stop It
+ABC News <http://abcnews.go.com>, 25 Mar 2009
+http://abcnews.go.com/Technology/story?id=7163685&page=1
+  [Thanks to Phil Porras for this one.  PGN-ed]
+
+Somewhere out there, perhaps in Eastern Europe, perhaps next door to us, a
+very clever hacker is spreading a sophisticated little computer worm called
+Conficker <http://abcnews.go.com/Technology/PCWorld/story?id=6667364>.
+
+It could make an electronic mess as it spreads from one computer to
+another, taking over machines and commanding them to do things their
+users never intended.
+
+"We've got some bad guys out there who are extremely sophisticated,"
+said Merrick Furst, a professor at Georgia Institute of Technology who
+also chairs an Internet security firm called Damballa. "There are a huge
+number of machines that might be able to be controlled by people other
+than the owners of those machines."
+
+Who is behind this computer attack? And what do they want from us? Are
+they trying to bring the world's computers to a halt? Or is the whole
+thing just some elaborate April Fool's joke?
+
+"It's not an April Fools prank," said Phillip Porras, a program director
+at SRI International, a major technology research firm. "We don't know
+much about how Conficker is being used. We are not sure why Conficker
+was built."   [... Long item.]
+
+  [Also note these, courtesy of Monty Solomon.  PGN]
+  Technical Cyber Security Alert TA09-088A
+http://www.us-cert.gov/cas/techalerts/TA09-088A.html
+
+  Conficker Worm: Help Protect Windows from Conficker
+http://www.microsoft.com/conficker
+
+  The 7 Most Important Things to Know About Conficker
+http://blogs.pcmag.com/securitywatch/2009/03/the_most_important_things_to_k.php
+
+  Is 'Conficker' Solved? Researchers Develop Scan Tool
+http://www.pcmag.com/article2/0,2817,2344060,00.asp
+
+------------------------------
+
+Date: Wed, 11 Mar 2009 10:47:00 -0000
+From: "Chris Leeson" <Chris.Leeson@atosorigin.com>
+Subject: A Peering risk
+
+According to *The Register*, a site called "Person Rating" has been
+launched. where you can - anonymously - enter a person's name and
+rate them against a set of criteria.
+  http://www.theregister.co.uk/2009/03/11/person_rating/
+
+The idea is that - as is supposed to happen with Wikipedia - a large number
+of contributors will even out any "extremes of opinion".  Of course, there
+are a number of risks that regular readers of the forum will be all too
+familiar with -- for example,
+
+ * Mistaken identity (only identifying by name?)
+ * Malicious updates (Wikipedia already has this problem with
+   pages on politicians)
+ * Invasion of Privacy/Libel
+
+*El Reg* is, of course, rather dismissive of the site:
+
+  "The idea is that the crowd will weed out extremes of opinion and the
+  result will be an accurate and impartial description of the person
+  concerned - which is about as likely as Greenpeace developing an
+  independent nuclear deterrent."
+
+  "Unlike Wikipedia, PersonRatings is intending to make money though
+  advertising, though it seems more likely the service will quietly
+  disappear when the crowds decide they've got better things to do than rate
+  their friends and colleagues for the benefit of targeted advertisers."
+
+At least the site has some sort of plan for making money. It will need
+it, if and when the libel cases start appearing.
+
+------------------------------
+
+Date: Thu, 12 Mar 2009 17:45:44 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Google Calendar as a single point of failure?
+
+I keep most of my scheduled appointments on Google Calendar (although it is
+a pain since I have to be careful not to put proprietary information in my
+appointment descriptions).  I missed a teleconference today, because Google
+Calendar said it was at 4pm, and when I showed up no one was there.  Going
+back through my notes I discovered the meeting was supposed to be at 3pm,
+and I had set it up as a recurring event.  I then discovered from reading
+Google Help forums that there are known problems - when Daylight Savings
+Time started, recurring events got moved either an hour earlier or an hour
+later, depending on whether you were the originator of the meeting or an
+invitee.
+
+There was another symptom I noticed - my meeting was at 3pm (Standard time)
+which got shifted to 4pm (Savings) time.  When I tried to change the time
+back to 3pm, it had no effect - presumably because it thought the meeting
+was already scheduled for 3pm (Standard).  So to make it show up on my
+calendar at 3pm (Savings), I had to change the schedule to 2pm (Standard).
+
+Once Google fixes the problem, I have to remember to move the scheduled time
+back again, so I show up at the right time!
+
+RISK?  When there's a shared calendar infrastructure and it's buggy,
+everyone ends up at the wrong time.  Something similar happened last year
+when the US switched to Savings time earlier than in previous years -
+Microsoft and other vendors rushed out patches to handle the time change.
+
+  [Along many other problems discussed here, this one seems to recur.  PGN]
+
+------------------------------
+
+Date: Thu, 12 Mar 2009 15:35:51 -0400
+From: Jerry Leichter <leichter@lrw.com>
+Subject: Safety and man/machine interactions: Traffic crossings
+
+Interesting article about the way people interact with cars around the world:
+
+A quote: England has been particular aggressive about having all kinds of
+warning mechanisms for both drivers and pedestrians.  "But sometimes drivers
+become so inured to this street 'furniture' they forget to look for people
+crossing - they forget what it's there for.  And a 1970 study by the
+Institute of Transportation Engineers Journal looking at San Diego accidents
+found incidents were twice as likely at 'marked crossings' as unmarked
+crossings.  Why? Pedestrians lose a sense of personal responsibility - they
+think that because they are at an official crossing, they don't need to look
+where they are going. And then they step out into oncoming traffic."
+http://news.bbc.co.uk/2/hi/uk_news/magazine/7939353.stm
+
+------------------------------
+
+Date: Thu, 12 Mar 2009 01:09:34 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: The Chinese iTunes Gift Voucher Trick
+
+While there are some legitimate digital music download sites in China -
+including 9Sky, Top100 and the recently launched Wawawa - digital music is
+proving to be a tough sell in the P.R.C, partly because of the market
+dominance of Baidu's free mp3 search. There are, however, people making
+decent profit in this as yet unmeasurable market: the hackers of Apple's
+iTunes store gift vouchers and their local agents.
+
+In China's biggest C2C online shopping site Taobao, $200USD iTunes gift
+cards are for sale at 17.9 RMB, roughly $2.6 USD. ...
+
+http://outdustry.com/2009/03/10/the-chinese-itunes-gift-voucher-trick/
+
+------------------------------
+
+Date: Tue, 10 Mar 2009 11:39:47 +1300
+From: "Richard O'Keefe" <ok@cs.otago.ac.nz>
+Subject: The Police don't send chain letters
+
+The #09/#90 mobile phone warning has recently been making the rounds in New
+Zealand.  Apparently some people don't routinely check Snopes.Com.  The
+Sunday *Star Times* issue 8 March 2009 has an article about it on page A6.
+The point of interest to RISKS readers is this:
+
+  the hoax's credibility was bolstered by the fact that it had been
+  circulated by a police staff member ... and carried her New Zealand Police
+  e-mail signature.  ... the staff member had forwarded it ...  in a
+  personal capacity.
+
+So someone in the Police fell for it, didn't think to check it, and
+forwarded it to her friends just like anyone else might, but recipients
+took it as a police endorsement of the content.  The same article quotes
+a spokesman saying
+
+  Also, people should remember New Zealand police don't use chain e-mails as
+  a way of putting forward information.  Neither do banks or anybody else
+  for that matter.
+
+------------------------------
+
+Date: Wed, 18 Mar 2009 23:38:36 +0100 (CET)
+From: "Toby Douglass" <trd@45mercystreet.com>
+Subject: UK considering generalised use of deep packet inspection
+
+http://news.zdnet.co.uk/security/0,1000000189,39629479,00.htm
+
+"Under the EU Data Retention Directive, from 15 March 2009, all UK
+Internet service providers (ISPs) are required to store customer traffic
+data for a year."
+
+This means that right now, *today*, all ISPs in the UK must now store when
+and who you sent e-mail to or received e-mail from.  The e-mail I sent
+earlier to a friend about this has been logged; that it came from me and
+when it was sent.  In case he's a terrorist.  I mean, he's a sixty-five
+year old retired patent agent, but you can't be too careful.  He *does*
+have a huge beard.  Lots of terrorists have huge beards.
+
+So if you're having an affair, best not to communicate via e-mail, because
+that evidence may be used against you in court.  I wish I was kidding, but
+this is going to happen now.  Divorce will occur, the house will be
+contested, the man or wife may suspect infidelity and the evidence -- all
+e-mail, who they were sent to and when -- *is now recorded*.  Don't need a
+telescope to see this one coming.
+
+But what's being discussed now is deep packet inspection, which means
+actually recording the data content - what you actually wrote in your
+e-mail, the comment you typed on a web-site, etc.  So basically EVERY
+communication you have on the net is recorded by the Government and stored
+for however many years it is.
+
+So when you write to your wife about the fantastic sex you had last night,
+it's recorded.  When you e-mail a friend about your private sexual
+fantasies, it's recorded.  When you discuss the abuse you experienced as a
+child from your parents, it's recorded.
+
+For anti-terrorism purposes.
+
+I mean, there's absolutely no evidence whatsoever that you are, or could
+ever be, under any circumstances WHATSOEVER, a danger to anyone.  If there
+was enough evidence that you could be convicted in a court of law after
+due process, you would already be in that court of law.  That evidence
+does not exist.
+
+But every detail, everything you write on-line, would be recorded by the
+State.  Monitored.  Read by software operated by a stranger, sometimes
+read by strangers, apparently to see if they can find people writing
+things which give them away as terrorists.
+
+On a related note, the "e-borders" scheme has stared rolling out in the UK.
+
+http://www.telegraph.co.uk/news/uknews/4987415/All-travel-plans-to-be-tracked-by-Government.html
+
+Every single person entering or leaving the UK must provide their travel
+plans.  Where they're going, how long for, what for, who with, etc.
+Recorded, with complete unoriginality, in a huge database for however many
+years.  I haven't read about the judicial violence to be used in the event
+of non-compliance; presumably you will not be allowed to enter the country.
+I'm wondering what will happen if you are *inside* and you want to get
+*out?* will you be refused exit from the country?  or will you be fined?  if
+you keep refusing, what happens then?  thousands of pounds worth of fines?
+
+Coverage is expected to be about 60% by the end of this year.
+
+The Government uses judicial violence (fines, prison sentences) to compel
+obedience to their demands.  I am *forced* to have my private affairs
+violated.  On what basis is this done?  the only ethical justification can
+be self-defence, of oneself or on behalf of others.  There is no such
+justification for there is no reason whatsoever to think me a danger to
+anyone.
+
+To be sure, it may be there a very, very, *very* few (a couple of
+thousand, out of 61,000,000 people) who are a danger but it cannot be
+known who they are; but there is a certain level of risk which cannot
+practically be reduced whilst retaining liberty and freedom.
+
+It is possible to reduce that risk if you eliminate liberty and freedom.
+Watching everyone, all of the time, reduces that risk and eliminates liberty
+and freedom.
+
+Historically, we have had a police force and an intelligence service to
+deal with these problems and have chosen to retain liberty and freedom.
+
+Spending 1,200 million pounds to compel all 61 million people to expose
+their private affairs and have those affairs permanently stored in a
+database is both profoundly unfree and also profoundly inefficient.  That
+money would achieve far better results going into the police and
+intelligence services.
+
+I have to say, I am throughly miserable and depressed by all of this.  I
+have all the material needs and comforts in the world; and I am deeply
+unhappy.  The Government, in my view, has missed the point of existence.
+
+As an aside, I left the UK (for Amsterdam) nine months ago.  I will not be
+returning while these monstrous schemes exist.
+
+------------------------------
+
+Date: Mon, 16 Mar 2009 09:19:39 +0000
+From: "David Smith" <d.smith@fnc.co.uk>
+Subject: Software Related Accident: Pipe-Laying Equipment
+
+IMCA Safety Flash 18/08 December 2008
+
+These flashes summarise key safety matters and incidents, allowing wider
+dissemination of lessons learnt from them. The information below has been
+provided in good faith by members and should be reviewed individually by
+recipients, who will determine its relevance to their own operations.
+
+The effectiveness of the IMCA safety flash system depends on receiving
+reports from members in order to pass on information and avoid repeat
+incidents. Please consider adding the IMCA secretariat (imca@imca-int.com)
+to your internal distribution list for safety alerts and/or manually
+submitting information on specific incidents you consider may be
+relevant. All information will be anonymised or sanitised, as appropriate.
+
+A number of other organisations issue safety flashes and similar documents
+which may be of interest to IMCA members. Where these are particularly
+relevant, these may be summarised or highlighted here.  Links to known
+relevant websites are provided at www.imca-int.com/links Additional links
+should be submitted to webmaster@imca-int.com
+
+Failure of Pipe Handling System Causes Injuries and Fatalities
+
+A member has reported an incident in which the failure of a J-lay
+pipe-handling system caused two pipes to be dropped, one of which caused
+injuries to eight people, four of whom died as a result. During pipe-laying
+operations, a system failure in the hydraulic pipe handling system of the
+J-lay tower (JLT) caused two quadruple joints being handled at the same time
+in two different areas of the tower to drop suddenly. Each piece of pipe was
+50m long with a diameter of 24* and weighed approximately 20 tons.
+
+Just prior to the incident the pipe-laying operation was stopped.  Operators
+reported a system failure and that the hydraulic power had been lost. Such
+an occurrence was not particularly unusual and, in line with company
+procedures, this was investigated immediately. A team of technicians led by
+the chief electrician tried without success to resolve the problems. After
+these attempts, a more in-depth analysis was made. It was decided, on the
+basis of input from the system diagnostics, to perform a memory
+reset. Following this the system appeared to be running correctly. This was
+the first time that a full memory reset was requested by the internal
+diagnostics of the control system during a project operational phase.
+
+Only after all indications that everything was in order and all systems were
+up and running again was the instruction given to the operator to restart
+the hydraulic packs. As soon as the hydraulic power packs were started, a
+loud bang was heard along with the noise of the hydraulic systems. One
+quadruple joint within the J-lay tower, held by the transfer system, was
+released and fell about a metre to the upper welding deck. At the same time,
+the quadruple joint held by the pipe elevator at the top of the J-lay tower
+was also released from its clamps and the hydraulic safety stop swung away,
+allowing the pipe to fall the full height of the tower, smashing through the
+access platform located outside the non-destructive testing/coating station
+to the lower deck below.
+
+All the people who were injured had been on the access platform which was
+destroyed. The force of impact caused some of the injured persons to fall
+down on to the lower deck at the base of the pipe-lay tower and some to be
+thrown overboard.
+
+Eight persons were injured, two seriously and two slightly. Four of the
+injured persons died as a result of their injuries.
+
+The primary causes of the incident were found to be:
+
+* Sudden release of the two quadruple joints was caused by a failure in
+conceptual design of the control system software. The program relevant to
+the JLT initialising instruction was pre-loaded in the erasable programmable
+read-only memory (EPROM) of the programmable logic controller (PLC) with the
+instruction to open all clamps. Members are recommended to investigate the
+possibility that this could happen to the PLC-based control systems on
+equipment on their vessels.
+
+* The unnecessary presence and uncontrolled access of working personnel on
+to the access platform destroyed by the falling pipe exposed personnel to
+suspended load/dropped object hazard.  Following investigation of the
+incident, a number of corrective actions were put in place by the company:
+
+ - The first primary cause was resolved with the removal of the
+   EPROM memories from the system;
+
+ - The second primary cause has been addressed by a revision of the
+   vessel and JLT working methodologies; pipe handling activities have been
+   reconsidered through a dropped object philosophy in order to identify
+   mechanical and electrical barriers, additional controls, and new set of
+   operational procedures;
+
+* Electrical controls:
+
+ - a number of clamp opening operations were prevented by adding electrical
+   circuit breakers
+
+ - all critical sequences will be called by PLC and must be confirmed by
+   operator via electrical push buttons;
+
+* Mechanical controls:
+
+ - different systems have been and will be implemented to prevent the
+   vertical pipe drop in any section of the JLT, to restrain lateral pipe
+   movement and fall and to secure the pipe until the internal line up is
+   completed in the upper welding station
+
+ - an additional public address system was installed for use during
+   quadruple joint loader lift, and audible and visible alarms for elevator
+   movements
+
+ - a safety net was installed underneath the J-Lay tower platforms to
+   guarantee protection against persons falling overboard;
+
+* Procedures were revised in light of the incident, with the following
+points highlighted:
+
+ - all pipe handling activities are to be considered as working under
+   suspended loads
+
+ - the immediate area around the JLT is restricted to essential
+   personnel only
+
+ - transit and from the JLT to be controlled by dedicated watchmen
+
+ - no personnel at all allowed in certain areas during J-lay operation
+
+David H Smith MIET, MBCS, MACMm, Frazer-Nash Consultancy Ltd., Unit 11,
+Herringston Barn, Herringston, Dorchester, Dorset DT2 9PU, UK  01305 217910
+
+------------------------------
+
+Date: Sun, 08 Mar 2009 19:26:48 +0800
+From: jidanni@jidanni.org
+Subject: Spam as an indicator of network health
+
+There I was listening to the mosquitoes, when it dawned on me that just like
+mosquitoes, you just can't stamp out spam e-mail. And just like mosquitoes
+are a good indicator of environmental health, spam is a good indicator of
+network health, for the common man.
+
+If there was a Silent Spring spam-wise, you had better check to see if you
+are really getting all of your legitimate e-mail too!
+
+Likewise, spam phone calls are nature's way of helping you check the
+circuits.
+
+------------------------------
+
+Date: Sat, 7 Mar 2009 21:29:57 +0000
+From: Nick Rothwell <nick@cassiel.com>
+Subject: When Clouds go Bad: Losing Data in MobileMe
+
+I've been using Apple's MobileMe synchronised online services for contacts,
+calendar and file sharing on a number of Macs of varying ages, as well as my
+iPhone. It works fine under OS X 10.5 (Leopard), but has always seemed a
+little wobbly under 10.4 (Tiger): contacts occasionally not showing up, bits
+of the calendar not appearing, to-do items vanishing, that kind of
+thing. Nothing too worrying, since it's always seemed to be a local display
+problem under Tiger, and MobileMe's "cloud" has always had a complete set of
+data.
+
+A couple of days ago, the synchronisation process on an old PowerBook
+running Tiger went a bit off the rails, and it complained about data
+clashes, offered options to merge, and so on. I clicked the "overwrite this
+computer with contents of MobileMe" button, and before I knew it, my entire
+contact database had been wiped - *poof*. (Well, all except a single contact
+in Australia.)
+
+In a state of some annoyance, I checked my iPhone. Contact database gone -
+*poof*.
+
+I checked MobileMe online at www.me.com. Contacts - *poof*.
+
+Well, I will say this for MobileMe: their over-the-air synchronisation does
+indeed seem to be fast and efficient.
+
+Faced with a Plan A recovery procedure of waiting on hold for a MobileMe
+Support chat session with Apple (whilst needing to get out to a client site,
+ideally with a non-empty iPhone), I opted for Plan B: rush upstairs, pull
+the ethernet cable from the (Leopard) Mac mini, fire up Address Book and
+export contacts to a file, plug in ethernet, synchronise, re-import
+contacts, synchronise again.
+
+So, the obvious risks: (i) a rogue client can quickly and efficiently wipe
+out a dataset in a high-speed, wireless network service, and some devices
+(like the iPhone) are always linked to it. (ii) A cloud is not a
+backup. Wipe the data in a cloud, and the wipe will propagate everywhere
+just like you told it to - there isn't an accessible "previous version" to
+go back to. See also: "A RAID Device is Not a Backup." (Luckily, I had an
+inadvertent backup on the Mac mini.)
+
+"But," my inner newbie says, "I'm running the Time Machine backup software
+on the MacBook Pro. Why don't I just roll back to an earlier Address Book?"
+Well, despite Apple's claims that Time Machine "backs up everything", it
+really is just a file backup program, and the contacts and calendar
+information lives in some invisible database somewhere, out of the backup
+regime.(*)
+
+So, risk (iii): assuming that a backup program will work on important data
+which is not obviously file-based.
+
+(*) While I think about it, this might also be due to the fact that I run
+Apple's FileVault encryption on my home directory, and Time Machine has
+trouble with this as well: FileVault maps a directory structure to a sparse
+disk image, so Time Machine can only back up the image when I log out
+(infrequently), and can only roll back the entire image, not its contents.
+So, risk (iv): assuming that a transparent piece of technology (on-the-fly
+encryption) is also transparent to the other tools that you rely on.
+
+Nick Rothwell / Cassiel.com Limited  www.cassiel.com
+
+------------------------------
+
+Date: Sat, 21 Mar 2009 09:13:11 +0800
+From: jidanni@jidanni.org
+Subject: Only allow 1, 2, and 100 year domain name registration
+
+I purchased a domain name with the longest expiry period available, 10
+years. But I am quite sure that at that time I'll be running around like a
+chicken with its head cut off.
+
+Any longer than two years and if you're like me or Maxwell Smart, you'll say
+"The old 'Domain Name Expiring Soon' reminder spam e-mail trick? I'm not
+falling for that again! Ha, and here's another, purporting to be sent from
+my very own cron job. Meet the Delete key!"
+
+Any longer than five years and well, the guy who sold you the domain
+had better still be in the phone book, because I can't navigate the
+renewal interface or find the contact form.
+
+Any longer than ten years well he and his company had better be in
+good health because I forgot the password.
+
+Any longer and ... pass the Geritol.
+
+Sure, transfers among users or registration companies would be fine.  Those
+are all initiated by people who know what they are doing.
+
+But just as the hardware and software of 10 years ago may likely not be
+plugged in, don't expect the user to be either.
+
+Thus domain name registration should only be allowed for 1,2 and 100
+years. OK, I mean lifetime.
+
+------------------------------
+
+Date: Sun, 15 Mar 2009 14:26:19 -0700 (PDT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Re: ESTA visa waiver online (Michaelson, RISKS-25.57)
+
+There are a few other problems with the ESTA website -- which should have
+been sorted out well before making the system mandatory prior to travel.
+
+My experiences are that it only takes a few minutes to return an
+authorisation - BUT that it takes more than a few minutes to enter all of
+the info required. AND the system doesn't seem to remember anything.
+
+Recently I obtained authorisation to visit the USA on Visa Waiver to spend
+my hard earned credit crunch tourist dollars there. At an Internet Cafe I
+spent an inordinate amount of time entering all of the info. required by
+ESTA.
+
+However I could not print anything out at the time. So when I visited a
+friend's house who had a printer I opened up the ESTA record only to find
+that it had 'forgotten' ALL of my info. and that I had to re-enter it all.
+
+As an airline employee I sometimes have to fly to the USA on 'wait-listed'
+standby. If I am denied boarding for my listed flight I can list on the next
+one, but then I have to update my APIS record, and also the ESTA record. The
+APIS system remembers all my details and it is easy to update them to the
+new flight. BUT ESTA does not remember anything and I then have to type ALL
+of the info. back in.
+
+It would also help if all of the scam ESTA websites were closed down - they
+charge outrageous fees for what is a free service.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.62
+************************
+

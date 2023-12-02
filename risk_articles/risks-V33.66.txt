@@ -1,0 +1,619 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.66
+
+RISKS-LIST: Risks-Forum Digest  Thursday 16 March 2023  Volume 33 : Issue 66
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.66>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+The EU's chat-control legislation is the most alarming proposal I've ever
+ read (Matthew Green)
+Authors risk losing copyright if AI content is not disclosed, U.S. guidance
+ says (Ars Technica)
+AI to act as doctor's second pair of eyes to spot nearly invisible colon
+ cancer growths (The Straits Times)
+BlackMamba (Dark Reading)
+Welcome to the Big Blur (The Atlantic)
+Chat GPT4: Is the world prepared for the coming AI storm? (BBC)
+Botnet that knows your name and quotes your email is back with new tricks
+ (Ars Technica)
+Personal info from data breach affecting lawmakers posted on hacker site
+ (NBC News)
+A Spy Wants to Connect With You on LinkedIn (WiReD)
+Microsoft lays off an ethical AI team as it doubles down on OpenAI
+ (TechCrunch)
+Tesla Model 3 unlocked and driven by the wrong owner (Autoblog)
+Ransomware Attacks Have Entered a Heinous New Phase (WiReD)
+Ransomware Group Claims Hack of Amazon's Ring (Vice)
+Samsung caught faking zoom photos of the Moon (The Verge)
+Cerebral admits to sharing patient data with Meta, TikTok, Google
+ (The Verge)
+Vanishing phone customer support is driving us all insane (WashPost)
+Verizon Copies T-Mobile's Popular Offer -- With Two Big Catches (The Street)
+Noncompete clauses are everywhere, even for dancers and hair stylists
+ (WashPost)
+Quebec residents can now freeze their credit files (Jose Maria Mateos)
+Re: Why I'm sticking up for science (elizabeth, Jurek Kirakowski, 3daygoaty)
+Re: Everyone is special, SMS-Based Multi-Factor Authentication
+ (Jan Libove Alzina)
+Re: Why the Floppy Disk Just Won't Die (Steve Bacher)
+Re: rm -rf (Dan Astorian, Steve Bacher, Henry Baker, dmitri maziuk)
+Re: Terms of enscamment? (John Levine)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 12 Mar 2023 09:00:49 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: The EU's chat-control legislation is the most alarming proposal
+ I've ever read (Matthew Green)
+
+Taken in context, it is essentially a design for the most powerful text and
+image-based mass surveillance system the free world has ever seen.
+
+This legislation, which is initially targeted at child abuse applications,
+creates the infrastructure to build in mandatory automated scanning tools
+that will search for *known* media, *unknown* media matching certain
+descriptions, and textual conversations.
+
+The legislation is vague about how this will be accomplished, but the
+*impact assessment* it cites is not. The assessment makes clear that
+mandatory scanning of images and text, especially in encrypted data, is the
+only solution the Commission will consider.  [...]
+
+https://twitter.com/matthew_d_green/status/1634252397919739921
+
+------------------------------
+
+Date: Thu, 16 Mar 2023 17:21:16 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Authors risk losing copyright if AI content is not disclosed, U.S.
+ guidance says (Ars Technica)
+
+Copyright Office will field public input during listening sessions this
+spring.
+
+https://arstechnica.com/tech-policy/2023/03/us-issues-guidance-on-copyrighting-ai-assisted-artwork/
+
+------------------------------
+
+Date: Wed, 15 Mar 2023 10:49:30 +0000
+From: Richard Marlon Stein <rmstein@protonmail.com>
+Subject: AI to act as doctor's second pair of eyes to spot nearly invisible
+ colon cancer growths (The Straits Times)
+
+https://www.straitstimes.com/tech/ai-to-act-as-doctor-s-second-pair-of-eyes-to-s
+pot-nearly-invisible-colon-cancer-growths
+
+  Developed with the help of biomedical company Medtronic, the tool is able
+  to detect roughly 20^ more growths -- or polyps -- that doctors would
+  otherwise miss with the human eye, according to studies by SKH.
+
+  Endoscope image processing by AI to discern near invisible (to the naked
+  eye) polyps during a gastroscopy.
+
+  FDA's TPLC platform identifies, to date, 4 separate devices under Product
+  Code QNP (gastrointestinal lesion software detection system). See
+  https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfTPLC/tplc.cfm?id=2260&min_report_year=2018
+  for device approval information. The polyp detector stack is defined as,
+  ``A gastrointestinal lesion software detection system is a
+  computer-assisted detection device used in conjunction with endoscopy for
+  the detection of abnormal lesions in the gastrointestinal tract. This
+  device with advanced software algorithms brings attention to images to aid
+  in the detection of lesions. The device may contain hardware to support
+  interfacing with an endoscope.''
+
+No medical device reports for device or patient problems. Stay tuned to this
+space.
+
+Among the many procedural risks (e.g., an unsterilized endoscope) for
+gastroscopy is perforation -- the endoscope, via the gastroenterologist,
+pokes a hole through your intestine.
+
+Need to wonder if the polyp detector false negative/positive outcome might
+advise over-aggressive polyp biopsy frequency that elevates perforation
+risk.
+
+------------------------------
+
+Date: Mon, 13 Mar 2023 00:14:59 -04005B5B5B5B5B
+From: Dan Geer <dan@geer.org>
+Subject: BlackMamba (Dark Reading)
+
+https://www.darkreading.com/endpoint/ai-blackmamba-keylogging-edr-security
+
+AI-Powered 'BlackMamba' Keylogging Attack Evades Modern EDR Security
+
+Researchers warn that polymorphic malware created with ChatGPT and other
+LLMs will force a reinvention of security automation.
+
+Researchers from HYAS Labs demonstrated the proof-of-concept attack, which
+they call BlackMamba, which exploits a large language model (LLM) -- the
+technology on which ChatGPT is based -- to synthesize a polymorphic
+keylogger functionality on the fly. The attack is "truly polymorphic" in
+that every time BlackMamba executes, it resynthesizes its keylogging
+capability, the researchers wrote.
+
+The BlackMamba attack, outlined in a blog post, demonstrates how AI can
+allow the malware to dynamically modify benign code at runtime without any
+command-and-control (C2) infrastructure, allowing it to slip past current
+automated security systems that are attuned to look out for this type of
+behavior to detect attacks.
+
+------------------------------
+
+Date: Wed, 15 Mar 2023 08:21:30 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Welcome to the Big Blur (The Atlantic)
+
+Thanks to AI, every written word now comes with a question.
+
+https://www.theatlantic.com/technology/archive/2023/03/gpt4-arrival-human-artificial-intelligence-blur/673399/
+
+------------------------------
+
+Date: Thu, 16 Mar 2023 07:24:45 -0600
+From: Matthew Kruk <mkrukg@gmail.com>
+Subject: Chat GPT4: Is the world prepared for the coming AI storm? (BBC)
+
+Artificial intelligence has the awesome power to change the way we live our
+lives, in both good and dangerous ways. Experts have little confidence that
+those in power are prepared for what's coming.
+
+https://www.bbc.com/news/world-us-canada-64967627
+
+------------------------------
+
+Date: Tue, 14 Mar 2023 23:04:37 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Botnet that knows your name and quotes your email is back with new
+ tricks (Ars Technica)
+
+Quoting Herman Melville is only one of Emotet's latest innovations.
+
+https://arstechnica.com/information-technology/2023/03/botnet-that-knows-your-name-and-quotes-your-email-is-back-with-new-tricks/
+
+------------------------------
+
+Date: Wed, 15 Mar 2023 22:08:19 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Personal info from data breach affecting lawmakers posted on hacker
+ site (NBC News)
+
+Senate staffers were sent an email warning that data from the DC Health Link
+breach, including users' birthdates and Social Security numbers, can be
+found online.
+
+https://www.nbcnews.com/politics/congress/info-data-breach-affecting-lawmakers-posted-hacker-site-rcna75140
+
+------------------------------
+
+Date: Thu, 16 Mar 2023 02:12:47 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A Spy Wants to Connect With You on LinkedIn (WiReD)
+
+Russia, North Korea, Iran, and China have been caught using fake profiles to
+gather information. But the platform's tools to weed them out only go so
+far.
+
+https://www.wired.com/story/linkedin-fake-profiles-state-actors-scams
+
+------------------------------
+
+Date: Tue, 14 Mar 2023 01:19:42 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Microsoft lays off an ethical AI team as it doubles down on OpenAI
+ (TechCrunch)
+
+Microsoft laid off an entire team dedicated to guiding AI innovation that
+leads to ethical, responsible and sustainable outcomes. The cutting of the
+ethics and society team, as reported by Platformer, is part of a recent
+spate of layoffs that affected 10,000 employees across the company.
+
+https://techcrunch.com/2023/03/13/microsoft-lays-off-an-ethical-ai-team-as-it-doubles-down-on-openai/
+
+------------------------------
+
+Date: Tue, 14 Mar 2023 18:18:21 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Tesla Model 3 unlocked and driven by the wrong owner (Autoblog)
+
+A TeslaModel 3 unlocked and driven by the wrong owner. The man was ablec2 to
+drive off, stop, and pick his children up from school without issue
+
+https://www.autoblog.com/2023/03/13/tesla-model-3-unlocked-driven-by-wrong-owner/
+
+  [Monty Solomon noted
+https://www.washingtonpost.com/nation/2023/03/14/tesla-app-unlock-strangers-car
+  PGN]
+
+------------------------------
+
+Date: Tue, 14 Mar 2023 01:22:40 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Ransomware Attacks Have Entered a Heinous New Phase (WiReD)
+
+With victims refusing to pay, cybercriminal gangs are now releasing stolen
+photos of cancer patients and sensitive student records.
+
+https://www.wired.com/story/ransomware-tactics-cancer-photos-student-records
+
+------------------------------
+
+Date: Tue, 14 Mar 2023 17:15:40 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Ransomware Group Claims Hack of Amazon's Ring (Vice)
+
+https://www.vice.com/en/article/qjvd9q/ransomware-group-claims-hack-of-amazons-ring
+
+------------------------------
+
+Date: Mon, 13 Mar 2023 18:26:59 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Samsung caught faking zoom photos of the Moon (The Verge)
+
+https://www.theverge.com/2023/3/13/23637401/samsung-fake-moon-photos-ai-galaxy-s21-s23-ultra
+
+------------------------------
+
+Date: Mon, 13 Mar 2023 18:34:23 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Cerebral admits to sharing patient data with Meta, TikTok, Google
+ (The Verge)
+
+https://www.theverge.com/2023/3/11/23635518/cerebral-patient-data-meta-tiktok-google-pixel
+
+------------------------------
+
+Date: Tue, 14 Mar 2023 09:47:53 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Vanishing phone customer support is driving us all insane (WashPost)
+
+Vanishing phone customer support is driving us all insane: Why it's
+increasingly hard to reach customer support by phone -- if it's possible at
+all.
+
+https://www.washingtonpost.com/opinions/2023/03/07/phone-customer-support-disappearing/
+
+------------------------------
+
+Date: Wed, 15 Mar 2023 22:38:10 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Verizon Copies T-Mobile's Popular Offer -- With Two Big Catches
+ (The Street)
+
+The No. 1 wireless carrier wants to look as if it's giving customers
+something for nothing. It's not and customers should be wary.
+
+https://www.thestreet.com/travel/verizon-botches-its-take-on-t-mobiles-netflix-deal
+
+------------------------------
+
+Date: Tue, 14 Mar 2023 09:50:01 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Noncompete clauses are everywhere, even for dancers and hair
+ stylists (WashPost)
+
+As regulators take aim at noncompete agreements, people in five states talk
+about how they've been hampered in their attempts to change employers.
+
+https://www.washingtonpost.com/business/2023/03/10/noncompete-agreements-ftc/
+
+------------------------------
+
+Date: Sun, 12 Mar 2023 09:16:23 -0400
+From: =?iso-8859-1?Q?Jos=E9_Mar=EDa?= Mateos <chema@rinzewind.org>
+Subject: Quebec residents can now freeze their credit files
+
+Public service announcement: Quebec residents can now freeze their credit
+files with the two credit bureaus operating in Canada: Equifax and
+TransUnion.
+
+I wrote an oped about this issue that got published by the Montreal Gazette
+a month ago:
+https://montrealgazette.com/opinion/opinion-quebecers-act-now-to-freeze-your-credit-file
+
+Also, early this year I started https://idtheftreform.ca/, which is an
+effort to bring together people to push for legislative changes in Canada
+regarding ID theft laws, which to my mind (coming from Europe) place a heavy
+burden on the victims to defend themselves, when most of the time the cause
+is a banking / credit institution not checking documentation as thoroughly
+as they should.
+
+------------------------------
+
+Date: Sat, 11 Mar 2023 21:42:36 -0500
+From: "elizabeth135095@gmail.com" <elizabeth135095@gmail.com>
+Subject: Re: Why I'm sticking up for science (RISKS-33.64-65)
+
+While I also consider the Dawkins editorial to be a rant whose aim,
+poorly-circumscribed as it may be, is not fully on topic for RISKS, I find
+that zeurkous' response highlights the RISK that the original submission
+highlighted.
+
+There is risk to society at large when relativism is placed on equal
+standing with empiricism. The "special treatment" afforded to "Western"
+science is earned by the fact that all people can, in fact, access and
+verify it. There is no special belief system or ancestral qualification
+required. It is important to point out that there are traditional beliefs
+that are not evaluated by the world at large (yet another RISK!), but when
+they are they also become part of this shared science, this consensus
+reality that scientists and observers everywhere participate in.
+
+Advocating for the promulgation of beliefs and systems of belief that are
+not to be questioned or verified, simply because they have also been held by
+some people at some time, erodes solidarity. It erodes the trust that any
+person can have in the mass of people, because there is now this doubt about
+whether everyone is willing to perceive the same reality.  Unfortunately,
+signs point to us all *living* in the same reality -- whether colonized,
+colonizer, independent, or uncontacted -- and we cannot play together nicely
+if some of us insist on playing another game altogether.
+
+------------------------------
+
+Date: Mon, 13 Mar 2023 16:01:59 +0000
+From: Jurek Kirakowski <jzk@uxp.ie>
+Subject: Re: Why I'm sticking up for science (RISKS-33.64-65)
+
+I suppose I didn't bother to make any response to the post by Geoff
+Goodfellow citing in detail a Spectator article by Richard Dawkins because,
+as a scientist and a Roman Catholic, I am always astounded by the sheer
+ignorance of Dawkins and his ilk about what religion is and - amazingly -
+about how science proceeds. This was just more of the same, no doubt causing
+eyes of many a reader to glaze over and pass on to the next item.
+
+If I may put this into a way of talking that is actually relevant to the
+objectives of this list, the RISK is that the boundaries between religion
+and science get deliberately blurred by people who have a naive world view
+of both and who promote these world views with sophistical rhetoric and
+cheap knock-down arguments against a parody of what religious belief is.
+
+The article cited by Geoff Goodfellow is a good example of how irrational
+emotions may be stirred by those peddling this RISKY behaviour, leading to
+untenable positions on both topics.
+
+------------------------------
+
+Date: Sun, 12 Mar 2023 19:26:03 +1100
+From: 3daygoaty <threedaygoaty@gmail.com>
+Subject: Re: Why I'm sticking up for science (RISKS-33.64-65)
+
+Dr Dick Dawkins goes too far.  It's one thing to argue when pseudo science
+gets in the door, but another thing entirely to argue cultural values need
+to be kept at arms length.  He does it in The God Delusion -- he undoes his
+own arguments with cloying appeals to science as the great reset against
+humanist encroachment.  New Zealand has a river and a mountain with
+personhood.  It's wonderful progress.  Science will be brought forward and
+made stronger.  Does Dawkins still oppose the chiropractic as anti-science?
+TDG
+
+------------------------------
+
+Date: Sun, 12 Mar 2023 10:23:50 +0000
+From: Jay Libove Alzina <libove@felines.org>
+Subject: Re: Everyone is special, SMS-Based Multi-Factor Authentication
+
+(John and I chatted a little offline about some of this) Unfortunately, at
+least insofar as I can see wandering around within my Vanguard account and
+talking with Vanguard support, Vanguard does NOT use ONLY whatever 2FA you
+have configured; Vanguard REQUIRES a mobile phone, and literally says at the
+security key login prompt page "If you don't have your security key, you can
+always request a security code".  In other words, as I said initially,
+Vanguard (like BoA) lets you buy and set up a physical security token, but
+also always allow you to bypass it - making the physical security token of
+exactly zero real security value.
+
+I checked in with John about it and he also found the "would you like to
+bypass the real user's strong security and use weak security that you can
+attack?"  prompt by Vanguard. (eyeroll)
+
+John then observed: >Ugh, you're right.  Vanguard are pretty sophisticated
+so I would guess they think that it is a lot more people who forget their
+passwords than who get SIM swapped.
+
+Undoubtedly true, though the fallibility of the average user shouldn't mean
+that we godlike security people have to accept less security than we're
+willing to hamstring ourselves with ... (insert "eye roll" emoji here,
+again)
+
+John continued:
+>I also wonder if they have different security for different sizes of
+>accounts.
+
+Sadly, nope. My parents have one of those "bigger size" accounts, and I've
+spoken directly with their named Vanguard representative, who couldn't come
+up with anything else/better (and, when pressed, never responded at all...
+very disappointing). (Though, as John also noted, maybe in the millions and
+millions and ... size accounts? Dunno. Shouldn't have to be in the top 1% to
+have adequate security !)
+
+Lastly, in response to the newer comments about why 2FA really is necessary,
+about the recent hacks of LastPass, while those hacks are serious, they
+don't in the near-term make a secured-with-a-strong-unique-password account
+directly vulnerable (the vaults that were stolen remained encrypted, so if
+the LastPass master password was good, there's still a practically safe
+amount of time before a vault could be brute forced). But, yes, still - 2FA
+is unfortunately NEEDED now for ... basically everything.  (And, then, yes,
+adequate, at least as safe recoverability for when 2FA fails, is also
+needed).
+
+------------------------------
+
+Date: Mon, 13 Mar 2023 10:52:58 -0700
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: Why the Floppy Disk Just Won't Die (RISKS 33.65)
+
+Of course, most of the "floppy disks" as referenced in the WIRED article are
+not floppy at all. They are mainly the 3.5" diskettes that supplanted the
+earlier 5-1/4" disks that were truly floppy, whence the appellation. The
+sobriquet was carried forward to their replacement, even though floppiness
+ceased to be an attribute. (The WIRED article alludes only to the 3.5" and
+much earlier 8" disks without mentioning the once-commonplace 5-1/4" ones at
+all.)
+
+I tried to adopt the practice of referring to the 3.5" disks as *stiffs*,
+but it never caught on.
+
+------------------------------
+
+Date: Sun, 12 Mar 2023 11:46:26 -0400
+From: Dan Astoorian <djast@ecf.utoronto.ca>
+Subject: Re: rm -rf (Bacher, RISKS-33.66)
+
+In response to Steve Bacher's comment:
+
+It's not typically necessary to use subshells with -e or pipefail turned
+off: the -e option in bash already has mechanisms to prevent the shell from
+terminating when _anticipated_ commands return a nonzero exit status:
+
+  The shell does not exit if the command that fails is part of the command
+  list immediately following a while or until keyword, part of the test
+  following the if or elif reserved words, part of any command executed in a
+  && or || list except the command following the final && or ||, any command
+  in a pipeline but the last, or if the command's return value is being
+  inverted with !.
+
+The common idiom is to append "&& true" or "|| true" to commands or
+pipelines you don't want to trigger the behaviour of -e if they fail, e.g.:
+
+    set -e
+    grep pattern "$FILENAME" | wc -l || true
+
+will not cause the shell to exit even if the grep command returns a non-zero
+exit status (whether this is because the pattern is not found in the named
+file, because the named file does not exist or is not readable, because the
+FILENAME variable is not set and "set -u" is in effect, or for any other
+reason--so caution is still needed in permitting the script to continue in
+not making unwarranted assumptions about the reason the pipeline failed).
+
+Using "|| true" makes the intention of ignoring the success of failure of
+the command or pipeline apparent; using "&& true" is perhaps slightly less
+intuitive, but has the advantage of allowing the script to evaluate the
+return status of the pipeline; e.g., "case $? in 1) [...]".
+
+------------------------------
+
+Date: Mon, 13 Mar 2023 09:39:53 -0700
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: rm -rf (Bacher, RISKS-33.63)
+
+I know you meant to write
+
+        cd foo && rm -rf ...
+
+but it got munged on the way to the RISKS web page.  [PGN usually strips
+the html crap from a strictly UTF-8 digest.  Sorry when i don't.]
+
+Yes, that's another approach; I would go further and encase it in a
+subshell:
+
+        (cd foo && rm -rf ...)
+
+to ensure that the cd does not affect the remainder of the script.  In that
+way you get the same outcome, in terms of the environment, following the
+execution of the cd and rm whether the cd "takes" or not.
+
+If you actually want to change the current working directory for the
+remainder of the script, this doesn't apply.
+
+------------------------------
+
+Date: Sun, 12 Mar 2023 17:27:51 +0000
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: rm -rf (Levine, RISKS-33.65)
+
+  "IEEE 1003.2 is the shell command part of POSIX. I'm not sure I could call
+  it complete, but it is thorough and detailed, and they were acutely aware
+  that the commands are all used in shell scripts."
+
+Based upon this comment, I'd say that Planck's Principle is alive and well
+in the computer science community. It's amazing that we ever made the
+transition from decimal to binary arithmetic!
+
+https://en.wikipedia.org/wiki/Planck%27s_principle
+
+  I just Google'd "bash" "euo" and got 489,000 results.
+
+  Clearly, Unix/Linux error handling in shell scripts is a massive mess that
+  will require a new generation of computer scientists to fix.
+
+------------------------------
+
+Date: Sun, 12 Mar 2023 18:29:39 -0500
+From: dmitri maziuk <dmitri.maziuk@gmail.com>
+Subject: Re: rm -rf (RISKS-33.65)
+
+I think what's missing from all these is that snafus like `rm -rf /` or
+`killall` (on not Linux) have long been considered a rite of passage among
+certain unix sysadmins. Dealing with the consequences of your mistake is a
+valuable learning experience; if one wants to be forever shielded from the
+consequences, one should consider politics, not unix.
+
+------------------------------
+
+Date: 12 Mar 2023 14:21:46 -0500
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Terms of enscamment? (Slade, RISKS-33.65)
+
+Yup, I have the same problem.
+
+Password? Whatp password? Eventbrite lets you enter a mail address
+that they don't verify. As you just discovered, if you give Eventbrite
+the wrong address, you don't get the tickets so there is a strong
+incentive to provide a real address. (Unless, I suppose, the tickets
+are delivered in the web transaction and the mail is just a copy. I
+haven't bought tix from them for a very long time and don't remember.)
+
+I suppose they could verify the address by sending a test message you have
+to click on, but there is a tradeoff: some fraction of people would give up
+and not complete the transaction, so I can't really blame them.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.66
+************************

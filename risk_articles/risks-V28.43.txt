@@ -1,0 +1,608 @@
+RISKS-LIST: Risks-Forum Digest  Monday 5 January 2015  Volume 28 : Issue 43
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.43.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Cyber attack damages German blast furnace (Thomas Koenig)
+German Researchers Discover a Flaw That Could Let Anyone Listen to
+  Your Cell Calls (Craig Timberg via ACM TechNews)
+"Misfortune Cookie" CVE-2014-9222 (Bob Gezelter)
+"12 million home and business routers vulnerable to critical hijacking hack"
+  (Dan Goodin via Gene Wirchenko)
+SS7 hackdoors allow ANYONE to listen to your calls (Henry Baker)
+"Microsoft vs. DoJ: The battle for privacy in the cloud" (Simon Phipps via
+  Gene Wirchenko)
+LU Wei editorial in the *HuffPost* (Dave Farber)
+Public Reactions to Snowden (Bruce Schneier)
+FBI Agents Pose as Repairmen to Bypass Warrant Process (Bruce Schneier)
+After Silk Road takedowns, Dark Web drug sites still thriving
+  (Cyrus Farivar via Dewayne Hendricks)
+SMB-spreadable malware: TA14-353A (Bob Gezelter)
+ICANN e-mail accounts, zone database breached in spearphishing attack
+  (Dan Goodin via Werner U)
+Ars Technica public statement and reaction to 14 Dec hack (Werner U)
+Danielle Keats Citron: Hate Crimes in Cyberspace (PGN)
+Marc Goodman: FUTURE CRIMES: Everything is Connected, ... (PGN)
+Richard A, Clarke: Sting of the Drone (Review by Marc Rotenberg)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 22 Dec 2014 15:54:35 +0100
+From: Thomas Koenig <tkoenig@netcologne.de>
+Subject: Cyber attack damages German blast furnace
+
+The German federal authority for security in information technology (BSI)
+reported in their 2014 report that a steel mill was targeted in a cyber
+attack.  The attack led to an uncontrolled shutdown of a blast furnace,
+bringing it to an uncontrolled state that led to massive damages.
+https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Lageberichte/Lagebericht2014.pdf?__blob=publicationFile
+
+The attackers had detailed know-how both in classical IT security and in
+industrial control and production processes.
+
+  [The same report also noted by Jeremy Epstein, who also cited IT World:
+http://www.itworld.com/article/2861675/cyberattack-on-german-steel-factory-causes-massive-damage.html
+  The report revealed one of the rare instances in which a digital attack
+  actually caused physical damage.  PGN]
+
+------------------------------
+
+Date: Fri, 19 Dec 2014 11:45:34 -0500 (EST)
+From: "ACM TechNews" <technews@hq.acm.org>
+Subject: German Researchers Discover a Flaw That Could Let Anyone Listen to
+  Your Cell Calls (Craig Timberg)
+
+  [PGN-Excerpted from ACM TechNews, Friday, December 14, 2014]
+
+(Craig Timberg, *The Washington Post*, 18 Dec 2014)
+
+German researchers have discovered security flaws that could enable hackers,
+spies, and criminals to listen to private phone calls and intercept text
+messages.  This revelation is just the most recent indication of widespread
+insecurity on the SS7 network.  The flaws are actually functions built into
+SS7 for other purposes that hackers can repurpose for surveillance because
+of the lax security on the network.  Although researchers did not find
+evidence that their latest discoveries have been marketed to governments on
+a widespread basis, vulnerabilities publicly reported by security
+researchers often turn out to be tools long used by secretive intelligence
+services, such as the U.S. National Security Agency or Britain's GCHQ, but
+not revealed to the public.  The researchers found two distinct ways to
+eavesdrop on calls using SS7 technology.  In the first, commands sent over
+SS7 could be used to hijack a cellphone's forwarding function.  In the
+second technique, hackers would use radio antennas to collect all the calls
+and texts passing through the airwaves in an area.  The researchers also
+discovered new ways to track the locations of cellphone users through SS7.
+In addition, they found it was possible to use SS7 to learn the phone
+numbers of people whose cellular signals are collected using surveillance
+devices.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_5-d259x2c39bx062021&
+
+------------------------------
+
+Date: Thu, 18 Dec 2014 10:46:24 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: "Misfortune Cookie" CVE-2014-9222
+
+Paraphrasing a blog entry on the vulnerability, "Misfortune Cookie" is
+believed to afflict 12 million devices in 189 countries. The vulnerability
+is a bug in the web server component RomPager from AllegroSoft, used by
+many hardware vendors for embedded devices, including SOHO routers.
+Reportedly, the weakness would allow an attacker to subvert the firewall,
+exposing credentials and interior systems to attack.  A blog entry going
+into more detail is at:
+http://blog.norsecorp.com/2014/12/18/millions-at-risk-from-misfortune-cookie-soho-router-vulnerability/
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Fri, 19 Dec 2014 09:45:33 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "12 million home and business routers vulnerable to critical
+  hijacking hack" (Dan Goodin)
+
+Dan Goodin - 18 Dec 2014
+Bug exposes user data, as well as computers, Web cams, and other
+connected devices.
+http://arstechnica.com/security/2014/12/12-million-home-and-business-routers-vulnerable-to-critical-hijacking-hack/
+
+------------------------------
+
+Date: Thu, 18 Dec 2014 16:14:00 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: SS7 hackdoors allow ANYONE to listen to your calls
+
+FYI -- ``When I really need a confidential conversation, I use a
+fixed-line'' -- which shows how clueless this politician is (SS7 is used for
+ALL phone calls, fixed-line OR wireless).
+
+https://en.wikipedia.org/wiki/Signalling_System_No._7
+http://www.washingtonpost.com/blogs/the-switch/wp/2014/12/18/german-researchers-discover-a-flaw-that-could-let-anyone-listen-to-your-cell-calls-and-read-your-texts/
+
+------------------------------
+
+Date: Wed, 17 Dec 2014 10:58:40 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Microsoft vs. DoJ: The battle for privacy in the cloud"
+  (Simon Phipps)
+
+Simon Phipps, InfoWorld, 17 Dec 2014
+Is a U.S. warrant enough to force an American company to breach privacy laws
+abroad? Microsoft with the support of friends and foes
+alike, says no.
+http://www.infoworld.com/article/2859897/internet-privacy/microsoft-vs-doj-the-battle-for-privacy-in-the-cloud.html
+
+selected text:
+
+To put it more succinctly, the position Microsoft and so many others are
+opposing "argues that, unlike your letters in the mail, emails you store in
+the cloud cease to belong exclusively to you. Instead, according to the
+government, your emails become the business records of a cloud provider."
+
+This is a fundamentally important case for cloud computing, so it's no
+surprise to see OpenStack cornerstones HP and Rackspace standing
+shoulder-to-shoulder with their competitor. It's also fundamentally
+important to digital rights globally, which is why the EFF and the ACLU are
+joined by Digital Rights Ireland and the U.K.'s Open Rights Group (of which
+I am a director). Let's hope the Supreme Court can see past the technical
+and business details to the real issue -- the privacy of the citizens of
+every country where America trades, as well as American citizens.
+
+------------------------------
+
+Date: Wed, 17 Dec 2014 10:31:13 -0500
+From: "Dave Farber via ip" <ip@listbox.com>
+Subject: LU Wei editorial in the *HuffPost*
+
+China's new cyber Czar, Minister LU Wei has a new editorial on the
+HuffingtonPost of all places that emphasizes the need for "cyber
+sovereignty" see below.
+
+His remarks below are nearly identical to those he gave at the U.S.-China
+Internet Industry Forum earlier this month in Washington D.C.
+http://m.huffpost.com/us/entry/6324060
+
+------------------------------
+
+Date: Tue, 16 Dec 2014 15:43:47 -0600
+From: Bruce Schneier <schneier@schneier.com>
+Subject: Public Reactions to Snowden
+
+  https://www.schneier.com/blog/archives/2014/12/over_700_millio.html
+
+There's a new international survey on Internet security and trust, of
+"23,376 Internet users in 24 countries," including "Australia, Brazil,
+Canada, China, Egypt, France, Germany, Great Britain, Hong Kong, India,
+Indonesia, Italy, Japan, Kenya, Mexico, Nigeria, Pakistan, Poland, South
+Africa, South Korea, Sweden, Tunisia, Turkey and the United States." Amongst
+the findings, 60% of Internet users have heard of Edward Snowden, and 39% of
+those "have taken steps to protect their online privacy and security as a
+result of his revelations."
+
+The press is mostly spinning this as evidence that Snowden has not had an
+effect: "merely 39%," "only 39%," and so on. (Note that these articles are
+completely misunderstanding the data. It's not 39% of people who are taking
+steps to protect their privacy post-Snowden, it's 39% of the 60% of Internet
+users -- which is not everybody -- who have heard of him. So it's much less
+than 39%.)
+
+Even so, I disagree with the "Edward Snowden Revelations Not Having Much
+Impact on Internet Users" headline. He's having an enormous impact. I ran
+the actual numbers country by country, combining data on Internet
+penetration with data from this survey. Multiplying everything out, I
+calculate that 706 million people have changed their behavior on the
+Internet because of what the NSA and GCHQ are doing. (For example, 17% of
+Indonesians use the Internet, 64% of them have heard of Snowden and 62% of
+them have taken steps to protect their privacy, which equals 17 million
+people out of its total 250-million population.)
+
+Note that the countries in this survey cover only 4.7 billion out of a total
+7 billion world population. Taking the conservative estimates that 20% of
+the remaining population uses the Internet, 40% of them have heard of
+Snowden, and 25% of those have done something about it, that's an additional
+46 million people around the world.  [...]
+
+------------------------------
+
+Date: Mon, 15 Dec 2014 02:15:29 -0600
+From: Bruce Schneier <schneier@schneier.com>
+Subject: FBI Agents Pose as Repairmen to Bypass Warrant Process
+
+This is a creepy story. The FBI wanted access to a hotel guest's room
+without a warrant. So agents broke his Internet connection, and then posed
+as Internet technicians to gain access to his hotel room without a warrant.
+
+> From the motion to suppress:
+
+  The next time you call for assistance because the Internet service in your
+  home is not working, the "technician" who comes to your door may actually
+  be an undercover government agent.  He will have secretly disconnected the
+  service, knowing that you will naturally call for help and -- when he
+  shows up at your door, impersonating a technician -- let him in.  He will
+  walk through each room of your house, claiming to diagnose the problem.
+  Actually, he will be videotaping everything (and everyone) inside.  He
+  will have no reason to suspect you have broken the law, much less probable
+  cause to obtain a search warrant.  But that makes no difference, because
+  by letting him in, you will have "consented" to an intrusive search of
+  your home.
+
+Basically, the agents snooped around the hotel room, and gathered evidence
+that they submitted to a magistrate to get a warrant. Of course, they never
+told the judge that they had engineered the whole outage and planted the
+fake technicians.
+
+This feels like an important case to me. We constantly allow repair
+technicians into our homes to fix this or that technological thingy. If we
+can't be sure they are not government agents in disguise, then we've lost
+quite a lot of our freedom and liberty.
+
+  [PGN-Excerpted from CRYPTO-GRAM, 15 Dec 2014.
+  Incidentally that issue of CRYPTO-GRAM also has items on Regin,
+  the AURORA attack, and the Sony hack.]
+
+Since 1998, CRYPTO-GRAM has been a free monthly newsletter providing
+summaries, analyses, insights, and commentaries on security: computer and
+otherwise. You can subscribe, unsubscribe, or change your address on the Web
+at <http://www.schneier.com/crypto-gram.html>. Back issues are also
+available at that URL.
+
+CRYPTO-GRAM is written by Bruce Schneier. See <http://www.schneier.com>.
+Crypto-Gram is a personal newsletter. Opinions expressed are not necessarily
+those of Co3 Systems, Inc.
+
+------------------------------
+
+Date: Dec 19, 2014 12:59 PM
+From: "Dewayne Hendricks" <dewayne@warpspeed.com>
+Subject: After Silk Road takedowns, Dark Web drug sites still thriving
+
+Evolution sells drugs, guns, and more -- but no ``services related to murder.''
+Cyrus Farivar, Ars Technica, 19 Dec 2914 [via Dave Farber]
+http://arstechnica.com/business/2014/12/after-two-silk-road-takedowns-dark-web-drug-sites-still-thriving/
+
+Over a year after the shuttering of the original Silk Road website and over
+a month after the seizure of Silk Road 2 and other similar sites, the
+sketchiest of Dark Web sites still persist.
+
+According to a new report published Thursday from the Digital Citizens
+Alliance (DCA), an advocacy group, Evolution Marketplace has long passed
+Silk Road ``as the largest illegal black market for drugs before the
+takedown.'' Others include Agora Marketplace, Nucleus Marketplace, and a
+number of smaller ones.
+
+As of this week, Evolution has over 26,000 listings for drugs, weapons,
+pornography, and more.
+
+``Evolution Marketplace is a much different animal than Silk Road,'' Dan
+Palumbo, the group's research director, said in a statement.  ``They sell
+weapons, stolen credit cards, and more nefarious items that were forbidden
+on both versions of Silk Road. Silk Road sold a lot of dangerous things, but
+operators drew the line at their version of `victimless crimes', i.e.. no
+child pornography, weapons, or identity theft. Now, four of the top five
+DarkNet Marketplaces sell weapons while three of the top five sell stolen
+financial data. This is a darker DarkNet. It speaks to the challenge facing
+law enforcement as they knock one set of bad actors offline, another comes
+along with bigger and bolder intentions."
+
+We have standards, after all(!)
+
+Like the previous incarnations of Silk Road, Evolution (or `Evo' as it's
+known to its users) requires Tor to use and boasts a slew of questionable
+goods, all available for sale in bitcoins. Evo itself takes in between 2.5
+and 4 percent of all transactions.  Signing up for the site takes just a few
+moments --no e-mail address or anything else is even required. Ars decided
+to create an account and take a dive into Evolution. (Like our previous
+account on Silk Road 2, this reporter has created an account on Evolution
+under the username `cfarivar', but has zero intention to purchase or sell
+any items.)
+
+In a look on Thursday, Ars found nearly 15,000 drug-related listings, by far
+the most popular on the site: cocaine, methamphetamine, marijuana, and other
+controlled substances were listed. Amongst other popular categories of
+digital goods were various hacking guides, pirated software, and even
+malware. A fake Colorado driver's license sells for just 0.257 bitcoins
+($80). [...]
+
+------------------------------
+
+Date: Mon, 22 Dec 2014 02:11:00 -0700
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: SMB-spreadable malware: TA14-353A
+
+US CERT has released an bulletin concerning malware which was used at a
+"major entertainment company" (presumably Sony Pictures). The bulletin
+contains details of the malware operations, list of known components, and
+other details.  The CERT bulletin is at:
+https://www.us-cert.gov/ncas/alerts/TA14-353A 
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Thu, 18 Dec 2014 20:59:22 +0100
+From: Werner U <werneru@gmail.com>
+Subject: ICANN e-mail accounts, zone database breached in spearphishing attack
+  (Dan Goodin)
+
+Dan Goodin, Ars Technica, 17 Dec 2014
+ICANN e-mail accounts, zone database breached in spearphishing attack
+Password data, other personal information of account holders exposed.
+http://arstechnica.com/security/2014/12/icann-e-mail-accounts-zone-database-breached-in-spearphishing-attack/
+http://arstechnica.com/author/dan-goodin/
+
+Unknown attackers used a spearphishing campaign to compromise sensitive
+systems operated by the Internet Corporation for Assigned Names and Numbers
+(ICANN), a coup that allowed them to take control of employee e-mail
+accounts and access personal information of people doing business with the
+group.
+
+ICANN, which oversees the Internet's address system, said in a release
+published Tuesday <https://www.icann.org/news/announcement-2-2014-12-16-en>
+that the breach also gave attackers administrative access to all files
+stored in its centralized zone data system <https://czds.icann.org/en>, as
+well as the names, postal addresses, e-mail addresses, fax and phone
+numbers, user names, and cryptographically hashed passwords of account
+holders who used the system. Domain registries use the database to help
+manage the current allocation of hundreds of new generic top level domains
+(gTLDs) currently underway. Attackers also gained unauthorized access to
+the content management systems of several ICANN blogs.
+
+"We believe a 'spear phishing' attack was initiated in late November 2014,"
+Tuesday's press release stated. "It involved email messages that were
+crafted to appear to come from our own domain being sent to members of our
+staff. The attack resulted in the compromise of the email credentials of
+several ICANN staff members."
+
+Earlier this month, ICANN officials discovered the compromised credentials
+were used to gain unauthorized access to the zone data system. Other
+compromised systems included the ICANN GAC Wiki
+<https://gacweb.icann.org/display/gacweb/Governmental+Advisory+Committee>,
+where attackers were able to view a members-only index page and one
+individual user's profile page; the ICANN Whois information portal
+<http://whois.icann.org/>; and the ICANN blog <http://blog.icann.org/>.  The
+most sensitive information exposed appears to be the personal information of
+account holders of the centralized zone system. ICANN recommended holders
+immediately change their accounts passwords...
+
+As the group controlling the Internet's domain name system, ICANN is a
+prime target for all kinds of attacks from hackers eager to obtain data
+that can be used to breach other targets. Tuesday's advisory warning that
+several employees were successfully breached should come as a wake up call
+to similar groups and serve as a reminder of just how hard it is to prevent
+social-engineering attacks.
+
+------------------------------
+
+Date: Thu, 18 Dec 2014 20:22:21 +0100
+From: Werner U <werneru@gmail.com>
+Subject: Ars Technica public statement and reaction to 14 Dec hack
+
+Ars was briefly hacked yesterday; here's what we know
+<http://arstechnica.com/staff/2014/12/ars-was-briefly-hacked-yesterday-heres-what-we-know/>
+Readers, please change your passwords.
+by Ars Staff - Dec 16, 2014 9:52 pm UTC
+(If you have an account on Ars Technica, please change your password
+today. See below for more details.)
+
+At 20:00 CT on December 14, an Internet intruder gained access to one of the
+Ars Web servers and spent the next hour attempting to get from the Web
+server to a more central machine. At 20:52, the attempt was successful
+thanks to information gleaned from a poorly located backup file. The next
+day, at 14:13, the hacker returned to the central server and replaced the
+main Ars webpage with a defacement page that streamed a song from the band
+Dual Core. That song, "All the Things
+<http://dualcoremusic.bandcamp.com/album/all-the-things>," features the
+chorus:
+
+Drink all the booze,
+hack all the things!
+
+The hacker didn't have long to drink all the booze and hack all the things,
+fortunately; by 14:29, our technical team had removed the defaced page and
+restored normal Ars operations. We spent the afternoon changing all internal
+passwords and certificates and hardening server security even further.
+
+Log files show the hacker's movements through our servers and suggest that
+he or she had the opportunity to copy the user database. This database
+contains no payment information on Ars subscribers, but it does contain user
+e-mail addresses and passwords. Those passwords, however, are stored in
+hashed form (using 2,048 iterations of the MD5 algorithm and salted with a
+random series of characters). ...
+
+  [NOTE the interesting discussion in the "PROMOTED COMMENTS" about MD5+salt
+  encrypted passwords in the user database.]
+
+------------------------------
+
+Date: Mon, 22 Dec 2014 10:54:57 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Danielle Keats Citron: Hate Crimes in Cyberspace
+
+Danielle Keats Citron
+Hate Crimes in Cyberspace
+Harvard University Press
+2014
+343 pp.
+
+This book by a law professor at the University of Maryland Law School
+appears to be a well researched, insightful, and rather comprehensive
+analysis of many of the legal issues surrounding cyberstalking,
+harassment, anonymity, and related subjects.
+
+A lengthy review of this book by Martha C. Nussbaum in *The Nation* (24
+Nov 2014) ends with this paragraph:
+
+  In the end, the Internet is only a conduit.  It may exacerbate, but
+  does not cause, the underlying problems of hatred and harassment.
+  Danielle Citron's legal prescriptions can curb, but will not cure, the
+  deformation of human beings that vexes our society.  That sad fact
+  should not discourage us from improving the law; but we must not
+  imagine that law alone can fix the deeper problems that make law
+  necessary.
+
+Overall the law is an asset, but not a solution by itself.  The same is
+true of technology.
+
+------------------------------
+
+Date: Mon, 22 Dec 2014 11:35:28 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Marc Goodman: FUTURE CRIMES: Everything is Connected ...
+
+Marc Goodman
+FUTURE CRIMES: Everything is Connected, Everyone is Vulnerable,
+  and What We Can Do About It
+Doubleday
+
+Highly relevant to the entire history of the ACM Risks Forum, this book
+deserves a detailed review here when it is published on 24 Feb 2015.  It is
+likely to be a very strong addition to the RISKS-related literature.  There
+are three basic parts --
+
+ * A Gathering Storm
+ * The Future of Crime (including especially Chapter 16: Next-Generation
+   Security Threats: Why Cyber Was Only the Beginning)
+ * Surviving Progress (including Chapter 18: The Way Forward)
+
+Marc Goodman is a global strategist with over two decades of experience in
+law enforcement, former FBI Futurist-in-Residence, advisor to Interpol and
+over 70 countries in transnational cyberrisks, founder of the Future Crimes
+Institute, and Chair for Policy, Law, and Ethics at Silcon Valley's
+Singularity University.
+
+Keep an eye open for it.
+
+------------------------------
+
+Date: Mon, 5 Jan 2015 13:55:15 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Richard A, Clarke: Sting of the Drone (Review by Marc Rotenberg)
+
+Richard A. Clarke
+Sting of the Drone
+Thomas Dunne Books, New York, St. Martin's Press
+http://amzn.to/1l1dK4s
+
+White House National Security veteran Richard Clarke's new action thriller
+"Sting of the Drone" may establish a new genre for Washington policymakers.
+
+This book is not just a quick-paced novel about a clever plot to turn drone
+warfare against the United States, it is also a stinging critique of current
+US policy by a former Presidential advisor. Toss the briefing books and the
+PowerPoint presentations - if you want to get your point across in
+Washington, an action thriller may be the way to go.
+
+And it is an excellent thriller. Clarke brings us into the drone operations
+center outside of Las Vegas, where drone pilots track foreign targets and
+direct their weaponized flying machines. Clarke also takes us into a White
+House meeting for an agency head sign-off on the target list, a process that
+the President has claimed he oversees. Clark tells a different story. And
+then he takes us into DC hotel rooms for a little spy colleagues rendezvous:
+"I meant what I said that night at the Ritz. I like being single, too. I get
+that right now your career is central, mine is for me, too."
+
+The tradecraft also keeps clicking. Clarke takes us through IP mapping, GPS
+spoofing, data mining, signal jamming, and facial recognition. We learn a
+lot about the maneuverability of the Predator drone and the battery
+requirements of Stinger missiles. Clarke is very good on detail. How many of
+his specifics are, or could be, real is an interesting question, considering
+that he is intimately familiar with these techniques.
+
+Clarke's take on the drone program is damning. Collateral damage is
+significant and understated by the White House. The key players are out of
+their depth. The oversight is weak. The legal boundaries are not clear. And
+for every target the US successfully takes out the blowback is greater.
+
+Pushbutton warfare has consequences. Clarke pushes the premise further by
+describing a world in which the targets are fed up and decide to change the
+rules of the game. This premise is all the more frightening because it has
+probably occurred, and the US is about to embark on a significant expansion
+of drone deployment within our borders. Clarke speaks not only to our policy
+abroad but also to the flying machine here at home.
+
+Unfortunately, Clark's skepticism about drone warfare does not extend to
+some of the other military technologies that have made their way to US
+shores. Facial recognition turns out to be surprisingly effective in one key
+sequence, using a remarkable data mining tool codenamed Minerva that pretty
+much knows everything about everything. And it's always right.
+
+Perhaps someone will write a novel about a crowd-sourced effort to identify
+a bombing suspect. A good twist would include a hi-tech company trying to
+establish its bona fides as a press organization and a college student with
+a foreign name who commits suicide.
+
+In the meantime, EPIC will continue to help the ACLU and *The New York
+Times* force the release of the legal memo that justified the killing of
+American citizens by drone.  Whatever the legal theory is for shooting down
+Americans with Flying Killer Robots, it should be made public.
+
+Marc Rotenberg, President, Electronic Privacy Information Center
+(www.epic.org)
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.43
+************************
+
+--_002_6249896b54554cca863c8e65174f1b0bEXHUBVM03campusnclacuk_--

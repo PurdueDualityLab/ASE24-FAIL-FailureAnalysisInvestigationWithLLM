@@ -1,0 +1,695 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.08
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 26 February 2019  Volume 31 : Issue 08
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.08>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Lion Air Crash Fixes Delayed (WSJ)
+Setback for Israeli lunar lander as computer glitch prevents scheduled
+  maneuver (The Times of Israel)
+NHTSA's Implausible Safety Claim for Tesla's Autosteer Driver
+  Assistance System (R.A.Whitfield)
+Electronic Medical Records make it easier to peddle patient data
+  (Kelly Bert Manning)
+Quantum Computers: Here's What One Looks Like (Fortune)
+The Kalashnikov assault rifle changed the world. Now there's a Kalashnikov
+  drone.  (SanFranciscoChron)
+U.S. Cyber Command operation disrupted Internet access of Russian
+  troll factory on day of 2018 midterms (WashPost)
+ToRPEDO Privacy Attack on 4G/5G Networks Affects All U.S. Carriers
+  (ThreatPost)
+Rabbit Holes that, by simply choosing not to do Internet video, we have
+  Not Gone Down (NYTimes)
+... but we "never activated the cameras" (Mark Thorson)
+The Auto Show of the Future is Already Here (NYTimes)
+Self-Driving Cars Might Kill Auto Insurance as We Know It (Bloomberg)
+AI's Big Challenge (Scientific American)
+Artificial intelligence debate raises more questions than answers
+  (Japan Times)
+Techplomacy (CBC)
+"Microsoft Edge lets Facebook run Flash code behind users' backs"
+  (Catalin Cimpanu)
+Nike's bug-ridden self-tying shoe app (BBC)
+SET lives! -- Maybe ... (Rob Slade)
+Cybercriminals Have a New Favorite Hack: Formjacking (Fortune)
+Re: Vision system for autonomous vehicles watches not just where
+  pedestrians walk, but how (Amos Shapir)
+Re: 'Zero Trust' AI: Too Much of a Good Thing is Wonderful (Henry Baker)
+Experts warn of growing health risk from plastic (Express)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 22 Feb 2019 11:15:54 -0500
+From: George Sherwood <sherwood@testcover.com>
+Subject: Lion Air Crash Fixes Delayed (WSJ)
+
+Andy Pasztor and Andrew Tangel,  *The Wall Street Journal*, 10 Feb 2019
+
+Boeing and Regulators Delay Jetliner Fixes Prompted by Lion Air Crash
+Software update, initially expected in January, now likely pushed until
+April or later  [PGN-truncated for RISKS]
+
+https://www.wsj.com/articles/boeing-and-regulators-delay-jetliner-fixes-prompted-by-lion-air-crash-11549821489
+https://www.pprune.org/rumours-news/618252-boeing-737-max-software-fixes-due-lion-air-crash-delayed.html
+
+------------------------------
+
+Date: Tue, 26 Feb 2019 16:05:28 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Setback for Israeli lunar lander as computer glitch prevents
+  scheduled maneuver (The Times of Israel)
+
+Engineers examining data from Beresheet spacecraft to learn why it rebooted
+itself, causing automatic abort of trajectory adjustment needed to get to
+the moon.
+
+Priel said the team believes glare from the sun on the the spacecraft's
+sensors is making it more difficult than expected for the spacecraft to
+orient itself according to the position of the stars. However, he added that
+the issue only happens at certain angles, and the team thus far is able to
+manipulate the spacecraft to obtain a full reading.
+
+``The thing with the star tracker is it brought a lot of uncertainties with
+the first maneuver,'' said Priel, referring to the successful maneuver on
+Sunday. ``At some points, we weren't sure if we should put it off. But we
+overcame it, we implemented it, and it was beautiful to see.  During the
+[first] maneuver we had online communication -- not immediately, with about
+a two-second delay, but we saw it almost real time.
+
+``It was very exciting to see the main engine turn on and the measurements
+and the star navigation system working,'' he said. ``It was exciting and
+breathtaking as well.''
+
+https://www.timesofisrael.com/setback-for-israeli-lunar-lander-as-computer-glitch-prevents-scheduled-maneuver/
+
+------------------------------
+
+Date: Sun, 24 Feb 2019 06:47:35 -0500
+From: "R.A.Whitfield" <inquiry@quality-control.us>
+Subject: NHTSA's Implausible Safety Claim for Tesla's Autosteer Driver
+  Assistance System
+
+In January 2017, the National Highway Traffic Safety Administration (NHTSA)
+published the remarkable claim that the airbag deployment crash rate dropped
+by almost 40 percent in Tesla passenger vehicles equipped with the Autopilot
+Technology Package following the installation of a new driver assistance
+system component, Autosteer.  However, our replication of NHTSA's analysis
+of the underlying data shows that the Agency's conclusion is not
+well-founded.
+
+The calculation of accurate crash rates of this type depend on reliable
+counts or estimates of both airbag deployment crashes as well as the mileage
+traveled exposing vehicles to the risk of a crash. But after obtaining the
+formerly secret, underlying data through a lawsuit filed under the Freedom
+of Information Act against the U.S. Department of Transportation, we
+discovered that the actual mileage at the time the Autosteer system was
+installed appears to have been reported for fewer than half the vehicles
+NHTSA studied. For those vehicles that do have apparently exact measurements
+of exposure mileage both before and after the system's installation, the
+change in crash rates associated with Autosteer is the opposite of that
+claimed by NHTSA – if these data are to be believed.
+
+The overall reduction in the crash rates reported by NHTSA following the
+installation of Autosteer is an artifact of the Agency's treatment of
+mileage information that is actually missing in the underlying dataset.
+
+Our work illustrates the risks posed by:
+* performing statistical analyses in Excel;
+* treating missing data in Excel spreadsheets as numeric zeros;
+  regulatory capture;
+* spending taxpayer dollars on anti-scientific efforts to prevent the
+  replication of research done by government agencies at taxpayer expense;
+* the lack of an international, comprehensive, open, and trustworthy
+  surveillance system for casualties and property damage associated with the
+  use of advanced driver-assistance systems.
+
+The full report and a link to the underlying data:
+http://www.safetyresearch.net/Library/NHTSA_Autosteer_Safety_Claim.pdf
+
+Detailed coverage including the context of this story is here:
+http://www.safetyresearch.net/blog/articles/new-analysis-challenges-bold-tesla-claims
+
+Coverage by the Los Angeles Times with Tesla's response is here:
+https://www.latimes.com/business/autos/la-fi-hy-tesla-nhtsa-20190214-story.html
+
+Technical coverage and commentary is here:
+https://arstechnica.com/cars/2019/02/in-2017-the-feds-said-tesla-autopilot-cut-crashes-40-that-was-bogus/
+
+An independent, partial replication and reanalysis of our work, along with an R-script, is here:
+https://pastebin.com/eibQgEm1
+
+R. A. Whitfield, for Quality Control Systems Corp., Crownsville, Maryland
+
+------------------------------
+
+Date: Thu, 21 Feb 2019 13:27:35 -0500
+From: Kelly Bert Manning <bo774@freenet.carleton.ca>
+Subject: Electronic Medical Records make it easier to peddle patient data
+
+The Toronto Star has reported that "Medical-record software companies are
+selling your health data...IQVIA's main customer is the pharmaceutical
+industry. Pharmaceutical companies use the EMR data to track use of their
+drugs, identify untapped markets and plot marketing strategies."
+https://www.thestar.com/news/investigations/2019/02/20/medical-record-software-companies-are-selling-your-health-data.html
+https://www.cbc.ca/news/technology/carepartners-data-breach-ransom-patients-medical-records-1.4749515
+
+An attempt is made to anonymize the data but we have seen how such efforts
+can often be undone.
+https://digitalcommons.law.scu.edu/cgi/viewcontent.cgi%3Farticle%3D1016%26context%3Dhightechevents
+
+  [Much too long for RISKS.  PGN-truncated]
+
+------------------------------
+
+Date: Fri, 22 Feb 2019 18:46:44 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Quantum Computers: Here's What One Looks Like (Fortune)
+
+``What you're looking at is the world's most expensive refrigerator,'' says
+Bob Sutor, head of quantum strategy at IBM, while gesturing at a 20-qubit
+quantum computer that company unveiled in January.  Despite its small size,
+Rigetti, founded by a physicist who previously built quantum computers at
+IBM, believes it can challenge the titans.  The company sells a quantum
+computing cloud service to researchers who are racing to be the first to
+achieve ``quantum advantage,'' when a quantum computer outperforms a
+traditional one. Scientists expect a modest demonstration of superiority in
+the next couple of years, though they predict it will take up to 10 years
+before the technology can handle any meaningful tasks.
+
+``People keep asking whether we can build working quantum computers and do
+it repeatedly at scale,'' says Rigetti vice president Betsy Masiello.
+``Today, in the market, we have definitively answered, yes. We can build
+them, they work, and we can do it in a repeatable fashion at production
+level.''
+
+The reality is here; the race is on.
+
+http://fortune.com/2019/02/22/quantum-computers-future/
+
+...when will they solve non-meaningful tasks?
+
+------------------------------
+
+Date: Sat, 23 Feb 2019 09:35:55 -0700
+From:  geoff goodfellow <geoff@iconia.com>
+Subject: The Kalashnikov assault rifle changed the world. Now there's a
+  Kalashnikov drone.  (SanFranciscoChron)
+
+The Russian company that gave the world the iconic AK-47 assault rifle has
+unveiled a suicide drone that may similarly revolutionize war by making
+sophisticated drone warfare technology widely and cheaply available.
+
+The Kalashnikov Group put a model of its miniature exploding drone on
+display this week at a major defense exhibition in Abu Dhabi, the capital of
+the United Arab Emirates, where the world's arms companies gather every two
+years to show off and market their latest wares. [..]
+
+With its low price, high efficiency, and ease of use, the Kalashnikov rifle
+became the weapon of choice for revolutionaries and insurgents around the
+world, empowering disgruntled citizens against their governments in Latin
+America, Africa and Asia. It remains a potent tool to this day: The Pentagon
+purchases secondhand Kalashnikov rifles for its allies in Syria and
+Afghanistan, rather than give them more expensive American-made guns.
+
+The Kalashnikov drone -- officially named the KUB-UAV -- will likewise be
+simple to operate, effective and cheap, its manufacturers claim - and just
+as revolutionary. It will mark "a step toward a completely new form of
+combat," said Sergey Chemezov, chairman of Russia's state-owned Rostec arms
+manufacturer, which owns a controlling stake in Kalashnikov, according to
+Kalashnikov's news statement on the launch. [...]
+
+https://www.sfgate.com/news/article/The-Kalashnikov-assault-rifle-changed-the-world-13639212.php
+
+------------------------------
+
+Date: Tue, 26 Feb 2019 15:30:06 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: U.S. Cyber Command operation disrupted Internet access of Russian
+  troll factory on day of 2018 midterms (WashPost)
+
+The U.S. military blocked Internet access to an infamous Russian entity
+seeking to sow discord among Americans during the 2018 midterms, several
+U.S. officials said, a warning that the Kremlin's operations
+against the United States are not cost-free.
+
+The strike on the Internet Research Agency in St. Petersburg, a company
+underwritten by an oligarch close to President Vladimir Putin, was part of
+the first offensive cyber campaign against Russia designed to thwart
+attempts to interfere with a U.S. election, the officials said.
+
+``They basically took the IRA offline,'' according to one individual
+familiar with the matter who, like others, spoke on the condition of
+anonymity to discuss classified information. ``They shut 'em down.''
+
+https://www.washingtonpost.com/world/national-security/us-cyber-command-operation-disrupted-internet-access-of-russian-troll-factory-on-day-of-2018-midterms/2019/02/26/1827fc9e-36d6-11e9-af5b-b51b7ff322e9_story.html
+
+On election day? A little late?
+
+------------------------------
+
+Date: Tue, 26 Feb 2019 09:49:16 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: ToRPEDO Privacy Attack on 4G/5G Networks Affects All U.S. Carriers
+  (ThreatPost)
+
+The attack threatens users with location-tracking, DoS, fake notifications
+and more.  Privacy-breaking flaws in the 4G and 5G mobile protocols could
+allow attackers to intercept calls, send fake amber alerts or other
+notifications, track location and more, according to a research team from
+Purdue University and the University of Iowa.
+https://threatpost.com/5g-security/140664/
+
+In a paper presented at Mobile World Congress in Barcelona this week, the
+researchers explained that the issues arise from weaknesses in the cellular
+paging (broadcast) protocol. They started with the fact that when a mobile
+device is in its idle, low-power state, it will conserve battery life partly
+by polling for pending services only periodically.
+https://www.ndss-symposium.org/ndss-paper/privacy-attacks-to-the-4g-and-5g-cellular-paging-protocols-using-side-channel-information/
+
+``when a cellular device is not actively communicating with a base station,
+it enters an idle, low-energy mode to conserve battery power,'' Elisa
+Bertino, Omar Chowdhury, Mitziu Echeverria, Syed Rafiul Hussain and Ninghui
+Li explained. ``When there is a phone call or an SMS message for the device,
+it needs to be notified. This is achieved by the paging protocol, which
+strives to achieve the right balance between the device's energy consumption
+and timely delivery of services such as phone calls.''
+
+The researchers uncovered three connected types of attacks that use this
+paging mechanism. The primary attack, dubbed ToRPEDO (short for TRacking via
+Paging mEssage DistributiOn), can be used to verify the location of a
+specific device. Attackers could also inject fake paging messages and mount
+denial-of-service (DoS) attacks, the team said.
+
+Two other attacks enabled by ToRPEDO, the IMSI-Cracking attack and PIERCER
+(short for Persistent Information ExposuRe by the CorE netwoRk), allow an
+adversary to fully uncover the victim's unique International Mobile
+Subscriber Identity (IMSI) number, if the phone number is known -- opening
+the door to targeted user location-tracking.  [...]
+
+https://threatpost.com/torpedo-privacy-4g-5g/142174/
+
+------------------------------
+
+Date: Tue, 26 Feb 2019 02:23:37 -0500
+From: Mark Brader <msb@vex.net>
+Subject: Rabbit Holes that, by simply choosing not to do Internet video, we
+  have Not Gone Down (NYTimes)
+
+http://www.nytimes.com/2018/03/10/opinion/sunday/youtube-politics-radical.html
+
+------------------------------
+
+Date: Sat, 23 Feb 2019 11:11:45 -0800
+From: Mark Thorson <eee@dialup4less.com>
+Subject: ... but we "never activated the cameras"
+
+Undisclosed cameras are starting to appear on airliner seats, ostensibly to
+support seat-to-seat videoconferencing.  I presume they must have
+undisclosed microphones too.
+
+http://www.taipeitimes.com/News/front/archives/2019/02/24/2003710312
+
+------------------------------
+
+Date: Mon, 25 Feb 2019 12:14:36 -0500
+From: ACM TechNews <technews-editor@acm.org>
+Subject: The Auto Show of the Future is Already Here (NYTimes)
+
+Robert C. Yeager, *The New York Times*, 21 Feb 2019
+via ACM TechNews, Monday, February 25, 2019
+
+Top auto shows are increasingly incorporating technology, along with
+hands-on experiences like driving simulators and virtual reality
+demos. According to Detroit Auto Dealers Association executive director Rod
+Alberts, conventional car shows are changing due to declines in the number
+of automakers, as well as year-round model debuts driven by social media and
+shorter build times. Automotive Trade Association Executives president
+Jennifer Colman said this has forced auto shows to evolve and offer
+"interactive apps, ride-and-drives, and other experiences that meet
+consumers' needs." Showcased at the annual auto show in Detroit was a demo
+of an autonomous car located in Shanghai, China, controlled remotely from
+the Detroit event via an "automated valet" system by Chinese startup ZongMu
+Technology. Also on display at the event were intersection accident
+prevention solutions from a company named Derq, which connect "smart city"
+cameras and sensors to predictive algorithms that can set off audio and
+visual alarms in standard and autonomous vehicles.
+
+https://orange.hosting.lsoft.com/trk/click%3Fref%3Dznwrbbrs9_6-1e905x21a85dx070497%26
+
+  [So, your life depends on a remote wireless hookup where there may be
+  wireless?  PGN]
+
+------------------------------
+
+Date: Mon, 25 Feb 2019 13:52:24 -0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Self-Driving Cars Might Kill Auto Insurance as We Know It
+  (Bloomberg)
+
+"Without humans to cause accidents, 90% of risk is removed. Insurers are
+scrambling to prepare."
+https://www.bloomberg.com/news/articles/2019-02-19/autonomous-vehicles-may-one-day-kill-car-insurance-as-we-know-it
+
+------------------------------
+
+Date: Tue, 26 Feb 2019 09:26:55 -0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: AI's Big Challenge (Scientific American)
+
+https://blogs.scientificamerican.com/observations/ais-big-challenge/
+
+"Consider computer vision, where deep neural networks have achieved stunning
+performance improvements on benchmark image-categorization tasks. Say we
+task our computer vision algorithm with correctly labeling images as either
+cats or dogs. If the algorithm correctly labels the images, we might
+conclude that the underlying deep neural network has learned to distinguish
+cats and dogs.
+
+"Now suppose all of the dogs are wearing shiny metallic dog tags and none of
+the cats are wearing cat tags. Most likely, the deep neural network didn't
+learn to see cats and dogs at all but simply learned to detect shiny
+metallic tags. Recent work has shown that something like this actually
+underpins the performance of deep neural networks on computer vision
+tasks. The explanation may not be as obvious as shiny metallic tags, but
+most academic data sets contain analogous unintentional cues that deep
+learning algorithms exploit.
+
+"The problem, it turns out, is one of computational misdirection. Adding or
+deleting just a few pixels can eliminate a particular cue that the deep
+neural network has learned to depend on. More fundamentally, this error
+demonstrates that deep neural networks rely on superficial image features
+that typically lack meaning, at least to humans.
+
+"That creates an opportunity for serious mischief by bad actors using
+targeted adversarial examples. If you're counting on consistent
+image recognition for self-driving cars designed to recognize road signs,
+for example, or security systems that recognize fingerprints...you're in
+trouble."
+
+Brittle artificial pattern recognition is a more accurate label for AI
+deployed in autonomous vehicles, and possibly for diagnostic image scanning,
+etc.
+
+Risk: Data set bias and algorithms become sensitized and fragile, unable to
+evolve -- learn/adjust -- without human intervention.
+
+------------------------------
+
+Date: Sat, 23 Feb 2019 16:14:02 -0500
+From: "Dave Farber" <farber@gmail.com>
+Subject: Artificial intelligence debate raises more questions than answers
+  (Japan Times)
+
+https://www.japantimes.co.jp/news/2019/02/23/national/media-national/artificial-intelligence-debate-raises-questions-answers/%23.XHG3W-5OmnM
+
+------------------------------
+
+Date: Mon, 25 Feb 2019 11:37:26 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Techplomacy (CBC)
+
+Denmark has created a "Tech Ambassador."  What does he do?
+http://techamb.um.dk/
+
+"TechPlomacy is an acknowledgment of the key role that technology and
+digitalisation plays and will increasingly play in the future for
+individuals and societies alike."  But what does he do?
+
+"We need a stronger multi-stakeholder discussion on how we want these new
+technologies to shape our societies in the future. This requires us to
+rethink the relationship between governments, civil society and the private
+sector."  But what does he do?
+
+"In the view of the Danish Government, this necessitates that we establish a
+formal diplomatic platform in order to engage in dialogue and collaboration
+on a broad range of topics with the tech-industry. Tech Ambassador Casper
+Klynge and his global team will therefore work to build strategic
+partnerships and engage directly with tech-hubs, governments, international
+organizations, civil society, cities, regions, world-class universities and
+other stakeholders. Concrete initiatives cut across foreign and security
+policy, including cyber, development policy, export and investment
+promotion, and a range of sector policies. The opportunities and challenges
+of the technology agenda will be pursued and addressed in bilateral
+relations with other countries and in the EU and multilateral fora."  OK,
+there's a lot of talking going on ...
+
+I watched the CBC's interview with Casper Klynge, and it seems he is fairly
+knowledgeable about commerce stats and business leaders, but I detect a lack
+of any real understanding about technology itself.  And that could be a
+problem.  We have, over the years, seen numerous instances of governments
+trying to legislate for, or address, problems in technology, only to make
+the situation worse because they don't really understand it. [...]
+https://www.cbc.ca/news/technology/national-casper-klyge-tech-ambassador-1.4828015
+https://is.gd/iKkj0Y
+https://www.cbc.ca/news/thenational/world-s-first-tech-ambassador-on-democracy-in-the-digital-age-1.5032269
+https://is.gd/sO4hvn
+
+------------------------------
+
+Date: Thu, 21 Feb 2019 22:13:16 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Microsoft Edge lets Facebook run Flash code behind users' backs"
+  (Catalin Cimpanu)
+
+Catalin Cimpanu for Zero Day | 20 Feb 2019
+
+https://www.zdnet.com/article/microsoft-edge-lets-facebook-run-flash-code-behind-users-backs/
+Microsoft Edge lets Facebook run Flash code behind users' backs
+
+selected text:
+
+Google security researcher finds secret whitelist that lets Facebook run
+Flash content despite Edge's normal security policies.
+
+The whitelist allows Facebook Flash content to bypass Edge security features
+such as the click-to-play policy that normally prevents websites from
+running Flash code without user approval beforehand.
+
+Prior to February 2019, the secret Flash whitelist contained 58 entries,
+including domains and subdomains for Microsoft's main site, the MSN portal,
+music streaming service Deezer, Yahoo, and Chinese social network QQ, just
+to name the biggest names on the list.
+
+Microsoft trimmed down the list to two Facebook domains earlier this month
+after a Google security researcher discovered several security flaws in
+Edge's secret Flash whitelist mechanism.
+
+"So many sites for which I'm completely baffled as to why they're there,"
+Fratric said. "Like a site of a hairdresser in Spain.
+http://www.dgestilistas.esdgestilistas.es)?!
+
+  I wonder how the list was formed. And if [the Microsoft Security Response
+  Center] knew about it."
+
+------------------------------
+
+Date: Fri, 22 Feb 2019 12:12:08 -0800
+From: Mark Thorson <eee@dialup4less.com>
+Subject: Nike's bug-ridden self-tying shoe app (BBC)
+
+Close on the heels of the Nike shoe that fell apart on camera during a
+basketball game, their app for the self-tying shoe seems equally flawed.  At
+least they didn't try to put it on the Internet, yet.  The "future of
+footwear", indeed.
+
+https://www.bbc.com/news/business-47336684
+
+------------------------------
+
+Date: Fri, 22 Feb 2019 12:08:07 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: SET lives! -- Maybe ...
+
+So, this is the time of year we renew our "enhanced" medical insurance.  We
+pay annually, rather than go through the hassle and cost of the various
+"payment plans" available.
+
+For the past five years, at least, the process has been different *every*
+*single* *year*.  So, I just go to the HQ office to get it done.
+
+In past years, I could speed up the process (very slightly) by filling out a
+form on the back of the bill, noting that I'm paying by credit card, and
+giving the credit card details.  (I use a card that I don't use for everyday
+transactions.)  This year, when I filled out the form, there was no space
+for the credit card number (although there was space for the expiry date and
+my signature).  I thought this was rather odd, but ...
+
+So, I get to the office, wait to be called, and finally get called.  This
+year a I get a twofer: a trainee is shadowing the agent I'm dealing with.  I
+say that I'm here to pay by credit card, and pass over the forms.  The agent
+says that they don't take credit card data at customer service anymore, only
+over the phone.  But, she says, she knows that sometimes she can get someone
+to do it over the phone with her, and she places a call.
+
+While we are waiting to find someone (in accounting?) willing to do this,
+I'm chuckling over the silliness of some new policy about credit card
+retention.  And, since chuckling is not the reaction they are used to
+getting when someone is faced with yet another bureaucratic delay, I have to
+explain that I am an infosec maven, and why this type of thing is amusing.
+Someone in IT or (more likely) senior management has been terrified by some
+new requirement and has instituted a new process that will probably be, at
+best, minimally effective.  Is it PCI-DSS?  Is it (more likely) GDPR?  And,
+while I'm doing this, I'm getting out my credit card, in preparation, and
+placing it on the desk.
+
+The agent, while she is trying to get the right person in accounting, is
+looking at a screen which obviously has my account info on it.  She glances
+at my card and notes, "So you're using the same card number, but it's got a
+new expiry date."
+
+At which point I just guffawed out loud. The new credit card retention
+policy obviously says that you can't write the credit card number on a form,
+and can't make space for it on a form, and can't send it through the mail on
+a form, but obviously my card number (she said it was only the last three
+digits) and card expiry date show up on her screen.  (And, presumably,
+somewhere in the back end my complete card number is available.)
+
+Oh, SET?  Twenty years ago the major credit card companies created Secure
+Electronic Transactions, a system designed for use of credit cards over the
+Internet.  It provided a code to retailers that verified the user had a card
+and the charge would be honoured, but never actually gave the vendor the
+card number.  (In a way, it was kind of a quick one-time form of digital
+currency.)  They got to within three months of rolling out the system when
+someone noticed that the only problem SET actually solved was vendor fraud.
+But vendor fraud was, basically, a non-issue.  So SET never did get
+released.
+
+Well, with all the concern these days about credit card retention and data
+breaches, maybe it's time to give SET a second look ...
+
+------------------------------
+
+Date: Fri, 22 Feb 2019 18:42:16 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Cybercriminals Have a New Favorite Hack: Formjacking (Fortune)
+
+Every month, thousands of retail websites are targeted by cybercriminals,
+who insert a small piece of malicious code that allows them to snatch
+customers' credit card information. The hacking technique is
+called formjacking, and it's the virtual equivalent of putting a
+device on an ATM to skim debit card numbers.
+
+http://fortune.com/2019/02/20/phishing-ransomware-formjacking-hack-hackers/
+
+Would be nice to know HOW insert...
+
+------------------------------
+
+Date: Fri, 22 Feb 2019 12:08:11 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Vision system for autonomous vehicles watches not just where
+  pedestrians walk, but how (RISKS-31.07)
+
+Looking at sample images posted on this article (and others) of this
+research, I got the impression that most data was collected in the US
+Midwest, at winter.  Did researchers consider pedestrians wearing shorts and
+sandals on a Florida beach, or walking briskly on a busy NYC street?
+
+And what is the behavior of pedestrians in other regions of the world, e.g.
+France, Italy, the ME, Africa, India?
+
+I'm afraid Mid-US pedestrians are just too well-behaved to become the main
+source of data used to teach the AI systems of autonomous vehicles.
+
+------------------------------
+
+Date: Wed, 20 Feb 2019 19:31:16 -0800 (GMT-08:00)
+From: hbaker1 <hbaker1@pipeline.com>
+Subject: Re: 'Zero Trust' AI: Too Much of a Good Thing is Wonderful
+  (Shapir, R-31.06)
+
+Hmmm...
+
+I wonder if the converse holds: "A society which makes laws which are next
+to impossible to abide by, and who then doesn't enforce them, must be an
+authoritarian regime."
+
+Now let's see: Who in the U.S. loves to write large numbers of "virtue
+signaling" laws, and then does nothing to enforce them?
+
+Would it possibly be the Congressional Democrats, who passed all kinds of
+laws to "protect" us ordinary citizens from predatory actions by the
+financial industry, and then did *nothing* to enforce these laws during the
+Obama administration?
+
+------------------------------
+
+Date: Sun, 24 Feb 2019 12:48:30 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Experts warn of growing health risk from plastic (Express)
+
+Plastic poses a health risk to humans "at every stage of its lifecycle," a
+shocking international report warned yesterday. It linked plastic to
+diseases such as cancer and kidney, heart and reproductive problems.
+
+It declared: "Uncertainties and knowledge gaps undermine a complete
+evaluation of health impacts, limit the ability of consumers, communities
+and regulators to make informed choices, and heighten both acute and
+long-term health risks at all stages of the plastic lifecycle." It cited
+particular concerns about "the health effects of the cumulative exposure to
+the mixtures of thousands of chemicals used in food packaging and other
+manufactured products". The report by groups including the US Center for
+International Environmental Law and Britain's Exeter University comes amid
+growing concerns about the impact of plastic pollution.
+
+https://www.express.co.uk/life-style/health/1091433/plastic-sea-microparticles-health-risk-diseases
+
+  [This item seems not very computer-related, but is included here because
+  its being part of total-system considerations of the survival of our
+  planet.  PGN]
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.08
+************************

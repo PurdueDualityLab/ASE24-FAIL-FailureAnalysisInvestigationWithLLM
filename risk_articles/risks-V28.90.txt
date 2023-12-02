@@ -1,0 +1,442 @@
+RISKS-LIST: Risks-Forum Digest  Thursday 20 August 2015  Volume 28 : Issue 90
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.90.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Bitcoin is on the verge of a constitutional crisis (Timothy B. Lee)
+Uber Missed Criminal Records of Drivers, Prosecutors Assert (NYTimes)
+Lightning storm security risks (Morten Welinder)
+Recent Wikipedia items in RISKS (Denis Bloodnok)
+The Covert World of People Trying to Edit Wikipedia--for Pay
+  (Lauren Weinstein)
+Socially controversial science topics on Wikipedia draw edit wars
+  (Lauren Weinstein)
+Why the "Right To Be Forgotten" is the	Worst Kind of Censorship
+  (Lauren Weinstein)
+Data from hack of Ashley Madison cheater site purportedly dumped online
+  (Ars Technica)
+Re: Could Hackers Take Down a City? (Alister Wm Macintyre)
+Re: Failing light rail safety system (Geoff Kuenning)
+Re: Supreme Court's Free-Speech Expansion ... (R. G. Newbury)
+Re: gmail policy on BCCs, related to Mass. pot dispensary (Geoff Kuenning)
+Re: IRS Get Transcript (Harlan Rosenthal)
+Re: Intel to customers: We listen to you... All The Time! (Edwin Slonim,
+  Dimitri Maziuk)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wednesday, August 19, 2015
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Bitcoin is on the verge of a constitutional crisis (Timothy B. Lee)
+
+[Note:  This item comes from friend Steve Goldstein. DLH] (via Dave Farber)
+
+Timothy B. Lee, Vox, 18 Aug 2015
+<http://www.vox.com/2015/8/18/9168977/bitcoin-constitutional-crisis>
+
+The Bitcoin community is facing one of the most momentous decisions in its
+six-year history. The Bitcoin network is running out of spare capacity, and
+two increasingly divided camps disagree about what, if anything, to do
+about the problem.
+
+If these two sides fail to reach a consensus, the Bitcoin network could --
+according to one side, at least -- slowly grind to a halt as the number of
+transactions exceeds the network's capacity to process them. Even worse, if
+a fix for this problem is forced through prematurely, it could split the
+Bitcoin network in two and permanently damage public trust in the network.
+
+The argument is the closest thing the Bitcoin community has had to a
+constitutional crisis. Bitcoiners are trying to figure out who, if anyone,
+has the authority to make technical changes to the Bitcoin network's
+foundations. So far, neither side in the increasingly heated debate has
+shown much willingness to compromise.
+
+The Bitcoin network is running out of capacity
+
+The Bitcoin network processes transactions in units called "blocks," which
+are created about every 10 minutes. To prevent malicious parties from
+clogging up the system with spam, the original Bitcoin software limited the
+size of each block to one megabyte, which corresponds to a few thousand
+transactions. When Bitcoin was created in 2009, that left plenty of room
+for growth.
+
+But Bitcoin usage has been growing, bringing the network closer and closer
+to its maximum capacity. Right now, the network is only 30 to 40 percent
+full on average, but it sometimes gets congested during periods of high
+demand, causing delays for users. And if current growth continues, things
+could get a lot worse in the next year or two, as the network gets closer
+to 100 percent capacity.
+
+And if Bitcoin is going to become a mainstream payment platform, it's going
+to have to grow a lot more. Bitcoin handles tens of thousands of
+transactions per day. Visa handles tens of millions. To compete with Visa
+and other mainstream payment technologies, the network is going to need
+more capacity.
+
+Changing the limit is easy -- if everyone agrees
+
+The limit is just a number in the Bitcoin software. If that number were
+changed to a higher value, the Bitcoin network would have more capacity.
+
+The difficulty is that this only works if everyone agrees to raise the
+limit. The Bitcoin network is built on consensus. If some parts of the
+Bitcoin network raise the limit and others don't, the network would be split
+in two. Having two competing versions of the Bitcoin network running
+simultaneously would be catastrophic. It would destroy trust in the Bitcoin
+network, since users could never be sure which transactions were official.
+And it would likely cause the value of bitcoins -- the unit of currency --
+to plunge, as people questioned whether the network had a future at all.
+[...]
+
+------------------------------
+
+Date: Thu, 20 Aug 2015 09:28:39 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Uber Missed Criminal Records of Drivers, Prosecutors Assert
+
+District attorneys in Los Angeles and San Francisco say drivers for the
+ride-hailing service have included some convicted of murder or sex offenses.
+http://www.nytimes.com/2015/08/20/technology/uber-missed-criminal-records-of-drivers-prosecutors-assert.html
+
+------------------------------
+
+Date: Wed, 19 Aug 2015 20:23:39 -0400
+From: Morten Welinder <mwelinder@gmail.com>
+Subject: Lightning storm security risks
+
+Long Island suffered a quite spectacular electrical storm in the early hours
+of 4 Aug 2015.  It came, evidently, with strong gusts of wind downing trees
+left, right, and center.
+
+Sometime during that storm one of my wireless routers reset itself.  Where I
+used to have an encrypted access point, I suddenly had an unencrypted one
+with admin/admin setup.  On the inside of my firewall, no less.
+
+This was somewhat mitigated by the power company which cut power in order to
+start clearing out the mess.  And also somewhat by the cable company whose
+nearby cables were ripped out of the ground by a large tree's roots.
+
+Why would anyone make a router fall back to fully open wireless?
+
+------------------------------
+
+Date: Thu, 20 Aug 2015 18:39:42 +0100
+From: Denis Bloodnok <qymf8h@fyvzl.net>
+Subject: Recent Wikipedia items in RISKS
+
+Full disclosure: I'm a Wikipedia editor, and also a friendly acquaintance of
+Abigail Brady, one of the authors of the Cracked article.
+
+There's no doubt that Wikipedia is a bit of a sausage factory. A lot of the
+time, you don't want to know what goes on under the surface; and in
+particular the Chelsea Manning debacle was the process at its worse. I'm
+quite surprised Abi did not mention the little detail at the end of this
+piece:
+
+http://www.philipsandifer.com/2013/10/wikipedia-goes-all-in-on-transphobia.html
+
+Which is also why this item is pseudonymous - if I tell you that someone who
+quite openly works for Chelsea Manning's jailers does so and so might have a
+bit of a conflict of interest, that'll get me permabanned.
+
+However, I'm quite amused that we've been told both that:
+
+"it's an anonymous gang bang where the opinions of idiots are valued,
+and authority and experience are ignored."   and
+"anybody can declare themselves to be an anonymous expert about anything"
+
+The way it's actually meant to work (which, of course, it doesn't always) is
+that Wikipedia doesn't believe you're an expert just because you say you
+are.  If you are a published expert, you can point to useful cites from your
+own work - but avoid citing yourself directly, because Wikipedia also
+doesn't believe you are right about the great controversy in your field just
+because you say you are.
+
+The reality is that most editors spend most of their time on damage control,
+and there's not enough of that to go around. (As regards Ken Knowlton's link
+to:
+http://en.wikipedia.org/w/index.php?title=Ken_Knowlton&diffa6405285&oldida3415154
+that should have been edited out whether or not he was alive; it could be
+expunged from history as well, but if the subject thinks it's amusing there
+seems little point).
+
+There's a fundamental difficulty with the "like Wikipedia, but peer-reviewed
+and better" model - otherwise an attractive one; it's been tried
+(http://en.citizendium.org/ is one) and no-one used it.
+
+The risks (to get back to the topic)? The road to hell is paved with good
+intentions; everyone in this mess meant well, and look where it got us, in a
+trap where the project is driving away the very editors who could stop
+things getting worse.
+
+------------------------------
+
+Date: Sun, 16 Aug 2015 19:39:21 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The Covert World of People Trying to Edit Wikipedia--for Pay
+
+http://www.theatlantic.com/business/archive/2015/08/wikipedia-editors-for-pay/393926/
+
+  Can the site's dwindling ranks of volunteer editors protect its articles
+  from the influence of money?
+
+The beginning of the end for Wikipedia. And it's about time, as its
+quality has continued sinking into the muck.
+
+------------------------------
+
+Date: Tue, 18 Aug 2015 12:58:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Socially controversial science topics on Wikipedia draw edit wars
+
+http://arstechnica.com/science/2015/08/socially-controversial-science-topics-on-wikipedia-draw-edit-wars/
+
+  The accuracy of what you see depends on whether people are happy about a
+  topic ... Likens might be expected to be satisfied with seeing his
+  findings become widely accepted and eventually serve as the basis for
+  national policy. But any satisfaction he felt almost certainly took a hit
+  because he made a terrible mistake: he tried to make sure the Wikipedia
+  entry on acid rain was accurate. In a new paper, Likens says "we noticed
+  that some corrections we or others made on the acid rain article had been
+  changed by major edits to introduce (or re-introduce) balderdash and
+  factual errors into the content."
+
+------------------------------
+
+Date: Fri, 14 Aug 2015 13:33:46 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Why the "Right To Be Forgotten" is the	Worst Kind of Censorship
+
+        Why the "Right To Be Forgotten" is the Worst Kind of Censorship
+                             Lauren's Blog
+                http://lauren.vortex.com/archive/001119.html
+
+  [This item in its entirety epitomizes several of Lauren's previous
+  messages on this subject.  His full text is worth reading.  I have
+  abridged this item for RISKS, perhaps to induce you to peruse the
+  extensive scope of his blog items.  Here are the final paragraphs.  PGN]
+
+[...] There is no practical way to proverbially "dip your toe" into RTBF
+censorship, without ending up quickly and totally submerged and drowning.
+It's like being "a little bit" pregnant, or setting a match to a piece of
+flash paper.
+
+Making it crystal clear to our legislatures and political leaders that we
+will not accept these censorship regimes is absolutely crucial to our civil
+liberties -- in fact, even to our knowledge going forward of what civil
+liberties actually are!
+
+This will be an enormously difficult battle, because censorship is very
+much the natural ally of governments and of politicians.
+
+But if we lose this battle, this war on our basic freedoms, it's very
+possible that someday -- perhaps not in the very distant future at all --
+even these very words you're reading right now may be impossible to ever
+find again.
+
+------------------------------
+
+Date: Tue, 18 Aug 2015 15:48:18 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Data from hack of Ashley Madison cheater site purportedly dumped
+  online (Ars Technica)
+
+http://arstechnica.com/security/2015/08/data-from-hack-of-ashley-madison-cheater-site-purportedly-dumped-online/
+
+  Gigabytes worth of data taken during last month's hack of the Ashley
+  Madison dating website for cheaters has purportedly been published
+  online--an act that, if true, could prove highly embarrassing for the men
+  and women who have used the service over the years.  A 10-gigabyte file
+  purportedly containing e-mails, member profiles, credit-card transactions
+  and other sensitive Ashley Madison information became available as a
+  BitTorrent download in the past few hours. Ars hasn't had an opportunity
+  to download the massive file to confirm its contents.
+
+------------------------------
+
+Date: Thu, 20 Aug 2015 01:03:09 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: Could Hackers Take Down a City? (Andrea Peterson WaPost 28.89)
+
+I vaguely remember a story from over a decade ago, where in a labor dispute,
+a city workers union was accused of hacking traffic lights to city's streets
+to grind almost to a halt due to the traffic jams created.  I think it was
+in Washington state.
+
+More recent stories saying yes, this could happen:
+  http://www.wired.com/2014/04/traffic-lights-hacking/
+  http://resources.infosecinstitute.com/hacking-traffic-light-systems/
+
+A lot of risks, to a city, are in infrastructure not controlled by a city,
+such as public utilities.  Some pipeline explosions have been due to
+mistakes in the control rooms of the pipeline companies.  Can they be hacked
+to cause such an accident on purpose? Wasn't one of the great NE black outs
+partially caused, because an electric utility control room was pre-occupied
+with a virus attack, when they should have been doing their normal job? Take
+out electric power, phones, and that can do a lot of disruption.  Some
+people have been trying to figure out how to do this, but not by hacking.
+
+April 4, 2013,  unknown persons chopped fiber-optic cables and killed
+landlines, cell phones and Internet service for tens of thousands of people
+in Santa Clara, Santa Cruz and San Benito counties. Ten fiber-optic cables
+were cut at four locations.
+
+http://www.sfgate.com/bayarea/article/Sabotage-attacks-knock-out-phone-service-3245380.php
+
+April 16, 2013, sniper(s) took out 17 power transformers at a PG&E
+substation south of San Jose, nearly causing a blackout throughout Silicon
+Valley. 100 fingerprint-free shell casings were found at the scene, after 52
+minutes of shooting.  It took 27 days to repair all the damage.
+
+https://publicintelligence.net/njroic-electric-grid-threats/
+http://sfist.com/2014/02/05/pge_metcalf_station_terrorist_attac.php
+http://sanfrancisco.cbslocal.com/2014/02/05/federal-energy-commission-says-attack-on-sj-pge-substation-was-terrorism/
+http://www.nationalterroralert.com/2014/02/05/threat-to-the-grid-details-emerge-of-sniper-attack-on-power-station/
+
+------------------------------
+
+Date: Thu, 20 Aug 2015 01:21:06 -0700
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: Re: Failing light rail safety system (Muller)
+
+My understanding is that in US traffic light systems, there is a low-level
+hardware controller that prevents lights from going green in both
+directions, no matter what the software orders.  If the Nieuwegein light
+rail system had similar hardware, either the tram's green light or the
+bicycle's would be prohibited.
+
+(The hardware will also shut the signal down and go into a fail-safe mode,
+such as blinking red in all directions, if the software commands are
+sufficiently wrong.)
+
+------------------------------
+
+Date: Wed, 19 Aug 2015 20:49:35 -0400
+From: "R. G. Newbury" <newbury@mandamus.org>
+Subject: Re: Supreme Court's Free-Speech Expansion ... (RISKS-28.89)
+
+And then there are the opposite aspects: if the government cannot now
+restrict any speech on purely content-related bases, how can governmental
+bodies now require you to speak in a particular content related way? Such as
+baking wedding cakes for gay weddings?
+
+------------------------------
+
+Date: Thu, 20 Aug 2015 01:22:57 -0700
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: Re: gmail policy on BCCs, related to Mass. pot dispensary (Levine)
+
+John Levine writes:
+
+> Setting up a Google email group that allows only the group owner to post
+> takes about two minutes.  Why is that "not a real alternative"?
+
+Does it really take only two minutes for a 200-person group?  In any
+case, two minutes is a lot of time to have to spend if you're only going
+to BCC a bunch of people once or twice.  I find myself in that situation
+quite often.
+
+Geoff Kuenning   geoff@cs.hmc.edu   http://www.cs.hmc.edu/~geoff/
+
+------------------------------
+
+Date: Wed, 19 Aug 2015 21:39:34 -0500 (CDT)
+From: Harlan Rosenthal <harlan.rosenthal@verizon.net>
+Subject: Re: IRS Get Transcript (RISKS-28.88)
+
+I had reason to use this last year.
+I was horrified at how easy it was.
+
+------------------------------
+
+Date: Thu, 20 Aug 2015 11:03:16 +0300
+From: Edwin Slonim <eslonim@minols.com>
+Subject: Re: Intel to customers: We listen to you... All The Time!
+
+> "Intel's new processors let you wake your computer with your voice"
+
+Don't be silly, this "feature" is nothing more than an additional facility
+available in hardware to partially wake the processor from deep sleep, do
+some processing and go back to sleep, quickly and efficiently.
+
+If someone chooses to use it for continuous voice monitoring, then that is a
+feature of the relevant software (eg Windows 10). It could also be used to
+monitor heart activity of a sick person continuously in the background - why
+not write a headline for that?
+
+------------------------------
+
+Date: Thu, 20 Aug 2015 09:42:39 -0500
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: Intel to customers: We listen to you... All The Time!
+
+Am I the only one reminded of the "format c colon return" joke from last
+century?
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.90
+************************

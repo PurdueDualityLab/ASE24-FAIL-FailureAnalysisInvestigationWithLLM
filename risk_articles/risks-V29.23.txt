@@ -1,0 +1,528 @@
+23-Jan-2016 22:37:10-GMT,5132;000000000004
+precedence: bulk
+Subject: Risks Digest 29.23
+
+RISKS-LIST: Risks-Forum Digest  Monday 25 January 2016  Volume 29 : Issue 23
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.23.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+British Family Refused Entry To The USA  -- upgrade screwup (Chris J Brady)
+The Boston Globe delivery disaster caused by software (Steve Golson)
+Belgian Crelan Bank loses 75.8-million dollars in CEO fraud (Al Mac)
+Re: Why no secure architectures in commodity systems? (Mark Thorson,
+  Michael Marking)
+Re: Ballot Battles: The History of Disputed Elections in the U.S.
+  (Amos Shapir)
+Internet of Things security is so bad, there's a search engine for
+  sleeping kids (Ars Technica)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 24 Jan 2016 21:13:03 +0000 (UTC)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: British Family Refused Entry To The USA -- upgrade screwup
+
+'Rip Off Britain -- Holidays' is a popular BBC TV consumer rights programme.
+
+ [This is another instance of the old calendar confusion between U.S. and
+ elsewhere, which keeps arising in RISKS: month/day/year vs day/month/year;
+ whereas year/month/day is less common, it is much less ambiguous, and
+ mathematically sound.  In RISKS, we long ago decided on dd/MON/year.  PGN]
+
+This week -- in Series 4 Episode 7 -- it featured a young family who had
+previously visited the USA and now wanted to visit again. Their previous
+Esta Visas had expired so they applied online for new ones -- at cost.
+
+However the new Visas were refused. When they enquired the only reason given
+was that they had apparently over-stayed their visas on their last visit.
+
+In its inimitable way Homeland Security (whoever) were adamant that the
+refusal was correct. The family were equally adamant that they had done
+nothing wrong. They were also in danger of losing all of their holiday
+bookings because their travel insurance wouldn't pay out over 'visa refusal
+issues.'
+
+Eventually after help from the BBC it transpired that when they had departed
+from JFK Airport the previous time the date was 08-01-2013, i.e., 8th
+January 2013. A few days afterwards their Esta Visas then expired. All well
+and good, right? Well no!!
+
+At the date of their departure from JFK a new computer system had just been
+implemented by a British company. And in an amount of mind-boggling
+incompetence the system had been set up to record departure dates in the UK
+format of day-month-year. However the US authorities had interpreted these
+dates as month-day-year. This meant that as far as the US was concerned they
+had departed on August 1st 2013 -- effectively overstaying their visas.
+
+What is even more mind boggling is that the US authorities would not believe
+that such a mistake had been made. It was only after the intervention of the
+BBC (see the programme) that the US agreed to look into the case. Even then
+the family had to provide a large number of documents including their
+passports, old ticket receipts, etc., to prove that they had in fact left
+the USA within the validity of their Esta visas.
+
+The programme is at http://www.bbc.co.uk/programmes/b06wp9pk if you have
+access to play it.
+
+------------------------------
+
+Date: Sun, 24 Jan 2016 20:01:14 -0500
+From: Steve Golson <sgolson@trilobyte.com>
+Subject: The Boston Globe delivery disaster caused by software
+
+*The Boston Globe* recently changed distributors for its print edition, and
+the cutover has not gone well.
+
+  Delivery problems with *The Boston Globe*’s new circulation service
+  affected up to 10 percent of newspaper subscribers, and it could take four
+  to six months before service returns to normal, the Globe reports.
+
+http://www.boston.com/news/local/massachusetts/2016/01/04/boston-globe-delivery-problems-could-last-months-distributor-says/mv1aQZYpZMIdva1YfPKg3N/story.html
+
+  ...at least 2,000 subscribers have canceled their Globe subscriptions as
+  a result of the delivery debacle, which the parties blame both on a
+  shortage of drivers and software that mapped out paper routes confusingly.
+
+http://www.bu.edu/today/2016/whither-newspapers-or-should-that-be-withered/
+
+  ...many of ACI’s new delivery routes lack any logical sequence, leaving
+  drivers criss-crossing communities and making repeated trips to the same
+  neighborhoods.
+
+http://www.bostonglobe.com/business/2016/01/03/deliveries/wrEYnoz9F6XFEZeIkTzMQL/story.html
+
+  “We were crossing intersections that we had crossed just a few minutes
+  before to deliver newspapers in one section of Brookline, then back to the
+  other,” she said. “It was, it was dizzying. It was not arranged in a
+  geographical way. And I can see why any new driver would have a difficult
+  time getting to the right location.”
+
+https://www.wbur.org/2016/01/05/boston-globe-delivery
+
+Boston Globe owner John W. Henry was forced to issue this public
+apology/explanation:
+
+https://www.bostonglobe.com/opinion/2016/01/05/apologize-our-loyal-readers/S0uNqQOjkx3UD7jD3WbbgL/story.html
+
+The new distributor is based in California, and apparently has no experience
+with the maze of twisty little passages that is our road network in New
+England.
+
+RISK 1: Test your software in the target environment.
+
+RISK 2: Don't cutover everything at once.
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 13:23:54 -0600
+From: "Alister Wm Macintyre" <macwheel99@wowway.com>
+Subject: Belgian Crelan Bank loses 75.8-million dollars in CEO fraud
+
+I have seen many stories like this one -- a form of social engineering
+against top C-level executives, with mind boggling sums stolen, for which no
+current insurance system can pay them back.
+
+Actually I am somewhat happy to see this happening.  In my career, C-level
+executives have been 99% responsible for my day jobs having inadequate
+security, and violations of protections against breaches, because they have
+been in absolute denial of security advisories from me, my IT-co-workers,
+and outside IT-security vendors.  If anything can teach them to become
+risk-educated, this epidemic may.
+
+This particular outfit is using this kind of story as an effective marketing
+technique.  For similar recent stories from them, see:
+
+https://blog.knowbe4.com/ceo-fraud-costs-boeing-vendor-54-million-dollars
+https://blog.knowbe4.com/credit-union-chilling-ceo-fraud-story
+https://blog.knowbe4.com/scam-of-the-week-phish-with-hidden-sting
+https://blog.knowbe4.com/paychex-60-of-hacked-smbs-are-out-of-business-6-months-later
+
+> Date: Monday, January 25, 2016 9:50 AM
+> From: Stu Sjouwerman [mailto:stus@knowbe4.com]
+
+The Belgian Crelan Bank was the victim of a 70-million euro (75.8M U.S.)
+fraud that was launched from another country.  They claim (PDF) this CEO
+Fraud was discovered during an internal audit and does not affect their
+viability.
+
+The bank said: "As a result of these facts, we took additional, exceptional
+measures to strengthen our internal security procedures. We informed the
+justice department and we are investigating this incident.  Existing
+customers are not impacted."
+
+Luc Versele, CEO of Crelan was quoted: ``Looking at our historic reserves,
+Crelan can shoulder this fraud without any negative impact for our customers
+and affiliates. We are still viable and our total capital is 1,1 Billion
+Euro.''
+
+CEO Fraud, also called Business Email Compromise is the next cybercrime
+wave, as per the FBI who recently warned that this has cost small and medium
+enterprises 1.2 billion dollars in damages between October 2013 and August
+2015.  C-level employees, especially CEOs and CFOs, have to be aware of the
+various techniques the scammers are using to trick them into wiring out
+large amounts of money.
+
+Most small and medium enterprises do not know that they are not FDIC-insured
+like consumers, and that their cyber security insurance (if they even have
+it) also may not cover this specific type of fraud, because no IT
+infrastructure was compromised.
+
+What you can do about it:
+
+1. Alert your execs. These scams are getting more sophisticated by the month
+and be on the lookout.
+
+2. Review your Wire Transfer security policies and procedures.
+
+3. Grab this Social Engineering Red Flags PDF, print and laminate it, and
+   give it to your C-level execs (free).
+
+4. Read the IC3 Alert in full, and apply their Suggestions For
+   Protection. You can find it here. Copy and paste this link in your
+   browser to get to their website:
+   https://www.ic3.gov/media/2015/150122.aspx?
+
+Obviously all your employees need to be stepped through effective security
+awareness training to prevent social engineering attacks like this from
+getting through.  Find out how affordable this is for your organization
+today and be pleasantly surprised. [...]
+
+------------------------------
+
+Date: Sun, 24 Jan 2016 23:25:25 -0800
+From: Mark Thorson <eee@sonic.net>
+Subject: Re: Why no secure architectures in commodity systems? (Sizemore,
+  RISKS-29.22)
+
+Although many systems with hardware security have been proposed over the
+years -- mostly capability architectures -- part of the problem is that
+we've never had a comprehensive solution in which we can place high
+confidence.  That sort of confidence can only come from fielding a system
+into the real world and learning what are its deficiencies and weaknesses
+from handling real-world workloads and adversaries.  And then, acceptance
+would require rewriting all of our applications to run on this secure
+architecture.  It seems unlikely this can happen any time soon.
+
+  [Mark, I beg to differ.  See the CHERI hardware-software capability-based
+  system architecture, which provides a hybrid solution allowing legacy code
+  to run in confined environments that cannot compromise the rest of the
+  system.  https://www.cl.cam.ac.uk/research/security/ctsrd/ and
+  http://www.csl.sri.com/neumann .  PGN]
+
+Capability architectures have fine-grained control over access to protected
+objects.  You can't just scribble some data on the stack and jump to it, or
+if you can it won't do you any good because you're still inside a highly
+protected environment.  This prevents many important classes of attacks.  In
+the architectures we use today, if you pierce the protection model anywhere
+you pierce it everywhere.  You can execute anything you like on any data you
+like.
+
+But a capability architecture doesn't protect against all kinds of attacks.
+If your architecture doesn't allow arbitrary binary executable code to be
+injected, what if the trusted executable code is a javascript or SQL
+interpreter?  That code takes in data and interprets it as instructions, so
+the opportunity still exists for malicious code to exist within a capability
+architecture ecosystem if the interpreter has flaws.
+
+I agree that a capability architecture would be preferable to the
+eggshell-thin protection model used today, but viable capability
+architectures were not available (or not with high confidence that they were
+ready) when the present architectures arose, and it's too late now to change
+the course of history.
+
+An advantage of the current protection model is that everybody knows how
+dangerous it is.  Anyone who cares about security knows they always have to
+assume somehow an attacker will overflow a buffer and execute malicious code
+with supervisor privileges or hammer a DRAM row and flip a protection bit on
+a page table entry.  They will never be able to become complacent because
+it's a capability architecture, the OS kernel has a formal proof of program
+correctness, and all the executable code is trusted.  Paranoia is a security
+layer of its own and perhaps the best of all.
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 05:43:54 +0000
+From: Michael Marking <marking@tatanka.com>
+Subject: Re: Why no secure architectures in commodity systems? (Sizemore,
+  RISKS-29.22)
+
+Before my response proper, two comments:
+(1) I apologize in advance for what probably could be considerably shorter.
+(2) I expect that most readers of this list will agree that we can't foresee
+    all of the holes in a system, so even the best system we can make, will
+    only be secure until we discover the ways it is flawed. (This list
+    teaches humility, but it's pretty damn funny at times, too.)
+
+  [I have removed all the interstitiated comments from Sizemore.
+  If this is confusing, please refer back to RISKS-29.22.  PGN]
+
+I'm responding as a systems designer and developer, with some work in the
+security-related aspects of other areas. I'm not a security researcher, but
+believe that security requires an holistic approach. I'm not an expert, so
+don't take my comments as authoritative.
+
+Don't expect the people who participated in a problem's creation, to be the
+ones to solve it. ;-)
+
+Complete "security" isn't obtainable. We can only approach it, we can never
+truly reach it. We can't prove consistency in mathematics from within a
+system (Godel's theorem), we can't prove that a message was received without
+error (although we can be sure with vanishingly small probability of error),
+and there is no such thing as scientific "proof" (so the best we can do is a
+well-accepted theorem). It's all relative.  So what does "truly secure"
+mean? We don't even have a good definition of ideal security.
+
+Worse, your security isn't my security, so any definition is relative to
+specific users.
+
+(BTW, Multics was tres cool.)
+
+Yes we could get very close to security if the system were open, but no
+system is completely open. We may get to observe the design process, but we
+don't have enough eyes to see it all the way to implementation and to
+manufacturing. Even if most actors are both ethical (whatever that means)
+and competent (again), there are always some bad actors. It's a long way
+from a specification to a product, and I can't completely trust that there
+are enough eyeballs to catch all of the mistakes and the mischief. How do I
+know that the circuit I bought from a supplier is the same one that was
+specified and designed?
+
+(Paranoia is an occupational hazard here.)
+
+The benefits from installing backdoors and from compromising the design
+might be worth that process, too. Do you know any such consortium you
+wouldn't also expect to be paranoid and mistrusting, also?
+
+I don't think that anyone has thus discovered or concluded, but we have to
+work in a presumed hostile environment. So we develop mechanisms for
+exchanging keys in the clear, for doing secure computations in the open, for
+saving keys when memory can't be securely erased, and so on. These
+procedures can be reviewed. We're surrounded by the (presumed) enemy, but we
+must move forward as best we can. The nature of the beast is that every
+aspect of the system is not *completely* trustworthy, and that no component
+is completely reliable.
+
+I often avoid flash memory, for example, because I don't have a lot of
+confidence that it can be erased (due to load-leveling mechanisms with
+unpublished interfaces). Of course, a spinning magnetic disk might have some
+malicious circuit in it, to capture private data, but I've just concluded
+that it's less likely. Not much, but that's all I've got to work with. So I
+just include the risk in the release notes, and do what I can.
+
+One big problem with depending on "secure" hardware is that it violates a
+principle I consider axiomatic: at least half of the risk is from the
+"inside". A detective knows that the murderer in a homicide case was
+probably close to the victim. A forensic accountant knows that the thief was
+probably on the inside, or at least had an accomplice on the inside.  You
+(the statistical "you") are more likely to die at the hands of your
+countrymen than because of foreign enemies. And so on. I couldn't bring
+myself to trust all of the insiders, and I'd still spend half my security
+time looking for the threat from the inside.
+
+Finally, after years of working with both hardare and software, I concluded
+long ago that there is no bright line between them. They're both parts of
+bigger systems, and you can't make secure hardware without secure software
+and vice versa. Even more, the applications are part of the same system as
+the kernels and drivers and other platform components, and I suspect that
+you can't have a provably secure platform any more than you could have a
+provable secure application, unless it's all taken together along with the
+user environment and so on. We can move toward the "secure horizon", but
+it's like steering a ship by the stars, we won't ever reach it.
+
+I completely agree that a secure architecture would *greatly* increase the
+difficulty of routine penetration activities. I believe, however, that there
+is little incentive in many quarters to develop such architectures. There
+are some good, isolated efforts to develop better systems.
+
+I like SELinux, for example, but even the folks at the NSA can't agree on
+whether or not we should have backdoors in systems. If the President and the
+director of the NSA and the joint chiefs of staff came down on the side of
+"no backdoors", there'd still be some effort from the inside to sabotage the
+effort, I promise.
+
+Even when good (though imperfect) solutions exist, security is almost always
+an inconvenience, if not an impediment to profits, control, and dominance,
+so the use of the solution is restricted. It would be easy for Google to
+prevent a lot of spyware from running on Android devices, for instance, but
+it's not in their best interests to do it. Your average user can't even be
+bothered to create a random password, never mind to configure access
+permissions. Most network routers offer SPI firewalls, but how many work in
+the opposite direction, to prevent, say, the images from your surveillance
+cameras from escaping to the outside?
+
+So what we have to work with are some good components we can use along with
+some necessary bad components to build systems which we hope are secure. In
+this day and age, you still can't trust most software, and most customers,
+users, and employers in practice will put security near the bottom of their
+priorities list, making it uneconomical to build more secure (or more
+reliable) systems.
+
+Even when I've been asked to do security audits, the customers usually don't
+care about many of the conclusions. An audit is most of the time merely
+another checklist item. Yes, I know many of the vulnerabilities are highly
+unlikely to be significant, but even the glaring ones are ignored often as
+not.
+
+Ultimately, because most people don't care -- at least enough to pay the
+price --, the markets don't support better components or better products.
+
+While I'm waiting for all of those secure platforms, I'll continue to
+develop for the insecure environments available to me now. I'm not holding
+my breath. I'll support the components which are secure, but security is too
+often a weakest link thing: if you bar one window, the burglar will enter
+through a different window, and few people want to live with bars on *all*
+of their windows.
+
+In other words, we have no choice but to work in handicapped environments.
+"Excuse me, Mr Burglar, please wait a moment while I locate my revolver and
+load it..." It's a cracker's festival out there, and they're not going to
+hold the party while we get our acts together.  Sometimes our jobs are more
+like emergency room activities than they are like preventative medicine, but
+the patients keep coming into the doors.
+
+Meanwhile, I've never seen a good, practical definition of security, which
+isn't subject to interpretation. To me, efforts like the various trusted
+computing initiatives are great, but without the interpretation they sound
+like a lot of mumbo-jumbo. What they don't say is deafening.  I'm convinced
+that many of the behind-the-scenes motives aren't really about security at
+all, but, rather about marketing, DRM (for one's own "intellectual
+property", anyway), profits, and such. Honestly, I like formal methods, but
+in the real world they haven't yet arrived at practicality. Look at the
+various military efforts to define and to organize security and to develop
+secure systems: They're sometimes awesome, we can learn from them, but they
+change every few years because every previous version has proven inadequate
+(not necessarily wrong, more often only limited). Yes, the military are
+often still fighting the previous war, not the current one, but they have
+unlimited budgets (by our standards), significant incentives, better and
+enforceable organizational abilities... and they're still trying to find --
+let alone to hit -- the target. (Don't mean to pick on them, they're just a
+good example. Don't see many better practical examples, actually.)
+
+I make a prediction: computer-related security will be as different X years
+from now as it is now from where it was X years ago. Remember when virus
+checkers and owner/group/world permissions were advanced stuff?  Today's
+secure system is tomorrow's quaint example of naive misperceptions.
+Misperceptions will be shown, in time, to be universal.  Hopefully, we can
+laugh at ourselves when we're ready to leave these lives for the next ones.
+
+Nicky, Your questions are reasonable, and, frankly, I don't think they're
+addressed well in any of the books or journals on my shelves (or on my
+computer).  Only rarely does the scope of the analysis include the complete
+political and economic dimensions of the context.
+
+I don't mean to sound arrogant or dismissive of your inquiry, but (in case
+it doesn't show) I've grown cynical and frustrated over the years, not so
+much because of the technologies (this if fun stuff!) but because of the
+politics. I'm *sure* (sarcasm here...) that if the job were left to us
+technologists, theorists, engineers, and scientists, and taken away from the
+sociopathic oligarchy, then things would be *much* better in the world.
+
+------------------------------
+
+Date: Mon, 25 Jan 2016 18:24:53 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Ballot Battles: The History of Disputed Elections in the U.S.
+  (Smith, RISKS-29.22)
+
+While Mark E. Smith's ideas are laudable, I'm afraid the end result might
+be a political version of Wikipedia.
+
+"The will of the people" is not a very well defined term, and rather
+unreliable.  It has been shown time and again to be very susceptible to
+cheap tricks.
+
+What we need is a way to make elected officials behave like responsible
+adults;  I'm not sure there is a provable scheme to ensure that.
+
+------------------------------
+
+Date: Sat, 23 Jan 2016 12:24:22 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Internet of Things security is so bad, there's a search engine for
+  sleeping kids (Ars Technica)
+
+Ars Technica via NNSquad
+http://arstechnica.com/security/2016/01/how-to-search-the-internet-of-things-for-photos-of-sleeping-babies/
+
+  Shodan, a search engine for the Internet of Things (IoT), recently
+  launched a new section that lets users easily browse vulnerable webcams.
+  The feed includes images of marijuana plantations, back rooms of banks,
+  children, kitchens, living rooms, garages, front gardens, back gardens,
+  ski slopes, swimming pools, colleges and schools, laboratories, and cash
+  register cameras in retail stores, according to Dan Tentler, a security
+  researcher who has spent several years investigating webcam security.
+  "It's all over the place," he told Ars Technica UK. "Practically
+  everything you can think of."  We did a quick search and turned up some
+  alarming results ...
+
+If industry can't deal with this correctly, government will try to force the
+issue *their* way. And you know what *that* means.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.23
+************************

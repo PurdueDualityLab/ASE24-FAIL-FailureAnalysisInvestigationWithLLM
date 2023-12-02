@@ -1,0 +1,705 @@
+precedence: bulk
+Subject: Risks Digest 30.42
+
+RISKS-LIST: Risks-Forum Digest  Monday 7 August 2017  Volume 30 : Issue 42
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.42>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Siemens, DHS warn of "low skill" exploits against CT and PET Scanners
+  (Ars Technica)
+U.S. Senate is going to help improve security of the IoT (Don Gilman)
+U.S. Army reportedly asks units to stop using DJI drones, citing
+  cybersecurity concerns (The Verge)
+200-Terabyte Proof Demonstrates the Potential of Brute-Force Math
+  (Michael Byrne)
+Amazon Echo vulnerability allows hackers to eavesdrop with always-on
+  microphone (Apple Insider via geoff goodfellow)
+'Anonymous' browsing data can be easily exposed, researchers reveal
+  (The Guardian)
+21 Technologies Transforming Software Development (Peter Wayner)
+"The Death of Ruby? Developers Should Learn These Languages Instead"
+  (Alison DeNisco)
+China holds drill to shut down 'harmful' websites (Reuters via
+  Suzanne Johnson)
+HBO Security Contractor: Hackers Stole 'Thousands of Internal Documents'
+  (Variety)
+Stolen nude photos and hacked defibrillators: is this the future of
+  ransomware? (The Guardian)
+Uber drivers gang up to cause surge pricing, research says (The Telegraph)
+Wells Fargo faces lawsuits, angry lawmakers over car lending (WashPost)
+"How can we stop algorithms telling lies?" (Cathy O'Neil via PGN)
+Grandpa Had a Pension. This Generation Has Cryptocurrency. (NYTimes)
+Cybersecurity Researcher Hailed as Hero Is Accused of Creating Malware
+  (NYTimes)
+Have Smartphones Destroyed a Generation? (The Atlantic)
+More than 1 in 5 travelers knowingly or unknowingly carried prohibited
+  items onto aircraft, survey finds (WashPost)
+"Beware the Browser Extensions Privacy Trap!" (Lauren Weinstein)
+Site tracks Russian Propaganda on Social Media (Dashboard)
+Hacker who stopped WannaCry charged for writing banking malware (WiReD)
+To Protect Voting, Use Open-Source Software (Woolsey and Fox)
+Fishy circumstances cause power outage in Seattle (Dyer Oxley)
+Re: Leaping Kangaroos (Paul Edwards)
+Re: somebody else's computer, in another country (Kelly Bert Manning)
+Re: NEC Updates like software updates (William Brodie-Tyrrell)
+Re: Iranians Use 'Cute Photographer' Profile To Hack Targets in Middle East
+  (Amos Shapir)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 6 Aug 2017 08:05:06 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Siemens, DHS warn of "low skill" exploits against CT and PET
+  Scanners (Ars Technica)
+
+via NNSquad
+https://arstechnica.com/gadgets/2017/08/siemens-dhs-warn-of-low-skill-exploits-against-ct-and-pet-scanners/
+
+  Siemens identified the vulnerabilities in a customer alert on 26 Jul 2017,
+  warning that the vulnerabilities were highly critical -- giving them a
+  rating of 9.8 out of a possible 10 using the Common Vulnerability Scoring
+  System. The systems affected include Siemens CT, PET, and SPECT scanners
+  and medical imaging workflow systems based on Windows 7.  One of the
+  vulnerabilities is in the built-in Window Web server running on the
+  systems. "An unauthenticated remote attacker could execute arbitrary code
+  by sending specially crafted HTTP requests to the Microsoft Web server
+  (port 80/tcp and port 443/tcp) of affected devices," Siemens warned in its
+  alert.  The bug in the Web server software allows code injection onto the
+  devices.
+
+------------------------------
+
+Date: Wed, 2 Aug 2017 08:56:50 -0500
+From: Don Gilman <txaggiese@gmail.com>
+Subject: U.S. Senate is going to help improve security of the IoT
+
+http://www.reuters.com/article/us-fireeye-results-idUSKBN1AH56W
+
+SAN FRANCISCO (Reuters) -- A bipartisan group of U.S. senators on Tuesday
+plans to introduce legislation seeking to address vulnerabilities in
+computing devices embedded in everyday objects -- known in the tech industry
+as the Internet of Things -- which experts have long warned poses a threat
+to global cyber security.
+
+------------------------------
+
+Date: Fri, 4 Aug 2017 14:47:28 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: U.S. Army reportedly asks units to stop using DJI drones, citing
+  cybersecurity concerns (The Verge)
+
+https://www.theverge.com/2017/8/4/16095244/us-army-stop-using-dji-drones-cybersecurity
+
+  The editor of SUAS News has obtained what appears to be an internal memo
+  from the U.S. Army asking all units to discontinue the use of DJI drones
+  due to an increased awareness of cybervulnerabilities with DJI products.
+  The memo notes that the Army had issued over 300 separate releases
+  authorizing the use of DJI products for Army missions, meaning a lot of
+  hardware may have been in active use prior to the memo, which is dated
+  2 Aug 2017.
+
+  [See also
+https://arstechnica.com/gadgets/2017/08/army-tells-troops-to-stop-using-dji-drones-immediately-because-cyber/
+  PGN]
+
+------------------------------
+
+Date: Fri, 4 Aug 2017 11:51:42 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: 200-Terabyte Proof Demonstrates the Potential of Brute-Force Math
+  (Michael Byrne)
+
+Michael Byrne, *Motherboard*, 30 Jul 2017
+via ACM TechNews, Friday, August 4, 2017
+
+Researchers Marijn Heule and Oliver Kullmann envision brute-force problem
+solving playing a key role in security- and safety-critical systems by
+generating proofs in propositional logic, also known as Satisfiability (SAT)
+solving.  "Today, SAT solving on high-performance computing systems enables
+us to conquer problems of high complexity, driven by practice," the
+researchers write in a paper published in the August issue of Communications
+of the ACM. "This combination of enormous computational power with 'magical
+brute force' can now solve very hard combinatorial problems, as well as
+proving safety of systems such as railways."  As part of their work, Heule
+and Kullmann have demonstrated an automated SAT solver that has produced a
+200-terabyte proof.  "Now the task is to live up to big complexities, and to
+embrace the new possibilities," Heule and Kullmann note.  "Proofs must
+become objects for investigations, and understanding will be raised to the
+next level, how to find and handle them."
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-16060x212a24x076576&
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 18:17:19 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Amazon Echo vulnerability allows hackers to eavesdrop with
+  always-on microphone (Apple Insider)
+
+A security researcher has shown off the potential danger of Internet
+connected speakers being used to listen in on private conversations by
+publishing details of how to hack earlier models of the Amazon Echo via a
+hardware-based vulnerability that cannot be fixed with a software patch.
+
+The 2015 and 2016 models of the Amazon Echo can be exploited by using 18
+debug connection pads, accessible by removing the rubber base from the
+device, according to MWR InfoSecurity researcher Mark Barnes. An external SD
+card breakout board was attached to the debug pads, allowing Barnes to boot
+from an SD card and rewrite the onboard firmware, making it remotely
+accessible.
+
+http://appleinsider.com/articles/17/08/02/amazon-echo-vulnerability-allows-hackers-to-eavesdrop-with-always-on-microphone
+
+------------------------------
+
+Date: Wed, 2 Aug 2017 01:44:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 'Anonymous' browsing data can be easily exposed, researchers reveal
+  (The Guardian)
+
+A journalist and a data scientist secured data from three million users
+easily by creating a fake marketing company, and were able to de-anonymise
+many users
+https://www.theguardian.com/technology/2017/aug/01/data-browsing-habits-brokers
+
+------------------------------
+
+Date: Mon, 7 Aug 2017 11:58:06 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: 21 Technologies Transforming Software Development (Peter Wayner)
+
+Peter Wayner, InfoWorld, 3 Aug 2017 via ACM TechNews, 7 Aug 2017
+
+Software development is being transformed by technologies such as continuous
+integration and smarter languages, while databases are improving and
+fulfilling a variety of niches.  Frameworks are relieving programmers of the
+burden of writing everything from scratch, and routine libraries also are
+proving helpful.  Meanwhile, the development of mechanisms and rules for
+enforcing uniform styles is making code easier to understand, and virtual
+machines are increasingly favored over physical hardware as instruments for
+running the code.  Application programming interfaces have made it largely
+unnecessary to pack data tightly, and new user interfaces such as smart TVs
+and smartphones are creating many novel programming opportunities and
+challenges.  In addition, infrastructure as a service and platform as a
+service are streamlining server and website building, while social media
+portals are increasingly necessary.  Furthermore, performance monitoring is
+becoming a key necessity as code defects and bottlenecks are no longer
+restricted to a single machine.
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-1610dx212a47x076853&
+
+------------------------------
+
+Date: Mon, 7 Aug 2017 11:58:06 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: "The Death of Ruby? Developers Should Learn These Languages
+  Instead" (Alison DeNisco)
+
+Alison DeNisco, Tech Republic, 7 Aug 2017 via ACM TechNews, 7 Aug 2017
+
+The Ruby programming language's popularity has plummeted steeply in the past
+few years, owing to scalability limits, slower application runtimes, and an
+inability to let computer scientists gain the same types of insight into
+their data as they can with other languages, according to experts.  "[Ruby]
+might be a good language if somebody wants to start out doing programming,
+but true computer scientists don't look at it as introducing the true
+paradigms of computer programming," says Tufts University's Karen Panetta.
+Many companies have discarded Ruby for languages that offer easier expansion
+and lower long-term costs, including the MEAN stack, or Python and Java.
+Coding Dojo's Speros Misirlakis stresses the importance for developers to be
+agile and conversant in different languages.  "Every developer realizes you
+can't specialize in one language and expect that to be true for 20 or 30
+years," Misirlakis notes.  "People should be open to learning multiple
+technologies, languages, and frameworks."
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-1610dx212a46x076853&
+
+------------------------------
+
+Date: August 4, 2017 at 10:31:21 AM EDT
+From: Suzanne Johnson <fuhn@pobox.com>
+Subject: China holds drill to shut down 'harmful' websites
+
+  (via Dave Farber)
+
+President Xi Jinping has overseen a tightening of China's cyberspace
+controls, including tough new data surveillance and censorship rules. This
+push is now ramping up ahead of an expected consolidation of power at the
+Communist Party Congress this autumn.
+
+The drill asked Internet data centers to practice shutting down target web
+pages speedily and report relevant details to the police, including the
+affected websites' contact details, IP address and server location.
+
+http://www.reuters.com/article/us-china-internet-idUSKBN1AJ1XL
+
+------------------------------
+
+Date: Wed, 2 Aug 2017 11:48:24 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: HBO Security Contractor: Hackers Stole 'Thousands of Internal
+  Documents' (Variety)
+
+via NNSquad
+http://variety.com/2017/digital/news/hbo-hack-thousands-of-documents-stolen-1202513573/
+
+  The HBO hack may have been worse than the initial leaks of a few un-aired
+  TV show episodes suggested. A security company hired by HBO to scrub
+  search results for the hacked files from search engines has told Google
+  that the hackers stole "thousands of Home Box Office (HBO) internal
+  company documents."  The disclosure came as part of a DMCA take-down
+  notice sent to Google Tuesday to force the search engine to take down
+  links to the leaked files. The take-down notice also detailed that the
+  hackers did away with "masses of copyrighted items including documents,
+  images, videos and sound."  The company in question, IP Echelon, is
+  frequently being used by HBO to remove links to infringing material from
+  Google. An HBO spokesperson declined to comment on the take-down notice
+  and the nature of any files stolen by the hackers when contacted by
+  Variety Wednesday "due to an ongoing investigation."
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 09:54:23 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Stolen nude photos and hacked defibrillators: is this the future of
+  ransomware? (The Guardian)
+
+Hackers behind attacks such as WannaCry might not have become hugely rich,
+but that doesn't mean they are going to give up any time soon
+https://www.theguardian.com/technology/2017/aug/03/ransomware-future-wannacry-hackers
+
+------------------------------
+
+Date: Wed, 2 Aug 2017 13:58:29 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Uber drivers gang up to cause surge pricing, research says
+  (The Telegraph)
+
+http://www.telegraph.co.uk/technology/2017/08/02/uber-drivers-gang-cause-surge-pricing-research-says/
+
+  Researchers at the University of Warwick found Uber drivers in London and
+  New York have been tricking the app into thinking there is a shortage of
+  cars in order to raise surge prices.  According to the study. drivers
+  manipulate Uber's algorithm by logging out of the app at the same time,
+  making it think that there is a shortage of cars.
+
+    [Maybe they are just going through pUBERty?  PGN]
+
+------------------------------
+
+Date: Fri, 4 Aug 2017 09:07:54 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Wells Fargo faces lawsuits, angry lawmakers over car lending
+
+https://www.washingtonpost.com/business/wells-fargo-faces-lawsuits-angry-lawmakers-over-car-lending/2017/08/02/ae8b0f06-77c3-11e7-8c17-533c52b2f014_story.html
+
+------------------------------
+
+Date: Fri, 4 Aug 2017 14:29:28 -0700
+From: Peter G. Neumann <neumann@csl.sri.com>
+Subject: "How can we stop algorithms telling lies?" (Cathy O'Neil)
+
+Thanks to Ben Schneiderman for serendipitously reminding me that I have been
+meaning to mention Cathy O'Neil's book, Weapons of Math Destruction (which
+to my British colleagues would of course be Weapons of Maths Destruction --
+seemingly closer phonetically).  (Browsing that title turns up many hits.)
+
+Cathy has an item in *The Guardian* on problematic algorithms, which
+seems very relevant for RISKS:
+https://www.theguardian.com/technology/2017/jul/16/how-can-we-stop-algorithms-telling-lies
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 22:01:28 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Grandpa Had a Pension. This Generation Has Cryptocurrency.
+
+After years as a niche market for technologically sophisticated anarchists
+and libertarians, digital coins may be on the verge of going mainstream.
+https://www.nytimes.com/2017/08/03/style/what-is-cryptocurrency.html
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 19:51:38 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Cybersecurity Researcher Hailed as Hero Is Accused of Creating Malware
+
+A British security researcher, credited with stopping the spread of malicious software in May, was arrested in connection with a separate attack.
+https://www.nytimes.com/2017/08/03/technology/cybersecurity-researcher-hailed-as-hero-is-accused-of-creating-malware.html
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 22:19:37 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Have Smartphones Destroyed a Generation? (The Atlantic)
+
+More comfortable online than out partying, post-Millennials are safer,
+physically, than adolescents have ever been. But they're on the brink of a
+mental-health crisis.
+https://www.theatlantic.com/magazine/archive/2017/09/has-the-smartphone-destroyed-a-generation/534198/
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 21:46:41 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: More than 1 in 5 travelers knowingly or unknowingly carried
+  prohibited items onto aircraft, survey finds
+
+A jet-chartering service says its survey found that at least 6 percent
+boarded a commercial aircraft knowingly or unknowingly carrying a bladed
+object. prohibited by the TSA.
+https://www.washingtonpost.com/news/tripping/wp/2017/08/03/more-than-1-in-5-travelers-knowingly-or-unknowingly-carried-prohibited-items-onto-aircraft-survey-finds/
+
+------------------------------
+
+Date: Wed, 2 Aug 2017 10:12:58 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Lauren's Blog: "Beware the Browser Extensions Privacy Trap!"
+
+via NNSquad
+https://lauren.vortex.com/2017/08/02/beware-the-browser-extensions-privacy-trap
+
+There's a story going around currently about a group of researchers who
+claim to have de-anonymized a variety of browser users' search data. The
+fact that proper anonymization of data is a nontrivial task is quite well
+known. Sloppy "anonymization" can be effectively as bad as no anonymization
+at all.
+
+But the interested observer might wonder ... where did these researchers get
+their search data in the first place?
+
+It turns out that the main source of this data are the individuals or firms
+behind third-party browser extensions and apps, which provide or sell the
+user data that they collect to data brokers and to other entities.
+
+And so we open up a very big can of worms.
+
+The major browsers (e.g., Google's Chrome) provide various means for users
+to install extensions and applications to extend browser functionalities.
+While the browser firms work extensively to build top-notch security and
+privacy controls into the browsers themselves, the unfortunate fact is that
+these can be undermined by such add-ons, some of which are downright
+crooked, many more of which are sloppily written and poorly maintained.
+
+Ironically, some of these add-on extensions and apps claim to be providing
+more security, while actually undermining the intrinsic security of the
+browsers themselves. Others (and this is an extremely common scenario) claim
+to be providing additional search or shopping functionalities, while
+actually only existing to silently collect and sell user browsing activity
+data of all sorts.
+
+The manner in which these apps and extensions end up being installed can be
+insidious, and relates to the fundamental complexity of the underlying
+security models, which are not understood by the vast majority of users,
+especially non-techie users. For the record, similar confusion exists
+regarding smartphone app security models, e.g. for Android.
+
+The bottom line is that most users, faced with a prompt to install an
+extension or app that claims to provide useful functions, will simply grant
+the requested permissions, no matter how privacy and/or security invasive
+those permission actually are.
+
+And why should we expect these users to do anything differently?  Expecting
+them to really understand what these permissions mean is ludicrous. We're
+the software engineers and computer scientists -- most users aren't either
+of these. They have busy lives -- they expect our stuff to just work, and
+not to screw them over.
+
+I recently helped an older Chrome user whom I know clean out their Chrome
+browser on Windows 10. As is routine for me, I used Chrome Remote Desktop
+for this purpose (please see: "Google Asked Me How I'd Fix Chrome Remote
+Desktop -- Here's How!")
+https://lauren.vortex.com/2017/07/24/google-asked-me-how-id-fix-chrome-remote-desktop-heres-how
+
+He must have had 25 or 30 "crap" extensions installed that I needed to
+individually remove (some of which appeared to have been "slave" extensions
+installed by other "master" extensions). He claimed not to have knowingly
+installed any of them. Almost certainly, these were all prompted
+installations at sites he visited once or twice, with which he could have
+easily interacted without installing any of these add-ons at all.
+
+But these sites push users very hard to install these privacy-invasive, data
+sucking extensions, and as noted above most users will grant requested
+permissions, implicitly assuming that they're protected by the browser
+itself.
+
+Underlying browser security models can complicate the situation. For
+example, one of the most common -- and most easily abused -- categories of
+permissions requested by extensions and apps is one that grants read and
+write access to all data at all websites you visit -- or even that *plus*
+all data on your computer!
+
+Now, here's the kicker. While these sorts of permissions are the golden
+ticket for abuse by crooked and sloppy extensions or apps, there are many
+legitimate, well-written add-ons that also require such permissions to
+operate.
+
+But how is the average user to make a reasonable determination in this
+context, faced with a site urging them to install an add-on that is being
+portrayed as necessary? Most users don't have a site reputation database at
+hand for reference -- they just want to get on with what they're trying to
+do online.
+
+I will note here that I know of various corporate environments where
+security policies absolutely prohibit the installation of apps or extensions
+with such broad permissions, with few if any exceptions (e.g. unless they're
+of internal origin and have passed rigorous internal security and privacy
+audits).
+
+I don't have a brilliant "magic wand" solution to this set of problems.
+
+Personally, I install as few browser extensions and apps as possible unless
+I am absolutely confident in the reputation of their origins, and I
+absolutely minimize the installation of any add-ons that require broad
+permissions either to websites or the local machines. Sometimes there are
+situations where an app or extensions looks very useful and enticing -- but
+I still need to say "no go" to them the vast majority of the time.
+
+One last thing. I urge you to check right now to see what extensions and/or
+apps you have installed, and remove the ones that you don't need (or worse,
+don't even recognize). For most versions of Chrome, you can do this by
+entering on your browser address bar:
+
+    chrome://extensions
+and:
+    chrome://apps
+
+On the extension list, a little trash can at the right is where you click to
+remove an extension. On the app list page (page select is at the bottom of
+that page), right click to access the menu that includes a "Remove from
+Chrome" entry. On Chrome OS, you may not be able to access the app page(s)
+using the link above. If the link doesn't work in this case, click on the
+white circle in the bottom of screen toolbar to bring up the app page.
+
+Is this all too complicated? Yep, it sure is.
+
+------------------------------
+
+Date: Wed, 2 Aug 2017 11:06:42 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Site tracks Russian Propaganda on Social Media (Dashboard)
+
+via NNSquad
+http://dashboard.securingdemocracy.org/
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 13:16:37 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Hacker who stopped WannaCry charged for writing banking malware
+  (WiReD)
+
+via NNSquad
+https://www.wired.com/story/wannacry-malwaretech-arrest
+
+  Just three short months ago, security researcher Marcus Hutchins entered
+  the pantheon of hacker heroes for stopping the WannaCry ransomware that
+  ripped through the Internet and paralyzed hundreds of thousands of
+  computers.  Now, he's been arrested and charged with involvement in
+  another mass hacking scheme--this time on the wrong side.  Yesterday,
+  authorities detained 22-year-old Hutchins after the Defcon hacker
+  conference in Las Vegas as he attempted to fly home to the UK, where he
+  works as a researcher for the security firm Kryptos Logic. Upon his
+  arrest, the Department of Justice unsealed an indictment against Hutchins,
+  charging that he created the Kronos banking trojan, a widespread piece of
+  malware used to steal banking credentials for fraud. He's accused of
+  intentionally creating that banking malware for criminal use, as well as
+  being part of a conspiracy to sell it for $3,000 between 2014 and 2015 on
+  cybercrime market sites like the now-defunct AlphaBay dark web market. The
+  news of Hutchins' arrest shocked Defcon attendees and the wider
+  cybersecurity community, in which Hutchins is a widely admired figure for
+  his technical knowledge and his key actions to neuter the WannaCry
+  epidemic in May.
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 10:45:32 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: To Protect Voting, Use Open-Source Software (Woolsey and Fox)
+
+R. James Woolsey and Brian J. Fox
+https://www.nytimes.com/2017/08/03/opinion/open-source-software-hacker-voting.html?emc=edit_th_20170803&nl=todaysheadlines&nlid=44068520
+
+------------------------------
+
+Date: Fri, 4 Aug 2017 19:14:13 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Fishy circumstances cause power outage in Seattle (Dyer Oxley)
+
+  [Another animal-related power outage in the Pacific Northwest, to add to
+  the fish tank item in RISKS-30.40.  PGN]
+
+A bird dropped a fish on power lines in South Seattle, causing a 2.5-hour
+outage in the area.  Connie MacDougal, a City Light spokesperson said, "It
+is rare, I've been here 16 years and I've heard of raccoon-caused outages,
+and many bird outages.  But never a fish."
+
+  [A short fish could not have caused the short, so therein lies a long
+  tail.  PGN]
+
+------------------------------
+
+Date: Sat, 5 Aug 2017 15:06:12 +1000
+From: Paul Edwards <paule@cathicolla.com>
+Subject: Re: Leaping Kangaroos (Horsfall, RISKS-30.39)Re: Leaping Kangaroos
+  (Horsfall, RISKS-30.39)
+
+Having spent a lot of time traveling through regional and rural parts of
+Australia (and having been a driver in two instances of a kangaroo and my
+car wanting to occupy the same point in space at the same time) I do wonder
+about how local knowledge can be incorporated into self-driving cars.
+
+For example, near where my parents-in-law live in central New South Wales,
+there are several roads (generally abutting dams) where you do not drive
+close to dawn or dusk to avoid the roos as they congregate to drink. (We
+drove out to one such place late one afternoon with a picnic dinner and
+watched over 30 kangaroos crossing the road in a 15-20 minute period during
+dusk.)
+
+Likewise there are many country roads where the verge creates puddles after
+rain which are also favoured spots for roos to get water (so you avoid these
+areas but only after rain). And there are other times when you are driving
+along and see one or more kangaroos hopping parallel to you and you switch
+off your headlights to ensure they do not veer toward you. Doubtless there
+are more examples for kangaroos, generally localized knowledge.
+
+I can imagine (but don’t know) that Laplanders may have similar local
+knowledge and rules of thumb for avoiding reindeer, or Canadians with moose
+(or PGN with squirrels).
+
+The interesting questions then become: how hard would it be to incorporate
+this into the AI, and what would the cost/benefit ratio look like?
+
+------------------------------
+
+Date: Thu, 3 Aug 2017 18:08:23 -0400 (EDT)
+From: Kelly Bert Manning <Kelly.Manning@ncf.ca>
+Subject: Re: somebody else's computer, in another country (Slade, RISKS-30.40)
+
+Rob Slade echoed a phrase I often use when cloud enthusiasts blithely skip
+over privacy and security issues, but I phrase it as "a computer belonging
+to someone else, probably in a different legal jurisdiction".
+
+A few years ago I was at a party where a friend invited everybody that she
+knew was turning 60. One of the people I met described how his iPhone had
+been lifted from his shorts pocket on a crowded transit train in Europe,
+leading him to panic when he realised that he had lost access to information
+about all his customers, needed to run his business
+
+Eventually someone suggested that he buy a new iPhone and restore access
+from Apple's cloud. That seemed to work for him. Problem solved?
+
+I just sat there, wondering if he had any idea about the legal ramifications
+under BC Provincial PIPEDA, Canadian Federal PIPA and other regulations.
+
+Take a device your business depends on along on a world tour, hooked to the
+contact and other Personally Identifiable Data of your customers. Then
+restore access from a server probably hosted in another country, subject to
+no notice access under the PATRIOT Act or similar legislation. Where to
+start, so I didn't.
+
+Most of us in Canada and the USA are familiar with out of country telephone
+scammers calling from India, for example, with claims that we are valued
+customers who have won ..., or that the IRS or CRA is about to arrest us.
+
+Canadian and USA Do Not Call List violation penalties have little deterrent
+effect of foreign scofflaws. How much effect do our Privacy Protection laws
+and regulations have on foreign criminals?
+
+There are very effective methods that could greatly reduce the number of
+these calls that ring through to our phones, but telecom providers seem slow
+to adopt them. I expect that there will be a similar organisational inertia
+reluctance to secure IoT and clouds.
+
+Smartphone users may be able to install an app, but those of us with Plain
+Old Telephone Service do not have that option to block the scammers.
+
+http://www.cbc.ca/news/business/telcos-telemarketing-scams-spam-1.3334194
+http://www.cbc.ca/news/canada/offshore-telemarketers-defy-canada-s-do-not-call-list-1.1323440
+https://www.blackhat.com/docs/us-16/materials/us-16-Marzuoli-Call-Me-Gathering-Threat-Intelligence-On-Telephony-Scams-To-Detect-Fraud-wp.pdf
+http://money.cnn.com/2017/04/09/news/tax-scam-india-arrest-ringleader/index.html
+http://money.cnn.com/2016/10/06/news/india-irs-scam-arrests/index.html
+https://www.pindrop.com/irs-phone-scam-live-call_analysis/
+http://www.slate.com/articles/business/the_bills/2016/05/robocalls_have_triumphed_over_the_do_not_call_list_whose_fault_is_it.html
+
+------------------------------
+
+Date: Wed, 2 Aug 2017 15:24:47 +0930
+From: William Brodie-Tyrrell <william@brodie-tyrrell.org>
+Subject: Re: NEC Updates like software updates (Newbury, RISKS-30.41)
+
+> What goes un-noticed is that the legislature effectively grants to an
+> un-named, un-accountable body the power to unilaterally *amend the law*.
+
+Even better, they get to charge you money for the privilege of reading those
+laws to which you are subject.  I'm not sure of the situation in the EU/US,
+but access to any/all (I think) Australian Standards documents requires
+significant payments to SAI Global.
+
+------------------------------
+
+Date: Wed, 2 Aug 2017 17:55:02 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Iranians Use 'Cute Photographer' Profile To Hack Targets
+  in Middle East (RISKS-30.41)
+
+> used a polished social media profile of a young, English woman using the
+  name "Mia Ash" ...
+
+There is a meta-data giveaway here: The source could be identified by
+noting that "Mia Ash" means "my dear" in Persian.
+
+I wonder if the NSA scans the social network looking for such out-of-context
+gems.
+
+  [If they do, I Foresee that Farsi might become Farce-y.  PGN]
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.42
+************************

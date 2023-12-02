@@ -1,0 +1,400 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.89
+
+RISKS-LIST: Risks-Forum Digest  Sunday 3 October 2021  Volume 32 : Issue 89
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.89>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+First death attributed to ransomware (WSJ via Ross Anderson)
+What Is CoolSculpting? (The New York Times)
+Tesla owners can now request ‘Full Self-Driving’, prompting criticism from
+ regulators and safety advocates (MSN)
+Chip makers to carmakers: time to get out of the semiconductor Stone Age
+ (Fortune)
+Taiwan system update causes accidental loss of student data (Focus Taiwan)
+Portpass app may have exposed hundreds of thousands of users' personal data
+ (CDC)
+How close is nuclear fusion power? (Sabine Hossenfelder)
+Troll farms, Russia, YouTube, Facebook (PGN-ed from Lauren Weinstein)
+Regulators Racing Toward First Major Rules on Cryptocurrency (NYTimes)
+Elevator-Pitch Privacy (Richard Stein)
+Vulnerability of locked iPhone with a Visa Card set in Transit Mode (BBC)
+How to have a hard time finding the About page (Dan Jacobson)
+Save the date!  IFIP 60th Anniversary Panel “Autonomous vehicle
+ (Charles B Weinstock)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 30 Sep 2021 19:52:44 +0100
+From: Ross Anderson <Ross.Anderson@cl.cam.ac.uk>
+Subject: First death attributed to ransomware (WSJ)
+
+A Hospital Hit by Hackers, a Baby in Distress: The Case of the First
+Alleged Ransomware Death: A lawsuit says computer outages from a
+cyberattack led staff to miss troubling signs, resulting in the baby’s
+death, allegations the hospital denies
+https://www.wsj.com/articles/ransomware-hackers-hospital-first-alleged-death-11633008116
+
+------------------------------
+
+Date: Sun, 26 Sep 2021 11:21:03 +0800
+From: "Richard Stein" <rmstein@ieee.org>
+Subject: What Is CoolSculpting? (New York Times)
+
+https://www.nytimes.com/article/cool-sculpting.html
+
+"The fat-freezing procedure left supermodel Linda Evangelista 'disfigured.'
+Here's what experts say it is supposed to do and what the most common side
+effects are."
+
+The report contained this statement of interest:
+
+"More than eight million CoolSculpting treatments had been administered in
+the U.S. as of 2019, according to the CoolSculpting website. The American
+Society for Aesthetic Plastic Surgery reports that board-certified U.S.
+plastic surgeons performed 129,686 nonsurgical fat-reducing treatments in
+2019, a category that includes CoolSculpting as well as treatments that use
+ultrasound to kill fat cells. But those numbers do not reflect CoolSculpting
+treatments done by dermatologists, so the real number is probably much
+higher."
+
+The FDA's Center for Devices and Radiological Health collects and reports
+adverse events for medical devices, but does not collect, compile, and
+report regulated device usage/treatment count information.  The device
+usage/treatment count reporting deficit creates opacity that exploits
+consumer expectation.
+
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfTPLC/tplc.cfm?id=6012
+(retrieved on 26SEP2021) itemizes and categorizes these adverse events from
+01JAN2016 to 31AUG2021 for product code OOK. One can examine the medical
+device reports attributed to device and patient problems for the
+CoolSculpting machine.
+
+See this for the 455 patient problem reports attributed to hyperplasia:
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfmaude/results.cfm?start_search=1&searchyear=&productcode=OOK&patientproblem=1906&devicename=&knumber=k&pmanumber=p&manufacturer=&brandname=&eventtype=&reportdatefrom=01/1/2016&reportdateto=&pagenum=10
+
+A worldwide recall for ~860 CoolSculpting devices has been issued by Deltiq
+Aesthetics (see
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?start_search=1&event_id=88397,
+retrieved on 26SEP2021).
+
+The recall notice lists what FDA identifies as a software design error.  The
+manufacturer's recall justification says, "An incorrect error messaging
+system that could potentially lead to: 1) Reporting a thermal event error
+causing a user to re-treating the affected anatomic area within 24 hours, 2)
+Not reporting a thermal event or any other error codes causing a user to
+continue treating without being aware that a thermal event has occurred."
+
+Why did a celebrity's treatment-induced hyperplasia event and subsequent
+law suit apparently initiate the device recall when more than 400 prior
+reports probably preceded it?
+
+Risk: Cosmetic therapy medical device software.
+
+------------------------------
+
+Date: Sat, 25 Sep 2021 09:00:25 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Tesla owners can now request ‘Full Self-Driving’, prompting
+ criticism from regulators and safety advocates (MSN)
+
+Tesla began letting owners request its “Full Self-Driving” software early
+Saturday, opening up for wide release its most advanced driver-assistance
+suite and signaling that thousands of drivers will soon be on the road with
+the unregulated and largely untested features.
+
+It’s the first time the company has let typical owners upgrade to the
+software it terms self-driving, although the name itself is an exaggeration
+by industry and regulatory standards. Tesla chief executive Elon Musk had
+said owners would be able to request this weekend the upgraded suite of
+advanced driver-assistance features, which Tesla says is a beta, although
+they wouldn’t receive the capabilities right away.
+
+Owners will have to agree to let Tesla monitor their driving behavior
+through the company insurance calculator. Tesla issued a detailed guide
+specifying the criteria under which drivers would be graded. If their
+driving is deemed to be “good” over a seven-day period, Musk said on
+Twitter, “beta access will be granted.”
+
+It’s the latest twist in a saga that has regulators, safety advocates and
+relatives of Tesla crash victims up in arms because of the potential for
+chaos as the technology is unleashed on real-world roads. Until now,
+roughly 2,000 beta testers have had access to the technology.  [...]
+https://www.msn.com/en-us/autos/other/tesla-owners-to-soon-gain-full-self-driving-access-at-the-touch-of-a-button-prompting-criticism-from-regulators-and-safety-advocates/ar-AAONcOv
+
+  [Reply from Jay Fenello <jay@fenello.com>:
+  This is very dangerous given Tesla's decision to *not* use any type of
+  distance measuring technology (sonar, radar, lidar) other than cameras and
+  AI.  PGN]
+
+------------------------------
+
+Date: Sat, 25 Sep 2021 23:13:45 -0400
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Chip makers to carmakers: time to get out of the semiconductor
+ Stone Age (Fortune)
+
+When it comes to the electronic circuits that power our everyday lives,
+the automobile is simultaneously the world’s most expensive consumer
+good and the one that runs on the cheapest possible semiconductor chips.
+
+Moore’s law of ever-increasing miniaturization seemingly never reached
+the automotive industry. Dozens of chips found in everything from
+electronic brake systems to airbag control units tend to rely on
+obsolete technology often well over a decade old. These employ
+comparatively simple transistors that can be anywhere from 45 nanometers
+to as much as 90 nanometers in size, far too large—and too primitive—to
+be suitable for today’s smartphones.
+
+When the pandemic hit, replacement demand for big-ticket items like new
+cars was pushed back while sales of all kinds of home devices soared.
+When the car market roared back months later, chipmakers had already
+reallocated their capacity.
+
+Now these processors are in short supply, and chipmakers are telling car
+companies to wake up and finally join the 2010s.
+
+https://fortune.com/2021/09/17/chip-makers-carmakers-time-get-out-semiconductor-stone-age/
+
+------------------------------
+
+Date: Mon, 27 Sep 2021 22:30:37 +0800
+From: "積丹尼 Dan Jacobson" <jidanni@jidanni.org>
+Subject: Taiwan system update causes accidental loss of student data
+
+"When the team transferred the files onto the new workstation, it seems to
+have used a wrong setting, causing the data to be deleted instead of being
+stored permanently after a recent system update..."
+
+https://focustaiwan.tw/society/202109250013
+
+------------------------------
+
+Date: Wed, 29 Sep 2021 08:50:40 -0600
+From: "Jonathan Levine" <jonathan.canuck.levine@gmail.com>
+Subject: Portpass app may have exposed hundreds of thousands of users'
+ personal data (CBC)
+
+Alberta's premier, Jason Kenney, has steadfastly refused to implement any
+sort of COVID vaccine "passport" (air bunnies because I find the term
+muddled) out of some kind of misplaced sense of libertarianism.  So, along
+with an explosion of Delta infections -- mostly among the unvaccinated, of
+course -- worthy of the American south, here's what we get:
+
+https://www.cbc.ca/news/canada/calgary/portpass-privacy-breach-1.6191749
+
+The RISK: Where governments abdicate their responsibility to take reasonable
+and necessary measures, incompetent opportunists will surely step into the
+void.
+
+------------------------------
+
+Date: Sat, 2 Oct 2021 11:53:01 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: How close is nuclear fusion power? (Sabine Hossenfelder)
+
+How close is nuclear fusion to break-even? If you trust the headlines we're
+getting close and the international project ITER is going to be the first to
+produce energy from fusion power. But not so fast. Scientists have,
+accidentally or deliberately, come to use a very misleading quantity to
+measure their progress. Unfortunately we're much farther away from
+generating fusion power than the headlines suggest...�
+➔➔https://www.youtube.com/watch?v=LJ4W1g-6JiY
+
+------------------------------
+
+Date: Tue, 28 Sep 2021 16:13:10 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Troll farms, Russia, YouTube, Facebook (PGN-ed)
+
+In 2019, Almost All of Facebook's Top Christian Pages Were Run By
+Foreign Troll Farms
+https://www.relevantmagazine.com/culture/tech-gaming/almost-all-of-facebooks-top-christian-pages-are-run-by-foreign-troll-farms/
+
+Troll farms reached 140 million Americans a month on Facebook before 2020
+election, internal report shows
+https://www.technologyreview.com/2021/09/16/1035851/facebook-troll-farms-report-us-2020-election/
+
+Russia threatens to block YouTube unless it permits vaccine misinformation
+Russia threatens YouTube ban for deleting RT channels
+https://www.bbc.com/news/technology-58737433
+
+Leaked Facebook Docs Depict Kids as 'Untapped' Wealth and other sagas
+https://gizmodo.com/leaked-facebook-docs-depict-kids-as-untapped-wealth-1847763431
+
+CNN restricts access to its Facebook pages in Australia
+https://www.engadget.com/cnn-restricts-access-facebook-pages-australia-083645494.html?src=rss
+
+------------------------------
+
+Date: Sat, 25 Sep 2021 23:12:56 -0400
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Regulators Racing Toward First Major Rules on Cryptocurrency (NYTimes)
+
+Concerned about the potential for a digital-era bank run, the Treasury
+Department is working on an oversight framework for the fast-growing sector.
+
+https://www.nytimes.com/2021/09/23/us/politics/cryptocurrency-regulators-rules.html
+
+How sustainable altcoins aim to challenge Bitcoin's dominance
+
+“It’s becoming pretty clear that Bitcoin is either ignoring or making
+excuses for the environmental issues it’s having,” Jameson, who now heads up
+operations at Flashbots, told Fortune.
+
+Over the past dozen years, the cryptocurrency community has largely hummed
+along to the deafening sounds of mining rigs while Bitcoin’s energy usage
+has ballooned along with its price. The original cryptocurrency now uses
+about the same amount of electricity in a year as Poland, with a carbon
+footprint comparable to that of Oman, according to Digiconomist, which
+tracks Bitcoin’s energy consumption.  [...\
+
+“We will do for sustainability what Robinhood did for equities in that we
+will create access for millions of people who want to put their own
+discretionary investment income into investment opportunities that have a
+market rate of return and that align with their values,” Carver said.
+
+https://fortune.com/2021/09/24/sustainable-altcoins-bitcoin-dominance/
+
+------------------------------
+
+Date: Fri, 1 Oct 2021 12:39:45 +0800
+From: "Richard Stein" <rmstein@ieee.org>
+Subject: Elevator-Pitch Privacy
+
+A friend reports that his father was ascending a retirement community's
+elevator when a mechanical-sounding voice surprisingly intoned that "your
+warranty has expired." After initially thinking this was about the elevator
+warranty, his father remembered hearing those exact words and tone and
+surmised that it was a robocall for a vehicle maintenance extension sales
+pitch. He relates that at least one retirement community employee, who
+reported a similar incident, was chided by supervisors and colleagues who
+didn't believe her claims that the elevator spoke.
+
+Elevators in the U.S. must possess emergency communication devices, often
+telephony-based. Authorized elevator maintenance personnel likely use them
+to perform remote status inquiries. In this case, a robocaller sequence
+reached the elevator's unpublished emergency phone number to promote
+warranty extensions.
+
+An elevator's emergency phone answers automatically and silently to
+establish a two-way communications link and to allow quick audio evaluation
+of conditions after a potential emergency, when occupants may be unable to
+speak. A web search for "elevator telephone products" reveals numerous 3rd
+party offerings. Your lift might be listening, possibly matching voice
+prints for law enforcement, surveillance, or monetizing the conversation.
+
+Risk: Elevator-pitch privacy and potential disruption of true emergency
+communications.
+
+It is unknown whether or not elevator controls, sensors, displays are
+accessible/exploitable through the emergency telephone.  Hopefully not!
+
+------------------------------
+
+Date: Thu, 30 Sep 2021 09:56:01 +0200
+From: "Anthony Thorn" <anthony.thorn@atss.ch>
+Subject: Vulnerability of locked iPhone with a Visa Card set in Transit Mode
+ (BBC)
+
+https://practical_emv.gitlab.io/
+
+Reported by BBC (https://www.bbc.com/news/technology-58719891) and many UK
+sources.
+
+"Apple told the BBC: "We take any threat to users' security very
+seriously. This is a concern with a Visa system but Visa does not believe
+this kind of fraud is likely to take place in the real world given the
+multiple layers of security in place"
+
+The biggest risk applies to stolen iPhones with a Visa Card set in Transit
+Mode.
+
+------------------------------
+
+Date: Mon, 27 Sep 2021 22:22:09 +0800
+From: "積丹尼 Dan Jacobson" <jidanni@jidanni.org>
+Subject: How to have a hard time finding the About page
+
+On https://karunademo.wordpress.com/
+"About ↓"
+Looks like a menu with one item below it, "Testimonials".
+But it is actually a link itself too if you press it.
+That's why people have a hard time finding the About page on sites using
+this theme.
+
+------------------------------
+
+Date: Mon, 27 Sep 2021 13:20:59 +0000
+From: "Charles B Weinstock" <weinstock@sei.cmu.edu>
+Subject: Save the date!  IFIP 60th Anniversary Panel “Autonomous vehicle
+ safety and security: An information processing imperative
+
+Dear colleagues, We invite you to attend a virtual panel session “Autonomous
+vehicle safety and security: An information processing imperative."  The
+session is organized by leaders of the “Intelligent Vehicle Dependability
+and Security” project within IFIP Working Group 10.4 on Dependable Computing
+and Fault Tolerance.  It is one of 10 panel events being hosted by IFIP,
+selected from a pool of proposals to celebrate their 60th anniversary.
+[Graphical user interface, application Description automatically generated]
+
+The panelists are internationally recognized experts in diverse aspects of
+road vehicle autonomy, with a shared interest in the safety and security
+focus of the workshop.  The panel will be held October 18, 2021 from 15:00
+to 16:15 CET (9:00 to 10:15 AM ET).  A description of the panel and the
+registration link are here: https://ifip.org/jubilee60/?r=event6 Short bios
+of the panelists and moderator can be found on the registration page.
+
+IFP60 Panel VI Organizers
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.89
+************************

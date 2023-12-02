@@ -1,0 +1,222 @@
+RISKS-LIST: Risks-Forum Digest  Monday 12 May 2014  Volume 27 : Issue 91
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.91.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+NEWS FLASH: RISKS-27.90 caught by Spam Assassin (PGN)
+"Reading, Writing, Arithmetic, and Lately, Coding" (Matt Richtel via
+  Ed Lazowska, PGN)
+"The FCC has already started destroying the Internet" (Paul Venezia via
+  Gene Wirchenko)
+"Security-vendor snake oil: 7 promises that don't deliver" (Roger A. Grimes
+  via Gene Wirchenko)
+"Oracle's surprise win in Java API case could make it harder for developers"
+  (Paul Krill via Gene Wirchenko)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 12 May 2014 1:09:22 PDT
+From: RISKS List Owner <risko@csl.sri.com>
+Subject: NEWS FLASH: RISKS-27.90 caught by Spam Assassin
+
+Please check your spam bucket if you did not receive RISKS-27.90, assuming
+this issue gets through despite mentioning `large amounts of money'.  Oddly,
+there was NO MENTION of the 2.8-point item, which has to do with
+H*K*L*O*T*T*O, lightly encoded to avoid a repetition.  This of course
+happened (at least) once before, in RISKS-22.20, almost 12 years ago, as
+recorded by Danny Burstein in RISKS-22.21.
+
+This is what caught my copy of the previous issue.
+
+Content analysis details:   (5.3 points, 5.0 required)
+
+ pts rule name              description
+ 0.0 T_URIBL_SEM_FRESH_15   Contains a domain registered less than 15 days
+                            ago
+                            [URIs: estoniaevoting.org]
+-0.0 T_RP_MATCHES_RCVD      Envelope sender domain matches handover relay
+                            domain
+ 2.5 US_DOLLARS_3           BODY: Mentions millions of $ ($NN,NNN,NNN.NN)
+ 0.0 LOTS_OF_MONEY          Huge... sums of money
+ 2.8 [see above]            [see above, lightly encoded]
+
+------------------------------
+
+Date: Sunday May 11, 2014 at 5:25:39 PM EDT
+From: Ed Lazowska <lazowska@cs.washington.edu>
+Subject: "Reading, Writing, Arithmetic, and Lately, Coding" (Matt Richtel)
+
+Matt Richtel, *The New York Times, 11 May 2014 (Ed Lazowska via Dave Farber)
+
+This Sunday's front-page lead article in *The New York Times* is worth
+reading.
+http://www.nytimes.com/2014/05/11/us/reading-writing-arithmetic-and-lately-coding.html
+
+My opinion:
+
+It's excellent exposure for "the movement" of driving computer science into
+K-12.
+
+But it's hugely vocationally focused, and thus misses the key point:
+Computer programming is the hands-on inquiry-based way we teach
+computational thinking, which is an essential 21st-century capability for
+just about everyone.
+
+The incongruity within the article itself is glaring.  Towards the top, it
+says ``It is a stark change for computer science, which for decades was
+treated like a stepchild, equated with trade classes like wood shop.''  It
+then proceeds to focus almost exclusively on a vocational/trade/skill
+rationale for the teaching programming.
+
+The wonderful Hadi Partovi (Code.org) says it just right in his one quote in
+the article: learning our field is ``as essential as learning about gravity
+or molecules, electricity or photosynthesis.'' But people don't learn about
+``gravity or molecules, electricity or photosynthesis'' for vocational
+purposes, but rather because they lead towards `modes of thought' that are
+essential.
+
+This angle gets no coverage elsewhere in the article.  (And Hadi is referred
+to as `she' in the print version, further suggesting a level of
+misunderstanding ...)
+
+It would be great if *The New York Times*, at least, would get this right
+..., but I guess pretty much any press is good press.
+
+------------------------------
+
+Date: Mon, 12 May 2014 8:01:17 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: "Reading, Writing, Arithmetic, and Lately, Coding" (Matt Richtel)
+
+I have long been an advocate of integrating relevant fundamentals of
+discrete mathematics, principles underlying computer technology, and ethics
+of computer use into early education, beginning as early as reasonable in
+K-12 curricula, and at whatever levels of abstraction can be understood at
+each level.  However, it seriously seems overly simplistic to believe that
+teaching a visual coding (programming) language early will by itself result
+in programmers who can understand the pitfalls of later trying to specify
+requirements, programs, and system architectures that can satisfy critical
+needs for trustworthy systems and networks.
+
+Perhaps what is also needed is a graded set of staged versions of the
+highlights from RISKS that can add some reality to the proposition that
+being able to write a simple visual program is only one stepping stone to
+becoming a logical person and perhaps eventually a system architect/software
+engineer in the sense of real engineering.
+
+Computer literacy is essential, but once again we need to dust off the old
+Einstein dictum: Everything should be made as simple as possible, but no
+simpler.  Instilling a better understanding of complexity throughout the
+progression of increasingly higher education seems to have been accomplished
+fairly well in mathematics, but not yet in computer education before
+college.  There is clearly a burden on educating the teachers as well, but
+visual programming may offer an overly simplistic approach unless the
+underlying principles are also visible to them and to the students.  End of
+soapbox.  PGN
+
+------------------------------
+
+Date: Mon, 12 May 2014 12:56:26 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "The FCC has already started destroying the Internet"
+  (Paul Venezia)
+
+Paul Venezia | InfoWorld, 12 May 2014
+The FCC has already started destroying the Internet
+The mere mention of the awful new rules proposed by the FCC already
+is causing fallout
+http://www.infoworld.com/d/data-center/the-fcc-has-already-started-destroying-the-internet-242191
+
+------------------------------
+
+Date: Mon, 12 May 2014 12:51:41 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Security-vendor snake oil: 7 promises that don't deliver"
+  (Roger A. Grimes)
+
+Roger A. Grimes | InfoWorld, 12 May 2014
+Beware bold promises from a multibillion-dollar industry that can't
+http://www.infoworld.com/d/security/security-vendor-snake-oil-7-promises-dont-deliver-242138
+prevent your IT systems from being routinely hacked
+
+------------------------------
+
+Date: Mon, 12 May 2014 12:38:38 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Oracle's surprise win in Java API case could make it harder
+  for developers" (Paul Krill)
+
+Paul Krill | InfoWorld, 9 May 2014
+The ruling that APIs can be copyrighted could make it a lot harder to
+take advantage of APIs with a direct license
+http://www.infoworld.com/t/java-programming/oracles-surprise-win-in-java-api-case-could-make-it-harder-developers-242288
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.91
+************************
+
+--_002_b93682d9932041d8b4c809d0f7f060f8EXHUBVM03campusnclacuk_--

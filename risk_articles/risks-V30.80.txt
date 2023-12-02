@@ -1,0 +1,1247 @@
+precedence: bulk
+Subject: Risks Digest 30.80
+
+RISKS-LIST: Risks-Forum Digest  Saturday 18 August 2018  Volume 30 : Issue 80
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.80>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+BlockChain Security (Rob Slade)
+How Blockchain is Empowering Cyberpunks and Governments Alike (Bloomberg)
+Is a Truly Decentralized Internet Possible?  How It Could Work With
+  Blockchain (MakeUseOf)
+West Virginia to offer mobile blockchain voting app for overseas voters
+  in November election. (WashPost)
+An 11-Year-Old Changed The Results Of Florida's Presidential Vote At A
+  Hacker Convention. Discuss. (BuzzFeed News)
+Can hackers tamper with your vote? Researchers show it's possible
+  in nearly 30 states (McClatchy)
+Hacking the US mid-terms? It's child's play (BBC.com)
+Are Blockchains the answer for secure elections?  Probably not!
+  (Scientific American)
+Russian Military Spy Software is on Hundreds of Thousands of Home Routers
+  (Defense One)
+In-the-wild router exploit sends unwitting users to fake banking site
+  (Ars Technica)
+Not all level-2 edriver assists are equal, IIHS finds after testing.
+  (Ars Technica)
+How China Found CIA Spies Leak (David Choi)
+Blowing spy networks (Foreign Policy)
+Hacking firm sues ex-employee over work on antidote to its spyware
+  (Straits Times)
+A New Pacemaker Hack Puts Malware Directly On the Device (WiReD)
+Foreshadow, which foreshadows the depth of our security problems (PGN)
+God/NSA Mode backdoors (Paul Wagenseil)
+Black Hat: IoT Control Hubs Expose Smart City Systems to Risk (E-Week)
+Netflix launches tool for monitoring AWS credentials. (Techtarget)
+A Botnet of Smart Irrigation Systems Can Deplete a City's Water Supply
+  (HelpNetSecurity)
+Fax machines may be vulnerable to hackers, new report finds (WashPo)
+The wild and wacky world of cyber-insurance (Web Informant)
+Apple Invents an Augmented Reality Windshield that will even Support
+  FaceTime Calls between Different Vehicles (Patently Apple)
+AOL & Verizon (CNET)
+Florida man arrested in alleged multi-state SIM card hacking ring
+  (The Verge)
+"Instagram hack is locking hundreds of users out of their accounts"
+  (Charlie Osborne)
+Child drownings in Germany linked to parents phone fixation (The Guardian)
+Non-disclosure (Rob Slade)
+Ohio Council Member Wants to Implant Microchips in People Awaiting Trial
+  (The Appeal)
+Mozilla wipes 23 Firefox add-ons off the map for tracking user activity
+  (Charlie Osborne)
+Everybody hates their cable company, unless the company is Google,
+  or the city, or a tiny mom-and-pop (Boingboing)
+WPA3: How and why the Wi-Fi standard matters (HPE)
+Google records your location even when you tell it not to (AP)
+A Tweet About Hacking Gets a Google Engineer in Trouble (WiReD)
+When I say "because" my cellphone types it as "cuz" (Dan Jacobson)
+Ahoy!  Software banning ahead! (TorrentFreak)
+Taiwanese cops give malware-laden USB sticks as prizes for security quiz
+  (The Register)
+Computerized Chemical Toxicity Prediction Beats Animal Testing
+  (Scientific American)
+Hacking a Brand New Mac Remotely, Right Out of the Box (WiReD)
+Yet another squirrel incident (vtdigger)
+What3words: putting geographical addresses behind a closed API
+  (Dan Jacobson)
+The Flourishing Business of Fake YouTube Views. (TheNewYorkTimes)
+Machine Learning Can Identify the Authors of Anonymous Code (WiReD)
+"Apple macOS vulnerability paves the way for system compromise with a 
+  single click" (Charlie Osborne)
+Hey you kids!  Get off my LAWN! (Rob Slade)
+Police body cam problems (Rob Slade)
+Hackers can infiltrate police body cameras to tamper with evidence
+  (Charlie Osborne)
+All that's old is new again -- was: How a bunch of lava lamps protect us
+  from hackers (Jeremy Epstein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 17 Aug 2018 10:42:22 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: BlockChain Security
+
+The ISC2 "community" has had a bunch of queries about blockchain in recent
+months.  One person started a fairly active thread asking for a kind of a
+cheat sheet for blockchain security.
+
+The real issue is that, however it started out, blockchain has now become
+kind of a marketing term: it means whatever the vendor selling it to you
+thinks it means.  (Which is not necessarily what you need it to mean.)
+Essentially, by now it's pretty meaningless.
+
+At base, it is an amalgamation of two ideas.  Digital signing of
+transactions, and a distributed database of those transactions and
+signatures.
+
+Beyond that, we have implementation details.  And those, as always, are
+where the problems arise.
+
+Are you really serious about the signatures?  Are you doing confidentiality,
+or just the authentication?  How serious is your signature algorithm?  What
+about key management?  Have you got all the bits you need for a full PKI?
+Are you using a hierarchical model or web of trust?
+
+And these are only the beginning of the questions.  On the signature side.
+
+How are you going to distribute the transaction ledger?  Is it going to be
+full everywhere?  Is it going to be full *any*where?  How can it be accessed
+and checked?  Will a complete examination of the register identify an
+individual even if a single transaction doesn't?
+
+So, ultimately, the answer to your question is "no."  There isn't any
+nugget.  There isn't any cheat sheet.  The hygiene depends upon what you
+build or buy.
+
+And that's why BLOCKCHAIN IS NOT THE ANSWER.
+
+(Blockchain isn't even the question.  Even if the answer *is* "no.")
+
+(Sorry.  As the dictionary guy I always get kind of bitter when a term that
+*might* have had a meaning or use gets abused to the point of being
+meaningless ...)
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 00:16:16 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How Blockchain is Empowering Cyberpunks and Governments Alike
+  (Bloomberg Government)
+
+Behlendorf proposed voting as a promising use case for blockchain.  aIt
+could be used to prevent voters' names from being stricken from the record
+unfairly while ensuring that only those eligible to vote are allowed to, he
+said.  Further, blockchains could be used to validate that vote counts match
+at the precinct, state, and national levels.
+
+http://about.bgov.com/blog/blockchain-empowering-cyberpunks-governments-alike/
+
+"prevent voters' names from being stricken from the record unfairly while
+ensuring that only those eligible to vote are allowed to" because ... magic?
+
+------------------------------
+
+Date: Thu, 9 Aug 2018 17:36:31 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Is a Truly Decentralized Internet Possible?
+  How It Could Work With Blockchain (MakeUseOf)
+
+http://www.makeuseof.com/tag/decentralized-internet-blockchain/
+Right; blockchain fixes EVERYTHING.
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 02:38:47 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: West Virginia to offer mobile blockchain voting app for overseas
+  voters in November election. (WashPost)
+
+http://www.washingtonpost.com/technology/2018/08/10/west-virginia-pilots-mobile-blockchain-voting-app-overseas-voters-november-election/
+
+------------------------------
+
+Date: Wed, 15 Aug 2018 15:52:07 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: An 11-Year-Old Changed The Results Of Florida's Presidential
+  Vote At A Hacker Convention. Discuss. (BuzzFeed News)
+
+Veteran hackers have tried for years to get the world to notice flaws in
+voting machines. Now that they've got it, they have to wrestle with scaring
+people away from voting.
+
+http://www.buzzfeednews.com/article/kevincollier/voting-hackers-defcon-failures-manufacturers-ess
+
+------------------------------
+
+Date: Thu, Aug 16, 2018 at 6:00 AM
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Can hackers tamper with your vote? Researchers show it's possible
+  in nearly 30 states (McClatchy)
+
+  [Note:  This item comes from reader Randall Head.  DLH]
+
+Tim Johnson, Greg Gordon and Christine Condon, McClatchy, 14 Aug 2018
+Can hackers tamper with your vote? Researchers show it's possible in nearly
+30 states
+
+http://www.mcclatchydc.com/news/nation-world/national/national-security/
+
+Las Vegas -- Top computer researchers gave a startling presentation recently
+about how to intercept and switch votes on emailed ballots, but officials in
+the 30 or so states said the ease with which votes could be changed wouldn't
+alter their plans to continue offering electronic voting in some fashion.
+
+Two states -- Washington and Alaska -- have ended their statewide online
+voting systems.
+
+The developments, amid mounting fears that Russians or others will try to
+hack the 2018 midterm elections, could heighten pressure on officials on
+other U.S. states to reconsider their commitment to online voting despite
+repeated admonitions from cybersecurity experts.
+
+But a McClatchy survey of election officials in a number of states that
+permit military and overseas voters to send in ballots by email or fax --
+including Alabama, Kansas, Missouri, North Carolina, South Carolina and
+Texas -- produced no immediate signs that any will budge on the issue. Some
+chief election officers are handcuffed from making changes, even in the
+name of security, by state laws permitting email and fax voting.
+
+At the world's largest and longest-running hacker convention, two
+researchers from a Portland, Ore., nonpartisan group that studies election
+security showed how, in about two hours, they could set up a sham server
+and program it to intercept and alter ballots attached to emails.
+
+``Ballots sent over email are not secure,'' said Lyell Read, one of the
+researchers from the group Free and Fair. ``As long as people have a chance
+to vote another way, that's probably a good decision.''
+
+Read and Daniel M. Zimmerman, who earned credentials as a computer
+scientist at CalTech, said the hacking at the annual DefCon conference in
+Las Vegas required nothing more than commonly available programming tools.
+
+Read said he set up an `impostor server' to mimic a real one that would
+normally route emails containing attached ballots. On the rogue server, he
+inserted 30 or so lines of computer code, known as Bash shell script, to
+alter voters' choices on ballots attached to emails in transit and to
+replace them with Read's preferred candidates.
+
+Among those attending the conference were more than 20 officials from the
+U.S. Department of Homeland Security. Several of them observed the email
+vote switcheroo, said a department official who spoke on condition of
+anonymity.
+
+DHS officials have stepped up their consultations with states about election
+security since Russian operatives hacked a voting vendor in 2016 and tried
+through so-called spearphishing attacks to penetrate 21 state voter
+registration systems, succeeding only in Illinois. The agency rarely
+discusses its advice to state and local officials, whom the Constitution
+gives nearly total authority over the nation's elections.
+
+What does your state allow? [...]
+
+------------------------------
+
+Date: Sun, 12 Aug 2018 12:17:25 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Hacking the US mid-terms? It's child's play (BBC.com)
+
+http://www.bbc.com/news/technology-45154903
+
+'"Bianca Lewis, 11, has many hobbies. She likes Barbie, video games,
+fencing, singing... and hacking the infrastructure behind the world's most
+powerful democracy.
+
+"I'm going to try and change the votes for Donald Trump," she tells me.
+"I'm going to try to give him less votes. Maybe even delete him off of the
+whole thing."  Fortunately for the President, Bianca is attacking a replica
+website, not the real deal.  "She's taking part in a competition organised
+by R00tz Asylum, a non-profit organisation that promotes "hacking for good".
+Its aim is to send out a dire warning: the voting systems that will be used
+across America for the mid-term vote in November are, in many cases, so
+insecure a young child can learn to hack them with just a few minute's
+coaching.
+
+To quote The Who from *Summertime Blues*: ``I'd like to help you, son, but
+you're too young to vote.''  Script-kiddies to the rescue! Teaching the next
+generation of hackers, via simulation, to secure voting platform integrity.
+Just hope their ethics mature faster than their typing skills.
+
+------------------------------
+
+Date: Thu, 16 Aug 2018 9:57:33 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Are Blockchains the answer for secure elections?  Probably not!
+  (Scientific American)
+
+http://www.scientificamerican.com/article/are-blockchains-the-answer-for-secure-elections-probably-not/
+
+  [To paraphrase an earlier quote about cryptography variously attributed to
+  Roger Needham, Butler Lampson, and/or Jim Morris,
+
+    If you think blockchains are the answer to your problem, you don't
+    understand blockchains, and you don't understand your problem.
+
+  PGN]
+
+------------------------------
+
+Date: Wed, 15 Aug 2018 15:51:19 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Russian Military Spy Software is on Hundreds of Thousands of
+  Home Routers (Defense One)
+
+In May, the Justice Department told Americans to reboot their routers.  But
+there's more to do  -- and NSA says it's up to device makers and
+the public.
+
+LAS VEGAS -- The Russian military is inside hundreds of thousands of routers
+owned by Americans and others around the world, a top U.S.  cybersecurity
+official said on Friday. The presence of Russian malware on the routers,
+first revealed in May, could enable the Kremlin to steal individuals'
+data or enlist their devices in a massive attack intended to disrupt
+global economic activity or target institutions.
+
+On May 27, Justice Department officials asked Americans to reboot their
+routers
+<http://www.nytimes.com/2018/05/27/technology/router-fbi-reboot-malware.html>
+to stop the attack. Afterward, the world largely forgot about it.  That's a
+mistake, said Rob Joyce, senior advisor to the director of the National
+Security Agency and the former White House cybersecurity coordinator.
+
+``The Russian malware is still there,'' said Joyce.
+
+http://www.defenseone.com/technology/2018/08/russian-military-spy-software-hundreds-thousands-home-routers/150474/
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Fri, 10 Aug 2018 21:41:49 -0400
+Subject: In-the-wild router exploit sends unwitting users to fake banking site
+  (Ars Technica)
+
+http://arstechnica.com/information-technology/2018/08/in-the-wild-router-exploit-sends-unwitting-users-to-fake-banking-site/
+
+------------------------------
+
+Date: Fri, 10 Aug 2018 21:46:06 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Not all level-2 driver assists are equal, IIHS finds after testing.
+  (Ars Technica)
+
+http://arstechnica.com/cars/2018/08/not-all-level-2-driver-assists-are-equal-iihs-finds-after-testing/
+
+------------------------------
+
+Date: Thu, 16 Aug 2018 10:22:13 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: How China Found CIA Spies Leak (David Choi)
+
+The CIA falsely believed it was `invincible' in China -- here's how its
+spies were reportedly discovered in one of the biggest blows to the agency.
+
+Business Insider via https://apple.news/AHrCHw8PmRPOQPezQrOSmhg
+
+A new Foreign Policy report cites sources detailing how the communication
+system between the CIA's spies and handlers in China nearly a decade ago was
+compromised.  The vulnerability contributed to the deaths of at least 30
+spies, the sources said.  This internet-based system, imported from
+operations in the Middle East, was apparently brought to China under the
+assumption that it could not be breached.  But, according to the report, the
+program actually had telltale links to the CIA that would have allowed China
+to work out what was going on.  A firewall used by the CIA to communicate
+with its spies in China compromised their identities and contributed to
+their executions by the Chinese government, several current and former
+intelligence officials told Foreign Policy magazine in a report published
+Wednesday.
+
+In a two-year period starting in 2010, Chinese officials began accurately
+identifying spies working for the US.  Chinese authorities rounded up the
+suspects and executed or imprisoned them before their handlers were able to
+determine what was going on.  "You could tell the Chinese weren't guessing,"
+one of the US officials said in the report. "The Ministry of State Security
+were always pulling in the right people."  "When things started going bad,
+they went bad fast."
+
+US intelligence officials cited in the report are now placing the lion's
+share of the blame on what one official called a "f----- up" communications
+system used between spies and their handlers.
+
+This Internet-based system, brought over from operations in the Middle East,
+was taken to China under the assumption that it could not be breached and
+made the CIA "invincible," Foreign Policy reported.  "It migrated to
+countries with sophisticated counterintelligence operations, like China," an
+official said.  "The attitude was that we've got this, we're untouchable."
+
+Intelligence officers and their sources were able to communicate with each
+other using ordinary laptops or desktop computers connected to the Internet,
+marking a stark departure from some of the more traditional methods of
+covert communication.
+
+------------------------------
+
+Date: Thu, 16 Aug 2018 11:58:21 +0900
+From: "Dave Farber" <farber@gmail.com>
+Subject: Blowing spy networks (Foreign Policy)
+
+   [From: "Jim O'Donnell" <eugippius@gmail.com>]
+
+http://foreignpolicy.com/2018/08/15/botched-cia-communications-system-helped-blow-cover-chinese-agents-intelligence/
+
+------------------------------
+
+Date: Wed, 15 Aug 2018 10:38:59 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Hacking firm sues ex-employee over work on antidote to its spyware
+  (Straits Times)
+
+http://www.straitstimes.com/singapore/courts-crime/hacking-firm-sues-ex-employee-over-work-on-antidote-to-its-spyware
+
+Insider risk.
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 12:38:24 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A New Pacemaker Hack Puts Malware Directly On the Device (WiReD)
+
+The first pacemaker hacks emerged about a decade ago. But the latest
+variation on the terrifying theme depends not on manipulating radio
+commands, as many previous attacks have, but on malware installed directly
+on an implanted pacemaker.
+
+For nearly two years, researchers Billy Rios of the security firm Whitescope
+and Jonathan Butts of QED Secure Solutions have gone back and forth with
+pacemaker manufacturer Medtronic, which makes Carelink 2090 pacemaker
+programmers and other relevant equipment that the researchers say contain
+potentially life-threatening vulnerabilities. The Department of Homeland
+Security and the Food and Drug Administration have gotten involved as well.
+And while Medtronic has remediated some of the issues the researchers
+discovered, Rios and Butts say that too much remains unresolved, and that
+the risk remains very real for pacemaker patients.  The pair will walk
+through their findings Thursday at the Black Hat security conference.
+
+http://www.wired.com/story/pacemaker-hack-malware-black-hat
+
+  [Monty Solomon noted these related items:
+    Hack causes pacemakers to deliver life-threatening shocks.
+http://arstechnica.com/information-technology/2018/08/lack-of-encryption-makes-hacks-on-life-saving-pacemakers-shockingly-easy/
+    Heart alert: Pacemakers can be hacked ...,  Fox News, 21 Feb 2018
+http://www.foxnews.com/health/2018/02/21/heart-alert-pacemakers-can-be-hacked-new-research-shows.html
+  Monty also reminded us of this old item from the WSJ, 20 Oct 2017:
+    Some doctors are wary of software patch that prevents unauthorized
+    access to Internet-connected devices, worried about risk of malfunction
+http://www.wsj.com/articles/hacking-is-a-risk-for-pacemakers-so-is-the-fix-1508491802
+    PGN]
+
+------------------------------
+
+Date: Wed, 15 Aug 2018 16:03:18 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Foreshadow, which foreshadows the depth of our security problems
+
+With so many known vulnerabilities, and continually new ones being
+discovered, it is becoming ever clearer that defenses are being overwhelmed.
+This is illustrated by the reality that the Common Vulnerability Enumeration
+(mitre.cve) now includes more than 105,000 vulnerabilities -- almost 11,000
+more than at the beginning of 2018.
+
+Here's a really nasty family of new attacks.  They extend an international
+team of authors' earlier work on the Foreshadow/L1 Terminal attacks on SGX
+(USENIX Security 2018).  Intel subsequently discovered even more
+vulnerabilities in SGX, which are being called Foreshadow-NG.  The new paper
+
+  Ofir Weisse, Jo Van Bulck, Marina Minkin, Daniel Genkin, Baris Kasikci,
+  Frank Piessens, Mark Silberstein, Raoul Strackx, Thomas Wenisch, Yuval Yarom
+  Foreshadow-NG: Breaking the Virtual Memory Abstraction with Transient
+  Out-of-Order Execution, revised 14 August 2018.
+  https://twitter.com/yuvalyarom/status/1029413004000088066?s=11
+
+has attacks that ``completely bypass the virtual memory abstraction by
+directly exposing [L1] cached physical memory contents to unprivileged
+applications and guest virtual machines.''  These attacks to be very
+serious, and may extend far beyond SGX.
+
+------------------------------
+
+Date: Tue, 14 Aug 2018 07:55:39 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: God/NSA Mode backdoors (Paul Wagenseil)
+
+Why do we even bother encrypting, when our chips are so corrupt?
+
+I believe that these VIA chips ended up in some military hardware, and
+possibly in some ATM machines.
+
+This article strengthens my belief that *all* of our current chips have
+hidden backdoors thanks to Uncle Sam.  No wonder China wants to design &
+build their own chips!
+
+http://www.tomshardware.com/news/x86-hidden-god-mode%2C37582.html
+
+Paul Wagenseil August 9, 2018 at 5:06 PM
+Hacker Finds Hidden 'God Mode' on Old x86 CPUs
+
+LAS VEGAS -- Some x86 CPUs have hidden backdoors that let you seize root by
+sending a command to an undocumented RISC core that manages the main CPU,
+security researcher Christopher Domas told the Black Hat conference here
+Thursday (Aug. 9).
+
+The command -- ".byte 0x0f, 0x3f" in Linux -- "isn't supposed to exist,
+doesn't have a name, and gives you root right away," Domas said, adding that
+he calls it "God Mode."  The backdoor completely breaks the protection-ring
+model of operating-system security, in which the OS kernel runs in ring 0,
+device drivers run in rings 1 and 2, and user applications and interfaces
+("userland") run in ring 3, furthest from the kernel and with the least
+privileges. To put it simply, Domas' God Mode takes you from the outermost
+to the innermost ring in four bytes.  "We have direct ring 3 to ring 0
+hardware privilege escalation," Domas said. "This has never been done."
+
+That's because of the hidden RISC chip, which lives so far down on the bare
+metal that Domas half-joked that it ought to be thought of as a new, deeper
+ring of privilege, following the theory that hypervisors and chip-management
+systems can be considered ring -1 or ring -2.  "This is really ring -4," he
+said. "It's a secret, co-located core buried alongside the x86 chip. It has
+unrestricted access to the x86."
+
+The good news is that, as far as Domas knows, this backdoor exists only on
+VIA C3 Nehemiah chips made in 2003 and used in embedded systems and thin
+clients. The bad news is that it's entirely possible that such hidden
+backdoors exist on many other chipsets.  "These black boxes that we're
+trusting are things that we have no way to look into," he said. "These
+backdoors probably exist elsewhere."
+
+Domas discovered the backdoor, which exists on VIA C3 Nehemiah chips made in
+2003, by combing through filed patents. He found one -- US8341419 -- that
+mentioned jumping from ring 3 to ring 0 and protecting the machine from
+exploits of model-specific registers (MSRs), manufacturer-created commands
+that are often limited to certain chipsets.  Domas followed the "trail of
+breadcrumbs," as he put it, from one patent to another and figured out that
+certain VIA chipsets were covered by the patents. Then he collected many old
+VIA C3 machines and spent weeks fuzzing code.
+
+He even built a testing rig consisting of seven Nehemiah-based thin clients
+hooked up to a power relay that would power-cycle the machines every couple
+of minutes, because his fuzzing attempts would usually crash the
+systems. After three weeks, he had 15 GB of log data -- and the instructions
+to flip on the backdoor in the hidden RISC chip.  "Fortunately, we still
+need ring 0 access to start the launch process, right?" Domas
+asked. "No. Some of the VIA C3 x86 processors have God Mode enabled by
+default. You can reach it from userland. Antivirus software, ASLR and all
+the other security mitigations are useless."
+
+Domas has put all his research up on his GitHub page, including tools to
+check whether your VIA C3 CPU might have an undocumented coprocessor and to
+disable the coprocessor by default:
+  http://github.com/xoreaxeaxeax/rosenbridge
+
+------------------------------
+
+Date: Fri, 10 Aug 2018 17:16:57 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Black Hat: IoT Control Hubs Expose Smart City Systems to Risk
+  (E-Week)
+
+LAS VEGAS --A pair of researchers from IBM and Threatcare have discovered 17
+vulnerabilities across three different manufacturers and four different
+smart city products and will detail their findings at Black Hat USA here on
+Aug. 9.
+
+In a video interview with eWEEK, security researcher Daniel Crowley from IBM
+X-Force Red and security researcher Jennifer Savage from Threatcare outlined
+the risks and provided a physical demonstration of what the impact could
+be. The demonstration was done with a miniature dam that was connected to a
+vulnerable device. The researchers showed how they were able to take control
+of the vulnerable hub, tricking the attached sensors, leading to a flood.
+
+http://www.eweek.com/security/researchers-reveal-smart-city-system-flaws-at-black-hat
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 00:57:53 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Netflix launches tool for monitoring AWS credentials. (Techtarget)
+
+At Black Hat 2018, a Netflix security engineer introduced a new open source
+tool designed to more effectively monitor AWS credentials in large cloud
+environments, like Netflix's.
+
+http://searchcloudsecurity.techtarget.com/news/252446622/Netflix-launches-tool-for-monitoring-AWS-credentials
+
+------------------------------
+
+Date: Wed, 15 Aug 2018 16:24:02 -0400
+From: =?ISO-8859-1?Q?Jos=E9_Mar=EDa_Mateos?= <chema@rinzewind.org>
+Subject: A Botnet of Smart Irrigation Systems Can Deplete a City's Water Supply
+  (HelpNetSecurity)
+
+http://www.helpnetsecurity.com/2018/08/09/botnet-smart-irrigation-systems/
+
+Summary from AMC TechNews:
+
+Scientists at Ben-Gurion University of the Negev (BGU) in Israel say urban
+water services are vulnerable to a botnet attack on smart irrigation systems
+that water concurrently. The team analyzed three popular commercial smart
+irrigation systems and found they contained weaknesses susceptible to botnet
+hijacking. The attack strategy does not require infecting a water service's
+physical cyber systems, as a bot running on a compromised device can
+identify a smart irrigation system connected to its local access network in
+less than 15 minutes, and switch on watering via each system using an series
+of session hijacking and replay attacks.
+
+------------------------------
+
+Date: Tue, 14 Aug 2018 21:25:50 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Fax machines may be vulnerable to hackers, new report finds (WashPo)
+
+http://www.washingtonpost.com/technology/fax-machines-may-be-vulnerable-to-hackers-new-report-finds/2018/08/13/4976de9b-836c-4e94-ad95-12f40f1e64e4_story.html
+
+"Hackers can gain access to a network using the phone line connected to a
+fax machine, which is often connected to the rest of an organization's
+network. By sending an image file that contains malicious software over the
+phone line, hackers can take control of the device and access the rest of
+the network. The researchers were able to do this using only a fax number,
+which is often widely distributed by organizations on business cards and
+websites."
+
+FaxRAT? RATFax?
+
+------------------------------
+
+Date: Wed, 8 Aug 2018 11:46:43 -0500
+From: David Strom via WebInformant <webinformant@list.webinformant.tv>
+Subject: The wild and wacky world of cyber-insurance (Web Informant)
+
+Web Informant, Aug 8 2018: The wild and wacky world of cyber insurance
+(+podcast) [via Gabe Goldberg]
+
+If you have ever tried to obtain property insurance, you know you have a
+"project" cut out for you. Figuring out what each insurer's policies cover
+-- and don't cover -- is a chore. When you finally get to the point where
+you can compare premiums, many of you just want the pain to end quickly and
+probably pick a carrier more out of expediency than economy.
+
+Now multiple this by two factors: first, you want to get business insurance,
+and then you want to get business cyber insurance. If you are a big company,
+you probably have specialists that can handle these tasks -- maybe. The
+problem is that insurance specialists don't necessarily understand the
+inherent cyber risks, and IT folks don't know how to talk to the insurance
+pros. And to make matters more complex, the risks are evolving quickly as
+criminals get better at plying their trade.
+
+My first job was working after college in a key punch department of a large
+insurance company in NYC. We filled out forms for the keypunch operators to
+cut the cards that were used to program our mainframe computers. It was
+strictly a clerical position, and it motivated me to go back and get a
+graduate degree. I had no idea what the larger context of the company was,
+or anything really about insurance. I was just writing numbers on a pad of
+paper.
+
+Years later, I worked in the nascent IT department of another large
+insurance company in downtown LA. This was back in the mid 1980s. We didn't
+know from cyber insurance back then: indeed, we didn't even have many PCs in
+the building. At least not when I started: my job was to join an end-user
+support department that was bringing in PCs by the truckload.
+
+So those days are thankfully behind me, and behind most of us too. Cyber
+insurance is becoming a bigger market, mainly because companies want to
+protect themselves against any financial losses that stem from hacking or
+data leaks. So far, this kind of insurance has been met with mixed
+success. Here is one recent story about a Virginia bank that was hit with
+two different attacks
+<http://krebsonsecurity.com/2018/07/hackers-breached-virginia-bank-twice-in-eight-months-stole-2-4m/>
+They had cyber insurance, and filed a claim, and ended up in a court battle
+with their insurer who (surprise!) didn't want to pay out, claiming some
+fine print on the policy.
+
+Sadly, that is where things stand for the present day. Cyber insurance is
+still a very immature market, and there are many insurers who frankly
+shouldn't be writing policies because they don't know what they are doing,
+what the potential risks are, and how to evaluate their customers. If you
+live in a neighborhood with a high rate of car thefts, your auto premiums
+are going to be higher than a safer neighborhood. But there is no single
+metric -- or even a set of metrics -- that can be used to evaluate the cyber
+risk context.
+
+I talk about these and other issues with two cyber insurance gurus on David
+Senf's 40 min. podcast *Threat Actions This Week* here
+<http://www.youtube.com/watch%3Fv%3DP0huxAPWWzU%26feature%3Dyoutu.be> part
+of a panel with Greg Markell of Ridge Canada
+<http://www.linkedin.com/in/gregmarkell/> Guidewire
+<http://www.linkedin.com/in/vgosrani/ with these issues, you might want to
+give it a listen.
+
+Comments always welcome here:
+http://blog.strom.com/wp/%3Fp%3D6648
+
+------------------------------
+
+Date: Wed, 8 Aug 2018 16:59:46 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Apple Invents an Augmented Reality Windshield that will even Support
+  FaceTime Calls between Different Vehicles (Patently Apple)
+
+Over the last eight months a wide range of patent applications
+http://www.patentlyapple.com/patently-apple/autonomous-vehicle-technology/
+covering autonomous vehicles have come to light, with many of them
+discovered in Europe. In that time frame we also learned that Apple is
+working with Volkswagen
+http//www.patentlyapple.com/patently-apple/2018/05/apples-autonomous-shuttle-service-will-use-volkswagen-vans.html
+on an autonomous vehicle. Earlier today Patently Apple discovered yet
+another European Patent application from Apple that was published on
+Wednesday August 1, 2018.
+
+The detailed patent covers a future augmented reality windshield system
+which also is known as a Heads up Display. Apple describes every aspect of
+their AR display system in painstaking detail. It even describes occupants
+of an autonomous vehicle having a FaceTime session between different
+vehicles. The system will even be able to detect and make adjustments so
+that a panicky occupant could remain calmer in the autonomous vehicle.
+
+http://www.patentlyapple.com/patently-apple/2018/08/apple-invents-an-augmented-reality-windshield-that-will-even-support-facetime-calls-between-different-vehicles.html
+
+"detect and make adjustments so that a panicky occupant could remain calmer"
+-- what?
+
+------------------------------
+
+Date: Wed, 15 Aug 2018 10:49:39 -0400
+From: Ken Knowlton <kcknowlton@aol.com>
+Subject: AOL & Verizon (CNET)
+
+When we [who??] logged in to a Yahoo Mail account Friday, we were greeted
+with the privacy policy you see below (Jason Kint had pointed to the policy
+earlier on Twitter). In it, Oath notes that it has the right to read your
+emails, instant messages, posts, photos and even look at your message
+attachments. And it might share that data with parent company Verizon, too.
+
+from
+http://www.cnet.com/news/yahoo-aol-oath-privacy-policy-verizon-emails-messages/
+
+  Oath, the media division of Verizon that runs both AOL and Yahoo, is
+  finally unifying the privacy policy of its two giant legacy Internet
+  brands. That means an updated set of privacy terms and policies for
+  hundreds of millions of users. And in an online world where privacy
+  expectations have been radically reshaped in light of Facebook's Cambridge
+  Analytica mess, it's more important than ever to read the fine print on
+  those splash screens.
+
+------------------------------
+
+Date: Wed, 15 Aug 2018 15:53:22 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Florida man arrested in alleged multi-state SIM card hacking ring
+  (The Verge)
+
+SIM card hacking ring, the latest in a series of similar incidents.
+
+According to court records first unearthed this week by reporter Brian
+Krebs, law enforcement learned of the plot when a mother in Michigan
+overheard her son pretending to be an AT&T employee and called
+investigators. Authorities turned up, searched the son's room and
+his computer, and discovered files with a list of names and phone numbers,
+along with SIM cards and cell phones.
+
+After more searching, officers say they discovered SIM cards that led to
+seven victims in seven states, and who said their identities were stolen and
+cryptocurrency accounts pilfered of hundreds of thousands of dollars.
+Officers interviewed the son, who allegedly said about eight others,
+including a man named Ricky Handschumacher, were involved.  According to the
+officers' account, Handschumacher discussed the fraud scheme in Discord
+conversations.
+
+http://www.theverge.com/2018/8/11/17671698/sim-card-fraud-arrest-florida-cyber-fraud
+
+------------------------------
+
+Date: Wed, 15 Aug 2018 15:53:32 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Instagram hack is locking hundreds of users out of their accounts"
+  (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 15 Aug 2018
+Recovery options are being changed to .ru addresses by an unknown threat actor.
+http://www.zdnet.com/article/instagram-hack-is-locking-hundreds-of-users-out-of-their-accounts/
+
+------------------------------
+
+Date: Thu, 16 Aug 2018 05:38:50 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Child drownings in Germany linked to parents phone fixation
+  (The Guardian)
+
+http://www.theguardian.com/lifeandstyle/2018/aug/15/parents-fixated-by-phones-linked-to-child-drownings-in-germany
+
+  German lifeguards have issued a warning that a growing number of child
+  drownings this summer are linked to their parents' obsession
+  with mobile phones.
+
+  More than 300 people have drowned in Germany this year, with hardly a day
+  passing during the current heatwave when a swimmer has not died.
+
+  The German Lifeguard Association (DLRG) -- the biggest organisation of its
+  kind in the world, providing 40,000 volunteer lifeguards at German
+  beaches, lakes and the coast -- has made a direct connection between
+  children getting into difficulty in the water and parents being too busy
+  on their mobile phones to notice.
+
+  ``Too few parents and grandparents are heeding the advice: when
+  your children and grandchildren are in the water, put your smartphone
+  away,'' Achim Wiese, the DLRG's spokesman, said.
+
+    [Also noted by Jose Maria Mateos.  PGN]
+
+------------------------------
+
+Date: Thu, 16 Aug 2018 11:09:10 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Non-disclosure
+
+Regardless of political content, this article does make some really
+interesting points about NDAs and how to write them.
+
+http://www.npr.org/2018/08/15/638628071/fact-check-can-trump-legally-keep-former-staff-quiet-probably-not or http://is.gd/eJ60G3
+
+I recall one time that I was doing some recruiting (among other things) for
+one outfit.  They were in a really specific space, and needed people with
+really focused skills.  I knew the people that they needed, but I couldn't
+get anyone to sign up with them because they had created this really
+draconian NDA, and people who had spent 20 years developing niche skill sets
+would have been prevented from ever working with anyone else under those
+terms.  (I can tell you this story because the NDA they had me sign only
+said that I couldn't tell anyone what I learned from them.  Since I had been
+researching their space for ten years I went in knowing what their
+"proprietary" tech had to be.  The only thing I learned from them was that
+their senior management staff were a bunch of idiots.)
+
+------------------------------
+
+Date: Thu, 16 Aug 2018 23:56:26 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Ohio Council Member Wants to Implant Microchips in People Awaiting
+  Trial (The Appeal)
+
+http://theappeal.org/ohio-council-member-implant-gps-microchips-in-people-electronic-monitoring/
+
+------------------------------
+
+Date: Fri, 17 Aug 2018 11:12:03 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Mozilla wipes 23 Firefox add-ons off the map for tracking user
+  activity (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 17 Aug 2018
+
+The purge was prompted by the exposure of the Web Security add-on's
+data-slurping habits.
+http://www.zdnet.com/article/mozilla-wipes-23-firefox-add-ons-off-the-map-for-tracking-user-activity/
+
+[selected text]
+
+Mozilla has eradicated 23 Firefox add-ons for monitoring user browsing
+habits and covertly sending data to remote servers.
+
+However, after engineers inspected the extensions, it has emerged that
+multiple add-ons acting under different names all have the "same code,"
+according to Villalobos.
+
+"Further inspection reveals they may all be the same person/group," the
+engineer said.
+
+------------------------------
+
+Date: Thu, 9 Aug 2018 08:06:02 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Everybody hates their cable company, unless the company is Google,
+  or the city, or a tiny mom-and-pop (Boingboing)
+
+NNSquad
+http://boingboing.net/2018/08/09/party-like-its-1982.html
+
+  But in case you're thinking that this is just endemic to operating an ISP
+  or cable operator, that it's just impossible to do so in a way that
+  pleases your customers, know this: there are several ISPs that people
+  love! Who are these mysterious entities that somehow manage to do what
+  multi-billion-dollar, highly concentrated, neutracidal telcoms operators
+  have only gotten worse at with each passing year?
+
+  * Google (who want you to use the Internet as much as possible).
+  * Cities (municipal Internet is the one thing that federal and state
+    governments are sure could never work, which is why Trump's FCC and red
+    state legislatures have done everything they can to kill it)
+  * Small, mom-and-pop local ISPs (which the FTC and FCC have consistently
+    allowed the big carriers to buy and destroy)
+
+------------------------------
+
+Date: Thu, 9 Aug 2018 17:55:43 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: WPA3: How and why the Wi-Fi standard matters (HPE)
+
+WPA2 has given us 14 years of secure wireless networking. WPA3 will fix a
+number of big problems in WPA2 and make strong security the default
+condition.
+
+Wi-Fi Protected Access II, or WPA2, is the standard behind wireless security
+networking. It protects users everywhere, from coffee shops to college
+campuses to corporate headquarters. WPA2 may be the most widespread security
+standard in the world that ordinary people encounter.
+
+With all that's gone on since 2004, when the specification behind WPA2 was
+adopted, it must be considered a successful standard. But WPA2 does have
+some important limitations. A new version, WPA3, is a significant
+improvement. Products to use it are being built now, and certification for
+them will begin in the third quarter of 2018.
+
+http://www.hpe.com/us/en/insights/articles/wpa3-how-and-why-the-wi-fi-standard-matters-1808.html
+
+------------------------------
+
+Date: Tue, 14 Aug 2018 17:18:12 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Google records your location even when you tell it not to (AP)
+
+Associated Press, 13 Aug 2018
+Some services on Android and iPhone automatically stores your movements even
+after you pause the 'location history' setting
+http://www.theguardian.com/technology/2018/aug/13/google-location-tracking-android-iphone-mobile
+
+selected text:
+
+Google wants to know where you go so badly that it records your movements
+even when you explicitly tell it not to.
+
+For the most part, Google is upfront about asking permission to use your
+location information. An app like Google Maps will remind you to allow
+access to location if you use it for navigating. If you agree to let it
+record your location over time, Google Maps will display that history for
+you in a "timeline" that maps out your daily movements.
+
+Storing your minute-by-minute travels carries privacy risks and has been
+used by police to determine the location of suspects. So the company will
+let you "pause" a setting called "location history".
+
+Google says that will prevent the company from remembering where you've
+been. Google's support page on the subject states: "You can turn off
+Location History at any time. With Location History off, the places you go
+are no longer stored."
+
+That isn't true. Even with "location history" paused, some Google apps
+automatically store time-stamped location data without asking.
+
+------------------------------
+
+Date: Fri, 10 Aug 2018 15:39:25 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: A Tweet About Hacking Gets a Google Engineer in Trouble (WiReD)
+
+[RIDICULOUS!] via NNSquad
+http://www.wired.com/story/defcon-tweet-about-hacking-gets-engineer-trouble/
+
+  MATT LINTON, A senior software engineer at Google, says he was asked to
+  leave Caesars Palace hotel in Las Vegas Thursday night after a tweet about
+  hacking was reported to the Las Vegas Metropolitan Police Department. The
+  police have confirmed that Linton is not considered a threat, but as of
+  Friday afternoon the engineer says he has not been let back into Caesars,
+  which is hosting Defcon, the annual conference that attracts thousands of
+  security researchers, academics, lawyers, and hackers.
+
+ - - -
+
+Oh give me a goddamned break. Matt didn't do anything wrong. Get real,
+people!
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 09:13:44 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: When I say "because" my cellphone types it as "cuz"
+
+When I say "because" my cellphone types it as "cuz," making recipients
+of my messages wrongly think I am from the hip younger set. Sorry Mom,
+all that money spent on an English tutor defeated in the end anyway.
+
+------------------------------
+
+Date: Fri, 10 Aug 2018 18:12:52 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Ahoy!  Software banning ahead! (TorrentFreak)
+
+Ahoy!, is a browser extension.  It is free, as in open source.  It has now
+been removed from the Chrome store.  Why?  Nobody is saying.
+http://torrentfreak.com/google-boots-open-source-anti-censorship-tool-from-chrome-store-180810/ or http://is.gd/X8L4ol
+
+Nobody at Google is saying.  Mozilla doesn't seem to have any problem with
+Ahoy!: it is still available for Firefox.
+
+So why is Google dead set against Ahoy!?  Could it possibly be because Ahoy!
+is an anti-censorship tool?  "Don't Be Evil" Google couldn't possibly be
+kowtowing to China's censorship, could it?
+http://en.wikipedia.org/wiki/Google_China%232016%25E2%2580%2593present:_Attempts_to_come_back_to_mainland_China or
+http://is.gd/LvPIB5
+http://community.isc2.org/t5/Industry-News/Buggy-censorship/m-p/12370
+
+(Of course, the fact that Google won't say anything about reports that it is
+starting up, or has bought, a censored search app for China don't help tamp
+down the rumour mill any ...)
+http://theintercept.com/2018/08/01/google-china-search-engine-censorship/
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 10:46:18 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Taiwanese cops give malware-laden USB sticks as prizes for security
+  quiz (The Register)
+
+http://www.theregister.co.uk/2018/01/10/taiwanese_police_malware/
+
+"The good news is that the infection was an old virus Chinese-language site
+Liberty Times names [such] as `XtbSeDuA.exe' that tr[y] to steal personal
+data from 32-bit machines."
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 12:25:28 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Computerized Chemical Toxicity Prediction Beats Animal Testing
+  (Scientific American)
+
+http://www.scientificamerican.com/podcast/episode/computerized-chemical-toxicity-prediction-beats-animal-testing/
+
+"The software is being made commercially available by Underwriter's
+Laboratories, which co-sponsored the research. Given that computer programs
+don't need the money or time to run that animal experiments do, this virtual
+toxicology screening should appeal to companies and animal lovers alike."
+
+The application applies a database of ~800K animal tests against ~10K
+chemicals to predict toxicity. Trust the DB content is viable and
+accurate. Over-reliance may enable GIGO (garbage-in, garbage-out) to
+erroneously support unmerited certification of toxic dish soap or laundry
+detergent into the consumer marketplace.
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 12:34:41 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Hacking a Brand New Mac Remotely, Right Out of the Box (WiReD)
+
+Apple's supply chain is one of the most closely monitored and analyzed in
+the world, both because of the control the company exerts and keen interest
+from third parties. But there's still never a guarantee that a mass-produced
+product will come out of the box totally pristine. In fact, it's possible to
+remotely compromise a brand new Mac time it connects to Wi-Fi.
+
+That attack, which researchers will demonstrate Thursday at the Black Hat
+security conference in Las Vegas, targets enterprise Macs that use Apple's
+Device Enrollment Program and its Mobile Device Management platform. These
+enterprise tools allow employees of a company to walk through the customized
+IT setup of a Mac themselves, even if they work in a satellite office or
+from home. The idea is that a company can ship Macs to its workers directly
+from Apple's warehouses, and the devices will automatically configure to
+join their corporate ecosystem after booting up for the first time and
+connecting to Wi-Fi.
+
+http://www.wired.com/story/mac-remote-hack-wifi-enterprise/
+
+Semi-obscure threat, corporate systems only...
+
+------------------------------
+
+Date: Sat, 11 Aug 2018 17:08:40 -0700
+From: Mark Thorson <eee@dialup4less.com>
+Subject: Yet another squirrel incident (vtdigger)
+
+"Quinn said squirrels are notorious for chewing through fiber optic cables,
+and *The Atlantic* wrote in 2011 that one telecommunications company
+reported the critters were responsible for 17 percent of their damaged
+lines."
+
+http://vtdigger.org/2018/08/09/squirrel-blamed-internet-blackout/
+
+Who needs Russians when you've got squirrels?
+
+------------------------------
+
+Date: Sun, 12 Aug 2018 11:38:01 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: What3words: putting geographical addresses behind a closed API
+
+Hmmm, putting geographical addresses behind a closed API:
+http://en.wikipedia.org/wiki/What3words
+http://wiki.openstreetmap.org/wiki/What3words
+
+Makes me think of every few months how people are rescued by reporting what
+electric pole they were near and if that instead depended on a proprietary
+central point of failure...
+http://wiki.osgeo.org/wiki/Taiwan_Power_Company_grid
+
+------------------------------
+
+Date: Sun, 12 Aug 2018 00:59:55 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: The Flourishing Business of Fake YouTube Views. (TheNewYorkTimes)
+
+Plays can be bought for pennies and delivered in bulk, inflating videos' popularity and making the social media giant vulnerable to manipulation.
+
+http://www.nytimes.com/interactive/2018/08/11/technology/youtube-fake-view-sellers.html
+
+------------------------------
+
+Date: Sun, 12 Aug 2018 06:27:46 -0400
+From: =?ISO-8859-1?Q?Jos=E9_Mar=EDa_Mateos?= <chema@rinzewind.org>
+Subject: Machine Learning Can Identify the Authors of Anonymous Code (WiReD)
+
+http://www.wired.com/story/machine-learning-identify-anonymous-code/
+
+Researchers who study stylometry --the statistical analysis of
+linguistic style --have long known that writing is a unique,
+individualistic process. The vocabulary you select, your syntax, and your
+grammatical decisions leave behind a signature. Automated tools can now
+accurately identify the author of a forum post for example, as long as they
+have adequate training data to work with. But newer research shows that
+stylometry can also apply to artificial language samples, like
+code. Software developers, it turns out, leave behind a fingerprint as well.
+
+------------------------------
+
+Date: Mon, 13 Aug 2018 16:06:15 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Apple macOS vulnerability paves the way for system compromise
+  with a single click" (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 13 Aug 2018
+Tampering with two lines of code unveiled a serious bug which could lead to
+full system compromise.
+http://www.zdnet.com/article/apple-zero-day-vulnerability-permits-attacker-compromise-with-the-click-of-a-mouse/
+
+------------------------------
+
+Date: Tue, 14 Aug 2018 10:28:37 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Hey you kids!  Get off my LAWN!
+
+We live in a world increasingly governed by technology, where a huge
+majority of the population are not only ignorant of the technology governing
+them, but *proud* to be ignorant!  The news last night was full of "Google
+knows where you are even if you turn off 'Location!'" stories.  Really?
+This is news?  You didn't know this?  You didn't know that, even if you turn
+off GPS there are three, completely different, means of locating your phone?
+That are being used constantly?  You don't want to be tracked?  Get rid of
+your phone.  And, no, Android isn't to blame, since the same day that the
+entire media was running the Google story, everybody was ignoring the fact
+that Apple admitted that Siri was listening to you all the time.
+Technopeasants.
+
+------------------------------
+
+Date: Tue, 14 Aug 2018 10:46:20 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Police body cam problems
+
+OK, we know security cameras have security problems.
+It seems that extends to police body cams as well.
+
+http://nakedsecurity.sophos.com/2018/08/14/police-body-cameras-open-to-attack/
+or http://is.gd/uEMpgI
+
+The cameras can be tracked.  And all that that implies.
+
+The video can be downloaded.  Also uploaded.  Which means it can be
+downloaded, modified, and uploaded.  With all that that implies for
+evidence.  These days deepfakes can be pretty convincing.  Or, if you didn't
+want to go to all that much trouble, simply erasing a few seconds of the
+audio track could make it seem as if an officer had not issued a warning
+before shooting ...
+
+------------------------------
+
+Date: Tue, 14 Aug 2018 17:00:25 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Hackers can infiltrate police body cameras to tamper with evidence
+  (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 14 Aug 2018
+
+It is possible that crucial recordings could be modified or deleted due to
+vulnerabilities in body cam software.
+http://www.zdnet.com/article/hackers-can-infiltrate-police-body-cameras-to-tamper-with-evidence/
+
+------------------------------
+
+Date: Wed, 8 Aug 2018 22:07:16 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: All that's old is new again -- was: How a bunch of lava lamps
+  protect us from hackers (WiReD)
+
+Glad that Cloudflare has (re)invented the use of lava lamps for random
+numbers.  As described on Wikipedia, Silicon Graphics did this about 20
+years ago.  http://en.wikipedia.org/wiki/Lavarand
+
+No clue whether Cloudflare's implementation infringes on SGI's patents.
+
+(And yes, I see that Cloudflare has other sources of randomness, etc.  But
+the principle is the same.)
+
+What's most surprising is that searching for "lava" on risks.org only finds
+unrelated hits.
+
+  Eric Sosman <esosman@comcast.net> noted the patents...
+    http://en.wikipedia.org/wiki/Lavarand
+    http://patents.google.com/patent/US5732138
+  PGN]
+
+------------------------------
+
+Date: Tue, 5 May 2018 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks have done to URLs.  I have
+  tried to extract the essence.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.80
+************************

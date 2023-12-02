@@ -1,0 +1,520 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.83
+
+RISKS-LIST: Risks-Forum Digest  Thursday 19 August 2021  Volume 32 : Issue 83
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.83>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Inside a Fatal Tesla Autopilot Accident (NYImes)
+Self-Driving Car Company to Test a Second Autonomous Vehicle in NYC
+ (Streetsblog New York City)
+Technical Issue Gives Some Metro Riders Unexpected SmarTrip Boost (DCist)
+Texas murder suspect granted bond after police data loss (ABC News)
+Simulating nuclear cloud rise anywhere, anytime (phys.org)
+Mysterious Hacker Group Suspected in July Cyberattack on Iranian Trains
+ (NYTimes)
+Dozens of STARTTLS Related Flaws Found Affecting Popular Email Clients
+ (The Hacker News)
+Autocorrect Errors in Excel Still Creating Genomics Headache (Dyani Lewis)
+BlackBerry resisted announcing major flaw in software powering cars,
+ hospital equipment (Peter Gutmann)
+Apple's controversial client-side child-abuse scanning algorithm reverse
+ engineered, first hash collision already created (Schneier via LW)
+Apple's project is likely doomed (Lauren Weinstein)
+New AdLoad Variant Bypasses Apple's Security Defenses to Target macOS
+ Systems (The Hacker News)
+Parents pull kids from schools as district bucks CDC guidance and board
+ member spreads misinformation (CNN)
+Abrien Aguirre Hawaii Covid Whistleblower (BitChute)
+Insecurity of voting machines against attackers with physical access
+ (Andrew Appel)
+Colorado Republican official accused after voting system passwords are
+ leaked to right-wing site (WashPost)
+Re: Citigroup Center Stilts -- New York, New York (Mark Brader)
+Re: Clearing the heavens of space junk (Erling Kristiansen)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 17 Aug 2021 21:08:46 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Inside a Fatal Tesla Autopilot Accident (NYImes)
+
+Neal E, Boudette and Niraj Chokshi
+*The New York Times* Business front page, 17 Aug 2021
+
+After a series of crashes, U,S, safety regulators open a broad inquiry at a
+system's potential flaws.
+
+The investigation was prompted by at least 11 accidents in which Teslas
+using Autopilot ... drove into parked fire trucks, police cars, and other
+emergency vehicles.
+
+https://www.nytimes.com/2021/08/17/business/tesla-autopilot-accident.html
+
+[And the following day, on the front page continued inside:
+  A Tesla Crash Exposes Perils of Its Autopilot (Neal E. Boudette)
+  *The New York Times*, 18 Aug 2021
+PGN]
+
+[See also RISKS items grepped in the past half
+year, with truncated subject lines.  You can use Lindsay Marshall's search
+engine at risks.org to find the items:
+  Bursts of acceleration in Tesla vehicles caused by drivers mistaking
+  A Tesla Model S erupted 'like a flamethrower.' It renewed old safety
+  This Bluetooth Attack Can Steal a Tesla Model X in Minutes (R 32 39)
+  Federal investigators blast Tesla, call for stricter safety standards
+  Two people killed in fiery Tesla crash with no one driving (R 32 61-63);
+  Tesla backseat driver was arrested then released; now he says he is back at
+  Tesla Autopilot system was on during fatal California crash, adding to
+  Tesla's Autopilot Mode Crashed a Car Right Into a Washington State Cop Car
+  Tesla activates in-car camera to monitor drivers using Autopilot
+  Tesla brings the strategies pioneered by Apple to the auto industry
+  Tesla apologizes after man in S.China locked in his car due to power failure
+PGN]
+
+------------------------------
+
+Date: Fri, 13 Aug 2021 18:06:55 -0400
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Self-Driving Car Company to Test a Second Autonomous Vehicle in NYC
+ (Streetsblog New York City)
+
+Wait a minute -- there’s going to be another one of those things out there?
+And then five more?!
+
+A tech firm that has been quietly testing a single self-driving car on the
+streets of New York City -- which prompted the Department of Transportation
+to initiate a process to further regulate the testing of such driverless
+vehicles — is about to deploy a second “look-ma-no-hands” car in Gotham this
+month, with plans for five more by the end of the year, Streetsblog has
+learned. [...]
+
+Throughout the video, Shashua referred to Mobileye’s work in New York as
+“battle testing” and used combat themes to describe the work his company is
+doing here.
+
+``Battle testing of AV is very challenging in New York,” he said. “If we
+want to build at scale, we have to drive in places that are challenging.  …
+And scale is important. You cannot build a business unless you can operate
+at scale.''  [...]
+
+But the theme that Shashua kept coming back to was the difficulties of
+driving in New York City, with five main things that “stand out” in New York
+versus other world capitals:
+
+  “Pedestrians and jaywalking”: “In New York City, this is really a class of
+  its own. Pedestrians don’t respect the rules. When I’m in California and
+  everywhere else in the world, if there is a red light, [pedestrians] don’t
+  cross. In New York City, you cross. That’s New York City. You have
+  jaywalkers and pedestrians and you have tons of them.” He made it sound as
+  if everything would be so much easier if the pedestrians could be
+  reformed.
+
+  “Driving behavior”: “People here are very very assertive because the
+  majority of drivers here are professional drivers. Whether they are Uber,
+  Lyft or taxis, they are driving because they need to make their
+  living. They don’t have time to be polite. The culture here is very, very
+  aggressive when the traffic is congested. It is unlike everywhere
+  else. People complain about Boston, but New York City is much worse.”
+
+  “Light pollution”: “There is no night here in the city,” he said.
+
+  “Double-parking”: “You have double-parking everywhere,” he said, making it
+  “quite tricky” for an autonomous car to determine whether the “vehicle in
+  front of it is an obstacle and not just standing in a line in a traffic
+  jam. The car driving in New York City needs to make that decision every
+  100 meters. [The car has to calculate] ‘What is an obstacle I need to
+  overate [[sic, or maybe sick if it really over-ate. PGN]] and what is a
+  car that is just standing in a jam and I have to be patient.’ It is very
+  tricky.”
+
+  “Road users diversity”: You have carriages pulled by horse and so many
+  different types of road users beyond pedestrians. You don’t find this in
+  other cities.”
+
+  “It’s really a huge headache to test here in New York City,” he concluded.
+
+https://nyc.streetsblog.org/2021/08/13/self-driving-car-company-to-test-a-second-autonomous-vehicle-in-nyc/
+
+------------------------------
+
+Date: Fri, 13 Aug 2021 17:06:36 -0400
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Technical Issue Gives Some Metro Riders Unexpected SmarTrip Boost
+ (DCist)
+
+Commuters returning to Metro for the first time might be surprised to have a
+lot more money on their SmarTrip card than they should -- and even more
+surprised when that dollar amount drops suddenly.
+
+A technical issue with SmartBenefits -- the system used by employers to
+deposit money onto their employees’ SmarTrip accounts -- is causing higher
+amounts of money to be displayed for some riders when they swipe into the
+system. Once the rider uses up the actual amount on the card, it will
+display zero dollars, despite the prior swipes showing much more.
+
+The problem comes from a lot of people stopping SmartBenefits during the
+pandemic. People who haven’t ridden the system for a year and a half likely
+don’t remember how much money they had on their card when they last
+traveled.
+
+It appears that in some cases, monthly SmartBenefits appeared like they were
+still added to accounts after they were stopped or paused during the
+pandemic, leading to the unexpectedly high balances shown at the
+fare-gates. In reality, the money was never added to the accounts.
+
+https://dcist.com/story/21/08/13/technical-error-leads-to-incorrect-smartrip-card-balances-for-some-metro-riders/
+
+  Benefits appeared to be added, but weren't.  What could go wrong?
+
+------------------------------
+
+Date: Sat, 14 Aug 2021 13:12:14 +0800
+From: "Richard Stein" <rmstein@ieee.org>
+Subject: Texas murder suspect granted bond after police data loss (ABC News)
+
+https://abcnews.go.com/US/wireStory/texas-murder-suspect-granted-bond-police-data-loss-79449121
+
+"The lost data included images, video, audio, case notes and other
+information gathered by police officers and detectives, police said in an
+earlier statement. A city IT employee was moving the files, which had not
+been accessed for the previous six to 18 months, from an online, cloud-based
+archive to a server at the city’s data center. The 'employee failed to
+follow proper, established procedures, resulting in the deletion of the data
+files,' police said."
+
+Risk: Data backup and restore processes for systems of record.
+
+[Regular oversight of backup/restore processes, including random content
+delete/restore verification, can inculcate organizational vigilance and
+discipline essential to sustain continuity.]
+
+------------------------------
+
+Date: Tue, 17 Aug 2021 10:54:45 +0800
+From: "Richard Stein" <rmstein@ieee.org>
+Subject: Simulating nuclear cloud rise anywhere, anytime (phys.org)
+
+https://phys.org/news/2021-08-simulating-nuclear-cloud-anytime.html
+
+"The researchers used the May 8, 1953 'Encore' event as a basis for testing
+their WRF hypothesis. Using global atmospheric reanalysis data to simulate
+conditions on that date, they fed the WRF model the parameters of a nuclear
+fireball and dialed in the resolution accordingly. After running the model,
+their simulation matched the 1953 photos remarkably well."
+
+  Would weather.com add a nuclear fallout forecast to their app?
+
+  [Available, at a discount, to paid subscribers from their mine shaft
+  shelters.]
+
+------------------------------
+
+Date: Sat, 14 Aug 2021 14:04:27 -0400
+From: "Jan Wolitzky" <jan.wolitzky@gmail.com>
+Subject: Mysterious Hacker Group Suspected in July Cyberattack on Iranian
+ Trains (NYTimes)'
+
+When a cyberattack on Iran’s railroad system last month caused widespread
+chaos with hundreds of trains delayed or canceled, fingers naturally pointed
+at Israel, which has been locked in a long-running shadow war with Tehran.
+
+But a new investigation by an Israeli-American cybersecurity company, Check
+Point Software Technologies, concluded that a mysterious group opposed to
+the Iranian government was most likely behind the hack. That is in contrast
+to many previous cyberattacks, which were attributed to state entities. The
+group is known as Indra, named after the god of war in Hindu mythology.
+
+https://www.nytimes.com/2021/08/14/world/middleeast/iran-trains-cyberattack.html
+
+  [Convenient, perhaps, that an Israeli-American company points the finger
+  for an attack on an enemy of both countries elsewhere.]
+
+------------------------------
+
+Date: Mon, 16 Aug 2021 15:40:14 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Dozens of STARTTLS Related Flaws Found Affecting Popular Email
+ Clients (The Hacker News)
+
+Security researchers have disclosed as many as 40 different vulnerabilities
+associated with an opportunistic encryption mechanism in mail clients and
+servers that could open the door to targeted man-in-the-middle (MitM)
+attacks, permitting an intruder to forge mailbox content and steal
+credentials.
+
+The now-patched flaws, identified in various STARTTLS implementations, were
+*detailed*
+<https://www.usenix.org/conference/usenixsecurity21/presentation/poddebniak>
+by a group of researchers Damian Poddebniak, Fabian Ising, Hanno Böck, and
+Sebastian Schinzel at the 30th USENIX Security Symposium. In an
+Internet-wide scan conducted during the study, 320,000 email servers were
+found vulnerable to what's called a command injection attack.
+
+Some of the popular clients affected by the bugs include Apple Mail, Gmail,
+Mozilla Thunderbird, Claws Mail, Mutt, Evolution, Exim, Mail.ru, Samsung
+Email, Yandex, and KMail. The attacks require that the malicious party can
+tamper connections established between an email client and the email server
+of a provider and has login credentials for their own account on the same
+server.
+
+STARTTLS refers to a form of *opportunistic TLS*
+<https://en.wikipedia.org/wiki/Opportunistic_TLS> that enables email
+communication protocols such as SMTP, POP3, and IMAP to be transitioned or
+upgraded from a plain text connection to an encrypted connection instead of
+having to use a separate port for encrypted communication.  [...]
+https://thehackernews.com/2021/08/dozens-of-starttls-related-flaws-found.html
+
+------------------------------
+
+Date: Mon, 16 Aug 2021 11:55:46 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Autocorrect Errors in Excel Still Creating Genomics Headach
+ (Dyani Lewis)
+
+Dyani Lewis, *Nature*, 13 Aug 2021, via ACM TechNews, Monday, August 16, 2021
+
+Autocorrect errors in spreadsheet programs like Microsoft Excel or Google
+Sheets continue to dog academic genomics literature, according to a study of
+published gene lists. This often happens when the abbreviated form of a
+gene's name, or symbol, is wrongly identified and autocorrected as a date,
+which means the gene is lost when the data is imported into
+gene-network-analysis software. Five years after Australian researchers
+brought attention to the problem, analysis by a team at Australia's Deakin
+University confirmed such errors remain widespread. Deakin's Mark Ziemann
+said simple checks can detect autocorrect errors, while not using
+spreadsheets is another suggestion. He also said researchers can trace
+errors by using scripted computer languages like Python and R, which do not
+autocorrect gene symbols.
+
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-2c57fx22ce5dx072660&
+
+------------------------------
+
+Date: Thu, 19 Aug 2021 07:36:12 +0000
+From: Peter Gutmann <pgut001@cs.auckland.ac.nz>
+Subject: BlackBerry resisted announcing major flaw in software powering
+ cars, hospital equipment
+
+The reports are actually a bit misleading since people associate
+`Blackberry' with RIMm while QNX is a Unix-like microkernel RTOS originally
+from Quantum Software Systems.  QNX was popular in car head units alongside
+Windows Embedded, so it's a problem in some head units, not in something
+like an ECU (and yes, I know you can then leap across to other parts of the
+car if they're insufficiently isolated).
+
+Given the age of QNX and its lack of public exposure (meaning third-party
+examination), I'm surprised there's only one vulnerability in it.  This
+scenario in particular follows on from what happened with the i-Opener, an
+Internet appliance built on top of QNX.  The existence of a $99 device that
+you could shovel Linux onto meant that the previously secure-in-obscurity
+QNX got a free security evaluation by a bunch of hackers, who promptly found
+a security bypass allowing it to be sidegraded to a Linux appliance.
+
+Perhaps the moral here is "be too boring to be of interest to anyone".
+
+------------------------------
+
+Date: Thu, 19 Aug 2021 08:14:12 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Apple's controversial client-side child-abuse scanning algorithm
+ reverse engineered, first hash collision already created
+
+https://www.schneier.com/blog/archives/2021/08/apples-neuralhash-algorithm-has-been-reverse-engineered.html
+
+  [Also noted by Monty Solomon.  PGN]
+
+  [Note: Ross Anderson's op-ed in The Guardian piece is online:
+  https://www.theguardian.com/commentisfree/2021/aug/14/sexual-abuse-images-apple-tech-giant-iphones-us-surveillance
+
+  [There is still are many arguments all over the place on this.
+  Perhaps the following item is prescient?  PGN]
+
+------------------------------
+
+Date: Thu, 19 Aug 2021 09:34:46 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Apple's project is likely doomed
+
+Apple's client-side child abuse photos/messages scanning system is
+ultimately likely doomed. Its motives are laudable but foundational
+collateral problems are piling up. It would be wise for Apple to abandon
+this effort before users' and firms' faith in Apple are further damaged.
+
+------------------------------
+
+Date: Mon, 16 Aug 2021 16:02:17 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: New AdLoad Variant Bypasses Apple's Security Defenses to Target
+ macOS Systems (The Hacker News)
+
+A new wave of attacks involving a notorious macOS adware family has evolved
+to leverage around 150 unique samples in the wild in 2021 alone, some of
+which have slipped past Apple's on-device malware scanner and even signed
+by its own notarization service, highlighting the malicious software
+ongoing attempts to adapt and evade detection.
+
+"AdLoad," as the malware is known, is one of several widespread adware and
+bundleware loaders targeting macOS since at least 2017. It's capable of
+backdooring an affected system to download and install adware or
+potentially unwanted programs (PUPs), as well as amass and transmit
+information about victim machines.
+
+The new iteration "continues to impact Mac users who rely solely on Apple's
+built-in security control XProtect for malware detection," SentinelOne
+threat researcher Phil Stokes *said*
+<https://labs.sentinelone.com/massive-new-adload-campaign-goes-entirely-undetected-by-apples-xprotect/>
+in
+an analysis published last week. "As of today, however, XProtect arguably
+has around 11 different signatures for AdLoad [but] the variant used in
+this new campaign is undetected by any of those rules."
+
+The 2021 version of AdLoad latches on to persistence and executable names
+that use a different file extension pattern (.system or .service), enabling
+the malware to get around additional security protections incorporated by
+Apple, ultimately resulting in the installation of a persistence agent,
+which, in turn, triggers an attack chain to deploy malicious droppers that
+masquerade as a fake Player.app to install malware.  [...]
+
+https://thehackernews.com/2021/08/new-adload-variant-bypasses-apples.html
+
+------------------------------
+
+Date: Thu, 19 Aug 2021 09:02:42 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Parents pull kids from schools as district bucks CDC guidance and
+ board member spreads misinformation (CNN)
+
+https://www.cnn.com/2021/08/19/health/cobb-county-schools-georgia-covid/index.html
+
+------------------------------
+
+Date: Thu, 12 Aug 2021 19:24:31 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Abrien Aguirre Hawaii Covid Whistleblower (BitChute)
+
+Abrien Aguirre worked in Oahu's biggest Rehab and Skilled Nursing
+Facilities in three separate covid units and he shares what he witnessed
+which is shocking to say the least.  [...]
+https://www.bitchute.com/video/snvoNdcBzaAZ/
+
+------------------------------
+
+Date: Fri, 13 Aug 2021 7:27:23 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Insecurity of voting machines against attackers with physical
+ access (Andrew Appel)
+
+Andrew Appel's New post on freedom-to-tinker:
+
+https://freedom-to-tinker.com/2021/08/13/its-still-practically-impossible-to-secure-your-computer-or-voting-machine-against-attackers-who-have-30-minutes-of-access/
+
+------------------------------
+
+Date: Fri, 13 Aug 2021 00:10:29 -0700
+From: "Jim" <jgeissman@socal.rr.com>
+Subject: Colorado Republican official accused after voting system passwords are
+ leaked to right-wing site (WashPost)
+
+https://www.washingtonpost.com/politics/2021/08/12/mesa-county-voting-machines/
+
+------------------------------
+
+Date: Sat, 14 Aug 2021 01:07:59 -0400 (EDT)
+From: Mark Brader <msb@Vex.Net>
+Subject: Re: Citigroup Center Stilts -- New York, New York (RISKS-32.82)
+
+> If it hadn't been caught in time, a flaw in the design of this Manhattan
+> skyscraper could have led to its collapse.
+
+Curious.  I thought I was reading RISKS-32.82 there, not Risks 17.16.
+
+------------------------------
+
+Date: Sun, 15 Aug 2021 18:11:35 +0200
+From: Erling Kristiansen <erling.kristiansen@xs4all.nl>
+Subject: Re: Clearing the heavens of space junk (CBS News, RISKS-32.82)
+
+130 million small pieces of space debris is a lot. But you have to keep in
+mind that space is BIG.
+
+Most of the debris is in so-called Low Earth Orbit (LEO), let´s say between
+300 and 1700 km altitude. A quick back-of-an-envelope calculation estimates
+the volume of the LEO zone to be around 1 trillion cubic kilometers. That is
+around 8.000 cubic kilometers per piece of debris. Debris is likely not
+uniformly distributed, so the concentration may be larger in some regions
+than in others, but we are still talking about a very diluted cloud of
+mainly small objects.
+
+This is consistent with the observation that spacecraft occasionally do get
+hit, but that these are rare events.
+
+I have difficulty imagining what technology would be capable of removing a
+worthwhile fraction of the small debris that is so spread-out in space.
+
+If we look at larger objects, like dead satellites and rocket stages, the
+situation is different. These objects are being tracked, so we know about
+potential collisions and can take evasive measures. It should be possible,
+in principle, to approach and grab an object and de-orbit it.  But that´s an
+expensive operation, requiring the launch of a dedicated spacecraft that
+would likely only be capable of removing one, or, at most, a few objects. So
+doing this on a large scale seems unrealistic.
+
+I am not suggesting that the problem of space debris should not be taken
+seriously. What I want to say is that cleaning it up is a daunting task, if
+at all feasible.
+
+The lesson we should learn is that we should make sure all future space
+missions are designed for safe disposal, once the mission is over.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.83
+************************

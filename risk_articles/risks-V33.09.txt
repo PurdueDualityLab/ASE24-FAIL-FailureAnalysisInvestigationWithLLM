@@ -1,0 +1,796 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.09
+
+RISKS-LIST: Risks-Forum Digest  Monday 14 March 2022  Volume 33 : Issue 09
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.09>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Medical, IoT Devices Vulnerable to Attack (Dark Reading)
+Who's Responsible if a Tesla on Autopilot Kills Someone? (NextGov)
+Q&A with a legal expert: When a Tesla on autopilot kills someone,
+ who is responsible? (techxplore)
+Finnish govt agency warns of unusual aircraft GPS interference
+ (BleepingComputer)
+Thermostat offline? Here's perhaps why ... (Lauren Weinstein)
+Encryption Meant to Protect Against Quantum Hackers Is Easily Cracked
+ (New Scientist)
+Biden's cryptocurrency executive order sets stage for federal regulation
+ (WashPost)
+How People Actually Make Money From Cryptocurrencies (WiReD)
+Fraud Is Flourishing on Zelle. The Banks Say It's Not Their Problem.
+ (NYTimes)
+Linux Bug Gives Root on All Major Distros, Exploit Released
+ (BleepingComputer)
+Samsung: Hackers breached company data, source code for Galaxy
+Warning: Objects in driverless car sensors may be closer than they devices
+ (CNBC)
+Senate passes permanent Daylight Saving Time: Effects on school children of
+ permanent Daylight Saving Time (Lauren Weinstein)
+1974 -- The year Daylight Saving Time went too far (MercuryNews)
+Get rid of Daylight-Savings Time (Erik Honda)
+Docker, cgroups and the farce of SELinux (Bugzilla)
+Calvin Ridley's suspension raises betting concerns (WashPost)
+New tech could pull cars over, call first responders in emergencies (WTOP)
+Obfuscated URLs IArthur T.)
+Chernobyl Redux? (Henry Baker)
+Combat/t/ing Disinformation Can Feel Like a Lost Cause. It Isn't.
+ (Jay Caspian King)
+Russian State-Sponsored Cyber Actors Access Network Misconfigured with
+ Default MFA Protocols (US-CERT)
+A new iron curtain is descending across Russia's Internet (WashPost)
+Turmoil Over Ukraine Could Debilitate Russia's Space Program (WiReD)
+Ukraine and the Internet (sundry sources)
+The Race to Rescue Ukraine's Power Grid From Russia (WiReD)
+Putin's pre-war moves against U.S. tech giants laid groundwork for crackdown
+ on free expression (WashPost)
+Pro-Putin Disinformation on Ukraine Is Thriving in Online Anti-Vax Groups
+ (Mother Jones)
+Re: Here Comes the Full Amazonification of Whole Foods, or maybe not
+ (John Levine)
+Re: Small cyberphysical watermarks could prevent huge headaches (Barry Gold)
+Re: New Bill Would Bring Mobile Voting To WashDC (Michael Kohne,
+ Amos Shapir, Neil Youngman)
+MMS spam? (Rob Slade)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 11 Mar 2022 11:56:44 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Medical, IoT Devices Vulnerable to Attack (Dark Reading)
+
+Jai Vijayan, Dark Reading, 8 Mar 2022, via ACM TechNews; 11 Mar 2022
+
+Researchers at Forescout's Vedere Labs cybersecurity intelligence team and
+CyberMDX cybersecurity service provider discovered seven vulnerabilities,
+known collectively as "Access:7," in more than 150 Internet of Things (IoT)
+devices made by more than 100 companies. Three of the bugs, rated critical,
+allow attackers to gain full control of devices by remotely executing
+malicious code. The remainder, rated moderate to high in severity, allow
+attackers to steal data or execute denial-of-service attacks. The flaws were
+found in multiple versions of PTC Axeda agent and PTC Desktop Server, which
+are used in many IoT devices to enable remote access and management. All
+versions of the Axeda technology below 6.9.3 are affected. PTC has released
+patches for the vulnerabilities.
+
+https://orange.hosting.lsoft.com/trk/click?ref=nwrbbrs9_6-2e35bx23221ex073508&
+
+------------------------------
+
+Date: Tue, 15 Mar 2022 11:03:08 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Who's Responsible if a Tesla on Autopilot Kills Someone? (NextGov)
+
+Vehicular manslaughter charges filed in Los Angeles earlier this year mark
+the first felony prosecution in the U.S. of a fatal car crash involving a
+driver-assist system.
+
+In late 2019, Kevin George Aziz Riad's car sped off a California freeway,
+ran a red light, and crashed into another car, killing the two people
+inside. Riad's car, a Tesla Model S, was on autopilot.  [...]
+
+https://www.nextgov.com/ideas/2022/03/whos-responsible-if-tesla-autopilot-kills-someone/363111/
+
+------------------------------
+
+Date: Thu, 10 Mar 2022 11:33:59 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Q&A with a legal expert: When a Tesla on autopilot kills someone,
+ who is responsible? (techxplore.com)
+
+https://techxplore.com/news/2022-03-qa-legal-expert-tesla-autopilot.html
+
+"Ultimately, these issues depend on how federal regulators like the National
+Highway Traffic Safety Administration regulate the vehicle.  They will have
+to set a safety performance standard which the manufacturer has to satisfy
+before it can commercially distribute the product as fully autonomous. The
+question is where the regulators set that standard at, and I don't think
+it's easy to get right. At that point there will be a good debate to be had:
+Did they get it right or not? We're still a few years out. I think we'll all
+be having these conversations in 2025."
+
+Blame the regulators for a permissive AV liability standard that enables
+wide-spread AV deployments? Regulators are subject to industry capture.  As
+are legislators who author the laws that enable regulation. Campaign
+contributions often speak at a higher volume than non-profit public health
+and safety interests.
+
+Recurrent, high-profile product and service outrage incidents across the
+finance, aerospace, pharmaceutical, chemical, and medical device sectors
+reveal that regulatory industrial capture, regulatory approval delegation to
+industry contribute to spectacular brand disasters.
+
+A product usage license, as stated via terms of service, universally assert
+corporate indemnification: you, the customer, agree to hold the business and
+its employees faultless for any untoward event (accident, death, errant
+outcome) in exchange for a right to use the product or service. These
+ubiquitous terms shield CxO product decisions that can boost profits, though
+the business governance directive (and ensuing product modification, often
+using technology-based substitutes) may elevate public health and safety
+risks.
+
+Federal and state justice officials hesitate to pursue criminal remedies,
+and frequently defer criminal prosecution in exchange for civil penalties,
+settlements, and enhanced business monitoring.  Indemnification usage
+restrictions might deter profit pursuit at the expense of public health and
+safety.
+
+Public suspicion about regulatory oversight and enforcement effectiveness,
+and generally diminished trust in expertise, swells skepticism. Look no
+future than the consumer marketplace to reaffirm doubt.
+
+------------------------------
+
+Date: Fri, 11 Mar 2022 16:07:59 -0500
+From: Jan Wolitzky <jan.wolitzky@gmail.com>
+Subject: Finnish govt agency warns of unusual aircraft GPS interference
+ (BleepingComputer)
+
+Finland's Transport and Communications Agency, Traficom, has issued a
+public announcement informing of an unusual spike in GPS interference near
+the country's eastern border.
+
+The origin of the interference remains unknown, but based on numerous
+reports submitted to the agency from various sources, it has started during
+the weekend and is still ongoing.
+
+This has resulted in issuing NOTAMs (notices to airmen) to raise pilot
+awareness and help them take additional measures to keep flights safe.
+
+https://www.bleepingcomputer.com/news/technology/finnish-govt-agency-warns-of-unusual-aircraft-gps-interference/
+
+  [In the U.S., NOTAMs now stands for Notices To Air Missions.]
+
+     [In Scotland, it might stand for No tam o' shanters indoors.  PGN]
+
+------------------------------
+
+Date: Mon, 14 Mar 2022 13:43:35 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Thermostat offline? Here's perhaps why ...
+
+There are very widespread reports of Honeywell/Resideo Internet thermostats
+being offline in one or another respect since yesterday evening, continuing
+to now, including their apps and website being unavailable for long
+periods. No known time for fixes.
+
+  [Daylight Savings and Loan Time?   Borrowing an hour until the fall,
+  without interest?  Can you bank on it?   PGN
+
+    [For no particular reason, I am reminded of David Huffman telling me in
+    1966 that a merger of Honeywell and Fairchild was being planned, and
+    that it would be called *Farewell Honeychild*.  In that spirit, this one
+    might be called *Restwell HoneyDayO*.  PGN]
+
+------------------------------
+
+Date: Fri, 11 Mar 2022 11:56:44 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Encryption Meant to Protect Against Quantum Hackers Is Easily
+ Cracked (New Scientist)
+
+Matthew Sparkes, *New Scientist*, 8 Mar 2022,
+via ACM TechNews; 11 Mar 2022
+
+Ward Beullens at IBM Research Zurich in Switzerland easily cracked a
+cryptography algorithm touted as one of three contenders for a global
+standard against quantum hacking. Rainbow is a signature algorithm submitted
+to the U.S. National Institute of Standards and Technology (NIST)'s
+Post-Quantum Cryptography competition, and Beullens extracted Rainbow's
+secret key from a public key in just 53 hours on a standard laptop. He said
+this flaw would enable attackers to wrongfully "prove" they are someone
+else, rendering Rainbow "useless" for message verification. NIST's Dustin
+Moody said the Rainbow hack had been confirmed, and the algorithm will not
+likely be selected as the final signature algorithm.
+
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-2e35bx232218x073508&
+
+------------------------------
+
+Date: Thu, 10 Mar 2022 00:56:52 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Biden's cryptocurrency executive order sets stage for federal
+ regulation (WashPost)
+
+The long-awaited executive order aims to ensure that the U.S. fosters the
+surging industry while mitigating its potential threats.
+
+https://www.washingtonpost.com/business/2022/03/09/biden-crypto-executive-order
+
+------------------------------
+
+Date: Sun, 13 Mar 2022 21:47:10 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How People Actually Make Money From Cryptocurrencies (WiReD)
+
+For many crypto[currency] traders who are in it for the medium to long haul,
+there are some other ways to make money on cryptocurrency that's just
+sitting in your crypto-wallet: staking and yield farming on DeFi networks.
+DeFi is just a catchall term for *decentralized finance* -- —pretty much all
+the services and tools built on blockchain for currencies and smart
+contracts.
+
+And, as with any type of digital network, DeFi services are vulnerable to
+hacking, bad programming, and other glitches and problems beyond your
+control. Getting good, consistent yields may require more work than you're
+willing to do [...] watching the value of tokens and jumping from one type
+of yield farm to another can get good results, but it's not unlike trying to
+time the stock market. It can be very risky and could require more luck than
+skill.
+
+  What could possibly go wrong?
+   [It DeFi-es the imagination?  It certainly does not DeiFi it.  PGN]
+
+------------------------------
+
+Date: Tue, 8 Mar 2022 23:55:50 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Fraud Is Flourishing on Zelle. The Banks Say It's Not Their Problem.
+ (NYTimes)
+Zelle, the payments platform used by millions of customers, is a popular
+target of scammers. But banks have been reluctant to make fraud victims
+whole — despite owning the system.
+
+https://www.nytimes.com/2022/03/06/business/payments-fraud-zelle-banks.html
+
+------------------------------
+
+Date: Mon, 14 Mar 2022 11:43:04 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Linux Bug Gives Root on All Major Distros, Exploit Released
+ (BleepingComputer)
+
+Lawrence Abrams, BleepingComputer, 7 Mar 2022,
+via ACM TechNews, 14 Mar 2022
+
+Security researcher Max Kellermann recently disclosed his discovery of the
+Dirty Pipe Linux bug, which lets local users obtain root privileges through
+publicly available exploits, and impacts Linux Kernel 5.8 and later
+iterations, even on Android devices. He released a proof-of-concept exploit
+that allows local users to inject their own data into sensitive read-only
+files, stripping restrictions or tweaking configurations to expand their
+access privileges. Kellermann alerted various Linux maintainers about Dirty
+Pipe beginning Feb. 20, and although it has been corrected in Linux kernels
+5.16.11, 5.15.25, and 5.10.102, many servers still are running outdated
+kernels.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e384x23230fx073950&
+
+  [Tom Van Vleck <thvv@multicians.org> noted
+    "Dirty pipe" linux kernel bug (The Register)
+    Linux distributions patch kernel privilege escalation flaw
+    https://www.theregister.com/2022/03/08/in_brief_security/
+  PGN]
+
+------------------------------
+
+Date: Mon, 7 Mar 2022 16:27:09 -0500
+From: "Steven J. Greenwald" <greenwald.steve@gmail.com>
+Subject: Samsung: Hackers breached company data, source code for Galaxy
+ devices (CNBC)
+
+"The statement from the South Korean electronics giant comes after hacking
+group Lapsus$ claimed over the weekend via its Telegram channel that it has
+stolen 190 gigabytes of confidential Samsung source code."
+
+https://www.cnbc.com/2022/03/07/samsung-hackers-breached-company-data-source-code-for-galaxy-devices.html
+
+------------------------------
+
+Date: Tue, 15 Mar 2022 17:19:27 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Warning: Objects in driverless car sensors may be closer than they
+ appear (techxplore.com)
+
+https://techxplore.com/news/2022-03-driverless-car-sensors-closer.html
+
+"Researchers at Duke University have demonstrated the first attack strategy
+that can fool industry-standard autonomous vehicle sensors into believing
+nearby objects are closer (or further) than they appear without being
+detected."
+
+The frustum attack confuses AV proximity analysis. The essay suggests that
+AV data-sharing on approach or stereo cameras might significantly reduce AV
+proximity ambiguities.
+
+The US NHTSA (National Highway Traffic Safety Administration) might add this
+case to their AV accident root cause value list.
+
+------------------------------
+
+Date: Tue, 15 Mar 2022 11:48:57 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Senate passes permanent Daylight Saving Time: Effects on
+ school children of permanent Daylight Saving Time
+
+Permanent Daylight Saving Time was tried in the U.S. back around 1970
+I believe. After an increase in dark morning accidents among school
+children, with schools and businesses resisting changing their hours,
+the plan was quickly rescinded. -L
+
+------------------------------
+
+Date: Tue, 15 Mar 2022 12:12:55 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 1974 -- The year Daylight Saving Time went too far (MercuryNews)
+
+  [Permanent Daylight Saving Time was tried in the U.S. back around 1970.
+  After an increase in dark morning accidents among school children, with
+  schools and businesses resisting changing their hours, the plan was
+  quickly rescinded. -L]  (PGN-ed into one message)
+
+1974: The year Daylight Saving Time went too far
+The "permanent daylight saving time" experiment that failed: -:
+
+https://www.mercurynews.com/2016/10/30/the-year-daylight-saving-time-went-too-far/
+
+------------------------------
+
+Date; Tue, 15 Mar 2022 12:58:23 PD
+From: Peter G Neumann
+Subject: Get rid of Daylight-Savings Time (Erik Honda)
+
+Letter from Erik Honda to *The San Francisco Chronicle*, 15 Mar 2022:
+
+Four years ago, we [California] overwhelming passed a ballot initiative in
+California instructing our politicians to get rid of daylight-saving time.
+
+Every spring forward has been documented to lead to increased car accidents
+and heart attacks, with no discernible benefits to anyone.  Not to mention
+it makes me tired and sad.
+
+Why can't our elected officials get this done?  Now please.
+
+------------------------------
+
+Date: Sun, 6 Mar 2022 12:25:25 -0500
+From: Cliff Kilby
+Subject: Docker, cgroups and the farce of SELinux (Bugzilla)
+
+News emerged of a potential container escape.
+https://bugzilla.redhat.com/show_bug.cgi?id=2051505
+
+Quay helpfully reviewed this and noted that SELinux seems to provide
+protection from the vulnerability.
+
+Unfortunately common behavior is to disable security features for
+containers. The presence of btrfs was enough to cause Docker to fail to
+attempt to launch at all with SELinux enabled.
+
+https://github.com/moby/moby/issues/7952 (now closed)
+
+RedHat themselves even provide instructions to disable SELinux on Podman (a
+container orchestrator).
+
+https://www.redhat.com/sysadmin/podman-inside-container
+
+High-level security advice for all servers has been "use MAC" for many years
+to enforce process isolation and limit the scope of unknown vulnerabilities.
+Virtualization is a hard problem to solve with process isolation
+enforcement, but it is doable. Containers don't want to be marketed as
+virtualization services, but they are. Everything you need to know to run a
+virtualization service applies to a container service, and unlike
+virtualization, containers are not practicing process isolation.
+
+SELinux profiles use the MAC label "container_file_t" for permission
+constraints on the container host.
+
+https://www.redhat.com/sysadmin/privileged-flag-container-engines
+
+This label may be incorrectly applied to system level resources manually
+due to poor user advice.
+
+It would behoove container users to ensure that a MAC is in place (SELinux,
+AppArmour, seccomp), is in enforce, and is scoped to processes in the
+container execution environment and that the containers haven't been over
+granted permission (like CAP_SYS_ADMIN), or granted access to files that
+should have been protected by misapplied labels.
+
+These opinions are my own and may not represent those of my employer.
+I do not require attribution.  [Unusual, but Apparently Required,  PGN]
+
+------------------------------
+
+Date: Sun, 13 Mar 2022 14:52:55 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Calvin Ridley's suspension raises betting concerns (WashPost)
+
+In November, Calvin Ridley violated a sacrosanct rule of professional sports
+with an ease that would have been unimaginable just a decade ago.  With a
+few taps of his smartphone while in Florida, away from his team, the Atlanta
+Falcons wide receiver placed a series of bets, which the NFL later detected
+and punished him for this week with an indefinite suspension.  [...]
+
+Companies such as Genius Sports and Sportradar, which formerly worked with
+the NFL and is still in business with MLB, the NHL, the NBA and other
+leagues, monitor betting patterns and search for inconsistencies.  They have
+technology that can spot unusual patterns, and then a human analyst
+determines whether they can be explained -- a changed forecast or reported
+injury, for example -- or whether the league needs to be alerted, said Andy
+Cunningham, the director of global partnerships for Sportradar's Integrity
+Services.
+
+https://www.washingtonpost.com/sports/2022/03/11/calvin-ridley-sports-leagues-gambling
+
+  The risk? Illicit betting? Increasing surveillance? Former, sure.  Latter,
+  sure, because who knows what other data's being gathered by non-sports
+  figures.
+
+------------------------------
+
+Date: Thu, 10 Mar 2022 08:48:50 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: New tech could pull cars over, call first responders in emergencies
+ (WTOP)
+
+High-tech systems in new cars that can watch drivers and ensure they're
+paying attention are taking another leap forward.
+
+Those systems, which involve cameras and sensors, can also be used to
+determine if a driver has fallen asleep or is experiencing a medical
+emergency.
+
+Other technology already incorporated into the car can then be used to
+safely pull over the vehicle and call first responders if the driver is
+unresponsive.
+
+Keith Barry, a car reporter at Consumer Reports said the pull-over
+feature is closer than many people realize.  [...]
+<https://www.consumerreports.org/car-safety/driver-monitoring-can-pull-car-over-if-driver-incapacitated-a1204997865/>
+https://wtop.com/consumer-news/2022/03/updated-tech-could-pull-cars-over-ca=
+ll-first-responders-in-emergencies/
+
+------------------------------
+
+Date: Sat, 05 Mar 2022 18:56:32 -0500
+From: "Arthur T." <risks202203b.10.atsjbt@xoxy.net>
+Subject: Obfuscated URLs
+
+Most URL shorteners have a way to expand a URL so you can see where you're
+going before you actually go to the obfuscated site. Risks digest has
+several non-shortening obfuscated URLs for which I have not found a way to
+see where a click will take me without actually going there.  For instance,
+In RISKS-33.08, there were ten links of the form:
+https://orange.hosting.lsoft.com/trk/click?ref=semirandom-looking-string.
+
+I'm sure that the readers and contributors are aware of the RISKS of
+clicking on "blind" URLs, so I'm surprised to see them here.  Apparently
+it's been going on for close to a decade, but I guess this is the first time
+I wanted to click through on one.
+
+------------------------------
+
+Date: Sun, 06 Mar 2022 16:42:40 +0000
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Chernobyl Redux?
+
+I finally got around to watching the 'Chernobyl' miniseries, and I'm
+wondering how accurate its portrayal was. (Yes, I know, my timing is either
+impeccable or terribly ironic.)
+
+https://en.wikipedia.org/wiki/Chernobyl_(miniseries)
+
+In particular, I don't recall any mention at the time of the possibility of
+the sort of multi-megaton-equivalent explosion that was successfully avoided
+in the series.
+
+This brings me back to today. If something were to happen to the operators
+of the Chernobyl (or other ex-Soviet reactors), would these reactors be
+capable of shutting themselves down automatically in a 'safe' way?
+
+It appears that any of these plants have the possibility of wreaking a lot
+more havoc than the 'small' 'tactical' battlefield nukes that are frequently
+mentioned in the media.
+
+------------------------------
+
+Date: Wed, 9 Mar 2022 10:45:46 PST
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Combat/t/ing Disinformation Can Feel Like a Lost Cause. It Isn't.
+ (Jay Caspian King)
+
+People can be taught to spot and then ignore online falsehoods.
+Jay Caspian King, *The New York Times*, lead op-ed in the editorial
+spot, 9 Mar 2022, national edition, A18
+
+* An educational alternative (e.g., Finland and Estonia)
+* The huge gap we need to close (school students failing media literacy)
+* Lessons that work
+  (14 U.S. states offer mandatory media literacy education.)
+
+  [I still hate "COMbating" in favor of "comBATTing" for the double
+  consonant in the ACCented SYLLable.  PGN]
+
+------------------------------
+
+Date: Tue, 15 Mar 2022 21:12:48 +0000
+From: US-CERT@messages.cisa.gov
+Subject: Russian State-Sponsored Cyber Actors Access Network Misconfigured
+ with Default MFA Protocols (US-CERT)
+
+https://us-cert.cisa.gov/ncas/current-activity/2022/03/15/russian-state-sponsored-cyber-actors-access-network-misconfigured
+
+Cybersecurity and Infrastructure Security Agency (CISA) - Defend Today,
+Secure Tomorrow
+
+------------------------------
+
+Date: March 5, 2022 at 22:59:59 GMT+9
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: A new iron curtain is descending across Russia's Internet
+ (WashPost)
+
+[Note:  This item comes from friend Tim Pozar.  DLH]    (via Dave Farber)
+
+Craig Timberg, Cat Zakrzewski and Joseph Menn, *The Washington Post*,
+4 Mar 2022
+
+A new iron curtain is descending across Russia's Internet On Friday, online
+access was curtailed by both Russian censors and Western businesses as the
+war in Ukraine became a reason for moves that limited free access to the
+Internet
+
+https://www.washingtonpost.com/technology/2022/03/04/russia-ukraine-internet-cogent-cutoff/
+
+------------------------------
+
+Date: Sun, 6 Mar 2022 23:39:56 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Turmoil Over Ukraine Could Debilitate Russia's Space Program (WiReD)
+
+In response to international sanctions, Russia's space agency is distancing
+itself from its former partners and risks losing its role as a major space
+power.
+
+Roscosmos also announced it will no longer supply rocket engines to the
+United States. “Let them fly on their brooms," Rogozin said on a state-owned
+Russian news channel.
+
+https://www.wired.com/story/turmoil-over-ukraine-could-debilitate-russias-space-program/
+
+------------------------------
+
+Date: Sun, 6 Mar 2022 10:08:02 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Ukraine and the Internet (sundry sources)
+
+  [PGN-ed]
+
+Ukrainians Find That Relatives in Russia Don't Believe It's a War
+https://www.nytimes.com/2022/03/06/world/europe/ukraine-russia-families.html?smid=tw-share
+
+ - - -
+
+Russia creates its own TLS certificate authority to bypass sanctions: Given
+their suspect nature and concerns about traffic interception by Russian
+authorities, the use of such certificates is enormously problematic. Above
+all, do not install such certificates manually in browsers under any
+conditions and no matter how prompted to do so. -L
+
+https://www.bleepingcomputer.com/news/security/russia-creates-its-own-tls-certificate-authority-to-bypass-sanctions/
+
+ - - -
+
+Fake Ukraine spam solicitations for money are already widely circulating,
+usually asking for payment in bitcoin.
+
+------------------------------
+
+Date: Sat, 12 Mar 2022 23:08:35 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Race to Rescue Ukraine's Power Grid From Russia (WiReD)
+
+In late February, Ukraine began a long-planned 72-hour test to unhook its
+electricity grid from Russia's. Then the invasion started.
+
+https://www.wired.com/story/the-race-to-rescue-ukraines-power-grid-from-russia
+
+------------------------------
+
+Date: Sat, 12 Mar 2022 14:29:24 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Putin's pre-war moves against U.S. tech giants laid groundwork for
+ crackdown on free expression
+
+Google and Apple blinked after threats from Russian agents.
+
+https://www.washingtonpost.com/world/2022/03/12/russia-putin-google-apple-navalny/
+
+------------------------------
+
+Date: Sun, 13 Mar 2022 16:03:57 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Pro-Putin Disinformation on Ukraine Is Thriving in Online Anti-Vax
+ Groups (Mother Jones)
+
+https://www.motherjones.com/politics/2022/03/pro-putin-disinformation-on-ukraine-is-thriving-in-online-anti-vax-groups/
+
+  [In context, the correlation between the two topics seems not at all
+  surprising.  PGN]
+
+------------------------------
+
+Date: 5 Mar 2022 20:44:18 -0500
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Here Comes the Full Amazonification of Whole Foods, or maybe
+ not (RISKS-33.08)
+
+Today's Slate Money podcast has a different take. They note that
+Amazon is closing their physical bookstores, that it feels like Whole
+Foods has been on autopilot since Amazon bought it, and in Amazon's
+attempts to run physical stores have been consistently underwhelming.
+
+They also note that the array of cameras and sensors required by Just Walk
+Out is really creeepy.
+
+Listen here. The Amazon segment starts at about 20:30:
+https://slate.com/podcasts/slate-money/2022/03/big-tech-russia-amazon-stores
+
+------------------------------
+
+Date: Sun, 6 Mar 2022 10:31:45 -0800
+From: Barry Gold <BarryDGold@ca.rr.com>
+Subject: Re: Small cyberphysical watermarks could prevent huge headaches
+ caused, by fake meds (RISKS-33.08)
+
+Consumers can't use the app pre-sale, but most Internet sales involve either
+credit cards or a payment app like PayPal. When the drug arrives they can
+check it with the app. If it's fake, they return it. If their payment isn't
+refunded, they can go to the card issuer or PayPal etc.  and get their money
+back that way.
+
+As for law enforcement: if the thing comes into their hands legitimately,
+they can test it. So if they buy some drugs and test them, that's perfectly
+okay under search and seizure. Only if they took it away from somebody who
+had bought it would they run into S&S problems.
+
+------------------------------
+
+Date: Mon, 7 Mar 2022 06:13:37 -0500
+From: Michael Kohne <mhkohne@kohne.org>
+Subject: Re: New Bill Would Bring Mobile Voting To WashDC (RISKS-33.08)
+
+If a non-anonymous solution is available, bad actors will try to find ways
+to force people who shouldn't be using into using it. This will happen both
+at a policy level and an individual level.
+
+At a policy level, a bad-guy politician will minimize availability of
+anonymous voting in order to allow peer-pressuring of smaller populations
+into either not voting or voting for the bad guys. In an area that's close,
+this kind of thing could easily swing elections.
+
+At an individual level, you can easily envision an abusive spouse forcing
+the victim to vote how the spouse wants. Right now the best the abuser can
+do is force the victim to not vote, with non-anonymous voting they can
+actually force the spouse to vote for the abuser's preferred candidate.
+
+And if you think the policy level thing won't happen, I invite you to review
+the last few years of controversy over polling places in parts of the US --
+there's plenty of evidence that bad guys will try to prevent minorities from
+voting if they can manage it.
+
+------------------------------
+
+Date: Mon, 7 Mar 2022 13:40:01 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: New Bill Would Bring Mobile Voting To WashDC (RISKS-33.08)
+
+What is missing is that if anonymity becomes an option, the choice of
+anonymity is not anonymous!
+
+This means that if someone is bullied into voting in a certain way, they
+might also be bullied into using the non-anonymous option to vote by.
+
+  [Similar comment form John Beattie.  PGN]
+
+------------------------------
+
+Date: Wed, 9 Mar 2022 13:20:30 +0000
+From: Neil Youngman <neil.youngman@youngman.org.uk>
+Subject: Re: New Bill Would Bring Mobile Voting To WashDC (RISKS-33.08)
+
+1. It shouldn't be forced on people, but it's not just the government that
+   might wish to force it on people. In a relationship where a dominant
+   member who wants others in the relationship to vote his choices instead
+   of their own choices, this again allows him/her to insist that they use
+   the non-anonymous voting system.
+
+2. In an all anonymous system vote buying is hampered by the inability of
+   the buyer to know whether the votes stayed bought. With your proposal the
+   buyer can tie payment to seeing the vote.
+
+It may be convenient for you, but it also may have negative consequences for
+democracy.
+
+------------------------------
+
+Date: Mon, 7 Mar 2022 07:21:29 -0800
+From: Rob Slade <rslade@gmail.com>
+Subject: MMS spam?
+
+I have been receiving a lot of MMS (as opposed to SMS, normal text) messages
+on my phones recently.  One of the phones doesn't have a data plan, so I
+don't get to see what the messages are.  (Yes, yes, I *know* the cell
+companies promise that their plans allow you unlimited voice, video, and
+pictures "text" messages.  They lie.)  I have generally despaired of trying
+to get people to realize the difference between SMS and MMS messages, and
+the incompatibilities that make MMS messages unreliable even if you do have
+the phone and cell/mobile data plan to support them.
+
+However, a few days ago I got an MMS message from someone who *is*
+technically competent, and, when I challenged him, he denied sending any
+such message.  Given that he would know, and the increase in numbers, I am
+wondering if there is some new spamming campaign utilizing MMS messages.
+
+Anybody heard/seen anything along these lines?
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.09
+************************

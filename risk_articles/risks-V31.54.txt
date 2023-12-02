@@ -1,0 +1,1042 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.54
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 28 January 2020  Volume 31 : Issue 54
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.54>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [MASSIVE REJECTION OF RISKS-31.53.  PICK UP at risks.org]
+Boeing 737s can't land facing west (FAA via Clive D.W. Feather)
+GPS jamming expected in southeast during military exercise (AOPA)
+Election Security At The Chip Level (SemiEngineering)
+Russians Hacked Ukrainian Gas Company at Center of Impeachment
+  (Nicole Perlroth and Matthew Rosenberg) 
+Scientists Deliver, Once Again, a Horrifying Report About
+  How Hot Earth Is Getting (VICE)
+Ransomware attack forces cancer patients to re-schedule (CBC Web)
+An Avenue by Which It Might Be Technically Possible to Give an iPhone The
+  Software Equivalent of Cancer (Pixel Envy)
+Please Stop Sending Terrifying Alerts to Our Cell Phones (WIRED)
+Update Firefox now, says Homeland Security, to block attacks (9to5mac)
+A field guide to Iran's hacking groups (Web Informant)
+Iran hackers have been password-spraying the U.S. electric grid (WiReD)
+Re: The shooting down of flight PS752 in Iran (Martyn Thomas)
+In a desperate bid to stay relevant in 2020's geopolitical upheaval,
+  N. Korea upgrades its Apple Jeus macOS malware (The Register)
+Inside Documents Show How Amazon Chose Speed Over Safety in Building Its
+  Delivery Network (ProPublica)
+Feds Are Content to Let Cars Drive, and Regulate, Themselves (WIRED)
+Should Automakers Be Responsible for Accidents? (Gabe Goldberg)
+Paul Krugman's no-good, very bad Internet day (Ars Techica)
+Hackers Cripple Airport Currency Exchanges, Seeking $6 Million Ransom
+  (NYTimes)
+Hacker offers for sale 49M user records from US data broker LimeLeads
+  (Security Affairs)
+Over two dozen encryption experts call on India to rethink changes
+  to its intermediary liability rules (Tech Crunch)
+Chosen-Prefix attack against SHA-1 Reported (Ars Technica)
+Patch Tuesday, January 2020 (Rapid7)
+Facebook Says Encrypting Messenger by Default Will Take Years (WiReD)
+China's new Cryptolaw (Cointelegraph)
+Some consumers have noticed that computerization isn't always the answer
+  (Star Tribune)
+At Mayo Clinic AI engineers face an acid test: Will their algorithms help
+  real patients? (StatNews)
+AI Comes to the Operating Room (The New York Times)
+A Very Real Potential for Abuse: Using AI to Score Video Interviews (CNN)
+5G, AI, blockchain, quantum, ... (Marketoonist)
+Inside the Billion-Dollar Battle Over .Org (Steve Lohr)
+A lazy fix 20 years ago means the Y2K bug is taking down computers now
+  (New Scientist)
+When 2 < 7 => failure (Ars Technica via Jeremy Epstein)
+Make It Your New Year's Resolution Not to Share Misinformation
+  (Mother Jones)
+Inside the Feds' Battle Against Huawei (WiReD)
+Apple Is Bullying a Security Company with a Dangerous DMCA Lawsuit (iFixit)
+How to Protect Yourself From Real Estate Scams (NYTimes)
+Dutch Artists Celebrate George Orwell's Birthday By Putting Party Hats On
+  Surveillance Cameras (BuzzFeed News)
+Re: reliability of computers (Chris Drewe)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 10 Jan 2020 20:24:07 +0000
+From: "Clive D.W. Feather" <clive@davros.org>
+Subject: Boeing 737s can't land facing west (FAA)
+
+"The FAA received reports earlier this year of three incidents of display
+electronic unit (DEU) software errors on Model 737 NG airplanes flying into
+runway PABR in Barrow, Alaska. All six display units (DUs) blanked with a
+selected instrument approach to a runway with a 270-degree true heading, and
+all six DUs stayed blank until a different runway was selected.  [...]  The
+investigation revealed that the problem occurs when this combination of
+software is installed and a susceptible runway with a 270-degree true
+heading is selected for instrument approach. Not all runways with a
+270-degree true heading are susceptible; only seven runways worldwide, as
+identified in this AD, have latitude and longitude values that cause the
+blanking behavior."
+
+(Note that this is all 6 displays on each plane, not 2 displays on each of
+three planes.)
+
+The runways in question are:
+
+Runway 26, Pine Bluffs, Wyoming, USA (82V)
+Runway 28, Wayne County, Ohio, USA (KBJJ)
+Runway 28, Chippewa County, Michigan, USA (KCIU)
+Runway 26, Cavern City, New Mexico, USA (KCNM)
+Runway 25, Barrow, Alaska, USA (PABR)
+Runway 28, La Mina, La Guajira, Colombia (SKLM)
+Runway 29, Cheddi Jagan, Georgetown, Guyana (SYCJ)
+
+(The numbers are magnetic bearings, whereas the problem is apparently
+related to true bearing.)
+
+Original FAA notice:
+<http://rgl.faa.gov/Regulatory_and_Guidance_Library/rgad.nsf/0/3948342a978cc27b862584dd005c1a60/$FILE/2019-25-17.pdf>
+
+  [Clive, Can you think of the significance of 270?  Perhaps an instance of
+  Buridan's Ass algorithm, in this case being halfway between 180 and 360,
+  and not being able to decide?  PGN]
+
+    [I have no idea. Also, why don't all runways facing 270 have the
+    problem? I suspect we'll never find out.  Clive]
+
+  [Li Gong noted 
+  Blackout Bug: Boeing 737 cockpit screens go blank if pilots land on
+  specific runways (The Register)
+https://www.theregister.co.uk/2020/01/08/boeing_737_ng_cockpit_screen_blank_bug/
+  PGN]
+
+------------------------------
+
+Date: Fri, 17 Jan 2020 07:30:56 -0800
+From: Paul Saffo <paul@saffo.com>
+Subject: GPS jamming expected in southeast during military exercise (AOPA)
+
+Dan Namowitz, AOPA, 14 Jan 2020
+
+GPS reception may be unavailable or unreliable over a large portion of the
+southeastern states and the Caribbean during offshore military exercises
+scheduled between January 16 and 24.
+aopa.org/news-and-media/all-news/2020/january/14/gps-jamming-expected-in-southeast-during-military-exercise
+
+Graphic depicting area of GPS interference testing. Courtesy of the FAA.
+The FAA has posted a flight advisory for the exercises that will require
+jamming of GPS signals for periods of several hours each day of the
+event. Navigation guidance, ADS-B, and other services associated with GPS
+could be affected for up to 400 nautical miles at Flight Level 400, down to
+a radius of 180 nm at 50 feet above the ground.
+
+The flight advisory encourages pilots to report any GPS anomalies they
+encounter. Reports may be submitted using this online form.
+
+AOPA reported on a similar event in the southeastern United States in 2019.
+
+AOPA is aware of hundreds of reports of interference to aircraft during
+events around the country for which notices to airmen were issued, and we
+consider the risks to GA aircraft highly concerning.
+
+In one example, an aircraft lost navigation capability and did not regain it
+until after landing. Other reports have highlighted aircraft veering off
+course and heading toward active military airspace -- and the wide range of
+reports makes it clear that interference affects aircraft differently. In
+some cases, recovery from signal interference may not occur until well after
+the aircraft exits the jammed area.
+
+In a January 2019 AOPA survey, more than 64 percent of 1,239 pilots who
+responded noted concern about the impact of interference on their use of GPS
+and ADS-B.
+
+AOPA continues to advocate for officials to place more focus on efforts
+to address the well-documented safety concerns raised by such events.
+
+------------------------------
+
+Date: Wed, 15 Jan 2020 00:40:24 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Election Security At The Chip Level (SemiEngineering)
+
+https://semiengineering.com/how-secure-are-electronic-voting-machines/
+
+------------------------------
+
+Date: Wed, 15 Jan 2020 15:11:02 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Russians Hacked Ukrainian Gas Company at Center of Impeachment
+  (Nicole Perlroth and Matthew Rosenberg)
+
+Nicole Perlroth and Matthew Rosenberg, *The New York Times* 13 Jan 2020,
+  updated in the online version 15 Jan 2020
+https://www.nytimes.com/2020/01/13/us/politics/russian-hackers-burisma-ukraine.html
+ 
+Offices in Kyiv of a subsidiary of the Ukrainian energy company
+Burisma. Security experts suggest the hackers may have been looking for
+damaging information on Joe Biden.
+
+With President Trump facing an impeachment trial over his efforts to
+pressure Ukraine to investigate former Vice President Joseph R. Biden Jr.
+and his son Hunter Biden, Russian military hackers have been boring into the
+Ukrainian gas company at the center of the affair, according to security
+experts.
+
+The hacking attempts against Burisma, the Ukrainian gas company on whose
+board Hunter Biden served, began in early November, as talk of the Bidens,
+Ukraine and impeachment was dominating the news in the United States.
+
+It is not yet clear what the hackers found, or precisely what they were
+searching for. But the experts say the timing and scale of the attacks
+suggest that the Russians could be searching for potentially embarrassing
+material on the Bidens - the same kind of information that Mr. Trump wanted
+from Ukraine when he pressed for an investigation of the Bidens and Burisma,
+setting off a chain of events that led to his impeachment.
+
+The Russian tactics are strikingly similar to what American intelligence
+agencies say was Russia's hacking of emails from Hillary Clinton's campaign
+chairman and the Democratic National Committee during the 2016 presidential
+campaign. In that case, once they had the emails, the Russians used trolls
+to spread and spin the material, and built an echo chamber to widen its
+effect.
+
+------------------------------
+
+Date: Thu, 16 Jan 2020 14:20:00 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Scientists Deliver, Once Again, a Horrifying Report About
+  How Hot Earth Is Getting (VICE)
+
+``These are big numbers for our planet,'' one NASA scientist told VICE News
+
+EXCERPT:
+
+In 2019, parts of the planet were hotter than they've ever been before,
+according to NASA and NOAA's annual temperature report. And scientists are
+warning the world won't be able to reverse the damage.
+
+For the first time ever, the average temperature in Alaska was above
+freezing. And Australia, at more than 1.5 degrees Celsius above normal, was
+as hot as the UN hopes the world will ever get.
+
+As a whole, 2019 was the second hottest year on record, according to the
+report, published by government scientists on Wednesday. That caps off the
+hottest decade in recorded history. The last half of the decade was also
+one for the record books: All five years, together, were the hottest on
+record. The cause, the scientists say, is clearly human-emitted greenhouse
+gases.
+
+``The last ice age, where we had ice covering North America and most of
+Europe was only five degrees [Celsius] colder than the pre-industrial
+planet,'' Gavin Schmidt, director of NASA's Goddard Institute for Space
+Studies, told VICE News.
+
+``We've warmed up a fifth of that,'' he added. ``These are big numbers for our
+planet.''
+
+In addition to Alaska and Australia, Poland and other parts of eastern
+Europe also broke temperature records, as did Madagascar, New Zealand,
+parts of Southern Africa, and eastern South America. And on top of the high
+temperatures, glaciers are melting at record rates
+<https://www.businessinsider.com/greenland-ice-melting-is-2070-worst-case-2019-8>
+in
+Greenland. Hurricanes and typhoons are becoming more intense. And wildfires
+are getting bigger and more frequent.
+
+The planet' has already warmed a full degree Celsius above pre-industrial
+levels -- and scientists say there's likely no turning back. Just because
+the planet wasn't *quite* as warm in 2019 as it was in 2016 that shouldn't
+not be misinterpreted as climate change turning around.
+
+``This whole, `Oh, we've been cooling since 2016' point -- that's just
+bullshit,'' Schmidt said...
+
+[...]
+https://www.vice.com/en_us/article/884gx3/scientists-deliver-once-again-a-horrifying-report-about-how-hot-earth-is-getting
+
+------------------------------
+
+Date: Thu, 16 Jan 2020 14:36:55 -0800
+From: "David E. Ross" <david@rossde.com>
+Subject: Ransomware attack forces cancer patients to re-schedule (CBC Web)
+
+eHealth is the provincial health authority in Saskatchewan, Canada.  Note
+that they have a backup plan for such situations.  The attack began 6
+January.  Treatments for affected patients were delayed 24 to 48 hours.  By
+14 January, the effects of the attack were apparently resolved.
+
+The news article on the Canadian Broadcasting Company Web site had the
+headline:
+
+  Ransomware attack on eHealth forces 31 cancer patients to re-schedule
+  radiation treatment
+
+The article read:
+
+Six patients booked for chemotherapy also affected.
+
+A ransomware attack on the computer system that stores confidential medical
+data for Saskatchewan residents ended up affecting almost 40 patients
+getting cancer treatment in Saskatoon and Regina.
+
+The attack on eHealth Saskatchewan began Jan. 6. Antivirus software
+immediately began sending alerts to staff.
+
+When eHealth officials attempted to open files on affected servers they
+received a message that the files had been encrypted and would remain
+inaccessible until a payment was made.
+
+The Saskatchewan Cancer Agency oversees the two cancer clinics in Saskatoon
+and Regina. It disconnected from the eHealth network after learning of the
+assault on the system.
+
+While the move served to protect patient data, it also meant that staff
+could not immediately access provincial lab results, imaging pathology and
+pharmacy and medical information.
+
+eHealth hit by ransomware attack but personal health data is secure, says
+CEO.
+
+The clinics have contingency plans for when the electronic records are not
+accessible but it took time to co-ordinate retrieving the information.
+
+As a result, 31 patients booked for radiation and another six with
+chemotherapy appointments had their treatment delayed by between 24 and 48
+hours.
+
+Each patient was given a personal explanation and apology for the delay and
+inconvenience, officials with Saskatchewan Cancer Agency said in an emailed
+statement.
+
+The agency fully reconnected with the eHealth network on Jan. 14.
+
+------------------------------
+
+Date: Thu, 16 Jan 2020 18:23:10 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: An Avenue by Which It Might Be Technically Possible to Give an
+  iPhone The Software Equivalent of Cancer (Pixel Envy)
+
+https://pxlnv.com/blog/software-equivalent-of-cancer/
+
+------------------------------
+
+Date: Tue, 7 Jan 2020 20:04:15 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Please Stop Sending Terrifying Alerts to Our Cell Phones (WIRED)
+
+https://www.wired.com/story/please-stop-sending-terrifying-alerts-to-my-cell-phone/
+
+------------------------------
+
+Date: Fri, 10 Jan 2020 11:30:15 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Update Firefox now, says Homeland Security, to block attacks
+  (9to5mac)
+
+https://ww.9to5mac.com/2020/01/10/update-firefox-now/
+
+------------------------------
+
+Date: Fri, 17 Jan 2020 09:54:15 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A field guide to Iran's hacking groups (Web Informant)
+
+https://blog.strom.com/wp/?p=7529
+
+------------------------------
+
+Date: Fri, 10 Jan 2020 20:50:38 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Iran hackers have been password-spraying the U.S. electric grid
+  (WiReD)
+
+A state-sponsored group called Magnallium has been probing American electric
+utilities for the past year.
+https://www.wired.com/story/iran-apt33-us-electric-grid/
+
+------------------------------
+
+Date: Mon, 13 Jan 2020 10:10:55 PST
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Re: The shooting down of flight PS752 in Iran
+
+It seems to me that commercial aircraft shouldn't fly within range of
+anti-aircraft systems at a time of high military alert, because human
+error or computer system error is too likely. If that wasn't obvious
+before the USS Vincennes shot down Iran Air 655 in 1988, it should have
+become obvious immediately afterwards. Iran Air 655 has been regarded in
+the literature as a "Normal Accident", using Chick Perrow's terminology.
+
+Air defence systems are major intelligence targets, so several states with
+significant cyber capability will have been trying to compromise the Iranian
+system over an extended period. It would surprise me if they had all
+completely failed.  This heightens the probability that an aircraft may be
+misidentified.
+
+If an air defence system identifies (or appears to identify) a radar
+contact as something that will strike fatally within a small number of
+seconds, the missile defences will be fired, whether there is a human in
+the loop or not.
+
+I find it impossible to allocate blame.
+
+  [As we have said so often in RISKS, blame can often be remarkably widely
+  distributed.  Here are subsequent reports of the Iranian revolutionary
+  guards air-defense comms being jammed, and other issues relating to this
+  shootdown.  See the NYTimes article "Anatomy of a Lie", on how the events
+  around the shootdown unfolded:
+  https://www.nytimes.com/2020/01/26/world/middleeast/iran-plane-crash-coverup.html
+
+  This item came in recently, although RISKS-31.54 was ready to be sent
+  weeks ago.  We are still resolving internal mailer problems that massively
+  rejected delivery of RISKS-31.53 to many readers.  It appears to be Office
+  365 problem or a side-effect of SRI's installation of proofpoint to block
+  executable attachments.  Let's see if this issue gets through.
+
+  PLEASE submit RISKS items for consideration as ASCII text to RISKS without
+  attachments to facilitate my efforts.  Office 365 is now introducing
+  several hundred lines of headers, which makes things even worse.  PGN]
+
+  WARNING:  I've had a slew of mailman messages dropping readers's
+  subscriptions.  If you did not get this message via the normal mailing,
+  you need to resubscribe.  SORRY.  I have no control over this.  PGN
+
+------------------------------
+
+Date: Thu, 9 Jan 2020 11:56:01 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: In a desperate bid to stay relevant in 2020's geopolitical
+  upheaval, N. Korea upgrades its Apple Jeus macOS malware (The Register)
+
+https://www.theregister.co.uk/2020/01/08/applejeus_malware_returns/
+
+------------------------------
+
+Date: Wed, 8 Jan 2020 23:45:24 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Inside Documents Show How Amazon Chose Speed Over Safety in
+  Building Its Delivery Network (ProPublica)
+
+https://www.propublica.org/article/inside-documents-show-how-amazon-chose-speed-over-safety-in-building-its-delivery-network
+
+...but we all want our stuff right now...
+
+------------------------------
+
+Date: Sat, 11 Jan 2020 17:29:06 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Feds Are Content to Let Cars Drive, and Regulate, Themselves (WIRED)
+
+A new Transportation Department policy on self-driving cars is long on
+boosting the industry and short on ensuring its safety.
+
+Not all road safety advocates are pleased with that approach. “The DOT is
+supposed to ensure that the US has the safest transportation system in the
+world, but it continues to put this mission second, behind helping industry
+rush automated vehicles,” Ethan Douglas, a senior policy analyst for cars
+and product safety at Consumer Reports, said in a statement.
+
+https://www.wired.com/story/feds-content-cars-drive-regulate-themselves/
+
+------------------------------
+
+Date: Fri, 17 Jan 2020 10:29:53 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Should Automakers Be Responsible for Accidents?
+
+What a strange scheme:
+
+Automaker enterprise liability would have useful incentives that driver
+liability law misses.
+
+My basic argument is that while current negligence-based auto liability
+rules could in theory work to provide optimal accident-avoidance incentives,
+in practice they do not. The current system requires courts and drivers to 
+evaluate benefit–cost tradeoffs they are not equipped to make. Also under
+the current system, much of auto-accident costs are offloaded onto medical
+and disability insurers or taxpayers.  By  contrast, under an  automaker
+enterprise liability system, responsibility for those costs would be placed
+on the parties in the best position to reduce and insure them: vehicle
+manufacturers. In addition, automakers would be induced to charge enough for
+cars to fully internalize the costs of automobile accidents.  Further, if
+auto-insurance contracts—and auto-insurance premium adjustments—could be 
+deployed  to improve driving habits, auto manufacturers would be induced to
+coordinate with auto insurers to achieve these deterrence gains. Moreover,
+to the extent that Level 5s reduce the cost of accidents, they would be 
+cheaper to purchase than conventional  vehicles, which would provide a
+natural subsidy to encourage (and potentially accelerate) their deployment.
+
+https://www.cato.org/sites/cato.org/files/serials/files/regulation/2019/3/regulation-v42n1-1.pdf
+
+------------------------------
+
+Date: Fri, 10 Jan 2020 12:29:04 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Paul Krugman's no-good, very bad Internet day (Ars Techica)
+
+https://arstechnica.com/information-technology/2020/01/paul-krugmans-no-good-very-bad-internet-day/
+
+------------------------------
+
+Date: Thu, 9 Jan 2020 23:07:32 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Hackers Cripple Airport Currency Exchanges, Seeking $6 Million
+  Ransom (NYTimes)
+
+https://www.nytimes.com/2020/01/09/business/travelex-hack-ransomware.html
+
+------------------------------
+
+Date: Thu, 16 Jan 2020 14:34:46 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Hacker offers for sale 49M user records from US data broker
+  LimeLeads (Security Affairs)
+
+https://securityaffairs.co/wordpress/96432/data-breach/limeleads-data-leak.html
+
+------------------------------
+
+Date: Fri, 10 Jan 2020 12:17:45 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Over two dozen encryption experts call on India to rethink changes
+  to its intermediary liability rules (Tech Crunch)
+
+https://techcrunch.com/2020/01/09/over-two-dozen-encryption-experts-call-on-india-to-rethink-changes-to-its-intermediary-liability-rules/
+
+------------------------------
+
+Date: Tue, 07 Jan 2020 13:12:37 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: Chosen-Prefix attack against SHA-1 Reported (Ars Technica)
+
+As reported in Ars Technica, a team of researchers recently presented a
+paper reporting a successful chosen-prefix attack against SHA-1. This has
+implications for OpenSSL, PGP, Git, and other components and processes that
+rely on the use of SHA-1 message digests for proving authenticity.
+
+The full article can be found at:
+https://arstechnica.com/information-technology/2020/01/pgp-keys-software-security-and-much-more-threatened-by-new-sha1-exploit/
+
+The underlying paper is at: https://eprint.iacr.org/2020/014.pdf
+
+------------------------------
+
+Date: Wed, 15 Jan 2020 23:48:50 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: 2020 first Patch Tuesday: Windows' ECC certificates (Rapid7)
+
+The first Patch Tuesday of 2020 has been hotly anticipated due to a rumour
+that Microsoft would be fixing a severe vulnerability in a fundamental
+cryptographic library. It turns out that the issue in question is indeed
+serious, and was reported to Microsoft by the NSA: CVE-2020-0601 is a flaw
+in the way Windows validates Elliptic Curve Cryptography (ECC)
+certificates. It allows attackers to spoof a code-signing certificate that
+could be used to sign a malicious executable, which would look totally
+legitimate to the end user. It also enables attackers to conduct
+man-in-the-middle attacks and decrypt confidential information on user
+connections to affected systems. This vulnerability exists in Windows 10,
+Server 2016, and Server 2019. These systems need to be patched immediately,
+as correct certificate validation is vital for determining trust.
+
+https://blog.rapid7.com/2020/01/14/patch-tuesday-january-2020/
+
+  [Steven Cheung noted this (WSJ)
+
+    "The flaw at issue involves a mistake in how Microsoft uses digital
+    signatures to verify software as authentic, which helps block malware
+    from being deployed on a computer. The error would potentially enable
+    hackers to install powerful malware on systems undetected."]
+https://www.wsj.com/articles/microsoft-releases-patch-to-severe-windows-flaw-detected-by-nsa-11579030780
+
+------------------------------
+
+Date: Sun, 12 Jan 2020 16:19:24 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Facebook Says Encrypting Messenger by Default Will Take Years
+  (WiReD)
+
+Mark Zuckerberg promised default end-to-end encryption throughout Facebook's
+platforms. Nearly a year later, Messenger's not even close.
+
+https://www.wired.com/story/facebook-messenger-end-to-end-encryption-default/
+
+No rush...
+
+------------------------------
+
+Date: Mon, 13 Jan 2020 10:26:01 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: China's new Cryptolaw (Cointelegraph)
+
+cointelegraph.com/news/china-prepares-for-cbdc-with-cryptography-law-on-encryption-standards
+
+On 1 Jan 2020, China's law governing cryptographic password management came
+into power. Essentially, the act aims to set standards for the application
+of cryptography and the management of passwords, and, therefore, ultimately
+reduces China's cyber vulnerabilities on a nationwide scale.  Some local
+media outlets rumor that the law is paving the way for the long-awaited
+release of China's central bank digital currency, although it does not make
+any explicit references in that regard.  Meanwhile, the private sector is
+worried about the anonymity of its data.  [...]
+
+------------------------------
+
+Date: Fri, 10 Jan 2020 10:30:34 -0500
+From: scs@eskimo.com (Steve Summit)
+Subject: Some consumers have noticed that computerization isn't always the
+  answer (Star Tribune)
+
+Not the usual sort of risk, but here's a nice article on the premium placed
+by savvy farmers on tractors built before 1980 or so, in significant part
+because they're *not* computerized and can therefore be maintained by
+anyone.
+
+http://www.startribune.com/for-tech-weary-midwest-farmers-40-year-old-tractors-now-a-hot-commodity/566737082/
+
+------------------------------
+
+Date: Sun, 12 Jan 2020 12:22:00 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: At Mayo Clinic AI engineers face an acid test: Will their
+  algorithms help real patients? (StatNews)
+
+https://www.statnews.com/2019/12/18/mayo-clinic-artificial-intelligence-acid-test/
+
+A sobering peak at AI's potential role in medicine at the front line, with
+patient data-in-the-loop, applied to ferret out atrial fibrillation (a-fib)
+precursors using a convolution neural network -- the same algorithm applied
+by driverless vehicles to recognize traffic signs and road obstacles, etc.
+
+"The largest share of the data is derived from electrocardiograms (EKGs), a
+century-old technology that is commonly used to evaluate heart function by
+recording electrical pulses that cause the heart to beat.  About 250,000
+EKGs are performed every year at Mayo, which has a digital dataset of 7
+million records stretching back to the mid-1990s.
+
+"EKGs have been able to detect a-fib for decades, but Mayo is seeking to
+take it a step further — by trying to predict which patients will experience
+this arrhythmia in the future."  [...]
+
+"In a study published in August, Mayo reported the algorithm was able to
+accurately identify patients with a-fib at an 80-percent accuracy rate.  On
+a recent afternoon, its power was displayed in the case of a patient who had
+undergone EKGs over a 30-year period but had never been diagnosed with
+a-fib. Inside a conference room, a group of engineers and cardiologists
+scanned the peaks and valleys of the data projected on a screen for any sign
+of an abnormality.
+
+"Dr. Samuel Asirvatham, an electrophysiologist who reads EKGs as
+automatically as most people drive a flat stretch of interstate, jumped up
+from his chair to take a closer look. He flipped forward in the series of
+EKGs and then back, but nothing seemed to call out a certainty of atrial
+fibrillation. However, the AI system, when it was shown the same data,
+detected a hidden pattern pinpointing two occasions when the patient’s risk
+of atrial fibrillation had increased dramatically.
+
+"As it turned out, both of those EKGs preceded cryptogenic strokes, or
+strokes of unknown cause, that, in hindsight, may have been caused by the
+a-fib."
+
+Focusing on patient outcome improvement potential is a key performance
+indicator for effective medical care delivery. That the article does not
+mention false-negative/positive and
+area-under-curve/receiver-operating-characteristics (AUCROC) suggests some
+undisclosed algorithmic sensitivity derived from the MAYO dataset -- though
+it embodies a sizable patient sample history.
+
+As described by the essay, the data used is selective and filtered --
+presented as evidence of merit for premonitory a-fib detection where none is
+currently visible in a given cardiogram -- normal sinus rhythm
+presented. That a physician skilled in the art can recognize 'cryptogenic
+stroke' indicators based on prior cardiogram reading, as can the machine,
+suggests equivalent detection capability when both are given a sufficiently
+rich dataset.
+
+Interpreting an isolated electro-cardiogram to predict a-fib occurrence
+or recurrence risks, independent of patient history, is quack medicine.
+
+Cardiac electrophysiologists often assess a-fib risks using patient factors
+that antagonize: high blood pressure, obstructive sleep apnea, obesity, high
+cholesterol, sedentary life style, prior a-fib events, etc. Typically, the
+CHADS2 score
+(https://www.mdcalc.com/chads2-score-atrial-fibrillation-stroke-risk)
+encapsulates these factors to estimate stroke risk.
+
+Perhaps the motive to justify proactive a-fib prediction is to suppress or
+optimize future medical care expenditures. ~1% of the US population (~3
+million people) are diagnosed with a-fib each year.
+
+How many patients will be falsely diagnosed or misdiagnosed by "The Stroke
+Predictor Model 9000"? What costs (and potential hardships) will be incurred
+by patients, physicians, and medical system who rely on AI-enhanced
+incidents? Will these adverse incidents diminish or increase in frequency?
+Where's the double-blind study to certify and justify adoption of this
+device into cardiac care protocol?
+
+Risk: AI-based cardiogram signal processing and interpretation.
+
+------------------------------
+
+Date: Wed, 8 Jan 2020 12:14:15 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: AI Comes to the Operating Room (The New York Times)
+
+https://www.nytimes.com/2020/01/06/health/artificial-intelligence-brain-cancer.html
+
+"Images made by lasers and read by computers can help speed up the diagnosis
+of brain tumors during surgery."
+
+A 'frozen section' analysis of brain tissue only requires ~2 minutes given
+the candidate technique. In the old days, 30+ minutes elapsed while the
+patient waited under anesthesia for a carbon-based pathology assessment.
+
+Speed is important, too: less time on the operating room table, and a "quick
+second opinion," albeit by 'deep learning' trained-machine to recognize
+tumors in the flesh. MRIs apparently don't always yield a conclusive pre-op
+diagnosis. Hence the need for biopsy supplement.
+
+"The study involved brain tissue from 278 patients, analyzed while the
+surgery was still going on. Each sample was split, with half going to AI and
+half to a neuropathologist. The diagnoses were later judged right or wrong
+based on whether they agreed with the findings of lengthier and more
+extensive tests performed after the surgery.
+
+"The result was a draw: humans, 93.9 percent correct; AI, 94.6 percent."
+'Correct'? No false-positive or false-negative AUC ROC measures?
+
+You should trust your physician -- they swear by the Hippocratic Oath. Trust the
+physician's tool supply chain? Not so fast.
+
+------------------------------
+
+Date: Thu, 16 Jan 2020 04:01:34 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: A Very Real Potential for Abuse: Using AI to Score Video Interviews
+  (CNN)
+
+CNN has published an article on an interesting trend: the use of AI
+evaluations of candidate video interviews during the selection process for
+internships and jobs.
+
+As in other cases with AI-based evaluation of imagery, the potential for
+baked-in bias is clear. Without extensive study, is there a way to validate
+that such mechanisms are free of explicit or implicit bias concerning race,
+culture, and other factors. As an example, the subject of "word choice". In
+some cultures, directness is valued, in other cultures, precisely the
+opposite is true. It would be far too simple for a bot to downgrade a
+candidate for "lack of directness" when their cultural background values
+it. Would that not be effective discrimination on race, national origin, or
+other prohibited or suspect factor.
+
+A thought experiment: Consider scoring the statement "The patient has a
+tumor" with the all-but-required phrasing used by a radiologist "The
+patient's imagery is consistent with the presence of a tumor". Is one of
+these options "evasive"?
+
+One could argue that it is a matter of what questions are asked, but that
+presupposes a degree of sophistication which is likely not present in
+practice.
+
+https://www.cnn.com/2020/01/15/tech/ai-job-interview/index.html
+
+------------------------------
+
+Date: Mon, 13 Jan 2020 13:19:47 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: 5G, AI, blockchain, quantum, ... (Marketoonist)
+
+Smart Devices and 5G cartoon | Marketoonist | Tom Fishburne
+
+With the imminent arrival of 5G, there’s a lot of euphoric talk about about
+the future of connected devices, which is leading to a fair amount of
+technology-for-technology-sake.  And there are many funny and no-so-funny
+bumps in the road.
+
+On the funny end of the spectrum, GE was mocked
+<https://www.marketwatch.com/story/this-ridiculous-ge-video-showing-14-steps-to-reset-a-smart-lightbulb-has-suddenly-gone-viral-2019-06-20>
+a few months ago for releasing a guide to reset their Smart Lightbulb.  It
+requires 14 complicated steps of turning it off and on at exact second
+counts with a stopwatch (“turn off for two seconds … turn on for eight
+seconds”).  Stephen Fry remarked
+<https://www.marketwatch.com/story/this-ridiculous-ge-video-showing-14-steps-to-reset-a-smart-lightbulb-has-suddenly-gone-viral-2019-06-20>,
+“This is insane enough to be joyous.”
+
+On the not-so-funny end of the spectrum, smart-device maker Wyze announced
+<https://www.marketwatch.com/story/smart-device-maker-wyze-confirms-data-breach-that-could-affect-millions-2019-12-29>
+two weeks ago that both of the company’s production databases were left
+entirely open to the Internet, exposing the data of 2.4 million users of
+their smart-home cameras and devices.
+
+These are all reflections of the awkward adolescent stage of technology
+we’re living and working in. We have to continually question just how
+“smart” all of this “smart” technology really is.
+
+https://marketoonist.com/2020/01/smart.html
+
+------------------------------
+
+Date: January 8, 2020 8:14:28 JST
+From: Richard Forno <rforno@infowarrior.org>
+Subject: Inside the Billion-Dollar Battle Over .Org (Steve Lohr)
+
+  [via Dave Farber]
+
+Steve Lohr, *The New York Times*, 7 Jan 2020
+
+A private equity firm wants to buy the Internet domain used by nonprofits. A
+group of online pioneers says it is not the place to maximize profits.
+
+Two months ago, Ethos Capital, a private equity firm, announced that it
+planned to buy the rights to a tract of Internet real estate for more than
+$1 billion.  But it wasn't just any piece of digital property. It was
+dot-org, the cyber neighborhood that is home to big nonprofits and
+nongovernmental organizations like the United Nations (un.org) and NPR
+(npr.org), and to little ones like neighborhood clubs.
+
+The deal was met with a fierce backlash. Critics argued that a less
+commercial corner of the Internet should not be controlled by a
+profit-driven private equity firm, as a matter of both principle and
+practice. Online petitions and letters of concern came from hundreds of
+organizations, thousands of individuals and four Democrats in Congress,
+including Senator Elizabeth Warren of Massachusetts.
+
+Rarely has the acronym-strewn realm of Internet addresses -- so-called
+domain names -- stirred such passion.
+
+Now, a group of respected Internet pioneers and nonprofit leaders is
+offering an alternative to Ethos Capital's bid: a nonprofit cooperative
+corporation. The incorporation papers for the new entity, the Cooperative
+Corporation of .ORG Registrants, were filed this week in California.
+[...]   [PGN-ed, longish item, truncated]
+
+https://www.nytimes.com/2020/01/07/technology/dot-org-private-equity-battle.html?emc=3Drss&partner=3Drss
+
+------------------------------
+
+Date: Thu, 9 Jan 2020 21:03:39 -0800
+From: Paul Saffo <paul@saffo.com>
+Subject: A lazy fix 20 years ago means the Y2K bug is taking down computers
+  now (New Scientist)
+
+  [Re: Martyn Thomas, This might be a genuine Y2K problem -- are there more?
+  RISKS-31.50]
+
+Chris Stokel-Walker, *New Scientist*, 7 Jan 2020
+https://www.newscientist.com/article/2229238-a-lazy-fix-20-years-ago-means-the-y2k-bug-is-taking-down-computers-now/
+
+  [PGN-ed to avoid duplication with RISKS-31.50 and 53.]
+
+[...] Programmers wanting to avoid the Y2K bug had two broad options:
+entirely rewrite their code, or adopt a quick fix called ``windowing'',
+which would treat all dates from 00 to 20, as from the 2000s, rather than
+the 1900s. An estimated 80 per cent of computers fixed in 1999 used the
+quicker, cheaper option.
+
+``Windowing, even during Y2K, was the worst of all possible solutions
+because it kicked the problem down the road,'' says Dylan Mulvin at the
+London School of Economics.
+
+Coders chose 1920 to 2020 as the standard window because of the significance
+of the midpoint, 1970. ``Many programming languages and systems handle
+dates and times as seconds from 1970/01/01, also called Unix time,'' says
+Tatsuhiko Miyagawa, an engineer at cloud platform provider Fastly.
+
+Unix is a widely used operating system in a variety of industries, and this
+v``epoch time'' is seen as a standard.
+
+The theory was that these windowed systems would be outmoded by the time
+2020 arrived, but many are still hanging on and in some cases the issue had
+been forgotten.
+
+``Fixing bugs in old legacy systems is a nightmare: it's spaghetti and
+nobody who wrote it is still around,'' says Paul Lomax, who handled the Y2K
+bug for Vodafone. ``Clearly they assumed their systems would be long out of
+use by 2020. Much as those in the 60s didn't think their code would still be
+around in the year 2000.''
+
+Those systems that used the quick fix have now reached the end of that
+window, and have rolled back to 1920. Utility company bills have reportedly
+been produced with the erroneous date 1920, while tens of thousands of
+parking meters in New York City have declined credit card transactions
+because of the date glitch.
+
+Thousands of cash registers manufactured by Polish firm Novitus have been
+unable to print receipts due to a glitch in the register's clock. The
+company is attempting to fix the machines.
+
+WWE 2K20, a professional wrestling video game, also stopped working at
+midnight on 1 January 2020. Within 24 hours, the game's developers, 2K,
+issued a downloadable fix.
+
+Another piece of software, Splunk, which ironically looks for errors in
+computer systems, was found to be vulnerable to the Y2020 bug in
+November. The company rolled out a fix to users the same week -- which
+include 92 of the Fortune 100, the top 100 companies in the US.
+
+Some hardware and software glitches have been incorrectly attributed to the
+bug. One healthcare professional claimed Y2020 hit a system developed by
+McKesson, which produces software for hospitals. A spokesperson for McKesson
+told New Scientist the firm was unaware of any outage tied to Y2020.
+
+Exactly how long these Y2020 fixes will last is unknown, as companies
+haven't disclosed details about them. If the window has simply been pushed
+back again, we can expect to see the same error crop up.
+
+Another date storage problem also faces us in the year 2038. The issue again
+stems from Unix's epoch time: the data is stored as a 32-bit integer, which
+will run out of capacity at 3.14 am on 19 January 2038.
+
+[In response to a request from Eric Hofnagel, I pulled together a historical
+list of Y2K-related problems.  It is now on my website 
+http://www.csl.sri.com/neumann/neumann.html at
+http://www.csl.sri.com/neumann/y2k-pgn.txt
+PGN]
+
+------------------------------
+
+Date: Mon, 13 Jan 2020 13:35:59 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: When 2 < 7 => failure (Ars Technica)
+
+Grocery store system does periodic audits of self-checkout users, but the
+system doesn't work if you have fewer than 7 items - the audit requires
+auditing exactly seven items.
+
+Granted, not the biggest risk in the world, but if the venue didn't
+have in-person employees, what would the customer do?
+
+https://arstechnica.com/staff/2020/01/how-i-broke-my-grocery-stores-app-by-not-buying-enough-stuff/
+
+------------------------------
+
+Date: Tue, 7 Jan 2020 20:18:50 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Make It Your New Year's Resolution Not to Share Misinformation
+  (Mother Jones)
+
+https://www.motherjones.com/politics/2020/01/make-it-your-new-years-resolution-not-to-share-misinformation/
+
+Not profound but worth sharing with the less tech-savvy.
+
+------------------------------
+
+Date: Fri, 17 Jan 2020 11:50:03 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Inside the Feds' Battle Against Huawei (WiReD)
+
+https://www.wired.com/story/us-feds-battle-against-huawei/
+
+Long, interesting...
+
+------------------------------
+
+Date: Mon, 6 Jan 2020 19:57:42 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Apple Is Bullying a Security Company with a Dangerous DMCA Lawsuit
+  (iFixit)
+
+https://www.ifixit.com/News/apple-is-bullying-a-security-company-with-a-dangerous-dmca-lawsuit
+
+------------------------------
+
+Date: Mon, 6 Jan 2020 19:58:52 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How to Protect Yourself From Real Estate Scams (NYTimes)
+
+https://www.nytimes.com/2020/01/03/realestate/how-to-protect-yourself-from-real-estate-scams.html
+
+Not entirely new, but worth reading how it works, what to do and not to.
+
+------------------------------
+
+Date: Fri, 17 Jan 2020 10:14:25 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Dutch Artists Celebrate George Orwell's Birthday By Putting Party
+  Hats On Surveillance Cameras (BuzzFeed News)
+
+https://www.buzzfeednews.com/article/ellievhall/dutch-artists-celebrate-george-orwells-birthday-by-adorning
+
+------------------------------
+
+Date: Mon, 06 Jan 2020 20:27:28 +0000
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Re: reliability of computers (RISKS-31.53)
+
+This brought back memories from a guy at the company where I used to work,
+as he told of being called in as an expert witness on something very similar
+back in the 1990s.  As I recall, he said that two banks or building
+societies (mortgage providers) had merged; they had totally different
+computer systems, but the new managers simply fired one of the support teams
+and expected the other to cope with both systems, which they struggled to
+do.  His expert opinion was that security on the unsupported system was a
+disaster area, with security features not enabled, passwords and log-ins
+left with default settings, etc.  As mentioned, he felt sympathy for the
+police officer, who queried some transactions on his account and ended up
+being charged with attempting to obtain money by deception.  The
+geographical location for the case was Woodbridge, Suffolk.
+
+By the way, there was a similar "our computers are never wrong" item on a
+BBC radio programme covering consumer affairs a couple of months ago.  This
+featured a woman with a regular Chip&PIN credit/debit card, which had
+expired and been routinely replaced by the card provider.  She was told to
+cut up the old one but forgot to do this, however she expected it to be
+cancelled anyway so wasn't concerned.  Quite some time later she found
+unexpected transactions on the account and was told "the security with these
+cards has never failed so it must have been stolen", which she knew was
+untrue as she still had it in her hands.  After much argument it turned out
+that the old card had *not* been cancelled, so the woman went through normal
+life unknowingly having a pair of duplicate cards, then didn't notice when
+one was stolen...
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.54
+************************

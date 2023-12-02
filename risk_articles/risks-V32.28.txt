@@ -1,0 +1,401 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.28
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 22 September 2020  Volume 32 : Issue 28
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.28>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Boeing cuts flight training pilots, will outsource jobs overseas (The Stand)
+Deepfakes to turn world into 'sci-fi dystopia' as humans 'won't tell
+  difference' (Daily Star)
+DARPA-funded implantable biochip to detect COVID-19 could hit markets by
+  2021 (ZeroHedge) 
+Election systems already hacked? (Bob Woodward via Glenn Story)
+Unsecured Microsoft Bing Server Exposed Users' Search Queries and Location
+  (The Hacker News)
+Old TV caused village broadband outages for 18 months (BBC)
+The Fight Over the Fight Over California's Privacy Future (WiReD)
+Fake directors plan to combat money laundering (bbc.com)
+D.C.'s New Area Code Will Be... 771 (DCist)
+Think Twice Before Using Facebook, Google, or Apple to Sign In Everywhere
+  (WiReD)
+New Covid-19 swab test robot offers safe, more comfortable procedure for
+  patients (Straits Times)
+Re: The future is cyborg (George Sigut)
+Re: A Quick Note on Voting Twice (Andrew Appel via PGN)
+Re: The future is cyborg (Martyn Thomas)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 22 Sep 2020 08:09:09 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Boeing cuts flight training pilots, will outsource jobs overseas
+  (The Stand)
+
+http://www.thestand.org/2020/09/boeing-cuts-flight-training-pilots-will-outsource-jobs-overseas/
+
+  [Thanks to Robert Dorsett.  PGN]
+
+------------------------------
+
+Date: Tue, 22 Sep 2020 09:35:19 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Deepfakes to turn world into 'sci-fi dystopia' as humans 'won't
+  tell difference' (Daily Star)
+
+*Experts have warned that deepfake technology is rapidly advancing at a
+rate far faster than the technology used to detect it, with one believing
+it could be too smart for humans to figure out.  [...]
+https://www.dailystar.co.uk/news/latest-news/deepfakes-turn-world-sci-fi-22715143
+
+------------------------------
+
+Date: Sat, 19 Sep 2020 13:17:15 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: DARPA-funded implantable biochip to detect COVID-19 could hit
+  markets by 2021 (ZeroHedge)
+
+https://www.zerohedge.com/medical/darpa-funded-implantable-biochip-detect-covid-19-could-hit-markets-2021
+
+------------------------------
+
+Date: Sat, 19 Sep 2020 15:50:35 -0700
+From: Glenn Story <glenn.story@gmail.com>
+Subject: Election systems already hacked? (Bob Woodward)
+
+I'm reading the new Bob Woodward book, *Rage, *and came across this
+unsettling quote:
+
+  "The NSA and CIA had evidence, highly classified, that the Russians had
+  placed malware in the election registration system in at least two
+  counties in Florida -- St. Lucie County and Washington County. There was
+  no evidence yet that the malware had been activated. It was sitting there
+  to be used.  The voting system vendor used by Florida was used by state
+  election registration systems all around the country. The Russian malware
+  was sophisticated and could be activated in counties with particular
+  demographics. For instance, in areas with higher percentages of Black
+  residents, the malware could erase every tenth voter, almost certainly
+  reducing the total vote count for Democrats. The same could potentially be
+  activated to reduce Trump votes in Republican districts.".
+
+I've read lots of warnings about *attempts* to hack into American voting
+systems, but hadn't been aware of any successful penetrations.
+
+This seems very serious to me.  If it is determined, after the fact, that
+votes were miscounted or voters were not allowed to vote in a battleground
+state, what will we do?
+
+*Rage* has been getting lots of publicity, but so far as I know no one has
+picked up on this passage, which even the author doesn't make a big noise
+about.
+
+Hopefully the counties that have been hacked (and all others using that
+brand of voting software) have had their systems scrubbed clean--it doesn't
+say one way or the other in the book.
+
+------------------------------
+
+Date: Tue, 22 Sep 2020 08:02:27 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Unsecured Microsoft Bing Server Exposed Users' Search Queries and
+  Location (The Hacker News)
+
+A back-end server associated with Microsoft Bing exposed sensitive data of
+the search engine's mobile application users, including search queries,
+device details, and GPS coordinates, among others.
+
+The logging database, however, doesn't include any personal details such as
+names or addresses.
+
+The data leak, discovered by Ata Hakcil of WizCase
+<https://www.wizcase.com/blog/bing-leak-research/> on September 12, is a
+massive 6.5TB cache of log files that was left for anyone to access without
+any password, potentially allowing cybercriminals to leverage the
+information for carrying out extortion and phishing scams.
+
+According to WizCase, the Elastic server is believed to have been password
+protected until September 10, after which the authentication seems to have
+been inadvertently removed.
+
+After the findings were privately disclosed to Microsoft Security Response
+Center, the Windows maker addressed the misconfiguration on September 16.
+
+Misconfigured servers have been a constant source of data leaks
+<https://www.comparitech.com/blog/information-security/prison-phone-service-exposes-millions-inmate-records/>
+in recent years, resulting in exposure of email addresses, passwords, phone
+numbers, and private messages.  [...]
+
+https://thehackernews.com/2020/09/bing-search-hacking.html
+
+------------------------------
+
+Date: Tue, 22 Sep 2020 07:42:10 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Old TV caused village broadband outages for 18 months (BBC)
+
+*The mystery of why an entire village lost its broadband every morning at
+7am was solved when engineers discovered an old television was to blame*.
+
+Broadband: Old TV caused village broadband outages for 18 months
+https://www.bbc.co.uk/news/uk-wales-54239180
+https://www.bbc.com/news/uk-wales-54239180
+
+  [Also noted by Mark Bennison]
+
+------------------------------
+
+Date: Mon, 21 Sep 2020 20:20:06 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Fight Over the Fight Over California's Privacy Future (WiReD)
+
+Proposition 24 is designed to make the California Consumer Privacy Act
+stronger.  Why do so many privacy advocates oppose it?
+
+When state senator Bob Hertzberg learned that an ambitious privacy
+initiative had gotten enough signatures to qualify for the ballot in
+California, he knew he had to act quickly.
+
+``My objective was to get the damn thing off the ballot.''
+
+https://www.wired.com/story/california-prop-24-fight-over-privacy-future/
+
+------------------------------
+
+Date: Sun, 20 Sep 2020 12:04:15 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Fake directors plan to combat money laundering (bbc.com)
+
+https://www.bbc.com/news/business-54209977
+
+The UK's Companies House comprises a core system of record that
+authenticates business ownership and persons of significant control (PSC) --
+corporate directors. Historically weak oversight enabled rampant criminal
+exploitation via money laundering enterprises.
+
+"One estimate from Transparency International (TI), which investigates
+corruption, identified almost 1,000 front companies responsible for up to
+£137 billion of suspected criminal money flowing through the UK."
+
+See https://www.transparency.org/en/blog/gatekeepers-asleep-on-the-job for
+instance:
+
+"Reporting of major corruption scandals usually puts the high-profile
+kleptocrats front and centre, and rightly so. But, more often than not, the
+criminal and corrupt couldn't launder their ill-gotten gains without a
+variety of professional services, including those of accountants, notaries,
+real estate agents and bankers.
+
+"These professions are subject to specific anti-money laundering
+obligations, and are meant to be the first line of defence protecting the
+global financial system against dirty money."
+
+Professionals routinely shirk ethical responsibilities.
+
+Tightening oversight is key to suppress illegitimate commercial
+activities. This document details significant reform measures:
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/919356/corporate-transparency-register-reform-consultation-government-response.pdf.
+
+Lord Callanan, the UK Minister for Climate Change and Corporate
+Responsibility states in the forward, "Too often I see companies repeatedly
+set up and closed down to avoid paying debts -- so called 'phoenixing'.
+Shell companies have been set up for no other purpose than to launder the
+proceeds of crime -- committed both here and overseas."
+
+The identified reforms close numerous loopholes that enabled money
+laundering enterprises to acquire legitimacy. The reforms rely heavily on
+digital document and identity authentication mechanisms. Agents performing
+registrations on behalf of candidates PSC are required to demonstrate
+comprehensive credential verification due diligence.
+
+Third-party ID verification services will be enlisted to accelerate and vet
+the credentials of PSC candidates before they acquire Companies House bona
+fides. Cross-referencing government systems of record will establish
+candidate authenticity.
+
+The new processes are scheduled to roll-out for user testing at the end of
+financial year 2020/2021. Wait and see what transparency.org reports about
+UK money laundering in the near future.
+
+My guess is that another nation will see an incremental growth in
+money-laundering traffic as the UK strengthens controls.
+
+------------------------------
+
+Date: Tue, 22 Sep 2020 18:11:02 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: D.C.'s New Area Code Will Be... 771 (DCist)
+
+For more than seven decades, (202) has been D.C.'s sole area code. But by
+the end of 2022, the city will have a new one: (771).
+
+This month regulators started the 13-month process to implement the new
+(771) area code, a step that reflects the reality that the longstanding
+(202) area code -- first unveiled in 1947 as one of the country's 86
+original area codes -- is running out of of available phone numbers.
+
+Each area code can produce roughly eight million seven-digit phone numbers,
+and the North American Numbering Plan Administrator -- the official
+regulator of area codes in the U.S., Canada and some Caribbean countries --
+says (202) is expected to run out of numbers within two years. In fact, the
+number of (202) phone numbers remaining declined at such a rapid pace this
+year that in August NANPA formally declared it was in jeopardy, kicking off
+a series of steps to slow its march towards extinction -- including
+rationing numbers.
+
+https://dcist.com/story/20/09/22/washington-dc-new-area-code-771-district-phone/
+
+...another non-renewable resource. I wonder how many area codes NANPA has
+unallocated -- and when we'll need four-digit area codes. Or hexadecimal
+phone keypads, or phone numbers including */#. (Yes, latter two are jokes --
+mostly)
+
+------------------------------
+
+Date: Mon, 21 Sep 2020 20:09:16 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Think Twice Before Using Facebook, Google, or Apple to Sign In
+  Everywhere (WiReD)
+
+So-called single sign-on options offer a lot of convenience. But they have
+downsides that a good old fashioned password manager doesn't.
+
+https://www.wired.com/story/single-sign-on-facebook-google-apple/
+
+No surprise here; I keep reminding people of this.
+
+------------------------------
+
+Date: Tue, 22 Sep 2020 13:30:58 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: New Covid-19 swab test robot offers safe, more comfortable
+  procedure for patients (Straits Times)
+
+https://www.straitstimes.com/singapore/robot-that-conducts-swab-tests-for-covid-19-is-safe-faster-and-more-comfortable-for
+
+SARS-CoV2 exposure constitutes an occupational risk for healthcare
+professionals. Singapore commenced deployment of a prototype SwabBot to
+reduce this risk. Other countries have also deployed similar solutions.
+
+"'Our team felt that we had to find a better way to swab patients to reduce
+the risk of exposure of Covid-19 to our healthcare workers, especially when
+patients sneeze or cough during the swabbing process,' said principal
+investigator Rena Dharmawan, associate consultant of head and neck surgery
+at NCCS' Division of Surgery and Surgical Oncology."
+
+ From the US Center for Disease Control,
+https://covid.cdc.gov/covid-data-tracker/index.html#health-care-personnel
+(retrieved on 22SEP2020) reveals infections and deaths among healthcare
+professionals participating in the COVID-19 pandemic response.
+
+"Data were collected from 5,043,006 people, but healthcare personnel status
+was only available for 1,213,744 (24.07%) people. For the 160,860 cases of
+COVID-19 acquired by healthcare personnel, death status was only available
+for 115,817 (72.00%)."
+
+These values can be used to compute infection and mortality probabilities
+among US healthcare professionals during the pandemic.
+
+Probability of infection acquisition: 160860/1213744 ~= 13.3%
+
+Probability of mortality from infection: 709/115817 ~= 0.61%
+
+Given Singapore's aggressive COVID-19 pandemic response campaign, these
+probabilities are likely to be substantially diminished compared to the US.
+
+SwabBot Risks: SARS-CoV2 transmission from shared device reuse, injury from
+nasal probe malfunction during sample acquisition, cross-sample
+contamination.
+
+------------------------------
+
+Date: Sat, 19 Sep 2020 08:54:04 -0400
+From: George Sigut <george.sigut@gmail.com>
+Subject: Re: The future is cyborg (RISKS-32.27)
+
+The numbers don't seem to tally. 63% average with 60% maximum?
+Interestingly there is another independent report on the same
+study, which gives other, more differentiated numbers:
+
+https://www.computerweekly.com/news/252489134/Brits-more-fazed-by-human-augmentation
+
+All other reports seem to be using the Reuters text.
+
+Risk 1: The study itself is not available, so there is no way
+        to see which numbers are correct.
+Risk 2: A big agency being parroted by all others, drowning out
+        a differing opinion.
+
+------------------------------
+
+Date: Sun, 20 Sep 2020 13:04:31 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: A Quick Note on Voting Twice (Bishop, RISKS-32.27)
+
+Andrew Appel <appel@princeton.edu> has just released his blog article
+"Vote-by-mail meltdowns in 2020?" on Freedom-to-Tinker:
+
+  https://freedom-to-tinker.com/2020/09/20/vote-by-mail-meltdowns-in-2020/
+
+  This excellent blog item very clearly discusses the risks issues relevant
+  to absentee voting and vote-by mail, and related issues.  PGN
+
+------------------------------
+
+Date: Sat, 19 Sep 2020 18:16:25 +0100
+From: Martyn Thomas <martyn@72f.org>
+Subject: Re: The future is cyborg (RISKS-32.27)
+
+This equates 'considering' with 'supporting'. It would be difficult to form
+any view either way without 'consideration'.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.28
+************************

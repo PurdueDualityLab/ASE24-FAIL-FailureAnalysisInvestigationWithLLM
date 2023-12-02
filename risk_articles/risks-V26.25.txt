@@ -1,0 +1,555 @@
+RISKS-LIST: Risks-Forum Digest  Monday 20 December 2010  Volume 26 : Issue 25
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.25.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Health information technology risks (Robert L Wears)
+Nice Work, EFF: e-mail protected by 4th Amendment (David Bolduc)
+WikiLeaks (*Washpost* via PGN)
+Amazon's cutoff of Wikileaks casts shadow on cloud computing (Lauren
+  Weinstein via PGN)
+File Not Found: The Record Industry's Digital Storage Crisis (David Browne
+  via Matthew Kruk)
+Massive Gawker Media security breach (Jonathan Kamens)
+iPhone snitch network launched (Jason Douglass via Monty Solomon)
+Interesting/Funny speech generation error (Lindsay Marshall)
+Dogs, not naked body scanners? (PGN)
+Ex-manager charged with stealing $140G from South Brunswick hotel
+  (FJohn Reinke)
+"Security seals" on websites (River Tarnell)
+Re: Risk of RISKS and short URLs? (David Landgren)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 14 Dec 2010 18:07:20 -0500
+From: "Robert L Wears, MD, MS" <wears@ufl.edu>
+Subject: Health information technology risks
+
+Since the ECRI Institute recently moved health IT to its 'top 10 list' of
+hazardous healthcare technologies for 2011, I thought I would offer this
+case in point.
+
+Shortly before midnight on a Monday evening, a large urban academic medical
+center suffered a major IT system crash which disabled virtually all IT
+functionality for the entire campus and regional outpatient clinics.  The
+outage affected ADT, financial, medical records, laboratory ordering and
+reporting, imaging ordering and reporting, and pharmacy systems.  (Two
+semi-independent subsystems, EKG, and picture archiving, were still
+functional in a limited sense).  The outage persisted for 67 hours, and
+forced the cancelation of all elective procedures on Wednesday and Thursday,
+involving 52 major procedures and numerous minor procedures (such as
+colonoscopies).  All ambulance traffic was diverted to other hospitals
+during the outage (estimated 70 diversions).  There were substantial delays
+in obtaining laboratory and radiology results on existing inpatients, so
+despite the reduction in the numbers of incoming patients, it was difficult
+to clear out the hospital as physicians delayed discharges pending those
+results.  Not surprising to the readers of RISKS, the outage was due to a
+concatenation of small failures and long-standing but unapparent underlying
+latent conditions.  The triggering event was a hardware failure in a
+critical network component.  This was repaired but required major servers to
+be manually restarted.  During restart, the servers halted and reported
+critical errors; it was then discovered that certain file permissions had
+been changed that prevented the clinical systems from rebooting, and
+operators from reverting to prior versions.  (It should be noted that these
+systems had not been rebooted for over 26 months).  Ultimately it was found
+that these changes resulted from an attempt to install "high availability"
+failover capability two years prior.  The high availability project had been
+plagued with problems from the start, and eventually was halted prior to
+completion, but some changes that had been made were never completely rolled
+back, unknown to the system's managers.  These changes, in the presence of
+the network fault, had the effect of triggering an attempt to execute high
+availability failover processes that were nonexistent and thus led to the
+reboot failures.  Once this issue was discovered and corrected, clinical
+servers could be restarted.  The databases then underwent extensive
+integrity checks, and when these were satisfactory, services were resumed on
+Friday at 1600.  Backloading the clinical and financial data accumulated
+during the outage took considerably longer than the downtime did.  There was
+no evidence this event was due to external agency, malware, hacking, etc.
+Interestingly, no pre-existing data were lost during the crash and downtime.
+A previous risk analysis had estimated direct costs for complete downtime at
+$56,000 per hour, so the total direct cost (not including lost revenue from
+
+canceled cases or diverted patients) is likely close to $4 million.  As far
+as is known, no patients were injured during this event.  The risks here are
+multiple, but a few salient point are worth emphasizing.  First, it was
+difficult initially for frontline workers to convince help desk personnel
+that the system was unavailable due to the partitioning of the network
+secondary to the initiating hardware failure.  Second, it was difficult to
+understand the nature of the failure or to uncover the ultimate cause of the
+event.  Third, the organization was slow in activating its own internal
+disaster plan - an incident management group was not convened until 1530
+Tuesday, roughly 16 hours into the incident.  Fourth, the social element of
+the sociotechnical system that is a hospital was able to quickly reorganize
+in multiple ways and keep essential services operating in at least some
+fashion for the duration.  Many of these adaptations were made "on the fly";
+one of the most interesting was rescheduling financial staff (who now had
+nothing to do, since no bills could be produced), using them as runners to
+move orders, materials, and results around the organization.  Fifth, as has
+been frequently noted in RISKS, maintenance played an important part in this
+failure.  The irony of the role of "high availability" resulting in
+unavailability is rich indeed.  Sixth, as Richard Cook has pointed out, a
+working system, even with known flaws, is a precious resource, so the
+reluctance to ever submit to a full restart over the course of two years,
+which included multiple large and small maintenance downtimes, is
+understandable, even though that might have identified problems like the
+undocumented permission and script changes at a time when they might have
+been more easily recognized and corrected.  As more and more care delivery
+organizations with little experience in managing clinical, as opposed to
+business, systems install more and more advanced, clinical HIT systems --
+systems that have not been developed from a safety-critical computing
+viewpoint -- more frequent and potentially more consequential failures are
+likely.
+
+Robert L Wears, MD, MS University of Florida 1-904-244-4405 (ass't)
+Also Imperial College London r.wears@imperial.ac.uk +44 (0)791 015 2219
+
+------------------------------
+
+Date: December 14, 2010 10:31:32 PM EST
+From: David Bolduc <bolduc@austin.rr.com>
+Subject: Nice Work, EFF: e-mail protected by 4th Amendment
+
+  [From Dave Farber's IP distribution.  PGN]
+
+Useful formatting and pointers in original.
+<http://www.outsidethebeltway.com/federal-court-e-mail-entitled-to-fourth-amendment-protection/>
+
+Federal Court: E-Mail Entitled To Fourth Amendment Protection
+Doug Mataconis, 14 Dec 2010
+
+In what could turn out to be a landmark case, a three-judge panel of the
+Sixth Circuit Court of Appeals ruled that e-mail held on an ISP server is
+subject to the protections of the Fourth Amendment:
+
+In a landmark decision issued today in the criminal appeal of
+U.S. v. Warshak, the Sixth Circuit Court of Appeals has ruled that the
+government must have a search warrant before it can secretly seize and
+search e-mails stored by e-mail service providers. Closely tracking arguments
+made by EFF in its amicus brief, the court found that e-mail users have the
+same reasonable expectation of privacy in their stored e-mail as they do in
+their phone calls and postal mail.
+
+EFF filed a similar amicus brief with the 6th Circuit in 2006 in a civil
+suit brought by criminal defendant Warshak against the government for its
+warrantless seizure of his e-mails. There, the 6th Circuit agreed with EFF
+that e-mail users have a Fourth Amendment-protected expectation of privacy in
+the e-mail they store with their e-mail providers, though that decision was
+later vacated on procedural grounds. Warshak's appeal of his criminal
+conviction has brought the issue back to the Sixth Circuit, and once again
+the court has agreed with EFF and held that e-mail users have a Fourth
+Amendment-protected reasonable expectation of privacy in the contents of
+their e-mail accounts.
+
+From the decision:
+
+E-Mail is the technological scion of tangible mail, and it plays an
+indispensable part in the Information Age. Over the last decade, e-mail has
+become ``so pervasive that some persons may consider [it] to be [an]
+essential means or necessary instrument[] for self-expression, even
+self-identification.''  Quon, 130 S. Ct. at 2630. It follows that e-mail
+requires strong protection under the Fourth Amendment; otherwise, the Fourth
+Amendment would prove an ineffective guardian of private communication, an
+essential purpose it has long been recognized to serve. See
+U.S. Dist. Court, 407 U.S. at 313; United States v. Waller, 581 F.2d 585,
+587 (6th Cir. 1978) (noting the Fourth Amendment's role in protecting
+private communications). As some forms of communication begin to diminish,
+the Fourth Amendment must recognize and protect nascent ones that arise. See
+Warshak I, 490 F.3d at 473 (``It goes without saying that like the
+telephone earlier in our history, e-mail is an ever-increasing mode of
+private communication, and protecting shared communications through this
+medium is as important to Fourth Amendment principles today as protecting
+telephone conversations has been in the past.''
+
+If we accept that an e-mail is analogous to a letter or a phone call, it is
+manifest that agents of the government cannot compel a commercial ISP to
+turn over the contents of an e-mail without triggering the Fourth
+Amendment. An ISP is the intermediary that makes e-mail communication
+possible. E-Mails must pass through an ISP's servers to reach their intended
+recipient. Thus, the ISP is the functional equivalent of a post office or a
+telephone company. As we have discussed above, the police may not storm the
+post office and intercept a letter, and they are likewise forbidden from
+using the phone system to make a clandestine recording of a telephone call
+-- unless they get a warrant, that is. See Jacobsen, 466 U.S. at 114; Katz,
+389 U.S. at 353. It only stands to reason that, if government agents compel
+an ISP to surrender the contents of a subscriber's e-mails, those agents
+have thereby conducted a Fourth Amendment search, which necessitates
+compliance with the warrant requirement absent some exception.
+
+Given the fundamental similarities between e-mail and traditional forms of
+communication [like postal mail and telephone calls], it would defy common
+sense to afford e-mails lesser Fourth Amendment protection. It follows that
+e-mail requires strong protection under the Fourth Amendment; otherwise the
+Fourth Amendment would prove an ineffective guardian of private
+communication, an essential purpose it has long been recognized to
+serve.   [T]he police may not storm the post office and intercept a
+letter, and they are likewise forbidden from using the phone system to make
+a clandestine recording of a telephone call ``unless they get a
+warrant, that is. It only stands to reason that, if government agents compel
+an ISP to surrender the contents of a subscriber's e-mails, those
+agents have thereby conducted a Fourth Amendment search, which necessitates
+compliance with the warrant requirement.''
+
+In the case at hand, which involved a criminal fraud prosecution of the
+owners of the company that sold the male enhancement produce Enzyte, the
+Court went on to find that the facts indicated that a good faith exception
+existed to the failure to obtain a warrant for the search at issue. As a
+result, the criminal convictions were sustained. Nonetheless, the
+Court's finding that the Fourth Amendment's protections
+extend to e-mail kept on a third-party server stands and given the prevalence
+of web-based e-mail today, it's an important one as
+well. Conceptually, there doesn't seem to be any reason why an e-mail
+provider like, say, Google, should be treated any differently than a
+delivery service or a post office. The expectations of privacy of the
+average citizen are similar, and the fact that someone chooses to store
+e-mail on a web server rather than downloading it doesn't strike me
+as a relevant distinction for 4th Amendment purposes. Besides, the idea that
+the Federal Government would be able to access electronic mail without any
+need for a showing of probable cause that a crime has been committed strikes
+me as so offensive to American concepts of liberty that the outcome here
+seems rather self-evident.
+
+But, of course, nothing in the law is self-evident. This holding only
+applies in the Sixth Circuit for the moment and it will be up to other
+courts across the country to apply the holding. Hopefully, they'll
+do the right thing.
+
+You can read the full opinion here, but be warned that it's long (98
+pages) and much of it deals with issues unrelated to the Fourth Amendment
+ruling.
+
+Archives: https://www.listbox.com/member/archive/247/=now
+
+------------------------------
+
+Date: Fri, 10 Dec 2010 8:44:48 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: WikiLeaks
+
+Joby Warrick; Rob Pegoraro, WikiLeaks Avoids Shutdown as Supporters
+Worldwide Go on the Offensive *The Washington Post* 8 Dec 2010
+[Culled from ACM TechNews, 10 Dec 2010 by PGN]
+
+The resilience of WikiLeaks despite attempts to shut it down is a testament
+to the extreme difficulty governments face in their attempts to control the
+Internet.  "The Internet is an extremely open system with very low barriers
+to access and use," says Google's Vint Cerf.  "The ease of moving digital
+information around makes it very difficult to suppress once it is
+accessible."  When WikiLeaks was blocked from using its primary Internet
+host, it shifted to another, while the number of mirror WikiLeaks sites
+exploded to more than 1,000.  Concurrently, angry WikiLeaks' advocates are
+launching attacks against sites that have severed ties to the group.
+WikiLeaks was targeted for shutdown because it disclosed sensitive
+U.S. diplomatic cables, but over the past week it has continued to publish
+them online, defying efforts to impede its access to funding and Web
+resources.  WikiLeaks' lack of a central headquarters makes it immune to
+legal and political pressure, while outsiders' closure attempts are
+complicated by the organization's multi-continental Web infrastructure.
+"Something that's illegal in some countries but not others is very hard to
+keep off the Net, even though there's been some success in keeping it out of
+the countries where it's illegal," notes Internet Systems Consortium
+president Paul Vixie.
+
+  [This is a huge topic for discussion, and generating all sorts of
+  controversy on all sides -- e.g., claims of overly aggressive government
+  actions trying to hide embarrassment, attempts to take down WikiLeaks
+  providers including widespread mirrors, overly aggressive retaliations by
+  those supportive of open information, denying government jobs to anyone
+  who had accessed WikiLeaks, and so on.  Rational thought once again leads
+  to interesting conclusions such as natural consequences of overclassifying
+  information, the use of system-high security in which any authorized user
+  has almost total access within some domain without need to know, many
+  fundamental weaknesses in system, network, and human trustworthiness, the
+  need for whistle-blowers and the realistic impossibility of guaranteeing
+  them protection, and so on.  This is a complicated issue, and probably not
+  one ongoing discussions in RISKS can grapple with adequately.  But so be
+  it: let the wild rumpus roar, as it may.  PGN]
+
+------------------------------
+
+Date: Sat, 11 Dec 2010 20:34:55 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Amazon's cutoff of Wikileaks casts shadow on cloud computing
+
+WikiLeaks row: why Amazon's desertion has ominous implications for democracy
+http://bit.ly/eabO1h  (Guardian UK)
+
+  [From Lauren Weinstein's Network Neutrality Squad and Privacy Forum,
+  http://lists.vortex.com/mailman/listinfo/privacy; http://www.nnsquad.org;
+  http://www.vortex.com]
+
+  [There are many RISKS lessons here.  PGN]
+
+------------------------------
+
+Date: Wed, 15 Dec 2010 00:25:16 -0700
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: File Not Found: The Record Industry's Digital Storage Crisis
+
+Source: David Browne
+Vinyl and analog tapes last forever, but hard drives fail and digital
+formats change, 7 Dec 2010
+
+Last year, the Beggars Banquet label unearthed the multitrack master
+recordings of the Cult's classic 1985 album, Love, for a planned deluxe
+edition. The LP was an early digital recording, and to the label's shock,
+one master was unplayable; the other contained only 80 percent of the
+album. "That's the problem with digital," says Steve Webbon, head archivist
+of the Beggars Group. "When it goes, it's just blank. It's gone."
+
+Welcome to the digital nightmare...
+http://www.rollingstone.com/culture/news/17389/239965
+
+------------------------------
+
+Date: Mon, 13 Dec 2010 14:28:18 -0500
+From: Jonathan Kamens <jik@kamens.us>
+Subject: Massive Gawker Media security breach
+
+A massive Gawker Media security breach was recently disclosed. The
+usernames, e-mails and (poorly, 1DES) encrypted passwords of about 1.5
+million Gawker-hosted Web sites (e.g., Lifehacker, Gizmodo, Gawker, Jezebel,
+io9, Jalopnik, Kotaku, Deadspin, Fleshbot, the old Consumerist, and any
+other defunct sites previously hosted by Gawker), along with Gawker source
+code and a bunch of other goodies, were stolen and published onto the
+Internet.
+
+Here's the party line from Gawker: http://lifehacker.com/5712785/
+
+Here's a much more detailed and comprehensive analysis from The Firewall
+security blog on forbes.com:
+http://blogs.forbes.com/firewall/2010/12/13/the-lessons-of-gawkers-security-mess/
+
+There's one more twist that some people may be unaware of (either because
+not everyone was sent the e-mail message I'm about to describe, or because
+their spam filters blocked it). A stealth-mode startup calling itself "Hint"
+sent out e-mail messages to an undetermined number of the people whose
+information was compromised which read as follows:
+
+  Hi there,
+
+  Hint wanted to let you know that your e-mail address and password that you
+  used to signup for Gawker (or one of its sites) were hacked. Forbes'
+  coverage is at
+  http://blogs.forbes.com/kashmirhill/2010/12/12/gawker-gets-hacked-by-gnosis/
+
+  In situations like this, time is of the essence, which is why we were
+  surprised & shocked to find that Gawker Media hadn't taken the initiative
+  to notify you of this privacy breach immediately. We HIGHLY recommend you
+  change all of your online passwords as a precaution.
+
+  -The Team at Hint (http://www.hint.io)
+  (This is a one time e-mail)
+
+This notification was problematic in a number of ways:
+
+ * The links in it (which I haven't shown above) are obfuscated
+   tracking links pointing back at email.hint.io.
+ * As far as I can tell, Hint has nothing whatsoever to do with
+   Gawker, and the e-mail message offers no explanation for why it's
+   appropriate for Hint, in particular, to be sending out this
+   notification.
+ * Hint is apparently a stealth-mode start-up whose Web sites reveals
+   nothing substantive about what it is doing or when it will be
+   going live with whatever is doing, so there's no way to verify the
+   authenticity of the message.
+ * If you look in the headers of the e-mail message, it claims to have
+   originated at "matthew-gagnons-macbook-pro.local". According to
+   LinkedIn, Matthew Gagnon is affiliated with Hint, and one of his
+   LinkedIn recommendations there even makes reference to the MacBook
+   Pro being his platform of choice, so it would seem that the
+   references to Hint in the message legitimate. I doubt Mr. Gagnon
+   wanted to reveal himself in this way as the sender of the message,
+   though. Perhaps the folks at Hint have some work to do on their
+   software to prevent inadvertent privacy breaches like this one.
+ * I can't help but suspect that whatever Hint is getting ready to go
+   public with may compete with Gawker. If so, then it looks to be in
+   rather poor taste for them to be the ones broadcasting Gawker's
+   screw-up, as bad as it may be.
+
+For those who are curious, I've posted on my blog
+(http://blog.kamens.us/?p=1946) some advice to Hint for what they should do
+the next time they take it upon themselves to notify >1 million users that
+some other site they use has been compromised.
+
+------------------------------
+
+Date: Fri, 17 Dec 2010 02:22:43 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: iPhone snitch network launched (Jason Douglass)
+
+Jason Douglass, Infowars.com, 13 Dec 2010
+
+A new iPhone App with the misleading name 'PatriotApp' attempts to draw on
+the power of the patriot movement, turning smartphone users into a gigantic
+snitch network.
+
+You might think an app with such a patriotic name might have useful
+functions like a pocket constitution or quotes from our forefathers.  But
+contrary to the services one might expect, this app allows users to report
+any 'suspicious' behavior directly linking them with top government
+agencies.
+
+Much like the new DHS program 'If you see something, say something' this app
+is meant to turn average citizens into a network of spies feeding
+information back to the federal government. ...
+http://www.infowars.com/iphone-snitch-network-launched/
+
+------------------------------
+
+Date: Tue, 7 Dec 2010 14:53:36 +0000
+From: Lindsay Marshall <Lindsay.Marshall@newcastle.ac.uk>
+Subject: Interesting/Funny speech generation error
+
+Whilst dealing with a system with automatic recognition of UK post codes
+today, I entered the code XX7 3EG and it was recognised correctly but when
+it was read back to me the second part was rendered both as "3 for example"
+and "3 for instance". Missing an "only spell" marker flag somewhere!
+
+------------------------------
+
+Date: Wed, 8 Dec 2010 12:45:53 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Dogs, not naked body scanners?
+
+UCSF Scientists Warning About TSA Naked Body Scanners
+
+For people who believe that TSA naked body scanners give you less radiation
+than you receive when flying on airplane, this is complete nonsense.
+Sniffing dogs are what the FGBI uses for protection and they are known to be
+more accurate than the scanners and cost only $8,500 per dog vs $1.5 million
+per scanner.
+
+Here's a letter that we've obtained from the scientists ... that explains
+why this logic is flawed and will end up costing some people their lives.
+Direct your attention in particular to the section entitled "The Red Flags":
+
+http://www.naturalnews.com/files/TSA_Naked_Body_Scanners.pdf
+Tree of Life Rejuvenation Center, Patagonia, Arizona, www.treeoflife.nu
+
+------------------------------
+
+Date: Sun, 12 Dec 2010 18:55:33 -0500
+From: fjohn <reinkefj@yahoo.com>
+Subject: Ex-manager charged with stealing $140G from South Brunswick hotel
+
+http://www.mycentraljersey.com/article/20101210/NEWS/101210039/Ex-manager-charged-with-stealing-140G-from-South-Brunswick-hotel
+
+  Police say Clegg, the onetime general manager, created fake vouchers that
+  showed that the hotel received services from a company called Mercer
+  Catering. The vouchers allegedly were submitted to the hotel's parent
+  company, Scotto Brothers Enterprises.
+
+$140k!!! Hard to imagine that this type of fraud can succeed in this day and
+age. For 18 months?
+
+Where were the controls?
+
+------------------------------
+
+Date: Sat, 11 Dec 2010 13:09:04 +0000
+From: River Tarnell <r.tarnell@ieee.org>
+Subject: "Security seals" on websites
+
+Recently, I've noticed a lot of websites adding "security seals" --
+basically an image link -- to their SSL-enabled pages.  An example is near
+the bottom of the dabs.com account sign-in page:
+<https://www.dabs.com/AccountLogin.aspx>.
+
+These usually link to the website of the SSL certificate issuer, and provide
+some basic information about the website and the company, such as name and
+address.
+
+The risk here is that if users begin to rely on these "seals" instead of the
+SSL indication in their browser (lock icon, address bar, etc.), fraudulent
+sites could provide seals that purport to verify their own identity, and
+trick users into believing they are the real "dabs.com" (or whatever).
+
+------------------------------
+
+Date: Mon, 13 Dec 2010 17:24:11 +0100
+From: david.landgren@groupe-bpi.com
+Subject: Re: Risk of RISKS and short URLs? (Chris D., RISKS-26.23)
+
+It is worth pointing out that many link shorteners offer ways to show what
+the link points to, in order to avoid this problem.
+
+For bit.ly, it's easy, just add a + (plus) to the end of the link, hence
+http://bit.ly/deUpGb+ . For tinyurl.com links, add the subdomain preview,
+hence http://tinyurl.com/376q3vf becomes http://preview.tinyurl.com/376q3vf
+(and you will see that this link is quite safe). It stands to reason that
+goo.gl would offer similar functionality.
+
+Admittedly, this does assume that you (know how to) edit the address bar
+manually, which is inconceivable to 99.99% of the population. In that
+respect, tinyurl.com gets it right since, for the price of a locally-stored
+cookie, the service will preview by default every single tinyurl.com link
+that comes your way.
+
+  [Also noted by (Hey)Rick.  PGN]
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.25
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E4828401A36EXSAN02campus_--

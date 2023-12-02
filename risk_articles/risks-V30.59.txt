@@ -1,0 +1,638 @@
+precedence: bulk
+Subject: Risks Digest 30.59
+
+RISKS-LIST: Risks-Forum Digest  Saturday 17 March 2018  Volume 30 : Issue 59
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.59>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+Contents:
+Hacking critical infrastructures (Nicole Perlroth et al. via PGN)
+Lessons for RISKS from the Florida bridge collapse (PGN)
+The Controversial CLOUD Act: Privacy Plus or Minus? (Lauren Weinstein)
+Cybercriminals spotted hiding cryptocurrency mining malware
+  in forked projects on GitHub (Danny Palmer)
+Linus Torvalds slams CTS Labs over AMD vulnerability report
+  (Steven J. Vaughan-Nichols)
+FCC Accuses Stealthy Startup of Launching Rogue Satellites (Gabe Goldberg)
+FCC Accuses Stealthy Startup of Launching Rogue Satellites (danny burstein)
+How social media spread a historical lie (WashPo)
+How Trump Consultants Exploited the Facebook Data of Millions (NYTimes)
+Microsoft still doesn't get it (Phil Smith III)
+Meet the Scarlett Johansson PostgreSQL malware attack
+  (Steven J. Vaughan-Nichols)
+New system to help commuters avoid crowds at MRT stations (Richard M. Stein)
+Australia warns South-east Asia of high-tech terror threat (Straits Times)
+Vancouver BC Transit system says tap your card, not your wallet
+  (Kelly Bert Manning)
+Re: Usual infile-outfile clobber accident (B. Elijah Griffin)
+Re: British Teen Accessed U.S. Middle East Intelligence Ops (Nick Sizemore)
+Re: AI-Aided Cameras Mean No More Car Mirrors, No More Blind Spots
+  (Michael Bacon)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 16 Mar 2018 11:54:49 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Hacking critical infrastructures (Nicole Perlroth et al.)
+
+  [Nicole Perlroth had a bi-fecta on this general topic today, with two
+  different articles.  The first article below apparently broke late, after
+  the second one.  Given that critical-infrastructure systems are evidently
+  riddled with security flaws and potential reliability problems, this
+  should not be a surprise to RISKS readers.  PGN]
+
+U.S. Says Hacks Left Russia Able to Shut Utilities
+Nicole Perlroth and David E. Sanger
+*The New York Times*, 16 Mar 2018, front page [PGNed]
+
+Russia is now accused of having engineered a series of cyberattacks that
+targeted American and European nuclear power plants as well as water and
+electrical systems ``that could have sabotaged or shut power plants off at
+will.''  This activity began at least in late 2015, and has now escalated to
+hacking critical control systems.  Eric Chien (Symantec) is quoted: ``We now
+have evidence that they are sitting on the machines, connected to industrial
+control infrastructure that allow them to effectively turn the power of or
+effect sabotage.''
+
+How Hackers Lit a Fuse
+Nicole Perlroth and Clifford Krauss
+*The New York Times*, 16 Mar 2018, front page of Business Day  [PGNed]
+
+Captions: Attacks on Saudi petrochemical companies look to wreak digital
+havoc that's deadly, too. ... Sadara Chemical Company is a joint venture
+between Saudi Aramco and Dow Chemical.  Its computer systems were hit by one
+in a string of cyberattacks last year.
+
+  ``The only thing that prevented an explosion was a mistake in the
+  attackers' computer code,'' the investigators said.
+
+After considering some of the details, the article suggests that Iran might
+be the most likely culprit.  PGN
+
+------------------------------
+
+Date: Sat, 17 Mar 2018 11:00:34 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Lessons for RISKS from the Florida bridge collapse
+
+This item is particularly for newer readers of RISKS who might never have
+heard some of this before, and another reminder for our long-time readers.
+
+Although this bridge collapse might seem unrelated to computer-related
+risks, the lessons of Roger Boisjoly (who urged that the Challenger not be
+launched in subfreezing temperatures because the O-rings would not hold, and
+who was then fired by Morton Thiokol -- RISKS-5.78), Matt Jafee (who wrote
+the code for the Aegis system that shot down the Iranian Air Airbus from the
+Vincennes, and had reported that the operator would have no operational
+indication of the rate of climb or descent of an incoming object --
+RISKS-8.74), and others noted in the RISKS archives who had warned about
+critical problems.
+
+One positive case where remedial action was actually taken involved the
+brand-new Millennium footbridge over the Thames, which was closed after
+opening-day throngs caused critical resonant-frequency instabilities at
+walking speeds (RISKS-20.93 and 95).
+
+There is also the fundamental problem of secondary causes, such as when one
+fault is detected but considered noncritical and not remediated, until
+another seemingly unrelated fault results in a devastating failure.  And
+then long ago we reported on the Handley Page Victor fighter plane, which
+had undergone three independent assurance tests (wind tunnel, simulation,
+and mathematical analysis of the aerodynamics) that the wings would survive
+supersonic flight.  All three tests were wrong, and the first test run
+resulted in the loss of the plane and the pilot.
+
+So, here are two messages reported by Lauren Weinstein on this subject,
+where problems had been diagnosed but either not considered or considered
+not relevant (respectively):
+
+  Engineer of Florida Bridge Reported Cracks Days Before Collapse
+
+  An engineer reported cracks on a newly installed pedestrian bridge two
+  days before it collapsed on a busy roadway here, killing at least six
+  people, state officials said on Friday.  The report, by the lead engineer
+  with the company in charge of the bridge's design, was made in a voice
+  mail message left for a Florida Department of Transportation
+  employee. That employee was out of the office, however, and did not
+  receive it until Friday, a day after the collapse.
+  Crack on Florida Bridge Was Discussed in Meeting Hours Before Collapse
+  http://www.nytimes.com/2018/03/16/us/florida-bridge-cracks.html
+
+  Crack on Florida Bridge Was Discussed in Meeting Hours Before Collapse
+
+  Hours before the collapse of a pedestrian bridge at Florida International
+  University on Thursday, the engineering company for the bridge met with
+  the construction manager and representatives from the university and the
+  Florida Department of Transportation to discuss a crack on the structure,
+  according to a statement from the university released early Saturday.  The
+  engineering company, Figg Bridge Engineers, delivered a technical
+  presentation on the crack, the statement said, and ``concluded there were
+  no safety concerns and the crack did not compromise the structural
+  integrity of the bridge.''
+  http://www.nytimes.com/2018/03/17/us/florida-bridge-collapse-crack.html
+
+------------------------------
+
+Date: Thu, 15 Mar 2018 10:18:59 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The Controversial CLOUD Act: Privacy Plus or Minus?
+
+Lauren's Blog
+
+http://lauren.vortex.com/2018/0315/the-controversial-cloud-act-privacy-plus-or-minus
+
+Over the last few days you may have seen a bunch of articles about the
+CLOUD Act -- recently introduced U.S. bipartisan legislation that would
+overhaul key aspects of how foreign government requests for the data of
+foreign persons held on the servers of U.S. companies would be handled.
+
+I'm being frequently asked for my position on this, and frankly the analysis
+has not been a simple one.
+
+Opponents, including EFF, the ACLU, and a variety of other privacy and civil
+right groups, are opposing the legislation, arguing that it eases access to
+such data by foreign governments and represents a dangerous erosion of
+privacy rights.
+
+Proponents, including Apple, Facebook, Google, Microsoft, and Oath
+(Yahoo/Verizon) argue that the CLOUD Act provides much needed clarity to the
+technically and legally confused mess regarding transborder data requests,
+and introduces new privacy and transparency protections of its own.
+
+One thing is for sure -- the current situation IS a mess and completely
+unsustainable going forward, with ever escalating complicated legal
+entanglements (e.g. the ongoing Microsoft Ireland case, with a pending
+Supreme Court decision likely to go against Microsoft's attempts at
+promoting transborder privacy) and ever more related headaches in the
+future.
+
+Cutting to the chase, I view the CLOUD Act as flawed and imperfect, but
+still on balance a useful effort at this time to move the ball forward in an
+exceedingly volatile global environment.
+
+This is particularly true given my concerns about foreign governments'
+increasing demands for *data localization* -- where their citizens' data
+would be stored under conditions that would frequently be subject to far
+fewer privacy protections than would be available under either current
+U.S. law or the clarified provisions of the CLOUD Act. In the absence of the
+CLOUD Act, such demands are certain to rapidly accelerate.
+
+One of the more salient discussions of the CLOUD Act that I've seen
+lately is: ``Why the CLOUD Act is Good for Privacy and Human Rights''.
+
+http:/www.lawfareblog.com/why-cloud-act-good-privacy-and-human-rights
+
+Regardless of how you feel about these issues, the article is well worth
+reading.
+
+Let's face it -- nothing about the Net is simple.
+
+------------------------------
+
+Date: Thu, 15 Mar 2018 08:50:52 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Cybercriminals spotted hiding cryptocurrency mining malware
+  in forked projects on GitHub (Danny Palmer)
+
+http://www.zdnet.com/article/cybercriminals-spotted-hiding-cryptocurrency-mining-malware-in-forked-projects-on-github/
+
+Danny Palmer, ZDNet 15 Mar 2018
+
+Those behind the campaign are tailoring the Monero cryptojacking malware to
+use a limited amount of CPU power in order to evade infections being
+detected.
+
+opening text:
+
+Cybercriminals have found another way to spread their malware: uploading
+cryptocurrency mining code to GitHub, according to security researchers at
+security company Avast.
+
+Developers 'fork' projects on GitHub, which means making a copy of someone
+else's project in order to build on it. In this case, the cybercriminals
+fork random projects and then hide malicious executables in the directory
+structure of these new projects, the researchers said.
+
+Users don't need to download the malicious executables directly from
+GitHub. Instead, the malware is spread via a phishing ad campaign.  When a
+user visits a site that displays the phishing ads and clicks on one, the
+executable downloads, the researchers said.
+
+If the user clicks on one of these adverts, they're told their Flash Player
+is out of date and provided with a fake update which, if downloaded, will
+infect them with the malware. This update is provided via a redirect to
+GitHub, where the code is hosted, hidden in forked projects.
+
+------------------------------
+
+Date: Thu, 15 Mar 2018 08:58:01 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Linus Torvalds slams CTS Labs over AMD vulnerability report
+  (Steven J. Vaughan-Nichols)
+
+Steven J. Vaughan-Nichols for Linux and Open Source, 15 Mar 2018
+Linux's creator said he thinks CTS Labs' AMD chip security report ``looks
+more like stock manipulation than a security advisory'' and questions an
+industry.
+http://www.zdnet.com/article/linus-torvalds-slams-cts-labs-over-amd-vulnerability-report/
+
+Who knows if Mr. Torvalds is right in his speculation?  It is yet another
+risk though.
+
+------------------------------
+
+Date: Thu, 15 Mar 2018 12:31:34 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: FCC Accuses Stealthy Startup of Launching Rogue Satellites
+  (IEEE Spectrum)
+
+The U.S. communications agency says tiny Internet of Things satellites from
+Swarm Technologies could endanger other spacecraft
+
+http://spectrum.ieee.org/tech-talk/aerospace/satellites/fcc-accuses-stealthy-startup-of-launching-rogue-satellites
+
+------------------------------
+
+Date: Thu, 15 Mar 2018 13:20:58 -0400
+From: danny burstein <dannyb@panix.com>
+Subject: FCC Accuses Stealthy Startup of Launching Rogue Satellites
+
+I, for one, welcome our new Skynet overlords (Re: [IEEE Spectrum)
+
+The U.S. communications agency says tiny Internet of Things satellites from
+Swarm Technologies could endanger other spacecraft
+
+rest, which is basically a complaint by the FCC that a California based
+company piggybacked a bunch of satellites on an Indian rocket launcher and
+didn't tell anyone, and isn't talking about them...
+
+http://spectrum.ieee.org/tech-talk/aerospace/satellites/fcc-accuses-stealthy-startup-of-launching-rogue-satellites
+
+The RISKS are as obvious as having a house fall on you.  Don't wear any ruby
+slippers.
+
+------------------------------
+
+Date: Thu, 15 Mar 2018 21:15:38 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How social media spread a historical lie (WashPo)
+
+via NNSquad
+
+http://www.washingtonpost.com/news/made-by-history/wp/2018/03/15/how-social-media-spread-a-historical-lie/
+
+  The truth about the complicated racial legacies of both parties -- and the
+  Klan's influence on them in 1924 -- has been perniciously contorted by
+  activists deploying digital tricks, abetted (often unwittingly) by
+  good-faith actors such as academics, journalists and volunteer Wikipedia
+  editors.  What's left is a fake historical *fact* that has been *verified*
+  by powerful digital properties such as Google, Facebook, Wikipedia and
+  various online publishers without being true. Which reflects one actual
+  truth: Now, not only can partisans and malicious actors manufacture fake
+  news, but they can falsify history as well.
+
+------------------------------
+
+Date: Sat, 17 Mar 2018 10:15:51 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How Trump Consultants Exploited the Facebook Data of Millions
+  (NYTimes)
+
+NYTimes via NNSquad
+http://www.nytimes.com/2018/03/17/us/politics/cambridge-analytica-trump-campaign.html
+
+  So the firm harvested private information from the Facebook profiles of
+  more than 50 million users without their permission, according to former
+  Cambridge employees, associates and documents, making it one of the
+  largest data leaks in the social network's history. The breach allowed the
+  company to exploit the private social media activity of a huge swath of
+  the American electorate, developing techniques that underpinned its work
+  on President Trump's campaign in 2016.  An examination by The New York
+  Times and The Observer of London reveals how Cambridge Analytica's drive
+  to bring to market a potentially powerful new weapon put the firm -- and
+  wealthy conservative investors seeking to reshape politics -- under
+  scrutiny from investigators and lawmakers on both sides of the Atlantic.
+
+It's really quite fascinating. Over time Google has gotten better and
+better, and Facebook has gotten worse and worse. This all comes from the
+top.
+
+------------------------------
+
+Date: Thu, 15 Mar 2018 13:48:51 -0400
+From: Phil Smith III <phsiii@gmail.com>
+Subject: Microsoft still doesn't get it
+
+A Microsoft diagnostic tool download displays a nice dialog titled
+``Application Install - Security Warning'' and advises us that it's from:
+
+  outlookdiagnostics.azureedge.net
+
+It does say `Publisher: Microsoft Corporation', and I got there from a
+Microsoft page, so I'm sure it's legit. But it's a decade or so late to be
+asking people to trust random-looking domains, nu?
+
+  [Later response from Phil:]
+
+Cool. I've seen similar from American Express, who used a DST domain for a
+mailing. I happen to know who DST are, but the average bear won't. And when
+I contacted AmEx about it, their customer service just assured me that the
+email was legit, without understanding the issue.
+
+This gets to a meta-issue that's been really bothering me, and represents a
+significant risk: companies no longer have the coherence to allow problems
+like this to be fixed. Even if you get to a CS rep who understands and cares
+about the issue, (s)he has no way to report it up any kind of chain to
+anyone who might be able to fix it. This is as true in technology companies
+as in any others, and represents a significant threat to competitiveness and
+security. But nobody cares.
+
+Ok, I feel better now :)
+
+------------------------------
+
+Date: Fri, 16 Mar 2018 10:01:19 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Meet the Scarlett Johansson PostgreSQL malware attack
+  (Steven J. Vaughan-Nichols)
+
+Steven J. Vaughan-Nichols for Linux and Open Source, 15 Mar 2018
+An image of the popular actress is being used as a malware attack
+vector on the open-source DBMS PostgreSQL.
+http://www.zdnet.com/article/meet-the-scarlett-johansson-postgresql-malware-attack/
+
+selected text:
+
+If it is successful, the first thing you'll know about it is when your
+monthly cloud bill is far higher than expected. According to Impervia, most
+antivirus programs fail to detect this attack.
+
+------------------------------
+
+Date: Sat, 17 Mar 2018 11:10:24 +0800
+From: Richard M Stein <rmstein@ieee.org>
+Subject: New system to help commuters avoid crowds at MRT stations
+  (Straits Times)
+
+http://www.straitstimes.com/singapore/transport/new-system-to-help-commuters-avoid-crowds-at-mrt-stations
+
+  ``An advanced crowd-sensing system - to be put in place at SMRT stations
+  later this year - uses data from various sources such as closedcircuit
+  television cameras and Wi-Fi signals from mobile devices to monitor how
+  crowded platforms are, and how long commuters might have to wait for a
+  train.
+
+  ``The information will be linked to the SMRTConnect app to allow commuters
+  to better plan their journeys. Currently, station managers estimate how
+  busy stations are from their own observations and inform commuters about
+  crowds using signs and announcements.
+
+  ``The new system is part of a digitalisation programme SMRT has been
+  developing in its efforts to prevent disruptions and to respond quickly if
+  they occur.''
+
+Unknown what kind of cookies or location tracking will be deployed for this
+stack of bits. The article also identifies fault frequency benchmarks and
+future reliability objectives to assess the *success or failure* of this
+integrated tracking toolset.
+
+  ``The Circle Line clocked 523,000km between faults, up from 228,000km in
+  2016. The North-South and East-West lines - the two oldest MRT lines -
+  clocked 336,000km and 278,000km, up from 156,000km and 145,000km,
+  respectively.
+
+  ``The adoption of these technologies will enable our people to work
+  smarter, more productively and effectively," said SMRT chief executive
+  officer Desmond Kuek.
+
+  ``He was optimistic that SMRT would be able to hit the reliability target
+  of 1,000,000km between delays of more than five minutes ahead of the 2020
+  deadline that Transport Minister Khaw Boon Wan set last year.''
+
+When a train fault arises in Singapore, and protracted delay materializes,
+alternate transport is quickly arranged -- a line of buses stretching from
+*Hell to breakfast* appears at MRT stations to mule folks from point A to B.
+SMRT is generally recognized for effective customer support under fault
+conditions -- they've had a lot of practice to refine these workarounds.
+
+Crowd density sensing and surveillance is routine in Singapore, where this
+panoptic insight helps optimize allocation from transit faults.  Unknown
+whether or not the underlying surveillance foundation attempts facial
+recognition matching. Mobile device mac address and SIM registration linked
+to authenticated ids (passports, etc.) is a requirement for purchase
+approval. Device possession and real-time pixel recognition linkage, however
+imperfect, is a likely by product.  -- Richard M. Stein rmstein@ieee.org
+
+------------------------------
+
+Date: Sat, 17 Mar 2018 19:50:07 +0800
+From: Richard M Stein <rmstein@ieee.org>
+Subject: Australia warns South-east Asia of high-tech terror threat
+ (Straits Times)
+
+http://www.straitstimes.com/asia/se-asia/australia-warns-south-east-asia-of-high-tech-terror-threat
+
+  Australia on Saturday (March 17) warned the use of encrypted messaging
+  apps to plan terrorist attacks was the greatest threat faced by
+  intelligence agencies in modern times and urged a 'united and cohesive'
+  response.
+
+  Home Affairs Minister Peter Dutton told an Asian-Australia special summit
+  in Sydney that the use of the 'dark web' by extremists and other criminals
+  was a spiraling problem.  ``The use of encrypted messaging apps by
+  terrorists and criminals is potentially the most significant degradation
+  of intelligence capability in modern times,'' he said.
+
+Does technological integration or terrorism represent the greatest risk
+today?  Dutton's cautionary harbinger argues that it is technology, not
+terror.  Technological integration intensifies risk profiles and failure
+vulnerabilities. The convenience that technology offers amplifies the
+fragility of resilience that institutions, government services, and
+industries must possess to mitigate catastrophes arising from terrorist
+incidents. Technological over-dependence compounds hazards that undermine
+essential resilience.
+
+Deadly acts against the innocent are despicable. With terrorism, many
+governments routinely apply extra-judicial processes -- drone strikes,
+special forces ops, or cyberwar engagement -- to deliver justice ("settling
+the score") and eliminate recurrence potential, save for the rare capture,
+public trial, and conviction.Å†
+
+The ability to transmit and receive intercept-free communications is often
+the only safeguard to enable private, confidential conversations between
+parties. The tools will not disappear given their quotidian appeal. The
+Å†same tools sponsor terrorists to engage their illicit and nefarious
+actions, a paradox with no apparent solution. The inability to intercept a
+terrorist's communications and thwart their implementation is problematic
+for intelligence gathering.Å†
+
+Technology magnifies public risk while terrorism remains constant.
+Technology that unintentionally runs amuck can render a result as deadly as
+any act of terrorism. Unfortunately, the administration of justice to
+redress outrageous wound is more difficult to achieve for terrorism.
+
+------------------------------
+
+Date: Sat, 17 Mar 2018 12:45:44 -0400
+From: Kelly Bert Manning <bo774@freenet.carleton.ca>
+Subject: Vancouver BC Transit system says tap your card, not your wallet
+
+TV is full of ads touting the supposed benefits of using a mobile device or
+card to pay for something. In some cases it is even presented as a
+competition to see who can pay first.
+
+Clash is a known problem with changes to the electronic payment system used
+by Vancouver BC TransLink. Now bank cards or wallet apps can be used, in
+addition to TransLink Compass Cards.
+
+Previous implementations from the same vendor elsewhere have led to problems
+such as multiple billing for the same ride.
+
+TransLink promises not to multi-bill, but different payment modes have
+different billing rates.
+
+Another problem is that some rides are costed based on distance traveled.
+If you don't tap out as expected the charge is higher. If an unintended tap
+in starts the meter running on an unintended card or device you may not be
+aware of the need to tap out with that specific card or device at your
+destination to avoid being billed the maximum charge.
+
+The system is supposed to be more convenient for tourists, but those are the
+transit riders who would be least aware of the Clash risk.
+
+Old advice to tourists was to buy a sheet of paper transit tickets at the
+Vancouver Airport Drugstore. The original contactless payment system began
+applying a $5 surcharge for departing from the Airport.
+
+You also can't tap a Compass card twice in a row for a second rider, even if
+the balance on the card would cover a second fare, you need a second
+card. Compass Day Pass Cards expire at midnight. Sheets of paper tickets did
+not expire.
+
+Exit Rate charges are a long standing complication for transit riders.
+
+http://www.compasscard.ca/help
+http://www.vancouverisawesome.com/2018/03/09/tap-wallet-translink-compass-card-clash/
+http://bc.ctvnews.ca/translink-unveils-credit-card-tap-in-system-warns-of-card-clash-1.3836342
+http://www.tripadvisor.ca/ShowTopic-g154943-i81-k9223898-o10-Skytrain_seabus_buses-Vancouver_British_Columbia.html
+http://en.wikipedia.org/wiki/M.T.A._(song
+
+------------------------------
+
+Date: Thu, 15 Mar 2018 23:33:14 -0400
+From: "B. Elijah Griffin" <eli@panix.com>
+Subject: Re: Usual infile-outfile clobber accident (Jacobson, R 30.58)
+
+Reminds me of another one, that happens when using non-vi extensions in
+two different vi clones:
+
+In vim, the "-o" opens each of the several files on the command line in
+a separate editing "window". But while elvis has the same sort of (text
+based) windows, in that program the "-o" option has a different purpose:
+
+NAME
+       elvis - a clone of the ex/vi text editor
+
+SYNOPSIS
+       elvis [-V...] [-a] [-r] [-e] [-i] [-s|-] [-b] [-R] [-S|-SS] [-f
+       session] [-o logfile] [-G gui] [-c command|+command] [-t tag] [-w
+       scroll] [-B blksize] [file]...
+
+Elvis is the default vi clone in Slackware, while vim is the default in
+most other Linux distributions.
+
+------------------------------
+
+Date: Fri, 16 Mar 2018 02:17:07 -0700
+From: Nick Sizemore <bolshev@theriver.com>
+Subject: Re: British Teen Accessed U.S. Middle East Intelligence Ops
+ by Pretending to be CIA Director (R 30.54)
+
+Article seems to ignore the real story, i.e.: What's a CIA Director, and a
+former one at that, doing with "...sensitive U.S. plans about intelligence
+operations in different Middle East countries..." in his email and/or cloud
+accounts.  [Your "Article" grammatically needs an "article": "The"]
+
+Article does have a correction, saying "A previous version of this story
+said the plans in question were `top secret.'  It's not clear what level of
+classification they were."
+
+If they were in fact classified, or even 'sensitive but unclassified', they
+certainly shouldn't have been in his personal account.  If they were in an
+official account to which access was extended to allow consultation, that
+should not have been accessible through the open Internet, but rather on a
+separate, possibly TCP/IP, network running on government controlled
+infrastructure.
+
+Whichever was the case, there appears to be a much more serious problem, one
+with both legal and security implications.
+
+http://www.avg.com
+
+------------------------------
+
+Date: Fri, 16 Mar 2018 07:23:42 +0000
+From: Michael Bacon - Grimbaldus <michael.bacon@grimbaldus.com>
+Subject: Re: AI-Aided Cameras Mean No More Car Mirrors, No More Blind Spots
+  (R 30.59)
+
+Gabe Goldberg write that the World Health Organisation has said that 1.25
+million people die in road traffic accidents each year, then goes on to
+relate Mitsubishi Electric's development of mirrorless car technology, with
+AI replacing the interior and wing mirrors.
+
+One has to wonder how many of those 1.25 million deaths were caused by
+reversing vehicles, and how many would be prevented by such technology
+... the risks he listed notwithstanding.
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.59
+************************

@@ -1,0 +1,627 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.20
+
+RISKS-LIST: Risks-Forum Digest  Monday 17 August 2020  Volume 32 : Issue 20
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.20>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Cops tap smart streetlights sparking controversy and legislation
+  (IEEE Spectrum)
+NSA, FBI Expose Russian Intelligence Hacking Tool (Christopher Bing)
+New attack lets hackers decrypt VoLTE encryption to spy on phone calls
+  (The Hacker News)
+Can police demand you unlock your phone? NJ court says yes. (Apple News)
+FDA Inspector FTE and Product Recalls 2008-2019 (Richard Stein)
+Feds are treating BlueLeaks organization as ‘a criminal hacker group,’
+  documents show (The Verge)
+New Hampshire passes "Jetson law" to allow some flying vehicles (Axios)
+Greenland's ice sheet has melted to a point of no return, according to new
+  study (CTV News)
+Trump's attacks on Postal Service could kill more Americans than COVID-19
+  (Lauren Weinstein)
+Machine learning-based COVID-19 voice detection (Times of Israel)
+Expired certificate contributed to undercounting of Calif. COVID cases
+  (SC Magazine)
+'A national crisis': As coronavirus forces many schools online this fall,
+  millions of disconnected students are being left behind (WasPost)
+Re: Beirut blast: The other countries with dangerous dumps of explosives
+  (Richard Stein)
+Re: The nuclear mistakes that could have ended civilization (Amos Shapir)
+Re: Apple stumbled into a war with the gaming industry, and the future of
+  iOS is at stake (The Verge via Monty Solomon)
+Re: Is it the AI That's Racist, or is it the Humans That Create the AI?
+  (Amos Shapir)
+Re: Deepfakes or not??? (John Ballman, John Levine)
+Re: When tax prep is free, you may be paying with your privacy (Wol)
+Re: Tom's hardware NOSCRIPT (Dmitri Maziuk)
+Re: Why & Where You Should You Plant Your Flag (Henry Baker)
+Quote of The Day (George Bernard Shaw)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 15 Aug 2020 13:28:20 -0400
+From: José María (Chema) Mateos <chema@rinzewind.org>
+Subject: Cops tap smart streetlights sparking controversy and legislation
+  (IEEE Spectrum)
+
+https://spectrum.ieee.org/view-from-the-valley/sensors/remote-sensing/cops-smart-street-lights
+
+San Diego was the first city to fully embrace the CityIQ technology, though
+Atlanta and Portland did run pilot tests of the technology. San Diego
+financed the smart lights -- and 14,000 other basic LED lights -- with a
+plan that spread the payments out over 13 years, in such a way that the
+energy savings from replacing incandescent lighting would cover the cost and
+then some.
+
+The CityIQ streetlights are packed with technology. Inside is an Intel Atom
+processor, half a terabyte of storage, Bluetooth and Wi-Fi radios, two 1080p
+video cameras, two acoustical sensors, and environmental sensors that
+monitor temperature, pressure, humidity, vibration, and magnetic
+fields. Much of the data is processed on the node -- a textbook example of
+“edge processing.” That typically includes the processing of the digital
+video: machine-vision algorithms running on the streetlight itself count
+cars or bicycles, say, or extract the average speed of vehicles, and then
+transmit that information to the cloud. This data is managed under contract,
+initially by GE Current, and the data manager owns any analytics or
+algorithms derived from processed data.
+
+Initially, at least, the data was expected to be used exclusively for
+civic analysis and planning and public convenience.
+
+But in August 2018, everything changed. That's when, while investigating a
+murder in San Diego's Gaslamp Quarter, a police officer looked up and saw
+one of the new smart streetlights. He realized the streetlight's video
+cameras had a perfect view of the crime scene -- one unavailable from the
+various security cameras in the area.
+
+``We had never seen a video from any of these cameras before.  But we
+realized the camera was exactly where the crime scene was.'' says Jeffrey
+Jordon, a captain with the San Diego Police Department.
+
+The police department reached out to San Diego's environmental services
+department, the organization responsible for the lights, and asked if video
+were available. It turned out that the video was still stored on the light
+-— it is deleted after five days -- and Current was able to pull it up from
+the light to its cloud servers, and then forward it to the police
+department.
+
+------------------------------
+
+Date: Mon, 17 Aug 2020 12:31:53 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: NSA, FBI Expose Russian Intelligence Hacking Tool
+  (Christopher Bing)
+
+Christopher Bing, Reuters, 13 Aug 2020 via ACM TechNews, 17 Aug 2020
+
+The U.S. National Security Agency (NSA) and Federal Bureau of Investigation
+(FBI) have publicly exposed a Russian hacking tool. Russia's Main
+Intelligence Directorate apparently used the "Drovorub" malware to penetrate
+Linux-based computers, which Keppel Wood at NSA's Cybersecurity Directorate
+said are pervasively employed by National Security Systems, the
+U.S. Department of Defense, the defense industrial base, and the at-large
+cybersecurity community. Steve Grobman at cybersecurity company McAfee said,
+"Drovorub is a 'Swiss Army knife' of capabilities that allows the attacker
+to perform many different functions, such as stealing files and
+remote-controlling the victim's computer." The report on Drovorub is the
+latest in a series of public disclosures by the U.S government targeting
+Russian hacking operations ahead of the 2020 presidential election.
+
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-2685fx22425dx065377&
+
+------------------------------
+
+Date: August 14, 2020 at 08:40:28 GMT+9
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: New attack lets hackers decrypt VoLTE encryption to spy on phone
+  calls (The Hacker News)
+
+Researchers -- who previously made the headlines earlier this year for
+uncovering severe security issues in the 4G LTE and 5G networks -- today
+presented a new attack called 'ReVoLTE,' that could let remote attackers
+break the encryption used by VoLTE voice calls and spy on targeted phone
+calls.
+
+The attack doesn't exploit any flaw in the Voice over LTE (VoLTE) protocol;
+instead, it leverages weak implementation of the LTE mobile network by most
+telecommunication providers in practice, allowing an attacker to eavesdrop
+on the encrypted phone calls made by targeted victims.
+
+VoLTE or Voice over Long Term Evolution protocol is a standard high-speed
+wireless communication for mobile phones and data terminals, including
+Internet of things (IoT) devices and wearables, deploying 4G LTE radio
+access technology.
+
+The crux of the problem is that most mobile operators often use the same
+keystream for two subsequent calls within one radio connection to encrypt
+the voice data between the phone and the same base station, i.e., mobile
+phone tower.
+
+Thus, the new ReVoLTE attack exploits the reuse of the same keystream by
+vulnerable base stations, allowing attackers to decrypt the contents of
+VoLTE powered voice calls in the following scenario.
+
+https://thehackernews.com/2020/08/a-team-of-academic-researcherswho.html
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 16:50:57 +0900
+From: farber@keio.jp
+Subject: Can police demand you unlock your phone? NJ court says yes.
+  (Apple News)
+
+Can police demand you unlock your phone if they want to examine it for
+evidence? Courts in different states have given different answers to this
+question, but New Jersey's Supreme Court has ruled that the answer is
+yes. The court decided that a suspect can be forced to use his passcode to
+unlock his phone.  Read in 9to5Mac:
+https://apple.news/Ai9VM8hKhRbG9h0Wsbv43uw
+
+------------------------------
+
+Date: Mon, 17 Aug 2020 11:46:40 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: FDA Inspector FTE and Product Recalls 2008-2019
+
+This submission is a follow up to
+https://catless.ncl.ac.uk/Risks/31/62#subj12.1. Diminished import
+inspections likely elevates non-compliant product introduction and public
+health risk.
+
+On 26 MAR 2020, I initiated a freedom of information act (FOIA) request to
+the US Health and Human Services (HHS) seeking historical FDA inspector
+full-time equivalent allocation. The FDA's Office of Regulatory Affairs
+(ORA) returned a response on 14AUG2020.
+
+The FDA inspector corps assess product regulatory compliance from imports,
+domestic and foreign manufacturers. They are field-deployed personnel. The
+inspector corps align to FDA product lines.
+
+Investigations trace to one of six FDA centers with jurisdiction over the
+product lines:
+
+CBER -- Center for Biologics Evaluation and Research
+CDER -- Center for Drug Evaluation and Research
+CDRH -- Center for Devices and Radiological Health
+CFSAN -- Center for Food Safety and Applied Nutrition
+CTP -- Center for Tobacco Products
+CVM -- Center for Veterinary Medicine
+
+Investigative FTE by Center
+(Domestic/Foreign and Import Operations)
+
+FY,CBER,CDER,CDRH,CFSAN,CTP,CVM
+2008,110.1,259.3,204.9,591.8,,85.2
+2009,115.1,248.8,214.4,642.8,,91.3
+2010,121.0,252.1,231.4,681.9,,89.8
+2011,131.0,293.1,243.5,842.1,,91.4
+2012,131.1,292.2,243.4,842.6,13.2,91.6
+2013,140.1,333.6,246.5,903.9,13.2,105.1
+2014,140.0,343.9,247.9,902.0,8.5,105.1
+2015,127.5,367.2,270.7,911.2,7.8,106.2
+2016,142.9,365.4,253.2,925.9,6.5,106.2
+2017,143.2,354.9,253.8,963.0,6.5,106.3
+2018,137.0,353.8,245.1,916.1,10.0,99.4
+2019,122.6,323.6,219.6,875.9,11.6,98.9
+
+One can observe from this table that 2019 inspector FTE ranges from ~80% to
+90% that of the "peak" FTE (~2016)., confirmation of fewer "cops on the
+beat" overseeing FDA-regulated product lines.
+
+One can explore the FDA "enforcement reports" space using this URL:
+https://www.accessdata.fda.gov/scripts/ires/index.cfm. Note: This tool
+reports on enforcement action from 2012 to current. The FDA publishes an API
+to access the full recall database.
+
+The enforcement report reveals many more voluntary
+manufacturer/supplier-initiated recalls than mandatory recalls initiated by
+the FDA.
+
+POST-RELEASE product line defect escape detection surveillance is clearly
+operative. A further investigation to assess inspector FTE allocation and
+voluntary/involuntary product recall frequency might prove instructive.
+
+Given recall density, public health and safety would measurably improve if
+manufacturer/supplier PRE-RELEASE product defect escape suppression was more
+effective.
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 23:10:29 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Feds are treating BlueLeaks organization as ‘a criminal hacker
+  group,’ documents show (The Verge)
+
+The group says it's not involved in hacking
+
+https://www.theverge.com/2020/8/13/21365448/blueleaks-dhs-distributed-denial-secrets-dds-ddosecrets-police
+
+------------------------------
+
+Date: Sun, 16 Aug 2020 14:13:35 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: New Hampshire passes "Jetson law" to allow some flying vehicles
+  (Axios)
+
+New Hampshire is touting itself as the first state in the country to
+authorize flying cars, which is a bit of an overstatement.
+
+Why it matters: The bill signed by Gov. Chris Sununu, dubbed "the Jetson
+law," makes it legal for "roadable aircraft" to drive on the state's roads.
+
+ - That's not the same as authorizing urban air taxis to fly above those
+   same roadways, something only the Federal Aviation Administration can do,
+   and remains a long way off.
+
+Yes, but: It's still an interesting development on the road to future
+mobility.
+
+ - It applies to small planes that can also be driven as cars.
+ - A handful of companies are working on such flexible aircraft,
+   including Terrafugia <https://terrafugia.com/>, Samson Sky
+   <https://www.samsonsky.com/> and PAL-V <https://pal-v-nh.com/>.
+ - The law allows pilots to drive these aircraft to and from airports but
+   prohibits landing or taking off on public roads.
+ - Terrafugia and PAL-V both have operations in New Hampshire, and all
+   three companies helped shape the legislation.
+
+How it works:  [...]
+https://www.axios.com/new-hampshire-jetson-law-flying-cars-47d8e13a-d6de-40b3-a1b3-28eff68a500a.html
+
+------------------------------
+
+Date: Sun, 16 Aug 2020 14:11:35 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Greenland's ice sheet has melted to a point of no return, according
+  to new study (CTV News)
+
+Greenland's ice sheet has melted to a point of no return, and efforts to
+slow global warming will not stop it from disintegrating. That's according
+to a new study by researchers at Ohio State University.  "The ice sheet is
+now in this new dynamic state, where even if we went back to a climate that
+was more like what we had 20 or 30 years ago, we would still be pretty
+quickly losing mass," Ian Howat, co-author of *the study
+<https://www.nature.com/articles/s43247-020-0001-2.pdf>* and a professor at
+Ohio State University, said.
+
+Greenland's ice sheet dumps more than 280 billion metric tons of melting ice
+into the ocean each year, making it the greatest single contributor to
+global sea level rise, according to Michalea King, the lead author of the
+study and researcher at Ohio State University.  The ice loss has been so
+massive in recent years, she said, that it has caused a measurable change in
+the gravitational field over Greenland.  Ice melting in Greenland
+contributes more than a millimeter rise to sea level every year, and that's
+likely to get worse. Sea levels are projected to rise by more than 3 feet by
+the end of the century, wiping away beaches and coastal properties.
+
+Coastal states like Florida, and low-lying island nations are particularly
+vulnerable. Just 3 feet of sea level rise could put large areas of coastline
+underwater. Forty percent of the US population resides in coastal areas that
+are vulnerable to sea level rise.  "There's a lot of places, like in Florida
+especially, where one meter alone would cover a lot of existing land areas,"
+King said. "And that's exacerbated when you get storms and hurricanes and
+things like that, that then cause extra surge on top of a higher baseline."
+
+The study also found that the ice sheet is retreating in rapid bursts,
+leading to a sudden and unpredictable rise in sea levels, making it
+difficult to prepare for the effects.  The study used four decades of
+satellite data to measure changes in Greenland's ice sheet. The authors
+found that after 2000, the ice sheet shrank so rapidly that replenishing
+snowfall would not keep up with the rate of melting from parts of the
+glacier newly exposed to warmer ocean water, even if climate change were
+reversed.  [...]
+https://www.ctvnews.ca/sci-tech/greenland-s-ice-sheet-has-melted-to-a-point-of-no-return-according-to-new-study-1.5065393
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 11:27:46 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Trump's attacks on Postal Service could kill more Americans than
+  COVID-19
+
+[Just] My opinion
+
+  Trump's war against the Postal Service could have another casualty: tens
+  of thousands of military veterans with disabilities
+https://www.businessinsider.com/trumps-war-against-postal-service-military-veterans-2020-4
+
+  Social Security checks being delayed along with prescriptions, due to
+  Trump's attack on Postal Service
+https://twitter.com/TheAltarOfAndy/status/1294692146973351938
+
+  [PGN merged three items from LW, slight PGN-ing]
+
+------------------------------
+
+Date: Sun, 16 Aug 2020 17:32:10 -0400
+From: Ed Ravin <eravin@panix.com>
+Subject: Machine learning-based COVID-19 voice detection (Times of Israel)
+
+A Tel Aviv engineering college is working on an AI/machine learning system
+that they hope will be able to detect "vocal biomarkers" of a COVID-19
+infection in a person's voice.
+
+ https://www.timesofisrael.com/testing-testing-indian-samples-boost-israeli-bid-for-voice-based-covid-check/
+
+On one hand, it's a great idea if it actually works. But we all know that
+machine learning systems are approximations. They guess right most of the
+time if the samples you're testing are consistent with the data that you
+used to train the model. Like the face recognition systems that misidentify
+people of color as criminals, this system if put into use as proposed in the
+article (at the entrances of schools to decide who is allowed into the
+building) has the potential to ruin a lot of people's lives with false
+positives and maybe even kill a few people with false negatives.
+
+------------------------------
+
+Date: Sun, 16 Aug 2020 16:11:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Expired certificate contributed to undercounting of Calif. COVID
+  cases (SC Magazine)
+
+https://www.scmagazine.com/certificates/california-under-counted-covid-19-cases-after-certificate-expired/
+
+------------------------------
+
+Date: Sun, 16 Aug 2020 16:14:36 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 'A national crisis': As coronavirus forces many schools online this
+  fall, millions of disconnected students are being left behind
+
+https://www.washingtonpost.com/education/a-national-crisis-as-coronavirus-forces-many-schools-online-this-fall-millions-of-disconnected-students-are-being-left-behind/2020/08/16/458b04e6-d7f8-11ea-9c3b-dfc394c03988_story.html
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 08:13:03 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: Beirut blast: The other countries with dangerous dumps of
+  explosives (BBC)
+
+https://www.bbc.com/news/world-53755289
+
+"According to the Swiss-based monitoring agency Small Arms Survey, between
+1979 and August last year almost 30,000 people across 101 countries were
+killed or injured by unplanned explosions at munitions sites (UEMS)."
+
+http://www.smallarmssurvey.org/fileadmin/docs/V-Fact-sheets/SAS-Fact-Sheet-UEMS.pdf
+
+The identifying causes of UEMS (excluding "undetermined"):
+
+a) Lack of surveillance, leading to ammunition deterioration
+b) Inappropriate storage infrastructure and systems
+c) Handling errors and inappropriate working practices
+d) Failure to take into account external and environmental influences
+   and events
+e) Poor security
+
+A supplemental table shows that "Purpose-built Storage" accounts for the
+majority of UEMS incidents over the tracked interval (1984-2019).
+
+------------------------------
+
+Date: Sun, 16 Aug 2020 13:05:32 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: The nuclear mistakes that could have ended civilization
+  (RISKS-32.19)
+
+It seems that handling of nuclear weapons instills a certain measure of
+sanity and logical thinking among operators.  It's precisely the realization
+that errors can and do happen, that caused operators to prefer the "don't
+shoot" option in every case.
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 23:32:51 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Re: Apple stumbled into a war with the gaming industry, and the
+  future of iOS is at stake (RISKS-32.19)
+
+Epic [*] CEO Tim Sweeney says Apple fight is about ‘basic freedoms of all
+consumers and developers'.
+https://www.theverge.com/2020/8/14/21369622/epic-ceo-tim-sweeney-apple-fortnite-lawsuit-ban-basic-freedoms-developers
+
+  [* PGN note: To avoid confusion, this is Epic Games, not EPIC (Electronic
+  Privacy Information Center]
+
+Apple has finally met its Fortnite match
+https://www.theverge.com/2020/8/14/21368651/apple-fortnite-ios-app-store-ban-lawsuit-epic-games-payments
+
+Fortnite vs Apple vs Google: a brief and very incomplete timeline
+https://www.theverge.com/2020/8/14/21368504/fortnite-apple-google-app-store-brief-incomplete-timeline
+
+Epic is suing Google over Fortnite's removal from the Google Play Store
+https://www.theverge.com/2020/8/13/21368363/epic-google-fortnite-lawsuit-antitrust-app-play-store-apple-removal
+
+Fortnite for Android has also been kicked off the Google Play Store
+https://www.theverge.com/2020/8/13/21368079/fortnite-epic-android-banned-google-play-app-store-rule-violation
+
+Watch Epic’s Nineteen Eighty-Fortnite short mocking Apple right here
+https://www.theverge.com/2020/8/13/21367924/watch-epic-nineteen-eighty-fortnite-short-apple-app-store-ban
+
+------------------------------
+
+Date: Sun, 16 Aug 2020 12:58:59 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Is it the AI That's Racist, or is it the Humans That Create the
+  AI? (RISKS-32.19)
+
+It seems that no matter how sophisticated the AI may be, it's only as good
+as the people who had compiled its training set.  The old principle still
+holds: Garbage in, garbage out.
+
+  [... and of course, the trustworthiness of the system in which it is
+  embedded.  That is almost always forgotten -- except for my nagging.  PGN]
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 17:36 +0100 (BST)
+From: "John Dallman" <jgd@cix.co.uk>
+Subject: Re: Deepfakes or not??? (Thorson, RISKS-32.19)
+
+Mark Thorson <eee@dialup4less.com> expresses concern about the common
+mismatches between sound and picture.
+
+This is mostly likely an implementation issue in codecs. Digital video
+codecs, to minimise bandwidth, mostly transmit differences between frames.
+Sometimes the scene changes abruptly, and has to be re-sent in full, and
+demolition briefly, the stream falls behind.
+
+There are effectively two channels in a stream, video and audio. The obvious
+thing to do is to try to catch up the video as soon as possible, and let the
+audio stutter. Video is where most of the information is, surely?
+
+It turns out humans notice glitches in audio, especially speech, far more
+readily than in video. Audio is basically continuous, whereas video relies
+on the human visual system interpreting a series of still images as
+motion. We cope with dropped frames in video without noticing, unless there
+are a lot of them, but we notice audio problems.
+
+Various companies have had to discover this for themselves over the years;
+it doesn't seem to be specified in the digital video standards. I suspect
+the feeds Mark has been watching have some contributors with equipment that
+still prioritises video over audio.
+
+------------------------------
+
+Date: 14 Aug 2020 22:16:24 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Deepfakes or not??? (Thorson, RISKS-32.19)
+
+Synchronizing audio and video has been a problem since the advent of talking
+motion pictures.
+
+The audio and video in digital TV are encoded and decoded separately.  The
+video codes are a lot more complex and decoding can fall behind.  There are
+supposed to be sync codes to adjust the audio to match but that doesn't
+always work.
+
+https://en.wikipedia.org/wiki/Audio-to-video_synchronization
+
+I'd think a deep fake would have if anything better sync than normal video
+since both streams are completely under the control of the fake maker.
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 11:56:09 +0100
+From: Wols Lists <antlists@youngman.org.uk>
+Subject: Re: When tax prep is free, you may be paying with your privacy.
+  (Damerell, RISKS-32.19)
+
+> Furthermore, those 10 million are disproportionately likely to be wealthy
+
+Or self-employed. At which point they should be employing an accountant
+anyway, for whom tax-prep will be a pretty mundane job.
+
+And any decent accountancy firm will be like where my mum worked - "we
+should be able to save you more in tax than we charge in fees".
+
+(Over here, tax prep isn't the problem, it's HMRC continually changing the
+rules. Like claiming that people who converted from self-employed status to
+limited companies "did it as a tax dodge". To which those people replied
+"no, we did it because HMRC twisted our arm!")
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 13:18:36 -0500
+From: dmaziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: Tom's hardware NOSCRIPT (Singer, RISKS-32.19)
+
+... site refusing to work without JavaScript off ...
+
+That's been the web's "new normal" for a while now, here's one I ran into
+recently:
+
+- everyone uses doodle pools to schedule meetings,
+- my e-mail client is set to display plain text messages,
+- I received a message with a link to doodle poll,
+- I follow the link only to find out it's to the last week's poll that's
+  already closed (and that zoom meeting already took place).
+
+Before complaining to the organizers I changed my mail client to html view
+and checked the link there: lo and behold, it took me to the correct poll
+for the next meting.
+
+So look on the bright side: at least the "noscript" version of the website
+is telling you it's defunct. The "no html" MIME part of an e-mail message
+does not.
+
+------------------------------
+
+Date: Sat, 15 Aug 2020 09:24:01 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: Why & Where You Should You Plant Your Flag (RISKS-32.19)
+
+Perhaps you all need to "plant your flag" on Alpha Centauri, too?
+
+"There's no point in acting surprised about it.  All the planning charts and
+demolition orders have been on display at your local planning department in
+Alpha Centauri for 50 of your Earth years, so you've had plenty of time to
+lodge any formal complaint and it's far too late to start making a fuss
+about it now. ... What do you mean, you've never been to Alpha Centauri?
+Oh, for heaven's sake, mankind, it's only four light years away, you know.
+I'm sorry, but if you can't be bothered to take an interest in local
+affairs, that's your own lookout.  Energize the demolition beams."
+
+-- Douglas Adams, The Hitchhiker's Guide to the Galaxy
+
+------------------------------
+
+Date: Sun, 16 Aug 2020 14:08:36 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Quote of The Day (George Bernard Shaw)
+
+*"My way of joking is to tell the truth"*
+
+https://www.penguinrandomhouse.com/books/294039/plays-by-george-bernard-shaw-by-george-bernard-shaw/
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.20
+************************

@@ -1,0 +1,890 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.53
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 22 November 2022  Volume 33 : Issue 53
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.53>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Russian software disguised as American finds its way into U.S. Army, CDC
+ apps (Jan Wolitzky)
+How North Korea became a mastermind of crypto cybercrime (Ars Technica)
+U.S. NSA recommends 'memory safe' languages (Media Defense)
+Re: Rust (dmitri maziuk)
+Cyber Vulnerability in Networks Used by Spacecraft, Aircraft, Energy
+ Generation Systems (U.Michigan)
+Reducing Redundancy to Accelerate Complicated Computations (TJNAF)
+Vulnerabilities of electric vehicle charging infrastructure (techxplore.com)
+Cybercriminals Are Selling Access to Chinese Surveillance Cameras
+ (Threatpost)
+Code grey: Inside a 'catastrophic' IT failure at the Queensway Carleton
+ Hospital (CBC)
+Open-Source Software Has Never Been More Important (TechRadar)
+Autonomous Vehicles Join the List of U.S. National Security Threats (WiReD)
+Hotel barfs on two people with the same name (gcluley via Wendy M. Grossman)
+DeepMind says its new AI coding engine is as good as an average human
+ programmer (The Verge)
+Time Has Run Out for the Leap Second (NYTimes)
+Timer on GE ovens automagically reprogrammed to gobble rather than ding
+ (Business Wire)
+Akamai finds 13 million malicious newly observed domains a month (SC Media)
+Inside the turmoil at Sobeys-owned stores after ransomware attack (CBC)
+$10.7 Million Payment To Virginia In Google Privacy Settlement (VA Patch)
+Short Videos on Ethics in AI and Software Development (Gene Spafford)
+Electronic Health Record Legal Settlements (JAMA Health Forum)
+Is This the End Game for Cryptocurrency? (Paul Krugman via PGN et al.)
+Tuvalu Turns to Metaverse as Rising Seas Threaten Existence (Lucy Craymer)
+Smart Home Hubs Leave Users Vulnerable to Hackers (Leigh Beeson)
+Twitter update (Lauren Weinstein PGN-simmerized)
+In Memoriam: Drew Dean (Peter G. Neumann)
+In Memoriam: Frederick P. Brooks Jr. (Steve Bellovin)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 14 Nov 2022 10:37:05 -0500
+From: Jan Wolitzky <jan.wolitzky@gmail.com>
+Subject: Russian software disguised as American finds its way into
+ U.S. Army, CDC apps
+
+Thousands of smartphone applications in Apple and Google's online stores
+contain computer code developed by a technology company, Pushwoosh, that
+presents itself as based in the United States, but is actually Russian,
+Reuters has found.
+
+The Centers for Disease Control and Prevention (CDC), the United States'
+main agency for fighting major health threats, said it had been deceived
+into believing Pushwoosh was based in the U.S. capital. After learning about
+its Russian roots from Reuters, it removed Pushwoosh software from seven
+public-facing apps, citing security concerns.
+
+The U.S. Army said it had removed an app containing Pushwoosh code in March.
+
+  [Monty Solomon noted another version:
+  Russian Code Found in Thousands of American Apps, Including the CDC's (Gizmodo)
+  https://gizmodo.com/russian-pushwoosh-code-american-apps-cdc-army-1849779521
+  PGN]
+
+------------------------------
+
+Date: Mon, 14 Nov 2022 23:57:34 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: How North Korea became a mastermind of crypto cybercrime
+ (Ars Technica)
+
+Cryptocurrency theft has become one of the regimeâs main sources of
+regvenue.  Created by a Vietnamese gaming studio, Axie Infinity offers
+players the chance to breed, trade, and fight Pokémon-like cartoon monsters
+to earn cryptocurrency.  But earlier this year, the network of blockchains
+that underpin the game's virtual world was raided by a North Korean hacking
+syndicate, which made off with roughly $620 million in the ether
+cryptocurrency.
+
+The crypto heist, one of the largest of its kind in history, was confirmed
+by the FBI, which vowed to continue to expose and combat [North Korea's] use
+of illicit activities -- including cybercrime and cryptocurrency theft -- to
+generate revenue for the regime.
+
+The successful crypto heists illustrate North Korea’s growing sophistication
+as a malign cyber actor. Western security agencies and cyber security
+companies treat it as one of the world's four principal nation-state-based
+cyberthreats, alongside China, Russia, and Iran.
+
+According to a UN panel of experts monitoring the implementation of
+international sanctions, money raised by North Korea's criminal
+cyber-operations are helping to fund the country's illicit ballistic missile
+and nuclear programs. Anne Neuberger, US deputy national security adviser
+for cybersecurity, said in July that North Korea ``uses cyber to gain, we
+estimate, up to a third of their funds for their missile program.''
+
+Crypto analysis firm Chainalysis estimates that North Korea stole
+approximately $1 billion in the first nine months of 2022 from decentralized
+crypto exchanges alone.  ...
+
+https://arstechnica.com/information-technology/2022/11/how-north-korea-became-a-mastermind-of-crypto-cyber-crime/
+
+------------------------------
+
+Date: Mon, 14 Nov 2022 19:35:38 +0000
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: U.S. NSA recommends 'memory safe' languages (Media Defense)
+
+The U.S. NSA finally came out this week to strongly endorse `memory-safe'
+languages for most software programming, specifically mentioning C#, Go,
+Java, Ruby, Rust, and Swift as examples.
+
+Apparently orphaned DoD language *Ada* was conspicuously left out of
+
+NSA's list, even though versions of Ada that target JVM can utilize Java
+JVM's GC.  https://en.wikipedia.org/wiki/Ada_(programming_language)
+
+Ubiquitous web language *Javascript* was also conspicuous by its absence,
+even though Javascript has a sophisticated GC.
+https://javascript.info/garbage-collection
+
+Also curiously, NSA left out any mention of Arm's *CHERI*
+(Capability Hardware Enhanced RISC Instructions) architecture
+which should address NSA's performance concerns:
+
+  ``Memory safety can be costly in performance ... There is also considerable
+  performance overhead associated with checking the bounds on every array
+  access that could potentially be outside of the array.''
+  https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/
+
+    CHERI, can you come out tonight (Come come, come out tonight)
+    You, ooh better ask your NSA (CHERI baby)
+    Tell her everything is *all right*.
+
+    (Apologies to Frankie Valli &amp; Bob Gaudio)
+
+With Arm's new 'Morello' processor, can I finally replace my *Raspberry Pi*
+with a *CHERI Pi*??
+
+  [Now I know what startup sound will play when CHERI Pi boots...  :-) ]
+
+While waiting, use CHERI as a QEMU virtual machine?
+https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/cheri-llvm.html
+
+https://media.defense.gov/2022/Nov/10/2003112742/-1/-1/0/CSI_SOFTWARE_MEMORY_SAFETY.PDF
+
+``Memory issues in software comprise a large portion of the exploitable
+vulnerabilities in existence. NSA advises organizations to consider making a
+strategic shift from programming languages that provide little or no
+inherent memory protection, suchas C/C++, to a memory safe language when
+possible.  [Examples noted above, with html trademarks omitted here.  PGN]
+Memory-safe languages provide differing degrees of memory usage protections,
+so available code hardening defenses, such as compiler options, tool
+analysis, and operating system configurations, should be used for their
+protections as well. By using memory-safe languages and available code
+hardening defenses, many memory vulnerabilities can be prevented, mitigated,
+or made very difficult for cyber-actors to exploit.''
+
+------------------------------
+
+Date: Sun, 13 Nov 2022 20:28:23 -0600
+From: dmitri maziuk <dmitri.maziuk@gmail.com>
+Subject: Re: Rust (RISKS-33.52)
+
+Memory is the resource every computer program uses, but it's not the
+only resource.
+
+Nobody (that I know of) managed to pull off proper object destruction in a
+garbage-collected language. Thus, if a program written in a
+*garbage-collected* language uses those *other* resources, there is no
+guarantee as to when it might release them. The best they can do is
+*sometime between when the object goes out of scope, and when the program
+terminates*. And that's just not good enough for many applications including
+systems programming.
+
+That's what Rust has that automatic memory management doesn't: *when a
+variable goes out of scope, its destructor is run, or it's dropped*.
+
+------------------------------
+
+Date: Wed, 16 Nov 2022 11:46:50 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Cyber Vulnerability in Networks Used by Spacecraft, Aircraft,
+ Energy Generation Systems (U.Michigan)
+
+Zachary Champion, University of Michigan News, 15 Nov 2022
+via ACM TechNews, 16 Nov 2022
+
+Researchers at the University of Michigan and the U.S. National Aeronautics
+and Space Administration (NASA) discovered a cyberattack that exploits
+networks used by aircraft, spacecraft, energy generation systems, and
+industrial control systems. The PCspooF exploit targets the time-triggered
+ethernet (TTE) system, which lowers costs in high-risk settings by allowing
+mission-critical and less-critical devices to operate on the same network
+hardware. PCspoof mimics switches in TTE networks to send out malicious
+synchronization messages masked by electromagnetic interference. The
+disruption gradually causes time-sensitive messages to be dropped or
+delayed, with potentially disastrous effects. The researchers said the
+exploit can be prevented by replacing copper Ethernet cables with
+fiber-optic cables, or by deploying optical isolators between switches and
+untrusted devices.
+
+  [Richard Marlon Stein noted another version, both seemingly derivative:]
+
+https://techxplore.com/news/2022-11-cyber-vulnerability-networks-spacecraft-aircraft.html
+
+A major vulnerability in a networking technology widely used in critical
+infrastructures such as spacecraft, aircraft, energy generation systems and
+industrial control systems was exposed by researchers at the University of
+Michigan and NASA.
+
+It goes after a network protocol and hardware system called time-triggered
+ethernet, or TTE, which greatly reduces costs in high-risk settings by
+allowing mission-critical devices (like flight controls and life support
+systems) and less important devices (like passenger WiFi or data collection)
+to coexist on the same network hardware. This blend of devices on a single
+network arose as part of a push by many industries to reduce network costs
+and boost efficiency.
+
+------------------------------
+
+Date: Wed, 16 Nov 2022 11:46:50 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Reducing Redundancy to Accelerate Complicated Computations
+ (TJNAF)
+
+Thomas Jefferson National Accelerator Facility (15 Nov 2022),
+via ACM TechNews, 16 Nov 2022
+
+Scientists at the U.S. Department of Energy's Thomas Jefferson National
+Accelerator Facility and the College of William & Mary have developed a tool
+to optimize supercomputing time. Their MemHC framework structures the memory
+of a graphics processing unit (GPU) to accelerate the calculation of
+many-body correlation functions. The researchers created three memory
+management methods that reduce redundant memory operations and expedite
+calculation of tensor contractions 10-fold. They coded MemHC to enable
+memories to persist on the GPU in a manner more appropriate for
+calculations, reducing the GPU's input and output tasks to concentrate on
+communication between the GPU and its host central processing unit.
+
+  [This may be an issue of bad journalism.  Hardware accelerators *with*
+  built-in redunancy might make more sense than jiggering software to run on
+  inappropriate hardware.  Furthermore, getting rid of security of the input
+  and output is another way to increase performance, but it is totally
+  counter to trustworthiness.  Be very careful about what and where you are
+  optimizing.  PGN]
+
+------------------------------
+
+Date: Wed, 16 Nov 2022 08:37:49 +0000
+From: Richard Marlon Stein <rmstein@protonmail.com>
+Subject: Vulnerabilities of electric vehicle charging infrastructure
+ (techxplore.com)
+
+https://techxplore.com/news/2022-11-vulnerabilities-electric-vehicle-infrastructure.html
+
+Can the grid be affected by electric vehicle charging equipment?
+Absolutely. Would that be a challenging attack to pull off? Yes. It is
+within the realm of what bad guys could and would do in the next 10 to 15
+years. That's why we need to get ahead of curve in solving these issues.'
+
+The team looked at a few entry points, including vehicle-to-charger
+connections, wireless communications, electric vehicle operator interfaces,
+cloud services and charger maintenance ports. They looked at conventional AC
+chargers, DC fast chargers and extreme fast chargers.
+
+  I imagine the old pay-at-the-pump skimmer is likely too. For EVs:
+  pay-at-the-electron dispenser skim.
+
+------------------------------
+
+Date: Fri, 18 Nov 2022 15:18:14 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Cybercriminals Are Selling Access to Chinese Surveillance Cameras
+ (Threatpost)
+
+Tens of thousands of cameras have failed to patch a critical,
+11-month-old CVE, leaving thousands of organizations exposed.
+New research indicates that over 80,000 Hikvision surveillance cameras
+in the world today are vulnerable to an 11 month-old command injection flaw.
+
+Hikvision -- short for Hangzhou Hikvision Digital Technology -- is a Chinese
+state-owned manufacturer of video surveillance equipment. Their customers
+span over 100 countries (including the United States, despite the FCC
+labeling Hikvision *an unacceptable risk to U.S. national security*.  Last
+Fall, a command injection flaw in Hikvision cameras was revealed to the
+world as CVE-2021-36260. The exploit was given a critical rating of 10
+rating by NIST.   [...]
+
+  [This message and several others from Gabe came in badly garbled by smart
+  characters that cause chunks of text to totally disappear -- even with Dan
+  Jacobson's perl-based script.  I've used what I could without going back
+  to the source.  If you want the rest, you should do exactly that.  PGN]
+
+https://threatpost.com/cybercriminals-are-selling-access-to-chinese-surveillance-cameras/180478/
+
+------------------------------
+
+Date: Mon, 21 Nov 2022 06:48:14 -0700
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Code grey: Inside a 'catastrophic' IT failure at the Queensway
+ Carleton Hospital (CBC)
+
+https://www.cbc.ca/news/canada/ottawa/queensway-carleton-hospital-doctors-network-outage-1.6656370
+
+Emergency room doctors, nurses and other health-care professionals who
+worked through the night during a major, hospital-wide computer and phone
+outage in Ottawa were "sticking their necks out" in an "exceptionally
+unsafe" environment, according to documents obtained by CBC News.
+
+Inaccessible medical records, inoperable equipment, defective backup phones
+and pagers, and poor communication from administrators plagued the Queensway
+Carleton Hospital (QCH) for nearly 20 hours in early September when a "code
+grey" was declared, internal records obtained through a Freedom of
+Information request show.
+
+Code grey refers to infrastructure failure. QCH called one shortly after
+noon on 9 Sept 2022, which lasted till 9:38 a.m. the following day.
+
+------------------------------
+
+Date: Fri, 18 Nov 2022 12:15:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Open-Source Software Has Never Been More Important (TechRadar)
+
+Craig Hale, *TechRadar*, 13 Nov 2022, via ACM TechNews, 18 Nov 2022
+
+GitHub's Octoverse 2022 report on the state of open-source software found
+that 90% of Fortune 100 companies use open-source software (OSS) in some
+capacity. There have been 413 million OSS contributions to GitHub from the
+platform's 94 million users this year alone, the company noted. The report
+found that commercially backed OSS projects are increasing, and that around
+a third of Fortune 100 companies now have an open-source program office to
+coordinate their OSS strategies. However, as the Synopsis Open-Source
+Security and Risk Analysis Report for 2022 found, despite a steady 3%
+year-on-year decrease in vulnerabilities, more than 80% of the codebases
+analyzed were still found with at least one vulnerability, with 88% of the
+codebases investigated showing no signs of update in the past two years.
+
+------------------------------
+
+Date: Mon, 21 Nov 2022 18:37:52 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Autonomous Vehicles Join the List of US National Security Threats
+ (WiReD)
+
+Pfluger highlights in his letter that China could use autonomous and
+connected vehicles as a pathway to incorporate their systems and technology
+into our country's infrastructure.  As Homeland Security secretary Alejandro
+Mayorkas told a House committee last week, there are perils of having
+communications infrastructure in the hands of nation-states that don't
+protect freedoms and rights as we do. FBI director Christopher Wray warned
+that China has stolen more data from the United States than all other
+nations combined, through increasingly sophisticated large-scale
+cyber-espionage operations against a range of industries, organizations, and
+dissidents in the United States.
+
+https://www.wired.com/story/autonomous-vehicles-china-us-national-security
+
+------------------------------
+
+Date: Fri, 18 Nov 2022 18:38:45 +0000
+From: "Wendy M. Grossman" <wendyg@pelicancrossing.net>
+Subject: Hotel barfs on two people with the same name (gcluley)
+
+A hotel computer could not cope with two men named Brian Cox checking in
+on the same day:
+
+https://twitter.com/gcluley/status/1593656867665768448
+
+------------------------------
+
+Date: Mon, 14 Nov 2022 14:07:20 +0000
+From: Martin Ward <martin@gkc.org.uk>
+Subject: DeepMind says its new AI coding engine is as good as an average
+ human programmer (The Verge)
+
+https://www.theverge.com/2022/2/2/22914085/alphacode-ai-coding-program-automatic-deepmind-codeforce
+
+If an AI is as good as an average human programmer, then the average human
+programmer is no better than an AI which doesn't actually understand
+anything about what it is doing.
+
+For some time now I have suspected that the average human programmer just
+fiddles with the code until it seems to work and calls it "done", without
+having any real understanding of exactly what the program is supposed to do
+or how the implementation actually works.  This is my rather cynical take on
+"test-driven development, or TDD.
+
+The above research appears to provide scientific confirmation of my view. If
+an AI can perform as well as an average programmer, then given that the AI
+has no understanding of the program or its implementation and is just
+fiddling with the code until it appears to work (i.e., until it passes the
+provided set of acceptance tests), then it seems that the average human
+programmer also has no understanding and is also just fiddling with the code
+until it appears to work.
+
+According to the Wikipedia page on TDD, step 3 is "Write the simplest code
+that passes the new test". A suitable candidate for this is code which scans
+the test data file for the provided input parameters and returns the
+required output (as given in the test file).  Step 3 says explicitly
+``Inelegant or hard code is acceptable, as long as it passes the test.''
+So, this hard coding should be acceptable. The suggested implementation also
+follows the principles of *keep it simple, stupid* (KISS) and *You aren't
+gonna need it.* (YAGNI) It has the further advantage of passing any
+additional tests that may be added to the test harness in the future.
+
+  [Unfortunately, it massively violates the Einstein Principle that
+  everything should be made as simple as possible, BUT NO SIMPLER.
+  I think most RISKS readers by now understand that it is the NO SIMPLER
+  that is the killer here for trustworthy systems.  PGN]
+
+------------------------------
+
+Date: Sat, 19 Nov 2022 22:52:14 -0700
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Time Has Run Out for the Leap Second (NYTimes)
+
+https://www.nytimes.com/2022/11/14/science/time-leap-second.html
+
+Roughly every four years, an extra day gets tacked onto the end of February,
+a time-keeping convention known as the leap year. The practice of adjusting
+the calendar with an extra day was established by Julius Caesar more than
+2,000 years ago and modified in the 16th century by Pope Gregory XIII,
+bequeathing us the Julian and Gregorian calendars.
+
+That extra day is a way of aligning the calendar year of 365 days with how
+long it actually takes Earth to make a trip around the sun, which is nearly
+one-quarter of a day longer. The added day ensures that the seasons stay
+put rather than shifting around the year as the mismatch lengthens.
+
+Humanity struggles to impose order on the small end of the time scale, too.
+Lately the second is running into trouble. Traditionally the unit was
+defined in astronomical terms, as one-86,400th of the mean solar day (the
+time it takes Earth to rotate once on its axis). In 1967 the world’s
+metrologists instead began measuring time from the ground up, with atomic
+clocks. The official length of the basic unit, the second, was fixed at
+9,192,631,770 vibrations of an atom of cesium 133. Eighty-six thousand four
+hundred such seconds compose one day.
+
+But Earth's rotation slows ever so slightly from year to year, and the
+astronomical second (like the astronomical day) has gradually grown longer
+than the atomic one. To compensate, starting in 1972, metrologists began
+occasionally inserting an extra second — a leap second -- to the end of an
+atomic day. In effect, whenever atomic time is a full second ahead, it stops
+for a second to allow Earth to catch up. Ten leap seconds were added to the
+atomic time scale in 1972, and 27 more have been added since.
+
+Adding that extra second is no small task. Moreover, Earth's rotation is
+slightly erratic, so the leap second is both irregular and unpredictable.
+Fifty years ago, those qualities made inserting the leap second difficult.
+Today the endeavor is a technical nightmare, because precise timing has
+become integral to society’s highly computerized infrastructure.
+
+------------------------------
+
+Date: Sat, 19 Nov 2022 07:03:41 -0500
+From: Jan Wolitzky <jan.wolitzky@gmail.com>
+Subject: Timer on GE ovens automagically reprogrammed to gobble rather
+ than ding (Business Wire)
+
+A former colleague reports that his *smart* GE oven got an automatic
+software upgrade.  Now, when the timer runs down, instead of a chime, it
+makes a sound like a turkey.
+
+https://www.businesswire.com/news/home/20211103005746/en/GE-Profile%E2%84%A2-Launches-First-of-Its-Kind-Turkey-Mode-to-Ease-Cooking-Stress-for-the-Most-High-Pressure-Meal-of-the-Year
+
+(And when your expensive oven is hacked and bricked, does it honk to tell
+you your goose is cooked?)
+
+  [The Internet of Every Oven is already a turkey -- i.e., someone (or some
+  thing) that does something thoughtless or annoying.  PGN]
+
+------------------------------
+
+Date: Thu, 17 Nov 2022 17:02:29 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Akamai finds 13 million malicious newly observed domains a month
+ (SC Media)
+
+Akamai researchers on Wednesday reported that based on a newly observed
+domain (NOD) dataset, they have flagged almost 79 million domains as
+malicious in the first half of 2022.  The researchers say this equals
+approximately 13 million malicious domains per month, representing 20.1% of
+all the NODs that successfully resolved.
+
+In a blog post, the Akamai researchers explained that whenever a domain name
+is queried for the first time in the last 60 days, the researchers consider
+it an NOD. The NOD dataset lets the researchers zoom in on the long-tail
+rgistered domain names, typos, and domains that are only very rarely queried
+on a global scale.
+
+NOD data lets Akamai classify a new domain very early in the threat
+lifecycle. All of its NOD-based detection systems and rules are fully
+automated. The researchers say that once a new NOD gets identified, the time
+needed for Akamai to classify it as malicious is measured in minutes -- not
+hours or days. All of this gets done with no human intervention, which lets
+Akamai mitigate the new DNS threats quickly, according to the researchers.
+
+https://www.scmagazine.com/analysis/malware/akamai-finds-13-million-malicious-newly-observed-domains-a-month
+
+------------------------------
+
+Date: Tue, 15 Nov 2022 06:53:11 -0700
+From: Matthew Kruk <mkrukg@gmail.com>
+Subject: Inside the turmoil at Sobeys-owned stores after ransomware (CBC)
+
+https://www.cbc.ca/news/canada/nova-scotia/inside-turmoil-sobeys-ransomware=
+-attack-1.6650636
+
+Employees of Empire Co., the parent company of Sobeys, have begun to speak
+out about the turmoil unfolding inside the grocery chain since a ransomware
+attack began plaguing its computer systems earlier this month.
+
+Workers from across the country say some stores have run short of items
+because orders cannot be placed as usual, while at others, food that had
+gone bad initially either piled up or was frozen because it couldn't be
+removed from the inventory system.
+
+Pharmacies were unable to fill new prescriptions for a week, customers
+cannot redeem loyalty points or use gift cards, and staff were concerned
+last week they wouldn't get paid because the payroll system is down.
+
+``It's basically been a mess -- the word that can best describe it -- just a
+mess,'' said one employee who works in the front end at a Safeway in western
+Canada.
+
+------------------------------
+
+Date: Sun, 20 Nov 2022 16:21:07 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: $10.7 Million Payment To Virginia In Google Privacy Settlement
+ (VA Patch)
+
+Virginia was part of a record $391.5 million settlement with Google over the
+company's user privacy practices. Here is the state's share.
+
+https://patch.com/virginia/across-va/10-7-million-payment-va-google-privacy-settlement
+
+Almost $400M, wow -- that'll sure teach Google a lesson about privacy.  They
+might have to look under TWO executive suite couch cushions to find it.
+
+------------------------------
+
+Date: Wed, 16 Nov 2022 10:28:03 -0500
+From: Gene Spafford <spaf@purdue.edu>
+Subject: Short Videos on Ethics in AI and Software Development
+
+Purdue has just released a series of short videos on ethics related to AI
+and software development. I can definitely recommend this if you are
+interested in the topics, and especially if you haven't thought much about
+this topic.
+
+The lead video is by Vint Cerf. I am also featured in the series.
+
+https://www.cla.purdue.edu/about/college-initiatives/leadingethically/techethics.html
+
+------------------------------
+
+Date: Tue, 15 Nov 2022 00:33:50 +0000
+From: Richard Marlon Stein <rmstein@protonmail.com>
+Subject: Electronic Health Record Legal Settlements (JAMA Health Forum)
+
+https://jamanetwork.com/journals/jama-health-forum/fullarticle/2798437
+
+"Six EHR vendors reached settlement agreements totaling $379.8 million
+(Table).  Settlements for 5 of the 6 vendors involved alleged kickbacks,
+which are payments from the vendor to clinicians. Most kickbacks were
+related to product promotion, and 1 was related to influencing clinicians to
+prescribe opioids. Settlements for 4 of 6 vendors involved alleged
+misrepresentation of EHR capabilities to falsely certify their product. One
+vendor allegedly miscalculated rates of electronic record sharing, which
+were used in incentive program attestation. Based on available Centers for
+Medicare & Medicaid Services attestation data, the EHR products associated
+with these 6 settlements were used by 76831 unique clinicians during the
+years of alleged misconduct."
+
+The "Gang of 6" EHR vendors: eClinicalWorks, Greenway Health LLC, Practice
+Fusion Inc, Viztek LLC, athenahealth Inc, CareCloud Health Inc.
+
+EHR manipulation and fake EHR product feature certification for profit.
+
+Difficult to confidently estimate patient impact. Unsettling to learn
+physician prescriptions are steered by prioritizing profit over patient
+needs. I doubt the DoJ would investigate and indict 77Kphysicians for their
+willing participation.
+
+Per-prescription kickback as a service (PKAAS)? Patients should consult
+their physicians.
+
+------------------------------
+
+Date: Fri, 18 Nov 2022 10:26:14 PST
+From: Peter G Neumann <neumann@csl.sri.com>
+Subject: Is This the End Game for Cryptocurrency? (Paul Krugman)
+
+Paul Krugman, *The New York Times*, National Edition, Opinion, A25.
+18 Nov 2022 (PGN-excerpted)
+
+We should ask why crypto[currency] institutions were created in the first
+place.`
+
+... These exchanges are -- wait for it -- financial institutions, whose
+ability to attract investors depends on -- wait for it again -- those
+investors' trust.  In other words, the crypto ecosystem has basically
+evolved into exactly what it was supposed to replace: a system of financial
+intermediaries whose ability to operate depends on their perceived
+trustworthiness.
+
+In which case, what is the point?  Why should an industry that at best has
+simply reinvented conventional banking have any fundamental value?  ...
+
+As boosters love to remind us, previous predictions of crypto's imminent
+demise have proved wrong.  Indeed, the fact that Bitcoin and its rivals
+aren't really usable as money needn't mean that they become worthless -- you
+can, after all, say the same thing about gold.
+
+But if the government finally moves in to regulate crypto firms, which
+would, among other things, prevent them from promising impossible-to-deliver
+returns, it's hard to see what advantage these firms would have over
+ordinary banks.  Even if the value of Bitcoin goes to zero (which it still
+might), there's a strong case that the crypto industry, which loomed so
+large just a few months ago, is headed for oblivion.
+
+I cross-posted this to our Bay Area cryptographers' list.  Here are two
+replies:
+
+Dave Jevans:
+Hopefully this is the beginning of effective enforcement of existing
+regulations and the appropriate extension of transparency regs.  While
+unfortunate, the FTX debacle shows the lack of enforcement of existing regs.
+
+Crypto[currency] will be much stronger after this, as banks enter the
+custodial market. They have charters, audits, BSA officers, training,
+oversight, transparency to the board, and insurance.
+
+Steven Sprague:
+They are all learning still.
+Tokens are api messages for software with embedded value.
+Cost of audit for on chain events can slowly approach zero.
+Value of audited stuff is higher than un-audited.
+
+------------------------------
+
+Date: Fri, 18 Nov 2022 12:15:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Tuvalu Turns to Metaverse as Rising Seas Threaten Existence
+ (Lucy Craymer)
+
+Lucy Craymer, Reuters, 15 Nov 2022 via ACM TechNews, 18 Nov 2022
+
+The Pacific island nation of Tuvalu said it intends to replicate itself in
+the metaverse to preserve its history and culture amid threatened submersion
+by rising sea levels. Tuvalu foreign minister Simon Kofe told the COP27
+climate summit, "Our land, our ocean, our culture are the most precious
+assets of our people and to keep them safe from harm, no matter what happens
+in the physical world, we will move them to the cloud." Kofe hopes the
+digital version of Tuvalu will allow the country to continue as a state,
+even if the ocean covers it completely. He said seven governments have
+agreed to continue recognizing Tuvalu even if it is covered in water, adding
+that its submersion would be challenging from the standpoint of
+international law.
+
+------------------------------
+
+Date: Mon, 21 Nov 2022 12:03:24 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Smart Home Hubs Leave Users Vulnerable to Hackers (Leigh Beeson)
+
+Leigh Beeson, *UGA Today*, 15 Nov 2022, via ACM TechNews 21 Nov 2022
+
+The ChatterHub system developed by University of Georgia (UGA) researchers
+can expose smart home hub users to hackers by revealing the activity of
+various hubs nearly 90% of the time. UGA's Kyu Lee said, "We were able to
+use machine learning technology to figure out what much of the activity is
+without even having to decrypt the information." Lee said the information
+smart hubs send to individual devices can be deciphered by "using patterns,
+the size of the packet, and the timing of the packet." Hackers can acquire
+this information without positioning ChatterHub close to the hub, nor do
+they require prior knowledge of the types of smart devices to which it is
+connected or the hub's manufacturer to breach the system remotely.
+
+------------------------------
+
+Date: Tue, 22 Nov 2022 14:42:36 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Twitter update (PGN-simmerized)
+
+Without warning Musk apparently disables Twitter SMS 2-factor authentication
+https://www.androidauthority.com/twitter-sms-2fa-3234698/  [14 Nov 2022]
+
+Musk publicly mocks the employees he has fired [15 Nov 2022]
+
+Musk mocks fired employee, saying that the person had "tragic case of adult
+onset Tourette's"  [15 Nov 2022]
+https://twitter.com/elonmusk/status/1594500655724609536
+
+Facebook says now that he's a candidate, nothing Trump says will be fact
+checked.
+  [I have a Truth-ache all the time lately, and the Authordontist can't
+  help.  Ground Truth seems to have forsaken us.  See my rant in
+  RISKS-33.51. PGN]
+
+Musk and NASA:
+It's well past time to be asking why NASA continues to rely on on a toxic
+and disgusting person like Musk. In the end, they will almost certainly come
+to regret it, given his escalating bizarre behavior. -L  [15 Nov 2022]
+
+Fact check: 20 false and misleading claims Trump made in his
+announcement speech.  He even lied about the price of turkeys. -L [16 Nov 2022]
+https://www.cnn.com/2022/11/15/politics/fact-check-trump-announcement-speech-2024/index.html
+
+Musk's ultimatum to Twitter employees [16 Nov 2022]:
+Let's look at Musk's Twitter ultimatum to employees last night logically. He
+gives them a link to click by Thursday if they agree to work long hours and
+be hardcore and (unwritten but assumed) not question his genius or motives
+or personality or obnoxiousness.  If employees don't accept that, they're
+out with three months severance.  Now, this is a binary choice. Choice one
+provides no assurance that Musk won't fire you on a whim for any reason
+whatsoever however fantastical or paranoid.  On the other hand, choice two
+guarantees three months pay. In any normal environment, a myriad of factors
+would enter into this decision. But given Musk's temperament and behavior,
+the decision is considerably simplified.  And it amounts to this: If you can
+manage it financially, take the three months pay and GET THE HELL OUT OF
+THERE NOW!
+
+He's just making up crap again: Elon Musk finally makes up his mind on
+Twitter Blue: You'll be an 'official' celeb or company if enough
+verified people follow you  [16 Nov 2022]
+https://fortune.com/2022/11/16/elon-musk-makes-up-mind-twitter-blue-official-if-enough-verified-followers/
+
+It's being reported that at least 100s of employees decided to take up
+Musk on his "leave and get 3 months pay" offer, with scrambling to try
+keep crucial employees from leaving.
+Offices will reportedly be closed until the 21st. Rumor is there's paranoia
+of employee sabotage.   [17 Nov 2022]
+
+Musk says hate tweets will no longer be taken down:
+In tweet, Musk says hate tweets will no longer be taken down, merely
+deboosted and demonetized, but findable. That spells the end of
+Twitter. Q.E.D. -L  [18 Nov 2022]
+
+Elon and the app stores: If Musk leaves hate speech up on Twitter, even
+"unboosted" and unmonetized as he now says he's planning to do, he will most
+likely be violating the terms of the Apple App Store and Google (Android)
+Play Store, and of course various EU regulations. -L [18 Nov 2022]
+
+Report: Head of Twitter ad sales out of Twitter -- again:
+Robin Wheeler, who reportedly resigned as head of Twitter ad sales but was
+convinced by Elon to un-resign, apparently is out of the company (again)
+just over a week later. You can't make this stuff up. -L [18 Nov 2022]
+
+What do the app stores say about hate speech?
+If Elon plans to keep hate speech up on Twitter, no matter how he talks
+of not "boosting" it or making it harder to find, he will run up against
+not only EU regulations but also the iPhone and Android app stores.
+Let's see what Google says:
+
+   "We don't allow apps that promote violence, or incite hatred against
+   individuals or groups based on race or ethnic origin, religion,
+   disability, age, nationality, veteran status, sexual orientation,
+   gender, gender identity, caste, immigration status, or any other
+   characteristic that is associated with systemic discrimination or
+   marginalization."  [19 Nov 2022]
+   https://support.google.com/googleplay/android-developer/answer/9878810
+
+Musk posts obnoxious "semi-pornographic" NSFW Trump-related tweet [20 Nov]
+https://twitter.com/elonmusk/status/1594500655724609536
+
+Elon's Hellhole: Elon Musk's Twitter Reinstates Anti-Trans Activists
+on Same Weekend as Club Q Attacked
+https://www.vice.com/en/article/epz8jz/elon-musk-twitter-colorado-shooting-anti-trans-reinstated
+
+------------------------------
+
+Date: Mon, 21 Nov 2022 10:48:05 PST
+From: Peter G Neumann <neumann@csl.sri.com>
+Subject: In Memoriam: Drew Dean
+
+One of our long-time younger RISKS contributors (since Feb 1996), Drew Dean
+passed away on 23 August 2022 at 52, while doing the recreational thing he
+loved most on his annual vacation -- wind-surfing.  His funeral was on 17
+Nov 2022, and we held an very caring celebration of his life on 19 Nov 2022
+at SRI, for friends, colleagues, and Drew's sisters and their spouses.  Drew
+was beloved by many of us.  He made many important contributions to computer
+science and system trustworthiness -- and to our lives -- and will really
+be missed.
+
+The published obituary:
+ https://www.dignitymemorial.com/obituaries/san-diego-ca/richard-dean-10922443
+The program for last Saturday's SRI event, and A Chronological Timeline of
+   Drew's professional life:
+ http://www.csl.sri.com/neumann/Drew-handout.pdf
+
+A Kudoboard for Drew, which already has some wonderful contributions that
+   are much more personally diverse than anything else that might be
+   included in RISKS.  It will be particularly meaningful to those of you
+   who knew Drew:
+ https://www.kudoboard.com/boards/7EwhehOU
+
+------------------------------
+
+Date: Mon, 21 Nov 2022 12:03:24 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: In Memoriam: Frederick P. Brooks Jr. (Steve Bellovin)
+
+Steven Bellovin, CircleID, 19 Nov 2022, via ACM TechNews 21 Nov 2022
+
+Computer scientist Frederick P. Brooks Jr., who passed away on 17 Nov 2022,
+earned the ACM A.M. Turing Award in 1999 for his landmark contributions to
+computer architecture, operating systems, and software engineering. Columbia
+University's Steven Bellovin recalled Brooks' time at IBM, where he led the
+design of the S/360 mainframes, which comprised five models with distinct
+performance characteristics, sharing a common architecture-defined
+instruction set. At the University of North Carolina at Chapel Hill, Brooks
+focused on computer graphics and protein modeling, and pioneered virtual
+reality by using a remote manipulator arm to "grab" and move atoms with
+accompanying force feedback.
+
+  [Fred was a natural leader and wise person (e.g., The Mythical Man Month).
+  I remember the day his Harvard PhD thesis came back from the printer,
+  uncollated, very close to the submission deadline.  He organized every
+  able body in the basement of the Computing Lab to contribute to manual
+  collation, the first copy of which was indeed submitted only minutes
+  before the 5pm deadline.  While still a grad student, Fred was coauthor
+  with Bill Wright, Albert Hopkins and me on our work for the late Anthony
+  Oettinger's statistical linguistics course.  Fred and Bill had done a
+  Markovian analysis of eighth-note digrams up to octograms of 37
+  common-meter hymn tunes, and a year later Albert and I synthesized over
+  600 new hymn tunes for varying length Markoff chains, cranked out on the
+  Harvard Mark IV: An Experiment in Musical Composition, IRE Transactions on
+  Electronic Computers, September 1957, EC-6, pp. 175-182:
+    http://www/csl.sri.com/neumann/Experiment-in-musical-composition.pdf
+  (Oettinger was a pioneer in translating Russian into English.)  When Fred
+  was later Chairman of the department at UNC Chapel Hill, he had four chess
+  clocks in his office, one for each of administration, teaching,
+  students/office hours, and afternoon naps.  PGN]
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.53
+************************

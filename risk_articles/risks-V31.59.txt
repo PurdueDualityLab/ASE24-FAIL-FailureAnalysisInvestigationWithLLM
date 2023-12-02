@@ -1,0 +1,1057 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.59
+
+RISKS-LIST: Risks-Forum Digest  Friday 21 February 2020  Volume 31 : Issue 59
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.59>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Bluetooth-Related Flaws Threaten Dozens of Medical Devices (WIRED)
+Electronic voting systems (Ross Anderson)
+Orbital Debris Summary (Aerospace.org)
+Fraud Case in Charleston SC Shines Light on Web's Dark Corners (WSJ)
+Israel Says Hamas Targeted Its Soldiers in Honey Trap's Cyberattack (WSJ)
+Your Doorbell Camera Spied on You. Now What? (NYTimes)
+Sex robots may cause psychological damage (BBC)
+Electrical Tape on Sign Tricked a Tesla Into Speeding in a Test
+  (Yahoo Finance)
+Spooky Video shows self-driving cars being tricked by holograms (Inverse)
+Microsoft Surface Battery Fail (Larry Werring)
+Hundreds of Millions of PC Components Still Have Hackable Firmware (WIRED)
+EU Commission white paper On Artificial Intelligence - A European approach
+  to excellence and trust (Europa via Diego Latella)
+How smartphone addiction changes your brain: Scans reveal how grey
+  matter of tech addicts physically changes shape and size in a similar way
+  to drug users (Daily Mail)
+US Govt Warns Critical Industries After Ransomware Hits Gas Pipeline
+  Facility (CISA)
+Hackers Are Using the Coronavirus Panic to Spread Malware (Malware Bytes)
+Flywheel owners found out that their bikes were bricked through Peloton
+  (The Verge)
+Scientists Warn `Insect Apocalypse' Could Doom Humanity (The Guardian)
+Mysterious GPS outages are wracking the shipping industry (Fortune)
+UN/CCW/GGE documents on Autonomous Weapon Systems (Diego Latella)
+IBM, Marriott, and Mickey Mouse Take on Tech's Favorite Law (David McCabe)
+Re: A lazy fix 20 years ago means the Y2K bug is taking down computers
+  (John Levine, Martin Ward)
+Re: Debunking the lone woodpecker theory (Gabe Goldberg)
+My smart car rental was a breeze - until I got trapped in the woods
+  (The Guardian)
+Today in sharing economy struggles: our app-powered rental car
+  lost cell service on the side of a mountain in rural California and now I
+  live here I guess (Kari Paul)
+Re: Car renter paired car to FordPass, could still control car long ...
+  (Jeremy Epstein, R. G. Newbury)
+Re: The Intelligence Coup of the Century (David Lesher)
+How the Iowa Caucuses Came Crashing Down (WashPost)
+'The only uncertainty is how long we'll last': a worst-case scenario for
+  the climate in 2050 (The Guardian)
+Like Something Out of The Book Of Exodus Locust Armies Are Devouring Entire
+  Farms In Kenya In As Little As 30 Seconds (CGTN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 21 Feb 2020 14:44:48 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Bluetooth-Related Flaws Threaten Dozens of Medical Devices (WIRED)
+
+Hundreds of smart devices -- including pacemakers -- are exposed thanks to a
+series of vulnerabilities in the Bluetooth Low Energy protocol.
+
+The Bluetooth Special Interest Group, which oversees development of the
+Bluetooth and BLE standards, did not a return a request from WIRED for
+comment about the findings. Bluetooth and BLE implementation issues
+<https://www.wired.com/story/bluetooth-complex-security-risk/> are common,
+though, partly because the Bluetooth and BLE standards are massive and
+complex.
+
+"Some of the vendors we contacted originally, the engineers said, 'Well, the
+reason you're getting these issues is that you're putting in values that are
+not expected, not within the specification,'" Chattopadhyay says. "But you
+can't only be testing for a benign environment. We're talking about an
+attacker here. He doesn't care about what's expected."
+
+https://www.wired.com/story/bluetooth-flaws-ble-internet-of-things-pacemakers/
+
+Unfair! Testing unexpected values not in specifications...
+
+------------------------------
+
+Date: Sun, 16 Feb 2020 15:42:04 +0000
+From: Ross Anderson <Ross.Anderson@cl.cam.ac.uk>
+Subject: Electronic voting systems
+
+  (Note MIT's Voatz item, RISKS-31.58)
+
+So now both America and Russia have deployed thoroughly unimpressive
+electronic voting systems that claimed to have a blockchain feature.
+
+Last week at Financial Crypto, Sasha Golovnev talked on Breaking the
+encryption scheme of the Moscow Internet voting system.  A new system for
+electronic voting in three wards of the city of Moscow in 2018 had a public
+testing period, in which Sasha and Pierrick Gaudry broke it twice. There was
+no spec, but the source code was put online a day before the first public
+test. It turned out that it used ElGamal encryption with keys under 256
+bits; the encryption was done three times with different keys, and the
+designers were unaware that triple encryption doesn't strengthen ElGamal the
+way it does DES! Their first attack was simple key recovery as CADO-NFS
+could do the discrete logs on a laptop in ten minutes. The election
+authorities changed to 1024-bit ElGamal, whereupon a second attack was
+found: a one-bit leak from a subgroup attack – enough to distinguish between
+the two candidates in the election. The developers denied that this attack
+worked but silently changed the code anyway. There was also an ethereum
+blockchain for vote tallying, which vanished after the election result was
+declared, and the link between the decryption and he blockchain was broken
+when they keysize was increased. Other things were wrong too.
+
+See http://fc20.ifca.ai/preproceedings/178.pdf
+
+The link to the liveblog from which this is taken is here:
+  https://www.lightbluetouchpaper.org/2020/02/10/fc-2020/
+
+------------------------------
+
+Date: Sun, 16 Feb 2020 10:43:05 -0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Orbital Debris Summary (Aerospace.org)
+
+https://aerospace.org/article/space-debris-and-space-traffic-management
+
+The URL gives a table summarizing the current statistics on orbital space
+debris by size, quantity estimates, collision effect equivalence (hit by a
+bus or a bomb), and whether or not the detritus is track-able.
+
+Any object less than 5 cm cross-section cannot be tracked. Objects at or
+above 10 cm cross-section are subject to tracking. The catalog for 10 or 10+
+cm debris objects numbers is in the 100s of thousands. I have not found a
+public inventory on the Internet, though space-track.org lists satellite
+records using a standard 2 line summary format that identifies the name and
+their orbital ephemerides.
+
+An estimated tens of millions of debris objects between 1 mm and 5 cm
+currently orbit Earth at various altitudes.
+
+------------------------------
+
+Date: Mon, 17 Feb 2020 11:45:08 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Fraud Case in Charleston SC Shines Light on Web's Dark Corners
+  (WSJ)
+
+Micfo and its founder pleaded not guilty in case revolving around IP
+addresses and the American Registry for Internet Numbers
+
+https://www.wsj.com/articles/fraud-case-in-charleston-s-c-shines-light-on-webs-dark-corners-11581944400
+
+------------------------------
+
+Date: Mon, 17 Feb 2020 11:51:39 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Israel Says Hamas Targeted Its Soldiers in Honey Trap's Cyberattack
+  (WSJ)
+
+The Israeli military said operatives of the Palestinian militant group Hamas
+targeted its soldiers in a months-long operation that duped them into
+downloading spyware with the false promise of exchanging illicit photos with
+young women.
+
+Dozens of Israeli soldiers downloaded the spyware, but the scheme was
+detected early enough to prevent important secrets from getting out and the
+Hamas servers hosting the operation were destroyed, the military said on
+Sunday.
+
+The phishing operation, known as a honey trap, is the third such scheme
+since 2017 and shows how Hamas exploits social media to elicit information
+from enemy soldiers -- and how difficult it is for Israel and others to
+prevent such attacks.
+
+https://www.wsj.com/articles/israel-says-hamas-targeted-its-soldiers-in-honey-trap-cyberattack-11581874491
+
+------------------------------
+
+Date: Thu, 20 Feb 2020 10:22:13 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Your Doorbell Camera Spied on You. Now What? (NYTimes)
+
+Amazon's popular Ring security cameras have gaping security holes.  Here's
+how to protect yourself.
+
+tech fix: Your Doorbell Camera Spied on You. Now What?
+
+Amazon's popular Ring security cameras have gaping security holes.  Here's
+how to protect yourself.
+
+Has there ever been a tech product more polarizing than Ring?
+
+The Internet-connected doorbell gadget, which lets you watch live video of
+your front porch through a phone app or website, has gained a reputation as
+the webcam that spies on you and that has failed to protect your data. Yet
+people keep buying it in droves.
+
+Ring, which is owned by Amazon and based in Santa Monica, Calif., has
+generated its share of headlines, including how the company fired four
+employees over the last four years for watching customers' videos. Last
+month, security researchers also found that Ring's apps contained hidden
+code, which had shared customer data with third-party marketers. And in
+December, hackers hijacked the Ring cameras of multiple families, using the
+devices' speakers to verbally assault some of them.
+
+This week, Ring announced new protocols to strengthen the security of its
+products, such as mandating two-factor verification, which requires you to
+punch in a temporary code before logging into your account to see your
+footage. A Ring spokeswoman said the company was focused on constantly
+enhancing its security.
+
+Yet security experts said that Ring had been slow to react and that its
+solutions were weak.
+
+https://www.nytimes.com/2020/02/19/technology/personaltech/ring-doorbell-camera-spying.html
+
+------------------------------
+
+Date: Mon, 17 Feb 2020 08:44:16 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Sex robots may cause psychological damage (BBC)
+
+*US researchers have warned that the availability of sex robots with
+artificial intelligence (AI) poses a growing psychological and moral threat
+to individuals and society*
+
+They say the technology is escaping oversight because agencies are too
+embarrassed to investigate it.
+The scientists want action to prevent the unregulated use of such robots.
+
+Dr Christine Hendren of Duke University told BBC News that "the stakes were
+high".  "Some robots are programmed to protest, to create a rape scenario,
+Some are designed to look like children. One developer of these in Japan is
+a self-confessed paedophile, who says that this device is a prophylactic
+against him ever hurting a real child.  But does that normalise and give
+people a chance to practise these behaviours that should be treated by just
+stamping them out?"
+
+Dr Hendren was speaking at the annual meeting of the American Association
+for the Advancement of Science.
+
+ - New law of robotics: Humans must flourish
+   <https://www.bbc.com/news/technology-40423595>
+ - Call to ban killer robots in wars
+   <https://www.bbc.com/news/science-environment-47259889>
+ - Robots adapt to damage in seconds
+   <https://www.bbc.com/news/science-environment-32884768>
+
+A number of sex robots are advertised online. A US-based firm, Realrobitix,
+has posted a video marketing its Harmony robot for between $8,000 and
+$10,000.
+
+It is a life-sized doll which can blink and move its eyes and neck, and
+also its lips as it talks. [...]
+
+https://www.bbc.com/news/science-environment-51330261
+
+------------------------------
+
+Date: Wed, 19 Feb 2020 08:48:20 -0800
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Electrical Tape on Sign Tricked a Tesla Into Speeding in a Test
+  (Yahoo Finance)
+
+Researchers were able to trick a Tesla vehicle into speeding by putting a
+strip of electrical tape over a speed limit sign, spotlighting the kinds of
+potential vulnerabilities facing automated driving systems.
+
+Technicians at McAfee Inc. placed the piece of tape horizontally across the
+middle of the `3' on a 35 mile-per-hour speed limit sign. The change caused
+the vehicle to read the limit as 85 miles per hour, and its cruise control
+system automatically accelerated, according to research released by McAfee
+on Wednesday.
+
+McAfee says the issue isn't a serious risk to motorists. No one was hurt and
+the researcher behind the wheel was able to safely slow the car.
+
+But the findings, from 18 months of research that ended last year,
+illustrate a weakness of machine learning systems used in automated driving,
+according to Steve Povolny, head of advanced threat research at
+McAfee. Other research has shown how changes in the physical world can
+confuse such systems. [...]
+
+https://finance.yahoo.com/news/electrical-tape-sign-tricked-tesla-090000044.html
+https://www.bloomberg.com/news/articles/2020-02-19/electrical-tape-on-sign-tricked-a-tesla-into-speeding-in-a-test
+
+------------------------------
+
+Date: Fri, 21 Feb 2020 13:44:02 +0100
+From: Diego Latella <Diego.Latella@isti.cnr.it>
+Subject: Spooky Video shows self-driving cars being tricked by holograms
+  (Inverse)
+
+https://www.inverse.com/innovation/us-regulators-greenlight-nuros-r2-autonomous-delivery-vehicle
+
+Hackers can trick a Tesla into accelerating by 50 miles per hour (MIT Tech Rev)
+
+https://www.technologyreview.com/s/615244/hackers-can-trick-a-tesla-into-accelerating-by-50-miles-per-hour/
+
+------------------------------
+
+Date: Tue, 18 Feb 2020 16:00:41 -0500
+From: Larry Werring <lwerring@nrtco.net>
+Subject: Microsoft Surface Battery Fail
+
+Given the hype about how dangerous lithium batteries can be and the emphasis
+placed by the International Air Travel Association (IATA) and International
+Civil Aviation Organization (ICAO) on the safety of lithium batteries on
+aircraft (https://www.iata.org/en/programs/cargo/dgr/lithium-batteries), I
+am surprised that the recent lithium battery troubles being experienced by
+Microsoft Surface users has not gained more attention.
+
+I'm being a bit selfish here because I'm one of the users experiencing the
+problem and my interactions with Microsoft technical support have been less
+than satisfactory. A bit of background - I own both a Microsoft Surface Book
+(1st Gen) and a Microsoft Surface Pro 3. Until recently, I considered these
+to be great products.  A few weeks ago I noticed that there were signs
+of burn-through occurring near the edge of the screen on my Surface Book. On
+closer examination this past weekend, I noticed that the frame of my Surface
+Book is warped and the screen itself has begun to bulge outwards. Research
+(Google is your friend) led me to discover that there are numerous
+complaints about Microsoft Surface products failing because the lithium
+battery built into them have swollen.  These swollen batteries have led
+to cracked/warped screens and the screen almost popping off the
+computer.  Unfortunately, these batteries cannot be removed or replaced.
+
+Armed with this information I contacted Microsoft Customer Support.  
+They immediately confirmed that the lithium battery in my Surface Book is
+likely swelling.   I was told to immediately stop using and unplug the
+computer because the failed battery could lead to a loss of all my data -
+not because the swollen battery is dangerous but because I might lose my
+data. He also confirmed that the battery cannot be removed or replaced, I
+must dispose of the computer. I asked the technician whether the swelling
+battery was dangerous and could cause a fire or explosion.  He denied this
+insisting that only my data was at risk. However, he did say that they would
+send me special packaging so I could SAFELY ship my computer back to
+Microsoft for disposal, this because our Post Office won't ship swollen
+lithium batteries (I wonder why?).  He told me my computer is out of
+warranty but did offer to sell me a replacement for $810 CDN.  I told him
+that I wasn't paying that much for a 6-year old computer but that I was more
+concerned about the safety issues associated with defective lithium
+batteries.  I noted that there are owners of these computers living and
+traveling around the world who could also be unknowingly experiencing
+swelling batteries and, thus, could be at risk, particularly if the device
+is taken on an aircraft.   He dismissed my concerns outright saying that
+only my data was at risk.
+
+I have discovered that there are a lot of folks experiencing the same
+problem (swelling Surface batteries) and that Microsoft has known about the
+problem for a while. The company appears to have chosen to essentially do
+and say nothing about the risks, and there are risks.  At least one user
+has reported that the swollen battery in their Surface computer has caught
+fire.
+(https://answers.microsoft.com/en-us/surface/forum/all/surface-pro-3-swollen-battery-safety-hazard/cbf0e621-508f-4e71-a45b-ab8c6e7c888b?page=2)
+
+So, here we have a battery safety issue that, in the past, has resulted in
+at least one major device recall and an outright ban of those devices on
+aircraft. Yet this popular product by Microsoft is experiencing the same
+problems and they choose to say and do nothing. People's property and lives
+could be at risk.  Microsoft should man up and recall all affected Surface
+products.
+(https://www.cnet.com/news/galaxy-note-4-refurbished-batteries-recall/)
+
+As an aside, my Surface Pro 3 doesn't look like the battery is swelling
+(yet) but I've had to disable the touch screen because the mouse cursor
+repeatedly keeps wanting to jump to the same spot.   I suspect that there
+may be pressure on the back of the touch screen causing that problem...
+suggesting that its battery may also be beginning to swell. Sooo, two
+Microsoft products are going to be disposed of - before one of them burns my
+house down.
+
+Heads up people.   If you own a Microsoft Surface Book (1st Gen) or a
+Surface Pro 3 or 4, you may have safety problems with the lithium battery.
+Please be diligent.   If you own a later Microsoft Surface product, ask
+Microsoft if your device is safe.   I believe the risk could be reduced
+in newer products if Microsoft would redesign the internal battery so it can
+easily be removed and replaced at the first sign of problems.  
+Considering their price tag, it seems stupid to dispose of a perfectly good
+computer simply because the battery is swelling.
+
+On that note - I'm off to buy myself a new non-Microsoft laptop...
+
+------------------------------
+
+Date: Tue, 18 Feb 2020 18:11:42 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Hundreds of Millions of PC Components Still Have Hackable Firmware
+  (WIRED)
+
+The lax security of supply chain firmware has been a known concern for years
+-- with precious little progress being made.
+
+https://www.wired.com/story/firmware-hacks-vulnerable-pc-components-peripherals/
+
+------------------------------
+
+Date: Wed, 19 Feb 2020 16:46:49 +0100
+From: Diego Latella <Diego.Latella@isti.cnr.it>
+Subject: EU Commission white paper On Artificial Intelligence - A European
+  approach to excellence and trust (Europa)
+
+You might be interested in the EU Commission WHITE PAPER On Artificial
+Intelligence: A European approach to excellence and trust, which has been
+just published.
+https://ec.europa.eu/info/sites/info/files/commission-white-paper-artificial-intelligence-feb2020_en.pdf
+
+------------------------------
+
+Date: Wed, 19 Feb 2020 08:45:21 -0800
+From: geoff goodfellow <geoff@iconia.com>
+Subject: How smartphone addiction changes your brain: Scans reveal how grey
+  matter of tech addicts physically changes shape and size in a similar way
+  to drug users (Daily Mail)
+
+- German researchers examined the brains of 48 participants using MRI
+   images
+- Total of 22 people smartphone addicts and 26 non-addicts made up the
+   cohort
+- Researchers found diminished grey matter volume in key regions of the
+   brain
+- Similar phenomenon observed in people who suffer with substance
+   addiction  [...]
+
+https://www.dailymail.co.uk/sciencetech/article-8016779/Brains-people-addicted-smartphone-physically-change.html
+
+------------------------------
+
+Date: Wed, 19 Feb 2020 08:46:14 -0800
+From: geoff goodfellow <geoff@iconia.com>
+Subject: US Govt Warns Critical Industries After Ransomware Hits Gas
+  Pipeline Facility (CISA)
+
+The U.S. Department of Homeland Security's Cybersecurity and Infrastructure
+Security Agency (CISA) earlier today issued a warning to all industries
+operating critical infrastructures about a new ransomware threat that if
+left unaddressed could have severe consequences.
+
+The advisory <https://www.us-cert.gov/ncas/alerts/aa20-049a> comes in
+response to a cyberattack targeting an unnamed natural gas compression
+facility that employed spear-phishing to deliver ransomware to the
+company's internal network, encrypting critical data and knocking servers
+out of operation for almost two days.
+
+"A cyber threat actor used a spear-phishing link to obtain initial access to
+the organization's information technology network before pivoting to its
+operational technology network. The threat actor then deployed commodity
+ransomware to encrypt data for impact on both networks," CISA noted in its
+alert.
+
+As ransomware attacks continue to escalate in frequency and scale, the new
+development is yet another indication that phishing attacks continue to be
+an effective means to bypass security barriers and that hackers don't always
+need to exploit security vulnerabilities to breach organizations. [...]
+<https://thehackernews.com/2019/12/zeppelin-ransomware-attacks.html>
+<https://thehackernews.com/2019/11/everis-spain-ransomware-attack.html>
+https://thehackernews.com/2020/02/critical-infrastructure-ransomware-attack.html
+
+------------------------------
+
+Date: Fri, 21 Feb 2020 11:50:54 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Hackers Are Using the Coronavirus Panic to Spread Malware
+  (Malware Bytes)
+
+*Hackers are posing as the CDC and public health organizations to get
+people to open virus-laden files*
+EXCERPT:
+
+Hackers are using the public's fear of the coronavirus to steal passwords
+and spread malware, according to multiple cybersecurity firms and computer
+security.  The setup is usually simple -- a malicious actor sends a mark on
+an email or message that appears to come from an official government source,
+such as the Centers for Disease Control, and gets the mark to click a link
+that asks for personal info. It's an old scam updated to prey on people's
+coronavirus fears.
+<https://blog.malwarebytes.com/social-engineering/2020/02/battling-online-coronavirus-scams-with-facts/>
+<https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/multiple-phishing-attacks-discovered-using-the-coronavirus-theme/>
+<https://nakedsecurity.sophos.com/2020/02/05/coronavirus-safety-measures-email-is-a-phishing-scam/>
+
+``The most prominent coronavirus-themed campaign targeted Japan,
+distributing emotet...in malicious email attachments feigning to be sent by
+a Japanese disability welfare service provider,'' California-based cyber
+security company Check Point said in a report, ``The emails appear to be
+reporting where the infection is spreading in several Japanese cities,
+encouraging the victim to open the document which, if opened, attempts to
+download emotet on their computer.''
+<https://blog.checkpoint.com/2020/02/13/january-2020s-most-wanted-malware-coronavirus-themed-spam-spreads-malicious-emotet-malware/>
+
+Emotet is a trojan malware program that, once installed, sits on the
+victim's computer and gathers personal information. Not every
+coronavirus-themed malware requires the user to install software. Many of
+them are simple phishing attempts with a coronavirus theme.
+
+In a typical example, described at in Trustwave's SpiderLabs Blog
+<https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/multiple-phishing-attacks-discovered-using-the-coronavirus-theme/>,
+a strange email address pretending to come from the CDC will reach out to a
+victim telling them a city near them has reported a coronavirus outbreak.
+The email asks the victim to click a link for more info. The link appears to
+be legitimate but redirects to a phishing website that replicates a Windows
+login and asks the users for their email and password. [...]
+https://www.vice.com/en_us/article/n7jdxw/hackers-are-using-the-coronavirus-panic-to-spread-malware
+
+------------------------------
+
+Date: Fri, 21 Feb 2020 11:51:38 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Flywheel owners found out that their bikes were bricked through
+  Peloton (The Verge)
+
+After a patent settlement with Peloton, Flywheel users are left reeling
+with how the company handled news of its bikes suddenly shutting down.
+Every morning at 4:30AM, Shani Maxwell would throw on her Flywheel T-shirt
+and hop on her Fly Anywhere bike. An avid fan who's been riding with
+Flywheel since 2013, she'd leapt at the chance to own the company's branded
+bike when the company released its Peloton competitor in 2017.  [...]
+
+https://www.theverge.com/2020/2/20/21145349/flywheel-bike-shut-down-email-user-reactions-peloton-trade-in
+
+------------------------------
+
+Date: Fri, 21 Feb 2020 11:52:44 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Scientists Warn `Insect Apocalypse' Could Doom Humanity
+  (The Guardian)
+
+For several years, a crescendo of scientists have sounded alarms over an
+insect apocalypse -- a global dying-off of what may already amount to as
+much as 80 percent of the global bug population.
+<https://www.motherjones.com/environment/2020/02/car-splatometer-tests-reveal-huge-decline-in-the-number-of-insects/>
+<https://www.nytimes.com/2018/11/27/magazine/insect-apocalypse.html>
+
+Now, in a grim update, 25 scientists around the world have published a stark
+warning: If humankind doesn't manage to save the global bug population, it
+could spell doom for human life.
+
+Extinction Event
+
+In a pair of strongly-worded open letters published in the journal *Nature
+Conversation, *the researchers decried the pollution, habitat destruction,
+and climate change they believe is causing the mass death of the world's
+insects.
+<https://www.sciencedirect.com/science/article/pii/S0006320719317823?via%3Dihub#bb0910>
+<https://www.sciencedirect.com/science/article/pii/S0006320719317793?via%3Dihub#bb0135>
+
+``Each species represents an unrepeatable part of the history of life,'' the
+scientists wrote. ``In turn, each species also interacts with others and
+their environment in distinctive ways, weaving a complex network that
+sustains other species, including us.''  Bug Hunt
+
+The scientists wrote, poetically, that the ``fates of humans and insects are
+intertwined.'' In other words, our collective ecological footprint doesn't
+just threaten our fellow Earthlings -- it could also effectively kick the
+ladder out from under our own position in the ecosystem.
+
+Insects, per the study provide humans with ``[everything] from pollination
+and decomposition, to being resources for new medicines, habitat quality
+indication'' and more.  Turns out, it's a bug's world, and humans are just
+living off of it. The question is: Without their help, for how much longer?
+<https://www.sciencedirect.com/science/article/pii/S0006320719317823?via%3Dihub#bb0910>,
+
+READ MORE: *Fates of humans and insects intertwined, warn scientists*
+<https://www.theguardian.com/environment/2020/feb/20/fates-humans-insects-intertwined-scientists-population-collapse>
+[*The Guardian*]
+
+More on insects:
+*University Deletes Press Release Claiming Evidence of Bugs on Mars*
+<https://futurism.com/university-deletes-press-release-claiming-mars-bugs>
+
+https://futurism.com/the-byte/scientists-warn-insect-apocalypse-could-doom-humanity
+
+------------------------------
+
+Date: Thu, 20 Feb 2020 10:26:24 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Mysterious GPS outages are wracking the shipping industry (Fortune)
+
+  [See RISKS-31.48,54, etc.]
+
+For the global maritime shipping industry, spotty satellite navigation is a
+disaster waiting to happen.
+
+The call came in by radio one evening last September, at around 9 p.m.  On
+the line was the master of a tanker, approaching the end of a month-long
+journey from the Port of South Louisiana and carrying more than 5,000 metric
+tons of ethanol. The message was urgent: The ship's GPS signal had suddenly
+disappeared -- leaving the crew to navigate Cyprus's shoreline in the dark.
+
+On the other end of the line was the pilots' office at the Vasiliko oil
+terminal, whose staff oversees shipping traffic at Vasiliko's harbor on
+Cyprus's arid, palm-fringed southern coast. Stelios Christoforou, the pilot
+on duty, recognized the gravity of the situation right away. In daylight, an
+experienced ship captain can maneuver using paper maps, markers, and the
+coastline as guides. But at night, GPS becomes a critical tool in unfamiliar
+waters -- especially near Cyprus, where NATO and Russian warships
+roam. And any accident could spill the tanker's cargo across miles of
+coastline.
+
+https://fortune.com/longform/gps-outages-maritime-shipping-industry/
+
+Seems to need free account to read full article, which is
+interesting/alarming.
+
+------------------------------
+
+Date: Fri, 21 Feb 2020 15:33:33 +0100
+From: Diego Latella <Diego.Latella@isti.cnr.it>
+Subject: UN/CCW/GGE documents on Autonomous Weapon Systems
+
+The links to the following UN/CCW/GGE documents
+
+Report of the 2019 session of the Group of Governmental Experts on Emerging
+Technologies in the Area of Lethal Autonomous Weapons Systems
+<https://undocs.org/en/CCW/GGE.1/2019/3> CCW/GGE.1/2019/3 - Sept. 25, 2019
+
+Chair's Summary - Report of the 2019 session of the Group of Governmental
+Experts on Emerging Technologies in the Area of Lethal Autonomous Weapons
+Systems CCW/GGE.1/2019/3/Add.1 - November 8, 2019
+<https://www.unog.ch/80256EDD006B8954/%28httpAssets%29/931FC63728F1B052C12584AD004A6628/$file/1919338E.pdf>
+are now available at the page on Computers: National Security, War, and
+Civil Rights (http://www.uspid.org/compwa.html
+<http://www.uspid.org/compwa.html>) of the USPID (www.uspid.org
+<http://www.uspid.org/>) web site.
+
+------------------------------
+
+Date: Tue, 18 Feb 2020 09:36:54 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: IBM, Marriott, and Mickey Mouse Take on Tech's Favorite Law
+  (David McCabe, NYTimes, 4 Feb 2020)
+
+A motley group of powerful companies have their knives out for Section 230,
+which shields platforms from lawsuits over content posted by users.
+
+An unusual constellation of powerful companies and industries are fighting
+to weaken Big Tech by limiting the reach of one of its most sacred laws. The
+law, known as Section 230, makes it nearly impossible to sue platforms like
+Facebook or Google for the words, images and videos posted by their users.
+
+  - - - -
+
+Corporations are working with the Trump administration to control online
+  speech (Ron Wyden, Dem-OR, *The Washington Post*, 14 Feb 2020)
+https://www.washingtonpost.com/opinions/corporations-are-working-with-the-trump-administration-to-control-online-speech/2020/02/14/4d3078c8-4e9d-11ea-bf44-f5043eb3918a_story.html
+
+Some of the biggest corporations in the United States are brawling over the
+future of the law that allows free speech and innovation to thrive
+online. Under the guise of getting rid of lies and protecting children,
+they're working with the Trump administration and top Republicans to
+undermine Americans' rights and give the government unprecedented control
+over online speech.
+
+------------------------------
+
+Date: 17 Feb 2020 16:22:09 -0800
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: A lazy fix 20 years ago means the Y2K bug is taking down
+  computers, now (Ward, RISKS-31.58)
+
+>  [And there won't be any COBOL programmers around when we hit Year 2100,
+>  PGN]
+
+Wanna bet?  COBOL is now 60 years old.  The ISO standard was last updated in
+2014 and now contains OOP constructs borrowed from C++, which is only fair
+since C++ borrowed its structures from COBOL via PL/I and C.
+
+For all that people complain about COBOL, it is still a pretty good language
+for the things it was designed for -- business calculations with arithmetic
+that follow business rules, e.g., decimal rounding to the nearest cent.
+
+I realize 2100 is 80 years from now, but we're almost halfway there already.
+
+  [What I meant (somewhat facetiously) was Original COBOL programmers.  When
+  Y2K approached before 2000, many who were long retired were pulled back
+  into duty.  Most of them are now long gone.  PGN]
+
+------------------------------
+
+Date: Tue, 18 Feb 2020 18:50:00 +0000
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: A lazy fix 20 years ago means the Y2K bug is taking down
+ computers, now (Levine, RISKS-31.59)
+
+Many large companies are still using IBM assembler on mainframes.  The
+really forward-looking companies are thinking about migrating to the wave of
+the future: COBOL!  But the temptation to make do with the current system
+for another year or two is often too strong.
+
+New technology is not being developed and put into practice in the way it
+used to be (other than exploiting Moore's Law: which itself has slowed
+considerably in the last decade).  Consider the technological inventions and
+advances that occurred in the 30 years from 1950 to 1980: microwaves,
+lasers, halogen lamps, LEDs, LCDs, the transistor, integrated circuits,
+minicomputers, microcomputers, games consoles, mobile phones, colour
+television, FM radio, LP records, CDs, video recorders, solar panels, moon
+landings etc. etc.
+
+Now think about the new technology that has been introduced to everyday life
+between 1990 and 2020. PCs have got faster, with larger memories, mobile
+phones have got smaller and sprouted apps, and what else?
+
+Given that COBOL has already survived decades of technological innovation,
+in the current period of relative stagnation and caution, there seems to be
+no reason why it should not survive indefinitely.
+
+Scientific and technological progress are not inevitable features of the
+modern world: they have to be desired and laboured for.
+
+------------------------------
+
+Date: Tue, 18 Feb 2020 13:48:48 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Re: Debunking the lone woodpecker theory (RISKS-31.58)
+
+Understood, that goes with a curated digest!
+
+The rambly bit was from friend-of-a-friend; someone else in our little cabal
+commented on it:
+
+It's impressive that a company like that would even hire someone with actual
+experience. Somebody in HR slipped up somewhere. So is (as Dan was
+discussing in another note) "get code into production as fast as possible"
+just another way of saying "move fast and break things"?
+
+The risk -- disdain for any sort of technology discipline -- is terrifying.
+NWANC is real and growing.
+
+------------------------------
+
+Date: Wed, 19 Feb 2020 21:48:39 -0000
+From: "Cuckoo Fair Treasurer" <cuckoofairtreasurer@gmail.com>
+Subject: My smart car rental was a breeze - until I got trapped in the woods
+
+The dangers of renting an Internet-enabled (or is it dependent) car and then
+taking it to an area with no mobile coverage
+
+https://www.theguardian.com/technology/2020/feb/18/smart-car-gig-rental-app-trapped?CMP=share_btn_link
+
+------------------------------
+
+Date: Tue, 18 Feb 2020 09:38:25 -0700
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Today in sharing economy struggles: our app-powered rental car
+  lost cell service on the side of a mountain in rural California and now I
+  live here I guess
+
+It appears that although I do not have enough cell service to start up my
+only means of transportation I do have enough to live tweet my struggle so
+thanks for tuning in I will be here indefinitely...  apparently in 45
+minutes to an hour a tow truck will come to move us three miles down the
+road where there is cell service so we can start our car the future is
+dumb...  six hours, two tow trucks, and 20 calls to customer service later
+apparently it was a software issue and the car needed to be rebooted before
+we could use it...
+
+https://twitter.com/kari_paul/status/1229214223227478016
+
+------------------------------
+
+Date: Sun, 16 Feb 2020 08:54:40 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Re: Car renter paired car to FordPass, could still control car long
+  after return (ZDNet via Shaw, RISKS-31.58)
+
+The Ford and Enterprise situation is just the tip of the iceberg.
+Enterprise presumably has the technical and financial capability to reset
+every rental car before re-renting it (and perhaps now has the motivation as
+well).
+
+But what about people renting out their personal vehicles with Getaround or
+Turo or similar services?  Those individuals undoubtedly do NOT have the
+knowledge or ability to reset the car, and since the systems are unattended,
+they may never even be accessed by the owner in between rentals.  And
+without centralized controls (since such services don't physically manage
+the vehicles), the service can't do the reset for them - unless they enable
+remote automated reset, which brings its own set of risks...
+
+So, I agree with ZDnet: "Too often, tech companies place the onus on
+customers to work things out for themselves and even to save themselves.
+Or, worse, to only discover a breach when it's too late. Wouldn't it be
+bracing if tech companies, I don't know, showed a little responsibility in
+advance?"
+
+[However,] that responsibility needs to be considered in light of the
+different usage models, not just the traditional rental car companies (e.g.,
+Enterprise), but also other uses.
+
+(And FWIW, even something as simple as having the oil changed in your car
+gives the opportunity for someone to link their phone to your car, and
+enable the remote control.  So I'd argue this isn't a failure by Enterprise
+- it's a failure by Ford and anyone else who makes remote controls.)
+
+------------------------------
+
+Date: Sun, 16 Feb 2020 22:36:14 -0500
+From: "R. G. Newbury" <newbury@mandamus.org>
+Subject: Re: Car renter paired car to FordPass, could still control car long
+  after return (ZDNet via Shaw, RISKS-31.58)
+
+It's worse than you think. A new OWNER may find himself unable to change the
+car's settings, because the car is still 'locked' to a prior owner.  And the
+prior owner still has the power to start or unlock the car. It's not a
+matter of 'clearing' the settings: only the 'owner' can do that!  Apparently
+it's not just Land Rover; it could include Jaguar, Audi and BMW cars.
+
+https://www.theregister.co.uk/2018/07/27/jaguar_land_rover_connected_car_privacy/
+
+John Leyden, The Register, 27 Jul 2018
+
+Shock Land Rover Discovery: Sellers could meddle with connected cars if not
+unbound; Secondhand owners who didn't sell at JLR dealer can call us, says
+firm
+
+Both data and the online controls on "connected cars" from Jaguar Land Rover
+remain available to previous owners, according to security experts and
+owners of the upmarket vehicles. The car maker has defended its privacy
+safeguards and security of its InControl tech.
+
+El Reg began investigating the issue after talking to Matt Watts, a techie
+who blogged about the issue of connected cars and the data they collect,
+without initially naming Jaguar Land Rover (JLR).
+
+Watts' secondhand Range Rover came with the ability to remotely control the
+climate systems, call breakdown services, upload GPS/destination details and
+much more. The vehicle also keeps a record of much of this information and
+stores it in an online account.
+
+Most drivers won't use this functionality, but Watts is a self-admitted
+geek. After he downloaded the JLR app to his smartphone and started to
+experiment, Watts realised that he was able to use the eight digits of the
+vehicle identification number (VIN) to link his vehicle to an online
+account.
+
+When doing so, the JLR website informed him that the vehicle was linked to
+another user's account. After dealing with support centres and a JLR dealer,
+Watts was eventually told that the previous owners should have disconnected
+before selling on the car. He was initially advised to contact the previous
+owner, which is annoying enough in itself.
+
+"The process to get the manufacturer to update the online details for the
+vehicle is for me to try and find the previous owner and get them to do it
+for me," Watts wrote.
+
+The issue goes far beyond Watts being unable to use the funky functionality
+of his secondhand motor, as he explained:
+
+The previous owner of my car has control over it, they can unlock it, they
+can remotely set the climate control without me knowing about it, even when
+the car isn't running, they potentially can even look at the sat-nav system,
+they can also call break down services to the vehicle and all of this
+without me knowing anything about it.
+
+*Someone else has access to a significant amount of data about myself and my
+vehicle and there appears to be nothing that the manufacturer is prepared to
+do about it.*
+
+Watts told El Reg: "Data is being collected about me and the vehicle's
+location and simply provided to whomever previously connected the app to the
+car. JLR needs a bullet-proof method for this to be automatically
+disconnected when the vehicle changes hands. I don't know how you do this
+but the current process is clearly not sufficient." [...]
+
+------------------------------
+
+Date: Sun, 16 Feb 2020 10:14:40 -0500
+From: David <wb8foz@panix.com>
+Subject: Re: The Intelligence Coup of the Century (RISKS-31.58)
+
+One interesting aspect of this reporting is only CIA is mentioned.
+
+When this saga started, they *were* effectively the Intelligence
+Community. (Their only-child status did not last long.) Yet it's hardly
+their forte to design crypto systems & hardware. That *is* the purview of
+their stepbrothers at Fort Meade.
+
+While they now seemingly on good terms, before the end of the Cold War there
+were many tales of their ...discordant... relationship. [I recall being told
+by a SIS just assigned a joint tasking at the other place "I knew there was
+a sea change when I arrived and found they suddenly honored not only my
+badge but my executive parking pass..."]
+
+So for now one can just wonder what part NSA played in this saga over its
+tenure. It can't be trivial.
+
+------------------------------
+
+Date: Sun, 16 Feb 2020 11:24:09 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: How the Iowa Caucuses Came Crashing Down (WashPost)
+
+This adds some more details to what happened.
+
+The Washington Post, 15 Feb 2020
+https://www.washingtonpost.com/politics/how-the-iowa-caucuses-came-crashing-down-under-the-watchful-eye-of-the-dnc/2020/02/15/25b17e7e-4f5f-11ea-b721-9f4cdc90bc1c_story.html
+
+------------------------------
+
+Date: Mon, 17 Feb 2020 08:46:15 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: 'The only uncertainty is how long we'll last': a worst-case
+  scenario for the climate in 2050 (The Guardian)
+
+*The Future We Choose*, a new book by the architects of the Paris climate
+accords, offers two contrasting visions for how the world might look in
+thirty years (read the best case scenario here).
+<https://www.theguardian.com/environment/2020/feb/15/best-case-scenario-2050-climate-crisis-future-we-choose-christiana-figueres-tom-rivett-carnac>
+
+EXCERPT:
+
+It is 2050. Beyond the emissions reductions registered in 2015, no further
+efforts were made to control emissions. We are heading for a world that
+will be more than 3C warmer by 2100
+
+The first thing that hits you is the air. In many places around the world,
+the air is hot, heavy and, depending on the day, clogged with particulate
+pollution. Your eyes often water. Your cough never seems to disappear. You
+think about some countries in Asia, where, out of consideration, sick
+people used to wear white masks to protect others from airborne infection.
+Now you often wear a mask to protect yourself from air pollution. You can
+no longer simply walk out your front door and breathe fresh air: there
+might not be any. Instead, before opening doors or windows in the morning,
+you check your phone to see what the air quality will be.
+
+Fewer people work outdoors and even indoors the air can taste slightly
+acidic, sometimes making you feel nauseated. The last coal furnaces closed
+10 years ago, but that hasn't made much difference in air quality around
+the world because you are still breathing dangerous exhaust fumes from
+millions of cars and buses everywhere. Our world is getting hotter. Over the
+next two decades, projections tell us that temperatures in some areas of the
+globe will rise even higher, an irreversible development now utterly beyond
+our control. Oceans, forests, plants, trees and soil had for many years
+absorbed half the carbon dioxide we spewed out. Now there are few forests
+left, most of them either logged or consumed by wildfire, and the permafrost
+is belching greenhouse gases into an already overburdened atmosphere. The
+increasing heat of the Earth is suffocating us and in five to 10 years, vast
+swaths of the planet will be increasingly inhospitable to humans. We don't
+know how hospitable the arid regions of Australia, South Africa and the
+western United States will be by 2100. No one knows what the future holds
+for their children and grandchildren: tipping point after tipping point is
+being reached, casting doubt on the form of future civilisation. Some say
+that humans will be cast to the winds again, gathering in small tribes,
+hunkered down and living on whatever patch of land might sustain them.
+
+More moisture in the air and higher sea surface temperatures have caused a
+surge in extreme hurricanes and tropical storms. Recently, coastal cities in
+Bangladesh, Mexico, the United States and elsewhere have suffered brutal
+infrastructure destruction and extreme flooding, killing many thousands and
+displacing millions. This happens with increasing frequency now. Every day,
+because of rising water levels, some part of the world must evacuate to
+higher ground. Every day, the news shows images of mothers with babies
+strapped to their backs, wading through floodwaters and homes ripped apart
+by vicious currents that resemble mountain rivers. News stories tell of
+people living in houses with water up to their ankles because they have
+nowhere else to go, their children coughing and wheezing because of the
+mold growing in their beds, insurance companies declaring bankruptcy,
+leaving survivors without resources to rebuild their lives. Contaminated
+water supplies, sea salt intrusions and agricultural runoff are the order of
+the day. Because multiple disasters are often happening simultaneously, it
+can take weeks or even months for basic food and water relief to reach areas
+pummeled by extreme floods. Diseases such as malaria, dengue, cholera,
+respiratory illnesses and malnutrition are rampant.
+
+You try not to think about the 2 billion people who live in the hottest
+parts of the world, where, for upwards of 45 days per year, temperatures
+skyrocket to 60C (140F), a point at which the human body cannot be outside
+for longer than about six hours because it loses the ability to cool itself
+down. Places such as central India are becoming increasingly challenging to
+inhabit. Mass migrations to less hot rural areas are beset by a host of
+refugee problems, civil unrest and bloodshed over diminished water
+availability.
+
+Food production swings wildly from month to month, season to season,
+depending on where you live. More people are starving than ever before.
+Climate zones have shifted, so some new areas have become available for
+agriculture (Alaska, the Arctic), while others have dried up (Mexico,
+California). Still others are unstable because of the extreme heat, never
+mind flooding, wildfire and tornadoes. This makes the food supply in general
+highly unpredictable. Global trade has slowed as countries seek to hold on
+to their own resources.
+
+Countries with enough food are resolute about holding on to it. As a result,
+food riots, coups and civil wars are throwing the world's most vulnerable
+from the frying pan into the fire. As developed countries seek to seal their
+borders from mass migration, they too feel the consequences.  Most
+countries' armies are now just highly militarised border patrols. Some
+countries are letting people in, but only under conditions approaching
+indentured servitude.  [...]
+
+https://www.theguardian.com/environment/2020/feb/15/worst-case-scenario-2050-climate-crisis-future-we-choose-christiana-figueres-tom-rivett-carnac
+
+------------------------------
+
+Date: Mon, 17 Feb 2020 08:47:41 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Like Something Out of The Book Of Exodus Locust Armies Are
+  Devouring Entire Farms In Kenya In As Little As 30 Seconds (CGTN)
+
+<https://africa.cgtn.com/2020/02/09/swarms-big-as-cities-un-chief-says-locust-fight-must-intensify/>
+
+... we have never seen anything like this before.  the UN continues to warn
+that the number of locusts could get 500 times bigger by June.  But even if
+this plague ended right now, millions of people would still be facing a
+devastating famine in the months ahead.  These locusts travel in swarms up
+to 40 miles wide, each one can eat the equivalent of its own body weight
+every day, and the swarms can travel close to 100 miles in a 24 hour period.
+This is a nightmare of epic proportions, and it is just getting started.
+
+National Geographic has never been known to sensationalize news stories, but
+even they are saying that this plague is like something out of the Book of
+Exodus.  [...]
+<https://www.nationalgeographic.com/science/2020/02/locust-plague-climate-science-east-africa/>
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.59
+************************

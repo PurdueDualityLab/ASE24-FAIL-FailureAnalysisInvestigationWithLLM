@@ -1,0 +1,473 @@
+precedence: bulk
+Subject: Risks Digest 29.67
+
+RISKS-LIST: Risks-Forum Digest  Monday 9 August 2016  Volume 29 : Issue 67
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.67.html>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+The "internet"  and the "associated press": Mini-editorial (PGN)
+"The Internet vs. "the internet" (Lauren Weinstein)
+How to hack an election in seven minutes (Ben Wofford)
+Cyber Protections Contemplated for U.S. Election Systems
+  (Mark Rockwell)
+FTC vows to crack down on sponsored internet [Internet!] posts
+  (Engadget)
+Risk From Linux Kernel Hidden in Windows 10 Exposed at Black Hat (EWeek)
+Young man [shot to death] while playing Pokemon at [San Francisco]
+  tourist attraction (USNews)
+If you're at the Rio Olympics, you've probably already been hacked
+  (Daily Dot)
+US military uses 8-inch floppy disks to coordinate nuclear force
+  operations (CNBC)
+"Flaw in Samsung Pay lets hackers wirelessly skim credit cards"
+  (Zack Whittaker)
+Re: NSA Fans: Be careful what you wish for (Peter Houppermans)
+Re: BBC to deploy detection vans to snoop on [I]nternet users (Chris Drewe)
+Re: Study: 78% of Resold Drives Still Contain Readable Personal or
+  Business Data (Wols)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 7 Aug 2016 18:12:00 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The "internet"  and the "associated press": Mini-editorial
+
+Apparently, the "associated press" has caved in to the brits, who like lower
+case on acronyms and many proper nouns.  "The Internet" is a proper noun and
+deserves its initial capital in American usage.  There is only *one*
+Internet.  That is precisely the foundational notion of its conceptual
+existence.  For years, I have been surreptitiously coercing the random
+occurrence of "the internet" to be "the Internet".  If we were to follow the
+Associated Press insisting on referring to "the internet", from now on I
+suppose I will now have to refer the "associated press" and "ap", along with
+britain and england and the uk in lower case only, and change all acronyms
+to lower case as well as the brits often to do (e.g., nsa, cia, darpa).
+which is ok unless you are referring to an acronym that is actually an
+english word -- which becomes horribly ambiguous in some contexts.  Think of
+the recursive acronym GNU (GNU is Not Unix) vs gnu or even the compromise
+Gnu.  Also, sometimes we see acronyms with initial caps (such as Darpa).
+However, if the disassociated press would choose that as a "compromise"
+standard, we would have to resort to "the Us" and "the Uk", which would
+really be yUky.  But any use of lower-case letters that screws up the
+primary purpose of an acromym -- where each upper-case letter can be
+expanded.  (Thus, we use "DoD" for the Department of Defense, because the
+"of" is not capitalized.)  I think it is evident that this decision by the
+ap is truly execrable, absurd, and ridiculous.
+
+Furthermore, this type of anal absurdity might be what leads the ap to write
+N.S.A. and N.A.S.A. instead of NSA and NASA, although no one in their right
+minds would write nsa and nasa without leading to NASAl blockage.  An
+acronym is not equivalent to "ACRONYM" unless it really it is used to avoid
+spelling out A Curiously Ridiculous Offensive Noun You Mean.  Writing
+A.C.R.O.N.Y.M in that case would be even more utterly ridiculous.  Thus, the
+distinction between an acronym and a word needs to be made by using
+upper-case letters consistently.
+
+Similarly, "the web" should be written as "the Web", because it is short for
+"the World-Wide Web", and should be distinguished from other kinds of webs.
+
+One more absurdity: The brits call people from Argentina Argentynes, and the
+network tennis announcers seem to pick up on that -- as if Argentina were
+pronounced ArgenTYNA.  You may have noticed that RISKS is an international
+venue, and therefore I make no attempt to change british english to American
+English here for submissions from the uk.  But I think the associated press
+is no longer worthy of dictating absurd and inconsistent conventions, and
+will be reduced to the lower case forever after in this venue, because the
+other associated presses (not "the associated press") seem to be caving in
+as well.
+
+Finally, for those of you who have not read my website (or Website if you
+are a purist), I have considered "comparing ACLs and RNGs".  You have three
+choices with an acronym -- you can pronounce them (a) as if they are words
+(ackle), or (b) sequences of letters (R-N-G), or (c) expansions based on
+what is referred to by each letter (access-control lists and random-number
+generators).  In the case of my example, ACLs and RNGs are of course
+typically treated as case (a) and (b), respectively -- as in "ackles and
+are-en-jes".  (This gives us a lovely new kind of mixed metaphor.)
+
+------------------------------
+
+Date: Sun, 7 Aug 2016 19:08:42 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "The Internet" vs. "the internet"
+
+"Internet" vs. "internet"
+
+https://plus.google.com/+LaurenWeinstein/posts/1K81jmqFdBC
+
+Please do me a personal favor. Don't fall into the trap of using the term
+"internet" instead of "Internet" when discussing our global communications
+wonder.  The clowns behind the AP Style Guide recently decreed it to be a
+lower-case word, and most mainstream journalistic outlets are sheepishly
+following suite.  It's possible to argue about Web vis-a-vis web, but
+Internet is not negotiable. Please continue to use Internet in any of your
+own writing, and if you care to make this preference known to media here,
+there, and everywhere, that would be dandy as well. Thanks.
+
+------------------------------
+
+Date: Fri, 5 Aug 2016 5:09:56 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: How to hack an election in seven minutes (Ben Wofford)
+
+Ben Wofford, Politico, 5 Aug 2016
+http://www.politico.com/magazine/story/2016/08/2016-elections-russia-hack-how-to-hack-an-election-in-seven-minutes-214144#ixzz4GSGyipND
+
+When Princeton Professor Andrew Appel decided to hack into a voting machine,
+he didn't try to mimic the Russian attackers who hacked into the DNC's
+database last month. He didn't write malicious code, or linger near a
+polling place where the machines can go unguarded for days.
+
+Instead, he bought one online.
+
+With a few cursory clicks of a mouse, Appel parted with $82 and became the
+owner of an ungainly metallic giant called the Sequoia AVC Advantage, one of
+the oldest and vulnerable, electronic voting machines in the United States
+(among other places it's deployed in Louisiana, New Jersey, Virginia, and
+Pennsylvania). No sooner did a team of bewildered deliverymen roll the
+250-pound device into a conference room near Appel's cramped, third-floor
+office than the professor set to work. He summoned a graduate student named
+Alex Halderman, who could pick the machine's lock in seven
+seconds.  Clutching a screwdriver, he deftly wedged out the four ROM chips --
+they weren't soldered into the circuit board, as sense might dictate --
+making it simple to replace them with one of his own: A version of modified
+firmware that could throw off the machine's results, subtly altering the
+tally of votes, never to betray a hint to the voter. The attack was
+concluded in minutes. To mark the achievement, his student snapped a photo
+<https://www.cs.princeton.edu/~appel/avc/> of Appel's oblong features, messy
+black locks and a salt-and-pepper beard -- grinning for the camera, fists
+still on the circuit board, as if to look directly into the eyes of the
+American taxpayer: Don't look at me -- you're the one who paid for this
+thing.
+
+Appel's mischief might be called an occupational asset: He is part of a
+diligent corps of so-called cyber-academics --professors who have spent the
+last decade serving their country by relentlessly hacking it. Electronic
+voting machines -- particularly a design called Direct Recording Electronic,
+or DREs -- took off in 2002, in the wake of Bush v. Gore. For the ensuing 15
+years, Appel and his colleagues have deployed every manner of stunt to
+convince the public that the system is pervasively unsecure and vulnerable.
+Beginning in the late nineties, Appel and his colleague, Ed Felten, a
+pioneer in computer engineering now serving in the White House Office of
+Science and Technology Police, marshaled their Princeton students together
+at the Center for Information Technology Policy (where Felten is still
+director). There, they relentlessly hacked one voting machine after another,
+transforming the center into a kind of Hall of Fame for tech mediocrity:
+reprogramming one popular machine to play Pac-Man; infecting popular models
+with self-duplicating malware; discovering keys to voting machine locks that
+could be ordered on eBay. Eventually, the work of the professors and
+Ph.D. students grew into a singular conviction: It was only a matter of
+time, they feared, before a national election -- an irresistible target --
+would invite an attempt at a coordinated cyberattack.
+
+The revelation this month that a cyberattack on the Democratic National
+Committee is the handiwork of Russian state security personnel has set off
+alarm bells across the country: Some officials have suggested that 2016
+could see more serious efforts to interfere directly with the American
+election. The DNC hack, in a way, has compelled the public to ask the
+precise question the Princeton group hoped they'd have asked earlier, back
+when they were turning voting machines into arcade games: If motivated
+programmers could pull a stunt like this, couldn't they tinker with the
+results in November through the machines we use to vote?
+
+This week, the notion has been transformed from an implausible plotline in a
+Phillip K. Dick novel into a deadly serious threat, outlined in detail by a
+raft of government security officials. ``This isn't a crazy hypothetical
+anymore,'' says Dan Wallach, one of the Felten-Appel alums and now a
+computer science professor at Rice.  ``Once you bring nation states' cyber
+activity into the game?''  He snorts with pity. ``These machines, they
+barely work in a friendly environment.''
+
+The powers that be seem duly convinced. Homeland Security Secretary Jeh
+Johnson recently conceded
+<https://www.politicopro.com/cybersecurity/whiteboard/2016/08/jeh-johnson-election-system-needs-cybersecurity-upgrades-075507>
+the ``longer-term investments we need to make in the cybersecurity of our
+election process.''  A statement by 31 security luminaries at the Aspen
+Institute issued a public statement
+<http://www.prnewswire.com/news-releases/members-of-the-aspen-institute-homeland-security-group-issue-statement-on-dnc-hack-300306004.html>:
+``Our electoral process could be a target for reckless foreign governments
+and terrorist groups.'' Declared Wired
+<https://www.wired.com/2016/08/americas-voting-machines-arent-ready-election/>:
+``America's Electronic Voting Machines Are Scarily Easy Targets.''  For the
+Princeton group, it's precisely the alarm they've been trying to sound for
+most of the new millennium.
+
+  [Long but super article, the rest PGN-truncated for RISKS.  Read it and
+  weep.  We've been beating this drum since the very first issue of RISKS,
+  31 years ago this week.  PGN]
+
+------------------------------
+
+Date: Mon, 8 Aug 2016 12:14:55 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: Cyber Protections Contemplated for U.S. Election Systems
+
+Mark Rockwell, *Federal Computer Week*, 5 Aug 2016
+via ACM TechNews, 8 Aug 2016
+
+Following repeated hacks of Democratic National Committee systems by
+attackers who could be associated with the Russian government, the Obama
+administration is considering boosting cyber protections for U.S. election
+systems by classifying them as critical infrastructure, which would put them
+under the protection of the U.S. Department of Homeland Security (DHS).  "We
+have to carefully consider whether our election system is critical
+infrastructure, like the financial system or the power grid," says DHS
+secretary Jeh Johnson.  Presidential assistant Lisa Monaco says the reaction
+to those who hack election systems in the U.S. might resemble what happened
+in response to the cyberattack on Sony Pictures Entertainment, which crossed
+a threshold into being destructive and coercive.  She notes the U.S.
+government attributed the Sony attack to North Korea and hit the country
+with sanctions.  In addition, the government also prosecuted Chinese
+military personnel who hacked into U.S. companies' systems to steal data,
+and recently indicted Iranian hackers for a series of cyberattacks.  Monaco
+says a deliberate intrusion to coerce or influence the U.S. political
+process is a "serious, serious issue," which could require a new type of
+response.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-10d12x2f8c9x073912&
+
+  [More editorial rant to the journalists who use "Cyber" as a noun.  It is
+  a combining form, so the title could have been "Cyberprotections".  PGN]
+
+------------------------------
+
+Date: Sun, 7 Aug 2016 18:50:54 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: FTC vows to crack down on sponsored internet [Internet!] posts
+  (Engadget)
+
+via NNSquad
+https://www.engadget.com/2016/08/07/ftc-vows-crackdown-on-sponsored-posts/
+
+  The FTC's settlement with Warner Bros. over poor disclosure in sponsored
+  internet [Internet! - I don't care what AP says - Lauren] posts was just
+  the beginning.  The Commission tells Bloomberg that the government is
+  planning a crackdown on paid posts that will require both stars and
+  advertisers to be much more explicit when telling viewers that it's a paid
+  piece. A disclosure through a social hashtag or a below-the-fold YouTube
+  description won't be enough -- the FTC wants celebrities to reveal their
+  endorsements up front, and to mention them in videos. There's "no
+  effective disclosure" if people don't see it, the agency says.
+
+I hope everyone involved with the development of the Net will make an effort
+to explain and *demonstrate* to the distinguished authors of the "AP Style
+Guide" that the term is "Internet" not "internet" -- we can argue about
+"Web" vs. "web", but "Internet" is not up for negotiation!
+
+------------------------------
+
+Date: Sun, 7 Aug 2016 20:42:20 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Risk From Linux Kernel Hidden in Windows 10 Exposed at Black Hat
+  (EWeek)
+
+via NNSquad
+http://www.eweek.com/security/risk-from-linux-kernel-hidden-in-windows-10-exposed-at-black-hat.html
+
+  Embedded within some versions of the latest Windows 10 update is a
+  capability to run Linux. Unfortunately, that capability has flaws, which
+  Alex Ionescu, chief architect at Crowdstrike, detailed in a session at the
+  Black Hat USA security conference here and referred to as the Linux kernel
+  hidden in Windows 10.  In an interview with eWEEK, Ionescu provided
+  additional detail on the issues he found and has already reported to
+  Microsoft.  The embedded Linux inside of Windows was first announced by
+  Microsoft in March at the Build conference and bring some Ubuntu Linux
+  capabilities to Microsoft's users.  Ionescu said he reported issues to
+  Microsoft during the beta period and some have already been fixed. The
+  larger issue, though, is that there is now a new potential attack surface
+  that organizations need to know about and risks that need to be mitigated,
+  he said.
+
+------------------------------
+
+Date: Sun, 7 Aug 2016 19:55:31 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Young man [shot to death] while playing Pokemon at [San Francisco]
+  tourist attraction
+
+via NNSquad
+http://www.usnews.com/news/us/articles/2016-08-07/young-man-shot-to-death-at-san-francisco-tourist-attraction
+
+  A college student has been shot to death while playing "Pokemon Go" at a
+  tourist attraction in San Francisco.  Authorities say 20-year-old Calvin
+  Riley was shot Saturday night by an unknown assailant at Aquatic Park near
+  Ghiradelli Square.  The U.S. Park police and local homicide detectives are
+  investigating what led to the shooting.  A family friend told KGO-TV Riley
+  and a friend were playing the popular mobile game when someone came up and
+  shot the young man in the back and ran away. John Kirby said no
+  confrontation or words were exchanged before the shooting.
+
+------------------------------
+
+Date: Sun, 7 Aug 2016 18:05:42 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: If you're at the Rio Olympics, you've probably already been hacked
+
+via NNSquad
+http://www.dailydot.com/debug/rio-olympics-fake-apps-wifi/
+
+  While athletes head to Rio de Janeiro, Brazil to compete for medals in the
+  2016 Summer Olympic Games, hackers in the area have their eyes on a
+  different prize: the personal information of unsuspecting travelers.
+  According to a new report from mobile security firm Skycure, visitors to
+  the former capital of Brazil are being targeted by malicious actors who
+  have set up fake Wi-Fi hotspots designed to steal information from
+  connected devices. These phony wireless networks were spotted by Skycure
+  around the city, but they were most prominent in locations where travelers
+  were most likely to look for a place to connect, like shopping malls,
+  well-known coffee shops, and hotels.
+
+------------------------------
+
+Date: Fri, 05 Aug 2016 21:52:59 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: US military uses 8-inch floppy disks to coordinate nuclear force
+  operations (CNBC)
+
+http://www.cnbc.com/2016/05/25/us-military-uses-8-inch-floppy-disks-to-coordinate-nuclear-force-operations.html
+
+The U.S. Defense Department is still using -- after several decades --
+8-inch floppy disks in a computer system that coordinates the
+
+------------------------------
+
+Date: Fri, 05 Aug 2016 17:36:24 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Flaw in Samsung Pay lets hackers wirelessly skim credit
+  cards" (Zack Whittaker)
+
+Zack Whittaker, ZDNet, 6 Aug 2016
+The tokens that are used to make purchases can be easily stolen and
+used in other hardware to make fraudulent transactions.
+http://www.zdnet.com/article/flaw-in-samsung-pay-lets-hackers-wirelessly-skim-credit-cards/
+
+------------------------------
+
+Date: Sat, 6 Aug 2016 09:56:52 +0200
+From: not.for.spam@houppermans.net
+Subject: Re: NSA Fans: Be careful what you wish for (RISKS-29.66)
+
+"Better to address these vulnerabilities before they are exploited than to
+invite a crisis of democracy even more alarming than a reality-TV star
+seeking the presidency."
+
+And what, pray, suggests that that exploitation is not happened right now?
+
+In the UK they already had to retrospectively change the law because GCHQ
+wasn't exactly colouring inside the lines.  Given the fact that nobody ever
+gets as much as a demotion for abuse of these apparati, I'd venture that
+that ship has sailed.
+
+------------------------------
+
+Date: Sat, 06 Aug 2016 21:30:08 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Re: BBC to deploy detection vans to snoop on internet users
+
+Item in newspaper about the authorities possibly intercepting wi-fi
+communications in people's houses to check for violations of BBC TV
+licensing:
+
+http://www.telegraph.co.uk/news/2016/08/05/bbc-to-deploy-detection-vans-to-snoop-on-internet-users/
+
+BBC to deploy detection vans to snoop on Internet users, 6 Aug 2016
+
+> The BBC is to spy on [I]nternet users in their homes by deploying a new
+> generation of Wi-Fi detection vans to identify those illicitly watching
+> its programmes online.
+
+> BBC vans will fan out across the country capturing information from
+> private Wi-Fi networks in homes to sniff out those who have not paid the
+> licence fee.
+
+> The corporation has been given legal dispensation to use the new
+> technology, which is typically only available to crime-fighting agencies,
+> to enforce the new requirement that people watching BBC programmes via the
+> iPlayer must have a TV licence.
+
+> "Detection vans can identify viewing on a non-TV device in the same way
+> that they can detect viewing on a television set" Sir Amyas Morse,
+> National Audit Office
+
+------------------------------
+
+Date: Sat, 6 Aug 2016 19:23:42 +0100
+From: Wols Lists <antlists@youngman.org.uk>
+Subject: Re: Study: 78% of Resold Drives Still Contain Readable Personal or
+  Business Data (RISKS-29.64)
+
+> And if you don't you'll zap your home disk. So I would use 'sdz' in such
+> examples.
+
+Well, if I did that to my two desktops, I wouldn't lose anything
+(important). Just Windows Vista.
+
+One system has two mirrored disks, the other is multiboot with anything
+of value on sdb and sdc.
+
+I do agree with sdz, but don't agree with sweeping assumptions ... I
+generally avoid having my home data on sda ...
+
+------------------------------
+
+Date: Tue, 10 May 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+    newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.67
+************************

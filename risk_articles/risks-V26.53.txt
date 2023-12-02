@@ -1,0 +1,803 @@
+RISKS-LIST: Risks-Forum Digest  Sunday 7 August 2011  Volume 26 : Issue 53
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.53.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+F-35 Testing Suspended (Gabe Goldberg)
+Google's driverless car causes 5-car pile-up (Mark Thorson)
+The Anti-Malware Follies, George Ledin Jr (George Ledin)
+The Speed of the Web, the Speed of the Nonsense (Robert X. Cringely
+  via Gene Wirchenko)
+How does a telco call its service people when its network is out?
+  (Danny Burstein)
+Text error sends Scottish exam results a day early (Carrell/Shepherd
+  via Monty Solomon)
+Microsoft vs. Google: Patents, Society, and Greed (Lauren Weinstein)
+Java SE 7 Problems (Gene Wirchenko)
+Report on 'Operation Shady RAT' Identifies Widespread Cyber-Spying
+  (Nakashima/Tate via ACM TechNews)
+The_Most_Expensive_One-byte_Mistake Generates Buzz (ACM Bulletin)
+Microsoft Kicks Off $250,000 Security Contest (Gregg Keizer via
+  ACM TechNews)
+AT&T increases voice mail security; Password meant to deter hackers
+  (Hiawatha Bray via Monty Solomon)
+8 Technical Methods That Make the PROTECT IP Act Useless (Lauren Weinstein)
+Contractor leaves hundreds of bank account details at a pub (Jim Reisert)
+Hospital reports a possible data loss (Liz Kowalczyk via Monty Solomon)
+Re: High-rolling gamblers are exploiting a quirk in Cash WinFall,
+  raking in huge profits (Jim Reisert)
+Re: Google+ and Names (Tony Finch)
+Re: Motorcycle 'smart key' (Carl Byington)
+Re: Don't throw away Grandma's wind-up desk clock (Tony Finch)
+Risk, Hazards & Crisis in Public Policy, Vol 2 Issue 2 (Heather M. Bell)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 04 Aug 2011 10:12:32 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: F-35 Testing Suspended
+
+Uh oh: "the Navy's F-35C variant was grounded due to a software problem
+that could have caused the control surfaces to freeze in flight"
+
+  F-35 Testing Suspended
+
+Officials have ceased all flight and ground operations for the Joint Strike
+Fighter after the integrated power package (IPP) on a U.S. Air Force variant
+test aircraft failed, Tuesday, during a ground maintenance run at Edwards
+Air Force Base. No injuries were reported as a result of the unit's failure
+and developers are working to source the cause. The particular aircraft is
+an AF-4, which is a conventional takeoff and landing version of the
+multi-role aircraft. The IPP combines functions performed by an auxiliary
+power unit, emergency power system and environmental controls. It's failure
+isn't the only electrical problem to ground F-35s this year.
+
+The cessation or limiting of specific operations during the test program is
+not particularly unusual, but putting a halt to ground operations is less
+common. Overall, the F-35 is ahead of its latest schedule, which was put in
+place in January. The F-35 has previously suffered delays this year. In
+March the fleet was grounded due to a dual generator failure on this same
+test aircraft. In June, the Navy's F-35C variant was grounded due to a
+software problem that could have caused the control surfaces to freeze in
+flight. In both cases, the problem was sourced and resolved, and aircraft
+were returned to testing shortly thereafter. Developers are aiming for a
+similar result now.
+
+------------------------------
+
+Date: Sat, 6 Aug 2011 07:56:06 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Google's driverless car causes 5-car pile-up
+
+But it was being operated in manual mode by a human driver.
+Those darn humans, always messing things up.
+
+http://www.dailymail.co.uk/news/article-2023072
+
+------------------------------
+
+Date: Sun, 7 Aug 2011 12:19:49 PDT
+From: George Ledin <ledin@sonoma.edu>
+Subject: The Anti-Malware Follies, George Ledin Jr
+
+  [For the Inside Risks series in the Communications of the ACM, George
+  Ledin has written two articles on the importance of teaching malware, also
+  available at http://www.csl.sri.com/neumann/insiderisks.html, subject to
+  ACM copyright as indicated on those web pages:
+
+  * Not Teaching Viruses and Worms is Harmful (CACM 48, 1, January 2005)
+    http://www.csl.sri.com/neumann/insiderisks.html#175
+
+  * The Growing Harm of Not Teaching Malware (CACM 54, 2, February 2011)
+    http://www.csl.sri.com/neumann/insiderisks.html/cacm223.pdf
+
+  I invited George to submit this new item to the Risks Forum, to give what
+  tends to be an important but contentious topic broader audience.  PGN]
+
+- - - - -
+
+The Anti-Malware Follies, George Ledin Jr
+
+If you eliminated Kung-Fu from Enter the Dragon, how much movie would be
+left? If you got rid of signature databases from all commercial antimalware
+products, what would these products be good for?
+
+We demand efficacy of our prescription medicines. Shouldn't we require that
+the antimalware services we purchase be useful and effective?
+
+Indexing ancient, archaic, vestigial malware is a relatively mundane,
+actually chiefly automated, menial task. It is also easily defeatable, even
+by amateurs.
+
+In our underground lab my students run a ridiculously simple experiment.
+Four sacrificial computers on a cart are wheeled in. Each computer has been
+preloaded with a popular, widely used antimalware package. Four computers,
+four different packages, one per computer because, curiously, competing
+antimalware packages don't tolerate being active on the same computer
+together.
+
+There are some fifty companies that offer similar antimalware `protection'.
+Although some of these companies have expanded their business horizons to
+include compliance, record retention, dataloss mitigation, password
+management, and various other services, the antimalware products continue to
+be the reliable cash-cows they've always been.
+
+Once the isolated cart is wheeled in and its four computers are booted up,
+students are invited to try to defeat the installed protection.  They come
+prepared with CDs harboring different versions of a well- known virus or
+worm or trojan, such as Melissa or I Love You or others that we store safely
+in our archives.
+
+Students insert their CDs. The original, unaltered versions of the
+historical malware are promptly recognized by the antimalware packages,
+which communicate their findings on the computer screens and sandbox the
+troublemaking malware.
+
+The antimalware packages do not fare well when confronted by slightly
+altered versions of the same malware. Versions in which the main body of the
+malware is gutted and replaced by my students with innocuous `Hello World!'
+programs are still flagged by the antimalware packages as if these programs
+were dangerous.
+
+These false positives are expected, of course. That's because the original
+virus, worm, or trojan, now lacking a body, will not cause any harm, but its
+headers, the donors of signature data stored in the antimalware lists,
+remain.
+
+False negatives are also easily achieved by leaving the body of the malware
+unchanged while obfuscating or altering the malware's outer cladding.
+
+Students observe first-hand how commercial antimalware fails to deliver the
+protection it promises. Tweak a virus', worm's, or trojan's exterior bits
+but leave its interior bits intact and the antimalware package can't
+recognize the wolf in sheep's clothing.
+
+Keep the malware's exterior as is while commenting out its interior sets off
+righteous but false alarms.
+
+The most impressive demonstration comes from the students' own amateur
+efforts. Their own simpleton, primitive, but actual course-project
+programming work passes unnoticed. Improvised malware, the fruit of their
+limited experience but fertile imagination, slips by commercially available
+antimalware products.
+
+Well, not quite. The top quarter or so of the fifty antimalware firms,
+evidently and painfully aware of the obvious limitations (not to say much
+about credibility) of their signature-based products, have been
+experimenting with `behavioral' markers.
+
+This is a bold and at first blush promising idea. If, upon entering a
+computer, a program exhibits unusual or suspicious conduct that is
+unnecessary for the normal functioning of that computer, protection can be
+offered by way of warnings to the user and automatic, preventive
+quarantining of that program.
+
+The behavioral concept is intriguing and, once malware teaching and research
+are taken more seriously, the concept may blossom into testable hypotheses.
+
+Not yet, unfortunately. The antimalware firms' principal motivation is to
+keep their profitable services, and this cannot be done by admitting the
+truth -- that these services provide little or no defense against new
+malware. Users today are eager to load up their digital devices with all
+kinds of applications, a good percentage of which exhibit unusual or
+unexpected behaviors. (But aren't necessarily malware.)
+
+The antimalware companies know they must tread carefully so as not to
+alienate their large numbers of pliant subscribers who thus far don't mind
+downloading these companies' upgrades and patches, but would be restive and
+annoyed by each unnecessary precaution and false alarm.
+
+Malware authors know all of this, of course. Some current and all future
+Confickers and Stuxnets of the world have nothing to fear.
+
+We, however, cannot afford to ignore our worries. Between 3 and 6 million
+botnets are at the beck and call of malware deployers; hence the
+consequences of business as usual are more than merely terrifying.
+
+Rustock, for example, was taken down by a very old-fashioned law enforcement
+raid that stopped a hundred servers from blasting spam, but the Rustock
+botmasters still managed to curtail the damage done to them by wiping
+incriminating information. Law enforcement raids to take control of the
+servers and legally seize and convert the botnets' backup domains are
+melodramatic events in which occasionally and very expensively good triumphs
+over evil. Like revenuers' raids on speakeasies and gin mills during
+prohibition, these `triumphs' are ephemeral and ultimately very cost
+ineffective.
+
+It's wishful, deluded thinking to expect Internet attacks to abate. We can,
+however, hope for greater effectiveness in dealing with malware.
+
+Dissemination of knowledge -- widespread education -- is essential.
+Teaching malware and openly exchanging research data will help everyone
+(e.g., http://www.cs.sonoma.edu/ledin/malware/).  Informed users are better
+defenders.  Like Bruce Lee's Kung-Fu, it should not be only in the hands of
+the bad guys.
+
+------------------------------
+
+Date: Fri, 05 Aug 2011 13:19:07 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: The Speed of the Web, the Speed of the Nonsense (Robert X. Cringely)
+
+http://www.infoworld.com/t/cringely/ie-and-me-who-looks-stupid-now-169025
+InfoWorld Home / Notes from the Field
+IE and me: Who looks stupid now?
+Yes, the 'IE users are stupid' story is a hoax. Cringely says the joke's on him
+By Robert X. Cringely | InfoWorld
+
+selected text:
+
+"You know that survey that said IE users were dumber than paint, which I
+wrote about not once but twice earlier this week? It's all a hoax,
+perpetrated by a Web entrepreneur named Tarandeep Gill (if that is his real
+name). He fesses up here.
+
+Yes, I feel stupid, thanks for asking. At least I'm in good company.  CNN,
+the BBC, NPR, and a number of other mainstream news outlets all took the
+bait.
+
+Really, who could resist? It was a story tailor made for the Web."
+
+  It certainly was tailor-made.  Hoaxes are.
+
+------------------------------
+
+Date: Thu, 4 Aug 2011 10:08:35 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: How does a telco call its service people when its network is out?
+
+[WNBC tv news]
+
+AT&T wireless subscribers in New York this morning probably cannot make or
+receive phone calls due to what the company calls a software upgrade.  The
+problem likely started at 1:30 a.m. Thursday, according to a service
+representative with the phone giant. Smart phones do not appear to be
+affected to the same degree as mobile phones.
+
+When AT&T mobile phone users attempt to make a call, the caller likely
+receives a display that says the circuit or channel is not available. There
+is also no ring tone.
+
+If someone tries to call the user, the call typically goes directly to
+voicemail.
+
+An AT&T service representative told NBC New York that this problem appears
+to be restricted to phones within New York City. The representative could
+not offer a time frame for when the problem would be fixed.
+
+rest:
+http://www.nbcnewyork.com/news/local/Phone-Outage-for-ATT-Customers-in-NYC-126758183.html
+
+------------------------------
+
+Date: Wed, 3 Aug 2011 22:33:44 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Text error sends Scottish exam results a day early
+
+Exam officials launch investigation after 30,000 students in Scotland who
+opted to get grades by text were sent them early
+
+Severin Carrell and Jessica Shepherd
+The Guardian, Thursday 4 August 2011
+
+Exam officials have launched an investigation after up to 30,000 students in
+Scotland who opted to get their grades by text message were sent them on
+Wednesday, a day early by mistake.
+
+Opposition leaders in the Scottish parliament said the blunder had given
+these students a clear advantage in finding places at university because the
+list of late courses available went live on the Internet at a minute past
+midnight on Thursday morning, nine hours before the results were officially
+due to arrive. ...
+
+http://www.guardian.co.uk/education/2011/aug/04/text-error-scottish-exam-results
+
+------------------------------
+
+Date: Sat, 6 Aug 2011 12:50:18 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Microsoft vs. Google: Patents, Society, and Greed
+
+  [From Network Neutrality Squad]
+
+              Microsoft vs. Google: Patents, Society, and Greed
+                 http://lauren.vortex.com/archive/000887.html
+
+In his 1971 science fiction novel "The Futurological Congress," author
+Stanislaw Lem takes a dark look at the premise that most of what we see
+around us -- even the seemingly obvious -- is actually illusionary to some
+extent, and that even many people who believe that they know they underlying
+truths are themselves being fooled by deeper layers of reality's onion.
+
+In the worlds of finance and high technology, there is a great deal of truth
+to this interpretation, and we need only look to the warped and largely
+destructive world of patents to realize how far we've gone astray.
+
+Patents and related concepts have a long history, but this 1844 quote from a
+report to the French Chamber of Deputies in the debates preceding adoption
+of the French Patent Law of 1844 is noteworthy:
+
+  "Every useful discovery is, in to Kant's words 'the presentation of a
+  service rendered to Society'. It is, therefore, just that he who has
+  rendered this service should be compensated by Society that received
+  it. This is an equitable result, a veritable contract or exchange that
+  operates between the authors of a new discovery and Society. The former
+  supply the noble products of their intelligence and Society grants to them
+  in return the advantages of an exclusive exploitation of their discovery
+  for a limited period".
+
+The emphasis on "service rendered to Society" is particularly striking.
+
+Fast forward to 2011, and the concept of "serving society" seems to have
+been painfully marginalized as a prime mover in the titanic patent battles
+and associated atrocities that are increasingly a millstone around the necks
+of society and consumers -- creating mainly enormous monetary and lost
+opportunity costs.
+
+This sorry situation didn't appear overnight.  Back in 2002, in "Stop
+the Patent Process Madness" ( http://j.mp/cYeqEz [Wired] ), I briefly
+described the rise of stealth and protective patents, and how the
+enormous expansion of both software and business method patents has
+further distorted the picture.
+
+Since then, I would argue that matters have gotten far worse, with patents
+now being explicitly wielded as weapons of financial destruction, rather
+than as the instruments of innovation that were originally intended to serve
+society.
+
+The current very public arguing between Microsoft and Google regarding
+massively expensive "bundles" of patents purportedly associated with
+smartphone systems (and Android in particular) -- well explained and
+analyzed on Groklaw ( http://j.mp/psztN3 ) -- is a notable current example.
+
+Leaving aside Microsoft's flagrant and disingenuous attempt at
+mischaracterizing the situation, including their obnoxious, out of context
+release of an email from Google that Microsoft clearly hoped would cast
+false aspersions on Google's motivations, the overall landscape related to
+high technology patents is nothing short of insane.
+
+To use the vernacular, a "simple" DVD player involves a lot of patents.  A
+typical PC invokes an amazingly large range of patents.  And a modern
+smartphone can trigger a stupefyingly gigantic mountain of patents --
+perhaps as many as a quarter of a million.
+
+Notably (and especially in the smartphone case), the technical term for most
+of these patents is "bull" -- they shouldn't really have been granted in the
+first place.
+
+But we've reached a point now where even good players feel obligated to file
+patents left and right in order not only to protect themselves from
+malevolent patent sharks, but also to try preserve openness for future
+developers.
+
+If core Internet technologies had been patented decades ago in the manner
+that tech is patented today, I would assert that the Net we'd have now would
+be an enormously more closed and restricted environment -- if the Internet
+had even managed to really continue developing at all under such conditions.
+
+Average consumers are largely unaware of how grossly these "layers" of the
+patent system not only effectively create a "tax" on the technology that
+they purchase, but also create such a fear of litigation that many creative
+individuals choose not to proceed with developing products or services that
+otherwise could have benefited society greatly.
+
+There is an imperfect -- but still fairly horrifying -- analogy between the
+way "bundles" of patents can be treated by the unscrupulous as
+anticompetitive weapons, similar in some respects to how bundles of
+sub-prime mortgages were manipulated in manners that helped lead to our
+recent economic collapse.
+
+Another relevant example is ICANN's atrocious "gold rush" scheme for massive
+generic top-level domains expansion ( http://j.mp/r4yRRt [Lauren's Blog] ).
+
+In all of these cases -- patents, mortgages, domains -- the original,
+society-serving functional purposes of these concepts have been largely lost
+in the rush to treat the buying and selling of these "instrumentalities" (or
+related derivatives) as mechanisms mainly of financial gain for a relative
+few, but with society at large losing enormously as a result.
+
+Peeling the onion down another layer, I believe that this is symptomatic of
+a deeper failing, an increasing tendency to value not the creation of new
+products and services that benefit society and consumers generally, but
+rather the manipulation of the systems themselves by the unscrupulous to
+serve greed -- forcing even the benevolent players into the game on a purely
+defensive basis.
+
+A practical path out from this nightmare is not entirely clear.  To call
+Congress dysfunctional these days is to be charitable beyond measure.
+
+At the very least, as individuals we can try to stay informed regarding the
+reality of these situations -- the inner layers of the onion.
+
+This will not only help us to see through ignoble tactics such as those
+employed by Microsoft in the current smartphone patents controversy, but
+more generally enable us to more accurately discern where many other matters
+of concern actually stand, and what society should be demanding from our
+legislators, leaders, the financial community, and major industries in
+general.
+
+In Lem's "Futurological Congress," most of the population lived in a
+carefully conceived, falsified representation of reality.
+
+We need not follow their example.
+
+Lauren Weinstein (lauren@vortex.com): http://www.vortex.com/lauren
+People For Internet Responsibility: http://www.pfir.org
+Network Neutrality Squad: http://www.nnsquad.org
+PRIVACY Forum: http://www.vortex.com
+Google+: http://vortex.com/g+lauren
+Tel: +1 (818) 225-2800 / Skype: vortex.com
+
+------------------------------
+
+Date: Thu, 04 Aug 2011 12:17:33 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Java SE 7 Problems
+
+Having just been stung by Java in trying to write a simple parser: one
+little thing after another, I would have said that Java designers are Java's
+worst enemy.  I might have been off, but only a bit:
+
+http://www.infoworld.com/d/application-development/oracle-javas-worst-enemy-168828
+
+InfoWorld Home / Application Development / Fatal Exception
+August 04, 2011
+Oracle: Java's worst enemy
+The buggy Java SE 7 release is only the latest misstep in a mounting
+litany of bad behavior
+By Neil McAllister
+
+selected text:
+
+Oracle shipped Java SE 7 with a serious, show-stopping bug, and who was the
+first to alert the Java community? The Apache Foundation. Oh, the irony.
+
+This is the same Apache Foundation that resigned from the Java Community
+Process (JCP) executive committee in protest after Oracle repeatedly refused
+to give it access to the Java Technology Compatibility Kit (TCK).
+
+Now we learn that Oracle knew about the Java SE 7 bug fully five days before
+it shipped the product. And yet it shipped anyway because five days wasn't
+enough time to fix the problem.
+
+------------------------------
+
+Date:         Wed, 3 Aug 2011 11:52:32 -0400
+From: ACM TechNews <technews@HQ.ACM.ORG>
+Subject: Report on 'Operation Shady RAT' Identifies Widespread Cyber-Spying
+
+ACM TechNews; Wednesday, August 3, 2011
+ Read the TechNews Online at: http://technews.acm.org
+(c) 2011 INFORMATION, INC.
+This service may be reproduced for internal distribution.
+Sponsored by
+http://software.intel.com/en-us/academic/?cid=sw:iacstn4
+
+Report on 'Operation Shady RAT' Identifies Widespread Cyber-Spying
+*The Washington Post*, 3 August 2011, Ellen Nakashima, Julie Tate
+
+Over a period of several months, 72 corporations and government
+organizations--49 of them U.S.-based--were hacked by an extensive
+cyberspying operation, according to a new McAfee report.  McAfee researchers
+analyzed logs generated on a single server to trace the hacks, which
+targeted the Hong Kong and New York offices of the Associated Press, the
+networks of the International Olympic Committee, 12 U.S. defense companies,
+a U.S. Energy Department lab, and the United Nations Secretariat, among
+others.  McAfee says the hackers were seeking information on sensitive
+U.S. military systems, along with material from satellite communications,
+electronics, natural gas companies, and even bid data from a Florida real
+estate firm.  James A. Lewis at the Center for Strategic and International
+Studies says the intrusions are likely Chinese in origin, noting that the
+target list's stress on Taiwan and on Olympic organizations in the run-up to
+the 2008 Beijing Games "points to China" as the culprit.  McAfee says that
+hackers had erroneously configured a command-and-control server based in a
+Western nation to produce logs that identified every Internet protocol
+address the server had controlled for the past five years.
+http://www.washingtonpost.com/national/national-security/report-identifies-widespread-cyber-spying/2011/07/29/gIQAoTUmqI_story.html
+
+  [See also
+http://news.yahoo.com/biggest-ever-series-cyber-attacks-uncovered-u-n-040749882.html
+  PGN]
+
+------------------------------
+
+Date: Thu, 4 Aug 2011 13:14:37 -0400
+From: ACM Bulletin <acmbulletin@acm.org>
+Subject: The_Most_Expensive_One-byte_Mistake Generates Buzz
+
+A column on the acmqueue website (http://queue.acm.org/) questions the
+decision by C/UNIX/Posix creators Ken Thompson, Dennis Ritchie, and Brian
+Kernighan to use NUL-terminated text strings.  Bikeshed columnist
+Poul-Henning Kamp surveys the impact of this choice and its relationship to
+the frequent failure of the CS/IT industry to recognize and learn from
+mistakes.
+
+The column (http://queue.acm.org/detail.cfm?id=2010365) went live this week
+and registered more than 70,000 views in the first three days. In that time
+frame it recorded 23,000 slashdot hits
+(http://developers.slashdot.org/story/11/08/03/011244/The-Most-Expensive-One-Byte-Mistake),
+and generated more than twice that amount of traffic to the acmqueue site.
+Follow the comments on Slashdot or the acmqueue website
+(http://queue.acm.org/detail.cfm?id=2010365#content-comments).
+
+------------------------------
+
+Date: Fri, 5 Aug 2011 11:40:29 -0400
+From: ACM TechNews <technews@HQ.ACM.ORG>
+Subject: Microsoft Kicks Off $250,000 Security Contest (Gregg Keizer)
+
+ACM TechNews, Friday, August 5, 2011
+Gregg Keizer, Microsoft Kicks Off $250,000 Security Contest,
+*Computerworld*, 3 Aug 2011
+
+Microsoft has launched a $250,000 contest for security technology
+researchers that challenges them to find ways to defend against entire
+classes of exploits.  "We want to make it more costly and difficult for
+criminals to exploit vulnerabilities," says Microsoft's Katie Moussouris.
+"We want to inspire researchers to focus their expertise on defensive
+security technologies."  The contest, which runs through April 1, 2012, asks
+researchers to developing mitigation technology for preventing the
+exploitation of memory safety vulnerabilities.  The winner will receive
+$200,000, the second-place winner will receive $50,000, and the third-place
+winner will receive a subscription to Microsoft's developer network.
+"Overall, it seemed to us that to take an approach to block entire classes
+was the best way to engage with the research community and protect
+customers," Moussouris says.  The contest shows that Microsoft is looking
+for solutions to return-oriented programming, which can be used by attackers
+to breach current Windows security technologies such as ASLR and address
+space layout randomization, says nCircle Security's Andrew Storms.  A panel
+of Microsoft employees will judge the contest.
+http://www.computerworld.com/s/article/9218845/Microsoft_kicks_off_250_000_security_contest?taxonomyId=85
+
+------------------------------
+
+Date: Sat, 6 Aug 2011 17:39:37 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: AT&T increases voice mail security; Password meant to deter hackers
+  (Hiawatha Bray)
+
+Hiawatha Bray, *The Boston Globe*, 6 Aug 2011
+
+AT&T Inc. is changing the default method by which cellular customers check
+their voice mail, after reports that the company's policies made messages
+more vulnerable to hackers than on other cellphone carriers.  The giant
+telecommunications company said it will start requiring users to enter a
+password to access their voice mails from their own cellphones. Until now,
+AT&T users calling from their own phones would immediately get access to
+their voice mails without entering a password. ...
+
+http://www.boston.com/business/technology/articles/2011/08/06/att_increases_voice_mail_security/
+
+------------------------------
+
+Date: Sun, 7 Aug 2011 16:35:17 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 8 Technical Methods That Make the PROTECT IP Act Useless
+
+8 Technical Methods That Make the PROTECT IP Act Useless
+http://j.mp/poow9T  (ZeroPaid)  [From NNSquad]
+
+    "We've been running a series of guides that show just how easy it is to
+     [bypass] general DNS censorship. It's general DNS censorship that has
+     been proposed in the PROTECT-IP Act among other things. Rather than
+     simply debate philosophically on why the PROTECT-IP act will do
+     absolutely nothing to deter copyright infringement, we decided to do
+     one better and prove it instead."
+
+------------------------------
+
+Date: Fri, 5 Aug 2011 11:48:10 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Contractor leaves hundreds of bank account details at a pub
+
+Humans are often the weakest link:
+
+http://www.itpro.co.uk/635422/hundreds-of-bank-account-details-left-at-london-pub
+
+``Saving personal information on to an unencrypted memory stick is as risky
+as taking hard copy papers out of the office,'' said Sally-Anne Poole,
+acting head of enforcement at the Information Commissioner's Office (ICO).
+``This incident could so easily have been avoided if the information had
+been properly protected.''
+
+Jim Reisert AD1C, <jjreisert@alum.mit.edu>, http://www.ad1c.us
+
+------------------------------
+
+Date: Sat, 6 Aug 2011 17:39:37 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Hospital reports a possible data loss (Liz Kowalczyk)
+
+Liz Kowalczyk, Hospital reports a possible data loss; Doctor misplaced drive
+that had held patient records *The Boston Globe*, 6 Aug 2011
+
+A doctor who works at Brigham and Women's and Faulkner hospitals lost an
+external hard drive in June, and the computer device may have contained
+medical information for 638 patients, the hospitals said yesterday. ...
+
+Information related to inpatient hospital stays from July 10, 2009, to
+Jan. 28, 2011, may have been on the device, including patient names, medical
+record numbers, dates of admission, medications, and information about
+diagnosis and treatment. The device did not contain Social Security numbers,
+insurance numbers, or other financial account information.
+
+http://www.boston.com/news/local/massachusetts/articles/2011/08/06/hospital_reports_a_possible_data_loss/
+
+------------------------------
+
+Date: Sat, 6 Aug 2011 04:17:40 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Re: High-rolling gamblers are exploiting a quirk in Cash
+ WinFall, raking in huge profits (RISKS-26.51)
+
+State Treasurer Steven Grossman severely restricted yesterday the number of
+Cash WinFall lottery tickets any store can sell in a day, closing a loophole
+that has allowed a handful of high-stakes gamblers to win most of the
+prizes.
+
+Just three gambling companies collected 1,105 of the 1,605 Cash WinFall
+prizes statewide after a May drawing, each following a strategy that
+involved buying hundreds of thousands of dollars worth of the $2 tickets at
+selected stores over a few days.
+
+Under the new rules, no store will be allowed to sell more than $5,000 worth
+of Cash WinFall tickets in a single day, making it much harder for the
+gamblers to continue their high-volume purchases.
+
+http://www.boston.com/news/local/massachusetts/articles/2011/08/02/lottery_restricts_high_level_players/
+
+Jim Reisert AD1C, <jjreisert@alum.mit.edu>, http://www.ad1c.us
+
+------------------------------
+
+Date: Wed, 3 Aug 2011 14:45:44 +0100
+From: Tony Finch <dot@dotat.at>
+Subject: Re: Google+ and Names (Wirchenko, RISKS-26.51)
+
+Gene Wirchenko <genew@ocis.net> wrote:
+>
+> There has been a big commotion over real names with Google+ with accounts
+> being terminated.
+
+Kirrly "Skud" Robert has done a lot of informative analysis on the
+problems caused by the "real name" policy and its erratic enforcement.
+http://infotrope.net/category/tech-2/
+
+Over a year ago Patrick McKenzie wrote an amusingly ranty checklist of
+assumptions that programmers should not make about names.
+http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/
+
+------------------------------
+
+Date: Tue, 02 Aug 2011 17:56:13 -0700
+From: Carl Byington <carl@five-ten-sg.com>
+Subject: Re: Motorcycle 'smart key' (RISKS-26.52)
+
+So you are riding on a highway with the key in your (backpack, pocket,
+etc), and it falls out on the ground. Does the steering now lockup? That
+would be more than just a tip-over.
+
+------------------------------
+
+Date: Wed, 3 Aug 2011 14:32:39 +0100
+From: Tony Finch <dot@dotat.at>
+Subject: Re: Don't throw away Grandma's wind-up desk clock (Lee, RISKS-26.51)
+
+> I've seen that report before and wonder if there simply isn't some lousy
+> reporting going on. [...] It sounds to me like the only change proposed
+> is lengthening out the period as well, perhaps, as allowing the error to
+> accumulate further before it is corrected.
+
+No, the proposal is to completely stop correcting the accumulated phase
+error for a year. http://www.nerc.com/page.php?cid=6%7C386
+
+------------------------------
+
+Date: Wed,  3 Aug 2011 11:25:10 -0700 (PDT)
+From: "Heather M. Bell" <mm-11487-6693041@dcpso.bepress.com>
+Subject: Risk, Hazards & Crisis in Public Policy, Vol 2 Issue 2
+
+  [Given the lack of discipline concerning quantitative and qualitative
+  approaches to computer-related risk management, I thought it might be
+  useful to compare what is done in analyzing and ameliorating risks in
+  various other application areas -- many of which of course have
+  computer-related components.  Perhaps the lack of far-sighted and
+  non-local optimization is endemic there as well.  However, there are
+  sometimes more hoops to jump through.  PGN]
+
+Berkeley Electronic Press
+The Policy Studies Organization and Berkeley Electronic Press are pleased to
+announce the latest issue of Hazards & Crisis in Public Policy.
+http://www.psocommons.org/rhcpp/announce/20110803
+
+Articles:
+
+* Managing Risk through Liability, Regulation, and Innovation:
+  Organizational Design for Spill Containment in Deepwater Drilling
+  Operations
+
+* What's Your Position on Nuclear Power?  An Exploration of Conflict in
+  Stakeholder Participation for Decision-making about Risky Technologies
+
+* Opportunities and Challenges of Incorporating Climate Change Threats
+  into Disaster Risk Management Planning: A Case Study in Costa Rica
+
+* School District Partner Choice in Emergency Management Collaboration
+
+* Assessment of an Emergency Disaster Response to Floods in Agadez, Niger
+
+* Climate Disaster Resilience of Dhaka City Corporation: An Empirical
+  Assessment at Zone Level
+
+Response/Comment:
+
+* Assumptions Can Kill
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.53
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E6C04F5D2E0EXSAN02campus_--

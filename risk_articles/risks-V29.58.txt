@@ -1,0 +1,351 @@
+precedence: bulk
+Subject: Risks Digest 29.58
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 21 June 2016  Volume 29 : Issue 58
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.58.html>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+A Hacking of More Than $50 Million Dashes Hopes in the World of Virtual
+  Currency (NYTimes)
+Technician broke the Internet by thinking Hong Kong was in the USA
+  (Dagens Nyheter via Debora Weber-Wulff)
+Attacking NYC by computer (NY Magazine via Jeremy Epstein)
+One Million IP Addresses Used In Brute-Force Attack On A Bank (Slashdot)
+Critical MSDOS program can't get license renewed (Henry Baker)
+Russian bill requires encryption backdoors in all messenger apps (Daily Dot)
+Citing Attack, GoToMyPC Resets All Passwords (Krebs on Security)
+Man Inadvertently Broadcasts His Own Killing on Facebook Live (NYTimes)
+Autonomous harmful robot (Daily Mail via Mark Thorson)
+Re: Tesla Model X autonomously crashes into building, owner claims
+  (Ian Macky)
+Re: The Air Force Had a Totally Accidental Computer Disaster (Steve Lamont)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 19 Jun 2016 11:10:50 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: A Hacking of More Than $50 Million Dashes Hopes in the World of
+  Virtual Currency
+
+http://www.nytimes.com/2016/06/18/business/dealbook/hacker-may-have-removed-more-than-50-million-from-experimental-cybercurrency-project.html
+
+The project, known as the Decentralized Autonomous Organization, is raising
+broader questions about the security and viability of virtual currencies
+like Ether and Bitcoin.
+
+  [Not very DAO-ist.  Lao Tze would be shocked!  Actually, the hack
+  reportedly resulted from a TOCTTOU problem -- nonatomic transactions
+  exploiting a time-of-check-to-time-of-use flaw.  This might be considered
+  as a converse of Tom Lehrer's Don't Write Naughty Words on Walls If You
+  Can't Spell: Don't Write Critical Code If You Can't Think.  The risks of
+  TOCTTOUs are as old as the hills.  PGN]
+
+------------------------------
+
+Date: Tue, 21 Jun 2016 21:30:19 +0200
+From: Debora Weber-Wulff <weberwu@htw-berlin.de>
+Subject: Technician broke the Internet by thinking Hong Kong was in the USA
+
+The Swedish Daily "Dagens Nyheter" reports on June 21 on the reason that
+many sites (Reddit, Whatsapp, Slack, and others) were hard to reach the day
+before in Europe.
+
+http://www.dn.se/ekonomi/europa-blev-hongkong-sa-sankte-telia-natet/
+
+It seems that the Swedish operator Telia Carrier is one of the few Tier 1
+companies that are responsible for directing European Internet traffic.
+While a technician was reconfiguring part of the network, they mixed up a
+few things and sent all traffic to the USA via Hong Kong.
+
+The resulting slowdown led people to believe that the transatlantic cable
+had been damaged.
+
+Telia would not comment on the issue.
+
+The Register has a short report from June 20:
+http://www.theregister.co.uk/2016/06/20/telia_engineer_blamed_massive_net_outage/
+
+Prof. Dr. Debora Weber-Wulff, HTW Berlin, 10313 Berlin  +49-30-5019-2320
+weberwu@htw-berlin.de http://www.f4.htw-berlin.de/people/weberwu/
+
+------------------------------
+
+Date: Mon, 20 Jun 2016 08:59:46 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Attacking NYC by computer
+
+NY Magazine has a long description of a scenario where basically everything
+in NYC is (successfully) attacked - vehicles, hospitals, power systems,
+thermostats, etc.  There's nothing in here that we haven't seen before --
+and they footnote each of the claims, but it's a well-written if somewhat
+breathless description of how attackers could put all the bad things
+together into a fairly catastrophic attack.  (Yeah, some of the elements are
+misleading - for example, the reference to hacked elections isn't actually
+about hacking voting, but rather spying on elections.  But the overall
+pictures is IMHO fairly accurate.)
+
+http://nymag.com/daily/intelligencer/2016/06/the-hack-that-could-take-down-nyc.html
+
+------------------------------
+
+Date: Sun, 19 Jun 2016 16:02:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: One Million IP Addresses Used In Brute-Force Attack On A Bank
+  (Slashdot)
+
+Slashdot via NNSquad
+https://it.slashdot.org/story/16/06/19/226250/one-million-ip-addresses-used-in-brute-force-attack-on-a-bank
+
+  Cisco says in just one week in February they detected 1,127,818 different
+  IP addresses being used to launch 744,361,093 login attempts on
+  220,758,340 different email addresses -- and that 93% of those attacks
+  were directed at two financial institutions in a massive Account Takeover
+  (ATO) campaign.
+
+------------------------------
+
+Date: Sun, 19 Jun 2016 15:25:37 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Critical MSDOS program can't get license renewed
+
+What should happen to software that the vendor wants to stop supporting?
+
+So long as the vendor is left blameless and without any liability, why not
+allow continued use through abandonment to the public domain?
+
+I'm sure that all of us have tons of stories of software that works just
+fine w/o requiring any support for years and years.
+
+Why "upgrade" to SW that costs 10-50X more, which requires a huge additional
+investment in new HW, and -- most importantly -- requires the *retraining*
+of lots of people ?
+
+Nowadays, it is possible to run such old MSDOS software through HW or SW
+emulation, and this enables accessing the software through modern I/O
+devices.  Such software can often access memories 1000X bigger than
+available when the MSDOS SW was in its prime, thereby enabling many
+additional years of useful life.
+
+There's an additional hope that legislation will eventually allow software
+copyrights on such old SW *source code* to also join the public domain, so
+that computer museums, at least, can demonstrate these old systems.
+
+Antique automobiles are typically grandfathered out of modern requirements
+so they can still be driven on public roads.  This particular MSDOS SW
+doesn't even drive on the public Internet -- at least so far as I can tell
+from this article.
+
+http://www.abc.net.au/news/2016-06-18/software-legal-battle-could-put-sa-patients'-safety/7522934
+
+Software legal battle could put South Australian patients' safety at risk,
+Government outlines in court documents
+
+Angelique Donnellan, ABC Net (AU), 18 Jun 2016
+
+The South Australian Government has warned that patient safety will be at
+risk if it is forced to stop using a crucial software system in country
+hospitals.  The ABC obtained court documents which reveal the extent of a
+bitter legal stoush between the Government and the maker of the patient
+records system.  The system called, CHIRON, is used at 64 country health
+sites in South Australia, including at the Mount Barker Hospital.
+
+In technology terms, the program is ancient and based on the MS-DOS
+platform. It was installed in SA hospitals in the early 90s.  In the Federal
+Court CHIRON's maker Working Systems demanded the State Government stop
+using it because the licence expired in March last year.  The Government
+said complying would jeopardise patient safety and there would be a material
+risk to SA Health's ability to provide an effective health service.
+
+According to court documents the Government argued without CHIRON hospital
+staff would not have access to critical information such as patient
+allergies to medication and there was potential for new patient data being
+lost or incorrectly recorded.
+
+Working Systems said any risk to patient safety was the Government's fault
+because it had failed to plan and refused to sign up to updated software in
+2003.  The company said a licence extension for CHIRON was not possible
+because it was too old and no longer supported.
+
+Court documents show in 2014 the Government assured Working Systems it was
+seeking a replacement.  That system known as EPAS, which has been dogged by
+delays, controversy and cost blowouts. It is currently only operating at
+three sites, including Port Augusta.
+
+The CHIRON matter is listed for trial in December.
+
+------------------------------
+
+Date: Mon, 20 Jun 2016 18:45:35 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Russian bill requires encryption backdoors in all messenger apps
+  (Daily Dot)
+
+Daily Dot via NNSquad
+
+http://www.dailydot.com/politics/encryption-backdoor-russia-fsb/
+
+  Backdoors into encrypted communications may soon be mandatory in Russia.
+  A new bill in the Russian Duma, the country's lower legislative house,
+  proposes to make cryptographic backdoors mandatory in all messaging apps
+  in the country so the Federal Security Service -- the successor to the KGB
+  -- can obtain special access to all communications within the country.
+
+------------------------------
+
+Date: Mon, 20 Jun 2016 16:38:08 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Citing Attack, GoToMyPC Resets All Passwords (Krebs on Security)
+
+Krebs via NNSquad
+http://krebsonsecurity.com/2016/06/citing-attack-gotomypc-resets-all-passwords/
+
+  GoToMyPC, a service that helps people access and control their computers
+  remotely over the Internet, is forcing all users to change their
+  passwords, citing a spike in attacks that target people who re-use
+  passwords across multiple sites.
+
+------------------------------
+
+Date: Sun, 19 Jun 2016 11:11:06 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Man Inadvertently Broadcasts His Own Killing on Facebook Live
+  (NYTimes)
+
+A 28-year-old man in Chicago who accidentally caught his own fatal shooting
+on video is the latest example of the *no gatekeeper* world of live
+streaming.
+
+http://www.nytimes.com/2016/06/18/us/man-inadvertently-broadcasts-his-own-killing-on-facebook-live.html
+
+------------------------------
+
+Date: Mon, 20 Jun 2016 08:52:18 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Autonomous harmful robot
+
+The first of a new class of robots.  It's all downhill from here.
+
+http://www.dailymail.co.uk/sciencetech/article-3638874
+
+------------------------------
+
+Date: Sun, 19 Jun 2016 06:22:46 -0700 (PDT)
+From: Ian Macky <ian@macky.net>
+Subject: Re: Tesla Model X autonomously crashes into building, owner claims
+
+Teslas are instrumented.  When there's a crash like this one, it's probably
+a good idea to wait until the log contents are revealed before repeating the
+driver's claims; the logs often show the opposite.
+
+Unintended acceleration is almost always caused by the driver pushing the
+wrong pedal, then, thinking they are pushing the brake, when the car takes
+off, they push yet harder.  Happens all too frequently.  Cognitive error.
+
+Anyway, in this case, here's Tesla's response:
+
+  "We analyzed the vehicle logs which confirm that this Model X was
+  operating correctly under manual control and was never in Autopilot or
+  cruise control at the time of the incident or in the minutes before.  Data
+  shows that the vehicle was traveling at 6 mph when the accelerator pedal
+  was abruptly increased to 100%. Consistent with the driver's actions, the
+  vehicle applied torque and accelerated as instructed. Safety is the top
+  priority at Tesla and we engineer and build our cars with this foremost in
+  mind. We are pleased that the driver is ok and ask our customers to
+  exercise safe behavior when using our vehicles."
+
+------------------------------
+
+Date: Sun, 19 Jun 2016 11:15:05 -0700
+From: spl@tirebiter.org (Steve Lamont)
+Subject: Re: The Air Force Had a Totally Accidental Computer Disaster
+
+http://thehill.com/policy/defense/283605-air-force-recovers-crashed-database
+
+  Air Force recovers crashed database, *The Hill*, 15 Jun 2016
+
+  The Air Force has recovered a database that holds thousands of
+  inspector general records after it crashed, the service said Wednesday
+  afternoon.
+
+  "After aggressively leveraging all vendor and department capabilities, the
+  Air Force made a full recovery of the Automated Case Tracking System
+  database, the Air Force inspector general system of record for all records
+  related to IG complaints, investigations and appeals," the Air Force said
+  in a statement.
+
+  Last week, the Air Force announced that a database known as the Automated
+  Case Tracking System (ACTS) had crashed and that records for more than
+  100,000 Air Force inspector general cases dating back to 2004 were lost.
+  [...]
+
+    [Martyn Thomas noted that this should act as a warning to those who
+    trust irreplaceable data to any cloud service provider. But I'd wager it
+    won't be heeded.  PGN]
+
+    [PGN via LW: See also BoingBoing:]
+http://boingboing.net/2016/06/18/air-force-tried-harder-now-sa.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+boingboing%2FiBag+%28Boing+Boing%29
+
+------------------------------
+
+Date: Tue, 10 May 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+    newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.58
+************************

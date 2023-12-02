@@ -1,0 +1,507 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.49
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 25 November 2019  Volume 31 : Issue 49
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.49>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Train door safety interlock based on hanger not actual door position (BBC)
+Aircraft warning lights system open online (Security Affairs)
+Tainted Data Can Teach Algorithms the Wrong Lessons (WiReD
+Finds GPS tracker on his car, removes it, charged with theft (Ars Technica)
+DMVs profit by selling PII (Vice/Motherboard)
+Cheap kids smartwatch exposes the location of 5,000+ children
+  (Catalin Cimpanu)
+More on AI-generated deepfakes (NYTimes)
+Hidden Cam Above Bluetooth Pump Skimmer (Krebs on Security)
+Tim Berners-Lee's plan includes framework to protect privacy,
+  personal data (MarketWatch)
+Independent security researcher discovers information trove (Bloomberg)
+Investigation finds BC firm delivered micro-targeted political ads
+  without ensuring consent (Kelly Bert Manning)
+A cautionary tale about IT out sourcing -- Landlord finds millions
+  of confidential files left by defunct IT firm
+This girl hacked 11,000 dogs and cats smart feeders
+  (Information Security Newspaper)
+Re: How dumb design wwii plane led macintosh (Amos Shapir)
+Re: A hypothesis on the immediate future of audio scams (Amos Shapir)
+Re: There's more to the Internet than the DNS, or Internet world despairs
+  ... (John Levine)
+Re: What happens if your mind lives for ever on the Internet? (Martin Ward)
+Re: Officials Warn of "Juice Jacking" Scams at USB Charging Stations
+  (Andrew Duane)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 27 Nov 2019 16:37:41 -0000
+From: "paul cornish" <paul.a.cornish@googlemail.com>
+Subject: Train door safety interlock based on hanger not actual door position
+  (BBC)
+
+>From the BBC web site https://www.bbc.co.uk/news/uk-england-essex-50573800
+
+The actuator moved, the door hanger moved, the micro switch (on the door
+hanger) said the door was closed.  But the bolts holding the door onto the
+hanger had gone so the door stayed open. 23 minutes at 83 mph before a
+passenger told the driver
+
+------------------------------
+
+Date: Wed, 27 Nov 2019 07:03:39 +0000
+From: J Coe <spendday@gmail.com>
+Subject: Aircraft warning lights system open online (Security Affairs)
+
+Independent researcher Amitay Dan <https://twitter.com/popshark1> discovered
+that control panels for aircraft warning lights were exposed to the
+Internet, potentially allowing attackers to control them.
+
+https://securityaffairs.co/wordpress/94414/hacking/aircraft-warning-lights-hack.html
+
+------------------------------
+
+Date: Wed, 27 Nov 2019 9:47:01 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Tainted Data Can Teach Algorithms the Wrong Lessons (WiReD
+
+  This is joint work of Wenchao Li at Boston University and Susmit Jha at
+  SRI and others, on inserting Trojans/backdoors to reinforcement learning
+  policy.  Their paper was recently covered by Wired:
+    https://www.wired.com/story/tainted-data-teach-algorithms-wrong-lessons/
+  and picked up by other outlets such as boingboing:
+    https://boingboing.net/2019/11/25/backdooring-ai.html
+
+------------------------------
+
+Date: Mon, 25 Nov 2019 18:46:19 -0500 (EST)
+From: danny burstein <dannyb@panix.com>
+Subject: Finds GPS tracker on his car, removes it, charged with theft
+  (Ars Technica)
+
+Turns out it was the local constabulary who placed it on his car.  Oh, they
+had a warrant.
+
+He found it, took it off, brought it into his house.  It stopped working
+(unclear from the stories just why, i.e. did he smash it, remove battery,
+hit the "off" button, etc...)
+
+The cops got another warrant to search his home claiming they believed he
+had stolen (!!)  the tracker and hid it in his house.  So they entered and
+saw drug paraphernalia.
+
+Hillarity is ongoing
+
+https://arstechnica.com/tech-policy/2019/11/man-charged-with-theft-for-removing-police-gps-tracker-from-his-car/
+
+------------------------------
+
+Date: Mon, 25 Nov 2019 13:30:26 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: DMVs profit by selling PII (Vice/Motherboard)
+
+*A document obtained by Motherboard shows how DMVs sell people's names,
+addresses, and other personal information to generate revenue*
+
+The California Department of Motor Vehicles is generating revenue of
+$50,000,000 a year through selling drivers' personal information, to a DMV
+document obtained by Motherboard.
+
+DMVs across the country are selling data that drivers are required to
+provide to the organization in order to obtain a license. This information
+includes names, physical addresses, and car registration information.
+California's sales come from a state which generally scrutinizes
+privacy to a higher degree
+<https://techcrunch.com/2019/10/12/californias-privacy-act-what-you-need-to-know-now/> than the rest of the country.
+
+In a public record acts request, Motherboard asked the California DMV for
+the total dollar amounts paid by commercial requesters of data for the past
+six years. The responsive document shows the total revenue in financial year
+2013/14 as $41,562,735, before steadily climbing to $52,048,236 in the
+financial year 2017/18.
+
+The document doesn't name the commercial requesters, but some specific
+companies appeared frequently in Motherboard's earlier investigation
+<https://www.vice.com/en_us/article/43kxzq/dmvs-selling-data-private-investigators-making-millions-of-dollars>
+that looked at DMVs across the country. They included data broker LexisNexis
+and consumer credit reporting agency Experian. Motherboard also found DMVs
+sold information to private investigators, including those who are hired to
+find out if a spouse is cheating. It is unclear if the California DMV has
+recently sold data to these sorts of entities...
+
+https://www.vice.com/en_us/article/evjekz/the-california-dmv-is-making-dollar50m-a-year-selling-drivers-personal-information
+
+------------------------------
+
+Date: Mon, 25 Nov 2019 11:57:17 -0800
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: Cheap kids smartwatch exposes the location of 5,000+ children
+  (Catalin Cimpanu)
+
+Catalin Cimpanu for Zero Day | 25 Nov 2019
+Insecure web backend and mobile app let attackers access any kids' details
+and parent account.
+https://www.zdnet.com/article/cheap-kids-smartwatch-exposes-the-location-of-5000-children/
+
+A cheap $35 kids' smartwatch made in China was caught exposing the personal
+details and location information for more than 5,000 children and their
+parents.
+
+The concept is not new, as there are plenty of similar products on the
+market, varying in prices from $30 to $200-$300. However, Morgenstern
+suggests that SMA created one of the most insecure products on the market.
+
+For starters, Morgenstern says anyone can query the smartwatch's backend via
+a publicly accessible web API. This is the same backend where the mobile app
+also connects to retrieve the data it shows on parents' phones.
+
+Morgenstern says there's an authentication token in place that's supposedly
+there to prevent unauthorized access, but attackers can supply any token
+they like, as the server never verifies its validity.
+
+Morgenstern says that using this technique, his team was able to identify
+more than 5,000 M2 smartwatch wearers and more than 10,000 parent accounts.
+
+      [And it gets worse.]
+
+------------------------------
+
+Date: Sun, 24 Nov 2019 22:08:02 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: More on AI-generated deepfakes (NYTimes)
+
+Researchers are creating tools to find AI-generated fake videos before
+they become impossible to detect. Some experts fear it is a losing battle.
+
+https://www.nytimes.com/2019/11/24/technology/tech-companies-deepfakes.html
+
+------------------------------
+
+Date: Mon, 25 Nov 2019 13:13:05 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Hidden Cam Above Bluetooth Pump Skimmer (Krebs on Security)
+
+Tiny hidden spy cameras are a common sight at ATMs that have been tampered
+with by crooks who specialize in retrofitting the machines with card
+skimmers. But until this past week I'd never heard of hidden cameras being
+used at gas pumps in tandem with Bluetooth-based card skimming devices.
+
+Apparently, I'm not alone.
+
+``I believe this is the first time I've seen a camera on a gas pump with a
+Bluetooth card skimmer,'' said *Detective Matt Jogodka *of the Las Vegas
+Police Department, referring to the compromised fuel pump pictured below...
+
+https://krebsonsecurity.com/2019/11/hidden-cam-above-bluetooth-pump-skimmer/
+
+------------------------------
+
+Date: Mon, 25 Nov 2019 13:14:05 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Tim Berners-Lee's plan includes framework to protect privacy,
+  personal data (MarketWatch)
+
+World Wide Web inventor Tim Berners-Lee released an ambitious rule book for
+online governance -- a bill of rights and obligations for the Internet --
+designed to counteract the growing prevalence of such anti-democratic
+poisons as misinformation, mass surveillance and censorship.
+
+The product of a year's work by the World Wide Web Foundation where
+Berners-Lee is a founding director, the *Contract for the Web*
+<https://contractfortheweb.org/>seeks commitments from governments and
+industry to make and keep knowledge freely available -- a digital policy
+agenda true to the design vision of the 30-year-old web.
+
+The contract is non-binding, however. And funders and partners in the
+endeavor include Alphabet's  Google and Facebook, whose data-collecting
+business models and sensation-rewarding algorithms have been blamed for
+exacerbating online toxicity.
+
+``We haven't had a fairly complex, fairly complete plan of action for the
+web going forward,'' Berners-Lee said in an interview.  ``This is the first
+time we've had a rule book in which responsibility is being shared.''
+
+https://www.marketwatch.com/story/web-inventor-unveils-ambitious-rule-book-for-internet-responsibility-2019-11-24
+
+------------------------------
+
+Date: Mon, 25 Nov 2019 13:35:28 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Independent security researcher discovers information trove
+  (Bloomberg)
+
+Server shut down after FBI contacted about unsecured data
+
+A database aggregating 1.2 billion users' personal information, including
+social media accounts, email addresses and phone numbers, was discovered
+unprotected on a server last month. So far, it's not clear how it got
+there.
+
+Most of the data was collected by a company called People Data Labs, said
+Vinny Troia, chief executive officer of Night Lion Security, which is based
+in St. Louis. People Data Labs provides work emails and social media account
+details for what the company claims is a billion and a half people.  That
+data is scraped from various sources and sold as a way to contact ``70%+
+decision makers in the US, UK and Canada,'' according to the company's
+website.
+
+The unprotected data didn't reside on a People Data Labs'
+server, but was on a Google Cloud server, Troia said. Google didn't
+respond to a request for comment about who was renting the server.
+
+Sean Thorne, People Data Labs' co-founder and chief executive officer, said
+some, but not all, of the data came from his company and suspects it was
+being aggregated by another firm merging various data points...
+
+https://www.newsmax.com/finance/streettalk/billion-data-unprotected-google/2019/11/22/id/942975/
+
+https://www.bloomberg.com/news/articles/2019-11-22/a-billion-people-s-data-left-unprotected-on-google-cloud-server
+
+------------------------------
+
+Date: Tue, 26 Nov 2019 22:51:43 -0500 (EST)
+From: Kelly Bert Manning <bo774@freenet.carleton.ca>
+Subject: Investigation finds BC firm delivered micro-targeted political ads
+  without ensuring consent
+
+A joint investigation by the Canadian Federal Privacy Commission and BC
+Office of the Information and Privacy Commissioner has issued a Press
+Release regarding their investigation of Cambridge Analytica associate
+Aggregate IQ.
+
+"Joint investigation finds failings in political consultancy's consent
+practices for uses and disclosures of personal information and in its
+security safeguard practices.
+
+VANCOUVER, British Columbia, November 26, 2019"
+
+https://priv.gc.ca/en/opc-news/news-and-announcements/2019/nr-c_191126/
+https://www.oipc.bc.ca/news-releases/2364
+
+------------------------------
+
+Date: Tue, 26 Nov 2019 22:57:09 -0500 (EST)
+From: Kelly Bert Manning <bo774@freenet.carleton.ca>
+Subject: A cautionary tale about IT out sourcing -- Landlord finds millions
+  of confidential files left by defunct IT firm
+
+"When one of Gregg Patterson's commercial tenants packed up and moved out in
+the middle of the night, leaving behind hard drives, computer servers and
+bankers boxes full of documents, he could have just dumped it all at the
+curb."
+
+https://www.cbc.ca/news/canada/ottawa/fly-by-night-it-company-leaves-10-million-digital-files-cautionary-tale-1.5365619
+
+------------------------------
+
+Date: Wed, 27 Nov 2019 11:42:06 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: This girl hacked 11,000 dogs and cats smart feeders
+  (Information Security Newspaper)
+
+https://www.securitynewspaper.com/2019/10/25/this-girl-hacked-11000-dogs-and-cats-smart-feeders-would-she-dare-to-harm-your-pets/
+
+25 Oct 2019
+
+  Cybersecurity incidents can affect many aspects of our lives, including
+  issues related to our pets. A few months ago, Xiaomi, in collaboration
+  with the company Furrytail, launched a crowd funding project consisting of
+  an Internet-connected pet feeder controlled through an app, which was sold
+  on Youpin, Xiaomi's official store.
+
+  Anna Prosvetova, a well-known Russian hacker, claims to have hacked
+  thousands of Furrytail Pet Smart Feeder devices, accessing any data
+  related to its use. The hacker states that it is even possible to
+  manipulate the operation of the device remotely.
+
+  According to cybersecurity experts, this device is basically an
+  Internet-connected food depot capable of feeding pets when their master is
+  away from home, setting schedules to deliver a previously determined food
+  load. The project had a more than acceptable response in the fundraising
+  process, so it was launched almost immediately and released earlier this
+  year.
+
+------------------------------
+
+Date: Tue, 26 Nov 2019 18:20:16 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: How dumb design wwii plane led macintosh (RISKS-31.48)
+
+The application described would create a very stable cruise, no user might
+wander off the beaten path or stumble -- which would make it the most boring
+travel experience ever...
+
+The most exciting experiences often occur when we stumble upon something
+unexpected; such an application would essentially eliminate such moments!
+
+------------------------------
+
+Date: Tue, 26 Nov 2019 18:25:35 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: A hypothesis on the immediate future of audio scams (RISKS-31.48)
+
+This scam is nothing new; in fact, it's as old as recording devices.
+
+For example this movie:
+https://letterboxd.com/film/the-great-telephone-robbery/ was made in 1972
+following a real event in which criminals used low-tech means to connect to
+a bank's phone line and impersonate the manager.
+
+------------------------------
+
+Date: 26 Nov 2019 17:40:08 -0500
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: There's more to the Internet than the DNS, or Internet world
+  despairs
+
+>https://www.theregister.co.uk/2019/11/20/org_registry_sale_shambles/?page=1
+
+This is a classic Register article.  Many of the purported facts are correct
+but the conspiracy theory they hint at is not.  The arguments are entirely
+about the purported effects of implausibly large price increases on .org
+registrants, most of whom are in North America and other developed
+countries.  It has a bunch of questions at the end for Ethos, the buyer, and
+says "We will update this story if and when they respond."  Ethos did, at
+https://www.keypointsabout.org/ and at
+http://www.circleid.com/posts/20191125_showing_our_ethos_with_org/ The
+Register hasn't updated the story, but that's classic, too.
+
+Moreover, there are on the order of 4 billion Internet users, of whom
+perhaps 0.1% are .org domain registrants. Most of that other 99.9% does not
+live in developed countries.  The point of selling the registry is to have a
+more stable income to support the Internet Society's programs that benefit
+that 99.9% as well as the 0.1%.  The risk here is to assume that the
+technical concerns of your friends and people who look like you are the ones
+that matter.
+
+Claimer: I'm a member of the ISOC board, we reviewed the various proposals
+to buy PIR in detail, and we voted unanimously for the one we accepted.
+
+------------------------------
+
+Date: Wed, 27 Nov 2019 10:18:17 +0000
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: What happens if your mind lives forever on the Internet?
+
+In the 1940's, Turing wrote about his famous Test, and predicted that within
+20 years we would have machines as intelligent as humans.
+
+In the 1960's, when AI research was just beginning, researchers predicted
+that within the next 20 years we would have machines as intelligent as
+humans.  I remember reading some of these predictions in the 1970's and
+wondering...
+
+In the 1980's, I read Douglas Hofstadter's brilliant book "Godel, Escher,
+Bach" in which he predicted that within the next 20 years we would have
+machines as intelligent as humans.  At that point, I made my own prediction:
+"In 20 years time people will *still* be predicting that in 20 years time we
+would have machines as intelligent as humans!"
+
+In 1999 Ray Kurzweil published "The Age of Spiritual Machines" and Hans
+Moravec published "Robot", which proposed that perhaps even as early as 2020
+to 2030 we will create silicon evolutionary spaces that will develop
+higher-level intelligence.
+
+Bill Gates said "Twenty years from now, predicts Ray Kurzweil, $1,000
+computers will match the power of the human brain."
+
+It seems that *my* prediction was fulfilled! :-)
+
+Some tentative conclusions:
+
+(1) Twenty years is just about as far ahead as anyone can imagine.
+
+(2) "Moore's Law", observed in 1965 that computer power doubles every two
+years.  This "law" continued to hold for many decades, yet despite these
+huge technological gains since Turing's paper in the 1940's, human
+intelligence is still just as far away as it ever was.  It is as if despite
+building bigger and bigger ladders, we are getting no closer to Andromeda
+galaxy!
+
+(3) This suggests that in reality, human intelligence is *infinitely* far
+removed from machine intelligence: in other words, that there really is some
+*qualitative* difference between man and machine, and not just a
+quantitative gap which can be bridged with a few more transistors and a
+better programming language.  You simply cannot get to Andromeda by climbing
+a ladder.  If this is the case, then, a fortiori, you cannot duplicate a
+human mind within a machine.
+
+(4) In this context, the arguments about a "Technological Singularity" begin
+to look more like a "reductio ad absurdum" proof that machine intelligence
+will *never* surpass human intelligence.  (Since the superintelligent
+machine will be able to design a still more intelligent machine, and so on
+ad infinitum.  Quod est absurdum).
+
+------------------------------
+
+Date: Wed, 27 Nov 2019 12:20:01 -0500
+From: Andrew Duane <e91.waggin@gmail.com>
+Subject: Re: Officials Warn of "Juice Jacking" Scams at USB Charging
+  Stations (RISKS-31.48)
+
+"... In a scam called "juice jacking," criminals load malware onto charging
+stations or cables they leave plugged in at the stations, infecting the
+phones and other electronic devices of unsuspecting users..."
+
+This is exactly why I have always labeled and carried power-only micro-USB
+cables that don't even have data wires inside them. They used to be widely
+available for my old micro-USB phones and tablets, but I have not seen them
+for my new and (not even remotely) improved USB-C cables or my wife's Apple
+Lightning cables.
+
+My workaround for the new phones is to carry a wireless charging pad. Even
+though they are far less convenient, I assume malware can't be transmitted
+over Qi-charging. Should that last sentence end with the word "yet"?
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.49
+************************

@@ -1,0 +1,441 @@
+precedence: bulk
+Subject: Risks Digest 29.71
+
+RISKS-LIST: Risks-Forum Digest  Monday 22 August 2016  Volume 29 : Issue 71
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.71>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Aviation Experts Urge Caution on Releasing Self-Driving Cars (WSJ)
+I Just Drove Eight Hours on Tesla Autopilot and Lived to Tell the Tale
+  (Bloomberg)
+The New York Times and The Associated Press!! (PGN)
+"The Internet" vs "internet" and other sundry thoughts (Richard Bos)
+"Android malware being spread via Google Adsense" (InfoWorld)
+Snowden Junior (motherboard)
+The NSA leak is real, Snowden documents confirm (Sam Biddle)
+Cisco confirms NSA-linked zeroday targeted its firewalls for years
+  (Ars Technica)
+"Microsoft changes Win7/8.1 updates, pushes even harder for Windows 10"
+  (Woody Leonhard)
+People ignore software security warnings up to 90% of the time (BYU)
+Comcast's $70 gigabit offer good only in cities with Google Fiber (Ars)
+Chemistry group throws out election results after fears of vote rigging
+  (PGN)
+Re: How to hack an election in seven minutes (Richard Bos)
+Re: Facebook will bypass web adblockers, but offer ad targeting opt-outs
+  (Richard Bos)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 21 Aug 2016 12:12:25 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Aviation Experts Urge Caution on Releasing Self-Driving Cars (WSJ)
+
+http://www.wsj.com/articles/aviation-experts-suggest-caution-releasing-self-driving-cars-1469611801
+
+------------------------------
+
+Date: Sun, 21 Aug 2016 12:28:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: I Just Drove Eight Hours on Tesla Autopilot and Lived to Tell the Tale
+
+http://www.bloomberg.com/news/articles/2016-08-10/i-just-drove-8-hours-on-tesla-autopilot-and-lived-to-tell-the-tale
+
+  [If you believe in basing probabilities on past experience, the odds of
+  not living to tell the tale are one in a tens of thousands for Tesla X and
+  S computer-assisted cars, and zero in millions of miles for Google
+  self-driving cars.  PGN]
+
+------------------------------
+
+Date: Sun, 21 Aug 2016 14:41:04 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The New York Times and The Associated Press!!
+
+In an Irony of Ironies, Sunday's editorial page of *The New York Times*
+(with mentions of "the internet" [all lower case]) has the following
+sentence in an editorial on the shortage of vaccines for the current
+epidemic of yellow fever in Angola and the Democratic Republic of Congo:
+
+  Angola couldn't account for a million doses [the W.H.O.] sent it early
+  this year, The Associated Press recently reported.
+             ^^^
+
+My apologies to *The Times*: all these years in RISKS I have been mistakenly
+referring to this newspaper as *the New York Times*, when actually the
+Masthead clearly says its name is "The New York Times".  So now we must
+refer to "The Associated Press" (although as previously noted, I think they
+have earned the lower-case "the associated press") and "The Boston Globe"
+and so on.  However, to be utterly consistent, I will also consistently now
+refer to "The Internet" rather than my previous otherwise use of "the
+Internet" (certainly a proper term) rather than the emerging media's
+preference the amorphous use of "the internet".  (I actually learned the
+proper use of unique proper names in my high school, which our then
+long-time Principal Elizabeth Jean Brown consistently reminded us is
+"The Rye High School"!)  Cheers!
+
+Note that *The NY Times* is apparently using W.H.O. (as an incomplete
+initialism for The World Health Organization), presumably because WHO would
+be confusing as an mistakenly emphatic version of "who" if lower-cased -- an
+example I could have noted in my rant in RISKS-29.68.  I presume it would
+otherwise be "The WHO" (which conjures up Dr Seuss), or "the Who" (which
+conjures up the English rock band).  Yes, consistency is the hobgoblin of
+little minds, so I'm certainly not trying to be consistent -- just perhaps a
+little annoying to some RISKS readers in pointing out a pervasive lack of
+consistency elsewhere.  Maybe the doubters might now realize why it should
+be "The Internet".  PGN
+
+------------------------------
+
+Date: Sun, 21 Aug 2016 13:13:58 GMT
+From: raltbos@xs4all.nl (Richard Bos)
+Subject: "The Internet" vs "internet" and other sundry thoughts (PGN, R 29 68)
+
+I'll add the Dutch perspective, here, just for comparison: according to the
+Green Booklet, which contains spelling regulations for the Dutch language,
+the *official* name of a *unique* institution gets a capital letter; the
+same name when applied to a general category does not. This can get a little
+weird at first sight. For example, Dutch capitalises the British Parliament,
+but not the German parliament, because the UK Parliament is officially
+called that, while the German one is the Bundestag, which is *a* parliament.
+
+The issue is now to determine whether the Internet, or the internet, is an
+official institution with an official name, or merely the largest and most
+well-regulated example of an inter-network. I offer no opinion in this case
+(the Green Booklet certainly doesn't!), I merely note how Dutch would
+capitalise the word in each case. In fact, I can see arguments for both
+sides.
+
+Brand names also get capitals by default. So do names of companies and
+organisations. In the latter cases (and presumably the former, though I
+can't find this noted explicitly) the trademark holder can decide to write
+his own name lower-case after all, and the public is supposed to follow
+suit. However, whatever the i/Internet is, as far as I know it's not a legal
+trademark.  (Also, genericised trademarks get decapitalised, so "aspirine"
+is a generic analgesic while "Aspirine" is (still?) the specific Bayer
+product; but the whole discussion is whether I/internet has become
+genericised enough, so that doesn't help us here.)
+
+------------------------------
+
+Date: Thu, 18 Aug 2016 09:27:44 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Android malware being spread via Google Adsense"
+
+InfoWorld, 17 Aug 2016
+Google's Adsense advertising program is used by many sites across the
+Internet. But Android users should beware of some nasty malware that
+is being spread by Google's Adsense network.
+http://www.infoworld.com/article/3108655/android/android-malware-being-spread-via-google-adsense.html
+
+selected text:
+
+     More at Neowin
+
+  [I like to quote a relevant portion so RISKS readers can determine whether
+  they should go to the full article.  Neowin disables cut-and-paste on the
+  article on my computer.  Let InfoWorld get the hits.]
+
+------------------------------
+
+Date: Thu, 18 Aug 2016 14:41:45 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Snowden Junior (motherboard)
+
+"It's Snowden Junior" - Former NSA Employees Say NSA Hack Is The Work Of A
+  "Rogue Insider"
+Motherboard, 18 Aug 2016, zero hedge
+
+The last time an NSA insider claimed that a rogue agent originating at the
+spy agency itself may be the source of the recent Democratic server (and
+George Soros) hacks and subsequent leaks, was three weeks ago when former
+NSA employee, William Binney said that " NSA Has All Of Hillary's Deleted
+Emails, It May Be The Leak
+<http://www.zerohedge.com/news/2016-07-31/whistleblowers-stunning-claim-nsa-
+has-all-hillarys-deleted-emails-it-may-be-leak> ."
+
+Now, in the aftermath of the latest major hack, one involving none other
+than the NSA's special operations team, the "Equation Group" by a mysterious
+hacker collective calling itself "The Shadow Brokers" which even the likes
+of Edward Snowden
+<http://www.zerohedge.com/news/2016-08-16/edward-snowden-explains-historic-n
+sa-hack-escalation-could-get-messy-fast> hinted may have been done by
+Russia, speculation has returned that this latest, and most troubling hack
+yet, was also an inside job.
+
+In an interview with Motherboard, titled " Former NSA Staffers: Rogue
+Insider Could Be Behind NSA Data Dump
+<https://motherboard.vice.com/read/former-nsa-staffers-rogue-insider-shadow-
+brokers-theory> " an anonymous insider has said that the chances of a hacker
+remotely breaking into the National Security Agency's systems are very
+unlikely. Despite accusations that the leak is Russia's meddling, the data
+dropped online under the name "the Shadow Brokers" would have required
+someone with the ability to access the NSA's server, the former NSA employee
+told the news outlet.
+
+As Motherboard puts it, an insider could have stolen the NSA hacking tools
+from the NSA, in a similar fashion to how former NSA contractor Edward
+Snowden stole an untold number of the spy agency's top secret documents.
+This theory is being pushed by someone who claims to be, himself, a former
+NSA insider. [...]
+
+http://www.zerohedge.com/news/2016-08-18/%E2%80%9Cit%E2%80%99s-snowden-junior-former-nsa-employees-say-nsa-hack-work-rogue-insider
+
+------------------------------
+
+Date: August 21, 2016 at 1:46:10 AM GMT+9
+From: Hendricks Dewayne <dewayne@warpspeed.com>
+Subject: The NSA leak is real, Snowden documents confirm (Sam Biddle)
+
+Sam Biddle, 19 Aug 2016  [Re: RISKS-29.69.70]
+https://theintercept.com/2016/08/19/the-nsa-was-hacked-snowden-documents-confirm/
+
+On Monday, a hacking group calling itself the ShadowBrokers announced an
+auction for what it claimed were cyberweapons made by the NSA. Based on
+never-before-published documents provided by the whistleblower Edward
+Snowden, The Intercept can confirm that the arsenal contains authentic NSA
+software, part of a powerful constellation of tools used to covertly infect
+computers worldwide.
+
+The provenance of the code has been a matter of heated debate this week
+among cybersecurity experts, and while it remains unclear how the software
+leaked, one thing is now beyond speculation: The malware is covered with the
+NSA's virtual fingerprints and clearly originates from the agency.
+
+The evidence that ties the ShadowBrokers dump to the NSA comes in an agency
+manual for implanting malware, classified top secret, provided by Snowden,
+and not previously available to the public. The draft manual instructs NSA
+operators to track their use of one malware program using a specific
+16-character string, ace02468bdf13579.  That exact same string appears
+throughout the ShadowBrokers leak in code associated with the same program,
+SECONDDATE.
+
+SECONDDATE plays a specialized role inside a complex global system built by
+the U.S. government to infect and monitor what one document estimated to be
+millions of computers around the world. Its release by ShadowBrokers,
+alongside dozens of other malicious tools, marks the first time any full
+copies of the NSA's offensive software have been available to the public,
+providing a glimpse at how an elaborate system outlined in the Snowden
+documents looks when deployed in the real world, as well as concrete
+evidence that NSA hackers don't always have the last word when it comes to
+computer exploitation.
+
+But malicious software of this sophistication doesn't just pose a threat to
+foreign governments, Johns Hopkins University cryptographer Matthew Green
+told The Intercept:
+
+  The danger of these exploits is that they can be used to target anyone who
+  is using a vulnerable router. This is the equivalent of leaving
+  lockpicking tools lying around a high school cafeteria. It's worse, in
+  fact, because many of these exploits are not available through any other
+  means, so they're just now coming to the attention of the firewall and
+  router manufacturers that need to fix them, as well as the customers that
+  are vulnerable.
+
+So the risk is twofold: first, that the person or persons who stole this
+information might have used them against us. If this is indeed Russia, then
+one assumes that they probably have their own exploits, but there's no need
+to give them any more. And now that the exploits have been released, we run
+the risk that ordinary criminals will use them against corporate targets.
+
+The NSA did not respond to questions concerning ShadowBrokers, the Snowden documents, or its malware.
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 16:20:56 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Cisco confirms NSA-linked zeroday targeted its firewalls for years
+
+Ars Technica via  NNSquad
+http://arstechnica.com/security/2016/08/cisco-confirms-nsa-linked-zeroday-targeted-its-firewalls-for-years/
+
+  To exploit the vulnerability, an attacker must control a computer already
+  authorized to access the firewall or the firewall must have been
+  misconfigured to omit this standard safeguard.  "It's still a critical
+  vulnerability even though it requires access to the internal or management
+  network, as once exploited it gives the attacker the opportunity to
+  monitor all network traffic," Mustafa Al-Bassam, a security researcher,
+  told Ars. "I wouldn't imagine it would be difficult for the NSA to get
+  access to a device in a large company's internal network, especially if it
+  was a datacenter."
+
+Depends on the company, of course. But still another reason why moving away
+from enterprise firewall models toward individual device/user authentication
+models is important.
+
+------------------------------
+
+Date: Thu, 18 Aug 2016 09:39:10 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Microsoft changes Win7/8.1 updates, pushes even harder for
+  Windows 10" (Woody Leonhard)
+
+Woody Leonhard, InfoWorld, 16 Aug, 2016
+Starting in October, patches will be cumulative and Win7/8.1
+customers will effectively cede control of their PCs to Microsoft
+Microsoft changes Win7/8.1 updates, pushes even harder for Windows 10
+http://www.infoworld.com/article/3108405/microsoft-windows/microsoft-changes-win781-updates-pushes-even-harder-for-windows-10.html
+
+opening text:
+
+Windows 7 and 8.1 have had a good run, but that's about to come to a
+close. According to new guidelines, Microsoft will start rolling out Windows
+7 and 8.1 (as well as Server 2008 R2, 2012, and 2012 R2) patches in
+undifferentiated monthly blobs. The patches will be cumulative, which
+eliminates the need to exercise judgment in selecting the patches you
+want. At the same time, though, the new approach severely hampers your
+ability to recover from bad patches -- and it allows Microsoft to put
+anything it wants on your Win7/8.1 PC.
+
+  If you haven't yet read Nathan Mercer's Aug. 15 post on further
+  simplifying servicing models for Windows 7 and Windows 8.1, I suggest you
+  do so now.
+<https://blogs.technet.microsoft.com/windowsitpro/2016/08/15/further-simplifying-servicing-model-for-windows-7-and-windows-8-1/>
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 16:54:31 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: People ignore software security warnings up to 90% of the time
+
+Phys.org via NNSquad
+
+http://phys.org/news/2016-08-people-software-percent.html
+
+  A new study from BYU, in collaboration with Google Chrome engineers, finds
+  the status quo of warning messages appearing haphazardly -- while people
+  are typing, watching a video, uploading files, etc. -- results in up to 90
+  percent of users disregarding them.  Researchers found these times are
+  less effective because of "dual task interference," a neural limitation
+  where even simple tasks can't be simultaneously performed without
+  significant performance loss. Or, in human terms, multitasking.
+
+It's not just a matter of when they're presented. Another aspect of the
+problem is that people stop paying attention to these warnings because they
+simply don't trust them. They've been bombarded by so many fake warnings and
+crooked false alarms -- and in millions of cases burned by them -- that they
+simply refuse to react to new warnings on a reliable basis because they
+don't have the expertise to judge if they're real or not. A completely
+sensible attitude in key respects from their standpoints, unfortunately.
+
+------------------------------
+
+Date: Fri, 19 Aug 2016 08:56:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Comcast's $70 gigabit offer good only in cities with Google Fiber
+
+NNSquad
+http://arstechnica.com/information-technology/2016/08/comcasts-70-gigabit-offer-is-only-good-in-cities-with-google-fiber/
+
+  But when Comcast announced gigabit Internet for parts of Chicago this
+  week, the no-contract price of $139.95 was the only one mentioned. The
+  difference, as DSLRreports wrote today, is that there's no Google Fiber
+  providing competition in Chicago yet. While Google Fiber has tentative
+  plans to expand to Chicago, its $70 gigabit Internet service is already
+  available in parts of Atlanta and Nashville ...  Unlike Google Fiber and
+  AT&T's GigaPower fiber service, Comcast's gigabit cable doesn't offer
+  symmetrical speeds. New DOCSIS 3.1 (Data over Cable Service Interface
+  Specification) technology dramatically increases download speeds, but the
+  Comcast offering is just 35Mbps upstream. Comcast does have a symmetrical
+  2Gbps residential Internet service that uses fiber, but it costs $300 a
+  month with installation and activation fees of up to $1,000.
+
+If this doesn't shine a floodlight on the impact of competition in the
+ISP access marketplace, nothing can. Proof that when a dominant ISP
+doesn't have effective competition, they feel free to screw consumers.
+It's right there in black and white!
+
+------------------------------
+
+Date: Fri, 19 Aug 2016 14:18:14 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Chemistry group throws out election results after fears of vote rigging
+
+http://www.sciencemag.org/news/2016/08/chemistry-group-throws-out-election-results-after-fears-vote-rigging?utm_campaign=news_daily_2016-08-18&et_rid=17776002&et_cid=727904
+
+------------------------------
+
+Date: Sun, 21 Aug 2016 13:13:58 GMT
+From: raltbos@xs4all.nl (Richard Bos)
+Subject: Re: How to hack an election in seven minutes (Ben Wofford, RISKS-29.68)
+
+And another bit of Dutch perspective: this happened in our country, too, and
+I don't think anyone wants the voting machines back. (Then again, we don't
+vote for prison directors or dog inspectors, and we don't have half a dozen
+elections on the same day.)
+
+------------------------------
+
+Date: Sun, 21 Aug 2016 13:13:58 GMT
+From: raltbos@xs4all.nl (Richard Bos)
+Subject: Re: Facebook will bypass web adblockers, but offer ad targeting
+  opt-outs (LW, RISKS-29.68)
+
+> It should be noted that Google has *long* offered detailed controls to users
+> over both local and third-party ad targeting, at:
+> https://www.google.com/settings/ads
+
+Well, except that (1) this setting *demands* that you accept third-party
+cookies, which is in itself a privacy risk - and Google knows that; and (2)
+it works properly only if you're permanently logged in to a Google account,
+which ditto and ditto.  "Do No Evil" is less and less applicable.
+
+Just use an ad blocker; it's a necessity these days, not so much to stop
+seeing ads (I don't care much about static, silent, non-executing ads) as to
+stop the malware, both the intentional kind and the ones that lag your
+machine out of sheer incompetence. These kinds of ads keep appearing despite
+the advertisers' and advertisement vendors' "best" efforts; unless and until
+they *provably* clean up their act, an ad blocker is a requirement for
+safely browsing the web. And Google isn't even the worst, merely the largest
+-- but they're hardly to be trusted, either.
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.71
+************************

@@ -1,0 +1,412 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 23 March 2016  Volume 29 : Issue 39
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.39.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Why Hackers Might Help FBI and not Apple (Perlroth/Benner)
+Re: Why Hackers Might Help FBI and not Apple: Cellebrite (PGN)
+Radio Attack Lets Hackers Steal 24 Different Car Models (Andy Greenberg,
+  Steven Sprague, James Hughes)
+Re: American Express 3rd-party breach (John Levine)" <johnl@iecc.com>
+Re: Ukraine Electric SANS Report (Peter Bernard Ladkin)
+Way to Go, FCC. Now Manufacturers Are Locking Down Routers (WiReD via
+  Lauren Weinstein)
+New York has just opened a massive public spying network (Kirsty Styles)
+Utilization at Internet Interconnection Points (Nick Feamster)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 23 Mar 2016 11:01:09 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Why Hackers Might Help FBI and not Apple (Perlroth/Benner)
+
+Nicole Perlroth and Katie Benner, *The New York Times*, 23 March 2016
+
+Excerpts (lightly PGN-ed):
+
+Google, Microsoft, Facebook, Twitter, Mozilla and many other tech companies
+all pay outside hackers two turn over bugs in their products and systems.
+Uber began a new bug bounty program [yesterday].  Google has paid outside
+hackers more than $6M since it announced a bug bounty program in 2010, and
+last week doubled its top reward to $100,000 for anyone who can break into
+Chromebook.
+
+Yet Apple has yet to give hackers anything more than a gold star.  When
+hackers turn over serious flaws in its products, they may see their name(s)
+listed on the company's website. ... Apple could now be doing more,
+especially in this day and age where the conventions of finding bugs and
+fixing them have changed.  Just this week, researchers at JHU uncovered a
+flaw that would allow attackers to decrypt the contents of photos and videos
+attached in Apple's iMessage program.  [Actually, they reported it to Apple
+back in December, but diligently withheld announcing it publicly until Apple
+had fixed it.] ...
+
+Jay Kaplan, former NSA analysis and co-founder of Synack: ``Apple can
+embrace security researchers, or try to facilitate programs that will secure
+its operating system, but it's never going to be able to compete with what
+is going on behind the scenes in the black market.  It's just not going to
+happen.''
+
+------------------------------
+
+Date: Wed, 23 Mar 2016 12:02:13 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Why Hackers Might Help FBI and not Apple: Cellebrite
+
+An Israeli newspaper has reported that data forensics experts at
+Cellebrite are involved in the case.  [PGN-ed]
+http://www.ynetnews.com/articles/0,7340,L-4782246,00.html
+http://www.bbc.com/news/technology-35883441
+
+Cellebrite told the BBC that it works with the FBI but would not say more.
+However, its website states that one of its tools can extract and decode
+data from the iPhone 5C -- the model in question -- among other locked
+handsets.
+<http://www.cellebrite.com/Pages/ios-forensics-physical-extraction-decoding-and-analysis-from-ios-devices>
+
+  ``File system extractions, decoding and analysis can be performed on
+  locked iOS devices with a simple or complex passcode," Cellebrite's site
+  states. ... Simple passcodes will be recovered during the physical
+  extraction process and enable access to emails and keychain passwords. ...
+  If a complex password is set on the device, physical extraction can be
+  performed without access to emails and keychain.''
+
+------------------------------
+
+Date: Tue, Mar 22, 2016 at 10:18 AM
+From: Hendricks Dewayne <dewayne@warpspeed.com>
+Subject: Radio Attack Lets Hackers Steal 24 Different Car Models
+
+Andy Greenberg, *WiReD*, 21 Mar 2016
+http://www.wired.com/2016/03/study-finds-24-car-models-open-unlocking-ignition-hack/
+
+For years, car owners with keyless entry systems have reported thieves
+approaching their vehicles with mysterious devices and effortlessly opening
+them in seconds. After having his Prius burgled repeatedly outside his Los
+Angeles home, the New York Times' former tech columnist Nick Bilton came to
+the conclusion that the thieves must be amplifying the signal from the key
+fob in the house to trick his car's keyless entry system into thinking the
+key was in the thieves' hand. He eventually resorted to keeping his keys in
+the freezer.
+
+Now a group of German vehicle security researchers has released new findings
+about the extent of that wireless key hack, and their work ought to convince
+hundreds of thousands of drivers to keep their car keys next to their
+Pudding Pops. The Munich-based automobile club ADAC late last week made
+public a study it had performed on dozens of cars to test a radio
+*amplification attack* that silently extends the range of unwitting drivers'
+wireless key fobs to open cars and even start their ignitions, as first
+reported by the German business magazine WirtschaftsWoche. The ADAC
+researchers say that 24 different vehicles from 19 different manufacturers
+were all vulnerable, allowing them to not only reliably unlock the target
+vehicles but also immediately drive them away.
+
+``This clear vulnerability in [wireless] keys facilitates the work of
+thieves immensely,'' reads a post in German about the researchers' findings
+on the ADAC website. ``The radio connection between keys and car can easily
+be extended over several hundred meters, regardless of whether the original
+key is, for example, at home or in the pocket of the owner.''
+
+That car key hack is far from new: Swiss researchers published a paper
+detailing a similar amplification attack as early as 2011. But the ADAC
+researchers say they can perform the attack far more cheaply than those
+predecessors, spending just $225 on their attack device compared with the
+multi-thousand-dollar software-defined radios used in the Swiss researchers'
+study. They've also tested a larger array of vehicles and, unlike the
+earlier study, released the specific makes and models of which vehicles were
+susceptible to the attack; they believe that hundreds of thousands of
+vehicles in driveways and parking lots today remain open to the wireless
+theft method.
+
+The Vulnerable Makes and Models
+
+Here's the full list of vulnerable vehicles from their findings, which
+focused on European models: the Audi A3, A4 and A6, BMW 730d, Citroen DS4
+CrossBack, Ford Galaxy and Eco-Sport, Honda HR-V, Hyundai Santa Fe CRDi, KIA
+Optima, Lexus RX 450h, Mazda CX-5, MINI Clubman, Mitsubishi Outlander,
+Nissan Qashqai and Leaf, Opel Ampera, Range Rover Evoque, Renault Traffic,
+Ssangyong Tivoli XDi, Subaru Levorg, Toyota RAV4, and Volkswagen Golf GTD
+and Touran 5T. Only the BMW i3 resisted the researchers' attack, though they
+were still able to start its ignition. And the researchers posit -- but
+admit they didn't prove -- that the same technique likely would work on
+other vehicles, including those more common in the United States, with some
+simple changes to the frequency of the equipment's radio communications.
+
+The ADAC released a video that shows surveillance camera footage of a
+real-world theft that seemed to use the technique, as well as a
+demonstration by the group's own researchers.  [...]
+
+------------------------------
+
+Date: Wed, 23 Mar 2016 14:56:33 +0000
+From: Steven Sprague <steven@rivetz.com>
+Subject: Re: Radio Attack Lets Hackers Steal 24 Different Car Models
+
+This is really fun but it is the result of not having the simple role of
+user intent. Simply adding a timer to the fob could result in the fob only
+responding for 5 min after any button is pushed.
+
+This concept is similar to how any malware on a pc can use the users Smart
+card because it is left plugged in and the Operating system can easily steal
+the PIN and enable remote signing or encryption functions.
+
+User intent is a critical part of the formation of a modern transaction or
+instruction. Technologies like Trusted User Interface (TUI) which is part of
+the Trusted Execution Environment in Samsung handsets provides a solid
+capability to assure the user participates.
+
+------------------------------
+
+Date: Wed, 23 Mar 2016 08:27:40 -0700
+From: James Hughes <jphughes@mac.com>
+Subject: Re: Radio Attack Lets Hackers Steal 24 Different Car Models
+  (Sprague)
+
+  > This is really fun but it is the result of not having the simple role of
+  >  user intent.
+
+....as exemplified by the same attack being used on NFC credit cards. The
+Apple (and I assume other NFC enabled smart devices) do capture intent so
+they are somewhat more secure.
+
+------------------------------
+
+Date: 23 Mar 2016 02:03:11 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: American Express 3rd-party breach (Al Mac, RISKS-29.38)
+
+I bought a nice leather wallet with a built in tinfoil hat:
+
+http://www.idstronghold.com/rfid-blocking-secure-wallet-10slots-idsh7005.asp
+
+It does seem to work -- NFC apps on my phone can't read cards through the
+wallet, and tapping the wallet on a contactless credit card terminal never
+beeps.
+
+I originally got it to protect my NEXUS card (a passport card issued by the
+US and Canadian governments) but now I have several contactless credit and
+debit cards, too.  Wallet also available on Amazon for $2 more.
+
+------------------------------
+
+Date: Wed, 23 Mar 2016 07:11:31 +0100
+From: Peter Bernard Ladkin <ladkin@rvs.uni-bielefeld.de>
+Subject: Re: Ukraine Electric SANS Report (RISKS-29.37,38)
+
+I think it is useful to separate concerns with regard to the Ukrainian power
+outage in December 2015.  One concern involves a cyber attack on the
+infrastructure related to electricity distribution ICT systems. Another
+involves electricity outages.
+
+First: There was a cyber attack on electricity-distribution infrastructure
+in Ukraine on 2015-12-24, as well as a DoS attack on the voice-telephone
+systems of the targeted energy companies. These cyberattacks did not cause
+the electricity outages, according to the SANS Report.
+
+Second: The electricity outages were caused by human control action,
+according to the SANS Report.  These actions were apparently remotely
+executed.
+
+Here is the citation:
+
+[begin quote SANS Report]
+  Regardless of the impact of the SCADA network environment, neither [of the
+  two pieces of malware identified] contained the required components to
+  cause the outage. The outages were caused by the use of the control
+  systems and their software through direct interaction by the
+  adversary. All other tools and technology, such as [the identified
+  malware], were used to enable the attack or delay restoration efforts.
+[end quote SANS Report]
+
+The outages were apparently caused by human action using valid
+authentication for the control systems. There is apparently no public
+information, if any at all, on who the attackers were. I note that Ukraine
+is undergoing civil war which has lasted so far a couple of years. The
+attackers could have been employees with legitimate authentication
+credentials who wished to disrupt supply. They could also have been
+breakers-in who managed to obtain authentication credentials for the control
+systems through any of the well-known methods.
+
+The SANS report, and the RISKS contributions by Alister Macintyre, focus on
+the first of these concerns, the mechanisms of the cyber attacks. It is not
+at all surprising either that hostile actors disrupt computer systems to
+which they have access or that there is malware available for them to do
+so. I am not sure how much we can learn from this.
+
+I am also not sure at this point what we can learn from the outage itself.
+It is obvious that hostile actors using valid authentication can disrupt the
+function of a control system. The issue of remote access facilities to
+control systems on industrial plant, and the vulnerabilities that go along
+with it, is well-known to security professionals.
+
+However, there is a considerable challenge in raising the awareness of
+engineering-plant personnel about the criticality of the computer systems
+they might be using. I address those in a blog post at
+http://www.abnormaldistribution.org/2016/03/23/power-plants-and-cyberawareness/
+
+Six years after Stuxnet, it appears that some nuclear-plant operators still
+think that if a system is "air-gapped" (that is, not connected to external
+computer communication networks) it is not vulnerable to disruption via
+malware. This from an eye-opening recent report by Chatham House, the Royal
+Institute of International Affairs, on cybersecurity in civil nuclear
+facilities.  I recommend the report highly to Risks readers.
+https://www.chathamhouse.org/publication/cyber-security-civil-nuclear-facilities-understanding-risks
+
+Peter Bernard Ladkin, University of Bielefeld and Causalis
+www.rvs.uni-bielefeld.de www.causalis.com
+
+------------------------------
+
+Date: Wed, 23 Mar 2016 07:44:52 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Way to Go, FCC. Now Manufacturers Are Locking Down Routers
+
+*WiReD* via NNSquad
+http://www.wired.com/2016/03/way-go-fcc-now-manufacturers-locking-routers/
+
+  HEY, REMEMBER WHEN the FCC reassured us last year that it wasn't going to
+  lock down Wi-Fi routers? And everyone breathed a sigh of relief, because
+  custom router firmware is actually a really good thing? Sure, it's fun to
+  improve your router by extending the range or making your network
+  friendlier for guests. But open firmware is important for other reasons:
+  it enables critical infrastructure, from emergency communications for
+  disaster relief and building free community access points to beefing up
+  personal security.  Well, there goes that. Because even though the FCC
+  said its new requirements were not intended to lock down router software
+  or block the installation of open source firmware, at least one large
+  manufacturer has reacted by doing just that. And more could follow.
+
+Unfortunately, the folks rightly fighting against this have proven
+ineffective and refused suggestions for a campaign explaining the dangers of
+these lockdowns in terms of privacy and security. They seemed to feel that
+the FCC could be reasoned with on this. I disagreed. Oh well.
+
+------------------------------
+
+Date: March 22, 2016 at 5:43:13 PM EDT
+From: Hendricks Dewayne <dewayne@warpspeed.com>
+Subject: New York has just opened a massive public spying network
+  (Kirsty Styles)
+
+Kirsty Styles, The Next Web, 22 Mar 2016
+http://thenextweb.com/us/2016/03/22/new-york-just-opened-massive-public-spying-network/
+
+Free public Wi-Fi always sounds a little too good to be true and now
+American civil liberties campaigners have written to the Mayor of New York
+to tell him they are pretty creeped out about how much data the new LinkNYC
+booths will collect.
+
+The anticipated 10,000-strong network across New York will be paid for by
+advertising, which the team explains will represent a ``Crich, context-aware
+platform to reach New Yorkers and visitors.''
+
+Mayor de Blasio has so far only talked about this as a boon for the city as
+he expects it to generate $500 million in advertising sales but, of course,
+personalized ads require serious amounts of data.
+
+The Ts & Cs on signing up require you to turn over your email and then
+submit your future browsing data, as well as information about the specific
+content you read and what stuff you click on.
+
+As identified by the New York Civil Liberties Union, CityBridge says it'll
+only make *reasonable efforts* to clear out your data if it sees 12 months
+of inactivity on the network, so if you're a regular user, you're signing up
+to be stalked for life.
+
+Security and surveillance concerns
+
+The NYCLU explains that the network ``retains a vast amount of information
+about users -- often indefinitely -- building a massive database that
+carries a risk of security breaches and unwarranted NYPD surveillance.''
+
+Donna Lieberman, executive director of the NYCLU, adds: ``Free public Wi-Fi
+can be an invaluable resource for this city, but New Yorkers need to know
+there are too many strings attached.''
+
+The scheme already had to abandon part of its proposed advertising effort
+after a Buzzfeed investigation found that it planned on installing Bluetooth
+devices that would serve ads straight to people's phones as they walked by.
+
+A similar attempt to do this in London, via smartphone tracking Bluetooth
+bins, was halted after concerns were raised by privacy campaigners. [...]
+
+------------------------------
+
+Date: Wed, 23 Mar 2016 09:34:55 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Utilization at Internet Interconnection Points
+
+An Unprecedented Look into Utilization at Internet Interconnection Points
+https://freedom-to-tinker.com/blog/feamster/the-interconnection-measurement-project-revealing-utilization-at-internet-interconnection-points/
+
+Revealing Utilization at Internet Interconnection Points
+Nick Feamster, Princeton University
+http://arxiv.org/pdf/1603.03656v1.pdf
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.39
+************************

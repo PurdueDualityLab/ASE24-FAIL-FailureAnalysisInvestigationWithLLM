@@ -1,0 +1,383 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 30.90
+
+RISKS-LIST: Risks-Forum Digest  Thursday 2 November 2018  Volume 30 : Issue 90
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.90>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Oops! on RISKS issues with missing subject lines (PGN)
+"Why a Helium Leak Disabled Every iPhone in a Medical Facility"
+  (Daniel Oberhaus)
+Chinese spies orchestrated massive hack that stole aviation secrets
+  (Ars Technica)
+How'd this government agency get infected with malware? 9,000 pages
+  of porn. (WashPost)
+The spreading scourge of broken SSL implementation (Mark Thorson)
+Feds took woman's iPhone at border, she sued, now they agree to delete data
+  (Ars Technica)
+Feds Also Using 'Reverse Warrants' To Gather Location/Identifying
+  Info On Thousands Of Non-Suspects (TechDirt)
+The ethics of who to kill in a crash ... (Rob Slade)
+Robot backpack: How this Fusion bot aids collaboration (bbc.com)
+Bolton says he is conducting offensive cyber-action to thwart
+  would-be election disrupters (WashPost)
+A new study finds potentially manipulative ads in apps for preschoolers
+  (WashPost)
+Re: Explainable AI Simulation for AVs (Amos Shapir)
+Re: Toward Human-Understandable, Explainable AI (Richard Stein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 1 Nov 2018 11:12:15 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Oops! on RISKS issues with missing subject lines
+
+Apologies for causing the subject line of the previous two RISKS issues to
+disappear, because of my forgetting to remove a header line in the draft
+issue that comes from my mail system and enables me to append more items.
+We are supposed to learn from our failures; long ago Henry Petroski noted
+that we don't do that very well -- and that we don't even learn enough from
+our successes either.
+
+This issue explicitly avoids the previous problem (which I have almost
+always assiduously avoided in past RISKS issues), and I will revert to my
+usual check-list in the future.  The combination of extraneous text
+introduced by SRI's Office-365 mail system (safelinks messing with URLs,
+insertion of `[EXTERNAL SENDER]' -- which yesterday was changed to `[CAUTION
+EXTERNAL]' -- after protests that the clutter was annoying! -- in subject
+lines from mail from non-SRI subscribers, and huge piles of additional
+header cruft) are making the editing of RISKS issues much more onerous and
+time-consuming.
+
+If you are submitting something for consideration for RISKS, please avoid
+duplicating html versions of your ASCII submission, avoid including entire
+copies of previous messages to which you are responding, try to minimize
+non-utf-8 text, and otherwise reduce the amount of editing I have to do.
+That will help me considerably.  Thanks!  PGN
+
+------------------------------
+
+Date: Thu, 01 Nov 2018 09:18:11 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Why a Helium Leak Disabled Every iPhone in a Medical Facility"
+  (Daniel Oberhaus)
+
+Motherboard, 30 Oct 2018,
+
+https://motherboard.vice.com/en_us/article/gye4aw/why-a-helium-leak-disabled-every-iphone-in-a-medical-facility
+Why a Helium Leak Disabled Every iPhone in a Medical FacilityT
+The bizarre incident happened during the installation of an MRI machine and
+was a surprise to everyone except Apple.
+
+selected text:
+
+An IT worker at a medical facility made a remarkable discovery about iPhones
+and Apple watches earlier this month, after a freshly installed MRI machine
+appeared to disable every iOS device in the hospital.
+
+According to Woolridge, most of the Apple devices in the facility "seemed
+completely dead." Many wouldn't give any indication of charging when plugged
+into the wall and had issues connecting to the cellular network, but not the
+wifi.
+
+Woolridge ran some tests of his own to see if helium could shut down an
+iPhone. He placed an iPhone 8+ in a sealed bag and added some helium. In a
+video of the test Woolridge runs a stopwatch app on the phone. The stopwatch
+increasingly speeds up throughout the course of the video before the iPhone
+freezes at around eight minutes. The helium, it seemed, was messing with the
+iPhone's clock.
+
+  [Gabe Goldberg added:
+    Helium: It's not just to make your voice sound funny.  PGN]
+
+------------------------------
+
+Date: Wed, 31 Oct 2018 23:15:36 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Chinese spies orchestrated massive hack that stole aviation secrets
+  (Ars Technica)
+
+Feds say campaign hacked 13 firms in bid to help Chinese state-owned aerospace company.
+
+https://arstechnica.com/tech-policy/2018/10/feds-say-chinese-spies-and-their-hired-hackers-stole-aviation-secrets/
+
+------------------------------
+
+Date: Tue, 30 Oct 2018 23:11:54 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How'd this government agency get infected with malware? 9,000 pages
+  of porn. (WashPost)
+
+How'd this government agency get infected with malware? 9,000 pages of porn.
+
+An employee at the U.S. Geological Survey visited more than 9,000
+pornography websites and infected the agency's network with malware,
+prompting calls to bolster security measures.
+
+https://www.washingtonpost.com/technology/2018/10/30/howd-this-government-agency-get-infected-with-malware-pages-porn/
+
+------------------------------
+
+Date: Wed, 31 Oct 2018 17:00:19 -0700
+From: Mark Thorson <eee@dialup4less.com>
+Subject: The spreading scourge of broken SSL implementation
+
+I run the Safari browser on an iBook G4. Sure, it's an old machine, but it
+works just fine for most of what I use it for.  There have always been
+websites that don't work or work well with the Safari browser, and it was no
+big deal not to bother looking at those ones.  But in the last year or so,
+there has been a proliferation of broken websites I can't access at all, and
+it has now spread to websites I care about.
+
+When I write to the people who run these websites, the answer is always the
+same: We have to go to https otherwise Google will penalize us in the page
+rankings.  When I pointed out that I can access many https sites just fine,
+one of them said that they checked with their ISP and were told that they
+are running the latest SSL implementation.  I believe that is the problem.
+
+What would be an example of a website that works perfectly fine with my
+computer?  This one:
+
+https://www.google.com/
+
+What would be examples of websites that I care about which have dropped off
+the web (as far as I'm concerned)?  Here's a few of my recently deceased
+former favorites:
+
+https://www.ncahf.org/
+https://marginalrevolution.com/
+https://www.goldmine-elec-products.com/
+
+I think we can presume that Google has web engineers that are as good as any
+in the business, and they don't run broken SSL, even if it is the latest
+version.  They probably check many computers and browsers to see that they
+work with the Google website, probably including mine.  And they made the
+decision to use what they use because they don't want to dump any users like
+me for no good reason.
+
+The only solution appears to be to convince webmasters to use an SSL
+implementation that isn't broken, like what Google itself uses.  And the
+only way to do that is for Google to downgrade broken SSL in page rank,
+upgrade the sites that use unbroken SSL, and make sure everybody knows it.
+
+------------------------------
+
+Date: Wed, 31 Oct 2018 23:19:03 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Feds took woman's iPhone at border, she sued, now they agree to
+  delete data
+
+CAIR lawyer pleasantly surprised: "We were prepared for much more pushback."
+
+https://arstechnica.com/tech-policy/2018/10/feds-agree-to-delete-data-seized-off-womans-iphone-during-border-search/
+
+------------------------------
+
+Date: Thu, 1 Nov 2018 11:59:59 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Feds Also Using 'Reverse Warrants' To Gather Location/Identifying
+  Info On Thousands Of Non-Suspects (TechDirt)
+
+https://www.techdirt.com/articles/20181027/08301740920/feds-also-using-reverse-warrants-to-gather-location-identifying-info-thousands-non-suspects.shtml
+
+------------------------------
+
+Date: Wed, 31 Oct 2018 09:42:58 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: The ethics of who to kill in a crash ...
+
+Over on the (ISC)^2 "community" we're discussing the ethics of who to kill
+in a crash, a la the old trolley problem.  Someone stated that he'd never
+buy/get into a car that would choose to kill him.
+
+The Faraday Auto Navigating Locomotive Company is proud to announce the
+2019 Faraday Watt!
+
+The Watt is our premier model, but priced for families.  It has the greatest
+range of options in its class, including 29 cup-holders (unprecedented for a
+five seat model) and a 73 inch dashboard display.
+
+It also has the greatest range of user-selectable moral driving options,
+including "don't kill me," "kill me but leave my passengers alive," and "I'm
+done for, you go on and marry Alice."
+
+Watt! The fun moral driving solution!
+
+Personally, I suspect I'll have problems with cars that think they are
+smarter than I am, but I know that we should implement them as soon as
+possible because they already drive better than we do and there would be an
+instant saving of lives as soon as we do it.  That's risk management.
+
+(And, yes, I know that there are wonderfully horrifying tales of
+self-driving cars failing recently.  The plural of anecdote is not data.)
+
+------------------------------
+
+Date: Thu, 1 Nov 2018 13:17:12 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Robot backpack: How this Fusion bot aids collaboration (bbc.com)
+
+https://www.bbc.com/news/av/technology-45992475/robot-backpack-how-this-fusion-bot-aids-collaboration
+
+Risk: GBH (grievous bodily harm) via remote takeover.
+
+------------------------------
+
+Date: Thu, 1 Nov 2018 13:01:14 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Bolton says he is conducting offensive cyber-action to thwart
+  would-be election disrupters (WashPost)
+
+[Note: Might make a good April Fools contribution for 2019]
+
+https://www.washingtonpost.com/world/national-security/bolton-acknowledges-us-has-taken-action-to-thwart-would-be-election-disrupters/2018/10/31/0c5dfa64-dd3d-11e8-85df-7a6b4d25cfbb_story.html
+
+"Brett Bruen, a former National Security Council official who has worked on
+countering Russian disinformation, called signaling 'a pretty ineffective'
+warning shot. 'What we have seen over recent months have been largely
+superficial steps, mostly for domestic consumption, to be able to say that
+we are doing something,' he said."
+
+A more effective warning shot would be analogous to what transpired in
+"French Connection 2." The French Chief Superintendent of Police in
+Marseilles called Popeye Doyle's mother.
+
+Call the hacker's mother and explain that her son or daughter is paid to
+interfere with American elections and post fake news stories to disrupt
+democracy. If a mother's admonishment can't change a hacker's behavior, and
+convince them to pursue less provocative career employment, nothing will!
+
+------------------------------
+
+Date: Wed, 31 Oct 2018 20:17:45 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: A new study finds potentially manipulative ads in apps for
+  preschoolers (WashPost)
+
+https://www.washingtonpost.com/technology/the-switch/a-new-study-finds-potentially-manipulative-ads-in-apps-for-preschoolers/2018/10/30/3cc5b606-d764-496b-a5be-b8977fbb9b4c_story.html
+
+"'Our findings show that the early childhood app market is a Wild West, with
+a lot of apps appearing more focused on making money than the child's play
+experience,' Jenny Radesky, a developmental behavioral expert and an author
+of the study, said in a statement. 'This has important implications for
+advertising regulation, the ethics of child app design, as well as how
+parents discern which children's apps are worth downloading.'
+
+"Children use mobile devices one hour every day, on average, highlighting
+the importance of researching what they encounter and how it may affect
+their health, Radesky added."
+
+------------------------------
+
+Date: Thu, 1 Nov 2018 18:07:25 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Explainable AI Simulation for AVs (Stein, Risks 30.89)
+
+What's missing from the detailed list of suggested tests for qualifying
+AV's is, IMHO, the most important aspect of driving: interaction with other
+drivers, understanding their intentions, and conveying our intentions to
+them.
+
+This point is exemplified by the accident in Las Vegas, where a truck
+backed into the path of an AV:  A human driver would have either used his
+horn to alert the truck's driver, or start backing up, assuming the driver
+behind him would realize what was going on, and also back up; the AV in
+this case did neither.
+
+Human drivers make a lot of decisions based upon their social experience,
+not available to the current generation of AV (and probably many future
+generations): How to make sure other drivers understand our intentions?
+How are they going to react to our actions?  Such decisions take into
+account our assessment of who the other driver is -- male or female, young
+or old, etc. -- and also on parameters like "Is it socially acceptable to
+use the horn in this place, or at this time of night?"
+
+Driving is a team effort; it seem likely that AVs will need to share the
+roads with human drivers for quite a long time, and would have to be taught
+some social skills, before they can blend in safely.
+
+------------------------------
+
+Date: Wed, 31 Oct 2018 12:08:35 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: Toward Human-Understandable, Explainable AI (Resiak,
+  RISKS-30.88)
+
+djc@resiak.org wrote:
+
+ >Though I'm all in favor of the kind of transparency Hani Hagras proposes,
+ >I find it difficult to imagine how we can effectively grasp and achieve
+ >it.
+
+Vehicular manslaughter trial juries will likely be equally confounded.
+Consequently, vehicle manufacturers/operators will need hefty product
+liability insurance policies, unless there's regulatory or legislative
+indemnification relief.
+
+Unlike nuclear warfare's existential threat, the AV experiment on public
+roads raises a public health and safety risk. I certainly agree that
+sometimes, it is best to not pursue a solution that risks public health and
+safety.
+
+There's a lot of VC and institutional investor money expecting rapid AV
+industrial expansion. No risk, no reward. The wheels are greased to move
+forward with a bet that AVs constitute a "good enough" simulated equivalence
+of carbon-based motorist accident potential. Only a "Red Asphalt" outcome
+comparison per NHTSA statistics will prove this equivalence.
+
+------------------------------
+
+Date: Tue, 5 May 2018 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks have done to URLs.  I have
+  tried to extract the essence.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.90
+************************

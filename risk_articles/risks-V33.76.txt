@@ -1,0 +1,589 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.76
+
+RISKS-LIST: Risks-Forum Digest  Saturday 15 July 2023  Volume 33 : Issue 76
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.76>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Defective train safety controls lead to bus rides for South Auckland
+ commuters (Gary Hinson)
+Blocked Rail Crossings Snarl Towns, but Congress Won't Act (NYTimes)
+Key Management problem leads to major security breach (WiReD)
+Artificial Intelligence at the Crossroads (Lauren Weinstein)
+It's not just Hollywood -- AI is coming for us all (Lauren Weinstein) 
+Satellite Security Lags Decades Behind the State of the Art (Julia Weiler)
+Idaho helicopter crash likely caused by dropped iPad (Monty Solomon)
+3 tax-prep firms shared 'extraordinarily sensitive' data about taxpayers
+ with Meta, lawmakers say (The Boston Globe)
+How addictive, endless scrolling is bad for your mental health (WashPost)
+Your printing service might read your documents. Here's what to know.
+ (WashPost)
+Printer ink is a scam.  Here's how to spend less. (WashPost)
+WordPress plugin installed on 1 million+ sites logged plaintext passwords
+ (Ars Technica)
+Re: OceanGate's safety culture (DJC)
+Re: A Myth About Innovation ... (3daygoaty, Martyn Thomas, John Levine,
+ Mark Lutton)
+Re: G=C3=B6del, Escher, Bach (3daygoaty)
+Re: Italian Data Protection Authority has ordered ChatGPT to stop processing
+ Italian users' (Rich Kulawiec)
+ACM Technology Policy Council Releases Principles for Generative AI
+ Technologies (ACM)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 12 Jul 2023 09:40:38 +1200
+From: Gary Hinson <gary@isect.com>
+Subject: Defective train safety controls lead to bus rides for
+ South Auckland commuters
+
+https://www.stuff.co.nz/national/300925717/te-huia-train-banned-from-auckland-city-after-twice-failing-to-stop-on-red
+
+https://www.rnz.co.nz/news/national/493552/waka-kotahi-temporarily-bans-te-huia-train-from-operating-in-auckland
+
+https://www.nzherald.co.nz/nz/hamilton-to-auckland-train-service-banned-from-auckland-metro-area-due-to-serious-safety-risk-to-passengers/U3L4Z5F3VBEOPOGXDJGUOQR7T4/
+
+According to my layman's understanding of NZ media reports, a commuter
+train route from Hamilton, about 100km South, into Auckland has safety
+issues -- specifically, trains have passed red on (at least) two occasions,
+once earlier this week.  The news reports are a little confusing, for
+instance claiming that the safety warning worked *but* drivers apparently
+ignored them, begging the obvious question about what it means by
+"worked".
+
+Waka Kotahi (the NZ transport authority) has evidently responded by banning
+the train from entering the city, so now it terminates on the city outskirts
+about 30km from the central city, where passengers transfer to buses --
+which pose their own safety concerns of course. The train company management
+seemingly accepts the need to improve the safety systems but appears
+reluctant to do so, presumably due to the costs involved -- a tricky balance
+of profitability against the largely external/societal costs of train
+accidents.  I get the feeling the ban shows the authorities losing patience
+with management and sending a strong message via the news media, as much as
+through the ban itself - a different form of safety control, one that seems
+to be "working".
+
+------------------------------
+
+Date: Tue, 11 Jul 2023 18:23:35 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Blocked Rail Crossings Snarl Towns, but Congress Won't
+ Act (NYTimes)
+
+The industry has used its muscle to prevent federal, state and local
+governments from penalizing companies that park freight trains across roads
+for hours or days.
+
+In a response to questions, the Association of American Railroads attributed
+blocked crossings to local governments, which, it said, had routed roads
+across railway tracks rather than over or under them, an approach that other
+industrialized countries had taken.
+
+John Gray, a senior vice president at the association, said in a statement
+that railroads had taken steps to reduce the impact of blocked
+crossings. "The real solution is not a question of technology or operational
+practices by either the railroad or public agencies," Mr.  Gray said. "It is
+a public infrastructure investment similar to what has taken place in the
+rest of the developed world for more than a century and a half."
+
+Local officials and some railway employees said that explanation was
+self-serving. They link the rise in blocked crossings to a pursuit of bigger
+profits -- Union Pacific, BNSF, CSX and Norfolk Southern have made $96
+billion in profits in the last five years, 13 percent more than in the
+previous five years. The big railroads' profit margins significantly exceed
+those of companies in most other industries.
+
+In search of greater efficiency, railroads have been running longer trains.
+As a result, when those trains are moved, assembled and switched at rail
+yards, they often spill over into nearby neighborhoods, blocking roads,
+local officials and workers said.
+
+Crews have a better sense of the space that shorter trains take up, said
+Randy Fannon Jr., a national vice president of the Brotherhood of Locomotive
+Engineers and Trainmen union, who also oversees its safety task
+force. Longer trains are more difficult to maneuver on single-track
+railroads. Such railroads have sections of track, or sidings, where trains
+can pull aside to allow other trains to pass, but those sections are not big
+enough for very long trains, Mr. Fannon said.
+
+"If you've got two 5,000-foot trains or one 10,000-foot train, you cut your
+locomotive use in half and your train crew in half," he said.  "That's all
+this is about - profit." [...]
+
+The blockages are unrelenting in York - and sometimes extreme.
+
+On a sweltering election day in June 2022, a train blockage lasted more than
+10 hours, forcing many people, some old and ill, to shelter in an arts
+center.  [...]
+
+------------------------------
+
+Date: Fri, 14 Jul 2023 06:41:18 -0400
+From: Bob Gezelter <gezelter@rlgsc.com>
+Subject: Key Management problem leads to major security breach (WiReD)
+
+A major security breach involving both commercial customers and U.S.
+government agencies on the Microsoft cloud apparently exploited a
+compromised encryption certificate.
+
+Encryption keys are literally the root of encryption-centered authentication
+solutions. In one of my chapters in the Computer Security Handbook, Fourth
+Edition (2002), I noted that high-level keys used for credential and code
+signing should be zealously protected.
+
+Security precautions are critical to maintaining cybersecurity.  Regardless
+of the outcome of the investigation into this incident, we should all heed
+the warning and re-examine our procedures for certificates and the keys used
+to validate them.
+
+https://www.wired.com/story/microsoft-cloud-attack-china-hackers/
+
+------------------------------
+
+Date: Thu, 13 Jul 2023 09:32:07 -0700
+From: Lauren Weinstein <lauren@vortex.com>:
+Subject: Artificial Intelligence at the Crossroads
+
+https://lauren.vortex.com/2023/07/13/artificial-intelligence-at-the-crossroads
+
+Suddenly there seems to be an enormous amount of political, regulatory, and
+legal activity regarding AI, especially generative AI.  Much of this is
+uncharacteristically bipartisan in nature.
+
+The reasons are clear. The big AI firms are largely depending on their
+traditional access to public website data as the justification for their use
+of such data for their AI training and generative AI systems.
+
+This is a strong possibility that this argument will ultimately fail
+miserably, if not under current laws then under new laws and
+regulations likely to be pushed through around the world, quite likely
+in a rushed manner that will have an array of negative collateral
+effects that could actually end up hurting many ordinary people.
+
+Google for example notes that they have long had access to public
+website data for Search.
+
+Absolutely true. The problem is that generative AI is wholly different
+in terms of its data usage than anything that has ever come before.
+
+For example, ordinary Search provides a direct value back to sites through
+search results pages links -- something that the current Google CEO has said
+Google wants to de-emphasize (colloquially, "the ten blue links") in favor
+of providing "answers".
+
+Since the dawn of Internet search sites many years ago, search results links
+have long represented a usually reasonable fair exchange for public
+websites, with robots.txt (Robots Exclusion Protocol) available for
+relatively fine-grained access control that can be specified by the websites
+themselves, and which at least the major search firms generally have
+honored.
+
+But generative AI answers eliminate the need for links or other "easy
+to see" references. Even if "Google it!" or other forms of "more
+information" links are available related to generative AI answers at
+any AI firm's site, few users will bother to view them.
+
+The result is that by and large, today's generative AI systems by
+their very nature return essentially nothing of value to the sites
+that provide the raw knowledge, data, and other information that
+powers AI language/learning models.
+
+And typically, generative AI answers (leaving aside rampant inaccuracy
+problems for now) are like high school term papers that haven't even
+included sufficient (if any) inline footnotes and comprehensive
+bibliographies with links.
+
+A very quick "F" grade at many schools.
+
+I have proposed extending robots.txt to help deal with some of these AI
+issues -- and Google also very recently proposed discussions around this
+area.
+
+Giving Creators and Websites Control Over Generative AI:
+
+https://lauren.vortex.com/2023/02/14/giving-creators-and-websites-control-over-generative-ai
+
+But ultimately, the "take -- and give back virtually nothing in return"
+modality of many AI systems inevitably leads toward enormous pushback. And I
+do not sense that the firms involved fully understand the cliff that they're
+running towards in a competitive rush to push out AI systems long before
+they or the world at large are ready for them.
+
+These firms can either grasp the nettle themselves and rethink the
+problematic aspects of their current AI methodologies, or continue
+their current course and face the high probability that governmental
+and public concerns will result in major restrictions to their AI
+projects -- restrictions that may seriously negatively impact their
+operations and hobble positive AI applications for users around the
+world long into the future.
+
+------------------------------
+
+Date: Fri, 14 Jul 2023 10:04:23 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: It's not just Hollywood -- AI is coming for us all
+
+It's not just Hollywood -- AI is coming for us all
+
+The major film studios have long been known to use every trick in the
+book to squeeze writers and actors out of due compensation. The terms
+"above the line" and "below the line" are often synonymous with
+getting paid properly or getting nearly nothing.
+
+The studios want to use AI to replace actors. There are many nuances,
+but that's what's going on. And everyone outside the entertainment
+industry had better wake up to the fact that this isn't just an
+entertainment industry battle here in L.A., but a battle against
+abusive AI systems whose deployment could ultimately wreck untold
+millions of lives.
+
+And to those who argue that this is just technology as always, that everyone
+complains about tech replacing jobs all through history, I would assert that
+AI -- especially generative AI -- is of a wholly different magnitude, unlike
+anything ever seen before, which if uncontrolled will do irreparable,
+destabilizing damage to society that will make previous tech concerns look
+like a pimple compared with Mount Everest.
+
+Reference:
+
+Artificial Intelligence at the Crossroads
+https://lauren.vortex.com/2023/07/13/artificial-intelligence-at-the-crossroads
+
+------------------------------
+
+Date: Fri, 14 Jul 2023 11:39:48 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Satellite Security Lags Decades Behind the State of the Art
+ (Julia Weiler)
+
+Julia Weiler, Ruhr-Universit=C3=A4t Bochum (Germany), 11 Jul 2023,
+via ACM TechNews
+
+Researchers at Germany's Ruhr University Bochum (RUB) and CISPA Helmholtz
+Center for Information Security found a profound lack of modern security
+concepts implemented in low-earth orbit (LEO) satellites. They examined
+three satellite systems and found they were missing security measures
+standard in modern cellphones and laptops, such as code and data
+separation. Software analysis revealed poor technical security could allow
+attackers to hijack the satellites by severing their ground control
+connection. RUB's Johannes Willbold said satellite developers' approach to
+security hinges on the lack of their systems' documentation. However, this
+does not make them any less vulnerable to attack methods like reverse
+engineering, added RUB's Moritz Schloegel.
+
+------------------------------
+
+Date: Fri, 14 Jul 2023 23:26:57 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Idaho helicopter crash likely caused by dropped iPad
+
+https://appleinsider.com/articles/23/07/14/fatal-helicopter-crash-likely-caused-by-dropped-ipad
+
+------------------------------
+
+Date: Wed, 12 Jul 2023 09:47:27 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 3 tax-prep firms shared 'extraordinarily sensitive' data about
+ taxpayers with Meta, lawmakers say (The Boston Globe)
+
+In exchange, Meta was able to access the data to write targeted algorithms
+for its own.
+
+https://www.boston.com/news/politics/2023/07/12/3-tax-prep-firms-shared-extraordinarily-sensitive-data-about-taxpayers-with-meta-lawmakers-say/
+
+------------------------------
+
+Date: Fri, 14 Jul 2023 19:35:33 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How addictive, endless scrolling is bad for your mental health
+ (WashPost)
+
+Social media received its first surgeon general's advisory. Here's how it's
+affecting minds and contributing to a mental-health crisis in young people.
+
+https://www.washingtonpost.com/science/2023/07/14/social-media-mental-crisis-youths/
+
+------------------------------
+
+Date: Mon, 10 Jul 2023 22:41:44 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Your printing service might read your documents. Here's what to
+ know. (WashPost)
+
+Some printers and printing services are snooping on your documents. Here's a
+quick guide to printer privacy for people in a rush.
+
+https://www.washingtonpost.com/technology/2023/07/10/printing-privacy-securi=
+ty-printed-documents/
+
+------------------------------
+
+Date: Fri, 14 Jul 2023 23:57:06 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Printer ink is a scam.  Here's how to spend less. (WashPost)
+
+Americans waste $10 billion each year on name-brand ink. So we tested
+low-cost options including remanufactured cartridges, ink injection kits --
+and even making our own.
+
+https://www.washingtonpost.com/technology/2023/07/12/cheap-printer-ink-refil=
+l-cartridges-save-money/
+
+------------------------------
+
+Date: Thu, 13 Jul 2023 22:28:44 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: WordPress plugin installed on 1 million+ sites logged
+ plaintext passwords (Ars Technica)
+
+https://arstechnica.com/?p=1953744
+
+------------------------------
+
+Date: Tue, 11 Jul 2023 09:17:50 +0200
+From: djc <djc@resiak.org>
+Subject: Re: OceanGate's safety culture (Dorsett)
+
+> And Rush's patent (note you can patent just about anything these days;
+> patents can be powerful weapons, but have little intellectual merit):
+> https://patents.google.com/patent/US11119071B1/en?q=(stockton+rush+carbon+oceangate)&oq=stockton+rush+carbon+oceangate
+
+ From which: "Distinctive acoustic emissions readings and/or waveforms
+observed during testing of hollow carbon fiber composite structures (e.g.,
+cylinders) as pressures are ramped up are indicative of a composite
+seasoning or curing process rather than failure conditions."
+
+Until they're not.
+
+Willful blindness.
+
+------------------------------
+
+Date: Tue, 11 Jul 2023 14:49:55 +1000
+From: 3daygoaty <threedaygoaty@gmail.com>
+Subject: Re: A Myth About Innovation ... (RISKS-33.75)
+
+I suspect a lot of people are now trying to "think different" about
+fake-it-till-you-make-it.  Whether crypto-currencies, Theranos. or this
+submarine (or in fact Legacy Of Ashes by Tim Weiner (2007), about
+"innovation" in the CIA).  Despite epic fails and increasingly deep entry
+of risky innovation into more risky fields, I can't see how pure, more,
+slower, deeper regulation is going to fully de-risk what are inherently
+risky and complicated activities run by people.
+
+However, Oreskes' doesn't convincingly redoubt this, either.
+
+> ...innovation comes from bold trailblazers moving fast and breaking
+things...That story is often wrong, and it was 100 percent wrong in this
+case.
+
+me: it's always 100% wrong where it goes wrong.  Innovation has a high
+failure rate, like 95%, even when proponents are skilled with great tools
+and information.
+
+> ... And the loss of the Titan proves that even in a mature industry, you still
+need regulation.
+
+me: There was regulation, there wasn't enforcement since the sub ran in
+international waters.
+
+Here in the RISKS list I'm sure some will agree there is the risk that risk
+management itself causes risks.  We need an innovative approach to
+regulation, as we have seen in other process-heavy areas (Peer to Patent,
+for example) wherein the regulation is seen as a value add.  Innovators
+will always play fast and loose.  How can the business of reducing risks
+with regulations and enforcement itself be seen differently?
+
+------------------------------
+
+Date: Tue, 11 Jul 2023 10:57:50 +0100
+From: Martyn Thomas <martyn@mctar.uk>
+Subject: Re: Myth about innovation ... (RISKS-33.75)
+
+We should challenge the myth that regulation stifles innovation. Some of the
+most innovative industries are highly regulated. Pharmaceuticals and
+children's toys, for example (in the EU and UK).
+
+------------------------------
+
+Date: 10 Jul 2023 19:42:48 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: A Myth About Innovation May Have Doomed the Titan (RISKS-33.75)
+
+>The man behind the submersible had argued that regulation stifles new
+>ideas.
+
+Well, yeah.  Most ideas are bad ideas, and new ones are no exception.
+
+It would be extremely innovative to make a chain saw out of recycled
+cardboard, but that doesn't mean you'd want to stand anywhere near one.
+
+There also seems to be a problem for some people to understand slogans
+like "move fast and break things." If Facebook fails catastrophically,
+meh, no cat pictures. If a vehicle with people in it, whether on a
+road or under the ocean, fails catastrophically, uh oh.
+
+------------------------------
+
+Date: Mon, 10 Jul 2023 18:08:20 -0400
+From: Mark Lutton <mlutton@rcn.com>
+Subject: Re: Myth about Innovation and Titan
+
+"A Myth About Innovation May Have Doomed the Titan"
+
+When I saw that title, my first thought was "Move fast and break things."
+
+------------------------------
+
+Date: Tue, 11 Jul 2023 15:07:34 +1000
+From: 3daygoaty <threedaygoaty@gmail.com>
+Subject: Re: G=C3=B6del, Escher, Bach (RISKS-33.75)
+
+The RISK is that someone wants to know why Hofstadter wrote GEB, and they
+ask a LLM.  Ask me no questions, I'll tell you no lies.
+
+Me, to ChatGPT: Criticise the statement "Ultimately, I wrote the book to
+share my passion for uncovering hidden connections and to celebrate the
+intricate tapestry of ideas that bind the works of G=C3=B6del, Escher, and
+Bach, as well as the broader human quest for understanding and meaning"
+
+ChatGPT: The statement [ibid] is commendable in its intention to explore
+hidden connections and celebrate the interplay of ideas. However, there are
+a few potential criticisms that can be made:
+
+Lack of clarity: While the statement expresses a desire to share the
+author's passion for uncovering hidden connections, it doesn't provide
+specific details about what those connections are or how they relate to the
+works of G=C3=B6del, Escher, and Bach. Without clear examples or
+explanations, it becomes difficult for readers to understand the specific
+content and purpose of the book.
+
+Overgeneralization: The statement suggests that the book is not only focused
+on the connections between the works of G=C3=B6del, Escher, and Bac= h but
+also on the broader human quest for understanding and meaning. While this
+broader focus may sound intriguing, it risks diluting the specific
+exploration of the connections between the mentioned artists and their
+works. The lack of emphasis on the specific subject matter may result in a
+less focused and cohesive book.
+
+Assumed significance: The statement implies that the connections between
+G=C3=B6del, Escher, and Bach's works hold special significance in the
+broader human quest for understanding and meaning. While these artists and
+their works are undoubtedly influential and thought-provoking, it's
+important to justify and establish why their connections are particularly
+significant in the broader context. Failing to do so may weaken the argument
+and leave readers questioning the relevance and importance of these specific
+connections.
+
+Audience comprehension: The statement assumes that readers are already
+familiar with the works of G=C3=B6del, Escher, and Bach, and their
+significance in the quest for understanding and meaning. However, not all
+readers may have this level of familiarity, and without proper background
+knowledge or explanations, they may struggle to fully engage with the book's
+content.  Providing context and explanations for readers less familiar with
+these artists and their works would enhance accessibility and understanding.
+
+Overall, while the statement conveys an admirable intent to explore hidden
+connections and celebrate the interplay of ideas, it would benefit from
+greater clarity, specificity, and justification to strengthen its argument
+and engage a wider range of readers.
+
+------------------------------
+
+Date: April 3, 2023 0:15:35 JST
+From: Rich Kulawiec <rsk@gsp.org>
+Subject: Re: Italian Data Protection Authority has ordered ChatGPT to
+ stop processing Italian users' (RISKS-33.75)
+
+The authors of the "Stochastic Parrots" paper have responded to that "pause"
+letter:
+
+  Statement from the listed authors of Stochastic Parrots on the "AI pause"
+  letter https://www.dair-institute.org/blog/letter-statement-March2023
+
+  The referenced paper is here:
+On the Dangers of Stochastic Parrots | Proceedings of the 2021 ACM
+Conference on Fairness, Accountability, and Transparency
+https://dl.acm.org/doi/abs/10.1145/3442188.3445922
+
+------------------------------
+
+Date: Tue, 11 Jul 2023 10:00:30 -0400 (EDT)
+From: ACM Bulletins <acmbulletin@acm.org>
+Subject: ACM Technology Policy Council Releases Principles for Generative AI
+ Technologies
+
+11 Jul 2023
+
+In response to major advances in generative AI technologies -- as well as
+the significant questions these technologies pose in areas including
+intellectual property, the future of work, and even human safety -- ACM's
+global Technology Policy Council (TPC) has issued "Principles for the
+Development, Deployment, and Use of Generative AI Technologies."
+(https://www.acm.org/binaries/content/assets/public-policy/ustpc-approved-generative-ai-principles)
+
+Drawing on the deep technical expertise of computer scientists in the United States and Europe, the TPC statement outlines eight principles intended to foster fair, accurate, and beneficial decision-making concerning generative and all other AI technologies. The Introduction to the new Principles advances the core argument that "the increasing power of generative AI systems, the speed of their evolution, broad application, and potential to cause significant or even catastrophic harm, means that great care must be taken in researching, designing, developing, deploying, and using them. Existing mechanisms and modes for avoiding such harm likely will not suffice."
+
+"Principles for the Development, Deployment, and Use of Generative AI
+Technologies" was jointly produced and adopted by ACM's US Technology Policy
+Committee (USTPC) and Europe Technology Policy Committee (Europe TPC). The
+document addresses four new issues uniquely posed by the rise and rapid
+proliferation generative AI. It also revises and restates nine additional
+principles first discussed in the TPC's similarly developed October 2022
+joint "Statement on Principles for Responsible Algorithmic Systems"
+(https://www.acm.org/binaries/content/assets/public-policy/final-joint-ai-statement-update.pdf)
+and draws upon its January 2023 ACM TechBrief: "Safer Algorithmic Systems."
+(https://dl.acm.org/doi/pdf/10.1145/3582277)
+
+Copyright (c) 2023, ACM, Inc. All rights reserved.
+
+------------------------------
+
+Date: Sat, 1 Jul 2023 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) has moved to the ftp.sri.com site:
+   <risksinfo.html>.
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.76
+************************

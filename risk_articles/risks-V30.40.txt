@@ -1,0 +1,933 @@
+precedence: bulk
+Subject: Risks Digest 30.40
+
+RISKS-LIST: Risks-Forum Digest  Friday 28 July 2017  Volume 30 : Issue 40
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.40>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Keen Lab hackers managed to take control of Tesla vehicles again
+  (Electrek)
+Russian parliament bans use of proxy Internet services, VPNs (SacBee)
+Hackers undermine Russia's attempts to control the Internet
+  (Alex Luhn roundabout via Geoff Goodfellow)
+Hackers plan to break into 30 voting machines to put election meddling to
+  the test (USA Today)
+Facebook helped blunt Russian meddling in French elections (Engadget)
+World's most hi-tech voting system raises cyber-defences (Irish Examiner)
+China WhatsApp crackdown only scratches surface of worsening Internet
+  censorship (CNN)
+A smart fish tank left a casino vulnerable to hackers (CNN)
+Beijing Wants AI to Be Made in China by 2030 (The New York Times)
+Chinese Mind-Reading Computer Moves Closer to Reality (Patrick Nelson)
+Myopic CEO perspective, I think (Gabe Goldberg on Fortune item)
+45,000 Facebook Users Leave One-Star Ratings After Hacker's Unjust Arrest
+  (Bleeping Computer)
+Wisconsin Company to Implant Microchips In Employees (KSTP via
+  Gabe Goldberg)
+Chicago festival to mark Pokemon Go anniversary goes awry
+  (San Francisco Chronicle)
+Massive Privacy Breach: Wells Fargo Accidentally Releases Trove of Data on
+  Wealthy Clients (NYTimes)
+Roomba's Next Big Step Is Selling Maps of Your Home to the
+  Highest Bidder (Gizmodo)
+Student denied loan due to namesake (Amos Shapir on BBC item)
+Bugs in popular hacker tools open the door to striking back (WiReD)
+Three Square Market microchips its employees (prlog via
+  Steve Lamont)
+Pile driver vs. underground high-voltage cable. Oops
+  (News Observer via danny burstein)
+Sweden drenched by "The Cloud" (Rick Falkvinge)
+Re: Leaping Kangaroos (3daygoaty)
+Re: 'Energy firms can switch off your freezer for a few minutes at
+  night' (Chris Drewe)
+Re: Bloomberg: A Solar Eclipse Could Wipe Out 9,000 Megawatts of
+  Power Supplies (Kelly Bert Manning)
+Re: Wifi Webcam TENVIS sends all it knows to dvripc.cn
+  (David Alexander, Rob Slade)
+Re: Western tech firms bow to Russian demands to share cybersecrets
+  (Martin Ward)
+NEC updates are like software updates (Re: Charging Phone Kills 14-Year-Old
+  Girl in Bathtub, Burton Strauss III)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 28 Jul 2017 10:12:20 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Keen Lab hackers managed to take control of Tesla vehicles again
+
+Last year, a Chinese whitehat hacker group, the Keen Security Lab at
+Tencent, managed to remotely hack the Tesla Model S through a malicious wifi
+hotspot.  Tesla quickly pushed a fix through an over-the-air software update
+but now the same research group has managed to again gain control of Tesla's
+vehicles.
+<https://electrek.co/2016/09/20/first-tesla-model-s-remotely-controlled-hackers-tesla-pushed-a-fix/>
+<https://electrek.co/2016/09/27/tesla-releases-more-details-on-the-chinese-hack-and-the-subsequent-fix/>,
+
+The hack involved tricking a Tesla drivers into accessing a malicious
+website through a wifi hotspot and then install their own software in order
+to gain access to some of the car's features -- more importantly, the
+braking system.
+
+Tesla's fix included adding code signing in order to prevent anyone else
+from uploading software on Tesla's system, but now Keen Lab says that they
+managed to by-pass the code signing with the latest round of vulnerabilities
+testing on Tesla's car.
+
+Here they list their new exploit this year: [...]
+
+https://electrek.co/2017/07/28/tesla-hack-keen-lab/
+
+  [See also (noted by Monty Solomon):]
+  Chinese group hacks a Tesla for the second year in a row
+https://www.usatoday.com/story/tech/2017/07/28/chinese-group-hacks-tesla-second-year-row/518430001/
+
+------------------------------
+
+Date: Fri, 21 Jul 2017 08:16:45 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Russian parliament bans use of proxy Internet services, VPNs
+
+via NNSquad
+http://www.sacbee.com/news/business/technology/article162838593.html
+
+  Russia's parliament has outlawed the use of virtual private networks, or
+  VPNs, and other Internet proxy services, citing concerns about the spread
+  of extremist materials.  The State Duma on Friday unanimously passed a
+  bill that would oblige Internet providers to block websites that offer VPN
+  services.  Many Russians use VPNs to access blocked content by routing
+  connections through servers outside the country.  The lawmakers behind the
+  bill argued that the move could help to enforce Russia's ban on
+  disseminating extremist content online.
+
+This has nothing to do with terrorist extremism, and everything to do with
+Putin's murderous censorship regime.
+
+------------------------------
+
+Date: Tue, 25 Jul 2017 09:18:29 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Hackers undermine Russia's attempts to control the Internet
+
+John Gilmore famously stated of Internet censorship that "The Net
+interprets censorship as damage and routes around it". [4]
+<https://en.wikipedia.org/wiki/Internet_censorship>
+<https://en.wikipedia.org/wiki/John_Gilmore_(activist)#cite_note-Censorship-4>
+
+ vis-a-vis:
+
+> Date: July 25, 2017 at 10:49:19 AM EDT
+> From: Dewayne Hendricks <dewayne@warpspeed.com>
+> Subject: Hackers undermine Russia's attempts to control the Internet*
+
+> [Note:  This item comes from friend Steve Goldstein.  DLH]
+
+Alec Luhn in Moscow, The Guardian, 25 Jul 2017
+Hackers undermine Russia's attempts to control the Internet.
+Authorities have blacklisted thousands of sites for political dissent since
+Putin's re-election in 2012 -- but activists have subverted the system
+
+https://www.theguardian.com/world/2017/jul/25/hackers-undermine-russias-attempts-to-control-the-internet
+
+Moscow's attempt to control the Internet inside Russia has come unstuck
+following a campaign by hackers who have subverted a system of
+blacklisting sites deemed inappropriate.
+
+Since Vladimir Putin's re-election in 2012, authorities have banned
+thousands of sites -- some for promoting social ills, others for political
+dissent -- by inscribing their particulars on a blacklist and forcing
+Internet service providers (ISPs) to block them.
+
+But in recent weeks, activists seeking to push back against the crackdown
+have undermined the system by purchasing banned sites and inserting the
+particulars of perfectly legal web pages into their domain names.
+
+Havoc ensued.
+
+Last month, cash machines belonging to big state banks VTB and Sberbank
+stopped working. Major news sites and social media services were blocked
+and even Google became inaccessible.
+
+Andrei Soldatov, author of The Red Web, a book about Russia's online
+surveillance: ``The Kremlin proved incapable of putting the Internet under
+control by technical means. The only thing that partly works is intimidation
+of companies and users.  To make intimidation more effective you need to
+make the rules more vague and complicated, to make almost everyone guilty by
+definition.''
+
+With the blacklisting system looking vulnerable, the fear is that the
+authorities will retaliate by introducing an even harsher system of control
+on what web users can view.
+
+Already they have created a new whitelist of sites that can never be
+blocked. And last week, parliament passed a law banning the use of virtual
+private networks (VPNs), used by many to access blocked content. Hundreds of
+people staged a protest march in Moscow at the weekend to object to online
+censorship.
+
+The Internet cat-and-mouse game started five years ago when the state
+telecoms watchdog, Roskomnadzor, was given broad powers to censor the
+Russian web via amendments to a law drafted to ``protect children from
+information harming their health and development.''
+
+This provided for the creation of a register, or blacklist, of banned sites
+that Internet service providers were required to block. Wikipedia,
+LiveJournal, Russia's largest social network VK and largest search engine
+Yandex protested the law as a crackdown on the freedom of information.
+
+With its blacklist, Roskomnadzor went after sites containing child
+pornography and information on narcotics and suicide. But it also bans pages
+for *extremist statements*, a slippery term that has been applied to
+everything from terrorist groups to liberal opposition news sites, and for
+information about unsanctioned public demonstrations.
+
+In the first two years, more than 50,000 web sites were blocked, some 4,000
+of them for extremism. Sites can be blocked based on a court decision or a
+complaint by government agencies or citizens.  [...]
+
+------------------------------
+
+Date: Thu, 27 Jul 2017 23:57:09 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Hackers plan to break into 30 voting machines to put election
+  meddling to the test (USA Today)
+
+https://www.usatoday.com/story/tech/2017/07/26/voting-machines-hackers-election-hack/507071001/
+
+------------------------------
+
+Date: Thu, 27 Jul 2017 08:40:30 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Facebook helped blunt Russian meddling in French elections
+  (Engadget)
+
+NNSquad
+https://www.engadget.com/2017/07/27/facebook-helped-blunt-russian-meddling-in-french-elections/
+
+  Facebook played a key role in identifying and stopping Russian
+  interference in the recent French election, a US congressman has
+  revealed. During the attack, Russian intelligence operatives attempted to
+  spy on Emmanuel Macron's election campaign by posing as friends of
+  Macron's and attempting to glean information. This was in conjunction with
+  the previously reported Russian interference, where spies also used fake
+  Facebook accounts to spread misinformation about the French election.
+
+------------------------------
+
+Date: Tue, 25 Jul 2017 14:13:56 -0400
+From: Eugene Spafford <spaf@ACM.ORG>
+Subject: World's most hi-tech voting system raises cyber-defences
+  (Irish Examiner)
+
+http://www.irishexaminer.com/business/worlds-most-hi-tech-voting-system-raises-cyber-defences-455138.html
+
+------------------------------
+
+Date: Sun, 23 Jul 2017 08:48:17 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: China WhatsApp crackdown only scratches surface of worsening
+  Internet censorship
+
+via NNSquad
+http://www.cnn.com/2017/07/21/asia/china-internet-censorship/index.html
+
+  As Liu Xiaobo, the Chinese Nobel Peace Prize laureate, lay dying in a
+  heavily-guarded hospital last month, there was little mention of his fate
+  in China.  For many younger Chinese, Liu is an unknown figure, the
+  culmination of years of intense censorship of his life and works.  The
+  tiny minority who did attempt to express outrage online at Liu's
+  treatment, or commemorate him after he succumbed to liver cancer on July
+  14, saw their posts blocked and images deleted.  On Weibo, China's most
+  popular Twitter-like platform, users were prevented from posting messages
+  with the words "Nobel," "liver cancer," "RIP" or the candle emoji,
+  according to researchers at Toronto's Citizen Lab and Hong Kong's
+  Weiboscope.
+
+------------------------------
+
+Date: Mon, 24 Jul 2017 09:18:04 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A smart fish tank left a casino vulnerable to hackers
+
+Most people know about phishing -- but one casino recently learned about the
+dangers of actual fish tanks.
+
+Hackers attempted to steal data from a North American casino through a fish
+tank connected to the Internet, according to a report from security firm
+Darktrace.
+
+Despite extra security precautions set up on the fish tank, hackers still
+managed to compromise the tank to send data to a device in Finland before
+the threat was discovered and stopped.
+
+"Someone used the fish tank to get into the network, and once they were in
+the fish tank, they scanned and found other vulnerabilities and moved
+laterally to other places in the network," Justin Fier, director for cyber
+intelligence and analysis at Darktrace, explained to CNN Tech.
+
+http://money.cnn.com/2017/07/19/technology/fish-tank-hack-darktrace/index.html
+
+------------------------------
+
+Date: Mon, 24 Jul 2017 11:48:38 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Beijing Wants AI to Be Made in China by 2030 (The New York Times)
+
+The country laid out a development plan on Thursday to become the world
+leader in AI by 2030, aiming to surpass its rivals technologically and
+build a domestic industry worth almost $150 billion.
+
+Released by the State Council, the policy is a statement of intent from the
+top rungs of China's government: The world's second-largest economy will be
+investing heavily to ensure its companies, government and military leap to
+the front of the pack in a technology many think will one day form the basis
+of computing.
+
+The plan comes with China preparing a multibillion-dollar national
+investment initiative to support moonshot projects, start-ups and academic
+research in A.I., according to two professors who consulted with the
+government about the effort.
+
+The United States, meanwhile, has cut back on science funding. In budget
+proposals, the Trump administration has suggested slashing resources for a
+number of agencies that have traditionally backed research in AI.  Other
+cuts, to areas like high-performance computing, would affect the development
+of the tools that make AI work.
+
+https://mobile.nytimes.com/2017/07/20/business/china-artificial-intelligence.html
+
+------------------------------
+
+Date: Fri, 21 Jul 2017 12:00:32 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: Chinese Mind-Reading Computer Moves Closer to Reality
+
+Patrick Nelson, *Network World*, 19 Jul 2017
+via ACM TechNews, 21 Jul 2017
+Read TechNews Online at: http://technews.acm.org
+
+Researchers at the Chinese Academy of Sciences (CAS) have developed Deep
+Generative Multiview Model (DGMM), a mind-reading program that deciphers
+symbols that people have viewed.  The software scans a person's brain
+activity and then redraws the numerals and symbols previously seen by the
+subject.  The program uses functional magnetic resonance imaging (fMRI)
+imaging to analyze the visual cortex and capture brain activity data.  The
+researchers then run an algorithm on the data, which interprets the signals
+and maps them, thus recreating the image.  "Now, eerily sophisticated
+software is starting to decode that brain activity and assign meaning to it;
+fMRI is also becoming a window on the mind," the CAS researchers say.
+Although other techniques have been used to achieve the same feat, the CAS
+researchers claim their method is the most accurate.  The researchers say
+their technology eventually could be used to record and re-watch dreams.
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-15cf8x2127c6x080147&
+
+------------------------------
+
+Date: Mon, 24 Jul 2017 12:01:57 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Myopic CEO perspective, I think
+
+Dear Technologists: User Experience Isn't an App or a Feature. It's
+Everything.
+
+What about the unboxing experience? What about customer service? It all
+matters, Siminoff said. "Talking someone through downloading an app is user
+experience. It's really the end-to-end [experience]."
+
+Siminoff added that he often receives feedback that a competitor's video
+doorbell has better hardware. "Who gives a shit?" he asked. "Our customers
+aren't buying it because of that. They're buying it because it makes their
+homes safer." It's the complete package that matters, he added. The only
+danger is to not get too far behind on technology relative to competing
+products.
+
+http://fortune.com/2017/07/20/user-experience-everything/
+
+CEO wondering "Who gives a sh*t?" about better hardware seems good argument
+against buying Ring.  Better hardware might last longer, not rust, be
+upgradeable, have better connectivity, be more reliable.  Even look better.
+
+------------------------------
+
+Date: Mon, 24 Jul 2017 09:17:01 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: 45,000 Facebook Users Leave One-Star Ratings After Hacker's Unjust
+  Arrest (bleeping computer)
+
+Over 45,000 users have left one-star reviews on a company's Facebook page
+after the business reported a security researcher to police and had him
+arrested in the middle of the night instead of fixing a reported bug.
+
+The arrest took place this week in Hungary after an 18-year-old found a flaw
+in the online ticket-selling system of Budapesti Közlekedési
+Központ (BKK), Budapest's public transportation authority.  Teen
+hacks company using browser's DevTools.
+
+The young man discovered that he could access BKK's website, press F12 to
+enter the browser's developer tools mode, and modify the page's source code
+to alter a ticket's price.
+
+Because there was no client or server-side validation put in place, the BKK
+system accepted the operation and issued a ticket at a smaller price.
+
+As a demo, the young man says he bought a ticket initially priced at 9459
+Hungarian forints ($35) for 50 Hungarian forints (20 US cents).
+
+https://www.bleepingcomputer.com/news/security/45-000-facebook-users-leave-one-star-ratings-after-hackers-unjust-arrest/
+
+------------------------------
+
+Date: Mon, 24 Jul 2017 14:50:08 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Wisconsin Company to Implant Microchips In Employees
+
+Pay by the hand. A Wisconsin software company called Three Square Market is
+offering to implant microchips in employees' hands. The chip will work for
+mobile payments and as a computer ID, but does not have GPS or a tracking
+component. "It's the next thing that's inevitably going to happen and we
+want to be a part of it," says CEO Todd Westby.
+
+The company designs software for break room markets that are commonly found
+in office complexes.
+
+http://kstp.com/news/wisconsin-company-to-implant-microchips-in-employees-three-square-market/4549459/
+
+...because carrying cash or a phone is too hard?
+
+------------------------------
+
+Date: Sat, 22 Jul 2017 17:44:58 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Chicago festival to mark Pokemon Go anniversary goes awry
+
+NNSquad (PGN-rearranged)
+http://www.sfchronicle.com/business/technology/article/Pokemon-Go-Fest-has-troubles-moving-11307747.php
+
+  Niantic Inc.'s John Hanke said "the whole Niantic team" was working to fix
+  a glitch in the server and log-on problems with cellular service providers
+  AT&T, Sprint and Verizon.  Some in attendance paid as much as $400 online
+  for the tickets when they sold out within minutes of their June release.
+  The Chicago Tribune reported the festival's organizers decided to issue
+  refunds for the $20 tickets and $100 in credits for use on the app.  The
+  Chicago Sun-Times reported the CEO of the game's developer was booed when
+  he tried to explain the problem to the crowd.
+
+------------------------------
+
+Date: Fri, 21 Jul 2017 17:15:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Massive Privacy Breach: Wells Fargo Accidentally Releases Trove of
+  Data on Wealthy Clients (The New York Times)
+
+NNSquad
+https://www.nytimes.com/2017/07/21/business/dealbook/wells-fargo-confidential-data-release.html?partner=rss&emc=rss
+
+  When a lawyer for Gary Sinderbrand, a former Wells Fargo employee,
+  subpoenaed the bank as part of a defamation lawsuit against a bank
+  employee, he and Mr. Sinderbrand expected to receive a selection of emails
+  and documents related to the case.  But what landed in Mr.  Sinderbrand's
+  hands on July 8 went far beyond what his lawyer had asked for: Wells Fargo
+  had turned over -- by accident, according to the bank's lawyer -- a vast
+  trove of confidential information about tens of thousands of the bank's
+  wealthiest clients.  The 1.4 gigabytes of files that Wells Fargo's lawyer
+  sent included copious spreadsheets with customers' names and Social
+  Security numbers, paired with financial details like the size of their
+  investment portfolios and the fees the bank charged them. Most are
+  customers of Wells Fargo Advisors, the arm of the bank that caters to
+  high-net-worth investors.  By Mr. Sinderbrand's estimate, he has financial
+  information for at least 50,000 individual customers. In all,
+  Mr. Sinderbrand said, these clients have tens of billions of dollars
+  invested through Wells Fargo, all laid out in vivid detail for him as part
+  of the discovery process in his lawsuit.
+
+------------------------------
+
+Date: Tue, 25 Jul 2017 17:59:30 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Roomba's Next Big Step Is Selling Maps of Your Home to the
+ Highest Bidder
+
+The Roomba is generally regarded as a cute little robot friend that no one
+but dogs would consider to be a potential menace. But for the last couple of
+years, the robovacs have been quietly mapping homes to maximize
+efficiency. Now, the device's makers plan to sell that data to smart home
+device manufacturers, turning the friendly robot into a creeping, creepy
+little spy.
+
+http://gizmodo.com/roombas-next-big-step-is-selling-maps-of-your-home-to-t-1797187829
+
+Very helpful, article shows ad for ... Roomba.
+
+------------------------------
+
+Date: Tue, 25 Jul 2017 17:25:10 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Student denied loan due to namesake
+
+A student has been unable to get a loan for university because someone with
+the same name, birthday and born in the same area has already applied for
+one.  Full story at: http://www.bbc.com/news/uk-england-birmingham-40707719
+
+Isn't it time designers of personal info database systems would learn that
+name and DOB are not enough to identify a person uniquely?  A search through
+the RISKS archive comes up with about 20 items of "your computer cannot do
+twins" type; the earliest is in RISKS-4.05, dated Nov.1986!
+
+------------------------------
+
+Date: Tue, 25 Jul 2017 10:50:42 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Bugs in popular hacker tools open the door to striking back (WiReD)
+
+NNSquad
+https://www.wired.com/story/bugs-in-popular-hacker-tools-open-the-door-to-striking-back
+
+  The concept of "hacking back" has drawn attention-and generated
+  controversy-lately as geopolitics focuses increasingly on the threat of
+  cyberwar. The idea that cyberattack victims should be legally allowed to
+  hack their alleged assailants has even motivated a bill, the Active Cyber
+  Defense Certainty Act, that representative Tom Graves of Georgia has
+  shared for possible introduction this fall. And though many oppose hacking
+  back as a dangerous and morally ambiguous slippery slope, research shows
+  that, for better or worse, in many cases it wouldn't be all that hard.  It
+  turns out that many popular hacking tools are themselves riddled with
+  vulnerabilities. That doesn't necessarily make returning fire on incoming
+  hacks a good idea, but it does show that attackers often don't pay all
+  that much attention to security.  As the idea of hacking back gains
+  support it could eventually cost them.
+
+------------------------------
+
+Date: Mon, 24 Jul 2017 09:44:01 -0700
+From: spl@tirebiter.org (Steve Lamont)
+Subject: Three Square Market microchips its employees (prlog)
+
+https://www.prlog.org/12653576-three-square-market-microchips-employees-company-wide.html
+
+Three Square Market Microchips Employees Company-Wide -- Three Square Market
+PRLog, July 20, 2017
+
+River Falls, Wis. - Three Square Market (32M) is offering implanted chip
+technology to all of their employees on August 1st, 2017.  Employees will be
+implanted with a RFID chip allowing them to make purchases in their break
+room micro market, open doors, login to computers, use the copy machine,
+etc. This program, offered by 32M, is optional for all employees. The
+company is expecting over 50 staff members to be voluntarily chipped. 32M is
+partnering with BioHax International and Jowan Osterland, CEO, based out of
+Sweden.
+
+RFID technology or Radio-Frequency Identification uses electromagnetic
+fields to identify electronically stored information. Often referred to as
+"chip" technology, this option has become very popular in the European
+marketplace. The chip implant uses near-field communications (NFC); the same
+technology used in contactless credit cards and mobile payments. A chip is
+implanted between the thumb and forefinger underneath the skin within
+seconds.
+
+A micro market, also known as a break room market, has become a staple in
+the U.S. with over 20,000 locations and growing. While in existence for over
+a decade in the American workplace, the international community began to
+embrace this only a few years ago. A micro market is a mini convenience
+store located right in the employee break room using a self-checkout kiosk,
+similar to what is found at many major retailers. Businesses see multiple
+benefits when adding a micro market to their location, such as increased
+employee morale and productivity.  32M entered this growing industry over
+four years ago and is rapidly growing in market share and believes this
+technology will help it continue this trajectory.
+
+"We foresee the use of RFID technology to drive everything from making
+purchases in our office break room market, opening doors, use of copy
+machines, logging into our office computers, unlocking phones, sharing
+business cards, storing medical/health information, and used as payment at
+other RFID terminals. Eventually, this technology will become standardized
+allowing you to use this as your passport, public transit, all purchasing
+opportunities, etc." commented 32M CEO, Todd Westby.
+
+[MORE]
+
+I'd like mine implanted on the tip of my middle finger, please. . .
+
+------------------------------
+
+Date: Thu, 27 Jul 2017 20:54:32 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Pile driver vs. underground high voltage cable. Oops
+
+Ranks right up there with backhoe vs. fiber optic line..  or squirrel
+vs. transformer..
+
+[North Carolina]
+
+OBX blackout: Mandatory evacuation, state of emergency on Ocracoke Island
+
+Thousands were without power on Ocracoke and Hatteras islands on Thursday
+and officials were unsure when it will be restored.
+
+The Cape Hatteras Electric Cooperative said on Thursday that it could take
+several days or even weeks before power can be restored on Hatteras and
+Ocracoke.
+
+PCL Construction, the company building the new Bonner Bridge, told CHEC that
+at about 4:30 a.m. on Thursday, its crews drove a steel casing into the
+underground transmission cable running between the south end of the bridge
+and the overhead riser pole, causing the outage.  [...]
+
+http://www.newsobserver.com/news/local/article164046057.html
+
+------------------------------
+
+Date: Mon, 24 Jul 2017 15:05:30 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Sweden drenched by "The Cloud"
+
+Sweden's Transport Agency moved all of its data to "the cloud", apparently
+unaware that there is no cloud, only somebody else's computer. In doing so,
+it exposed and leaked every conceivable top secret database: fighter pilots,
+SEAL team operators, police suspects, people under witness relocation. Names,
+photos, and home addresses: the list is just getting started. The responsible
+director has been found guilty in criminal court of the whole affair, and
+sentenced to the harshest sentence ever seen in Swedish government: she was
+docked half a month's paycheck.
+
+Worst known governmental leak ever is slowly coming to light: Agency moved
+nation's secret data to "The Cloud".
+
+Rick Falkvinge, Privacy News Online, 21 Jul 2017
+
+Many governments have had partial leaks in terms of method (Snowden) or
+relations (Manning) lately, but this is the first time I'm aware that the
+full treasure chest of every single top-secret governmental individual with
+photo, name, and home address has leaked. It goes to show, again, that
+governments can't even keep their most secret data under wraps - so any
+governmental assurances to keep your data safe have as much value as a
+truckload of dead rats in a tampon factory.
+
+It started out with a very speedy trial where a Director General in Sweden
+was fined half a month's pay. Given how much the establishment has got each
+other's backs, this sentence was roughly equivalent to life in prison for a
+common person on the street, meaning they must have done something really
+awful to get not just a guilty verdict, but actually be fined half a month's
+salary.
+
+On digging, it turns out the Swedish Transport Agency moved all its data to
+"the cloud", as managed by IBM, two years ago. Something was found amiss when
+the Director General of the Transport Agency, Maria Egren, was quickly
+retired from her position this January - but it was only on July 6 that it
+became known that she was found guilty of exposing classified information in
+a criminal court of law. The scandal quickly escalated from there.
+
+There's an enormous amount of data in Swedish about the overall leak scandal,
+but among all that data, one piece bears mentioning just to highlight the
+generally sloppy, negligent, and indeed criminal, attitude toward sensitive
+information:
+
+Last March, the entire register of vehicles was sent to marketers subscribing
+to it. This is normal in itself, as the vehicle register is public
+information, and therefore subject to Freedom-of-Information excerpts. What
+was not normal were two things: first, that people in the witness protection
+program and similar programs were included in the register distributed
+outside the Agency, and second, when this fatal mistake was discovered, a new
+version without the sensitive identities was not distributed with
+instructions to destroy the old copy. Instead, the sensitive identities were
+pointed out and named in a second distribution with a request for all
+subscribers to remove these records themselves. This took place in open
+cleartext e-mail.
+
+Take this incident and scale it up to everyday behavior at a whole agency
+with key responsibility for safeguarding national secrets.
+
+At present, these databases are known to have been exposed, by moving them to
+"The Cloud" as if it were just a random buzzword: [...]
+
+https://www.privateinternetaccess.com/blog/2017/07/swedish-transport-agency-worst-known-governmental-leak-ever-is-slowly-coming-to-light/
+
+  [Also, Donald B. Wagner noted this item:]
+https://www.thelocal.se/20170717/swedish-authority-handed-over-keys-to-the-kingdom-in-it-security-slip-up
+
+------------------------------
+
+Date: Mon, 24 Jul 2017 10:31:20 +1000
+From: "3daygoaty ." <threedaygoaty@gmail.com>
+Subject: Re: Leaping Kangaroos (Thorn, RISKS-30.38)
+
+Squirrels causing self-driving car accidents (that inadvertently also kill
+the squirrel) will never occur more than ten times in Perth, Western
+Australia.
+
+There's only ten of them.
+
+http://www.abc.net.au/news/2017-07-07/the-rise-and-fall-of-perths-palm-squirrel-pest-population/8683784
+
+------------------------------
+
+Date: Wed, 26 Jul 2017 22:28:25 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Re: 'Energy firms can switch off your FREEZER for a few minutes at
+  night'
+
+Probably not news, but an article in a recent newspaper gives a clue to
+possible UK future electricity policy.  Problem is that many conventional
+coal and gas power stations are being closed due to being too old and/or too
+polluting, renewable energy (wind and solar) is only available in short
+bursts and not necessarily when needed, European natural gas sources are
+dwindling and a lot of other countries are competing over supplies, and
+nuclear power is still some years in the future, as it has been since the
+1950s; reportedly, the margin between available generating capacity and
+likely demand peaks is becoming vanishingly small, while the Government has
+just announced a big plan to change us all to electric cars...
+
+One obvious RISK is worrying if your freezer will still be frozen in the
+morning.
+
+http://www.dailymail.co.uk/news/article-4725424/Government-brings-new-energy-rules.html
+
+Summary:
+
+> Energy firms could be allowed to switch off consumers' freezers during
+> times of high demand as part of a new Government initiative designed to
+> save billions in electricity bills.
+> Customers who opt into the scheme would be offered reduced costs if they
+> allow a third party to power down their appliances at peak times.
+> The Government, regulator Ofgem and the industry are rolling out smart
+> meters and will bring in 'smart tariffs' for consumers to pay less for
+> off-peak power.
+> The Government will also introduce standards for electric vehicle
+> charging points so consumers can charge their cars when demand is low
+> and be paid for feeding power from cars back to the grid.
+> The Government hopes this will alleviate the need for expensive power
+> stations in the future.
+
+------------------------------
+
+Date: Sun, 23 Jul 2017 11:45:04 -0400 (EDT)
+From: Kelly Bert Manning <Kelly.Manning@ncf.ca>
+Subject: Re: Bloomberg: A Solar Eclipse Could Wipe Out 9,000 Megawatts of
+  Power Supplies (Kuenning, RISKS-30.39)
+
+Geoff Kuenning wrote that something similar happens for up to 14 hours
+per day when the Sun sets. Night can be longer than that at high latitudes.
+
+There is also the issue of wind generated power being intermittent.
+
+Fortunately there is a solution for large-scale storage of grid connected
+power. Folks can be forgiven for not being aware of this novel solution. It
+was such an obscure solution that Swiss and Italian Electric Utilities did
+not begin using it for leveling out electric supply and demand until the
+1890s.
+
+http://spectrum.ieee.org/green-tech/wind/norway-wants-to-be-europes-battery
+https://en.wikipedia.org/wiki/Bath_County_Pumped_Storage_Station
+
+------------------------------
+
+Date: Tue, 25 Jul 2017 08:58:14 +0000 (UTC)
+From: David Alexander <davidalexander440@btinternet.com>
+Subject: Re: Wifi Webcam TENVIS sends all it knows to dvripc.cn
+
+I read the posting by Turgut Kalfaglu and thought "what's new?" Brian Krebs
+posted a long expose of the problems of this sort associated with the FOSCAM
+units in Feb 2016. To summarize: They reach out to servers in China by
+default. There is an option to disable this in the menus but it doesn't
+work, they keep on doing it. The FOSCAM is white labeled into a lot of
+different products by different manufacturers. It wouldn't surprise me if
+this was another variant of the same hardware.
+
+I've been talking about these and other problems with IoT products for over
+2 years.  This is me (Youtube video) presenting at the Institute for
+Information Security Professionals conference in London last year on this
+very subject.  F-Secure put out a press release in June this year about
+insecure webcams, including FOSCAM. There is a headline article on the front
+page of the (UK) Daily Telegraph today (25 July 2017) "Internet of things'
+will leave home gadgets vulnerable to hacks, senior police officer warns".
+
+For a variety of reasons that I won't speculate on for fear of being sued,
+many manufacturers are either not building in security to IoT products, not
+doing it right, not making products that are patchable or a combination of
+these things. I don't have the time or inclination to test these kind of
+devices myself and I've lived for a great many years without them. I don't
+have any IoT products in my house, and I don't plan to either.
+
+------------------------------
+
+Date: Sat, 22 Jul 2017 18:06:32 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Re: Wifi Webcam TENVIS sends all it knows to dvripc.cn (RISKS-30.39)
+
+> Date: Tue, 18 Jul 2017 07:47:32 +0300
+> From: turgut kalfaglu <turgut@kalfaoglu.com>
+
+> Nowhere in the configuration does it mention that it sends information to
+> some "cloud".
+
+I wish people would stop using "cloud."  To use "cloud" clouds one's
+judgment.  "Cloud" is the same thing we used to call file-sharing,
+distributed computing, or time-sharing.  It just means "somebody else's
+computer."
+
+rslade@vcn.bc.ca     slade@victoria.tc.ca     rslade@computercrime.org
+victoria.tc.ca/techrev/rms.htm http://www.infosecbc.org/links
+
+------------------------------
+
+Date: Tue, 25 Jul 2017 20:31:21 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: Western tech firms bow to Russian demands to share cybersecrets
+
+On 20/07/17 18:24, Wols Lists wrote:
+> On 20/07/17 14:41, Martin Ward wrote:
+>> Anthony Youngman <antlists@youngman.org.uk> wrote:
+>>
+>> The last occasion when a flaw was discovered in the axioms used
+>> to prove the correctness of programs (logic and basic set theory)
+>> was Russell's Paradox:
+>
+> And? The maths was flawed, it was incorrect.
+
+You claimed that "we keep on discovering, all too often, reality has a habit
+of saying `you've got the wrong axioms'".
+
+"We keep on discovering..." implies something which happens over and over
+again: certainly more than once!
+
+But that happened *once* over 100 years ago: and the flaw was discovered
+almost as soon as the set of axioms were proposed, and the flaw was fixed
+shortly afterward.
+
+The phrase "keep on discovering..." implies many occasions, certainly more
+than one. What are these occasions?
+
+Do you know how much mathematics has been built on top of the axioms of
+logic and set theory, and how many applications of that mathematics have
+been tested in reality in the last 100 years without uncovering a *single*
+further flaw in the axioms?
+
+Your argument has a much stronger application to engineering than computing:
+Newton's laws of motion are insufficient for space travel and needed to be
+"corrected" by special and general relativity. But rocket scientists still
+make extensive use of mathematics and rockets still (usually) reach their
+destinations. So your argument fails.  But if it fails for rocket science, a
+fortiori it fails for software engineering (where the mathematics is much
+simpler and the axioms have not needed to be fixed for over 100 years).
+
+The application of mathematics to engineering is only valid when the laws of
+physics are understood to a sufficient degree of accuracy.  Newton's laws
+are accurate enough for bridge building, but not for space travel.
+
+Physical laws are only valid in some possible worlds: the laws of physics
+are contingent. But mathematics is valid in *every* possible world: so there
+is no need to ensure that the axioms match reality (we don't do experiments
+to test if addition is commutative, for example!).  This does not eliminate
+the need for testing, however.
+
+> After all, didn't Knuth understand exactly this when (I can't remember the
+> quote exactly) he said "I don't guarantee it will work, I have merely
+> proven it correct"?
+
+The correct quote is "Beware of bugs in the above code; I have only proved
+it correct, not tried it".  (See
+http://www-cs-faculty.stanford.edu/~uno/faq.html) A proof does not guarantee
+the absence of bugs: because the proof might contain an error or the
+typed-in code might contain a typo.  My first version of the polynomial
+algorithm had a bug caused by a typo.  Bugs caused by typos are usually easy
+to spot: either via more careful proofreading, or because (as in my case)
+they cause the program to fail on almost every input value. But testing
+informally developed code is usually a long process with many iterations of
+the test/debug/fix cycle, and a high probability of residual security
+holes. On the other hand, testing provably correct code usually involves an
+initial proofread/test, fix any typos if necessary, then *all* the tests
+pass (in my experience).
+
+------------------------------
+
+Date: Sun, 23 Jul 2017 13:45:57 -0500
+From: Burton Strauss III <bstrauss@gmail.com>
+Subject: NEC Updates like software updates (Re: Charging Phone Kills
+  14-Year-Old Girl in Bathtub)
+
+In RISKS-30.39, Paul Fenimore makes the case "There is an analogy of old
+power circuit designs to old software that is not maintained but continues
+to operate in the high-risk environments found on networks."
+
+That reality is a lot closer than is comfortable.
+
+Although it's called the National Electrical Code, this is purely a model
+code, intended to be adopted by local jurisdictions. (To the poster in
+another forum that said it's nuts, only in the US would building codes be a
+local issue, please do remember that the building INSPECTOR is a local
+function).
+
+In the case of Lovington, NM, it appears that the NEC was adopted,
+specifically the 1956 version and has not been updated since.
+
+http://library.amlegal.com/nxt/gateway.dll/New%20Mexico/lovington_nm/title15buildingsandconstruction/chapter1508electricalcode
+
+15.08.020   National Electrical Code adopted.
+
+The regulations contained in the National Electrical Code, 1956 Edition, as
+the same are now or may be amended, is adopted by reference and is declared
+to be a part of this chapter when not in conflict with a specific statement
+contained in the body of this chapter to the contrary. Copies of such
+regulations shall be kept on file in the office of the city manager.
+
+(Prior code 16-1-2)
+
+The use of GFI/GFCI became part of the NEC in 1975. As with software in
+various devices, just because the manufacturer (the NEC here) provides an
+update, there is no requirement to update requirements (the town code) or
+the installations (specific houses).
+
+The building code was updated to a more recent code (2009), e.g.
+http://www.lovington.org/uploads/1/0/7/2/10720033/ord-0546.pdf, but not as
+far as I can see, the electrical code!
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.40
+************************

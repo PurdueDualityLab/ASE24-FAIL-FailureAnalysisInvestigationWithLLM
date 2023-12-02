@@ -1,0 +1,703 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 13 September 2011  Volume 26 : Issue 55
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.55.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Backlogged.  Catching up.  PGN]
+Hurricane power outage: What could possibly go wrong? (Doug Hosking)
+Southwest power outage from AZ to SoCal and BajaCal (Monty Solomon)
+Insulin pumps can be hacked (Werner U)
+One Sperm Donor, 150 Offspring (Jacqueline Mroz via Monty Solomon)
+Ten Years After 9/11, Cyber Attacks Pose National Threat (Jaikumar Vijayan
+  via ACM TechNews)
+Nominet UK proposing police shut down domains without court order
+  (Lauren Weinstein)
+Channel 5 in Minneapolis had windows browser showing (Joyce Scrivner)
+Researchers crack APCO P25 public safety encryption, find DoS flaws
+  (Slashdot via Lauren Weinstein)
+T-Mobile JavaScript comment stripper breaks websites (Lauren Weinstein)
+Risks of typos in email addresses: Man-in-the-mailbox attack (Toby)
+Why Governments Are Terrified of Social Media (Lauren Weinstein)
+Private Yale Student Info Accessible via Google Search (Jeff James via
+  Monty Solomon)
+Yale Student Allows His Privacy To Be Obliterated For A Class Project
+  (Kashmir Hill via Monty Solomon)
+Yet another incident of over-reliance on GPS navigation (Sean W. Smith)
+Zombie Cookies won't die (Gene Wirchenko)
+Re: Don't throw away Grandma's wind-up desk clock (Paul Robinson)
+CFP Integrated Formal Methods: iFM 2012 (Diego Latella)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 28 Aug 2011 22:14:21 -0700
+From: "Doug Hosking" <doug1@sonic.net>
+Subject: Hurricane power outage: What could possibly go wrong?
+
+"When power went out at Johnson Memorial Hospital in Stafford Springs [due
+to the hurricane, on 27 Aug 2011], the hospital switched to its backup
+generator.  But then they lost the generator as well.  A spokesperson says
+after discussions with the power company, they decided to transfer patients
+to other hospitals, starting with critical care patients."
+http://connecticut.cbslocal.com/2011/08/28/hospital-patients-transferred-after-storm-cuts-power/
+
+Imagine the fun and RISKS.
+
+How well do computerized patient records, computerized billing systems,
+computerized medication systems, card access systems, etc. work in this
+situation?  This seems highly prone to failure even if the transition
+happened on a planned basis, much less suddenly.  It's rather scary how many
+different possible failure modes come to mind with only a few seconds of
+thought, much less a detailed study.
+
+I would have thought that generator testing would be one of the first things
+on the "to do" list as soon as they suspected Irene would affect their area
+(in addition to more regularly scheduled testing).  It would be interesting
+to see what the root cause of the generator failure was.
+
+------------------------------
+
+Date: Sat, 10 Sep 2011 14:12:30 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Southwest power outage from AZ to SoCal and BajaCal
+
+Single worker caused massive power outage across Southwest, power
+company admits
+http://www.nydailynews.com/news/national/2011/09/09/2011-09-09_single_worker_caused_massive_power_outage_across_southwest_power_company_admits.html
+
+Feds launch probe of Southwest power outage
+Human error blamed for blackout that impacted about 5 million people
+http://www.msnbc.msn.com/id/44449688/ns/us_news-life/
+  [See also https://plus.google.com/114753028665775786510/posts/VevANeZmbDz]
+
+------------------------------
+
+Date: Mon, 29 Aug 2011 19:15:58 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Insulin pumps can be hacked
+
+SC Magazine <http://www.scmagazineus.com/> >
+
+Black Hat: Insulin pumps can be hacked, 10 Aug 2011
+<http://www.scmagazineus.com/black-hat-insulin-pumps-can-be-hacked/article/209106/>
+
+A Type 1 diabetic said Thursday that hackers can remotely change his insulin
+pump to levels that could kill him.  Jay Radcliffe, a security researcher,
+demonstrated to the crowd at the Black Hat conference in Las Vegas how he is
+able to send commands to and wirelessly disable (within about 150 feet) the
+insulin pump he has been wearing since he was 22, when he was diagnosed with
+the autoimmune disease after dealing with extreme weight loss and an
+unquenchable thirst.
+
+Radcliffe, now 33, explained that all he requires to perpetrate the hack is
+the target pump's serial number, which can be obtained via social
+engineering or by running a simple computer scan. Then using hardware and a
+program he wrote to talk to the device, he can issue instructions. These
+commands can order the device to turn off, but more dangerously, they can
+significantly raise or lower the levels of insulin Radcliffe's body absorbs
+at any given moment.
+
+"It's basically like having root on the device, which is like having root on
+the chemistry of your body," said Radcliffe, who wears his $6,000 pump
+around the clock to maintain normal blood sugar levels.  Radcliffe did not
+name the affected vendor because the threat requires a complete overhaul of
+the product and would result in panicked customers.  "I don't think it's
+relevant to the purpose of my talk," he said at a press conference
+afterward. "If I name the vendor, then any bad guy or evil hacker...can
+start exploit code on it right away."
+
+Radcliffe said he isn't sure how many other vendors make insulin pumps that
+suffer from similar vulnerabilities. To remedy the problem, he suggested
+manufacturers implement a verification process, in which users have to
+approve changes to their devices.
+
+In addition, the pumps should contain a password-protected serial number.
+The vulnerability is more indicative, he said, of the chronic insecurity of
+embedded systems.  "Everything has an embedded processor and computer in
+it," he said. "Every time you hide behind [security by] obscurity, it is
+going to fail."
+
+Brad Smith, a researcher and Black Hat conference staffer who also is a
+registered nurse, said the medical field largely looks the other way when it
+comes to securing patient devices.  "I lecture at all the medical
+conferences," he said during the press conference. "They just hide it. Pay
+attention to what [Radcliffe] is saying.  His life is in this pump."
+
+------------------------------
+
+Date: Tue, 6 Sep 2011 08:46:36 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: One Sperm Donor, 150 Offspring (Jacqueline Mroz)
+
+Jacqueline Mroz, *The New York Times*, 5 Sep 2011
+
+Cynthia Daily and her partner used a sperm donor to conceive a baby seven
+years ago, and they hoped that one day their son would get to know some of
+his half siblings - an extended family of sorts for modern times.  So
+Ms. Daily searched a Web-based registry for other children fathered by the
+same donor and helped to create an online group to track them. Over the
+years, she watched the number of children in her son's group grow.  And
+grow.
+
+Today there are 150 children, all conceived with sperm from one donor, in
+this group of half siblings, and more are on the way. "It's wild when we see
+them all together - they all look alike," said Ms.  Daily, 48, a social
+worker in the Washington area who sometimes vacations with other families in
+her son's group.
+
+As more women choose to have babies on their own, and the number of children
+born through artificial insemination increases, outsize groups of donor
+siblings are starting to appear. While Ms. Daily's group is among the
+largest, many others comprising 50 or more half siblings are cropping up on
+Web sites and in chat groups, where sperm donors are tagged with unique
+identifying numbers.
+
+Now, there is growing concern among parents, donors and medical experts
+about potential negative consequences of having so many children fathered by
+the same donors, including the possibility that genes for rare diseases
+could be spread more widely through the population. Some experts are even
+calling attention to the increased odds of accidental incest between half
+sisters and half brothers, who often live close to one another. ...
+http://www.nytimes.com/2011/09/06/health/06donor.html
+
+------------------------------
+
+Date:         Fri, 9 Sep 2011 11:36:43 -0400
+From: ACM TechNews <technews@HQ.ACM.ORG>
+Subject: "Ten Years After 9/11, Cyber Attacks Pose National Threat
+
+Jaikumar Vijayan, item in *Computerworld* 07 Sep 2011
+Ten Years After 9/11, Cyber Attacks Pose National Threat, Committee Says
+  [Excerpted from ACM TechNews; Friday, 9 Sep 2011]
+
+Catastrophic cyberattacks are a very real threat to U.S. security, according
+to a study from the Bipartisan Policy Center's National Security
+Preparedness Group (NSPG).  The study underscores worries from the
+U.S. Department of Homeland Security and the intelligence community about
+terrorists striking against U.S. assets without ever penetrating national
+borders, with the threat against critical infrastructure systems being
+especially potent.  "As the current crisis in Japan demonstrates, disruption
+of power grids and basic infrastructure can have devastating effects on
+society," the report says.  The NSPG report acknowledges that the
+U.S. government has made significant strides in meeting many of the 9/11
+Commission's recommendations, but notes that progress has been slow in
+several key areas.  For example, the availability of radio spectrum for
+public safety purposes still needs to be substantially broadened, while a
+recommendation to establish a Privacy and Civil Liberties Oversight Board
+with the federal government's executive branch is still not completely
+implemented.  "If we were issuing grades, the implementation of this
+recommendation would receive a failing mark," the report concludes.
+http://www.computerworld.com/s/article/9219756/10_years_after_9_11_cyberattacks_pose_national_threat_committee_says
+
+------------------------------
+
+Date: September 05, 2011 1:06:51 PM
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Nominet UK proposing police shut down domains without court order
+
+  Nominet UK proposing police shut down domains without court order
+  http://j.mp/nFs4z5 (eWeek Europe) [ NNSquad]
+
+  "Nominet, the registrar that handles .uk domains, is moving ahead with
+  proposed rules (PDF) that could allow law enforcement agencies to request
+  a domain be shut down without a court order."
+
+Go ahead, keeping pushing the evolution of non-centralized DNS alternatives
+not subject to extrajudicial tampering. The more governments interfere with
+DNS operations, the more clear it is to everyone that DNS has outlived its
+usefulness.
+
+The real irony is that increasingly entities who feel vulnerable to
+government DNS takedowns are taking preemptive steps for alternatives to
+maintain connectivity. So governments really are unwittingly helping
+"Darwin" in this area.
+
+Lauren Weinstein (lauren@vortex.com): http://www.vortex.com/lauren
+- Network Neutrality Squad: http://www.nnsquad.org Tel: +1 (818) 225-2800
+
+------------------------------
+
+Date: Sun, 11 Sep 2011 08:57:39 -0500
+From: Joyce Scrivner <joyce.scrivner@gmail.com>
+Subject: Channel 5 in Minneapolis had windows browser showing
+
+During the evening of 10 Sept 2011, Channel 5's second digital channel had a
+windows Internet browser information window overwriting the weather
+information for at least 30 minutes.  (I gave up checking.)
+[Attached .jpg omitted.  You've probably seen something like it before. PGN.]
+
+This is yet another example of how attempting to run systems without
+operational access and monitoring shows the seams where unmonitored
+automation fails.  I had to laugh at the Internet Explorer window, but I
+also imagined home viewers attempting to call the station and provide
+information to the single employee trying to keep the evening television
+shows running.
+
+------------------------------
+
+Date: Sat, 10 Sep 2011 09:37:27 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Researchers crack APCO P25 public safety encryption, find DoS flaws
+
+Researchers crack APCO P25 public safety encryption, find DoS flaws
+http://j.mp/n0WXG7  (Slashdot) [NNSquad]
+
+  "Two Australian security researchers, Stephen Glass and Matt Robert, have
+  published a paper that details flaws in the encryption implementation
+  (PDF) in the APCO Project 25 digital radio standard, used by emergency
+  services and police departments world-wide. The paper details flaws in the
+  DES-OFB and ADP encryption that enable the encryption key to be recovered
+  by traditional brute force key searching. Also detailed is a DoS attack
+  that makes use of unauthenticated radio inhibit mechanism."
+
+------------------------------
+
+Date: Mon, 12 Sep 2011 21:07:57 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: T-Mobile JavaScript comment stripper breaks websites
+
+T-Mobile JavaScript comment stripper breaks websites
+http://j.mp/ne2fSv  (Register)  [NNSquad]
+
+  "The T-Mobile JavaScript comment-stripper appears to be searching for '/*'
+  and '*/' and removing everything in between. This might work in most
+  cases; however in the jQuery library, we find a string containing '*/*',
+  and later down the file, another string containing '*/*'.  T-Mobile
+  removes everything between the things it thinks are comment markers, even
+  though they're actually contained within strings, causing the jQuery
+  library to be invalid JavaScript and stopping anything using jQuery from
+  running," he wrote."
+
+Three letters: SSL.
+
+------------------------------
+
+Date: Mon, 12 Sep 2011 19:41:06 -0700
+From: "Toby" <toby@gottfriedville.net>
+Subject: Risks of typos in email addresses: Man-in-the-mailbox attack
+
+In a paper titled "Doppelganger Domains", Garrett Gee and Peter Kim describe
+how by registering domains that match someone else's subdomain, less a dot
+or two, such as "cslsri.com" (for csl.sri.com), someone can capture email
+which has a typo in the address.
+http://www.wired.com/images_blogs/threatlevel/2011/09/Doppelganger.Domains.pdf
+
+By forwarding the mail (and the reply) to the appropriate real address(es),
+the capturer can cover his tracks, meanwhile collecting whatever valuable
+information (passwords, business secrets, etc) is contained in the emails.
+
+The authors also describe some defensive measures domain owners can take.
+
+  [Also noted by Amos Shapir: Bad spelling opens up security loophole.  PGN]
+     http://www.bbc.co.uk/news/technology-14842691
+
+------------------------------
+
+Date: Thu, 25 Aug 2011 01:28:06 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Why Governments Are Terrified of Social Media
+
+              Why Governments Are Terrified of Social Media
+         http://lauren.vortex.com/archive/000891.html  [NNSquad}
+
+In Missouri, teachers and others are up in arms over a law that would ban
+most contacts between teachers and students through social media, not only
+via systems like Facebook, but even apparently mechanisms such as Google
+Docs ( http://j.mp/pSqX11 [ABC News] ).
+
+In the UK, Prime Minister David Cameron has proposed censoring or cutting
+off BlackBerry and other social media systems based on the misguided and
+false assumption that this would prevent planning and communications by
+potential rioters or other "undesirable" persons.
+
+And back here in the U.S., BART shut down parts of the cell phone network,
+in an attempt to block communications in advance of a legal protest that
+never took place, though we know full well from history that protests --
+even of enormous scope -- do not require high technology to be organized and
+deployed ( http://j.mp/rq7SO9 [Lauren's Blog] ).
+
+Around the world, including here in the U.S., governments are demanding
+unencrypted access to supposedly "secure" communications systems.
+
+The common thread is very clear.  Governments are increasingly terrified of
+the communications abilities that Internet and other technologies have
+provided their citizenry and other residents.
+
+While usually careful to express their concerns in the context of seemingly
+laudable motives like fighting crime or terrorism, in reality these
+governments have revealed the distrust and contempt with which they view
+their populations at large.
+
+This is by no means a new phenomenon.
+
+Throughout human history, governments and many leaders have cast a jaundiced
+eye on virtually every new technological development that enabled
+communications, particularly if that technology made it easier for direct
+person-to-person messages to be exchanged outside the view of government
+services and minders.
+
+These government efforts to suppress and control communications have
+virtually all failed in the end, though a great deal of damage has been done
+to individuals and groups in the process.
+
+At one time, even the ability to read and write was considered too dangerous
+a skill set for the commoners.  The invention of the printing press threw
+government and churches alike into convulsions of apprehension.
+
+And now "social media" is the new scapegoat, the whipping boy, the
+technological designated evil that short-sighted politicians of both major
+parties, and their various administrative minions and supporters, are
+demanding be monitored, leashed, and controlled.
+
+In reality of course, it's not the technology that these persons wish to
+leash -- it's ordinary people.  It's you and me and the vastness of other
+law-abiding persons who have become the targets of the 21st century law
+enforcement mantra: "Screw the Bill of Rights -- treat everybody like a
+suspect, all the time."
+
+The broad implications of this "guilty until proven innocent" mindset are
+all around us now.  They're at the heart of the newly revealed alliance
+between CIA and the New York Police Department to monitor the activities of
+innocent citizens, using surveillance techniques that would have seemed
+comfortably familiar to the old East German Stasi secret police.
+
+They're seen in the massive government-mandated Internet data retention
+demanded by "The Protecting Children from Internet Pornographers Act of
+2011" -- now moving rapidly through Congress, and disingenuously titled to
+suggest it only applies to child abuse, when in reality its true reach would
+broadly encompass all manner of Internet access activities (
+http://j.mp/o13jMO [Atlantic] ).
+
+Governments seem to increasingly no longer feel that it's necessary or
+desirable to have "probable cause" or court orders before spying on
+individuals, tracking their movements via hidden GPS units, building
+dossiers, or even disrupting communications.  Constitutional guarantees are
+more and more viewed by our leaders as quaint artifacts of the past, to be
+ignored today merely as annoying inconveniences.
+
+The innocent are now being treated largely as potential "future criminals"
+-- and so subject to many of the same sorts of surveillance and other law
+enforcement techniques that in the past were generally limited to specific
+suspects of specific crimes.
+
+To the extent that these activities for now appear to be mostly aimed at
+persons with skin colors or religions different from us, it becomes easier
+to "go with the flow" of this new law enforcement mentality, to not make
+waves, to be quiet, to be sheep.
+
+But the same techniques used today against one group can be easily
+repurposed for others.  Government ordered records of users' Internet
+activities will affect us all, and the infrastructures created to support
+these surveillance-related systems may be be extremely long-lived.
+
+When governments no longer trust the people, when officials make the mental
+and physical leaps to targeting vast numbers of innocent persons in the
+manner of criminal suspects of yesteryear, we have embarked on a road that
+leads to a very dark place indeed.
+
+Today, social media is the cross-hairs.  Governments certainly are
+enthusiastic about using social media for their own investigatory and
+enforcement purposes, but they appear to be desperately seeking ways to
+control and limit the ability of ordinary persons to communicate privately
+and securely on these systems, or to use them at all in some cases.
+
+This is hypocrisy of the highest order.  It is a serious risk to innocent
+individuals being targeted by its adherents today.
+
+Unchallenged, tomorrow it will be a serious risk to us all.
+
+------------------------------
+
+Date: Thu, 25 Aug 2011 17:51:21 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Private Yale Student Info Accessible via Google Search
+
+Jeff James, Private Yale Student Info Accessible via Google Search
+25 Aug 2011
+
+While we're normally flooded with news about hackers who routinely bypass
+security systems and exploit zero-day vulnerabilities to gain access to
+sensitive systems, recent news from Yale University underscores that the
+vast majority of IT security failures are caused by human error, neglect, or
+plain ignorance. I've written about how users are often the weakest link in
+IT security, but that maxim can apply to simple human error in general.
+
+According to the Yale student newspaper, the University is notifying 43,000
+staff, students, and alumni that sensitive personal information -- like
+names and social security numbers -- were inadvertently made accessible to
+Internet searches when a file containing that information was left
+unprotected and unsecured on an FTP server that was used as a storage
+location for open source software. ...
+
+http://www.windowsitpro.com/blog/security-blog-12/security/private-yale-student-info-accessible-google-search-140325
+
+------------------------------
+
+cDate: Thu, 25 Aug 2011 17:58:01 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Yale Student Allows His Privacy To Be Obliterated For A Class Project
+
+Yale Student Allows His Privacy To Be Obliterated For A Class Project
+Kashmir Hill, *Forbes*, 12 May 2011
+
+Six Yale students needed a guinea pig for a class project. The guinea pig
+had to be willing to hand over access to his cellphone and to his Facebook
+and email accounts so that the students could figure out which of the three
+held the most revealing and intimate details about a person's life.
+
+Amazingly, they found a volunteer. And now the details of his life have been
+posted online for your perusal. The Yalies called it "The Gavin Project."
+They wanted to find out "which source of personal information reveals the
+most personal information." One nod to privacy: "Gavin" is not the Yale
+senior's real name. So what did they find out about him?
+
+His smartphone revealed he's well-connected, yielding some interesting
+contacts, including former New York governor Elliot Spitzer, Reddit founder
+Alexis Ohanian, blogger Matt Yglesias, and former Mexican president Ernesto
+Zedillo. Given that social circle, I wasn't surprised when one of the
+students involved in the data scrape, Sebastian Park, told me Gavin has
+political ambitions. (So perhaps his fellow privacy-invading students were
+doing him a favor.  Lots of politicians these days are paying "online
+reputation companies" to go through their digital dossiers to find potential
+landmines, reports Politico.)  ...
+
+http://www.forbes.com/sites/kashmirhill/2011/05/12/yale-student-allows-his-privacy-to-be-obliterated-for-a-class-project/
+
+------------------------------
+
+Date: Mon, 12 Sep 2011 12:33:16 -0400
+From: "Sean W. Smith" <sws@cs.dartmouth.edu>
+Subject: Yet another incident of over-reliance on GPS navigation
+
+Vermont State Police say a Massachusetts woman drove her car into a river
+from a road that had been damaged by flooding from Tropical Storm Irene
+after she drove around a road closed sign while following directions from
+her GPS, according to the Associated Press.
+
+Police say 25-year-old Sarah Ho of Boston was driving on the Dover Road in
+South Newfane late Saturday afternoon when she came upon a road closed
+sign. She told police she drove around the sign after seeing other vehicles
+drive around the sign.
+
+Police say Ho was driving too fast when she came upon a one-lane section of
+gravel road with large potholes. As a result her car went into the adjacent
+river.  She was not hurt and her vehicle suffered minor damage.
+
+http://rutlandherald.typepad.com/vermonttoday/2011/09/woman-goes-into-river-after-entering-closed-road.html
+
+Sean W. Smith   sws@cs.dartmouth.edu  www.cs.dartmouth.edu/~sws/
+Professor, Department of Computer Science, Dartmouth College, Hanover NH USA
+
+------------------------------
+
+Date: Mon, 22 Aug 2011 16:50:00 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Zombie Cookies won't die
+
+http://www.infoworld.com/t/internet-privacy/zombie-cookies-wont-die-microsoft-admits-use-and-html5-looms-new-vector-170511
+InfoWorld Home / InfoWorld Tech Watch
+August 22, 2011
+'Zombie cookies' won't die: Microsoft admits use, HTML5 looms as new vector
+Despite lawsuits, bad publicity, and Adobe's promise to end their use
+in Flash, zombie cookies persist and could find a new host in HTML5
+By Woody Leonhard | InfoWorld
+
+opening paragraphs:
+
+One year ago this week, I wrote about zombie cookies, describing how Disney,
+MySpace, and NBC Universal had just been sued for using zombie cookies to
+track people even if they have gone to great lengths to disable, block, or
+delete cookies. Seven months ago, I mentioned that Adobe had taken up the
+pitchfork and vowed to make Flash zombie cookies a thing of the past.
+
+So it's pretty shocking that Jonathan Mayer, a Stanford researcher, caught
+Microsoft using both a cache-based zombie cookie and a more advanced type of
+persistent "supercookie" to track folks even if they blocked or deleted
+browser cookies. Microsoft surreptitiously tracked users who had the
+temerity to visit MSN.com (in the United States, Canada, and Spain), the
+U.S. English home page of www.microsoft.com, or the Microsoft Store.
+
+Perhaps even scarier, as HTML5 gains traction: Its local storage is a great
+feature, but one wide open for abuse for such items as zombie cookies. And
+Internet Explorer's InPrivate Browsing, Firefox's Private Browsing, and
+Chrome's Incognito browsing modes won't protect you from the ETag form of
+zombie cookies or from HTML5-based zombies.
+
+------------------------------
+
+Date: Sun, 11 Sep 2011 10:12:41 -0700 (PDT)
+From: Paul Robinson <paul@paul-robinson.us>
+Subject: Re: Don't throw away Grandma's wind-up desk clock (Lee, RISKS-26.49)
+
+The kitchen in the rooming house where I live has a gas stove and microwave
+oven, both having clocks.  Usually they are right but occasionally if PEPCO
+has had a power failure of a second or longer, then both will reset, and if
+someone puts the wrong time in either then there's no guarantee they'll be
+right.
+
+Which is why when I want the exact time, I depend upon the $7 battery-
+powered analog clock that sits on the wall, and that I change the AA battery
+once every six months, basically each time Daylight Savings Time either
+starts or ends.  Much more accurate and reliable, and absolutely immune to
+power company failures, spikes or other problems.
+
+------------------------------
+
+Date: Tue, 13 Sep 2011 17:17:46 +0200
+From: Diego Latella <Diego.Latella@isti.cnr.it>
+Subject: CFP Integrated Formal Methods (iFM 2012)
+
+CALL FOR PAPERS
+
+9th International Conference on Integrated Formal Methods (iFM 2012)
+in conjunction with ABZ 2012, in honor of Egon Boerger's 65th birthday
+for his contribution to state-based formal methods
+
+June 18 - 22, 2012 - CNR - Pisa - ITALY        http://ifm.isti.cnr.it
+
+Consiglio Nazionale delle Ricerche=20
+Istituto di Scienza e Tecnologie dell'Informazione ``A. Faedo''
+Formal Methods && Tools Lab.
+Via Moruzzi 1 - 56124 Pisa
+
+OBJECTIVES AND SCOPE
+
+Applying formal methods may involve the modeling of different aspects=20
+of a system that are expressed through different paradigms.=20
+Correspondingly, different analysis techniques will be used to examine=20
+differently modeled system views, different kinds of properties, or=20
+simply in order to cope with the sheer complexity of the system.=20
+The iFM conference series seeks to further research into the=20
+combination of (formal and semi-formal) methods for system development,=20
+regarding modeling and analysis, and covering all aspects from language=20
+design through verification and analysis techniques to tools and their=20
+integration into software engineering practice   Areas of interest=20
+include but are not limited to:=20
+
+- Case Studies;=20
+- Experience reports;=20
+- Formal and semiformal modelling notations;=20
+- Integration of formal methods into software engineering practice;=20
+- Logics;=20
+- Model checking;=20
+- Model transformations;=20
+- Semantics;=20
+- Static Analysis;=20
+- Refinement;=20
+- Theorem proving;=20
+- Tools;=20
+- Type Systems;=20
+- Verification
+
+
+SUBMISSION GUIDELINES
+iFM 2012 solicits high quality papers reporting research results and/or=20=
+
+experience reports related to the overall theme of method integration. =20=
+
+The conference proceedings will be published by Springer Lecture Notes=20=
+
+in Computer Science series. All papers must be original, unpublished,=20
+and not submitted for publication elsewhere. All submissions must be=20
+in PDF format, using the Springer LNCS style files; we suggest to use=20
+the LaTeX2e package (the llncs.cls class file, available in llncs2e.zip =20=
+
+and the typeinst.dem available in typeinst.zip as a template for your=20
+contribution).  Submissions should be made using the iFM 2012 Easychair =20=
+
+web site. Papers should not exceed 15 pages in length. Each paper will=20=
+
+undergo a thorough review process.=20
+
+All accepted papers must be presented at the conference. Their=20
+authors must be prepared to sign a copyright transfer statement.=20
+At least one author of each accepted paper must register to the=20
+conference by the early date indicated by the organizers, and=20
+present the paper.
+
+
+IMPORTANT DATES
+Paper submission: January 14, 2012
+Paper notification: March 1, 2012
+Final version paper: March 20, 2012
+
+
+INVITED SPEAKERS
+Egon Boerger, University of Pisa, Italy
+Muffy Calder, University of Glasgow, United Kingdom
+Ian J. Hayes, University of Queensland, Australia
+
+ABZ - iFM 2012 GENERAL CHAIRS
+John Derrick, University of Sheffield, United Kingdom
+Stefania Gnesi, CNR-ISTI, Italy
+
+iFM PROGRAMME COMMITTEE CHAIRS:=20
+Diego Latella, CNR-ISTI, Italy
+Helen Treharne, University of Surrey, United Kingdom=20
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.55
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E6C080D2AE5EXSAN02campus_--

@@ -1,0 +1,505 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.36
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 3 August 2022  Volume 33 : Issue 36
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.36>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Today's Robotic Surgery Turns Surgical Trainees Into Spectators
+ (IEEE Spectrum)
+Experts show how to unlock several Honda models via Rolling-PWN attack
+ (Security Affairs)
+Post-quantum encryption contender is taken out by single-core PC and 1 hour
+ (Ars Technica)
+Data Centers Are Facing a Climate Crisis (WiReD)
+The Default Tech Settings You Should Turn Off Right Away (NYTimes)
+Alex Jones' attorney mistakenly sent two years of his text messages to Sandy
+ Hook family's lawyer (The Independent)
+About the W3C official Decentralized Identifier recommendation announced
+ today (Lauren Weinstein)
+Study finds Wikipedia influences judicial behavior (MIT)
+Re: BMW's Heated as a Service Model Has Drivers Seeking Hacks
+ (Barry Gold, John Levine, Gabe Goldberg, Pete Resiak)
+Re: Students and staff are entirely prohibited from using Google Search
+ (Lars-Henrik Eriksson)
+Re: Tim Hortons Offers a Free Coffee and Pastry for Spying on People for
+ Over a Year (Jonathan Levine, Steve Bacher)
+Re: Tech giants, including Meta, Google, and Amazon, want to put an end to
+ leap-seconds (Steve Bacher)
+Re: Drone Contraband Deliveries Are Rampant at U.S. Prisons (Amos Shapir)
+Re: Online pricing algorithms are gaming the system, and could mean you pay
+ more (Amos Shapir)
+Re: Jeopardy! player causes `at-home-disturbance' (Steve Bacher,
+ Amos Shapir)
+Re: "Dr. Birx ADMITS She 'Knew' COVID-19 Vaccines 'Were Not Going to Protect
+ Against Infection' (John Levine)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 01 Aug 2022 23:59:01 +0000
+From: Richard Marlon Stein <rmstein@protonmail.com>
+Subject: Today's Robotic Surgery Turns Surgical Trainees Into Spectators
+ (IEEE Spectrum)
+
+https://spectrum.ieee.org/files/17305/08 Spectrum_22Med.pdf retrieved on
+02AUG2022. IEEE membership might be required to access.
+
+"Medical training in the robotics age leaves tomorrow's surgeons short on
+skills."
+
+"Once the robotic arms are in place and instruments are inserted, the
+surgeon 'scrubs out' and takes up position perhaps 15 feet away from the
+patient in the immersive daVinci control console, which provides a
+stereoscopic view. The surgeon's hands are on two multipurpose controllers
+that can move and rotate the instruments in all directions; by switching
+between controllers, the surgeon's two hands can easily manage all four
+robotic arms.
+
+"And the trainee... well, the trainee gets to watch from another console, if
+there is one. While the lead surgeon could theoretically give the trainee
+one of the robot arms to control, in practice it never happens. And surgeons
+are reluctant to give the trainee control over all the arms because they
+know that will make the procedure take longer, and the risk to the patient
+goes up nonlinearly with elapsed time under anesthesia."
+
+Sawbone v. Robot patient outcome comparisons for certain procedures, such as
+prostate surgery, are challenging to interpret. Why?
+
+The FDA is required to collect and report data for adverse events. The
+medical device reports (MDRs) document and standardize adverse event
+resulting in patient injury, death, and device malfunction. MDRs are almost
+exclusively prepared and reported by device manufacturer representatives:
+significant subject matter expertise necessary to accurately document an
+adverse event.
+
+The FDA is NOT required to collect data on the total number of robotic
+surgical procedures performed over time. The robot surgeon device
+manufacturers know, but are not required to disclose.
+
+This practice explains why most (if not all) long-term medical device
+recipient studies reveal events per population (usually per 100,000) per
+year. This data can be extracted from billing records kept at the Centers
+for Medicare & Medicaid Services (cms.gov). Trend reporting can smooth and
+obscure event clusters.
+
+The total robot procedures performed, devices implanted/explanted or
+in-service per year constitute "proprietary data." Expecting consumers to
+interpolate medical device counts or surgical procedures by examining MDR
+filings is burdensome.
+
+Would a legal requirement for periodic manufacturer disclosure of aggregate
+medical device implants/explants or procedure counts improve safety? MDRs
+v. actual counts information may enlighten more than device per patient
+population trends.
+
+Refer to
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfTPLC/tplc.cfm?id=5692&min_report_year=2017
+from FDA's TPLC platform for Product Code NAY: System, surgical, computer
+controlled instrument. This product code groups several manufacturer devices
+into equivalent categories. Intuitive Surgical, Inc.'s DaVinci is
+prominently featured in the report.
+
+The TPLC MDR summary shows robotic surgical device adverse event reports per
+year. That total adverse event-report frequency grows year-over-year
+suggests robotic-driven surgical procedures are in demand. In CSV format:
+
+MDR Year MDR Reports MDR Events
+  2017      1049      1049
+  2018      1074      1074
+  2019      1154      1154
+  2020      1558      1558
+  2021      1997      1997
+  2022      2465      2465
+
+"Break" or "Detachment of Device or Device Component" events characterize
+the most common robot surgeon faults.
+
+------------------------------
+
+Date: Wed, 3 Aug 2022 11:13:04 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Experts show how to unlock several Honda models via Rolling-PWN
+ attack (Security Affairs)
+
+Bad news for the owners of several Honda models, the Rolling-PWN Attack
+vulnerability can allow unlocking their vehicles.
+
+https://securityaffairs.co/wordpress/133090/hacking/honda-rolling-pwn-attack.html
+
+------------------------------
+
+Date: Tue, 2 Aug 2022 11:14:18 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Post-quantum encryption contender is taken out by single-core PC
+ and 1 hour (Ars Technica)
+
+[Oops!]
+
+https://arstechnica.com/information-technology/2022/08/sike-once-a-post-quantum-encryption-contender-is-koed-in-nist-smackdown/
+
+------------------------------
+
+Date: Mon, 1 Aug 2022 20:05:31 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Data Centers Are Facing a Climate Crisis (WiReD)
+
+Companies are racing to cool down their servers as energy prices and
+temperatures soar. And the worst is yet to come.
+
+https://www.wired.com/story/data-centers-climate-change
+
+------------------------------
+
+Date: Mon, 1 Aug 2022 17:47:27 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: The Default Tech Settings You Should Turn Off Right Away (NYTimes)
+
+These controls, which are buried inside products from Apple, Google,
+Meta and others, make us share more data than we need to.  [...]
+
+https://www.nytimes.com/2022/07/27/technology/personaltech/default-settings-turn-off.html
+
+------------------------------
+
+Date: Wed, 3 Aug 2022 11:17:50 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Alex Jones' attorney mistakenly sent two years of his text messages
+ to Sandy Hook family's lawyer (The Independent)
+
+https://www.independent.co.uk/news/world/americas/alex-jones-sandy-hook-text-messages-b2137543.html
+
+------------------------------
+
+Date: Mon, 1 Aug 2022 17:48:06 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: About the W3C official Decentralized Identifier recommendation
+ announced today
+
+You may be hearing about this, and I'm not going to try critique it in
+detail here right now. But I will express an overall opinion of it.  My
+sense is that it is an unmitigated mess. Nor is it obvious to me that it
+will ever not be an unmitigated mess. The list of reasons why is long and
+technical. But that's my executive summary for right now based on what I've
+seen about this to date. -L
+
+------------------------------
+
+Date: Tue, 2 Aug 2022 13:44:08 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Study finds Wikipedia influences judicial behavior (MIT)
+
+https://news.mit.edu/2022/study-finds-wikipedia-influences-judicial-behavior-0727
+
+------------------------------
+
+Date: Mon, 1 Aug 2022 22:02:20 -0700
+From: Barry Gold <BarryDGold@ca.rr.com>
+Subject: Re: BMW's Heated as a Service Model Has Drivers Seeking Hacks
+ (RISKS-33.35)
+
+In the 1970s, IBM sold the 370/145, which did not have virtual memory.  Or
+at least, that's what the POP (Principles of Operation = instruction set
+handbook) said.
+
+Being a moderately large customer, we had an on-site CE (repairman), with an
+office set aside for his use. There was a hardcopy listing of the 145's
+microcode (looking very much like any other assembly language) bound in a
+large folder in the office -- which was not kept locked. One of our
+programmers, having some time on his hands was leafing through this out of
+idle curiosity and noticed that there were gaps in the address column:
+
+10258 opcode operands
+10259 opcode operands
+10260 opcode operands
+10536 opcode operands
+10537 opcode operands
+etc.
+
+"Curiouser and curiouser". One of the things you could do at the console was
+to "coredump" the microcode to the console "typewriter" (a 120 cps dot
+matrix terminal). In hexadecimal with EBCDIC translation at the right.
+
+Lo and behold, in one of the gaps there appeared the characters CROSS PAGE.
+
+Well... wasn't that interesting?
+
+He traced through the code and discovered that the machine came with virtual
+memory, but when you loaded the appropriate bit into the control register,
+the microcode would first check a "switch" -- actually a wire that the CE
+could clip. We didn't actually own the 145 -- IBM was in the leasing
+business in those days -- so we couldn't just take a pair of "dikes" and
+clip it ourselves.
+
+No problemo. It turns out that the "control registers" were in the microcode
+address space.
+
+He wrote a program called "wishbone". Set the load address to 00C (the card
+reader), put the binary deck in the hopper, and push the IPL button. The
+program loads and just sits there. You then have 2 minutes to set the
+console dials to a particular address, push "set microprogram address", then
+"start". The program that was loaded into the registers would execute, and
+*patch* the microcode to ignore that wire and turn on virtual addressing. It
+would also print out "Wish granted".
+
+Then grab a copy of CP/67(*) on tape, IPL from the tape, and presto, you
+have a virtual machine.
+
+If you did nothing for 2 minutes, or if you pushed any other buttons, the
+console would print out "Wish denied".
+
+[CP/67 was a virtual machine OS for the 360 model 67. The 370/145 interface
+was identical]
+
+About 6 months later IBM announced virtual memory for the 145, the CE
+clipped the wire, and we could run CP/67 officially.
+
+------------------------------
+
+Date: 1 Aug 2022 23:05:01 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: BMW's Heated as a Service Model Has Drivers Seeking Hacks
+ (RISKS-33.35)
+
+Back in the good old days, there was an IBM card reader where the difference
+between the fast model and the slow one was a delay relay.  Needless to say,
+academic departments all rented the slow one and bypassed the relay, and had
+to try to remember to put it back when the CE came by.
+
+I also believe there were some small mainframes that were always shipped
+with the maximum amount of memory, with jumpers to enable the amount paid
+for.
+
+On some models of IBM 1130, the CPU cycle time was deliberately slowed down,
+except that when it was taking interrupts from the printer, it needed to run
+at full speed to set the print hammers before the rotating print drum moved
+past the desired character position. You can imagine what students did with
+that.
+
+This annoyingly bad idea goes way back.
+
+  [Someone who shall remain nameless, along with vendor's identity, sent me
+  privately a different approach that I feel is worth doubly anonymizing, in
+  case it is apocryphal:
+
+    At one point [the vendor] did the same for a CPU upgrade. The field
+    engineer would build a tent around the fridge-sized box, snip a wire,
+    and come out in an hour or two with a VERY large bill.
+
+  PGN]
+
+------------------------------
+
+Date: Mon, 1 Aug 2022 23:39:16 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Re: BMW's Heated as a Service Model Has Drivers Seeking Hacks
+ (John Levine, RISKS-33.36)
+
+You have a point -- but for computer equipment,  what's the alternative?
+Companies make entirely different device models to satisfy various price
+points? Make one mid-range model that doesn't satisfy most needs? Make one
+model for the largest demand and ignore the rest? How are those better than
+allowing one device presenting different capabilities to satisfy different
+needs/budgets? Why is it annoying or even bad, vs.  happily meeting
+different needs at different price points?
+
+In fact, why is enabling different auto features for different prices bad?
+Again, what would you suggest -- configure different cars for different
+budgets? That's more expensive and requires more complex logistics, and who
+does it help? Always enable all built-in features?  But then how to target
+different needs/budgets?
+
+That's not defending rental model for auto features -- it's bad enough that
+software goes in that direction.
+
+IBM DOES allow rental of speed boost features on installed equipment to meet
+peak loads. That too satisfies customer requirements.
+
+------------------------------
+
+Date: Tue, 2 Aug 2022 07:35:13 +0200
+From: Pete <djc@resiak.org>
+Subject: Re: BMW's Heated as a Service Model Has Drivers Seeking Hacks
+ (RISKS-33.35)
+
+Or IBM's 1950s-1960s era line printers which were leased -- not sold -- at
+different levels of speed controlled, customers discovered, by jumpers on a
+plugboard.  Remove a jumper to get the higher speed, no cutting required.
+
+------------------------------
+
+Date: Tue, 2 Aug 2022 09:31:31 +0200
+From: Lars-Henrik Eriksson <lhe@it.uu.se>
+Subject: Re: Students and staff are entirely prohibited from using Google
+ Search (RISKS-33.35)
+
+The web article doesn't support the claim in the subject line that using
+Google Search is "entirely prohibited". In any case, it is quite reasonable
+to use DuckDuckGo instead of Google Search. GDPR issues aside, in a teaching
+situation, you don't want the "personalisation" features of Google Search as
+that could skew the search results -- particularly if several people share
+the same computer.
+
+------------------------------
+
+Date: Mon, 1 Aug 2022 18:33:19 -0600
+From: Jonathan Levine <jonathan.canuck.levine@gmail.com>
+Subject: Re: Tim Hortons Offers a Free Coffee and Pastry for Spying on People
+ for Over a Year (Vice) (RISKS-33.35)
+
+> The wholesome Canadian chain caused a scandal when its privacy violation was
+> revealed, and now it's proposing a free coffee and a baked good as
+> restitution.
+
+"Canadian"?  Puh-leez.  Tim's (and Burger King's) parent company is Brazilian.
+
+But yeah, the proposed settlement is pretty weak cheese.
+
+------------------------------
+
+Date: Tue, 2 Aug 2022 13:19:39 -0700
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: Tim Hortons Offers a Free Coffee and Pastry for Spying on People
+ for Over a Year (Vice) (RISKS-33.35)
+
+When I first saw this headline, I thought Tim Hortons was offering you free
+food in exchange for the right to spy on you.  Not unlike the auto insurance
+"safe driver points" incentives, eh?
+
+------------------------------
+
+Date: Tue, 2 Aug 2022 14:07:30 -0700
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: Tech giants, including Meta, Google, and Amazon, want to put an
+ end to leap-seconds (ZDNet, RISKS-33.35)
+
+They could not have chosen a worse moment to petition for the abandonment of
+leap seconds, as the Earth's rotation is just now reportedly speeding up.
+We may need many more leap second adjustments.
+
+------------------------------
+
+Date: Wed, 3 Aug 2022 12:42:03 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Drone Contraband Deliveries Are Rampant at U.S. Prisons
+ (WiReD, RISKS-33.35)
+
+There's a very low-tech solution to this problem (this image is of the yard
+of a newly built prison in Israel):
+http://www.hoek.co.il/wp-content/uploads/2015/03/250-ofek2.jpg
+
+Note the mesh net over the yard.  This has been the standard in prisons for
+decades now, to solve the low-tech problem of accomplices throwing stuff
+from outside over the fence.
+
+------------------------------
+
+Date: Wed, 3 Aug 2022 12:48:19 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Online pricing algorithms are gaming the system, and could mean
+ you pay more (npr.org, RISKS-33.35)
+
+"... if one business sets a price, the algorithm could automatically
+undercut it" -- or else, if one business sets a higher price, the algorithm
+could raise its prices to match...
+
+Consider it logically: when faced with these two choices, which one is the
+algorithm more likely to decide is more profitable for its company?
+
+------------------------------
+
+Date: Tue, 2 Aug 2022 14:03:59 -0700
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: Jeopardy! player causes `at-home-disturbance' (RISKS-33.35)
+
+It still escapes me why the Echo and similar devices don't implement some
+basic voice fingerprinting to prevent random speakers from activating them.
+
+------------------------------
+
+Date: Wed, 3 Aug 2022 12:55:28 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Jeopardy! player causes `at-home-disturbance' (RISKS-33.35)
+
+While Alexa is not a very common name, it's still common enough to cause
+trouble for quite a lot of people (and their families).  But now we are
+facing yet another level of this problem: One of the reactions quoted in
+this article is " "Hey @Jeopardy please no more contestants named Alexa" --
+a new form of discrimination is born!
+
+------------------------------
+
+Date: 1 Aug 2022 22:11:06 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: "Dr. Birx ADMITS She 'Knew' COVID-19 Vaccines 'Were Not Going
+ to Protect Against Infection' (RISKS-33.35)
+
+>Since then, "breakthrough cases" have become common, with triple-vaccinated
+>Americans regularly catching SARS-CoV-2 and staying sick for much longer
+>than the unvaccinated...
+
+This is nonsense, and I am surprised you published it.  The source is a Fox
+"news" piece.  [*]
+
+Nobody who understands medicine ever said that vaccinations would completely
+prevent infection, but there is overwhelming evidence that if you are
+vaccinated you are less likely to get sick, and you will get less sick if
+you do.
+
+  [* John, Thanks.  That's *exactly* why I ran it RISKS, without comments.
+  "Overwhelming", you say?  But you might check out the website "How Bad Is
+  My Batch", which if you you check your batch numbers, points out something
+  else: 5% of the Pfizer and Moderna batches are apparently reponsible for
+  80% of the bad reactions including deaths and permanent disablement from
+  the vaccines.  So maybe only 95% of the batches do what you say.  PGN]
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.36
+************************

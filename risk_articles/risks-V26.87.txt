@@ -1,0 +1,571 @@
+RISKS-LIST: Risks-Forum Digest  Saturday 2 June 2012  Volume 26 : Issue 87
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.87.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Anti-virus software deletes fetal monitor data, baby OK (Kevin Fu)
+Yet another Leap Year issue (Tim Duncan)
+Court warns on jurors' Web use (Milton J. Valencia via Monty Solomon)
+U.S. tech companies warn: threat to Internet from foreign governments
+  (Lauren Weinstein)
+Spy software's Bluetooth capability allowed stalking Iranian victims
+  (Richard M. Smith)
+Budget and staff pressures are reshaping federal cybersecurity market (PGN)
+Over-55s pick passwords twice as secure as teenagers' (Lauren Weinstein)
+Future Internet Content-Centric Networking a memory of the past?
+  (David Farber)
+"Facebook's mobile desperation will threaten your privacy" (Gene Wirchenko
+  on Bill Snyder)
+SouthWest airlines manipulating web content (John Pettitt)
+If you're going to steal an iPhone, don't photograph yourself! (Mark Brader)
+Re: iCloud user tracks down iPhone thief using photo stream (Andrew Douglass)
+On Facebook, 'Likes' Become Ads (Somini Sengupta via Monty Solomon)
+Telemarketing Calls Keep Mounting Up, Along With Consumer Irritation
+  (Alina Tugend via Monty Solomon)
+Microsoft forbids class actions in new Windows licence (Gavin Clarke via
+  Gene Wirchenko)
+The fallacy of collaboration technology (Galen Gruman via Gene Wirchenko)
+Re: "Siri *ab*use (Peter Houppermans)
+Re: Facts about Fukushima spent fuel pool #4 (Dan Yurman)
+Re: Vint Cerf warns Web freedom is under attack (Chris Drewe)
+Re: UK surveillance program could expose private lives (Chris Drewe)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 31 May 2012 09:37:12 -0400
+From: Kevin Fu <kevinfu@cs.umass.edu>
+Subject: Anti-virus software deletes fetal monitor data, baby OK
+
+An anecdote on risks to patients when anti-virus software goes awry in
+Health Information Technology (HIT).
+
+"Our hospital fetal monitoring devices interface with our general HIT
+system. We had found some viruses that were missed by our previous antivirus
+software and we replaced it one month ago with a new product.  This morning
+the new antivirus software identified the fetal monitor file as malware and
+deleted it. We have not able to recover the lost file, which contains about
+7 hours of fetal monitor data."
+
+"Betrayed by Your Allies", May 2012
+http://hosted.verticalresponse.com/250140/86af97f052/
+
+Similar AV risks for HIT have been reported in the past.  An incident in
+April 2010 caused an outage by an errant anti-virus DAT file update.
+http://www.npr.org/templates/story/story.php?storyId=126168997
+
+The risks?  Technical components for malware mitigation are not without
+their own risks that manifest at the system level.  Malware mitigation has
+obvious importance for software-based medical devices and HIT, but systems
+engineering thinking needs to be front and center.
+
+My interpretation: "Don't throw out the baby with the malware."  The
+overarching goal should remain better outcomes for public health.  Thanks to
+Ross Koppel at UPenn for bringing this anecdote to my attention.
+
+------------------------------
+
+Date: Wed, 30 May 2012 22:31:29 -0400
+From: Tim Duncan <tim@duncan.cx>
+Subject: Yet another Leap Year issue
+
+High school salutatorian may not be back in country in time for graduation
+because BOTH systems her lawyer's firm used to track dates didn't know that
+2012 was a leap year.
+http://www.fox59.com/news/wxin-high-school-salutatorian-may-not-be-back-in-country-in-time-for-graduation-20120530,0,1077029.column
+
+------------------------------
+
+Date: Sat, 2 Jun 2012 14:42:11 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Court warns on jurors' Web use (Milton J. Valencia)
+
+Posts on social media raise risks of mistrial; state's judges told to
+spell out rules
+
+Milton J. Valencia, *The Boston Globe*, 14 May 2012
+
+In the state's first decision involving juries and social media, the
+Massachusetts Appeals Court has called on judges to better police jurors'
+use of the Internet to make sure they do not discuss cases online, and thus
+risk a mistrial.
+
+The court said judges need to do more to explain to jurors that refraining
+from conversations about a case also means not posting anything about it on
+Facebook or Twitter, common practice in today's technology-driven world.
+
+"Jurors must separate and insulate their jury service from their digital
+lives,'' the court said in a ruling involving a Plymouth Superior Court case
+in which several jurors made comments on Facebook during a trial. Those
+posts in turn elicited responding posts from friends.
+
+"Instructions not to talk or chat about the case should expressly extend to
+electronic communications and social media,'' the court added in its
+little-noticed ruling two weeks ago. ...
+
+http://articles.boston.com/2012-05-14/metro/31690554_1_social-media-jurors-courts-and-media
+
+http://bostonglobe.com/metro/2012/05/13/judges-told-keep-jurors-off-facebook-and-twitter/iWSpYg9CRFeQsyfcu4hJTP/story.html
+
+------------------------------
+
+Date: Wed, 30 May 2012 19:45:06 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: U.S. tech companies warn: threat to Internet from foreign governments
+
+  "That could mean the Web might look drastically different in other
+  countries than it does in the United States, opponents of the proposals
+  say. An Internet user in Uzbekistan could be more easily tracked by
+  government officials and might get access to only a portion of the Google
+  search results seen in the United States, for example.  In a rare
+  coordinated effort to knock down the proposals, Google, Microsoft, Verizon
+  and Cisco also warn of financial risks to their businesses if new rules
+  are adopted. They say some nations may push for laws on Internet firms
+  that could lead to tariffs on Internet service providers such as Verizon,
+  or even Web firms such as Facebook that enable people to communicate over
+  the Internet.That could mean the Web might look drastically different in
+  other countries than it does in the United States, opponents of the
+  proposals say. An Internet user in Uzbekistan could be more easily tracked
+  by government officials and might get access to only a portion of the
+  Google search results seen in the United States, for example."
+  http://j.mp/LHNSd1 (Washington Post)
+
+Let me put it this way. A UN/ITU "takeover" of the Net would make
+SOPA, PIPA, and CISPA look like cream puffs.
+
+------------------------------
+
+Date: Sat, Jun 2, 2012 at 9:12 AM
+From: Richard M. Smith <richard.m.smith@computerbytesman.com>
+Subject: Spy software's Bluetooth capability allowed stalking Iranian victims
+
+http://arstechnica.com/security/2012/06/spy-softwares-bluetooth-capabilty-allowed-stalk-of-iranian-victims/
+
+Espionage software that was recently found targeting Iranian computers
+contains advanced Bluetooth capabilities, taking malware to new heights by
+allowing attackers to physically stalk their victims, new analysis from
+Symantec shows.
+
+The Flame malware, reported earlier this week to have infiltrated systems in
+Iran and other Middle Eastern countries, is so comprehensive that security
+experts have said it may take years for them to fully document its inner
+workings. In a blog post published Thursday, Symantec researchers dangled an
+intriguing morsel of information concerning one advanced feature when
+picking apart a module that the binary code referred to as BeetleJuice.****
+<http://arstechnica.com/security/2012/05/spy-malware-infecting-iranian-networks-is-engineering-marvel-to-behold/>
+<http://www.symantec.com/connect/blogs/flamer-recipe-bluetoothache>
+
+The component scans for all Bluetooth devices in range and collects the
+status and unique ID of each one found, presumably so that it can be
+uploaded later to servers under the control of attackers, the Symantec
+report said. It also embeds an encoded fingerprint into each infected device
+with Bluetooth capabilities. The BeetleJuice module gives the attackers the
+ability to track not only the physical location of the infected device, but
+the coordinates of smartphones and other Bluetooth devices that have been in
+range of the infected device.
+
+  [There is lots more to this story.  See also:
+Obama Order Sped Up Wave of Cyberattacks Against Iran
+David E. Sanger, *The New York Times*, 1 Jun 2012
+http://www.nytimes.com/2012/06/01/world/middleeast/obama-ordered-wave-of-cyberattacks-against-iran.html
+
+Also
+http://www.securityweek.com/anti-censorship-tool-used-syria-and-iran-compromised
+  PGN]
+
+------------------------------
+
+Date: Fri, 1 Jun 2012 20:35:28 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Budget and staff pressures are reshaping federal cybersecurity market
+
+A shortage of skilled cyber experts is driving some contract decisions.
+http://shar.es/qwZ26
+
+------------------------------
+
+Date: Sat, 2 Jun 2012 10:49:16 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Over-55s pick passwords twice as secure as teenagers'
+
+  "People over the age of 55 pick passwords double the strength of those
+  chosen by people under 25 years old. That's according to the largest ever
+  study of password security, which also found that most of us choose
+  passwords that are less secure than security experts recommend."
+  http://j.mp/KAsARU  (New Scientist)
+
+------------------------------
+
+Date: Sat, 2 Jun 2012 14:39:37 -0400
+From: David Farber <dave@farber.net>
+Subject: Future Internet Content-Centric Networking a memory of the past?
+
+Funny, but the DCS project that we did in 1970s under NSF funding used a
+"content-centric" Local network and it yielded many important advantages.
+Unfortunately the techniques used were eliminated by those who picked up
+parts of the effort since they saw no need for it :-) -- Farber, D.J.,
+J. Feldman, F.R. Heinrich, M.D. Hopwood, K.C. Larson, D.C. Loomis, and
+L.A. Rowe.  "The Distributed Computing System." Proc. Seventh Annual IEEE
+Computer Society International Conference, (Feb. 1973), pp. 31-34.
+
+  "Next month, a little more than a year after the National Science
+  Foundation (NSF) launched the Future Internet Architecture (FIA) program,
+  100 researchers will gather in Palo Alto, CA, to discuss the progress in
+  `content-centric networking' (CCN) -- a new direction for organizing
+  Internet traffic that aims to provide greater security and faster
+  connectivity.
+
+  Content-centric networking represents a shift from today's focus on using
+  network addresses to find content. Instead it proposes a protocol that
+  specifically defines and tracks content. Backers say it represents an
+  evolutionary change similar to IP forwarding.
+
+  ``We think it's definitely a concept that will change how people design
+  high performance hardware,'' said Jim Thornton, a principal engineer who
+  leads a dozen researchers at PARC working in the area.
+
+------------------------------
+
+Date: Thu, 31 May 2012 09:21:30 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Facebook's mobile desperation will threaten your privacy"
+
+My. Bill Snyder thinks that we are in for much more privacy trouble from
+Facebook.
+
+Bill Snyder, *InfoWorld*, 31 May 2012
+Facebook's mobile desperation will threaten your privacy
+Facebook's only way to grow is via mobile -- and once the crazy
+schemes fail, Facebook will resort to its old tricks
+http://www.infoworld.com/d/the-industry-standard/facebooks-mobile-desperation-will-threaten-your-privacy-194448
+
+------------------------------
+
+Date: Wed, 30 May 2012 17:33:16 -0700
+From: John Pettitt <j@p.tt>
+Subject: SouthWest airlines manipulating web content
+
+I had an interesting issue come up today.  One of our staff was complaining
+that our web site wouldn't load.  After the usual "it works for me" dance we
+took a look at his computer and found his browser had a cached copy of our
+home page containing requests for two javascript files not present on the
+original.
+
+What happened is he flew on SouthWest airlines yesterday and their in flight
+wifi injected the scripts into the page which was then cached by the browser
+(they also manipulated the page cache headers to make the content cacheable
+far longer than intended).  When he tried to load the page on our network
+the server addresses for the scripts were not reachable so the browser
+appeared to hang until the connection timed out.
+
+The issues here are legion. Start with the fact that our site appeared to be
+broken, had this been a customer rather than an employee we'd probably have
+lost them.  Then move on to cache time manipulation which could lead to
+users seeing and making decisions based on stale content with potentially
+negative consequences.  Finally the fact that the cached content was
+attempting to load unauthorized scripts while it was running on our our
+intranet poses some interesting security questions.
+
+Needless to say out employees are now banned from using SouthWest inflight
+wifi.
+
+------------------------------
+
+Date: Thu, 31 May 2012 13:48:29 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: If you're going to steal an iPhone, don't photograph yourself!
+
+  [More on the brief item by Karen Haslam in RISKS-26.86.  PGN]
+
+According to Katy McCaffrey, she was on a cruise when her iPhone was stolen.
+But she had set it up so that photos taken with it would be automatically
+transmitted to her own computer.  It didn't take long after that for a
+suspect to be identified as a cruise line employee, and the phone to be
+recovered.
+
+  http://www.komonews.com/news/va?vaid05e478b0cbcbdd3a7c2c011bbd4f24a
+  http://www.telegraph.co.uk/technology/apple/9289306/any.html
+
+------------------------------
+
+Date: Sat, 2 Jun 2012 15:27:42 -0400
+From: Andrew Douglass <andrew@douglass.org>
+Subject: Re: iCloud user tracks down iPhone thief using photo stream (26.86)
+
+While the sleuthing is impressive - there have been a number of these - I'm
+curious if there are ethical or legal issues. Being able to tap into your
+own property makes perfect sense, but in a way also resembles wiretap and
+hacking into computer systems. For example. if the stolen property were
+transferred to a good-faith purchaser who then made proprietary business or,
+er, explicit marital videos which the theft victim in turn publicized on the
+web -- well, I think there are some privacy boundaries to ponder, even with
+an underlying illegality and righteous pursuit of justice.
+
+------------------------------
+
+Date: Fri, 1 Jun 2012 19:40:43 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: On Facebook, 'Likes' Become Ads (Somini Sengupta)
+
+Somini Sengupta, 31 May 2012, *The New York Times* [PGN-truncated for RISKS]
+
+On Valentine's Day, Nick Bergus came across a link to an odd product on
+Amazon.com: a 55-gallon barrel of ... personal lubricant.  He found it
+irresistibly funny and, as one does in this age of instant sharing, he
+posted the link on Facebook, adding a comment: "For Valentine's Day. And
+every day. For the rest of your life."
+
+Within days, friends of Mr. Bergus started seeing his post among the ads on
+Facebook pages, with his name and smiling mug shot. Facebook - or rather,
+one of its algorithms - had seen his post as an endorsement and transformed
+it into an advertisement, paid for by Amazon.  ...
+
+http://www.nytimes.com/2012/06/01/technology/so-much-for-sharing-his-like.html
+
+  [Nice item.  Worth reading.  PGN]
+
+------------------------------
+
+Date: Fri, 1 Jun 2012 19:40:43 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Telemarketing Calls Keep Mounting Up, Along With Consumer Irritation
+  (Alina Tugend)
+
+Alina Tugend, *The New York Times*, 1 Jun 2012
+
+Sometimes I just don't know when a column is going to hit a nerve.  But
+judging from the response to my May 19 piece, annoying telemarketing calls
+and robo-calls rank high among the miserable irritants of everyday life.
+
+Readers said the calls, particularly those that offer lower interest rates
+for credit cards and mortgages, are becoming more frequent, despite using
+every tool available to block them.
+
+Reporting such calls to the Federal Trade Commission, as I suggested, was an
+exercise in frustration and futility, many readers told me.
+
+"I have all four of my phone numbers on the Do Not Call Registry," one
+reader, John Dingman, of Dallas, told me in an e-mail. "When I report such
+calls, the F.T.C. site thanks me and there is no other discernible
+response. The calls continue, perhaps from other companies, perhaps from the
+same companies with a new gambit and/or phone number. Who knows?"
+
+Readers told me that the Do Not Call Registry seemed to work just fine at
+blocking calls when it began in 2003 and for several years after that. But
+the number of unwanted calls has steadily increased. ...
+
+http://www.nytimes.com/2012/06/02/your-money/telemarketing-calls-keep-mounting-up-along-with-consumer-irritation.html
+
+------------------------------
+
+Date: Thu, 31 May 2012 11:16:32 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Microsoft forbids class actions in new Windows licence (Gavin Clarke)
+
+http://www.theregister.co.uk/2012/05/29/no_microsoft_class_actions/
+Microsoft forbids class actions in new Windows licence:
+You're on your own now
+Gavin Clarke, *Business*, 29 May 2012
+
+opening text:
+
+Microsoft will make it harder for customers to club together with lawyers to
+file lawsuits against its products.  The company is rolling out new End User
+License Agreements (EULAs) that forbid punters from joining class-action
+proceedings.
+
+------------------------------
+
+Date: Fri, 01 Jun 2012 08:27:19 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "The fallacy of collaboration technology" (Galen Gruman)
+
+Galen Gruman, *InfoWorld*, 01 Jun 2012
+Videoconferencing, unified communications, and shared editing don't
+work the way people do
+http://www.infoworld.com/d/consumerization-of-it/the-fallacy-of-collaboration-technology-194531
+
+This article does a great job of deconstructing collaboration and showing
+why collaboration technology does not fit very well.  The risk is of a
+round-peg solution in a round-hole problem.
+
+------------------------------
+
+Date: Thu, 31 May 2012 10:51:44 +0200
+From: Peter Houppermans <peter@houppermans.com>
+Subject: Re: "Siri *ab*use (Solomon and Wirchenko, RISKS-26.86)
+
+Siri has been on my "list of things to avoid" pretty much from before I
+obtained the new iPhone.
+
+Although I generally like the phone, there are some features that I
+disabled/changed the moment I received it.  Siri is part of those features
+that are killed - here is the complete list:
+
+1- iCloud.  No thank you.  I have a legal obligation (and, more importantly,
+an ethical one) to protect the privacy of my clients and friends, so I will
+not give an uncontrolled 3rd party access to their data..
+
+2 - Location services: only enabled for apps that really have a need for it,
+which excludes most weather programs (the risk of data leaks is high).
+There is an interesting gotcha here: without the "find my phone" location
+service enabled you will not have a remote kill switch for the phone - even
+if you don't want to locate it first.  Let me translate that: a
+knowledgeable thief or less than honest finder just has to disable location
+services to prevent remote kill.  Not good - should be a separate, protected
+function (assuming the theft was for the hardware rather than the content).
+
+3 - Simple passwords - I opted for complex ones (or at least longer ones).
+Needs no elaboration :).
+
+4 - Siri.  An iPhone doesn't have the local power to process voice commands,
+so it sends them to a US hosted service.  In the process it thus provides
+pristine, digital quality voice prints of clearly identifiable users to an
+untrusted 3rd party. Biometrics are biometrics, whatever form they take..
+
+5 - iMessage, the Apple version of WhatsApp.  iMessage and WhatsApp give
+providers access to all user messages, especially since they also carry
+images.  While I'm on WhatsApp - it also exports the *entire* address book
+to WhatsApp's servers (the iPhone version will not even permit access to
+*configuration* until it has received permission to run off with that data).
+Personally, I am in awe of these services.  I have never seen a global
+intercept implemented so smoothly and inexpensively, ever..
+
+------------------------------
+
+Date: Sat, 02 Jun 2012 16:55:18 -0400
+From: Dan Yurman <djysrv@gmail.com>
+Subject: Re: Facts about Fukushima spent fuel pool #4 (RISKS-26.86)
+
+Regarding the "end of the world" rhetoric about the spent fuel pool at
+Fukushima reactor #4, this nonsense has been thoroughly debunked by a
+special post at the blog of the American Nuclear Society.
+
+http://ansnuclearcafe.org/2012/05/16/spent-fuel-at-fukushima-not-dangerous/
+
+For starters, critics claim there are 10,893 spent fuel assemblies at
+Fukushima. In fact, there are only 2,724 spent fuel assemblies and all of
+them are in conditions which are below the temperature at which fuel
+cladding could oxidize. The technical details are laid out in the ANS Cafe
+article.
+
+Then there are claims, in particular, that if the spent fuel in pool #4 were
+to lose its cooling water, that the zirconium cladding on the fuel would
+oxidize and that all of the curies of radioactivity in the fuel would
+simultaneously be ejected into the open air.
+
+This sequence isn't possible based on the current condition of the spent
+fuel at reactor #4 nor is it possible for the other spent fuel stored at
+Fukushima.
+
+First, the spent fuel isn't hot enough. It has been out of the reactor long
+enough that even if all the water was lost, the remaining decay heat would
+still be below the point of ignition which is 900C for the cladding and
+2,880C for the uranium oxide in the fuel.
+
+Second, the fuel has been out of the reactor for more than a year. The fuel
+has been out of the reactor longer than the point at which it could catch on
+fire.
+
+Scare the socks off people propaganda is never a substitute for engineering
+reality. You might just as well try to build railroads on snow drifts.
+
+------------------------------
+
+Date: Sat, 02 Jun 2012 22:19:46 +0100
+From: "Chris Drewe" <e767pmk@yahoo.co.uk>
+Subject: Re: Vint Cerf warns Web freedom is under attack (R 26 86)
+
+Indeed, but I feel that it also applies the other way round, i.e.,
+authorities are using the Internet to monitor what we're up to and taking
+action against unacceptable behaviour, under the pretext of maintaining law
+and order, of course.  The audit trail left by digital communications
+enables anything that you say (or write) to be taken down and used in
+evidence against you later.  And apart from CCTV, in public places there's
+usually someone nearby with a smartphone incorporating a movie camera to
+catch any lapses (and maybe post them on YouTube).
+
+------------------------------
+
+Date: Sat, 02 Jun 2012 22:19:46 +0100
+From: "Chris Drewe" <e767pmk@yahoo.co.uk>
+Subject: Re: UK surveillance program could expose private lives (R 26 86)
+
+Comment from a Brit: yes, it's irritating how the authorities make a big
+fuss about "don't worry, we won't read your e-mails or record your telephone
+conversations, we just want access to traffic records (which ISPs and phone
+companies keep anyway), so no threat to your privacy or anything..." while
+as RISKS readers will know, details of who you're communicating with are
+hugely revealing, and if this is available in real time then your movements
+can be tracked as well.
+
+Usual justification is "we need to do this, or you'll be blown up by
+terrorists!"  Yeah, right...
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.87
+************************
+
+--_002_ec3e10800fcf4a0ea5c3b157f1c514f5EXHUBVM01campusnclacuk_--

@@ -1,0 +1,475 @@
+precedence: bulk
+Subject: Risks Digest 29.47
+
+RISKS-LIST: Risks-Forum Digest  Monday 18 April 2016  Volume 29 : Issue 47
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.47.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Drone collides with BA 320 approaching London Heathrow airport
+  (The Guardian)
+Report: SS7 still vulnerable more than a year after hack first reported
+  (Fiercewireless)
+Hackers use Congressman's iPhone to demo ability to listen into calls, 
+  monitor texts, track location? (9to5mac via Geoff Goodfellow)
+Man accidentally 'deletes his entire company' with one line of bad code
+  (Andrew Griffin)
+Bank back stabbing (Alister Wm Macintyre)
+Uber Gave Government Millions Of Users' Data (HuffPo)
+Researchers cracked Microsoft's Google-shortened URLs ... (WiReD)
+Apple to deprecate QuickTime for Windows after discovery of two flaws
+  (Apple Insider)
+House GOP Passes Anti-Net Neutrality Bill Despite Obama Veto Threat
+  (Motherboard)
+Guess what? URL shorteners short-circuit cloud security (Sean Gallagher)
+BMW's car-sharing service launches--and almost lands Ars a ticket (Ars)
+First came the Breathalyzer, now meet the roadside police *textalyzer*
+  (David Kravets)
+Out-of-date apps put 3 million servers at risk of crypto ransomware
+  infections (Dan Goodin)
+Apple stops patching QuickTime for Windows despite 2 active
+  vulnerabilities (Dan Goodin)
+5 Things To Know About Ransomware (The Boston Globe)
+OK, panic -- newly evolved ransomware is bad news for everyone
+  (Sean Gallagher)
+The Top Google Updates in 2016 You'll Want to Know About (MakeUseOf via
+  Gabe Goldberg)
+Andrew Appel TEDx Talk: Internet Voting?  Really? (PGN)
+Re: Online election hacking (Mark E. Smith)
+Re: Senate Cybersecurity panel unveils long-awaited encryption bill (AlMac)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 18 Apr 2016 5:58:01 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Drone collides with BA 320 approaching London Heathrow airport
+
+http://www.theguardian.com/uk-news/2016/apr/17/drone-plane-heathrow-airport-british-airways
+
+------------------------------
+
+Date: Mon, 18 Apr 2016 08:46:08 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Report: SS7 still vulnerable more than a year after hack first reported
+
+http://www.fiercewireless.com/story/report-ss7-still-vulnerable-more-year-after-hack-first-reported/2016-04-18
+
+------------------------------
+
+Date: Mon, 18 Apr 2016 09:36:59 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Hackers use Congressman's iPhone to demo ability to listen into
+  calls, monitor texts, track location?
+
+http://9to5mac.com/2016/04/18/ss7-hack-iphone-congressman/
+
+  [This is a fascinating article.  Senator Lieu is concerned that mobile
+  phones are vulnerable to surveillance by anyone (not just law enforcement)
+  -- because of the SS7 vulnerability.  The article also quotes Karsten
+  Nohl, who demonstrated the vulnerabilities for Senator Lieu: "The ability
+  to intercept cellphone calls through the SS7 network is an open secret
+  among the world's intelligence agencies -- including ours -- and they
+  don't necessarily want that hole plugged."  PGN]
+
+------------------------------
+
+Date: Thu, 14 Apr 2016 11:43:04 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Man accidentally 'deletes his entire company' with one line of bad
+  code (Andrew Griffin)
+
+*The Independent*
+
+"I run a small hosting provider with more or less 1535 customers and I use
+Ansible to automate some operations to be run on all servers.  Last night I
+accidentally ran, on all servers, a Bash script with a rm -rf {foo}/{bar}
+with those variables undefined due to a bug in the code above this line."
+
+http://www.independent.co.uk/life-style/gadgets-and-tech/news/man-accidentally-deletes-his-entire-company-with-one-line-of-bad-code-a6984256.html
+
+  [Also noted by Dan Jacobson.]
+http://www.independent.ie/business/technology/man-deletes-his-whole-company-after-typing-wrong-bit-of-code-34629615.html
+
+This is not new(s), although it is nevertheless RISKS-worthy.  PGN]
+
+------------------------------
+
+Date: Thu, 14 Apr 2016 16:09:49 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Bank back stabbing
+
+Before opening financial accounts, I do some due diligence about the place,
+which isn't easy, thanks to bank secrecy.  Then every few years I do this
+again for all places I got accounts, because stuff happens we can find out
+about, such as a 5 star rating falling to 2 stars.  Several banks in my city
+are UNRATED.  Needless to say, I have accounts with none of them, except one
+which WAS rated, then had a merger over a year ago, became unrated, and is
+still that way.
+
+I keep notes on what I'm doing, try to reconcile bank statements, then go
+visit them to ask when I can=92t explain things.  Also I sometimes visit to
+do non-standard operations.  This can lead to interesting life experiences
+learning about hidden bank rules.
+
+
+* When we open a CD (Certificate of Deposit), there is a contract with the
+rules.  Apparently banks may change these rules, retroactively, and if the
+customer not like it, tough.  Banks are like landlords and their leases, in
+this regard.  Customers cannot change contracts retroactively, without
+signature of other party.  In recent years, many US judges have ruled that
+only the customers are bound by contracts, not the banks.
+
+"We're supposed to report, on our tax returns, ALL funds (and other assets)
+received from ALL persons and institutions, with very few exceptions.  The
+institutions are also supposed to report this to gov taxing authorities.
+MANY DO NOT.  (There also was a recent US Tax Court ruling where someone got
+in trouble for not properly reporting extremely large allowance paid adult
+children.). Fortunately, if I notice this missing info, I can go ASK them,
+but then I have to supply the account #, the CD #, etc, which can include a
+CD which matured & was closed out, so where did I put the paperwork on now
+gone CD, whose interest I need to report on my taxes?
+
+* Many banks consider themselves exempt from gov regulations, can make up
+new rules, then say "We have to do this by gov rules," without providing any
+citation, and I cannot find that on any gov site.  When they do that to me,
+I close the account, because I find that behavior to be intolerable.
+
+------------------------------
+
+Date: Wed, 13 Apr 2016 09:21:48 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Uber Gave Government Millions Of Users' Data (HuffPo)
+
+HuffPo via NNSquad
+http://www.huffingtonpost.com/entry/uber-customer-data-privacy_us_570e518ae4b0ffa5937da329
+
+  The ride-sharing company said that between July and December 2015, it had
+  provided information on more than 12 million riders and drivers to various
+  U.S. regulators and on 469 users to state and federal law agencies.
+
+------------------------------
+
+Date: Fri, 15 Apr 2016 16:19:07 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Researchers cracked Microsoft's Google-shortened URLs ... (WiReD)
+
+http://www.wired.com/2016/04/researchers-cracked-microsoft-googles-shortened-urls-spy-people/?mbid=nl_41516
+
+Vitaly Shmatikov: "If someone wanted to inject a lot of malicious content
+into people's computers, it's a pretty interesting way of doing it, By
+scanning you can find these folders, you put whatever you want in them, and
+it gets automatically copied to people's hard drives."
+
+------------------------------
+
+Date: 15 Apr 2016 09:36:48 -0400
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: Apple to deprecate QuickTime for Windows after discovery of two flaws
+
+http://appleinsider.com/articles/16/04/14/apple-to-deprecate-quicktime-for-windows-after-discovery-of-two-flaws
+
+------------------------------
+
+Date: Fri, 15 Apr 2016 14:18:13 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: House GOP Passes Anti-Net Neutrality Bill Despite Obama Veto Threat
+
+http://motherboard.vice.com/read/house-republicans-anti-net-neutrality-bill-obama-fcc
+
+  Brushing aside a veto threat from President Obama, Republicans in Congress
+  passed a controversial bill on Friday that public interest groups say
+  would kneecap federal net neutrality Internet protections.  Open Internet
+  advocates call the "No Rate Regulation of Broadband Internet Access Act,"
+  which was approved in a 241-173 vote largely along party lines, just the
+  latest GOP attempt to undermine federal rules protecting net neutrality,
+  the principle that all content on the Internet should be equally
+  accessible.
+
+  [See also Jon Brodkin, Ars Technica, 13 Apr 2016
+  White House threatens veto of GOP's anti-net neutrality bill
+  "No Rate Regulation" legislation would strip FCC of consumer protection powers.
+  http://arstechnica.com/business/2016/04/white-house-threatens-veto-of-gops-anti-net-neutrality-bill/
+  Noted by Monty Solomon.  PGN]
+
+------------------------------
+
+Date: Sat, 16 Apr 2016 01:32:42 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Guess what? URL shorteners short-circuit cloud security
+  (Sean Gallagher)
+
+Sean Gallagher, Ars Technica, 14 Apr 2016
+Researchers search for Microsoft, Google short URLs, find exposed personal
+data.
+http://arstechnica.com/security/2016/04/guess-what-url-shorteners-short-circuit-cloud-security/
+
+------------------------------
+
+Date: Sat, 16 Apr 2016 01:36:39 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: BMW's car-sharing service launches--and almost lands Ars a ticket
+
+http://arstechnica.com/cars/2016/04/bmws-car-sharing-service-launches-and-almost-lands-ars-a-ticket/
+
+------------------------------
+
+Date: Sat, 16 Apr 2016 01:39:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: First came the Breathalyzer, now meet the roadside police *textalyzer*
+  (David Kravets)
+
+David Kravets, Ars Technica, 11 Apr 2016
+Drivers in accidents could risk losing license for refusing to submit phone
+to testing.
+http://arstechnica.com/tech-policy/2016/04/first-came-the-breathalyzer-now-meet-the-roadside-police-textalyzer/
+
+------------------------------
+
+Date: Sat, 16 Apr 2016 01:40:08 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Out-of-date apps put 3 million servers at risk of crypto ransomware
+  infections (Dan Goodin)
+
+1,600 schools, governments, and aviation companies already backdoored.
+Dan Goodin, Ars Technica, 15 Apr 2016
+http://arstechnica.com/security/2016/04/3-million-servers-are-sitting-ducks-for-crypto-ransomware-infection/
+
+------------------------------
+
+Date: Sat, 16 Apr 2016 01:45:39 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple stops patching QuickTime for Windows despite 2 active
+  vulnerabilities (Dan Goodin)
+
+Dan Goodin, Ars Technica, 14 Apr 2016
+Security firm urges Windows users to uninstall media player.
+http://arstechnica.com/security/2016/04/apple-stops-patching-quicktime-for-windows-despite-2-active-vulnerabilities/
+
+------------------------------
+
+Date: Sat, 16 Apr 2016 10:58:12 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 5 Things To Know About Ransomware
+
+https://www.bostonglobe.com/lifestyle/2016/04/14/things-know-about-ransomware/zOCkuVP3GzdiRbyCq7JSeP/story.html
+
+------------------------------
+
+Date: Sat, 16 Apr 2016 14:07:49 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: OK, panic -- newly evolved ransomware is bad news for everyone
+  (Sean Gallagher)
+
+Sean Gallagher, Ars Technica, 8 Apr 2016
+Crypto-ransomware has turned every network intrusion into a potential payday.
+http://arstechnica.com/security/2016/04/ok-panic-newly-evolved-ransomware-is-bad-news-for-everyone/
+
+------------------------------
+
+Date: Sun, 17 Apr 2016 16:39:16 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Top Google Updates in 2016 You'll Want to Know About
+
+"The Smart Reply feature which was available only on Android and iOS now
+works on the web. It "reads" your emails and crafts a reply for you.  Three
+replies, actually. You can pick one (and edit it if need be) before you send
+the email. Inbox "learns" from your choices to craft better replies and more
+complex sentences with each iteration."
+
+http://www.makeuseof.com/tag/top-google-updates-2016-youll-want-know/
+
+Well, that's certainly risk free. I mean, who here has ever clicked the
+wrong box/button/link on a web page?
+
+And I've always wanted Google to save me the trouble of reading email to
+"craft" replies. Machines should think, people should ... check Facebook, I
+guess.
+
+Gabriel Goldberg, Computers and Publishing, Inc., 3401 Silver Maple Place,
+Falls Church, VA 22042  (703) 204-0433
+
+------------------------------
+
+Date: Fri, 15 Apr 2016 7:14:37 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Andrew Appel: Internet Voting?  Really?
+
+Andrew gave a TEDx talk (i.e., a local TED-like talk at Princeton
+University), on the topic of "Internet Voting? Really?"
+
+Here's the 21-minute video, professionally edited by the TED people.
+
+https://www.youtube.com/watch?v=abQCqIbBBeM
+
+------------------------------
+
+Date: Fri, 15 Apr 2016 05:30:31 +0800
+From: "Mark E. Smith" <mymark@gmail.com>
+Subject: Re: Online election hacking (BBW, RISKS-29.46)
+
+Elections don't have to be online to be hacked. The central tabulators that
+count the votes in most US election districts are nothing but computers and
+it has been proven that they can be directly or remotely hacked. Since the
+software used is proprietary, the results are not verifiable or at least not
+verifiable within a useful timespan, i.e., before a candidate is sworn into
+office, after which federal officials cannot be directly recalled by voters
+even if it is proven that the election was stolen.
+
+Our elections, like our currency, are backed only by faith and credit in the
+US government. I wonder how many computer professionals retain their faith
+in an electoral system that cannot be verified? As long as they weren't
+partisan, they could probably incorporate as a religion, The Church of
+Divine Election Protection, and become tax exempt.
+
+------------------------------
+
+Date: Thu, 14 Apr 2016 19:15:40 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: Re: Senate Cybersecurity panel unveils long-awaited encryption bill
+  (RISKS-29.46)
+
+I am not a lawyer, but I debate legal principles on various forums, which
+may lead some people to believe that I know what I am talking about.
+
+The context of my response are two posts on the Burr-Feinstein bill, via
+posts # 3 and # 2:
+  <http://catless.ncl.ac.uk/Risks/29.46.html>
+
+Which was apparently down when I tried to retrieve the links.
+
+I had been reading, in many posts and stories. that laws like this mean that
+many US consumers of electronics would seek the products of other nations,
+which they think would have privacy protections, outside the loss of them
+from US firms.  But then, while I was following Panama Papers coverage, =
+video
+
+https://www.youtube.com/watch?v=VzccIZUEYws
+<http://www.linkedin.com/redir/redirect?url=https%3A%2F%2Fwww%2Eyoutube%2Eco
+m%2Fwatch%3Fv%VzccIZUEYws&urlhash=mzWd&_t=tracking_anet>
+
+Reminded me, that in the absence of any international court of justice with
+jurisdiction, the US has been enforcing US laws on people and companies
+actions extraterritorially. For example, a Dutch company does something in
+Africa, which is a violation of US laws, so the US drags that company into
+US courts. The US usually only does this if the company has a foot print in
+the USA, which is a reason some companies refuse to have a foot print in the
+USA.  There have also been cases of refugees, who get asylum in the US, who
+are then able in US courts to sue their homeland for the actions for which
+the US gave them asylum.
+
+The US authorizes this under ATS (Alien Tort Statute of 1789). Other nations
+are very annoyed about this US behavior. They think it is improper for US
+courts to rule on violation of International Law, where the USA is not
+directly involved.
+
+The US Supreme Court ruled on some of this in the SOSA case, which is pretty
+complicated.  The US DEA (Drug Enforcement Agency) had sent spies into
+Mexico to try to infiltrate Drug Cartels).  They were not good at that job.
+(Maybe they needed advanced CIA training.)  They were caught, tortured by a
+cartel.  Via further DEA spying, they thought they identified who was
+responsible, but were unable to get them extradited thru Mexican courts.
+So, DEA hired a Mexican national to kidnap an alleged torturer and bring to
+the USA for trial.  US court found the accused to be innocent, because of
+insufficient DEA evidence.  That person then went thru US courts to charge
+the DEA sub-contractor with kidnapping, which is illegal in both USA and
+Mexico.  US Supreme Court said the kidnapped person had grounds for a civil
+law suit. One Lesson is that if the US wants to kidnap someone from another
+nation, the plan had better have enough evidence for conviction, or else put
+them in a CIA jail which is really secret.
+
+That is a precedent.
+
+=D8 Customer-X does a (free?) download of encryption protection ap-Y =
+from
+non-US firm-Z, thinking that if gov agents grab the device, seeking =
+what=92s
+on it, they cannot get that from the company, because it is a non-US
+company.
+
+=D8 FALSE !  This precedent applies.  The fact that customer-X is using =
+a
+company-Z product means that company-Z will now be vulnerable to the =
+same
+kind of subpoena and court case which US-based companies are vulnerable =
+to,
+by virtue of the foot print of Customer-X being in the USA.
+
+=D8 Companies outside the US, which want to protect themselves from =
+this, will
+have to ban sales to people who are inside the USA.
+
+=20
+
+Alister Wm Macintyre (Al Mac)
+
+Linked In https://www.linkedin.com/in/almacintyre=20
+
+Panama Papers group:  https://www.linkedin.com/groups/8508998
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.47
+************************

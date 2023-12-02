@@ -1,0 +1,556 @@
+RISKS-LIST: Risks-Forum Digest  Sunday 27 March 2011  Volume 26 : Issue 39
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.39.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Mis-click sends false alert about shooting to 40,000 on UIUC campus
+  (Steven N. Severinghaus)
+RSA hack - a lesson in how not to handle a PR disaster! (yvonneeskenzi via
+  Monty Solomon)
+The RSA Hack FAQ (Tim Greene via Monty Solomon)
+Bismaleimide triazine shortage looms (Mark Thorson)
+Re: Canadian Nuclear Plant Leaks Radioactive Water (Roger Hird,
+  George Wangersky)
+Single point of failure; was: German Parliament in the Dark (Martyn Thomas)
+Stuxnet found in Japan (Danny Burstein)
+Disk drives in copy machines (Lou Katz)
+Re: UK Royal Academy of Engineering report on GPS jamming (Martyn Thomas)
+Re: GPS Jamming trial (Tony Finch)
+Re: Jamming (Charles Jackson)
+Comments on recent RISKS items (Joe Thompson)
+Re: Google: Nosy Questions (Jonathan Kamens)
+Re: Google's "Farmer" search tweaks devastate website rankings (E. John Sebes)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 24 Mar 2011 18:42:16 -0400
+From: "Steven N. Severinghaus" <sns@severinghaus.org>
+Subject: Mis-click sends false alert about shooting to 40,000 on UIUC campus
+
+>From the News-Gazette[1], the local paper at the University of Illinois at
+Urbana-Champaign:
+
+> An Illini Alert message sent out Thursday morning to 87,000 emails and
+> cell phones was an error, the University of Illinois says.
+>
+> The message system, which is intended to alert the campus to
+> emergencies, was being tested. A message was sent that said, "Active
+> shooter at BUILDING NAME/INTERSECTION. Escape area if safe to do so or
+> shield/secure your location."
+>
+> There was no emergency, and the message was sent in error, UI
+> spokeswoman Robin Kaler said.
+
+The paper also quotes the UIUC spokesperson:
+
+> The alert sent today was caused by a person making a mistake. Rather than
+> pushing the SAVE button to update the pre-scripted message, the person
+> pushed the SUBMIT button. We are working with the provider of the
+> Illini-Alert service to implement additional security features in the
+> program to prevent this type of error.
+
+It sounds as if there is an obvious risk in having the "make 40,000 people
+fear for their lives" button right next to the "save this for later"
+button. Having no confirmation and a meaningless label on the button also
+seems risky; I'd be a lot less likely to accidentally click a button labeled
+"Send this alert to thousands of people right now".
+
+[1]
+http://www.news-gazette.com/news/technology/2011-03-24/ui-emergency-message-mistake.html
+
+------------------------------
+
+Date: Thu, 24 Mar 2011 23:55:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: RSA hack - a lesson in how not to handle a PR disaster!
+
+By yvonneeskenzi, 21 Mar 2011
+
+I've been doing PR for the IT security industry for 16 years and there has
+never been such a major breach to an IT security vendor, as the one to hit
+RSA on Friday.  And rarely has a PR disaster been dealt with so badly. From
+where I'm sitting, resellers, distributors, customers as well as bloggers,
+tweeters and journalists are running around speculating about what's
+happened and panicking about what to do - with no clear advice or guidance
+from RSA's internal or external experts.  It's almost like they've battened
+down the hatches, stuck their heads under their duvets and hoped this whole
+nasty incident would shut-up and go away, so that they could start the week
+afresh as though nothing had happened. ...
+
+http://eskenzi.wordpress.com/2011/03/21/rsa-hack-%E2%80%93-a-lesson-in-how-not-to-handle-a-pr-disaster/
+
+------------------------------
+
+Date: Thu, 24 Mar 2011 23:55:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: The RSA Hack FAQ (Tim Greene)
+
+Tim Greene, The RSA Hack FAQ: RSA hack: What happened, when, what should you
+do about it, Network World, 18 Mar 2011
+
+In the aftermath of RSA saying that its SecurID two-factor authentication
+tokens may have been compromised in a data breach of the company's network,
+here are some key questions and answers about the situation.
+
+The answers in quotations come from a public letter signed by RSA's
+Executive Chairman Art Coviello. ...
+
+http://www.networkworld.com/news/2011/031811-rsa-hack-faq.html
+
+------------------------------
+
+Date: Tue, 22 Mar 2011 14:59:11 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Bismaleimide triazine shortage looms
+
+A consequence of the earthquake in Japan is the looming shortage of
+bismaleimide triazine, a key component of substrates for memory sticks
+and BGA packages.  One of the more intelligent and informative
+articles on the subject is this one:
+
+http://www.eetimes.com/electronics-news/4214144
+
+The reader comments are also well informed.  One reader correctly
+points out that a packaging house can't just switch vendors, because
+of the need to qualify any new supplier.  That can take months.
+
+The risk is having a single company or a single geographic area
+providing most of the world's supply of a key material.  This happened
+before, about 15 years ago, when a Japanese factory making most
+of the world's supply of die attach adhesive burned down.  Pricing
+for DRAM surged about 30-40%, and I got hit by that shortage when
+I needed a new computer.
+
+The article mentions another risk:  even if the BT production facilities
+are capable of operation, rolling blackouts in eastern Japan may
+cripple their output.  It turns out that Japan uses 50 Hz electricity
+in the east and 60 Hz in the west.  There are frequency-conversion
+stations, but they have a combined capacity of only about 1 gigawatt.
+This article provides some details.
+
+http://news.techworld.com/green-it/3265854/japans-earthquake-and-tsunami-leaves-tokyo-facing-blackouts
+
+The nuclear reactors put out of commission and Tokyo are both
+on the 50 Hz side of the fence.  Western Japan can't make up
+the shortfall. I guess it takes a disaster like this to expose obscure
+choke points in the world's infrastructure.
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 16:18:50 +0000 (GMT)
+From: Roger Hird <rl.hird@orpheusmail.co.uk>
+Subject: Re: Canadian Nuclear Plant Leaks Radioactive Water (RISKS-26.38)
+
+> With all the focus placed on the Japanese radiation leak as
+> well as the toxic plume of radioactive particles (possibly
+> containing uranium and plutonium) heading for the United
+> States, another potential disaster is receiving virtually no
+> attention [IE THE PICKERING DISCHARGE INTO LAKE ONTARIO].
+
+Apropos this, one of the most significant risks in any situation is panicky
+overstatement.
+
+Regarding a "toxic plume", "possibly containing U and Pu" particles and
+"heading for the US" - imagination seems to have created a monster out of
+nothing.
+
+There is no such toxic plume.  The discharges from Fukushima have been
+relatively low altitude, unlike at Chernobyl, and seem unlikely to spread
+beyond Japan.  They have been mainly gas and vapour.  There is no evidence
+of the burning of fuel which might have caused a risk of U or Pu particles
+being discharged; the excessive heating of stored used fuel elements, which
+might have lead to much more dangerous and substantial discharges, seems to
+have been avoided by efficient accident management by the Japanese
+authorities.  Isotopes identified as contributing to the (surprisingly low)
+levels of radiation reported are, as would be expected, principally Iodine
+and Caesium.
+
+It doesn't help crisis management if people invent scares.
+
+As far as Pickering is concerned the volume of water discharged sounds a lot
+"tens of thousands of litres" - but is irrelevant - what matters is the
+amount and type of radioactivity.  I've seen it described as a "disaster"
+but Canada's Nuclear Safety Commission describes the leak as negligible.
+The radioactivity was apparently dissolved Tritium "far below regulatory
+limits", estimated to raise Tritium levels at local water treatment plans by
+less than 0.6 bequerels per litre (against usual levels of 6 - 10 per litre
+at local water processing plants and provincial standard of 7,000 per litre
+for drinking water - which does actually seem a bit high - European
+standards are, I think, about 100 per litre but that's still way above the
+Lake Ontario levels).
+
+Of course it might all be a great conspiracy -- but that's another risk!
+
+Roger Hird  rl.hird@orpheusmail.co.uk  http://roger.hird.orpheusweb.co.uk
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 11:30:42 -0700
+From: George Wangersky <george.wangersky@gmail.com>
+Subject: Re: Canadian Nuclear Plant Leaks Radioactive Water (RISKS-26.38)
+
+The writer of this article might be well-advised to consult a less biased
+news source than "planetsave.com". The linked article, while truthful, omits
+enough information to border on the deceptive, and those ignorant of
+radiological safety basics will interpret this as a major nuclear disaster.
+Reading the original referenced article yields a somewhat less biased
+result.
+
+http://www.cbc.ca/news/canada/toronto/story/2011/03/16/pickering-nuclear-leak.html
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 09:08:50 +0000
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Single point of failure; was: German Parliament in the Dark
+  (Weber-Wulff, RISKS-26.38)
+
+> So we are back to the simple risks: Single point of failure.  Will they
+  never learn?
+
+Redundancy looks like inefficiency, and the work required to ensure that
+redundancy is fully maintained is difficult and expensive. Until someone
+comes up with a way of putting a value on redundancy that will convince
+sceptical accountants and managers looking for a way to improve their
+finances, these single points of failure will remain.
+
+On another single-point-of-failure risk, I understand that the US Dept of Homeland Security has acknowledged that GPS should be backed up by a diverse source of Position, Navigation and Timing data - but that they think this is a task best left to the market. Yet, in surveys, they have discovered that many organisations believe they are not dependent on GPS when, in fact, they are ...
+
+Will they never learn?
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 13:44:53 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Stuxnet found in Japan
+
+*Daily Yomiuri* online
+
+New cybervirus found in Japan
+Stuxnet designed to attack off-line servers via USB memory sticks
+
+The Yomiuri Shimbun
+
+Stuxnet, a computer virus designed to attack servers isolated from the
+Internet, such as at power plants, has been confirmed on 63 personal
+computers in Japan since July, according to major security firm Symantec
+Corp.
+
+rest:
+http://www.yomiuri.co.jp/dy/national/T101004003493.htm
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 16:03:07 -0700
+From: Lou Katz <lou@metron.com>
+Subject: Disk drives in copy machines
+
+Why do these drives continue to save the scans? Why don't they delete scans
+on powerdown or after a short time. It is not clear to me what purpose
+saving scans has beyond speeding up the printing of large
+documents. Shouldn't the scans be deleted once the document is printed?  On
+the other hand, maybe I should wear my tinfoil hat with the shiny side in.
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 09:16:23 +0000
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Re: UK Royal Academy of Engineering report on GPS jamming
+
+Erling Kristiansen writes:
+
+>  In my opinion, the best cure is to avoid deploying GPS-based applications
+>  that give an incentive for jamming. Road tolling is the first example that
+>  springs to mind.
+
+I chaired the study that produced the Royal Academy of Engineering report on
+GNSS Reliance and Vulnerabilities. The report is available from
+http://www.raeng.org.uk/news/publications/list/reports/RAoE_Global_Navigation_Systems_Report.pdf
+
+Recommendation 7 in the report is "Widely deployed systems such as Stolen
+Vehicle Tracking or Road User Charging should favour designs where the user
+gains little or no advantage from the jamming of signals that are so
+important to other services."
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 12:18:36 +0000
+From: Tony Finch <dot@dotat.at>
+Subject: Re: GPS jamming trial
+
+> The UK Ministry of Defence has informed Ofcom of the following GPS jamming
+> exercise: [...]
+
+Similar denial of service exercises are performed by the US DOD, though they
+describe what they are doing less bluntly. See the link to "GPS Testing
+Notices" at http://www.navcen.uscg.gov/ and look for "Flight Advisory - GPS
+Testing" at http://www.faasafety.gov/SPANS/notices_public.aspx
+
+These exercises have been going on for years: for example see the link below
+to a discussion from 2007. I believe the military have developed this
+capability as a less indiscriminate replacement for GPS's global "selective
+availability" feature which was turned off in May 2000.
+http://www.mail-archive.com/time-nuts@febo.com/msg10114.html
+
+f.anthony.n.finch  <dot@dotat.at>  http://dotat.at/
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 11:20:21 -0400
+From: "Charles Jackson" <clj@jacksons.net>
+Subject: Re: Jamming (RISKS-26.38)
+
+Your latest issue of Risks Digest had two items on GPS jamming.
+
+One wrote:
+=========
+The proposed "cure" is to locate and remove jammers.  I don't know what kind
+of signal current jammers transmit. But, considering the very low power and
+wide spectrum of the GPS signal, it should not be difficult to build a
+jammer that is virtually impossible to locate. You can only home in on a
+transmitter if you can "see" it above the background noise.
+=========
+
+The other item indicated that consumer GPS receivers had more than 32 dB of
+jam resistance.  I'm just typing away here and relying on memory here—so
+the following analysis may be off and should not be relied on without
+checking.  The public GPS signal is about 1 MHz wide.  Thermal noise in 1
+MHz is about -106 dBm.  So, a 32 dB stronger signal needs to be about -74
+dBm.  That's the kind of signal level one receives from a wireless base
+station transmitting to a consumer handset one or two km away—my handset
+reports a -88 dBm signal as I am typing this.  A GPS jammer transmitting
+broadband noise has to be fairly high power if it is to have much range.
+This type of jammer should be fairly easy to track down unless it is
+designed for very short range jamming.  The GPS jammers I see advertised on
+the Internet are inexpensive ($150-$300) and advertise quite short ranges
+(10 meters—20 meters).  See
+http://www.jammer-store.com/gps-blockers-jammers.html.
+
+If you assume that such a jammer puts a signal 30 dB above the noise floor
+into a GPS receiver with an omnidirectional antenna 10 meters away, an
+enforcement officer with relatively unsophisticated equipment should be able
+to detect such a device from 100 meters away or so (20 dB free space
+attenuation).  It is probably the case that good enforcement operators could
+find it at considerably longer distances.
+
+A more sophisticated jammer would replicate the satellite signals but with a
+slight delay or would transmit forged satellite signals (spoofing).  These
+signals could be transmitted at much lower levels (below the noise floor)
+and would require more complex and specialized equipment to track down.
+But, such jammers would be a good deal more expensive than the simple band
+jammers described above.
+
+A jammer faces a dilemma.  If they transmit a strong enough signal to jam,
+it is not easy to remain covert.  In some sense any signal strong enough to
+jam can be detected and its direction of arrival determined.  Similarly,
+someone marketing such devices faces a bit of a dilemma—they need to
+advertise if they want to reach a large market.
+
+In the United States the relevant regulator, the FCC, goes after the firms
+marketing such devices and gives them a warning for a first offense.  See,
+for example, http://www.fcc.gov/eb/Orders/2010/DA-10-2240A1.html.
+
+Charles L. Jackson  1-301 656 8716  PO Box 221  Port Tobacco, MD 20677
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 11:15:30 -0400
+From: Joe Thompson <joe@orion-com.com>
+Subject: Comments on recent RISKS items (RISKS 26.37-38)
+
+  [OK.  I could have split this into separate messages, as I normally would
+  do.  PGN]
+
+Re: RAID disks, Turgut Kalfaoglu (RISKS 26.37):
+
+> "Another trouble with RAID disks is that they are usually purchased at the
+> same time, and more than one fail at once."
+
+Only if the sysadmins aren't thinking a few moves ahead.  Experienced admins
+know about "bad batches" and plan accordingly -- I recently bought a set of
+drives for RAID in two NAS devices, and made sure to buy from two different
+vendors, check serial and batch numbers, and verify with the NAS maker which
+disks were mirrored with each other, to populate disks so as to minimize the
+chance of both disks of a mirrored stripe set failing in a short time.  (At
+a previous job, I saw a 12-drive RAID-5 array containing critical user data
+have a second failure while it was rebuilding from the first failure -- that
+was an ugly day, especially when we found out there were no usable backups,
+and I was glad it wasn't my team's fault and that answering the customer's
+questions was not my job.  The best mistakes to learn from are those
+*others* make...)
+
+- - - -
+
+Re: Google: Nosy Questions, Gene Wirchenko quoting Bob Bowdon (RISKS 26.37)
+
+"...why on earth would [Doodle 4 Google]'s original Parent Consent Form ask
+for the child's city of birth, date of birth and last four digits of the
+child's SSN?
+
+...You see what Google knows and many parents don't know is that a person's
+city of birth and year of birth can be used to make a statistical guess
+about the first five digits of his/her social security number.  Then, if you
+can somehow obtain those last four SSN digits explicitly—voila, you've
+unlocked countless troves of personal information from people who didn't
+even understand that such a disclosure was happening."
+
+While this might be true, Bowdon went beyond suggesting such an attack might
+be possible and actually imputed motive to Google without evidence, which is
+fearmongering plain and simple despite his later updates about Google's
+explanations.  Last-4-digits-of-SSN is a very (misguided but) common method
+of disambiguating identities used by a wide variety of commercial and
+governmental entities, and Google's use of it for that purpose is neither
+unusual nor, on its face, exceptionally nefarious.
+
+- - - -
+
+Re: NJ came close to selling private data at auction, Jeremy Epstein
+(RISKS 26.38)
+
+"Perhaps this was the most interesting part: '[The comptroller's] report
+says that one agency had a device that magnetically erased computer drives,
+but that employees did not like to use it because it was noisy.'  Do you
+suppose government agencies that handle classified data have such a cavalier
+attitude about data protection?"
+
+Not the federal ones I've worked with.  In one memorable case a
+double-rackful of servers was to be secure-wiped before site-to-site
+transport to comply with federal directives about confidential data leaving
+the established data-security perimeter.  It turned out that because the
+personnel starting the wipe were told to go ahead and leave rather than wait
+several hours, and the people who were supposed to verify successful wipe
+did not do so before unracking and packing, the move was delayed while a
+decision was made on what to do.  Rather than take another whole day to
+repeat the wipe, or wipe quickly (but hardware-destructively) with a
+degausser, an armed federal guard came and sat in the back of the moving
+truck for the duration of the 38-mile trip.
+
+------------------------------
+
+Date: Thu, 10 Mar 2011 09:22:22 -0500
+From: Jonathan Kamens <jik@kamens.us>
+Subject: Re: Google: Nosy Questions (RISKS-26.37)
+
+  [I am rather overloaded with worthy submissions.  This one
+  should have been included in the previous issue.  PGN]
+
+Gene Wirchenko's item in RISKS about Google's Doodle-4-Google contest would
+have been more fair and even-handed had he included the paragraph only two
+after the "opening paragraphs" he quoted:
+
+    In fairness, we have no evidence that Google will use or sell this
+    information for marketing purposes. For that matter, it's possible
+    they could throw the data away. (Care to guess the odds?) But to be
+    absolutely clear, there's no evidence Google has done anything with
+    this information at all, nefarious or otherwise.
+
+My immediate suspicion, upon reading the opening paragraphs Wirchenko
+quoted, was that Google was using the SSN and other information they
+requested only to weed out duplicate and invalid entries, and that they were
+almost certainly discarding the SSN after using it for that purpose. And,
+indeed, when I subsequently read Bowdon's article, I discovered that Google
+had told him exactly that weeks ago, a fact which Wirchenko certainly should
+have mentioned in his submission to RISKS.
+
+Bowdon should have apologized and retracted his claims against Google when
+Google told him unequivocally that they were false and he had no evidence to
+the contrary. Wirchenko should not have submitted such a sensationalistic
+item to RISKS without presenting both sides of the story. And, in my
+opinion, RISKS should not have run an item about an accusation that had
+already been debunked by the time the item was submitted.
+
+------------------------------
+
+Date: Wed, 23 Mar 2011 13:55:23 -0700
+From: "E. John Sebes" <jsebes@osdv.org>
+Subject: Re: Google's "Farmer" search tweaks devastate website rankings
+
+I am sure that Google's recent effort to weed out "farmed content" from
+search results did indeed have some false positives, as Mark Thorson's story
+seems to indicate. That shouldn't be surprising, of course -- it's a basic
+risk of any hueristic filtering technique that the filter will have
+unintended consequences, esp. since the filtering algorithm's "intent" is
+not specified rigorously. That stated, Google has had for quite some time a
+method for content providers to contact Google when the provider thinks that
+they have been blacklisted but don't "deserve"
+it. https://www.google.com/webmasters/tools/reconsideration
+
+That stated, my local search tech guru says that in a lot of cases, people
+whose sites have been farm-filtered are in fact engaging in the types of
+practices that Google wishes to discourage, but were doing so without the
+knowledge that the "search spamming" techniques have the risk of getting you
+blacklisted. In many cases, the "guilty from ignorance" people didn't know
+that they were doing stuff similar to the egregiously clear farming of
+JCPenney et. al., because they had engaged with SEO services companies that
+promise a lot of result for little money, but fail to mention that the nice
+cost/benefit comes with risk b/c the "blackhat" SEO techniques used.
+
+Caveat emptor once again -- if the deal sounds too good to be true, it
+probably is!
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.39
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E5270DC3BC7EXSAN02campus_--

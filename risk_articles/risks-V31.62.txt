@@ -1,0 +1,931 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.62
+
+RISKS-LIST: Risks-Forum Digest  Saturday 21 March 2020  Volume 31 : Issue 62
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.62>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:  [Cleaning up part of the backlog; more to come]
+Many to blame in fatal crash of a Tesla (Tom Krisher via PGN)
+His Tesla was in a hit and run. It recorded the whole thing. (WashPost)
+NASA shows it's lost confidence in Boeing's ability to police its own work
+  on Starliner space capsule (WashPost)
+Boeing Culture Concealment 747 Max report (The Guardian)
+Bad Air: Pilots worldwide complain of unsafe cabin fumes (Politico)
+Former acting Homeland Security inspector general indicted in data theft of
+  250,000 workers (WashPost)
+Let's Encrypt discovers CAA bug, must revoke customer certificates (WiReD)
+The EARN IT Act Is a Sneak Attack on Encryption (WiReD)
+Wash Your Hands -- but Beware the Electric Hand Dryer (WiReD)
+Live Coronavirus Map Used to Spread Malware (Krebs)
+The Economic Ramifications of COVID-19 (Medium)
+DA suspends most inspections of foreign drug, device and food manufacturers
+  (WashPost)
+Downloading Zoom for work raises employee privacy concerns (Gabe Goldberg)
+Scam call centre owner in custody after BBC investigation (BBC News)
+Are AI baby monitors designed to save lives or just prey on parents'
+  anxieties? (WashPost)
+In search of better browser privacy options (Web Informant)
+Assigning liability when medical AI is used (StatNews)
+Most Medical Imaging Devices Run Outdated Operating Systems (WiReD)
+Come on, Microsoft! Is it really that hard to update Windows 10 right?
+  (Computerworld)
+A Botnet Is Taken Down in an Operation by Microsoft, Not the Government
+  (NYTimes)
+Fuzzy matching vs. marlberries (Dan Jacobson)
+Giant Report Lays Anvil on US Cyber Policy (WiReD)
+Google tracked his bike ride past burglarized home, which made him a suspect
+  (NBC News)
+Crimea, Kashmir, Korea -- Google redraws disputed borders, depending on
+  who's looking (WashPost)
+What happens when Google loses your address? You cease to exist. (WashPost)
+Legislators Want to Block TikTok From Goverment Phones (LifeWire)
+H.R. 5680, Cybersecurity Vulnerability Identification and Notification Act
+  of 2020 (Congressional Budget Office)
+Whisper left sensitive user data exposed online (WashPost)
+As the U.S. spied on the world, the CIA and NSA bickered (WashPost)
+Re: Mysterious GPS outages are wracking the shipping industry (Dmitri Maziuk)
+Re: ElectionGuard (John Levine)
+Re: What to do about artificially intelligent government (Amos Shapir)
+Re: 911 operators couldn't trace the location of a dying student's phone
+  (John Levine)
+Re: Risks of Leap Years and Dumb Digital Watches (Amos Shapir, Terje Mathisen)
+Re: Risks of Leap Years ...., and depending on WWVB (Bob Wilson)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 21 Mar 2020 12:33:06 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Many to blame in fatal crash of a Tesla (Tom Krisher via PGN)
+
+Tom Krisher, SFChronicle.com (which as usual ignores the existence of the
+  Science Fiction Chronicle), front page of the Chron's Business Report, 21
+  Mar 2020, PGN-ed
+
+As we have noted in many cases (including Deepwater Horizon RISKS-29.49,
+the Boeing 737 Max, and many others), attempts to place blame are often
+frustrated by reality:  blame may be widely distributed.
+
+The cited article by Tom Krisher notes the National Transportation Safety
+Board (NTSB) report released on 19 Mar 2020 on the Tesla crash on 1 March
+2019 in Delray Beach, Florida.  The Tesla was under Autopilot driving at 69
+mph when the Autopilot neither braked or otherwise attempted to avoid a
+tractor-trailer that crossed in its path.
+
+The report noted that all of the following factors were relevant:
+
+* The driver of the Tesla for not paying attention.  He had turned the
+  Autopilot on just 12.3 seconds before impact.  Autosteer (which keeps the
+  car centered in its lane) turned on 2.4 seconds later.
+
+* The driver (who was not injured) of the tractor-trailer, which sheared off
+  the roof of the Tesla
+
+* Tesla, because it allowed the driver to avoid paying attention to the
+  Autopilot, and to limit where it was safe to use the Autopilot, activating
+  it in conditions for which it was not designed.  (However, Tesla told the
+  NTSB investigators that ``forward collision warning and automatic
+  emergency braking systems on Model 3 in the Delray cash weren't designed
+  to activate for crossing traffic or to prevent crashes at high speeds.''
+  Tesla also had noted that the driver wasn't warned about not having his
+  hands on the wheel ``because the approximate 6-second duration was too
+  short to trigger a warning under the circumstances.''  However, Tesla also
+  claims that ``the Autopilot is a driver-assist system, and that drivers
+  must be ready to intervene at all times.''
+
+* The National Highway Traffic Safety Administration (NHTSA) for its lax
+  regulations, and failing to put limits on the use of automated driving
+  systems to just those cases in which they were designed to work
+
+A statement for the NTSB chairman Robert Sumwalt noted this was the ``third
+fatal vehicle crash we have investigated where a driver's overreliance on
+Tesla's Autopilot and the operational design of the Tesla's Autopilot have
+led to tragic consequences.''
+
+Krisher notes that the Delray Beach crash was remarkably similar to one in
+Williston FL in 2016, which also killed the driver of a Tesla.
+
+------------------------------
+
+Date: Sun, 8 Mar 2020 14:48:52 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: His Tesla was in a hit and run. It recorded the whole thing.
+  (WashPost)
+
+The car is becoming a sentry, a chaperone, and a snitch.
+
+My parked car got gashed in a hit-and-run two weeks ago. I found a star
+witness: the car itself.
+
+Like mine, your car might have cameras. At least one rearview camera has
+been required on new American cars since 2018. I drive a Tesla Model 3 that
+has eight lenses pointing in every direction, which it uses for backing up,
+parking and cruise control. A year ago, Tesla updated its software to also
+turn its cameras into a 360-degree video recorder. Even when the car is off.
+<https://www.usatoday.com/story/money/cars/2018/05/02/backup-cameras/572079002/>
+<https://www.washingtonpost.com/technology/2018/08/02/behind-wheel-tesla-model-its-giant-iphone-better-worse/?tid=lk_inline_manual_4&itid=lk_inline_manual_4>
+
+All those digital eyes captured my culprit Å‚Äî a swerving city bus
+-- in remarkable detail. [...]
+
+Without Sentry Mode, I wouldn't have known what hit me.  The city's response
+to my hit-and-run report was that it didn't even need my video
+file. Officials had evidence of their own: That bus had cameras running,
+too.
+
+https://www.washingtonpost.com/technology/2020/02/27/tesla-sentry-mode/
+
+------------------------------
+
+Date: Sat, 7 Mar 2020 13:55:13 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: NASA shows it's lost confidence in Boeing's ability to police its
+  own work on Starliner space capsule (WashPost)
+
+https://www.washingtonpost.com/technology/2020/03/06/nasa-shows-its-lost-confidence-boeings-ability-police-its-own-work-starliner-space-capsule/
+
+When trust erosion and brand outrage clobbers a for-profit brand, either the
+marketplace settles the situation through corporate bankruptcy, or a remedy
+-- a second chance, a mulligan -- is applied to repair and restore business
+operations viability (aka profitability). NASA must reconcile a supplier
+dilemma with corporate ramifications that will significantly impact US space
+flight and strategic aerospace capabilities.
+
+Boeing's software factory concealed issues that compromised the Starliner
+mission. NASA apparently did not detect pre-release system/software
+under-achievements or qualification shortcuts introduced to achieve
+scheduled milestones. Rigorous release qualification practices and subject
+matter expertise for the systems under test are mandatory prerequisites that
+both supplier and customer must possess.  Unless expertise is mutually
+shared, one party may be unfairly exploited for profit or convenience.
+
+Not certain what the Boeing/NASA RACI required (roles/responsibilities in
+terms of product engineering, test/measurement and review/sign-off), but
+someone should have pulled the 'showstopper' cord well before liftoff. That
+much is obvious from the Starliner mission record.
+
+A key enabler to promote product life cycle defect escape suppression is
+esprit de corps. Within Boeing, this intangible appears to have been
+weakened. An organization needs participants that embody the "worst customer
+in the world, best friend a product can find" inside the walls of their
+factory to represent uncompromised customer interests.
+
+Test engineers, especially, must embody this demeanor, and ethically abide
+to "do no harm" principles by reporting and escalating mission/life critical
+product deficiencies. These 'rara avises' enjoy breaking product. Finding
+and reporting what's broken, before release, fulfills a software editorial
+life cycle, a critical practice to achieve operational flight plan
+viability. A defect tracking platform that is policed jointly with the
+customer enables discussion and agreement on prioritized repairs. 'Release
+defect patrol' promotes informed consent.
+
+The product life cycle, especially in aerospace, requires all participants
+(supplier/regulator/customer) to ethically and professionally practice
+without fear of reprisal. 'Tin ear' management that fails to weigh project
+triple constraints (cost, schedule, scope) with product safety and
+mission/objectives must be held accountable for negligent practice.
+
+Transparency and review are necessary to remediate and repair Boeing's
+broken software factory. Aligning organizational objectives with mission
+deliverables, enforcing management accountability via disclosure and
+measurable achievement might yield fixed cost priorities. If the priorities
+are achieved in a timely fashion, a diminished aerospace brand might be
+salvaged.
+
+------------------------------
+
+Date: Sat, 7 Mar 2020 12:47:02 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Boeing Culture Concealment 747 Max report (The Guardian)
+
+https://www.theguardian.com/business/2020/mar/06/boeing-culture-concealment-fatal-737-max-crashes-report
+
+https://transportation.house.gov/imo/media/doc/TI%20Preliminary%20Investigative%20Findings%20Boeing%20737%20MAX%20March%202020.pdf
+
+------------------------------
+
+Date: Sun, 8 Mar 2020 08:07:23 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Bad Air: Pilots worldwide complain of unsafe cabin fumes (Politico)
+
+https://www.politico.com/news/2020/03/07/airplanes-unsafe-cabin-fumes-123362
+
+"Two years ago, the FAA warned in a safety alert that airlines and pilots
+should ensure their procedures and check-lists address what to do about
+odors and fumes on board and asked operators, manufacturers and regulators
+to boost efforts at prevention. But the FAA hasn't ordered manufacturers to
+actually change the way air on most planes gets funneled into the cabin,
+which pilots say can be fouled by engine oil intermixing with breathable
+air, due to the planes' design, combined with poor maintenance and faulty
+seals."
+
+Risk: Pilot blackout, breathing distress.
+
+------------------------------
+
+Date: Sat, 7 Mar 2020 16:21:09 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Former acting Homeland Security inspector general indicted in
+  data theft of 250,000 workers (WashPost)
+
+Charles K. Edwards and a former subordinate face a 16-count indictment in a
+scheme that prosecutors allege involved stolen government software and
+databases for resale.
+
+https://www.washingtonpost.com/local/legal-issues/former-acting-homeland-security-inspector-general-indicted-in-data-theft-of-250000-workers/2020/03/06/4a8eb39a-5fd3-11ea-9055-5fa12981bbbf_story.html
+
+------------------------------
+
+Date: Sun, 8 Mar 2020 10:44:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Let's Encrypt discovers CAA bug, must revoke customer certificates
+  (WiReD)
+
+A tiny backend bug at Let's Encrypt almost broke millions of websites.
+A five-day scramble ensured it didn't.
+
+https://www.wired.com/story/lets-encrypt-internet-calamity-that-wasnt/
+
+------------------------------
+
+Date: Sat, 7 Mar 2020 19:36:09 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The EARN IT Act Is a Sneak Attack on Encryption (WiReD)
+
+The crypto wars are back in full swing.
+
+https://www.wired.com/story/earn-it-act-sneak-attack-on-encryption/
+
+------------------------------
+
+Date: Sat, 7 Mar 2020 19:36:42 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Wash Your Hands -- but Beware the Electric Hand Dryer (WiReD)
+
+"Electric towels" were supposed to prevent the spread of contagious disease.
+What if they've been doing the opposite?
+
+https://www.wired.com/story/wash-your-hands-but-beware-the-electric-hand-dryer/
+
+------------------------------
+
+Date: Sun, 15 Mar 2020 16:24:01 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Live Coronavirus Map Used to Spread Malware
+
+https://krebsonsecurity.com/2020/03/live-coronavirus-map-used-to-spread-malware/
+
+------------------------------
+
+Date: Fri, 13 Mar 2020 09:24:55 -0400
+From: John Ohno <john.ohno@gmail.com>
+Subject: The Economic Ramifications of COVID-19 (Medium)
+
+https://medium.com/the-weird-politics-review/why-america-will-suffer-greatly-under-covid-19-9223e7af48f7
+
+Why America Will Suffer Greatly Under Covid-19:
+the Broken Economics of Coronavirus
+A perfect storm of flawed institutions
+Black Cat
+12 Mar 2020  6 min read
+John Ohno is a co-author of this article.
+
+A friend recently asked me: ``what could be done better in America to stop
+coronavirus?''  It was the kind of question that makes you pause for a good
+long while before answering -- because it suggests that the person asking
+you has misunderstood you already. There is no single action that anyone
+could or would take to slow this down, because these are systematic
+problems.
+
+This is going to be really bad. You should expect hospitals to get
+overwhelmed, which will turn nonlethal cases into lethal ones. You should
+expect international and national supply lines to be interrupted in some
+cases.
+
+You should stockpile about a month's worth of non-perishable foods and
+medicine to treat the symptoms. Lentils, rice, vitamin supplements, Tylenol,
+and Pedialyte -- these are the cheapest ways to do this. You should not be
+planning to avoid the disease -- you should be planning as though you are
+going to get the disease. It may be a hungry and generally awful summer, but
+if you do not have complicating conditions, you will survive.
+
+Here is why we will suffer terribly under this disease, even compared to
+other countries:
+* not enough paid sick days
+* no nationalized healthcare
+* insufficiently-coordinated response
+* perfect-storm of supply chains and debt
+
+These are all political choices, not features of the virus. This virus will
+be worse here because it has been set up to be worse.
+
+*Not enough paid sick days*
+
+America does not have enough paid sick days, especially not for food service
+workers, and these people do not own their own homes or have other sources
+of basic subsistence -- and so they will work when they are sick, because
+they have to. They cannot afford to be publicly-minded. They do not have
+the luxury of being nice.
+
+And because they will work when they are sick, they will infect you. They
+will infect the food that you eat -- stop eating out! Anywhere! -- they will
+infect your packages, and so on. Even if you are oh-so-cautious, other
+people will not be. And they will be infected.  More than that, people will
+work through their infections. And so more of these cases will become
+acute. Which will mean more long-term organ damage and more deaths.
+
+*No nationalized healthcare*
+Sick people will not get treatment, and so they will infect more people than
+they otherwise would have, and be more likely to die. Those that survive
+will in many cases be saddled with medical debt, weighing down any future
+economic recovery.
+
+I really do not know what more to say about this. Even if you are wealthy
+and/or hate poor people, a bunch of people who are sick and can't afford
+treatment can get you sick -- there are very clear reasons of self-interest
+for having a health-care system that takes care of everyone.
+
+*Insufficiently coordinated response*
+The American health system isn't.
+
+This is worse than just the CDC avoiding testing people, to keep the
+official numbers low -- though that is a great example of how bureaucratic
+incentives can kill. Most of the know outbreaks in the US seem to simply be
+places where local health authorities circumvented the CDC and did their own
+tests -- it seems likely that there are many more outbreaks and many more
+cases in the US than it would appear on paper.
+
+There are multiple federal-level bureaus and NGOs responsible for the
+country-wide picture, and they are not set-up to coordinate properly. There
+are 50 state-level bureaus, each of which will do different things, and none
+of them are allowed to close state borders without congressional
+approval. There are about 3000 county-level health boards, and they all have
+different standards and different funding mechanisms. In addition, there are
+city-level efforts, and efforts being taken by private institutions. None of
+these are in any way coordinated.
+
+*Perfect Storm of Supply Chains and Debt* Automation hasn't made production
+or distribution or service more resilient, because it's been put toward
+further centralization -- rather than requiring a large proportion of
+blue-collar workers to stop work in order to stop production, a smaller
+proportion of a smaller number of white-collar workers control the machinery
+by which work is distributed to the blue-collar workers. That machinery is
+fragile enough that without monitoring it, it will become dysfunctional. It
+is possible that the flow of consumer goods into stores might be disrupted
+temporarily, making it hard to obtain some goods needed for daily life.
+
+The idea of a deadly disease that can spread not only through face-to-face
+contact but through the semi-automated alternatives we have redirected most
+of our commerce towards (mail order with packages sorted by people who
+certainly won't be taking sick days, & takeout delivered by the same) is
+uniquely suited to screwing up an economy in which both visible and hidden
+labor is largely performed by a growing precariat [?] whose contract with
+capital is based on the presumption of a happy path in which no catastrophes
+are permitted.
+
+Since the great recession, many firms have reoriented to operate at much
+higher ratios of debt to income. This, plus the just-in-time supply chains
+that have become common in the last few decades, makes these firms extremely
+fragile -- they have no buffer. Thus, a big disruption to a bunch of firms
+at once can make many of them be unable to service their debts or even go
+out of business, which disrupts supply chains further, which can cause more
+of these companies to become insolvent. This is all much more of a problem
+for smaller firms than it is for larger, richer, firms with more resources
+and more confidence from lenders: the eventual recovery will be one in which
+the big firms have had their smaller competitors eliminated.
+
+Essentially all the infrastructure has been built on the assumption that
+none of the other infrastructures would break down. Which has ironies,
+because it shows that the economy bares more isomorphs to the Stalinist one
+than anyone is really comfortable admitting -- everything is fine until
+circumstances change, and then people start dying, because neither allows
+much room for bottom-up flows of information or distributed responses.
+There's this assumption that the mass of blue-collar service workers will
+always be sufficiently available (at less-than-minimum-wage prices) to do
+whatever needs to be done, and a pandemic that hits the only people doing
+the traveling and touching the packages is going to really screw that up.
+So very much of our densely populated and highly interconnected world is
+based around the supposed invincibility of modern medicine: the vaccine,
+antibiotics, and so on. When that fails, so much else does, too.  In a
+sense, there is a preview of a general strike, with this coronavirus.
+Evictions, rents, and mortgage payments have all been frozen in certain
+places. During the peak of this, people will either avoid going to work out
+of fear, or be sick enough to stay home. There are certain obvious
+similarities, and someone more schooled in the theory of this tactic might
+be able to point out how to exploit the coronavirus collapse.
+
+------------------------------
+
+Date: Wed, 11 Mar 2020 09:38:51 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: DA suspends most inspections of foreign drug, device and food
+  manufacturers (The Washington Post)
+
+https://www.washingtonpost.com/health/2020/03/10/fda-suspends-most-inspections-foreign-drug-device-food-manufacturers/
+
+  "FDA Commissioner Stephen Hahn said in a statement that the decision was
+  based on State Department travel advisories, Centers for Disease Control
+  and Prevention travel recommendations and restrictions imposed on foreign
+  visitors by certain countries. He added the agency will 'maintain
+  oversight over international manufacturers and imported products using
+  alternative tools and methods.'"
+
+This FDA webpage https://datadashboard.fda.gov/ora/cd/inspections.htm shows
+the total number of inspections (foreign + domestic) 'taking a nosedive'
+starting in 2019.
+
+For business under deregulation, caveat emptor flourishes. For consumers,
+learn to ask tough questions about your physicians' suppliers BEFORE
+electing to purchase.
+
+------------------------------
+
+Date: Sat, 14 Mar 2020 00:30:14 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Downloading Zoom for work raises employee privacy concerns
+
+Zoom is a work-from-home privacy disaster waiting to happen
+
+Just because you're working from home doesn't mean your boss isn't still
+keeping tabs on your every mouse click.  In recent days, thanks in part to
+the social-distancing measures made necessary by the coronavirus outbreak,
+converts to the work-from-home life are being forced to contend with the
+widely used videoconferencing service Zoom. There's just one problem: It's
+not exactly privacy-friendly.
+
+Long the bane of remote workers, Zoom is equipped with numerous settings
+that even many of its longtime users may not know about. Take, for example,
+the "attendee attention tracking" feature. According to Zoom, if enabled,
+this feature allows hosts of conference calls -- i.e., your boss -- to
+monitor participants' computers.
+
+https://mashable.com/article/zoom-conference-call-work-from-home-privacy-concerns/
+
+I run Zoom on iPad while multi-tasking on computer, phone, whatever. I have
+camera disabled from app AND have mechanical cover over it, and I mute
+myself to not broadcast keyboard noise. I love Zoom -- much prefer it to
+other conferencing tools I've used -- and, of course, my conferences are
+related to volunteering so there's no "boss" involved.
+
+------------------------------
+
+Date: Sat, 7 Mar 2020 14:16:31 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Scam call centre owner in custody after BBC investigation (BBC News)
+
+A scam call centre that targeted thousands of British victims has been
+raided by the Indian police, following a BBC investigation.
+
+https://www.bbc.com/news/technology-51740214
+
+Another one bites the dust. Leaving only ... how many? ... remaining.
+
+------------------------------
+
+Date: Sun, 8 Mar 2020 14:51:32 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Are AI baby monitors designed to save lives or just prey on
+  parents' anxieties? (WashPost)
+
+Advanced camera systems are raising fears of data collection, false alarms
+and newborn privacy: ``We have the technology to do this kind of constant
+surveillance and hyper-monitoring, [but] it's driving parents insane.''
+
+Baby-monitor companies are pushing artificial-intelligence technology into
+the family nursery, promising that surveillance software designed to record
+infants' faces, sounds and movements can save them from injury or death.
+
+But medical, parenting and privacy experts say the safety claims made for
+such Internet-connected systems aren't supported by science and merely prey
+on the fears of young parents to sell dubious technology. No federal agency
+has provided evidence to back them up.
+
+https://www.washingtonpost.com/technology/2020/02/25/ai-baby-monitors/
+
+------------------------------
+
+Date: Mon, 9 Mar 2020 16:53:38 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: In search of better browser privacy options (Web Informant)
+
+A new browser privacy study by Professor Doug Leith, the Computer Science
+department chair at Trinity College is worth reading carefully.  Leith
+instruments the Mac versions of six popular browsers (Chrome, Firefox,
+Safari, Edge, Yandex and Brave) to see what happens when they *phone home*.
+All six make non-obvious connections to various backend servers, with Brave
+connecting the least and Edge and Yandex (a Russian language browser) the
+most. How they connect and what information they transmit is worth
+understanding, particularly if you are paranoid about your privacy and want
+to know the details.
+
+https://blog.strom.com/wp/?p=7616
+
+------------------------------
+
+Date: Mon, 9 Mar 2020 20:32:58 -0700
+From: Mark Thorson <eee@dialup4less.com>
+Subject: Assigning liability when medical AI is used (StatNews)
+
+Doctors could be liable if they use an AI to make
+treatment decisions -- or if they don't use it.
+
+https://www.statnews.com/2020/03/09/can-you-sue-artificial-intelligence-algorithm-for-malpractice/
+
+"Regardless, AI vendors, many of which are start-ups, could be accruing
+liability of an unknown scale."
+
+"Big payouts or high-profile lawsuits could obliterate the emerging health
+AI sector, which is still a cottage industry."
+
+------------------------------
+
+Date: Tue, 10 Mar 2020 18:22:34 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Most Medical Imaging Devices Run Outdated Operating Systems (WiReD)
+
+The end of Windows 7 support has hit health care extra hard, leaving several
+machines vulnerable.
+
+https://www.wired.com/story/most-medical-imaging-devices-run-outdated-operating-systems/
+
+Hardly news, but useful reminder. Next time I'm faced with some big med
+machine I'll ask to see its update log.
+
+------------------------------
+
+Date: Thu, 12 Mar 2020 09:50:33 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Come on, Microsoft! Is it really that hard to update Windows 10
+  right? (Computerworld)
+
+February Windows 10 patches were a mess. Is Microsoft ever going to get its
+Win10 patches act together?
+
+https://www.computerworld.com/article/3532092/come-on-microsoft-is-it-really-that-hard-to-update-windows-10-right.html
+
+------------------------------
+
+Date: Wed, 11 Mar 2020 01:20:54 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A Botnet Is Taken Down in an Operation by Microsoft, Not the
+  Government (NYTimes)
+
+A Botnet Is Taken Down in an Operation by Microsoft, Not the Government
+https://www.nytimes.com/2020/03/10/us/politics/microsoft-botnets-malware.html
+
+------------------------------
+
+Date: Thu, 12 Mar 2020 10:14:13 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Fuzzy matching vs. marlberries
+
+It was another ho-hum day when I did
+https://www.google.com/search?q=Ardisia+japonica+edible?
+
+> People also ask
+> Can you eat Marlberry?
+
+> Is it OK to eat mulberries off the tree?
+
+Clicking on the first said they were only for the birds. While
+clicking on the last said "Luckily, they're totally edible,"
+
+Ah, no wonder, one is talking about marlberries, the other mulberries!
+So fuzzy matching has its dangers!
+
+  [Dan, I'm afraid you *ardisia* now than you were before, so maybe you are
+  also *fuzzy*, which ardisia is not.  PGN]
+
+    Ardisia = tropical evergreen subshrubs (some climbers) to trees of
+    Asia and Australasia to Americas [syn: {Ardisia}, {genus Ardisia}]
+
+------------------------------
+
+Date: Thu, 12 Mar 2020 09:45:40 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Giant Report Lays Anvil on US Cyber Policy (WiReD)
+
+Released today, the bipartisan Cyberspace Solarium Commission makes more
+than 75 recommendations that range from common-sense to befuddling.
+
+https://www.wired.com/story/opinion-giant-report-lays-anvil-on-us-cyber-policy
+
+------------------------------
+
+Date: Mon, 9 Mar 2020 16:47:50 +0000
+From: "Fleming, Cody (cf5eg)" <cf5eg@virginia.edu>
+Subject: Google tracked his bike ride past burglarized home, which made
+  him a suspect.  (NBC News)
+
+https://www.nbcnews.com/news/us-news/google-tracked-his-bike-ride-past-burglarized-home-made-him-n1151761
+
+Summary: poor guy used an app to track his bicycle rides, then got charged
+with a burglary because his commute (and therefore his digital ID) took him
+past this lady's house at what was apparently the wrong time.
+
+Risks: getting an ominous -- but opaque and ambiguous -- notification from
+one of the world's largest, most powerful companies for...doing what
+exactly?
+
+------------------------------
+
+Date: Sun, 8 Mar 2020 14:53:02 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Crimea, Kashmir, Korea -- Google redraws disputed borders,
+  depending on who's looking (WashPost)
+
+The Silicon Valley firm alters maps under political pressure and the
+inscrutable whims of tech executives
+
+https://www.washingtonpost.com/technology/2020/02/14/google-maps-political-borders/
+
+The risk? War...
+
+------------------------------
+
+Date: Tue, 10 Mar 2020 15:31:41 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: What happens when Google loses your address? You cease to exist.
+  (WashPost)
+
+https://www.washingtonpost.com/opinions/what-happens-when-google-loses-your-address-you-cease-to-exist/2020/03/09/b1885f28-622c-11ea-b3fc-7841686c5c57_story.html
+
+``This is how we discovered that Google Maps had two locations listed for
+our home. One was right, one was wrong. This seemed like a pretty minor
+problem in the scheme of things, and it was. For a while, I even thought it
+was kind of wonderful. We could be anonymous! Even Google didn't know where
+we lived!  [...]  But over time, as Google Maps got embedded in more and
+more apps, the problem worsened. Google Maps is used by Uber, Instacart,
+Lyft, Door Dash and even something called the Zombie Outbreak Simulator.''
+
+Risk: Sole-source location and route data supplier.
+
+The Rand McNally Road Atlas
+(https://store.randmcnally.com/2020-rand-mcnally-road-atlases.html)
+can't be beat for backup. Now available with protective vinyl cover!
+
+  [Also noted by Gabe Goldberg.  PGN]
+    Every day, users contribute more than 20 million pieces of information
+    to Google Maps. There are bound to be errors.
+
+------------------------------
+
+Date: Fri, 13 Mar 2020 10:47:26 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Legislators Want to Block TikTok From Government Phones (LifeWire)
+
+Yes, there's an actual *No TikTok on Government Devices Ac*
+
+ *Å†Why It Matters:
+
+TikTok is one of the fastest growing social content sharing apps in the
+country, but it's also owned by a Chinese company. The U.S.'s security
+concerns are slamming up against legislators and government workers' dreams
+of becoming "TikTok Famous."
+
+https://www.lifewire.com/theres-an-actual-no-tiktok-government-devices-act-4799632
+
+------------------------------
+
+Date: Sat, 14 Mar 2020 10:40:36 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: H.R. 5680, Cybersecurity Vulnerability Identification and
+  Notification Act of 2020 (Congressional Budget Office)
+
+https://www.cbo.gov/publication/56198
+
+The pending legislation would impose fines on businesses that do not satisfy
+CISA (Cyber Infrastructure Security Agency) hygiene criteria.
+
+"ISPs that do not comply with subpoenas could be subject to civil and
+criminal penalties; therefore, the government might collect additional fines
+under the legislation."
+
+Let's see...~122M Internet domains registered in the U.S. currently
+(https://www.registrarowl.com/report_domains_by_country.php). Suppose a US
+$1000 penalty per violation? Might wipe out the U.S. budget deficit
+eventually.
+
+------------------------------
+
+Date: Tue, 10 Mar 2020 18:20:04 +0100
+From: Peter Houppermans <not.for.spam@houppermans.net>
+Subject: Whisper left sensitive user data exposed online (WashPost)
+
+https://www.washingtonpost.com/technology/2020/03/10/secret-sharing-app-whisper-left-users-locations-fetishes-exposed-web/
+
+"Whisper, the secret-sharing app that called itself the *safest place on the
+Internet*, left years of users' most intimate confessions exposed on the Web
+tied to their age, location and other details, raising alarm among
+cybersecurity researchers that users could have been unmasked or
+blackmailed.  The data exposure, discovered by independent researchers and
+shown to *The Washington Post*, allowed anyone to access all of the location
+data and other information tied to anonymous *whispers* posted to the
+popular social app, which has claimed hundreds of millions of users. The
+records were viewable on a non-password-protected database open to the
+public Web. A Post reporter was able to freely browse and search through the
+records, many of which involved children: A search of users who had listed
+their age as 15 returned 1.3 million results."
+
+It apparently took until *The Washington Post* contacted them for this to go
+offline, but that could just be a matter of parallel events as specialists
+had already given them a heads up.  However, being contacted by the PRESS
+that you're busy leaking secrets strikes me as a near worst case scenario
+for such a company.
+
+------------------------------
+
+Date: Fri, 06 Mar 2020 22:08:38 -0500
+From: David Lesher <wb8foz@8es.com>
+Subject: As the U.S. spied on the world, the CIA and NSA bickered (WashPost)
+
+  [Re: The Intelligence Coup of the Century (RISKS-31.58)]
+
+Greg Miller, *The Washington Post*, 6 Mar 2020
+
+ As the U.S. spied on the world, the CIA and NSA bickered
+<https://www.washingtonpost.com/national-security/as-the-us-spied-on-the-world-the-cia-and-nsa-bickered/2020/03/06/630a4e72-5365-11ea-b119-4faabac6674f_story.html>
+
+U.S. spy agencies were on the verge of an espionage breakthrough, closing in
+on the clandestine purchase of a Swiss company that could give American
+intelligence the ability to crack much of the world's encrypted
+communications.
+
+But the deal fell apart, done in by one of many behind-the-scenes battles
+between the CIA and the National Security Agency detailed in classified
+documents tracing one of the most remarkable intelligence operations in
+American history. [...]
+
+------------------------------
+
+Date: Fri, 6 Mar 2020 16:39:01 -0600
+From: Dmitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: Mysterious GPS outages are wracking the shipping industry
+  (RISKS-31.60)
+
+> I'm not saying that losing your GPS-based navigation is trivial, but any
+> ocean-going vessel and its crew should already be equipped to at least have
+> a reasonable chance of avoiding a navigation-related catastrophe.
+
+Gotta wonder what's "reasonable" for a supertanker size of three WWII
+aircraft carriers, with a crew of six.
+
+------------------------------
+
+Date: 6 Mar 2020 21:24:56 -0500
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: ElectionGuard (Lite via Rob Slade)
+
+The paper record goes into a ballot box, so they can count the paper ballots
+to check the software count.  You can't let people take home a record of how
+they voted, since that enables vote buying.*
+
+Other than the buzzword factor, I'm trying to figure out what advantage this
+very complex scheme has over an off the shelf system where voters hand mark
+paper ballots and drop them in a ballot box.  You can get computerized
+ballot boxes that count the ballots as they're dropped in the box if for
+some reason you believe it would be a problem to wait for the result while
+people hand-count them.  That's what we use here in N.Y.
+
+* - We leave as an exercise for the reader whether it's really a good
+idea to do all absentee voting as Oregon does.
+
+  [It seems like a lesser of weevils, as everything else may be worse.  PGN]
+
+------------------------------
+
+Date: Tue, 10 Mar 2020 09:20:42 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: What to do about artificially intelligent government (RISKS-31.60)
+
+The main risk is that instead of using AI just to flag special cases, to be
+decided by a human being later, decision makers would incorporate such AI
+systems into the process and (as usually happens) rely on them blindly.
+It's the old "Our computer says this must be so!" -- except that now, it's
+an *intelligent* computer...
+
+------------------------------
+
+Date: 6 Mar 2020 21:32:17 -0500
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: 911 operators couldn't trace the location of a dying student's
+  phone. (Stein, RISKS-31.60)
+
+Subsequent reports said that the student had a Chinese phone roaming from
+his Chinese carrier, and the phone probably didn't have the location
+hardware that US phones do.
+
+https://www.timesunion.com/news/article/RPI-student-killed-by-flu-called-911-but-rescuers-15068290.php
+
+  [Roger that, John. Wonder if there should be a standardized 'soft'
+  GSM/CDMA emulation of h/w location discovery? If there was, it'd probably
+  be full of holes. Nothing like a keyed and registered GPS locater to
+  enable surveillance, I guess.  RS]
+
+------------------------------
+
+Date: Tue, 10 Mar 2020 09:29:40 +0200
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Risks of Leap Years and Dumb Digital Watches (RISKS-31.60)
+
+It's most likely that the `smarter' watch types that track the year, insert
+29 Feb on years divisible by 4 (which in the simplest form, requires just
+looking at the lower 2 bits of the year number).  These are going to fail on
+1 Mar 2100 (and 2200, 2300)!  [Just another reminder.  This shows up in
+RISKS more often then every now and then.  PGN]
+
+------------------------------
+
+Date: Mon, 9 Mar 2020 11:59:45 +0100
+From: Terje Mathisen <terje.mathisen@tmsw.no>
+Subject: Re: Risks of Leap Years and Dumb Digital Watches (RISKS-31.60)
+
+> [3] have the kind that needs to be set back a day because (unlike the
+> smarter types that track the year or receive information from external
+> sources) it went directly from February 28 to March 1;
+
+nope:
+
+I've been part of the NTP Hackers team for ~25 years and for the last 10+ of
+those I have exclusively used Garmin Forerunner watches which have enough
+intelligence to do this right, as well as using the GPS network to keep the
+local time near-perfect.
+
+> and [4] *hadn't realized it yet*?'
+
+That did use to happen in the old days, with the Casio watches we used to
+record split times, yes. :-)
+
+------------------------------
+
+Date: Mon, 9 Mar 2020 15:00:35 -0500
+From: Bob Wilson <wilson@math.wisc.edu>
+Subject: Re: Risks of Leap Years ...., and depending on WWVB
+
+Last Saturday night (for most practical purposes) I checked my digital watch
+(which listens to WWVB for accurate time/date information) at what was still
+eight minutes after midnight at my house. The watch had, at midnight,
+checked in and apparently got a good signal. But it had already "leaped"
+forward, so it said 1:08 and had the date (which was correct) as 8 Mar. But
+of course the time was not legally supposed to go forward until 2:00 AM by
+my local time (CST, becoming CDT).
+
+I am wondering if that is a defect in the watch's firmware, or did WWVB send
+out an incorrect time signal? I have trusted WWV, with or without the B, for
+almost seven decades now, and I think I would rather blame the watch
+manufacturer than NIST. (Which I will probably be still calling NBS for as
+long as I am listening!)
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.62
+************************

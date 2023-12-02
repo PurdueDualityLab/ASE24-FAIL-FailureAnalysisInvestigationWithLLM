@@ -1,0 +1,555 @@
+precedence: bulk
+Subject: Risks Digest 29.57
+
+RISKS-LIST: Risks-Forum Digest  Saturday 18 June 2016  Volume 29 : Issue 57
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.57.html>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+FBI Needs Better Hackers to Solve Encryption Standoff (Joshua Eaton)
+"Surveillance reform measure blocked in the wake of Orlando killings"
+  (John Ribeiro)
+London Mayoral count resorted to spreadsheets (Martyn Thomas)
+Intel x86s hide another CPU that can take over your machine --
+  you can't audit it (BoingBoing)
+Physical Key Extraction Attacks on PCs (CACM)
+Lawyers who yanked "Happy Birthday" into public domain now sue over
+  "This Land" (Ars Technica)
+The Air Force Had a Totally Accidental Computer Disaster (Gizmodo)
+"Home invasion? Three fears about Google Home" (Fahmida Y. Rashid)
+Best Korea's Social Network hacked after using worst ID and password
+  possible (Rocket News)
+The average cost of a data breach is now $4 million (Help Net Security)
+"Companies pay out billions to fake-CEO email scams" (Michael Kan)
+'Spam King' Sanford Wallace gets 2.5 years in prison for 27M
+  Facebook scam messages (BoingBoing)
+Cormac Herley, "Unfalsifiability of security claims" (Bruce Schneier)
+Henry Baker <hbaker1@pipeline.com>
+ Privacy not possible with increasing financial surveillance (Sarah Jeong)
+Re: Tesla Model X autonomously crashes into building, owner claims
+  (Gary Hinson)
+Re: Russian penetration attack on DNC: NOT! (Ars Technica)
+Re: Lancaster UK power outage (Martin Ward)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 17 Jun 2016 12:54:47 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: FBI Needs Better Hackers to Solve Encryption Standoff
+  (Joshua Eaton)
+
+Joshua Eaton, *The Christian Science Monitor*, 16 Jun 2016
+
+With U.S. technology companies refusing to allow anyone, including the
+federal government, access to suspected criminals' encrypted communications
+conducted on their devices, a leading cybersecurity expert is proposing
+another method for authorities to obtain the information they need without
+undermining the security of the millions of other consumers who also use
+those products.  Worcester Polytechnic Institute professor Susan Landau
+suggests law enforcement boost the hiring of government hackers and foster
+in-house experts to legally hack such devices when they have a warrant.  The
+strategy entails exploiting existing software bugs instead of having tech
+companies install "backdoors" in their products.  Landau says the
+U.S. Federal Bureau of Investigation (FBI) can bypass encryption by
+investing in court-sanctioned lawful hacking capabilities such as installing
+remote surveillance programs on computers and phones and hiring more agents
+with computer science backgrounds.  The unacceptable alternative would
+compromise consumer security and give criminal hackers, among others,
+another exploitation option, according to Landau.  She also says the FBI's
+paltry lawful hacking budget and resources may be one reason why the bureau
+wants companies to install backdoors.
+http://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-f2f6x2e54ax065639&
+
+------------------------------
+
+Date: Sat, 18 Jun 2016 05:21:25 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Surveillance reform measure blocked in the wake of Orlando
+  killings" (John Ribeiro)
+
+John Ribeiro, InfoWorld, 17 Jun 2016
+The U.S. House of Representatives voted down a proposed anti-surveillance
+amendment that would prevent warrantless searches by law enforcement on
+Americans
+http://www.infoworld.com/article/3085175/government/surveillance-reform-measure-blocked-in-the-wake-of-orlando-killings.html
+
+selected text:
+
+"With Orlando fresh in everyone's mind, members of Congress appear to be
+voting based on fear rather than on reason," wrote Kevin Bankston, director
+of New America's Open Technology Institute. He added that there is no reason
+to think that mandating backdoors into American companies' encrypted
+products or allowing warrantless searches of Americans' private data would
+have prevented the tragedy, a view widely held by many privacy advocates.
+
+------------------------------
+
+Date: Sat, 18 Jun 2016 14:26:48 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: London Mayoral count resorted to spreadsheets
+
+The result of last month's London Mayoral election on 5 May was delayed
+by several hours after staff had to manually query a bug-stricken database.
+
+http://www.bbc.co.uk/news/technology-36558446
+
+------------------------------
+
+Date: Sat, 18 Jun 2016 09:58:13 -0400
+From: "David Farber" <dfarber@me.com>
+Subject: Intel x86s hide another CPU that can take over your machine --
+  you can't audit it
+
+  [Boing Boing. More on this latter . Not what is suggested djf]
+
+http://boingboing.net/2016/06/15/intel-x86-processors-ship-with.html
+
+Recent Intel x86 processors implement a secret, powerful control mechanism
+that runs on a separate chip that no one is allowed to audit or
+examine. When these are eventually compromised, they'll expose all affected
+systems to nearly unkillable, undetectable rootkit attacks. I've made it my
+mission to open up this system and make free, open replacements, before it's
+too late.
+
+The Intel Management Engine (ME) is a subsystem composed of a special 32-bit
+ARC microprocessor that's physically located inside the chipset. It is an
+extra general purpose computer running a firmware blob that is sold as a
+management system for big enterprise deployments. ...
+
+  [Werner U. notes SlashDot item that refers to BoingBoing.
+
+------------------------------
+
+Date: Thu, 16 Jun 2016 12:41:43 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Physical Key Extraction Attacks on PCs
+
+http://cacm.acm.org/magazines/2016/6/202646-physical-key-extraction-attacks-on-pcs/fulltext
+
+  Our research thus focuses on two main questions: Can physical side-channel
+  attacks be used to nonintrusively extract secret keys from PCs, despite
+  their complexity and operating speed?  And what is the cost of such
+  attacks in time, equipment, expertise, and physical access?  Results. We
+  have identified multiple side channels for mounting physical
+  key-extraction attacks on PCs, applicable in various scenarios and
+  offering various trade-offs among attack range, speed, and equipment
+  cost. The following sections explore our findings, as published in several
+  recent articles.
+
+------------------------------
+
+Date: Sat, 18 Jun 2016 08:17:36 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Lawyers who yanked "Happy Birthday" into public domain now sue over
+  "This Land" (Ars Technica)
+
+  [This song is made for you and me!]  [NNSquad]
+
+http://arstechnica.com/tech-policy/2016/06/lawyers-who-yanked-happy-birthday-into-public-domain-now-sue-over-this-land/
+
+  The lawyers who successfully got "Happy Birthday" put into the public
+  domain and then sued two months ago over "We Shall Overcome" have a new
+  target: Woody Guthrie's "This Land."  Randall Newman and his colleagues
+  have filed a proposed class-action lawsuit against The Richmond
+  Organization (TRO) and Ludlow Music, the two entities that also claim to
+  own the copyright for "We Shall Overcome." ...  According to the "This
+  Land" suit, the melody of the song is actually a Baptist hymn from the
+  late 19th or early 20th century, often referred to as "Fire Song."
+
+------------------------------
+
+Date: Tue, 14 Jun 2016 14:41:17 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The Air Force Had a Totally Accidental Computer Disaster (Gizmodo)
+
+via NNSquad
+http://gizmodo.com/the-air-force-had-a-totally-accidental-computer-disaste-1781973697?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+gizmodo%2Ffull+%28Gizmodo%29
+
+  Last Month, Lockheed Martin, the government contractor which operates the
+  servers that store sensitive information about internal Air Force
+  investigations, came to realize that all of the data on said servers was
+  missing. The apparent reason was a run-of-the-mill system crash--but what
+  caused that actual crash is still unclear. Now, the United Stated Air
+  Force is reportedly missing all of its investigation records dating all
+  the way back to 2004. Whoops!
+
+Investigation records lost back to 2004. And no clear sense of what backups
+may or may not exist. This is the same government that wants access to our
+secure communications. Yeah.
+
+  [The Air Force and the FBI are *not quite* the same.]
+
+------------------------------
+
+Date: Wed, 15 Jun 2016 09:37:57 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Home invasion? Three fears about Google Home" (Fahmida Y. Rashid)
+
+  This article covers risks and concerns about Google Home.
+
+Fahmida Y. Rashid, InfoWorld, 15 Jun 2016
+Always-listening devices accelerate our transformation into a constantly
+surveilled society. That's a problem not only for us but for our kids, too
+http://www.infoworld.com/article/3079846/security/home-invasion-3-fears-about-google-home.html
+
+------------------------------
+
+Date: Wed, 15 Jun 2016 12:41:41 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Best Korea's Social Network hacked after using worst ID and
+  password possible (Rocket News)
+
+"Best Korea's Social Network" hacked after using worst ID and password possible
+http://en.rocketnews24.com/2016/06/16/best-koreas-social-network-hacked-after-using-worst-id-and-password-possible/
+
+------------------------------
+
+Date: Thu, 16 Jun 2016 15:26:07 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: The average cost of a data breach is now $4 million
+  (Help Net Security)
+
+Help Net Security, 16 Jun 2016
+
+The average data breach cost has grown to $4 million, representing a 29
+percent increase since 2013, according to the Ponemon Institute.
+
+Cybersecurity incidents continue to grow in both volume and sophistication,
+with 64 percent more security incidents reported in 2015 than in 2014. As
+these threats become more complex, the cost to companies continues to
+rise. In fact, the study found that companies lose $158 per compromised
+record. Breaches in highly regulated industries like healthcare were even
+more costly, reaching $355 per record – a full $100 more than in 2013.
+
+https://www.helpnetsecurity.com/2016/06/16/data-breach-cost-4-million/
+
+------------------------------
+
+Date: Fri, 17 Jun 2016 10:20:52 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Companies pay out billions to fake-CEO email scams" (Michael Kan)
+
+Michael Kan, InfoWorld, 16 Jun 2016
+In the U.S. alone, victims have lost $960 million to the schemes over
+the past three years, according to new data from the FBI
+http://www.infoworld.com/article/3084886/cyber-crime/companies-pay-out-billions-to-fake-ceo-email-scams.html
+
+opening text:
+
+Email scammers, often pretending to be CEOs, have duped businesses into
+giving away at least $3.1 billion, according to new data from the FBI.
+
+------------------------------
+
+Date: Thu, 16 Jun 2016 16:03:30 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 'Spam King' Sanford Wallace gets 2.5 years in prison for 27M
+  Facebook scam messages
+
+http://boingboing.net/2016/06/16/spam-king-sanford-wallace.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+boingboing%2FiBag+%28Boing+Boing%29
+
+  A hacker who called himself 'Spam King' and sent 27 million unsolicited
+  Facebook messages for a variety of scams has been sentenced to 30 months
+  in jail.  Sanford Wallace, 47 was also ordered to pay more than $310,000
+  in fines. The hacker also known as "Spamford" is reported to have
+  compromised over 500,000 Facebook accounts from November 2008 to March
+  2009, and messaged victims links to external sites that harvested their
+  log-ins and Facebook friend lists. Then, Wallace spammed the Facebook
+  users with links to other websites ... allace's spamming career didn't
+  begin with Facebook messages, but stretches all the way back to the '90s,
+  when he sent junk fax messages. He faced civil suits from both Myspace and
+  Facebook in 2007 and 2009, respectively, and racked up nearly $1 billion
+  in fines from the two companies that he was unable to pay. This recent
+  sentence, is the first time Wallace has been convicted of a crime, with
+  the Spam King pleading guilty to one count of "fraud and related activity
+  in connection with electronic mail." His two-and-a-half year jail sentence
+  is just short of the three year maximum he was facing.
+
+------------------------------
+
+Date: Wed, 15 Jun 2016 00:30:27 -0500
+From: Bruce Schneier <schneier@schneier.com>
+Subject: Cormac Herley, "Unfalsifiability of security claims":
+
+             CRYPTO-GRAM
+            June 15, 2016
+          by Bruce Schneier
+    CTO, Resilient, an IBM Company
+        schneier@schneier.com
+       https://www.schneier.com
+
+A free monthly newsletter providing summaries, analyses, insights, and
+commentaries on security: computer and otherwise.
+For back issues, or to subscribe, visit
+<https://www.schneier.com/crypto-gram.html>.
+
+You can read this issue on the web at
+<https://www.schneier.com/crypto-gram/archives/2016/0615.html>. These same
+essays and news items appear in the "Schneier on Security" blog at
+<http://www.schneier.com/blog>, along with a lively and intelligent comment
+section. An RSS feed is available.
+
+Interesting research paper:
+  Cormac Herley, "Unfalsifiability of security claims":
+
+  There is an inherent asymmetry in computer security: things can be
+  declared insecure by observation, but not the reverse. There is no
+  observation that allows us to declare an arbitrary system or technique
+  secure. We show that this implies that claims of necessary conditions for
+  security (and sufficient conditions for insecurity) are unfalsifiable.
+  This in turn implies an asymmetry in self-correction: while the claim that
+  countermeasures are sufficient is always subject to correction, the claim
+  that they are necessary is not. Thus, the response to new information can
+  only be to ratchet upward: newly observed or speculated attack
+  capabilities can argue a countermeasure in, but no possible observation
+  argues one out. Further, when justifications are unfalsifiable, deciding
+  the relative importance of defensive measures reduces to a subjective
+  comparison of assumptions. Relying on such claims is the source of two
+  problems: once we go wrong we stay wrong and errors accumulate, and we
+  have no systematic way to rank or prioritize measures.
+
+This is both true and not true.
+
+Mostly, it's true. It's true in cryptography, where we can never say that an
+algorithm is secure. We can either show how it's insecure, or say something
+like: all of these smart people have spent lots of hours trying to break it,
+and they can't -- but we don't know what a smarter person who spends even
+more hours analyzing it will come up with. It's true in things like airport
+security, where we can easily point out insecurities but are unable to
+similarly demonstrate that some measures are unnecessary. And this does lead
+to a ratcheting up on security, in the absence of constraints like budget or
+processing speed. It's easier to demand that everyone take off their shoes
+for special screening, or that we add another four rounds to the cipher,
+than to argue the reverse.
+
+But it's not entirely true. It's difficult, but we can analyze the
+cost-effectiveness of different security measures. We can compare them with
+each other. We can make estimations and decisions and optimizations. It's
+just not easy, and often it's more of an art than a science. But all is not
+lost.
+
+Still, a very good paper and one worth reading.
+
+Blog entry URL:
+https://www.schneier.com/blog/archives/2016/05/the_unfalsifiab.html
+
+Unfalsifiability of security claims:
+http://research.microsoft.com/pubs/256133/unfalsifiabilityOfSecurityClaims.pdf
+
+------------------------------
+
+Date: Fri, 17 Jun 2016 07:17:25 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Privacy not possible with increasing financial surveillance
+
+In a series of four articles in *The Atlantic*, Sarah Jeong argues
+conclusively that the systems of financial surveillance originally intended
+for determining credit-worthiness of corporations and rich individuals have
+been extended -- thanks to the cost-effectiveness of IT & Internet
+technology -- to even the poorest of the poor.
+
+Furthermore, this surveillance exercise has been converted into a form of
+coercive social control on legal activities which have been politicized.
+The use of financial controls to punish Wikileaks today can also be used to
+punish those seeking and providing abortions tomorrow.
+
+While Sarah does not mention "civil asset forfeiture" (CAF) in this
+particular series, it is easy to see that CAF is the obvious next step in
+closing the surveillance/control loop.  "See Something, Say Something"
+inevitably becomes "See Something, Take Something".
+
+Some libertarians have advocated the use of Bitcoin-type protocols to avoid
+this financial surveillance.  Sarah argues that -- far from saving us from
+surveillance, a cashless society (advocated by state-nanny Cass Sunstein)
+will allow essentially complete surveillance and control.
+
+ - - -
+
+The "War on Drugs" was the excuse for much of this financial surveillance &
+control system; the "War on Terror" is now the excuse for extending it for
+total surveillance and total control.
+
+Within a few years, the President won't require a drone strike to disable a
+domestic dissident; that "Red Button" on her desk will disable the
+dissident's ability to financially function in society, and instantly strip
+all financial assets -- without any presumption of innocence.  "Look ma, no
+due process!"
+
+Bottom line: allowing the government a pass on the ubiquitous surveillance
+of financial transactions is akin to providing the govt a "metadata
+loophole" aka "third party doctrine"; fine-grained financial data provides
+all of the metadata information, so this becomes a distinction without a
+difference.
+
+http://www.theatlantic.com/technology/archive/2016/04/mass-surveillance-was-invented-by-credit-bureaus/479226/
+
+Also by Sarah Jeong:
+Credit Bureaus Were the NSA of the 19th Century
+http://www.theatlantic.com/technology/archive/2016/04/credit-reporting-spying/480510/
+
+You Can't Escape Data Surveillance In America
+http://www.theatlantic.com/technology/archive/2016/04/rental-company-control/478365/
+
+How Technology Helps Creditors Control Debtors
+http://www.theatlantic.com/technology/archive/2016/04/cashless-society/477411/
+
+How a Cashless Society Could Embolden Big Brother
+Sarah Jeong Apr 8, 2016 Technology
+
+------------------------------
+
+Date: Fri, 17 Jun 2016 12:23:41 +1200
+From: "Gary Hinson" <Gary@isect.com>
+Subject: Re: Tesla Model X autonomously crashes into building, owner claims
+
+With ever-advancing auto-automation, surely it is not beyond the wit of Man
+to ensure that such vehicles are thoroughly instrumented and the data are
+retained in black boxes, if not systematically uploaded for further
+analysis?  A moment's idle and ill-informed conjecture suggests the
+possibilities of: identifying failure modes; diagnosing driver and vehicle
+errors; spotting opportunities for safer, more fuel-efficient driving;
+forensic evidence concerning incidents; compliance with road laws;
+indications of drivers' failing eyesight/health/impairment/incompetence .
+
+Aren't there suitable standards in this area already?  If not, why not?
+Isn't anyone driving them?  It's such an obvious avenue, a clear route ahead.
+
+  [Standards?  We are probably still in the period where each company is
+  trying to roll its own, although there is supposedly some standardization
+  on interfaces.  However, think about the composition problem of having
+  different components from different vendors (including the ubiquitous
+  entertainment system that is a culprit in airliners) supposedly seamlessly
+  integrated, and the communication problem among vehicles when we get to
+  the automated highway (!), and the need for monitoring and oversight to
+  ensure everything is working properly, or remediating when it is not, ...
+  PGN]
+
+Dr Gary Hinson PhD MBA CISSP, CEO of IsecT Ltd., New Zealand
+http://www.isect.com/
+
+Passionate about information risk and security awareness, standards and metrics
+ <http://www.noticebored.com/> www.NoticeBored.com
+<http://www.iso27001security.com/> www.ISO27001security.com
+<http://www.securitymetametrics.com/> www.SecurityMetametrics.com
+
+------------------------------
+
+Date: Wed, 15 Jun 2016 22:42:03 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Russian penetration attack on DNC: NOT! (RISKS-29.56)
+
+Ars Technica reports that "Guccifer 2.0" claims responsibility
+for the attack on the DNC, Clinton, and Trump sites.  Guccifer includes
+the purloined data as "proof".
+
+http://arstechnica.com/security/2016/06/lone-wolf-claims-responsibility-for-dnc-hack-dumps-purported-trump-smear-file/#p3
+
+https://guccifer2.wordpress.com/2016/06/15/dnc/
+
+------------------------------
+
+Date: Thu, 16 Jun 2016 11:47:05 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: Lancaster UK power outage (RISKS-29.56)
+
+The immediate cause of the power loss was flooding of the main subsystem
+next to the River Lune, which reached a peak flow of 1,742 cubic meters of
+water per second.
+
+The connection between rainfall level of 150 to 200mm and a record peak
+water flow in the river may seem obvious and inevitable: but in fact is
+exacerbated by successive Governments' handling of the upland areas:
+
+(1) A study in mid-Wales suggests that rainwater’s infiltration rate into
+the soil is 67 times higher under trees than under sheep pasture.  Yet
+farmers are subsidised for keeping sheep and rewarded for removing "unwanted
+vegetation" (i.e. trees) from land which is not being farmed.
+
+(2) Rivers that have been dredged and canalised to protect farmland rush the
+water instead into the nearest town.
+
+(3) In June 2014 the environment department proposed to deregulate dredging,
+allowing landowners to strip the structure and wildlife habitat out of
+ditches and rivers. There could be no better formula for disaster
+downstream. Once water is in the rivers, it has to go somewhere. If you
+don’t hold it back in the fields, it will tumble into people’s homes
+instead.
+
+(4) Internal drainage boards -- which are public bodies but tend to be
+mostly controlled by landowners -- often prioritise the protection of
+farmland above the safety of towns and cities downstream.
+
+(5) The Government was instrumental in destroying the proposed European soil
+framework directive, which would have reduced flooding by preventing the
+erosion and compaction of the soil.
+
+http://www.theguardian.com/commentisfree/2015/dec/07/hide-evidence-storm-desmond-floods-paris-talks
+
+http://www.theguardian.com/commentisfree/2015/dec/29/deluge-farmers-flood-grouse-moor-drain-land
+
+Dr Martin Ward STRL Principal Lecturer & Reader in Software Engineering
+martin@gkc.org.uk  http://www.cse.dmu.ac.uk/~mward/
+
+------------------------------
+
+Date: Tue, 10 May 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+    newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.57
+************************

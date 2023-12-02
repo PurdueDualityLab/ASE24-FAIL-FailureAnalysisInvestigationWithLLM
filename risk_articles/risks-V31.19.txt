@@ -1,0 +1,625 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.19
+
+RISKS-LIST: Risks-Forum Digest  Saturday 20 April 2019  Volume 31 : Issue 19
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.19>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+AA 300 JFK-LAX incident (CBS via PGN)
+1983 Soviet nuclear false alarm incident (Dan Jacobson)
+Contractor identifies new problems with phase 2 of the Silver Line
+  (WashPost)
+"Fallible machines, fallible humans" (The Straits Times and Financial Times)
+A computerized YouTube fact-checking tool goes very wrong: In flaming Notre
+  Dame, it somehow sees 9/11 tragedy (WashPost)
+Election systems in 50 states were targeted in 2016 (DHS/FBI via
+  Ars Technica)
+Mysterious operative haunted Kaspersky critics (AP)
+Samsung's $2,000 folding phone is breaking for some users after two days
+  (CNBC)
+Cyberspies Hijacked the Internet Domains of Entire Countries (WiReD)
+Man Bites Dog Dept: MSFT supports human rights!! (Reuters)
+Microsoft Email Hack Shows the Lurking Danger of Customer Support (WiReD)
+As China Hacked, U.S. Businesses Turned A Blind Eye (npr.org)
+Wipro customers hacked, says Krebs. Nothing to see here, says Wipro
+  (TechBeacon)
+Facebook has admitted to unintentionally uploading the address books of 1.5
+  million users without consent (The Guardian)
+Utah Bans Police From Searching Digital Data Without A Warrant,
+  Closes Fourth Amendment Loophole (Forbes)
+AppleWatch or AnkleMonitor: You Decide (Henry Baker)
+Fintech fiddles as home burns: 97% of apps lack basic security (TechBeacon)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 17 Apr 2019 15:04:30 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: AA 300 JFK-LAX incident
+
+On 10 Apr 2019, an American Airlines Airbus A321 jet `nearly crashed' during
+takeoff at JFK.  The wing apparently scraped the ground and hit a sign and
+light pole during takeoff, bending the wing.  "We were banking, uncontrolled
+bank 45 degrees to the left," a pilot could be heard saying on the air
+traffic control audio of the incident.  It was evidently an `uncommanded
+roll to the left', with no explanation yet as to the cause.  Although the
+plane did manage to take off, it then returned to JFK 28 minutes later.
+
+https://www.cbsnews.com/news/american-airlines-flight-300-jfk-close-call-appears-worse-than-first-reported/
+
+------------------------------
+
+Date: Fri, 12 Apr 2019 11:47:21 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: 1983 Soviet nuclear false alarm incident
+
+"...the system reported that a missile had been launched from the United
+States, followed by up to five more. Petrov judged the reports to be a
+false alarm, and his decision to disobey orders, against Soviet military
+protocol, is credited with having prevented an erroneous retaliatory
+nuclear attack on the United States and its NATO allies that could have
+resulted in large-scale nuclear war. Investigation later confirmed that
+the Soviet satellite warning system had indeed malfunctioned."
+https://en.wikipedia.org/wiki/1983_Soviet_nuclear_false_alarm_incident
+https://en.wikipedia.org/wiki/Stanislav_Petrov
+
+  [In RISKS-3.39, 18 Aug 1986, we had a "Nuclear false alarm" item,
+  contributed by Robert Stroud.  That case triggered nuclear attack sirens
+  in Edinburgh.  PGN]
+
+------------------------------
+
+Date: Fri, 12 Apr 2019 19:36:28 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Contractor identifies new problems with phase 2 of the Silver Line
+  (WashPost)
+
+The structures that support the Dulles Airport Metro station's glass wall
+are cracked and lack proper reinforcement.
+
+Keith Couch, project director for CRC, downplayed the problems at the Dulles
+station, saying that officials are working to find a solution. He said the
+fact that the problems were discovered before the project was completed is a
+sign that the company's quality control program is working. CRC's
+inspections and quality control have come under criticism as the project's
+problems have mounted.
+
+Project executive director Charles Stark characterized the issues at the
+Dulles station as a “workmanship problem.”
+
+https://www.washingtonpost.com/local/trafficandcommuting/contractor-identifies-new-problems-with-phase-2-of-the-silver-line/2019/04/11/df412180-5a2a-11e9-a00e-050dc7b82693_story.html
+
+"QC is working" to detect workmanship problems.
+
+"workmanship" appears in article once, as does "improve" -- but referring to
+schedule, not workmanship.
+
+The risk? Nothing changing.
+
+------------------------------
+
+Date: Wed, 17 Apr 2019 14:04:14 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: "Fallible machines, fallible humans"
+  (The Straits Times and Financial Times)
+
+Robert Wright byline, behind paywalls as:
+
+1) "Fallible machines, fallible humans," via
+https://www.straitstimes.com/opinion/fallible-machines-fallible-humans
+retrieved on 17APR2019;
+
+2) "Autonomous machines: industry grapples with Boeing lessons" via
+https://www.ft.com/content/f96478e0-59e0-11e9-939a-341f5ada9d40
+
+The cited news articles discuss technology-dependent systems (medical
+infusion pumps, aircraft, industrial robotic manufacturing) and their
+dependency on human engagement to monitor activity.
+
+Today's AI cannot independently comprehend context: they can match patterns,
+but cannot rationalize the recognized pattern in a way that emulates a
+human's mind.
+
+No machine can be programmed today to process contextual awareness and
+independently act to preserve and protect human life during an emergency. An
+organization or individual expecting this outcome apparently believes that
+science fiction is real. They must be disabused of this fallacy.
+
+In the FT and Straits Times articles, Mark Sujan of University of Warwick
+asks, "How do we ensure that the system knows enough about the world within
+which it's operation? That's a complex thing."
+
+As noted by Don Norman (see
+http://catless.ncl.ac.uk/Risks/12/48%23subj7.1 for example),
+"The real RISK in computer system design is NOT human error. It is designers
+who are content to blame human error and thereby wash their hands of
+responsibility."
+
+Demonstrating system behavior when subjected to erroneous or negative input
+stimulus can reveal more about system safety-readiness and resilience than
+demonstration of behavior under nominal stimulus conditions. Anomalous
+system states, in a simulator, can instruct and refine operational
+readiness.
+
+Successful and effective system operation depends on informed, trained, and
+engaged human oversight. Safety critical system operators must possess
+perspicacity. Clear indicators of anomalous behavior, and insightful
+operator reaction to them, are essential to ensure a safe outcome.
+
+------------------------------
+
+Date: Wed, 17 Apr 2019 16:17:13 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: A computerized YouTube fact-checking tool goes very wrong: In
+  flaming Notre Dame, it somehow sees 9/11 tragedy (WashPost)
+
+https://www.washingtonpost.com/technology/2019/04/15/computerized-youtube-fact-checking-tool-goes-very-wrong-flaming-notre-dame-it-somehow-sees-sept-tragedy
+
+"If the algorithm saw a video of tall structures engulfed in smoke and
+inferred that it was related to the attack on the World Trade Center, that
+speaks well of the state of the art in video system understanding, that it
+would see the similarity to 9/11. There was a point where that would have
+been impossible.
+
+"But the algorithms lack the comprehension of human context or common sense,
+making them woefully unprepared for news events. YouTube, he said, is poorly
+equipped to fix such problems now and probably will remain so for years to
+come.
+
+"'They have to depend on these algorithms, but they all have sorts of
+failure modes. And they can't fly under the radar anymore,' Domingos said.
+'It's not just whack-a-mole. It's a losing game.'"
+
+Risk: Brand outrage incidence frequency multiplies with business
+accumulation of technical debt.
+
+------------------------------
+
+Date: Fri, 12 Apr 2019 9:09:05 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Election systems in 50 states were targeted in 2016 (DHS/FBI via
+  Ars Technica)
+
+https://arstechnica.com/information-technology/2019/04/dhs-fbi-say-election-systems-in-50-states-were-targeted-in-2016
+
+*A joint intelligence bulletin (JIB) has been issued by the Department of
+Homeland Security and Federal Bureau of Investigation to state and local
+authorities regarding Russian hacking activities during the 2016
+presidential election.  While the bulletin contains no new technical
+information, it is the first official report to confirm that the Russian
+reconnaissance and hacking efforts in advance of the election went well
+beyond the 21 states confirmed in previous reports.*
+
+------------------------------
+
+Date: Thu, 18 Apr 2019 14:13:57 +0100
+From: J Coe <spendday@gmail.com>
+Subject: Mysterious operative haunted Kaspersky critics (AP)
+
+The Associated Press has learned that the mysterious man (who said his name
+was Lucas Lambert) spent several months last year investigating critics of
+Kaspersky Lab, organizing at least four meetings with cybersecurity experts
+in London and New York.
+
+https://apnews.com/a3144f4ef5ab4588af7aba789e9892ed
+
+------------------------------
+
+Date: Wed, 17 Apr 2019 19:39:58 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Samsung's $2,000 folding phone is breaking for some users after two
+  days (CNBC)
+
+Samsung's Galaxy Fold is already breaking.
+Reviewers who got the device are seeing flickering screens. Some think
+because a protective film was removed.
+But CNBC's unit is also broken and we did not remove the film.
+
+Samsung's $2,000 folding phone is breaking for some users after two days
+https://www.cnbc.com/2019/04/17/samsung-galaxy-fold-screen-breaking-and-flickering.html
+
+Gadget gimmick for its own sake? I use two PC monitors for Windows but don't
+have windows span their border -- bezels would be intrusive. I can't see
+using this phone with a single app spanning the displays and am skeptical
+about people paying that much for two separate screens -- if it even
+operates that way. Surprise, the hinge is a likely failure point.
+
+------------------------------
+
+Date: Wed, 17 Apr 2019 20:41:13 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Cyberspies Hijacked the Internet Domains of Entire Countries
+  (WiReD)
+
+The discovery of a new, sophisticated team of hackers spying on dozens of
+government targets is never good news. But one team of cyberspies has pulled
+off that scale of espionage with a rare and troubling trick, exploiting a
+weak link in the Internet's cybersecurity that experts have warned about for
+years: DNS hijacking, a technique that meddles with the fundamental address
+book of the Internet.
+
+Researchers at Cisco's Talos security division on Wednesday revealed that a
+hacker group it's calling Sea Turtle carried out a broad campaign of
+espionage via DNS hijacking, hitting 40 different organizations. In the
+process, they went so far as to compromise multiple country-code top-level
+domains -- the suffixes like .co.uk or .ru that end a foreign web address --
+putting all the traffic of every domain in multiple countries at risk.
+
+The hackers' victims include telecoms, Internet service providers, and
+domain registrars responsible for implementing the domain name system.  But
+the majority of the victims and the ultimate targets, Cisco believes, were a
+collection of mostly governmental organizations, including ministries of
+foreign affairs, intelligence agencies, military targets, and energy-related
+groups, all based in the Middle East and North Africa. By corrupting the
+Internet's directory system, hackers were able to silently use "man in the
+middle" attacks to intercept all Internet data from email to web traffic
+sent to those victim organizations.
+
+https://www.wired.com/story/sea-turtle-dns-hijacking/
+
+------------------------------
+
+Date: Wed, 17 Apr 2019 21:24:08 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Man Bites Dog Dept: MSFT supports human rights!! (Reuters)
+
+  [Once again, I had to carefully check the date on this article to make
+  sure that it wasn't April 1st!]
+
+As much as I applaud the zeal of all the newly converted, I'm far too
+cynical to believe a word of Brad Smith, given the *second* article about
+Microsoft, below.  Perhaps St. Augustine's prayer is more appropriate for
+Microsoft: "Please God, make me good, but not just yet".
+
+My prayer for Microsoft: "May the Farce be with you!" *
+
+(* See below.)
+
+https://www.reuters.com/article/us-microsoft-ai/microsoft-turned-down-facial-recognition-sales-on-human-rights-concerns-idUSKCN1RS2FV
+
+Microsoft turned down facial-recognition sales on human rights concerns
+
+Joseph Menn   April 16, 2019 / 11:33 PM / Updated a day ago
+
+PALO ALTO (Reuters) - Microsoft Corp recently rejected a California law
+enforcement agency's request to install facial recognition technology in
+officers' cars and body cameras due to human rights concerns, company
+President Brad Smith said on Tuesday.
+
+Microsoft concluded it would lead to innocent women and minorities being
+disproportionately held for questioning because the artificial intelligence
+has been trained on mostly white and male pictures.
+
+AI has more cases of mistaken identity with women and minorities, multiple
+research projects have found.
+
+"Anytime they pulled anyone over, they wanted to run a face scan" against a
+database of suspects, Smith said without naming the agency.  After thinking
+through the uneven impact, "we said this technology is not your answer."
+
+Speaking at a Stanford University conference on "human-centered artificial
+intelligence," Smith said Microsoft had also declined a deal to install
+facial recognition on cameras blanketing the capital city of an unnamed
+country that the nonprofit Freedom House had deemed not free.  Smith said it
+would have suppressed freedom of assembly there.
+
+On the other hand, Microsoft did agree to provide the technology to an
+American prison, after the company concluded that the environment would be
+limited and that it would improve safety inside the unnamed institution.
+
+Smith explained the decisions as part of a commitment to human rights that
+he said was increasingly critical as rapid technological advances empower
+governments to conduct blanket surveillance, deploy autonomous weapons and
+take other steps that might prove impossible to reverse.
+
+Microsoft said in December it would be open about shortcomings in its facial
+recognition and asked customers to be transparent about how they intended to
+use it, while stopping short of ruling out sales to police.
+
+Smith has called for greater regulation of facial recognition and other uses
+of artificial intelligence, and he warned Tuesday that without that,
+companies amassing the most data might win the race to develop the best AI
+in a "race to the bottom."
+
+He shared the stage with the United Nations High Commissioner for Human
+Rights, Michelle Bachelet, who urged tech companies to refrain from building
+new tools without weighing their impact.
+
+"Please embody the human rights approach when you are developing
+technology," said Bachelet, a former president of Chile.
+
+Microsoft spokesman Frank Shaw declined to name the prospective customers
+the company turned down.
+
+Reporting by Joseph Menn; Editing by Greg Mitchell and Lisa Shumaker
+
+https://www.nextgov.com/emerging-tech/2019/04/microsoft-unveils-two-secret-data-centers-built-classified-government-data/156376/
+
+Frank Konkel, 17 Apr 2019
+
+Microsoft Unveils Two Secret Data Centers Built for Classified Government
+Data
+
+... Microsoft's announcement is part of the company's plan to compete with
+Amazon--the only company cleared to host the CIA and Defense Department's
+secret and top secret classified data--and comes as both companies compete
+for a $10 billion military cloud contract called *JEDI*.  ...
+
+------------------------------
+
+Date: Tue, 16 Apr 2019 20:22:03 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Microsoft Email Hack Shows the Lurking Danger of Customer Support
+  (WiReD)
+
+On Friday night, Microsoft sent notification emails to an unknown number of
+its individual email users -- across Outlook, MSN, and Hotmail -- warning
+them about a data breach. Between January 1 and March 28 of this year,
+hackers used a set of stolen credentials for a Microsoft customer support
+platform to access account data like email addresses in messages, message
+subject lines, and folder names inside accounts. By Sunday, it acknowledged
+that the problem was actually much worse.
+
+After tech news site Motherboard showed Microsoft evidence from a source
+that the scope of the incident was more extensive, the company revised its
+initial statement, saying instead that for about 6 percent of users who
+received a notification, hackers could also access the text of their
+messages and any attachments. Microsoft had previously denied to TechCrunch
+that full email messages were affected.
+
+https://www.wired.com/story/microsoft-email-hack-outlook-hotmail-customer-support/
+
+------------------------------
+
+Date: Wed, 17 Apr 2019 12:33:07 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: As China Hacked, U.S. Businesses Turned A Blind Eye (npr.org)
+
+https://www.npr.org/2019/04/12/711779130/as-china-hacked-u-s-businesses-turned-a-blind-eye
+
+"Technology theft and other unfair business practices originating from China
+are costing the American economy more than $57 billion a year, White House
+officials believe, and they expect that figure to grow.
+
+"Yet an investigation by NPR and the PBS television show Frontline into why
+three successive administrations failed to stop cyberhacking from China
+found an unlikely obstacle for the government -- the victims themselves."
+
+Why do for-profit organizations, possessing vast stores of valuable
+intellectual property, apparently accept and anticipate theft of this
+content?  Because the PRC marketplace is "too big" to ignore.
+
+US businesses display a remarkable, and convenient, myopia when it suits
+their primary objective: capture and realize revenue. Corporations are
+inured to theft and breach, exhausted by defense against the inevitable.
+
+Businesses budget for theft losses and pay insurance premiums as an
+operational expense. No longer is an eyelash of concern raised. These
+expenses are considered leakage. (See the movie classic "Casino.").
+Business continuity is the objective.
+
+When pushed against the wall (if revenue capture is threatened by
+'unfavorable or unfair' competition), business can prevail upon political
+governance to embargo foreign-products, or savage their competitor's product
+capabilities like HuaWei 5G per
+http://catless.ncl.ac.uk/Risks/31/16%23subj19
+
+A calculated brand outrage assault and reputation sabotage campaign can tip
+procurement scales against certain suppliers.
+
+Given visible product defect escape and zero-day density reports (as noted
+in RISKS-31.16 and elsewhere), how do data breach and IP theft incidents
+arising from deployed gear (be they domestic or foreign), constitute a
+favorable outcome for dependent end-users and businesses?
+
+Whether the PRC or the US/EU "wins the contest" for most rapacious and
+effective data breach and IP theft exploitation capabilities is immaterial
+to governments.
+
+International economic dominance -- hegemony -- appears to motivate PRC IP
+theft and intrusion frequency: Become the world's largest economy and bask
+in the bragging rights limelight by any conceivable means. The US/EU
+apparently do not enlist their intelligence services for this purpose, at
+least as vigorously engaged or as visibly compared to the #2 global economy.
+
+Risks: Exhausted business strategies and weak operational practices that
+rely on government intervention to rebalance the marketplace.  Insufficient
+or ineffective safeguards applied to suppress IP Internet theft, intrusions,
+and digital data exfiltration.
+
+------------------------------
+
+Date: Thu, 18 Apr 2019 13:38:48 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Wipro customers hacked, says Krebs. Nothing to see here, says Wipro
+  (TechBeacon)
+
+https://techbeacon.com/security/wipro-customers-hacked-says-krebs-nothing-see-here-says-wipro
+
+------------------------------
+
+Date: Thu, 18 Apr 2019 08:05:53 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Facebook has admitted to unintentionally uploading the address
+  books of 1.5 million users without consent (The Guardian)
+
+EXCERPT:
+
+Facebook has admitted to `unintentionally' uploading the address books of
+1.5 million users without consent, and says it will delete the collected
+data and notify those affected.
+https://www.theguardian.com/technology/facebook 
+
+The discovery follows criticism of Facebook by security experts for a
+feature that asked new users for their email password as part of the sign-up
+process. As well as exposing users to potential security breaches, those who
+provided passwords found that, immediately after their email was verified,
+the site began importing contacts without asking for permission.
+
+Facebook has now admitted it was wrong to do so, and said the upload was
+inadvertent.  ``Last month we stopped offering email password verification
+as an option for people verifying their account when signing up for Facebook
+for the first time,'' the company said.  ``When we looked into the steps
+people were going through to verify their accounts we found that in some
+cases people's email contacts were also unintentionally uploaded to Facebook
+when they created their account, We estimate that up to 1.5 million people's
+email contacts may have been uploaded. These contacts were not shared with
+anyone and we're deleting them. We've fixed the underlying issue and are
+notifying people whose contacts were imported. People can also review and
+manage the contacts they share with Facebook in their settings.''
+
+The issue was first noticed in early April, when the Daily Beast reported
+on Facebook's practice of asking for email passwords to verify new users. The
+feature, which allows Facebook to automatically log in to a webmail account
+to effectively click the link on an email verification itself, was
+apparently intended to smooth the workflow for signing up for a new account.
+https://www.thedailybeast.com/beyond-sketchy-facebook-demanding-some-new-users-email-passwords
+
+But security experts said the practice was `beyond sketchy', noting that
+it gave Facebook access to a large amount of personal data and may have led
+to users adopting unsafe practices around password confidentiality. The
+company was ``practically fishing for passwords you are not supposed to
+know,'' according to cybersecurity tweeter e-sushi who first raised concern
+about the feature, which Facebook says has existed since 2016...
+https://twitter.com/originalesushi%3Flang%3Den
+
+https://www.theguardian.com/technology/2019/apr/18/facebook-uploaded-email-contacts-of-15m-users-without-consent
+
+------------------------------
+
+Date: Thu, 18 Apr 2019 11:00:29 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Utah Bans Police From Searching Digital Data Without A Warrant,
+  Closes Fourth Amendment Loophole (Forbes)
+
+https://www.forbes.com/sites/nicksibilla/2019/04/16/utah-bans-police-from-searching-digital-data-without-a-warrant-closes-fourth-amendment-loophole/
+
+------------------------------
+
+Date: Fri, 12 Apr 2019 07:01:53 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: AppleWatch or AnkleMonitor: You Decide
+
+"Ankle monitor" and Fitbit/AppleWatch are becoming indistinguishable in the
+new world of Chinese/Uber/AirBnB-style Social Credit Systems.
+
+Three excellent 11-16 minute videos of Big Tech's version of Social
+Credit Systems in action.  Well done, with high production values.
+
+This dystopian world is no longer "far into the future", but already
+here.
+
+https://www.sscqueens.org/news/launch-of-screening-surveillance
+https://www.sscqueens.org/projects/screening-surveillance
+https://www.youtube.com/channel/UCpEmA7HemoLdu-bZsr63y-Q
+
+Blaxites
+
+https://www.sscqueens.org/projects/screening-surveillance/blaxites
+https://www.youtube.com/watch%3Fv%3DyfVNDuWGZTs
+
+Blaxites
+
+Published on Apr 9, 2019
+
+Jai's celebratory social media post affects her access to vital medication.
+Her attempts to circumvent the system leads to even more dire consequences.
+
+Written by: Nehal El-Hadi  Directed by: Josh Lyon
+
+https://www.sscqueens.org/projects/screening-surveillance/frames
+https://www.youtube.com/watch%3Fv%3DjfJX8HaGy6s
+
+Frames
+
+Published on Apr 9, 2019
+
+A smart city tracks and analyzes a woman walking through the city.
+Things she does are interpreted and logged by the city system, but are
+they drawing an accurate picture of the woman?
+
+Written by: Madeline Ashby   Directed by: Farhad Pakdel
+
+https://www.sscqueens.org/projects/screening-surveillance/a-model-employee
+https://www.youtube.com/watch%3Fv%3DkBeggSzwKQ4
+
+A Model Employee
+
+Published on Mar 29, 2019
+
+To keep her day job at a local restaurant, Neeta, an aspiring DJ, has
+to wear a tracking wristband.  As it tracks her life outside of work,
+she tries to fool the system, but a new device upgrade means trouble.
+
+Written by: Tim Maughan   Directed by: Leila Khalilzadeh
+
+------------------------------
+
+Date: Fri, 12 Apr 2019 18:46:56 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Fintech fiddles as home burns: 97% of apps lack basic security
+  (TechBeacon)
+
+This is not fine. A white-hat researcher examined 30 financial apps, looking
+for information security issues -- worryingly, all but one of them were
+insecure.
+
+The failures were mind-numbingly familiar, and dead easy to find. It's as if
+the industry has learned nothing and is walking around with a sign on its
+back, saying, “Rob me.”
+
+https://techbeacon.com/security/fintech-fiddles-home-burns-97-apps-found-insecure
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.19
+************************

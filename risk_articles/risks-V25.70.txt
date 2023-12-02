@@ -1,0 +1,611 @@
+precedence: bulk
+Subject: Risks Digest 25.70
+
+RISKS-LIST: Risks-Forum Digest  Monday 1 June 2009  Volume 25 : Issue 70
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.70.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Municipal politician unseated over fake e-mail (Kelly Bert Manning)
+A new biometrics risk? (Lee Rudolph)
+No-risk intelligence gathering? (PGN)
+iDEAL is not so ideal (Erling Kristiansen)
+Failures of eCommerce are Human not Computers (Chris J Brady)
+No 911 Service (Gene Wirchenko)
+Risks On Rails (Rob Slade)
+Train and iPod do not mix (Gene Wirchenko)
+Cycle-omatic complexity needed? (Jeremy Epstein)
+NZ bank lends $10M instead of $10K; plus Facebook (Rob Slade)
+Re: Tail strikes from improper settings (Dick Mills)
+Radio-isotope shortage, again... (Danny Burstein)
+Hutber's Law, Clarke's Third Law and Weasley's Law (Michael Bacon)
+Re: How small does the disk chunk have to be? (Jeremy Epstein, Fred Cohen,
+  Jeremy Epstein)
+Re: secure but memorable passwords (David Alexander, Dave Martin,
+  Paul Karagianis)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 27 May 2009 20:25:26 -0700
+From: Kelly Bert Manning <bo774@freenet.carleton.ca>
+Subject: Municipal politician unseated over fake e-mail
+
+A municipal councilor in White Rock, British Columbia, has been booted out
+of office for sending unsolicited e-mail with a fake sender name, from a
+city hall computer, lying about his opponents. One of his opponents spent
+several $100s on a forensic analysis and court case, recovering his
+expenses.
+
+The lying spammer has lost his seat, fined $20,000 and has to refund his
+court costs, which were paid by White Rock but may now be recoverable
+due to the reversal of the election.
+
+Do a web search on
+   White Rock Coleridge Todd
+
+Full text of decision.
+http://www.courts.gov.bc.ca/jdb-txt/SC/09/06/2009BCSC0688.htm
+
+------------------------------
+
+Date: Wed, 27 May 2009 11:07:23 -0400 (EDT)
+From: lrudolph@panix.com (Lee Rudolph)
+Subject: A new biometrics risk?
+
+As reported at http://news.bbc.co.uk/2/hi/health/8064332.stm :
+
+   A commonly-used cancer drug can make patients' fingerprints disappear,
+   potentially causing problems for foreign travel, a doctor warns.  One
+   patient was held by US immigration officials for four hours before they
+   allowed him to enter the country.  The case is highlighted in the journal
+   Annals of Oncology. ...  Although the drug is commonly used to treat a
+   range of cancers, it can cause chronic inflammation of the palms or soles
+   of the feet, leading to peeling, bleeding or blistering of the skin.
+   Over time this can lead to the loss of fingerprints. ...
+
+------------------------------
+
+Date: Mon, 1 Jun 2009 14:21:32 -0700
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: No-risk intelligence gathering?
+
+...Mike Birmingham, a spokesman for the Office of the Director of National
+Intelligence (located at the intersection of the Dulles Toll Road and Route
+123), would say only that if a communications line used by the agency was
+cut, the nation's intelligence-gathering would carry on uninterrupted.  "No
+particular project puts us at risk -- highway construction, building
+construction," Birmingham said. "We don't have a single point of failure.
+Our systems are redundant."  [Source: *The Washington Post*, 30 May 2009;
+TNX to Mark Luntzel for spotting this one.  PGN]
+
+http://www.washingtonpost.com/wp-dyn/content/article/2009/05/30/AR2009053002114.html
+
+------------------------------
+
+Date: Tue, 26 May 2009 22:19:03 +0200
+From: Erling Kristiansen <erling.kristiansen@xs4all.nl>
+Subject: iDEAL is not so ideal
+
+Ideal is an electronic payment service for on-line purchases operated in The
+Netherlands (and maybe other countries -- I don't know).  It works as
+follows:
+
+* You complete the details of your purchase on the web site of the merchant
+* You select iDEAL as payment method
+* You are re-directed to the on-line banking service of the bank of your
+  choice
+* After logging in with your usual credentials, you are presented with a
+  pre-filled bank transfer form
+* Accepting the form, the payment is done, and you are returned to the
+  merchant, who confirms your purchase and payment
+
+In a recent purchase I made, rather than confirming payment, I got a pop-up
+something like "Payment failed. Please try again later or pay by other
+means".
+
+I did just that: Tried again later. Same result. Tried again a lot
+later. Same result.  Checking my bank account, it turned out that 3 payments
+had been debited.
+
+The merchant dealt with the case in a professional manner, accepting one
+payment and refunding me the two other. But it took several phone calls,
+faxing supporting material and a few days before I was really sure that the
+holiday I had booked was actually confirmed. Apparently, they had some
+trouble locating a bank transfer that was not properly linked to the
+purchase.
+
+Is the iDEAL protocol really so sloppy that it cannot deal properly with a
+fault somewhere half-way the process? Or is it the implementation by a
+particular vendor that is broken?  What I really object to is the "try again
+later" phrase that seemingly implies that the whole transaction was voided.
+
+------------------------------
+
+Date: Thu, 28 May 2009 04:03:57 -0700 (PDT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: Failures of eCommerce are Human not Computers
+
+It never ceases to amaze me at the ineptitude of e-commerce web sites to
+deliver items paid for.  There are excellent e-commerce web sites such as
+British Airways flight booking, Expedia, eBay and Amazon.
+
+The common factor is that most (99.99%) manage to take a customer's money
+from a bank or credit card account almost quicker than a web page takes to
+refresh. And at least with airlines a customer then gets an e-ticket.
+
+But it is companies that sell hard goods that are continually of concern. I
+have had little trouble with Amazon who use 'normal mail services. But eBay
+sellers, and companies such as Argos, Littlewoods, GUS, etc. (aka online
+mail order catalogue companies) ALL have a real problem in actually
+delivering goods to purchasers. The courier companies -- DHL, FedEx, Parcel
+Force, etc. -- even if in-house -- are the weak link in the e-commerce
+chain.
+
+The issues are
+
+1) These companies deliver at their convenience forgetting that many people
+are not at home but out at work, and/or
+
+2) The laziness of the courier drivers is such that they don't bother to
+leave an attempted delivery card, and ultimately the goods are 'returned to
+sender' -- unclaimed.
+
+In February I was sent from the USA some valuable and rare archive video
+recordings on tape. They failed to arrive at my address in the UK. The
+courier fee was $60. After persistent enquiries at both ends they had simply
+disappeared -- each 'country' blamed the other. The tracking number(s)
+didn't work.  *Three* months later the package turned up again -- but at the
+sender's address as 'returned unclaimed at destination.' It appears that
+once again the courier driver had simply failed to leave an 'attempted
+delivery card.'  And the courier company had failed to alert me by mail
+and/or email. So the goods went beck to sender.
+
+Last year I bought some clubbing clothes from a eBay company in Germany.
+Again the goods were dispatched using a German courier -- I can't read
+German so tracking on its web site was a problem. The goods never
+arrived. Again they were sent back, and I had to raise a formal complaint
+with eBay and PayPal to obtain a refund.
+
+I know that I'm not the only one affected in the UK. And this appears to be
+a world-wide problem. A friend of mine in New York City always has goods
+delivered to his parents in Vermont because he can never get them delivered
+properly in New York.
+
+It is not usually the fault or risks of using computers and the Internet
+that fails the development of e-commerce so badly. It is the human element -
+aka the lazy courier companies and their drivers that fail the system. I see
+no solution to this even as the Internet gets faster.
+
+------------------------------
+
+Date: Mon, 01 Jun 2009 09:51:34 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: No 911 Service
+
+I hope no one found out the hard way:
+"Geezer phones don't work
+Part of http://www.itbusiness.ca/it/client/en/home/News.asp?sub=true&id=53372:
+
+Thousands of phones sold by Jitterbug, a mobile operator that specializes in
+simple handsets for limited uses such as emergency calls, are being recalled
+because they can't be used to call 911 in some rare cases. Jitterbug sells
+bare-bones handsets and no-contract service plans geared toward seniors and
+other consumers who don't make heavy use of cell phones. One of its phones,
+the Jitterbug OneTouch, has dedicated buttons for the Jitterbug operator,
+one preset number, and 911 in place of a numeric keypad. That phone, as well
+as the standard Jitterbug phone with a keypad, have been recalled because
+they can't be used to call 911 emergency lines in some U.S. areas where they
+should be able to."
+
+------------------------------
+
+Date: Fri, 29 May 2009 16:47:58 -0800
+From: Rob Slade <rMslade@shaw.ca>
+Subject: Risks On Rails
+
+In 2004, a politically controversial decision was made to cease operations
+of BCRail, and sell a 999 year lease to CN.
+
+A section of the line near the town of Lillooet is known as one of the
+longest continuous mountain grades in Canada.  BCRail used dynamic brakes.
+
+CN used air brakes, and confirmed this decision in early 2006, despite
+concerns raised by employees.
+
+On June 29, 2006, a train derailed on that section, and two employees died.
+
+The Transportation Safety Board (TSB) has now ruled that the failure was
+caused by an inadequate braking system used in the steep mountain canyon.
+
+http://links.cbc.ca/a/l.x?T=jncickgignjgfckaafjiiiklfcfi&M=36
+
+"[N]o risk assessment was done before removing locomotives with dynamic
+braking from this extreme mountain territory."
+
+rslade@vcn.bc.ca  http://victoria.tc.ca/techrev/rms.htm
+http://blog.isc2.org/isc2_blog/slade/index.html http://twitter.com/rslade
+http://blogs.securiteam.com/index.php/archives/author/p1/
+
+------------------------------
+
+Date: Sun, 24 May 2009 22:51:24 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Train and iPod do not mix
+
+Jason Hewlett, Fatality: 19-year-old killed while walking on train tracks;
+iPod may have drowned out sound of train's warning whistle, *The Daily New*,
+Kamloops, British Columbia, Canada, 22 May 2009, A1-A2, PGN-ed
+
+Liam Peel, an 19-year-old Kamloops man, may not have heard a CP Rail train
+approaching from behind him at 56 km/h, because he was apparently listening
+to an iPod while walking along one of the track rails, dressed in a black
+hoodie.  A registered audiologist suggested that an iPod can crank out up to
+100 decibels, and ear buds tend to drown out external sounds.  [At maximum
+volume, our youths are probably going deaf as well.]
+
+------------------------------
+
+Date: Fri, 29 May 2009 10:20:27 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Cycle-omatic complexity needed?
+
+Floyd Landis' 2006 Tour de France victory is being questioned because of
+allegedly hacked computer systems that held the drug test results.
+
+http://www3.signonsandiego.com/stories/2009/may/29/1s29landis215559-landis-case-twist-hacking-lab-com/
+
+Clearly, to keep drug testing computers safe from Tour de France attackers,
+we need higher cycle-omatic complexity of the systems.
+
+The RISK?  Some of us will go to any length to pull a pun out of a
+marginally security related article.
+
+------------------------------
+
+Date: Mon, 25 May 2009 14:15:27 -0800
+From: Rob Slade <rMslade@shaw.ca>
+Subject: NZ bank lends $10M instead of $10K; plus Facebook (Wells, RISKS-25.69)
+
+Actually, I'd just seen this in another place, with rather complementary
+info.  "The fugitive couple and their small entourage have been traced to
+Hong Kong, Macau and mainland China, largely via one of their indiscreet
+updates on social networking site Facebook."  I thought the "tracking crooks
+by Facebook" aspect made it RISKS fodder in another direction:
+
+http://www.smh.com.au/news/technology/web/2009/05/25/1243103468196.html
+
+------------------------------
+
+Date: Fri, 29 May 2009 11:17:52 -0400
+From: Dick Mills <dickandlibbymills@gmail.com>
+Subject: Re: Tail strikes from improper settings (Knowlton, RISKS-25.68)
+
+> An airplane on a take-off run clearly could perform an automatic sanity
+> check (comparing thrust settings and actual acceleration with gross
+> weight, air speed/temperature/pressure, flap settings ...) and raise an
+> alarm if something's seriously amiss.
+
+As an engineer, I love this idea.  A dash of physics, a bit of programming,
+a tiny display.  Life is good.
+
+In fact, you could improve it.  GPS databases already know which airport
+you're at, and your heading tells it which runway you're on.  It would be
+easy to look up runway length from that input.
+
+As a pilot, I'm highly skeptical of any such alarm that may go off at the
+particularly sensitive time as take off.  The alarm could trigger an
+inappropriate takeoff abort; and that could lead to a crash.
+
+Displaying a new piece of information, say actual versus planned
+acceleration, would be very welcome in the first 100 feet of takeoff roll.
+The same information would be very unwelcome a few seconds later as we near
+takeoff speed at 200 feet per second, At that point, things happen too
+rapidly and the pilot is too focused to deal with distractions or cognitive
+dissonance.
+
+That makes the design an engineering challenge -- the more time the gizmo
+takes to make sure that estimates are accurate and alarms are not false, the
+less valuable the information is to the pilot.  Also, if we create a
+situation where trust transitions from the machine to the pilot's instincts,
+and there is no clear-cut transition boundary, then the design is a bad one.
+
+Any new gizmo in the cockpit might be heroic or counterproductive depending
+on the human interface, and our ability to integrate it into pilot training.
+We need to develop practiced responses to inputs that lead to practiced
+recovery procedures.
+
+Dick Mills, SV Tarwathie  blog: dickandlibby.blogspot.com
+
+------------------------------
+
+Date: Sun, 24 May 2009 23:13:40 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: radio-isotope shortage, again...
+
+[The dangers of not having multiple sources for, in this case, radioisotopes,
+strikes yet again.  This primarily affects Canadian medical institutions,
+but there's lots of impact in the US as well.  (Maybe it wouldn't have been
+so bad if Columbia University had gotten that nuclear reactor after all...)]
+
+Peter Zimonjic, Isotope crisis may be worse than forecast; Some patients
+will be 'low priority' http://www.saultstar.com/ArticleDisplay.aspx?e=1581040
+
+Patient groups say lives are at stake because of the shrinking number of
+nuclear imaging scans available at Canadian hospitals.  The situation is
+expected to worsen in the coming weeks as the medical isotope shortage
+intensifies because of the shutdown of the Chalk River nuclear reactor.
+[These isotopes, which have short radioactive half lives, thus can't be
+"stored", are used in many medical procedures. Oh, and for other purposes,
+too).
+
+------------------------------
+
+Date: Tue, 26 May 2009 13:34:03 +0100
+From: "Michael Bacon" <attilathehun1900@tiscali.co.uk>
+Subject: Hutber's Law, Clarke's Third Law and Weasley's Law (Hollman, R-25.68)
+
+In RISKS-25.68, David Hollman (In a Lab, an Ever-Growing Database of DNA
+Profiles) asks if there is, "A niche catchphrase for the effect where
+information in digital form has more credibility than in other forms?"  In
+the same issue, Bob Frankston (Re: Australian emergency services) asks
+whether anyone thought to play the audio recording over a telephone line.
+
+Whilst I am insufficiently witty to think of an appropriate catchphrase,
+these both illustrate Hutber's Law -- "Improvement means deterioration".
+
+They also suggest to me two other laws.
+
+The first is Arthur C Clarke's Third Law, that any sufficiently advanced
+technology is indistinguishable from magic . and so it appears is much of
+today's technology to the non-technical and because of the increasing
+diversification of skills, even many of the 'techies'.
+
+The second could be termed Weasley's Law, from the character Arthur Weasley
+in the Harry Potter book 'The Chamber of Secrets': "Never trust anything if
+you can't see where it keeps its brain."
+
+But maybe the appropriate catchphrase is that old one ., "Computer says
+[YES/NO]".
+
+------------------------------
+
+Date: Thu, 28 May 2009 12:46:27 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Re: How small does the disk chunk have to be? (RISKS 25.68)
+
+Quoting an article about drive destruction, Fred Cohen disagreed with the
+adequacy of Canada's tax agency cutting disk drives into pieces "no bigger
+than the width of a pencil", saying the pieces "will have to be small enough
+to make the content on one chunk of no utility. At the density of a HDD, a
+pencil width holds quite a bit of data."
+
+Fred is right in the literal sense, but one has to consider the
+overall threat model.  Given a choice of obtaining and putting
+together a disk drive from pieces no bigger than the width of a pencil
+or hacking into a site to steal the data, the risks to the attacker
+for a hacking attempt are much lower, the specialized knowledge and
+equipment required much less, and the likelihood of success much
+greater.  I fear that following Fred's cautionary words might lead
+organizations to overemphasize drive destruction and underemphasize
+the risks of software flaws.
+
+Given everything we've read about tax, military, and medical systems
+being routinely compromised, a pencil width of data is fine with me
+for destruction of a disk that has my personal information.  What
+keeps me up at night is the probability that the organization put a
+firewall in place and called it a day.
+
+--Jeremy
+
+------------------------------
+
+Date: Thu, 28 May 2009 09:54:58 -0700
+From: Fred Cohen <fc@all.net>
+Subject: Re: How small does the disk chunk have to be? (RISKS 25.68)
+
+I certainly agree that risks should be rationally managed. However, my
+caution stands. I don't believe I said that it was a bad risk management
+decision -- only that the residual data on a chunk of a disk is
+substantial. Evaluating the risks is not something that was discussed in the
+previous article -- rather it seemed to me to portray a level of risk
+thought to be acceptable with no particular reason behind it. I would
+welcome the detailed explanation from Canada's tax agency about how they
+made the risk management decision and what residual risks they decided to
+accept, assuming that such a rational decision was made. Which brings me to
+your point, Jeremy... What is the basis for your conclusion with respect to
+the relative risks you identify, and how did you do your calculations? Or
+were you just making a broad generalization without a firm basis like
+Canada's Tax Agency did in its press release (although perhaps not in its
+actual decision process - we don't know).
+
+Fred Cohen & Associates tel/fax: 925-454-0171 http://all.net/
+572 Leona Drive Livermore, CA 94550
+
+------------------------------
+
+Date: Fri, 29 May 2009 10:49:40 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Re: How small does the disk chunk have to be? (RISKS 25.68)
+
+Fred, I think we're in agreement that the residual data on a chunk of disk
+is substantial.  While it's true that the evaluation wasn't discussed, the
+implication was that chunks of that size are "safe", and therefore there was
+an implicit risk assessment.
+
+As for my conclusion about the relative risks, I assumed that the pieces of
+disk aren't labeled or segregated when being disposed of (i.e., so disk A is
+in a bag labeled "tax data disk A" while disk B is in a separate bag).  I
+also assumed that their application security is neither better nor worse
+than the typical site - namely there's a 90% likelihood (give or take) that
+the site can be compromised with no more than a couple weeks of work by
+reasonably skilled non-nation-state attackers.  So my calculation was that
+if there's a 90% probability of an arm's length essentially undetectable
+attack in a couple weeks vs. obtaining the physical media and analysis
+equipment and putting it back together (which, from what I've read, takes
+months or longer), the odds are very much on the software attack.
+
+I don't know how much data is destroyed in the process of chopping the disks
+up, and how much of it is recoverable through error correcting codes, use of
+RAID (if an attacker is able to get multiple copies of the same data), etc.
+That would obviously also come into the risk assessment - but I believe the
+order of magnitude difference is large enough to make software attacks a
+clear winner for the bad guy.
+
+So, yes I did do a (very informal) risk assessment in making my statement.
+Was it a broad generalization?  Yes, but an informed one.
+
+------------------------------
+
+Date: Mon, 25 May 2009 06:43:28 +0100
+From: David Alexander <dave_ale@online.rednet.co.uk>
+Subject: Re: secure but memorable passwords (Colbourn, RISKS-25.69)
+
+I have just read Phil Colbourns advice on creating a secure password.  It's
+good, but I don't think it goes far enough. It should be adequate for
+slowing down most attackers, but it won't work for anyone knowledgeable who
+can access the .sam file. Before an e-mail comes 'flooding in' to point it
+out - I know that should only be a very few people and it should be one of
+the best defended files in the whole system.
+
+Someone has completed the task of generating 'rainbow tables' for every
+Microsoft password combination up to 14 characters in length.  It's a 64 Gb
+download, but it is publicly available. For sysadmin and any other password
+with privileges, I regard anything less than 15 characters that uses the MS
+password hashing algorithm as broken.  Eight characters is not long, not any
+more.
+
+David Alexander, Towcester, Northamptonshire, England
+
+------------------------------
+
+Date: Mon, 25 May 2009 18:10:05 -0400
+From: Dave Martin <dave_martin@mindspring.com>
+Subject: Re: memorable but secure passwords (Colbourn, RISKS-25.69)
+
+In RISKS-25.69 Phil Colbourn presented a method for creating "memorable but
+secure passwords" but those 2 things, memorable and secure, seem to be
+directly at odds with each other.
+
+Perhaps I have a naive view of the problems with passwords but it escapes me
+why passwords can not be phrases rather than based on some arcane and
+usually difficult set of arbitrary "rules".
+
+It seems to me that the stricter the rules the easier it makes things for
+those would like to compromise a site with said rules. A phrase that
+includes upper and lower case letters (if desired) as well as spaces and
+punctuation creates a much large space that must be consider when attempting
+to figure out a password.
+
+I've been designing sites to allow the use of a phrase of up to 255
+characters for a number of years and have yet to have any of them
+compromised. It's a lot easier to remember "My first car was a '65 Mustang"
+than it is to remember "Ab19EloG#z" And a phrase that is easily remembered
+doesn't need to be written down.
+
+------------------------------
+
+Date: Tue, 26 May 2009 17:26:00 -0400
+From: "Paul Karagianis" <karypm@stjohns.edu>
+Subject: Re: How to make memorable but secure passwords
+
+How so?  Or, more importantly, shouldn't we be asking on a target site by
+target site basis: "why is this better than three letters lower case, that
+aren't my initials"?  eg: "cat".
+
+The usual nonsense about complex passwords being needed to defeat
+"dictionary lookup" - a concept that depends on a sites admin being willing
+to hand out his encrypt - doesn't apply to the typical e-store that is
+willing to send you your password in clear text.
+
+I'd be interested in typical e-store policies on people playing "guess the
+password"... how long do they pause between attempts, do they "lock" the
+account for some time period after so many tries etc.  But in the real world
+I'm much more concerned about some manager getting his laptop stolen from
+the airport bar with my account info, along with the info for 78,000 other
+customers, on it.
+
+The escalation we've seen in trying to get the Internet user base to adopt
+ever sillier passwords that they inevitably need to copy onto post-its on
+the bottom of their keyboards seems, to me anyway, to have become insanely
+disproportionate to the threat.  Is this still a real problem for anyone
+else?
+
+Working at a University requires that we set initial passwords for students
+to something not easily deduced by their classmates or we'll inevitably be
+told that any account abuse we follow up on was done by "someone guessed my
+password".  But that's more of a political solution to a different issue.
+
+Aside from the above, I suppose one may be trying to protect oneself from
+someone who uses the same machine you do, but I fail to see how an
+environment that threatening (which suggests a key logger might be in the
+opponents arsenal) would benefit from a more more complex password.
+
+I guess what I'm asking for here is, if you're suggesting a best practice,
+could you (rhetorical "you"... I'm not trying to hold the authors of this
+post or many similar ones immediately accountable) give a little more detail
+about the threat you're helping us avoid?
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.70
+************************

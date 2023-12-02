@@ -1,0 +1,749 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.24
+
+RISKS-LIST: Risks-Forum Digest  Saturday 29 August 2020  Volume 32 : Issue 24
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.24>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Cosmic rays may soon stymie quantum computing (phys.org)
+Tesla with Autopilot hits cop car; driver admits he was watching a movie
+  (ArsTechnica)
+A Tesla Employee Thwarted an Alleged Ransomware Plot (WiReD)
+Ransomware Has Gone Corporate -- and Gotten More Cruel (WiReD)
+Sendgrid Under Siege from Hacked Accounts (Krebs on Security)
+A bug in Windows 10 could be slowly wrecking your SSD (PC Gamer)
+Ambulance won't find mislocated addresses (Dan Jacobson)
+How algorithms keep workers in the dark (bbc.com)
+The risks of supply chain threat sharing (Federal Computer Week)
+Re: Driverless cars are coming soon followup (Wol, Michael Bacon,
+  Chris Drewe)
+Re: Very old news. A Chrome feature is creating enormous load on global root
+  DNS servers (John Levine)
+Re: Washington Postal workers defy USPS orders (Peter Houppermans)
+Re: Mike Godwin, the Creator of Godwin's Law, Is Suing Trump Over His TikTok
+  Executive Order (Amos Shapir)
+For Election Administrators, Death Threats Have Become Part of the Job
+  (ProPublica)
+Viral pro-Trump tweets came from fake African American spam accounts,
+  Twitter says (NBC News)
+USPS is telling people their mail is being held 'at the request of the
+  customer.' It isn't true. (Lauren Weinstein)
+Re: Fiddling with the environment (John Levine)
+Re: What would happen to Earth if humans went extinct? (Paul Robinson)
+Re: Greenland glacier melt (R. G. Newbury)
+Re: Date and time synchronization (John Harper, David Halliwell)
+Re: Dicekeys, an additional risk (Bart Z. Lederman)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 27 Aug 2020 18:44:19 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Cosmic rays may soon stymie quantum computing (phys.org)
+
+https://phys.org/news/2020-08-cosmic-rays-stymie-quantum.html
+
+Quantum computers are likely to require significant shielding to sustain
+coherent qubit interactions while they compute solutions. Quantum computers
+apply Josephson junctions to host qubit state. The junctions are sensitive
+to perturbations at many wavelengths, including those arising from earth
+tremor, thermal, x-ray, etc. How deep a basement, with tremor isolation,
+ionization shields, etc. will be needed, is yet to be determined. This
+experiment demonstrates qubit decoherence potential when high-energy photons
+strike.
+
+I am reminded of a similar issue affecting the "old" silicon-based
+supercomputers: These massively parallel machines consist of separate
+physical memory and cpu modules, each interconnected to each other via a
+speedy message-passing network. See
+https://spectrum.ieee.org/computing/hardware/how-to-kill-a-supercomputer-dirty-power-cosmic-rays-and-bad-solder.
+
+The memory modules are prone to cosmic ray intercept. The incident radiation
+causes memory bit failures, often permanently disabling use.  Extended
+computations (protein folding, nuclear weapon stockpile simulation, etc.)
+crash, as does the machine, until triage can disable a row/column of
+physical memory.
+
+"In the summer of 2003, Virginia Tech researchers built a large
+supercomputer out of 1,100 Apple Power Mac G5 computers. They called it Big
+Mac. To their dismay, they found that the failure rate was so high it was
+nearly impossible even to boot the whole system before it would crash.
+
+"The problem was that the Power Mac G5 did not have error-correcting code
+(ECC) memory, and cosmic ray-induced particles were changing so many values
+in memory that out of the 1,100 Mac G5 computers, one was always crashing.
+Unusable, Big Mac was broken apart into individual G5s, which were sold one
+by one online. Virginia Tech replaced it with a supercomputer called System
+X, which had ECC memory and ran fine."
+
+------------------------------
+
+Date: Sat, 29 Aug 2020 00:51:49 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Tesla with Autopilot hits cop car; driver admits he was watching a
+  movie (ArsTechnica)
+
+The driver was charged with a violation of the state's "move over" law and
+with having a television in the car.
+
+https://arstechnica.com/cars/2020/08/movie-watching-tesla-driver-charged-after-autopilot-hits-cop-car/
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 20:27:26 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A Tesla Employee Thwarted an Alleged Ransomware Plot (WiReD)
+
+Elon Musk confirmed Thursday night that a ransomware gang had approached a
+Gigafactory employee with alleged promises of a big payout.
+
+https://www.wired.com/story/tesla-ransomware-insider-hack-attempt/
+
+------------------------------
+
+Date: Wed, 26 Aug 2020 19:33:37 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Ransomware Has Gone Corporate -- and Gotten More Cruel (WiReD)
+
+The DarkSide operators are just the latest group to adopt a veneer of
+professionalism, while at the same time escalating the consequences of their
+attacks.
+
+https://www.wired.com/story/ransomware-gone-corporate-darkside-where-will-it-end/
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 13:21:35 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Sendgrid Under Siege from Hacked Accounts
+
+Email service provider *Sendgrid* is grappling with an unusually large
+number of customer accounts whose passwords have been cracked, sold to
+spammers, and abused for sending phishing and email malware attacks.
+Sendgrid's parent company *Twilio* says it is working on a plan to require
+multi-factor authentication for all of its customers, but that solution may
+not come fast enough for organizations having trouble dealing with the
+fallout in the meantime.
+
+Many companies use Sendgrid to communicate with their customers via email,
+or else pay marketing firms to do that on their behalf using Sendgrid's
+systems. Sendgrid takes steps to validate that new customers are legitimate
+businesses, and that emails sent through its platform carry the proper
+digital signatures that other companies can use to validate that the
+messages have been authorized by its customers.
+
+But this also means when a Sendgrid customer account gets hacked and used to
+send malware or phishing scams, the threat is particularly acute because a
+large number of organizations allow email from Sendgrid's systems to sail
+through their spam-filtering systems.
+
+To make matters worse, links included in emails sent through Sendgrid are
+obfuscated (mainly for tracking deliverability and other metrics), so it is
+not immediately clear to recipients where on the Internet they will be taken
+when they click.
+
+Dealing with compromised customer accounts is a constant challenge for any
+organization doing business online today, and certainly Sendgrid is not the
+only email marketing platform dealing with this problem. But according to
+multiple emails from readers, recent threads on several anti-spam discussion
+lists <https://www.mail-archive.com/search?l=mailop%40mailop.org&q=sendgrid>
+<https://cwiki.apache.org/confluence/display/SPAMASSASSIN/MailingLists>, and
+interviews with people in the anti-spam community, over the past few months
+there has been a marked increase in malicious, phishous and outright spammy
+email being blasted out via Sendgrid's servers.  [...]
+
+https://krebsonsecurity.com/2020/08/sendgrid-under-siege-from-hacked-accoun
+ts/
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 23:54:14 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A bug in Windows 10 could be slowly wrecking your SSD (PC Gamer)
+
+Fortunately a fix is on the way.
+
+Microsoft is currently testing a fix for Windows 10 bug that could cause the
+operating system to defragment solid state drives (SSDs) more often than is
+needed. While periodic defragging of a mechanical hard disk drive (HDD) is a
+good thing, doing it too often on SSDs can actually degrade their integrity
+and shorten their lifespan.  [...]
+
+As spotted by Bleeping Computer, when Microsoft rolled out the May 2020
+update for Windows 10, it introduced a bug to the Optimize Drives feature
+causing it to incorrectly determine the last time a drive has been
+optimized. When you open it up, you might notice your SSD says "Needs
+optimization" even if the routine was recently run (Windows 10 handles this
+automatically).
+
+https://www.pcgamer.com/windows-10-bug-wrecking-ssd/
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 00:12:20 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Ambulance won't find mislocated addresses
+
+Correct address placement on the map is how the ambulance can find your
+house, in rural areas. (And no I'm not talking about G**gle Maps, I'm
+talking about official (Taiwan) government e-maps.)
+
+(Junior, a/k/a me, has taken it upon himself to be the unsung local hero,
+saving many potential lives as usual, asking for justice for those
+precarious misplaced address nodes scattered on the hills on the e-map on my
+computer screen.)
+
+So how are these addresses born? Well the applicant brings his stack of
+property deeds to the Household Bureau office, and, well, we behind the desk
+need to fill in a parcel number on the application form, so, well, just grab
+one of the deeds and use that parcel number. Oh yes, visit the site and take
+photographs for the records. So new address 35 is recorded as being located
+on parcel 1234 instead of actual 1240...
+
+Causing now twenty years later some addresses to be located in orchards or
+on slopes hundreds of meters from where their respective actual houses
+are. Yup, those parcel numbers are what we now used to place the address
+nodes on the spanking new e-maps. Back in the old days some dusty number in
+a ledger -- has now become a two-dimensional point on an e-map.
+
+"That's the parcel number they applied with. They need to bring in their
+documents to the office if they want to change the location."
+
+Problem is, to the homeowner, there is nothing wrong with their address,
+happily attached to their house. And indeed, let's say they are highly
+literate (and still alive.) Well they still often won't be able to tell you
+which of their stack of title deeds is the one referring to their house's
+land vs. the one referring to their orchard.
+
+Also who is going to tell lots of average citizens they need to march down
+to the Household Bureau to correct some internal coordinate problem on some
+obscure e-map? "Didn't your office take enough photos of my house back when
+I applied already?"
+
+Anyway, my suggestion to the Household Bureau is to simply connect to the
+Land Bureau's computer and see if (thankfully usually still after all those
+years) the parcel with the house belongs to the same person as the parcel
+with the orchard, and update the records accordingly.
+
+Or, just let it slide. And be blamed when the ambulance can't find somebody
+in need.
+
+And then there are those address nodes that ended up on nobody's land in the
+middle of the creek...
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 11:14:31 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: How algorithms keep workers in the dark (bbc.com)
+
+https://www.bbc.com/worklife/article/20200826-how-algorithms-keep-workers-in-the-dark
+
+"Giving self-learning algorithms the responsibility to make and execute
+decisions affecting workers is called 'algorithmic management.' It carries a
+host of risks in depersonalizing management systems and entrenching
+pre-existing biases."
+
+The essay cites an example of an algorithm at work:
+
+"At Amazon's fulfillment centre in south-east Melbourne, they set the pace
+for 'pickers', who have timers on their scanners showing how long they have
+to find the next item. As soon as they scan that item, the timer resets for
+the next. All at a 'not quite walking, not quite running' speed."
+
+Reminiscent of "John Henry" (see
+https://en.wikipedia.org/wiki/John_Henry_(folklore)). Would the algorithm
+increase the interval if a picker tripped or was injured during item
+fulfillment?  How does/would it learn of these outcomes? Are there feedback
+variables that account for injuries? At what frequency is the algorithm
+adjusted to account for under-fulfillment or over-fulfillment? Does the
+employee receive better or worse compensation?
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 21:13:09 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: The risks of supply chain threat sharing (Federal Computer Week)
+
+https://fcw.com/articles/2020/08/27/johnson-supply-chain-liability-problem.aspx
+
+"An interim report issued by the DHS task force last year laid out a number
+of data points that could be useful in sniffing out supply chain threats,
+such as information around counterfeit parts, malicious code inserted into
+software and tips about insider threats or physical attacks on participants
+or products in the chain. It also found that intelligence around this area
+was 'unique' and that 'actionable information often requires a level of
+specificity which may create sensitivities about how it is shared' that lead
+to 'a range of legal considerations that ICT stakeholders must navigate.'"
+
+Recall Kaspersky Labs anti-virus product, and the door it opened to inspect
+a machine for AV diagnosis (see
+https://catless.ncl.ac.uk/Risks/30/48#subj10.1). Deployment risks from
+Huawei and ZTE network products, etc.
+
+Risk: Vendor identity disclosure from suspected product without sufficient
+evidence can be libelous.
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 20:11:28 +0100
+From: Wol <antlists@youngman.org.uk>
+Subject: Re: Driverless cars are coming soon followup (PH, RISKS-32.23)
+
+>> Competition between car makers to see who can provide us the most
+>> distraction moves the industry in exactly the wrong direction!
+
+Especially like, as in our car, the entertainment system is buggy, so the
+driver spends far too much FIXING the system's screw-ups when they should be
+concentrating on driving ...
+
+> but turn indicators are manual, and apparently still considered optional
+> by whole tribes of road users.
+
+That's assuming it isn't the car at fault - a light touch on the indicator
+stalk will cause it to flash three times to indicate a lane change, but I
+regularly approach a junction, indicate, and it might flash ONCE before
+auto-canceling! If I'm concentrating on an unfamiliar junction and an
+uncooperative sat-nav, I don't need the additional grief of an auto-cancel
+mechanism that keeps killing the indicators. I know on many occasions,
+driving in a roughly straight line, I've had to indicate four or five times
+approaching the junction because the indicator just won't stay on!
+
+------------------------------
+
+Date: Sat, 29 Aug 2020 10:25:08 +0100
+From: Michael Bacon <attilathehun1900@tiscali.co.uk>
+Subject: Re: Driverless cars are coming soon followup (PH, RISKS-32.23)
+
+In saying that: "It is not even possible to brake without brake lights
+flaring ", Peter Houppermans ignores the potential to brake using only the
+handbrake, which does not (in the vast majority of vehicles) cause the brake
+light(s) to illuminate.
+
+Whilst I happily argue that too many designers have taken the versatility of
+modern materials to the point that form trumps function, I do feel that the
+modern "growing" turn indicator light is more reliable at indicating the
+intended direction, especially at night and given the greater brilliance of
+other exterior lights.
+
+The above assumes that drivers use their indicators in sufficient time;
+however many seem to use them solely to remind themselves what they just
+did, rather than to advise other drivers of their intentions.  When I did my
+Class 1 driver training with Greater Manchester Police Driving School it was
+impressed upon me that hand signals, indicators, brake lights and car
+positioning were all about communicating one's intentions to other road
+users.  Of course that assumes others actually pay sufficient attention,
+which increasingly seems to be less the case than when I started driving.
+
+As to the drivers of some cars not using indicators, it has been reported
+that Audi and BMW dealers no longer stock replacement bulbs because of a
+lack of demand.
+
+------------------------------
+
+Date: Wed, 26 Aug 2020 22:31:27 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: Driverless cars are coming soon followup (RISKS-32.23)
+
+Possibly one of the most trivial posting to RISKS for a while...  My problem
+is that many cars have parking/tail/turn signal/back-up/rear fog lights
+crammed into small light clusters, so if the driver brakes and signals at
+the same time, which happens quite often, it can be difficult to see the
+flashing signal light against the steady bright brake light.  Some buses
+have LED lights which just show colourless white when off so there's little
+contrast between off and on indications.  I haven't driven overseas very
+much, but at least with the American system of a big red rear brake/signal
+light at each side it's less ambiguous, though if only one side of the
+vehicle is visible (e.g., in a line of traffic), then it's not immediately
+obvious if the driver has tapped the brakes or has started signaling.
+There's the same problem with 4-way emergency hazard flashers, as if (again)
+the vehicle is only visible at one side, it's not clear if the hazard
+flashers or turn signals are indicating.
+
+------------------------------
+
+Date: 25 Aug 2020 22:51:29 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Very old news. A Chrome feature is creating enormous load on
+  global root DNS servers (RISKS-32.24)
+
+>A Chrome feature is creating enormous load on global root DNS servers
+
+Someone hasn't been paying attention. The ICANN Name Collision report
+written seven years ago in 2013 said the exact same thing:
+
+https://www.icann.org/en/system/files/files/name-collision-02aug13-en.pdf
+
+See section 5.4.3 on page 48.  At that point the Chrome random names were
+46% of all root server traffic (see table 12 on the previous page.)
+
+------------------------------
+
+Date: Wed, 26 Aug 2020 09:56:50 +0200
+From: Peter Houppermans <peter@houppermans.net>
+Subject: Re: Washington Postal workers defy USPS orders (previous)
+
+  [christensen.jack.a@gmail.com responded to PH on this item:]
+
+> It would be interesting to know exactly what the "risks to the public in
+> computers and related systems" are perceived to be in this item.
+
+Easy.  Three arguments:
+
+1. Ever tried to sort a large volume of post *without* computers involved?
+
+2. Voting (and associated untruths, fraud, manipulation, funding deprivation
+   etc. etc.) has been a staple of RISKS for decades as it represents indeed
+   a major RISK to any enterprise, people and country if not done correctly
+   and democratically.
+
+3. As someone who integrates risks from various areas, I naturally have an
+   interest that goes beyond *my* chosen area of expertise, mostly because
+   the most important component (the human) has this pesky habit of not
+   sticking to one category either -- they're everywhere!  This shows the
+   human component.
+
+The benefit of the RISKS mailing list has been for many years that it brings
+together professionals in all walks of life sharing experiences which may
+not always fall inside the original defined purpose, but which have a
+connection which may even be at best tangential.  It allows people to widen
+their perspective.
+
+The items in question show a SYSTEM (hey, look, another subject matter hit)
+seeks to repair itself as the pesky humans involved still try to do the
+right thing.  That's educational and instructive, hence another argument for
+its inclusion.
+
+For the record, one of the reasons I try to read every RISKS is exactly
+because it has remained diverse.
+
+I, for one, hope it remains that way.
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 11:29:35 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Mike Godwin, the Creator of Godwin's Law, Is Suing Trump Over
+  His TikTok Executive Order (RISKS-32.23)
+
+Maybe Godwin's Law should be updated: "as an online discussion grows longer,
+the probability of it deteriorating into a pro-Trump / anti-Trump tirades
+approaches 1"
+
+------------------------------
+
+Date: Wed, 26 Aug 2020 19:27:03 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: For Election Administrators, Death Threats Have Become Part of the
+  Job (ProPublica)
+
+In a polarized society, the bureaucrats who operate the machinery of
+democracy are taking flak from all sides. More than 20 have resigned or
+retired since March 1, thinning their ranks at a time when they are most
+needed.
+
+https://www.propublica.org/article/for-election-administrators-death-threats-have-become-part-of-the-job
+
+------------------------------
+
+Date: Thu, 27 Aug 2020 20:27:36 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Viral pro-Trump tweets came from fake African American spam
+  accounts, Twitter says (NBC News)
+
+https://www.nbcnews.com/tech/security/viral-pro-trump-tweets-came-fake-african-american-spam-accounts-n1238553
+
+------------------------------
+
+Date: Thu, 27 Aug 2020 22:34:49 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: USPS is telling people their mail is being held 'at the request of
+  the customer.' It isn't true.
+
+https://www.washingtonpost.com/dc-md-va/2020/08/27/usps-delayed-packages/
+
+------------------------------
+
+Date: 26 Aug 2020 13:23:32 -0400
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: Fiddling with the environment (Bacon, RISKS-32.23)
+
+> Richard Stein wonders what will become of Florida's release
+> of a genetically engineered mosquito intended to combat Dengue Fever.
+
+Frankenskeeters?
+
+Cheap shots are fun, but in this case the costs of doing nothing are
+substantial.
+
+The Aedes mosquitoes they are targeting are dangerous to people. They
+spread yellow fever, dengue, chikungunya, and zika. While you may not be
+familiar with these diseases, people all over the tropics are. The keys have
+had outbreaks of dengue, which is always miserable and at its worst
+crippling or fatal. A friend of mine who lives in central America had
+chikungunya, one of the less serious ones, and it made him unable to work
+for the better part of a year.  You don't want to know what yellow fever is
+like.
+
+At this point the mosquito treatment is to spray pesticides into breeding
+areas. We know what the consequences of that are, killing other desirable
+insects and polluting the shallow waters around the Keys.
+
+The mosquitoes they'll be releasing are males (only females bite) that
+produce offspring that die before they mature unless they have tetracycline
+in their diet which in the wild they don't. They've been released in Brazil
+and other places and knocked down Aedes populations by 95%.
+
+While it certainly possible that there is some effect that nobody has
+noticed yet, it's a lot more likely that they'll do what's expected, kill
+mosquitoes and prevent disease without toxic pesticides.
+
+Looking at the reports about local opposition, I don't see anything beyond
+genetically engineered == scary == bad along with some garbled complaints
+about the way the mosquitoes were created.
+
+  [Wondering about RISKS-relevance?  This item was certainly involved in
+  risks to the public.  Were there any computer-based models and
+  analyses of long-term effects?  PGN
+
+------------------------------
+
+Date: Sat, 29 Aug 2020 20:03:30 +0000 (UTC)
+From: Paul Robinson <rfc1394@yahoo.com>
+Subject: Re: What would happen to Earth if humans went extinct?
+ (Goodfellow, RISKS-32.21)
+
+Seems like maybe The History Channel should start reruns of "Life Without
+People," the two year series that explored a world in which all people just
+suddenly disappear.  The story explicitly says it does not give a reason for
+why we vanished, just the aftermath.
+
+"Welcome to earth: Population: zero."
+
+The show examines possible results of a year, five years, ten, twenty, a
+hundred, and so on to as far away as 10,000 years from now. The buildings
+turning into rust and crumbling, the refinery explosions, nuclear power
+plant meltdowns. family pets trapped indoors, sometimes dying, domesticated
+animals going extinct because they needed humans to breed them, and the
+cities becoming jungle as grass and other fauna and flora overtake them.
+
+In the end, the world will erase every trace of our existence. The show even
+explores this by visiting abandoned cities and settlements after 20 to 50
+years, and the process of decomposing is already well along.
+
+The show was created after the 2008 special of the same name did extremely
+well.
+
+------------------------------
+
+Date: Wed, 26 Aug 2020 15:20:09 -0400
+From: "R. G. Newbury" <newbury@mandamus.org>
+Subject: Re: Greenland glacier melt (RISKS-32.23)
+
+>  [With Greenland undergoing massive irreversible glacier melt, we can
+>  expect a corresponding effect of fiddling while Nome burned.  PGN]
+
+Massive?  No.  Large size, but not in relation to the whole.
+
+  [Actually, "massive" was subsequently refuted in various sources.  I'm
+  happy to have this item.  Please remember, constructive rebuttals
+  are always welcome.  PGN]
+
+Willis Eschenbach, 3 Aug 2019
+https://wattsupwiththat.wpcomstaging.com/2019/08/03/greenland-endures/
+
+From that data, we find that the 1981 to 2010 thirty-year average mass
+balance for the Greenland ice sheet was a net loss of 103 billion
+tonnes. Again, this is a very large number, it seems like a big deal that
+would demand our attention -- but is it really?
+
+In order to ask the question ``How big is 103 billion tonnes?'', we have to
+ask a related question:
+
+Compared to what?
+
+In this case, the answer is, ``Compared to the total amount of ice on
+ Greenland''.
+
+Here's one way of looking at that. We can ask, *if* Greenland were to continue
+losing ice mass at a rate of 103 billion tonnes per year, how long would it
+take to melt say half of the ice sheet? Not all of it, mind you, but half of
+it. (Note that I am NOT saying that extending a current trend is a way to
+estimate the future evolution of the ice sheet -- I'm merely using it as a
+way to compare large numbers.)
+
+To answer our question if 103 billion tonnes lost per year is a big number,
+we have to compare the annual ice mass loss to the amount of ice
+
+in the Greenland ice sheet. The Greenland ice sheet contains about
+2.6E+15 (2,600,000,000,000,000) tonnes of water in the form of snow and
+ice.
+
+So *if* the Greenland ice sheet were to lose 103 billion tonnes per year
+into the indefinite future, it would take about twelve thousand five hundred
+years to lose half of it.
+
+In other terms, the Ice Cap is losing  3.96**-5 of its mass every year,
+or .00396% per year. Scary number, that is.
+
+The effects of this are best shown graphically: Greenland Mass Balance and
+Greenland Total Mass. It is the latter which is the reality. See attached.
+
+Irreversible?  No.  In fact, the sign of the change changes. As recently as
+3,500 BP the Greenland Ice Cap was much smaller than at present.
+
+From University of Buffalo:
+https://wattsupwiththat.com/2013/11/22/study-greenland-ice-sheet-was-smaller-3000-5000-years-ago-than-today/
+
+And recently, the Jakobshavn Glacier has been found to be growing *again.
+https://wattsupwiththat.com/2019/06/19/if-greenland-is-catastrophically-melting-how-do-alarmists-explain-nasas-growing-greenland-glacier/
+
+------------------------------
+
+Date: Fri, 28 Aug 2020 11:56:59 +1200 (NZST)
+From: John Harper <harper@msor.vuw.ac.nz>
+Subject: Re: Date and time synchronization
+
+Both Robinson (RISKS-32.22) and Mathisen (RISKS-32.23) seem to have
+forgotten that midnight is not the only possible time for problems to occur.
+
+1. What happens in stationary computers in any place that goes in and out of
+   daylight saving at various times of year? Many places do not change at
+   midnight. (My country uses 2 am in in September, 3 am out in April.)
+
+2. What happens in a computer being used on a journey between time zones?
+   The crossing could occur at any time of day or night.
+
+3. What happens when there is a leap second? That is usually at 23:59:60
+   UTC, which is at various local times in various places.
+
+------------------------------
+
+Date: Wed, 26 Aug 2020 17:48:52 -0400
+From: David Halliwell <dhalliwe@rogers.com>
+Subject: Re: Date and time synchronization (Robinson, RISKS-32.22)
+
+The version suggested by Terje Mathisen (RISKS-32.23) is one that I have
+used.
+
+I started working at a monitoring site many years ago that had a program
+that needed to do some data logging once per minute (on the minute). The
+programming environment did not have a function to return date and time, so
+data and time needed to be obtained independently. The
+logic in the program was:
+
+ 1. Ask for date, save year.
+ 2. Ask for date, save month.
+ 3. Ask for date, save day.
+ 4. Ask for time, save hour
+ 5. Ask for time, save minute.
+ 6. If minute has changed since last time through loop, do your stuff.
+ 7. Remember minute for next pass through loop
+ 8. Loop.
+
+Yes, they really did do multiple DATE and TIME calls. Probably easier
+(lazier?) to program year(now), month(now), day(now) than to create another
+variable to store (now) and do year, month and day on the stored value.
+
+Someone may have thought "the time it takes to get the date and time is so
+small the chances of them not matching can be ignored." They were wrong (or
+never even thought about it.) Yes, in any trip through the loop,. the
+chances are small, but in most trips through the loop, the minute isn't
+going to change and nothing is done. The only loop that triggers action is
+the small fraction of loops where the minute DOES change. When the minute
+has changed, it could have happened any time between steps 1 to 5 or going
+from step 5 back to 1, and the probability of any one of those five
+intervals is probably about equal.
+
+So, the chances that the minute changed between requesting the hour and
+requesting the minute is about 20%. And because you are doing things every
+minute of the day, and every hour has a minute 59, there is a 20% chance
+that at the end of the hour the routine is going to mess up. And you could
+see that in the data it requested. four or five times a day, you saw a
+sequence like this:
+
+  * request data for 11:57
+  * request data for 11:58
+  * request data for 11:59
+  * request data for 11:00
+  * request data for 12:01
+
+The replacement was as Terje suggested:
+
+ 1. ask for date, save year, month, and day
+ 2. ask for time, save hour and minute
+ 3. ask for date again. If day has changed, go back to 1.
+ 4. If minute has changed, do your stuff.
+ 5. Remember minute for next trip through loop
+ 6. Loop.
+
+Step 3 avoids the date rollover. Using a single TIME call avoids the
+hour roll-over.
+
+I never saw a request for hour-old data again.
+
+------------------------------
+
+Date: Wed, 26 Aug 2020 03:54:54 -0700
+From: "Bart Z. Lederman" <bzl52@copper.net>
+Subject: Re: Dicekeys, an additional risk (Arthur T., RISKS-32.23)
+
+> For non-techies, physical randomization may seem more secure than
+> computer-generated. But if the dice are not extremely well made, they'll
+> be a bit less random than theory suggests.
+
+No matter how well made the dice are, as they are used they will collide with
+each other and slowly (or quickly, depending upon the material) become more
+and more deformed.  This means they will become less random, and each set of
+dice will become less random in a different way.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.24
+************************

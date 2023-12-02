@@ -1,0 +1,437 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.58
+
+RISKS-LIST: Risks-Forum Digest  Sunday 18 December 2022  Volume 33 : Issue 58
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.58>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: (Backlogged)
+What Would Plato Think about ChatGPT? (Zeynep Tufekci via PGN)
+Re: Dreams of a Future in Big Tech Dim for Computer Science Students
+ (Pete Resiak)
+Pretty-smart AI (Glenn Story)
+ChatGPT: Smart, but Not Smart Enough (The New Stack via Gabe Goldberg)
+A Literature Major's Experience as a Real-Estate AI Bot's Operator
+ (n+1 Magazine)
+Why local elevator rescues have reached a new high (Sue Dremann)
+How a secret software change allowed FTX to use client money (Reuters)
+Researcher Exploits Power Supply to Transmit, Steal Data from PC
+ (Michaek Kan)
+Russian Software Company Pretending to Be American (Bruce Schneier)
+Blockchain Fails to Gain Traction in the Enterprise (WSJ)
+Database of British Columbians' personal health information is
+ 'disturbingly' vulnerable: privacy watchdog (CBC)
+Major Canadian grocery chain says cyberattack cost $25 million (CBC)
+Cyber Posture Trends in China, Russia, the United States and the EU
+ (SIPRI via Diego Latella)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 18 Dec 2022 13:12:46 PST
+From: Peter G Neumann <neumann@csl.sri.com>
+Subject: What Would Plato Think about ChatGPT? (Zeynep Tufekci)
+
+Zeynep Tufekci, *The New York Times*,  Opinion, 18 Dec 2022
+
+Plato mourned the invention of the alphabet, worred that the use of text
+would threaten memory-based arts of rhetoric.  In his *Dialogues*, arguing
+through the voice of Thamus, the Egyptian king of the gods, Plato claimed
+the use of this more modern technology would create ``forgetfulness in the
+learners; soulds, because they will not use their memories.'' and that those
+who adopt it would ``appear to be omniscient and will generally know
+nothing,'' with ``the show of wisdom without the reality.''
+
+If Plato were alive today, would he say similar things about ChatGPT?
+[...]
+
+The way forward is not to just lament supplanted skills, as Plato did, but
+also to recognize that as more complex skills become essential, our society
+must equitably educate people to develop them.  And then it always goes back
+to the basics.  Value people as people, not just as bundles of skills.  And
+that isn't something that ChatGPT can tell us how to do.
+
+  [This is a long article worthy reading seriously, and very relevant to
+  RISKS.  I have included just the first and last pargraphs here.  However,
+  the article strikes a chord with my plaintive cries that fundamentals
+  needed for total-system trustworthihiness are almost totally ignored in
+  today's academic curricula, and therefore not surprisingly almost
+  completely absent in practice.  PGN]
+
+------------------------------
+
+Date: Sun, 11 Dec 2022 08:52:34 +0100
+From: Pete Resiak <djc@resiak.org>
+Subject: Re: Dreams of a Future in Big Tech Dim for Computer Science
+ Students (RISKS-33.57)
+
+A young friend graduated from a state university a few years ago with a BS
+in computer science.  He learned how to program in a couple of popular
+languages, but so far as I could tell, nothing about system-oriented
+thinking or about hardware or software architecture or anything in the
+history and development of current computing or indeed any theory at all.
+(He's stably employed today maintaining web pages for a defense contractor,
+and happy with the job.)  We seem not to have any common grounds for talking
+about computing.
+
+------------------------------
+
+From: Glenn Story <glenn.story@gmail.com>
+Date: Thu, 15 Dec 2022 15:07:28 -0800
+Subject: Pretty-smart AI
+
+I saw something on the web about an AI product called GPT-3.  I decided to
+try it:
+
+Here's the result:
+
+  Q = my question as entered
+  A = GPT-3's response
+  C = my comment on the answer
+  G = what google says about the same question
+
+Q: what is a lambda expression?
+A: A lambda expression is an anonymous function that can be used to create
+   delegates or expression tree types.
+C: Correct.
+G: A lambda expression is *a short block of code which takes in parameters
+   and returns a value*. Lambda expressions are similar to methods, but they
+   do not need a name and they can be implemented right in the body of a
+   method.
+
+Q: What is the difference between lento and adagio?
+A: Lento is a tempo marking that indicates a slow and leisurely pace, while
+   adagio is a tempo marking that indicates a slower and more solemn pace.
+C: Correct.
+G: *Lento -- slowly (40--45 BPM)*
+   *Largo -- broadly (45--50 BPM)*
+   *Adagio -- slow and stately (literally, at ease=) (55--65 BPM)*
+
+Q: How does it compare with Allegro?
+A: Allegro is a tempo marking that indicates a fast and lively pace,
+   faster than both lento and adagio.
+C: Correct
+G: (Wrong) OrCAD is known as the most popular schematic capture tool in the
+   Cadence suite, while Allegro is Cadence's flagship PCB layout tool.
+   Cadence also sells a ...
+
+Q: what are the three meanings of "static" in C++?
+A: The three meanings of "static" in C++ are: 1) a variable or function that
+   has static storage duration, 2) a variable or function that has internal
+   linkage, and 3) a class member that is shared by all objects of the same
+   class.
+C: Mostly correct, although a little vague.
+G: (Right but vague) Static is a keyword in C and C++ which is used to
+   declare a special type of a variable or a function inside or outside of a
+   class.
+
+Q: What is a sarangi? A: A sarangi is a bowed string instrument from
+   India that is used in Hindustani classical music.
+C: Correct
+G: (Text + picture) The s=C4=81rang=C4=AB is a bowed, short-necked string
+   instrument played in traditional music from South Asia -- Punjabi folk
+   music, Rajasthani folk music, and Boro ...
+
+Q: What musical notation is used for the shakuhachi?
+A: The shakuhachi is typically notated in a five-line staff with a key
+   signature of one flat.
+C: Incorrect. The musical notation for the shakuhachi is written in
+   vertical columns of katakana characters with the columns arranged right
+   to left.
+G: *Staff notation and graphic notation* are sometimes used to notate
+   music for shakuhachi, usually in modern music when shakuhachi is used in
+   conjunction with Western musical instruments.
+[image: image.png]
+
+Q: Your previous answer was incorrect.
+A: Unknown.
+C: No comment
+G: N/A
+
+Q: What is machine-language op-code for add on an IBM 1620?
+A: The machine-language op-code for add on an IBM 1620 is "ADD".
+C: Incorrect. ADD is the *Assembly*-language op-code. The distinction
+   between machine-language (numeric) and assembly-language (symbolic) is
+   often misunderstood even by software engineers. The correct answer is 21.
+G: Gave no answer but supplied several references.
+
+Q: What is RISC-V?
+A: RISC-V is an open-source instruction-set architecture (ISA) based on
+   established reduced-instruction-set computing (RISC) principles.
+C: Correct.
+G: (Longer but better) RISC-V is an open standard instruction set
+   architecture based on established RISC principles. Unlike most other ISA
+   designs, RISC-V is provided under open source licenses that do not
+   require fees to use.  [*]
+
+Q: How many op-codes does it define? A: RISC-V defines over 200 op-codes.
+C: I have no idea. Sounds high.
+G: (wrong) To define an opcode, use the opcode element. You can specify *up
+   to 228* opcodes. Q: How about ARM? A: ARM defines over 160 op-codes.
+C: Again, I don't know. I'm surprised that ARM has a smaller number than
+   Risc-V.
+G: (Gave no answer but showed references to ARM in general.)
+
+CONCLUSION: This AI seems to be approximately as accurate as Google's with
+the exception that Google does not remember any context from one question
+to the next, so that use of pronouns in a question confuses it, but not
+that of this GPT-3 interface. The latter does a good job of deciphering
+what such backward references refer to.
+
+https://beta.openai.com/playground/p/default-qa?modeltext-davinci-003
+
+  * PGN Footnote: [The RISC-Foundation has standardized on the formal RISC-V
+   specification from the University of Cambridge SAIL specification used as
+   the basis for CHERI-RISC-V.]
+
+     [Don't believe what you read on the Internet unless you deeply
+     understand the contextual issues and are able to discard clearly false
+     information -- especially when it comes to conspiracy theories.  PGN]
+
+------------------------------
+
+Date: Fri, 16 Dec 2022 15:12:52 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: ChatGPT: Smart, but Not Smart Enough (The New Stack)
+
+OpenAI's hot generative AI solution is fun to play with and good for
+creating some things, but when it comes to writing secure code it's just not
+smart enough.
+
+https://thenewstack.io/chatgpt-smart-but-not-smart-enough/
+
+------------------------------
+
+From: Amos Shapir <amos083@gmail.com>
+Date: Thu, 15 Dec 2022 17:19:35 +0200
+Subject: A Literature Major's Experience as a Real-Estate AI Bot's
+ Operator (n+1 Magazine)
+
+This is an interesting article detailing the experience of a humanities
+major who was tasked with baby-sitting a real estate AI bot.  Very
+insightful (and rather long).
+
+https://www.nplusonemag.com/issue-44/essays/human_fallback/
+
+------------------------------
+
+Date: Sun, 18 Dec 2022 15:33:35 PST
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Why local elevator rescues have reached a new high (Sue Dremann)
+
+Sue Dremann, *Palo Alto Weekly*, 16 Dec 2022
+
+What goes up don't always come down.  That's the issue with Palo Alto and
+Stanford.  The breakdowns catalogued by PulsePoint show that *elevator
+rescues* are not just local, and occur all over San Mateo and Santa Clara
+counties, and growing.  In 2021, Stanford had 41 and Palo Alto 25.  In 2022,
+the numbers are 38 in Stanford and 36 in Palo Alto year to date through 6
+Nov, with six more recorded since then -- 80 or more this year compared with
+66 last year.  The worst spots seem to be a parking lot in Palo Alto and two
+residence buildings at Stanford.  2227 permits exist in the extended local
+area, but 1460 of those have expired permits.  The same problem is noted
+statewide.
+
+I have mentioned in past RISKS issues some of the risks in elevators that
+automatically go to the bottom (not good when flooded) or to the top (not
+good in upper-level fires), rather than hanging in between floors so that is
+impossible to get out of the stuck elevator.  Overall, elevators may be a
+lose-lose situation, even if designed to be resilent under failures and
+power outages.
+
+------------------------------
+
+Date: December 14, 2022 8:36:22 JST
+From: Ellen Ullman <ullman@well.com>
+Subject: How a secret software change allowed FTX to use client money
+ (Reuters)
+
+https://www.reuters.com/technology/how-secret-software-change-allowed-ftx-use-client-money-2022-12-13/
+
+13 Dec 2022 (Reuters) In mid-2020, FTX's chief engineer made a secret change
+to the cryptocurrency exchange's software.  He tweaked the code to exempt
+Alameda Research, a hedge fund owned by FTX founder Sam Bankman-Fried, from
+a feature on the trading platform that would have automatically sold off
+Alameda's assets if it was losing too much borrowed money.
+
+In a note explaining the change, the engineer, Nishad Singh, emphasized that
+FTX should never sell Alameda's positions.  ``Be extra careful not to
+liquidate,'' Singh wrote in the comment in the platform's code, which it
+showed he helped author. Reuters reviewed the code base, which has not been
+previously reported.
+
+  [They needed Roto-Reuters to root out the risks.  PGN]
+
+------------------------------
+
+Date: Wed, 14 Dec 2022 11:36:56 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Researcher Exploits Power Supply to Transmit, Steal Data from PC
+ (Michaek Kan)
+
+Michael Kan, *PC Magazine*, 12 Dec 2022
+
+Mordechai Guri at Israel's Ben-Gurion University of the Negev transmitted
+stolen data from a personal computer by manipulating the device's power
+supply. "By regulating the workload of the CPU [central processing unit], it
+is possible to govern its power consumption and hence control the momentary
+switching frequency of the SMPS (switch-mode power supplies)," Guri
+explained. "The electromagnetic radiation generated by this intentional
+process can be received from a distance using appropriate antennas." Guri
+said malware installed on a universal serial bus drive could infect the
+target PC, but suggested banning smartphone use around the computer as a
+countermeasure.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2fc5ex2382bbx070822&
+
+------------------------------
+
+Date: Thu, 15 Dec 2022 21:11:33 PST
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Russian Software Company Pretending to Be American (Bruce Schneier)
+
+  [From Bruce Schneier's <schneier@schneier.com> CRYPTO-GRAM, 15 Dec 2022]
+
+[2022.11.16]
+[https://www.schneier.com/blog/archives/2022/11/russian-software-company-pretending-to-be-american.html]
+
+Computer code developed by a company called Pushwoosh is in about 8,000 Apple and Google smartphone apps. The company pretends to
+be American when it is actually Russian.
+https://www.reuters.com/technology/exclusive-russian-software-disguised-american-finds-its-way-into-us-army-cdc-2022-11-14/
+
+According to company documents publicly filed in Russia and reviewed by
+Reuters ``Pushwoosh is headquartered in the Siberian town of Novosibirsk''
+where it is registered as a software company that also carries out data
+processing. It employs around 40 people and reported revenue of 143,270,000
+rubles ($2.4 mln) last year. Pushwoosh is registered with the Russian
+government to pay taxes in Russia.
+
+On social media and in U.S. regulatory filings, however, it presents itself
+as a U.S. company, based at various times in California, Maryland, and
+Washington DC, Reuters found.
+
+------------------------------
+
+Date: Fri, 16 Dec 2022 12:08:00 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Blockchain Fails to Gain Traction in the Enterprise (WSJ)
+
+Isabelle Bousquette, *The Wall Street Journal*, 15 Dec 2022
+via ACM TechNews
+
+Blockchain technology's widespread enterprise adoption has failed to
+materialize, with a project by Danish shipping company A.P. Moller-Maersk
+and IBM's TradeLens to create a shipment-tracking platform the latest to be
+discontinued. Blockchain's complexity, the time needed to get a blockchain
+running, and problems recruiting participants have stymied major
+initiatives. IBM's Kathryn Guarini said blockchain demands changes to
+technology and business models that are difficult to drive forward, adding
+that enterprise blockchain has taken longer to bring change to business than
+originally predicted. Some experts maintain smaller projects involving fewer
+participants, with definite returns on investment and no sector-wide
+transformative ambitions, could reap greater success.
+
+------------------------------
+
+From: Matthew Kruk <mkrukg@gmail.com>
+Date: Thu, 15 Dec 2022 19:45:26 -0700
+Subject: Database of British Columbians' personal health information is
+ 'disturbingly' vulnerable: privacy watchdog (CBC)
+
+https://www.cbc.ca/news/canada/british-columbia/phsa-information-and-privacy-commissioner-report-1.6687123
+
+Millions of highly sensitive personal health records about people accessing
+health care in British Columbia have been left "disturbingly" vulnerable to
+leaks after the provincewide health authority failed to address security
+concerns in recent years, a new report has found.
+
+The Office of the Information and Privacy Commissioner for B.C. published a
+report Thursday saying the Provincial Health Services Authority (PHSA) has
+known about the "troubling" level of exposure since it audited its own
+system in 2019, but hasn't done enough to address the issue.
+
+``There is an enormous volume of sensitive personal information that, if
+breached, could cause a significant list of harms including embarrassment,
+loss of dignity, family breakdowns, and even physical harm to individuals if
+it was accessed improperly,'' read the report from the privacy watchdog.
+
+------------------------------
+
+From: Matthew Kruk <mkrukg@gmail.com>
+Date: Thu, 15 Dec 2022 18:12:14 -0700
+Subject: Major Canadian grocery chain says cyberattack cost $25 million
+ (CBC)
+
+  [See RISKS-33.51 and .53 for earlier reports.  PGN]
+
+https://www.cbc.ca/news/canada/nova-scotia/sobeys-cyber-attack-25-million-1.6686838
+
+The parent company of the Sobeys grocery store chain says a cyberattack last
+month will cost $25 million.  The grocery store operator disclosed the
+estimate in second quarter results released Thursday by Empire Co.  "Empire
+estimates, based on available information, that the financial impact on
+fiscal 2023 annual net earnings will be approximately $25 million, net of
+insurance recoveries," the company said.
+
+The report does not clarify the nature of the attack, whether it was
+ransomware or if any ransom was paid.
+
+------------------------------
+
+Date: Thu, 15 Dec 2022 13:12:12 +0100
+From: "Diego.Latella" <diego.latella@isti.cnr.it>
+Subject: Cyber Posture Trends in China, Russia, the United States and the EU
+ (SIPRI)
+
+Lora Saalman, Fei Fu and Larisa Saveleva Dovgal
+https://www.sipri.org/publications/2022/other-publications/cyber-posture-trends-china-russia-united-states-and-european-union
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.58
+************************

@@ -1,0 +1,541 @@
+RISKS-LIST: Risks-Forum Digest  Thursday 7 April 2011  Volume 26 : Issue 41
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.41.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Network failure closed hospitals to ambulance admissions (Gabe Goldberg)
+Japanese air route changes (jidanni)
+RSA turning a technical disaster into a marketing catastrophe? (PGN)
+Dceased Father-in-Law spamming friends and family two years on (Matthew Tarpy)
+A study in contrasts: handling stolen e-mail lists (Jonathan Kamens)
+Video: Internet Freedoms Lost: A Search Story (Lauren Weinstein)
+A Message from Walgreens (F John Reinke)
+Epsilon Data Breach: Expect a Surge in Spear Phishing Attacks (Jim Reisert)
+Epsilon: Who Reacted and How (Stephen Smoliar via PGN)
+75-year-old woman *literally* cuts Armenia off the Internet (Lauren Weinstein)
+The Rootkit That Was Not (Gene Wirchenko)
+Omission in CFP 2011 conference announcement (Jeremy Epstein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 03 Apr 2011 21:38:05 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Network failure closed hospitals to ambulance admissions
+
+University College London hospitals trust (UCLH) has launched an
+investigation after a network glitch led to the closure of A&E to blue light
+traffic. The problem also led to cancellations of operations.
+
+The trust was last month forced to halt a number of services, including the
+cancellation of 50 per cent of its operations, due to a faulty network
+switch. The faulty switch left computers across the trust unable to access
+various systems such as the trust's patient administration system and its
+IDX patient records software CareCast.
+
+A spokesman for the trust said that the network-wide incident occurred
+during the early hours of 22 February. He explained that UCLH was required
+to implement its business continuity plans, which included paper-based
+procedures, "in order to maintain business as usual".
+
+"Patient safety was at no stage compromised. In agreement with the London
+Ambulance Service, blue light patients were diverted to other hospitals for
+about 10 hours throughout the day. However our emergency department remained
+open to walk-in attendances," he said.
+
+http://www.theregister.co.uk/2011/03/30/network_failure_closed_uclh_to_ambulance_admissions/
+
+------------------------------
+
+Date: Fri, 01 Apr 2011 10:47:42 +0800
+From: jidanni@jidanni.org
+Subject: Japanese air route changes
+
+Better reprogram your airplane navigation system with all these new
+Japanese route changes:
+http://www.jeppesen.com/download/chart_notams/pac1.pdf
+
+------------------------------
+
+Date: Wed, 6 Apr 2011 20:57:11 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: RSA turning a technical disaster into a marketing catastrophe?
+
+  [Thanks to Jeremy Epstein.  PGN]
+
+Source: Ellen Messmer, *Network World*, 5 Apr 2011
+http://www.networkworld.com/news/2011/040511-rsa-hack-nda.html
+
+RSA has started providing more detail into the mid-March attack on its
+SecurID token-based authentication system, but to get a fuller story you
+have to be an RSA customer willing to sign a nondisclosure agreement.
+Sources say RSA is reaching out to its largest customers, especially those
+in sensitive industries, to get IT executives to sign such NDAs.  However,
+some RSA customers say they aren't willing to do that.
+
+  [What are they trying to hide?  Embarrassment? Liability? Clouded minds? PGN]
+
+------------------------------
+
+Date: April 5, 2011 8:45:55 AM EDT
+From: Matthew Tarpy <matthew@tarpy.com>
+Subject: Deceased Father-in-Law spamming friends and family two years on
+
+  [From Dave Farber's IP distribution.  PGN]
+
+My father in law tragically passed away just about two years ago, and a few
+months ago I helped my mother in law go through the process of having his
+account AOL closed down. Now he's spamming people from his mail book and
+it's causing, to say the least, some emotional distress.
+
+When my wife first told me about it, I figured that she'd gotten a one in a
+trillion blast spam that used his account, but the TO: line had all people
+he knew, so someone, somehow has gotten this account back alive.
+
+AOL.com has been next to useless as to help, and if it were just an old
+e-mail address I'd be tempted to just have people blackhole it, but because
+of who it is, and all that entails, I'd really like AOL's elp in shutting
+this down, it's causing my family a lot of pain and I can't imagine this
+will take them more than 3 minutes to fix.
+
+If anyone could put me in touch with anyone at AOL who could/would help,
+I'd greatly appreciate it!
+
+------------------------------
+
+Date: Sun, 03 Apr 2011 01:49:00 -0400
+From: Jonathan Kamens <jik@kamens.us>
+Subject: A study in contrasts: handling stolen e-mail lists
+
+I try to make a habit of giving out "tagged" e-mail addresses to web sites
+when I sign up for accounts / mailing lists / whatever. For example, when
+creating an account at widgets.com, instead of just signing up as
+"jik@kamens.us", I might sign up as "jik+widgets@kamens.us". It ends up in
+the same mailbox regardless, and it gives me some visibility into who is
+sharing or selling or allowing my e-mail address to be stolen.
+
+About six months ago, I started getting spam from an e-mail address that I
+had only used in one place: signing up one of my kids for a Scholastic,
+Inc. book club through their web site, way back in 2007.
+
+I contacted Scholastic and told them that either they were selling my e-mail
+address and it needed to stop, or they had suffered a data breach of at
+least customer e-mail addresses, if not more.
+
+In response, Scholastic's CISO informed me that Scholastic doesn't sell
+e-mail addresses to third parties; their children's book club business was
+sold to Sandvik Publishing in 2008; the e-mail address in question was no
+longer in Scholastic's database; and I should contact Sandvik if I wished to
+pursue the matter further.
+
+I sent a reply to the CISO which read as follows:
+
+  I don't recall ever being asked whether I considered it OK for Scholastic
+  to sell my PII to another company. This is especially disturbing since at
+  that point I was no longer a customer of Scholastic's for the business
+  that was sold.
+
+  Granted, your privacy policy gives you the legal right to sell any
+  information you collect to anyone you want. The fact that you are legally
+  permitted to do that doesn't make it right.
+
+  Your privacy policy also says, "Scholastic ensures that all personally and
+  non-personally identifiable information that it receives via the Internet
+  is secure against unauthorized access."  Alas, you apparently do not
+  consider it your responsibility to ensure that the third parties to whom
+  you sell PII keep it as secure as you claim to do yourselves. That is
+  rather disappointing.
+
+  I will contact [Sandvik] as you have suggested. However, if I were in your
+  shoes, I would be extremely concerned that a third party to whom
+  Scholastic had sold PII allowed it to be compromised, and I would consider
+  it my responsibility to investigate the issue myself, rather than leaving
+  the wronged (former) Scholastic customer entirely on his own.
+
+I received no further response from Scholastic.
+
+I then contacted the president of Sandvik. He insisted that Sandvik also
+does not sell e-mail addresses, and that it was simply impossible that my
+address could have been leaked through them, since the only place they
+have it is on a USB drive locked in a safe. They said it was more likely
+that the address was stolen by someone from my mail server or computer.
+
+I explained in response that the the only place this address could be
+found on my computer was in a three-year-old, compressed e-mail archive
+in a totally non-standard location in my home directory, and that I ran
+my own Linux mail server which I actively monitored on a daily basis,
+which had never shown any evidence of any sort of successful intrusion,
+and which in any case was hardly an attractive target for spammers to go
+to the trouble of harvesting e-mail addresses from, since it serves only
+the people in my family.
+
+For this, and various other reasons I pointed out, it was far more
+likely that the address had been stolen at some point from Sandvik. I
+also pointed out that the data breach laws in many of the states in
+which Sandvik does business would seem to require Sandvik to initiate an
+investigation into the breach and/or to report it to various state
+governments. At this point, Sandvik, too, stopped responding to my e-mails.
+
+There's really no way of knowing whether my e-mail address was actually
+stolen from Scholastic or Sandvik. I don't save mail server logs back
+far enough to know when I first started getting spam at that address,
+and even if I did, there's no guarantee that spammers would have started
+using the address immediately after getting their hands on it, nor is
+there any guarantee that Scholastic completely destroyed the data
+immediately after selling the business to Sandvik. Scholastic and
+Sandvik both refuse to acknowledge the possibility that e-mail addresses
+and possibly more PII were stolen from them, and it's unlikely that a
+nobody like me would be able to convince them to take this more
+seriously, so I stopped trying.
+
+I'd like to contrast the poor handling of the e-mail address breach by
+Scholastic and/or Sandvik with an e-mail message I just got from Brookstone:
+
+    *++++++++++++Important E-Mail Security Alert++++++++++++*
+
+    Dear Valued Brookstone Customer,
+
+    On March 31, we were informed by our e-mail service provider that
+    your e-mail address may have been exposed by unauthorized entry into
+    their system. Our e-mail service provider deploys e-mails on our
+    behalf to customers in our e-mail database.
+
+    *We want to assure you that the only information that may have been
+    obtained was your first name and e-mail address. Your account and
+    any other personally identifiable information are not stored in this
+    system and were not at risk.*
+
+    Please note, it is possible you may receive spam e-mail messages as
+    a result. We want to urge you to be cautious when opening links or
+    attachments from unknown third parties.
+
+    In keeping with best industry security practices, *_Brookstone will
+    never ask you to provide or confirm any information, including
+    credit card numbers, unless you are on our secure e-commerce site,
+    Brookstone.com._*
+
+    Our service provider has reported this incident to the appropriate
+    authorities.
+
+    We regret this has taken place and for any inconvenience this may
+    have caused you. We take your privacy very seriously, and we will
+    continue to work diligently to protect your personal information.
+
+    Sincerely,
+
+    Brookstone Customer Care
+
+It's definitely unfortunate that Brookstone allowed a breach of e-mail
+addresses and the first names associated with them, because spammers
+will use the first names to help them evade people's spam filters and
+execute more convincing and successful phishing attacks. Having said
+that, Brookstone deserves a great deal of credit for sending out this
+notification. Furthermore, if the timeline in the notification is true,
+then they sent it out two days after being notified about the breach,
+which is all the more impressive.
+
+------------------------------
+
+Date: Thu, 7 Apr 2011 00:31:56 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Video: Internet Freedoms Lost: A Search Story
+
+                http://lauren.vortex.com/archive/000841.html
+
+Greetings.  Congress is hellbent on imposing Internet censorship, using
+exaggerated claims of piracy as the excuse for draconian COICA and other
+legislation that would give the U.S. government unparalleled control over
+the operations and content not only of U.S. based Internet sites, but (via
+the DNS - Domain Name System) sites around the world in other countries as
+well.
+
+And with a major target of Congress now appearing to be search engines such
+as Google, Congressional efforts seem aimed at declaring that even providing
+a link or other information about an "offending" site should be prohibited.
+
+Attempts to censor and otherwise micromanage the search results of Google
+and other search engines are an additional enormous threat to free speech
+and civil liberties globally.
+
+Can these enormously important issues be boiled down to a very short, very
+quickly produced "Search Story" video?
+
+Let's find out.
+
+Internet Freedoms Lost: A Search Story:
+http://j.mp/dN6vdE  (YouTube / ~1.5 minutes)
+
+Lauren Weinstein (lauren@vortex.com): http://www.vortex.com/lauren
+People For Internet Responsibility: http://www.pfir.org
+Network Neutrality Squad: http://www.nnsquad.org
+Global Coalition for Transparent Internet Performance: http://www.gctip.org
+PRIVACY Forum: http://www.vortex.com  +1 (818) 225-2800 / Skype: vortex.com
+
+------------------------------
+
+Date: Mon, 04 Apr 2011 19:08:32 -0400
+From: "fj@rcc" <fjohn@reinke.cc>
+Subject: A Message from Walgreens
+
+A good reason to use unique e-mail addresses for each of your "special"
+correspondents. Just like passwords, unique. A little bit of trouble to
+administrate, but it certainly isolates the trouble. And, it's trivial to do
+when you have your own domain. You can even subcontract the e-mail to Gmail
+if you want by repointing a few records. It also automagicaly detects
+financial spam, when a message purporting to be from "your bank" arrives on
+the "wrong e-mail" account. Wish I could teach this technique to more
+people. We could have e-mail "security" even if the ISPs don't want to do
+IPv6 or e-mail providers, like Yahoo, won't authenticate when e-mail arrives
+from outside labeled as if originated from Yahoo itself.  (I even tried to
+sell them a consulting engagement but they said "it wasn't their
+problem". With an attitude like that, no wonder we have problems.)
+
+Ferdinand John Reinke, 3 Tyne Court, Kendall Park, NJ 08824 1-908-209-3625
+Personal: http://www.reinke.cc Professional: http://www.reinkefj.com
+
+- ------- Original Message --------
+Date: Mon, 04 Apr 2011 18:20:30 EDT
+From: Walgreens <Walgreens@email.walgreens.com>
+Subject: A Message from Walgreens
+To: Walgreens4911991@reinke.cc
+
+Dear Valued Customer,
+
+On March 30th, we were informed by Epsilon, a company we use to send e-mails
+to our customers, that files containing the e-mail addresses of some
+Walgreens customers were accessed without authorization.  We have been
+assured by Epsilon that the only information that was obtained was your
+email address. No other personally identifiable information was at risk
+because such data is not contained in Epsilon's email system.
+
+For your security, we encourage you to be aware of common email scams that
+ask for personal or sensitive information. Walgreens will not send you
+emails asking for your credit card number, social security number or other
+personally identifiable information. If ever asked for this information, you
+can be confident it is not from Walgreens.
+
+We regret this has taken place and any inconvenience this may have caused
+you. If you have any questions regarding this issue, please contact us at
+1-855-814-0010. We take your privacy very seriously, and we will continue to
+work diligently to protect your personal information.
+
+Sincerely, Walgreens Customer Service Team
+
+  [Wow, just after I sent off the above e-mail, in comes another one
+  regarding Epsilon from Target. Same comments apply to this one.  "Unique
+  email addresses" solves this too.  And then, just a while later, a third
+  one from Marriott International, Inc.  fj]
+
+------------------------------
+
+Date: Mon, 04 Apr 2011 20:42:04 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Epsilon Data Breach: Expect a Surge in Spear Phishing Attacks
+
+A very good description of the risks here - I think even a layman/laywoman
+could follow it.
+
+http://news.yahoo.com/s/pcworld/20110404/tc_pcworld/epsilondatabreachexpectasurgeinspearphishingattacks
+
+------------------------------
+
+Date: Sun, 3 Apr 2011 19:56:16 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Epsilon: Who Reacted and How (Stephen Smoliar)
+
+From Stephen Smoliar's blog, 3 Apr 2011:
+<http://therehearsalstudio.blogspot.com>
+
+Last night the Security section of CNET News ran the following report
+by Edward Moyer on a security breach.
+<http://news.cnet.com/8301-1009_3-20050068-83.html#ixzz1ITq0qMk>
+
+Epsilon, which manages e-mail communications for TiVo, JP Morgan Chase,
+Capital One Financial, US Bank, the Kroger grocery chain, and other
+clients, said this week that it suffered a security breach that revealed
+data on some of its clients' customers.
+
+Epsilon, which says it sends 40 billion e-mails annually, released a
+statement
+<http://www.epsilon.com/News%20%26%20Events/Press_Releases_2011/Epsilon_Notifies_Clients_of_Unauthorized_Entry_into_E-Mail_System/p1057-l3>
+yesterday saying that on March 30 it detected an"unauthorized entry into its
+system that exposed customer names and e-mail addresses.  The company said
+"no other personal identifiable information associated with those names was
+at risk."  Bloomberg reported that an Epsilon representative would not say
+how many other clients might be affected, citing an ongoing investigation.
+<http://www.bloomberg.com/news/2011-04-02/jpmorgan-kroger-capital-one-tivo-warn-of-e-mail-breaches.html>
+
+While this is clearly interesting on its own merits, my attention was drawn
+to Moyer's account of how some of these businesses reacted when they were
+informed of the situation by Epsilon.  Kroger's strategy was to use
+electronic mail to deliver a short message:
+<http://news.cnet.com/8301-1009_3-20050068-83.html#ixzz1ITqvVLdo>
+
+  Kroger wants to remind you not to open e-mails from senders you do not
+  know.  Also, Kroger would never ask you to e-mail personal information
+  such as credit card numbers or social security numbers. If you receive
+  such a request, it did not come from Kroger and should be deleted.
+
+While this does not say anything that readers should not know, it provides a
+useful reminder through the very channel that had been placed at risk.  This
+amounts of a vote of confidence in Epsilon's statement and their approach to
+managing electronic mail.  It is also likely to be seen by those who matter
+the most.
+
+This strikes me as a far better understanding of `customer relationship
+management'
+<http://therehearsalstudio.blogspot.com/2010/08/friedrich-hayek-at-safeway.html>
+than the actions of Chase <https://www.chase.com/Chase.html> and Capital
+One, each of which simply posted the information on their respective Web
+sites.  Chase did a relatively poor job of directing attention.  The notice
+is on the home page in the form: Please read important message
+to all Chase customers.
+
+That this summary should have been more informative.  Many (probably
+myself included) would view this with suspicion as being just another
+pitch to sell something.  In my case, though, I would never see the
+message, since, as a Chase customer, I tend to go directly to the My
+Accounts page.  Not only is there no notice of the problem on that page,
+but also there is not a message in the internal Secure Message Center
+alerting me that a problem may exist.  Capital One, however, turned out
+to be even worse, since they do not even provide a pointer to their
+message
+<http://www.capitalone.com/protection/email.php?linkid=WWW_1009_Z_A0B2084C1F86D22A0E1FFBF38F9G1F85H5AF4I7CC8_HOME_C1_02_T_ALERTEMAIL>
+on their home page <https://www.capitalone.com/>.
+
+It seems to me that the main conclusion to draw from this comparison is that
+Kroger gave more thought to communicating with their customers than either
+Chase or Capital One did.  One reason may be that Kroger has to deal with
+its customers as grocery shoppers on a week-by-week basis, if not with
+greater frequency.  The financial sector, on the other hand, does not think
+about engaging with customers with such frequency.  As a corollary this
+means that businesses in the financial sector ``understand'' (scare quotes
+intended) their customers by analyzing databases
+<http://therehearsalstudio.blogspot.com/2010/08/friedrich-hayek-at-safeway.html>,
+while Kroger may actually try to establish understanding through engagement
+on the floor
+<http://therehearsalstudio.blogspot.com/2009/08/curse-of-overqualification.html>
+of their outlets.  I would further suggest that Capital One, in particular,
+seems to feel that it is important to invest its resources in advertising to
+bring in more customers than in engaging in any meaningful way with the
+customers it already has (perhaps because they think of engagement
+<http://therehearsalstudio.blogspot.com/2009/10/insulting-victim.html> in
+terms of selling more stuff rather than providing the services associated
+with that stuff).  This may be yet another lens through which we can examine
+the state of our current economic problems and our prospects for recovery
+
+------------------------------
+
+Date: Wed, 6 Apr 2011 09:58:09 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 75-year-old woman (literally) cuts Armenia off the Internet
+
+  [Network Neutrality Squad]
+http://j.mp/fzDSbO  (Gawker)
+
+------------------------------
+
+Date: Tue, 05 Apr 2011 12:31:49 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: The Rootkit That Was Not
+
+http://www.infoworld.com/t/anti-virus/lessons-the-samsung-rootkit-never-existed-409
+
+Robert Lemos, Lessons from the Samsung rootkit that never existed: A
+language pack for a European country gets labeled as a keylogger and quickly
+roils the blogosphere, *InfoWorld Tech Watch, 01 April 2011
+
+A lot of malicious software originates in the former Eastern Bloc and other
+once-communist nations. Theories of why that is vary: Perhaps unemployed
+workers in those countries are highly educated in technology disciplines and
+remain steeped in a culture of underground capitalism from the communist
+era. Or, more simply, it could be the a lack of a legal framework to
+prosecute cybercrime.
+
+Security software firm GFI Software went unintentionally overboard
+protecting against Balkan malware, classifying the entire Slovenian language
+as malicious. Under certain settings, GFI's Vipre malware scanning engine
+labeled the Windows/SL directory found on some Samsung computers as
+malicious, mistaking it for the StarLogger rootkit. Rootkits hide themselves
+on a victim's system to escape detection; in reality, the directory contains
+localization files for the south-central European nation of Slovenia.
+
+------------------------------
+
+Date: Fri, 1 Apr 2011 22:13:21 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Omission in CFP 2011 conference announcement
+
+In RISKS-26.38 I submitted the Call for submission for Computers
+Freedom Privacy research & posters.  I apologize for omitting the
+important logistics information!
+
+CFP 2011 will be held at Georgetown University in Washington DC on
+June 14-16.  The poster session will be on June 16.  Additional
+information is available at www.cfp.org/2011.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.41
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E5270DC3BC9EXSAN02campus_--

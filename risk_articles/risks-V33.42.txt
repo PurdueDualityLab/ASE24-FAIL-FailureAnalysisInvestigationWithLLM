@@ -1,0 +1,812 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.42
+
+RISKS-LIST: Risks-Forum Digest  Saturday 27 August 2022  Volume 33 : Issue 42
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.42>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Another Post-Quantum approach bites the dust. VERY CLEVER.
+ (Quantum Magazine)
+The Crypto[currency] World Can't Wait for Ethereum's Merge (The NY Times)
+5G Networks Are Worryingly Hackable (Edd Gent)
+The next wave of wireless security worries: API-driven (Light Reading)
+Eight-Year-Old Linux Kernel Vulnerability Uncovered (Ravie Lakshmanan)
+Experimental Attack Can Steal Data from Air-Gapped Computers (Carly Page)
+Tesla demands video of cars hitting child-size mannequins be taken down
+ (WashPost)
+Why are Tesla fanatics putting their children in the path of moving
+ cars? (Arwa Mahdawi)
+Scanning students' homes during remote testing is unconstitutional  -- judge
+ says (Ars Technica)
+Congress approved $386 million to retrain veterans. Only 397
+ benefited. (WashPost)
+Weaponizing Middleboxes for TCP Reflected Amplification (Geoff Goodfellow)
+Keeping Up With the Vacuum Cleaners (Rob Slade)
+Let's think step by step in ML Reasoning (via Tom Van Vleck)
+3D gun printing operation busted in Calgary (Jose Maria Mateos)
+Danger: Metaverse Ahead! -- Part 2 (Rob Slade)
+Dangers of the Metaverse -- Part 2b: "White voice?" (Rob Slade)
+Re: Startup uses AI to transform call center workers' accents into
+ "white voice" (Gabe Goldberg)
+Re: A Janet Jackson Song Could Crash Windows XP Laptops (Steve Bacher)
+Re: Scans of Students' Homes During Tests Are Deemed Unconstitutional
+ (Gabe Goldberg)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 25 Aug 2022 16:44:03 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Another Post-Quantum approach bites the dust. VERY CLEVER.
+ (Quantum Magazine)
+
+Second of the proposed post-quantum crypto approaches for NIST to consider,
+that has been broken on relatively small and cheap hardware (a laptop) in
+minutes or hours.
+
+https://www.quantamagazine.org/post-quantum-cryptography-scheme-is-cracked-on-a-laptop-20220824/
+
+  "It's a bit of a bummer", said Christopher Peikert, a cryptographer at
+  the University of Michigan.
+
+    [It's Summer,  So maybe its Summer or Bummer cum laude?  PGN]
+
+------------------------------
+
+Date: Sat, 27 Aug 2022 16:08:13 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Crypto[currency] World Can't Wait for Ethereum's Merge
+ (NYTimes)
+
+A long-awaited upgrade to Ethereum, the most popular crypto[currency]
+platform, may make the technology more environmentally sustainable. But it
+comes with risks.
+
+The cryptocurrency industry has endured a terrible year. A devastating crash
+wiped nearly $1 trillion from the market, draining the savings of thousands
+of people. Several companies filed for bankruptcy.
+
+Now the industry is fixated on a potential saving grace: a long-awaited
+software upgrade to the most popular cryptocurrency platform, Ethereum,
+which provides the technological backbone for thousands of crypto-projects.
+The upgrade -- known as the Merge -- has gained near-mythical status after
+years of delays that left some insiders questioning whether it would ever
+happen.
+
+But if all goes according to plan, the Merge will take place around 15 Sep
+2022, more than eight years after it was initially discussed. The change
+would shift Ethereum to a more energy-efficient infrastructure, addressing
+the widespread criticism that crypto[currency]'s climate impact outweighs
+its possible benefits. And it would lay the foundation for future upgrades
+to reduce the hefty fees required to conduct transactions in Ether, the
+platform's signature currency and the second-most valuable digital asset
+after Bitcoin.
+
+https://www.nytimes.com/2022/08/26/technology/crypto-ethereum-the-merge.html
+
+------------------------------
+
+Date: Fri, 26 Aug 2022 12:21:17 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: 5G Networks Are Worryingly Hackable
+
+Edd Gent, *IEEE Spectrum*, 24 Aug 2022, via ACM TechNews, 26 Aug 2022
+
+German security researchers determined 5G networks can be hacked, having
+breached and hijacked live networks in a series of "red teaming" exercises.
+Poorly configured cloud technology made the exploits possible, they said,
+and Karsten Nohl at Germany's Security Research Labs cited a failure to
+implement basic cloud security. He suggested telecommunications companies
+may be taking shortcuts that could prevent 5G networks' "containers" from
+functioning properly. The emergence of 5G has escalated demand for
+virtualization, especially for radio access networks that link end-user
+devices to the network core. Nohl said 5G networks respond to the greater
+complexity with more automated network management, which makes exploitation
+easier.
+
+https://orange.hosting.lsoft.com/trk/click?refznwrbbrs9_6-2f1abx235868x069445&
+
+------------------------------
+
+Date: Wed, 24 Aug 2022 10:40:01 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: The next wave of wireless security worries: API-driven IoT devices
+
+Wireless carriers may be the next cast of characters to learn the hard way
+about the security risks created by IoT devices. This warning came in a
+recent briefing
+<https://www.blackhat.com/us-22/briefings/schedule/#attacks-from-a-new-front-door-in-g--g-mobile-networks-26971>
+at the Black Hat information-security conference
+<https://www.blackhat.com/us-22/briefings/schedule/> here by Altaf Shaik, a
+senior security researcher at Technische Universit=C3=A4t Berlin.
+
+"There is increased threat when it comes to 5G, and the impact is also
+quite bigger because here the hacker gets to target the industry and not
+just a single user," Shaik said at the start of this 40-minute presentation.
+<https://i.blackhat.com/USA-22/Wednesday/US-22-Shaik-Attacks-From-a-New-Front-Door-in-4G-5G-Mobile-Networks.pdf>
+
+The core issue here is 5G's utility in connecting not just people (who stand
+to get notable privacy upgrades with 5G, as Shaik explored in a presentation
+at last year's Black Hat conference
+<https://www.lightreading.com/security/5g-defends-against-imsi-catchers---but-implementation-is-critical/d/d-id/771471>)
+but machines. Carriers are now moving to turn that latter feature into new
+lines of business
+<https://www.lightreading.com/iot/t-mobile-venture-aims-to-bring-uncarrier-simplicity-to-enterprise-iot/d/d-id/775451>
+by offering IoT services to businesses that these customers can manage
+directly through new APIs.
+
+"For the first time, 4G and 5G networks are trying to bring this network
+exposure," Shaik said. "The proprietary interfaces are now changing and
+slowly moving to generalized or commoditized technologies like APIs."
+
+"So now any external entity can actually control their smart devices by
+using the service APIs and going through the 4G or 5G core network," Shaik
+said, citing a Vodafone test of drones in Germany. "This exposure layer
+provides APIs and shares information for the drone control center."
+
+Carriers sell these IoT services to businesses (as verified with a tax ID)
+willing to buy IoT SIMs in bulk purchases of a thousand or more. These
+business customers, in turn, can manage these SIMs through an IoT
+connectivity management web interface, with an IoT service platform web
+interface providing account-wide controls.
+
+"You can do plenty of stuff, provided you have access to these APIs,"
+summed up Shaik.
+
+Open to compromise
+
+However, poorly configured or administered APIs can open the IoT devices of
+other customers and even perhaps a carrier's core network to compromise.
+For example, an attacker could start by exploiting vulnerabilities "to gain
+data of arbitrary users hosted on the same platform," then attempt to
+compromise a carrier's application server -- and then possibly "penetrate
+from there into the mobile core network, because they are connected," Shaik
+continued. [...]
+
+https://www.lightreading.com/iot/the-next-wave-of-wireless-security-worries-api-driven-iot-devices/d/d-id/779825
+
+------------------------------
+
+Date: Wed, 24 Aug 2022 12:08:32 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Eight-Year-Old Linux Kernel Vulnerability Uncovered
+ (Ravie Lakshmanan)
+
+Ravie Lakshmanan, *The Hacker News*, 22 Aug 2022, via ACM Tech News
+
+Northwestern University researchers have discovered an eight-year-old
+vulnerability in the Linux kernel, dubbed DirtyCred, that exploits a
+previous unknown flaw to escalate user privileges to their maximum. The
+researchers described DirtyCred as "a kernel exploitation concept that swaps
+unprivileged kernel credentials with privileged ones to escalate
+privilege. Instead of overwriting any critical data fields on kernel heap,
+DirtyCred abuses the heap memory reuse mechanism to get privileged." They
+added that it "is like the dirty pipe that could bypass all the kernel
+protections, [but] our exploitation method could even demonstrate the
+ability to escape the container actively that Dirty Pipe is not capable of."
+
+https://Orange.Hosting.Lsoft.Com/Trk/Click?Ref=znwrbbrs9_6-2f175x235780x069284&
+
+------------------------------
+
+Date: Fri, 26 Aug 2022 12:21:17 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Experimental Attack Can Steal Data from Air-Gapped Computers
+ (Carly Page)
+
+Carly Page, *TechCrunch*, 24 Aug 2022, via ACM TechNews, August 26, 2022
+
+Security researcher Mordechai Guri at Israel's Ben Gurion University
+identified an experimental exploit for stealing data from
+Internet-disconnected computers. Guri said the Gairoscope attack uses a
+smartphone's gyroscope to exfiltrate information from air-gapped computers
+just "a few meters away." He said an attacker monitoring sounds emanating
+from the speakers of the air-gapped system could gain data like passwords or
+login credentials. Guri said these inaudible frequencies generate "tiny
+mechanical oscillations within the smartphone's gyroscope," which can be
+rendered as readable data. In addition, he said, attackers could conduct the
+exploit using a mobile browser, since phone gyroscopes can be accessed using
+JavaScript. Suggested countermeasures include removing loudspeakers from
+air-gapped systems to create an audio-less networking environment, and
+screening resonant frequencies produced by the audio hardware through an
+audio filter.
+
+https://orange.hosting.lsoft.com/trk/click?refznwrbbrs9_6-2f1abx235864x069445&
+
+------------------------------
+
+Date: Thu, 25 Aug 2022 18:49:23 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Tesla demands video of cars hitting child-size mannequins be taken
+ down (The Washington Post)
+
+The move comes amid heightened sensitivity to criticism of the software that
+is under public and regulatory scrutiny
+
+SAN FRANCISCO --Tesla is demanding an advocacy group take down videos of its
+vehicles striking child-size mannequins, alleging the footage is defamatory
+and misrepresents its most advanced driver-assistance software.
+
+https://www.washingtonpost.com/technology/2022/08/25/tesla-elon-musk-demo/
+
+------------------------------
+
+Date: Wed, 24 Aug 2022 08:27:32 -0400
+From: Mark Lender <msl@marksethlender.com>
+Subject: Why are Tesla fanatics putting their children in the path of moving
+ cars? (Arwa Mahdawi)
+
+ [What makes the Elon guard his Musk? -- MONEY! MSL]
+
+Some superfans are so determined to prove that Elon Musk's `autonomous'
+driving technology works that they are willing to put their kids in harm's
+way.
+
+https://ablink.editorial.theguardian.com/ss/c/TBl-lE0k4WbTlFRn6v-lQXxTpTslqnvUsR2ofAkC00tCgPKhs9TO5NKUUP4fsU1haDJl1Kd74PRGAhcFeH-vjLodfcqoVIfgsQoQlwiSCxj-f9YbeTCQDALOSj2Fv0EIINF4A0ooB5viiURaNm3STmUAYt8EH2Oc-lX68A2stBkzaUNlzgWhSaPFRUEeSXhVhcYq4IcN5wE4p2mYQfct8aPCS5w6HOLNoT0kbRVTQYDlZiaWJB8ZU-KOxWg47zelDPgzslfWQRPdWveRARdwo8a-3-mKBk2iZ8dRnXFWgioz75wELS2Acj3J5y4gBkDJ/3ov/3lRBtT0ZT5GhyBbbuKgeaw/h73/FIVD5jp4dDIYopRzwCfcFQ4mQ3UN2Ghgkm5h-sZGNm8>
+
+  [Mark gave me the above horrible URL, but browsing on the title instead
+  gets me the article with the generic Guardian top-level URL!  Bummer.  PGN]
+
+------------------------------
+
+Date: Thu, 25 Aug 2022 07:14:43 +0900
+From: David Farber <farber@keio.jp>
+Subject: Scanning students' homes during remote testing is unconstitutional
+ -- judge says (Ars Technica)
+
+https://arstechnica.com/tech-policy/2022/08/privacy-win-for-students-home-scans-during-remote-exams-deemed-unconstitutional/
+
+------------------------------
+
+Date: Fri, 26 Aug 2022 13:07:09 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Congress approved $386 million to retrain veterans. Only 397
+ benefited. ((WashPost)
+
+Nearly $400 million went to a veteran retraining program as part of the
+American Rescue Plan
+
+The offer to military veterans left unemployed by the coronavirus pandemic
+was tantalizing: A year of online courses courtesy of the federal
+government. Graduates would be set up for good jobs in high-demand fields
+from app development to graphic design.
+
+Schedules were disorganized and courses did not follow a set syllabus.
+School-provided laptops couldn't run critical software. And during long
+stretches of scheduled class time, students were left without instruction,
+according to interviews with Culbreth and 10 other veterans who attended the
+school.
+
+https://www.washingtonpost.com/politics/2022/08/25/covid-veterans-retraining-program-school
+
+------------------------------
+
+Date: Wed, 24 Aug 2022 07:53:23 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Weaponizing Middleboxes for TCP Reflected Amplification
+
+  (was STD 7, RFC 9293 on Transmission Control Protocol
+
+> Date: Wed, Aug 24, 2022 at 7:43 AM
+> From: geoff goodfellow via Internet-history <internet-history@elists.isoc.org>
+> Subject: Weaponizing Middleboxes for TCP Reflected Amplification
+ (was Fwd: STD 7, RFC 9293 on Transmission Control Protocol (TCP))
+
+Weaponizing Censorship Infrastructure
+
+Reflective amplification attacks are a powerful tool in the arsenal of a
+DDoS attacker, but to date have almost exclusively targeted UDP-based
+protocols. In this paper, we demonstrate that non-trivial TCP-based
+amplification is possible and can be orders of magnitude more effective than
+well-known UDP-based amplification. By taking advantage of TCP-noncompliance
+in network middleboxes, we show that attackers can induce middleboxes to
+respond and amplify network traffic. With the novel application of a recent
+genetic algorithm, we discover and maximize the efficacy of new TCP-based
+reflective amplification attacks, and present several packet sequences that
+cause network middleboxes to respond with substantially more packets than we
+send. We scanned the entire IPv4 Internet to measure how many IP addresses
+permit reflected amplification.  We find hundreds of thousands of IP
+addresses that offer amplification factors greater than 100×. Through our
+Internet-wide measurements, we explore several open questions regarding DoS
+attacks, including the root cause of so-called mega amplifiers. We also
+report on network phenomena that causes some of the TCP-based attacks to be
+so effective as to technically have infinite amplification factor (after the
+attacker sends a constant number of bytes, the reflector generates traffic
+indefinitely). We have made our code publicly available.
+
+> Date Aug 11, 2021 1:30 PM
+> Event USENIX Security 2021
+> Location USENIX Security 2021
+
+> https://www.cs.umd.edu/~kbock/talk/usenix21/
+
+> Date: Wed, Aug 24, 2022 at 6:29 AM
+> From: John Kristoff via Internet-history <internet-history@elists.isoc.org>
+> Subject: Re: STD 7, RFC 9293 on Transmission Control Protocol (TCP)
+
+> From: <internet-history@elists.isoc.org>
+
+On Wed, 24 Aug 2022 09:58:11 +0200
+Craig Partridge via Internet-history <internet-history@elists.isoc.org>
+wrote:
+
+ > I have not tracked closely in a while but believe that we haven't
+ > seen a new attack in over 10 years and that various TCP tweaks have
+ > dealt with these issues.
+
+While not an attack directly on TCP, it has been shown there is a way to
+conduct source address-spoofed TCP-based amplification and reflection
+attacks with relatively little effort.  The problem is not in TCP itself,
+but in how middle boxes maintain TCP state for the end points between
+boundaries, or don't maintain state as is the case here.  Most attacks are
+mostly now found in the larger tweaks.
+
+For those that haven't seen this paper, it is worth a look, and may result
+in a lot of "I told you so's" for those who have been skeptical of middle
+boxes.   :-)
+
+<https://www.cs.umd.edu/~kbock/talk/usenix21/>
+
+Internet-history mailing list
+Internet-history@elists.isoc.org
+https://elists.isoc.org/mailman/listinfo/internet-history
+
+------------------------------
+
+Date: Fri, 26 Aug 2022 05:37:18 -0700
+From: Rob Slade <rslade@gmail.com>
+Subject: Keeping Up With the Vacuum Cleaners
+
+I tell people that everyone fights about which field of technology is
+changing the fastest.  I don't fight about it.  I figure security has a
+lock on it.  Regardless of what else changes in whatever other field of
+technology, it has an implication for security.
+
+We need to keep up.
+
+We need to keep up with each change in technology.  We need to keep up with
+the vulnerabilities that are being created as people create more
+"solutions."  We need to keep up with the latest threats; the latest
+exploits; the latest attacks; the latest news about who has been attacked,
+and how.  We have to pursue the news avidly, and effectively, to try and
+keep up with the most relevant issues of the day.
+
+There are of course people who try to produce newsletters to help us out.
+Well, sometimes not to help us out.  Vendors, and trade rags, frequently
+produce such newsletters themselves.  Unfortunately, since their aim is to
+promote their own products, they put minimal work, and pretty much no
+analysis, into retailing whatever stories they consider to have security
+implications.
+
+There are, however, some useful ones.  The oldest, and preeminent, one is
+the RISKS-Forum Digest. ( http://www.risks.org ) It's contributors make up
+the cream of the cream of those who are interested in the dangers of
+technology, and to technology.  And Peter, over thirty-five years, has set
+the standard for the moderation of a quality topical mailing list on the
+Internet.
+
+The Department of Homeland Security used to produce one.  It's ceased
+publication on January 27th, 2016.  Odd, that.
+
+Another one is put out by the Security Branch of the office of the Chief
+information officer, of the province of British Columbia.
+<http://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/information-security/security-news-digest>
+It's pretty good.  And it has been running for long enough to develop a
+track record that I can use to say that.
+
+Les Bell has recently started one
+<https://www.lesbell.com.au/classroom/blog/index.php?courseid=1>.  He's got
+a background in trade media, but, unlike most of the editors and writers in
+trade rags, he also knows the field of security.
+
+In a recent version of the newsletter
+<https://www.lesbell.com.au/classroom/blog/index.php?entryid=63>, he talked
+about the fact that Amazon has purchased iRobot, the maker of the Roomba
+vacuum cleaner.  Les noted that Amazon makes a number of home IoT devices.
+Amazon can collect a great deal of information from the devices in your
+home.  But one thing the devices can't do, is map your home.  Until now.
+The Roomba is built to map your home, in order to make its vacuuming more
+efficient.  So now, in addition to all the other data that Amazon is able to
+collect, it is able to look inside your home, in a sense.
+
+Les doesn't go any farther than that.  I don't think he goes quite far
+enough.  Because iRobot doesn't just make vacuum cleaners.  They also make
+robots for the military, and law enforcement.  And, now that all of this is
+under one roof, so to speak, Amazon will be able to sell a service to law
+enforcement.
+
+When law enforcement once to do a raid, they would dearly love to know what
+they will face once they get inside the door.  Well, if a Roomba is in the
+house, Amazon will be able to provide them with that information.
+Amazon/iRobot will be able to tell you the layout of the rooms, and where
+furniture is, and (possibly not in real time, but) where people are likely
+to be.  I'm sure that law enforcement will be willing to pay for such
+information.  After all, it will be a saving of lives to do it.  Not just
+police officers, but the occupants of the house, who will be in less danger,
+given that the police have more information about where they are.
+
+More and more companies are getting more and more information about you.
+Some of this information is helpful, both to you, and the authorities.  Some
+of the information is just useful to the authorities.  And some of the
+information is going to be useless, and even misleading, and mistakes will
+be made.
+
+------------------------------
+
+Date: Sat, 27 Aug 2022 15:42:44 -0400
+From: Tom Van Vleck <thvv@multicians.org>
+Subject: Let's think step by step about ML Reasoning!
+
+[2205.11916] Large Language Models are Zero-Shot Reasoners,
+  Takeshi Kojima et al.
+https://arxiv.org/abs/2205.11916
+
+If you feed a machine-learning language model "reasoning" questions,
+it gets some right and some wrong.  Depending on the model and how
+it was "trained." If you give the same question to the model but add
+"Let's think step by step", it gets them right.
+
+Apparently the magic phrase depends on the kind of model, and the kinds of
+training.  What phrase could we use on humans, to encourage them to reason
+in additional ways?
+
+Clearly it would have to be different for different native languages and
+cultures, and for different desired methods of coming to a conclusion; e.g.,
+"Love thy neighbor as thyself" might potentiate some results and "Let's make
+America/France/Russia great again" might produce others.
+
+(This reminds me of Max Barry's fine science fiction thriller, Lexicon.  In
+it, people are classified into "segments" -- for each segment, a different
+sequence of nonsense words will force the person to obey orders.)
+
+I still think machine learning is Clever Hans.  THVV
+
+------------------------------
+
+Date: Thu, 25 Aug 2022 18:32:58 -0400
+From: =?UTF-8?Q?Jos=C3=A9_Mar=C3=ADa_Mateos?= <chema@rinzewind.org>
+Subject: 3D gun printing operation busted in Calgary
+
+https://www.cbc.ca/lite/story/1.6562076
+
+> Nine per cent of the crime guns seized this year were homemade or 3D
+  printed firearms. Police say that is a significant increase compared with
+  previous years. Lawson said that in 2020, when the firearms investigative
+  unit was founded, police seized one or two homemade guns, while this year
+  they seized about 15.
+
+> "They used to be all only on the dark web because it was more of a
+  nefarious activity. And now in lots of countries where you can legally
+  print your own private firearm â¦ which is illegal in Canada, it is
+  becoming more prevalent to obtain those types of documents on the
+  Internet," he said.
+
+------------------------------
+
+Date: Wed, 24 Aug 2022 04:42:19 -0700
+From: Rob Slade <rslade@gmail.com>
+Subject: Danger: Metaverse Ahead! -- Part 2
+
+Different vendors, and different commentators, seem to have different ideas
+about the nature of the Metaverse.  (It's difficult to opine about a
+technology when nobody can agree on what that technology actually is.)
+ However, all seem to agree that the metaverse will involve some kind of
+artificial reality.
+
+Artificial reality or virtual reality will provide the interface to the
+metaverse, in the opinion of most.  Virtual or artificial reality will
+provide a layer of abstraction, hiding the nuts and bolts of what is going
+on in terms of communication and processing, from the user.
+
+As has been famously said, any technical problem can be solved by the
+addition of a layer of abstraction, except for the problem of too many
+layers of abstraction.
+
+Anytime you hide something in information processing, you are in grave
+danger of introducing some kind of security vulnerability.
+
+We will be hiding, from the user, who or what they are actually talking to,
+in terms of machine and network connections.  We will be hiding, from the
+user, any idea of where processing is taking place.  There will be a lot of
+processing involved in creating the virtual or artificial reality itself.
+Is this processing taking place on the user's machine?  Is this processing
+taking place on the host platform machine?  Is this processing taking place
+somewhere else in the cloud?  And then there's the question of what this
+processing is actually doing and how realistic, or consistent, the
+presentation to the user actually is.
+
+There are going to be differences in devices that users use to access the
+metaverse.  We are already seeing inconsistencies and differences in
+communications devices, and the representations that they make of our
+communications.
+
+For example, Gloria and the girls and I tended to communicate via
+WhatsApp.  WhatsApp has a number of communications functions, but we used
+it primarily for text messaging.  When I wanted to indicate a joke, being
+old school, I would use the standard text-based emoticons: generally
+speaking a colon, a hyphen, and a close parenthesis.  And now comes the
+first question about where processing takes place.  When I typed in those
+three characters, something, either the soft keyboard that I was using, or
+WhatsApp itself, would change it to a graphic emoticon, for transmission.
+I don't know, for sure, which piece of software did that translation.  (I
+suspected it was WhatsApp, because the soft keyboard did seem to work
+differently with other programs.)  In any case the others would see a
+little happy face icon.  However, Gloria, using an Android device, what
+often see the little Android character, bearing a smile.  The girls, using
+iPhones, would generally see the more usual yellow happy face icon.  The
+three of us would see three different representations of what I had typed.
+That is a minor inconsistency, and probably would not lead to any great
+misunderstandings.  But it is an inconsistency.  It is a difference.  A
+layer of abstraction has been added, and other people do not know,
+accurately, what it is that I actually did or said.
+
+Now multiply that by an extensive range of devices from handheld
+smartphones to vision systems and sensing gloves.  Multiply that from input
+via text, or speech recognition.  Multiply that by speech recognition using
+artificial intelligence.  Multiply that by graphical representation
+systems, that are possibly also using artificial intelligence to both
+generate, and represent, communications.  The possibilities for mixed
+representation expand enormously.
+
+Misrepresentation or inaccuracy is not the only possible problem of
+abstraction.
+
+A number of issues can be hidden from the user and may threaten the
+security of both the user and the metaverse system itself.
+
+Communication protocols, and authentication procedures and protocols, will
+also be hidden from the user.  Many issues and many security factors will
+be abstracted and therefore hidden from the user.  This abstraction will
+add layers of complexity to an already extremely complicated security
+situation.  Authentication will become much more important.  The protocols
+of communication, and authentication, will be hidden from the user.  They
+will be hidden in layers of abstraction that will add complexity to an
+already complex mix of communications protocols, networking protocols,
+middleware applications, and authentication.
+
+The Metaverse, like the world wide Web before it, will attempt to become a
+grand unified field theory of the Internet.  Everyone will want their
+application to work in the Metaverse.  Everyone will want their business to
+function in the Metaverse.  Banking, finance, business transactions, and
+even real real estate sales, will take place in the Metaverse.  E-commerce
+will be apart of the metaverse, and will be one of the major drivers.
+Therefore, authentication will become even more important.
+
+Authentication will have greater significance.  At the moment, most
+authentication for many e-commerce functions will operate on the basis of
+some kind of cookie left on the machine.  This is node authentication, in a
+way.  But node authentication will be insufficient in a situation where the
+bulk of commerce is being done on the Metaverse, and individuals must be
+identified, authenticated, and their authorization verified.
+Authentication will become much more complex, and, at the same time,
+attempts will be made to make authentication simpler for the user and more
+transparent.  The user will not want to remember passwords or pull out
+tokens to verify themselves.  Users are already used to the node
+authentication that places a cookie on their machine so that their banking,
+purchasing, online shopping, games, and other entertainments are all
+instantly accessible when they sit down at the computer, or when they pull
+out their smartphone.  They will not want a more complex system to verify
+themselves to the Metaverse.
+
+The grand unification of communications and authentication, under the
+Metaverse, will add complexity, to an already complex environment.  And, of
+course, complexity is the enemy of security.  Therefore there will be many
+aspects of the Internet of the metaverse that will be extremely complex
+with layers of abstractions, authentications and communications protocols
+that must all be verified, and must all work properly together.
+
+If the Metaverse is to be a universal interface to the Internet, and all
+forms of communication, there will be issues of compatibility.  We are
+already seeing a variety of problems in this regard, with the existing
+Internet, and the World Wide Web.  Websites are being programmed in such a
+way that they will display on any device, screen, or window.  But in order
+to do this, the displays can be significantly different.  Indeed, in many
+situations, certain functions will not appear on the wrong sized device,
+screen, or window.  Certain websites can demonstrate this fairly easily
+simply by resizing an existing window very slightly.
+
+Thus, in the name of compatibility, we have sites that can display
+completely differently to different users.  This can create enormous
+misunderstandings when users are, apparently, using the same website, and
+see completely different things.  At the very least, it is an enormous
+problem for technical support.  With the automation of web development, and
+the inclusion of application programming interfaces, and functional
+libraries, and point-and-click and cut and paste programming/citizen
+programming, these differences may not even be apparent to the system's
+managers, or owners.  Those charged with technical support may be
+completely unaware of the lack of functionality that different users will
+see depending upon their device, screen, or window size.
+
+With such differences in our existing Web interfaces, how much greater will
+be the problems when we are dealing with the Metaverse, and devices ranging
+from three-dimensional artificial reality goggles, to simple smartphones.
+
+------------------------------
+
+Date: Fri, 26 Aug 2022 11:21:37 -0700
+From: Rob Slade <rslade@gmail.com>
+Subject: Dangers of the Metaverse -- Part 2b - "White voice?"
+
+I posted my piece on the Metaverse and misrepresentation, and got an
+interesting URL in response:
+
+https://www.sfgate.com/news/article/sanas-startup-creates-american-voice-17382771.php
+
+... which is about a "service" that lets call centre workers use technology
+to make themselves sound "white."
+
+They had fun with the idea:
+
+> The solution, though, is pretty simple and should satisfy everyone: let
+the caller choose the accent they want to hear right at the start of the
+call. I mean, maybe you'd love to hear the IRS with a Jamaican accent, just
+to keep your mood up? Or Swedish chef?
+
+> Even better, let the caller decide how the help desk hears his or her own
+voice, like a sexy French accent or irate Irish, depending on the
+circumstances.
+
+> Also, letting white people change their voice to not sound so white could
+also be a big deal going forward.
+
+... but, particularly in regard to the Metaverse, this leads nicely into the
+area that I *really* wanted to get into (and that a request to examine got
+me started on all of this), which is psychological factors (and dangers) of
+the Metaverse.  Of which the "echo chamber" is definitely one.
+
+I suspect that there are significantly more dangers involved in this
+offering than are immediately apparent.  This service, or product, or
+whatever we want to call it (and we should probably be careful to call it by
+family friendly, or at least printable, names), is an example of the echo
+chamber effect that social media seems to be concentrating on in very many
+cases.  The echo chamber is, of course, the ability to talk only to those
+who agree with you and whom you agree with. This has significant dangers in
+the existing social media world, and this can only be exacerbated as the
+Metaverse comes into reality.  We talk to people whom we think agree with us
+on a variety of issues, and we assume that they are like us in appearance,
+social status, economic status, and a number of other areas as well.
+(However, as the article points out, this type of deception is being done
+anyway, even without technology, by those who train themselves to speak with
+American accents.  See Judi Dench's character's new job in "The Best Exotic
+Marigold Hotel.")  There are two dangers inherent in this practice that
+cannot be easily addressed: people who assume, supported by the fact that
+everyone they talk to agrees with them, that *everyone* agrees with them;
+and the fact that people will assume that people who agree with them on one
+topic will agree with them on other topics, and therefore create problems
+and offend the people that they are talking to by raising offensive ideas
+that the other person *doesn't* agree with.  (There are, of course, many
+more specific examples that can be imagined: these two only illustrate the
+two major sides of the echo chamber coin.)
+
+The company and investors, of course, present the idea in the most laudable
+terms: reducing bias.  But, as the article points out, accents don't *cause*
+bias, they just trigger it.  This is like treating the symptom, and not the
+underlying disease.  (Recently I had exercise induced vasculitis.  The
+doctor I saw was very concerned that I *not* attempt to get steroid cream to
+apply to it, which would possibly reduce irritation and itching, but would
+weaken the tissues, and possibly cause more serious problems.)
+
+In terms of the putative service call, a problem is that some white
+supremacist will think that he's talking to a fellow racist and say, in the
+course of the conversation, "I'm glad I'm not talking to one of those
+[offensive racial epithetic which just happens to apply to the person he's
+actually talking to].  Two immediately obvious problem possibilities arise.
+The first is, why should your staff be subject to such offensive comments?
+The second is that your service people may be offended enough to respond in
+kind to the person making offensive comments (probably to the total surprise
+of the racist who made the comments), and therefore generating bad will and
+bad reputation for your company.
+
+(In terms of this service as a business offering, I also suspect that many
+more people would be offended by the generated "white" voice than by
+accents.  It will probably be quite a while before the service can operate
+with the speed, and the timbre, necessary to make it sound truly human.
+Until then, callers who don't know the service is being used will hear
+delays, and a fairly flat delivery, and assume they are talking to some kind
+of voice response system.  The "uncanny valley" effect will probably kick
+in, and people will be annoyed at talking to, as they think, a robot.)
+
+But the jokes also point out some dangers.  If you, and the person you are
+talking to, are friends, know about the technology, and know that it is
+being used, then, yes, it's fun.  In any other situation, then, like I said
+in the original posting, it creates an opportunity for misrepresentation,
+and therefore can *cause* misunderstandings, far from eliminating them.  I
+recently had to deal with a communications problem with multiple parties,
+where a number of those involved had become offended.  It was, of course, a
+situation requiring delicate negotiations.  I would *not* want Irish
+imprecations added to any of my communications with any of the parties
+involved.  Nor would I want any musical lilt added to my delivery, lest
+those causing the problems see it as less serious than it was.
+
+------------------------------
+
+Date: Thu, 25 Aug 2022 16:21:48 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Re: Startup uses AI to transform call center workers' accents into
+ "white voice" (RISKS-33.41)
+
+Article: Have you seen the 2018 movie Sorry to Bother You? It's about a
+young black man who gets a job at a call center and has trouble making sales
+until he adopts a "white voice."
+
+A new company called Sanas seems to have based its business plan on the
+movie. It has developed software that converts call center workers' accents
+into "standard American English." If you listen to Sanas' demo, it sounds
+remarkably like the white voice in Sorry to Bother You.
+
+https://boingboing.net/2022/08/23/startup-uses-ai-to-transform-call-center-workers-accents-into-white-voice.html
+
+------------------------------
+
+Date: Thu, 25 Aug 2022 10:08:26 -0700
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: A Janet Jackson Song Could Crash Windows XP Laptops
+ (RISKS-33.41)
+
+Not only that, but if you're listening to your laptop audio through
+headphones or earbuds, presumably that wouldn't be audible enough to cause
+the crash. Suppressing frequencies from the audio output would punish those
+users for no practical reason.
+
+------------------------------
+
+Date: Thu, 25 Aug 2022 18:15:36 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Re: Scans of Students' Homes During Tests Are Deemed
+ Unconstitutional (RISKS-33.41)
+
+An Ohio judge ruled that such surveillance to prevent cheating could form a
+slippery slope to more illegal searches.
+
+https://www.wired.com/story/remote-testing-student-room-scans-privacy
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.42
+************************

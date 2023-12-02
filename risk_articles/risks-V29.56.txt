@@ -1,0 +1,995 @@
+precedence: bulk
+Subject: Risks Digest 29.56
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 15 June 2016  Volume 29 : Issue 56
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.56.html>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+GPS jamming and aircraft control systems (R A Lichtensteiger)
+"Tesla Model X autonomously crashes into building, owner claims"
+  (Lucas Mearian)
+Lexus Owners Say Update Bricked Cars' Navigation Systems (Consumerist via
+  Gabe Goldberg)
+Scary glitch affects luxury cars (Bob Frankston)
+Faulty update breaks Lexus cars' maps and radio systems (Martyn Thomas)
+Re: Faulty update breaks Lexus cars' maps and radio systems (Mike Ellims)
+Car Hacking / VW fun theory (Alister Wm Macintyre)
+Are we really sure drones are safe? (Charley Kline)
+Lancaster UK power outage (RAEng)
+Monkey in Kenya Survives After Setting Off Nationwide Blackout (NYTimes)
+And why would anyone sign up for this service? (Jeremy Epstein)
+David Dill: Why Online Voting is a Danger to Democracy (PGN)
+Tech firms say FBI wants browsing history without warrant (engadget)
+DEA Wants Inside Your Medical Records to Fight the War on Drugs (DailyBeast)
+The Internet is blurring the content/metadata distinction into
+  meaninglessness (Steve Bellovin et al. via SSRN)
+Father of the Internet Worries Our Digital History Is Disappearing
+  (Newsweek via Geoff Goodfellow)
+Oklahoma Highwaymen Seize Bank Accounts from Drivers (Henry Baker)
+Takedown, Staydown would be a disaster, Internet Archive Warns
+  (Torrentfreak)
+Internet greybeards and upstarts gather to redecentralize the Internet
+  (Boingboing)
+Parents are worried the Amazon Echo is conditioning their kids to be rude
+  (Alice Truong)
+Morocco bans reading newspapers in public (The Telegraph)
+Snooper's Charter, aka the Investigatory Powers Bill, UK law (Betanews)
+Russian penetration of political networks (WashPo)
+"Let's Encrypt" exposes almost 8K user email addresses (LW, Charlie Osborne)
+"Hackers could have changed Facebook Messenger chat logs" (Peter Sayer)
+One of the World's Largest Botnets Has Vanished (Joseph Cox)
+"Empty DDoS threats earn extortion group over $100,000" (Lucian Constantin)
+EU Exploring Idea of Using Government ID Cards as Mandatory Online Logins
+  (Softpedia)
+Local stations' commercial break shorter than national's (Dan Jacobson)
+Re: This 'Demonically Clever' Backdoor Hides In a Tiny Slice of a Computer
+  Chip (Jeff Jonas)
+Re: App to get PII from CAC card (Dan Pritts)
+Re: Another Risk of Self-Driving Cars; Clogged Highways?!? (Jeff Jonas)
+Isodarco 2017: ADVANCED AND CYBER WEAPONS SYSTEMS: TECHNOLOGY AND ARMS
+  CONTROL (Carlo Shaerf)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 8 Jun 2016 16:35:24 -0400
+From: R A Lichtensteiger <rali@tifosi.com>
+Subject: GPS jamming and aircraft control systems
+
+The US government will be performing GPS jamming experiments near China
+Lake.  The FAA, which publishes Notices to Airman (NOTAMs) has a category
+for GPS events.
+
+https://pilotweb.nas.faa.gov/PilotWeb/noticesAction.do?queryType=ALLGPS&formatType=DOMESTIC
+
+And I quote:
+
+  ADDITIONALLY, DUE TO GPS INTERFERENCE IMPACTS POTENTIALLY AFFECTING
+  EMBRAER PHENOM 300 AIRCRAFT FLIGHT STABILITY CONTROLS, FAA RECOMMENDS
+  EMBRAER PHENOM PILOTS AVOID THE ABOVE TESTING AREA AND CLOSELY MONITOR
+  FLIGHT CONTROL SYSTEMS DUE TO POTENTIAL LOSS OF GPS SIGNAL
+
+Awesome.
+
+  [Mark Thorson notes that a large area of southern California may be
+  affected.  http://www.dailymail.co.uk/sciencetech/article-3630029 He was
+  also found it particularly interesting that Embraer Phenom 300 business
+  jets should avoid the area entirely because their flight stability
+  controls may be affected.  Uh, what?  PGN]
+
+------------------------------
+
+Date: Wed, 08 Jun 2016 12:23:07 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Tesla Model X autonomously crashes into building, owner claims"
+  (Lucas Mearian)
+
+Lucas Mearian, ComputerWorld, 6 Jun 2016
+Autopilot was not activated in the car
+http://www.computerworld.com/article/3079807/car-tech/tesla-model-x-autonomously-crashes-into-building-owner-claims.html
+
+selected text:
+
+The owner of a brand-new Tesla Model X SUV said the car suddenly accelerated
+at "maximum speed" by itself, jumped a curb and slammed into the side of a
+shopping mall while his wife was behind the wheel.
+
+The owner of the Model X, Puzant Ozbag, said the vehicle had been delivered
+only five days earlier to his home in Irvine, Calif., where the accident
+also took place. He said his wife had not activated any self-driving
+features at the time of the crash.
+
+Puzant, who wasn't in the SUV at the time of the crash, said it was
+fortunate that the vehicle's front wheels were turned slightly left as his
+wife was pulling into the parking space because if they'd been straight, the
+Model X would have plowed into a nail salon and could have killed someone.
+
+The accident, which occurred at about 2:30 p.m., injured his wife's arm and
+caused major damage to the SUV's front end. His wife's arm was burned during
+the crash, likely from the airbags being deployed, and remains swollen
+today, Puzant said.
+
+If the Model X accident turns out to have been caused by a faulty autonomous
+vehicle system, it would not be the first reported by a Tesla owner.
+
+Last month, a Model S owner from Utah reported that his sedan started itself
+and rammed into the back of a trailer bed after he'd placed the vehicle in
+park and gone into a store to run an errand.
+
+------------------------------
+
+Date: Fri, 10 Jun 2016 18:23:51 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Lexus Owners Say Update Bricked Cars' Navigation Systems
+
+Just like your phone or computer, your web-connected car needs to get the
+occasional software update. Most of these system tweaks happen quietly
+without too much interruption to your life, but occasionally one goes wrong
+and you end up with a Lexus with navigation and infotainment systems that
+can't be used because they are stuck in a reboot loop.
+
+Lexus says it is working around the clock to find a solution for a satellite
+communication issue after many owners of vehicles with Lexus' Enform system
+with navigation said the head units for their systems stopped working.
+
+https://consumerist.com/2016/06/08/lexus-owners-say-update-bricked-cars-navigation-systems/
+
+And asynchronous updates pushed by car manufacturers over the air seemed
+like *such* a good idea. Who (aside from readers of this list) could have
+anticipated anything going wrong? It seems to me that "satellite
+communication" is the problem, not the "issue". And, while I'd hardly use
+Windows as the example of reliable updates, at least restore points
+occasionally undo update mischief. Maybe Lexus will introduce them as a
+priced feature.
+
+------------------------------
+
+Date: 11 Jun 2016 12:28:51 -0400
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: Scary glitch affects luxury cars
+
+http://www.bostonglobe.com/lifestyle/2016/06/09/scary-glitch-affects-luxury-cars/kj4wg2lhphlJDC3gATGuPM/story.html
+
+Carmaker Toyota and its luxury brand Lexus rushed to fix a software bug
+Wednesday that had caused a malfunction in vehicles' GPS, climate control
+and ''infotainment,'' or front console radio systems. It disabled the backup
+camera and hands-free phone functions as well.
+
+  Errant data broadcast Tuesday by the company's traffic and weather service
+  confounded vehicles' ''Enform'' infotainment system installed in 2014,
+  2015, and 2016 Lexus vehicles and the 2016 Toyota Land Cruiser, the
+  company said.  The data made the subscription-based ''Enform'' system
+  continuously reboot itself, rendering it unusable and drawing the ire of
+  many a driver.
+
+What is most worrisome about this particular bug is that it wasn't isolated
+to one function. The good news is that this particular system doesn't seem
+critical to the driving (unless, perhaps, the navigation system is going the
+driving!). The problem is not so much that a car might have a 1e8 lines of
+code -- it is in the difficulty of isolating subsystems and unanticipated
+interactions between the various systems. And between cars .
+
+------------------------------
+
+Date: Fri, 10 Jun 2016 16:57:25 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Faulty update breaks Lexus cars' maps and radio systems
+
+http://www.bbc.co.uk/news/technology-36478641
+
+"Errant data broadcast by our traffic and weather data service provider was
+not handled as expected by the microcomputer in the vehicle navigation head
+unit (centre display) of 2014-16 Model Year Lexus vehicles and 2016 Model
+Year Toyota Land Cruiser," a spokeswoman explained.
+
+"In some situations, this issue can cause the head unit to restart
+repeatedly, affecting operation of the navigation system (if equipped),
+audio and climate control features. The data suspected to be the source of
+the error was corrected last night."
+
+The firm said "many" vehicles had been affected. The affected vehicles have
+been recalled.
+
+------------------------------
+
+Date: Fri, 10 Jun 2016 19:14:51 +0100
+From: "Mike Ellims" <michael.ellims@tesco.net>
+Subject: Re: Faulty update breaks Lexus cars' maps and radio systems
+
+I think there have been recalls for several other vehicles along these lines
+as well.
+
+The Fait 500e and Mitsubishi Outlander which has been hacked, see for some
+juicy details.
+
+https://www.theguardian.com/technology/2016/jun/06/mitsubishi-outlander-car-
+hacked-security
+
+I also saw somewhere there was a bug in the web browser on the Tesla but
+they seem to have fixed it same day over the inter web...
+
+------------------------------
+
+Date: Sunday, June 12, 2016 2:57 PM
+From: Alister Wm Macintyre (Wow) [mailto:macwheel99@wowway.com]
+Subject: Car Hacking / VW fun theory
+
+  [Here is something I just sent to my Allstate Auto Insurance agent, which
+  may also be of interest to you.]
+
+The topic of "car hacking" is troublesome to me, and I know Allstate has
+also been looking into this threat. Here is another link which may interest
+you.  I found it because I follow cyber security issues on Linked In.  The
+comments on this link, are also worth viewing.
+
+http://www.csoonline.com/article/3081480/hardware/securing-your-car-from-cyberattacks-is-becoming-a-big-business.html
+
+There are several issues:
+
+* Most any new technology has a business psychology of being first to market
+share, then worry about security and privacy and other issues later, which
+turn out to be much more expensive to perfect, than had they be designed in
+from the start.  So we now have millions of cars on the road which can be
+hacked.  Look at how long it took for the air bag problem to be recognized
+and addressed properly.  A Congress hearing last year learned that there are
+still new cars being sold with the defective air bags.  My car had one of
+them, and I got mine replaced. Most people with them, are not yet replaced.
+
+* Even when some companies try to behave responsibly, they invariably
+include standard chips, which can include irresponsibility without the
+buyers being aware, such as Iiot at present time, which is now into millions
+of consumer products.
+
+* A lot of manufacturing is outsourced in such a way that it is vulnerable
+to Manchurian chips, which is extra stuff to support extra activities
+(usually crooked, or foreign state surveillance, or cyber war) not what the
+customer ordered, and almost impossible to detect.
+
+* Given the rise in interconnectedness of all kinds of gadgets, when there
+is risk of malware, hacking, other threats, is there anything the end user
+of the gadgets can do to mitigate the threat?  That is the topic of the link
+above.  It may be useful for Allstate to track, by vehicle manufacturer
+model, which is vulnerable to hacking, which have these cyber security
+protections available, review their relative merits, recommend the best to
+their customers driving those vehicles.
+
+The process, of software updates, has been shown to be vulnerable to crooks
+using that avenue to deliver badware.  I am very disturbed by this notion
+that some manufacturers wish to deliver software upgrades to autos when they
+are in the world of consumer usage, because that invites the bad people to
+use that channel on vehicles on a highway, to trigger massive pile ups.  I
+much prefer the notion that we take our car to get the upgrade, some place
+where the car is not being driven concurrently, and the upgrade can then be
+tested.  This is a model I saw for much of my career with back office
+computers.  An upgrade is due.  We wait on a time period with low activity
+by our users.  Stop everything.  Get a complete backup.  Apply the upgrade.
+Test that it meets standards.  Then decide whether to return to the backup,
+without the upgrade, or continue forwards.  Do another backup before
+resuming normal operations.  Making sure the update model is safe - this is
+something I think the industry needs to address PDQ, because we are headed
+towards mainstream news finding out, causing a panic, legislators craft bad
+laws.
+
+My comment on the bugs rate:
+
+I was a programmer for over 50 years.  My bugs rate depended on the
+programming tools made available to me by the software environment in which
+I worked.
+
+There were tools for testing, for checking coding standards, a format
+checker to find out if the code was "grammatically correct" in computer
+language.  Have you ever prepared some document, where you plan to run off
+many copies - you check and check, someone else checks, no one sees a typing
+error until after you have run off the many copies.  Programming can be like
+that, we make a typing error while keying in the program.
+
+I did not go by the standard of # bugs by lines of code, but rather # bugs
+by application run for the end users, because that was priority to fix.
+
+Most of our bugs were not an error made by the programmer at time of
+software development, but because programs were originally designed for one
+purpose, then the company later used those programs for another purpose, for
+which they were not originally designed, and thus did not work right, and
+needed to be fixed to meet the new conditions.  Those bugs were not a single
+typo in one line of code, but rather a package of logic, where many changes
+needed in multiple places.
+
+Even so, the notion of 15 bugs per 1,000 lines of code is unheard of for my
+career, even with the most rudimentary of programmer tools.
+
+5 bugs per million lines of code is about the worst I ever saw in my career,
+going into production, after testing, then discovered later
+
+VW was one of the first car manufacturers to get a bad rep in the cyber
+security world for how they handled news of hackable cars.
+Here they are doing something which may help repair their reputation:
+  https://www.youtube.com/watch?list=PLH-T358uPi7fY1nz0B9d4BOMjXsHY6-Nc
+
+------------------------------
+
+Date: June 9, 2016 at 3:48:22 PM EDT
+From: "Charley Kline" <csk@mail.com>
+Subject: Are we really sure drones are safe?
+
+  [via Dave Farber]
+
+Drones hacked and crashed by research team to expose design flaws.
+
+Five graduate students and their professor have discovered three different
+ways to send rogue commands from a computer laptop to interfere with an
+airborne hobby drone's normal operation and land it or send it plummeting.
+
+The Johns Hopkins University, Baltimore, USA, computer security team has
+raised concerns about the ease with which hackers could cause these
+increasingly popular robotic devices to ignore their human controllers and
+land or, more drastically, crash.
+
+  http://eandt.theiet.org/news/2016/jun/drone-hacking.cfm
+
+------------------------------
+
+Date: Tue, 14 Jun 2016 09:39:09 -0700
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Lancaster UK power outage (RAEng)
+
+This is a pithy RISKS-relevant illustration of how utilities are linked
+in an emergency, and how pervasive the effects can be.
+Courtesy of Cliff Jones and Brian Randell in Newcastle.
+
+  http://www.raeng.org.uk/publications/reports/living-without-electricity
+
+------------------------------
+
+Date: Thu, 9 Jun 2016 01:51:46 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Monkey in Kenya Survives After Setting Off Nationwide Blackout
+
+http://www.nytimes.com/2016/06/09/world/africa/monkey-kenya-survives-blackout-internet-vervet.html
+
+The primate jumped on a transformer at a hydroelectric power station,
+starting a chain reaction that knocked out lights and the Internet.
+
+------------------------------
+
+Date: Sat, 11 Jun 2016 15:20:53 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: And why would anyone sign up for this service?
+
+The headline is a nice summary: "Creepy startup will help landlords,
+employers and online dates strip-mine intimate data from your Facebook page"
+
+British startup Score Assured is used by landlords and others to learn about
+individuals - after their customer sends the individual an "invitation"
+(sort of an invitation to a lynch mob, IMHO), they are required to provide
+credentials for Facebook, LinkedIn, Twitter and/or Instagram accounts,
+according to the WashPost.  The data mining software then crawls postings
+and develops a profile.
+
+I love this quote from the co-founder: "If you're living a normal life,
+then, frankly, you have nothing to worry about."  But perhaps he's
+(unfortunately) correct on this one: "People will give up their privacy to
+get something they want."
+
+Of course there's no way to correct whatever conclusions it draws.
+
+What's almost as incredible as the product is that the reporter was willing
+to share her information with the company, and let them crawl her pages.
+
+https://www.washingtonpost.com/news/the-intersect/wp/2016/06/09/creepy-startup-will-help-landlords-employers-and-online-dates-strip-mine-intimate-data-from-your-facebook-page/
+
+------------------------------
+
+Date: Tue, 7 Jun 2016 11:43:36 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: David Dill: Why Online Voting is a Danger to Democracy
+
+http://engineering.stanford.edu/news/%E2%80%8Bdavid-dill-why-online-voting-danger-democracy
+
+If, like a growing number of people, you're willing to trust the Internet to
+safeguard your finances, shepherd your love life, and maybe even steer your
+car, being able to cast your vote online might seem like a logical, perhaps
+overdue, step.  No more taking time out of your workday to travel to a
+polling place only to stand in a long line. Instead, as easily as hailing a
+ride, you could pull out your phone, cast your vote, and go along with your
+day.  Sounds great, right?
+
+Absolutely not, says Stanford computer science professor David Dill
+<https://profiles.stanford.edu/david-dill>. In fact, online voting is such a
+dangerous idea that computer scientists and security experts are nearly
+unanimous in opposition to it.   [Long item PGN-truncated for RISKS.]
+
+------------------------------
+
+Date: Tue, 7 Jun 2016 08:42:50 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Tech firms say FBI wants browsing history without warrant
+
+via NNSquad
+http://www.engadget.com/2016/06/07/fbi-ecpa-ammendment-browsing-metadata-no-warrant/
+
+  Tech companies and privacy advocates are warning against new legislation
+  that would give the FBI the ability to access "electronic communication
+  transactional records" (ECTRs) without a warrant in spy and terrorism
+  cases. ECTRs include high-level information on what sites a person
+  visited, the time spent on those sites, email metadata, location
+  information and IP addresses. To gain access to this data, a special agent
+  in charge of a bureau field office need only write a "national security
+  letter" (NSL) that doesn't require a judge's approval.
+
+------------------------------
+
+Date: Fri, 10 Jun 2016 11:22:16 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: DEA Wants Inside Your Medical Records to Fight the War on Drugs
+
+NNSquad
+http://www.thedailybeast.com/articles/2016/06/10/dea-wants-inside-your-medical-records-to-fight-the-war-on-drugs.html
+
+  The feds are fighting to look at millions of private files without a
+  warrant, including those of two transgender men who are taking
+  testosterone.  Marlon Jones was arrested for taking legal painkillers,
+  prescribed to him by a doctor, after a double knee replacement.  Jones, an
+  assistant fire chief of Utah's Unified Fire Authority, was snared in a
+  dragnet pulled through the state's program to monitor prescription drugs
+  after someone stole morphine from an ambulance in 2012. To find the
+  missing morphine, cops used their unrestricted access to the state's
+  Prescription Drug Monitor Program database to look at the private medical
+  records of nearly 500 emergency services personnel--without a warrant.
+
+------------------------------
+
+Date: Tue, 7 Jun 2016 11:55:13 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The Internet is blurring the content/metadata distinction into
+  meaninglessness
+
+Steven M. Bellovin, Matt Blaze, Susan Landau, Stephanie K. Pell
+It's Too Complicated: The Technological Implications of Ip-Based
+Communications on Content/Non-Content Distinctions and the Third Party
+Doctrine
+http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2791646
+
+  For more than forty years, electronic surveillance law in the United
+  States developed under constitutional and statutory regimes that, given
+  the technology of the day, distinguished content from metadata with ease
+  and certainty.  The stability of these legal regimes and the distinctions
+  they facilitated was enabled by the relative stability of these types of
+  data in the traditional telephone network and their obviousness to
+  users. But what happens to these legal frameworks when they confront the
+  Internet? The Internet's complex architecture creates a communication
+  environment where any given individual unit of data may change its
+  status--from content to non-content or visa-versa--as it progresses
+  Internet's layered network stack while traveling from sender to
+  recipient. The unstable, transient status of data traversing the Internet
+  is compounded by the fact that the content or non-content status of any
+  individual unit of data may also depend upon where in the network that
+  unit resides when the question is asked.
+
+------------------------------
+
+Date: Fri, 10 Jun 2016 08:13:49 -1000
+From: the keyboard of geoff goodfellow <geoff@iconia.com>
+Subject: Father of the Internet Worries Our Digital History Is Disappearing
+
+http://www.newsweek.com/father-internet-worries-our-digital-history-disappearing-468642?utm_medium=email&utm_source=Father-of-the-Internet-Worries-Our-History-Is-Vani&utm_campaign=newsweek_email_newsletter
+
+This is a very serious problem.
+
+------------------------------
+
+Date: Wed, 08 Jun 2016 13:04:51 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Oklahoma Highwaymen Seize Bank Accounts from Drivers
+
+FYI -- The organized crime syndicate known as "Civil Asset Forfeiture" can
+now steal money from your bank accounts without a warrant using a new "ERAD"
+machine.
+
+"It shows [Oklahoma] is paying ERAD Group Inc., $5,000 for the software and
+scanners, then 7.7 percent of all the cash the highway patrol seizes."
+
+This is major escalation by the highwaymen from the older *red light camera
+scams* and *speed trap scams*.
+
+Aaron Brilbeck, News 9, 7 Jun 2016  [long item, pruned for RISKS.  PGN]
+OHP Uses New Device To Seize Money Used During The Commission Of A Crime
+http://fusion.net/story/5055/red-light-camera-programs-coming-to-a-screeching-halt/
+https://www.motorists.org/blog/7-ways-to-shut-down-a-speed-trap/
+
+BTW, Cyrus Vance seems to be funding his anti-Fourth Amendment "Going Dark"
+campaign using civil asset forfeiture funds.  Vance has thereby scored a
+hat-trick: using violations of the Fifth & Fourteenth Amendments to fund
+violations of the Fourth Amendment!
+
+http://www.nytimes.com/2015/11/08/nyregion/cyrus-vance-has-dollar-808-million-to-give-away.html
+https://en.wikipedia.org/wiki/Due_Process_Clause
+http://www.news9.com/story/32168555/ohp-uses-new-device-to-seize-money-used-during-the-commission-of-a-crime
+
+------------------------------
+
+Date: Tue, 7 Jun 2016 16:46:24 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Takedown, Staydown would be a disaster, Internet Archive Warns
+
+NNSquad
+https://torrentfreak.com/takedown-staydown-would-be-a-disaster-internet-archive-warns-160607/
+
+  To end this cycle they're pushing for a new mechanism provisionally titled
+  'Takedown, Staydown' or 'Notice and Staydown'. This would order web
+  platforms to ensure that once content is taken down it will never appear
+  again on the same platform. These proposals are currently under review by
+  the US Copyright Office.  But while copyright holders feel this would be a
+  great tool for them, it's perhaps unsurprising that content platforms are
+  less enthusiastic. After weighing in earlier in the year, the latest
+  warnings from the Internet Archive, a gigantic public repository of a wide
+  range of media, and are among the sternest yet.  Noting that even the
+  current system is regularly abused by those seeking to silence speech, the
+  Archive says that on a daily basis it receives wrongful takedowns for
+  content that is in the public domain, is fair use, or is critical of the
+  content owner. Therefore, further extending takedown rights could prove
+  extremely problematic.  "We were very concerned to hear that the Copyright
+  Office is strongly considering recommending changing the DMCA to mandate a
+  'Notice and Staydown' regime. This is the language that the Copyright
+  Office uses to talk about censoring the web," the Archive warns.
+
+------------------------------
+
+Date: Thu, 9 Jun 2016 07:09:20 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Internet greybeards and upstarts gather to redecentralize the
+  Internet
+
+NNSquad
+http://boingboing.net/2016/06/09/internet-greybeards-and-upstar.html#more-465741
+
+  This week, the Internet Archive is hosting a three-day event (which
+  finishes today) called The Decentralized Web Summit, whose goal is to
+  figure out how to build a new Internet that is "locked open," an idea that
+  emerged from Internet Archive founder Brewster Kahle's 2015 series of
+  talks and articles about how technologists can build networks and
+  protocols that are resistant to attempt to capture, monopolize and control
+  them.  I attended the first two days, and the event was inspiring and
+  brilliant. Speakers included Vint Cerf, one of the inventors of the core
+  Internet technologies; and Tim Berners-Lee, who invented the Web.
+
+Executive Summary: I don't view this concept as generally practical, for a
+whole bunch of reasons, some of which are fairly obvious. There will likely
+be limited niche situations where it can be successfully applied,
+however. Foundational problems include relative centralization and
+limited/oligarchical nature of ISPs and associated backbones (for technical,
+financial, and "political" reasons), the real-world issues associated with
+peering of high-volume traffic, and the infrastructure/operating costs
+associated with maintaining reliable circuits and systems. Note the failures
+of various community "mesh" environments to prove practical and reliable,
+for example.  Protocols are not the fundamental problem in these contexts.
+
+------------------------------
+
+Date: Thu, 9 Jun 2016 16:04:59 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Parents are worried the Amazon Echo is conditioning their kids
+  to be rude (Alice Truong)
+
+* Quartz* June 09, 2016
+
+Alexa will put up with just about anything. She has a remarkable tolerance
+for annoying behavior, and she certainly doesn't care if you forget your
+please and thank yous.
+
+But while artificial intelligence technology can blow past such indignities,
+parents are still irked by their kids' poor manners when interacting with
+Alexa, the assistant that lives inside the Amazon Echo.
+
+"I've found my kids pushing the virtual assistant further than they would
+push a human.  [Alexa] never says `That was rude' or I'm tired of you asking
+me the same question over and over again.' "  Avi Greengart, a tech analyst
+and father of five who lives in Teaneck, New Jersey.
+
+Perhaps she should, he thinks.
+
+http://qz.com/701521/parents-are-worried-the-amazon-echo-is-conditioning-their-kids-to-be-rude/
+
+------------------------------
+
+Date: Wed, 8 Jun 2016 09:32:41 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Morocco bans reading newspapers in public
+
+  [Try not to fall off your chair laughing at this one!]
+
+*The Telegraph* via NNSquad
+http://www.telegraph.co.uk/news/2016/06/08/morocco-bans-reading-newspapers-in-public/
+
+  But in Morocco, reading newspapers in public has been banned after editors
+  claimed they were losing millions in revenue because people kept sharing
+  them.
+
+     [I suppose the next step would be to ban reading newspapers online,
+     because the editors would be losing millions in revenue when people
+     keep reading the papers -- and did not even have to share!  But the
+     next step after that would be to ban newspapers altogether, which has
+     already been tried in other countries.  PGN]
+
+------------------------------
+
+Date: Tue, 7 Jun 2016 14:47:34 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Snooper's Charter, aka the Investigatory Powers Bill, UK law
+
+http://betanews.com/2016/06/07/snoopers-charter-vote/
+
+  The controversial Snooper's Charter -- or the Investigatory Powers Bill as
+  it is officially known -- has been voted into law by UK MPs.  An
+  overwhelming majority of politicians (444 to 69) voted in favor of the
+  bill which has been roundly criticized by both the public and technology
+  companies.  The Investigatory Powers Bill grants the UK government,
+  security, and intelligence agencies greater powers for monitoring Internet
+  usage, as well as permitting bulk data collection and remote hacking of
+  smartphones. The law allows for the kind of mass surveillance that Edward
+  Snowden warned about, and while the bill may have passed a majority vote,
+  there are still those who fear not enough has been done to safeguard
+  individuals' privacy.
+
+Ultimately, an unintended big boost for end-to-end encryption.
+
+  [SuperDuperSnooperPooperScooperLooper?  PGN]
+
+    [See also
+http://www.chicagotribune.com/news/sns-wp-blm-britain-encrypt-41ce0ee2-2ce5-11e6-b9d5-3c3063f8332c-20160607-story.html
+    ]
+
+    [Henry Baker noted further coverage on this item:
+
+http://www.telegraph.co.uk/technology/2016/06/08/can-the-government-read-your-texts-how-the-snoopers-charter-will/
+
+  Lord Hague has predicted that Western societies will enact laws and
+  regulations against unbreakable encryption -- while conceding that the
+  technology has always existed.  "Let us spy on you or we'll choke off
+  civil liberties."
+http://www.theregister.co.uk/2016/06/08/william_hague_infosec_keynote_speech/
+
+------------------------------
+
+Date: Tue, 14 Jun 2016 11:41:33 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Russian penetration of political networks (WashPo)
+
+  [After hearing about the OMB fiasco and so many recent data-gathering
+  breaches, why is this surprising?  PGN]
+
+*The Washington Post* reports that Russian government agents have attacked
+and penetrated the DNC (Democratic National Committee) network as well as
+candidate networks, including those of Hillary Clinton and Donald Trump, and
+some GOP PACs.
+
+The intruders so thoroughly compromised the DNC's system that they also were
+able to read all email and chat traffic, said DNC officials and the security
+experts.
+
+<https://www.washingtonpost.com/world/national-security/national-intelligence-director-hackers-have-tried-to-spy-on-2016-presidential-campaigns/2016/05/18/2b1745c0-1d0d-11e6-b6e0-c53b7ef63b45_story.html>.
+https://www.washingtonpost.com/world/national-security/russian-government-hackers-penetrated-dnc-stole-opposition-research-on-trump/2016/06/14/cf006cb4-316e-11e6-8ff7-7b6c1998b7a0_story.html
+
+------------------------------
+
+Date: Fri, 10 Jun 2016 22:19:46 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "Let's Encrypt" exposes almost 8K user email addresses
+
+NNSquad
+https://community.letsencrypt.org/t/email-address-disclosures-preliminary-report-june-11-2016/16867
+
+  The result was that recipients could see the email addresses of other
+  recipients. The problem was noticed and the system was stopped after 7,618
+  out of approximately 383,000 emails (1.9%) were sent. Each email
+  mistakenly contained the email addresses from the emails sent prior to it.
+
+This kind of rudimentary error goes all the way back to early ARPANET
+days. It really inspires confidence in the Let's Encrypt operation - NOT!
+
+------------------------------
+
+Date: Tue, 14 Jun 2016 11:05:39 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Let's Encrypt accidentally leaks user email data"
+  (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 14 Jun 2016
+Thousands of emails were disclosed before the issue was noticed.
+http://www.zdnet.com/article/lets-encrypt-accidentally-leaks-user-email-data/
+
+------------------------------
+
+Date: Wed, 08 Jun 2016 12:12:22 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Hackers could have changed Facebook Messenger chat logs"
+  (Peter Sayer)
+
+Peter Sayer, ComputerWorld, 8 Jun 2016
+Attackers could have rewritten logs of their Facebook Messenger chats
+with you to introduce falsehoods and malicious links
+http://www.computerworld.com/article/3080949/security/hackers-could-have-changed-facebook-messenger-chat-logs.html
+
+selected text:
+
+Roman Zaikin of Check Point Software Technologies discovered a flaw in
+Facebook's chat system that made it possible for an attacker to modify or
+remove any sent message, photo, file or link in a conversation they were
+part of.
+
+He demonstrated in a video how he could change an earlier message from an
+innocent "Hi!" to what could be a link to ransomware attack.
+
+But the chat logs could just as easily have been modified to create (or
+suppress) evidence of a spouse's unreasonable behavior in child custody
+battles, or any number of other scenarios.
+
+"These chats can be admitted as evidence in legal investigations and this
+vulnerability opens the door for an attacker to hide evidence of a crime or
+even incriminate an innocent person," Check Point researchers wrote Tuesday,
+in a blog post describing the flaw.
+
+------------------------------
+
+Date: Wed, 8 Jun 2016 14:30:43 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: One of the World's Largest Botnets Has Vanished (Joseph Cox)
+
+Joseph Cox, Motherboard, 8 Jun 2016
+
+With no warning, one of the world's largest criminal botnets -- a massive
+collection of computers used to launch attacks -- has disappeared.
+Researchers have reported huge drops in traffic for two of the most popular
+pieces of malware which rely on it.
+
+``We can only tell that the Dridex and Locky spam campaigns stopped since
+June 1 in our observation. We cannot confirm how the botnet was brought down
+yet,'' Joonho Sa, a researcher for cybersecurity company FireEye, told
+Motherboard in an email.
+
+Dridex is a piece of malware typically used to empty bank accounts, while
+Locky is a particularly widespread form of ransomware, which encrypts a
+victim's files until they pay a hefty bounty in bitcoin.  The two campaigns
+have been linked in the past.
+
+It's not clear what exactly will happen to Locky victims now that its
+infrastructure has seemingly gone offline. There's a chance that those
+infected with the ransomware may be unable to successfully pay the criminals
+and have their files unlocked.
+
+http://motherboard.vice.com/read/one-of-the-worlds-largest-botnets-has-vanished
+
+------------------------------
+
+Date: Wed, 08 Jun 2016 11:49:33 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Empty DDoS threats earn extortion group over $100,000"
+  (Lucian Constantin)
+
+Nice list you have here.  Be a real shame if something were to happen to it.
+For a mere $10,000, you can buy peace of mind from Gene's Protection
+Service.  For protection at a price, you can't afford to refuse.
+
+Lucian Constantin, IDG News Service, 26 Apr 2016
+There's no evidence that companies that declined to pay extortion
+fees to the Armada Collective were attacked, researchers say
+http://www.csoonline.com/article/3061411/security/empty-ddos-threats-earn-extortion-group-over-100-000.html
+
+selected text:
+
+Extorting money from companies under the threat of launching distributed
+denial-of-service attacks (DDoS) against their online properties has proven
+lucrative for cybercriminals. So much so that one group has managed to earn
+over $100,000 without any evidence that it's even capable of mounting
+attacks.
+
+Companies should be prepared to handle DDoS attacks, but giving into
+extortion is never recommended, because it encourages more cybercriminals to
+engage in this type of activity. And there's no guarantee that once you pay
+one group, another one won't come knocking.
+
+------------------------------
+
+Date: Wed, 8 Jun 2016 19:07:44 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: EU Exploring Idea of Using Government ID Cards as Mandatory Online
+  Logins (Softpedia)
+
+http://news.softpedia.com/news/eu-exploring-idea-of-using-government-id-cards-as-mandatory-online-logins-505026.shtml
+
+  According to this document, dated to May 25, 2016, the European Commission
+  is exploring the theoretical possibilities of forcing online platforms and
+  EU citizens into using government IDs as online identities.
+
+------------------------------
+
+Date: Thu, 09 Jun 2016 10:51:41 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Local stations' commercial break shorter than national's
+
+A national radio network might have each local station broadcast its own
+commercial break for two minutes before returning to the national jingle and
+program.
+
+But what if some local stations' commercials only last 1:59?
+
+They end up switching back too early, sending the final one second of the
+capital city's commercials into the ears of local listeners, unbeknownst
+to engineers in the capital city. (Until I told them (BCC, Taiwan.)
+
+------------------------------
+
+Date: Mon, 13 Jun 2016 00:29:56 -0400 (EDT)
+From: Jeff Jonas <jeffj@panix.com>
+Subject: Re: This 'Demonically Clever' Backdoor Hides In a Tiny Slice
+ of a Computer Chip (Andy Greenberg)
+
+> researchers at the University of Michigan haven't just imagined
+> that computer security nightmare; they've built and proved it works.
+> ...  they detailed the creation of an insidious, microscopic
+> hardware backdoor proof-of-concept.
+
+Ken Thompson's Turing award lecture "Reflections on Trusting Trust"
+describes creating a similar situation back in 1984.  He modded the C
+compiler to insert a backdoor into the LOGIN code, and to insert that
+backdoor generator when the "C" compiler was recompiled, so there was no
+source code for the infiltration.
+
+     http://cm.bell-labs.com/who/ken/trust.html
+
+I'd guess the chip layout toolset could be similarly infiltrated,
+particularly if it's binary only.  It could even propagate forward if the
+update & upgrade systems collaborate.
+
+------------------------------
+
+Date: Tue, 7 Jun 2016 18:13:47 -0400
+From: Dan Pritts <danno@dogcheese.net>
+Subject: Re: App to get PII from CAC card (Epstein, RISKS-29.55)
+
+You're certainly right that this doesn't solve the main problem.  Still,
+it's plausible that the app creator is the data read from the cards.  The
+linked article doesn't mention this nuance, but telling folks users not to
+install it isn't completely ridiculous.  The barn door has been left open,
+please don't send photos of the cow to 4chan.
+
+------------------------------
+
+Date: Mon, 13 Jun 2016 00:12:57 -0400 (EDT)
+From: Jeff Jonas <jeffj@panix.com>
+Subject: Re: Another Risk of Self-Driving Cars; Clogged Highways?!?
+
+Back in the 1980s, Sperry installed a centralized traffic system along Long
+Island (NY)'s major highways (Long Island Expressway, Northern State ...)
+their service roads and local streets.  The only visible part is the
+highway's informational signs and road sensors.  When I toured the main
+facility, it was explained that it linked to side-street traffic lights to
+help shunt traffic around congestion.
+
+That was before GPS and smart phones with real time traffic updates.
+Perhaps there's some data awareness or sharing for better situational
+awareness and response.
+
+A friend in the fire dept told me that they have a device to get all green
+lights, but the feature is enabled ONLY AS REQUIRED ON A PER-USE BASIS.
+Abuse is not tolerated. It is monitored and audited.  Just in case you
+wanted to create your own express "Lexus-lane", please do not.
+
+-- Jeffrey S Jonas
+
+------------------------------
+
+Date: Sun, 12 Jun 2016 10:37:31 +0200
+From: isodarco <isodarco@gmail.com>
+Subject: Isodarco 2017: ADVANCED AND CYBER WEAPONS SYSTEMS:
+  TECHNOLOGY AND ARMS CONTROL
+
+Enclosed and attached is the information relative to the 30th Isodarco
+Winter Course (www.isodarco.it). We hope that you will find this information
+of interest and you will join us in this intellectually challenging
+experience. We also hope that you will pass this information to your friends
+and colleagues and forward it to your mailing list. Attached is a pdf poster
+that you can print on European or American standard paper sizes, we hope
+that you will kindly post it on your bulletin board.
+
+Thank you for your collaboration and best personal regards.
+
+Carlo Schaerf
+
+*ISODARCO* <http://www.isodarco.it/>
+INTERNATIONAL SCHOOL ON DISARMAMENT AND RESEARCH ON CONFLICTS
+/since 1966-Italian Pugwash Group/
+
+30th Winter Course
+
+*ADVANCED AND CYBER WEAPONS SYSTEMS:*
+*TECHNOLOGY AND ARMS CONTROL*
+*ANDALO (TRENTO) – ITALY,8-15 JANUARY 2017*
+
+***Director of the School:Carlo Schaerf*(ISODARCO, Rome, Italy).
+
+*Directors of the Course:**Giampiero Giacomello*(Department of Political
+Sciences SPS, University of Bologna, Italy); *Riccardo Antonini*(Technical
+Scientific Expert, Presidency of the Italian Council of Ministers, Rome,
+Italy).
+
+The search for the ultimate weapon has always motivated military planners
+and engineers to exploit for military purposes new scientific discoveries
+and technological advances, thereby causing qualitative arms races. The
+breadth and pace of development in computers, networks, robotics and
+artificial intelligence suggests the emergence of new generations of
+weapons, in cyberspace and in the physical world, that will be compact,
+unmanned and, perhaps, with independent decision-making capability. Could
+the speed of action-reaction in future conflicts require to put humans
+"out-of-the-loop". This conclusion would be quite dangerous, because
+autonomous weapon systems, in cyber and real space, will inevitably be prone
+to serious hardware limitations and unreliability, design and programming
+errors, deception, tampering or, simply, hacking. This ISODARCO Course aims
+at understanding modern autonomous weapons technology as well as the
+possibilities and prospects of related arms control limitations.
+
+Long list of Principal Lecturers, more info, and online application
+available at http://www.isodarco.it/>www.isodarco.it  .   [PGN-ed]
+
+------------------------------
+
+Date: Tue, 10 May 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+    newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.56
+************************

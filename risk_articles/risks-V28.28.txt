@@ -1,0 +1,725 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 30 September 2014  Volume 28 : Issue 28
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.28.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+There's not a creativity deficit in science (Chris Lee via
+  Dewayne Hendricks)
+"6 challenges 3D printing has yet to overcome" (Anna Gale via
+  Gene Wirchenko)
+Bug in Bash shell creates big security hole on anything with *nix in it
+  (Lauren Weinstein)
+New wiretap resistance in iOS 8? (John Gilmore)
+Re: Wanted: Astronomer with Top Secret Clearance (Whitfield Diffie)
+Android L will have device encryption on by default (Monty Solomon)
+Hack runs Android apps on Windows, Mac, and Linux computers (Ars via
+  Monty Solomon)
+iOS 8: 'Wave' Wireless Microwave Charging Feature for iPad and iPhone
+  is Not Real (Monty Solomon)
+iOS 8's iCloud Drive reveals the dark side of empowered users
+  (Gene Wirchenko)
+Reports suggest the iPhone 6 and 6 Plus may bend in your pocket
+  (Andrew Cunningham via Monty Solomon)
+Russia to be disconnected from the Internet? (Lauren Weinstein)
+Court blasts US Navy for scanning civilians' computers for child porn
+  (Monty Solomon)
+Giant MQ-4C Triton surveillance drone flies across the United States
+  (Monty Solomon)
+"Feds seek expanded PC hacking powers for criminal investigations"
+  (Serdar Yegulalp via Gene Wirchenko)
+Texas man must pay $40.4M for running Bitcoin-based scam (Ars)
+US courts agree to restore 10 years of deleted online public records (Ars)
+FAA bars drone from delivering game ball to college football matchup (Ars)
+iFixit tears new iPhones apart, finds they're pretty easy to fix (Ars)
+A not-so-friendly reminder from the gov't: Yelp is not for kids (Ars)
+Comcast calls rumor that it disconnects Tor users `wildly_inaccurate' (Ars)
+Apple puts up support page to get U2 album out of your iTunes (Ars)
+Bill would limit reach of US search warrants for data stored abroad (Ars)
+Why big data evangelists should be sent to re-education camps (Farooq Butt)
+The Internet of Thugs (Henry Baker, Jonathan Zittrain)
+Allow Full Access for "SwiftKey" Keyboards? (Gabe Goldberg)
+Re: Software ... sends ... Colorado driver's licenses to immigrants
+  (Amos Shapir)
+Re: zero-day bounties (Patrick O'Beirne)
+MiniReview: The Design and Implementation of the FreeBSD Operating System
+  by McKusick, Neville-Neil, and Watson (PGN)
+REVIEW: Georgia Weidman: Penetration Testing (Richard Austin)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, Sep 20, 2014 at 5:11 PM
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: There's not a creativity deficit in science
+
+Don't use funding application statistics as a proxy for creativity.
+Chris Lee, Ars Technica, 20 Sep 2014 (via Dave Farber)
+<http://arstechnica.com/science/2014/09/a-creativity-deficit-in-science-no/>
+
+Not so long ago, on a website not so far away, an opinion was expressed:
+creativity was being suppressed in science. On the surface, the statistics
+support this: younger researchers are getting progressively less of the
+funding. Older researchers, it is asserted, tend to propose less risky and
+less innovative research. As with any good opinion in science, Nobel prize
+winners are wheeled as supporting cast. But, is it really true? Are we truly
+suppressing the creative side of science?
+
+The answer is, overwhelmingly, no. Scientific papers are a crude measure for
+scientific progress, but never have more papers being produced per year than
+now. Clearly, something creative is going on here. If you don't like
+scientific papers, simply look at technological progress: your smartphone
+would not have nearly as much punch without the creativity of scientists;
+antiviral drugs were not found lying about on the ground; experimental
+stem-cell therapies were not accidentally attempted. Behind all of these new
+things lies a decade or more of scientific research. But, you know, thats
+not creative at all.  [...  PGN truncated for RISKS.]
+
+------------------------------
+
+Date: Mon, 22 Sep 2014 10:00:18 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "6 challenges 3D printing has yet to overcome" (Anna Gale)
+
+This is the first article that I have seen that mentions some interesting
+downsides/risks about 3-D printing:
+
+Anna Gale, Fueled, via *IT Business*, 19 Sep 2014
+http://www.itbusiness.ca/blog/6-challenges-3d-printing-has-yet-to-overcome/51152
+
+------------------------------
+
+Date: Wed, 24 Sep 2014 15:02:36 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Bug in Bash shell creates big security hole on anything with *nix in it
+
+Bug in Bash shell creates big security hole on anything with *nix in it
+Could allow attackers to execute code on Linux, Unix, and Mac OS X
+Ars Technica via NNSquad
+
+http://arstechnica.com/security/2014/09/bug-in-bash-shell-creates-big-security-hole-on-anything-with-nix-in-it/
+
+  "The bug, discovered by Stephane Schazelas, is related to how Bash
+  processes environmental variables passed by the operating system or by a
+  program calling a Bash-based script. If Bash has been configured as the
+  default system shell, it can be used by network-based attackers against
+  servers and other Unix and Linux devices via Web requests, secure shell,
+  telnet sessions, or other programs that use Bash to execute scripts."
+
+------------------------------
+
+Date: Saturday, September 20, 2014
+From: John Gilmore <gnu@toad.com>
+Subject: New wiretap resistance in iOS 8? (from Cryptography)
+
+  [ORIGINAL SOURCES:
+  Jonathan Zdziarski, 17 Sep 2014
+  http://www.zdziarski.com/blog/?p875
+
+  Cyrus Farivar, Ars Technica, 18 Sep 2014
+  Apple expands data encryption under iOS 8, making handover to cops moot
+  "Apple cannot bypass your passcode and therefore cannot access this data."
+  http://arstechnica.com/apple/2014/09/apple-expands-data-encryption-under-ios-8-making-handover-to-cops-moot/
+  PGN]
+
+> Quoting from the new iOS 8 privacy policy announced tonight 17 Sep 2014.
+>> Apple has no way to decrypt iMessage and FaceTime data when it's in
+>> transit between devices. So unlike other companies' messaging services,
+>> Apple doesn't scan your communications, and we wouldn't be able to comply
+>> with a wiretap order even if we wanted to.
+>> https://www.apple.com/privacy/privacy-built-in/
+
+And why do we believe them?
+
+  *  Because we can read the source code and the protocol descriptions
+     ourselves, and determine just how secure they are?
+
+  *  Because they're a big company and big companies never lie?
+
+  *  Because they've implemented it in proprietary binary software,
+     and proprietary crypto is always stronger than the company
+     claims it to be?
+
+  *  Because they can't covertly send your device updated software that
+     would change all these promises, for a targeted individual, or on
+     a mass basis?
+
+  *  Because you will never agree to upgrade the software on your
+     device, ever, no matter how often they send you updates?
+
+  *  Because this first release of their encryption software has no
+     security bugs, so you will never need to upgrade it to retain
+     your privacy?
+
+  *  Because if a future update INSERTS privacy or security bugs, we
+     will surely be able to distinguish these updates from future
+     updates that FIX privacy or security bugs?
+
+  *  Because if they change their mind and decide to lessen our privacy
+     for their convenience, or by secret government edict, they will
+     be sure to let us know?
+
+  *  Because they have worked hard for years to prevent you from
+     upgrading the software that runs on their devices so that YOU can
+     choose it and control it instead of them?
+
+  *  Because the US export control bureaucracy would never try to stop
+     Apple from selling secure mass market proprietary encryption
+     products across the border?
+
+  *  Because the countries that wouldn't let Blackberry sell phones
+     that communicate securely with your own corporate servers,
+     will of course let Apple sell whatever high security non-tappable
+     devices it wants to?
+
+  *  Because we're apple fanboys and the company can do no wrong?
+
+  *  Because they want to help the terrorists win?
+
+  *  Because NSA made them mad once, therefore they are on the side
+     of the public against NSA?
+
+  *  Because it's always better to wiretap people after you convince
+     them that they are perfectly secure, so they'll spill all their
+     best secrets?
+
+There must be some other reason, I'm just having trouble thinking of it.
+
+------------------------------
+
+Date: Tue, Sep 16, 2014 at 7:37 AM
+From: Whitfield Diffie <whitfield.diffie@gmail.com>
+Subject: Re: Wanted: Astronomer with Top Secret Clearance (via Dave Farber)
+
+John Gilmore:
+  The main answer is that the inmates have taken over the asylum, ...
+
+Although I am in general agreement with John's outrage over the government's
+discovery that secrecy in many forms can protect it from oversight ---
+national security classification is only one of these; privacy is also a
+great excuse for keeping things secret from the electorate --- I don't find
+the need for a clearance for the director of the James Webb telescope
+surprising.
+
+The first thing that comes to mind is my recollection that the problem with
+the Hubble telescope's mirrors was attributed to NASA's being unable to use
+existing machinery for testing them because it was classified.  The range of
+areas in which a major project like the James Webb telescope brushes against
+secret technologies is broad.
+
+I believe an astronomical telescope cannot be pointed at the Earth because
+the Earth is too bright.  As John point's out, however, there are other,
+much dimmer, objects like other people's spacecraft that it perhaps can look
+at.  It also works the other way around.  The first space shuttle was looked
+at by spy satellites to assess the status of its tiles; somehow they had
+forgotten they could do this by the time tile damage was suspected but not
+investigated on Columbia or perhaps the spy satellites did see damage to
+Columbia's wing tiles and either didn't tell NASA or just didn't tell us.
+
+The technology of the James Webb telescope must be closely related to that
+of the spy satellites.  Giving the director an SI clearance doesn't
+guarantee NASA access to all relevant technology or the assistance of the
+agencies and companies that have it but I don't see any chance of that
+without it.
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 00:58:21 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Android L will have device encryption on by default
+
+http://arstechnica.com/gadgets/2014/09/android-l-will-have-device-encryption-on-by-default/
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 01:27:43 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Hack runs Android apps on Windows, Mac, and Linux computers
+
+http://arstechnica.com/gadgets/2014/09/hack-runs-android-apps-on-windows-mac-and-linux-computers/
+
+------------------------------
+
+Date: Tue, 23 Sep 2014 09:26:11 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: iOS 8: 'Wave' Wireless Microwave Charging Feature for iPad and
+  iPhone is Not Real
+
+A new hoax is quickly spreading across social media platforms that claims
+that the new iOS 8 update will help users wirelessly charge their iPhones
+and iPads with the help of a household microwave. Users should understand
+that this claim is false and that they will most definitely blow up their
+iOS device if they try this.
+
+http://www.ibtimes.co.uk/ios-8-wave-wireless-microwave-charging-feature-ipad-iphone-not-real-1466446
+
+------------------------------
+
+Date: Tue, 23 Sep 2014 17:33:03 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: iOS 8's iCloud Drive reveals the dark side of empowered users
+
+http://www.infoworld.com/article/2686976/consumerization-of-it/ios-8-reveals-the-dark-side-of-empowered-users.html
+iOS 8's iCloud Drive reveals the dark side of empowered users
+Apple's iCloud Drive deployment was sure to mess up people's access
+to documents -- and it did
+InfoWorld | Sep 23, 2014
+
+------------------------------
+
+Date: Wed, 24 Sep 2014 03:25:33 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Reports suggest the iPhone 6 and 6 Plus may bend in your pocket
+
+The new phones are thin, but it might make them more flexible than intended.
+
+Andrew Cunningham, Ars Technica, 23 Sep 2014
+http://arstechnica.com/apple/2014/09/reports-suggest-the-iphone-6-and-6-plus-may-bend-under-pressure/
+
+------------------------------
+
+Date: Fri, 19 Sep 2014 11:56:34 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Russia to be disconnected from the Internet?
+
+Pravda via NNSquad
+http://english.pravda.ru/society/stories/19-09-2014/128572-russia_internet-0/
+
+  "According to various reports, the officials will make a number of
+  decisions regulating the use of the Internet in Russia, providing for the
+  ability to cut the Russian Internet, known as Runet, from the outside
+  world, in case of emergency."
+
+You know -- emergencies -- like Czar Putin trying to do a Stalin on his
+own people.
+
+------------------------------
+
+Date: Mon, 15 Sep 2014 21:57:25 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Court blasts US Navy for scanning civilians' computers for child porn
+
+Every Gnutella user in the state of Washington was checked by the NCIS.
+
+http://arstechnica.com/tech-policy/2014/09/court-blasts-us-navy-for-scanning-civilians-computers-for-child-porn/
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 01:05:05 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Giant MQ-4C Triton surveillance drone flies across the United States
+
+http://arstechnica.com/tech-policy/2014/09/giant-mq-4c-triton-surveillance-drone-flies-across-the-united-states/
+
+------------------------------
+
+Date: Thu, 18 Sep 2014 14:41:52 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Feds seek expanded PC hacking powers for criminal investigations"
+  (Serdar Yegulalp)
+
+Serdar Yegulalp, InfoWorld | 17 Sep 2014
+The FBI and Department of Justice are mulling rules that would allow
+broader opportunities for domestic law enforcement to hack PCs as
+part of a criminal investigation
+http://www.infoworld.com/article/2684796/government/feds-seek-expanded-pc-hacking-powers-for-criminal-investigations.html
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 01:32:04 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Texas man must pay $40.4M for running Bitcoin-based scam
+
+http://arstechnica.com/tech-policy/2014/09/texas-man-must-pay-40-4m-for-running-bitcoin-based-scam-court-rules/
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 01:30:18 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: US courts agree to restore 10 years of deleted online public records
+
+http://arstechnica.com/tech-policy/2014/09/us-courts-agree-to-restore-10-years-of-deleted-online-public-records/
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 01:30:57 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: FAA bars drone from delivering game ball to college football matchup
+
+http://arstechnica.com/tech-policy/2014/09/faa-bars-drone-from-delivering-game-ball-to-college-football-matchup/
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 01:25:26 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: iFixit tears new iPhones apart, finds they're pretty easy to fix
+
+http://arstechnica.com/apple/2014/09/ifixit-tears-new-iphones-apart-finds-theyre-pretty-easy-to-fix/
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 01:29:10 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: A not-so-friendly reminder from the gov't: Yelp is not for kids
+
+http://arstechnica.com/tech-policy/2014/09/a-not-so-friendly-reminder-from-the-govt-yelp-is-not-for-kids/
+
+------------------------------
+
+Date: Mon, 15 Sep 2014 21:54:35 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Comcast calls rumor that it disconnects Tor users `wildly_inaccurate'
+
+http://arstechnica.com/business/2014/09/comcast-calls-rumor-that-it-disconnects-tor-users-wildly-inaccurate/
+
+------------------------------
+
+Date: Mon, 15 Sep 2014 22:00:28 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple puts up support page to get U2 album out of your iTunes (Ars)
+
+Apple puts up support page to get U2 album out of your iTunes
+Too many people don't want U2 anywhere near their libraries.
+
+http://arstechnica.com/apple/2014/09/apple-puts-up-support-page-to-get-u2-album-out-of-your-itunes/
+
+------------------------------
+
+Date: Sun, 21 Sep 2014 01:26:34 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Bill would limit reach of US search warrants for data stored abroad
+
+http://arstechnica.com/tech-policy/2014/09/bill-would-limit-reach-of-us-search-warrants-for-data-stored-abroad/
+
+------------------------------
+
+Date: Sep 20, 2014 7:12 PM
+From: "Farooq Butt" <farooq@farooqbutt.com>
+Subject: Why big data evangelists should be sent to re-education camps
+
+  (via Dave Farber)
+
+http://www.zdnet.com/why-big-data-evangelists-should-be-sent-to-re-education-camps-7000033862/
+
+------------------------------
+
+Date: Wed, 24 Sep 2014 20:45:36 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: The Internet of Thugs
+
+Cory Doctorow's worst fears w.r.t. repossessed Internet-enabled devices are
+now being realized.
+
+Perhaps this is what Jonathan Zittrain had in mind with his "kill switches
+for weaponry": "if you just make that next payment to the
+U.S. military-industrial complex secret account in Switzerland, we'll
+restore power to your tank/fighter-jet/etc. so that you can continue killing
+your own citizens.  Thank you for your business!"
+
+What next?  Internet-enabled Ebola medicines ?  "Please remit $10 million to
+the Big Pharma secret lobbying slush fund, so that we can send you the Ebola
+medicine enable code.  We're sorry for the temporary inconvenience."
+
+Michael Corkery and Jessica Silver-Greenberg
+Miss a Payment?  Good Luck Moving That Car
+*The New York Times*, 24 Sep 2014 [pruned starkly for RISKS]
+http://dealbook.nytimes.com/2014/09/24/miss-a-payment-good-luck-moving-that-car/
+
+------------------------------
+
+Date: Thu, 25 Sep 2014 09:39:48 -0400
+From: Jonathan Zittrain <zittrain@law.harvard.edu>
+Subject: Re: The Internet of Thugs (Baker, RISKS-28.28)
+
+FWIW, Cory's fears are my fears on this.  And in
+the consumer space, self-stopping (rather than
+self-driving) cars are only the beginning.
+
+But I find many differences between the Internet-enabled shift from product
+to service among consumers -- something I wrote about at length at
+<http://yupnet.org/zittrain/archives/14> -- and an army ready to do awful
+things with weapons, perhaps stopped by the heavy weapons' refusing to work
+for anyone able to simply get hands on them.  The power dynamics are
+inverted in the second example.
+
+------------------------------
+
+Date: Wed, 24 Sep 2014 20:39:40 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Allow Full Access for "SwiftKey" Keyboards?
+
+Why not? "Full access allows the developer of this keyboard to transmit
+anything you type, including things you have previously typed with this
+keyboard. This could include sensitive information such as your credit card
+number or street address." ...
+
+Head to your Settings app, then go to General > Keyboard > Keyboards.
+Choose to add a new keyboard, and pick it from the list of third-party
+keyboards. Finally, tap the new keyboard's name and choose to Allow Full
+Access (not required for Swype).
+
+You'll get a warning message about this, but it's required by the operating
+system. Obviously, a keyboard can theoretically collect everything you type
+into it; rest assured that well-known developers are keeping your info safe.
+
+http://www.makeuseof.com/tag/ios-8-lets-replace-iphone-ipads-keyboard-heres/
+
+Well-known developers ALWAYS keep us safe. What could possibly go wrong with
+this?
+
+------------------------------
+
+Date: Wed, 17 Sep 2014 17:00:02 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Software ... sends ... Colorado driver's licenses to immigrants
+
+IMHO the trouble is caused by using driver licenses where a "voter license"
+would be required -- namely, a national citizen's ID card.
+
+The insistence on not to institute any form of an official ID card had
+resulted in using a driver license in most cases, which leads to such
+contraptions as a "non-driving license" which is used as an ID and issued by
+the DMV in some states, although it has nothing to do with driving.
+
+Since states and the federal government manage every other aspect of voting,
+why wouldn't they also manage voters identification?
+
+------------------------------
+
+Date: Tue, 16 Sep 2014 08:57:18 +0100
+From: "Patrick O'Beirne" <pob@sysmod.com>
+Subject: Re: zero-day bounties (Edwards, RISKS-28.27)
+
+That article considers rework and test costs versus loss of income.
+There are two other risks to bugs:
+
+Cost of damage from failure (e.g., misleading information leading to damage
+to reputation or even worse to customers), and/or loss of revenue, e.g.,
+mispricing.
+
+------------------------------
+
+Date: Thu, 25 Sep 2014 9:51:15 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The Design and Implementation of the FreeBSD Operating System
+
+Marshall Kirk McKusick, George V. Neville-Neil, and Robert N.M. Watson
+The Design and Implementation of the FreeBSD Operating System
+Second edition, Addison-Wesley 2015
+xxx + 886 + some useful unnumbered pages on videos and course materials
+
+Excerpted from the preface:
+
+  This book is about the internal structure of the FreeBSD 11 kernel and the
+  concepts, data structures, and algorithms used in implementing FreeBD's
+  system facilities.  The book covers FreeBSD from the system-call level
+  down -- from the interface to the kernel to the hardware itself.  The
+  kernel includes system facilities, such as process management, security,
+  virtual memory, the I/O system, filesystems, the *socket* IPC mechanism,
+  and network protocol implementations.
+
+This is a truly extraordinary book -- extremely well written, comprehensive,
+incisive, and timely.  It seems to have something for everyone -- software
+developers, administrators, students, and others hungry for a single source
+for a wide range of considerable knowledge and experience that is highly
+relevant.  The second edition has roughly 1/3 completely new text and 1/3 of
+the earlier text extensively rewritten, It can serve as a reference book, as
+well as a valuable source for operating systems courses.
+
+One of the major new additions in the 2nd edition is a chapter by Robert
+Watson on security, which includes more conventional topics such as
+discretionary/mandatory access control, audit, etc, but also more
+contemporary topics such as Capsicum, disk encryption, and so on.  This new
+chapter may be of particular interest to RISKS readers.
+
+Whereas FreeBSD is used in its own right as a server OS, it is also an
+open-source operating-system foundation for systems as varied as Mac OS X
+and Apple iOS, NetApp's OnTap GX, EMC/Isilon appliances, Juniper Junos, and
+the Sony Playstation.  Therefore, its security should be highly relevant to
+RISKS readers.
+
+Note: The preface says `FreeBSD 11'.  The book does describe things that
+will ship with FreeBSD 11, but is also relevant for the existing FreeBSD 10.
+
+------------------------------
+
+Date: Thu, 25 Sep 2014 09:49:25 -0600
+From: "Cipher Editor" <cipher-editor@ieee-security.org>
+Subject: REVIEW: Georgia Weidman: Penetration Testing (Richard Austin)
+
+Newsletter of the IEEE Computer Society's TC on Security and Privacy
+Electronic Issue 122                                      September 25, 2014
+Hilarie Orman, Editor                           Sven Dietrich, Assoc. Editor
+cipher-editor @ ieee-security.org    cipher-assoc-editor @ ieee-security.org
+
+Richard Austin                                                     Yong Guan
+Book Review Editor                                           Calendar Editor
+cipher-bookrev @ ieee-security.org            cipher-cfp @ ieee-security.org
+
+The newsletter is also at http://www.ieee-security.org/cipher.html
+Cipher is published 6 times per year
+
+Book Review by Richard Austin, 16 Sep 2014
+
+Georgia Weidman: Penetration Testing: A Hands-On Introduction to Hacking
+No Starch Press 2014
+ISBN 978-1-59327-564-8
+Amazon.com USD 28.11
+Table of Contents:  http://www.nostarch.com/pentesting#toc
+
+When the publication announcement for this book arrived in my EMAIL, my
+first response was "Not another pen-testing book!" and I gazed at the table
+of contents with rather of a jaundiced eye.  As you have probably noticed, I
+have a fondness for books that require you to "do" as you read and Weidman's
+chapters on setting up a virtual lab and introducing Kali Linux piqued my
+interest enough to start reading.
+
+Weidman wasted no time in starting to rack up credibility points as she
+noted that in a penetration test, you simulate attacks by actually
+EXPLOITING vulnerabilities rather than just identifying them (Chapter 0).
+Then on page 3, she earned her "veteran" status by noting that even a simple
+port scan of a device's management port can knock them off the air (in my
+experience by crashing the on-board web server).
+
+To avoid this becoming just another catalog of tools and dialogs, the reader
+will definitely want to follow the procedures in Chapter 1 to set up the
+virtual lab for the book.  Weidman makes use of Kali Linux which has an
+arsenal of tools already installed and avoids much time wandering the
+"dependency maze" in getting the tools to run. She wisely recommends that
+you use the Kali version available on the book website so that her
+walkthroughs will match the tool versions.  Chapters 2 through 4 provide a
+brief introduction to Kali, scripting and the Metasploit framework that
+prepare you for the detailed walkthroughs in later chapters.
+
+With preliminaries out of the way, Weidman devotes the next three chapters
+to the assessment phase of the penetration test.  It's a pretty standard
+presentation of the usual tools (whois, nmap, Nessus, Metasploit, etc.) with
+accompanying introductory walkthroughs in the virtual lab environment.
+
+The next eight chapters are devoted to attacks, and this is where Weidman
+starts to shine.  She makes the solid point that in a penetration test, you
+have to go beyond identifying a vulnerability and actually exploit it where
+possible.  And, most importantly, after a successful exploit, you have to do
+something interesting (interesting to you as the pen-tester but damaging to
+the customer if actually done by an adversary).
+
+The catalog of attack methods is quite comprehensive and goes beyond the
+usual exploitation of technical vulnerabilities and cracking passwords to
+client-side attacks, social engineering (using SET. the Social Engineer
+Toolkit) and evading anti-virus.  Chapter 13, "Post Exploitation", is highly
+recommended for its coverage (and walkthrough) of how to capitalize on an
+initial foothold to achieve further access within the infrastructure.  She
+rounds out her survey of attacks with coverage of web applications (notable
+for illustrating use of the Burp proxy) and wireless.
+
+Weidman's next the important topic of "Exploit Development", and she spends
+four chapters covering stack-based buffer overflows, SEH (Structured
+Exception Handler) overwrites, fuzzing and development of Metasploit modules
+for new vulnerabilities.  This section provides a concise, all-in-one-place
+overview of these essential topics.
+
+The final chapter covers Weidman's personal specialty: attacking mobile
+devices.  As these wandering gateways into our infrastructures and
+repositories of proprietary data have become increasingly common, their
+value to our adversaries has correspondingly increased.  Weidman's coverage
+of how these devices are attacked and use of her "Smartphone Pentest
+Framework" are a valuable addition to the knowledge base of the practicing
+security professional.  The walkthroughs are done using emulators, so
+there's no need to risk "bricking" a real device when following along with
+the text.
+
+Through I started out with reservations about the need for
+yet-another-pen-testing-book, Weidman's presentation has much to recommend
+it to the technical security professional.  No book is ever going to make
+one into a successful penetration tester but careful study and time invested
+in following her walkthroughs will provide increased understanding of the
+pen-tester's craft and appreciation of our adversaries' use of similar
+techniques in the field.  Definitely a recommended read.
+
+Information for Subscribers and Contributors
+Two options, each with two options:
+1.  To receive the full ascii CIPHER issues as e-mail, send e-mail to
+    cipher-admin@ieee-security.org (which is NOT automated) with subject line
+    "subscribe".
+    OR
+    send a note to cipher-request@mailman.xmission.com with the
+    subject line "subscribe"
+    (this IS automated - thereafter you can manage your subscription
+     options, including unsubscribing, yourself)
+2.  To receive a short e-mail note announcing when a new issue of
+    CIPHER is available for Web browsing send e-mail to
+    cipher-admin@ieee-security.org (which is NOT automated) with subject line
+    "subscribe postcard".
+    OR
+    send a note to cipher-postcard-request@mailman.xmission.com with the
+    subject line "subscribe"
+    (this IS automated - thereafter you can manage your subscription
+     options, including unsubscribing, yourself)
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.28
+************************
+
+--_002_ed652a003d21464da13b7916bee85131EXHUBVM01campusnclacuk_--

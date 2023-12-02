@@ -1,0 +1,549 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.45
+
+RISKS-LIST: Risks-Forum Digest  Monday 7 October 2019  Volume 31 : Issue 45
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/31.45>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+The broken record: Why Barr's call against end-to-end encryption is
+  nuts (Sean Gallagher)
+Disney World Skyliner Gondola abruptly stops, stranding passengers in air
+  (NYTimes)
+Volatile compounds? 3D printing has a serious safety problem (Greg Nichols)
+Decades-old code is putting millions of critical devices at risk (WiReD)
+Ransomware forces 3 hospitals to turn away all but the most 
+  critical patients (Ars Technica)
+These sneaky email scammers are making it even harder for workers
+  to spot fake invoices (Danny Palmer)
+This mysterious hacking campaign snooped on a popular form of VoiP software
+  (Danny Palmer)
+Webkit zero-day exploit besieges Mac and iOS users with malvertising
+  redirects (Ars Technica)
+Commuters get an eyeful after pair breaks in, uploads porn to
+  Michigan billboard (NBC News)
+Maine hospital 'Wall of Shame' used records to mock disabled patients
+  (The Boston Globe)
+How Israeli security services used big data to stop a wave of terrorism
+  (haaretz)
+Wearable face projector to avoid face recognition (Reddit)
+Federal government has dramatically expanded exposure to risky mortgages
+  (WashPost)
+What Is Bitcoin Block Size and Why Does It Matter? (Blocks Decoded)
+Hacking Of Internet-connected cars big national security threat
+  (Consumer Watchdog)
+Some of the biggest critics of Waymo and other self-driving cars
+  are the Silicon Valley residents who know how they work (WashPost)
+10 Tips to Avoid Leaving Tracks Around the Internet (NYTimes)
+Code 42 Info Requested (Charles Dunlop)
+NCCIC (Rebecca Mercuri)
+Look Who's Driving, NOVA, 23 Oct 9 pm EDT (Gabe Goldberg)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: October 5, 2019 at 9:53:15 AM GMT+9
+From: Richard Forno <rforno@infowarrior.org>
+Subject: The broken record: Why Barr's call against end-to-end encryption is
+  nuts (Sean Gallagher)
+
+  [Via Dave Farber]
+
+Sean Gallagher, Ars Technica, 4 Oct 2019
+
+Barr, DHS Secretary, UK, and Australia say end-to-end encryption will help
+child abusers.
+
+Here we go again.
+
+US Attorney General William Barr is leading a charge to press Facebook and
+other Internet services to terminate end-to-end encryption efforts -- this
+time in the name of fighting child pornography. Barr, acting Secretary of
+Homeland Security Kevin McAleenan, Australian Home Affairs Minister Peter
+Dutton, and United Kingdom Secretary of State Priti Patel yesterday asked
+Facebook CEO Mark Zuckerberg to hold off on plans to implement end-to-end
+encryption across all Facebook Messenger services "without including a means
+for lawful access to the content of communications to protect our citizens."
+
+https://arstechnica.com/tech-policy/2019/10/the-broken-record-why-barrs-call-against-end-to-end-encryption-is-nuts/
+
+------------------------------
+
+Date: Mon, 7 Oct 2019 00:19:42 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Disney World Skyliner Gondola abruptly stops, stranding passengers
+  in air (NYTimes)
+
+https://www.nytimes.com/2019/10/06/business/disney-skyliner-crash.html
+
+The gondola system, which connects Epcot, Hollywood Studios and several
+Disney World resorts, opened on Sept. 29. It has now been shut down.
+
+------------------------------
+
+Date: Tue, 01 Oct 2019 17:04:26 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: Volatile compounds? 3D printing has a serious safety problem
+  (Greg Nichols)
+
+Greg Nichols for Robotics, ZDNet, 1 Oct 2019
+
+Dangerous emissions are the dirty little secret of the ballooning 3D
+printing industry.
+https://www.zdnet.com/article/volatile-compounds-3d-printing-has-a-serious-safety-problem/
+
+selected text:
+
+It's looking more and more certain that 3D printing has a serious safety
+problem. Though largely overlooked in the tech press, the problem is
+pervasive and could impact millions of students, patients, and employees who
+work in non-industrial settings that lack controlled environments.
+
+That's according to a two-year study by UL Chemical Safety and Georgia
+Institute of Technology, which shows that 3D printers emit airborne
+nanoparticles and volatile organic compounds that can cause cardiovascular
+and pulmonary issues. The UL/Georgia Tech study details the alarming
+presence of more than 200 volatile compounds that are detected in
+environments where a 3D printer is in use, including known irritants and
+carcinogens.
+
+------------------------------
+
+Date: Wed, 2 Oct 2019 23:49:58 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Decades-old code is putting millions of critical devices at risk
+  (WiReD)
+
+Nearly two decades ago, a company called Interpeak created a network
+protocol that became an industry standard. It also had severe bugs that are
+only now coming to light.
+
+In early August, the enterprise security firm Armis got a confusing call
+from a hospital that uses the company's security monitoring platform.  One
+of its infusion pumps contained a type of networking vulnerability that the
+researchers had discovered in a few weeks prior.  But that vulnerability had
+been found in an operating system called VxWorks -- which the infusion pump
+didn't run.
+<https://www.wired.com/story/vxworks-vulnerabilities-urgent11/>
+
+Hospital representatives wondered if it was just a false positive. But as
+Armis researchers investigated, they started to see troubling signs of a
+connection between VxWorks and the infusion pump's operating system. What
+they ultimately discovered has disturbing implications for the security of
+countless critical systems -- patient monitors, routers, security cameras,
+and more -- across dozens of manufacturers.
+
+Today Armis, the Department of Homeland Security
+<https://www.us-cert.gov/ics/advisories/icsa-19-274-01>, the Food and Drug
+Administration and a broad swath of so-called real-time operating system and
+device companies disclosed that Urgent/11, a suite of network protocol bugs,
+exist in far more platforms than originally believed. The RTO systems are
+used in the always-on devices common to the industrial control or health
+care industries. And while they're distinct platforms, many of them
+incorporate the same decades-old networking code that leaves them vulnerable
+to denial of service attacks or even full takeovers. There are at least
+seven affected operating systems that run in countless IoT devices across
+the industry.
+<https://www.fda.gov/medical-devices/safety-communications/urgent11-cybersecurity-vulnerabilities-widely-used-third-party-software-component-may-introduce>,
+<https://www.armis.com/resources/iot-security-blog/urgent-11-update/>
+
+"It's a mess and it illustrates the problem of unmanaged embedded devices,"
+says Ben Seri, vice president of research at Armis. "The amount of code
+changes that have happened in these 15 years are enormous, but the
+vulnerabilities are the only thing that has remained the same. That's the
+challenge."
+
+https://www.wired.com/story/urgent-11-ipnet-vulnerable-devices/
+
+------------------------------
+
+Date: Wed, 2 Oct 2019 09:18:55 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Ransomware forces 3 hospitals to turn away all but the most
+  critical patients (Ars Technica)
+
+https://arstechnica.com/information-technology/2019/10/hamstrung-by-ransomware-10-hospitals-are-turning-away-some-patients/
+
+------------------------------
+
+Date: Mon, 07 Oct 2019 10:33:44 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: These sneaky email scammers are making it even harder for workers
+  to spot fake invoices (Danny Palmer)
+
+Danny Palmer, ZDNet, 2 Oct 2019
+
+By compromising emails between vendors and their clients, scammers can
+produce exact replicas of expected invoices - and funnel the funds into
+their own wallets.
+https://www.zdnet.com/article/these-sneaky-email-scammers-are-making-it-even-harder-for-workers-to-spot-fake-invoices/
+
+opening text:
+
+Email scammers are getting more sophisticated, with one gang showing
+particularly advanced tactics for stealing from organisations across the
+world by using stealth, persistence and social engineering to trick firms
+into paying invoices for legitimate services.
+
+The attacks are different to standard Business Email Compromise (BEC)
+attacks because rather than using a fake request for a money transfer
+apparently ordered by a CEO or CFO, this campaign is based around supply
+chains, espionage and research, with the attackers only cashing in once
+they're convinced they can successfully dupe the victim by injecting
+themselves into a legitimate email thread about finance.
+
+This kind of approach makes the attacks very difficult to detect -- and
+often victims will only know they've been scammed when a vendor asks why a
+payment wasn't received.
+
+------------------------------
+
+Date: Mon, 07 Oct 2019 10:08:48 -0700
+From: Gene Wirchenko <gene@shaw.ca>
+Subject: This mysterious hacking campaign snooped on a popular form of VoiP
+  software (Danny Palmer)
+
+Danny Palmer | 4 Oct 2019
+Researchers uncover a campaign that is snooping on call data and recordings
+of conversations - and could even spoof calls.
+https://www.zdnet.com/article/this-mysterious-hacking-campaign-is-snooping-on-a-popular-form-of-voip-software/
+
+selected text:
+
+Security researchers have traced the initial attacks back to between
+February and July 2018, when an attacker was performing scans on over 600
+companies across the world that use Asterisk FreePBX -- a popular form of
+open source VoiP software.
+
+The attacker then went quiet for months before re-emerging this year,
+targeting a US-based server owned by an engineering company that provides
+services to the oil, gas and chemical industries.
+
+------------------------------
+
+Date: Wed, 2 Oct 2019 09:20:09 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Webkit zero-day exploit besieges Mac and iOS users with
+  malvertising redirects (Ars Technica)
+
+https://arstechnica.com/information-technology/2019/09/webkit-zeroday-exploit-besieges-mac-and-ios-users-with-malvertising-redirects/
+
+------------------------------
+
+Date: Tue, 1 Oct 2019 19:16:45 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Commuters get an eyeful after pair breaks in, uploads porn to
+  Michigan billboard (NBC News)
+
+https://www.nbcnews.com/news/us-news/commuters-get-eyeful-after-pair-breaks-uploads-porn-michigan-billboard-n1060581
+
+------------------------------
+
+Date: Sat, 5 Oct 2019 00:29:38 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Maine hospital 'Wall of Shame' used records to mock disabled patients
+  (The Boston Globe)
+
+https://www.boston.com/news/health/2019/10/04/a-maine-hospitals-wall-of-shame-used-private-records-to-mock-disabled-patients-now-officials-are-apologizing
+
+------------------------------
+
+Date: Sun, 6 Oct 2019 01:03:42 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: How Israeli security services used big data to stop a wave of
+  terrorism (haaretz)
+
+During 2015, Israel's security services were faced with a new problem:
+Dozens of young Palestinians, most of them with no terrorist background,
+were using whatever was handy -- from kitchen knives to cars -- to stoke an
+unusual wave of terror attacks.
+
+These activists were difficult to track down, because most of them were
+acting alone and were not members of any known organizations.  According to
+an article in the newspaper Haaretz, cyber-experts had used big data
+gathered from social networks to flag any unusual behavior on the net --
+such as access to extremists sites or "Facebook wills" -- in order to stop
+potential terrorists, some of them even before they had carried out any
+attack.
+
+https://www.haaretz.com/israel-news/.premium-how-israel-stopped-a-third-palestinian-intifada-1.7942355
+(may require subscription)
+
+------------------------------
+
+Date: Sun, 6 Oct 2019 11:51:16 -0400
+From: José María Mateos <chema@rinzewind.org>
+Subject: Wearable face projector to avoid face recognition (Reddit)
+
+https://www.reddit.com/r/Cyberpunk/comments/ddplms/hk_wearable_face_projector_to_avoid_face/
+
+Found this on Reddit linked to HK protests but, as a commenter says, this is
+actually an art project. There is more information here:
+http://jingcailiu.com/?portfolio=wearable-face-projector
+
+Cameras and other technological products make for a better and safer living
+environment than ever before. Mega databanks and high-resolution cameras in
+the streets stock hundreds of exabytes a year. But who has access to this
+data? It is possible that it could have commercial use, hence not only
+retail companies but also the advertisement industry could be very
+interested in this data in the coming future. They would hope to gain these
+personal data and information as much as they can.
+
+In the future, the advertisement could call your name when you walk along
+the streets. The companies would know your personal interests and may set
+different retail strategies for you. It could be convenient for customers,
+but personal thoughts and opinions should be kept private.  This product
+protects you from this privacy violation.
+
+Concept:
+
+Wearable face projector: A small beamer projects a different appearance on
+your face, giving you a completely new appearance.
+
+------------------------------
+
+Date: Thu, 3 Oct 2019 17:29:49 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Federal government has dramatically expanded exposure to risky
+  mortgages (WashPost)
+
+``There is a point here where, in an effort to create access to
+homeownership, you may actually be doing it in a manner that isn't
+sustainable and it's putting more people at risk,'' said David Stevens, a
+former commissioner of the Federal Housing Administration who led the
+Mortgage Bankers Association until last year. ``Competition,
+particularly in certain market conditions, can lead to a false narrative,
+like `housing will never go down' or `you
+will never lose on mortgages.' ''
+
+https://www.washingtonpost.com/business/economy/federal-government-has-dramatically-expanded-exposure-to-risky-mortgages/2019/10/02/d862ab40-ce79-11e9-87fa-8501a456c003_story.html
+
+  The risks? Human nature, greed, stupidity, unwillingness to learn from
+  history. The usual.
+
+    [It's a good think RISKS does not have a requirement for only *new
+    topics*.  ``When will they ever learn.''  (The old song, Little Boxes on
+    the Hillside'' [and they all look just the same] seems relevant here.
+    PGN]
+
+------------------------------
+
+Date: Thu, 3 Oct 2019 17:55:50 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: What Is Bitcoin Block Size and Why Does It Matter? (Blocks Decoded)
+
+However, that 1MB block size limit also restricts the number of transactions
+the Bitcoin network processes. With a 1MB block size limit, the Bitcoin
+network processes a maximum of around seven transactions per second (there
+are anomalies). For comparison, Ethereum processes about 15 transactions per
+second, Bitcoin Cash process around 65 transactions per second, and the Visa
+network can process over 1,700 fiat transactions per second.
+
+You see, then, that the Bitcoin block size has a direct effect on Bitcoin
+transaction speed.
+
+https://blocksdecoded.com/what-bitcoin-block-size/
+
+Using some fraction of the world's electricity to process ... seven
+transactions/second?
+
+------------------------------
+
+Date: Sat, 5 Oct 2019 10:42:43 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Hacking Of Internet-connected cars big national security threat
+  (Consumer Watchdog)
+
+Kill Switch: Why Connected Cars Can Be Killing Machines And How To Turn Them Off
+https://www.consumerwatchdog.org/privacy-technology/report-finds-hacking-internet-connected-cars-big-national-security-threat
+https://www.consumerwatchdog.org/sites/default/files/2019-07/KILL%20SWITCH%20%207-29-19.pdf
+
+------------------------------
+
+Date: Thu, 3 Oct 2019 17:26:34 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Some of the biggest critics of Waymo and other self-driving cars
+  are the Silicon Valley residents who know how they work (WashPost)
+
+SUNNYVALE, Calif.  Karen Brenchley is a computer scientist with expertise in
+training artificial intelligence, but this longtime Silicon Valley resident
+has pangs of anxiety whenever she sees Waymo self-driving cars maneuver the
+streets near her home.
+
+The former product manager, who has worked for Microsoft and
+Hewlett-Packard, wonders how engineers could teach the robocars operating
+<https://www.washingtonpost.com/local/trafficandcommuting/waymo-launches-nations-first-commercial-self-driving-taxi-service-in-arizona/2018/12/04/8a8cd58a-f7ba-11e8-8c9a-860ce2a8148f_story.html?tid=lk_inline_manual_4>
+on her tree-lined streets to make snap decisions, speed and slow with the
+flow of traffic and yield to pedestrians coming from the nearby park. She
+has asked her husband, an award-winning science-fiction author who doesn't
+drive, to wear a shiny vest while cycling to ensure autonomous vehicles spot
+him in a rush of activity.
+
+The problem isn't that she doesn't understand the technology.  It's that she
+does, and she knows how flawed nascent technology can be. ...
+<https://www.washingtonpost.com/business/driverless-cars/2018/10/26/d141ee32-d926-11e8-8384-bcc5492fef49_story.html?tid=lk_inline_manual_6>.
+
+Silicon Valley types can be most skeptical of advanced technology because
+they know how it works and what its risks are. Parents with experience at
+large tech firms have famously cracked down on screen time for their
+children. Some tech executives won't let female family members ride alone at
+night with ride-sharing cars. Others keep their kids off social media
+indefinitely.
+
+That same skepticism has landed on Silicon Valley streets. Residents are
+showing up to community meetings to express their concern about driverless
+cars, even though they still have safety drivers in the front seat. Posts on
+community site Nextdoor debate safety risks.
+
+https://www.washingtonpost.com/technology/2019/10/03/silicon-valley-pioneered-self-driving-cars-some-its-tech-savvy-residents-dont-want-them-tested-their-neighborhoods/
+
+  [Also noted by Richard Stein.  PGN]
+
+------------------------------
+
+Date: Sun, 6 Oct 2019 16:29:37 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 10 Tips to Avoid Leaving Tracks Around the Internet (NYTimes)
+
+https://www.nytimes.com/2019/10/04/smarter-living/10-tips-internet-privacy-crowdwise.html
+
+Some of these suggestions are more aggressive, and make using the web less
+convenient, but they'll definitely protect your privacy.
+
+------------------------------
+
+Date: Sun, 6 Oct 2019 21:41:49 -0400
+From: Charles Dunlop <cdunlop@umich.edu>
+Subject: Code 42 Info Requested
+
+A former student of mine recently took a job in a lab that required him to
+install "Code 42" software on his personal computer.  This software
+apparently backs up any lab-related data, and flags situations in which the
+data is deleted or copied or moved to other media.  He was told that he
+could opt to back up only the lab folder on his MacBook; however, the IT
+folks informed him that if he elected that option, his entire computer
+would be backed up.
+
+I hadn't heard of this software before, and there doesn't seem to be a lot
+of good information about it online.  Prima facie, it raises some serious
+privacy issues.  Any information about this would be appreciated.
+
+------------------------------
+
+Date: Fri, 4 Oct 2019 04:30:16 -0400
+From: Rebecca Mercuri <notable@mindspring.com>
+Subject: NCCIC
+
+Those who are not already familiar with NCCIC (the U.S. National
+Cybersecurity and Communications Integrations Center) may find this
+informational brochure to be of interest.
+<https://www.us-cert.gov/sites/default/files/publications/NCCIC_Year_in_Review_2017_Final.pdf>
+
+  In the face of increasingly sophisticated threats, NCCIC stands on the
+  front lines of the Federal Government's efforts to defend the Nation's
+  most essential cyber- and communications networks. Every day brings
+  challenges and opportunities. Our work inspires us, and we pursue it with
+  a single-minded purpose: create a more secure and resilient cyber- and
+  communications infrastructure.  In pursuit of this goal, NCCIC will listen
+  to customers, operational partners, and other stakeholders, remaining
+  attentive and responsive to their needs. We need and will encourage active
+  stakeholder participation.
+
+  In our information sharing programs to limit the likelihood and severity
+  of incidents. We will emphasize utility, speed, and accuracy in the
+  information we provide, and we will share as broadly as possible, while
+  protecting confidentiality and privacy. We will continuously assess and
+  optimize the way we perform as an integrated organization across all
+  locations and refine our processes, technologies, and organizational
+  structure to best execute our mission and serve our customers. NCCIC will
+  remain a leader in the cybersecurity field by recruiting the best and
+  brightest people, and by remaining agile and leaning forward to tackle
+  current and future threats.
+
+    [Rebecca gave the URL for the 2017 report, whose conclusions I have
+    added to her message.  The following URL she cited is more recent.  PGN]
+
+More about NCCIC can be found here:
+<https://www.dhs.gov/cisa/national-cybersecurity-communications-integration-center>
+
+------------------------------
+
+Date: Fri, 4 Oct 2019 15:08:24 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Look Who's Driving, NOVA, 23 Oct 9 pm EDT
+
+After years of anticipation, autonomous vehicles are now being tested on
+public roads around the world. Dozens of startups have sprung up alongside
+established auto and tech giants -- which are also testing the waters -- to
+form what many hope will be a transformative new industry. But as innovators
+rush to cash in on what they see as the next high-tech pot of gold, some
+experts warn there are still daunting challenges to overcome -- like how to
+train computers to make life-and-death decisions as well as humans can. NOVA
+peers under the hood of the autonomous vehicle industry to investigate how
+driverless cars work, how they may change the way we live, and whether we
+will ever be able to entrust them with our lives. NOVA /Look Who's Driving/
+premieres Wednesday, October 23, 2019 at 9 p.m. ET/8C on PBS.
+
+How can we train artificial intelligence to be better than humans at making
+life-and-death decisions? How do self-driving cars work? How close are we to
+large-scale deployment of them? Join us for a special screening of this
+fascinating documentary followed by our panel of pioneering company leaders
+and academic experts who will tackle not just these technical issues, but
+some of the potential economic and social implications. This panel
+discussion will be streamed live on our Facebook page.
+<https://www.facebook.com/pg/computerhistory/videos/?ref=page_internal>
+
+https://computerhistory.org/events/look-whos-driving/
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.45
+************************

@@ -1,0 +1,772 @@
+RISKS-LIST: Risks-Forum Digest  Monday 18 August 2014  Volume 28 : Issue 18
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.18.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Human cryptography is the key to online voting (Xavier Boyen)
+Vote! You Just Might Win $50,000 (Lauren Weinstein)
+E-mail Is Still the Best Thing on the Internet (*The Atlantic*)
+What caused today's Internet hiccup & how stable is the Internet?
+  (bgpmon via geoff goodfellow)
+Smarter than Siri: Viv promises a truly intelligent assistant
+  (Caroline Craig via Gene Wirchenko)
+Pervasive Medicare Fraud Proves Hard to Stop (Abelson/Lichtblau)
+Humans Need Not Apply, and Robot Swarms (Rodney Van Meter via Dave Farber)
+In Exposing Followers, Medium Fails Readers (ReadWrite via Lauren Weinstein)
+Community Health Systems hacked. 4.5M Records with PII compromised
+  (Bob Gezelter)
+Shaw Star Market Admit Credit Card Data Breach (Monty Solomon)
+EFF Cell Phone Guide For US Protesters, Updated 2014 Edition (EFF)
+Re: Informed consent for resuscitation trials (Robert R. Fenichel)
+Re: Meet MonsterMind, the NSA Bot That Could Wage Cyberwar
+  (Peter Houppermans)
+Re: Some taking a hard line against paying by E-ZPass (Chris Drewe,
+  Scott Miller)
+Re: Breach of 1.2 billion user names and passwords (Barry Gold)
+Re: Computer Programming Is a Trade; Let's Act Like It (Richard A. O'Keefe)
+Re: Cybersecurity as Realpolitik: Black Hat keynote (Barry Gold)
+Re: NSA Is Funding a Project to Roll All Programming Languages Into One
+  (Amos Shapir)
+Re: Google scanning e-mail for child porn (Bob Brown)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 18 Aug 2014 13:44:40 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Human cryptography is the key to online voting (Xavier Boyen)
+
+  [All quotes below are attributable to Assoc. Prof. Xavier Boyen, at the
+  Queensland University of Technology, who has received an Australian
+  Research Council Future Fellowship worth almost $800,000 to build
+  user-owned passwords.  PGN]
+
+HUMAN-POWERED cryptographic protocols could be used to secure online
+transactions and electronic voting following a new research project.
+http://www.theaustralian.com.au/technology/human-cryptography-the-key-to-online-voting/story-e6frgakx-1227028546184
+
+Cryptography provides unbreakable data security between computer nodes,
+but leaves human owners helpless.
+
+``The problem is cryptography, in order to be secure, requires heavy
+computer-assisted calculations to make it efficient and is very impractical
+for humans to do.  We have a lot of new techniques that would be much more
+amenable to human operations while retaining the proven security that we
+seek in terms of mathematical cryptography. [...]  The goal is to come up
+with a fairly simple but secure way to get the person involved in the very
+act of authenticating with a remote server or something like that.''
+
+The project aims to build public-key ciphers that can be operated manually
+from a mental key in seconds to let users regain their Internet privacy,
+even defending against spyware and malware lurking on their very own mobiles
+and computers.  It would also build security protocols with full end-to-end
+coverage all the way to the human users.
+
+``It could be the case that when you authenticate to a bank, instead of
+typing in your password the bank will send you a list of numbers and you
+know that you have to pick the second, the fourth and the fifth of those
+numbers and add them together.  Using these kinds of techniques, as one
+example, it is possible to actually hide from the phone -- which may not be
+working in your best interests -- what your password is, what your secret
+is.''
+
+Electronic voting provides a strong motivation for the research.  ``There is
+a concern that the voting machines might confirm one vote to the voter, but
+secretly record another one.  This could be prevented by binding the vote to
+some little secret piece of information known only to the voter.''
+
+  [Interesting approach to passwords, although still may not address the
+  Internet voting problems with respect to vote selling/buying/coercion.
+  PGN]
+
+------------------------------
+
+Date: Sat, 16 Aug 2014 21:13:12 -0700
+From: PRIVACY Forum mailing list <privacy@vortex.com>
+Subject: Vote! You Just Might Win $50,000
+
+*TIME* via PRIVACY Forum
+http://time.com/money/3117303/vote-lottery-cash-prizes/
+
+  To get people more involved -- and prevent further embarrassment -- the
+  city is now considering a pilot program that would use lottery-type cash
+  prizes as enticement to get locals to participate in elections.  The Los
+  Angeles Times reported that on Thursday night, the Los Angeles Ethics
+  Commission voted unanimously to recommend that the city council begin
+  offering cash prizes to voters randomly as soon as next year.  "Maybe it's
+  $25,000 maybe it's $50,000," said [Ethics] Commission President Nathan
+  Hochman. "That's where the pilot program comes in -- to figure out what
+  ... number and amount of prizes would actually get people to the voting
+  box." ... "Wouldn't we get a lot of people who know nothing about politics
+  or the candidates jumping in and voting and just checking the box so they
+  could get a million bucks?" the radio host asked Guerra.  "Absolutely,"
+  Guerra responded. But, he added, that might not be a bad thing. "That
+  might produce better results. There is no data to show that uninformed
+  voters make worse decisions than informed voters."
+
+The technical term for this proposal is IDIOTIC.
+And the technical term for Mr. Guerra is IDIOT.
+
+------------------------------
+
+Date: Sat, 16 Aug 2014 09:53:25 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: E-mail Is Still the Best Thing on the Internet
+
+*The Atlantic* via NNSquad
+http://www.theatlantic.com/technology/archive/2014/08/why-email-will-never-die/375973/
+
+  Yet, despite all the prognosticators predicting it will--choose the
+  violence level of your metaphor--go out of style, be put out to pasture,
+  or taken out back and shot, e-mail grinds on.
+
+  You can't kill e-mail! It's the cockroach of the Internet, and I mean that
+  as a compliment. This resilience is a good thing.
+
+  "There isn't much to sending or receiving e-mail and that's sort of the
+  point," observed Aaron Straup Cope, the Cooper-Hewitt Design Museum's
+  Senior Engineer in Digital and Emerging Media. "The next time someone
+  tells you e-mail is 'dead,' try to imagine the cost of investing in their
+  solution or the cost of giving up all the flexibility that e-mail affords."
+
+  E-Mail is actually a tremendous, decentralized, open platform on which new,
+  innovative things can and have been built. In that way, e-mail represents a
+  different model from the closed ecosystems we see proliferating across our
+  computers and devices.
+
+------------------------------
+
+Date: Wed, 13 Aug 2014 17:51:47 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: What caused today's Internet hiccup & how stable is the Internet?
+
+http://www.bgpmon.net/what-caused-todays-internet-hiccup/
+
+Geoff.Goodfellow@iconia.com  http://geoff.livejournal.com
+
+------------------------------
+
+Date: Mon, 18 Aug 2014 09:43:31 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Smarter than Siri: Viv promises a truly intelligent assistant
+  (Caroline Craig)
+
+Caroline Craig | InfoWorld, 15 Aug 2014
+AI's promise has been dangled for decades, but a startup founded by
+the creators of Siri may be poised to finally deliver
+http://www.infoworld.com/t/mobile-apps/smarter-siri-viv-promises-truly-intelligent-assistant-248405
+
+selected text:
+
+The company wants Viv to be not only smart but omnipresent, embedded in a
+plethora of Internet-connected objects and helping to power a million
+different apps. "Wouldn't it be nice if you could talk to everything, and it
+knew you, and it knew everything about you, and it could do everything?"
+Kittlaus said.
+
+      Ah, no.
+
+   1) Security risks.
+   2) What does "truly intelligent" mean?  Would I be able to
+      understand why it decided a particular way, or will this be
+      opaque?  Would it be reliably correct *for me*?
+   3) Whose life is it anyway?
+
+------------------------------
+
+Date: August 16, 2014 at 7:43:53 AM EDT
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Pervasive Medicare Fraud Proves Hard to Stop (Abelson/Lichtblau)
+
+Reed Abelson and Eric Lichtblau, *The New York Times*, 15 Aug 2014 (via DF)
+http://www.nytimes.com/2014/08/16/business/uncovering-health-care-fraud-proves-elusive.html
+
+The ordinary looking office building in a suburb of Baltimore gives no hint
+of the high-tech detective work going on inside. A $100 million system
+churns through complicated medical claims, searching for suspicious patterns
+and posting the findings on a giant screen.
+
+Hundreds of miles away in a strip mall north of Miami, more than 60 people
+-- prosecutors, F.B.I. agents, health care investigators, paralegals and
+even a forensic nurse -- sort through documents and telephone logs looking
+for evidence of fraudulent Medicare billing. A warehouse in the back holds
+fruits of their efforts: wheelchairs, boxes of knee braces and other medical
+devices that investigators say amount to props for false claims.
+
+The Obama administration's declared war on health care fraud, costing some
+$600 million a year, has a remarkable new look in places like Baltimore and
+Miami. But even with the fancy computers and expert teams, the government is
+not close to defeating the fraudsters. And even the effort designed to
+combat the fraud may be in large part to blame.
+
+An array of outside contractors used by the government is poorly managed,
+rife with conflicts of interest and vulnerable to political winds, according
+to interviews with current and former government officials, contractors and
+experts inside and outside of the administration. Authority and
+responsibilities among the contractors are often unclear and in competition
+with one another. Private companies -- like insurers and technology
+companies -- have responsibility for enforcement, often with little
+government oversight.
+
+Fraud and systematic overcharging are estimated at roughly $60 billion, or
+10 percent, of Medicare's costs every year, but the administration recovered
+only about $4.3 billion last year. The Centers for Medicare and Medicaid
+Services, which is responsible for overseeing the effort, manually reviews
+just three million of the estimated 1.2 billion claims it receives each
+year.
+
+``It's pretty dysfunctional because the contractors don't communicate with
+each other,'' said Orlando Balladares, a fraud investigator who has worked
+for both the government and private firms.
+
+Dr. Shantanu Agrawal, who oversees Medicare's antifraud center, the Center
+for Program Integrity, said the administration had made fighting fraud a top
+priority.  ``The focus is higher than it ever has been,'' said Dr. Agrawal,
+an emergency medicine physician and former McKinsey consultant who took the
+Medicare job this year. But even some of the administration's successes shed
+light on the crackdown's limitations.
+
+So-called recovery audit contractors, hired to reduce hospital overbilling,
+have an unparalleled record of returning money to Medicare, accounting for
+$8 billion in returned money since 2009. But hospital resistance to the
+contractors and an overburdened appeals process have largely stopped the
+recovery efforts.
+
+``They've been brought to a halt by their very success,'' said Marsha Simon,
+an expert on health policy and legislative strategy in Washington.
+
+Just this summer, Medicare shut down a successful hotline in fraud-plagued
+South Florida, saying it was no longer necessary. The hotline is credited
+with leading to more than 1,000 fraud investigations and identifying tens of
+millions of dollars in questionable payments in the last five years. Trained
+staff members hired by an outside contractor answered calls and passed
+relevant tips to investigators within 48 hours. [...]
+
+------------------------------
+
+Date: August 15, 2014 at 10:40:30 PM EDT
+From: Rodney Van Meter <rdv@sfc.wide.ad.jp>
+Subject: Humans Need Not Apply, and Robot Swarms (via Dave Farber)
+
+Dave, two things came across my radar in the last couple of days that will
+no doubt interest IPers:
+
+"Humans Need Not Apply" is a fifteen minute video describing the rise of the
+robots.  Fairly intelligently put together, if unyielding in its point of
+view.  Sort of intermediate in terms of depth in both technology and
+philosophy.
+https://www.youtube.com/watch?v=7Pq-S557XQU&list=UU2C_jShtL725hvbm1arSV9w
+The video asserts that 45% of the U.S. workforce is in jobs that are
+vulnerable to replacement by robots in the very near future, with
+transportation being at the top of the list but white collar, professional
+and even many creative jobs not so far behind.  This is from CGP Grey
+(http://www.cgpgrey.com/), who list Tyler Cowen's book as `further reading'
+on their front page.  I'm deeply skeptical of the level of scholarship on
+Cowen's book, which I've articulated here on IP before, but the issues are
+decidedly worth discussing.
+
+Second, Harvard's Self Organizing Systems Group has released a fantastic
+video of a *thousand* small robots organizing themselves on a plane:
+https://www.youtube.com/watch?v=IKCmhGbVd-o I saw a far more primitive
+version of something like this, oh, a decade ago, from Seth Copen
+Goldstein's group there at CMU.  It has taken a while to get to here, but
+this is amazing, and I'm sure only the tip of the iceberg.  It reminds me of
+MIT's self-assembling cubes from last year:
+https://www.youtube.com/watch?vjZbJS6LZbs and the nano-quadrotors from
+Penn from the year before: https://www.youtube.com/watch?v=YQIMGV5vtd4 We
+live in amazing times, and getting more amazing every day.
+
+------------------------------
+
+Date: Fri, 15 Aug 2014 22:03:55 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: In Exposing Followers, Medium Fails Readers
+
+ReadWrite via NNSquad
+http://readwrite.com/2014/08/15/medium-public-followers
+
+  What if the parents of a teenager discover that she's following That's So
+  Gay, a collection of articles on "unstraight issues by unstraight people,"
+  and thereby deduce her sexual orientation before she's disclosed it to
+  them?  Though its founder created Twitter, Medium is nothing like it. As
+  sharing everything with everyone becomes the standard across the Web,
+  there are fewer places where people can be themselves, without every
+  action disclosing some portion of their identity.  Before this latest
+  move, Medium was a quiet, well-lit place where you could explore ideas
+  with some sense of privacy. Now, in the name of "discovery," we've been
+  exposed.
+
+------------------------------
+
+Date: Mon, 18 Aug 2014 09:06:25 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: Community Health Systems hacked. 4.5M Records with PII compromised
+
+Community Health Systems, which operates over 206 hospitals in 28 states
+reports that their network was infiltrated by hackers, believed to be
+operating from the People's Republic of China.  The hackers are believed to
+have gained access to their names, Social Security numbers, physical
+addresses, birthdays and telephone numbers of patients who had contact with
+hospital network during the last five years.  The Money article can be found
+at:
+http://money.cnn.com/2014/08/18/technology/security/hospital-chs-hack/index.html
+
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Fri, 15 Aug 2014 19:22:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Shaw Star Market Admit Credit Card Data Breach
+
+http://www.boston.com/business/news/2014/08/15/shaw-star-market-admit-credit-card-data-breach/Fi4TunMOtrWm9osL6ibDrL/story.html
+
+------------------------------
+
+Date: Mon, 18 Aug 2014 08:59:12 -0400
+From: "David Farber via ip" <ip@listbox.com>
+Subject: EFF Cell Phone Guide For US Protesters, Updated 2014 Edition
+
+  [Long item truncated for RISKS.  PGN]
+
+https://www.eff.org/deeplinks/2014/08/cell-phone-guide-protesters-updated-2014-edition
+
+With major protests in the news again, we decided it's time to update our
+cell phone guide for protestors. A lot has changed since we last published
+this report in 2011, for better and for worse. On the one hand, we've
+learned more about the massive volume of law enforcement requests for cell
+phone -- ranging from location information to actual content -- and
+widespread use of dedicated cell phone surveillance technologies. On the
+other hand, strong Supreme Court opinions have eliminated any ambiguity
+about the unconstitutionality of warrantless searches of phones incident to
+arrest, and a growing national consensus says location data, too, is
+private.
+
+Protesters want to be able to communicate, to document the protests, and to
+share photos and video with the world. So they'll be carrying phones, and
+they'll face a complex set of considerations about the privacy of the data
+those phones hold. We hope this guide can help answer some questions about
+how to best protect that data, and what rights protesters have in the face
+of police demands.
+
+------------------------------
+
+Date: Thu, 14 Aug 2014 21:54:12 -0700
+From: "Robert R. Fenichel, MD" <bob@fenichel.net>
+Subject: Re: Informed consent for resuscitation trials (RISKS-28.17)
+
+The ethics of randomized medical trials is not a new subject of discussion.
+
+As always, the care providers involved must be in a state of equipoise: they
+must be genuinely uncertain as to which of two treatments is better.  When
+one of the two treatments has been in long use, some care providers may be
+diffident about randomized, blinded trials.  Often enough, that diffidence
+has delayed abandonment of interventions now known to be useless (gastric
+freezing for ulcers, internal-mammary artery ligation for angina) or even
+harmful (look up flecainide, encainide, and lidocaine for arrhythmias after
+heart attacks).
+
+The ethics of resuscitation trials, in which informed consent cannot be
+obtained, has also been discussed in the ethical and medical literature for
+many years (for example, see Abramson NS, Safar P, et al, Annals of
+Emergency Medicine 19(7):781-784 (1990) or
+http://www.google.ca/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&vedCMQFjAA&url=http%3A%2F%2Fwww.fda.gov%2Fohrms%2Fdockets%2Fac%2F04%2Fbriefing%2F2004-4073b1_01_IDE%2520presentation.ppt&ei’3tU4vfPKOcjALE0oCgAw&usg¯QjCNGVdMfaTogQyH27oqKzWm_DjWsP8A&sig2=jzR6NMx6DxNmShLLfawdSQ&bvm=bv.73231344,d.cGE
+(2004)).  In the United States, FDA guidelines covering such studies have
+been in place since about 2000, with ongoing revision.  The physicians who
+initiated these discussions were concerned that the only alternative to
+proper trials in unresponsive patients was to proceed in ignorance, possibly
+doing harm as they had long been doing, or possibly doing harm in an
+appealing new way.  In the absence of magical interventions of self-evident
+benefit, the alternative to randomized trials is ignorant guesswork.
+
+As to the specific matter of the UK study, looking at the use of adrenaline
+(called epinephirine in some parts of the world, including the US) in
+cardiac arrest: I don't know exactly what is being done in the UK, but the
+story suggests that the study was screened by medical experts, ethicists,
+and first responders, and that there was at least some attempt at public
+notice.  That's about as good as it gets in outpatient resuscitation.
+
+It seems from the story --- I no longer follow the literature of advanced
+cardiac life support, but I assume that those who proposed the study do
+follow it --- that when people say that they *know* that it's better to use
+adrenaline in cardiac arrest than to avoid it, they don't know what they're
+talking about, nor do those who say they *know* the opposite.
+
+If I were in the target population, I'd opt in.  In the event of my cardiac
+arrest, the experts believe that I'd be better off with adrenaline, or that
+I'd be better off without it, but they don't know which, and my expected
+outcome is therefore the same in the two arms, with confidence limits they'd
+like to tighten.  The only consequential choice I might make would be to opt
+out; then I could guarantee that the public-health consequence of my cardiac
+arrest would be zero.
+
+------------------------------
+
+Date: Fri, 15 Aug 2014 11:35:42 +0200
+From: Peter Houppermans <peter@houppermans.net>
+Subject: Re: Meet MonsterMind, the NSA Bot That Could Wage Cyberwar
+  (Trei, RISKS-28.17)
+
+> Personally, I think if you've got to trust that an automated system will
+> "hack back" in faster-than-human cycles, you're playing with fire.
+
+It appears lessons learned in an already existing environment -the stock
+markets with their algorithmic trading- are enthusiastically ignored.  I
+agree, this is a seriously dangerous idea - just imagine someone spoofing
+the attack origin.
+
+Personally, I have always preferred a human in or near any sensor-to-shooter
+link, even though it is not always clear if that has a positive or negative
+influence on the overall intelligence of the system.  :)
+
+------------------------------
+
+Date: Mon, 18 Aug 2014 19:44:53 +0100
+From: "Chris Drewe" <e767pmk@yahoo.co.uk>
+Subject: Re: Some taking a hard line against paying by E-ZPass (Powers,
+  RISKS-28.17)
+
+The Dartford River Crossing is a very busy toll bridge and tunnel road
+crossing the River Thames to the east of London, UK.  Currently drivers
+generally pay cash at toll booths, but to reduce long lines of waiting
+vehicles, work is under way to change to a cashless system:
+
+https://www.gov.uk/government/news/dart-charge-dartford-crossing-remote-payment
+
+> From October 2014 we are changing the way you pay the Dartford Crossing
+> charge. You will no longer pay at the barriers; instead you'll be able to
+> pay in advance, or before midnight the day after crossing. Drivers who
+> don't pay will face a penalty charge.  The new scheme is known as Dart
+> Charge and will help to reduce congestion at the crossing.  It will still
+> be free to use the crossing between 10pm and 6am.  There will be lots of
+> ways to pay: with a pre-pay account online by text at retail outlets over
+> the phone by post.
+
+Vehicles will be identified by number (license) plate recognition cameras
+(as with the London Congestion Charge).
+
+This appears to have similar risks to the E-ZPass scheme, such as
+surveillance and incorrect charging, but one potential problem could be
+timing your payment; if you buy a ticket well in advance but then don't make
+your journey you will have wasted the money, while if you cross but are then
+unable to pay within the deadline you will pick up a fine.  At least with
+cash you just pay for what you use, and you know that your payment has been
+accepted (though cashless systems can be a convenience for regular users).
+
+PS: I've only used the Dartford crossing a few times in my entire life, but
+a cashless system would be an advantage for me; my car is a left-hand-drive
+Chevrolet Caprice station wagon, so the driver's seat is on the wrong side
+for UK tollbooths...  :o)
+
+------------------------------
+
+Date: Fri, 15 Aug 2014 08:21:40 -0400
+From: "Scott Miller" <SMiller@unimin.com>
+Subject: Re: Some taking a hard line against paying by E-ZPass (Reisert,
+  RISKS-28.17)
+
+I am one of the "hard liners" the article refers to.  My reasons are the
+potential for invasions of privacy and other erosions of rights. The obvious
+attempts by some toll authorities to increase E-ZPass use by deliberately
+inconveniencing cash toll payers (observed for several years on the NJ
+Garden State Parkway and elsewhere -- those practices do seem to have
+diminished lately on the GSP) have only cemented my determination to avoid
+E-ZPass -- I am by nature extremely stubborn. I hang a conductor style coin
+changer on my dash when I drive long distances. The funny thing is that each
+denomination of Federal Reserve Note in my wallet still bears the promise
+"This note is legal tender for all debts, public and private'.  Maybe
+someone should sue for fraud.
+
+------------------------------
+
+Date: Thu, 14 Aug 2014 17:02:55 -0700
+From: Barry Gold <BarryDGold@ca.rr.com>
+Subject: Re: Breach of 1.2 billion user names and passwords
+
+At least one of the commentaries I read on this said not to keep your
+passwords in a file on your computer.
+
+Well, I've taken to using long, randomly-generated passwords (24
+characters). Typing those would be incredibly error-prone, so I keep them in
+a non-obvious file.
+
+After reading that, I started working on a "password vault": a piece of
+custom software that would let me store passwords, associated with a
+specific site (by whatever name or mnemonic I choose).  The file would be
+encrypted with a common cryptosystem (e.g., Twofish or AES).
+
+I figured that should be safe enough.  Sure, somebody could build software
+to do a flow analysis of the program, find the crypto-calls, and extract the
+key.  But it's custom software, so there aren't a lot of good targets to
+make it worthwhile for crackers.
+
+I got partway through all that, then realized that the whole idea was
+flawed: If somebody can put malware on your system that scans your disk and
+finds where you've stored your passwords, they can *also* put a keytracker
+into the OS.  So even if you kept them on a sheet of paper or memorized
+them, the crackers could _still_ obtain the password when you type it into
+the browser or other application.
+
+Screw this.  I'm going back to storing them in a Word file.
+
+------------------------------
+
+Date: Mon, 18 Aug 2014 11:42:06 +1200
+From: "Richard A. O'Keefe" <ok@cs.otago.ac.nz>
+Subject: Re: Computer Programming Is a Trade; Let's Act Like It (RISKS-28.14)
+
+As a lecturer in a Computer Science department, I clearly have some
+bias here.  The claim that "Computer programming is now a trade that
+someone can develop a basic proficiency in within weeks or months"
+contains two propositions and implies two others:
+
+(1) Computer programming is now a trade.
+(2) You can develop a basic proficiency very quickly.
+(3) Trades are "banausic" and therefore contemptible.
+(4) As mere artisans with very little skill, programmers should
+    be produced in large numbers and paid little.
+
+I have to say, therefore, that the image of a "trade" as something for
+thickos to pick up in weeks to months could not be further from the truth.
+Quoting, as an act of filial piety (because my father used to boast of being
+the only qualified plumber and drainlayer in the Law Society, from
+http://www.careers.govt.nz/jobs/construction/plumber-gasfitter-and-drainlayer/how-to-enter-the-job
+
+"To become a qualified drainlayer, you need to complete a drainlaying
+apprenticeship and gain a National Certificate in Drainlaying Level 4, which
+takes about 18 months to two years. This involves on-the-job training and
+completing block courses at a polytechnic."  And "to become registered as a
+licensed plumber and gasfitter you must: do an apprenticeship and complete a
+National Certificate in Plumbing and Gasfitting (this usually takes four
+years); and sit and pass the Plumbers, Gasfitters and Drainlayers Board
+examinations."
+
+That is, it can take LONGER to get a decent trade qualification than to get
+a BSc in Computer Science (which takes 3 years).
+
+But maybe programming really *is* unskilled compared with plumbing (a
+proposition that could be argued in earnest either way).  Let's see what a
+reputable "trade school" actually does with it.
+
+In my city there are three ways to get NZQA-approved qualifications
+in programming:
+
+ - in the Information Science department at the University
+   (part of Commerce)
+
+ - in the Computer Science department at the University
+   (part of Science, and where I am)
+
+ - in the Business, Tourism, and IT unit at Otago Polytechnic.
+
+The Polytechnic (www.op.ac.nz/) is where you would go to learn to be a motor
+mechanic, an electrician, a plumber, &c, so it's not unfair to call it a
+school of trades.  They are right across the road from the building I work
+in.  They put a huge amount of effort into looking after their students.  I
+respect them a lot.  Their offerings include
+
+Certificate in Information Technology (Level 3), 1 semester.  This is what
+you would have got at school, roughly.
+
+Certificate in Information Technology (Level 4), 1 semester.  This covers
+how to use Word, how to use Excel, blogs, wikis, what's an operating
+system, what's inside the box, and introductory programming (again, roughly
+school level).
+
+Certificate in IT Service and Support (Level 4).  This is "how to be a
+technician" + "professional communication".  It takes a year.  People with
+this qualification are valuable, no question.  They are the IT equivalent of
+"roadies".  You can go and look for a job, or you can convert it to
+
+Bachelor of IT (Level 7).  Level 7 means it's an honest-to-goodness
+Bachelor's degree.  It takes 3 years.  Not "weeks to months".  YEARS.
+
+How does their BIT compare with our BSc?  They'd be the same amount of
+effort.  They're comparable prices.  We have AI and bioinformatics, the
+Polytechnic have PC maintenance.  Their graduates would probably have done
+as much programming as ours.
+
+I personally would call the skill level they come out with 'basic
+proficiency'.  They have a heck of a lot yet to learn, but they have the
+foundations and have demonstrated willingness and ability to learn.
+
+If that's what 3 years does, "weeks to months" is not going to produce
+*good* programmers.  Mr Mims, in short, appears to be calling for the bulk
+production of not-yet-competent programmers.
+
+He is of course right that the qualification programmers get does not have
+to be a degree of the kind currently on offer.  Some sort of apprenticeship
+scheme could well be a good way to go.  To the best of my belief, the main
+obstacle is the way businesses want to hire programmers who need no further
+training.  Change *that*, and we can do interesting things.
+
+------------------------------
+
+Date: Thu, 14 Aug 2014 21:47:43 -0700
+From: Barry Gold <BarryDGold@ca.rr.com>
+Subject: Re: Cybersecurity as Realpolitik: Black Hat keynote (Dan Geer)
+
+Dan Geer wrote:
+> 7. Right to be forgotten -- YES [...]
+
+I agree with most of what Dan wrote.  Only this one section gives me
+heartburn, and most of that is with the title.
+
+A "right to be forgotten" as implemented in the European Community, is a
+really bad idea.
+
+First, it destroys the essential distinction between public and private.  If
+  you want to be private, do it indoors in your own home or somewhere else
+  that you have the right to control.  What you do in public is public, and
+  the public has the right to know about it.
+
+Second, it transfers the costs to the wrong party.  The EC demands that
+Google and other search engines and indexing systems maintain an
+infrastructure -- at their own expense -- to allow people to "be forgotten"
+by having specific pages removed from search results.
+
+In the old days, you could move to a new town, change your name, and start
+over.  But it was _not_ cheap.  Travel was expensive.  You had to sell
+whatever you couldn't carry, and that usually meant losing some of the
+value.  And then you arrived in a new place where everybody looked
+suspiciously at you, because they know one of the reasons people move is to
+get away from what they've done in the past.  So you have to start all over
+building a reputation.
+
+The EC wants the index services to pay for that privilege.
+
+It is not surprising that Google's response has been to make it virtually
+useless:
+
+* If you ask Google to remove something about you, they will remove
+  it only when the search terms include your name or other PII.
+* When they do this, they notify people that results have been
+  redacted.  [Error 451: not available for legal reasons]
+* They remove only the page(s) identified (how else are they to
+  identify what should be removed?)
+
+So, third, It seems inevitable to me that this will result in a new version
+of the Streisand effect.  Somebody demands that some page(s) be removed from
+search results.  Other people see the 451 notification and find alternate
+search terms to see the page(s) in question.  Then they multiple copies of
+them appear all over the Internet.
+
+But a right to mislead, that makes sense.  At least, in the sense that you
+should be able to create a new online identity.  And, really, all we need
+for that to happen is for the government to get out of the way.  A lot of
+the rules about identification come from the government, wanting to make
+sure you don't get benefits you're not entitled to, or that you don't
+"launder" money from something the government has made illegal which it
+really should keep its nose out of.
+
+So that's what we need.  A right to change your name and start over,
+possibly in a new place or at least a new website and/or ISP.  Yes?
+
+------------------------------
+
+Date: Sun, 17 Aug 2014 17:37:36 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: NSA Is Funding a Project to Roll All Programming Languages Into One
+
+This sounds a bit like TheLastOne project, see:
+ http://c2.com/cgi/wiki?TheLastOne
+
+------------------------------
+
+Date: Thu, 14 Aug 2014 20:30:45 -0400
+From: Bob Brown <bb@emorycottage.net>
+Subject: Re: Google scanning e-mail for child porn (RISKS-28.16)
+
+>> Why do you immediately rule out the obvious and completely effective
+>> fix of having Google stop conducting what appear to be searches of
+>> my private e-mail for potential criminal activity? ...
+
+> There's a very simple reason why not: Google isn't scanning every
+> e-mail message for child porn. It isn't even scanning them for spam.
+> It is scanning them for targeted advertising, which is where it gets
+> its money from. Spam detection, or child porn detection are the
+> side-effects.
+
+I call bogus.  *Of course* Google is scanning e-mail messages for child porn.
+They probably do not have to compute hashes of images to further their
+advertising business model, and they certainly don't have to spend CPU
+cycles comparing those hashes to hashes of known child porn images in order
+to make advertising dollars.
+
+Scanning for spam, on the other hand, does further their advertising
+business.  If they didn't do it, Google mail accounts would become
+unusable.  No users == no advertisers == no money.
+
+Sadly, this is a case of camel, nose, tent.  I agree that child
+pornography is reprehensible as well as illegal.  I happen to think that
+use of illicit drugs is reprehensible as well as illegal.  Should Google
+be looking for drug deals, too?
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.18
+************************
+
+--_002_7f319a2403344e83b0c8cf3eb8ec84cdEXHUBVM02campusnclacuk_--

@@ -1,0 +1,537 @@
+precedence: bulk
+Subject: Risks Digest 30.10
+
+RISKS-LIST: Risks-Forum Digest  Sunday 22 January 2017  Volume 30 : Issue 10
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.10>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Verizon remotely disables remaining Galaxy Note 7 phones (PGN)
+The cloud ate your homework! (code.org via Jim Reisert)
+Nim Language Draws From Best of Python, Rust, Go, and Lisp
+  (Serdar Yegulalp)
+Will Blockchain-Based Election Systems Make E-Voting Possible?
+  (Adam Stone)
+Dutch Developer Added Backdoor to Websites He Built,  Phished Over 20,000
+  Users (Bleeping Computer)
+CIA unveils new rules for collecting information on Americans (Reuters)
+Tesla's Self-Driving System Cleared in Deadly Crash (Neal E. Boudette)
+Re: How the Chinese Government Fabricates Social Media Posts for
+  Strategic Distraction, not Engaged Argument (GKing 50c)
+The first-ever close analysis of leaked astroturf comments from China's "50c
+  party" reveal Beijing's cybercontrol strategy (Cary Doctorow)
+Japan testing USB phone charging in public buses (TheNextWeb via
+  Henry Baker)
+The Fine Art of Sniffing Out Crappy Science (Chronicle of Higher Education)
+Facebook and Falsehood (Chronicle of Higher Education)
+Re: Fake News (Peter Houppermans)
+Subject: Re: Nissan's Path to Self-Driving Cars? Humans in Call Centers
+  (Michael Bacon)
+Re: Leap-seconds (Kurt Seifried, Bob Frankston, Kurt Seifried,
+  Bob Frankston)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 21 Jan 2017 10:16:58 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Verizon remotely disables remaining Galaxy Note 7 phones
+
+  [Thanks to Dan Geer citing this item, in a different venue.]
+
+http://fortune.com/2016/12/15/verizon-kill-remaining-note-7-phones/
+
+  Verizon Now Also Decides To Kill Remaining Note 7 Phones
+  *Fortune*, 15 Dec 2016
+
+  Verizon reversed course on Thursday and decided to allow Samsung to send a
+  software update to customers that will automatically disable their Galaxy
+  Note 7 phones. [...]
+
+I think the implications of this are quite severe, and ominous for cloud
+storage and the Internet of Things, as well as mobile devices.  The mere
+existence of such a disabling mechanism is likely to be exploited by the
+controlling entities, but also by others with illegitimate motives.
+
+https://www.washingtonpost.com/news/the-switch/wp/2017/01/20/samsung-expected-to-blame-irregular-battery-size-for-phone-fires
+http://fortune.com/2017/01/17/samsung-galaxy-note-7-verizon/
+
+See also an interesting precursor: A rather spectacular defense-vs-offense
+battle along these lines is recaptured in this 31 May 2008 article:
+   https://blog.codinghorror.com/revisiting-the-black-sunday-hack/
+
+``Revisiting the Black Sundau Hack'', in which DirectTV was able to execute
+a carefully engineered wipe-out of hacked Direct TV access, resulting in all
+hacked access cards being rewritten to "GAME OVER" -- a week before the 2001
+Superbowl.
+
+------------------------------
+
+Date: Sun, 22 Jan 2017 15:28:05 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: The cloud ate your homework! (code.org)
+
+"Code Studio had some technical difficulties and any student progress from
+9:19 - 10:33 am PST on Friday, January 20th was not saved. The site is back
+up and student progress is being saved again."
+
+http://blog.code.org/post/156133016748/this-mornings-technical-difficulties-on-code
+
+  [I suppose would-be coders might might learned that their own programs
+  are not the only thing that can go wrong.  PGN]
+
+------------------------------
+
+Date: Wed, 18 Jan 2017 12:11:40 -0500 (EST)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: Nim Language Draws From Best of Python, Rust, Go, and Lisp
+  (Serdar Yegulalp)
+
+Serdar Yegulalp, InfoWorld, 16 Jan 2017 via
+ACM TechNews, Wednesday, January 18, 2017
+
+The under-development Nim programming language is advertised as blending the
+compilation speed and cross-platform targeting of Google's Go language,
+Rust's safe-by-default behaviors, the readability and ease of development of
+Python, and the metaprogramming capabilities of Lisp.  Nim's syntax bears a
+strong resemblance to Python's, as it employs indented code blocks and some
+of the same syntax, while Go- and Rust-like features include first-class
+functions, distinct types, and object-oriented programming with composition
+favored over inheritance.  Nim permits templates and generics, and expresses
+C code as a default setting, while it also is capable of generating C++,
+Objective-C, or JavaScript.  Compile code caching means big projects with
+small changes to one module will recompile solely in that module.  Nim's
+memory management uses a deferred reference counting system for default
+garbage-collecting, which can be completely disabled in favor of manual
+management when necessary.  Nim intends to provide both a strong standard
+library and a solid assortment of third-party modules, while its biggest
+current drawback is the relatively small user-developer community for the
+language.  Nevertheless, Nim helps create software that eventually must be
+swift and robust, with a less precipitous learning curve or cognitive
+overhead typically related to existing languages.
+
+------------------------------
+
+Date: Wed, 18 Jan 2017 12:11:40 -0500 (EST)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: Will Blockchain-Based Election Systems Make E-Voting Possible?
+  (Adam Stone)
+
+Adam Stone, *Government Technology*, 11 Jan 2017
+
+Determining whether blockchain technology can accurately count votes and
+ensure the integrity of an electronic voting system was the purpose of a
+competition among university teams held by Kaspersky Lab.  Kaspersky's Juan
+Guerrero says the blockchain's model has different peers in different
+systems vet each other's transactions.  "If one of them gets hacked or one
+of them gets altered, all the others would be able to notice that change,"
+he notes.  Three submissions out of 19 were winners of the Kaspersky
+contest, including a "permissioned blockchain" model in which a central
+authority admits voting machines to the network and produces a distributed
+ledger of votes.  The other winning submissions included a model founded on
+global public keys that encrypt ballots and provide voter receipts, and a
+solution based on the Open Vote Network and DRE-i and DRE-ip encryptions.
+To balance vote auditability and privacy, one solution would match voters
+with random identity numbers so those numbers could be exposed by an audit
+without compromising individual voters.  To address the threat of voting
+under duress, most teams chose to stay with traditional voting places
+instead of remote voting.  Guerrero says the results of the contest should
+help spark discussions among stakeholders -- and U.S. voters -- on finding
+proof-of-concept e-voting systems.
+
+  [We should remind Adam and Kaspersky that the concept of unhackable
+  elections leads to Fake News items.  In this case, even if the voting
+  technology were perfect (which today depends on systems and networks that
+  are not secure), there are too many weak links elsewhere in the process.
+  In addition, there seem to be quite a few cryptographers in the voting
+  integrity community who think that block chains would be gross overkill in
+  this context.  PGN]
+
+------------------------------
+
+Date: Wed, 18 Jan 2017 08:21:45 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Dutch Developer Added Backdoor to Websites He Built,  Phished Over
+  20,000 Users (Bleeping Computer)
+
+https://www.bleepingcomputer.com/news/security/dutch-developer-added-backdoor-to-websites-he-built-phished-over-20-000-users/
+
+  A Dutch developer illegally accessed the accounts of over 20,000 users
+  after he allegedly collected their login information via backdoors
+  installed on websites he built.  According to an official statement, Dutch
+  police officials are now in the process of notifying these victims about
+  the crook's actions.  The hacker, yet to be named by Dutch authorities,
+  was arrested on July 11, 2016, at a hotel in Zwolle, the Netherlands, and
+  police proceeded to raid two houses the crook owned, in Leeuwarden and
+  Sneek.
+
+------------------------------
+
+Date: Wed, 18 Jan 2017 20:56:30 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: CIA unveils new rules for collecting information on Americans
+
+http://www.reuters.com/article/us-usa-intelligence-idUSKBN15236Z
+
+------------------------------
+
+Date: Fri, 20 Jan 2017 00:18:04 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Tesla's Self-Driving System Cleared in Deadly Crash
+  (Neal E. Boudette)
+
+Neal E. Boudette, *The New York Times*, 19 Jan 2017
+
+The highway agency found that while Tesla’s Autopilot feature didn’t prevent
+a crash in Florida, the system performed as it was intended.
+http://www.nytimes.com/2017/01/19/business/tesla-model-s-autopilot-fatal-crash.html
+
+------------------------------
+
+Date: Tue, 17 Jan 2017 21:05:52 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Re: How the Chinese Government Fabricates Social Media Posts for
+  Strategic Distraction, not Engaged Argument (GKing, RISKS-30.09)
+
+More on GKing's previous item via NNSquad
+again from http://gking.harvard.edu/50c
+
+  The Chinese government has long been suspected of hiring as many as
+  2,000,000 people to surreptitiously insert huge numbers of pseudonymous
+  and other deceptive writings into the stream of real social media posts,
+  as if they were the genuine opinions of ordinary people. Many academics,
+  and most journalists and activists, claim that these so-called "50c party"
+  posts vociferously argue for the government's side in political and policy
+  debates. As we show, this is also true of the vast majority of posts
+  openly accused on social media of being 50c. Yet, almost no systematic
+  empirical evidence exists for this claim, or, more importantly, for the
+  Chinese regime's strategic objective in pursuing this activity. In the
+  first large-scale empirical analysis of this operation, we show how to
+  identify the secretive authors of these posts, the posts written by them,
+  and their content. We estimate that the government fabricates and posts
+  about 448 million social-media comments a year.
+
+------------------------------
+
+Date: January 19, 2017 at 11:20:11 AM EST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: The first-ever close analysis of leaked astroturf comments from
+  China's "50c party" reveal Beijing's cybercontrol strategy
+
+[Note:  This item comes from friend David Rosenthal.  DLH]
+
+Cory Doctorow, Boing Boing, 18 Jan 2017
+<https://boingboing.net/2017/01/18/the-first-ever-close-analysis.html>
+
+The Harvard Institute for Quantitative Science team that published 2016's
+analysis of the Chinese government's '50c Party', who flood social media
+with government-approved comments has published a new paper, How the Chinese
+Government Fabricates Social Media Posts for Strategic Distraction, not
+Engaged Argument, in which they reveal their painstaking analysis of a huge
+trove of leaked emails between 50c Party members and their government
+handlers.
+
+The research refutes the widely held view that the 50c Party is a group of
+paid piece-workers who pile on to people who post negative comments about
+the government; rather, the 50c Party is a closely coordinated group of
+government workers whose messages are part of their normal, salaried duties,
+and consist largely of upbeat talk about upcoming government initiatives --
+or issues that distract from scandals.
+
+The analysis also reveals semantic features of 50c Party posts, making it
+possible to use relatively simple language classifiers to make guesses about
+which posts come from 50c Party members, and validates this hypothesis with
+a sly way of getting 50c Party members to reveal themselves through
+deceptive private messages.
+
+One implication: if we assume that the Chinese government is very good at
+controlling public opinion, and if we want to adopt their tactics to counter
+Trump, this suggests that we should: a) coordinate to make a lot of noise
+about the Trump-denying activities over the next four years (e.g.,
+California expanding public healthcare); b) coordinate to make a lot of
+noise about arbitrary upbeat subjects ("this new music is just great") on
+days when Trump is trying to draw everyone's attention to himself. But of
+course, the 50c Party is able to issue talking points to hundreds of
+thousands of people and make them work in lockstep.
+
+One way to parsimoniously summarize existing empirical results about
+information control in China is with a theory of the strategy of the
+regime. This theory, which as with all theories is a simplification of the
+complex realities on the ground, involves two complementary principles the
+Chinese regime appears to follow, one passive and one active. The passive
+principle is do not engage on controversial issues: do not insert 50c posts
+supporting, and do not censor posts criticizing, the regime, its leaders, or
+their policies. The second, active, principle is stop discussions with
+collective action potential, by active distraction and active censorship.
+Cheerleading in directed 50c bursts is one way the government distracts the
+public, although this activity can be also be used to distract from general
+negativity, government related meetings and events with protest potential,
+etc. (Citizens criticize the regime without collective action on the ground
+in many ways, including even via unsubstantiated threats of protest and
+viral bursts of online-only activity -- which, by this definition, do not
+have collective action potential and so are ignored by the government.)
+
+These twin strategies appear to derive from the fact that the main threat
+perceived by the Chinese regime in the modern era is not military attacks
+from foreign enemies but rather uprisings from their own people. Staying in
+power involves managing their government and party agents in China's 32
+provincial-level regions, 334 prefecture-level divisions, 2,862 county-level
+divisions, 41,034 township-level administrations, and 704,382 village-level
+subdivisions, and somehow keeping in check collective action organized by
+those outside of government. The balance of supportive and critical
+commentary on social media about specific issues, in specific jurisdictions,
+is useful to the government in judging the performance of (as well as
+keeping or replacing) local leaders and ameliorating other information
+problems faced by central authorities (Dimitrov, 2014a,b,c; Wintrobe,
+1998). As such, avoiding any artificial change in that balance -- such as
+from 50c posts or censorship -- can be valuable. Distraction is a clever and
+useful strategy in information control in that an argument
+
+------------------------------
+
+Date: Fri, 20 Jan 2017 12:55:55 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Japan testing USB phone charging in public buses
+
+FYI -- What could possibly go wrong?  It is well known that the NSA -- as
+well as other nation-state actors -- place malicious USB chargers in public
+places that can infect computers and phones that are attached.
+
+Mix ­ in Mobile
+You need a *USB condom* (but from a *trusted vendor* !!) to protect your phone.
+http://thenextweb.com/mobile/2017/01/20/japan-usb-phone-charger-public-transport/
+
+As someone who's been walking around with a beat-up iPhone 5 and a battery
+ready to die on me any moment, having access to more public phone charging
+stations is something I can absolutely get behind.  It seems Japan is
+sympathetic to this need.
+
+According to Japanese news outlet IT Media, a public transport bus in the
+Tokyo area has introduced, and is currently testing, USB charging stations
+for commuter phones and tablets.
+
+While the local Bureau of Transportation hasn't formally announced or
+confirmed the trials, numerous passengers so far have reported seeing the
+charging ports.  The service runs free of charge, with at least five of
+these wall-mounted charging hotspots placed inside the bus.
+
+According to reports, the service is currently available solely in a single
+bus. It remains unclear how long testing will continue or whether it will
+eventually roll out to more buses.
+
+Japan isn't the only country to have offered phone charging stations in
+public transport vehicles. Last September, London also equipped a limited
+number of buses with USB chargers. Similarly, Singapore ran trials with
+wall-mounted phone chargers on at least 10 buses in September last year.
+
+So don;t be surprised if you see the service available on one of the buses
+in your local area sometime soon. But until then: Better make sure you keep
+your portable battery pack in your backpack.
+
+------------------------------
+
+Date: Thu, 19 Jan 2017 07:45:51 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The Fine Art of Sniffing Out Crappy Science (Chronicle of Higher
+  Education)
+
+NNSquad
+http://www.chronicle.com/article/The-Fine-Art-of-Sniffing-Out/238907
+
+  Carl T. Bergstrom and Jevin West, a pair of scientists at the University
+  of Washington, think it's time to arm students with boots and shovels.
+  They have published the outline of a course, titled "Calling Bullsh*t,"
+  which would try to teach how to spot bad data and misleading graphs at a
+  time when bending statistics has become a popular art form.
+
+------------------------------
+
+Date: Thu, 19 Jan 2017 07:56:28 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Facebook and Falsehood (Chronicle of Higher Education)
+
+via NNSquad
+http://www.chronicle.com/article/FacebookFalsehood/238867
+
+  If businesses, public intellectuals, and academics want to start
+  addressing the problem, they are going to have to start thinking in
+  political terms, just as climate scientists have had to get politicized to
+  engage in the debates over global warming. If Facebook and other companies
+  are going to act effectively against fake news, they need to take a
+  directly political stance, explicitly acknowledging that they have a
+  responsibility to prevent the spread of obvious falsehoods, while
+  continuing to allow the sites' users to express and argue for a variety of
+  different understandings of the truth that are not obviously incompatible
+  with empirical facts.
+
+------------------------------
+
+Date: Wed, 18 Jan 2017 15:33:25 +0100
+From: Peter Houppermans <peter@houppermans.net>
+Subject: Re: Fake News (RISKS-30.09)
+
+I find it interesting that in all the reporting and arguing about fake news
+and the effects it has there has been one thing left untouched: the fact
+that the very label "fake news" is, in itself, manipulative.
+
+Any attempt to address "fake news" should start with the consideration that
+it may be better to replace the term with what it really is: lies.
+
+  [Peter H, Yes.  See RISKS-29.95,96, and RISKS-30.03.
+  But a lie lies in the eyes of the beholder and the beheld.
+  How about Fox's use of *faux news*?.
+  The now-common use of *Falsehood* seems less onerous than "Lies".
+  *Prevarication* might be a suitable alternative,
+  while later pretending you had not prevaricated
+  might be a *postvarication*?  PGN]
+
+------------------------------
+
+Date: Wed, 18 Jan 2017 11:52:25 +0000
+From: Michael Bacon - Grimbaldus <michael.bacon@grimbaldus.com>
+Subject: Re: Nissan's Path to Self-Driving Cars? Humans in Call Centers
+  (RISKS-30.09)
+
+Seamless Autonomous Mobility?
+
+I can hardly wait for them to outsource the call centre!
+
+------------------------------
+
+Date: Tue, 17 Jan 2017 18:46:15 -0700
+From: Kurt Seifried <kurt@seifried.org>
+Subject: Re: Leap-seconds (Frankston, RISKS-30.09)
+
+> Why is the millisecond precise position of the sun more important than all
+> other uses of time?
+
+Because satellites and other things that actually care.
+
+So what's your suggestion to deal with leap years and the undefining of the
+year?
+
+It's so weird to me that people **** all over leap seconds, but are fine
+with leap years and arbitrary timezone changes.
+
+To be fair my plan to deal with leap seconds for CVE entries is to ideally
+say they are optional and round down if needed (to 59), we're lucky in that
+being off by a second is ok.
+
+------------------------------
+
+Date: 17 Jan 2017 22:16:20 -0500
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: Re: Leap-seconds (Seifried, RISKS-30.09)
+
+Satellites can't use UTC because it's too imprecise.  They need the more
+precise times such as UT2. These are computed from TAI plus a correction
+factor. They don't use wall clock notation (HH::MM) -- minutes don't exist
+in UT2 nor UTC, so why do we even care about minutes?
+
+Leap years are a red-herring here since we don't assume any interval beyond
+weeks are constant. You cannot say minutes are not 60 seconds. Period. It is
+a definition. They are not about 60 second -- it is a definition. Time zones
+are about presentation and not about keeping as such.
+
+If you want sun-minutes for your sundial, fine -- but no need to make the
+rest of us use it.
+
+I have a longer paper for Springer about this but didn't want to get into
+all the issues on my essay.
+
+------------------------------
+
+Date: Wed, 18 Jan 2017 08:18:03 -0700
+From: Kurt Seifried <kurt@seifried.org>
+Subject: Re: Leap-seconds (Frankston, RISKS-30.10)
+
+Ah, I stand corrected: we have
+  https://en.wikipedia.org/wiki/ISO_80000-3
+
+Units of time, speed and acceleration
+<https://en.wikipedia.org/w/index.php?title=ISO_80000-3&action=edit&section=9>
+
+* second <https://en.wikipedia.org/wiki/Second> (symbol s): "*duration
+  of 9 192 631 770 periods of the radiation corresponding to the transition
+  between the two hyperfine <https://en.wikipedia.org/wiki/Hyperfine> levels
+  of the ground state of the caesium 133
+  <https://en.wikipedia.org/wiki/Caesium#Isotopes> atom*"
+
+Other units of time defined by the standard include
+<https://en.wikipedia.org/wiki/Minute> (1 min = 60 s)
+<https://en.wikipedia.org/wiki/Hour> (1 h = 60 min)
+<https://en.wikipedia.org/wiki/Day> (1 d = 24 h)
+The year is defined in an informative annex:
+<https://en.wikipedia.org/wiki/Year> (1 a = 365 d or 366 d)
+
+So you are correct, the minute is defined as 60 seconds and years are
+defined as normal or leap.
+
+However we still have the problem of time/the earth getting out of sync
+(great page: http://tycho.usno.navy.mil/leapsec.html). So then the problem
+becomes how do we reconcile various time keeping standards? leap seconds?
+stretch the leap second over a week like Amazon Web Services and Google?
+Simply ignore it and let GPS devices wander about a bit? ;)
+
+------------------------------
+
+Date: 18 Jan 2017 10:23:39 -0500
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: Re: Leap-seconds (Seifried, RISKS-30.10)
+
+Easy to resolve because HH:MM is just a naming convention like time zones.
+So we just do a daylight-like adjustment in 5000 year in case anyone then
+cares about what happens back on the old planet.
+
+  [I hope that resolves this exchange.  PGN]
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+==> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.10
+************************

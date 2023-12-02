@@ -1,0 +1,522 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 32.86
+
+RISKS-LIST: Risks-Forum Digest  Sunday 5 September 2021  Volume 32 : Issue 86
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/32.86>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Whistleblower claims smart motorway system failure (Safer Highways)
+The U.S. Army Tried Portable Nuclear Power at Remote Bases 60 Years Ago
+ (Atlas Obscura)
+Excel spreadsheet font gives evidence of fraud (The Economist)
+Digital Archives Meant to Be Permanent Seem to Be Lost on the Web
+ (New Scientist)
+AI Matches Cardiologists' Expertise, While Explaining Its Decisions
+  (UCSF News)
+Popular Smart Home Security System Can Be Remotely Disarmed (TechCrunch)
+New NSA FAQ on Quantum Computing and Post-Quantum Cryptography (Defense.gov)
+Apple backs down on CSAM launch, says it will collect input and make
+ improvements before launching (Apple Insider)
+Insufficient evidence that AI breast cancer screening is accurate enough to
+ replace human scrutiny (medicalxpress.com)
+GOP Election Reviews Create a New Kind of Security Threat (NYTimes)
+Re: Lying with statistics (Jonathan Levine)
+Re: Iceland has reported more cases in the past month than they had in the
+  previous 9 months combined (Sheldon, Andrew Douglass, Amos Shamir)
+Re: Toyota suspends use of self-driving vehicle in Olympic Village
+ (Steve Lamont)
+Re: Lights Flickered in New York City. Why Did the Subways Grind to a Halt?
+  (Sheldon)
+Re: autonomous vehicles (Matthew Kruk)
+Biden Administration Establishes Program to Recruit Techo (Maggie Miller)
+Security, Privacy, and Innovation: Reshaping Law for the AI Era
+  (noted by Gabe Goldberg)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 2 Sep 2021 10:25:37 -0400
+From: "George Sherwood" <sherwood@transedge.com>
+Subject: Whistleblower claims smart motorway system failure (Safer Highways)
+
+A whistleblower has claimed staff operating England's smart motorways are
+'petrified' of road users being killed following a string of computer
+crashes.
+
+Three system failures in April meant that across hundreds of miles of
+motorway, the digital signs which inform drivers of speed limits or lane
+closures were left 'unusable'.
+
+The signs, also called gantries, could not be changed along parts of the M1,
+M4, M5 and M62, leading an insider at National Highways (formerly England
+Highways) to warn that 'someone is going to get killed.'
+
+https://www.saferhighways.co.uk/post/whistleblower-claims-smart-motorway-sys
+tem-failure
+
+------------------------------
+
+Date: Fri, 3 Sep 2021 22:53:35 -0400
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: The U.S. Army Tried Portable Nuclear Power at Remote Bases 60 Years
+ Ago (Atlas Obscura)
+
+It didn’t go well.
+
+https://www.atlasobscura.com/articles/camp-century-portable-nuclear-reactor
+
+------------------------------
+
+Date: Sat, 4 Sep 2021 11:31:20 -0400
+From: "Steve Golson" <sgolson@trilobyte.com>
+Subject: Excel spreadsheet font gives evidence of fraud (The Economist)
+
+A prominent paper on dishonesty relied on a fabricated dataset, and different fonts provide proof:
+
+http://datacolada.org/98
+
+     Perhaps the most peculiar feature of the dataset is the fact that
+     the baseline data for Car #1 in the posted Excel file appears in
+     two different fonts. Specifically, half of the data in that column
+     are printed in Calibri, and half are printed in Cambria.
+
+     The analyses we have performed on these two fonts provide evidence
+     of a rather specific form of data tampering. We believe the
+     dataset began with the observations in Calibri font. Those were
+     then duplicated using Cambria font.
+
+Also mentioned in The Economist:
+
+https://www.economist.com/graphic-detail/2021/08/28/how-data-detectives-spotted-fake-numbers-in-a-widely-cited-paper
+
+RISK: It's data, it's in Excel, therefore it must be correct.
+
+not-a-RISK: Making your data publicly available is a good thing.
+
+------------------------------
+
+Date: Wed, 1 Sep 2021 11:39:18 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Digital Archives Meant to Be Permanent Seem to Be Lost on the Web
+ (New Scientist)
+
+Chris Stokel-Walker *New Scientist*, 30 Aug 2021,
+via ACM TechNews, 1 Sep 2021
+
+Old Dominion University (ODU)'s Michael Nelson and colleagues found
+supposedly permanent digital Web archives could be lost. The team ran a Web
+crawler between November 2017 and January 2019 to access 16,627 pages
+preserved by 17 services in the U.S., Europe, and some serving the whole
+Internet. Four of the archives' uniform resource identifiers changed during
+that period, impacting the crawler's ability to find the archived pages. The
+four archives stored 1,981 Web pages, of which 537 were affected, including
+20 that could not be retrieved at all. ODU's Michael Nelson said, "Being
+able to provide access to archives and demonstrate the integrity and
+authenticity of those archives are indeed issues that are very important to
+us and our members, and Web archives are no exception."
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2c9x22d585x074076&
+
+------------------------------
+
+Date: Wed, 1 Sep 2021 11:39:18 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: AI Matches Cardiologists' Expertise, While Explaining Its Decisions
+ (UCSF News)
+
+Elizabeth Fernandez, University of California, San Francisco News, 24 Aug 2021
+via ACM TechNews, 1 Sep 2021
+
+Scientists at the University of California, San Francisco and the University
+of California, Berkeley designed an artificial intelligence (AI) algorithm
+that diagnosed cardiovascular ailments as well as expert cardiologists,
+while explaining its reasoning. The researchers trained the convolutional
+neural network on commonly accessible electrocardiogram (ECG) data. The
+researchers said the algorithm performed strongly across 38 different
+diagnoses in five broad diagnostic categories. Because the researchers
+incorporated "explainability" into the algorithm, it highlighted ECG
+segments critical for each diagnosis, which may boost physicians' confidence
+in using it. The researchers said their results "offer strong support for AI
+algorithms like neural networks to be incorporated into existing commercial
+ECG algorithms, since they perform better for many diagnoses, can improve
+over time and provide additional insights through explainability."
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2c9x22d584x074076&
+
+------------------------------
+
+Date: Wed, 1 Sep 2021 11:39:18 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Popular Smart Home Security System Can Be Remotely Disarmed
+ (TechCrunch)
+
+Zack Whittaker, TechCrunch, 31 Aug 2021, via ACM TechNews, 1 Sep 2021
+
+Researchers at cybersecurity company Rapid7 found vulnerabilities that can
+be used to remotely disarm the Fortress S03 smart home-security system. The
+Wi-Fi-based system allows owners to monitor their homes with a mobile
+application via Internet-linked cameras, motion sensors, and sirens, and to
+arm or disarm it with a radio-controlled key fob. The researchers said
+hackers can remotely query an unauthenticated application programming
+interface without the server checking the request's legitimacy; the server
+would return the device's unique International Mobile Equipment Identity
+number, which could be used to disarm the system. In addition, intercepting
+unencrypted radio signals between the S03 and the key fob could permit the
+"arm" and "disarm" signals to be captured and replayed. Rapid7 informed
+Fortress of the flaws, then publicly disclosed them when the company did not
+respond after three months; a law firm representing Fortress called the
+claims of vulnerabilities in the S03 system "false, purposely misleading,
+and defamatory," without specifying why they are false, or that Fortress has
+fixed the vulnerabilities.
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2c9x22d583x074076&
+
+------------------------------
+
+Date: Sat, 4 Sep 2021 15:47:53 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: New NSA FAQ on Quantum Computing and Post-Quantum Cryptography
+ (Defense.gov)
+
+https://media.defense.gov/2021/Aug/04/2002821837/-1/-1/1/Quantum_FAQs_20210804.PDF
+
+------------------------------
+
+Date: Fri, 3 Sep 2021 08:20:39 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Apple backs down on CSAM launch, says it will collect input and
+ make improvements before launching
+
+https://appleinsider.com/articles/21/09/03/apple-backs-down-on-csam-features-postpones-launch
+
+------------------------------
+
+Date: Thu, 2 Sep 2021 09:43:24 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Insufficient evidence that AI breast cancer screening is accurate
+ enough to replace human scrutiny (medicalxpress.com)
+
+https://medicalxpress.com/news/2021-09-insufficient-evidence-ai-breast-cancer.html
+
+'"Current evidence on the use of AI systems in breast cancer screening is a
+long way from having the quality and quantity required for its
+implementation into clinical practice."
+
+'"Well designed comparative test accuracy studies, randomized controlled
+trials, and cohort studies in large screening populations are needed which
+evaluate commercially available AI systems in combination with radiologists
+in clinical practice."'
+
+When the initial diagnosis originates from AI, a second opinions about
+medical diagnosis will remain essential. How many patients will ask their
+physicians to review the initial diagnosis for a false positive/negative?
+
+------------------------------
+
+Date: Wed, 01 Sep 2021 21:58:16 +0000
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: GOP Election Reviews Create a New Kind of Security Threat (NYTimes)
+
+> Nick Corasaniti, *NYTimes*,  1 Sep 2021
+> https://www.nytimes.com/2021/09/01/us/politics/gop-us-election-security.html
+
+> As Republicans continue to challenge the 2020 results, voting equipment is
+> being compromised when partisan insiders and unvetted operatives gain
+> access.
+
+> "that previously unknown technical vulnerabilities could be discovered by
+> partisan malefactors and exploited in future elections."
+
+> "Security experts say that election hardware and software should be
+> subjected to transparency and rigorous testing, but only by credentialed
+> professionals."
+
+I was incredibly offended by the supercilious tone of this NYTimes article,
+especially as it indicated a complete disregard for the dubious history of
+'Security through Obscurity':
+
+https://en.wikipedia.org/wiki/Security_through_obscurity
+
+The 2020 election wasn't 'stolen', but that doesn't imply that our election
+systems are in good shape -- they aren't, and can't be, so long as we
+disregard Kerckhoffs's Principle:
+
+https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle
+
+  "Secrecy, in other words, is a prime cause of brittleness -- and therefore
+  something likely to make a system prone to catastrophic collapse.
+  Conversely, openness provides ductility."  Bruce Schneier
+
+Since elections and voting are the fundamental aspects of a democracy, these
+processes deserve the highest level of scrutiny by the largest number of
+eyes. By definition, all of these processes -- both *hardware* and
+*software* -- should be OPEN SOURCE, and significant efforts in the computer
+science and crypto communities should be made to render these processes as
+*transparent* and *auditable* as possible.
+
+  "I consider it completely unimportant who in the party will vote, or how;
+  but what is extraordinarily important is this--*who will count the votes,
+  and how*." said in 1923; Boris Bazhanov The Memoirs of Stalin's Former
+  Secretary (1992);
+
+------------------------------
+
+Date: Wed, 1 Sep 2021 16:17:50 -0600
+From: "Jonathan Levine" <jonathan.canuck.levine@gmail.com>
+Subject: Re: Lying with statistics (RISKS-32.85)
+
+> Risk: Blithely quoting a company's statistics without questioning them.
+
+Well, the broader problem is the public's uncritical acceptance of just
+about *all* numbers thrown at us.  The one that had me yelling at the
+(CBC) radio recently was a local geothermal energy promoter's claim
+that here in Alberta we could pull 10 terawatts (no puns please, PGN...)
+out of the ground, a number that demands some explanation if one
+bothers to correlate it with the *world's* electricity consumption,
+presently between 15 and 20 terawatts.
+
+------------------------------
+
+Date: Wed, 1 Sep 2021 18:41:02 -0400
+From: Sheldon <sheldon10101@gmail.com>
+Subject: Re: Iceland has reported more cases in the past month than they had
+ in the previous 9 months combined (RISKS-32.85)
+
+People don't understand what vaccines do.
+
+Vaccines are tested and approved based upon their preventing disease, not
+upon their preventing infection. Of all the human vaccines, only the HPV
+vaccine prevents infection. For example, children get infected with the two
+serotypes of polio that exist, even if they are vaccinated. That the
+SARS-COV-2 vaccines prevent infection is a bonus that will decline over
+time. However, the vaccines are still great at preventing hospitalization
+and death. That's because the protection of the immune system goes beyond
+antibodies. For example, people who cannot produce antibodies and are
+vaccinated have similar levels of protection against hospitalization and
+death as people with a normal immune system.
+
+A booster shot will likely increase the antibody levels and cut down on the
+infection rate and the hospitalization rate.  But that will only be for a
+few months until we once again have these SARS-COV-2 vaccines operating as
+every other human vaccine. A booster is a protection for those who are
+vaccinated and probably even more so for the idiots who are not.
+
+The only long-term answer is to get every fool vaccinated ASAP.
+
+The above paragraphs are based upon /This Week in Virology/. probably the
+best technical podcast in the world on viruses and vaccines.
+
+------------------------------
+
+Date: Thu, 2 Sep 2021 19:03:43 -0400
+From: "Andrew Douglass" <andr3wdouglass@gmail.com>
+Subject: Re: Iceland has reported more cases in the past month than they had
+ in the previous 9 months combined (RISKS-32.85)
+
+Something came up today that surprised me. Perhaps this was worked out in
+the newsgroup—I can’t seem to get into it at the moment.
+
+The digest reported uncritically:
+
+> ... 91.2% of their adult population is at least partially vaccinated,
+> 86.5% are fully vaccinated Fauci said with 50% vaccinated, we wouldn’t see
+> surges like those in the past.  Whoops!
+
+https://twitter.com/ianmSC/status/1428407830093041664
+
+A certain crowd, if you read the Twitter thread, is taking this to mean that
+precautions don’t work. This is a faulty conclusion for a bunch of reasons.
+
+(1) the two-dose vaccination % in Iceland is about 74%, not 87%
+(2) infections and related data should be evaluated per capita;
+(3) the United States has three times the per capita infection rate as Iceland;
+(4) an increase in infection rate from very very good to very good looks
+    ominous with the Y-access access scaled up;
+(5) hospitalization/death post-vax are the crucial numbers. Vaxed people
+    rarely get very sick or die;
+(6) If Dr Fauci’s “fairly certain” was wrong—and that was pre-Delta
+    explosion—it reflects on Dr Fauci, not the statistically proven
+    effectiveness of vaccines;
+(7) The data suggests actually that Iceland let off its restirctions in June
+    at the wrong time.
+(8) The RISK: relying on a cherry-picked context-free graph and annotating
+    it cleverly to make a political point.
+(9) I’m sure there’s more…. Public health is complicated.
+
+More:
+https://www.reuters.com/article/factcheck-iceland-vaccines/fact-check-covid-19-cases-in-iceland-are-not-proof-that-vaccines-are-ineffective-idUSL1N2P918F
+
+------------------------------
+
+Date: Sat, 4 Sep 2021 17:20:07 +0300
+From: "Amos Shapir" <amos083@gmail.com>
+Subject: Re: Iceland has reported more cases in the past month than they had
+ in the previous 9 months combined (RISKS-32.85)
+
+How to Lie with Statistics, part 2:
+
+Iceland had more infections, but the number of people hospitalized -- which
+is the main cause of potential overwhelming health services -- has been less
+than half than in previous waves, and is already declining fast.
+
+So yes, anti-vaxers, Iceland had hammered the Coronavirus with science.
+Again.
+
+https://ourworldindata.org/explorers/coronavirus-data-explorer
+
+------------------------------
+
+Date: Wed, 1 Sep 2021 16:08:59 -0700
+From: "Steve Lamont" <spl@tirebiter.org>
+Subject: Re: Toyota suspends use of self-driving vehicle in Olympic Village
+ (CNN)
+
+It helps to read to the bottom of stories, to wit:
+
+https://www.cnn.com/2021/08/27/cars/toyota-self-driving-vehicle-paralympics-accident/index.html
+
+  "Kitazono was crossing a crosswalk in the athlete's village when an
+  e-Palette made a right turn and struck him at a very slow speed, according
+  to a report from Japanese news organization Asahi Shimbun. At the time,
+  the vehicle was under manual control of an operator, who told police they
+  'were aware that a person was there but thought (the person) would
+  (realize that a bus was coming) and stop crossing the (street),' the Asahi
+  reported."
+
+In other words, this was *driver* error, not an error by the e-Palette
+self-driving system.
+
+------------------------------
+
+Date: Wed, 1 Sep 2021 18:23:13 -0400
+From: Sheldon <sheldon10101@gmail.com>
+Subject: Re: Lights Flickered in New York City. Why Did the Subways Grind to
+ a Halt? (NYTimes, RISKS-32.85)
+
+In my experience, Toronto's subway just stops when there is a power
+outage. I did a bit of poking around and power is supposed to come from two
+independent substations so that power can be switched over. There is battery
+backup, but it isn't for traction. In case of longer term outage at a
+station, generators can be brought onsite. But again, these generators
+aren't intended to supply traction power.
+
+The New York subways system operates under different rules and different
+expectations, running 24 hours a day. And it operates tunnels under
+water. Not only does the Toronto subway shut down every night but
+periodically it partly shuts down on a weekend for maintenance or
+upgrades. The risk here is that because of the opposition to shutting down
+for maintenance, the maintenance and upgrades take years and years longer
+than they would elsewhere.
+
+------------------------------
+
+Date: Fri, 3 Sep 2021 23:53:38 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Re: autonomous vehicles
+
+My $.25. It amazes me that we let a tech mongrel like Elon Musk to run free.
+It's an example of where too much money makes an idiot feel like a god. He is
+polluting space with his Internet satellites and his autonomous vehicles are
+dangerous and in some cases killing innocent people.
+
+As a first start, somebody please slap his face and say, "wake up and join
+reality".
+
+------------------------------
+
+Date: Wed, 1 Sep 2021 11:39:18 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Biden Administration Establishes Program to Recruit Tech
+ Professionals to Serve in Government (The Hill)
+
+Maggie Miller, *The Hill*, 30 Aug 2021, via ACM TechNews, 1 Sep 2021
+
+The Biden administration has established the U.S. Digital Corps to enlist
+and train technology professionals to serve in digital positions within the
+federal government and tackle major challenges like COVID-19 and
+cybersecurity. The program will launch later this year as a two-year
+fellowship for 30 initial participants, who could serve at initial host
+agencies like the General Services Administration (GSA), the Department of
+Veterans Affairs, and the Consumer Financial Protection Bureau. GSA's Robin
+Carnahan said, "The Digital Corps fellowship offers technologists just
+starting out in their career the opportunity to work on some of the most
+pressing challenges that we face and develop innovative solutions that make
+government work better for the American people."
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2c9x22d57dx074076&
+
+------------------------------
+
+Date: Fri, 3 Sep 2021 18:15:01 -0400
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Security, Privacy, and Innovation: Reshaping Law for the AI Era
+
+17/24 Sep 2021 to 1 Oct 2021  (Save the Date)
+
+Security, Privacy, and Innovation: Reshaping Law for the AI Era
+Virtual Symposium, Fall 2021
+
+Artificial intelligence (AI) is having profound effects on all aspects of
+our society, the human experience, and national security. AI offers the
+potential to expand knowledge, increase prosperity, and provide solutions to
+global challenges. At the same time, public and private actors have
+harnessed AI to supercharge cyber attacks and disinformation campaigns,
+weaken social cohesion, and subvert individual rights. And legal frameworks
+have yet to grapple with serious questions around algorithmic bias and
+privacy.
+
+In partnership with the National Security Commission on Artificial
+Intelligence, the Berkman Klein Center, and Just Security, the Reiss Center
+on Law and Security is convening a virtual symposium of experts to debate
+critical legal issues around AI. The symposium will explore how the law must
+adapt to promote innovation while addressing serious questions around the
+development and use of AI in the United States and globally.
+
+https://mailchi.mp/5ed5636e6c78/4r6psihvze-10296873?e=37de312147
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-32.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 32.86
+************************

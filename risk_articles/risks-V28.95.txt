@@ -1,0 +1,644 @@
+precedence: bulk
+Subject: Risks Digest 28.95
+
+RISKS-LIST: Risks-Forum Digest  Thursday 24 September 2015  Volume 28 : Issue 95
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.95.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Crooked software: VW Is Said to Cheat on Diesel Emissions;  U.S. to Order
+  Big Recall (NYTimes)
+Ethics in Engineering: Volkswagen's Diesel Fiasco (Hackaday via LW)
+OPM says 5.6 million fingerprints stolen in cyberattack, five times
+  as many as previously thought (Hackaday)
+Sensors You Can Swallow Could Be Made of Nutrients and Powered by
+  Stomach Acid (Neil Savage)
+Trojan targets online poker sites, peeks at players' cards (Ars Technica)
+India Draft Encryption Policy Doc lays out horrendous requirements (Deity)
+Oops! Error by Systema Software exposes millions of records with
+  insurance claims data and internal notes (Data Breaches)
+Researchers say South Korea-backed child monitoring app was wide open to
+  hackers (AP)
+D-Link Oops (Help Net)
+AVG privacy -not- policy (Softpedia)
+"Sloppy dev practices allowed malware into Apple App Store"
+  (Fahmida Y. Rashid)
+Apple Confirms Discovery of Malicious Code in Some App Store Products
+  (NYTimes)
+Skype Service Problems for Some Users Worldwide (NYTimes)
+Syndry risky thoughts caused by weekend's SLASHDOT articles (Werner U)
+Symantec employees fired for issuing rogue HTTPS certificate for Google
+  (Ars Technica)
+iPhone 6s's Hands-Free Siri Is an Omen of the Future (NYTimes)
+As Head-Up Displays Become Common, Distraction Becomes an Issue (NYTimes)
+France tells Google to remove search results globally, or face big
+  fines (Ars Technica)
+Yes, the FCC might ban your operating system (PRPL)
+Re: One Symptom in New Medical Codes: Doctor Anxiety (William Ehrich)
+Re: Researcher Hacks Self-driving Car Sensors (Martin Ward, LW)
+Re: "The Web's 10 most dangerous neighborhoods" (John Levine)
+Re: Why We Positively, Absolutely, Can't Trust the Government with
+  Encryption (William Ehrich)
+Re: Unwanted data transmissions by Windows 10 (Carl Byington)
+Re: How to make the Internet worse for everyone except the slimeballs
+  (Dan Jacobson, Lauren Weinstein)
+Re: Vehicles with keyless ignition systems... (Dan Jacobson)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 20 Sep 2015 12:11:49 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Crooked software: VW Is Said to Cheat on Diesel Emissions;
+  U.S. to Order Big Recall (Coral Davenport)
+
+Coral Davenport, *The New York Times*, 18 Sep 2015
+http://www.nytimes.com/2015/09/19/business/volkswagen-is-ordered-to-recall-nearly-500000-vehicles-over-emissions-software.html
+
+  The Obama administration on Friday directed Volkswagen to recall nearly a
+  half-million cars, saying the automaker illegally installed software in
+  its diesel-power cars to evade standards for reducing smog.  The
+  Environmental Protection Agency accused the German automaker of using
+  software to detect when the car is undergoing its periodic state emissions
+  testing.  Only during such tests are the cars' full emissions control
+  systems turned on. During normal driving situations, the controls are
+  turned off, allowing the cars to spew as much as 40 times as much
+  pollution as allowed under the Clean Air Act, the E.P.A. said.
+
+  `The Environmental Protection Agency issued the company a notice of
+  violation and accused the company of breaking the law by installing
+  software known as a `defeat device' in 4-cylinder Volkswagen and Audi
+  vehicles from model years 2009-15.  The device is programmed to detect
+  when the car is undergoing official emissions testing, and to only turn on
+  full emissions control systems during that testing.  Those controls are
+  turned off during normal driving situations, when the vehicles pollute far
+  more heavily than reported by the manufacturer, the E.P.A. said.
+
+  ``Using a defeat device in cars to evade clean air standards is illegal
+  and a threat to public health,'' said Cynthia Giles, the E.P.A.'s
+  assistant administrator for the Office of Enforcement and Compliance.
+  ``Working closely with the California Air Resources Board, E.P.A. is
+  committed to making sure that all automakers play by the same rules.
+  E.P.A. will continue to investigate these very serious violations.''
+
+  The software was designed to conceal the cars' emissions of the pollutant
+  nitrogen oxide, which contributes to the creation of ozone and smog. The
+  pollutants are linked to a range of health problems, including asthma
+  attacks and other respiratory diseases.
+
+It will be interesting to see if VW can negotiate the fines for this
+massive fraud down to something less than staggering.
+
+  [Henry Baker noted that the affected diesel models include:
+   * Jetta (Model Years 2009 ­ 2015)
+   * Beetle (Model Years 2009 ­ 2015)
+   * Audi A3 (Model Years 2009 ­ 2015)
+   * Golf (Model Years 2009 ­ 2015)
+   * Passat (Model Years 2014-2015)]
+
+  [See also
+https://www.washingtonpost.com/news/the-switch/wp/2015/09/23/opm-now-says-more-than-five-million-fingerprints-compromised-in-breaches/
+
+  [We've noted in RISKS previously that this kind of shenanigan could easily
+  be used in voting machines (especially proprietary ones), which when run
+  in test mode do everything correctly, but when run in live elections might
+  surreptitiously do whatever else they might have been programmed to do.
+  PGN]
+
+------------------------------
+
+Date: Wed, 23 Sep 2015 10:41:16 -0700
+From: "People For Internet Responsibility <pfir@pfir.org>
+Subject: Ethics in Engineering: Volkswagen's Diesel Fiasco (Hackaday)
+
+http://hackaday.com/2015/09/23/ethics-in-engineering-volkswagens-diesel-fiasco/
+
+  Like the Space Shuttle Challenger disaster, like the Johnstown flood, and
+  like that one scene at the beginning of Fight Club, this will be one for
+  the engineering ethics text books. If this does turn into a criminal
+  investigation - and chances of that are good - we will eventually learn
+  how this complete abdication of law and social responsibility came to be.
+  Until then, we're left to guess how one of the biggest blunders of
+  automotive history came to be, and where Volkswagen and the diesel car
+  will be in the years to come.
+
+I have for many years publicly asserted that ethics are a *fundamental*
+aspect of engineering -- including software engineering. I have
+frequently faced arguments from persons claiming that I'm wrong -- that
+engineers should just write the code as they're told to do, and that
+their role is not to independently apply any ethical considerations
+whatsoever. I cannot even really begin to explain how strongly I
+disagree with that view, or how devastating to consumer and user trust
+that view can be.   [Lauren Weinstein]
+
+------------------------------
+
+Date: Wed, 23 Sep 2015 10:29:35 -0700
+From: PRIVACY Forum mailing list <privacy@vortex.com>
+Subject: OPM says 5.6 million fingerprints stolen in cyberattack, five times
+  as many as previously thought (Hackaday via LW)
+
+  One of the scariest parts of the massive cybersecurity breaches at the
+  Office of Personnel Management just got worse: The agency now says 5.6
+  million people's fingerprints were stolen as part of the hacks.  That's
+  more than five times the 1.1 million government officials estimated when
+  the cyberattacks were initially disclosed over the summer. However, OPM
+  said Wednesday the total number of those believed to be caught up in the
+  breaches, which included the theft of the Social Security numbers and
+  addresses of more than 21 million former and current government employees,
+  remains the same.
+
+  [CNBC: ``We recently learned that as far back as 2007, the Inspector
+  General was warning that OPM was vulnerable to a breach, but nothing was
+  done to prevent it. ... US Gov blames China for breach, ignoring
+  implications of their own front door back door mentality.'']
+
+And this is the same government that wants access to our encryption keys.
+But don't worry! Simply change your passwords and fingerprints and you'll be
+just fine.  Yeah.  LW
+
+------------------------------
+
+Date: Wed, 23 Sep 2015 11:59:39 -0400 (EDT)
+From: "ACM TechNews" <technews@hq.acm.org>
+Subject: Sensors You Can Swallow Could Be Made of Nutrients and Powered by
+  Stomach Acid (Neil Savage)
+
+Neil Savage, IEEE Spectrum, 21 Sept 2015, via ACM TechNews, 23 Sep 2015
+
+Carnegie Mellon University (CMU) researchers are working on designs for an
+ingestible sensor that would combine silicon circuitry and nutrients and
+could be powered by stomach acid.  One of the major hurdles when designing
+ingestible sensors is convincing regulators they would be safe.  The
+approach of Christopher Bettinger's team at CMU is to use organic and
+biodegradable materials that are already considered safe to ingest.  They
+envision silicon logic circuits encapsulated in a biodegradable hydrogel,
+which would enable it to squeeze through tight openings.  The antennas and
+electronics would be made of small amounts of digestible minerals such as
+manganese, magnesium, and copper.  In addition, the silicon Bettinger's team
+proposes using to power the logic circuits of their ingestible sensors can
+be converted by the body into silicic acid.  The sensor would be powered by
+a battery with a cathode made of melanin and an anode made of manganese
+oxide.  When the battery reaches the stomach, acidic gastric juices would
+act as an electrolyte and transport current.  During testing, the design has
+been able to provide 5 milliwatts of power for up to 20 hours.  The
+researchers say ingestible sensors could be used to study the microbiome,
+look for infections, and monitor medication uptake.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_5-e1e8x2d43fx063701&
+
+  [Fascinating possibilities here. Remotely reprogrammable? remotely
+  surveillable? what about integrity risks?  privacy risks?  and what could
+  happen maliciously, accidentally, or even *in-jestibly*?  stupid
+  gas-tric(k)s? PGN]
+
+------------------------------
+
+Date: Fri, 18 Sep 2015 09:08:48 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Trojan targets online poker sites, peeks at players' cards (Ars)
+
+Ars Technica via NNSquad
+http://arstechnica.com/security/2015/09/trojan-targets-online-poker-sites-peeks-at-players-cards/
+
+  Anybody who has ever played poker, online or offline, always suspects that
+  they might be the victim of cheating when the cards aren't going their
+  way.  Now there's evidence to suspect that the hunch is real when it comes
+  to two of the world's most popular online gambling portals.  "Several
+  hundred" gamblers on the Pokerstars and Full Tilt Poker platforms have
+  been hit with a cheating trojan, according to ESET security researcher
+  Robert Lipovsky.
+
+But don't worry boys and girls, Internet voting would be perfectly safe!
+Nothing can go wrong! No th ing ca n g o wr
+
+------------------------------
+
+Date: Sun, 20 Sep 2015 21:00:58 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: India Draft Encryption Policy Doc lays out horrendous requirements
+
+http://deity.gov.in/sites/upload_files/dit/files/draft%20Encryption%20Policyv1.pdf
+
+  Users / Organizations within B group (i.e. B2B Sector) may use Encryption
+  for storage and communication. Encryption algorithms and key sizes shall
+  be prescribed by the Government through Notifications from time to
+  time. On demand, the user shall be able to reproduce the same Plain text
+  and encrypted text pairs using the software / hardware used to produce the
+  encrypted text from the given plain text. Such plain text information
+  shall be stored by the user/organisation/agency for 90 days from the date
+  of transaction and made available to Law Enforcement Agencies as and when
+  demanded in line with the provisions of the laws of the country.
+
+------------------------------
+
+Date: Sat, 19 Sep 2015 20:45:05 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Oops! Error by Systema Software exposes millions of records with
+  insurance claims data and internal notes
+
+Data Breaches via NNSquad
+http://www.databreaches.net/oops-error-by-systema-software-exposes-millions-of-records-with-insurance-claims-data-and-internal-notes/
+
+According to a source who contacted DataBreaches.net, as part of research on
+data leaks, the self-described "technology enthusiast" ("TE") downloaded
+some random data from a publicly available subdomain on Amazon Web Services
+(AWS).  Inspection of the files revealed many GB of SQL database backups
+with "names, social security numbers, addresses, dates of birth, phone
+numbers, as well as various financial and medical injury data."  TE informs
+DataBreaches.net that after discovering the treasure trove of personal
+information on or about August 30, he immediately began to notify the proper
+agencies and authorities.  DataBreaches.net withheld publication until now
+to give TE time to notify more entities and to give the software firm time
+to notify its affected clients.
+
+------------------------------
+
+Date: Sun, 20 Sep 2015 19:51:55 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Researchers say South Korea-backed child monitoring app was
+  wide open to hackers (AP)
+
+(AP): http://www.usnews.com/news/business/articles/2015/09/20/apnewsbreak-south-korea-backed-app-puts-children-at-risk
+
+  Security researchers say they found critical weaknesses in a South Korean
+  government-mandated child surveillance app -- vulnerabilities that left
+  the private lives of the country's youngest citizens open to hackers.  In
+  separate reports released Sunday, Internet watchdog group Citizen Lab and
+  German software auditing company Cure53 said they found a catalogue of
+  worrying problems with "Smart Sheriff," the most popular of more than a
+  dozen child monitoring programs South Korea requires for new smartphones
+  sold to minors.
+
+With "friends" like the S. Korea government, who needs enemies?
+
+------------------------------
+
+Date: Sat, 19 Sep 2015 13:13:10 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: D-Link Oops (Help Net)
+
+Software aps get updated by downloading patches, to the software on the
+computer.
+
+Hardware aps get updated by downloading firmware into the hardware.
+
+Both have their risks of vendor oops, and vendor policies.
+
+D-Link inadvertently provided purchasers with tools to aid malware
+developers.
+
+http://www.net-security.org/secworld.php?id=18869
+
+------------------------------
+
+Date: Sat, 19 Sep 2015 12:45:31 -0500
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: AVG privacy -not- policy (Softpedia)
+
+AVG privacy (not) policy lists data it collects from users, to sell to
+advertisers, to fund its fee service. This policy will be implemented
+starting October 15. AVG has published a blog post
+<http://now.avg.com/understanding-the-new-privacy-policy/>  explaining the
+decision to go this route, along with the full privacy policy's content
+<http://www.avg.com/gb-en/privacy-new> , so users can read it and decide if
+they want to use its services, switch to the paid AVG version,, or to an AVG
+competitor.  They claim that the info to be shared will be non-personal,
+such as web search history, what aps are on our computers, not personal id
+like name e-mail address, info which is used for id theft.
+
+http://news.softpedia.com/news/avg-proudly-announces-it-will-sell-your-browsing-history-to-online-advertisers-492146.shtml
+
+------------------------------
+
+Date: Mon, 21 Sep 2015 14:37:23 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Sloppy dev practices allowed malware into Apple App Store"
+  (Fahmida Y. Rashid)
+
+Fahmida Y. Rashid, InfoWorld, 21 Sep 2015
+The XcodeGhost malware on iOS and OS X provides an object lesson for
+developers: Never rely on unofficial versions or alternative repositories
+for your tools
+
+Instead of trying to sneak a malicious iOS app past Apple's verification
+process onto the App Store, malware writers went after developers looking
+for shortcuts.  [...]
+
+http://www.infoworld.com/article/2985129/security/sloppy-dev-practices-allowed-malware-into-apple-app-store.html
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Tue, 22 Sep 2015 18:24:41 -0400
+Subject: Apple Confirms Discovery of Malicious Code in Some App Store Products
+
+http://www.nytimes.com/2015/09/21/business/apple-confirms-discovery-of-malicious-code-in-some-app-store-products.html
+
+Security researchers said hackers took advantage of the fact that many
+Chinese developers use copies of code that are held on Chinese servers,
+resulting in a malicious version of Xcode.
+
+------------------------------
+
+Date: Tue, 22 Sep 2015 18:23:39 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Skype Service Problems for Some Users Worldwide
+
+http://www.nytimes.com/2015/09/22/technology/skype-service-disrupted-for-some-users-worldwide.html
+
+Microsoft's Internet calling unit did not specify how many of its roughly
+300 million global users were affected.
+
+------------------------------
+
+Date: Mon, 21 Sep 2015 12:59:13 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Sundry risky thoughts caused by weekend's SLASHDOT articles
+
+Delete, Dump and Destroy: Canada's Government Data Severely Compromised
+<http://yro.slashdot.org/story/15/09/20/1658223/delete-dump-and-destroy-canadas-government-data-severely-compromised?sdsrc=prev>
+
+Image Doctoring Is Tough To Spot, Even When We're Looking For It
+<http://science.slashdot.org/story/15/09/20/0436230/image-doctoring-is-tough-to-spot-even-when-were-looking-for-it?sdsrc=next>
+
+Private Medical Data of Over 1.5 Million People Exposed Through Amazon
+<http://yro.slashdot.org/story/15/09/20/0144248/private-medical-data-of-over-15-million-people-exposed-through-amazon?sdsrc=next>
+
+Symantec Subsidiary Thawte Issues Rogue Google Certificates
+<http://tech.slashdot.org/story/15/09/19/2313220/symantec-subsidiary-thawte-issues-rogue-google-certificates?sdsrc=next>
+
+------------------------------
+
+Date: Mon, 21 Sep 2015 12:39:13 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Symantec employees fired for issuing rogue HTTPS certificate for
+  Google
+
+http://arstechnica.com/security/2015/09/symantec-employees-fired-for-issuing-rogue-https-certificate-for-google/
+
+  Unauthorized credential was trusted by all browsers, but Google never
+  authorized it.
+
+------------------------------
+
+Date: Tue, 22 Sep 2015 17:47:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: iPhone 6s's Hands-Free Siri Is an Omen of the Future
+
+http://www.nytimes.com/2015/09/24/technology/personaltech/iphone-6s-hands-free-siri-is-an-omen-of-the-future.html
+
+Voice recognition and artificial intelligence have improved so fast that we
+are nearing `ambient computing' or robotic assistants that are always on
+hand.
+
+------------------------------
+
+Date: Mon, 21 Sep 2015 08:15:04 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: As Head-Up Displays Become Common, Distraction Becomes an Issue
+
+http://www.nytimes.com/2015/09/11/automobiles/as-head-up-displays-become-common-distraction-becomes-an-issue.html
+
+The technology, which shows data like a vehicle's speed in front of the
+driver, is moving beyond performance cars and appearing in more models.
+
+------------------------------
+
+Date: Mon, 21 Sep 2015 09:25:26 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: France tells Google to remove search results globally,	or face big
+  fines (Ars Technica)
+
+http://arstechnica.com/tech-policy/2015/09/france-confirms-that-google-must-remove-search-results-globally-or-face-big-fines/
+
+  Google's informal appeal against a French order to apply the so-called
+  "right to be forgotten" to all of its global Internet services and
+  domains, not just those in Europe, has been rejected. The president of the
+  Commission Nationale de l'Informatique et des Libert?s (CNIL), France's
+  data protection authority, gave a number of reasons for the rejection,
+  including the fact that European orders to de-list information from search
+  results could be easily circumvented if links were still available on
+  Google's other domains.
+
+If Google complies with this order, they'll have set the stage for every
+country around the world to demand the right to globally censor literally
+anything that their governments find *inconvenient* in Google search
+results. Not just EU and other Western countries, but Putin's USSR^h^h^h^h
+Russia, China, and other repressive regimes. Politicians will rush to
+sanitize their search results. Religious entities will want to remove
+contradictory references. There will be no end to it. It will be a stampede
+to a lowest common denominator of useless pablum. I've been warning of this
+for years but now we're at the literal cusp of a global information
+censorship disaster. *This must stop now.*
+
+------------------------------
+
+Date: Mon, 21 Sep 2015 14:09:13 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Yes, the FCC might ban your operating system
+
+http://prpl.works/2015/09/21/yes-the-fcc-might-ban-your-operating-system/
+
+  Over the last few weeks a discussion has flourished over the FCC's
+  Notification of Proposed Rule Making (NPRM) on modular transmitters and
+  electronic labels for wireless devices. Some folks have felt that the
+  phrasing has been too Chicken-Little-like and that the FCC's proposal
+  doesn't affect the ability to install free, libre or open source operating
+  system. The FCC in fact says their proposal has no effect on open source
+  operating systems or open source in general. The FCC is undoubtedly wrong.
+
+------------------------------
+
+Date: Tue, 22 Sep 2015 16:02:06 -0500
+From: William Ehrich <ehr844@gmail.com>
+Subject: Re: One Symptom in New Medical Codes: Doctor Anxiety
+
+Numerical codes for various things were useful on 80 byte punched cards, but
+horribly mistake-prone. Memory and processing power have improved a lot
+since then, so there is space for plain human readable English. I'm reminded
+of this whenever I can't remember the post office's two character
+abbreviation for the state in an address.
+
+------------------------------
+
+Date: Wed, 23 Sep 2015 19:34:16 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: Researcher Hacks Self-driving Car Sensors
+
+> Using such a system, attackers could trick a self-driving car into
+> thinking something is directly ahead of it, thus forcing it to slow down.
+
+On the other hand, a human-driven car can be forced to stop using a simple
+laser pointer costing a few dollars.
+
+Caltrops can work equally effectively against both types of vehicle.
+
+Lauren Weinstein responded:
+> All you need to do to stop a robo car is stand in front of it (and have
+> your friend stand behind).
+
+Agreed. So why is it a story that a self-driving car can be "tricked" into
+stopping using a setup costing $60?
+
+------------------------------
+
+Date: Wed, 23 Sep 2015 11:58:32 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Re: Researcher Hacks Self-driving Car Sensors (Ward)
+
+All you need to do to stop a robo car is stand in front of it (and have your
+friend stand behind). Or just drop an obstruction in front and rear. Wear
+Nixon masks if you're worried about cameras. The robo car is dead in the
+water. A human-driven car has a driver who can get out and deal with it. The
+robo car (without a cooperative passenger to take the initiative)
+... doesn't.
+
+------------------------------
+
+Date: 21 Sep 2015 18:24:57 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: "The Web's 10 most dangerous neighborhoods" (Maria Korolov)
+
+Something is pretty bogus with this article.  They claim the dirtiest TLD is
+.ZIP, but the domain isn't active yet.  Its DNS currently has a temporary
+wildcard with an A record of 127.0.53.53 to try to help flush out any old
+private usages of the name.
+
+------------------------------
+
+Date: Tue, 22 Sep 2015 16:02:22 -0500
+From: William Ehrich <ehr844@gmail.com>
+Subject: Re: Why We Positively, Absolutely, Can't Trust the Government
+  with Encryption
+
+Why "the government"? They, especially ours, are the least of the problem.
+Whole armies of hackers will compete in the game of finding and exploiting
+any backdoor.
+
+------------------------------
+
+Date: Mon, 21 Sep 2015 14:15:05 -0700
+From: Carl Byington <carl@five-ten-sg.com>
+Subject: Re: Unwanted data transmissions by Windows 10 (Durusau, RISKS-28.93)
+
+One mechanism to prevent some forms of malware involves convincing your
+local DNS server that certain names don't exist.
+
+http://www.circleid.com/posts/20100728_taking_back_the_dns/
+
+Modern versions of Bind use rpz (response policy zones) to specify names
+that by local policy should be treated specially. The following two lines
+could be added to your local rpz zone.
+
+vortex-win.data.microsoft.com   CNAME   .
+settings-win.data.microsoft.com CNAME   .
+
+That prevents any machines in your environment from finding the ip addresses
+for those names. Of course Microsoft could escalate (like all good virus
+writers) and hardcode some starting ip addresses, use fast flux dns servers,
+use a random domain name generator to produce domain names to contact for
+the telemetry data, etc. But the use of any of those techniques would then
+make it even more obvious that Microsoft intends to use your computer,
+electricity, and bandwidth for their own purposes, even if that usage
+conflicts with your usage.
+
+------------------------------
+
+Date: Tue, 22 Sep 2015 07:52:11 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Re: How to make the Internet worse for everyone except the slimeballs
+  (Weinstein, RISKS-28.95)
+
+How about a mode where the adblocker still requests the ads from the
+network, but just doesn't show them to the user? Bandwidth savings are gone,
+but who cares as I have plenty. And the ad companies will just have to work
+harder to detect who is really seeing their ads or not.
+
+------------------------------
+
+Date: Tue, 22 Sep 2015 17:44:36 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Re: How to make the Internet worse for everyone except the
+  slimeballs (Jacobson, RISKS-28.96)
+
+Given that the ad blocking proponents keep complaining about "bandwidth"
+and "tracking", I have a feeling this wouldn't quiet them.
+
+------------------------------
+
+Date: Tue, 22 Sep 2015 08:12:03 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Re: Vehicles with keyless ignition systems... (RISKS-28.93)
+
+> or, worse, when a passenger unintentionally has one card read at the
+> starting station and a different one read at the final station.
+
+Yup, in which case both cards now are in the "I am now riding in the
+vehicle" state...
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.95
+************************

@@ -1,0 +1,1630 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 30.92
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 21 November 2018  Volume 30 : Issue 92
+  [typo corrected]
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.92>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:  [I was badly backlogged from lack of RISKS time.  PGN]
+Commentary on Florida Election Recounts (Rebecca Mercuri)
+670 ballots in a precinct with 276 voters, and other tales from
+  Georgia's primary (MSN)
+Voting Machine Manual Instructed Election Officials to Use Weak
+  Passwords (Kim Zetter)
+Electionland/ProPublica had a lovely collection of election problems
+  already in the wee hours of election evening (PGN)
+At Doomed Flight's Helm, Pilots May Have Been Overwhelmed in Seconds
+  (NYTimes)
+Boeing issues warning on potential instrument malfunction after
+  Indonesia crash (WashPost)
+A Runway Train Traveled 57 Miles Through Australia's Outback (WiReD)
+Rules of the Road Evade Driverless Cars (WashPost)
+Siri Shortcuts can now be used with the VW Car-Net app to remotely
+  control a vehicle (AppleInsider)
+Russia suspected of jamming GPS signal in Finland (BBC)
+Why Google Internet Traffic Rerouted Through China and Russia (WiReD)
+Operation Infektion (The New York Times)
+GPS week field roll-over (David Magda)
+System error: Japan cybersecurity minister admits he has never
+  used a computer (TheGuardian.com)
+Tech CEOs Are in Love With Their Principal Doomsayer (Nellie Bowles)
+"IoT botnet infects 100,000 routers to send Hotmail, Outlook, and
+  Yahoo spam" (Catalin Cimpanu)
+Buffer Overflows and Spectre (Henry Baker)
+Police decrypt 258,000 messages after breaking pricey IronChat
+  crypto app (Ars Technica)
+Guns, drones, and surveillance equipment: Big Brother steps out in
+  Tel Aviv (The Times of Israel)
+The House That Spied on me (Gizmodo)
+A DJI Bug Exposed Drone Photos and User Data (WiReD)
+Fake fingerprints can imitate real ones in biometric systems
+  (The Guardian)
+Public Attitudes Toward Computer Algorithms (Pew Research Center)
+Guarding Against Backdoors and Malicious Hardware
+  (Security Boulevard)
+U.S. Declines to Sign Declaration Discouraging Use of Cyberattacks
+  (NYTimes)
+'The Cleaners' Looks At Who Cleans Up The Internet's Toxic Content
+  (npr.org)
+HealthCare.gov breach compromised applicants' financial,
+  immigration data (Washington Times)
+Apple IDs locked for unknown reasons for a number of iPhone users
+  (Apple Insider)
+Debate in Germany over allowing Chinese to bid on 5G
+  (Taipei Times)
+Bug bounty (Fortune)
+A thing to worry about: sleep study (Tom Van Vleck)
+A robot scientist will dream up new materials to advance computing
+  and fight pollution (MIT Technology Review)
+AI News Anchor Makes Debut In China (npr.org)
+3 Crazy Excel Formulas That Do Amazing Things (MakeUseOf)
+Dementia risk: Five-minute scan 'can predict cognitive decline' (bbc.com)
+MAS issues principles to guide use of AI, data analytics in finance
+  (The Straits Times)
+Awful AI is a curated list to track current scary usages of AI --
+  hoping to raise awareness (David Dao)
+Google accused of 'trust demolition' over health app (BBC)
+AI Could Make Cyberattacks More Dangerous, Harder to Detect (WSJ)
+AmazonBasics Microwave Review: It's a Little Undercooked (WiReD)
+Elon Musk's SpaceX wins FCC approval to put Starlink Internet
+  satellites into orbit (WashPost)
+Customer Complains About Tesla Forums, Tesla Accidentally Gives Him
+  Control Over Them (Motherboard )
+Google had a secret bug (WashPost)
+For the first time, researchers say Facebook can cause depression
+  (Brett Arends)
+Mozilla - *privacy not included (Gabe Goldberg)
+The digital epidemic killing Indians (bbc.com)
+Police: Woman remotely wipes phone in evidence after shooting
+  (The Daily Gazette)
+He Helped People Cheat at Grand Theft Auto. Then His Home Was Raided.
+  (NYTimes)
+MoneyGram agrees to pay $125 million for failing to crack down on
+  fraudulent money transfers (WashPost)
+Report: Could Your Online Behavior Affect What You Pay for Car
+  Insurance? (San Antonio Business Journal)
+Couple, homeless man in viral GoFundMe charged (BostonGlobe)
+The Dating Brokers (TacticalTech)
+Osaka woman terrifyingly attacked by intruder while playing video
+  games in her home late at night (Sora News)
+Re: EMV card fraud statistics (David Alexander)
+Re: Ethics of whom to kill (Arthur T.)
+Re: Tesla (Wol)
+Re: Credit Card Chips Have Failed to Halt Fraud, Survey Shows
+  (Phil Smith III)
+Re: Risks in Using Social Media to Spot Signs of Mental Distress
+  (Richard Stein)
+Book review: You'll see this message when it is too late,
+  by Josephine Wolff (Web Informant)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 15 Nov 2018 11:19:02 -0500
+From: Rebecca Mercuri <notable@mindspring.com>
+Subject: Commentary on Florida Election Recounts
+
+BREAKING NEWS
+
+This article features my thoughts on the recent Florida Election recounts:
+https://www.weeklystandard.com/alice-b-lloyd/who-needs-hackers-when-you-have-human-error
+
+This is actually the *third* time where ballot layouts in certain Florida
+counties may have confused voters. Here's a detailed report about the 1988
+election which led NIST (then NBS) researcher Roy Saltman to recommend
+against the use of the "butterfly ballot" that was (later) front-and-center
+in 2000.
+http://aliciapatterson.org/stories/tale-weird-drop-offs-and-jump-ups-are-computer-vote-counts-honest
+
+Different scanners now, no hanging chad, but a similar problem.
+Coincidence? I think not.
+
+Those who fail to learn from the past....
+Rebecca Mercuri.
+
+------------------------------
+
+Date: Thu, 8 Nov 2018 18:06:46 -0500
+From: Andrew Douglass <andr3wdouglass@gmail.com>
+Subject: 670 ballots in a precinct with 276 voters, and other tales from
+  Georgia's primary (MSN)
+
+https://www.msn.com/en-us/news/politics/670-ballots-in-a-precinct-with-276-voters-and-other-tales-from-georgias-primary/ar-BBLBUA4
+
+WASHINGTON - Habersham County's Mud Creek precinct in northeastern Georgia
+had 276 registered voters ahead of the state's primary elections in May.
+
+But 670 ballots were cast, according to the Georgia secretary of state's
+office, indicating a 243 percent turnout.  Georgia is one of four states
+that uses voting machines statewide that produce no paper record for voters
+to verify, making them difficult to audit, experts say.
+
+  Difficult indeed. Coincidentally (we hope), 83% of the county vote was for
+  the outgoing secretary of state Kemp.
+
+  It really only takes one story like this to prove the larger proposition
+  that unauditable electronic voting machines are a menace to
+  democracy. Only obvious errors like this bubble to the surface; who knows
+  what goes on in other cases?
+
+------------------------------
+
+Date: Tue, 6 Nov 2018 14:37:25 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Voting Machine Manual Instructed Election Officials to Use Weak
+  Passwords (Kim Zetter)
+
+Kim Zetter, Motherboard, 5 Nov 2018
+<https://motherboard.vice.com/en_us/contributor/kim-zetter>
+
+Voting Machine Manual Instructed Election Officials to Use Weak Passwords
+
+A vendor manual for voting machines used in about ten states shows the
+vendor instructed customers to use trivial easy-to-crack passwords and to
+re-use the passwords when changing log-in credentials.
+
+States and counties have had two years since the 2016 presidential election
+to educate themselves about security best practices and to fix security
+vulnerabilities in their election systems and processes. But despite
+widespread concerns about election interference from state-sponsored hackers
+in Russia and elsewhere, apparently not everyone received the memo about
+security, or read it.
+
+An election security expert who has done risk-assessments in several states
+since 2016 recently found a reference manual that appears to have been
+created by one voting machine vendor for county election officials and that
+lists critical usernames and passwords for the vendor's tabulation system.
+The passwords, including a system administrator and root password, are
+trivial and easy to crack, including one composed from the vendor's name.
+And although the document indicates that customers will be prompted
+periodically by the system to change the passwords, the document instructs
+customers to re-use passwords in some cases -- alternating between two of
+them -- and in other cases to simply change a number appended to the end of
+some passwords to change them.
+https://motherboard.vice.com/en_us/article/kzvejx/voting-machine-manual-instructed-election-officials-to-use-weak-passwords
+
+------------------------------
+
+Date: Wed, 7 Nov 2018 3:47:43 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Electionland/ProPublica had a lovely collection of election problems
+  already in the wee hours of election evening.
+
+https://www.propublica.org/electionland/
+
+Probably lots more to report as well.
+
+------------------------------
+
+Date: Fri, 9 Nov 2018 10:15:09 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: At Doomed Flight's Helm, Pilots May Have Been Overwhelmed in
+  Seconds (NYTimes)
+
+https://www.nytimes.com/2018/11/08/world/asia/indonesia-plane-crash-last-moments.html
+
+As American and Indonesian investigators puzzle through clues of troubles
+that befell Flight 610, they are finding not a single lapse but a cascade of
+issues.
+
+------------------------------
+
+Date: Wed, 7 Nov 2018 08:00:58 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Boeing issues warning on potential instrument malfunction after
+  Indonesia crash (WashPost)
+
+https://www.washingtonpost.com/world/asia_pacific/boeing-issues-warning-on-potential-instrument-malfunction-after-indonesia-crash/2018/11/07/b43168b6-e265-11e8-a1c9-6afe99dddd92_story.html
+
+  Airplane manufacturer Boeing said Wednesday that it has issued a bulletin
+  to airlines worldwide warning of erroneous readings from flight-control
+  software on its planes, after an almost-new Lion Air jetliner crashed into
+  the sea soon after takeoff, killing the 189 people on board.  Boeing,
+  which is assisting in an investigation into what went wrong in the Oct.
+  29 crash of one of its new 737 Max 8 jets, said in a statement that it
+  issued the bulletin Tuesday as "part of its usual process."
+
+------------------------------
+
+Date: Wed, 7 Nov 2018 18:54:51 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A Runway Train Traveled 57 Miles Through Australia's Outback (WiReD)
+
+Most things don't happen the way they do in the movies. Changes are less
+sudden, incidents less surprising, humans less attractive. But when a
+runaway train tore through the Australian outback, the action sequence that
+followed seems to have come right out of a Tony Scott flick.
+
+The whole mess started when the engineer stopped the 268-car,
+four-locomotive train and hopped out to inspect one of the cars, according
+to the Australian Transport Safety Board. While he was on the ground
+(presumably distracted by giant spiders and roving kangaroos), the train
+pulled away with nobody on board. Loaded down with iron ore, it was soon
+hitting 68 mph. The train, operated by metals, mining, and petroleum giant
+BHP, covered a remarkable 57 miles before the company stopped it--by
+flinging it off the tracks.
+
+Nobody was hurt, though the investigators, who are working to determine why
+the train pulled away in the first place, rated the damage to the equipment
+as `substantial'.  ...
+
+Here's one spot of good news: The technology to prevent an extended runaway
+train incident like this one already exists. Positive Train Control systems
+use train- and rail-mounted GPS and sensors to track locomotive movement and
+alert conductors and dispatchers to imminent derailments or collisions. If
+humans don't react to the warnings, the systems are designed to
+automatically brake trains before something terrible goes
+down. Congressional legislation demanded that America's rail operators
+implement Positive Train Control by 2015, but the Department of
+Transportation extended the deadline to December 2018 after many struggled
+to deploy the technology in time. According to the DOT's Positive Train
+Control dashboard, just 18 of 40 railroads had PTC implemented on all their
+locomotives by July of this year.
+
+https://www.wired.com/story/australia-runaway-train-derailment/
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 13:07:55 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Rules of the Road Evade Driverless Cars (WashPost)
+
+https://www.washingtonpost.com/business/rules-of-the-road-evade-driverless-cars/2018/11/09/1e1475a0-e484-11e8-ba30-a7ded04d8fac_story.html
+
+"Ghosn also acknowledged a big barrier to innovation: regulations and
+clearing any obstacles they raise before mass-marketing. This is more than
+just a caveat. Legal questions from traffic rules to liability in an
+accident ultimately will determine whether consumers -- be they big
+corporations or individuals -- decide if they can live with driverless cars,
+or can't live without them."
+
+"Removing the driver reduces a company's cost of goods by as much as 90
+percent, he said."
+
+Risk: Cross-border compliance with traffic rules complicates AV deployment
+and elevates safety underachievement potential without a binding
+international treaty. Especially critical for freight delivery services.
+
+Unwise to rely on GPS signal to automatically determine AV
+navigation/driving rule localization enforcement especially near an
+international border.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 16:32:36 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Siri Shortcuts can now be used with the VW Car-Net app to remotely
+  control a vehicle (AppleInsider)
+
+Volkswagen has updated its Car-Net mobile app with deeper Siri integration
+to allow drivers to perform specific tasks remotely from their vehicle,
+enabling users to lock or unlock their car from far away just by asking
+Apple's digital assistant on an iPhone.
+
+Announced on Monday, iPhones and iPads running iOS 12 can start to use Siri
+with the Car-Net <http://www.vw.com/carnet> app to control their vehicle.
+Once set up with the app, Siri can be used to change whether or not the car
+is locked, and to check the estimated mileage remaining for fuel, or for
+electric vehicles, how much charge is remaining.
+
+If the driver has forgotten where the car is located in a parking lot, they
+can also ask Sir to flash or honk the car's horn so it can be more easily
+found.
+
+There are also several shortcuts that can be enabled in Siri with
+personalized phrases, including commands to start or stop charging, to
+defrost the windows, to set the climate control temperature, and a "where is
+my car?" query.
+
+https://appleinsider.com/articles/18/11/12/siri-shortcuts-can-now-be-used-with-the-vw-car-net-app-to-remotely-control-a-vehicle
+
+Hmm. What could go wrong with remote access to cars? I wonder how it's
+secured...
+
+------------------------------
+
+Date: Wed, 14 Nov 2018 05:04:20 -0800
+From: Paul Saffo <paul@saffo.com>
+Subject: Russia suspected of jamming GPS signal in Finland (BBC)
+
+BBC, 12 Nov 2018
+https://www.bbc.com/news/technology-27662580
+
+Finnish Prime Minister Juha Sipila has said the GPS signal in his country's
+northern airspace was disrupted during recent NATO war games in Scandinavia.
+He said he believed the signal had been jammed deliberately and that it was
+possible Russia was to blame because it had the means to do so.  Finland is
+not a NATO member but joined the war games which began last month.  Norway
+also reported GPS problems during the exercises near Russia's north-western
+borders.
+
+``It is difficult to say what the reasons could be but there are reasons to
+believe it could be related to military exercise activities outside Norway's
+borders,'' Wenche Olsen, director of the Civil Aviation Authority of Norway,
+told the *Barents Observer* earlier this month.
+
+Russia is also suspected of jamming the GPS signal in Norway's border area
+last year when it held its own war games.  Relations between NATO and Russia
+have been strained since Russia annexed Crimea from Ukraine in 2014.  How
+serious was the disruption?  The Finnish region of Lapland and northern
+parts of Norway close to the Russian border were affected, with the
+Norwegian regional airline Wider=C3=B8e confirming its pilots had
+experienced GPS disruption, Germany's DW news site reports.
+
+However, the airline pointed out that pilots aboard civilian aircraft had
+other options when a GPS signal failed.
+
+``This is not a joke, it threatened the air security of ordinary people,''
+said Mr Sipila, who is himself an experienced pilot.  ``It is possible that
+Russia has been the disrupting party in this. Russia is known to possess
+such capabilities.''
+
+How could Russia block the signal?
+
+GPS is a global navigation system originally devised by the US military
+which works by sending signals from satellites above the Earth back down to
+receivers.  "Technology-wise, it's relatively easy to disturb a radio
+signal, and it's possible that Russia was behind it," Mr Sipila was quoted
+as saying.  Russia's electronic warfare capability has impressed many NATO
+commanders, the BBC's Jonathan Marcus wrote last year.
+
+The country has its own, lesser-known global navigation system, called Glonass.
+
+Why were the wargames held?
+
+NATO'S biggest military exercise since the Cold War, code-named Trident
+Juncture, rehearsed how the US-led alliance would respond to the invasion of
+an ally.  All 29 NATO members, as well as Finland and Sweden, were involved
+and it took place a few hundred miles from Norway's border with Russia.  At
+one point in the exercises, a Russian maritime reconnaissance plane flew
+past a US warship, the USS Mount Whitney.
+
+The exercises began on 25 October and ended last Wednesday.
+
+Just after they ended, an oil tanker collided with one of the Norwegian
+warships involved, in a fjord in southern Norway. The warship had been
+repeatedly warned of its collision course with the tanker, the BBC was told.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 19:59:08 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Why Google Internet Traffic Rerouted Through China and Russia (WiReD)
+
+For two hours Monday, Internet traffic that was supposed to route through
+Google's Cloud Platform
+<https://www.wired.com/story/google-cloud-security-command-center/> instead
+found itself in quite unexpected places, including Russia and China. But
+while the haphazard routing invoked claims of traffic hijacking -- a real
+threat, given that nation states could use the technique to spy on web users
+or censor services -- the incident turned out to be a simple mistake with
+outsized impacts.
+
+https://www.wired.com/story/google-internet-traffic-china-russia-rerouted/
+
+  [Li Gong noted this:
+https://www.darkreading.com/vulnerabilities---threats/google-traffic-temporarily-rerouted-via-russia-china/d/d-id/1333257
+  PGN]
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 21:21:55 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Operation Infektion (The New York Times)
+
+https://www.nytimes.com/video/opinion/100000006210828/russia-disinformation-fake-news.html
+
+Informative series on disinformation campaigns (aka Active Measures
+== Bullsh*t), their discovery, patterns/characteristics, and mechanisms to
+counter them. Note: the United States has conducted, and likely continues to
+conduct, disinformation campaigns internationally to achieve certain
+strategic and/or tactical political/policy objectives.
+
+Interesting to note that a disinformation campaign, as conducted by Russia's
+GRU, follows 7 rules for deployment:
+
+Rule 1) "Find a Crack"
+Rule 2) "The Big Lie"
+Rule 3) "A Kernel of Truth"
+Rule 4) "Conceal your Hand"
+Rule 5) "The Useful Idiot"
+Rule 6) "Deny Everything"
+Rule 7) "The Long Game"
+
+Risks by the bushel: (a) uninformed electorate that believes disinformation
+despite factual evidence to the contrary; (b) political governance that
+applies similar disinformation tactics to mislead and polarize populace or
+is not versed in policy formulations to counteract it; (c) dissolution of
+democracy; (d) severing of strategic international relationships; (e) social
+media business profit preservation and prioritization (exploiting viral and
+divisive content) to subvert democratic process.
+
+------------------------------
+
+Date: Wed, 14 Nov 2018 11:01:15 -0500
+From: David Magda <dmagda@ee.ryerson.ca>
+Subject: GPS week field roll-over
+
+Still a few months away, but perhaps worth knowing ahead of time: on
+Saturday, 6 April, 2019, 23:25 UTC, the GPS week counter field will roll
+over:
+
+> However, the [GPS data] field that contains the week number is a 10-bit
+> binary number. This limits the range of the week number to 0 – 1023,
+> or 1024 total weeks.
+>
+> GPS week zero started January 6, 1980. The 1024 weeks counter ran out and
+> rolled over on August 21, 1999. The week counter then reset to zero, and
+> it has been recounting ever since. The next time the counter will reach
+> week 1023 and rollover to zero is on April 6, 2019.
+>
+> Receivers must properly interpret that week number as the correct date,
+> not 19.7 years into the past or future. To do this, receivers use various
+> methods to ensure that they are providing the correct date. One common
+> method is to use the firmware date as a reference. This works well if the
+> receiver is new or is receiving firmware updates. It is also possible
+> for the user to modify this reference date in some receivers.
+
+https://spectracom.com/resources/blog/lisa-perdue/2018/gps-2019-week-rollover-what-you-need-know
+
+I was reminded of this by a recent article:
+
+> When a Pennsylvania county's 911 system suddenly went down without
+> warning, garbled messages across the network impacted fire and police
+> agencies' ability to respond to emergency messages. The issue was traced
+> to a firmware malfunction on communications equipment, related to
+> provision of GPS timing. The firmware had not been updated
+> for 19-1/2 years. Why should it have been?  Everything was working fine
+> -- until it didn't.
+
+https://www.gpsworld.com/prepare-today-for-timing-disruptions-tomorrow/
+
+This roll-over last occurred in August 1999, and a few incidents were
+mentioned in RISKS-20.55:  https://catless.ncl.ac.uk/Risks/20/55
+
+The world now uses GPS a lot more than it did twenty years ago, especially
+in embedded things.
+
+------------------------------
+
+Date: Thu, 15 Nov 2018 14:13:29 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: System error: Japan cybersecurity minister admits he has never
+  used a computer (TheGuardian.com)
+
+https://www.theguardian.com/world/2018/nov/15/japan-cyber-security-ministernever-used-computer-yoshitaka-sakurada
+
+"A Japanese minister in charge of cybersecurity has provoked astonishment
+by admitting he has never used a computer in his professional life, and
+appearing confused by the concept of a USB drive."
+
+Risk: Incurious governance oversight of a cabinet-level portfolio diminishes
+public health and safety readiness.
+
+A "decider" decides w/o subject matter comprehension. "Magic 8-ball"
+governance can be simulated.
+
+  [Gene Wirchenko saw another item on this story
+    "Japanese cybersecurity minister finds computers a mystery"
+https://www.zdnet.com/article/japanese-cybersecurity-minister-finds-computers-a-mystery/
+  and noted ``Can you spot the security risk?''  PGN]
+
+------------------------------
+
+Date: November 12, 2018 at 1:24:45 AM GMT+9
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: Tech CEOs Are in Love With Their Principal Doomsayer (Nellie Bowles)
+
+  [Note:  This item comes from friend Paul Pangaro.  DLH]
+
+Nellie Bowles, *The New York Times*, 9 Nov 2018
+Tech CEOs Are in Love With Their Principal Doomsayer
+The futurist philosopher Yuval Noah Harari thinks Silicon Valley is an
+engine of dystopian ruin. So why do the digital elite adore him so?
+
+<https://www.nytimes.com/2018/11/09/business/yuval-noah-harari-silicon-valley
+
+  [Long item pruned for RISKS.  PGN]
+
+------------------------------
+
+Date: Wed, 07 Nov 2018 11:36:54 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "IoT botnet infects 100,000 routers to send Hotmail, Outlook, and
+  Yahoo spam" (Catalin Cimpanu)
+
+Catalin Cimpanu for Zero Day | 7 Nov 2018
+https://www.zdnet.com/article/iot-botnet-infects-100000-routers-to-send-hotmail-outlook-and-yahoo-spam/
+
+IoT botnet infects 100,000 routers to send Hotmail, Outlook, and Yahoo spam
+Botnet infects routers and uses them to relay connections to webmail services.
+
+opening text:
+
+A new botnet made up of roughly 100,000 home routers has silently grown over
+the past two months. According to current evidence, the botnet's operators
+appear to use the infected routers to connect to webmail services and are
+most likely sending out massive email spam campaigns.
+
+------------------------------
+
+Date: Tue, 20 Nov 2018 09:19:17 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Buffer Overflows and Spectre
+
+Spectre is no longer just an annoyance; it is a scandal bigger than
+Dieselgate, affecting *billions* of people.
+
+Is it just me, or does anyone else in computer science feel a deep sense of
+embarrassment and betrayal ?
+
+We professionals in computer science have spent 50+ years advocating proper
+code hygiene in which every array reference is properly bounds-checked to
+avoid the dreaded *buffer overflow*, which is the source of perhaps the
+largest fraction of software bugs and hacking vulnerabilities.
+
+We've beaten up on computer languages such as C & C++ for their bad hygiene,
+and attempted to steer students towards modern languages which are *safe by
+design*, because they obsessively and anally check every array reference.
+
+What has our caution, advice and conscientious programming netted us?
+
+We've been undone by our hardware vendors, whose CPU's *ignore* our
+*explicit instructions* (what is it about the words "instruction",
+"command", "order code" do these vendors not understand?) to check every
+array reference -- e.g., hence the Spectre bugs.
+
+Isn't it time for a *class action lawsuit* against every CPU vendor whose
+*defective* and *dangerous* products exhibit Spectre vulnerabilities ?
+
+This is not just *negligence*, but outright *fraud*, because these CPU's
+violate their own specifications and advertising -- their own instruction
+reference manuals !
+
+It is as if an automobile manufacturer put a Spectre-like bug in our
+automobile braking systems which occasionally ignored the brake pedal
+because it adversely affected gas mileage.  Who cares about a few
+"accidental" deaths here and there, if the manufacturer can claim a few
+percentage points additional gas mileage?
+
+***What the CPU manufacturers have done is every bit as bad as what the auto
+   manufacturers did to *cheat government emissions testing*! ***
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Sat, 10 Nov 2018 10:44:27 -0500
+Subject: Police decrypt 258,000 messages after breaking pricey IronChat
+  crypto app (Ars Technica)
+
+https://arstechnica.com/information-technology/2018/11/police-decrypt-258000-messages-after-breaking-pricey-ironchat-crypto-app/
+
+------------------------------
+
+Date: Thu, 15 Nov 2018 13:42:05 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Guns, drones, and surveillance equipment: Big Brother steps out in
+  Tel Aviv (The Times of Israel)
+
+Some of the technology on show at the 5th International Homeland Security
+and Cyber-Exhibition is positively spooky
+
+https://www.timesofisrael.com/guns-drones-and-surveillance-equipment-big-brother-steps-out-in-tel-aviv/
+
+------------------------------
+
+Date: Sun, 11 Nov 2018 11:33:50 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The House That Spied on me (Gizmodo)
+
+[He] had the same view of Kashmir's house that her Internet Service Provider
+(ISP) has. After Congress voted last year to allow ISPs to spy on and sell
+their customers' Internet usage data, we were all warned that the ISPs could
+now sell our browsing activity, or records of what we do on our computers
+and smartphones. But in fact, they have access to more than that. If you
+have any smart devices in your home TV that connects to the Internet, an
+Echo, a Withings scale -- your ISP can see and sell information about that
+activity too. With my router [he] was seeing the information about Kashmir
+and her family that Comcast, her ISP, could monitor and sell.
+
+https://gizmodo.com/the-house-that-spied-on-me-1822429852
+
+------------------------------
+
+Date: Sun, 11 Nov 2018 15:25:37 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A DJI Bug Exposed Drone Photos and User Data (WiReD)
+
+DJI makes some of the most popular quadcopters
+<https://www.wired.com/story/guide-drones/>
+on the market, but its products have repeatedly drawn scrutiny
+<https://www.wired.com/story/army-dji-drone-ban/ government over privacy and
+security concerns. Most recently, the Department of Defense in May banned
+the purchase of consumer drones made by a handful of vendors, including DJI.
+<https://dronedj.com/2018/06/07/department-of-defense-bans-the-purchase-of-commercial-over-the-shelf-uas-including-dji-drones/>
+
+Now DJI has patched a problematic vulnerability in its cloud infrastructure
+that could have allowed an attacker to take over users' accounts and access
+private data like photos and videos taken during drone flights, a user's
+personal account information, and flight logs that include location data. A
+hacker could have even potentially accessed real-time drone location and a
+live camera feed during a flight.
+
+https://www.wired.com/story/dji-drones-bugs-exposed-users-data/
+
+------------------------------
+
+Date: Thu, 15 Nov 2018 11:06:03 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Fake fingerprints can imitate real ones in biometric systems
+  (The Guardian)
+
+Another fascinating vulnerability for a particular algorithmic
+implementation of fingerprint recognition!  This approaches what a master
+key does for classes of locks.  This goes way beyond the individualized
+gummy-bear attacks.   PGN
+
+https://www.theguardian.com/technology/2018/nov/15/fake-fingerprints-can-imitate-real-fingerprints-in-biometric-systems-research
+
+  Researchers have used a neural network to generate artificial fingerprints
+  that work as a "master key" for biometric identification systems and prove
+  fake fingerprints can be created.  According to a paper presented at a
+  security conference in Los Angeles, the artificially generated
+  fingerprints, dubbed "DeepMasterPrints" by the researchers from New York
+  University, were able to imitate more than one in five fingerprints in a
+  biometric system that should only have an error rate of one in a thousand.
+
+------------------------------
+
+Date: Mon, 19 Nov 2018 18:02:23 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Public Attitudes Toward Computer Algorithms (Pew Research Center)
+
+Americans express broad concerns over the fairness and effectiveness of
+computer programs making important decisions in people's lives
+
+http://www.pewinternet.org/2018/11/16/public-attitudes-toward-computer-algorithms/
+
+... but doesn't seem to motivate most people to opt out where it's possible.
+
+------------------------------
+
+Date: Sun, 11 Nov 2018 21:43:53 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Guarding Against Backdoors and Malicious Hardware
+  (Security Boulevard)
+
+In a post-Supermicro-scoop world, it's important for security
+teams to review the basics on detecting and guarding against hardware
+backdoors.
+
+Malicious software is relatively easy to find, but what if your actual
+device is the enemy?
+
+Last month, Bloomberg Businessweek broke a story on Chinese nation-state
+actors secretly implanting spy chips in targeted motherboards manufactured
+by mega-supplier Supermicro, compromising large enterprises in both the
+public sector and the private sector. This story came on the heels of
+multiple revelations earlier this year by security researchers backed by the
+Department of Homeland Security that the firmware of millions of
+Chinese-manufactured smartphones was compromised.
+
+There is much skepticism over the Bloomberg story because of vehement
+denials by the organizations implicated and other factors. If nothing else,
+though, it serves as a good wake-up call to IT security for guarding against
+hardware-embedded backdoors. For years, after all, it has been anticipated
+that China would try--or has already tried--embedding
+malicious backdoors directly into hardware. In 2012, researchers discovered
+a serious embedded backdoor in a Chinese-manufactured FPGA chipset used by
+military and aerospace organizations in the West. In this instance, for what
+it's worth, the cybersecurati generally agreed that this backdoor
+was inadvertent, not malicious. However, even inadvertent backdoors can be
+converted to malicious ones if discovered by the wrong person.
+
+https://securityboulevard.com/2018/11/guarding-against-backdoors-and-malicious-hardware/
+
+------------------------------
+
+Date: Mon, 12 Nov 2018 23:56:38 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: U.S. Declines to Sign Declaration Discouraging Use of Cyberattacks
+  (NYTimes)
+
+https://www.nytimes.com/2018/11/12/us/politics/us-cyberattacks-declaration.html
+
+The Trump administration, leery of limiting its options, chose not to sign
+on to the nonbinding pact put forward by President Emmanuel Macron of
+France.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 14:02:05 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: 'The Cleaners' Looks At Who Cleans Up The Internet's Toxic Content
+  (npr.org)
+
+https://www.npr.org/2018/11/12/667118322/the-cleaners-looks-at-who-cleans-up-the-internets-toxic-content
+
+'"I have seen hundreds of beheadings. Sometimes they're lucky that it's just
+a very sharp blade that's being used to them," one content moderator says in
+a clip from the film.'
+
+'"By the end of this year we're gonna have more than 20,000 people working
+on security and content review,' Zuckerberg said.
+
+See https://catless.ncl.ac.uk/Risks/30/09%23subj17.1
+on Internet cleaning.
+
+Risk: PTSD -- post-traumatic stress disorder from a desk job.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 19:54:08 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: HealthCare.gov breach compromised applicants' financial,
+  immigration data (Washington Times)
+
+Personal data including immigration status and employment information were
+compromised in a breach of HealthCare.gov that affected people who applied
+for coverage under the Affordable Care Act, former President Barack Obama's
+hallmark healthcare reform law, the Department of Health and Human Services
+said Friday.
+
+The Centers for Medicare and Medicaid Services (CMS), the division of HHS
+responsible for running HealthCare.gov's online application portal --
+designated the Marketplace -- has begun notifying approximately 75,000
+people affected by the previously disclosed data breach, officials announced
+in an update about the incident.
+
+https://www.washingtontimes.com/news/2018/nov/10/healthcaregov-breach-compromised-applicants-financ/
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 13:51:12 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Apple IDs locked for unknown reasons for a number of iPhone users
+  (Apple Insider)
+
+A number of iPhone users have discovered their Apple ID has been locked on
+all of their Apple devices, preventing them from accessing stored data and
+related services, with the lockdowns occurring for seemingly unknown
+reasons. ...
+
+It is unclear exactly what is happening to cause the accounts to be locked,
+but the significant rise in online complaints suggests it has happened to a
+large number of people at the same time with the first "wave" at about
+midnight eastern time. While it could be caused in error by Apple's account
+security protocols, there is also the chance that the accounts are being
+probed by a malicious actor, though ultimately the reason behind the locking
+of accounts is unknown in this case.
+
+Sources inside Apple not authorized to speak for the company advised to
+/AppleInsider/ "At present, this doesn't appear to be an Apple bug.
+Whatever it is, it is only impacting a minute percentage of our users."
+
+https://appleinsider.com/articles/18/11/13/apple-ids-locked-for-unknown-reasons-for-a-number-of-iphone-users
+
+------------------------------
+
+Date: Wed, 14 Nov 2018 16:15:22 -0800
+From: Mark Thorson <eee@dialup4less.com>
+Subject: Debate in Germany over allowing Chinese to bid on 5G
+  (Taipei Times)
+
+Pressure to exclude Chinese from bidding on 5G build-out,
+as U.S. and Australia already do.
+
+http://www.taipeitimes.com/News/front/archives/2018/11/15/2003704249
+
+Maybe Huawei should go open source?  Then, all we'd have to worry about is
+spy chips.
+
+------------------------------
+
+Date: Sun, 11 Nov 2018 15:38:41 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Bug bounty (Fortune)
+
+Bug bounty programs were a major topic of discussion during a panel on risk
+management at the Money20/20 finance and tech conference in Las Vegas a
+couple weeks ago. These programs compensate hackers for poking holes in a
+company's products and finding and reporting any vulnerabilities to the
+people who can fix them. Ideally, they help companies root out flaws in
+their code and hardware, making the world safer for businesses and
+consumers.
+
+https://view.email.fortune.com/%3Fqs%3D4eeb8fb07f569ef3f979cf14268fa83115990788ea48131265220db52f436cd60ec6f6c3730c71af18f048b7f1e25608112f3e42b011768b92d040d012711efef2f1fda5cacf467b
+
+------------------------------
+
+Date: Fri, 9 Nov 2018 14:55:47 -0500
+From: Tom Van Vleck <thvv@multicians.org>
+Subject: A thing to worry about: sleep study
+
+What I have in mind is the paper in the latest CACM, November 2018, Vol. 61
+No. 11, Pages 157-165.
+"LIBS: A Bioelectrical Sensing System from Human Ears for Staging
+  Whole-Night Sleep Study"
+
+Sleep study.  Good thing, right.
+Replace the electrode cap applied by a technician with some foam earplugs,
+saves money, do it at home, results almost as good,
+plus you can get not only EEG but eye tracking and muscle contractions.
+They sound very proud.
+
+Then their paper ends with a section on other stuff they could do with this.
+- autism onset detection
+- meditation training
+- eating habit monitoring
+Well hmm.
+- autonomous audio steering... train a hearing aid to favor amplifying
+  sounds from where the user is looking
+- also combine with the EEG signal and micro expression to see how pleased
+  the wearers are with the sound they hear
+- distraction and drowsiness detection .. see if drivers are alert
+- child's interest assessment .. see what the student is paying attention to
+  in class
+
+OK, but then this could be used to
+-- see if Winston Smith is paying attention to the telescreen
+-- determine if Winston Smith is pleased by what he hears from Big Brother
+-- weed out malcontent and rebellious students
+-- detect physiological responses to stimuli ("lie detectors")
+
+oh, not to worry, just don't let anybody stick earplugs with wires on them
+in your ears.  and make sure nobody invents a remote-sensing EEG, and beware
+of high quality sensor cameras that might pick up your micro expressions and
+other body responses
+
+yup, nobody would ever use this for evil, right.
+
+if Alexa or Siri offers us a useful gadget that promises to make us happy,
+will we be allowed to decline?
+
+I bet Joe Weizenbaum would be cautious.
+
+------------------------------
+
+Date: Mon, 12 Nov 2018 09:21:50 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: A robot scientist will dream up new materials to advance computing
+  and fight pollution (MIT Technology Review)
+
+https://www.technologyreview.com/s/612388/a-robot-scientist-will-dream-up-new-materials-to-advance-computing-and-fight-pollution/
+
+ From the what-if sci-fi risk category.
+
+Suppose the material-bot finds a compound that can literally "rip CO2" from
+the atmosphere by the boat load, and thereby suppress the hockey-stick rise
+in greenhouse gas concentration. But...the material must be constructed from
+highly radioactive and toxic combination of elements: radium, thorium, and
+polonium.
+
+Would pursuit of this CO2 scrubber be ethically justifiable if it was the
+"last chance" to save the Earth's ecosystem?
+
+------------------------------
+
+Date: Sat, 10 Nov 2018 11:59:00 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: AI News Anchor Makes Debut In China (npr.org)
+
+https://www.npr.org/2018/11/09/666239216/ai-news-anchor-makes-debut-in-china
+
+"It's quite difficult to watch for more than a few minutes. It's very flat,
+very single-paced, it's not got rhythm, pace or emphasis," Michael
+Wooldridge from the University of Oxford told the BBC. And compared to a
+trusted human news anchor, he says that "if you're just looking at animation
+you've completely lost that connection to an anchor."
+
+A "real silicon muppet" news anchor appeal to a broader audience? As
+simulation improves, succeeding generations of viewers may accept and trust
+silicon muppet as authoritative voice or face of governance.
+
+RISK: Pure propaganda broadcast sows confusion, or stiffens polarization
+despite contradictory, factual evidence.
+
+Recall "Dirty Laundry" lyrics by Don Henley and Danny Kortchmar (see
+https://www.lyricsfreak.com/d/don%2Bhenley/dirty%2Blaundry_20042033.html
+
+"We can do 'The Innuendo' / We can dance and sing /
+When it's said and done we haven't told you a thing /
+We all know that Crap is King /
+Give us dirty laundry!"
+
+------------------------------
+
+Date: Tue, 6 Nov 2018 22:31:48 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: 3 Crazy Excel Formulas That Do Amazing Things (MakeUseOf)
+
+https://www.makeuseof.com/tag/3-crazy-excel-formulas-that-do-amazing-things/
+
+Fun with Excel. I barely understand some of this but will study it.  Already
+learned from this the (trivial) ways to conditionally format cells.
+
+Reading more sophisticated techniques scares the bejeezus out of me -- how
+do you test/debug/validate arcane formulas producing
+results/dashboards/graphs/etc. Mostly can't, right? Great.
+
+------------------------------
+
+Date: Mon, 12 Nov 2018 17:30:56 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Dementia risk: Five-minute scan 'can predict cognitive decline'
+  (bbc.com)
+
+https://www.bbc.com/news/health-46155607
+
+"Scientists used ultrasound scanners to look at blood vessels in the necks
+of more than 3,000 people and monitored them over the next 15 years.
+
+"They found those with the most intense pulses went on to experience greater
+cognitive decline over the next decade than the other study participants.
+
+"Researchers hope it may offer a new way to predict cognitive decline.
+
+"An international team of experts, led by University College London (UCL),
+measured the intensity of the pulse traveling towards the brain in 3,191
+people in 2002.
+
+"A more intense pulse can cause damage to the small vessels of the brain,
+structural changes in the brain's blood vessel network and minor bleeds
+known as mini-strokes."
+
+Catch-22. More powerful ultrasonic pulses required to spot cognitive decline
+potential, but powerful pulses damage blood vessels and possible contribute
+to TIA -- transient ischemic aneurysm (aka stroke).
+
+Not a Therac-25 situation, though pulse intensity must be carefully
+controlled.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 13:43:21 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: MAS issues principles to guide use of AI, data analytics in finance
+  (The Straits Times)
+
+https://www.straitstimes.com/business/banking/mas-issues-principles-to-guide-use-of-artificial-intelligence-data-analytics-in
+
+"The Monetary Authority of Singapore (MAS) has issued a set of principles to
+promote fairness, ethics, accountability and transparency (FEAT) in the use
+of artificial intelligence (AI) and data analytics in finance."
+
+http://www.mas.gov.sg/~/media/MAS/News%2520and%2520Publications/Monographs%2520and%2520Information%2520Papers/FEAT%2520Principles%2520Final.pdf
+
+The four principles are identified as:
+
+* Fairness
+* Ethics
+* Accountability
+* Transparency
+
+The section on Ethics for AIDA (Artificial Intelligence and Data Analytics)
+is short:
+
+* Use of AIDA is aligned with the firm's ethical standards, values and
+   codes of conduct.
+* AIDA - driven decisions are held to at least the same ethical
+   standards as human-driven decisions.
+
+Mapping explainable AI characteristics to these principles is a challenge.
+
+Risks: Brand outrage. AIDA deployment promotes and accelerates organizational
+profit-seeking behaviors that throttle ethics, fairness, accountability, and
+transparency parameters.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 15:17:59 -0500
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: Awful AI is a curated list to track current scary usages of AI --
+  hoping to raise awareness (David Dao)
+
+https://github.com/daviddao/awful-ai
+
+Artificial intelligence in its current state is unfair, easily susceptible
+to attacks and notoriously difficult to control. Nevertheless, more and more
+concerning the uses of AI technology are appearing in the wild. This list
+aims to track all of them. We hope that Awful AI can be a platform to spur
+discussion for the development of possible contestational technology (to
+fight back!).
+
+------------------------------
+
+Date: Wed, 14 Nov 2018 08:49:10 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Google accused of 'trust demolition' over health app (BBC)
+
+via NNSquad [Ignore the rants!]
+https://www.bbc.com/news/technology-46206677
+
+  A controversial health app developed by artificial intelligence firm
+  DeepMind will be taken over by Google, it has been revealed.  Streams was
+  first used to send alerts in a London hospital but hit headlines for
+  gathering data on 1.6 million patients without informing them.  DeepMind
+  now wants the app to become an AI assistant for nurses and doctors around
+  the world.  One expert described the move as "trust demolition".
+
+IGNORE THE RANTS! - Google taking over this app does ABSOLUTELY NOTHING to
+reduce the privacy protections included therein, nor does it mean that the
+related health data will be combined with any other Google data. A textbook
+example of wacky knee-jerk reactions!
+
+------------------------------
+
+Date: Wed, 14 Nov 2018 11:50:09 -0500
+From: ACM TechNews <technews-editor@acm.org>
+Subject: AI Could Make Cyberattacks More Dangerous, Harder to Detect (WSJ)
+
+Adam Janofsky, *The Wall Street Journal, 13 Nov 2018
+via ACM TechNews, Wednesday, November 14, 2018
+
+Scientists warn that hackers could weaponize artificial intelligence (AI) to
+conceal and accelerate cyberattacks and potentially escalate their
+damage. IBM researchers last month demonstrated "DeepLocker" AI-powered
+malware designed to hide its damaging payload until it reaches a specific
+victim, identifying its target with indicators like facial- and
+voice-recognition and geolocation. IBM's Marc Stoecklin said with
+DeepLocker, "AI becomes the decision maker to determine when to unlock the
+malicious behavior." Meanwhile, the Stevens Institute of Technology's
+Giuseppe Ateniese has investigated the use of generative adversarial
+networks (GANs), which contain two neural networks that collaborate to
+deceive safeguards like passwords; he designed a GAN that fed leaked
+passwords found online into an AI model, to analyze patterns and narrow down
+likely passwords faster than brute-force attacks. Said Ateniese, "We need to
+study how AI can be used in attacks, or we won't be ready for them."
+
+https://orange.hosting.lsoft.com/trk/click%3Fref%3Dznwrbbrs9_6-1d288x218730x069217%26
+
+------------------------------
+
+Date: Wed, 14 Nov 2018 15:24:49 -0500
+From: David Tarabar <dtarabar@acm.org>
+Subject; Bugs in Chinese English-Speaking Virtual News Anchor (RadiiChina)
+
+China's state media introduced an AI based virtual news anchor. But there
+are still a few bugs. It referred to Jack Ma -- the founder of Alibaba -- as
+Jack Massachusetts,
+
+https://radiichina.com/xinhua-unveils-first-english-speaking-virtual-news-anchor/
+
+------------------------------
+
+Date: Sun, 18 Nov 2018 23:05:25 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: AmazonBasics Microwave Review: It's a Little Undercooked (WiReD)
+
+Connected, he sped through a battery of tests, which tended to either get
+the job done or leave him wondering if anyone at Amazon who actually cooks
+gave this thing a whirl before it was released to the public.
+
+https://www.wired.com/review/amazonbasics-microwave/
+
+The risk? Rampant IoT adding "di" after first letter.
+
+------------------------------
+
+Date: Sun, 18 Nov 2018 17:24:14 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Elon Musk's SpaceX wins FCC approval to put Starlink Internet
+  satellites into orbit (WashPost)
+
+https://www.washingtonpost.com/technology/2018/11/15/elon-musks-spacex-wins-fcc-approval-put-starlink-internet-satellites-into-orbit
+
+'"My favorite example is an innocuous little screwdriver that slipped
+through an astronaut's grasp and has been circling low Earth orbit at up to
+21,600 miles per hour for the last 35 years," said FCC Commissioner Jessica
+Rosenworcel. "At these speeds, even a common household item can wreak
+havoc."'
+
+Risk: ~2X the current orbital satellite population w/o collisions and no
+orbit reentry plan. See https://catless.ncl.ac.uk/Risks/30/86%23subj22.1
+
+Average Joe is ineligible to play orbital dodgeball.
+
+------------------------------
+
+Date: Mon, 19 Nov 2018 23:43:35 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Customer Complains About Tesla Forums, Tesla Accidentally Gives Him
+  Control Over Them (Motherboard )
+
+“The customer was inadvertently granted a higher level of
+permissions than he should have had to the Tesla forum,” a Tesla
+spokesperson told Motherboard in an email on Monday. “We revoked
+the access as soon as it was reported, and made other changes to adjust
+privileges accordingly following a full audit.”
+
+https://motherboard.vice.com/en_us/article/7xy8ey/customer-complains-about-tesla-forums-tesla-accidentally-gives-him-control-over-them
+
+"...as soon as it was reported...". Nice security. I hope their car patches
+system is more secure.
+
+------------------------------
+
+Date: Friday 9 Nov 2018 11:17:22 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Google had a secret bug (WashPost)
+
+Craig Timberg, Renae Merle and Cat Zakrzewski, *The Washington Post*,
+  8 Oct 2018
+Google for months kept secret a bug that imperiled the personal data
+of Google+ users
+
+https://www.washingtonpost.com/technology/2018/10/08/google-overhauls-privacy-rules-after-discovering-exposure-user-data/
+
+Google found a serious privacy bug in its Google+ service, but it did
+not inform government regulators or users for several months.  At that
+time, it announced that it would be winding down the Google+ service,
+it would impose new privacy limits on developer's for Android apps,
+and it would limit the sharing of information about Gmail users.
+Google said it could not notify users about the bug when it was first
+discovered because it was not sure which users were affected.
+
+------------------------------
+
+Date: Mon, 12 Nov 2018 10:41:25 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: For the first time, researchers say Facebook can cause depression
+  (Brett Arends)
+
+Brett Arends,  MarketWatch, 12 Nov 2018
+https://www.marketwatch.com/story/new-study-claims-facebook-instagram-and-snapchat-are-linked-to-depression-2018-11-09
+
+  Spending too much time on "social media" sites like Facebook is making
+  people more than just miserable. It may also be making them depressed.
+
+  A new study conducted by psychologists at the University of Pennsylvania
+  has shown -- for the first time -- a causal link
+  between time spent on social media and depression and loneliness, the
+  researchers said.
+
+  It concluded that those who drastically cut back their use of sites like
+  Facebook, Instagram and Snapchat often saw a marked improvement in their
+  mood and in how they felt about their lives.
+
+  "It was striking," says Melissa Hunt, psychology professor at University
+  of Pennsylvania, who led the study. "What we found over the course of
+  three weeks was that rates of depression and loneliness went down
+  significantly for people who limited their (social media) use."
+
+  Many of those who began the study with moderate clinical depression
+  finished just a few weeks later with very mild symptoms, she says.
+
+  The study, "No More FOMO: Limiting Social Media Decreases Loneliness and
+  Depression," was conducted by Melissa Hunt, Rachel Marx, Courtney Lipson
+  and Jordyn Young, is being published by the peer-reviewed Journal of
+  Social and Clinical Psychology.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 19:30:55 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Mozilla - *privacy not included
+
+  Shop Safe This Holiday Season
+
+Teddy bears that connect to the Internet. Smart speakers that listen to
+commands. Great gifts--unless they spy on you. We created this guide to help
+you buy safe, secure products this holiday season.
+
+This shows how creepy users find these products. Scroll to see it
+change. Click on a product to rate it.
+
+https://foundation.mozilla.org/en/privacynotincluded/
+
+Dial-a-risk, nicely calibrated.
+
+------------------------------
+
+Date: Mon, 12 Nov 2018 18:25:13 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: The digital epidemic killing Indians (bbc.com)
+
+https://www.bbc.com/news/av/stories-46152427/the-digital-epidemic-killing-indians
+(part of a BBC series on fake news and misinformation).
+
+Misinformation drives crowds to act maliciously against civilians.
+Crowd-sourced vigilantism.
+
+Risk: Ineffective regulation and irresponsible oversight of messaging
+application content threatens public order, weakens civility, and erodes
+public trust.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 13:35:35 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Police: Woman remotely wipes phone in evidence after shooting
+  (The Daily Gazette)
+
+She now faces evidence tampering and prosecution hindering counts
+
+https://dailygazette.com/article/2018/11/08/police-woman-remotely-wipes-phone-in-evidence-after-shooting
+
+------------------------------
+
+Date: Fri, 9 Nov 2018 14:15:04 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: He Helped People Cheat at Grand Theft Auto. Then His Home Was
+  Raided. (NYTimes)
+
+A gamer in Melbourne has had his assets frozen in connection with a popular
+video game cheat. He's one of many being sued by game companies worldwide,
+raising questions about copyright law and the policing of online civility.
+
+https://nyti.ms/2yZR4mz
+
+------------------------------
+
+Date: Thu, 8 Nov 2018 23:40:38 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: MoneyGram agrees to pay $125 million for failing to crack down on
+  fraudulent money transfers (WashPost)
+
+MoneyGram pays huge penalty to settle FTC and DOJ allegations that it didn't
+do enough to stop fraudsters from using its money transfer system
+
+https://www.washingtonpost.com/business/2018/11/09/moneygram-agrees-pay-million-failing-crack-down-fraudulent-money-transfers/
+
+------------------------------
+
+Date: Wed, 14 Nov 2018 07:53:15 -0500
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: Report: Could Your Online Behavior Affect What You Pay for Car
+  Insurance? (San Antonio Business Journal)
+
+https://www.bizjournals.com/sanantonio/prnewswire/press_releases/Texas/2018/11/13/DA70769
+
+Charlie Osborne for Zero Day | November 15, 2018
+The Zebra, the nation's leading car insurance search engine, today released
+findings of an investigative report that explores whether the U.S. auto
+insurance industry -- which serves 250 million U.S. drivers -- is collecting
+and using data about consumers' online behaviors and preferences (their
+"digital footprints") to calculate what people pay for their car insurance
+policies.
+
+Link to report: https://www.thezebra.com/research/digital-footprint-car-insurance/
+
+------------------------------
+
+Date: Thu, 15 Nov 2018 20:52:00 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Couple, homeless man in viral GoFundMe charged (BostonGlobe)
+
+"The entire campaign was predicated on a lie."
+
+https://www.boston.com/news/national-news/2018/11/15/homeless-man-viral-gofundme-arrested
+
+------------------------------
+
+Date: Wed, 07 Nov 2018 12:52:23 -0500
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: The Dating Brokers (TacticalTech)
+
+https://datadating.tacticaltech.org/viz
+
+In May 2017 artist Joana Moll and Tactical Tech purchased 1 million online
+dating profiles for 136€ from USDate, a supposedly US-based company that
+trades in dating profiles from all over the globe. The batch of dating
+profiles we purchased included pictures (almost 5 million of them),
+usernames, e-mail addresses, nationality, gender, age and detailed personal
+information about all of the people who had created the profiles, such as
+their sexual orientation, interests, profession, thorough physical
+characteristics and personality traits. Purchasing this data exposed a vast
+network of companies that are capitalising on this information without the
+conscious consent of the users, whom ultimately are the ones being
+exploited.  This project attempts to make parts of that network, and how it
+works, visible to everyone.
+
+------------------------------
+
+Date: Mon, 19 Nov 2018 23:08:25 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Osaka woman terrifyingly attacked by intruder while playing video
+  games in her home late at night (Sora News)
+
+  [Yes, it is not directly computer-related, but consider the security
+  risks: 1) headphones while playing alone (What if the intruder had not cut
+  the power first?  (possible surprise)) 2) The fuse box being right by the
+  front door.  It would be too easy for a computer programmer to be
+  similarly ambushed.]
+
+https://soranews24.com/2018/11/19/osaka-woman-terrifyingly-attacked-by-intruder-while-playing-video-games-in-her-home-late-at-night/
+
+[This story]  is like something out of an urban legend.
+
+At nearly 2 a.m. on 18 November, a 29-year-old woman was playing video games
+in her apartment in the Mitsumatsu area of Kaizuka City, Osaka Prefecture.
+She was playing with a pair of headphones on so as not to disturb the
+neighbors in her building. However, in the middle of her game all the power
+in her apartment suddenly went out.
+
+She walked toward the front door where the fuse box was, but instead found
+the silhouette of a strange man standing inside her apartment, having
+somehow gained entrance to her home. He had apparently pulled the circuit
+breaker moments earlier, and his entrance had been drowned out by the sounds
+of her gaming.
+
+Fuse boxes are often found next to the front door of Japanese apartments.
+
+------------------------------
+
+Date: Tue, 13 Nov 2018 09:28:20 +0000 (UTC)
+From: David Alexander <davidalexander440@btinternet.com>
+Subject: Re: EMV card fraud statistics (Goldberg, RISKS-30.91)
+
+I would just like to point out that, just because a card is EMV enabled, it
+does not mean it cannot be attacked by other means such as compromising the
+POS device. I have recently returned to the UK from a trip that took me to
+Texas, New Mexico and California. While I was pleased to see a lot of
+merchants are now using chip and PIN in the US there were a disappointingly
+high number of places where the mag stripe on my EMV card was `swiped'
+through the reader and I still had to sign for my purchase.  I know that
+will not account for anything like all of the 90% quoted in the article but
+it would be worth analysing if there is still a disproportionately high risk
+from merchants who have yet to migrate to chip and PIN.
+
+The problem is that enough data to commit fraud is still held in the mag
+stripe on the card. Until such time as the mag stripe can be eliminated the
+cards will be vulnerable. I haven't yet been brave enough to run a strong
+magnet over the stripe on one of my cards to see what the effect might be.
+
+------------------------------
+
+Date: Tue, 06 Nov 2018 19:07:43 -0500
+From: "Arthur T." <risks2018a.10.atsjbt@xoxy.net>
+Subject: Re: Ethics of whom to kill (RISKS-30.90,91)
+
+On 6 Nov 2018 13:44:32 -0500, in comp.risks
+(Message-ID:<CMM.0.90.4.1541529734.risko@chiron.csl.sri.com1852>)
+risko@csl.sri.com (RISKS List Owner) wrote:
+
+> Has Rob Slade not heard of "The exception proves the rule"? Yes I know
+> this saying is horribly mis-used, but it almost certainly comes from the
+> fact that it only takes ONE inconvenient fact to destroy a scientific
+> theory.
+
+That turns out not to be the case. It's a very old legal maxim which says
+that an exception in the law presupposes the rule it's an exception to. So a
+sign saying that parking is allowed on Tuesdays implies that there's a rule
+that it's not allowed on the other days. There are several sites which trace
+the etymology; one of the more trusted might be
+<https://www.snopes.com/fact-check/exceptional-proof/
+
+> It is also an inconvenient fact that people dismiss inconvenient facts as
+> "oh that's just an anecdote". But it only takes one inconvenient anecdote
+> to be verifiable, at which point it becomes a data point capable of
+> destroying your theory and lifetime's work.
+
+As we just saw, what's "obvious" or "almost certain" may not be
+true. Anecdotes tend to be passed along and morphed by the
+whisper-down-the-lane effect.
+
+The other problem with anecdotes is confirmation bias.  There are, say, ten
+horrible crashes of self-driving cars.  But how many would have been avoided
+by an alert driver?  How many miles of self-driving have there been total,
+and how does that compare to human-driven miles vs. crashes?
+
+> If there are a lot of anecdotes out there you cannot just dismiss and
+> ignore them.
+
+"My cousin's friend was abducted by aliens. What you gotta say about that,
+Mr. Scientist?" While there are anecdotes which shouldn't be ignored, there
+are some which which should be. There are enough reputable people on all
+sides of the self-driving car controversies that I expect the truth to come
+out, and probably in a timely fashion.
+
+------------------------------
+
+Date: Wed, 7 Nov 2018 01:30:03 +0000
+From: Wols Lists <antlists@youngman.org.uk>
+Subject: Re: Tesla (Risks-30.91)
+
+On 06/11/18 18:42, RISKS List Owner wrote:
+> Now, the Tesla can do that, too. If it notices that you're being blocked,
+> and that there's room in the next lane, a notification appears on your
+> screen. It informs you that if you put on your turn signal, Autopilot will
+> take it from there. It does the passing maneuver smoothly and
+> gracefully. (It doesn't actually return to your original lane, however --
+> just changes into a faster lane, passing the slowpoke, and stays there.)
+
+Which is illegal - staying in the outside lane, that is. Certainly in
+the UK. And I got fined in the old GDR for doing that.
+
+In the UK, every lane except the nearside is designated a passing (or
+overtaking) lane and is supposed to be used *only* for that purpose. If
+there's a lot of traffic, people stay in the outer lanes because they're
+continually overtaking other vehicles.
+
+Or they stay in the outer lanes when they shouldn't, which is actually a
+major problem. Hogging the middle lane on a motorway is seen as a minor
+infringement, but on a motorway many vehicles are not allowed to use the
+outside lane. So if I'm doing 60 towing a caravan, and come across a
+lane-hog doing 50, I can't get past! If I undertake that's called dangerous
+driving, and if I overtake then I'm in big trouble for using a lane I am
+explicitly barred from.
+
+------------------------------
+
+Date: Wed, 7 Nov 2018 15:56:07 -0500
+From: Phil Smith III <phsiii@gmail.com>
+Subject: Re: Credit Card Chips Have Failed to Halt Fraud, Survey Shows
+  (Goldberg, RISKS-30.91)
+
+Gabe Goldberg wrote about
+http://fortune.com/2018/11/05/credit-card-chips-fail-to-halt-fraud-survey-says/
+
+Terrible article by Fortune. EMV was never expected to "put an end to
+rampant credit card fraud". EMV was expected to make it harder to do CP
+(Card-Present) fraud, which it has done. And to nobody's surprise (in the
+Payments industry, anyway) CNP (Card-Not-Present) fraud has gone up while CP
+fraud has gone down, just as it has in every other market when EMV was
+introduced.
+
+As has surely been discussed here before, the U.S. issuers chose chip &
+signature instead of chip & PIN as is used in other markets. The stated
+reason for this is that PINs are "inconvenient", and are thus seen as a
+competitive disadvantage: if my Chase Visa requires a PIN and my Citi Visa
+doesn't, the theory is that I'm more likely to use the Citi card.
+
+This logic seems thin at best. I believe a more likely real reason is that
+chip&signature was easier for issuers to implement in their mostly
+home-grown back-end systems. And this seems to be supported by the fact that
+most U.S. issuers don't even support chip&PIN. If not for the implementation
+cost, one would assume that issuers would have added chip&PIN *support* at
+least while adding EMV support, and thus would at least allow PINs.
+
+A few domestic issuers do support chip&PIN: if you ask, they will issue a
+PIN. But that doesn't mean using the card will ask for a PIN in most
+cases. It does, however, prepare you for international travel, where
+chip&PIN is pretty well universal and you may be SOL if you don't have a
+PIN.
+
+------------------------------
+
+Date: Sun, 18 Nov 2018 18:15:34 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: Risks in Using Social Media to Spot Signs of Mental Distress
+ (Solomon, RISKS-28.45)
+
+https://www.npr.org/2018/11/17/668408122/facebook-increasingly-reliant-on-a-i-to-predict-suicide-risk
+
+'"To just give you a sense of how well the technology is working and rapidly
+improving...in the last year we've had 3,500 reports," she says.  That means
+AI monitoring is causing Facebook to contact emergency responders an average
+of about 10 times a day to check on someone -- and that doesn't include
+Europe, where the system hasn't been deployed.  (That number also doesn't
+include wellness checks that originate from people who report suspected
+suicidal behavior online.)
+
+"Davis says the AI works by monitoring not just what a person writes online,
+but also how his or her friends respond. For instance, if someone starts
+streaming a live video, the AI might pick up on the tone of people's
+replies.
+
+'"Maybe like, 'Please don't do this,' 'We really care about you.' There are
+different types of signals like that that will give us a strong sense that
+someone may be posting of self-harm content," Davis says.'
+
+The National Institute for Mental Health (NIHM) sites these statistics for
+2016 (https://www.nimh.nih.gov/health/statistics/suicide.shtml):
+
+* Suicide was the tenth leading cause of death overall in the United States,
+claiming the lives of nearly 45,000 people.  * Suicide was the second
+leading cause of death among individuals between the ages of 10 and 34, and
+the fourth leading cause of death among individuals between the ages of 35
+and 54.
+
+* There were more than twice as many suicides (44,965) in the United States
+as there were homicides (19,362).
+
+The age-adjusted suicide rate (per 100,000 persons) in 2016 was 21.3 for
+men, 6.0 for women, with a 13.4 suicides/day national average (see Table 1
+from the shtml page above).
+
+One year post-deployment of Facebook's AI algorithm to spot customer suicide
+potential w/o a statement of false positive detection or false negative
+detection is curious.
+
+The reference in Solomon's post
+(https://catless.ncl.ac.uk/Risks/28/45%23subj3 70% detection accuracy was
+achievable by analyzing Twitter posts from 171 users. Equivalent arithmetic
+for Facebook suggests (1-0.7)*3500 = 1050 emergency calls are false
+positives.
+
+The NIMH age-adjusted statistics of 13.4 daily case average suggests that
+not all potential suicides are either engaged or tracked via Facebook,
+despite the estimated ~203M users in 2017 (see
+https://www.statista.com/statistics/408971/number-of-us-facebook-users/
+
+Risk: Emergency service response dilution from suicide detection algorithm
+contextual analysis bias.
+
+------------------------------
+
+Date: Mon, 19 Nov 2018 19:58:48 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Book review: You'll see this message when it is too late,
+  by Josephine Wolff (Web Informant)
+
+A new book from Professor Josephine Wolff at Rochester Inst. of Technology
+called *You'll see this message when it is too late* is worth reading
+<https://www.amazon.com/Youll-this-message-when-late/dp/0262038854/davidstromswebin>
+there are plenty of other infosec books on the market, to my knowledge this
+is first systematic analysis of different data breaches over the past
+decade.
+
+She reviews a total of nine major data breaches of the recent past and
+classifies them into three different categories, based on the hackers'
+motivations; those that happened for financial gain (TJ Maxx and the South
+Carolina Department of Revenue and various ransomware attacks); for
+cyberespionage (DigiNotar and US OPM) and online humiliation (Sony and
+Ashley Madison). She takes us behind the scenes of how the breaches were
+discovered, what mistakes were made and what could have been done to
+mitigate the situation.
+
+A lot has been already written on these breaches, but what sets Wolff's book
+apart is that she isn't trying to assign blame but *dive into their root
+causes and link together various IT and corporate policy failures that led
+to the actual breach*.
+
+http://blog.strom.com/wp/%3Fp%3D6905
+
+------------------------------
+
+Date: Tue, 5 May 2018 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks have done to URLs.  I have
+  tried to extract the essence.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.92
+************************

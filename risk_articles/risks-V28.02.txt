@@ -1,0 +1,811 @@
+RISKS-LIST: Risks-Forum Digest  Thursday 12 June 2014  Volume 28 : Issue 02
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.02.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+`Switch incompatibility' leads to two helicopter ditchings (Ian Chard)
+Interconnection of Three Previously Separated Networks in Boeing 737
+  (Joe Loughry)
+Feedly and Evernote attacked for ransom, Feedly still down
+  (Lauren Weinstein)
+You shouldn't use a spreadsheet for important work (Daniel Lemire via
+  Henry Baker)
+"Unofficial XP update has Microsoft up in arms" (Serdar Yegulalp via
+  Gene Wirchenko)
+"Apple devices held hostage using Find My iPhone" (Loek Essers via
+  Gene Wirchenko)
+Cell phones as TEMPEST analyzers (David Shamah via Olin Sibert)
+Contactless Credit Cards causing increase in crime (Jeremy Ardley)
+NSA: Our systems are so complex we can't stop them from deleting data
+  wanted for lawsuit! (Dave Farber)J
+Turning everyone's home router into a WiFi hotspot (Jeremy Epstein)
+Comcast is turning your home router into a public WiFi hotspot (Henry Baker)
+Controlling Your Smart Home With One Hub (Molly Wood via Monty Solomon)
+"The FCC's Net neutrality plan is much worse than it looks"  (Paul Venezia
+  via Gene Wirchenko)
+Aereo wants a TV revolution, if the Supreme Court will let it (Scott Helman
+  via Monty Solomon)
+60 new state privacy laws in last 12 months (Robert Ellis Smith)
+International Snowden analysis report (Simon Davies)
+Re: Computer passes Turing Test ... (security curmudgeon, Tony Finch,
+  Craig Burton)
+Risks of ignoring electrical utility energy storage history
+  (Kelly Bert Manning)
+TrueCrypt.com reported compromised -- Caution Advised (Bob Gezelter)
+Re: real but not very valuable certs: was Forged SSL Certs
+  (John Levine)
+Re: German Green Energy, also Car 'Dash Cams' (Anthony)
+Brute force attack actually selected plaintext? (Fred Cohen)
+Deadline Approaching - Call for Papers: LASER 2014 (Sean Peisert)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 11 Jun 2014 08:47:55 +0100
+From: Ian Chard <ian@chard.org>
+Subject: `Switch incompatibility' leads to two helicopter ditchings
+
+In 2012, two Super Puma helicopters with a total of 33 people on board were
+forced to ditch in the North Sea when both the primary and emergency main
+router lubrication systems failed.  Everyone survived with only minor
+injuries.
+
+The main router lubrication system in both aircraft failed due to fatigue
+cracking in a critical part, and the pilots activated the emergency
+lubrication system, which sprays glycol into the rotor and gives the
+aircraft 30 minutes' safe flying time.  However, on both helicopters a
+warning light illuminated indicating that this emergency system failed as
+well, forcing them to ditch immediately (per their procedures).
+
+It turns out that the emergency lubrication systems were working fine, but
+the switch that was supposed to detect its failure was wired incorrectly,
+meaning that the warning light would *always* illuminate shortly after the
+system's activation.  The aircraft manufacturer made an early design change
+affecting the switch's pin assignments but, when it re-ordered the switches,
+it used the original specification by mistake.  This was compounded by the
+fact that 'the emergency lubrication sub-systems were tested individually,
+[but] no test was carried out on the complete system during certification,
+either on a test rig or installed on a helicopter'.
+
+The full Air Accident Investigation Bureau report is available as a PDF:
+http://www.aaib.gov.uk/publications/formal_reports/2_2014_g_redw_g_chcn.cfm
+
+Ian Chard <ian@chard.org>    http://rainbow.chard.org/
+
+------------------------------
+
+Date: Wed, 11 Jun 2014 19:06:37 +0000
+From: Joe Loughry <joe.loughry@stx.ox.ac.uk>
+Subject: Interconnection of Three Previously Separated Networks in Boeing 737
+
+"Special Conditions" refers to the fact that certification rules haven't
+kept pace. The three network domains (aircraft control, operator
+information, and passenger entertainment) used to run on physically separate
+wires, primarily for historical reasons, but having obvious engineering
+benefits as well. In recent years, first the computers and now the networks
+have migrated to virtual machine separation on shared hardware, for the
+equally obvious space, weight, and power savings. The *Federal Register*
+rule published this week mentions interconnection between at least two of
+the three domains; I hope they paid close attention to UC Berkeley's
+"Experimental Security Analysis of a Modern Automobile" (2010).
+
+https://federalregister.gov/a/2014-13244
+
+Source: "Special Conditions: The Boeing Company, Models 737-700, -700C,
+-800, -900ER, -7, -8, and -9 Series Airplanes; Airplane Electronic Systems
+Security Protection From Unauthorized External Access" [*Federal Register*
+vol. 79, no. 109, June 6, 2014, pp. 32640-32641].
+
+Joe Loughry, Doctoral Student in the Department of Computer Science
+St Cross College, Oxford
+
+------------------------------
+
+Date: Wed, 11 Jun 2014 08:59:28 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Feedly and Evernote attacked for ransom, Feedly still down
+
+*Forbes* via NNSquad
+http://www.forbes.com/sites/jaymcgregor/2014/06/11/feedly-and-evernote-go-down-as-attackers-demand-ransom/
+
+  "You may have noticed that you can't access the website or load any of
+  your feeds via the app. Feedly explained in a short message two hours ago
+  that the DDoS perpetrator is holding Feedly to ransom and asking for money
+  to stop the attack, Feedly has refused to comply."
+
+------------------------------
+
+Date: Wed, 28 May 2014 06:34:34 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: You shouldn't use a spreadsheet for important work (Daniel Lemire)
+
+Spreadsheet programs should have the precision of their numbers (# of 000s)
+severely limited, so that economists, bankers and politicians who are
+responsible for decisions involving billions & trillions of dollars won't be
+able to use them to make such large mistakes. ;-)
+
+http://lemire.me/blog/archives/2014/05/23/you-shouldnt-use-a-spreadsheet-for-important-work-i-mean-it/
+
+You shouldn't use a spreadsheet for important work (I mean it).
+
+I envy economists. Unlike computer scientists, they seem to be able to
+publish best-seller books with innovative research.  One such book is
+Pikettys Capital.  The book is reminiscent of Marxs capital in its scope.
+If you haven't heard about the book yet, it has a simple message: the yield
+on capital is higher than wage growth, which means that those with the
+capital are bound to get richer and more powerful.  The bulk of the
+population is doomed.  A small elite will soon collect all the wealth,
+leaving none for the regular folks.
+
+------------------------------
+
+Date: Tue, 27 May 2014 15:05:55 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Unofficial XP update has Microsoft up in arms" (Serdar Yegulalp)
+
+Serdar Yegulalp | InfoWorld, 27 May 2014
+Microsoft isn't amused by new hack that tricks Microsoft Update into
+applying XP security patches
+http://www.infoworld.com/t/microsoft-windows/unofficial-xp-update-has-microsoft-in-arms-243183
+
+  Well, turnabout is fair play I suppose.  I am not amused with Microsoft
+  dropping of support.  This post was typed on my Windows XP system.  The
+  more Microsoft keeps pushing against XP, the more likely my next OS will
+  not be a Microsoft OS.
+
+------------------------------
+
+Date: Tue, 27 May 2014 15:01:59 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Apple devices held hostage using Find My iPhone" (Loek Essers)
+
+Loek Essers, InfoWorld Home, 27 May 2014
+Hackers are demanding ransoms to unlock devices that were locked with
+the Find My iPhone tool, according to forum posts
+http://www.infoworld.com/d/mobile-technology/apple-devices-held-hostage-using-find-my-iphone-243133
+
+------------------------------
+
+Date: Wed, 11 Jun 2014 13:00:56 -0400
+From: Olin Sibert <osibert@oxford.com>
+Subject: Cell phones as TEMPEST analyzers (David Shamah)
+
+David Shamah, With New Hack, Cellphone Can Get Data Out of Computers, *Times
+of Israel* 9 Jun 2014,
+http://www.timesofisrael.com/with-new-hack-cellphone-can-get-data-out-of-computers/
+
+Professor Yuval Elovici, head of Ben Gurion University's Cyber Security Lab,
+has demonstrated software that allows a cell phone to spy on the activities
+of a nearby computer even though there is no connection between the phone
+and the computer.
+
+Unlike some "malware crosses air gap, time to panic" stories, this one
+actually seems plausible, although there's not enough detail in the press to
+understand what's actually happening. It is true, however, that computers
+generate potentially analyzable radio noise and that cell phones incorporate
+increasingly software-defined (i.e., re-programmable) radios.
+
+The article implies that the demonstration used software both on the phone
+and on the computer. That makes the job vastly simpler, of course, because
+it means the software (which the article plausibly says used the video
+hardware) can generate exactly the right "noise" for the receiver.
+
+Could a normal cellphone have its radio re-programmed to receive and analyze
+_unintentional_ signals? Are the radios sophisticated enough to enable that
+sort of analysis? Are cellphone antennas good enough?  This sort of attack
+is usually portrayed as being performed from a van in the parking lot with a
+big antenna and lots of equipment--but a phone could plausibly be 6 feet
+away instead of 60, and could get away with much less antenna. The diversity
+of (undocumented) radio hardware makes a universal attack seem unlikely, but
+still...
+
+It's an interesting report. Clearly, there's potential for a customized
+mobile device to do this. And that customization might consist of new radio
+firmware in a shiny new iPhone.
+
+------------------------------
+
+Date: Wed, 28 May 2014 09:32:42 +0800
+From: Jeremy Ardley <jeremy.ardley@gmail.com>
+Subject: Contactless Credit Cards causing increase in crime
+
+Tap-and-go credit cards contributing to increase in crime stats,
+Victoria [Australia] Police say
+
+Chief Commissioner Ken Lay said the number of deceptions, including when
+thieves fraudulently use other people's credit cards, has increased by
+11,600 and impacted on overall crime rates.  ``One of the main drivers over
+the last little while have been deceptions and these tap-and-go (credit)
+cards.''
+
+The figures compare the 12 months to March 2014 with those from the previous
+year.
+
+------------------------------
+
+Date: Mon, 9 Jun 2014 23:41:36 -0400
+From: "Dave Farber via ip" <ip@listbox.com>
+Subject: NSA: Our systems are so complex we can't stop them from deleting
+   data wanted for lawsuit!
+
+http://www.washingtonpost.com/blogs/the-switch/wp/2014/06/09/nsa-our-systems-are-so-complex-we-cant-stop-them-from-deleting-data-wanted-for-lawsuit/
+
+The National Security Agency recently used a novel argument for not holding
+onto information it collects about users online activity: it's too complex.
+
+The agency is facing a slew of lawsuits over its surveillance programs, many
+launched after former NSA contractor Edward Snowden leaked information on
+the agency's efforts last year. One suit that pre-dates the Snowden leaks,
+Jewel v. NSA, challenges the constitutionality of programs that the suit
+allege collect information about American's telephone and Internet
+activities.
+
+In a hearing Friday, U.S. District for the Northern District of California
+Judge Jeffrey S. White reversed an emergency order he had issued earlier the
+same week barring the government from destroying data that the Electronic
+Frontier Foundation had asked be preserved for that case. The data is
+collected under Section 702 of the Amendments Act to the Foreign
+Intelligence Surveillance Act. ...
+<https://www.eff.org/document/order-re-evidence-preservation-0>
+
+------------------------------
+
+Date: Wed, 11 Jun 2014 14:38:37 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Turning everyone's home router into a WiFi hotspot
+
+Xfinity is rolling out a new service where by default all of the home
+routers will become hotspots for other Xfinity customers.  The claim is that
+it won't use up the bandwidth of the "host" provider because it's a separate
+bandwidth section.  (Not sure I believe it, but that's what they say.)
+Xfinity says that all users will be authenticated before connecting.  If you
+use your own router, then it doesn't get enabled.
+
+Pros: If you are one of their customers, you can get WiFi service in a lot
+more places (free).
+
+Cons: What happens if someone uses your WiFi hotspot to conduct a criminal
+act?  Xfinity says that the "host" won't be liable.  But that seems to me a
+legal question, not a policy question for Xfinity to decide.  And if police
+monitor (for example) child porn coming through a router, will they be tech
+savvy enough to understand that "oh yeah, that's one of those Xfinity
+things, so we should believe the homeowner when they say 'not me'"?
+
+And of course the additional risk is that enabling this feature increases
+the attack surface within the router, since unknown people (even if they
+are Xfinity customers) are now inside your network.  Since many people
+leave devices open on their home network (on the understanding that "it's
+behind the firewall"), a break in the router from the outside guests to the
+inside host could put a lot at risk.
+
+This could also increase the value of an Xfinity customer's
+username/password, since knowing that information now gives access to a
+nationwide WiFi network.  Hopefully they're doing more authentication than
+just a password, but I doubt it.
+
+Lots of coverage, some of it pointing out the risks.  For example:
+http://blog.seattlepi.com/techblog/2014/06/09/comcast-is-turning-your-xfinity-router-into-a-public-wi-fi-hotspot/#24139101=0
+
+------------------------------
+
+Date: Wed, 11 Jun 2014 12:11:11 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Comcast is turning your home router into a public WiFi hotspot
+
+FYI -- Houston, you have a problem.
+
+I had to check my calendar twice to make sure that it wasn't April 1st.
+Given the hackability of home routers in general, this sounds like perhaps
+the worst idea I've ever heard.  And these Comcast people want to sell you
+*home security* services???
+
+Among other things, Comcast will be able to track smartphones all over
+Houston as they move around from hotspot to hotspot.  Comcast apparently
+envies NSA & ATT, and wants to get into the action.
+
+I especially liked the part about "people using the Internet via the hotspot
+won't slow down Internet access on the home network.  Additional capacity is
+allotted to handle the bandwidth."  So perhaps Comcast has been lying about
+that upstream bandwidth problem all along?
+
+On the other hand, ubiquitous wifi coverage of Houston may convince many
+people to "cut the cord" to their cellphone carrier & use wifi exclusively.
+
+Dwight Silverman's TechBlog, 9 Jun 2014
+Comcast is turning your Xfinity router into a public Wi-Fi hotspot [Updated]
+Update: Comcast has turned on the first 50,000 residential hotspots.
+http://blog.seattlepi.com/techblog/2014/06/09/comcast-is-turning-your-xfinity-router-into-a-public-wi-fi-hotspot/
+   [Long blog item truncated for RISKS.  PGN]
+
+------------------------------
+
+Date: Wed, 11 Jun 2014 22:29:04 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Controlling Your Smart Home With One Hub (Molly Wood)
+
+Molly Wood, *The New York Times*, 11 Jun 2014
+
+The smart home is full of promise: Coffee makers that turn on when you wake
+up, garage doors that open when you come home, relaxing music that is
+controlled remotely and air-conditioners and thermostats that perfectly
+regulate the home and save you money, too.
+
+Promise is rarely reality, though. Smart-home automation is a tricky and
+chaotic corner of tech right now. Companies are rushing to join the fray,
+buoyed in part by the success of the Nest Learning Thermostat, and Google's
+$3.2 billion acquisition of Nest.
+
+For consumers, putting together a smart home remains mostly a do-it-yourself
+project. You choose your components, connect them to your home network and
+start living your connected life. Companies like Comcast, Verizon and AT&T
+offer monitoring systems, but they don't offer much flexibility. And
+installing a complete home automation and security system can cost tens of
+thousands of dollars.
+
+The trouble is that for anyone pursuing this as a D.I.Y. project, the more
+devices you bring home, the more separate apps you need to control
+them. Suddenly, convenience becomes cumbersome. ...
+
+http://www.nytimes.com/2014/06/12/technology/personaltech/your-coffee-maker-garage-door-and-air-conditioner-all-controlled-by-one-device.html
+
+------------------------------
+
+Date: Tue, 27 May 2014 08:42:20 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "The FCC's Net neutrality plan is much worse than it looks"
+  (Paul Venezia)
+
+http://www.infoworld.com/d/data-center/the-fccs-net-neutrality-plan-much-worse-it-looks-243027
+Paul Venezia, InfoWorld, 27 May 2014
+Under the new proposal, ISPs will be slower to upgrade their networks
+and will find it easier to exploit customers on both ends
+
+------------------------------
+
+Date: Thu, 12 Jun 2014 01:32:46 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Aereo wants a TV revolution, if the Supreme Court will let it
+  (Scott Helman)
+
+Can a daring entrepreneur from Newton and his team of technologists upend
+the way we watch TV? Only if the Supreme Court doesn't quash their idea
+first.
+
+Scott Helman, *The Boston Globe*, 05 Jun 2014
+
+DON'T CALL CHET KANOJIA A DISRUPTER. First, it's hackneyed. "You go around
+in [Silicon] Valley, every punk is running around saying, you know,
+'Disrupt, disrupt, disrupt,' " he says. "It's like, 'Dude, you have no idea
+what you're talking about.' "
+
+Kanojia, a Newton entrepreneur who's trying to lead a TV revolution, does
+know what he's talking about. Which brings us to his second
+objection. Disruption, he says, is too often conflated with destruction,
+which is not his goal. He's not out to destroy TV networks or the cable
+industry, he insists. Just to make things better for viewers. "Something's
+gotta give," he says, citing continued increases in cable rates. "Otherwise
+you end up in a system where it's another mortgage payment."
+
+Indeed, doesn't the cable bill loom large in those late-night, kids-in-bed
+budget discussions at the kitchen table? You shell out a bundle, and the
+bundle only grows-the average bill for a pay TV subscription alone is on
+track to reach $123 a month next year and $200 by 2020, according to a 2012
+projection from market research firm NPD Group. And yet you ask yourself:
+What am I paying for? How many of those channels do I actually watch? ...
+
+http://www.bostonglobe.com/magazine/2014/06/05/aereo-wants-revolution-supreme-court-will-let/xevtnDRJj9HzbCdVQM22XK/story.html
+
+------------------------------
+
+Date: Thu, 12 Jun 2014 11:07:40 -0400
+From: "Robert Ellis Smith" <ellis84@rcn.com>
+Subject: 60 new state privacy laws in last 12 months
+
+States Enacting New Privacy Laws; Congress Creates a Vacuum in the Field
+
+State legislators have been extraordinarily busy in the past 14 months
+enacting privacy protective legislation. During the same period, Congress
+did not pass any notable pro-privacy reforms. Federal proposals to ban use
+of credit reports in employment decisions, to limit employers' access to
+Facebook accounts, and to require notifications of leaks of personal
+information (data breaches) have not moved forward in four years.
+
+SL Cover2013 privacy journal has counted more than 60 important laws on
+privacy enacted by state legislators in the 12 months since publication of
+its 2013 Compilation of State and Federal Privacy Laws. The new laws are
+described and cited in the 2014 Supplement, available in hard copy or pdf
+email attachment for $16. The 2013 book with the supplement included is $40
+(postage included) and the digital version is $28.50.
+
+The book and supplement describe each law, grouped by states and by
+categories, and include the legal citation of each state law.
+
+Facebook Passwords
+
+A total of 17 states, 12 of them in the past year, have passed laws
+restricting employers from demanding social-media passwords or access to
+personal sites belonging to applicants or employees. In recent months ten
+states have extended these protections to students in higher
+education. Louisiana, Michigan, New Mexico, Oregon, Utah, and Washington
+State have extended this protection to students in high schools and
+secondary schools as well. Wisconsin includes landlords in the prohibition.
+
+Surveillance by Drones
+
+Lawmakers in blue and red states alike have turned their attention to
+regulating law enforcement's use of unmanned aircraft for surveillance
+(drones). New laws in nine states require the government to have court
+approval before using drones for surveillance or for capturing images. North
+Carolina and Virginia have enacted moratoria on drone use by the government,
+both expiring in mid-2015. Oregon requires state registration of all drones
+and bans their uses as weapons.
+
+Access to Metadata
+
+Montana is apparently the first state to limit government agencies from
+getting access to location information from telephone providers (metadata)
+unless there is consent, an emergency, a search warrant, or a report of a
+stolen device. Texas seems to be the first and only state to require by
+statute a court warrant for law enforcement to procure email content. The
+law is written in such a way as to authorize access to email as much as to
+restrict it.  The statute claims that Texas authorities may seize email
+content outside of Texas.
+
+Ban-the-Box
+
+There has been a significant campaign throughout the U.S. to `ban-the-box'.
+That is the box found on many job applications asking whether Applicants
+have ever been arrested or convicted.  Many applicants have said that
+checking the box virtually assures that an application will be ditched.
+
+Therefore, reformers have asked state legislators to enact ban-the-box
+laws. The laws require elimination of the inquiry, whether it is in writing
+or verbally, until an applicant has been determined to meet the minimum
+requirements for a position and moves to the second stage of consideration
+for a job, usually an interview.
+
+Hawaii passed the first ban-the-box law in the nation, in 1998. In the past
+18 months, ten states have followed suit. Some laws cover government
+employment; others cover public and private employment. In addition, Georgia
+and Illinois have banned the box administratively since last October. North
+Carolina has a ban-the-box alternative affecting state licensing boards.
+
+Employers' Electronic Monitoring
+
+Connecticut and Delaware now prohibit electronic monitoring of employees
+without advance notice.
+
+California legislators continue to occupy themselves with advancing the
+pro-privacy laws in their state. In the past 12 months, they required Web
+sites to notify the public that they are forbidden from using personal data
+about minors in marketing. Kids have rights to remove some data about
+themselves from Web sites.
+
+Smart-Grid Restrictions
+
+Utilities in California are restricted in secondary uses of customer data in
+so-called smart grid technology, which allows precise pricing based on
+usage. This is the first such law in the nation.
+
+Californians now have rights to have Web sites disclose how they respond to
+do not track signals and whether third parties collect marketing data from
+the principal Web site or app.
+
+The legislature extended the state's medical confidentiality protections to
+apps. And it toughened the anti-paparazzi law, now making it a crime to
+harass a child because of the parent's employment.
+
+Robert Ellis Smith, ellis84@rcn.com, Publisher, PRIVACY JOURNAL, PO Box 28577,
+Providence RI 02908, 401/274-7861   fax 401/274-7861 www.privacyjournal.net
+
+------------------------------
+
+Date: Tue, 10 Jun 2014 15:33:59 +0100 (BST)
+From: "Simon Davies" <simon@privacy.org>
+Subject: International Snowden analysis report
+
+An international analysis of the impact of the Snowden disclosures, which
+I've edited, is now published.  It covers developments in 29 countries.  I
+just wish we had time to produce something more comprehensive, but the
+project only had four weeks from inception.
+
+I've blogged about it at
+http://www.privacysurgeon.org/blog/incision/global-security-analysis-reveals-widespread-government-apathy-following-snowden-disclosures/ but at this point I
+haven't put the report online, it's just a downloadable pdf.
+
+I've turned the report's conclusions by degrees from an apocalyptic
+scenario, highlighting a litany of deception and denial by government, into
+a somewhat more optimistic message of gradual change leading to reform. The
+two messages are not incompatible.   [Slightly PGN-ed for RISKS.]
+
+------------------------------
+
+Date: Wed, 11 Jun 2014 22:20:18 -0500 (CDT)
+From: security curmudgeon <jericho@attrition.org>
+Subject: Re: Computer passes Turing Test ... (RISKS-28.01)
+
+https://www.techdirt.com/articles/20140609/07284327524/no-computer-did-not-pass-turing-test-first-time-everyone-should-know-better.shtml
+
+No, A 'Supercomputer' Did *not* pass the Turing test for the first time, and
+everyone should know better
+
+So, this weekend's news in the tech world was flooded with a "story" about
+how a "chatbot" passed the Turing Test for "the first time," with lots of
+publications buying every point in the story and talking about what a big
+deal it was. Except, almost everything about the story is bogus and a bunch
+of gullible reporters ran with it, because that's what they do.  First,
+here's the press release from the University of Reading, which should have
+set off all sorts of alarm bells for any reporter. Here are some quotes,
+almost all of which are misleading or bogus: [..]
+
+  [Note: This story was bogus from the get-go.  I ran it with the
+  expectation that it would be debunked, so I am delighted to run this
+  item and the following ones.  PGN]
+
+------------------------------
+
+Date: Thu, 12 Jun 2014 11:32:09 +0100
+From: Tony Finch <dot@dotat.at>
+Subject: Re: Computer "passes" "Turing Test" for "first" time [notsp]
+
+The news item about the Turing Test is yet another over-hyped stunt
+from Kevin Warwick, who has an impressive track record of getting the
+media to credulously repeat his inflated claims.
+
+A couple of good debunkings include:
+
+https://www.techdirt.com/articles/20140609/07284327524/no-computer-did-not-pass-turing-test-first-time-everyone-should-know-better.shtml
+
+http://www.kurzweilai.net/response-by-ray-kurzweil-to-the-announcement-of-chatbot-eugene-goostman-passing-the-turing-test
+
+f.anthony.n.finch  <dot@dotat.at>  http://dotat.at/
+
+------------------------------
+
+Date: Thu, 12 Jun 2014 12:51:01 +1000
+From: "Craig Burton" <Craig.Burton@vec.vic.gov.au>
+Subject: Re: Subject: Computer passes Turing Test ... (RISKS-28.01)
+
+It's not clear to me what the risks are in "Eugene Goostman" convincing
+someone the software is a 13-year old boy.
+
+Do we now envisage some sort of smart war-dialing virtual kid con
+artist fleecing people?
+
+Or do we envisage smart software being given too much responsibility
+such as chat-bot suicide counseling or such?
+
+Or is the risk that real chatting support people are more likely to be
+assumed to be bots?  In the Most Human Human, Brian Christian muses that as
+a human control in the above competition, he could answer questions in such
+a way as to be perceived as being a machine.  This has happened to me via
+email when I replied too quickly with a fairly bland email to customers
+reporting problems at my company.  Is the risk in this case that end-users
+refuse help from perceived bots?
+
+I have found studies reporting people sometimes much more or much less
+likely to surrender personal information to automated (online) versus human
+moderated paper surveys.  I am guessing the online ones are trusted a lot
+less these days, but my point is that people may now surrender more personal
+information to bots they think are people.
+
+------------------------------
+
+Date: Sun, 25 May 2014 13:50:04 -0400 (EDT)
+From: Kelly Bert Manning <Kelly.Manning@ncf.ca>
+Subject: Risks of ignoring electrical utility energy storage history
+
+ Re: German Green Energy, also Car 'Dash Cams (Drewe, RISKS-27.94)
+
+"(a) Wind and solar sources can provide significant power, but only in short
+bursts and not necessarily when needed, so either conventional generating
+plant will have to be retained with these sources feeding in as and when
+available, or renewables will have to generate something like 500% of the
+country's electricity, with the surplus stored (how?) for periods of calm
+weather or when the sun don't shine (with a margin for the inefficiencies of
+the storage system)."
+
+Doing a web search on
+
+   history of pumped storage hydroelectricity
+
+turns up hits such as
+
+people.duke.edu/~cy42/PHS.pdf
+
+en.wikipedia.org/wiki/Pumped-storage_hydroelectricity
+
+Electric Utilities have been finding solutions to this problem as far back
+as 1890, when utilities used Steam Engines to generate electric power for
+distribution. Keeping boilers fired up at low use periods wasted fuel and
+overbuilding steam generation capacity for short term demand peaks wasted
+the capital needed to provide the generation capacity.
+
+The TVA pumped storage facility at Raccoon Mountain has a net dependable
+capacity of 1,652 megawatts and stores energy generated at coal fired and
+nuclear plants. Glacier retreat creates potential locations where pumped
+storage generators could be built without disrupting existing ecosystems
+any more than the meltdown of the glaciers already has.
+
+www.tva.gov/sites/raccoonmt.htm
+
+The same challenge of excess thermal power comes up 124 years later.
+
+Nuclear plants do not respond well to power levels being lowered and can
+take days to get back to full power if they are shut down abruptly. We
+were reminded of that by the Northeast transmission failure, August 2013
+
+cip.management.dal.ca/publications/Ontario%20-%20US%20Power%20Outage%20-%20Impacts%20on%20Critical%20Infrastructure.pdf
+
+"Steamers" often have unused capacity at night. There is only so much that can
+be done in terms of finding night time clients for that excess capacity. Enron
+demonstrated how long it takes to reheat a "steamer" after letting it cool.
+
+------------------------------
+
+Date: Wed, 28 May 2014 20:44:43 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: TrueCrypt.com reported compromised -- Caution Advised
+
+The TrueCrypt.com site apparently has a compromised set of binaries. The
+SourceForge TrueCrypt site has an advisory to switch to BitLocker.  The
+published reports are unclear whether the sites have been hijacked, or
+whether this is a deliberate act on the part of the development team.  This
+raises two risks:
+
+* The risk of relying on the availability of reliable distribution kits from
+online repositories. It emphasizes the need to burn local copies of
+installed software, lest the online repository be compromised or disappear.
+
+* How well regulated are online repositories routinely used by large
+communities of users.
+
+http://www.pcworld.com/article/2241300/truecrypt-now-encouraging-users-to-use-microsofts-bitlocker.html
+http://www.theregister.co.uk/2014/05/28/truecrypt_hack/
+
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: 25 May 2014 18:35:33 -0000
+From: "John Levine" <johnl@iecc.com>
+Subject: Re: real but not very valuable certs: was Forged SSL Certs
+  (Shapiro, RISKS-27.94)
+
+>It is a regrettable truth that SSL certificates are a very expensive thing
+
+While I share your skepticism about the current security value of a
+signed cert, it's simply not true that they're expensive, and it
+hasn't been true for many years.
+
+Startcom (https://www.startssl.com/) will sign certs for free, $0.00, and
+all current browsers accept them.  If that's not good enough, you can buy
+Comodo certs for $5/yr or Geotrust for $8/yr from resellers like ssls.com.
+
+  [Jonathan Kamens had some similar comments.  PGN]
+
+------------------------------
+
+Date: Mon, 26 May 2014 21:10:43 +0100
+From: Anthonys Lists <antlists@youngman.org.uk>
+Subject: Re: German Green Energy, also Car 'Dash Cams' (RISKS-27.93)
+
+In the UK we have (I think) *two* such power stations - effectively giant
+batteries.
+
+They were constructed to provide power surges to match peaks in demand -- in
+the days of just three or four TV channels and no video recorders, the ad
+breaks would trigger huge surges in demand as maybe four or five million
+households would switch on their kettles in the space of 30 seconds. That
+was the time needed for these power stations to go from 0W to 500MW.
+
+The station I know of for certain is in Wales where they have a large
+reservoir at the top of a mountain. At night, when demand is low and just
+the baseload generators are running, cheap electricity is used to pump water
+from the reservoir at the bottom to the reservoir at the top.  When demand
+peaks, these stations are ready to provide a quick surge of hydro-electric
+power.
+
+But these stations could just as easily be used to smooth out the supply in
+a nation of irregular green energy. Basic stats says that can predict
+roughly how much power you're going to get over the day (and year) and you
+can store surplus power and use it to smooth out the supply.
+
+------------------------------
+
+Date: Sun, 01 Jun 2014 06:05:14 -0700
+From: Fred Cohen <fc@all.net>
+Subject: Brute force attack actually selected plaintext?
+
+In RISKS-27.97, I saw the term "brute force attack" misused yet
+again. Selected plaintext seems more like the proper term for it. The
+password attacks actually observed tend to be using known password guessing
+followed by likely password guessing. And this is not the same as brute
+force - which essentially never works remotely against password systems with
+minor delays for retry and at least 8 characters of length.
+
+I think we should be more careful in our word usage.
+
+Fred Cohen - 925-454-0171 - All.Net & Affiliated Companies http://all.net/
+PO Box 811 Pebble Beach, CA 93953
+
+------------------------------
+
+Date: Tue, 10 Jun 2014 16:10:09 -0700
+From: Sean Peisert <speisert@ucdavis.edu>
+Subject: Deadline Approaching - Call for Papers: LASER 2014
+
+2014 LASER Workshop - Learning from Authoritative Security Experiment Results
+http://www.laser-workshop.org
+Arlington, Virginia - October 15-16, 2014
+Paper submissions due June 30, 2014
+[See earlier posting in RISKS-27.87.  PGN]
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.02
+************************
+
+--_002_4288c2930cb749ca828e4ce9253459f2EXHUBVM01campusnclacuk_--

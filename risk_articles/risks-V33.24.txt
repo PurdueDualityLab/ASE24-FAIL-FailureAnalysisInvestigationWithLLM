@@ -1,0 +1,438 @@
+Subject: Risks Digest 33.24
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 31 May 2022  Volume 33 : Issue 24
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.24>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+When a machine invents things for humanity, who gets the patent?
+ (techxplore)
+Inside the Government Fiasco That Nearly Closed the U.S. Air System
+ (ProPublica)
+Serious Warning Issued For Millions Of Google Gmail Users (Forbes)
+2022 Data Breach Investigations Report (DBIR)
+Children's Rights Violations by Governments that Endorsed Online Learning
+ During the Covid-19 Pandemic (HRW)
+Elon Musk: When He saw the Tesla CEO for who he really is. (S;ate)
+Help Wanted: State Misinformation Sheriff (Jose Maria Mateos)
+Microsoft Wants to Prove You Exist with Verified ID System, if You'll Let It
+ (Kyle Barr)
+An Autonomous Car Blocked a Fire Truck Responding to an Emergency (WiReD)
+Re: Autonomous vehicles can be tricked into dangerous driving (Martin Ward,
+ Richard Stein)
+Re: Artificial intelligence predicts patients' race from their medical
+ images (Jan Wolitzky, Amos Shapir, Steve Bacher)
+Security and Human Behaviour 2022 (Jose Maria Mateos)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 28 May 2022 13:34:10 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: When a machine invents things for humanity, who gets the patent?
+ (techxplore.com)
+
+https://techxplore.com/news/2022-05-machine-humanity-patent.html
+
+"The day is coming -- some say has already arrived -- when artificial
+intelligence starts to invent things that its human creators could not.  But
+our laws are lagging behind this technology, UNSW experts say.
+
+"It's not surprising these days to see new inventions that either
+incorporate or have benefitted from artificial intelligence (AI) in some
+way, but what about inventions dreamt up by AI -- do we award a patent to a
+machine?"
+
+The authors argue that a new class of intellectual property, that created or
+discovered by AI (AI-IP), be established to enable patent rights protection
+and adjudication.
+
+Would an anti-AI-IP invention, a dataset or learning model or combination
+that can defeat an AI-IP's operation be eligible for patent, or would it be
+considered dangerous malware?
+
+------------------------------
+
+Date: Sat, 28 May 2022 14:40:07 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Inside the Government Fiasco That Nearly Closed the U.S. Air
+ System (ProPublica)
+
+The upgrade to 5G was supposed to bring a paradise of speedy wireless.  But
+a chaotic process under the Trump administration, allowed to fester by the
+Biden administration, turned it into an epic disaster. The problems haven't
+been solved.
+
+The prospect sounded terrifying. A nationwide rollout of new wireless
+technology was set for January, but the aviation industry was warning it
+would cause mass calamity: 5G signals over new C-band networks could
+interfere with aircraft safety equipment, causing jetliners to tumble from
+the sky or speed off the end of runways. Aviation experts warned of
+"catastrophic failures leading to multiple fatalities."  [...]
+
+But the Trump administration didn't initially seem inclined to leave 5G
+decisions to the FCC. The administration saw the fifth generation of
+cellular technology, with its faster speeds and automation efficiencies for
+industry, as its single biggest communications initiative.
+
+Top Trump officials viewed the technology through the prism of competition
+with China. Many in the administration also expressed fears that Huawei
+Technologies, a dominant maker of 5G hardware, might be a conduit for
+Chinese government surveillance, posing a national-security threat. (Huawei
+has always denied such claims.) Trump lieutenants began employing a
+nationalist battle cry: America needed to "win the race to 5G" against
+China.
+
+https://www.propublica.org/article/fcc-faa-5g-planes-trump-biden
+
+------------------------------
+
+Date: Sat, 21 May 2022 18:17:34 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Serious Warning Issued For Millions Of Google Gmail Users
+
+Gmail is the world's most popular email service, it is also known as one of
+the most secure. But a dangerous exploit might make you rethink how you want
+to use the service in future.
+
+In an eye-opening *blog post* <https://ysamm.com/?p=763>, security
+researcher Youssef Sammouda has revealed that Gmail's OAuth authentication
+code enabled him to exploit vulnerabilities in Facebook to hijack Facebook
+accounts when Gmail credentials are used to sign in to the service. And the
+wider implications of this are significant.
+
+Speaking to *The Daily Swing*
+<https://portswigger.net/daily-swig/facebook-account-takeover-researcher-scoops-40k-bug-bounty-for-chained-exploit>,
+Sammouda explained that he was able to exploit redirects in Google OAuth and
+chain it with elements of Facebook's logout, checkpoint and sandbox systems
+to break into accounts. Google OAuth is part of the '*Open Authorization*
+<https://en.wikipedia.org/wiki/OAuth>' standard used by Amazon, Microsoft,
+Twitter and others which allows users to link accounts to third-party sites
+by signing into them with the existing usernames and passwords they have
+already registered with these tech giants.
+
+Sammouda reports no vulnerabilities using other email accounts. He does
+stress that it could potentially be applied more widely "but that was more
+complicated to develop an exploit for." He states Facebook paid him a
+$44,625 'bug bounty' for its role in this vulnerability. Facebook has
+subsequently patched the vulnerability from their side. I have contacted
+Google for a response on the role of Google OAuth in the exploit and will
+update this post when/if I receive a reply.
+
+Commenting on Sammouda's findings, security provider *Malwarebytes Labs*
+<https://blog.malwarebytes.com/exploits-and-vulnerabilities/2022/05/gmail-linked-facebook-accounts-vulnerable-to-attack-using-a-chain-of-bugs-now-fixed/>
+issued a warning to anyone using linked accounts: "Linked accounts were
+invented to make logging in easier," writes Pieter Arntz, the company's
+Malware Intelligence Researcher. "You can use one account to log in to other
+apps, sites and services... All you need to do to access the account is
+confirm that the account is yours."  [...]
+
+https://www.forbes.com/sites/gordonkelly/2022/05/21/google-gmail-security-facebook-oauth-login-warning/
+
+------------------------------
+
+Date: Sun, 29 May 2022 11:45:20 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: 2022 Data Breach Investigations Report (DBIR)
+
+https://www.verizon.com/business/resources/reports/dbir/
+https://www.verizon.com/business/resources/reports/2022/dbir/2022-dbir-data-breach-investigations-report.pdf
+
+Verizon DBIR: Stolen credentials led to nearly 50% of attacks
+
+The 2022 Verizon Data Breach Investigations Report revealed enterprises'
+ongoing struggle with securing credentials and avoiding common mistakes such
+as misconfigurations.
+
+https://www.techtarget.com/searchsecurity/news/252520686/Verizon-DBIR-Stolen-credentials-led-to-nearly-50-of-attacks
+
+------------------------------
+
+Date: Sun, 29 May 2022 14:48:34 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Children's Rights Violations by Governments that Endorsed Online
+ Learning During the Covid-19 Pandemic (HRW)
+
+How Dare They Peep into My Private Life?
+
+This report is a global investigation of the education technology (EdTech)
+endorsed by 49 governments for children's education during the pandemic.
+Based on technical and policy analysis of 164 EdTech products, Human Rights
+Watch finds that governments' endorsements of the majority of these online
+learning platforms put at risk or directly violated children's privacy and
+other children's rights, for purposes unrelated to their education.
+
+The coronavirus pandemic upended the lives and learning of children around
+the world. Most countries pivoted to some form of online learning, replacing
+physical classrooms with EdTech websites and apps; this helped fill urgent
+gaps in delivering some form of education to many children.
+
+But in their rush to connect children to virtual classrooms, few governments
+checked whether the EdTech they were rapidly endorsing or procuring for
+schools were safe for children. As a result, children whose families were
+able to afford access to the Internet and connected devices, or who made
+hard sacrifices in order to do so, were exposed to the privacy practices of
+the EdTech products they were told or required to use during Covid-19 school
+closures.
+
+https://www.hrw.org/report/2022/05/25/how-dare-they-peep-my-private-life/childrens-rights-violations-governments
+
+------------------------------
+
+Date: Mon, 30 May 2022 16:22:31 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Elon Musk: When He saw the Tesla CEO for who he really is.
+
+The CEO's mythmaking often obscures an uglier truth. The public is finally
+reckoning with it.
+
+Edward Niedermeyer:
+
+This duplicity on Tesla's part, I reasoned, couldn't be a mere accident.  To
+borrow the folksy saying favored by Warren Buffett: There is never just one
+cockroach. So I began digging into every aspect of Tesla's business, and in
+the years that followed, my investigations turned up no shortage of
+cockroaches.
+
+https://slate.com/technology/2022/05/elon-musk-tesla-twitter-fables.html
+
+------------------------------
+
+Date: Tue, 31 May 2022 06:05:21 -0400
+From: =?iso-8859-1?Q?Jos=E9_Mar=EDa?= Mateos <chema@rinzewind.org>
+Subject: Help Wanted: State Misinformation Sheriff
+
+https://www.nytimes.com/2022/05/31/technology/misinformation-sheriff-election-midterms.html
+
+> Ahead of the 2020 elections, Connecticut confronted a bevy of falsehoods
+> about voting that swirled around online. One, widely viewed on Facebook,
+> wrongly said that absentee ballots had been sent to dead people. On
+> Twitter, users spread a false post that a tractor-trailer carrying ballots
+> had crashed on Interstate 95, sending thousands of voter slips into the
+> air and across the highway.
+
+> Concerned about a similar deluge of unfounded rumors and lies around this
+> year's midterm elections, the state plans to spend nearly $2 million on
+> marketing to share factual information about voting, and to create its
+> first-ever position for an expert in combating misinformation. With a
+> salary of $150,000, the person is expected to comb fringe sites like
+> 4chan, far-right social networks like Gettr and Rumble and mainstream
+> social media sites to root out early misinformation narratives about
+> voting before they go viral, and then urge the companies to remove or flag
+> the posts that contain false information.
+
+"What do you do for a living?"
+
+"I... er... browse 4chan"
+
+------------------------------
+
+Date: Tue, 31 May 2022 11:25:10 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Microsoft Wants to Prove You Exist with Verified ID System, if
+ You'll Let It (Kyle Barr)
+
+Kyle Barr, Gizmodo, 31 May 2022
+
+In the decade-spanning conflict between the need for online privacy and
+efforts to stop fake accounts from accessing sensitive info, the tech
+monolith that is Microsoft is putting its massive weight behind the creation
+of standardized online identities.
+
+In its announcement Tuesday, Microsoft talked up its Entra management
+systems that includes Verified ID, promoting itself as a quick way of giving
+sensitive identification to entities that need to verify that you are who
+you say you are.
+
+In its release, the company said that old means of restricting electronic
+access was "no longer sustainable" because of how digital estates have
+become "boundary-less." What that really means is people abusing fake
+accounts to gain access to sensitive online networks have created a host of
+issues for private companies, governments and more. Microsoft itself has
+been targeted by hackers who managed to access company information on
+Microsoft's Azure cloud computing platform. The LAPSUS$ group of hackers has
+previously called on tech company employees to give them sensitive info.
+
+In at least a few of these cases, hackers were able to gain access to
+sensitive networks by using stolen account details to log in. Recently,
+reports showed hackers were able to gain user data from tech companies by
+posing as law enforcement officials.
+
+Instead of having personal information spread across a host of apps and
+services, this Verified ID system acts as a kind of digital wallet or
+personal info portfolio that can be handed over to employers, bankers, or
+whoever needs a verified identification. Ankur Patel, Microsoft's principal
+programmer for digital identity, told Protocol the new system could include
+college diplomas, bank notes, or even doctors' notes for a clean bill of
+health. Those who create and issue verified IDs can also suspend or
+invalidate credentials after they're issued.
+
+https://gizmodo.com/microsoft-verified-id-entra-digital-identity-wallet-1848996341
+
+  [ID is a very complex problem. But I will not be an early adopter of this.
+  -L]
+
+------------------------------
+
+Date: Fri, 27 May 2022 19:51:30 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: An Autonomous Car Blocked a Fire Truck Responding to an Emergency
+ (WiReD)
+
+The incident in San Francisco cost first responders valuable time, and
+underscores the challenges Cruise and other companies face in launching
+driverless taxis.
+
+https://www.wired.com/story/cruise-fire-truck-block-san-francisco-autonomous-vehicles/
+
+It's the old "free will vs. determinism" debate, and determinism lost.
+Pretty soon my toaster will say, "I'm sorry Gabe, I can't do that" when I
+tell it how I like my toast.
+
+------------------------------
+
+Date: Sat, 28 May 2022 16:47:51 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: Autonomous vehicles can be tricked into dangerous driving
+ behavior (RISKS-33.23)
+
+> Without human-like, contextual interpretation and reasoning, an AV's CAS
+> cannot discriminate a cardboard box from a concrete block.
+
+What if there is a cardboard box covering a concrete block?
+
+  [RISKS readers would like to believe that every cardboard box should be
+  avoided, because it might house a homeless person or your favorite pet.
+  PGN]
+
+------------------------------
+
+Date: Sun, 29 May 2022 08:50:25 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: Autonomous vehicles can be tricked into dangerous driving
+ behavior (Ward, RISKS-33.24)
+
+> What if there is a cardboard box covering a concrete block?
+
+People are required to purchase auto and health insurance policies.
+
+A cardboard box covering a concrete block which instantaneously confronts a
+vehicle steered by either human or machine are visually indistinguishable.
+A detected radio-wave (or infrared) signature would reveal a different
+signature for the machine to reconcile against the visual. An obstacle
+encountered under these circumstances favors neither human nor machine,
+unless the machine is train-sized or bigger.
+
+------------------------------
+
+Date: Fri, 27 May 2022 20:06:30 -0400
+From: Jan Wolitzky <jan.wolitzky@gmail.com>
+Subject: Re: Artificial intelligence predicts patients' race from their
+ medical images (RISKS-33.23)
+
+Care should be taken in interpreting the results of a study that purports to
+use objective data and artificial intelligence to predict an objectively
+undefined variable such as race, a social construct.  The "race" of the
+subjects in the training set was entirely subjective, i.e., self-reported.
+The authors never specify, e.g., how many different racial categories the
+subjects in each dataset were allowed to choose from, or whether there were
+differences in this among the datasets.  Furthermore, the datasets used were
+predominantly from an institution in Georgia, a historically racist area in
+a historically racist country, so the objective value of "race" assigned
+must be taken with a very large grain of salt.
+
+------------------------------
+
+From: Amos Shapir <amos083@gmail.com>
+Date: Sat, 28 May 2022 12:51:30 +0300
+Subject: Re: Artificial intelligence predicts patients' race from their
+ medical images (medicalxpress, RISKS-33.23)
+
+Ethnic identity is in the eye of the beholder.  These AI medical systems
+are not different in principle from any other medical examination; the only
+parameters they can detect are physical properties of a patient's body.
+
+It's true that such properties (most notably, skin color) have been, and
+still are, used for discrimination against people, but that should not
+affect the technicalities of medical procedures.  Mixing these with social
+and political issues might end in, e.g., labeling tests for sickle-cell
+anemia or vitamin D deficiency as racist.
+
+------------------------------
+
+Date: Sat, 28 May 2022 17:32:30 +0000 (UTC)
+From: Steve Bacher <sebmb1@verizon.net>
+Subject: Re: Artificial intelligence predicts patients' race from their
+ medical images (medicalxpress, RISKS-33.23)
+
+Yes, but it could also be used to positive ends, like identifying patients
+prone to sickle cell anemia, for instance.
+
+Or it could be the basis for corrective, reparative, or anti-profiling
+policies, whether you agree with those or not.
+
+After all, it's just information, and can be put to good or bad uses.
+
+  [One of the lessons from RISKS is that many things are dual-use -- good or
+  bad.  This is just one more.  Discriminating between them might be like
+  trying to use technology to mediate the fairness of an ill-conceived
+  *duel*, which would also have *dual* uses, especially if the technology
+  could be easily rigged, like so many other things.  PGN]
+
+------------------------------
+
+Date: Tue, 31 May 2022 06:06:13 -0400
+From: =?iso-8859-1?Q?Jos=E9_Mar=EDa?= Mateos <chema@rinzewind.org>
+Subject: Security and Human Behaviour 2022
+
+Seen on Bruce Schneier's blog: https://www.cl.cam.ac.uk/~rja14/shb22/.
+This is the list of working papers for the conference, which I think will be
+of interest to many RISKS subscribers.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.24
+************************

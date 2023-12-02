@@ -1,0 +1,953 @@
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 30.87
+
+RISKS-LIST: Risks-Forum Digest  Friday 19 October 2018  Volume 30 : Issue 87
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.87>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Election Integrity (The New Yorker Radio Hour)
+Election Security (Paul Burke)
+"US voter records from 19 states sold on hacking forum" (ZDNet)
+Cyber Tests Showed 'Nearly All' New Pentagon Weapons Vulnerable to
+  Attack, GAO Says (NPR)
+US weapons systems can be 'easily hacked' (BBC News)
+"Why Internet Tech Employees Are Rebelling Against Military Contracts
+  (Lauren Weinstein)
+Sky battles: Fighting back against rogue drones (bbc.com)
+"Autonomous cars on US roads with no brake pedals, steering wheels
+  just edged closer" (ZDNet)
+Why you have (probably) already bought your last car (bbc.com)
+Ford tests technology that could render traffic lights obsolete
+  (autoblog.com and ieee.org)
+Amazon Atlas (Gabe Goldberg)
+Turkey obtains recordings of Saudi journalist's purported killing (Yahoo)
+Apple VoiceOver iOS vulnerability permits hacker access to user photos
+  (Charlie Osborne)
+Code Signing: Did Someone Hijack Your Software? (Forbes)
+When Your Boss Is an Algorithm (The New York Times)
+Facebook's former security chief warns of plan to help solve negative
+  impacts (WashPost)
+The Eight Best Smart Plugs to Buy in 2018 (Lifewire)
+The impending war over deepfakes (Axios)
+What the heck is it with Windows updates? (Computerworld)
+Proof-of-concept code published for Microsoft Edge remote code execution bug
+  (ZDNet)
+Donald Daters (Naked Security)
+Paramedic agrees Apple Watch Series 4 will save lives; false positives not a
+  problem (9to5Mac)
+Genome Researchers Show No One's DNA Is Anonymous Anymore (Megan Moteni)
+Algorithms Designed to Fight Poverty Can Actually Make It Worse
+  (Scientific American)
+Researcher finds simple way of backdooring Windows PCs and nobody notices
+  for ten months (ZDNet)
+Experian credit freeze unfrozen by hackers? (Veridium)
+DC Think Tank Used Fake Social Media Accounts, A Bogus Expert, And
+  Fancy Events To Reach The NSA, FBI, And White House (BuzzfeedNews)
+I fell for Facebook fake news. Here's why millions of you did, too.
+  (WashPost)
+Jury duty (Rob Slade)
+Re: Molecule resonance and cellphone radiation (Richard Stein)
+Re: Fwd: NYTimes: The Auto Industry's VHS-or-Betamax Moment? (Gabe Goldberg)
+Re: innumeracy, or More than 250 people worldwide have died taking selfies
+  (John R. Levine)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 15 Oct 2018 11:46:47 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Election Integrity (The New Yorker Radio Hour)
+
+I happened to hear Susan Greenhalgh being interviewed by Logan Lamb on *The
+New Yorker Radio Hour* on NPR on 13 Oct.  She did a superb job of
+summarizing the risks associated with elections.
+
+https://www.wnycstudios.org/story/voting-safe-pod
+
+Also, see Kim Zetter and Denise Merrill on NPR.
+http://www.wnpr.org/post/we-may-have-crisis-brewing-security-our-electronic-voting-machines
+
+------------------------------
+
+From: Paul Burke <box1320@gmail.com>
+Date: Wed, 10 Oct 2018 08:08:31 -0400
+Subject: Election Security
+
+Kim Zetter's article in *The New York Times* (26 Sep 2018) recommends paper
+ballots and better security for election machines. Fine, but not a solution.
+Counting millions of paper ballots in thousands of locations is not secure
+or affordable. Better machine security won't find or stop all bugs, insider
+risks, or serious adversaries using zero-days.
+
+  [Machine-readable paper ballots seem to be widely preferred by people with
+  an understanding of the risks.  The point has long been noted that
+  proprietary direct-recording devices with no paper trail are not an
+  adequate solution; even with a voter-verified paper trail they are
+  problematic.  PGN]
+
+The following articles recommend security by having multiple officials
+re-tally ballots, using independent machines and software. Each re-tally
+makes it harder for bugs, insiders and hackers to hide. Scans make
+re-tallies cheap, and risk-limiting audits can check the scans' accuracy.
+
+Every jurisdiction can do plenty of checking now, without waiting for
+improved election machines.
+
+http://CitizenOversight.blogspot.com/2018/09/whos-counting-our-paper-ballots.html
+
+*Journal of Physical Security*, "Scanners, Hashes and Election Security"
+http://rbsekurity.com/JPS%2520Archives/JPS%252011(1).pdf
+
+------------------------------
+
+Date: Mon, 15 Oct 2018 19:45:16 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "US voter records from 19 states sold on hacking forum" (ZDNet)
+
+Catalin Cimpanu for Zero Day | 15 Oct 2018
+Seller is asking $42,200 for all 19 US state voter databases.
+https://www.zdnet.com/article/us-voter-records-from-19-states-sold-on-hacking-forum/
+
+The voter information for approximately 35 million US citizens is being
+peddled on a popular hacking forum, two threat intelligence firms have
+discovered. ...  The two companies said they've reviewed a sample of the
+database records and determined the data to be valid with a "high degree of
+confidence."
+
+------------------------------
+
+Date: Fri, 12 Oct 2018 12:43:00 -0400
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Cyber Tests Showed 'Nearly All' New Pentagon Weapons Vulnerable to
+  Attack, GAO Says (NPR)
+
+Bill Chappell, National Public Radio (10/09/18), via ACM TechNews,
+  12 Oct 2018
+https://www.npr.org/2018/10/09/655880190/cyber-tests-showed-nearly-all-new-pentagon-weapons-vulnerable-to-attack-gao-says
+
+Most of the U.S. Department of Defense's (DoD) newest weapons systems are
+plagued by security issues, including passwords that took seconds to guess
+or were never changed from their factory settings, and cyber vulnerabilities
+that were known but never corrected, according to a new Government
+Accountability Office report. The study found the Pentagon is "just
+beginning to grapple with" the scale of the vulnerabilities to its weapons
+systems.  Analysis of data from cybersecurity tests conducted on DoD weapons
+systems from 2012 to 2017 found by using simple tools and techniques,
+malefactors could hijack systems and largely operate undetected because of
+basic vulnerabilities. DoD researchers also interviewed cybersecurity
+officials, analyzing how the systems are protected and their responses to
+attacks. The report cited "widespread examples of weaknesses in each of the
+four security objectives that cybersecurity tests normally examine: protect,
+detect, respond, and recover."
+
+  [See also the GAO report:
+Weapon Systems Cybersecurity: DoD Just Beginning to Grapple with Scale of
+Vulnerabilities, GAO, 9 Oct 2018
+https://www.gao.gov/products/GAO-19-128
+  and
+New U.S. Weapons Systems Are a Hackers' Bonanza, Investigators Find
+Authorized hackers needed only hours to break into weapons systems the
+Pentagon is acquiring, and in many cases teams developing the systems were
+oblivious to the hacking.
+https://www.nytimes.com/2018/10/10/us/politics/hackers-pentagon-weapons-systems.html
+The entire 50-page report is at https://www.gao.gov/assets/700/694913.pdf .
+  PGN]
+
+------------------------------
+
+Date: Fri, 12 Oct 2018 00:13:02 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: US weapons systems can be 'easily hacked' (BBC News)
+
+[...] That includes the newest F-35 jet as well as missile systems.
+
+The report's main findings were:
+
+* The Pentagon did not change the default passwords on multiple weapons
+  systems - and one changed password was guessed in nine seconds.
+* A team appointed by the GAO was able to easily gain control of one weapons
+  system and watch in real time as the operators responded to the hackers.
+* It took another two-person team only one hour to gain initial access to a
+  weapons system and one day to gain full control.
+* Many of the test teams were able to copy, change or delete system data
+  with one team downloading 100 gigabytes of information
+
+https://www.bbc.com/news/technology-45823180
+
+------------------------------
+
+Date: Mon, 15 Oct 2018 09:30:57 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "Why Internet Tech Employees Are Rebelling Against Military Contracts"
+
+via NNSquad
+https://lauren.vortex.com/2018/10/15/why-internet-tech-employees-are-rebelling-against-military-contracts
+
+Of late we've seen both leaked and open evidence of many employees at
+Internet tech firms in the U.S. rebelling against their firms participating
+in battlefield systems military contracts, mostly related to cloud services
+and AI systems.
+
+Some reactions I've seen to this include statements like "those employees
+are unpatriotic and aren't true Americans!" and "if they don't like the
+projects they should just quit the firms!" (the latter as if everybody with
+a family was independently wealthy).
+
+Many years ago I faced similar questions. My work at UCLA on the early
+ARPANET (a Department of Defense project) was funded by the military, but
+was research, not a battlefield system. A lot of very important positive
+research serving the world has come from military funding over the years and
+centuries.
+
+When I was doing similar work at RAND, the calculus was a bit more complex
+since RAND's primary funding back then was also DOD, but RAND provided
+analytical reports to decision makers, not actual weapons systems. And RAND
+had a well-earned reputation of speaking truth to power, even when that
+truth was not what the power wanted hear. I liked that.
+
+But what's happening now is different. The U.S. military is attempting to
+expand its traditional "military-industrial" complex (so named during a
+cautionary speech by President Eisenhower in 1961) beyond the traditional
+defense contractors like Boeing, Lockheed, and Raytheon.
+
+The new battle systems procurement targets are companies like Google,
+Amazon, and Microsoft.
+
+And therein lies the root of the problem.
+
+Projects like Maven and JEDI are not simply research. They are active
+battlefield systems. JEDI has been specifically described by one of its top
+officials as a program aimed at "increasing the lethality of our
+department."
+
+When you sign on for a job at any of the traditional defense contractors,
+you know full well that battlefield operational systems are a major part of
+the firms' work.
+
+But when you sign on at Google, or Microsoft, or Amazon, that's a different
+story.
+
+Whether you're a young person just beginning your career, or an old-timer
+long engaged in Internet work, you might quite reasonably expect to be
+working on search, or ads, or networking, or a thousand other areas related
+to the Net -- but you probably did not anticipate being asked or required to
+work on systems that will actually be used to kill people.
+
+The arguments in favor of these new kinds of lethal systems are well
+known. For example, they're claimed to replace soldiers with AI and make
+individual soldiers more effective. In theory, fewer of our brave and
+dedicated volunteer military would be injured or killed. That would be great
+-- if it were truly accurate and the end of the story.
+
+But it's not. History teaches us that with virtually every advance in
+operational battlefield technology, there are new calls for even more
+military operations, more "interventions," more use of military power.  And
+somehow the promised technological advantages always seem to be somehow
+largely canceled out in the end.
+
+So one shouldn't wonder why Google won't renew their participation in Maven,
+and has now announced that they will not participate in JEDI -- or why many
+Microsoft employees are protesting their own firm's JEDI participation.
+
+And I predict that we're now only seeing the beginnings of employees being
+unwilling to just "go along" with working on lethal systems.
+
+The U.S. military has made no secret of the fact that they see cloud
+environments, AI, robotics, and an array of allied high technology fields as
+the future of lethal systems going forward.
+
+It's obvious that we need advanced military systems at least for defensive
+purposes in today's world. But simply assuming that employees at firms that
+are not traditional defense contractors will just "go along" with work on
+lethal systems would be an enormous mistake. Many of these employees are
+making much the same sorts of personal decisions as I did long ago and have
+followed throughout my life, when I decided that I would not work on such
+systems.
+
+The sooner that DOD actually understands these realities and recalibrates
+accordingly, the better.
+
+------------------------------
+
+Date: Mon, 15 Oct 2018 07:55:51 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Sky battles: Fighting back against rogue drones (bbc.com)
+
+https://www.bbc.com/news/business-45824096
+
+Risk: Drone-seeking capture munitions accidentally target low-flying piloted
+air vehicles, like traffic observation or police helicopters.
+
+------------------------------
+
+Date: Thu, 11 Oct 2018 21:50:48 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Autonomous cars on US roads with no brake pedals, steering wheels
+  just edged closer" (ZDNet)
+
+  [I so love the smell of a live beta in the morning ...]
+
+Liam Tung | October 10, 2018
+US paves the way for new rules catering to autonomous vehicles without human
+controls.
+
+https://www.zdnet.com/article/autonomous-cars-on-us-roads-with-no-brake-pedals-steering-wheels-just-edged-closer/
+
+opening text:
+
+Road users in the US may soon see self-driving cars without human controls
+under a pilot program proposed by the US National Highway Traffic Safety
+Administration (NHTSA).
+
+The agency is seeking public feedback on a proposed pilot to test vehicles
+"that lack controls for human drivers and thus may not comply with all
+existing safety standards" and do so in real-world scenarios, it said in a
+document released Thursday.
+
+------------------------------
+
+Date: Fri, 12 Oct 2018 09:45:56 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Why you have (probably) already bought your last car (bbc.com)
+
+https://www.bbc.com/news/business-45786690
+
+"The company's exponential growth is evidence of how powerful the Uber
+business model is.
+
+"Now take out the driver. You've probably cut costs by at least 50%."
+
+And take out pedestrians. Interesting to watch insurance companies and AV
+manufacturers, with a helping handout to politicians, compete for favorable
+legislation that enables and promotes an silicon-based, AV supreme
+environment that indemnifies liability.
+
+Some businesses, lobbyists, and politicians are literally banking on the
+idea that the public will become inured to silicon-based AV fatalities and
+injuries. Stephen King's "Christine" was a harbinger for this outcome.
+
+The foundation to suppress incident reporting already exists within the
+bureaucracy. All that's missing are the "Red Asphalt" streets and wealth
+transferred to the few indemnified purveyors and operators of AVs at the
+expense of public health.
+
+Oh wait...that situation, courtesy of carbon-based vehicle operators is
+manifest, so what's the AV ruckus all about? In a single symbol: $.
+
+------------------------------
+
+Date: Tue, 16 Oct 2018 10:42:15 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Ford tests technology that could render traffic lights obsolete
+  (autoblog.com and ieee.org)
+
+https://www.autoblog.com/2018/10/14/ford-v2v-technology-eliminate-traffic-lights/
+
+An enabler for autonomous vehicle transport ecosystems, "smart
+intersections" apparently eliminate traffic signals, and instead substitute
+V2V (vehicle-to-vehicle) communications to avoid collisions or even require
+a full stop before safely proceeding.
+
+Discussion of "virtual traffic light" technology is fortuitously
+published here:
+https://spectrum.ieee.org/ns/Blast/Oct18/10_Spectrum_2018_INT.pdf
+(pps 25-29).
+
+RISKS reports several intersection control incidents
+signaling device overrides for emergency vehicle right-of-way
+(https://catless.ncl.ac.uk/Risks/18/94%23subj5.1)
+(https://catless.ncl.ac.uk/Risks/24/26%23subj7.1)
+
+Perhaps a pedestrian cellphone app, a V2H or H2V (human-to-vehicle) will be
+available from the motor vehicle department? Will a "California Stop"
+finally be legalized?  (see
+https://www.urbandictionary.com/define.php%3Fterm%3Dcalifornia%2520stop
+
+------------------------------
+
+Date: Fri, 12 Oct 2018 16:04:07 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Amazon Atlas
+
+11 October 2018, WikiLeaks publishes a "Highly Confidential" internal
+document from the cloud computing provider Amazon. The document from late
+2015 lists the addresses and some operational details of over one hundred
+data centers spread across fifteen cities in nine countries. To accompany
+this document, WikiLeaks also created a map showing where Amazon's data
+centers are located.  ...[t]his came with skepticism that it's really
+secret, noting that such data centers can be found in other ways. Pushback
+to that said yeah -- by region but not by address. Of course, in Ashburn VA
+-- throw a rock, hit a data center.
+
+https://wikileaks.org/amazon-atlas/map/
+
+------------------------------
+
+Date: Sat, 13 Oct 2018 08:02:42 -0400
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: Turkey obtains recordings of Saudi journalist's purported killing
+  (Yahoo)
+
+This is some cyberpunk stuff:
+
+``The moments when Khashoggi was interrogated, tortured and murdered were
+recorded in the Apple Watch's memory,'' the paper said, adding that the
+watch had synched with his iPhone, which his fiancée was carrying outside
+the consulate.
+
+https://www.yahoo.com/news/turkey-obtains-recordings-saudi-journalists-purported-killing-paper-081631331--sector.html
+
+------------------------------
+
+Date: Tue, 16 Oct 2018 19:21:08 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Apple VoiceOver iOS vulnerability permits hacker access to user photos
+  (Charlie Osborne)
+
+Charlie Osborne for Zero Day | 15 Oct 2018
+The bug can be exploited to gain access to photos stored on a user's device.
+https://www.zdnet.com/article/apple-voiceover-iphone-vulnerability-permits-access-to-user-photos/
+
+------------------------------
+
+Date: Fri, 12 Oct 2018 00:11:31 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Code Signing: Did Someone Hijack Your Software? (Forbes)
+
+https://www.forbes.com/sites/forbestechcouncil/2018/10/09/code-signing-did-someone-hijack-your-software/%235b9ca0063a27
+
+------------------------------
+
+Date: Sat, 13 Oct 2018 16:23:48 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: When Your Boss Is an Algorithm (The New York Times)
+
+There are nearly a million active Uber drivers in the United States and
+Canada, and none of them have human supervisors. It’s better than having a
+real boss, one driver in the Boston area told me, ``except when something
+goes wrong.''
+
+When something does go wrong, Uber drivers can't tell the boss or a
+co-worker.  They can call or write to `community support'. but the results
+can be enraging. Cecily McCall, an African-American driver from Pompano
+Beach, Fla., told me that a passenger once called her `dumb' and `stupid',
+using a racial epithet, so she ended the trip early. She wrote to a support
+rep to explain why and got what seemed like a robotic response: ``We're
+sorry to hear about this. We appreciate you taking the time to contact us
+and share details.''
+
+The rep offered not to match her with that same passenger again.  Disgusted,
+Ms. McCall wrote back, ``So that means the next person that picks him up he
+will do the same while the driver gets deactivated'' —- fired by the
+algorithm -— because of a low rating or complaint from an angry
+passenger. ``Welcome to America.''
+
+https://www.nytimes.com/2018/10/12/opinion/sunday/uber-driver-life.html
+
+------------------------------
+
+Date: Thu, 18 Oct 2018 17:04:12 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Facebook's former security chief warns of plan to help solve
+  negative impacts (WashPost)
+
+https://www.washingtonpost.com/technology/2018/10/16/facebooks-former-security-chief-warns-techs-negative-impacts-has-plan-help-solve-them
+
+Dr. Strangelove had a plan too...
+
+Stamos proposes establishing "The Stanford Internet Observatory," a forum to
+debate and assess technology's potential downsides, but behind The Hoover
+Institution's closed doors.  "The Hoover Institution seeks to improve the
+human condition by advancing ideas that promote economic opportunity and
+prosperity, while securing and safeguarding peace for America and all
+mankind."  https://www.hoover.org/library-archives/about/our-mission
+
+If the technology is classified, closed doors are essential to protect
+national security. Technology for-profit that potentially jeopardizes public
+health, safety, or institutional trust mandates transparent discussion to
+reveal risks, and assess mitigation prior to deployment.
+
+Would the Observatory disclose findings that dissuade future investments
+into, or deployment of injurious, capriciously governed, and exploitable
+technology that promotes addiction, weakens democracy, but generates
+"boxcar" investor returns?
+
+Public injury is one technological downside that has been neglected for too
+long. Jurisprudence offers a certain remedy to redress injury.
+
+Contractual liability exemptions proliferate, especially for technology
+(principally stacks of software). An indemnification privilege/right often
+appears in user license agreements.  https://policies.google.com/terms and
+search for "indemnify" for example.
+
+Restrict indemnification from user contracts/licenses, and the business
+incentive to publish stacks that injure persons, property, or public trust,
+though unintentional, will diminish. Few organizations possess sufficient
+confidence or maturity to publish software without it.
+
+One possible alternative to the indemnification privilege might be for a
+software publisher to voluntarily disclose, for independent inspection,
+certain software life cycle collateral: Test plans, test results, defect
+logs, COTS or open source dependencies, product risk and mitigation
+registry, etc. can provide valuable insight into the organizational rigor
+applied to qualify publication viability or fitness.
+
+An informed body of experts, a technology publication viability board
+(TPVB), can independently assess release readiness and provide an opinion of
+production software life cycle maturity, compare the product to known Common
+Vulnerabilities and Exposures (CVE) records, and offer guidance or a rating
+about potential public impact prior to publication deployment.
+
+A TPVB enfranchised as a public, non-profit, conflict-free rating agency can
+offer an assessment based on evidence of publication merit that exceeds a
+business' motive to release at all costs and subject to their license terms
+and conditions. No bureaucrats on the TPVB. These investigators must possess
+exceptional interdisciplinary software, hardware, and triage skills. Funding
+might be derived from a flat corporate tax based on product usage
+consumption and public impact, ecosystem size deployment, or stack
+complexity.
+
+Questions to ask about a TPVB:
+
+Would the TPVB be similar to the rating agencies that were "shopped" by Wall
+Street bond sellers, a key contributor to the 2008 financial crisis? How to
+suppress institutional corruption, manipulation, and preserve TPVB
+independence and integrity?
+
+What would be the TPVB's mission scope, priorities, and governing
+parameters? How do existing or forecast user base/audience or access size,
+license price, deployment target by industry or economic segment: critical
+infrastructure, transportation, public service/elections/entitlements,
+entertainment/gaming, medical/hospital/life critical, etc. apply to TPVB's
+operation and mandate?
+
+Would TPVB grant rating exemptions for "grandfathered" stacks or ecosystems,
+like OS360 or legacy stacks like a Fortran II compiler?
+
+What standards and industry best practices should the TPVB apply for
+stack/ecosystem evaluation? What weights should be assigned to any
+evaluation factors given the stack's stated business purpose? What
+evaluation factors would represent public interest, health, safety or be
+relevant for institutional trust preservation? What weight would these
+factors deserve and how would they be factored?
+
+What collateral content items are required to initiate evaluation?  Should
+this content use standardized templates to simplify inspection and rating
+determination? Should the TPVB publish a simulator to enable business
+"self-assessment" before submission? Should the TPVB be subject to an
+assessment completion SLA?
+
+What commercial interfaces/contacts and communication protocols are
+permitted/prohibited during consultation prior to rating determination?
+
+What criteria would TPVB to generate a public-friendly rating? What
+constraints would be placed on an assigned rating to aid consumer
+interpretation?
+
+How would financial markets interpret a negative TPVB information and factor
+it into forward earning projections?
+
+------------------------------
+
+Date: Wed, 10 Oct 2018 18:00:20 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: The Eight Best Smart Plugs to Buy in 2018 (Lifewire)
+
+https://www.lifewire.com/best-smart-plugs-4163001
+
+Welcome to basic home automation -- but I'm still not ready to put home IoT
+devices online.
+
+  [Imagine every wall plug in your house or office supposedly being as smart
+  as you are with AI controlling every IoT device, but perhaps much dumber
+  with respect to risks.  Security?  Integrity?  Surveillance?  Privacy
+  problems?  Fire hazards?  Sounds like overkill to me.  PGN]
+
+------------------------------
+
+Date: Sun, 14 Oct 2018 19:58:41 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: The impending war over deepfakes (Axios)
+
+https://www.axios.com/the-impending-war-over-deepfakes-b3427757-2ed7-4fbc-9edb-45e461eb87ba.html
+
+   [AND DON'T MISS THE TWO LINKS AT THE END OF THE ARTICLE!)
+
+EXCERPT:
+
+Researchers are in a pitched battle against deepfakes, the artificial
+intelligence algorithms that create convincing fake images, audio and
+video, but it could take years before they invent a system that can sniff
+out most or all of them, experts tell Axios.
+
+Why it matters: A fake video of a world leader making an incendiary threat
+could, if widely believed, set off a trade war -- or a conventional
+one. Just as dangerous is the possibility that deepfake technology spreads
+to the point that people are unwilling to trust video or audio evidence.
+
+The big picture: Publicly available software makes it easy to create
+sophisticated fake videos without having to understand the machine learning
+that powers it. Most software swaps one person's face onto another's body,
+or makes it look like someone is saying something they didn't.
+
+This has ignited an arms race between fakers and sleuths.
+
+------------------------------
+
+Date: Sat, 13 Oct 2018 21:50:29 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "What the heck is it with Windows updates?" (Computerworld)
+
+Steven J. Vaughan-Nichols, *Computerworld*, Oct 10 2018
+Lately, it's been difficult to update Windows systems without running
+into some showstopping bugs. WTH is going on?
+https://www.computerworld.com/article/3312796/microsoft-windows/what-the-heck-is-it-with-windows-updates.html
+
+selected text:
+
+The story, Microsoft now admits, is that the 1809 release erases, for some
+people, all files in the \Documents, \Pictures, \Music, and \Videos folders.
+The folders are still there, but nothing's left in them. It's sort of the
+neutron bomb of Windows updates.
+
+How could this happen? Seriously, how can you have a release that does this
+to users? Where was the quality assurance team? Where were all those Windows
+10 Insider Preview users? Oh, wait. The brave beta users had seen this
+problem! ZDNet's Ed Bott reported last week that he'd found a report from
+three months ago from a tester who said that "my Documents folder had been
+overwritten with a new Documents folder, complete with custom icon. All
+contents were gone."
+
+Once more, and with feeling: WTH, Microsoft!
+
+How hard is this really, Microsoft? You literally have millions of Preview
+users.  At least one of them spotted this newest bug months before release.
+There may not be many people running into this problem, but anything bad
+enough to destroy users' files should be a red-letter, fix-it-now bug. It
+has proved bad enough that Microsoft has stopped the 1809 upgrade in its
+tracks until the problem gets resolved.
+
+------------------------------
+
+Date: Thu, 11 Oct 2018 22:29:53 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Proof-of-concept code published for Microsoft Edge remote code
+  execution bug" (ZDNet)
+
+Catalin Cimpanu for Zero Day | October 12, 2018
+The PoC can be hosted on any website and requires that users press the Enter
+key just once.
+
+https://www.zdnet.com/article/proof-of-concept-code-published-for-microsoft-edge-remote-code-execution-bug/
+
+selected text:
+
+A security researcher has published today proof-of-concept code which an
+attacker can use to run malicious code on a remote computer via the
+Microsoft Edge browser.
+
+Such PoCs are usually quite complex, but Al-Qabandi's code is only HTML and
+JavaScript, meaning it could be be hosted on any website.
+
+According to the researcher, all the attacker needs to do is trick a user
+into accessing a malicious website hosting the PoC via an Edge browser, and
+then press the Enter key. Once the user lets go of the Enter key, the PoC
+runs and executes a Visual Basic script via the Windows Script Host (WSH)
+default application.
+
+------------------------------
+
+Date: Thu, 18 Oct 2018 09:25:39 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Donald Daters (Naked Security)
+
+  [When I typed in that subject line into the input field on the ISC2
+  "community," one of the suggestions that came up was "Twitter and hate
+  speech" ...]
+
+Someone made an app for dating Trump followers.  (No, not carbon dating.  An
+actual dating app for supporters of Donald Trump, so they could find and
+date other followers of Donald Trump.)  It was open to everyone on Monday
+morning.
+
+https://nakedsecurity.sophos.com/2018/10/17/donald-daters-app-for-pro-trump-singles-exposes-users-data-at-launch/
+or https://is.gd/hIr01d
+
+A little more open than the creators intended (unless the creators are a
+secret cabal of Democrats, wanting information on all of The Donald's
+supporters).  The database of pretty much all information, including names,
+profile info and photos, private messages, and session tokens (so that you
+could take over accounts).
+
+------------------------------
+
+Date: Thu, 11 Oct 2018 16:35:53 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Paramedic agrees Apple Watch Series 4 will save lives; false
+  positives not a problem (9to5Mac)
+
+https://9to5mac.com/2018/10/09/paramedic/
+
+------------------------------
+
+Date: Fri, 12 Oct 2018 12:43:00 -0400
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Genome Researchers Show No One's DNA Is Anonymous Anymore
+  (Megan Moteni)
+
+Megan Molteni, WiReD, 11 Oct 2018, via ACM TechNews, Friday, 12 Oct 2018
+
+Researchers at Columbia University and the Hebrew University of Jerusalem in
+Israel collaborated with MyHeritage chief science officer Yaniv Erlich, a
+computational biologist, to determine a majority of Americans with European
+ancestry can be identified through their DNA via open genetic genealogy
+databases. The team analyzed MyHeritage's dataset of 1.28 million anonymous
+persons, tallying the number of relatives with large segments of matching
+DNA to find 60% of searches returned a third cousin or closer. Further
+examination of 30 genetic profiles with the GEDmatch open data personal
+genomics database and genealogy website could make similar identification of
+relatives at a rate of 76%, yielding a list of about 850 individuals that
+could be narrowed down using basic demographic information. Erlich says he
+expects accurate identity searches in genetic databases to be possible on
+anyone who leaves even traces of DNA behind relatively soon.
+
+https://orange.hosting.lsoft.com/trk/click%3Fref%3Dznwrbbrs9_6-1cc1cx217d2fx068985%26
+
+------------------------------
+
+Date: Wed, 17 Oct 2018 15:47:11 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Algorithms Designed to Fight Poverty Can Actually Make It Worse
+  (Scientific American)
+
+https://www.scientificamerican.com/article/algorithms-designed-to-fight-poverty-can-actually-make-it-worse/
+
+The Nov 2018 issue of *Scientific American* has a special section on "The
+Science of Inequality." The referenced article presents an in depth
+discussion and investigation of algorithms applied for entitlement
+allocation and tracking/reporting, aka "Poverty Analytics."
+
+"The rise of automated eligibility systems, algorithmic decision making and
+predictive analytics is often hailed as a revolution in public
+administration. But it may just be a digitized return to the
+pseudoscience-backed economic rationing of the past."
+
+Risk: Data collection, analysis, and reporting algorithm bias
+disenfranchises elderly, needy, and disabled populations.
+
+------------------------------
+
+Date: Wed, 17 Oct 2018 18:57:51 -0700
+From: Gene Wirchenko <genew@telus.net>
+Subject: Researcher finds simple way of backdooring Windows PCs and nobody
+  notices for ten months (ZDNet)
+
+Catalin Cimpanu for Zero Day | 17 Oct 2018
+https://www.zdnet.com/article/researcher-finds-simple-way-of-backdooring-windows-pcs-and-nobody-notices-for-ten-months/
+
+"RID Hijacking" technique lets hackers assign admin rights to guest and
+other low-level accounts.
+
+opening text:
+
+A security researcher from Colombia has found a way of gaining admin rights
+and boot persistence on Windows PCs that's simple to execute and hard to
+stop --all the features that hackers and malware authors are looking for
+from an exploitation technique.
+
+What's more surprising, is that the technique was first detailed way back in
+December 2017, but despite its numerous benefits and ease of exploitation,
+it has not received either media coverage nor has it been seen employed in
+malware campaigns.
+
+------------------------------
+
+Date: Thu, 18 Oct 2018 13:54:46 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Experian credit freeze unfrozen by hackers? (Veridium)
+
+Stop using PINs and passwords!
+
+Another week, another sorry tale of poor identification. This time, it’s
+Experian that failed to properly secure users’ PINs.
+
+People who froze their credit reports discovered hackers could unfreeze them
+-- even though a PIN was supposed to stop that. But Experian says it’s
+``confident that our authentication is secure.''  OK then.
+
+It turns out Experian had a bug in its PIN-recovery system. This was a bug
+so simple to exploit, it was barely a speedbump to a hacker who wanted to
+open credit in a victim's name.
+
+https://www.veridiumid.com/blog/experian-credit-freeze-unfrozen-by-hackers/
+
+I guess it wasn't a SAFETY PIN.
+
+------------------------------
+
+Date: Thu, 18 Oct 2018 13:57:40 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: DC Think Tank Used Fake Social Media Accounts, A Bogus Expert, And
+  Fancy Events To Reach The NSA, FBI, And White House (BuzzfeedNews)
+
+ICIT bills itself as "America's Cybersecurity Think Tank." But BuzzFeed News
+found it's running fake Twitter accounts and its top expert has questionable
+credentials.
+
+https://www.buzzfeednews.com/article/craigsilverman/icit-james-scott-think-tank-fake-twitter-youtube%23.msnKG780x
+
+------------------------------
+
+Date: Fri, 19 Oct 2018 02:12:31 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: I fell for Facebook fake news. Here's why millions of you did, too.
+  (WashPost)
+
+Everyone now knows the Web is filled with lies. So then how do fake Facebook
+posts, YouTube videos and tweets keep making suckers of us?
+
+https://www.washingtonpost.com/technology/2018/10/18/i-fell-facebook-fake-news-heres-why-millions-you-did-too/
+
+------------------------------
+
+Date: Fri, 19 Oct 2018 11:27:44 -0700
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Jury duty
+
+I've just got a summons for jury duty.  Jury selection starts Nov. 5 and
+goes all week or until empaneled (with the trial starting as soon as
+empaneled).  If I can't get myself disqualified, the trial lasts about 3
+months.  So, I may miss both BC Security Day *and* SecSIG due to jury
+selection process alone, and more if I can't get myself kicked off the jury.
+
+In my standard conference presentation on presenting technical evidence in
+court I always point out the difficulty of giving complicated technical
+evidence, pointing out that you have to convince two lawyers, who are smart
+and knowledgeable enough to have passed law school but don't necessarily
+know technology; plus a judge, who is, by definition, an *old* lawyer; plus
+twelve people who were, you will note, too *stupid* to find a way to get
+disqualified from jury duty.  My joke is coming back to haunt me ...
+
+  [On the other hand, serving is a civic duty, and perhaps a lesson in the
+  workings of the law.  PGN]
+
+------------------------------
+
+Date: Fri, 12 Oct 2018 10:03:16 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: Molecule resonance and cellphone radiation (Stein, RISKS-30.85)
+
+Alan -- Resonance is exactly what happens to water molecules inside a
+microwave oven. They are subject to vibration and rotation -- that's what
+the energy of a microwave can achieve, and hence the heating effect arising
+from friction between the rotating/vibrating molecules.
+
+Biological molecules also rotate and vibrate at room temperature.  Microwave
+radiation (~100 micro-eVolts) from a cellphone is ~250 times less energetic
+than room temperature heat as shown below.
+
+At room temperature (~298 Kelvins == ~25 degrees Celsius == ~78 degrees
+Fahrenheit), per E = kT (where k is Boltzmann's constant, ~8.61×10−5),
+yields:
+
+E = 25.7 meV (25 milli-eVolts). That's ~4 orders of magnitude lower than the
+ionization energy of hydrogen, carbon. and oxygen (~13 eVolts).
+
+Ionization from ultraviolet radiation is another matter: chemical bonds are
+busted clean and can reform incorrectly. Rather dangerous during DNA
+replication when a transcription error might arise that presages cancer
+formation (melanoma, for instance).
+
+------------------------------
+
+Date: Wed, 17 Oct 2018 00:36:17 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Re: Fwd: NYTimes: The Auto Industry's VHS-or-Betamax Moment?
+  (R 30 86)
+
+Ned Ludd would also dislike auto manufacturers pushing vehicle software
+updates over the air when they please.
+
+What could go wrong? If you like Windows running updates when you're
+presenting, you'll LOVE your car updating while you're driving ("Car will
+reboot in 30 seconds").
+
+------------------------------
+
+Date: 13 Oct 2018 10:37:05 -0400
+From: "John R. Levine" <johnl@iecc.com>
+Subject: Re: innumeracy, or More than 250 people worldwide have died taking
+  selfies (Stein, RISKS-30.86)
+
+About 150,000 people die every day worldwide from all causes.  If 250 people
+have died over six years from selfie-immolation, that is roughly 1/9 person
+per day out of that 150,000, or roughly 0.00008% of them.
+
+While it is unfortunate and unnecessary that those 250 people died, it is
+absurd to call it a "major public health problem".  It's not even a rounding
+error.
+
+The CDC says 9 people per day die in the US from mobile device distracted
+accidents.  That is not the same order of magnitude, it's at least two
+orders more, since the 9 people are just in the US but the 1/9 is worldwide.
+Numbers from the NHTSA say about 10% of all US fatal accidents and 15% of
+injury accidents are due to mobile distraction, so that really is a major
+public health problem.
+
+https://www.nhtsa.gov/sites/nhtsa.dot.gov/files/documents/812_381_distracteddriving2015.pdf
+
+------------------------------
+
+Date: Tue, 5 May 2018 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks have done to URLs.  I have
+  tried to extract the essence.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.87
+************************

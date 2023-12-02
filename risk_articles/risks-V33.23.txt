@@ -1,0 +1,937 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.23
+
+RISKS-LIST: Risks-Forum Digest  Friday 27 May 2022  Volume 33 : Issue 23
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.23>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+3+ Years Later and Millions of U.S. Patient X-Rays are Still Exposed to
+ Internet by Insecure PACS Servers" (Shawn Merdinger)
+Artificial intelligence predicts patients' race from their medical images
+ (medicalxpress.com)
+Touch Screens in Cars Solve a Problem We Didn't Have (Jay Caspian Kang)
+Autonomous vehicles can be tricked into dangerous driving behavior
+ (techxplore.com)
+Could contact lenses be the ultimate computer screen? (bbc.com)
+Accused of Cheating by an Algorithm, and a Professor She Had Never Met
+ (NYTimes)
+'Tough to Forge' Digital Driver's License Actually Easy to Forge
+ (Dan Goodin)
+New Zoom Flaws Could Let Attackers Hack Victims Just by Sending them a
+ Message (geoff goodfellow)
+Cyber-attacks could jeopardize global food supplies (techxplore.com)
+Crypto is a solution in search of a problem (WashPost)
+How Influencers Hype Crypto, Without Disclosing Their Financial Ties
+ (NYTimes)
+Researchers Find Backdoor in WordPress Plugin for Schools (Dan Goodin)
+Scientists Learn to Kill Cyberattacks in Less Than a Second (Cardiff)
+Vigilante scratching out QR codes on illegally parked scooters around Denver
+ (KMGH-TV)
+Apple shipped me a 79-pound iPhone repair kit to fix a 1.1 ounce battery
+ (The Verge)
+A Face Search Engine Anyone Can Use Is Alarmingly Accurate (NYTimes)
+A tale of 31 burgers ordered from DoorDash by a 2-year old (WashPost)
+Russia's laser weapon claim derided as propaganda (BBC News)
+Russian Botnet Can Spam Social Media on 'Massive Scale' (Gizmodo)
+This Hacktivist Site Lets You Prank Call Russian Officials (WiReD)
+Is your face gay? Conservative? Criminal? AI researchers are asking the
+ wrong questions (Trenton W. Ford)
+Grief fraud (Rob Slade)
+ACM makes back archives available for free (Lauren Weinstein)
+Cybercriminals target metaverse investors with phishing scams (CNBC)
+'Elon Musk's Crash Course' shows the tragic cost of his leadership (NPR)
+Re: ACM, Ethics, and Corporate Behavior (Richard Stein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 19 May 2022 20:25:19 -0400
+From: Shawn Merdinger <shawnmer@gmail.com>
+Subject: 3+ Years Later and Millions of U.S. Patient X-Rays are Still
+ Exposed to Internet by Insecure PACS Servers"
+
+Some readers might find this of interest.
+
+https://www.linkedin.com/pulse/3-years-later-millions-us-patient-x-rays-still-pacs-shawn-merdinger/
+
+------------------------------
+
+Date: Sun, 22 May 2022 12:27:12 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Artificial intelligence predicts patients' race from their medical
+ images (medicalxpress.com)
+
+https://medicalxpress.com/news/2022-05-artificial-intelligence-patients-medical-images.html
+
+"For example, the bone density test used images where the thicker part of
+the bone appeared white, and the thinner part appeared more gray or
+translucent. Scientists assumed that since Black people generally have
+higher bone mineral density, the color differences helped the AI models to
+detect race. To cut that off, they clipped the images with a filter, so the
+model couldn't color differences. It turned out that cutting off the color
+supply didn't faze the model -- it still could accurately predict
+races. (The "Area Under the Curve" value, meaning the measure of the
+accuracy of a quantitative diagnostic test, was 0.94–0.96). As such, the
+learned features of the model appeared to rely on all regions of the image,
+meaning that controlling this type of algorithmic behavior presents a messy,
+challenging problem."
+
+Ethnic identity detection and determination via AI-enhanced diagnostic image
+analysis may be applied to marginalize patient populations that postpone or
+deny effective medical treatments.
+
+------------------------------
+
+Date: Tue, 24 May 2022 00:29:23 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Touch Screens in Cars Solve a Problem We Didn't Have
+ (Jay Caspian Kang)
+
+Jay Caspian Kang, *The New York Times*, from a Subscriber-only Newsletter
+https://www.nytimes.com/2022/05/23/opinion/touch-screens-cars.html
+
+Despite my best efforts to stay young at heart, I have somehow reached the
+point in my life - 42 years old, dad, mostly sedentary -- where I feel
+perpetually assaulted by small changes in my daily routine.
+
+This was certainly an expected development, but one I feel relatively
+powerless against. And because I believe that a writer should age with his
+audience (nothing is sadder than a columnist who spends a clueless decade or
+so pretending like he's still one of the cool kids), I want to introduce
+what will be a recurring segment in this newsletter. The official name is
+still pending, but a good working title might be "Get Off My Lawn: A
+42-Year-Old Dad Complains About Change." I make no promises about how often
+these pieces will appear, but I hope to treat it like a Quaker meeting in
+which I will speak when the spirit of small grievances moves me.
+
+Today, I want to talk about the oversized touch screen in my Subaru Outback.
+All my car's important functions, which once were controlled by perfectly
+serviceable buttons, have now been relegated to a matrix of little boxes on
+a glowing screen. And of course the screen does not even really comply with
+my commands. Instead, it randomly changes its brightness and then
+disconnects my phone at the exact moment when I actually need to look at the
+navigation map.
+
+https://www.nytimes.com/2022/05/23/opinion/touch-screens-cars.html
+
+------------------------------
+
+Date: Fri, 27 May 2022 07:20:32 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Autonomous vehicles can be tricked into dangerous driving behavior
+ (techxplore.com)
+
+https://techxplore.com/news/2022-05-autonomous-vehicles-dangerous-behavior.html
+
+"When a driverless car is in motion, one faulty decision by its
+collision-avoidance system can lead to disaster, but researchers at the
+University of California, Irvine have identified another possible risk:
+Autonomous vehicles can be tricked into an abrupt halt or other undesired
+driving behavior by the placement of an ordinary object on the side of the
+road."
+
+Without human-like, contextual interpretation and reasoning, an AV's CAS
+cannot discriminate a cardboard box from a concrete block.
+
+When an obstacle appears, the CAS will try to determine an avoidance path as
+a deterministic outcome -- if there's no traffic in other lanes.
+
+At highway speed with following traffic, a CAS stop-decision is dangerous.
+The trolley problem at work.
+
+[A scaredy-car?!]
+
+------------------------------
+
+Date: Fri, 20 May 2022 13:37:52 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Could contact lenses be the ultimate computer screen? (bbc.com)
+
+https://www.bbc.com/news/business-61318460
+
+Who wouldn't want the programmable super-eyesight of the "Cyborg" in Martin
+Caidin's novel? Programmable contact lenses are under development. These
+devices, hardware and apps, might one day be available off-the-shelf in your
+supermarket or drugstore to imbue you with visual acuity rivaling "The 6
+Million Dollar Man."
+
+But more than vision enhancement, these eye-wearable plugins (eye-ins?)  will
+monitor your vital signs, live-stream your field of view, enable wireless
+GUI navigation...the eye is the limit.
+
+The US Centers for Disease Control estimates ~45M people in the US wear
+contact lenses everyday.
+https://www.cdc.gov/contactlenses/fast-facts.html retrieved on 20MAY2022.
+
+Contact lenses are generally safe medical devices, but can injure (corneal
+ulcers, keratitis, etc.), and also malfunction (lens crack, deformation,
+scratch, etc.).
+
+Patient death-by-contact lens medical device reports are not revealed by
+searching the FDA MAUDE system between 01JAN2017 and 29APR2022 for product
+codes LPL and LPM.
+
+The Johnson and Johnson Vision Care Inc. recall of 27MAR2018 included 3
+classes of daily wear contacts affecting ~500K lenses. See the LPL product
+code records below. Other manufacturer recall notifications, which I did not
+inspect in detail, apparently affect smaller numbers of lenses (generally).
+
+MEDICAL DEVICE REPORTS PRODUCT CODE LPL -- lenses, soft contact, daily wear;
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfTPLC/tplc.cfm?id=4497&min_report_year=2017
+
+MDR Year,MDR Reports,MDR Events
+2017,280,280
+2018,257,257
+2019,204,204
+2020,117,117
+2021,109,109
+2022,40,40
+
+RECALLS:
+
+Manufacturer,Recall Class,Date Posted
+Alden Optical,II,Mar-13-2018
+Chengdu Ai Qin E-commerce Co., Ltd,II,Jul-27-2020
+Clerio Vision,II,Apr-05-2021
+Clerio Vision,II,Jan-08-2021
+CooperVision Inc.,II,Jul-27-2021
+Johnson & Johnson Vision Care, Inc.,II,Jun-16-2021
+Johnson & Johnson Vision Care, Inc.,II,Apr-11-2019
+Johnson & Johnson Vision Care, Inc.,II,Aug-23-2018
+Johnson & Johnson Vision Care, Inc.,II,Mar-27-2018
+The See Clear Company,II,Mar-03-201
+
+MEDICAL DEVICE REPORTS PRODUCT CODE LPM -- lenses, soft contact,
+extended wear; see
+https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfTPLC/tplc.cfm?id=4498&min_report_year=2017
+retrieved on 20MAY2022.
+
+MDR Year,MDR Reports,MDR Events
+2017,215,215
+2018,195,195
+2019,189,189
+2020,107,107
+2021,103,103
+2022,26,26
+
+RECALLS:
+
+Manufacturer,Recall Class,Date Posted
+Allied Vision Group Inc,II,Apr-29-2020
+CooperVision Inc.,II,Jan-27-2020
+CooperVision Inc.,III,Feb-23-2018
+Johnson & Johnson Vision Care, Inc.,II,Mar-27-2018
+Lens.com,II,Dec-05-2019
+
+------------------------------
+
+Date: Fri, 27 May 2022 07:05:04 -0400
+From: Jan Wolitzky <jan.wolitzky@gmail.com>
+Subject: Accused of Cheating by an Algorithm, and a Professor She Had Never
+
+A Florida teenager taking a biology class at a community college got an
+upsetting note this year. A start-up called Honorlock had flagged her as
+acting suspiciously during an exam in February. She was, she said in an
+email to *The New York Times*, a Black woman who had been *wrongfully
+accused of academic dishonesty by an algorithm.*
+
+What happened, however, was more complicated than a simple algorithmic
+mistake. It involved several humans, academic bureaucracy and an automated
+facial detection tool from Amazon called Rekognition. Despite extensive
+data collection, including a recording of the girl, 17, and her screen
+while she took the test, the accusation of cheating was ultimately a human
+judgment call: Did looking away from the screen mean she was cheating?
+
+The pandemic was a boom time for companies that remotely monitor test
+takers, as it became a public health hazard to gather a large group in a
+room. Suddenly, millions of people were forced to take bar exams, tests and
+quizzes alone at home on their laptops. To prevent the temptation to cheat,
+and catch those who did, remote proctoring companies offered web browser
+extensions that detect keystrokes and cursor movements, collect audio from a
+computer's microphone, and record the screen and the feed from a computer's
+camera, bringing surveillance methods used by law enforcement, employers and
+domestic abusers into an academic setting.
+
+https://www.nytimes.com/2022/05/27/technology/college-students-cheating-software-honorlock.html
+
+  [Monty Solomon quoted more from the same article, noting that this is
+  an unsettling glimpse at the digitization of education:
+
+  When the student met with the dean and Dr. Orridge by video, she said, she
+  told them that she looks down to think, and that she fiddles with her
+  hands to jog her memory. They were not swayed. The student was found
+  "responsible" for "noncompliance with directions," resulting in a zero on
+  the exam and a warning on her record.
+
+  "Who stares at a test the entire time they're taking a test? That's
+  ridiculous. That's not how humans work," said Cooper Quintin, a
+  technologist at the Electronic Frontier Foundation, a digital rights
+  organization. "Normal behaviors are punished by this software."
+
+  PGN]
+
+------------------------------
+
+Date: Wed, 25 May 2022 12:23:33 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: 'Tough to Forge' Digital Driver's License Actually Easy to Forge
+
+Dan Goodin, *Ars Technica*, 24 May 2022, via ACM TechNews, 25 May 2022
+
+Security researchers have found that the supposedly hard-to-counterfeit
+digital driver's licenses (DDLs) in use in New South Wales, Australia,
+actually can be easily altered. Introduced in 2019, DDLs are used with an
+iOS or Android application that displays each holder's identity and age, and
+permits authentication. Researcher Noah Farmer found the DDL can be cracked
+by brute-forcing the four-digit personal identification number that encrypts
+the data, which can take less than an hour using publicly available scripts
+and a commodity computer. Once a hacker accesses encrypted DDL data, brute
+force enables them to read and alter anything stored on the file. Farmer
+aired the flaws in a blog post last week; it is not clear how, or if,
+Service NSW, which issued the digital driver's licenses, plans to respond.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2eaf1x233fe6x071730&
+
+------------------------------
+
+Date: Tue, 24 May 2022 19:14:52 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: New Zoom Flaws Could Let Attackers Hack Victims Just by Sending
+ them a Message
+
+Popular video conferencing service Zoom has resolved
+<https://explore.zoom.us/en/trust/security/security-bulletin/> as many as
+four security vulnerabilities, which could be exploited to compromise
+another user over chat by sending specially crafted Extensible Messaging and
+Presence Protocol (XMPP <https://en.wikipedia.org/wiki/XMPP>) messages and
+execute malicious code.
+
+Tracked from CVE-2022-22784 through CVE-2022-22787, the issues range between
+5.9 and 8.1 in severity. Ivan Fratric of Google Project Zero has been
+credited with discovering and reporting all the four flaws in February 2022.
+[...]
+
+https://thehackernews.com/2022/05/new-zoom-flaws-could-let-attackers-hack.html
+
+------------------------------
+
+Date: Tue, 24 May 2022 09:20:15 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Cyber-attacks could jeopardize global food supplies (techxplore.com)
+
+https://techxplore.com/news/2022-05-cyber-jeopardize-global-food.html
+
+"Digital agriculture is not immune to cyber-attack, as seen by interference
+to a U.S. watering system, a meatpacking firm, wool broker software and an
+Australian beverage company.
+
+"Extraction of cryptographic or sensitive information from the operation of
+physical hardware is termed side-channel attack," adds Flinders co-author
+Professor David Glynn.
+
+"These attacks could be easily carried out with physical access to devices,
+which the cybersecurity community has not explicitly investigated."
+
+Digital agriculture establishes a farm-to-table cyber attack surface.
+Industrial agriculture constitutes critical infrastructure per
+https://en.wikipedia.org/wiki/Critical_infrastructure.
+
+[GPS-guided tractors remotely disabled, agronomy sensors gamed, wholesale
+price manipulation via crop yield and stockpile estimate hacks, and
+point-of-sale skim. Bulk transport accidents. Climate
+disruption. Agri-brownout?]
+
+------------------------------
+
+Date: Tue, 24 May 2022 00:26:31 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Crypto is a solution in search of a problem (WashPost)
+
+Crypto[currency] is a solution in search of a problem.  It is dropping
+like a rock. Here's why that's a good thing.
+
+Inflation keeps rising, stocks keep falling, a war rages in Europe, and the
+budding market for cryptocurrencies and other digital confections is
+vaporizing by the day. None of this is cause for joy. But the crypto
+implosion at least has a cleansing benefit: It offers an opportunity to mop
+up a speculative and overhyped mess that has gotten badly out of control,
+snookering gullible investors in the process.
+
+https://www.washingtonpost.com/opinions/2022/05/20/crypto-bitcoin-dogecoin-ethereum-crashing/
+
+------------------------------
+
+Date: Fri, 27 May 2022 15:33:00 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How Influencers Hype Crypto, Without Disclosing Their Financial
+ Ties (NYTimes)
+
+"I don't know what went absurdly wrong," Mr. Paul said in an interview.
+"That's the project from hell, and I just wiped my hands of that."
+
+https://www.nytimes.com/2022/05/27/technology/crypto-influencers.html
+
+That pretty much sums it up.
+
+------------------------------
+
+Date: Fri, 27 May 2022 12:46:19 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Researchers Find Backdoor in WordPress Plugin for Schools
+ (Dan Goodin)
+
+Dan Goodin, (Ars Technica), 20 May 2022, via ACM TechNews, 27 May 2022
+
+Researchers at website security service Jetpack warned that WordPress's
+School Management Pro plugin contains a backdoor that enables hackers to
+take full control of sites using the package, which is sold to schools. The
+researchers said the website operation-management plugin has had the
+backdoor since at least version 8.9, which a third-party site said was
+issued last August. The researchers confirmed the backdoor via a
+proof-of-concept exploit, after WordPress.com support team members disclosed
+heavily obfuscated code on several sites that used the plugin. The backdoor,
+said the researchers, "allows any attacker to execute arbitrary PHP code on
+the site with the plugin installed." Users of the plugin should update it
+right away, and scan their sites for signs any new backdoors may have been
+added.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2eb2fx234087x072519
+
+------------------------------
+
+Date: Mon, 23 May 2022 12:08:08 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Scientists Learn to Kill Cyberattacks in Less Than a Second
+ (Cardiff)
+
+Cardiff University News (UK), 19 May 2022, via ACM TechNews, 23 May 2022
+
+Researchers at Cardiff University in the U.K. and European aerospace company
+Airbus have developed a technique for automatically detecting and
+neutralizing cyberattacks in under a second. The method is based on
+monitoring and forecasting malware's behavior, rather than on analyzing its
+code structure. The team built a virtual model representing commonly used
+laptops, and they tested the detection method on it using thousands of
+malware samples. The approach prevented the corruption of up to 92% of
+computer files, and wiped out the malware in an average 0.3 seconds. Airbus'
+Matilda Rhode said, "This is an important step towards an automated
+real-time detection system that would not only benefit our laptops and
+computers, but also our smart speakers, thermostats, cars, and refrigerators
+as the 'Internet of Things' becomes more prevalent."
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2eab1x233f43x071256&
+
+------------------------------
+
+Date: Tue, 24 May 2022 16:23:44 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Vigilante scratching out QR codes on illegally parked scooters
+ around Denver (KMGH-TV)
+
+Russell Haythorn, KMGH-TV) 23 May 2022
+
+  DENVER -- Call it vigilante parking enforcement -- someone is fed up with
+  scooter-users dumping their rides in the middle of the sidewalk in Denver.
+  As a result, that vigilante is taking matters into their own hands by
+  blacking out QR codes on those wonky parked scooters so you can't ride.
+
+  They are also slapping a note on those scooters which reads in part, ``All
+  vehicles must be parked in a manner that does not impede pedestrian clear
+  paths. ... This scooter was illegally parked, resulting in the QR code
+  being obscured -- some people suck -- and are not considerate."
+
+https://www.thedenverchannel.com/news/local-news/vigilante-scratching-out-qr-codes-on-illegally-parked-scooters-around-denver
+
+------------------------------
+
+Date: Tue, 24 May 2022 12:49:05 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Apple shipped me a 79-pound iPhone repair kit to fix a 1.1 ounce
+ battery (The Verge)
+
+ (NOT A PARODY)
+
+https://www.theverge.com/2022/5/21/23079058/apple-self-service-iphone-repair-kit-hands-on
+
+------------------------------
+
+Date: Fri, 27 May 2022 01:01:41 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A Face Search Engine Anyone Can Use Is Alarmingly Accurate
+ (NYTimes)
+
+Mr. Gobronidze said he believed that PimEyes could be a tool for good,
+helping people keep tabs on their online reputation. The journalist who
+disliked the photo that a photographer was using, for example, could now ask
+him to take it off his Yelp page.
+
+PimEyes users are supposed to search only for their own faces or for the
+faces of people who have consented, Mr. Gobronidze said. But he said he was
+relying on people to act "ethically," offering little protection against the
+technology's erosion of the long-held ability to stay anonymous in a
+crowd. PimEyes has no controls in place to prevent users from searching for
+a face that is not their own, and suggests a user pay a hefty fee to keep
+damaging photos from an ill-considered night from following him or her
+forever.
+
+"It's stalkerware by design no matter what they say," said Ella Jakubowska,
+a policy adviser at European Digital Rights, a privacy advocacy group.  ...
+But exclusion, Ms. Scarlett quickly discovered, was available only to
+subscribers who paid for "PROtect plans," which cost from $89.99 to $299.99
+per month. "It's essentially extortion," said Ms. Scarlett, who eventually
+signed up for the most expensive plan.
+
+https://www.nytimes.com/2022/05/26/technology/pimeyes-facial-recognition-search.html
+
+You can try searching with one photo for free; my results are laughable.  It
+found my test photo in several places (not surprising, I sent it when I was
+presenting), plus several people who aren't me.
+
+Photos were one of me and dozens of not-me.  Below the bar are results that
+are of lower resemblance to the uploaded photo. It is possible that, though
+the results are labeled *lower score*, some of them might contain photos of
+you!  We recommend you check them thoroughly.
+
+------------------------------
+
+Date: Tue, 24 May 2022 23:43:59 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: A tale of 31 burgers ordered from DoorDash by a 2-year old
+ (WashPost)
+
+Kelsey Golden was playing with her 2-year-old son, Barrett, on her front
+porch last week when a DoorDash driver pulled into the driveway.  The
+delivery woman climbed out of the car and held up a large paper sack [and
+later, the receipt].
+
+https://www.washingtonpost.com/lifestyle/2022/05/24/doordash-31-cheeseburgers-kelsey-golden/
+
+  [Apps don't order burgers; two-year olds order burgers.]
+
+------------------------------
+
+Date: Sat, 21 May 2022 18:14:37 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Russia's laser weapon claim derided as propaganda (BBC News)
+
+Russia claims to have used laser weapons on the battlefield in Ukraine,
+although the US says it has seen no evidence of this and Ukraine has derided
+it as propaganda. What are laser weapons and how effective could they be in
+the conflict?
+
+Yury Borisov, the deputy prime minister in charge of military development,
+told Russian TV that a laser prototype called Zadira was being deployed in
+Ukraine and had burned up a Ukrainian drone within five seconds at a
+distance of 5km (three miles).
+
+This was in addition to a previous laser system called Peresvet - named
+after a medieval Orthodox warrior monk - which could be used to dazzle
+satellites orbiting high above Earth and prevent them from gathering
+information.
+
+"If Peresvet blinds, then the new generation of laser weapons lead to the
+physical destruction of the target - thermal destruction, they burn up," Mr
+Borisov said.
+
+However, an official with the US Department of Defense said he had not seen
+"anything to corroborate reports of lasers being used" in Ukraine.
+
+Meanwhile, Ukrainian President Volodymyr Zelensky mocked the Russian claim,
+comparing it to the so-called "wonder weapons" that Nazi Germany claimed to
+be developing during World War Two.  "The clearer it became that they had no
+chance in the war, the more propaganda there was about an amazing weapon
+that would be so powerful as to ensure a turning point.  And so we see that
+in the third month of a full-scale war, Russia is trying to find its 'wonder
+weapon'... this all clearly shows the complete failure of the mission."
+
+https://www.bbc.com/news/world-europe-61508922
+
+Weapon shown looks like giant Super Soaker.
+
+------------------------------
+
+Date: Sun, 22 May 2022 18:28:44 +0900
+From: Dave Farber <farber@gmail.com>
+Subject: Russian Botnet Can Spam Social Media on 'Massive Scale' (Gizmodo)
+
+https://gizmodo.com/russian-botnet-spam-social-media-report-nisos-fake-news-1848956529
+
+This Russian Botnet Is Capable of Manipulating Social Media Trends on a 'Massive Scale,' Report Claims
+
+Need to spread some disinformation all over the world? A Russian company
+apparently has a quick and easy recipe for that.
+
+A new report claims that a subcontractor working for Russia99s intelligence
+service has a botnet capable of manipulating trends on social media
+platforms on a 9Cmassive scale.9D The report
+<https://6068438.fs1.hubspotusercontent-na1.net/hubfs/6068438/fronton-report.pdf>,
+published Thursday by the cybersecurity firm Nisos, alleges that the
+Moscow-based firm 0day Technologies can spread disinformation at a
+frightening rate using a customizable suite that is tied to a malicious
+network. The company has previously worked with the Federal Security
+Service, one of Russia's primary intelligence agencies.
+
+The report is based on documents and other materials that were stolen from
+the contractor and leaked by the hacktivist group Digital Revolution in
+March of 2020.
+<https://www.zdnet.com/article/hackers-breach-fsb-contractor-and-leak-details-about-iot-hacking-project/>
+
+ [Long message PGN-truncated]
+
+------------------------------
+
+Date: Mon, 23 May 2022 01:10:09 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: This Hacktivist Site Lets You Prank Call Russian Officials (WiReD)
+
+To protest the war in Ukraine, WasteRussianTime.today auto-dials Russian
+government officials, connects them to each other, and lets you listen in to
+their confusion.
+
+https://www.wired.com/story/robo-prank-call-russian-officials-website/
+
+Entertaining and well deserved -- but how long before this idea is
+duplicated for more general harassment?
+
+------------------------------
+
+Date: Mon, 23 May 2022 15:33:50 +0200
+From: "Diego.Latella" <diego.latella@isti.cnr.it>
+Subject: Is your face gay? Conservative? Criminal? AI researchers are
+ asking the wrong questions (Trenton W. Ford)
+
+Trenton W. Ford, Bulletin of the Atomic Scientists
+
+https://thebulletin.org/2022/05/is-your-face-gay-conservative-criminal-ai-researchers-are-asking-the-wrong-questions/
+
+------------------------------
+
+Date: Thu, 26 May 2022 20:56:29 -0700
+From: Rob Slade <rslade@gmail.com>
+Subject: Grief fraud
+
+Consider the case of Robert Slade.  His wife, Gloria, has died recently, and
+while the circumstances are not mysterious, there are still questions to be
+answered.  Gloria was not in great health, but none of her medical
+conditions were in any way life-threatening.  Up until she died.
+
+Now, someone has contacted EARLUG, which Rob attends regularly, albeit
+virtually.  The EARLUG people provided this person with Rob's contact
+information.  Rob has now received multiple phone calls from someone who
+claims to have insider knowledge of Gloria's death.
+
+This person identifies himself as being the purchasing manager for the ICU
+at Lions Gate Hospital.  He says that he was on extended family leave, and
+therefore unable to speak until now.  He has only just become aware of some
+of the circumstances of Gloria's death.  Such as the fact that hospital
+administrators on the day on which Rob was unable to visit Gloria, withdrew
+all nursing care from Gloria for that time period.
+
+All of this seems very strange.
+
+As we approach, you notice a sign up ahead.  It reads "You are entering the
+Fraudster Zone."
+
+Okay, it's not me.  But the circumstances of Gloria's death (and my
+associated grief) are so similar that I can use them to protect the identity
+of the actual family that is the victim of an attempted fraud.  (I did not
+expect, when I went to Bible Study, to spend three hours on the edges of
+what probably will turn out to be the beginning stages of a fraud
+investigation.)
+
+The situations are alike enough that I fully understand what the family is
+going through.  I also, by way of being one of the professionally paranoid,
+understand the social engineering techniques that the fraudster is using to
+try and attack the family.
+
+As I say, the circumstances are fairly similar. The family has had a death.
+The death is not particularly mysterious, and there is, in fact, no evidence
+of foul play.  However, the family has not been given full information, and
+is unhappy with the conduct of the case.
+
+They have now been contacted, via a rather circuitous route, by someone who
+claims to know exactly what happened to their family member surrounding the
+circumstances of the death.
+
+As with Gloria, not all the circumstances of the death are known.  In
+Gloria's case no autopsy was performed.  I understand that cytology and
+oncology reports have been done, but I have seen neither.  I could,
+therefore, suspect that something untoward might have been happening or
+being covered up.  I don't.  But not all the questions have been answered,
+and I fully understand the family's desire to know the circumstances of
+their loved ones death, I share that desire to know.
+
+When your loved one dies, you want to understand.  You want to understand
+all the circumstances, particularly if the death is sudden.  Sometimes you
+want to know who to blame.  Sometimes you simply want to understand the
+progress of the death and whether your loved one was in pain or discomfort
+during the period leading up to the actual demise.  You want to know.  And
+if someone comes along claiming to have knowledge, and the ability to
+explain to you the circumstances of the death, you are really inclined to
+take them up on it.
+
+This family is not completely happy with the investigation of their loved
+ones death.  I am not completely happy with the information I have been
+provided from the hospital as to Gloria's death.  However in neither case is
+there any evidence of any wrongdoing (other than the continued operation of
+a cell phone belonging to the victim, which is probably simply the result of
+a completely unrelated, and opportunistic, purloining).  This still means
+that you wish to know. And therefore, you are in a position of vulnerability
+for anyone who claims that they have knowledge that they could give you.
+
+I am not sure what the fraudster in this case wishes to accomplish.  It may
+simply be some kind of financial reward for providing the information.  It
+may be some other more complicated plan.  It doesn't really matter: the
+social engineering involved is pretty similar.
+
+The informant, in this case, claims to be in a position of some authority.
+The person also claims to have a reasonable excuse for absence from the
+scene, in order to explain why they have not contacted the family up until
+now.  They also claim that the authorities are involved, at some level, in a
+conspiracy in regard to the death.  This of course is very common in many
+frauds to prevent the victim from going to the authorities for either
+assistance, clarification, or to report a fraud.
+
+The fraudster engaged in some rather interesting provision of contact
+information.  Two phone numbers were provided.  One number was to be used
+for telephone calls.  The other was to be used for WhatsApp conversations.
+The inclusion of WhatsApp is interesting.  Subsequent to Gloria's death, I
+reassigned the number on Gloria's phone and found that WhatsApp continued to
+receive messages from original groups set up prior to Gloria's death and
+using her original phone number, but also received messages to the same
+groups from the same people when the new number was used.  WhatsApp has some
+intriguing addressing going on.
+
+In addition we did some searching on the phone numbers provided.  One
+number seems to have been registered in the Cayman Islands.  And, of
+course, we all know how much fraud there is associated with the Cayman
+Islands.  The other number popped up some rather interesting results,
+indicating a connection to Russian criminals.  In any case, the fraudster
+was pretty clearly identified as such by the use of these numbers.  In
+addition, the fraudster's story of both his own position in relation to
+personnel associated with the death, and the conspiracy that was supposedly
+associated with the death, are fairly clearly, and demonstrably, untrue.
+However, they are not completely improbable and, for someone who was not a
+professional paranoid, no one would think to check that these situations
+were questionable.
+
+I do not know how the fraudster obtained information about the family.  I do
+have some suspicions, given some of the mistakes that the fraudster made in
+identifying the family.  The fraudster initially contacted someone in a
+place where the family had been, but no longer resided.  When the fraudster
+then contacted the family directly, the fraudster did claim to be local to
+the area.  (This seems to be an attempt to appear trustworthy due to
+proximity.)  Although not too terribly local.  No really detailed
+information was provided.  In any case the phone numbers provided definitely
+did not match the supposed location of the fraudster.
+
+I do not know how much information above the actual death the fraudster had,
+although I'm sure that information was not difficult to come by.  (Probably
+a basic newspaper obituary would provide most details.)  However, I am
+reasonably certain that the family did, unwittingly, provide information to
+the fraudster on specific details of the death, and their unhappiness with
+the investigation.  The fraudster of course, used this further information
+to refine their social engineering approach to the family.  (I hope that I
+wouldn't be gullible enough to betray information to a fraudster, but, being
+a bereaved widower and therefore having questionable judgment in any case,
+as well as being sleep deprived, and therefore having my judgment denigrated
+even further. It is likely that I might provide such information. It
+certainly would not be beyond the bounds of possibility.)
+
+As I said, I was involved only peripherally.  Hopefully I provided some
+advice in the situation, and hopefully helped the family to come to a
+decision.  In the end, the decision seems to have been to turn to the
+police, and not engage the fraudster anymore.  I believe this to be the
+correct decision.  But I understand the difficulty in coming to that
+decision.
+
+------------------------------
+
+Date: Thu, 19 May 2022 13:30:22 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: ACM makes back archives available for free
+
+ACM (Association for Computing Machinery) makes their archive from
+1951 to 2000 available for free
+
+Very cool to see this big chunk of the ACM archive no longer being
+paywalled. It seems quite comprehensive -- I've already located a number of
+CACM articles I authored or coauthored during this period, including both
+serious ones and from my series of April Fool's Day CACM columns.  Long time
+since I've seen those in their original form!
+
+ACM announcement:
+
+https://associationsnow.com/2022/05/the-way-things-were-why-open-access-to-the-acm-digital-library-matters/
+
+ACM library search:
+
+https://dl.acm.org/
+
+Bonus: Ken and Dennis discuss UNIX (1973):
+
+https://dl.acm.org/doi/10.1145/800009.808045
+
+  [Also the first 10 years of *Inside Risks* -- 126 monthly articles,
+  many of which are now old-hat, but some of which represent RISKS issues
+  that are still problematic.  PGN]
+
+------------------------------
+
+Date: Thu, 26 May 2022 14:41:18 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Cybercriminals target metaverse investors with phishing scams
+ (CNBC)
+
+The metaverse, the new digital frontier where users can attend virtual
+concerts or purchase digital assets like land, has been hit with fraud.
+
+Cybercriminals use phishing links that imitate the legitimate metaverse
+platforms to drain investors' digital wallets of assets.
+
+While metaverse platforms are increasing their security measures and
+educating consumers about fraud prevention, they say they're not responsible
+for refunding money to phishing scam victims.
+
+A nurse in rural Maine. A fitness instructor in Colorado. A venture
+capitalist in Florida. All three invested in the metaverse, buying land they
+say they thought was a solid investment.
+
+"I was really excited about it," said Kasha Desrosiers, a long-term care
+nurse. "And hopeful for, you know, whatever projects that would come out of
+it."
+
+But in just days or months, all their virtual land was gone. And each of
+them says that there was simply no way to get it back.
+
+Investors across the country told CNBC that hackers stole their land in the
+metaverse by tricking them into clicking on links they believed were genuine
+portals to the virtual universe, but which turned out to be phishing sites
+designed to steal user credentials. What they wanted was a piece of the
+metaverse — a new, blockchain-based virtual set of platforms that has
+recently come to prominence because of significant involvement from
+celebrities, fashion shows and investors.
+
+Instead, they say they got a lesson in the dangers of high-risk investing.
+
+https://www.cnbc.com/2022/05/26/cybercriminals-target-metaverse-investors-with-phishing-scams.html
+
+I think they mean, "investing".
+
+------------------------------
+
+Date: Fri, 20 May 2022 13:19:52 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: 'Elon Musk's Crash Course' shows the tragic cost of his leadership
+ (NPR)
+
+Just as his effort to buy Twitter has led the world to focus on Elon Musk's
+management style and business strategies, FX and The New York Times have
+stepped up with a documentary taking a close look at how Musk responded to
+crashes involving the Autopilot function in cars from his company, Tesla.
+
+For those watching Musk's fitful attempt to buy Twitter, the film also
+serves as a pointed comparison; showing how his penchant for bold moves and
+provocative statements can lead fans to see what they want in his words –
+regardless of whether what he says is actually possible.
+
+As part of FX's The New York Times Presents documentary series, Elon Musk's
+Crash Course suggests that Musk oversold the cars' self-driving
+capabilities, leading to public confusion over what it could actually
+do. And when federal authorities began an investigation into a fatal crash
+involving the technology, the program says Musk pressured officials to curb
+the investigation.
+
+https://www.npr.org/2022/05/20/1100022168/elon-musks-crash-course-new-york-times-fx-hulu-twitter-tesla-self-driving-cars
+
+------------------------------
+
+Date: Fri, 20 May 2022 10:43:42 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Re: ACM, Ethics, and Corporate Behavior (RISKS-33.20)
+
+Via private communication, Prof. Moshe Vardi notified me about his essay:
+"Artificial Intelligence: Ethics Versus Public Policy" (01APR2022)
+https://sinews.siam.org/Details-Page/artificial-intelligence-ethics-versus-public-policy,
+
+Prof. Vardi argues that legislation and regulation, aka public policy, is an
+appropriate measure to deter deployment of exploitative AI applications
+endangering public health, safety and privacy interests.
+
+Ethical restraints have failed to slow AI product introductions that
+jeopardize public interests. Ethics, it appears, no longer concern
+professionals from contributing their skills and energies to create and
+deploy hazardous AI products and services. As aphorisms that once guided
+responsible professional action, ethics are diminished by corporate
+governance directives that demand organizational behavior compliance.
+
+A brand outrage incident can arise from corporate employee ethics
+breach. These occurrences are often excused under the "better to ask
+forgiveness than to get permission" expedient when profit flows from their
+outcome. No matter the merit and justification, ethical protests by brave
+technology professionals seldom prevent for-profit deployment of product
+that jeopardizes public wellbeing.
+
+Regulations, historically, are cautiously introduced to improve public
+safety outcomes. Vehicle head and taillights, mirrors, seat belts, air bags,
+turn signals, and horns exemplify the benefits of regulation that strengthen
+public safety and health interests without detriment to corporations or
+products.
+
+Enacting and enforcing regulations that penalize rapacious AI deployments
+will establish corporate accountability for their public health, safety, and
+privacy consequences. Reminding CxOs and boards of directors that
+exploitation of public data entitled by commercial impunity claimed with
+product indemnification and terms of service exposes their governance
+decisions to personal legal jeopardy.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.23
+************************

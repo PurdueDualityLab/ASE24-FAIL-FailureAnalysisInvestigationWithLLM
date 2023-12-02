@@ -1,0 +1,568 @@
+precedence: bulk
+Subject: Risks Digest 30.01
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 14 December 2016  Volume 30 : Issue 01
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.01>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+More on the LaMia crash involving the Brazilian soccer team
+PwC SAP fatal flaw in security software (Iain Thomson via Al Mac)
+Netgear R7000 and R6400 vulnerability (Bob Gezelter)
+Automated Assistants Will Soon Make a Bid for Your Finances
+  (Nathaniel Popper)
+Cars Talking to One Another? They Could Under Proposed Safety Rules
+  (Cecilia Kang)
+ACLU sues Rhode Island over computer benefits system delays
+  (AP item via The Boston Globe)
+Designing a Safer Battery for Smartphones -- That Won't Catch Fire
+  (John Markoff)
+Fake News Expert On How False Stories Spread And Why People Believe Them
+  (NPR)
+SHAME ON YOU, GOOGLE! - Holocaust Deniers as the top search result
+  (Gizmodo via Lauren Weinstein)
+Europe braces for Russian hacking in upcoming elections (Politico)
+Russia hacking the DNC (The New York Times)
+On the CIA assessment: Russia intervened in the 2016 election
+  (Peter Houppermans)
+The Perfect Weapon: How Russian Cyberpower Invaded the U.S.
+  (The New York Times)
+Don't like a political blog? Go after their advertising revenue
+  (Thomas Koenig)
+Trump's F-35 tweet sends Lockheed Martin stock into tailspin
+  (Steve Bittenbender)
+Ashley Madison settles cheaply for $1.6 million (FTC)
+Re: Boeing Dreamliner 787 should be reboot every 21 days (Michael Kohne)
+Re: Ball-bearing and crypto policy analogy (Serguei Patchkovskii,
+   Ron Rivest)
+
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 13 Dec 2016 02:29:18 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: More on the LaMia crash involving the Brazilian soccer team
+
+A plane crash, killing almost an entire Brazilian football team, has been
+explained.  The plane operators violated some standards.  They neglected to
+have a refueling stop, and the plane plain ran out of fuel There's been some
+finger pointing about that.  An airport official said she warned the plane
+crew that they needed to fuel up before leaving, but the crew assured her
+they had enough.  Gov blaming her for not doing what she said she did, so
+she has fled across a border seeking asylum.
+
+https://en.wikipedia.org/wiki/LaMia_Flight_2933
+https://www.youtube.com/watch?v=h9oPQSanKUo
+http://www.mirror.co.uk/news/world-news/chapecoense-plane-crashed-due-lack-9362053
+
+------------------------------
+
+Date: Sat, 10 Dec 2016 22:07:07 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com>
+Subject: PwC SAP fatal flaw in security software (Iain Thomson)
+
+Iain Thomson, *The Register*, 9 Dec 2016
+
+PwC has issued a denial that there is anything wrong with their software.
+How do we know there's any truth in their denial?
+
+I suppose it is inconceivable to an audit firm that anyone ought to audit
+them.
+
+Normally when flaws are found in a corporate software package, clients
+report the problem to tech support, and the situation gets fixed, and the
+fix can be tested.
+
+Here a company is not providing normal industry standard support.  They want
+people to take their word for it that their software is fine, even when
+evidence has been revealed to them that there is a problem.  This is
+reminiscent of the Volkswagen cover-up that their cars could be stolen via
+hacking the auto door locks.  Did they ever fix that?
+
+  Iain Thomson, *The Register*, 9 Dec 2016
+  Fatal flaw found in PricewaterhouseCoopers SAP security software
+  Instead of fixing the issue, PwC lawyered up
+
+http://www.theregister.co.uk/2016/12/09/fatal_flaw_in_pricewaterhousecoopers_sap_software/
+<http://www.theregister.co.uk/2016/12/09/fatal_flaw_in_pricewaterhousecoopers_sap_software/%0b>
+http://opensources.info/pricewaterhousecoopers-software-flaw-can-allow-hackers-to-manipulate-accounting-result-claims-report/
+http://www.ibtimes.co.uk/flaw-pricewaterhousecoopers-software-can-allow-hackers-manipulate-accounting-results-report-1595830
+
+A security tool built for SAP systems by PricewaterhouseCoopers has turned
+out to have worrying security holes of its own.
+
+German security research firm ESNC has been analyzing the Automated Controls
+Evaluator (ACE), which extracts relevant security and configuration data
+from an SAP system, analyzes it, and generates exception reports by review.
+But there appears to be a high-risk hole in the software.
+
+"This security vulnerability may allow an attacker to manipulate accounting
+documents and financial results, bypass change management controls, and
+bypass segregation of duties restrictions," ESNC said in an advisory.
+
+http://seclists.org/fulldisclosure/2016/Dec/33
+https://www.esnc.de <https://www.esnc.de/>
+
+"This activity may result in fraud, theft or manipulation of sensitive data
+including PII such as customer master data and HR payroll information,
+unauthorized payment transactions and transfer of money."
+
+Comments to the Register article ask:
+
+* How the PWC software can be so badly written as to allow this to happen?
+  Does it have anything to do with the company being run by non-tech people?
+
+* How PWC can be so clueless about fixing flawed software, that they'd
+  rather lawyer up than fix it?  ESNC gave them 90 days after discovery and
+  notification, before going public.
+
+* The next time anyone finds a PWC vulnerability, they won't do them the
+  courtesy of notification & reasonable time to fix, they'll just go public
+  to warn other PWC customers.
+
+* Search for "PWC scandal" to find lots of times this company has been in
+  big trouble already.
+
+* There was a question about lawyer hacker vulnerability.  Someone who must
+  be unaware that there has already been massive hacking of major law firms,
+  to facilitate such things as crooked insider trading, and telling the
+  world about Panama Papers.
+
+Here's info about SAP: https://en.wikipedia.org/wiki/SAP_SE
+
+For a company to be vulnerable to this breach vulnerability, they'd have to
+be running on SAP with the PWC's ACE
+
+Here's directory of industries served by PWC:
+http://www.pwc.com/us/en/industry.html
+
+------------------------------
+
+Date: Mon, 12 Dec 2016 02:46:01 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: Netgear R7000 and R6400 vulnerability
+
+Another installment from the "When will they ever learn" files:
+
+Netgear R7000 and R6400 routers have been found to contain an "arbitrary
+command injection" vulnerability.
+
+CERT Vulnerability Note VU#582384, entitled "Multiple Netgear routers are
+vulnerable to arbitrary command injection" describes the details of the the
+vulnerability, for which an exploit example is available.
+
+As reported by the CERT notice, there is presently no corrected firmware
+available for the devices. CERT recommends that the use of affected devices
+be discontinued until such time as a fix is available.
+
+The CERT Notice can be found at:
+
+https://www.kb.cert.org/vuls/id/582384
+
+Bob Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Wed, 14 Dec 2016 09:57:09 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Automated Assistants Will Soon Make a Bid for Your Finances
+  (Nathaniel Popper)
+
+Nathaniel Popper, The New York Times, 7 Dec 2016
+
+Companies are vying to create automated financial assistants that employ
+artificial intelligence; one was directly inspired by science fiction.
+http://www.nytimes.com/2016/12/07/business/dealbook/automated-assistants-will-soon-make-a-bid-for-your-finances.html
+
+------------------------------
+
+Date: Tue, 13 Dec 2016 21:29:59 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Cars Talking to One Another? They Could Under Proposed Safety Rules
+  (Cecilia Kang)
+
+Cecilia Kang, The New York Times, 13 Dec 2016
+
+Under the rules, cars would be able to use wireless technology to detect if
+another vehicle was moving too fast in their direction and headed for a
+collision.
+http://www.nytimes.com/2016/12/13/technology/cars-talking-to-one-another-they-could-under-proposed-safety-rules.html
+
+------------------------------
+
+Date: Sun, 11 Dec 2016 12:36:13 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: ACLU sues Rhode Island over computer benefits system delays (AP)
+
+AP item via The Boston Globe, 9 Dec 2016
+https://www.boston.com/news/local-news/2016/12/09/aclu-sues-rhode-island-over-computer-benefits-system-delays
+
+------------------------------
+
+Date: Sun, 11 Dec 2016 23:09:44 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Designing a Safer Battery for Smartphones -- That Won't Catch Fire
+
+John Markoff, *The New York Times*, 11 Dec 2016
+A Massachusetts start-up is part of a new wave of efforts in the United
+States, Europe, and Asia to improve battery technologies as consumers demand
+more from phones and cars.
+
+http://www.nytimes.com/2016/12/11/technology/designing-a-safer-battery-for-smartphones-that-wont-catch-fire.html
+
+------------------------------
+
+Date: Wed, 14 Dec 2016 12:28:58 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Fake News Expert On How False Stories Spread And Why People Believe
+  Them (NPR)
+
+via NNSquad
+http://www.npr.org/2016/12/14/505547295/fake-news-expert-on-how-false-stories-spread-and-why-people-believe-them?utm_medium=RSS&utm_campaign=news
+
+  Craig Silverman of BuzzFeed News has spent years studying media
+  inaccuracy. He explains how false stories during the presidential campaign
+  were spread on Facebook and monetized by Google AdSense.
+
+------------------------------
+
+Date: Mon, 12 Dec 2016 21:38:49 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: SHAME ON YOU, GOOGLE! - Holocaust Deniers as the top search result
+
+Google Won't Alter the Holocaust-Denying Results For 'Did the Holocaust
+Happen'
+https://plus.google.com/+LaurenWeinstein/posts/WcQYp9A7YJs?sfc=true
+http://gizmodo.com/google-wont-alter-the-holocaust-denying-results-for-di-1790025043
+
+SHAME ON YOU, GOOGLE! - While I agree with your decision to not remove the
+lying hate speech link in question, you should clearly label it as being
+false, a lie, or at least as having no credibility.  Call it "CredRank" Zero
+if you wish, but the fact is that most users of Google implicitly trust you
+so much that they assume you wouldn't rank vile, lying crap at the top of
+your search results.
+
+You know and I know that those top results don't mean that they are
+"correct" -- and they don't mean that you endorse them.  But it is widely
+believed that what Google puts at the top can be trusted. Once upon a time,
+you dealt with the search term "Jew" by including a note about related hate
+speech.
+
+The time has come for Google to lead the way against hate speech and fake
+news. Here's how I hope you will do so: "Action Items: What Google,
+Facebook, and Others Should Be Doing RIGHT NOW About Fake News":
+
+  See also:
+https://www.theguardian.com/commentisfree/2016/dec/11/google-frames-shapes-and-distorts-how-we-see-world
+https://lauren.vortex.com/2016/12/06/action-items-what-google-facebook-and-others-should-be-doing-right-now-about-fake-news
+
+------------------------------
+
+Date: Tue, 13 Dec 2016 7:34:15 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Europe braces for Russian hacking in upcoming elections
+
+Officials fear cyber-meddling by Moscow in upcoming elections in France,
+the Netherlands and Germany.
+http://www.politico.eu/article/europe-russia-hacking-elections/
+
+Politico's cybersecurity newsletter today + an alternative intelligence view
+re direct Russian involvement
+
+COMMISSIONS, SELECT COMMITTEES AND MORE - There are now no fewer than five
+different proposals for how Congress might push an investigation into
+alleged Russian election meddling and related cybersecurity issues.
+Sens. Ben Cardin, Dianne Feinstein and Patrick Leahy on Monday proposed an
+independent commission, with a different name but similar makeup to one
+proposed in the House by Reps. Eric Swalwell and Elijah Cummings. Sen. Cory
+Gardner on Monday again called for the creation of a Permanent Select
+Committee on Cybersecurity, inspired in part by the campaign hacks.  Senate
+Armed Services Chairman John McCain over the weekend suggested a select
+committee that would exist only temporarily to investigate election hacking.
+<http://go.politicoemail.com/?qs=d883538c4ff44c757157576daf15c07e7cebeb350829b9daf76541e83acbadf3>
+<http://go.politicoemail.com/?qs=d883538c4ff44c752de20738b20c61f9510ec56d15e297be05b621c5b9dc2b3b>
+<http://go.politicoemail.com/?qs=d883538c4ff44c751dd7073f06fd6b0e4196144b3624873cfd672901867c50dc>
+
+Some of those proposals might yet become reality, but what looks most likely
+in the near term is the idea endorsed by Senate Majority Leader Mitch
+McConnell, where the Senate Intelligence Committee would lead an
+investigation into potential foreign influence in the election and Senate
+Armed Services delving into the more general threat of cyberattacks.
+<http://go.politicoemail.com/?qs=d883538c4ff44c753afdab49117411747a0ed6040025628e14a527055dbcf7f3>
+
+In the House, the most likely result is no special investigation at all. [...]
+
+------------------------------
+
+Date: Tue, 13 Dec 2016 14:00:27 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Russia hacking the DNC
+
+http://www.nytimes.com/2016/12/13/us/politics/russia-hack-election-dnc.html
+
+Hundreds of similar phishing emails were being sent to American political
+targets, including an identical email sent on March 19 to Mr. Podesta,
+chairman of the Clinton campaign.  Given how many emails Mr. Podesta
+received through this personal email account, several aides also had access
+to it, and one of them noticed the warning email, sending it to a computer
+technician to make sure it was legitimate before anyone clicked on the
+"change password" button.
+
+"This is a legitimate email," Charles Delavan, a Clinton campaign aide,
+replied to another of Mr. Podesta's aides, who had noticed the alert.  "John
+needs to change his password immediately."
+
+With another click, a decade of emails that Mr. Podesta maintained in his
+Gmail account -- a total of about 60,000 - were unlocked for the Russian
+hackers. Mr. Delavan, in an interview, said that his bad advice was a result
+of a typo: He knew this was a phishing attack, as the campaign was getting
+dozens of them. He said he had meant to type that it was an "illegitimate"
+email, an error that he said has plagued him ever since.
+
+------------------------------
+
+Date: Sun, 11 Dec 2016 16:11:22 +0100
+From: Peter Houppermans <peter@houppermans.net>
+Subject: On the CIA assessment: Russia intervened in the 2016 election
+  (R 29 96)
+
+Pardon me for maybe missing something, but is Russia's (possibly) hacking
+the election really the key problem?
+
+The issue is not that Russia has (possibly) hacked the election, the issue
+is that it is deemed perfectly possible it could.
+
+I may be kicking in an open door here, but if a vital democratic mechanism
+is so mistrusted that any statement of it being hacked is deemed credible
+(and from the reports I've seen of some voting systems there's indeed reason
+to believe it possible), isn't that a big hint that things need fixing
+rather urgently?
+
+Writing accusingly about an increase of burglaries in your neighbourhood
+might sell more newspapers but personally, I would rather make sure my locks
+are up to scratch.
+
+  [Many locks are vulnerable, and they should be scratched!  PGN]
+
+------------------------------
+
+Date: Tue, 13 Dec 2016 22:06:25 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: The Perfect Weapon: How Russian Cyberpower Invaded the U.S.
+
+Eric Lipton, David E. Sanger and Scott Shane, *The New York Times*, 13 Dec 2016
+http://www.nytimes.com/2016/12/13/us/politics/russia-hack-election-dnc.html
+
+An investigation by *The New York Times* reveals missed signals, slow
+responses and a continuing underestimation of the seriousness of a campaign
+to disrupt the 2016 presidential election.
+
+------------------------------
+
+Date: Mon, 12 Dec 2016 23:18:32 +0100
+From: Thomas Koenig <tkoenig@netcologne.de>
+Subject: Don't like a political blog? Go after their advertising revenue
+
+In Germany, there is an Internet campaign to bring down political blogs
+considered to be "right-wing"; its hashtag is #KeinGeldfuerRechts (no money
+for the right wing).
+
+The campaign contacts companies whose advertising is displayed on these
+websites, and ask them to consider if they really want their names to be
+displayed on these websites.
+
+Some of the blogs that have seen advertising revenues drop dramatically due
+to this campaign are "Die Achse des Guten" (the Axis of Good,
+https://www.achgut.com/) and "Tichys Einblick" (Tichy's insight,
+http://www.tichyseinblick.de/).
+
+The campaign is headed by an advertising executive, Gerald Hensel, who works
+for Scholz & Partners. The company is currently suffering something of a
+sh..storm for failing to distance itself sufficiently from their executive.
+In the meantime, the website calling for the advertising boycott,
+http://davaidavai.com, has been switched to password-only access.
+
+The risks?  Trying to shut up your political opposition by targeting
+their advertising funds may work (which is not a pleasant thought), or
+it may backfire.
+
+------------------------------
+
+Date: Tue, 13 Dec 2016 8:10:59 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Trump's F-35 tweet sends Lockheed Martin stock into tailspin
+  (Steve Bittenbender)
+
+Steve Bittenbender, Government Security News, 13 Dec 2016
+
+On the same day Lockheed Martin delivered a two F-35s to Israel,
+President-elect Donald Trump took the country's largest government
+contractor to task for its handling of the fighter jet program's finances.
+
+The F-35 program and cost is out of control.  Billions of dollars can and
+will be saved on military (and other) purchases after January 20th," Trump
+posted on Twitter Monday morning. [...]
+
+http://gsnmagazine.com/article/47572/trumps_f_35_tweet_sends_lockheed_martin_stock_tail
+
+------------------------------
+
+Date: Wed, 14 Dec 2016 13:12:17 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Ashley Madison settles cheaply for $1.6 million (FTC)
+
+   (Previous item in RISKS-29.63:
+     Ashley Madison Admits It Lured Customers With 70,000 Fake 'Fembots'
+   PGN)
+
+Federal Trade Commission
+https://www.ftc.gov/news-events/press-releases/2016/12/operators-ashleymadisoncom-settle-ftc-state-charges-resulting
+
+The operators of the Toronto-based AshleyMadison.com dating site have agreed
+to settle Federal Trade Commission and state charges that they deceived
+consumers and failed to protect 36 million users' account and profile
+information in relation to a massive July 2015 data breach of their
+network.  The site has members from over 46 countries.
+
+The settlement requires the defendants to implement a comprehensive
+data-security program, including third-party assessments.  In addition, the
+operators will pay a total of $1.6 million to settle FTC and state actions.
+
+"This case represents one of the largest data breaches that the FTC has
+investigated to date, implicating 36 million individuals worldwide," said
+FTC Chairwoman Edith Ramirez.  "The global settlement requires
+AshleyMadison.com to implement a range of more robust data security
+practices that will better-protect its users' personal information from
+criminal hackers going forward."
+
+In addition to the provisions prohibiting the alleged misrepresentations and
+requiring a comprehensive security program, the proposed federal court order
+imposes an $8.75 million judgment which will be partially suspended upon
+payment of $828,500 to the Commission.  If the defendants are later found to
+have misrepresented their financial condition, the full amount will
+immediately become due.  An additional $828,500 will be paid to the 13 states
+and the District of Columbia.
+
+------------------------------
+
+Date: Wed, 14 Dec 2016 11:30:48 -0500
+From: Michael Kohne <mhkohne@kohne.org>
+Subject: Re: Boeing Dreamliner 787 should be reboot every 21 days
+  (PGN, RISKS-29.96)
+
+I have a couple of thoughts on why it might not be fixed yet. I've never
+done software for aircraft, just for medical devices (so my software has
+never been able to kill more than one person at a time):
+
+1) I don't know what the lead time on a software release for an aircraft
+   is. I'm betting their review and testing rules are pretty tight and take
+   quite a while. Even if they've got the bug fixed, it may take quite some
+   time to see the fix in the field.
+
+2) We don't know what, exactly, is going on, but assuming it's the signed
+   value as described, it seems likely that it could take quite a while to
+   be sure you've got all the instances where those time values are
+   mis-used. Depending on how use of that value is structured (for instance,
+   the routine that returns time might be returning a signed value), fixing
+   it might end up touching large portions of the system, thereby triggering
+   massive amounts of code review.
+
+3) Even if they fix it, are they sure enough of the fix? I'm sure it's
+   tempting for Boeing to say 'well, we'll roll out the fix, but keep the
+   reboot rule so that if we missed anything we don't get blamed'.
+
+4) Even if there's a fix, the airlines may not have rolled it out.  I've no
+   idea what an airline does for software patching a plane, but I'm betting
+   it's a more complex endeavor than just getting the files from Boeing and
+   taking them out to the plane.
+
+So there's a lot of reasons why a fix might not be in the field yet.
+
+------------------------------
+
+Date: Sun, 11 Dec 2016 09:21:06 +0100
+From: Serguei Patchkovskii <serguei.patchkovskii@gmail.com>
+Subject: Re: Ball-bearing and crypto policy analogy (Rivest, RISKS-29.96)
+
+Ronald Rivest has suggested an interesting analogy between law-enforcement
+agencies controlling cryptographic techniques and similar controls being
+imposed on ball bearings.
+
+I think this analogy is actually much closer than intended: The specific
+examples given in the item make ball-bearing controls sound completely
+nonsensical.  However, high-grade ball bearings and related manufacturing
+equipment *are* in fact quite tightly controlled, and with some good
+reasons.  The US Department of Commerce list of export controls on ball
+bearings and related technologies runs to some ten pages:
+https://www.bis.doc.gov/index.php/forms-documents/doc_view/734-ccl2]
+Similar restrictions are imposed by all countries participating in Wassenaar
+agreement:
+http://www.wassenaar.org/wp-content/uploads/2015/08/WA-LIST-15-1-2015-List-of-DU-Goods-and-Technologies-and-Munitions-List.pdf
+Violating these rules can land you in some serious trouble.
+
+------------------------------
+
+Date: Mon, 12 Dec 2016 15:57:33 -0800
+From: "Ronald L. Rivest" <rivest@mit.edu>
+Subject: Re: Ball-bearing and crypto policy analogy (Patchkovskii,
+  RISKS-30.01)
+
+Thanks to Serguei Patchkovskii for the information regarding the controls on
+the export of ball bearings.  I was unaware of the existence of these
+controls.
+
+The controls on ball bearings have to do with their tolerances primarily.
+The cryptographic analogue would probably be a control on key-size.  Since
+ball bearings are to be part of a manufactured product, while cryptographic
+schemes are there to defeat and adversarial attack, the restriction of
+commercial users to 'weak' crypto isn't really a good idea.
+
+------------------------------
+
+Date: Wed, 17 Aug 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 20.01
+************************

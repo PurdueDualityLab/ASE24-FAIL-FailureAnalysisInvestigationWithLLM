@@ -1,0 +1,679 @@
+precedence: bulk
+Subject: Risks Digest 26.89
+
+RISKS-LIST: Risks-Forum Digest  Saturday 9 June 2012  Volume 26 : Issue 89
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.89.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Medical device software update, server distributes malware (Kevin Fu)
+Haverhill teen to serve year in jail for fatal texting crash ...
+  (Ballou and Ellement via Monty Solomon)
+Teen texting behind wheel common: 42% in Mass. say they do it (Kay Lazar via
+  Monty Solomon)
+Flame required world-class cryptographers (Dan Goodin)
+Texting While Driving: Despite penalties, it's not sinking in (Billy Baker
+  via Monty Solomon)
+"VIDEO: "Heads Up" Distraction Safety Campaign Targets Pedestrians"
+  (Michelle Rosa via Gene Wirchenko)
+"Lawful access 'one of the greatest threats to privacy" (Nestor E. Arellano
+  via Gene Wirchenko)
+"Ontario service kiosks shut down" (Nestor E. Arellano via Gene Wirchenko)
+SSNs on P2P? The Feds found businesses that leaked private info (Megan Geuss
+  via Monty Solomon)
+MD5 password scrambler 'no longer safe' (John Kemp)
+LinkedIn and eHarmony reportedly did not "salt" password hashes
+  (Lauren Weinstein)
+LinkedIn app under scrutiny for transferring iOS calendar entries
+  (Monty Solomon)
+ATM-style provincial government services suspended due to breach
+  (Mark Brader)
+"Researchers find ways to bypass Google's Android malware scanner"
+  (Lucian Constantin via Gene Wirchenko)
+Police: mobile software hack defeating anti-theft measure (Cyrus Farivar
+  via Monty Solomon)
+Observations on changing passwords (Geoff Kuenning)
+Stupid security mistakes: Things you missed while doing the hard stuff
+  (Josh Fruhlinger via Gene Wirchenko)
+Re: 60% of Wikipedia entries about companies contain errors (Geo Swan)
+`Siri, Kill That Guy': Drones Might Get Voice Controls" (David Axe via
+  ACM TechNews)
+Another Siri risk (Martyn Thomas)
+Re: Telemarketing Calls Keep Mounting Up (Isaac Morland)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 9 Jun 2012 12:21:08 -0400
+From: Kevin Fu <kevinfu@cs.umass.edu>
+Subject: Medical device software update, server distributes malware
+
+The web server distributing the software updates for a ventilator (a medical
+device) itself needs some help with software updates.  According to Google,
+the web server was infected with 48 viruses and 2 scripting exploits.  20
+pages resulted in malicious software being downloaded and installed without
+user consent.
+
+The risks should be obvious.  This is an update for a medical device, and
+yet one must download it in a manner as if software sepsis is no big deal.
+Health care professionals might as well stop their washing hands while
+they're at it.
+
+Click Here to Download Your AVEA Ventilator Software Update. Trust Me.
+http://blog.secure-medicine.org/2012/06/click-here-to-download-your-avea.html
+
+------------------------------
+
+Date: Thu, 7 Jun 2012 13:10:57 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Haverhill teen to serve year in jail for fatal texting crash ...
+  (Ballou and Ellement)
+
+Brian R. Ballou and John R. Ellement, *The Boston Globe*, 6 Jun 2012
+... judge calls for people to keep eyes on road
+
+Saying he was sending a message of deterrence to Massachusetts drivers,
+District Court Judge Stephen Abany today imposed maximum sentences on
+Haverhill teen Aaron Deveau for causing a fatal crash by texting while
+driving.  The judge sentenced Deveau, who was 17 at the time of the crash,
+to concurrent sentences of 2 years on a charge of motor vehicle homicide and
+2 years for a charge of negligent operation of a motor vehicle causing
+serious injury while texting.
+
+Noting Deveau's youth and lack of criminal record, Abany ordered the teen to
+serve one year in the Essex County House of Corrections, suspending the rest
+of the sentences. Deveau, who has been free on bail since his arrest in
+2011, was taken into custody by court officers.
+
+Abany said from the bench that a criminal sentence is based on four
+principles - punishment, public safety, rehabilitation, and deterrence. Of
+those four issues, deterrence was his primary concern. ...
+
+http://www.boston.com/metrodesk/2012/06/06/haverhill-teen-convicted-motor-vehicle-homicide-fatal-crash-tied-texting/ORSyThaV1G2Y3a3TAkANmI/story.html
+
+------------------------------
+
+Date: Sat, 9 Jun 2012 00:24:35 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Teen texting behind wheel common: 42% in Mass. say they do it
+  (Kay Lazar)
+
+Kay Lazar, *The Boston Globe*, 8 Jun 2012
+
+Forty-two percent of Massachusetts high school students who drive admit they
+text while behind the wheel, according to a state survey to be released
+Friday.  The report, from the state's Department of Public Health, also
+finds that texting while driving is most common among high school seniors,
+with 61 percent of drivers admitting to the behavior, more than three times
+the percentage for sophomore drivers. ...
+
+http://www.boston.com/news/local/massachusetts/articles/2012/06/08/42_of_massachusetts_high_school_drivers_text_behind_the_wheel_survey_finds/?page=full
+
+------------------------------
+
+Date: Fri, 8 Jun 2012 4:42:06 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Flame required world-class cryptographers (Dan Goodin)
+
+Dan Goodin, *ars technica*, 7 Jun 2012
+http://arstechnica.com/security/2012/06/flame-crypto-breakthrough/
+
+The Flame espionage malware that infected computers in Iran achieved
+mathematic breakthroughs that could only have been accomplished by
+world-class cryptographers, two of the world's foremost cryptography experts
+said.  "We have confirmed that Flame uses a yet unknown MD5 chosen-prefix
+collision attack," Marc Stevens and B.M.M. de Weger wrote in an e-mail
+posted to a cryptography discussion group earlier this week. "The collision
+attack itself is very interesting from a scientific viewpoint, and there are
+already some practical implications."
+
+"Collision" attacks, in which two different sources of plaintext generate
+identical cryptographic hashes, have long been theorized. But it wasn't
+until late 2008 that a team of researchers made one truly practical. By
+using a bank of 200 PlayStation 3 consoles to find collisions in the MD5
+algorithm---and exploiting weaknesses in the way secure sockets layer
+certificates were issued---they constructed a rogue certificate authority
+that was trusted by all major browsers and operating systems. Stevens, from
+the Centrum Wiskunde & Informatica in Amsterdam, and de Weger, of the
+Technische Universiteit Eindhoven were two of the driving forces behind the
+research that made it possible.
+
+Flame is the first known example of an MD5 collision attack being used
+maliciously in a real-world environment. It wielded the esoteric technique
+to digitally sign malicious code with a fraudulent certificate that appeared
+to originate with Microsoft. By deploying fake servers on networks that
+hosted machines already infected by Flame---and using the certificates to
+sign Flame modules---the malware was able to hijack the Windows Update
+mechanism Microsoft uses to distribute patches to hundreds of millions of
+customers. [...]
+
+------------------------------
+
+Date: Thu, 7 Jun 2012 16:57:23 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Texting While Driving: Despite penalties, it's not sinking in
+  (Billy Baker)
+
+Billy Baker, *The Boston Globe*, 7 Jun 2012 [PGN-ed]
+http://www.boston.com/news/local/massachusetts/articles/2012/06/07/stiff_sentence_in_fatal_texting_while_driving_case_may_not_deter_some_teenagers/
+
+After a judge imposed the maximum sentence Wednesday on a local teenager who
+became the first person in the state convicted of causing a fatal crash
+while texting, it is still not clear the message is sinking in. ...
+
+Aaron Deveau - who was 17 in February 2011, when he drifted over the center
+lane on River Street and slammed head-on into a car driven by Donald Bowley
+Jr., 56 - was convicted of motor vehicle homicide and negligent operation of
+a motor vehicle causing serious injury while texting.  He was sentenced to a
+year in prison.  Bowley died 18 days after the crash. His girlfriend, Luz
+Roman, was injured. ...  During the trial, prosecutors used phone records to
+argue that Deveau was texting just before the accident, an assertion he
+denied on the witness stand.
+
+------------------------------
+
+Date: Thu, 07 Jun 2012 10:06:16 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "VIDEO: "Heads Up" Distraction Safety Campaign Targets Pedestrians"
+
+http://www.newstalk1010.com/News/localnews/blogentry.aspx?BlogEntryID=10387697
+VIDEO: "Heads Up" Distraction Safety Campaign Targets Pedestrians
+Posted By: Michelle Rosa mrosa@astral.com  29 May 2012
+
+opening text:
+
+Look Up! Toronto police are asking you to take a minute and stop texting and
+pay more attention when walking around the city.
+
+------------------------------
+
+Date: Tue, 05 Jun 2012 10:11:48 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Lawful access 'one of the greatest threats to privacy"
+  (Nestor E. Arellano)
+
+Nestor E. Arellano, *IT Business*, 4 Jun 2012
+Lawful access 'one of the greatest threats to privacy,' says watchdog
+Ontario's privacy commissioner focused her annual report on the
+federal government's desire to keep a closer eye on its citizen's
+onlined activities.
+http://www.itbusiness.ca/it/client/en/home/News.asp?id=67788
+
+Initiatives to provide law enforcement agents greater powers to access and
+track personal individual information may have suffered a set back early
+this year, but Ontario's information and privacy commissioner said today
+that vigilance is needed to protect individual rights.
+
+Bill C-30, "represents one of the most invasive threats to our privacy and
+freedom that I have encountered in 25 years of my career,"" said Dr. Ann
+Cavoukian, Ontario's Information and Privacy commissioner. ...
+
+------------------------------
+
+Date: Fri, 08 Jun 2012 09:47:27 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Ontario service kiosks shut down" (Nestor E. Arellano)
+
+Nestor E. Arellano, *IT Business*, 7 Jun 2012
+Authorities say "security violations" prompted them to order the
+deactivation of self-serve terminals that provide birth certificates,
+driver's licences and other documents.
+http://www.itbusiness.ca/it/client/en/Home/News.asp?id=67843
+
+------------------------------
+
+Date: Fri, 8 Jun 2012 10:15:10 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: SSNs on P2P? The Feds found businesses that leaked private info
+  *Megan Geuss)
+
+Megan Geuss, *ars technica*, 7 Jun 2012
+
+The FTC charged a debt collector and a car dealership with illegal
+indiscretion.  Back in 2010, the FTC conducted a probe revealing that a lot
+of sensitive customer data could be found on P2P networks, uploaded by
+companies that had pledged to safeguard that data. That led the FTC to
+investigate more specific impropriety, and today the Federal Trade
+Commission charged a debt collection agency in Provo, Utah, and a car
+dealership in Statesboro, Georgia, with illegally exposing the personal
+information of thousands of customers.
+
+The FTC's 2010 probe originally led to an uncovering of "health-related
+information, financial records, and driver's license and social security
+numbers" on peer-to-peer networks that had been shared by a legitimate
+organization's computer network. As is the nature of P2P, that leaked data
+was available to any users of the P2P network, and exposed many unwitting
+citizens to fraud and harm.
+
+Two years later, the FTC is doling out charges against two companies that
+were caught with computers that had connected to P2P networks and leaked
+sensitive data belonging to the companies' customers. In the settlement
+offer extended by the FTC, both companies would be required to disclose
+their privacy practices more clearly, and would undergo a security audit by
+the FTC every other year for the next 20 years to ensure compliance.
+
+The first company, EPN, Inc. (otherwise known as Checknet) is a debt
+collection agency in Provo, Utah, whose clients are healthcare providers,
+commercial credit organizations, and retailers. The FTC alleges that the
+company allowed its chief operating officer "to install P2P file-sharing
+software on the EPN computer system, causing sensitive information including
+Social Security numbers, health insurance numbers and medical diagnosis
+codes of 3,800 hospital patients to be made available to any computer
+connected to the P2P network." ...
+
+http://arstechnica.com/tech-policy/2012/06/ssns-on-p2p-the-feds-found-businesses-that-leaked-private-information/
+
+------------------------------
+
+Date: Thu, Jun 7, 2012 at 1:26 PM
+From: John Kemp <john@jkemp.net>
+Subject: MD5 password scrambler 'no longer safe'
+
+  [From Dave Farber's IP distribution.  PGN]
+
+https://www.zdnet.com/blog/security/md5-password-scrambler-no-longer-safe/12317
+
+This blog post doesn't tell us anything useful. The issue with the LinkedIn
+hack is that the password database was obtained and shared publicly.
+Although it is indeed possible with brute force to find a colliding
+cleartext for a given MD5 hash, you have to first have the hash value.
+
+In most such attacks, the attacker doesn't know the hashed value of the
+cleartext, or the cleartext. Thus, they are simply running a "dictionary
+attack" - generating passwords, hashing them and trying to match them. They
+do that until a hash that they generate matches, and the account is
+unlocked. Try doing that for a single password, online, and most sites will
+lock you out after about 3 tries. That alone makes most dictionary attacks
+impractical.
+
+When people have said that "MD5 is broken" they mean that MD5 is subject to
+"collision attacks" in which two different cleartext values can hash to the
+same value. So MD5 is broken for certain applications where you need unique
+hash values per unique string (note that SHA-1 is also vulnerable to these
+attacks), but it is still useful in some situations, and indeed, probably
+still mostly just fine for storing passwords, provided that certain other
+security measures are taken:
+
+(i) Online password retries must be limited
+(ii) Passwords should be stored "salted" - i.e.. where the cleartext is
+concatenated with a random value. In such a case, the attacker will have to
+run an individual dictionary attack for each user's password.
+(iii) Password databases should be stored securely
+
+ii only causes the attacker to spend more time in cracking passwords; iii
+and i are the really important measures for keeping passwords safe.  The
+problem with the LinkedIn hack is that they let an attacker get access to
+their password database in the first place -- that is a serious security
+error.
+
+------------------------------
+
+Date: Thu, 7 Jun 2012 12:50:40 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: LinkedIn and eHarmony reportedly did not "salt" password hashes
+
+LinkedIn and eHarmony reportedly did not "salt" their password hashes
+
+  "LinkedIn and eHarmony encrypted, or "hashed," the passwords of registered
+  users, but neither salted the hashes with random data that would have made
+  them much more difficult to decrypt.  Without salting, it's very easy to
+  crack".  http://j.mp/LfSauj  (Security News Daily via NNSquad)
+
+For LinkedIn and eHarmony to have reportedly not been "salting" their
+password cryptographic systems amounts to gross negligence.  UNIX/Linux
+systems have been routinely using salted functions for decades.  This isn't
+rocket science.  There is *no* excuse.
+
+------------------------------
+
+Date: Fri, 8 Jun 2012 10:48:28 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: LinkedIn app under scrutiny for transferring iOS calendar entries
+
+http://www.appleinsider.com/articles/12/06/06/linkedin_app_under_scrutiny_for_transferring_ios_calendar_entries.html
+
+LinkedOut - A LinkedIn Privacy Issue
+http://blog.skycure.com/2012/06/linkedout-linkedin-privacy-issue.html#!/2012/06/linkedout-linkedin-privacy-issue.html
+
+LinkedIn's Leaky Mobile App Has Access to Your Meeting Notes
+http://bits.blogs.nytimes.com/2012/06/05/linkedins-leaky-mobile-app-has-access-to-your-meeting-notes/
+
+More about our mobile calendar feature
+http://blog.linkedin.com/2012/06/06/mobile-calendar-feature/
+
+------------------------------
+
+Date: Thu,  7 Jun 2012 14:19:49 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: ATM-style provincial government services suspended due to breach
+
+In Ontario, Canada, various routine provincial government services are
+provided by a government agency called ServiceOntario -- for example, that's
+where I went when I lost my wallet last year and needed a new driver's
+license and provincial health insurance card.  For some simple services that
+don't require any human interaction, ServiceOntario provides self-serve
+ATM-style kiosks in places like shopping malls.  Any fees, of course, are
+paid using credit or debit cards.
+
+Today the government announced that it "suspected that attempts were made to
+gain access to key credit/debit card data that would allow for the
+replication of debit/credit cards" and that, "out of an abundance of
+caution", all 72 of these kiosks were being temporarily shut down.
+
+Police here have recently issued warnings about other attempts to steal such
+bank card data.
+
+See:
+  http://www.theglobeandmail.com/news/politics/article4238222.ece
+  http://www.cbc.ca/news/canada/ottawa/story/2012/06/07/ontario-serviceontario-kiosks-closed-due-to.html
+
+Mark Brader, Toronto, msb@vex.net | "Fast, cheap, good: choose any two."
+
+------------------------------
+
+Date: Thu, 07 Jun 2012 11:04:31 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: "Researchers find ways to bypass Google's Android malware scanner"
+  (Lucian Constantin)
+
+http://www.infoworld.com/d/security/researchers-find-ways-bypass-googles-android-malware-scanner-194882
+InfoWorld Home / Security / News
+June 05, 2012
+Researchers find ways to bypass Google's Android malware scanner
+Mobile security researchers devised methods that could allow Android
+malware to detect when it's being analyzed by Google's Bouncer system
+By Lucian Constantin | IDG News Service
+
+key paragraph:
+
+Antivirus programs have long used built-in emulators to safely observe how
+suspicious files behave when executed and most antivirus experts analyze
+malware samples in virtual machines. As a result, a lot of malware programs
+are now designed to suppress their malicious behavior if they detect the use
+of emulated environments.
+
+------------------------------
+
+Date: Fri, 8 Jun 2012 10:12:19 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Police: mobile software hack defeating anti-theft measure
+
+Cyrus Farivar, *ars technica*, 8 Jun2012
+
+A Ukrainian group has a worldwide network of resellers to reset IMEI
+numbers.  For over a year now, a French law has provided a means for law
+enforcement to block stolen phones and prevent them from being used.  French
+mobile phone users are encouraged to record their IMEI number online with
+authorities as a precautionary measure. Once a phone is reported stolen to
+the police, operators are required to transmit the unique IMEI number on
+each phone to a European bank in Dublin, Ireland. Then, this bank is
+supposed to block usage of that phone, rendering it unusable.
+
+The French newspaper Le Monde (Google Translate) reports that mobile theft
+in France has dropped 20 percent between April 2011 and April 2012,
+suggesting that this measure has been somewhat effective.
+
+However, the Paris police department has now announced that it has
+discovered the use of software called Z3X, which has apparently been found
+in 50 mobile phone shops in eastern Paris. Z3X is a Ukrainian-made tool that
+offers what appears to be a specific way to reset IMEI numbers on various
+specific phones, including models of Samsung, LG, NEC and other phones. The
+group has listed resellers scattered across the United States, Europe,
+Russia, Ukraine and Libya.  ...
+
+http://arstechnica.com/tech-policy/2012/06/police-mobile-software-hack-defeating-anti-theft-measure/
+
+------------------------------
+
+Date: Fri, 08 Jun 2012 01:05:28 -0700
+From: Geoff Kuenning <geoff@cs.hmc.edu>
+Subject: Observations on changing passwords
+
+OK, I'll admit to being foolish.  I had a low-security password that I used
+on many Web sites where the cost (to me) of a compromised account was pretty
+low.  One of those, unfortunately, was LinkedIn.  What I hadn't reckoned
+with was the pain of changing passwords on nearly 100 sites, a task I just
+finished (it took me two long evenings).
+
+In the process, though I made some amusing discoveries relevant to RISKS:
+
+* On many sites, it's hard to figure out how to change your password.  Even
+  when it's obvious, it usually takes many clicks.  That discourages
+  password updates, which seems like a bad idea.
+
+* Some sites require you to create an account to do anything, but they don't
+  provide you with a way to log into that account later (at least, not
+  without initiating a new transaction).  This is common at sites used to
+  make reservations in the U.S. National Parks system.  I couldn't change
+  those passwords.  (Quick! Go make a reservation in my name!)
+
+* Some sites seem to have been defunct for many years (I found one
+  Palm-related site whose latest "news" was from 2006) but are still running
+  and allowing password changes.  Why is somebody paying for their
+  electricity and domain name?
+
+* Only a few sites choose to delete really old accounts.
+
+* A few sites have password-construction rules that actually decrease
+  security.  The worst required precisely 7 or 8 characters chosen from the
+  36 alphanumerics.  Another required you to have "at least one" lowercase
+  character (want to bet the CEO types in all caps?).
+
+* Two large companies that are well known for their horrible customer
+  service had rules prohibiting obscenities in passwords.  I couldn't resist
+  testing their limits, so my password at both sites now contains a thinly
+  disguised insult.  I probably should have set the password to the famous
+  "Scunthorpe" but didn't think of it.  [See RISKS-18.07,08.  PGN]
+
+* One site (I think it was NewEgg) asked for the new password only once but
+  wanted me to enter my e-mail address twice, bringing to mind this cartoon:
+  http://xkcd.com/970/
+
+* A number of sites wouldn't work with Firefox/NoScript, even when I enabled
+  JavaScript for them.  In most cases, bringing up a different browser cured
+  the problem, but for one I had to try a third.  Is it really _that_ hard
+  to write a robust Web site?
+
+* But the winner of the incompetent-design sweepstakes has to be Dollar
+  Rent-a-Car, who asked me for the last four digits of my driver's license
+  number and my birth date for verification (but not my old password).
+  Then, when I clicked "Change Password", it took me to a customer-support
+  e-mail form!  Apparently I was expected to type a message asking a human
+  to change my password for me.  I declined; it seems monumentally stupid
+  for them to let one of their employees to have access to thousands of
+  customer passwords.  Instead, I used the form to ask them to let me know
+  when they deploy a secure system.
+
+Geoff Kuenning   geoff@cs.hmc.edu   http://www.cs.hmc.edu/~geoff/
+
+[I have always wished for my computer to be as easy to use as my telephone;
+my wish has come true because I can no longer figure out how to use my
+telephone.  -- Bjarne Stroustrup]
+
+------------------------------
+
+Date: Fri, 08 Jun 2012 09:31:23 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Stupid security mistakes: Things you missed while doing the hard stuff
+  (Josh Fruhlinger)
+
+Josh Fruhlinger, *InfoWorld*, 8 Jun 2012
+While you were upgrading your servers with the latest intrusion
+detection, did someone just walk in and steal them?
+http://www.infoworld.com/d/security/stupid-security-mistakes-things-you-missed-while-doing-the-hard-stuff-195145
+
+------------------------------
+
+Date: Wed, 6 Jun 2012 13:24:45 -0400
+From: Geo Swan <geoswan@gmail.com>
+Subject: Re: 60% of Wikipedia entries about companies contain errors
+
+Back in April, Lauren Weinstein told us about a report in Science News with
+the headline "Most Wikipedia Entries About Companies Contain Factual Errors,
+Study Finds"
+
+http://catless.ncl.ac.uk/Risks/26.79.html#subj6.1
+
+Note, the Science News report is a summary of a study published in the
+"Public Relations Journal".
+
+In the fall of 2011 the UK newspaper The Independent caught executives at a
+UK public relations firm named Bell Pottinger, claiming great success at
+sanitizing wikipedia articles about their clients.  How did they do this?
+They employed individuals who masqueraded as genuine wikipedia volunteers to
+remove the embarrassing material through subtle and gradual editing
+
+The example of their success the executives offered was their sanitization
+of the wikipedia's article about their client a Somilia based funds
+remittance company named Dahadshiil. The article (correctly) reported that
+an employee of Dahabshiil, based in Pakistan, ended up in Guantanamo.
+
+I started that article and I stand by its accuracy and fairness.
+
+More recently Jane Wilson, a spokesman for the public relations industry
+wrote an appeal to her colleagues, in the Huffington Post, encouraging them
+to eschew what she called "dark arts" techniques and openly and
+transparently engage with wikipedia volunteers to address accuracy and
+fairness concerns, through the mechanisms the wikipedia has set in place for
+doing so.
+
+I am afraid the Science News article appears to me to be another instance of
+what Wilson called "dark arts" -- smearing the wikipedia to distract the
+public from the black eye The Independent's report delivered.  The stock of
+Bell Pottinger's parent is reported to have dropped about 25 percent due to
+the bad press.
+
+http://www.webcitation.org/68DtG4EXK -- The Independent  -- "Caught on
+camera: top lobbyists boasting how they influence the PM".
+
+http://www.webcitation.org/68DrAXd1p --Suba News --"Dahabshiil -- you
+couldn't find it within the first 10 pages.""
+
+http://en.wikipedia.org/wiki/Dahabshiil -- the wikipedia article
+
+http://www.webcitation.org/68DsGmGvr  -- Huffington Post --
+"PR: If You Want to Understand Wikipedia, Become a Wikipedian"
+
+------------------------------
+
+Date: Fri, 8 Jun 2012 11:06:41 -0400
+From: ACM TechNews <technews@HQ.ACM.ORG>
+Subject: "'Siri, Kill That Guy': Drones Might Get Voice Controls" (David Axe)
+
+[Source: David Axe, *WiReD* News, 5 Jun 2012]
+
+Future U.S. Air Force drone operators could talk to a drone and receive a
+verbal response, similar to the Siri-style two-way voice exchange.
+Moreover, next-generation controls could include smarter,
+easier-to-interpret computer displays and tactile feedback, similar to
+vibrating controls such as the Xbox controller, that shake the drone
+operator's virtual cockpit if the robot detects incoming enemy fire.  The
+current interface consists of computer screens, keyboards, and joysticks for
+steering robots, while input is limited to keystrokes and mouse and joystick
+movements transmitted via satellite.  The Air Force Research Laboratory's
+(AFRL's) Mike Patzek says man-machine interfaces could replace this
+desktop-type environment in the next decade or so.  The progress of the Air
+Force's research and its funding will determine how the interfaces evolve,
+but there is no dispute that flying robots will have a key role in U.S. air
+power in the years to come.  "The fundamental issue is that the [robotic]
+systems are going to be more capable and have more automation," says AFRL's
+Mark Draper.  "The trick is, how do you keep the human who is located in a
+different location understanding what that system is doing, monitoring and
+intervening when he or she needs to?"
+http://www.wired.com/dangerroom/2012/06/voice-control-drones/
+
+------------------------------
+
+Date: Tue, 05 Jun 2012 10:43:39 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Another Siri risk
+
+A few weeks ago, I was at the theatre with my iPhone switched to "airplane
+mode". Shifting in my seat, I must have put pressure on the phone, because
+Siri suddenly complained loudly that I didn't have an Internet connection.
+
+------------------------------
+
+Date: Tue, 5 Jun 2012 10:10:51 -0400 (EDT)
+From: Isaac Morland <ijmorlan@uwaterloo.ca>
+Subject: Re: Telemarketing Calls Keep Mounting Up
+
+`... Along With Consumer Irritation, `Re: the answering machine message that starts with the Service Interruption Tone:
+
+For some years some members of my family have had a device which plays just
+the first note of that tone when they pick up the phone (I think it also
+works when their answering machine picks up).  So when calling them, one
+hears:
+
+<ring> ... <ring> ... <beep> Hello?
+
+The beep is very short.  Apparently they get essentially no telemarketing
+calls, so maybe just that one beep is enough by itself.
+
+Isaac Morland CSCF Web Guru DC 2554C, x36650 WWW Software Specialist
+
+------------------------------
+
+Date: Mon, 6 Jun 2011 20:01:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.89
+************************

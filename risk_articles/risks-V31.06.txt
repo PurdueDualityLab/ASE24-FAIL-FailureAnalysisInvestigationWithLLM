@@ -1,0 +1,1444 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 31.06
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 13 February 2019  Volume 31 : Issue 06
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.orgas
+  <http://catless.ncl.ac.uk/Risks/31.06>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+'A Trail of Decisions Kept Lion Air Pilots in the Dark' (NYT)
+The infrastructural humiliation of America (TechCrunch)
+Investigation finds Navy leaders ignored warnings for years before
+  one of the deadliest crashes in decades (ProPublica)
+Spectre: Do Loose Lips Sink Chips? (Henry Baker)
+Mayhem, the Machine That Finds Software Vulnerabilities, Then Patches Them
+  (IEEE Spectrum)
+Beware of Cars With Minds of Their Own (Bloomberg)
+Goodbye trolley problem: This is Silicon Valley's new ethics test (WashPost)
+A Machine Gets High Marks for Diagnosing Sick Children (SciAm)
+Where's my paycheck? Wells Fargo customers say direct deposits not showing
+  up after outage (USA Today)
+Network outage prevents bike rentals (Jeremy Epstein)
+USB sticks can take it ... (Rob Slade)
+Some AT&T iPhones Displaying Misleading '5G E' Icon in iOS 12.2 Beta 2
+  (MacRumors)
+Japan gears up for mega hack of its own citizens (Straits Times)
+Indecent disclosure (Ars Technica)
+LibreOffice and Apache OpenOffice vulnerable to same bug; only one is fixed.
+  (Ars Technica)
+There's No Good Reason To Trust Blockchain Technology (Bruce Schneier/WiReD)
+Fire -- and lots of it: Berkeley researcher on the only way to fix
+  cryptocurrency (Ars Technica)
+Navigating Bitcoin, Ethereum, XRP: How Google Is Quietly Making Blockchains
+  Searchable (Forbes)
+Crypto CEO dies holding only passwords that can unlock millions in
+  customer coins (geoff goodfellow)
+`Zero Trust' AI: Too Much of a Good Thing is Wonderful (Henry Baker)
+FDA proposes a supply chain tracking overhaul (Fortune)
+Why CAPTCHAs have gotten so difficult (The Verge)
+Situation Normal, All Zucked Up (Japan News)
+Google Began Censoring Search Results in Russia, Reports Say (Moscow Times)
+Security Researcher Assaulted Following Vulnerability Disclosure (SecJuice)
+NSO Group attacking investigators (Rob Slade)
+How does NYPD surveil thee? Let me count the Waze (Henry Baker)
+How Hackers and Scammers Break into iCloud-Locked iPhones (Motherboard)
+Airline Passengers Potentially at Risk From Check-In Flaws (EWeek)
+Privacy, transparency, and increasing digital trust (David Strom)
+Many popular iPhone apps secretly record your screen without asking
+  (TechCrunch)
+Apple allows screen captures of evertyhing that you do ... (Rob Slade)
+HP's ink DRM instructs your printer to ignore the ink in your cartridge
+  when you cancel your subscription (BoingBoing)
+The perils of using Internet Explorer as your default browser
+  (TechCommunity)
+Judge orders $150,000 in damages in GTA Online cheating case (Ars Technica)
+Maybe he'll die of the plague and we can all breathe easier ... (Rob Slade)
+Re: Deep Fakes (PGN)
+Re: Google, you sent this to too many people, so it must be spam
+  (Dan Jacobson)
+Re: Passwords, escrow, and fallback positions (Rob Slade)
+Re: Is it time for Linux? (Aaron M. Ucko)
+Re: Minor Crimes and Misdemeanors in the Age of Automation (Mark Brader)
+An Enthralling and Terrifying History of the Nuclear Meltdown at Chernobyl
+  (NYTimes)
+Revised UK Code of Practice for testing Automated Vehicles (Martyn Thomas)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 5 Feb 2019 08:33:27 -0800
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: 'A Trail of Decisions Kept Lion Air Pilots in the Dark' (NYT)
+
+Behind the Lion Air Crash, a Trail of Decisions Kept Pilots in the Dark
+By James Glanz, Julie Creswell, Thomas Kaplan and Zach Wichter
+Feb. 3, 2019
+https://www.nytimes.com/2019/02/03/world/asia/lion-air-plane-crash-pilots.html
+
+  In designing the 737 Max, Boeing decided to feed MCAS with data from
+  only one of the two angle of attack sensors at a time, depending on which
+  of two, redundant flight control computers -- one on the captain's side,
+  one on the first officer's side -- happened to be active on that flight.
+
+  That decision kept the system simpler, but also left it vulnerable to a
+  single malfunctioning sensor, or data improperly transferred from it -- as
+  appeared to occur on the day of the crash.
+
+  There is no evidence that Boeing did flight-testing of MCAS with erroneous
+  sensor data, and it is not clear whether the F.A.A. did so. European
+  regulators flight-tested the new version of the plane with normal sensor
+  data feeding into MCAS but not with bad data, the pilot familiar with the
+  European certification process said. [...]
+
+  Older 737s had another way of addressing certain problems with the
+  stabilizers: Pulling back on the yoke, or control column, one of which
+  sits immediately in front of both the captain and the first officer, would
+  cut off electronic control of the stabilizers, allowing the pilots to
+  control them manually.
+
+  That feature was disabled on the Max when MCAS was activated -- another
+  change that pilots were unlikely to have been aware of. After the crash,
+  Boeing told airlines that when MCAS is activated, as it appeared to have
+  been on the Lion Air flight, pulling back on the control column will not
+  stop so-called stabilizer runaway.
+
+There's a lot more context in the full article.
+
+------------------------------
+
+Date: February 5, 2019 at 4:00:40 PM GMT+9
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: The infrastructural humiliation of America (TechCrunch)
+
+  [Note:  This item comes from friend Robert Berger.  DLH]
+
+The infrastructural humiliation of America
+Jon Evans, TechCrunch, 3 Feb 2019
+https://techcrunch.com/2019/02/03/the-infrastructural-humiliation-of-america/
+
+I'm flying back to the USA today, and as an infrastructure aficionado, it's
+nice to be going home, but I'm dreading the disappointment. I just spent two
+weeks in Singapore and Thailand; last year I spent time in Hong Kong and
+Shenzhen; and compared to modern Asia, so much American infrastructure is
+now so contemptible that it's hard not to wince when I see it.
+
+The USA is nine times wealthier than Thailand, per capita, but I'd far
+rather ride Bangkok's SkyTrain than deal with NYC's subway nowadays. I'd
+much prefer to fly into Don Muang, Bangkok's ancient second-tier airport --
+which was actually closed for years, before being reopened to handle
+domestic flights and low-cost airlines -- than the hostile nightmare that is
+LAX. And those are America's two primary gateway cities!
+
+So imagine what it's like coming to America from wealthy Asian nations, and
+their gleaming, polished, metronomically reliable subways, trains, and
+airports. I don't think Americans understand just how that comparison has
+become a quiet ongoing national humiliation. If they did, sheer national
+(and civic) pride would make them want to do something about it. Instead
+there's a learned helplessness about most American infrastructure nowadays,
+a wrong but certain belief that it's unrealistic to dream of anything
+better.
+
+It's not just those two cities. Compare Boston's T to, say, Taipei, or San
+Francisco's mishmash of messed-up systems -- Muni, where I have waited 45
+minutes for a T-Third; CalTrain, which only runs every 90 minutes on
+weekends; BART, which squandered millions on its useless white-elephant
+Milbrae station -- to Shenzhen. And it's not just age; Paris's metro was
+inaugurated in 1900, but its well-maintained system continues to run
+excellently and expand continuously.
+
+Americans still tend to think of themselves as an example to other
+nations. Ha. I assure you, over the last few years nobody has flown from
+Seoul or Taipei or Tokyo or Singapore or Hong Kong or Shenzhen into Newark
+Airport; taken the AirTrain to the NJ Transit station; waited for the
+rattling, decrepit train into the city; walked through the repellent
+ugliness of Penn Station to the subway; waited for its ever-increasing
+delays; ridden to their destination; and finally emerged into New York City
+-- the nation's alpha city!  -- still thinking of the USA as anything other
+than a counterexample, or maybe a cautionary tale.
+
+This goes beyond transport infrastructure. Airport security measures are
+much more sensible in Asia. Payments are increasingly separately structured,
+and better, too -- in many places, credit cards (which already barely exist
+as a concept in China) are beginning to slowly wither away, replaced by
+Alipay and to a lesser extent WeChat Pay. (Not least because an ever-growing
+proportion of the tourist population is Chinese rather than Western,
+nowadays.)
+
+That's admittedly an example of leapfrogging, not decay, and American
+infrastructure does still have some bright spots. American roads are mostly
+still superb. Lyft and Uber are much better than their Southeast Asian
+equivalent Grab, which, whenever I checked it during this latest trip, was
+invariably both slower and more expensive than a taxi (never mind a tuk-tuk)
+despite the infamous Thai taxi mafias. International mobile connectivity is
+excellent and user-friendly and reasonably priced, at least if you're on
+T-Mobile like me, and as an added bonus, due to a technical quirk, mobile
+data roaming bypasses China's Great Firewall.
+
+But that doesn't change the fact that the state of much of America's
+infrastructure is appalling on its face, and even moreso when compared to
+nations which are on paper nowhere near as rich. The money other nations
+spend on urban infrastructure (don't even get me started on intercity
+trains) is instead siphoned off to somewhere else. It makes the USA -- still
+by far the wealthiest country in the world!  -- seem like an dying empire,
+one beginning to visibly crack and crumble as it is slowly hollowed out from
+within.
+
+------------------------------
+
+Date: Sun, 10 Feb 2019 13:04:02 +0900
+From: "Dave Farber" <farber@gmail.com>
+Subject: Investigation finds Navy leaders ignored warnings for years before
+  one of the deadliest crashes in decades (ProPublica)
+
+Investigation finds officials ignored warnings for years before one of the
+deadliest crashes in decades. Read the full story.
+Shared from Apple News
+
+------------------------------
+
+Date: Tue, 05 Feb 2019 15:04:11 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Spectre: Do Loose Lips Sink Chips?
+
+I certainly hope so, when the chips are flawed enough not to be fit for
+purpose -- i.e., run secure servers, run secure laptop software, run secure
+cellphone apps.
+
+But Prof. Gus Uht argues that "no public disclosure should be made at all,
+until and unless the exploit appears in the wild."  "it can unnecessarily
+ratchet up the public's anxieties."  "Better yet, don't even tell the world
+that such a thing as a 'bomb' exists.  Just knowing that something can be
+done is enough to drive others to successful re-invention."  [Uh, OK; Truman
+should have waited for the "quiet" A-bomb, because the most significant
+piece of information that the USSR needed was that once they spent $XXX
+billion, the damned thing would actually go off.  And we're still
+
+dealing with the blowback from the Stuxnet "victory".]
+
+https://www.sigarch.org/lets-keep-it-to-ourselves-dont-disclose-vulnerabilities/
+
+Perhaps Prof. Uht has forgotten the issues he ran on in his campaign for the
+Rhode Island House of Representatives in 2012: "I have worked to keep our
+local public water system safe and will continue to do so because we can't
+afford not to."
+
+If Prof. Uht had extended his "Let's Keep it to Ourselves: Don't Disclose
+Vulnerabilities" attitude to the Flint water crisis, even more children
+would have come down with lead poisoning.
+
+https://web.archive.org/web/20131208062116/http://votegusuht.org/issues.html
+
+'As Rhode Islanders, we should never fear the air we breathe or have to
+worry about exposing our children to toxic chemicals.  Development is fine
+when it is monitored and done seamlessly in our community, but not at the
+expense of our natural resources.  *I have worked to keep our local public
+water system safe and will continue to do so because we can't afford not
+to.*'
+
+https://en.wikipedia.org/wiki/Flint_water_crisis
+
+'[Dr. Marc] Edwards said, "It was the injustice of it all and that the very
+agencies that are paid to protect these residents from lead in water, knew
+or should've known after June at the very very latest of this year, that
+federal law was not being followed in Flint, and that these children and
+residents were not being protected.  And ***the extent to which they went to
+cover this up*** exposes a new level of arrogance and uncaring that I have
+never encountered."'
+
+Gus Uht on Jan 31, 2019 | Tags: Opinion, Security
+Let's Keep it to Ourselves: Don't Disclose Vulnerabilities
+https://www.sigarch.org/lets-keep-it-to-ourselves-dont-disclose-vulnerabilities/
+
+There are millions of viruses, etc., in the wild today.  Countless new ones
+are devised by black-hat hackers all the time.  In order to proactively
+defend against new exploits, some white-hatters seek out or create
+weaknesses or vulnerabilities and then devise fixes for them.  However, in
+some cases, such as Spectre, fixes are not readily apparent, either to the
+inventor or the vendor of the target software or hardware.  Regardless of
+the existence of a fix or not, the question arises as to what to publicize
+or disclose about the vulnerability.  ***We argue that no public disclosure
+should be made at all, until and unless the exploit appears in the wild.***
+
+The norm today is to fully disclose vulnerabilities, most often following
+the tenets of responsible disclosure.  It is our view that this is not the
+best thing to do since it effectively broadcasts weaknesses, and thus aids
+and abets black hat hackers as to the best ways to compromise systems.
+
+With the complexity of current hardware and software systems arising from
+billions of transistors and millions of lines of code, it is unlikely that
+any system will ever be bug-free or vulnerability-free.  There are
+effectively an infinite number of unknown vulnerabilities: "Every day, the
+AV-TEST Institute registers over 350,000 new malicious programs (malware)
+and potentially unwanted applications (PUA)."  What then is the point of
+actively 'discovering' new vulnerabilities and disclosing them?  They are
+effectively being invented and empower black hats to wreak havoc without
+making systems safer.  It is a race to the bottom.  At the same time ***it
+can unnecessarily ratchet up the public's anxieties.***
+
+Pros and Cons: Many arguments for full disclosure have been made over the
+years, e.g.: Schneier: Full Disclosure of Security Vulnerabilities a 'Damned
+Good Idea', Hardware Security and references therein, and Reflections on
+trusting SGX.  However, they all seem to miss the basic point: if you don't
+want to be blown up, you don't tell the world how to make and use a bomb.
+Better yet, don't even tell the world that such a thing as a 'bomb' exists.
+Just knowing that something can be done is enough to drive others to
+successful re-invention.
+
+One argument for full disclosure is that companies will not fix
+vulnerabilities unless they are forced to.  However, at the risk of excusing
+less-than-ideal behavior, looking at the situation from a company's
+point-of-view shows that inattention to a fix may be reasonable.  There are
+a plethora of vulnerabilities and bugs that need to be fixed at any given
+time, and resources are limited, so where should such resources be
+allocated?  Logically, it would be to address the problems having the
+highest potential for damage, that is to minimize overall risk.  Those
+vulnerabilities presenting the greatest risk are those that are widely known
+and have large deleterious effects, that is, just those that have been
+disclosed and widely publicized.  If a vulnerability has little affect, no
+one will care about it and it will not lead the news.
+
+Even with responsible disclosure it may be the case that a fix cannot be
+made quickly, but the vulnerability inventor decides to fully disclose it
+anyway, as in the case of Spectre.  In this case users will be exposed for
+possibly a long time, if not permanently.  Without an available fix it seems
+irresponsible to disclose such a vulnerability in any way, even
+'responsibly.'  Such an apparently indefinite delay occurred with Spectre.
+It was fully disclosed in January, 2018, and it was not until mid-Summer
+that any kind of effective mitigation that did not severely impact
+performance was devised, and then not for all processors.  A
+counter-argument can be made that mitigations would not have been devised if
+there had not been a full disclosure, since potential mitigation-creators
+would not have known about it; however, such mitigations might still have
+been too late.
+
+Post Mortem: Was/is there a benefit to the Spectre disclosure?  The
+implementation of actual exploits is sufficiently complex and
+system-dependent that Spectre has not been widely used (yet); see: There is
+no evidence in-the-wild malware is using Meltdown or Spectre, Does malware
+based on Spectre exist?, oo7: Low-overhead Defense against Spectre Attacks
+via Binary Analysis.  We may not be so lucky the next time.  Although
+hardware micro-architects are now aware that security needs to be a
+first-class design parameter, now black hatters have another vulnerability
+dimension to pursue; who knows what they will come up with?  The world has
+been shaken up by the disclosure; was that necessary and helpful?
+
+We can't always tell what's going to happen upon a disclosure; doesn't that
+mean we should be cautious, play it safe, and thus not disclose?  Isn't that
+the engineering way of doing things?  But it could be said that disclosure
+IS the safest approach, long term, since microarchitectures will be
+hardened.  But isn't the short-term risk too great?  We want to be able to
+live to see the long-term.  Besides, with possibly billions of affected and
+unfixable processors in the world, there would continue to be risks in the
+long-term.
+
+The Bottom Line: It seems like any attribute, hardware or software, can be
+used to detect and affect information or control-processes, it's just a
+matter of detailed 'discovery' or invention to figure out how.  So let's not
+help black hatters speed things up, get there first and really cause
+trouble.  Let's just keep it to ourselves.
+
+Acknowledgements: Many thanks to Laurette Bradley for comments and edits,
+Axelle Apvrille for Spectre-related malware information, and Resit Sendag
+for comments on an earlier draft of the post.
+
+About the Author: Augustus (Gus) K. Uht is a Professor-in-Residence in the
+College of Engineering at the University of Rhode Island.  He received his
+PhD from Carnegie-Mellon University, and MEE and BS degrees from Cornell
+University.  His areas of research include adaptive systems and instruction
+level parallelism.  He is a licensed Professional Engineer.
+
+------------------------------
+
+Date: Tue, 5 Feb 2019 13:20:41 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Mayhem, the Machine That Finds Software Vulnerabilities, Then
+  Patches Them (IEEE Spectrum)
+
+https://spectrum.ieee.org/computing/software/mayhem-the-machine-that-finds-software-vulnerabilities-then-patches-them
+
+High-speed "find and fix" capability for unpatched, exploitable
+vulnerabilities -- artificial White-Hats in a box.
+
+I wonder how well this capability performs against a Stuxnet or the TAO
+toolkit?
+
+Risk: Automated software security vulnerabilities detection and patch
+reduces vigilance, builds complacency, and compromises organizational
+resilience.
+
+Note: "Mayhem" was a malware strain that exploited bash(1) vulnerabilities
+(RISKS-28.31).
+
+------------------------------
+
+Date: Fri, 8 Feb 2019 16:46:11 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Beware of Cars With Minds of Their Own (Bloomberg)
+
+https://www.bloomberg.com/opinion/articles/2019-02-06/self-driving-vehicles-could-develop-minds-of-their-own
+
+"Self-driving vehicles powered by artificial intelligence might not have the
+same priorities as their human owners."
+
+"When imagining the effects of vehicle autonomy on our lives, we need to try
+thinking like artificial intelligence, not like humans. Then, potential will
+emerge for all kinds of strange, counterintuitive behaviors."
+
+Will there be a pill for that? Nevermind "The Trolley Problem." The "where
+will it park problem" appears to be a showstopper.
+
+------------------------------
+
+Date: Wed, 6 Feb 2019 10:44:00 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Goodbye trolley problem: This is Silicon Valley's new ethics test
+  (WashPost)
+
+https://www.washingtonpost.com/opinions/welcome-to-your-new-ethics-test-silicon-valley/2019/02/05/eb9f6e10-2969-11e9-b2fc-721718903bfc_story.html
+
+"Addiction has become another ethical landmine where dopamine hits -- and
+how one administers them -- are the key to a company's growth.  E-cigarette
+maker Juul Labs, founded in 2017 and now the fastest growing start-up in
+history, with a valuation of $38 billion, is largely responsible for a grave
+new statistic: about 20 percent of teens have admitted to vaping in
+school. In many ways, that shouldn't surprise us.  Juul is the logical
+extension of the Silicon Valley growth-hacking playbook: Design a flawless
+product, add a dopamine response, stir in some influencers and watch your
+product, game or app go viral."
+
+Technologically-fueled addictions embody covert institutionalized violence
+(https://www.radford.edu/~gmartin/IPPNO%2520Doc.html)
+
+Regulators and legislators accept them as a relatively harmless means to
+satisfy dopamine delivery desire.
+
+Addictive products generate sales taxes, income taxes, and the business
+lobby contributes campaign funds to sustain "wrist-slap regulatory
+oversight" in exchange for a franchise to exploit human frailty.  Standard
+operating procedure for capitalism.
+
+ From the "Blues Brothers"
+(https://www.imdb.com/title/tt0080455/%3Fref_%3Dnv_sr_1
+
+"Maury Sline: Hold it, hold it. Tomorrow night? What are you talking about?
+A gig like that, you gotta prepare the proper exploitation."
+
+"Elwood: I know all about that stuff. I have been exploited all my life."
+
+------------------------------
+
+Date: Mon, 11 Feb 2019 21:38:56 -0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: A Machine Gets High Marks for Diagnosing Sick Children (SciAm)
+
+https://www.scientificamerican.com/article/a-machine-gets-high-marks-for-diagnosing-sick-children/
+
+"The machine received good grades, agreeing with the humans about 90 percent
+of the time. It was especially effective at identifying neuropsychiatric
+conditions and upper respiratory diseases. For acute upper-respiratory
+infection, the most common diagnosis in the huge patient group, the AI
+system got it right 95 percent of the time. Would 95 percent be good enough?
+One of the next questions that needs to be researched, Zhang says, is
+whether the system will miss something dire.  The benchmark, he says, should
+be how senior physicians perform, which also is not 100 percent."
+
+"Study Suggests Medical Errors Now Third Leading Cause of Death in the U.S."
+https://www.hopkinsmedicine.org/news/media/releases/study_suggests_medical_errors_now_third_leading_cause_of_death_in_the_us
+says, "using hospital admission rates from 2013, they extrapolated that
+based on a total of 35,416,020 hospitalizations, 251,454 deaths stemmed from
+a medical error, which the researchers say now translates to 9.5 percent of
+all deaths each year in the U.S."
+
+"Medical errors" are categorized by a spectrum.
+http://www.covermd.com/Resources/Medical-Errors-List.aspx identifies "The
+Ten Most Common Medical Errors in the US."
+
+When a "difference of diagnostic opinion" arises between the silicon-based
+physician-assistant (SiMD) and the carbon-based attending physician (CMD),
+how are these conflicts resolved? Will a hospital require a "vote" by
+multiple CMDs to overrule the SiMD's? What is the protocol?
+
+What happens when both SiMD and CMD diagnostic opinions align, but they are
+both wrong, and the patient is given inappropriate treatment? In an
+emergency situation where CMD resource is stretched, what priority will be
+given to the SiMD's diagnostic findings?
+
+If SiMD's can be shown to reduce medical error rates, then their role as an
+adjunct to a physician's judgment may be appropriate.
+
+------------------------------
+
+Date: Fri, 8 Feb 2019 10:32:34 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Where's my paycheck? Wells Fargo customers say direct deposits not
+  showing up after outage
+
+Social media users said Friday they were having trouble seeing paychecks and
+direct deposits in their Wells Fargo online and mobile banking accounts.
+
+https://www.usatoday.com/story/money/2019/02/08/wells-fargo-outage-customers-report-issues-paychecks-deposits/2810562002/
+
+Earlier:
+Wells Fargo says working to fully restore system as outage spills into day 2
+https://www.cnbc.com/2019/02/08/wells-fargo-says-working-to-fully-restore-system-as-outage-spills-into-day-2.html
+
+------------------------------
+
+Date: Thu, 7 Feb 2019 16:39:56 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Network outage prevents bike rentals
+
+Ah, for the simpler days before bike rentals.
+
+Capital BikeShare (which is the largest bike rental in the Washington DC
+area) reports that "an issue that has left about 10% of stations temporarily
+out of service. These stations became disconnected from the network
+yesterday, meaning users could not use the Capital Bikeshare app or kiosk to
+unlock a bike when visiting one of these stations."
+
+Ironically, the link at the top of the page titled "System Alert" about the
+problem leads to
+https://www.capitalbikeshare.com/blog/technical-issues-at-stations gives a
+404.  Seems appropriate.
+
+------------------------------
+
+Date: Tue, 5 Feb 2019 12:24:44 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: USB sticks can take it ...
+
+Wanna know what to store your data on if you want to keep it available?
+
+A USB stick.
+
+There are impressive tales of them surviving, well, pretty much anything.
+
+So here's one more.
+https://www.niwa.co.nz/news/they-were-defrosting-leopard-seal-pooyou-wont-believe-what-happened-next or https://is.gd/FgDUCV
+
+A leopard seal ate one.  And pooped it out.  The poop (you can call it scat
+if you don't like poop) was collected and then frozen for more than a year.
+It was then defrosted and rinsed under a tap to get the big bits out.  One
+of the big bits was the USB stick.  It was dried out for a couple of weeks,
+and they still accessed a bunch of photos.
+
+(If you've been hanging out around New Zealand beaches with a blue kayak,
+you might want to look at the photos ...)
+
+------------------------------
+
+Date: Wed, 6 Feb 2019 15:08:34 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Some AT&T iPhones Displaying Misleading '5G E' Icon in iOS 12.2
+  Beta 2 (MacRumors)
+
+Some AT&T users who have installed the new iOS 12.2 beta are noticing their
+iPhones displaying a '5G E' connection to AT&T's network, which is AT&T's
+misleading name for an "upgraded" version of 4G LTE.
+
+AT&T began rolling out its fake 5G icon to Android smartphones in early
+January, and it now appears the change is extending to the iPhone. ...
+
+Update: AT&T has provided the following statement to MacRumors on the new
+icon in iOS 12.2 beta 2: "Today, some iPhone and iPad users could start
+seeing our 5G Evolution indicator on their devices. The indicator simply
+helps customers know when they are in an area where the 5G Evolution
+experience may be available."
+
+https://www.macrumors.com/2019/02/04/att-iphones-5ge-icon-beta-2/
+
+The risks? AT&T, 5G, marketing...
+
+------------------------------
+
+Date: Thu, 7 Feb 2019 13:51:18 +0800
+From: Richard Stein <rmstein@ieee.org>
+Subject: Japan gears up for mega hack of its own citizens (Straits Times)
+
+https://www.straitstimes.com/opinion/japan-targets-complacency-with-cyber-attack-on-citizens
+(behind straitstimes.com and ft.com paywall under Leo Lewis byline)
+
+Japan's minister of cyber-security, Yoshitaka Sakurada, is poised to
+initiate a homeland 'readiness' cyberattack against ~200M Internet-connected
+devices. The "attack" is part of a 5-year experiment, per Shinzo Abe's
+"Society 5.0" plan, to energize Japan's industrial and IoT competitiveness.
+https://techcrunch.com/2019/02/02/japans-society-5-0-initiative-is-a-roadmap-for-todays-entrepreneurs/
+
+"At best, say cyber-security experts at FireEye, the experiment could rip
+through corporate Japan's complacency and elevate security planning from the
+IT department to the C-Suite."
+
+"There remain deep, unresolved questions of whether manufacturers of IoT
+devices or their users should have responsibility for ensuring security and
+a nagging concern that the government's mega-hack will not conjure up an
+answer."
+
+------------------------------
+
+Date: Thu, 7 Feb 2019 10:01:07 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Indecent disclosure (Ars Technica)
+
+https://arstechnica.com/information-technology/2019/02/indecent-disclosure-gay-dating-app-left-private-exposed-to-web/
+
+------------------------------
+
+From: Monty Solomon <monty@roscom.com>
+Date: Thu, 7 Feb 2019 10:01:31 -0500
+Subject: LibreOffice and Apache OpenOffice vulnerable to same bug; only one
+  is fixed.
+
+https://arstechnica.com/information-technology/2019/02/path-traversal-bug-is-fixed-in-libreoffice-but-not-in-apache-openoffice/
+
+------------------------------
+
+Date: Thu, 7 Feb 2019 07:54:32 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: There's No Good Reason To Trust Blockchain Technology
+  (Bruce Schneier in WiReD)
+
+EXCERPT:
+
+In his 2008 white paper <https://bitcoin.org/bitcoin.pdf> that first
+proposed bitcoin, the anonymous Satoshi Nakamoto concluded with: ``We have
+proposed a system for electronic transactions without relying on trust.''
+He was referring to blockchain, the system behind bitcoin cryptocurrency.
+The circumvention of trust is a great promise, but it's just not true. Yes,
+bitcoin eliminates certain trusted intermediaries that are inherent in other
+payment systems like credit cards. But you still have to trust bitcoin --
+and everything about it.
+
+Much has been written about blockchains and how they displace, reshape, or
+eliminate trust. But when you analyze both blockchain and trust, you quickly
+realize that there is much more hype than value. Blockchain solutions are
+often much worse than what they replace... [...]
+
+https://www.wired.com/story/theres-no-good-reason-to-trust-blockchain-technology/
+
+------------------------------
+
+Date: Thu, 7 Feb 2019 14:28:09 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Fire -- and lots of it: Berkeley researcher on the only way to fix
+  cryptocurrency (Ars Technica)
+
+Nicholas Weaver says bitcoin and other digital coins recapitulate 500 years
+of failure.
+
+https://arstechnica.com/information-technology/2019/02/researcher-counts-the-reasons-he-wants-cryptocurrency-burned-with-fire/
+
+------------------------------
+
+Date: Mon, 11 Feb 2019 11:41:19 -0500
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Navigating Bitcoin, Ethereum, XRP: How Google Is Quietly Making
+  Blockchains Searchable (Forbes)
+
+Michael del Castillo. Forbes, 4 Feb 2019, via ACM TechNews, 11 Feb 2019
+
+Last year, a team of open source developers quietly began loading data for
+the entire Bitcoin and Ethereum blockchains into Google's big data analytics
+platform, BigQuery. With assistance from lead developer Evgeny Medvedev,
+Google's senior developer advocate for Google Cloud Allen Day created a
+suite of sophisticated software to search the data. In the past year, more
+than 500 projects were created using these tools, collectively known as
+Blockchain ETL (extract, transform, load), designed to do everything from
+predicting the price of bitcoin to analyzing wealth disparity among ether
+holders. Day demonstrated Blockchain ETL by examining the so-called hard
+fork, or an irrevocable split in a blockchain database, which created a new
+cryptocurrency -- bitcoin cash -- from bitcoin in the summer of 2017. Using
+Google's BigQuery, Day discovered bitcoin cash, rather than increasing
+microtransactions, was actually being hoarded among big holders of bitcoin
+cash.
+
+https://orange.hosting.lsoft.com/trk/click%3Fref%3Dznwrbbrs9_6-1e58cx21a206x069484%26
+
+  [Google bites the bitcoin bits.  PGN]
+
+------------------------------
+
+Date: Tue, 5 Feb 2019 15:41:29 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Crypto CEO dies holding only passwords that can unlock millions in
+  customer coins
+
+EXCERPT:
+
+Digital-asset exchange Quadriga CX has a $200 million problem with no
+obvious solution -- just the latest cautionary tale in the unregulated world
+of cryptocurrencies.
+
+The online startup can't retrieve about $145 million (C$190 million) in
+Bitcoin, Litecoin, Ether and other digital tokens held for its customers,
+according to court documents filed Jan. 31 in Halifax, Nova Scotia. Nor can
+Vancouver-based Quadriga CX pay the C$70 million in cash they're owed.
+
+Access to Quadriga CX's digital "wallets" -- an application that stores the
+keys to send and receive cryptocurrencies -- appears to have been lost with
+the passing of Quadriga CX Chief Executive Officer Gerald Cotten, who died
+Dec. 9 in India from complications of Crohn's disease. He was 30.
+
+RELATED STORIES
+
+Bitcoin industry grapples with age-old problem of inheritance After the
+bitcoin boom: hard lessons for cryptocurrency investors Bitcoin's `first
+felon' faces more legal trouble Cotten was always conscious about security
+-- the laptop, email addresses and messaging system he used to run the
+5-year-old business were encrypted, according to an affidavit from his
+widow, Jennifer Robertson. He took sole responsibility for the handling of
+funds and coins and the banking and accounting side of the business and, to
+avoid being hacked, moved the "majority" of digital coins into cold
+storage. [...]
+
+https://www.sfgate.com/business/article/Crypto-CEO-dies-holding-only-passwords-that-can-13590450.phpv3DYVI5w%2BRVhwt398MZ3%2BCLYwL/1Zjo2HyO/KM%3D
+
+------------------------------
+
+Date: Thu, 07 Feb 2019 07:53:41 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: `Zero Trust' AI: Too Much of a Good Thing is Wonderful
+
+Apparently, China's AI system for catching criminals is catching the "wrong"
+criminals: high-level corrupt officials
+
+This is one system that the U.S. should import to watch over our own
+government officials -- especially those elected to public office and
+responsible for all of the government surveillance on ordinary citizens.
+Notice how quickly Congress responded to the disclosure of Robert Bork's
+movie rental history with the "Video Privacy Protection Act" of 1988.
+
+https://www.scmp.com/news/china/science/article/2184857/chinas-corruption-busting-ai-system-zero-trust-being-turned-being
+
+SCMP, 04-05 Feb 2019
+Is China's corruption-busting AI system 'Zero Trust' being turned off
+for being too efficient?
+
+Despite being restricted to just 30 counties and cities, artificial
+intelligence system has already helped snare 8,721 officials
+System cross-references big data to evaluate work and personal lives
+of millions of government workers.
+
+Stephen Chen https://www.facebook.com/Stephen.Chen.SCMP
+
+What would you do if you had a machine to catch a thief? If you were a
+corrupt Chinese bureaucrat, you would want to ditch it, of course.
+
+Resistance by government officials to a groundbreaking big data experiment
+is only one of many challenges as the Chinese government starts using new
+technology to navigate its giant bureaucracy.
+
+According to state media, there were more than 50 million people on China's
+government payroll in 2016, though analysts have put the figure at more than
+64 million -- slightly less than the population of Britain.
+
+To turn this behemoth into a seamless operation befitting the information
+age, China has started adapting various types of sophisticated technology.
+The foreign ministry, for instance, is using machine learning to aid in risk
+assessment and decision making for China's major investment projects
+overseas.
+
+Beijing has been developing a nationwide facial recognition system using
+surveillance cameras capable of identifying any person, anywhere, around the
+clock within seconds. In Guizhou, a cloud system tracks the movements of
+every policeman with a live status report.
+
+Major Chinese telecommunication companies such as ZTE have won government
+contracts to develop blockchain technology to prevent the modification of
+government data by unauthorised people or organisations.
+
+President Xi Jinping has repeatedly stressed the necessity of promoting
+scientific and technological innovations such as big data and artificial
+intelligence (AI) in government reform.
+
+The challenge is implementing that vision on the ground. Look no further
+than an anti-corruption AI system dubbed by the researchers working it as
+"Zero Trust".
+
+Jointly developed and deployed by the Chinese Academy of Sciences and the
+Chinese Communist Party's internal control institutions to monitor, evaluate
+or intervene in the work and personal life of public servants, the system
+can access more than 150 protected databases in central and local
+governments for cross-reference.
+
+According to people involved in the programme, this allows it to draw
+sophisticated, multiple layers of social relationship maps to derive
+behaviour analyses of government employees.
+
+This was "particularly useful" in detecting suspicious property transfers,
+infrastructure construction, land acquisitions and house demolitions, a
+researcher said.
+
+The system is not without its weaknesses, however.
+
+"AI may quickly point out a corrupt official, but it is not very good
+at explaining the process it has gone through to reach such a
+conclusion," the researcher said. "Although it gets it right in most
+cases, you need a human to work closely with it."
+
+The system can immediately detect unusual increases in bank savings,
+for instance, or if there has been a new car purchase or bidding for a
+government contract under the name of an official or one of his family
+or friends.
+
+Once its suspicions have been raised it will calculate the chances of
+the action being corrupt. If the result exceeds a set marker, the
+authorities are alerted.
+
+A computer scientist involved in the programme who asked not to be
+named said that at that stage a superior could then contact the person
+under scrutiny and perhaps help him avoid "going down the road of no
+return with further, bigger mistakes".
+
+The Zero Trust experiment has been limited to 30 counties and cities,
+just 1 per cent of the country's total administrative area. The local
+governments involved, including the Mayang Miao autonomous county in
+Hunan province, are located in relatively poor and isolated regions
+far away from China's political power centres.
+
+Another researcher involved in the programme said the idea was to
+"avoid triggering large-scale resistance among bureaucrats",
+especially the most powerful ones, to the use of bots in governance.
+
+Since 2012, Zero Trust has caught 8,721 government employees engaging
+in misconduct such as embezzlement, abuse of power, misuse of
+government funds and nepotism.
+
+While some were sentenced to prison terms, most were allowed to keep
+their jobs after being given a warning or minor punishment.
+
+Still, some governments -- including Mayang county, Huaihua city and Li
+county in Hunan -- have decommissioned the machine, according to the
+researchers, one of whom said they "may not feel quite comfortable with the
+new technology".
+
+None of the local authorities responded to requests for comment.
+
+Zhang Yi, an official at the Commission for Discipline Inspection of
+the Chinese Communist Party in Ningxiang, Hunan province, said his
+agency was one of the few still using the system.
+
+"It is not easy -- we are under enormous pressure," he said, insisting that
+the main purpose of the programme was not to punish officials but to "save
+them" at an "early stage of corruption".
+
+"We just use the machine's result as reference," Zhang said. "We need
+to check and verify its validity. The machine cannot pick up the phone
+and call the person with a problem. The final decision is always made
+by humans."
+
+Since Xi rose to power in 2012, more than 1.4 million party members
+and government employees are estimated to have been disciplined,
+including leaders like former security tsar Zhou Yongkang and former
+Chongqing strongman Bo Xilai.
+
+A party disciplinary official in Xiushui county, Jiangxi, who took
+part in the Zero Trust project said no government officials were
+willing to provide the necessary data.
+
+"But they usually comply with a bit of pressure," said the official,
+who asked not to be named because of the sensitivity of the issue.
+
+Disciplinary officials need to help scientists train the machine with
+their experience and knowledge accumulated from previous cases. For
+instance, disciplinary officials spent many hours manually tagging
+unusual phenomena in various types of data sets to teach the machine
+what to look for.
+
+Some officials might fabricate data, but the machine can compare
+information from different sources and flag discrepancies. It can even
+call up satellite images, for instance, to investigate whether the
+government funding to build a road in a village ended up in the pocket
+of an official, the researchers said.
+
+The system is still running in Xiushui, but its fate is
+uncertain. Some officials have questioned the machine's right of
+access to sensitive databases because there is neither a law nor
+regulation authorising a computer or robot to do so.
+
+No wonder the system is being decommissioned by counties and cities
+that had signed up, and those still using it are facing enormous
+pressure, with the researchers seeing little or no hope of rolling it
+out nationwide.
+
+The Zero Trust hump notwithstanding, artificial intelligence's foray
+into other government sectors continues as the government is
+determined to apply cutting-edge technology to its advantage. AI
+clerks, for example, have been recruited in some courts to read case
+files and help judges process lawsuits with higher speed and accuracy.
+
+Last month, a court in Shanghai became the first ever in China to use
+an AI assistant at a public hearing, Xinhua reported.
+
+The machine, code-named "206", has the ability to record
+conversations, show evidence such as surveillance camera footage when
+mentioned by lawyers, and compare testimonies to help judges spot
+discrepancies, the report said.
+
+One judge was quoted as saying it would reduce the likelihood of a
+wrong verdict.
+
+------------------------------
+
+Date: Sun, 10 Feb 2019 15:45:03 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: FDA proposes a supply chain tracking overhaul (Fortune)
+
+The Food and Drug Administration (FDA) wants to transform the way it tracks
+and traces medicines in an effort to protect supply chain security. The road
+to achieving that goal runs straight through improved technology, the agency
+writes in a regulatory notice. Commissioner Scott Gottlieb even busted out
+the "B" word... "We're invested in exploring new ways to improve
+traceability, in some cases using the same technologies that can enhance
+drug supply chain security, like the use of blockchain. To advance these
+efforts, the FDA recently recruited Frank Yiannas, an expert on the use of
+traceability technologies in global food supply chains. He'll be working
+closely with me on ways for the FDA to facilitate the expansion of such
+methods, such as blockchain technology, to further strengthen the U.S. food
+supply," he wrote in a statement.  /(FDA
+<https://click.email.fortune.com/%3Fqs%3D51a73d1016def0c54ce8c32d0d2ae31fc729c67c51791aaed3df61eb3995b42696af864bd63fdc5f8fb24799ea342d226380f6ed4edcde37
+
+"Using new innovations..." -- as opposed to old innovations, I guess.
+
+Blockchain, magic as always:
+
+``For the drug track-and-trace system, our goals are to fully secure
+electronic product tracing, which provides a step-by-step account of where a
+drug product has been located and who has handled it; establish a more
+robust product verification to ensure that a drug product is legitimate and
+unaltered; and to make sure that any party involved in handling drugs in the
+supply chain must have the ability to spot and quarantine and investigate
+any suspect drug. We're committed to staying at the forefront of new and
+emerging technologies and how they might be used to create safer, smarter
+and more trusted supply chains to better protect consumer safety and ensure
+the integrity of the high quality of products they deserve.''
+
+------------------------------
+
+Date: Thu, 7 Feb 2019 14:31:58 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Why CAPTCHAs have gotten so difficult (The Verge)
+
+Demonstrating you're not a robot is getting harder and harder
+
+https://www.theverge.com/2019/2/1/18205610/google-captcha-ai-robot-human-difficult-artificial-intelligence
+
+------------------------------
+
+Date: Tue, 5 Feb 2019 14:30:02 -0800
+From: Mark Thorson <eee@dialup4less.com>
+Subject: Situation Normal, All Zucked Up (Japan News)
+
+Facebook censors museum promotion for exhibit that contains a partially nude
+marble statue from the first century of a woman and a nude bronze statue of
+a man from the first century B.C.  No mention of whether this decision was
+made by a human or an AIS (artificial idiot savant).
+
+http://the-japan-news.com/news/article/0005525581
+
+------------------------------
+
+Date: Fri, 8 Feb 2019 09:32:17 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Google Began Censoring Search Results in Russia, Reports Say
+  (Moscow Times)
+
+via NNSquad
+https://themoscowtimes.com/news/google-began-censoring-search-results-russia-reports-say-64423
+
+  Google began complying with Russian requirements and has deleted around 70
+  percent of the websites blacklisted by authorities, an unnamed Google
+  employee told Russia's Vedomosti business daily Wednesday. An unnamed
+  Roskomnadzor source reportedly confirmed the information to the paper.  On
+  Thursday, a Roskomnadzor spokesman told the state-run RIA Novosti news
+  agency that the regulator had established a "constructive dialogue" with
+  Google over filtering content.  "We are fully satisfied with the dialogue
+  at this time," Vadim Ampelonsky, the spokesman, was cited as saying.
+  Google Russia declined to comment.
+
+------------------------------
+
+Date: Sun, 10 Feb 2019 15:18:23 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Security Researcher Assaulted Following Vulnerability Disclosure
+  (SecJuice)
+
+Following a serious vulnerability disclosure affecting casinos globally, an
+executive of casino technology vendor Atrient <http://www.atrient.com/>
+researcher who disclosed the vulnerability at the ICE conference
+<https://www.icelondon.uk.com/> vulnerability disclosure gone bad, one
+involving the FBI, a vendor with a global customer base of casinos and a
+severe security vulnerability which has gone unresolved for four months
+without being properly addressed.
+
+https://www.secjuice.com/security-researcher-assaulted-ice-atrient/
+
+------------------------------
+
+Date: Mon, 11 Feb 2019 11:30:15 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: NSO Group attacking investigators
+
+Well, OK, it makes spyware for government use, so that's OK, right?
+
+Except that they sell their spyware to some governments with questionable
+records on human rights.
+
+Now NSO Group seems to be spying on, and mounting various types of attacks
+against, the researchers, journalists, and lawyers who are investigating the
+case.
+https://apnews.com/a1d1af4256c04cc5a36347667e966a14
+
+------------------------------
+
+Date: Thu, 07 Feb 2019 07:01:14 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject:  How does NYPD surveill thee? Let me count the Waze
+
+"Google and Waze Must Stop Sharing Drunken-Driving Checkpoints, New York
+Police Demand"
+
+So what's good for the goose (NYPD) isn't so good for the gander (ordinary
+citizens) ?
+
+https://www.nydailynews.com/new-york/nyc-crime/ny-metro-license-plate-reader-grab-20190119-story.html
+
+"NYPD's Domain Awareness System, which is linked to area squad cars equipped
+with license plate readers that digitally capture 1,000 license plates every
+day."
+
+https://theintercept.com/2018/09/06/nypd-surveillance-camera-skin-tone-search/
+
+"With access to images of thousands of unknowing New Yorkers offered up by
+NYPD officials ... IBM was creating new search features that allow other
+police departments to search camera footage for images of people by hair
+color, facial hair, and skin tone."
+
+https://en.wikipedia.org/wiki/Stop-and-frisk_in_New_York_City
+
+"[NYPD's stop-and-frisk] program became the subject of a racial profiling
+controversy. The vast majority, 90% in 2017, of those stopped were
+African-American or Latino ... 70% of all those stopped were later found to
+be innocent... Research suggests that stop-and-frisk had few effects, if
+any, on violent and property crime rates in New York City. "
+
+https://www.brennancenter.org/blog/brooklyn-court-nypds-use-cell-phone-trackers-unconstitutional
+
+"a New York State court in Brooklyn ruled that the NYPD's use of Stingrays
+without a warrant was unconstitutional"
+
+https://www.aclu.org/blog/privacy-technology/surveillance-technologies/new-nypd-drone-policy-represents-serious-threat
+
+"NYPD's drones are outfitted with cameras equipped with sophisticated
+technology and 4K resolution"
+
+"NYPD's drone policy places no meaningful restrictions on police deployment
+of drones in New York City and opens the door to the police department
+building a permanent archive of drone footage of political activity and
+intimate private behavior visible only from the sky"
+
+https://www.businessinsider.com/nypd-surveillance-archives-2018-2
+
+"In September, the New York City Municipal Archives launched an
+unprecedented exhibit showcasing NYPD surveillance materials from 1960 to
+1975 ... The exhibit, "Unlikely Historians: Materials Collected by NYPD
+Surveil lance Teams", gives visitors a small taste of just how far NYPD
+detectives went to infiltrate political organizations and investigate people
+they considered a threat."
+
+Michael Gold, *The New York Times*, 6 Feb 2019
+Google and Waze Must Stop Sharing Drunken-Driving Checkpoints, New
+York Police Demand
+https://www.nytimes.com/2019/02/06/nyregion/waze-nypd-location.html
+
+Google's navigation app Waze is known for providing real-time,
+user-submitted reports that advise drivers about potential thorns in their
+roadsides.
+
+But one feature has Waze in conflict with law enforcement officials across
+the country: how the app marks the location of police officers on the roads
+ahead or stationed at drunken-driving checkpoints.
+
+Over the weekend, the New York Police Department, the largest force in the
+nation, joined the fray, sending a letter to Google demanding that the tech
+giant pull that feature from Waze.
+
+In the letter, which was first reported on by Streetsblog, the Police
+Department said that allowing people to share the locations of sobriety
+checkpoints impeded its ability to keep streets safe.
+
+"The posting of such information for public consumption is irresponsible
+since it only serves to aid impaired and intoxicated drivers to evade
+checkpoints and encourage reckless driving," the department's acting deputy
+commissioner for legal matters, Ann P. Prunty, wrote in the
+letter. "Revealing the location of checkpoints puts those drivers, their
+passengers, and the general public at risk."
+
+Ms. Prunty added that people sharing the locations of sobriety checkpoints
+on Waze might be breaking the law by trying "to prevent and/or impair the
+administration" of the state's D.W.I. laws and that the department planned
+to "pursue all legal remedies" to stop people from sharing "this
+irresponsible and dangerous information."
+
+It was not immediately clear what legal steps might be taken.
+
+Waze does not allow drivers to specifically identify sobriety checkpoints.
+But people who use the app's police reporting feature can leave detailed
+comments on the cartoonish icon of a mustachioed police officer that pops
+up.
+
+Google said in a statement on Wednesday that safety was a "top priority" and
+"that informing drivers about upcoming speed traps allows them to be more
+careful and make safer decisions when they're on the road." ...
+
+------------------------------
+
+Date: Sun, 10 Feb 2019 15:09:31 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How Hackers and Scammers Break into iCloud-Locked iPhones
+  (Motherboard)
+
+In spring, 2017, a teenager walked up behind a woman leaving the Metro in
+Northeast Washington DC and put her in a chokehold: "Be quiet," he said. And
+"delete your iCloud." He grabbed her iPhone 6S and ran away.
+<https://www.justice.gov/usao-dc/pr/district-man-sentenced-four-years-prison-robbery>
+
+Last month, there were a string of similar muggings in Philadelphia In each
+of these muggings, the perpetrator allegedly held the victim up at gunpoint,
+demanded that they pull out their iPhone, and gave them instructions:
+Disable `Find My iPhone', and log out of iCloud.
+<https://web.archive.org/save/https://twitter.com/mattblaze/status/1085607855179382784>
+
+In 2013, Apple introduced a security feature designed to make iPhones less
+valuable targets to would-be thieves. An iPhone can only be associated to
+one iCloud account, meaning that, in order to sell it to someone else (or in
+order for a stolen phone to be used by someone new) that account needs to be
+removed from the phone altogether. A stolen iPhone which is still attached
+to the original owner's iCloud account is worthless for personal use or
+reselling purposes (unless you strip it for parts), because at any point the
+original owner can remotely lock the phone and find its location with Find
+My iPhone. Without the owner's password, the original owner's account can't
+be unlinked from the phone and the device can't be factory reset. This
+security feature explains why some muggers have been demanding passwords
+from their victims.
+https://motherboard.vice.com/en_us/article/8xyq8v/how-to-unlock-icloud-stolen-iphone
+
+------------------------------
+
+Date: Fri, 8 Feb 2019 16:00:15 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Airline Passengers Potentially at Risk From Check-In Flaws (EWeek)
+
+A relatively simple flaw in how some airlines provide e-ticketing
+information could be exposing passengers to risk.
+
+https://www.eweek.com/security/major-airlines-at-risk-from-check-in-system-flaw-wandera-reports
+
+------------------------------
+
+Date: 	Fri, 8 Feb 2019 09:36:27 -0600
+From: 	David Strom via WebInformant <webinformant@list.webinformant.tv>
+Subject: Privacy, transparency, and increasing digital trust
+
+  [via Dewayne Hendricks via Dave Farber]
+
+There is a crisis of trust in American democracy.
+
+So begins a new report from the Knight Commission on Trust, Media and
+Democracy organized by the Aspen Institute. It lays blame on our political
+discourse, racial tensions, and technology that gives us all more access to
+more commentary and news.  ``In 2018, unwelcome facts are labeled as fake.''
+<http://csreports.aspeninstitute.org/Knight-Commission-TMD/2019/report>
+
+Part of the problem with trust has to do with *the ease of cyber-criminals
+to ply their trade*. Once relegated to a dark corner of the Internet, now
+many criminals operate in the public view, selling various pieces of
+technology such as ready-made phishing kits to seed infections, carders to
+collect credit card numbers, botnets and web stressors to deliver DDoS
+attacks, and other malware construction kits that require little to no
+technical expertise beyond clicking a few buttons on a web form. A new
+report from CheckPoint shows that anyone who is willing to pay can easily
+obtain all of these tools. We truly have witnessed the growth of the
+Malware-as-a-Service industry.
+<https://www.checkpoint.com/downloads/resources/under-the-hood-of-cyber-crime-security-report-2019.pdf>
+
+  [Long message PGN-truncated for RISKS.]
+
+------------------------------
+
+Date: Thu, 7 Feb 2019 13:54:09 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Many popular iPhone apps secretly record your screen without asking
+  (TechCrunch)
+
+Many major companies, like Air Canada, Hollister and Expedia, are recording
+every tap and swipe you make on their iPhone apps. In most cases you won't
+even realize it. And they don't need to ask for permission.
+
+You can assume that most apps are collecting data on you. Some even monetize
+your data without your knowledge. But TechCrunch has found several popular
+iPhone apps, from hoteliers, travel sites, airlines, cell phone carriers,
+banks and financiers, that don't ask or make it clear -- if at all -- that
+they know exactly how you're using their apps.
+
+Worse, even though these apps are meant to mask certain fields, some
+inadvertently expose sensitive data.
+
+Apps like Abercrombie & Fitch, Hotels.com and Singapore Airlines also use
+Glassbox, a customer experience analytics firm, one of a handful of
+companies that allows developers to embed session-replay technology into
+their apps. These session replays let app developers record the screen and
+play them back to see how its users interacted with the app to figure out if
+something didn't work or if there was an error. Every tap, button push and
+keyboard entry is recorded -- effectively screenshotted -- and sent back to
+the app developers.
+
+https://techcrunch.com/2019/02/06/iphone-session-replay-screenshots/
+
+------------------------------
+
+Date: Fri, 8 Feb 2019 09:37:37 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Apple allows screen captures of everything that you do ...
+
+In the wake of the Facetime bug comes news of even more insidious breaches
+on your Apple devices.  Yes, *that* Apple, the one that makes so much of
+having this "safe" and locked down environment, where you can only run
+applications that they have approved, for your own protection.
+
+iOS apps are able to scrape screenshots of, basically, everything you do,
+and then send that back to, well, whoever they choose.
+https://nakedsecurity.sophos.com/2019/02/08/iphone-apps-record-your-screen-sessions-without-asking/ or
+https://is.gd/kPmeUl
+
+Without asking.
+
+Without letting you know.
+
+This isn't even a bug.  It seems to be part of the iOS system, and could
+have valid uses (although what they are escapes me at the moment).
+
+The fact that Apple, with it's closed and locked down system, allows this
+sort of thing is rather disturbing ...
+
+------------------------------
+
+Date: Fri, 8 Feb 2019 17:18:34 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: HP's ink DRM instructs your printer to ignore the ink in your
+  cartridge when you cancel your subscription (BoingBoing)
+
+via NNSquad
+https://boingboing.net/2019/02/08/inkjet-dystopias.html
+
+  Inkjet printer manufacturers continue to pioneer imaginative ways to
+  create real-world, desktop dystopias that make Black Mirror look
+  optimistic by comparison: one such nightmare is HP's "subscription"
+  printers where a small amount of money buys you ink cartridges that
+  continuously communicate with HP's servers to validate that you're still
+  paying for your subscription, and if you cancel, the ink stops working.
+
+------------------------------
+
+Date: Fri, 8 Feb 2019 14:23:28 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: The perils of using Internet Explorer as your default browser
+  (TechCommunity)
+
+The perils of using Internet Explorer as your default browser
+https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-perils-of-using-Internet-Explorer-as-your-default-browser/ba-p/331732
+
+Also: Microsoft begs you to stop using Internet Explorer
+https://www.engadget.com/2019/02/08/microsoft-internet-explorer-technical-debt/
+
+------------------------------
+
+Date: Fri, 8 Feb 2019 00:50:58 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Judge orders $150,000 in damages in GTA Online cheating case
+  (Ars Technica)
+
+Elusive mod menu let online players generate infinite amounts of in-game
+cash.
+
+https://arstechnica.com/gaming/2019/02/gta-online-cheat-tool-maker-ordered-to-pay-150000/
+
+------------------------------
+
+Date: Mon, 11 Feb 2019 10:02:42 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Maybe he'll die of the plague and we can all breathe easier ...
+
+Pete Hegseth is a host on the Faux News show "Fox and Friends."  On Sunday
+he said that "My 2019 resolution is to say things on air that I say off
+air. I don't think I've washed my hands for 10 years. Really, I don't really
+wash my hands ever."
+https://www.rawstory.com/2019/02/fox-friends-host-says-hasnt-washed-hands-10-years-germs-not-real-thing-cant-see/
+or https://is.gd/dGvgCZ
+
+He doesn't wash his hands because germs aren't real.
+
+Of course, he also says that his lack of hygiene inoculates him, but if germ
+theory isn't real, then that doesn't make any sense.
+
+OK, this could just be yet another stupid celebrity story.  Except that it
+means that there are people in positions of influence who are that stupid.
+And who contribute to things like anti-vax movements while measles epidemics
+are raging ...
+
+------------------------------
+
+Date: Tue, 5 Feb 2019 19:24:11 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Deep Fakes (RISKS-31.05)
+
+Here's a  video on Deep Fakes
+https://www.youtube.com/watch%3Fv%3DdVa-00GYHas
+
+------------------------------
+
+Date: Wed, 06 Feb 2019 07:53:30 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Re: Google, you sent this to too many people, so it must be spam
+
+And what if instead of
+> Subject: Your personal Google+ account is going away on April 2, 2019
+> Subject: Your personal Google  account is going away on April 2, 2019
+is what it said? How many Seniors would have heart attacks?
+Or I suppose seasoned seniors would have already thrown it in the spam
+bucket as preposterous. Whilst other seniors might have thought that "+"
+was like "TM" (trademark). (I had one senior ask me "What is this all
+about?". I told them to calm down.)
+
+------------------------------
+
+Date: Tue, 5 Feb 2019 08:54:41 -0800
+From: Rob Slade <rmslade@shaw.ca>
+Subject: Re: Passwords, escrow, and fallback positions (CoinDesk, RISKS-31.05)
+
+> Date: Sat, 2 Feb 2019 12:23:46 -0800
+> From: Rob Slade <rmslade@shaw.ca>
+
+> Crypto exchange QuadrigaCX seems to be filing for bankruptcy.  It's got
+> lots of money--locked up in cryptocurrency "cold storage."  The password
+> was only known to the CEO.  The CEO died in December.
+
+Came across a detailed article positing that QuadrigaCX was simply a Ponzi
+or pyramid scheme, but the link now seems to be dead ...
+
+https://medium.com/%40zeroresearchproof/quadrigacx-chain-analysis-report-pt-1-
+
+------------------------------
+
+Date: Sun, 10 Feb 2019 11:50:39 -0500
+From: amu@alum.mit.edu (Aaron M. Ucko)
+Subject: Re: Is it time for Linux? (Coe, RISKS-31.05)
+
+> Debian received a total of 938 CVE's in 2018 with windows 10 only
+> receiving 254.
+
+I take your overall point, but dispute the validity of this particular
+numerical comparison, since Debian contains over 51,000 packages, the vast
+majority of which supply functionality Windows 10 doesn't itself offer (such
+as two full-fledged office suites -- LibreOffice and Calligra Suite -- and
+multiple e-mail clients).  Moreover, even when there is overlap, Debian
+commonly offers far more options, with multiple web browsers, media players,
+mail servers, etc.  This approach makes for a relatively broad overall
+attack surface, but individual users and hosts will have more limited
+exposure depending on what they actually run.
+
+Aaron M. Ucko, KB1CJC (amu at alum.mit.edu, ucko at debian.org)
+
+------------------------------
+
+Date: Tue, 5 Feb 2019 02:23:42 -0500
+From: Mark Brader <msb@vex.net>
+Subject: Re: Minor Crimes and Misdemeanors in the Age of Automation
+  (Goldberg, RISKS-31.05)
+
+For those interested in this subject, I can highly recommend "Computers
+Don't Argue", a 1965 science-fiction short story by Gordon R. Dickson.  (I'm
+sure it's been mentioned in RISKS before.)
+
+------------------------------
+
+Date: Thu, 7 Feb 2019 12:53:02 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: An Enthralling and Terrifying History of the Nuclear Meltdown at
+  Chernobyl (NYTimes)
+
+In ``Midnight in Chernobyl,'' the journalist Adam Higginbotham reconstructs
+the disaster from the ground up, recounting the prelude to it as well as its
+aftermath.
+
+https://nyti.ms/2UJKBos
+
+------------------------------
+
+Date: Wed, 6 Feb 2019 16:48:57 +0000
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: Revised UK Code of Practice for testing Automated Vehicles
+
+https://www.gov.uk/government/publications/trialling-automated-vehicle-technologies-in-public
+
+The cybersecurity principles are at
+https://www.gov.uk/government/publications/principles-of-cyber-security-for-connected-and-automated-vehicles/the-key-principles-of-vehicle-cyber-security-for-connected-and-automated-vehicles
+
+There is so much wrong with these documents that it is hard to know where to
+start, but the consultation is open for comments:
+
+https://www.gov.uk/government/consultations/automated-vehicle-trialling-code-of-practice-invitation-to-comment
+
+PLEASE respond to the request for comments!
+
+------------------------------
+
+Date: Mon, 14 Jan 2019 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-31.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 31.06
+************************

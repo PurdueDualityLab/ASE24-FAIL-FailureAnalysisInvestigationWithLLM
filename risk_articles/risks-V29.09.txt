@@ -1,0 +1,902 @@
+RISKS-LIST: Risks-Forum Digest  Friday 13 November 2015  Volume 29 : Issue 09
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.09.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Happy Friday the Thirteenth!]
+Another failed software project: DHS online immigration forms (WashPo
+  via Jeremy Epstein)
+Driverless car stopped by officer in traffic (PGN)
+Toyota's A.I. Research Efforts Could Mean Cars That Anticipate
+  Traffic, Pedestrian Moves (Sharon Gaudin)
+Windows 3.1 Is Still Alive, And It Just Killed a French Airport
+  (Peter Longeray via Jim Reisert)
+Aircraft maintenance -- and making sausages? (PGN)
+Ukraine Cyberwar's Hottest Front (Coker and Sonne)
+UK law will allow secret backdoor orders for software, imprison you
+  for disclosing them (BoingBoing)
+UK Snooper's Charter would devastate computer security (Ars Technica)
+Court Says Tracking Web Histories Can Violate Wiretap Act (WiReD)
+Linux users targeted by new Linux.Encoder.1 encryption ransomware
+  (Mark Wilson)
+"Crackas With Attitude" claim they hacked the FBI's LEEP portal
+  (ted byfield)
+Anatomy of an Incident Website on Industrial Process Control Incidents
+  Launched (Rob Wilcox)
+10 reasons why phishing attacks are nastier than ever (InfoWorld)
+Apple and Google yank Instagram password-stealing app from app stores
+  (ZDNet)
+Encouraging trends and emerging threats in email security (Lauren Weinstein)
+It's Way Too Easy to Hack the Hospital (Reel and Robertson)
+Oz 'My Health Record': more surveillance than health (Richard Chirgwin)
+Re: UK Health Minister announces a review of NHS IT (Prashanth Mundkur)
+My first purchase with a chipped card (Paul Robinson)
+Tor Users Matter (Matthew Green)
+Microsoft: Self-Righteously Reformed Privacy Advocate (Henry Baker)
+New Microsoft Country Clouds Won't Bring Reign (Henry Baker)
+Vizio TV spies on you whether you agree or not (Dan Goodin via HB)
+Re: Helping victims who used encrypted privacy (Barry Gold)
+Re: Wikipedia and Deepak Chopra (3daygoaty)
+Re: German & US spy scandals ... (Clint Chaplin)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 10 Nov 2015 21:42:44 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Another failed software project: DHS online immigration forms
+
+  [A failed software project is a tautology, but just for the record:]
+
+After US$1B and a decade, only one of the 94 forms the US Citizenship and
+Immigration Services has only managed to get one form running online.  Usual
+sorts of problems - design wasn't finished until several years in (which
+isn't necessarily a bad thing - may mean that they actually designed what
+they were building before they built it!), lots of defects, etc.
+
+They're scrapping the waterfall-based development methodology for one based
+on cloud.  I don't really understand that - those are apples and giraffes.
+You can use waterfall to build a cloud-based system - but I guess this has
+something to do with buzzword compliance.
+
+https://www.washingtonpost.com/politics/a-decade-into-a-project-to-digitize-us-immigration-forms-just-1-is-online/2015/11/08/f63360fc-830e-11e5-a7ca-6ab6ec20f839_story.html
+
+------------------------------
+
+Date: Fri, 13 Nov 2015 9:57:21 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Driverless car stopped by officer in traffic -- but not ticketed
+
+  Google Self-Driving Car Stopped for Going Too Slow(ly):
+  An officer spotted a Google self-driving car going 24 mph in a 35 mph zone
+  yesterday, and stopped it -- with traffic backed up behind it.  Of course,
+  this should not be a surprise, because Google limits these cars to 25 mph,
+  for safety reasons.  As a result, no Google car has ever been ticketed --
+  after 1.2M miles and the equivalent of 90 years' driving experience.
+  [Source: Arden Dier, Newser via *San Jose Mercurity News* and NBC News,
+  PGN-ed]
+
+This event actually inspires some discussion of what might happen in a
+future where there are many such cars on the road.
+
+* Suppose a driverless car actually has no passengers.  (Perhaps it is
+  delivering groceries or packages, or doing surveillance of a dangerous
+  area.)  How does a police vehicle actually get the car to stop?
+  Presumably the officer gets his vehicle directly in front of the car.  But
+  if the car is programmed to back up when it reaches an immovable object,
+  several police vehicles might have to completely boxing it in.  Then, how
+  does the officer ticket the vehicle for some offense?  The citation would
+  presumably go to the owner of the car, e.g., Google!
+
+* Suppose at least two driverless cars are involved in an accident, with no
+  responsible adults as passengers.  If all of the cars involved in such a
+  multicar accident were driverless, would the cars be programmed to pull
+  over to a safe siding if they were drivable.  How would they exchange
+  (non)driver's licenses, as required by law?  Who would call for the tow
+  trucks?  If the damage required calling for law enforcement assistance,
+  how would that work?
+
+* Suppose a driverless and passengerless car is being controlled remotely.
+  Who would be liable for accidents, and would be the recipient of
+  citations?  How would an automated highway prevent malicious behavior by
+  drivers of noncompliant cars, such as old Hummers, motorcycles weaving in
+  and out, exhausted truck drivers in the fog, and legacy racing cars?
+
+* Suppose racing car drivers were to decide that they would prefer to be
+  remotely controlling driverless race cars.  Would people stop paying to
+  watch the races, some of whom presumably come hoping to watch the
+  collisions and accidents?  What about the responsibility for intentionally
+  wiping out your competition?  And perhaps electric cars would have battery
+  life sufficient to survive an Indianapolis 500 without having to recharge
+  their batteries, completely avoiding refueling pit stops (except for tire
+  changes)...  Of course, if you believe in totally autonomous vehicles
+  preprogrammed for the entire race without any real-time interactions, that
+  might reduce all of the challenges in auto racing to who is the best
+  programmer.  I suppose many rule changes would be in order.
+
+This is just my top-of-the-head reaction to an officer stopping a Google
+car, reportedly out of curiosity to have a discussion with the car's
+passenger/co-pilot as to how the car chose its speeds.  I presume
+appropriate people involved in driverless cars have thought through
+thoroughly all of the questions above (not to mention those that might arise
+in many other risks-relevant scenarios).  However, because there might never
+have been a reported traffic citation, and because I know of only one report
+of a driver-present car running into a driverless one that stopped for a
+pedestrian (as required by law), it might be timely to discuss some of these
+issues in RISKS -- especially as they relate to drone-like totally
+unoccupied cars.  PGN
+
+------------------------------
+
+Date: Wed, 11 Nov 2015 12:22:12 -0500 (EST)
+From: "ACM TechNews" <technews@hq.acm.org>
+Subject: Toyota's A.I. Research Efforts Could Mean Cars That Anticipate
+  Traffic, Pedestrian Moves (Sharon Gaudin)
+
+Sharon Gaudin, *ComputerWorld*, 11 Nov 2015, via ACM TechNews, 11 Nov 2015
+
+Toyota is making high-profile investments in artificial intelligence (AI)
+research and development that could yield many benefits in human-machine
+interaction.  In a recently announced partnership with Stanford University
+and the Massachusetts Institute of Technology, Toyota will give each
+institution $25 million over five years to set up AI research centers.
+Stanford AI lab executive director Steve Eglash says these efforts could
+lead to cars that function more safely on city streets and in inclement
+weather, as well as robotic assistants for the elderly and infirmed.  He
+says Toyota contributes not only financial support, but also "a unique
+perspective on the future of the AI industry and robotics."  Data is another
+important ingredient Toyota brings, which Eglash says can be applied toward
+making more contextual and human-centered AI.  With the car industry having
+already introduced self-parking autos and other driving-assistive
+innovations, Eglash thinks in a few years cars will be able to predict
+traffic and road conditions minutes before the vehicle arrives.  He also
+expects the research to lead to cars that can anticipate cyclists and
+pedestrians' actions and take precautionary measures.  Carnegie Mellon
+University professor Manuela Veloso sees such initiatives as the beginning
+of "the reality of AI in the physical world."
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_5-e4c1x2d7d4x063629&
+
+------------------------------
+
+Date: Fri, 13 Nov 2015 11:34:21 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Windows 3.1 Is Still Alive, And It Just Killed a French Airport
+  (Peter Longeray)
+
+Risks of not updating technology?
+
+https://news.vice.com/article/windows-31-is-still-alive-and-it-just-killed-a-french-airport
+
+November 13, 2015 | 5:30 am
+
+A computer glitch that brought the Paris airport of Orly to a standstill
+Saturday has been traced back to the airport's "prehistoric" operating
+system. In an article published Wednesday, French satirical weekly Le Canard
+Enchaine (which often writes serious stories, such as this one) said the
+computer failure had affected a system known as DECOR, which is used by air
+traffic controllers to communicate weather information to pilots. Pilots
+rely on the system when weather conditions are poor.
+
+DECOR, which is used in takeoff and landings, runs on Windows 3.1, an
+operating system that came onto the market in 1992.
+
+DECOR's breakdown on Saturday prevented air traffic controllers from
+providing pilots with Runway Visual Range, or RVR, information -- a value
+that determines the distance a pilot can see down the runway. As fog
+descended onto the runway and engineers battled to find the origin of the
+glitch, flights were grounded as a precaution.
+
+"The tools used by Aeroports de Paris controllers run on four different
+operating systems, that are all between 10 and 20 years old," explained
+Alexandre Fiacre, the secretary general of France's UNSA-IESSA air traffic
+controller union. ADP is the company that runs both Orly and Paris' other
+airport, Charles de Gaulle, one of the busiest in the world.
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 10:47:44 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Aircraft maintenance -- and sausages making?
+
+  [Thanks to Robert Dorsett for pointing out this item.]
+
+http://www.vanityfair.com/news/2015/11/airplane-maintenance-disturbing-truth
+
+------------------------------
+
+Date: Fri, 13 Nov 2015 5:03:03 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Ukraine Cyberwar's Hottest Front (Coker and Sonne)
+
+Margaret Coker and Paul Sonne, *WSJ*, 9 Nov 2015
+A woman votes in Kiev in May 2014. A cyberattack ahead of Ukraine's 2014
+presidential election threatened to derail the vote.
+http://www.wsj.com/articles/ukraine-cyberwars-hottest-front-1447121671
+
+KIEV, Ukraine -- Three days before Ukraine's presidential vote last year,
+employees at the national election commission arrived at work to find their
+dowdy Soviet-era headquarters transformed into the front line of one of the
+world's hottest ongoing cyberwars.
+
+The night before, while the agency's employees slept, a shadowy pro-Moscow
+hacking collective called CyberBerkut attacked the premises. Its stated
+goal: To cripple the online system for distributing results and voter
+turnout throughout election day. Software was destroyed. Hard drives were
+fried. Router settings were undone. Even the main backup was ruined.
+
+The carnage stunned computer specialists the next morning.  "It was like
+taking a cold shower.  It really was the first strike in the cyberwar."
+(Victor Zhora, director of the Ukrainian IT firm Infosafe, which helped set
+up the network for the elections.  [...]
+
+------------------------------
+
+Date: Tue, 10 Nov 2015 08:35:47 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: UK law will allow secret backdoor orders for software,	imprison you
+  for disclosing them (BoingBoing)
+
+BoingBoing via NNSquad
+http://boingboing.net/2015/11/10/uk-government-can-secretly-ord.html
+
+  Under the UK's new Snoopers Charter (AKA the Investigatory Powers Bill),
+  the Secretary of State will be able to order companies to introduce
+  security vulnerabilities into their software ("backdoors") and then bind
+  those companies over to perpetual secrecy on the matter, with punishments
+  of up to a year in prison for speaking out, even in court.  The gag orders
+  don't stop there. The Snoopers Charter also lets the government silence
+  people it conscripts to help it with interception, hacking, bulk data
+  collection and data-retention.
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 07:56:16 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: UK Snooper's Charter would devastate computer security
+
+http://arstechnica.com/tech-policy/2015/11/the-snoopers-charter-would-devastate-computer-security-research-in-the-uk/
+
+Rupert Goodwins (UK), Ars Technica, 11 Nov 2015
+What happens when you are forbidden from disclosing that backdoor you found?
+
+Any law that forbids citizens from revealing what the government gets up to,
+or from speaking out about what they find, needs to be looked at with a very
+hard stare indeed.  Yet that's where we find ourselves with the draft
+Investigatory Powers Bill, aka the Snooper's Charter.
+
+As Glyn Moody and George Danezis point out, the draft bill effectively makes
+it a crime to reveal the existence of government hacking.  Along the way,
+the new law would also make it illegal to discuss the existence or nature of
+warrants with anyone under any circumstances, including in court or with
+your MP, no matter what's been happening.  The powers are sweeping,
+absolute, and carefully put beyond public scrutiny, effectively for ever.
+There's no limitation of time. [...]
+
+------------------------------
+
+Date: Tue, 10 Nov 2015 18:08:25 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Court Says Tracking Web Histories Can Violate Wiretap Act
+
+*WiReD* via NNSquad
+http://www.wired.com/2015/11/court-says-tracking-web-histories-can-violate-wiretap-act/
+
+  In the ruling, the appeals court agreed with a lower court, which
+  dismissed the plaintiffs' claims that Google and the other defendants had
+  violated laws like the Wiretap Act, the Stored Communications Act, and the
+  Computer Fraud and Abuse Act by collecting users' web browsing
+  information. (Though the ruling does reverse the dismissal of a different
+  claim that the defendants violated the California constitution, which will
+  now proceed in the lawsuit.) But despite those decisions and perhaps more
+  importantly, the court was careful to make another point: That merely
+  tracking the URLs someone visits can constitute collecting the contents of
+  their communications, and that doing so without a warrant can violate the
+  Wiretap Act. And that's an opinion that will apply not just to Google, but
+  to the Justice Department ... In their ruling, the panel of three
+  appellate judges found that Google and its co-defendants hadn't violated
+  the Wiretap Act because they were a "party" to the communications rather
+  than a third-party eavesdropper--the users were visiting their websites
+  when the cookies were installed.  But the judges took special pains to
+  make clear that the defendants hadn't been let off because their
+  cookie-blocking circumvention technique was only collecting metadata from
+  users, rather than the content of their communications.
+
+------------------------------
+
+Date: Tue, 10 Nov 2015 10:38:46 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Linux users targeted by new Linux.Encoder.1 encryption ransomware
+
+Mark Wilson, BetaNews, 9 Nov 2015
+http://betanews.com/2015/11/09/linux-users-targeted-by-new-linux-encoder-1-encryption-ransomware/
+Linux users targeted by new Linux.Encoder.1 encryption ransomware
+
+Published 21 hours ago [as I write this (2015-11-10 10:38 PST).  This
+non-dating of content has its own risks.]
+
+------------------------------
+
+Date: Mon, 09 Nov 2015 21:54:08 -0500
+From: ted byfield <tbyfield@panix.com>
+Subject: "Crackas With Attitude" claim they hacked the FBI's LEEP portal
+
+The FBI set up a web portal, the Law Enforcement Enterprise Portal (LEEP),
+that provides access to an long and growing list of services and resources
+"that are sensitive but unclassified" -- in order to "strengthen case
+development for investigators, enhance information sharing between agencies,
+and be accessible in one centralized location!" (Yes, the exclamation point
+is in the original.) And they made all of it accessible with just a "single
+sign-on," i.e., a username and password.
+
+You'll never guess what happened next!
+
+<http://www.nextgov.com/cybersecurity/2015/11/you-only-need-one-password-access-allegedly-hacked-law-enforcement-databases/123537/>
+
+  FBI officials on Monday had no comment on bureau website access controls
+  or the alleged hack beyond a statement made Friday that "those who engage"
+  in such hacktivism activities "are breaking the law" and that the FBI will
+  work with other agencies and industries "to identify and hold accountable
+  those who engage in illegal activities in cyberspace."
+
+Hackers demonstrate they can gain access to LEEP, and the ensuing
+investigation involves several agencies, which share their investigation
+records on LEEP.
+
+------------------------------
+
+Date: Tue, 10 Nov 2015 07:36:05 -0800
+From: Rob Wilcox <nonanonpalindrome@gmail.com>
+Subject: Anatomy of an Incident Website on Industrial Process Control
+  Incidents Launched
+
+A multinational process control company has launched a website
+www.anatomyofanincident.com. It has brief narratives of process control
+incidents.
+
+Included in the initial launch are the BP Texas City Refinery explosion and
+fire, the Bayer Crop Sciences chemical tank rupture, the Buncefield oil
+storage depot fire, and the Piper Alpha drilling platform fire.
+
+The creators of the site note that further content is planned, deeper into
+the incidents and more incidents.
+
+The narratives discuss human and management contributions to the incidents,
+a longtime focus of the Risks Forum.
+
+------------------------------
+
+Date: Mon, 9 Nov 2015 17:23:48 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 10 reasons why phishing attacks are nastier than ever (InfoWorld)
+
+InfoWorld via  NNSquad
+http://www.infoworld.com/article/3000943/phishing/10-reasons-why-phishing-attacks-are-nastier-than-ever.html
+
+  Enter spearphishing: a targeted approach to phishing that is proving
+  nefariously effective, even against the most seasoned security pros.  Why?
+  Because they are crafted by thoughtful professionals who seem to know your
+  business, your current projects, your interests. They don't tip their hand
+  by trying to sell you anything or claiming to have money to give away. In
+  fact, today's spearphishing attempts have far more sinister goals than
+  simple financial theft.
+
+------------------------------
+
+Date: Wed, 11 Nov 2015 10:28:34 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Apple and Google yank Instagram password-stealing app from app stores
+
+http://www.zdnet.com/article/apple-and-google-yank-instagram-password-stealing-app-from-app-stores/
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 15:19:18 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Encouraging trends and emerging threats in email security
+
+New Research: Encouraging trends and emerging threats in email security
+https://googleonlinesecurity.blogspot.com/2015/11/new-research-encouraging-trends-and.html
+
+  To that end, in partnership with the University of Michigan and the
+  University of Illinois, we're publishing the results of a multi-year study
+  that measured how email security has evolved since 2013. While Gmail was
+  the foundation of this research, the study's insights apply to email more
+  broadly, not unlike our Safer Email Transparency report. It's our hope
+  that these findings not only help make Gmail more secure, but will also be
+  used to help protect email users everywhere as well.
+
+The irony of course is that TLS (STARTTLS) is basically clown-grade email
+encryption. It is -- generally -- easy for midpoints to defeat or disable
+(cracking the crypto is not necessary), and due to incompatibilities results
+in significant amounts of email not being delivered at all (that's why many
+popular mailing list systems are configured to not use it -- they've
+actually disabled it after trying to make it work and ending up with angry
+respondents who didn't get their mail, and it's difficult to blame
+them). And of course, hack attacks virtually never relate to third-party
+snooping of email -- rather, endpoint vulnerabilities are key to the big
+attacks. My gut feeling is that Google warning people about receiving
+unencrypted email will trigger much angst and panic without doing much good
+at all. But this is all part of the Internet's own version of airport
+"security theater": "Falling Into the Encryption Trap" -
+http://lauren.vortex.com/archive/001108.html
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 08:40:28 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: It's Way Too Easy to Hack the Hospital (Reel and Robertson)
+
+FYI -- Forget about a nightmare night at the museum; a cybersecurity
+researcher of medical device security finds himself spending two weeks
+hooked up to medical devices he had previously shown were extremely
+vulnerable to attack.
+
+https://en.wikipedia.org/wiki/Night_at_the_Museum
+
+"After six months, TrapX concluded that all of the hospitals contained
+medical devices that had been infected by malware."
+
+"observe hackers attempting to take medical records out of the hospitals
+through the infected devices."
+
+"In 2011, the Gwinnett Medical Center in Lawrenceville, Ga., shut its doors
+to all non-emergency patients for three days after a virus crippled its
+computer system."
+
+Monte Reel and Jordan Robertson, November 2015
+It's Way Too Easy to Hack the Hospital
+http://www.bloomberg.com/features/2015-hospital-hack/
+
+Firewalls and medical devices are extremely vulnerable, and everyone's
+pointing fingers.
+
+In the fall of 2013, Billy Rios flew from his home in California to
+Rochester, Minn., for an assignment at the Mayo Clinic, the largest
+integrated nonprofit medical group practice in the world.  Rios is a
+white-hat hacker, which means customers hire him to break into their own
+computers.  His roster of clients has included the Pentagon, major defense
+contractors, Microsoft, Google, and some others he can't talk about.  [...]
+
+When he found vulnerabilities in an infusion pump used in hospitals, he
+contacted the US Department of Homeland Security's ICS-CERT, which notified
+the Food and Drug Administration (FDA), which in turn notified the
+manufacturer, but nothing happened until he provided DHS and the FDA with
+proof-of-concept code demonstrating the risks the devices posed. The FDA
+issued an advisory recommending that the pumps not be used, but no one was
+under any obligation to fix the devices that were already in use. Trying to
+assign responsibility for mitigating these issues has been difficult, and
+Rios has concluded that the only way to make changes is to put pressure
+directly on the manufacturers.
+
+  [... VERY LONG item truncated for RISKS.  PGN-ed]
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 08:51:41 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Oz 'My Health Record': more surveillance than health
+  (Richard Chirgwin)
+
+FYI -- U.S. takeaway: Australia is simply further along the learning curve
+than the U.S.; the U.S. intends to 'lead' in the insecurity of health
+records, as well.
+
+"the e-health system looks more like it was designed for spooks and
+revenue-collectors than for doctors or patients"
+
+"[criticized the recommendation that] My Health Record be changed from an
+opt-in system to an opt-out system"
+
+"Once a breach has occurred, the data cannot be put back in the box"
+
+Richard Chirgwin, *The Register*, 12 Nov 2015
+Oz e-health privacy: after a breach is too late
+Privacy foundation slams 'dangerously naive' Senators
+http://www.theregister.co.uk/2015/11/12/oz_ehealth_privacy_after_a_breach_is_too_late/
+
+Australia's peak privacy body has lambasted the country's Senate for being
+ignorant about the implications of the country's new e-health records.  What
+was once called the Personally Controlled Electronic Health Record (PCEHR),
+re-branded My Health Record this year to give it a smiley face, is the
+government's attempt to dragoon Australians into a national health database.
+
+Looking behind the mask, however, the Australian Privacy Foundation reckons
+the e-health system looks more like it was designed for spooks and
+revenue-collectors than for doctors or patients.
+
+Coming in for special criticism is the Senate committee recommendation that
+My Health Record be changed from an opt-in system to an opt-out system.
+That decision seems designed to boost the chronically low take-up of a
+system that this year got a budget allocation of more than AU$450 million
+(its 15-year estimated cost from 2010 to 2025 is $3.6 billion).
+[PGN-truncated]
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 11:41:19 -0800
+From: Prashanth Mundkur <prashanth.mundkur@gmail.com>
+Subject: Re: UK Health Minister announces a review of NHS IT (Thomas, R-29.08)
+
+> Does any reader know whether [Robert Wachter] is well qualified to conduct
+> this review?
+
+RISKS-28.59 linked to Wachter's 5-part series on Medium, excerpted
+from "The Digital Doctor", starting here:
+https://medium.com/backchannel/how-technology-led-a-hospital-to-give-a-patient-38-times-his-dosage-ded7b3688558
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 03:03:25 +0000 (UTC)
+From: Paul Robinson <paul@paul-robinson.us>
+Subject: My first purchase with a chipped card
+
+No, I don't mean I broke off part of my card, it means of all the credit and
+debit cards that I have, currently the only one with a chip in it is my
+Target Red Card. A couple weeks ago I had to call in and ask the automated
+system to send me a new card because there was a crack in the mag strip. So,
+Target sent me a chipped card, and when I registered it on their website it
+asked me to select a pin;. I did.
+
+Since it is a chipped card, guess what? No mag stripe. Since Target had to
+replace 100% of their card readers anyway after they got hacked, and since
+you can't use the card anywhere else, it makes sense to have it set up for
+chip-and-pin only transactions, since the whole idea is to reduce the
+potential for fraud. A crook not only has to steal your card, he also has to
+torture you for your pin number.**
+
+Merchants were supposed to be ready to take chipped cards as of October
+anyway, but despite the fact I have about 6 different cards. only the one
+from Target has yet to be chipped. All my other debit and credit cards are
+mag stripe.
+
+So today, I went into Target to buy a package of socks, and I found they had
+a nice multi pack of socks for tall and big men, fits sizes 12-14, pack of
+10 black dress socks, $15. Not bad.
+
+So I go up to the self-serve register, scan the bar code on the socks,
+select credit card for method of payment, push the Red Card into the chip
+reader, it brings up a password entry box, I punch in my pin, then it burps
+twice to tell me to take my card back, and the transaction is approved. Very
+slick.
+
+My second purchase was at the pharmacy, $1.29 for one of my prescriptions
+after insurance. I'm actually impressed that the technology actually works.
+
+Now, anyone want to take any bets on how long before crooks figure a way to
+break the system in order to steal goods and/or money? I've heard the
+chip-and-pin system in Europe has been hacked, at least and some researchers
+have even written papers showing how it can be done.
+
+** The term "pin" as used with authenticating payment cards is an acronym
+for "personal identification number," so actually, using the term "pin
+number" is redundant.  I also sometimes take money out at an Automatic
+Teller Machine machine, so I'm also redundant when I use an ATM
+machine
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 13:10:24 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Tor Users Matter
+
+Why the attack on Tor matters
+Matthew Green, Ars Technica, 12 Nov 2015
+Op-ed: Comp sci researchers have a blind spot to ethical issues in their field.
+http://arstechnica.com/security/2015/11/why-the-attack-on-tor-matters/
+
+On Wednesday, Motherboard posted a court document filed in a prosecution
+against a Silk Road 2.0 user indicating that the user had been de-anonymized
+on the Tor network thanks to research conducted by a university-based
+research institute.  As Motherboard pointed out, the timing of this research
+lines up with an active attack on the Tor network that was discovered and
+publicized in July 2014.  Moreover, the details of that attack were eerily
+similar to the abstract of a (withdrawn) BlackHat presentation submitted by
+two researchers at the CERT division of Carnegie Mellon University (CMU).
+
+A few hours later, the Tor Project made the allegations more explicit,
+posting a blog entry accusing CMU of accepting $1 million to conduct the
+attack.  A spokesperson for CMU didn't exactly deny the allegations but
+demanded better evidence and stated that he wasn't aware of any payment.  No
+doubt we'll learn more in the coming weeks as more documents become public.
+
+You might wonder why this is important.  After all, the crimes we're talking
+about are pretty disturbing.  One defendant is accused of possessing child
+pornography, and if the allegations are true, the other was a staff member
+on Silk Road 2.0.  If CMU really did conduct Tor de-anonymization research
+for the benefit of the FBI, the people they identified were allegedly not
+doing the nicest things.  It's hard to feel particularly sympathetic.
+
+Except for one small detail: there's no reason to believe that the
+defendants were the only people affected.
+
+If the details of the attack are as we understand them, a group of academic
+researchers deliberately took control of a significant portion of the Tor
+network.  Without oversight from the University research board, they
+exploited a vulnerability in the Tor protocol to conduct a traffic
+confirmation attack, which allowed them to identify Tor client IP addresses
+and hidden services.  They ran this attack for five months and potentially
+de-anonymized thousands of users.
+
+It's quite possible that these researchers exercised strict protocols to
+ensure that they didn't accidentally de-anonymize innocent bystanders.  This
+would be standard procedure in any legitimate research involving human
+subjects, particularly research that has the potential to harm.  If the
+researchers did take such steps, it would be nice to know about them.  CMU
+hasn't even admitted to the scope of the research project, nor has it
+published any results, so we just don't know.
+
+While most of the computer science researchers I know are fundamentally
+ethical people, as a community we have a blind spot when it comes to the
+ethical issues in our field.  There's a view in our community that
+Institutional Review Boards are for medical researchers, and we've somehow
+been accidentally caught up in machinery that wasn't meant for us.  And I
+get this -- IRBs are unpleasant to work with.  Sometimes the machinery is
+wrong.
+
+But there's also a view that computer security research can't really hurt
+people, so there's no real reason for this sort of ethical oversight
+machinery in the first place.  This is dead wrong, and if we want to be
+taken seriously as a mature field, we need to do something about it.
+
+We may need different machinery, but we need something.  That something
+begins with the understanding that active attacks that affect vulnerable
+users can be dangerous and should never be conducted without rigorous
+oversight -- if they must be conducted at all.  It begins with the idea that
+universities should have uniform procedures for both faculty researchers and
+quasi-government organizations like CERT if they live under the same roof.
+It begins with CERT and CMU explaining what went on with their research
+rather than treating it like an embarrassment to be swept under the rug.
+
+Most importantly, it begins with researchers looking beyond their own
+research practices.  So far, the response to the Tor news has been a big
+shrug.  It's wonderful that most of our community is responsible.  But that
+doesn't matter if we're willing to look the other way when people in our
+community aren't.
+
+This story was originally published on Matthew Green's blog.
+http://blog.cryptographyengineering.com/2015/11/why-tor-attack-matters.html
+
+------------------------------
+
+Date: Fri, 13 Nov 2015 08:08:01 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Microsoft: Self-Righteously Reformed Privacy Advocate
+
+http://www.computing.co.uk/ctg/news/2399112/microsoft-finally-patches-stuxnet-and-the-freak-encryption-vulnerability
+
+Kieren McCarthy, *The Register*, 13 Nov 2015
+Microsoft creates its own movie moment with fancy privacy manifesto
+General counsel still waiting for people to leap onto desks
+http://www.theregister.co.uk/2015/11/13/microsofts_own_privacy_movie_moment/
+
+Microsoft has published what can only be described as a privacy manifesto.
+The unusual online screed comes complete with interactive graphics,
+including a recording of the FISA court's voicemail, and appears geared at
+pitching Microsoft as the protector of people's global data.  [Very long
+item truncated for RISKS.  PGN]
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 12:43:26 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: New Microsoft Country Clouds Won't Bring Reign
+
+It's also possible to store data so that it doesn't reside *anywhere* --
+e.g., using RAID techniques, except that instead of RAID standing for
+"Redundant Array of Independent Disks", we replace it with RAIC --
+"Redundant Array of Independent Countries".  Search also for "erasure
+coding".
+
+Also:
+
+"Microsoft to store data in Germany to keep it from third parties"
+http://money.cnn.com/2015/11/11/technology/microsoft-germany-data-center-privacy/index.html
+
+Cory Bennett - 11/10/15 11:28 AM EST
+Microsoft opens UK-only data center following EU ruling
+http://thehill.com/policy/cybersecurity/259656-microsoft-opens-uk-only-data-center-following-eu-ruling
+
+------------------------------
+
+Date: Thu, 12 Nov 2015 18:14:59 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Vizio TV spies on you whether you agree or not
+
+"This [spying] data is sent *regardless* of whether you agree to the privacy
+policy and terms of service when first configuring the TV."
+
+"readers are better off foregoing the minimal benefits provided by an
+Internet-connected TV and settling for one with no networking at all"
+
+It's worth reading the following blog for the techniques used to crack the
+Vizio TV; e.g., they used repeated command injection to list the filesystem,
+and then use this info to mount a filesystem on a USB stick and copy the
+whole filesystem over.
+https://blog.avast.com/2015/11/11/the-anatomy-of-an-iot-hack/
+
+Dan Goodin, Ars Technica, 11 Nov 2015
+Man-in-the-middle attack on Vizio TVs coughs up owners’ viewing habits
+Hack underscores amateur goofs routinely made by Internet-of-Things developers.
+http://arstechnica.com/security/2015/11/man-in-the-middle-attack-on-vizio-tvs-coughs-up-owners-viewing-habits/
+
+The cautionary tales just keep coming for Internet-connected TVs,
+thermostats, and other so-called "Internet-of-Things" devices.  Today's
+lesson comes courtesy of a smart TV from Vizio that was subjected to a
+man-in-the-middle attack because it couldn't be bothered to validate the
+HTTPS certificates of servers it connected to.
+
+Researchers from security firm Avast found that the Vizio model in their lab
+broadcast fingerprints of users' viewing habits, even when owners hadn't
+consented to a privacy policy displayed during set up.  What's more, the
+researchers uncovered a vulnerability in the smart TV that could act as a
+potential attack vector for a hacker attempting to access a user's home
+network.
+
+Specifically, the TV accepted a self-signed forged certificate when
+connecting to tvinteractive.tv, a site the TV accessed about once per
+second.  After studying the data sent to and from the server, the
+researchers discovered that commands the server sent the TV came embedded
+with a token.  Rather than checking the validity of the HTTPS certificate,
+the TV inspected a checksum at the end of the data before it would accept
+the data.  The checksum was the MD5 hash of the command combined with a
+secret cryptographic salt.
+
+The researchers were unable to use traditional cracking methods to figure
+out what the salt was.  So they instead used some reverse-engineering
+creativity to enumerate the entire file-system on the TV.  They soon found a
+plain-text file that contained the salt (which they declined to name).  They
+were then able to use their man-in-the-middle attack both to read data the
+TV sent to the server and to impersonate the server and send commands back
+to the TV.  With that, they were able to decrypt the entire binary stream
+that traveled between the TV and tvinteractive.tv, which is operated by a
+company called Cognitive Networks.
+
+In a blog post published Wednesday, the researchers wrote:
+https://blog.avast.com/2015/11/11/the-anatomy-of-an-iot-hack/
+
+  From this, it is obvious that the same data is being sent to Cognitive
+  Networks servers through UDP and HTTP.  This data is the fingerprint of
+  what you're watching being sent through the Internet to Cognitive
+  Networks.  This data is sent regardless of whether you agree to the
+  privacy policy and terms of service when first configuring the TV. [...]
+
+------------------------------
+
+Date: Mon, 09 Nov 2015 17:39:42 -0800
+From: Barry Gold <barrydgold@ca.rr.com>
+Subject: Re: Helping victims who used encrypted privacy (AlMac, RISKS-29.08)
+
+> I believe in an optional "side door" into our electronic lives.
+
+Overall, I think this is a good idea.  When the "side door" is optional,
+each person can choose for himself among the risks of:
+
+ * loss of privacy to the government (via search warrants or less controlled
+   methods, e.g., national security letters, tyrannical regimes simply
+   walking into the bank, lawyer's office, etc. with guns to get your
+   secrets)
+
+ * loss of privacy to phishers who "social engineer" the custodian
+
+ * loss of critical data due to disk crash, software error, death of the
+   only person who knows the keys or locations of data, etc.
+
+ > As for the allegation that encryption slows down access to the content,
+   if you have legal access, and a math chip to handle the decrypting, there
+   is no slow down.
+
+This is the only part of Mcintyre's post that I disagree with. There's a
+reason why "strong encryption" is called "strong". The encryption algorithm,
+key length, etc. are carefully designed to resist attempts to access the
+data without knowing the key -- even by attackers with the resources of a
+large government behind them. (e.g., the NSA, CIA, or equivalent groups in
+the UK, Germany, China, Russia, etc.)
+
+If the secret is important enough (that is, worth enough $$$), it's
+theoretically possible that a large, dedicated organization may be able to
+extract it without access to the key -- either by using massively parallel
+processing or by finding a weakness in the algorithm.  But note that it is
+at least theoretically possible to create a key long enough that you cannot
+brute force it even if you could do one computation with every atom in the
+Universe.
+
+So if you want your data to be available in case of your death or
+disability, find a custodian whom you trust with your passwords, encryption
+keys, etc.
+
+  [Ah, back to trusting potentially untrustworthy third parties
+  or escrow agents that can be compromised by insiders, outsiders,
+  and government agents, when there is already very weak security
+  in all systems involved.  Very nice.  PGN]
+
+------------------------------
+
+Date: Tue, 10 Nov 2015 14:52:40 +1100
+From: "3daygoaty ." <threedaygoaty@gmail.com>
+Subject: Re: Wikipedia and Deepak Chopra (Slade, RISKS-29.08)
+
+When my children pick up and examine a bit of litter and then attempt to
+drop it again I tell them if they touch it they have to bin it.
+
+I think this applies to Rob Slade's review of Computer Viruses on wikipedia.
+If you know within your field that a wikipedia article is misleading and
+possibly dangerous I think it behooves you to try do something.  If they
+cite your book incorrectly, all the more so.  Perhaps your efforts will be
+overwritten and lost, but then again they may not be lost.  Either way the
+virtuous attempt is in the page history forever and you did what you could.
+
+------------------------------
+
+Date: Mon, 9 Nov 2015 19:25:54 -0800
+From: Clint Chaplin <joatmon@gmail.com>
+Subject: Re: German & US spy scandals ... (AlMac, RISKS-29.08)
+
+> Remember Japan Airlines 007?"
+
+That would be Korean Airlines KAL 007.
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.09
+************************

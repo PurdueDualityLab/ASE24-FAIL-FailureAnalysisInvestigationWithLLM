@@ -1,0 +1,570 @@
+RISKS-LIST: Risks-Forum Digest  Saturday 14 May 2011  Volume 26 : Issue 44
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.44.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents: [Backlogged.  Busy.  PGN]
+Colleges worry about always-plugged-in students (Tracy Jan via
+  Monty Solomon)
+Warnings about Risks aren't just for technological issues (Paul Robinson)
+Amazon Cloud Cloudy? (Ted Samson via Gene Wirchenko)
+More About the Amazon Cloud Crash (Nestor E. Arellano via Gene Wirchenko)
+Cloud Reliability (Patrick Thibodeau via Gene Wirchenko)
+The algorithm says that'll be $23,698,655.93, plus $3.99 shipping
+  (Mark Brader)
+Texas exposes addresses, SSNs of 3.5 million residents (F John Reinke)
+Risks of auto-classification (Steven Bellovin)
+Iran claims it's under a second virus attack (Danny Burstein)
+RSA hack spear-phishing via an Excel spreadsheet with embedded Flash
+  (Jeremy Epstein)
+Tracking File Found in iPhones (Matthew Kruk)
+Re: Skype for Android User Data Leak (Robert N.M. Watson via PGN)
+Re: Increasing risks due to leap seconds being ever more frequent
+  (Amos Shapir)
+Re: 'HTTPS Now' (Dimitri Maziuk)
+Workshop on RFID Security and Privacy (Kevin Fu)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sun, 24 Apr 2011 22:35:44 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Colleges worry about always-plugged-in students (Tracy Jan)
+
+Tangled in an endless web of distractions
+Colleges worry about always-plugged-in students
+
+Tracy Jan, *The Boston Globe*, 24 Apr 2011
+
+It was supposed to be a quick diversion, Katie Inman told herself last week
+as she flipped open her laptop. She had two tests to study for, three
+problem sets due, a paper to revise. But within minutes, the MIT sophomore
+was drawn into the depths of the Internet, her work shunted aside.  ``I had
+just closed Facebook, but then I reopened it. It's horrible, I would type a
+sentence for my paper, and then get back on Facebook.''
+
+Desperate for productivity, Inman did something many of her classmates at
+one of the most wired campuses would find unfathomable: She installed a
+program that blocks certain websites for up to 24 hours. No social
+networking. No e-mail. No aimless surfing.
+
+While Inman took matters into her own hands, some MIT professors are urging
+college leaders across the country to free students from their tether to
+technology. Over the past decade, schools raced to connect students to the
+Internet - in dorms, classrooms, even under the old oak tree. But now, what
+once would have been considered heresy is an active point of discussion:
+pulling the virtual plug to encourage students to pay more attention in
+class and become more adept at real-life social networking. ...
+
+http://www.boston.com/news/education/higher/articles/2011/04/24/colleges_worry_about_always_plugged_in_students/
+
+------------------------------
+
+Date: Thu, 21 Apr 2011 15:15:36 -0700 (PDT)
+From: Paul Robinson <paul@paul-robinson.us>
+Subject: Warnings about Risks aren't just for technological issues
+
+We have warnings about risks because technology, if done incorrectly, can
+cause major problems.  But it's not just technology; more than 100 years ago
+there was a big warning to the legal community that if you use something the
+wrong way you can get into a lot of trouble.  All we have to do to
+confirm what happens when someone uses something incorrectly or makes a
+mistake using something is look at any decision of the United States Supreme
+Court.  I decided to write this up for a Wikipedia article and thought I'd
+pass this on as it has relevance to Risks readers.
+
+Every U.S. Supreme Court decision has the following boiler-plate warning
+printed before the Syllabus, which is the summary of the decision:
+
+  "NOTE: Where it is feasible, a syllabus (headnote) will be released, as is
+  being done in connection with this case, at the time the opinion is
+  issued. The syllabus constitutes no part of the opinion of the Court but
+  has been prepared by the Reporter of Decisions for the convenience of the
+  reader. See United States v. Detroit Timber & Lumber Co., 200 U. S. 321,
+  337."
+
+In the case of Detroit Timber, the court reporter misreported the decision
+in Hawley v. Diller, 178 U.S. 476 (1900).  The syllabus, which as the above
+note says, is the opinion of the court reporter as to what the court's
+opinion means, was wrong.  The lawyers for the United States relied on the
+syllabus for {Diller} instead of the court's actual opinion of the case and
+as a result, they got it wrong too.
+
+Here's why this issue is important. If you asked most people to name a
+Supreme Court case they might be able to mention the Miranda Warning even if
+they don't know the full case name {Miranda v. Arizona}, but almost
+everyone, even if they don't have an opinion on abortions (like myself), can
+name the case of {Roe v. Wade}.  The opinion - which I actually read once -
+runs over 100 pages.  It basically says that abortions can't be prohibited
+for the first three months of pregnancy and restrictions imposed by law on
+obtaining an abortion from a licensed physician during this period are not
+allowed.  Restrictions can be imposed on the second trimester, and even
+greater ones may be imposed on the third trimester.
+
+Now, there are three possible ways the writer of the Syllabus could
+summarize the case.  Correctly, as I have done.  Incorrectly, and say that
+states can't forbid physician-provided abortions and that a woman may obtain
+an abortion at any time (that's actually effectively the decision of the
+Canadian Supreme Court in {R. v. Morgentaler)), or the syllabus could
+incorrectly say that that states can forbid all abortions at any time.
+
+Now, let's say you're some prosecutor and the syllabus in Roe v. Wade had
+misreported the decision as saying a state can forbid all abortions, and
+your office decides to prosecute some doctor for performing abortions during
+the first month of pregnancy.  What's likely to happen is that first, the
+trial court finds your prosecution to be invalid because of the decision in
+Roe v. Wade, and dismisses the case; second, orders the state to pay the
+several thousand dollars this doctor unnecessarily spent in legal fees; and
+third, opens your office up for a civil suit for malicious prosecution for
+doing exactly what the Supreme Court said was not permitted, to prosecute a
+doctor for performing abortions done during the first three months of
+pregnancy, and as a result, the damages could be hundreds of thousands of
+dollars.
+
+So as a result of the error I mentioned, every case the Supreme Court prints
+has a reference to U.S. v. Detroit Timber to remind them that if you're not
+careful to read the actual opinion and instead depend on the syllabus,
+you're taking a big risk!
+
+The Lessons of history teach us - if they teach us anything - that no one
+learns the lessons that history teaches us.
+
+------------------------------
+
+Date: Fri, 22 Apr 2011 13:23:52 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Amazon Cloud Cloudy? (Ted Samson)
+
+http://www.infoworld.com/t/managed-services/popular-websites-crippled-hours-long-amazon-cloud-service-outage-657
+Ted Samson, InfoWorld Home / InfoWorld Tech Watch, April 21, 2011
+
+Amazon's popular EC2 and Relational Database Services suffered glitches
+earlier this morning, leaving popular websites and services such as Reddit,
+Foursquare, and HootSuite crippled or outright disabled well into the early
+afternoon. The outages are a sobering reminder of the risks of placing one's
+eggs in a service provider's basket, even a relatively well-established one
+such as Amazon Web Services. The mishap will no doubt prompt users of
+Amazon's services to call on the company to explain why it lacked the
+necessary backup and disaster-recovery systems to prevent this sort of
+downtime. ...
+
+------------------------------
+
+Date: Tue, 26 Apr 2011 10:07:01 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: More About the Amazon Cloud Crash (Nestor E. Arellano)
+
+http://www.itbusiness.ca/it/client/en/home/News.asp?id=62242
+
+Nestor E. Arellano, Firm averts Amazon cloud crash by 'spreading out the
+risk', *IT Business*,  26 Apr 2011
+
+... but thanks to redundant cloud services a Canadian company was able to
+avoid any major disruption.  By employing a combination of cloud and quasi
+cloud back-up services, Voices.com, a London, Ontario-based voice talent
+firm, suffered only about 90 minutes of minor signal latency before being
+able to recover full online capabilities while other Amazon clients did not
+fare as well.
+
+Because of server problems at Amazon's data center, which handles the
+company's EC2 Web hosting services, Web sites, including popular Web 2.0
+sites, were left staggering or disabled.
+
+As of noon Eastern time last Friday, those sites had been affected for about
+30 hours.
+
+Reddit reported at 10:30 a.m. that it was still running in emergency
+mode. Foursquare appeared to be up and running, while Quora was bouncing
+between read-only mode and not launching at all and showing an "internal
+server error" message.
+
+Vancouver-based Twitter monitoring service HootSuite was also having
+problems, reporting at one point that it was "back up" and then changing to
+"again offline."
+
+Thanks to Amazon's most recent outage, supporters of cloud services are
+going to have a tough time arguing that the uptime delivered by cloud
+services is superior to anything corporate IT can deliver.
+
+Laplante says he has one customer -- a small manufacturer whose core
+business application was built on WorkXpress and running on Amazon -- who
+has been knocked offline. "They are fired up and they are very angry," he
+said. The customer now wants the app hosted on a server in their shop.
+
+Laplante said the Amazon outage, which began Thursday morning, is going to
+make it difficult to sell cloud approaches. "I'm going to have to sell
+against this outage."  Paul Haugan, CTO of Lynnwood, Wash., said his city
+has been looking at Amazon's cloud offerings, but "the recent outage
+confirmed, for us, that cloud services are not yet ready for prime time."
+
+Haugan's view, which stems not just from Amazon's outage alone, is that
+"cloud services need some more maturing and a much more hardened
+infrastructure and security model prior to our adoption."
+
+Voices.com, said Ciccarelli suffered a hit to its reputation.  ``It wasn't
+just that our IT department had to wade through a ton of calls.  Our
+reliability was put in question because our clients don't really care that
+Amazon is providing us the cloud service, what they see is our company
+handling their audio files.''
+
+Thankfully, despite the complaints, Voices.com did not lose any clients.
+
+Today, Voices.com spreads the risk around.
+
+``Not having all our eggs is one basket adds extra layers of redundancy in
+case disaster strikes,'' said Ciccarelli.
+
+  [Alternative risks result from trying to coordinate too many baskets,
+  not to mention too many eggs.  PGN]
+
+------------------------------
+
+Date: Tue, 26 Apr 2011 10:09:31 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Cloud Reliability
+
+http://www.itbusiness.ca/it/client/en/CDN/News.asp?id=62250
+Patrick Thibodeau, Who gets blame for Amazon outage?
+Reliability of cloud services is makes customers complacent;
+many don't plan for worst-case scenarios, *IT Business*, 26 Apr 2011
+
+Amazon.com has promised to provide a "detailed post-mortem" on the root
+causes of the prolonged outage of its cloud services in recent days. Users
+of the Amazon services, meanwhile, may also have to explain how they got
+caught up in the outage.  The ensuing conversations may be uncomfortable for
+both Amazon and its cloud customers -- perhaps even more so for users of the
+services.
+
+Cloud services overall have been remarkably reliable, which may be fostering
+a dangerous complacency among customers who are putting too must trust in
+them. This is another old and familiar story of technology hubris, one that
+was famously illustrated by another tech marvel, the unsinkable Titanic.
+
+In this case, it is IT managers who will have to explain to their users --
+and to their company's executives -- why they didn't have a lifeboat.
+
+Amazon's partial outage, which began Thursday and seemed largely resolved
+today, was an exceptional event.
+
+Based on data compiled by AppNeta, the uptime reliability of 40 of the
+largest providers of cloud-based services, including Amazon, Google, Azure
+and Salesforce.com, shows how well cloud providers are delivering
+uninterrupted services. The performance management and network monitoring
+firm, known as Apparent Networks until this week, captures minute-by-minute
+uptime and other data from cloud providers used by its customers.
+
+The overall industry yearly average of uptime for all the cloud services
+providers monitored by AppNeta is 99.9948 per cent, which equal to 273
+minutes or 4.6 hours of unavailability per year.
+
+The worst providers clock in at 99.992 per cent or 420 minutes or seven
+hours of unavailability a year.
+
+The best providers are at 99.9994 per cent or three minutes or .05 hours of
+unavailability a year.
+
+The takeaway for cloud users looking at the AppNeta data is often that the
+risk of an outage is very low.
+
+------------------------------
+
+Date: Tue, 26 Apr 2011 02:18:37 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: The algorithm says that'll be $23,698,655.93, plus $3.99 shipping
+
+A biologist named Michael Eisen tells the story of trying to buy
+a book about developmental biology from Amazon.  It was out of print,
+but Amazon had two listings for new copies -- with prices in the
+millions of dollars, and rising daily.  Eisen monitored the prices
+for a while and came up with the following explanation:
+
+* Seller A didn't really have the book, but planned to buy it from
+  Seller B if someone placed an order.  They had a better feedback
+  record than B, so someone might buy it from A even at a higher
+  price, and had programmed their price to be 27.0589% higher than A's,
+  so they'd make a profit.
+
+* Seller B, meanwhile, was trying to ensure they just barely had the
+  lowest price, and had programmed their price to be 0.17% lower than
+  their competition.
+
+* Both prices were updated automatically once a day -- thus rising
+  exponentially until somebody noticed.
+
+See http://www.michaeleisen.org/blog/?p=358.
+
+------------------------------
+
+Date: Mon, 11 Apr 2011 18:04:32 -0400
+From: "fj@rcc" <kfjohn@reinke.cc>
+Subject: Texas exposes addresses, SSNs of 3.5 million residents
+
+Identity Fraud would be impossible with out the Gooferment's lame "social
+security number". Argh! Everything is so predictable!
+
+http://arstechnica.com/security/news/2011/04/texas-exposes-addresses-ssns-of-35-million-residents.ars
+
+> And now, a large group of Texans are about to have it a lot worse:the
+> state revealed Monday <http://txsafeguard.org/>that personal information
+> for 3.5 million citizens has been exposed to the public, including names,
+> addresses, Social Security numbers, and more.
+
+Ferdinand John Reinke, 3 Tyne Court, Kendall Park, NJ 08824 908-209-3625
+fjohn@reinke.cc  http://www.reinke.cc http://www.reinkefj.com
+
+------------------------------
+
+Date: Sun, 24 Apr 2011 18:38:38 -0400
+From: Steven Bellovin <smb@cs.columbia.edu>
+Subject: Risks of auto-classification
+
+While reading the AP news recently, via the Associated Press' official iPad
+app, I went to the "Religion" section.  I was rather surprised to see an
+article about a New York Mets baseball player being put on the disabled list
+due to an injury.  This seemed rather odd to me (even though as a long-time
+(and long-suffering) Mets fan I might be expected to utter prayers for
+relief when such things happen), until my wife pointed out the player's
+name: *Angel* Pagan...
+
+                --Steve Bellovin, https://www.cs.columbia.edu/~smb
+
+  [I suppose members of the team now known as the Los Angeles Angels of
+  Anaheim appear regularly in that section.  Media supporting a home team
+  is always popular, even if it is an example of Plug and Pray.  PGN]
+
+------------------------------
+
+Date: Mon, 25 Apr 2011 23:21:21 -0400 (EDT)
+From: danny burstein <dannyb@panix.com>
+Subject: Iran claims it's under a second virus attack
+
+After Stuxnet: Iran says it's discovered 2nd cyber attack [Jerusalem Post]
+
+Tehran - Iran has been targeted by a second computer virus in a "cyber war"
+waged by its enemies, its commander of civil defense said on Monday.
+Gholamreza Jalali told the semi-official Mehr news agency that the new
+virus, called "Stars", was being investigated by experts. ...  "Fortunately,
+our young experts have been able to discover this virus and the Stars virus
+is now in the laboratory for more investigations," Jalali was quoted as
+saying. He did not specify the target of Stars or its intended impact.
+
+rest:
+http://www.jpost.com/IranianThreat/News/Article.aspx?id=217795
+
+------------------------------
+
+Date: Mon, 04 Apr 2011 14:46:18 -0400
+From: Jeremy Epstein <jeremy.epstein@sri.com>
+Subject: RSA hack spear-phishing via an Excel spreadsheet with embedded Flash
+
+http://threatpost.com/en_us/blogs/rsa-securid-attack-was-phishing-excel-spreadsheet-040111
+
+Victim retrieved the message from spam folder, opened it, which used a
+zero-day vulnerability in Flash to install malware that then phoned home,
+giving control to the bad guys.  RSA confirmed it.
+
+Pretty darn clever.....
+
+Jeremy Epstein, Senior Computer Scientist, SRI International
+1100 Wilson Blvd, Suite 2800, Arlington VA  22209  703-989-8907 (M)
+
+------------------------------
+
+Date: Thu, 21 Apr 2011 01:27:58 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Tracking File Found in iPhones
+
+Nick Bilton, *The New York Times*, 20 Apr 2011
+(Miguel Helft and John Markoff contributed reporting.)
+http://www.nytimes.com/2011/04/21/business/21data.html?_r=1&nl=todaysheadlines&emc=tha26
+
+Apple faced questions [on 20 Apr 2011] about the security of its iPhone and
+iPad after a report that the devices regularly record their locations in a
+hidden file.  The report came from a technology conference in San Francisco,
+where two computer programmers presented research showing that the iPhone
+and 3G versions of the iPad began logging users' locations a year ago, when
+Apple updated its mobile operating system.  After customers upgraded the
+software, a new hidden file began periodically storing location data,
+apparently gleaned from nearby cellphone towers and Wi-Fi networks, along
+with the time.  The data is stored on a person's phone or iPad, but when the
+device is synced to a computer, the file is copied over to the hard drive,
+the programmers said. The data is not normally encrypted; although users can
+encrypt their information when they sync their devices, few do.
+
+To some privacy advocates, the storing of the data was a clear breach.  "The
+secretive collection of location data crosses the privacy line," said Marc
+Rotenberg, executive director of the Electronic Privacy Information Center,
+a privacy policy organization based in Washington.  "Apple should know
+better than to track iPhone users in this way."  Others said the discovery
+of the hidden file was unlikely to have a major practical impact on privacy
+and security.  "It is more symbolic than anything else," said Tim O'Reilly,
+a longtime technology pundit and founder of O'Reilly Media. "It is one more
+sign of how devices are collecting data about us and potentially sharing it
+with others. This is the future. We have to figure out how to deal with it."
+
+  [See also
+http://online.wsj.com/article/SB10001424052748704123204576283580249161342.html
+  and
+Apple, Google In Privacy Hot Water Over "Locationgate", 25 Apr 2011
+http://searchengineland.com/apple-google-in-privacy-hot-water-over-locationgate-74526
+  PGN]
+
+------------------------------
+
+Date: Wed, 20 Apr 2011 16:43:17 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Re: Skype for Android User Data Leak (RISKS-26.43)
+
+> "Skype mistakenly left these files with improper permissions, allowing
+> anyone or any app to read them," said Case. "Not only are they accessible,
+> but [they're] completely unencrypted."
+
+Robert Watson at the University of Cambridge noted to me:
+
+  Sounds like a classic failure of discretionary access control: you have to
+  get the permissions right!
+
+  Although it strikes me that the comment from Case gets the gist wrong:
+  encrypting them is all well and good, but if they have to be decrypted to
+  be used, then the key has to be lying around too. Getting the permissions
+  wrong seems a greater sin. But the greatest sin of all is requiring
+  application developers to get the permission bits right.  Robert
+
+------------------------------
+
+Date: Tue, 26 Apr 2011 17:26:30 +0300
+From: Amos Shapir <amos083@hotmail.com>
+Subject: Re: Increasing risks due to leap seconds being ever more frequent
+
+The problem seems to be that the UTC base serves two purposes, as a basis
+for timezones to define local (Sun-relative) time, and also as a benchmark
+for timing intervals.  At high precision, these uses might contradict each
+other, and the leap-second solution is viewed as inadequate.
+
+There is a good history of the efforts to separate these two functions in
+The Future of Leap Seconds (including a reference to Kamp's article).
+
+------------------------------
+
+Date: Thu, 21 Apr 2011 13:27:12 -0500
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: 'HTTPS Now' (RISKS-26.43)
+
+> Date: April 20, 2011 11:15:14 AM EDT
+> From: EFF Press <press@eff.org>
+> Subject: EFF: 'HTTPS Now' Campaign Urges Users to Take an Active Role
+>   in Protecting Internet Security
+
+> As a first step, individuals using the web are encouraged to install HTTPS
+> Everywhere, a security tool for the Firefox browser developed by EFF and
+> the Tor Project.  HTTPS Everywhere automatically encrypts a user's
+> browsing, changing it from HTTP to HTTPS whenever possible.
+
+If that also bypasses the Firefox's "self-signed cert" dialog, it's worth
+installing just for that. On the other hand, if it does not, one wonders how
+the majority of users will react to "Evil hackers Are Taking Over The
+Internet! Run away!" popping up after every other mouse click.
+
+<tinfoil hat>Or perhaps EFF got hired by VeriThawteInc in the cunning plan
+to expand the latter's customer base?</tinfoil hat>
+
+Dima
+
+Dimitri Maziuk Programmer/sysadmin
+BioMagResBank, UW-Madison -- http://www.bmrb.wisc.edu
+
+------------------------------
+
+Date: Tue, 26 Apr 2011 02:27:46 -0400
+From: Kevin Fu <kevinfu@cs.umass.edu>
+Subject: Workshop on RFID Security and Privacy
+
+7th Annual Workshop on RFID Security and Privacy (RFIDsec)
+Amherst, MA, USA
+June 26-28, 2011
+http://rfid-cusp.org/rfidsec/
+  Early bird registration ends May 13
+     [Sorry to be late.  I've been seriously preoccupied.  PGN]
+
+RFIDsec brings together researchers from academia and industry for topics of
+importance to improving the security and privacy of RFID, NFC, contactless
+technologies, and the Internet of Things.  RFIDsec bridges the gap between
+cryptographic researchers and RFID developers through invited talks,
+tutorials, and contributed presentations and posters.
+
+Pre-workshop tutorials cover the physics of RFID, hands-on differential
+power analysis of hardware tokens, hands-on programming of batteryless
+RFID-scale sensor devices, and an introduction to RFID security and privacy.
+
+Social highlights include a reception and a New England-style clambake
+with scenic views of the rolling foothills and majestic mountains of
+the Pioneer Valley.
+
+Discounts for full-time students are made possible by the generosity
+of Microsoft Research, Mocana, Cryptography Research, the RFID
+Journal, and DIFRwear.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.44
+************************
+
+--_002_C0BFE9BC4DE1C54E96C3901CD7A8F16E5272DD73EDEXSAN02campus_--

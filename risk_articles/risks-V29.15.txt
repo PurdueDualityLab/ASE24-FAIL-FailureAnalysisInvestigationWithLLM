@@ -1,0 +1,623 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 9 December 2015  Volume 29 : Issue 15
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.15.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Reboot not a solution -- especially for commercial aviation (Mark Richards)
+Working on Cheaper Sensors, Deeper Learnings (Gabe Goldberg)
+How Electronic Health Records Are Harming Patients (CIO)
+Hopeless failure of Dutch telecom providers & Phone House to protect
+  personal data: How I could access 12+ million records (Kees Huyser)
+Car calls 911 to report accident after Florida hit and run (ABC)
+Fired Kemp worker says he is a scapegoat re: Massive Georgia data breach
+  (AJC)
+Trend Micro finds security bugs in over 6M devices (Help Net)
+"New payment card malware hard to detect and remove" (Jeremy Kirk)
+The attack that broke Tor, and how Tor plans to fix it (Kashmir Hill)
+France looking at banning Tor, blocking public Wi-Fi (Sebastian Anthony)
+Interesting hack to gain backstage access (BBC via Ken Olthoff)
+"I gave my students iPads -- then wished I could take them back"
+  (WashPost)
+"Why Node.js waited for OpenSSL security update before patching"
+  (Fahmida Y. Rashid)
+I thought it was "https://" (Dan Jacobson)
+Road to Robotic Parking Is Littered With Faulty Projects
+  (UK National Crime Agency *via The New York Times*)
+Your child is a CYBER-CRIMINAL! (UK National Crime Agency via
+  Lauren Weinstein)
+How not to report on the encryption 'debate' (CJR)
+Terrorists Mock Bids to End Use of Social Media (NYTimes)
+Re: Database Error Complicit In Turkish Airlines Landing Accident
+   (Dan Jacobson)
+"Post on Facebook - and get a tax bill." (Kate Palmer via Chris Drewe)
+Re: Everyone is lying about the downed Russian jet? (David Damerell)
+Re: reply@not.possible (Dimitri Maziuk)
+Voter Privacy in the Age of Big Data (Ira Rubenstein)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Sat, 5 Dec 2015 10:40:24 -0500
+From: Mark Richards <mark.richards@massmicro.com>
+Subject: Reboot not a solution -- especially for commercial aviation
+
+Terrestrial-bound computer users blindly accept a system reboot as a problem
+solution.  In my experience this remains a constant in Windows (version 7
+and below... I have no experience with 8 or above, thanks), and various
+Apple OS's.  (My Linux boxes just keep on running).  This mindset has crept
+into the maintenance practices of the commercial airlines.  For many years I
+have read frequently the exploits of in-flight failures resolved by cycling
+a circuit breaker; of a "maintenance engineer" doing much the same on the
+ground to fix a "glitch".
+
+I think a read of the NTSC's report on the crash of an Indonesia Air Asia
+Airbus A320-200 which killed all aboard on 27 December, 2014, is worthy for
+its potential to sober flight crews, maintenance and regulators:
+
+     avherald.com/h?articleGf6abc7/0028&opt=0
+
+That CRM, basic recovery procedures, and a host of other
+allegedly-well-trained responses went out the window, including the
+continued lack of side stick conflict detection in Airbus designs, can, I
+think, be implicated in this mess... but it all began with a hard failure
+and a "reboot", taking us back to the old principle of the straw that breaks
+the camel's back.
+
+In flight, system restarts must remain the option of the crews.  The very
+hint of restricting flight crew access to the hardware meets with a strong
+objection.  However, we also see in this instance that the act of shutting
+off a system completely was not met with an appropriate crew response.
+Reversion to lower levels of flight dynamic protections simply return the
+airplane to stick and rudder. One may rightly ask why this is so
+problematic.  In the thinner upper levels, with tighter speed/stall margins,
+are crews simply not familiar enough to manage these extremes?
+
+Among the lessons: things that go bump in the night tend to leave bits
+floating on the ocean.  Need a reboot?  There's a good reason why.  Let's
+abandon the cheap and easy way out as it only puts off the inevitable
+disaster.
+
+------------------------------
+
+Date: Fri, 4 Dec 2015 18:22:56 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Working on Cheaper Sensors, Deeper Learnings
+
+Automotive Intelligence - Consumer Technology Association
+
+It is crucial for an autonomous car to be able to understand and learn
+behaviors, weigh factors and make judgment calls, not simply to follow
+rules, asserts Jim Buczkowski, global director of electronic systems,
+research and innovation at Ford Motor Co. in Dearborn, MI. "I don't think
+you can program for every single individual situation but you can't have a
+situation where the machine comes back and says, 'I don't know what to do,'"
+he says. Further, autonomous vehicles must be engineered for "graceful
+failure" when technology can't function -- for example, when one of the
+vehicle's sensors is blocked by dirt or inclement weather -- meaning "you
+still have some capability for driver assistance, but you don't have full
+autonomy," he explains. "Those are things that are part of the strategy that
+folks are looking at and working on."
+
+http://www.cta.tech/i3/Features/2015/November-December/Automotive-Intelligence.aspx
+
+...what could go wrong?
+
+Gabriel Goldberg, Computers and Publishing, Inc.       gabe@gabegold.com
+3401 Silver Maple Place, Falls Church, VA 22042           (703) 204-0433
+
+------------------------------
+
+Date: Fri, 4 Dec 2015 08:22:55 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How Electronic Health Records Are Harming Patients
+
+CIO via NNSquad
+http://www.cio.com/article/3011576/ehr/why-electronic-health-records-arent-more-usable.html
+
+  EHRs are designed to support billing more than patient care, experts say
+  ... It shouldn't come as a surprise that most doctors are unhappy with
+  their electronic health record (EHR) systems, which tend to be clunky,
+  hard to use and may actually get in the way of truly excellent patient
+  care ... Doctors' biggest complaint about the EHR is that it slows them
+  down, especially in the documentation phase. "Compared to handwriting or
+  dictating, EHRs take doctors nine times longer to enter the data,"
+  Anderson says. "Sure, you have more information in the EHR than in paper
+  records, but it takes more time." ... Other alerts go off to prevent
+  adverse drug interactions with other medications, allergies, or foods.
+  Many of these are inapplicable to particular patients, and after a while,
+  doctors may stop paying attention to them or turn them off. Three quarters
+  of EHRs don't allow the customization of these alerts, according to
+  Anderson.
+
+------------------------------
+
+Date: Tue, 8 Dec 2015 14:31:54 +0100
+From: Kees Huyser <kees.huyser@nikhef.nl>
+Subject: Hopeless failure of Dutch telecom providers & Phone House to
+  protect personal data: How I could access 12+ million records
+
+A (long) story of exposed passwords and lax security.
+
+"The sales guy started renewing my Vodafone subscription and therefor needed
+to log in at a dealer portal from Vodafone. He didn't remember the login
+password, and, here it comes, on the screen he opened an Excel file which
+contained *all* their passwords.
+
+Is this happening for real? I had just told him minutes ago I'm an
+experienced professional hacker, and we had both laughed about the
+password-taped-on-monitor leak.
+
+Curiously and intensively I looked on the screen to get a picture of the
+treasure trove that was in front of me. Passwords to view and modify
+customer data of KPN, Vodafone, Telfort, T-Mobile, UPC, Tele2 and other
+companies were right in front of me.
+
+http://sijmen.ruwhof.net/weblog/608-personal-data-of-dutch-telecom-providers-extremely-poorly-protected-how-i-could-access-12-million-records
+
+Kees Huyser
+
+------------------------------
+
+Date: Tue, 8 Dec 2015 08:31:58 -0700
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: Car calls 911 to report accident after Florida hit and run (ABC)
+
+ABC 7, Chicago, 4 Dec 2015, Port St. Lucie, FL
+
+A hit-and-run mystery was solved and a woman arrested in Florida after an
+unusual call to 911.  It wasn't the driver who picked up the phone, but
+instead it was the car itself that called for help.
+
+Port St. Lucie police say a car safety feature helped them to track down
+57-year-old Cathy Bernstein, who they say hit a truck and then [p]lowed
+through a van on Prima Vista Boulevard.
+
+Bernstein allegedly fled the scene, but her car's emergency assistance
+feature didn't just make a record of the crash, it automatically contacted
+911.
+
+http://abc7chicago.com/technology/car-auto-dails-911-to-report-accident-after-driver-allegedly-commits-hit-and-run/1109554/
+
+------------------------------
+
+Date: Thu, 3 Dec 2015 19:36:37 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Fired Kemp worker says he is a scapegoat re: Massive Georgia data
+  breach (AJC)
+
+AJC via NNSquad
+http://www.ajc.com/news/news/state-regional-govt-politics/exclusive-fired-kemp-worker-says-he-is-a-scapegoat/npbBC/
+
+  The employee fired after being blamed for a massive data breach at the
+  Georgia Secretary of State's Office said Wednesday he has been made a
+  scapegoat by the agency.  In an exclusive interview with The Atlanta
+  Journal-Constitution, longtime state programmer Gary Cooley said he did
+  not have the security access to add millions of Social Security numbers
+  and birth dates to a public data file -- something Secretary of State
+  Brian Kemp accused him of doing.  And while he acknowledged a role in the
+  gaffe, he also outlined a more complicated series of missteps and
+  miscommunication both within the office and with PCC Technology Group, an
+  outside vendor tasked with managing voter data for the state.
+
+------------------------------
+
+Date: Tue, 8 Dec 2015 07:55:16 -0600
+From: "Alister Wm Macintyre \(Wow\)" <macwheel99@wowway.com
+Subject: Trend Micro finds security bugs in over 6M devices (Help Net)
+
+An estimated 6.1 million smart phones, routers, and smart TVs still use old
+versions of software with security bugs for which fixes were available in
+2012.
+
+This is because many ap developers are using obsolete versions of Universal
+Plug & Play (UPnP) SDK library (libupnp).
+
+See chart in Help Net article, & Trend Micro blog, listing 20  popular apps
+in this condition.
+
+http://www.net-security.org/secworld.php?id196
+http://blog.trendmicro.com/trendlabs-security-intelligence/high-profile-mobile-apps-at-risk-due-to-three-year-old-vulnerability/#
+
+  [Incidentally OWASP has published top 10 security flaws found in modern apps.
+    https://www.owasp.org/index.php/Top_10_2013-Top_10]
+
+------------------------------
+
+Date: Tue, 08 Dec 2015 15:05:35 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "New payment card malware hard to detect and remove"
+
+Jeremy Kirk, InfoWorld, 7 Dec 2015
+FireEye finds that Nemesis, which comes from a suspected Russian group,
+is a bootkit
+http://www.infoworld.com/article/3012125/malware/new-payment-card-malware-hard-to-detect-and-remove.html
+
+------------------------------
+
+Date: Mon, 07 Dec 2015 08:41:23 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: The attack that broke Tor, and how Tor plans to fix it
+  (Kashmir Hill)
+
+Kashmir Hill, Fusion, 30 Nov 2015
+http://fusion.net/story/238742/tor-carnegie-mellon-attack/
+
+Law enforcement has been complaining for years about the Web "going dark,"
+saying that encryption and privacy tools are frustrating their ability to
+track criminals online.  But massive FBI operations over the last year that
+have busted 'hidden sites' used for the sale of drugs, hacking tools, and
+child pornography suggest the digital criminal world has gotten lighter,
+with law enforcement bragging that criminals can't "hide in the shadows of
+the Dark Web anymore."  While mysterious about its tactics, law enforcement
+indicated that it had found a way to circumvent the tool on which these
+sites relied, a software called Tor.  But criminals are not the only ones
+who rely on it.
+
+  [Henry also suggests other sites as well.  PGN]
+https://www.fbi.gov/newyork/press-releases/2014/dozens-of-online-dark-markets-seized-pursuant-to-forfeiture-complaint-filed-in-manhattan-federal-court-in-conjunction-with-the-arrest-of-the-operator-of-silk-road-2.0
+https://www.torproject.org/projects/torbrowser.html.en
+http://motherboard.vice.com/read/the-operators
+https://gitweb.torproject.org/doctor.git
+
+------------------------------
+
+Date: Mon, 07 Dec 2015 08:48:14 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: France looking at banning Tor, blocking public Wi-Fi
+  (Sebastian Anthony)
+
+  FYI -- 'So will they shorten it to égalité, fraternité?'
+
+Sebastian Anthony (UK) -- 7 Dec 2015
+Leaked docs from Ministry of Interior show worryingly illiberal trend for
+France.
+http://arstechnica.com/tech-policy/2015/12/france-looking-at-banning-tor-blocking-public-wi-fi/
+
+According to leaked documents from the Ministry of Interior the French
+government is considering two new pieces of legislation: a ban on free and
+shared Wi-Fi connections during a state of emergency, and measures to block
+Tor being used inside France.
+
+http://www.lemonde.fr/attaques-a-paris/article/2015/12/05/la-liste-musclee-des-envies-des-policiers_4825245_4809495.html
+
+------------------------------
+
+Date: Thu, 3 Dec 2015 21:26:36 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Interesting hack to gain backstage access (BBC)
+
+Ken Olthoff saw something (on the BBC web site, IIRC) about a guy who went
+to a concert and got backstage by on the spur of the moment editing the
+band's Wikipedia web page to include his name as a step-brother to one of
+the band members. He showed it to the guard at the door to the backstage
+area ("See? Here's my ID, here's what it says on the Wikipedia web page
+about the band - I'm his step-brother!"). Luckily, the guy and the band got
+along well when he met them in the green room, and they deemed him "a
+legend" for his hack.
+
+------------------------------
+
+Date: Sat, 5 Dec 2015 18:06:11 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: "I gave my students iPads -- then wished I could take them back"
+
+*WashPost* via NNSquad
+https://www.washingtonpost.com/opinions/i-gave-my-students-ipads--then-wished-i-could-take-them-back/2015/12/02/a1bc8272-818f-11e5-a7ca-6ab6ec20f839_story.html
+
+  A study released in September by the Organization for Economic Cooperation
+  and Development looked at school tech initiatives in more than three dozen
+  countries (although not the United States) and found that while students
+  who use computers moderately show modest gains over those who rarely do,
+  heavy technology use has a negative impact.  "Students who use computers
+  very frequently at school do a lot worse in most learning outcomes, even
+  after accounting for social background and student demographics," the
+  report concluded.
+
+------------------------------
+
+Date: Fri, 04 Dec 2015 14:21:29 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Why Node.js waited for OpenSSL security update before patching"
+  (Fahmida Y. Rashid)
+
+Fahmida Y. Rashid, InfoWorld Tech Watch, 4 Dec 2015
+Node.js Foundation fixed two critical vulnerabilities in its open
+source server-side JavaScript platform and addressed the newly patched OpenSSL
+http://www.infoworld.com/article/3012157/security/why-nodejs-waited-for-openssl-security-update-before-patching.html
+
+selected text:
+
+The fact that Node.js Foundation chose to delay its patches to incorporate
+OpenSSL fixes highlights the reality of open source code.  There are so many
+dependencies between various projects that maintainers have to track bugs in
+related libraries along with vulnerabilities in their own code. Modern
+software development typically consists of only 10 percent original code and
+90 percent from third-party libraries, said Christopher Frohoff, a security
+researcher with SourceClear. It's the developer's responsibility to make
+sure the applications don't link to vulnerable libraries.
+
+Even though Node.js 0.10.x (Maintenance) was not impacted by the
+above-mentioned vulnerabilities, users should still upgrade to the new
+Maintenance version because it depends on OpenSSL v.1.0.1.
+
+Many developers don't even know all the components being used in their
+applications, making it difficult to tell when a vulnerability in a project
+actually impacts their code. They may be aware of the libraries they're
+calling, but not what additional libraries those libraries are including,
+and the nesting can be several layers deep.  And some of those buried
+libraries may never show up in the program's dependency tree.
+
+=== End of Quotes ==
+  Now that I have covered that risk, let me add another one.  I recently
+  installed some software whose licencing agreement stated that I was
+  responsible for any violations with libraries used by the product.  If the
+  programmers of a package have difficulty keeping track of the
+  dependencies, imagine how much tougher end users have it.  (Please do not
+  bother stating that such terms would not hold up in court, because 1) they
+  just might, and 2) even being threatened with court action can get
+  expensive.)  [GW]
+
+------------------------------
+
+Date: Sun, 06 Dec 2015 22:45:43 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: I thought it was "https://"
+
+https://pptform.state.gov/include/FAQ.htm#faq8 :
+
+"Is this website secure?
+
+Our website is very secure. We use 128-bit SSL encryption to secure all
+traffic to and from the web server.  This is the industry standard for
+ensuring a high level of security when transmitting sensitive information
+over the Internet.  The website also receives its SSL certificate from
+VeriSign, the industry leader in providing SSL certificates. The lock icon
+at the bottom of the screen and the "https:\\" address are other indications
+that the site is secure."
+
+I thought it was "https://".   [LaTeX influence?  PGN]
+
+------------------------------
+
+Date: Sun, 6 Dec 2015 11:08:24 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Road to Robotic Parking Is Littered With Faulty Projects
+  (National Crime Agency *via The New York Times*)
+
+Having watched "A LEGO Brickumentary" http://www.imdb.com/title/tt3214286/
+(last two-thirds much more interesting than beginning), maybe they should
+have prototyped an automatic Lego garage parking tiny Lego cars before going
+full-scale.
+
+It sounds like some of these robogarages were built by the people who've
+created car-crushing machines. Combining those functions would be efficient
+-- push one button, park the car. Push the other, crush it into a cube.
+
+Software and hardware mishaps, including some that have smashed or trapped
+cars, have occurred at robotic garages around the country, but dozens of
+them are proposed or underway.
+http://www.nytimes.com/2015/11/28/us/road-to-robotic-parking-islittered-with-faulty-projects.html?smprod=nytcore-ipad&smid=nytcore-ipad-share
+
+------------------------------
+
+Date: Wed, 9 Dec 2015 09:58:04 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Your child is a CYBER-CRIMINAL!
+
+UK National Crime Agency via NNSquad
+
+The UK has just published their warning signs that your child may be
+a CYBER-CRIMINAL! Among their top concerns:
+
+ * Are they interested in coding? Do they have independent learning material
+   on computing?
+
+ * Do they use the full data allowance on the home broadband?
+
+The horrors! The horrors!
+
+http://www.nationalcrimeagency.gov.uk/crime-threats/cyber-crime/cyber-crime-preventing-young-people-from-getting-involved
+
+------------------------------
+
+Date: Sun, 6 Dec 2015 14:14:07 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How not to report on the encryption 'debate'
+
+CJR via NNSquad
+http://www.cjr.org/first_person/misinformation_and_misconceptions_how_not_to_report_on_the_encryption_debate.php?page=all
+
+  RARELY HAS A PUBLIC DEBATE been ignited so fast as the one about whether
+  to ban online encryption after the tragic Paris attacks two and a half
+  weeks ago.  And rarely has the coverage of such a debate been so lacking
+  in facts -- especially considering that encryption is a tool reporters
+  increasingly need to do their jobs.
+
+------------------------------
+
+Date: Mon, 7 Dec 2015 20:28:51 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Terrorists Mock Bids to End Use of Social Media
+
+NNSquad
+
+http://www.nytimes.com/2015/12/08/technology/terrorists-mock-bids-to-end-use-of-social-media.html?partner=rss&emc=rss
+
+  In some cases, Internet companies have been criticized for not taking down
+  websites that belong to the Islamic State, only to have it discovered
+  later that the sites were critical of it. Matthew Prince, chief executive
+  of CloudFlare, a San Francisco company, said that in one case Internet
+  activists criticized his company for keeping several Islamic State
+  websites online when, in fact, the sites in question were
+  pro-Kurdish. "It's particularly risky to take a bunch of tech companies
+  that are not certified policy experts and insert them into Middle East
+  politics," Mr. Prince said. Pulling all terror-related content is not
+  always preferred by law enforcement. In several cases, tech executives
+  say, they have been asked to keep terror-related content online so that
+  law enforcement agents can monitor terrorist networks or because the
+  content was created by law enforcement agents to lure terrorists into
+  divulging information. The issue is thornier for companies like Facebook,
+  in which the bulk of posts are meant to be private. "Do you want Facebook
+  looking at over 1.5 billion people's posts?" said Zeynep Tufekci, an
+  assistant professor in technology policy at the University of North
+  Carolina at Chapel Hill. "And if so, then for what?"
+
+------------------------------
+
+Date: Thu, 10 Dec 2015 05:26:49 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: Re: Database Error Complicit In Turkish Airlines Landing Accident
+   (RISKS-29.14)
+
+> some very important missing digits in the degrees, minutes and seconds
+> marking the latitude and longitude of the runway end.
+
+Maybe build an airfield at 0,0 (Gulf of Guinea) just in case?
+
+------------------------------
+
+Date: Fri, 04 Dec 2015 18:11:56 +0000
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: "Post on Facebook - and get a tax bill." (Kate Palmer)
+
+There was an item in the *Telegraph* this week about various organisations
+finding out about customers and taxpayers by postings on social media web
+sites:
+
+http://www.telegraph.co.uk/finance/personalfinance/insurance/12019256/Post-on-Facebook-and-get-a-tax-bill.html
+
+In summary:
+
+> Banks, insurers and Government bodies are trawling the Internet for any
+> information we give away on our social media accounts to price products
+> and catch anyone who cheats the system.  The City regulator has set its
+> sights on whether insurance companies in particular are using Facebook and
+> Twitter to unfairly increase premiums, for example.
+
+Although there may be advantages:
+
+> The City watchdog said it might not be "all bad news" for customers
+> because they could be placed into a lower-risk category due to their
+> online presence, and pay cheaper premiums.  "A person with more than 200
+> LinkedIn connections, for example, is statistically less risky"
+
+In my case I don't use social networking/media sites, my only on-line
+presence being on this esteemed forum, and who knows what anybody would make
+of my ramblings...  :o) However, personally I'd be concerned about the legal
+status of posts; if I set up a fake persona as a millionaire playboy and was
+then investigated by the tax authorities and had to confess that I wasn't
+actually a millionaire, could I be in trouble for not having money that I
+was supposedly avoiding paying tax on..?
+
+------------------------------
+
+Date: Thu, 3 Dec 2015 16:19:18 +0000
+From: David Damerell <damerell@chiark.greenend.org.uk>
+Subject: Re: Everyone is lying about the downed Russian jet?
+
+http://motherboard.vice.com/read/belgian-physicists-calculate-that-everyone-is-lying-about-the-downed-russian-jet
+
+I am not a physicist (or a pilot), but from photos I have seen it seems
+clear the jet is relatively intact immediately after the missile hit. It
+doesn't seem implausible that the control surfaces are working well enough
+that it could indeed make a sharp turn at that point while the pilot decides
+if ejection is necessary (or, indeed, jumps out of his skin while holding
+the joystick).  So is everyone lying? I'm not sure we can infer it from an
+analysis based on the premise that as soon as the missile hits the aircraft
+becomes entirely inert.
+
+------------------------------
+
+Date: Thu, 3 Dec 2015 13:12:04 -0600
+From: Dimitri Maziuk <dmaziuk@bmrb.wisc.edu>
+Subject: Re: reply@not.possible (Jacobson, RISKS-29.14)
+
+Dan, That sounds as if you haven't seen
+https://www.domainsbyproxy.com/default.aspx yet. Read and weep.
+
+------------------------------
+
+Date: Sun, 6 Dec 2015 12:03:23 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Voter Privacy in the Age of Big Data (Ira Rubenstein)
+
+Ira Rubinstein, New York University (NYU) - Information Law Institute (April
+26, 2014), Wisconsin Law Review, Forthcoming
+http://papers.ssrn.com/sol3/papers.cfm?abstract_id$47956
+
+Abstract: In the past several election cycles, presidential campaigns and
+other well-funded races for major political offices have become data-driven
+operations.  Presidential campaign organizations and the two main parties
+(and their data consultants) assemble and maintain extraordinarily detailed
+political dossiers on every American voter.  These databases contain
+hundreds of millions of individual records, each of which has hundreds to
+thousands of data points.  Because this data is computerized, candidates
+benefit from cheap and nearly unlimited storage, very fast processing, and
+the ability to engage in data mining of interesting voter patterns. [...]
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.15
+************************

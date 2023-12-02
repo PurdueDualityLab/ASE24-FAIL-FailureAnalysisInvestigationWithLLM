@@ -1,0 +1,583 @@
+precedence: bulk
+Subject: Risks Digest 29.49
+
+RISKS-LIST: Risks-Forum Digest  Friday 29 April 2016  Volume 29 : Issue 49
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/29.49.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+SWIFT system software compromised in order to hide the Bangladeshi Bank
+  fraud (Peter Ladkin)
+What you need to know about election apps and your personal data
+  (Cynthia Chen)
+Kuwait to impose genetic testing on all visitors and residents
+  (Thomas Koenig)
+Trust in the Cloud Could Be Pinned to Online Scoring System (David Ellis)
+Latest Headlines on DATABREACHES.NET (Werner U.)
+DARPA Is Looking for the Perfect Encryption App; It's Willing to Pay
+  (Lorenzo Franceschi-Bicchierai)
+Behind Mitsubishi's Faked Data, Fierce Competition (NYTimes)
+VW Presentation in '06 Showed How to Foil Emissions Tests (NYTimes)
+Social Media, Where Sports Fans Congregate and Misogyny Runs Amok (NYTimes)
+Malware reporting mailbox rejects emails containing malware (Martin Ward)
+Obama to make 'Nanny guns' push (Sarah Wheaton)
+Re: FBI admits it paid $1.3m to hack into that iPhone
+  (Henry Baker)
+BeautifulPeople Dating Website records for sale (Chris Vickery)
+Re: If Emoji Are the Future of Communication Then We're Screwed (Martin Ward)
+Europe's Billion-Euro Bet on Quantum Computing (Anthony Cuthbertson)
+Workshop on Software Measures and Metrics to Reduce Security Vulnerabilities
+  (Paul Black)
+Deepwater Horizon: A Systems Analysis of the Macondo Disaster
+  (Earl Boebert and James M. Blossom)
+Update on the catless.ncl.ac.uk outage (PGN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 26 Apr 2016 07:06:24 +0200
+From: Peter Bernard Ladkin <ladkin@rvs.uni-bielefeld.de>
+Subject: SWIFT system software compromised in order to hide the Bangladeshi
+   Bank fraud
+
+SWIFT is the international clearing house for bank transactions, and is a
+cooperative with 3,000 members.  One of its members, the state bank of
+Bangladesh, Bangladesh Bank, recently lost $81m due to fraudulent
+transactions using SWIFT systems.
+
+SWIFT has said that some of its software was compromised on Bangladesh Bank
+computers in order to cover up the $81m loss, which has led to the
+resignation of the Bank's governor.
+
+It seems that authorised access was used to perform the illegitimate
+transactions, of which the logs (and thus the visible audit trail) were then
+hidden somehow by malware.
+
+https://www.theguardian.com/technology/2016/apr/26/international-bank-transfer-system-hacked-swift-group-admits
+
+BAE systems has some information on malware involved in covering up the
+fraudulent transactions, but the incident is not yet fully understood. BAE
+apparently doesn't know how the fraudulent transactions were created and
+processed. SWIFT says the fraudulent transactions were initiated through
+authorised access to its systems.
+
+Prof. Peter Bernard Ladkin, Faculty of Technology, University of Bielefeld,
+33594 Bielefeld, Germany
+
+  [Different source (Reuters 26 Apr 2016 and DATABREACHES)
+<http://www.databreaches.net/swift-warns-customers-of-multiple-cyber-fraud-cases-issues-software-security-update/>
+  noted by Werner U.  PGN]
+
+------------------------------
+
+Date: Tue, 26 Apr 2016 08:14:35 -0600
+From: Jim Reisert AD1C <jjreisert@alum.mit.edu>
+Subject: What you need to know about election apps and your personal data
+  (Symantec)
+
+Cynthia Chen, Symantec Employee, 25 Apr 2016
+Presidential primary apps can gather a lot of information and may expose
+sensitive data.
+
+The number of apps related to the presidential primaries has grown
+considerably. These apps are more popular than ever, thanks mostly to Donald
+Trump, according to our data. However, we want to remind users that
+presidential primary apps can gather a lot of information and may expose
+sensitive data. Most primary apps are unofficial and not affiliated with a
+campaign, but even official apps have some data exposure, as we found by
+looking at two primary candidate apps using the Norton Mobile Security with
+Norton Mobile Insight app.
+
+http://www.symantec.com/connect/blogs/what-you-need-know-about-election-apps-and-your-personal-data
+
+------------------------------
+
+Date: Tue, 26 Apr 2016 00:17:12 +0200
+From: Thomas Koenig <tkoenig@netcologne.de>
+Subject: Kuwait to impose genetic testing on all visitors and residents
+
+Wow.
+
+I guess that with the huge amount of oil revenues these days, they don't
+need a tourist trade, nor do they care if business people go there.
+
+http://news.kuwaittimes.net/website/kuwait-to-enforce-dna-testing-law-on-citizens-expats-visitors-tests-wont-be-used-to-determine-genealogy-affect-freedoms/
+
+------------------------------
+
+Date: Wed, 27 Apr 2016 12:06:45 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: Trust in the Cloud Could Be Pinned to Online Scoring System
+  (David Ellis)
+
+David Ellis, University of Adelaide, 22 Apr 2016
+
+University of Adelaide researchers have developed an online tool to help
+build users' trust in the cloud.  "Trust management is a top obstacle in
+cloud computing, and it's a challenging area of research," says University
+of Adelaide professor Michael Sheng.  He attributes this lack of faith in
+the cloud to minimal transparency, and the difficulty in knowing whether
+cloud-based applications are malicious or genuine.  Sheng has been
+developing Cloud Armor, which aims to show which cloud sites, applications,
+or providers are more trustworthy than others.  "The basic concept behind
+this is like the website Rotten Tomatoes, which is widely used by people to
+review and rank films," Sheng says.  Cloud Armor relies on a "credibility
+model," a crawler engine that scans all of the comments made on the Internet
+about any aspect of the cloud, and the model determines what feedback is
+credible and what is not.  "We've tested this with and without our
+credibility model--without the model, some cloud applications receive a
+maximum score of 100; but with the model, that score might only get to 50 or
+60," Sheng says.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-efc1x2e214x065498&
+
+------------------------------
+
+Date: Thu, 28 Apr 2016 16:46:07 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Latest Headlines on DATABREACHES.NET
+
+I had not been aware of that site before following the link to an article
+there in the last RISKS-digest (regarding the Mexican voters list)...
+
+Just scanning over the list of the latest articles there (besides the
+followup regarding the Mexican issue) might touch on topics of interest to
+you or other RISKS-readers...
+
+Latest Posts
+
+- Another Greenshades client discloses breach of employee info
+   <http://www.databreaches.net/another-greenshades-client-discloses-breach-of-employee-info/>
+- Amazon denies Movimiento Cuidadano=E2=80=99s claim that they were hacked
+   <http://www.databreaches.net/amazon-denies-movimiento-cuidadanos-claim-that-they-were-hacked/>
+- American Samoa Domain Registry Was Exposing Client Data Since the mid-1990s
+   <http://www.databreaches.net/american-samoa-domain-registry-was-exposing-client-data-since-the-mid-1990s/>
+- Breach Response Portal Added by Massachusetts Regulator
+  <http://www.databreaches.net/breach-response-portal-added-by-massachusetts-regulator/>
+- Movimiento Ciudadano admits it was their copy of the Mexican voter
+   list on AWS, tries to deflect blame to researcher
+   <http://www.databreaches.net/movimiento-ciudadano-admits-responsibility-for-mexican-voter-data-leak-on-amazon/>
+- Banks Sue Wendy=E2=80=99s Over Five-Month-Long Data Hack
+  <http://www.databreaches.net/banks-sue-wendys-over-five-month-long-data-hack/>
+- Vail Valley Medical Center notifies 3,118 patients whose PHI was stolen by
+  departing employee
+   <http://www.databreaches.net/vail-valley-medical-center-notifies-3118-patients-whose-phi-was-stolen-by-departing-employee/>
+- Rhode Island Attorney General Pushing For A State-Level CFAA That Will
+  Turn Researchers, Whistleblowers Into Criminals
+  <http://www.databreaches.net/rhode-island-attorney-general-pushing-for-a-state-level-cfaa-that-will-turn-researchers-whistleblowers-into-criminals/
+- PH: BIR probes employees for leaking sensitive data
+  <http://www.databreaches.net/ph-bir-probes-employees-for-leaking-sensitive-data/>
+- Norway Starts Requiring Data Breach Notification
+  <http://www.databreaches.net/norway-starts-requiring-data-breach-notification/>
+
+------------------------------
+
+Date: Wed, 27 Apr 2016 12:06:45 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: DARPA Is Looking for the Perfect Encryption App; It's Willing to Pay
+
+Lorenzo Franceschi-Bicchierai, *Motherboard*, 22 Apr 2016
+
+The Pentagon's blue-sky research program is looking for someone to create
+the ultimate hacker-proof messaging app.  The "secure messaging and
+transaction platform" would use the standard encryption and security
+features of current messaging apps such as Signal, but also would use a
+decentralized Blockchain-like backbone structure that would be more
+resilient to surveillance and cyberattacks.  The goal of the U.S. Defense
+Advanced Research Projects Agency (DARPA) is "a secure messaging system that
+can provide repudiation or deniability, perfect forward and backward
+secrecy, time to live/self delete for messages, one-time eyes-only messages,
+a decentralized infrastructure to be resilient to cyberattacks, and ease of
+use for individuals in less than ideal situations," according to a recent
+notice for proposals.  DARPA wants "a public wall anyone can monitor or post
+messages on, but only correct people can decrypt," says Frederic Jacobs, an
+independent security researcher.  He notes one problem with this approach is
+the structure would have higher latency and be harder to deploy at scale.
+DARPA's effort also suggests the rise of encryption apps is inevitable.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-efc1x2e210x065498&
+
+  [DARPA and DoD and most other government agencies *need* strong
+  encryption.  Law Enforcement does not.  It's not just a Lexican Standoff.
+  PGN]
+
+------------------------------
+
+Date: Thu, 28 Apr 2016 14:12:11 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Behind Mitsubishi's Faked Data, Fierce Competition
+
+The latest automaker scandal has focused attention on the company's
+struggles in the brutally competitive Japanese microcar market.
+http://www.nytimes.com/2016/04/22/business/mitsubishi-cheating-fuel-economy-investigation.html
+
+------------------------------
+
+Date: Thu, 28 Apr 2016 14:12:05 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: VW Presentation in '06 Showed How to Foil Emissions Tests (NYTimes)
+
+The proposal, discovered as part of the investigations into Volkswagen,
+provides a direct link to the genesis of the diesel deception.
+http://www.nytimes.com/2016/04/27/business/international/vw-presentation-in-06-showed-how-to-foil-emissions-tests.html
+
+------------------------------
+
+Date: Fri, 29 Apr 2016 08:28:05 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Social Media, Where Sports Fans Congregate and Misogyny Runs Amok
+
+Two sports journalists decided to publicly address the vile messages they
+receive on social media, comments like "please kill yourself I will provide
+the bleach."
+http://www.nytimes.com/2016/04/29/sports/more-than-mean-women-journalists-julie-dicaro-sarah-spain.html
+
+------------------------------
+
+Date: Fri, 29 Apr 2016 09:11:42 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Malware reporting mailbox rejects emails containing malware
+
+The City of London Police have an email address for members
+of the public to report phishing attempts and other malware:
+
+https://reportlite.actionfraud.police.uk/Survey.mvc/Tab/1/11
+
+The address is NFIBPhishing@city-of-london.pnn.police.uk.
+
+Unfortunately, if you try to report malware to the malware
+reporting mailbox, by forwarding the malware as requested,
+the mailbox will reject your malware report:
+because it contains malware!
+
+ > A message that you sent could not be delivered to one or more of its
+ > recipients. This is a permanent error. The following address(es) failed:
+ >
+ >   NFIBPhishing@city-of-london.pnn.police.uk
+ >     delivery canceled
+...
+ > X-ACL-Warn: X-Virus Scan: Sophos AV 9
+ > X-ACL-Warn: X-Virus Status: infected by malware (Mal/DrodZp-A)
+ > X-ACL-Warn: X-Virus Note: Certain attachments are not checked for viruses
+
+Dr Martin Ward STRL Principal Lecturer & Reader in Software Engineering
+martin@gkc.org.uk  http://www.cse.dmu.ac.uk/~mward/
+
+------------------------------
+
+Date: Thu, 28 Apr 2016 21:15:20 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Obama to make 'Nanny guns' push (Sarah Wheaton)
+
+Sarah Wheaton, Politico <swheaton@politico.com>
+
+  [About the only things more insane than 'smart' guns are 4,000-pound
+  4-wheel autonomous drone missiles careening through our neighborhood
+  streets at 60 mph...  HB]
+
+The govt isn't interested in 'smart' guns, so much as 'back-doored' guns
+that can be silenced using a big red button controlled by a bureaucrat...
+
+A truly 'smart' gun would have to solve the 'Trolley Problem' in real time,
+using the full power of IBM's Watson/Jeopardy technology, but also having
+the legal wisdom of the U.S. Supreme Court in order to withstand the "Monday
+Morning Quarterbacks".
+
+https://en.wikipedia.org/wiki/Trolley_problem
+http://www.politico.com/story/2016/04/obama-smart-gun-technology-222574
+
+------------------------------
+
+Date: Mon, 25 Apr 2016 13:58:51 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Re: FBI admits it paid $1.3m to hack into that iPhone
+  (*The Guardian*)
+
+"Yes, the alleged cost [of the San Bernardino iPhone hack] is staggering"
+
+For the FBI to advertise that it paid $1.3 million for a single hack is part
+of its cynical effort to secure increased funding for next year:
+
+https://www.fbi.gov/news/testimony/fbi-budget-request-for-fiscal-year-2017
+
+"$38.3 million for operational technology investments related to the Going
+Dark initiative"
+
+"$85.1 million to enhance cyber investigative capabilities"
+
+"$27 million to leverage Intelligence Community Information Technology
+Enterprise components and services within the FBI"
+
+"$8.2 million to enhance surveillance capabilities"
+
+"Overall, the FY 2017 request represents an *increase* of $703.6 million
+over the FY 2016 enacted levels, including an additional $229.1 million for
+salaries and expenses and $474.5 million for construction."
+
+'nuf said.
+
+  [Note: The $1.3M figure was an estimate derived from a rather indirect
+  statement from James Comey, and should be considered an imprecise
+  estimate.  PGN]
+
+------------------------------
+
+Date: Thu, 28 Apr 2016 18:24:00 +0200
+From: Werner U <werneru@gmail.com>
+Subject: BeautifulPeople Dating Website records for sale (Chris Vickery)
+
+Chris Vickery, Blog MacKeeper
+
+Chris Vickery reports on the MacKeeper blog (dated April 27) of another
+unsecured MongoDB site he discovered and reported in 2015 to their owners
+(like the Verizon case) which, however, has since become available for
+purchase on DarkNet...
+
+(...with a potential for tragic personal consequences not unlike the Ashley
+Madison incident)
+
+Dating Website Leaks 1.2 million profiles
+<https://mackeeper.com/blog/post/218-dating-website-leaks-12-million-profiles>
+Now their data is being sold online in 2016
+
+MacKeeper Security Researcher Chris Vickery discovered the unsecured
+database in late 2015 and contacted BeautifulPeople.com to secure the user
+data. The bad part of this story is that the data was downloaded by cyber
+criminals sometime between this gap of when the database was unsecured, when
+it was discovered by Vickery, and when beautifulpeople were notified to
+secure the database. Now those criminals are selling the data of 1.2 million
+users online.  [...]
+
+*Attention - Portions of this article may be used for publication if
+properly referenced and credit is given to MacKeeper Security Researcher:
+Chris Vickery.*  [Indeed.  We have done so.  PGN]
+
+------------------------------
+
+Date: Tue, 26 Apr 2016 10:42:19 +0100
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: If Emoji Are the Future of Communication Then We're Screwed
+
+There are (at least) two causes for the huge potential for miscommunication
+using emoji:
+
+(1) There are a huge number of different emoji: Unicode lists over 300 faces
+  and gestures, from U+1F600 (GRINNING FACE) to U+1F574 (MAN IN BUSINESS
+  SUIT LEVITATING), and over 1600 emoji in total.
+
+(2) Copyright laws mean that every company has to, or believes that they
+  have to, produce their own designs for each emoji character which are
+  significantly *different* from everyone else's: in order to avoid
+  copyright claims.  Also, each company wants to have their own "style" of
+  emoji: even the country flags are.
+
+Also some devices interpret the same code as a very different symbol: the
+"yellow heart" on iOS (which I assume is U+1F49B YELLOW HEART) is
+interpreted on Android as a red "hairy heart" (or perhaps "heart with black
+spikes": this does not appear on the Unicode list).
+
+The image received could be very different to the one sent:
+http://www.engadget.com/2014/04/30/you-may-be-accidentally-sending-friends-a-hairy-heart-emoji/
+
+Dr Martin Ward STRL Principal Lecturer & Reader in Software Engineering
+martin@gkc.org.uk  http://www.cse.dmu.ac.uk/~mward/
+
+------------------------------
+
+Date: Wed, 27 Apr 2016 12:06:45 -0400 (EDT)
+From: "ACM TechNews" <technews-editor@acm.org>
+Subject: Europe's Billion-Euro Bet on Quantum Computing
+  (Anthony Cuthbertson)
+
+Anthony Cuthbertson, *Newsweek*, 28 Apr 2016
+
+The European Commission's (EC) just-announced Quantum Flagship project will
+invest $1.13 billion over the next 10 years to place Europe "at the
+forefront of the second quantum revolution" via quantum technology
+development, according to an EC spokesperson.  The project seeks to
+encompass not only quantum computers, but also quantum secure communication,
+quantum sensing, and quantum simulation.  Scheduled to launch in 2018, the
+Quantum Flagship is a response to the Quantum Manifesto urging substantial
+quantum technology investment, which was endorsed by several thousand
+individuals from industry, academia, and government institutions.  According
+to the manifesto, quantum technologies will give birth to a "knowledge-based
+industrial ecosystem," which will generate long-term economic, scientific,
+and societal benefits.  ETH Zurich professor Matthias Troyer thinks Quantum
+Flagship recognizes quantum technologies are ready to make the transition
+from research labs to commercial and industrial applications "that within
+the next decade will be able to perform tasks that classical devices are
+incapable of."  Cambridge Quantum Computing CEO Ilyas Khan agrees with this
+assessment.  "It has become increasingly clear that it is now only a matter
+of a relatively short time before quantum technologies become of practical
+importance at the strategic level for governments and large corporations,"
+Khan says.
+http://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-efc1x2e20ax065498&
+
+------------------------------
+
+Date: Tue, 26 Apr 2016 15:42:44 +0000
+From: "Black, Paul E. (Fed)" <paul.black@nist.gov>
+Subject: Workshop on Software Measures and Metrics to Reduce Security
+ Vulnerabilities
+
+We invite you to submit a position statement to a workshop on Software
+Measures and Metrics to Reduce Security Vulnerabilities.
+https://samate.nist.gov/SwMM-RSV2016.html
+
+when: Tuesday, 12 July 2016, 9 am to 4:30 pm
+where: NIST, Gaithersburg, MD, USA
+
+The U.S. Federal Cybersecurity Research and Development Strategic Plan seeks
+to fundamentally alter the dynamics of security, reversing adversaries'
+asymmetrical advantages. Achieving this reversal is the mid-term goal of the
+plan, which calls for "sustainably secure systems development and
+operation." Part of the mid-term (3-7 years) goal is "the design and
+implementation of software, firmware, and hardware that are highly resistant
+to malicious cyber activities ..." and reduce the number of vulnerabilities
+in software by orders of magnitude.  Measures of software play an important
+role.
+
+Industry requires evidence to tell how vulnerable a piece of software is,
+what techniques are most effective in developing software with far fewer
+vulnerabilities, determine the best places to deploy countermeasures, or
+take any of a number of other actions. This evidence comes from measuring,
+in the broadest sense, or assessing properties of software. With useful
+metrics, it is straight-forward to determine which software development
+technologies or methodologies lead to sustainably secure systems.
+
+The goal of this workshop is to gather ideas on how the U.S. Federal
+Government can best use taxpayer money to identify, improve, package,
+deliver, or boost the use of software measures and metrics to significantly
+reduce vulnerabilities.  We call for position statements from one to three
+paragraph long.  Position statements may be on any subject like the
+following: * existing measures of software that can make a difference in
+three to seven years, * means of validating software measures or confirming
+their efficacy (meta-measurements), * properties in software that can be
+measured, * standards (in both étalon and norme senses) needed for software
+measurement, * cost vs. benefit of software measurements, * surmountable
+barriers to adoption of measures and metrics, * areas or conditions of
+applicability (or non-applicability) of measures, * software measurement
+procedures (esp. automated ones), or * sources of variability or uncertainty
+in software metrics or measures.
+
+The output of this workshop and other efforts is a plan for how best the
+U.S. Federal Government can employ taxpayer money to significantly curtail
+software vulnerabilities in the mid-term.
+
+The workshop will be at the U.S. National Institute of Standards and
+Technology (NIST) in Gaithersburg, Maryland.  This workshop is open to all.
+There is no cost to attend the workshop, but prior registration is required
+to enter NIST grounds. No walk-in (on-site) registration is available.
+
+A "position" may include articulations of a problem, an issue to discuss, as
+well as a solution or opinion.  The program committee will review the
+position statements, and invite some to make a presentation.  Position
+statements will be published if agreed to by both the author and the program
+committee.  Send statements to Elizabeth Fong efong@nist.gov by 22 May 2016.
+
+Important Dates
+  May  22      deadline to submit statements
+  June  8      invitations to present sent
+  TBA          deadline to register
+  July 12      workshop
+
+For more information, go to the web site or contact Elizabeth Fong
+<efong@nist.gov>, Paul E. Black <paul.black@nist.gov>, or Thomas D. Hurt
+<thomas.d.hurt.civ@mail.mil>
+
+------------------------------
+
+Date: Wed, 27 Apr 2016 8:15:49 -0900
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Deepwater Horizon: A Systems Analysis of the Macondo Disaster
+  (Earl Boebert and James M. Blossom)
+
+One of the most relevant RISKS-related books I have ever read has been
+written by Earl Boebert and James M. Blossom.  It provides a DEEP analysis
+of everything that went wrong, and should be instructive for all RISKS
+readers.  Amazon is now accepting pre-orders for this book, although it will
+not be released until 6 Sep 2016.  I'll write more about the book as the
+time approaches.  (Incidentally, I was not fooled by my search engine
+offering to correct "Boebert" to "Bieber" -- Justin-time spelling
+correction?)
+
+------------------------------
+
+Date: Wed, 27 Apr 2016 10:21:00 PDT
+From: RISKS List Owner <risko@csl.sri.com>
+Subject: Update on the catless.ncl.ac.uk outage
+
+Lindsay Marshall (who for many years has managed the RISKS repository at
+Newcastle: catless.ncl.ac.uk) notes that the CATLESS RISKS repository will
+eventually be rebuilt after the serious water-main break that took down
+*all* of their servers.  (CATLESS apparently has low priority in the crunch
+to rebuild everything else.)  However, we have agreed that there is no
+longer any reason to ship only one copy of each issue across the pond to
+Lindsay's CATLESS redistribution service, and so we plan to move *everyone*
+there onto the regular SRI distribution.  However, we cannot do that until
+CATLESS is reconstituted. PGN
+
+------------------------------
+
+Date: Wed, 27 Apr 2016 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks) [SEE TEMPORARY STATUS of CATLESS]
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+
+=> OFFICIAL ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+XXX TEMPORARY NOTE: Existing RISKS subscribers served by the currently catless
+XXX redistribution service will soon be moved to the main SRI distribution,
+XXX as soon as the catless server Lindsay.Marshall@newcastle.ac.uk>
+XXX is reconstituted after its temporary demise.
+XXX  http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+XXX newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html --> VoLume, ISsue.
+XXX Lindsay has also added to the Newcastle catless site a palmtop version
+XXX of the most recent RISKS issue and a WAP version that works for many but
+XXX not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 29.49
+************************

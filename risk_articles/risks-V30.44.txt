@@ -1,0 +1,969 @@
+RISKS-LIST: Risks-Forum Digest  Thursday 31 August 2017  Volume 30 : Issue 44
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/30.44>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+U.S. National Infrastructures (Henry Petroski via PGN)
+Taiwan Grid Outage Caused By Human Error (Rob Wilcox)
+Pacemaker firmware updates (Peter Gregory)
+Donald Trump's cybersecurity advisers resign, warning of
+  'insufficient attention to the growing threats' (Chris Baynes)
+FBI pushes private sector to cut ties with Kaspersky (CyberScoop)
+WikiLeaks Turned Down Leaks on Russian Government During U.S.
+  Presidential Campaign (Foreign Policy)
+The Crisis of Connected Cars: When Vulnerabilities Affect the CAN
+ Standard (Trend Micro)
+Quebec man fights back after dealer remotely disables car over
+  $200 fee (CBC)
+Yu Pingan arrested for involvement in hacking OPM (Gizmodo)
+US Voting Machine Supplier Leaks 1.8 Million Chicago Voter Records
+  (Gizmodo)
+DreamHostStatus.com forgot to use separate nameservers (Dan Jacobson)
+Cracked screen => cracked security? (Dan Goodin)
+Identity Thieves Hijack Cellphone Accounts to Go After Virtual
+  Currency (The NYTimes)
+Google Accidentally broke the Internet throughout Japan (Engadget)
+Apple, Facebook, Google and others sign brief concerned about
+  warrantless location tracking (Roger Fingas)
+"Even Artificial Neural Networks Can Have Exploitable 'Backdoors'"
+  (WiReD)
+`Devil's Ivy' Is Another Wake-Up Call for IoT Security (Threatpost)
+US Army backing off a bit from its decision regarding sUAS usage
+  (Gary Mortimer)
+Aero-ease (Aeon)
+98.5% of unique net neutrality comments oppose Ajit Pai's anti-Title II plan
+  (Ars Techica)
+Risks of IBAN checksums (Paul van Keep)
+Ethereum Hack (Bruce Schneier)
+I knew what you were going to do next: AI learns from pro gamers,
+  then crushes them (The Washington Post)
+How Peter Thiel's Secretive Data Company Pushed Into Policing (WiReD)
+From Isaac Asimov to Aimee Mann, 'robophobia' plagues humans (WashPo)
+Carl Sagan in 1995 (Rich Kulawiec)
+UK Today's Roads Aren't Good Enough for Driverless Cars (Chris Drewe)
+Uh oh -- too easy to confuse self-driving cars (IEEE Spectrum via
+  Gabe Goldberg)
+Re: "Driverless" van in Virginia (Don Norman)
+Re: Is LIBOR, Benchmark for Trillions of Dollars in Transactions, a Lie?
+  (Amos Shapir)
+Re: The Death of Ruby? Developers Should Learn These Languages Instead
+  (Amos Shapir)
+Re: Botched Firmware Update Bricks Hundreds of Smart Door Locks
+  (Michael Bacon)
+Re: Microchipping employees (David Randolph)
+Lindsay Marshall named UK National Teaching Fellow (PGN)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 31 Aug 2017 7:42:06 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: U.S. National Infrastructures (Henry Petroski)
+
+I've been following Henry's work even before the publication of
+  To Engineering Is Human: The Role of Failure in Successful Design.
+
+See RISKS-3.25, 9.15, 9.16, 12.51, 18.61, 20.61, 26.80 for previous items.
+His latest article is a real blockbuster, and deserves your attention.
+
+  Henry Petroski, The State of Our Infrastructure, *American Scientist*,
+  September-October 2017, pp. 274--277
+  https://www.americanscientist.org/article/the-state-of-our-infrastructure
+
+This article picks up from his previous article on this topic in that
+journal 8 years ago.  His latest take on this subject includes a Report Card
+on U.S. intrastructures based mostly on ASCE evaluations from 1998 to 2017.
+Essentially every infrastructure sector -- Highways, Mass Transit, Aviation,
+Water.  Schools, Energy, etc. -- had a grade wallowing around in the range
+from D+ to D-.  Bridges, Solid Waste and Ports actually achieved a C+ grade
+in 2017.  The only notable improvement involved the Rail sector, which had
+climbed from a C- to a B.  However, the estimated investment for remediation
+in 2013 had risen to $3.6 trillion total by 2020 -- which Henry notes is
+almost as much as the entire current federal budget.  The 2017 estimate is
+3.5% of GDP (until 2025).  Considering there has been very little effort to
+even begin, we are just kicking the can further down the road.
+
+For greater depth, see Henry's 2016 book, The Road Taken: The History and
+Future of America's Infrastructures.
+
+You may wonder why I am putting this item in a forum devoted to
+computer-related risks.  There are two primary reasons.  (1) Many of these
+infrastructures are monitored by and controlled by computer systems that are
+not secure, reliable, or in some cases not sufficiently respectful of needs
+for human safety.  In some cases, the shortcomings of the computer systems
+may be contributing to the low grades of the infrastructures.  (2) The same
+miserable grades could be allocated to the security and integrity of
+computer systems and networks.
+
+I have long written on the risks of short-term optimization and the need for
+the proactive and holistic long-term thinking that is required to prevent
+this sort of pervasive degeneration.  In some sense, the lack of that
+thinking is continually making matters worse, and making any remediation
+even more difficult (politically, economically, and realistically).  The
+same comment also intensifies the potential implications of climate change
+on most of these infrastructures.  PGN
+
+------------------------------
+
+Date: Sun, 20 Aug 2017 11:31:55 -0700
+From: Rob Wilcox <robwilcoxjr@gmail.com>
+Subject: Taiwan Grid Outage Caused By Human Error
+
+I study grid operations. Major blackouts are studied like air disasters.
+The cause is almost always human error compounded by a lack of situational
+awareness. I would classify that as a user experience UX design failure.
+
+At 16:52 local time August 15, 2017 in the Taiwan grid became unbalanced and
+protection systems shut portions down as designed. A routine maintenance
+error caused the failure of a six unit natural gas power plant supplying
+about 12% of the country's load.
+
+The Tatan power plant is fueled by liquified natural gas. National gas
+company maintenance staff was replacing a power supply for a control system
+governing the flow of natural gas to the generators. They did not switch the
+connected control systems to manual control, leaving them on the automatic
+setting.
+
+The connected control systems automatically closed two valves supplying gas
+to the generators for several minutes.
+
+The Taiwan grid was operating close to the Summer load peak at the time,
+due to hot weather.
+
+Power was fully restored to the country about 4 1/2 hours later.
+
+The Minister of Economics Affairs Chih-kung Lee and the chairman of the
+national gas company Chen Chin-de have resigned as a result of the blackout.
+
+The automatic protection systems in the electric grid shut it down quickly
+when generation and load become unbalanced.
+
+Usually the grid will divide into working islands and outage islands.
+
+To restart the grid, a "black start," islands of generation have to be
+brought up in tandem with islands of load in exact balance while managing
+transmission constraints. That is a manual process by generator staff, field
+staff and operations control center staff. It is also governed by the
+maximum ramping speed of each generator.
+
+Blackouts are rare. There is not much first hand operational experience in
+black starts. Each utility will have written restoration plans. The control
+center staff trains black starts on simulators.
+
+Bringing up the grid when there is a large air conditioner load is
+complicated by motor stall current and voltage excursions.
+
+Yes, the grid is analog, with humans in the loop!
+
+Blackout and Taiwan energy strategy:
+https://www.bloomberg.com/news/articles/2017-08-16/taiwan-s-president-apologizes-for-blackout-affecting-millions
+
+Standard Operating Procedure Not Followed (8th time is the charm!):
+http://focustaiwan.tw/search/201708160017.aspx?q=blackout
+
+Failure and restoration:
+http://focustaiwan.tw/news/aeco/201708150033.aspx
+
+Weather drives August peak load:
+http://focustaiwan.tw/news/aeco/201708070018.aspx
+
+------------------------------
+
+Date: Wed, 30 Aug 2017 15:02:20 +0000
+From: Peter Gregory <Peter.Gregory@optiv.com>
+Subject: Pacemaker firmware updates
+
+The U.S. Food and Drug Administration issued an alert regarding the recall
+of network-connected pacemakers from St. Jude Medical, now Abbott
+Laboratories. Apparently some 465,000 people are affected.
+
+It's one thing to do a firmware update on one's laptop, tablet, or mobile
+device, or for a router, firewall, doorbell, or thermostat.  But what if a
+pacemaker is bricked after a user (or their physician) updates the firmware?
+My heart flutters at this prospect.  And I dare not think of a ransomware
+attack on a pacemaker - how would that work?
+
+https://www.bankinfosecurity.com/medical-device-recall-a-10238
+
+Peter H Gregory | Executive Director - CISO Services
+peter.gregory@optiv.com<mailto:peter.gregory@optiv.com>
+
+  [A long-time colleague of mine with close first-hand (and first-heart)
+  experience had this response when I shared the above with him:
+
+    For some reason neither of the Canadian hospitals used that remote
+    update/sensing feature.  The same was true in Ireland (where some
+    doctors did not understand the pacemaker maintenance system at all).
+    They both thought that a patient should be in their presence and
+    examined personally before doing anything.
+
+  PGN]
+
+------------------------------
+
+Date: August 29, 2017 at 8:52:32 PM EDT
+From: Shannon McElyea <shannonm@gmail.com>
+Subject: Donald Trump's cybersecurity advisers resign, warning of
+  'insufficient attention to the growing threats' (Chris Baynes)
+
+Chris Baynes, *The Independent*, 28 Aug 2017, via Dave Farber's IP.
+
+The panel is tasked with advising the US Homeland Security Department on
+cybersecurity and the protection of infrastructure.  The eight departing
+members accused Trump's administration of failing to be "adequately
+attentive to the pressing national security matters" or "responsive to sound
+advice received from experts".
+
+  ``Your actions have threatened the security of the homeland I took an oath
+  to protect,'' said their letter, obtained by IT news website Nextgov.
+
+http://www.independent.co.uk/news/world/americas/us-politics/donald-trump-cyber-security-advisers-resign-growing-threat-charlottesville-a7916496.html?cmpid=3Dfacebook-post
+
+Donald Trump's cyber-security advisers resign warning of 'insufficient
+attention to the growing threats'
+
+------------------------------
+
+Date: Sat, 19 Aug 2017 17:26:41 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: FBI pushes private sector to cut ties with Kaspersky (Cyberscoop)
+
+  The FBI has been briefing private sector companies on intelligence
+  claiming to show that the Moscow-based cybersecurity company Kaspersky Lab
+  is an unacceptable threat to national security, current and former senior
+  U.S. officials familiar with the matter tell CyberScoop.  The briefings
+  are one part of an escalating conflict between the U.S.  government and
+  Kaspersky amid long-running suspicions among U.S.  intelligence officials
+  that Russian spy agencies use the company as an intelligence-gathering
+  tool of global proportions.
+https://www.cyberscoop.com/fbi-kaspersky-private-sector-briefings-yarovaya-laws/
+
+------------------------------
+
+Date: August 17, 2017 at 8:51:10 PM EDT
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: WikiLeaks Turned Down Leaks on Russian Government During
+  U.S. Presidential Campaign (Foreign Policy)
+
+http://foreignpolicy.com/2017/08/17/wikileaks-turned-down-leaks-on-russian-government-during-u-s-presidential-campaign/
+
+  In the summer of 2016, as WikiLeaks was publishing documents from
+  Democratic operatives allegedly obtained by Kremlin-directed hackers,
+  Julian Assange turned down a large cache of documents related to the
+  Russian government, according to chat messages and a source who provided
+  the records.  WikiLeaks declined to publish a wide-ranging trove of
+  documents -- at least 68 gigabytes of data -- that came from inside the
+  Russian Interior Ministry, according to partial chat logs reviewed by
+  Foreign Policy.
+
+------------------------------
+
+Date: Fri, 25 Aug 2017 12:46:31 +0100
+From: Martyn Thomas <martyn@thomas-associates.co.uk>
+Subject: The Crisis of Connected Cars: When Vulnerabilities Affect the CAN
+ Standard (Trend Micro)
+
+http://blog.trendmicro.com/trendlabs-security-intelligence/connected-car-hack/
+
+" ... what should the security industry's response be when a hack is found
+that is not only successful in being able to drastically affect the
+performance and function of the car, but is also stealthy and vendor
+neutral?  Enter the hack that does just that -- one that has been discovered
+and proven to be effective ..."
+
+------------------------------
+
+Date: Tue, 29 Aug 2017 12:45:45 -0400
+From: Jose Maria Mateos <chema@rinzewind.org>
+Subject: Quebec man fights back after dealer remotely disables car over
+  $200 fee (CBC)
+
+http://www.cbc.ca/news/canada/montreal/quebec-man-fights-back-after-dealer-remotely-disables-car-over-200-fee-1.4265588
+
+A car dealership in Sherbrooke, Que., may have broken the law when it used a
+GPS device to disable the car of a client who was refusing to pay an extra
+$200 fee, say consumer advocates consulted by CBC News.
+
+Bury, Que., resident Daniel Lallier signed a four-year lease for a Kia Forte
+LX back in May from Kia Sherbrooke. Two months later, the 20-year-old's
+grandmother offered to buy the car outright when he lost his job and
+couldn't make his weekly payments.
+
+After settling the balance and paying a $300 penalty, Lallier said, the
+dealership told him he would have to pay an additional $200 to remove a GPS
+tracker that had been installed on the car.  The device allows dealers to
+remotely immobilize a car in case lease payments are in arrears. [...]
+
+After refusing to pay the fee, a mechanic notified Lallier by text message
+that his car was being remotely disabled until the dealership recovered the
+device and $200 fee.  "I went outside and tested my car, and it wouldn't
+work at all.  It wouldn't start period, and I got angry," Lallier said.
+
+------------------------------
+
+Date: Mon, 28 Aug 2017 10:55:02 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Yu Pingan arrested for involvement in hacking OPM (Gizmodo)
+
+https://gizmodo.com/fbi-arrest-chinese-national-linked-to-opm-data-breach-m-1798411342
+
+"A 36-year-old Chinese national was arrested in Los Angeles this week in
+connection with a computer hacking conspiracy involving malware linked to
+the 2014 US Office of Personnel Management (OPM) data breach.
+
+Yu Pingan of Shanghai, China, was arrested on Wednesday while traveling at
+Los Angeles International Airport. Also identified by the hacker pseudonym
+â€œGoldSun,â€ Yu has been charged under the Computer Fraud and Abuse Act and is
+further accused of conspiracy to commit offense or defraud the United
+States."
+
+------------------------------
+
+Date: Thu, 17 Aug 2017 13:51:29 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: US Voting Machine Supplier Leaks 1.8 Million Chicago Voter Records
+  (Gizmodo)
+
+via NNSquad
+http://gizmodo.com/us-voting-machine-supplier-leaks-1-8-million-chicago-vo-1797947510
+
+  A leading US supplier of voting machines confirmed on Thursday that it
+  exposed the personal information of more than 1.8 million Illinois
+  residents.  State authorities and the Federal Bureau of Investigation were
+  alerted this week to a major data leak exposing the names, addresses,
+  dates of birth, partial Social Security numbers, and party affiliations of
+  over a million Chicago residents. Some driver's license and state ID
+  numbers were also exposed.
+
+------------------------------
+
+Date: Sat, 26 Aug 2017 06:45:53 +0800
+From: Dan Jacobson <jidanni@jidanni.org>
+Subject: DreamHostStatus.com forgot to use separate nameservers
+
+To ensure users could still see status reports even when DreamHost.com was
+down (e.g., during a DDoS attack), the separate DreamHostStatus.com was
+established.
+
+Alas, they forgot to also use separate nameservers...
+
+------------------------------
+
+Date: Sat, 19 Aug 2017 13:55:22 -0700
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Cracked screen => cracked security? (Dan Goodin)
+
+Dan Goodin - Aug 18, 2017 12:27 pm UTC
+https://arstechnica.com/information-technology/2017/08/a-repair-shop-could-completely-hack-your-phone-and-you-wouldnt-know-it/
+
+Secret chips in replacement parts can completely hijack your phone's security
+Booby-trapped touchscreens can log passwords, install malicious apps, and more.
+
+People with cracked touch screens or similar smartphone maladies have a new
+headache to consider: the possibility the replacement parts installed by
+repair shops contain secret hardware that completely hijacks the security of
+the device.
+
+The Mafioso of old never allowed repairmen into their homes.  Stories abound
+regarding multiplicities of dead washing machines, TV's, etc.
+
+It appears that their fears were justified.
+
+On the other hand, these stories play right into the hands of those trying
+to kill "the right to repair" supported by the EFF.
+
+  [Also posted to
+http://www.metzdowd.com/mailman/listinfo/cryptography
+  PGN]
+
+------------------------------
+
+Date: 22 Aug 2017 09:38:11 -0400
+From: "Bob Frankston" <Bob19-0501@bobf.frankston.com>
+Subject: Identity Thieves Hijack Cellphone Accounts to Go After Virtual
+  Currency (The NYTimes)
+
+The New York Times, 21 Aug 2017
+https://www.nytimes.com/2017/08/21/business/dealbook/phone-hack-bitcoin-virtual-currency.html
+
+Yet another reminder of the risks of simplifying assumptions. In this case
+assuming that email and phone calls are a secure form of identity when they
+are really just creating a focus for attacks. It's also a reminder of the
+reason why we money isn't just a technology but part of larger social
+systems and why the challenge of establishing trust is so difficult. Let's
+not forget how many mechanisms pile on a DNS that doesn't even let you own
+your identity.
+
+  [Gabe Goldberg commented on this one as well:
+  So-called phone porting attacks are exposing a vulnerability that could be
+  exploited against anybody with valuable emails or other digital files.
+  PGN]
+
+------------------------------
+
+Date: Mon, 28 Aug 2017 17:21:22 -0400
+From: "Dave Farber" <farber@gmail.com>
+Subject: Google Accidentally broke the Internet throughout Japan
+  (Engadget)
+
+https://www.engadget.com/2017/08/28/google-accidentally-broke-internet-japan/
+
+------------------------------
+
+Date: Tue, 15 Aug 2017 11:32:52 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Apple, Facebook, Google and others sign brief concerned about
+  warrantless location tracking (Roger Fingas)
+
+Roger Fingas, Apple Insider,15 Aug 2017
+http://appleinsider.com/articles/17/08/15/apple-facebook-google-others-sign-brief-concerned-about-warrantless-location-tracking
+
+Several high-profile technology companies, including Apple, have submitted a
+amicus brief in a key case at the U.S. Supreme Court, expressing concerns
+about warrantless police access to cellphone location data.
+
+Other tech firms listed in the brief include Airbnb, Cisco, Dropbox,
+Evernote, Facebook, Google, Microsoft, Mozilla, Snap, Twitter, and Verizon.
+Collectively, the companies argue that the court should "refine the
+application of certain Fourth Amendment doctrines to ensure that the law
+realistically engages with Internet-based technologies and with people's
+expectations of privacy in their digital data."
+
+The case in question is Timothy Carpenter v. United States. Police obtained
+Carpenter's location history without a warrant, leading to his eventual
+robbery conviction. At court he's being represented by the American Civil
+Liberties Union, which says that the government violated Fourth Amendment
+rights against search and seizure...SNIP
+
+------------------------------
+
+Date: Fri, 25 Aug 2017 14:11:25 -0400
+From: Stuart Shapiro <s_shapiro@ACM.ORG>
+Subject: "Even Artificial Neural Networks Can Have Exploitable 'Backdoors'"
+
+"The stunt demonstrated a potential security headache for engineers working
+with machine-learning software.  The researchers showed it's possible to
+embed silent, nasty surprises into artificial neural networks, the type of
+learning software used for tasks such as recognizing speech or understanding
+photos.
+
+For their part, the NYU researchers are thinking about how to make tools
+that would let coders peer inside a neural network from a third party and
+spot any hidden behavior. Meanwhile? Buyer beware."
+
+https://www.wired.com/story/machine-learning-backdoors
+
+That last bit could have relevance for validation and testing more generally.
+
+------------------------------
+
+Date: Tue, 15 Aug 2017 19:17:28 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: `Devil's Ivy' Is Another Wake-Up Call for IoT Security
+  (Threatpost)
+
+``In the case of this camera, in order to exploit the vulnerability you
+would need to send a malicious payload to port 80,'' M Carlton, Senrio's
+vice president of research, told the website Threatpost.
+<https://threatpost.com/bad-code-library-triggers-devils-ivy-vulnerability-in-millions-of-iot-devices/126913/>
+``The camera then processes the data using the vulnerable library. The
+attacker then sends the specially crafted payload that triggers the buffer
+stack overflow which leads to custom code execution.''
+
+With the Axis cameras, after exploiting the vulnerability, Senrio
+researchers could reboot a device and change settings to block access to the
+video feed. More disturbingly, a device could also be reset to factory
+defaults, which would cause it to issue a prompt to change the user name and
+password, after which attackers would have complete control of the device.
+In other words, tech savvy thieves could use this exploit to turn off
+security cameras before pulling off a heist, and security personnel wouldn't
+be able to quickly get the cameras back up and running.
+
+http://windowsitpro.com/internet-things-iot/devils-ivy-another-wake-call-iot-security
+
+------------------------------
+
+Date: Tue, 15 Aug 2017 18:39:27 -0700
+From: john hight <johnhight@gmail.com>
+Subject: US Army backing off a bit from its decision regarding sUAS usage
+  (Gary Mortimer)
+
+Gary Mortimer, sUAS News: Aug 2018
+
+An exception to policy with recommendations from the asymmetric warfare
+group that will permit the use of DJI kit once some conditions have been
+met.  The Android Tactical Assault Kit will become the ground-control
+station (GCS) of choice when a DJI plugin has passed OPSEC (Operational
+Security) scrutiny.  It was developed by the Air Force Research Lab (AFRL),
+Army Research Laboratory (ARL) and the Defense Advanced Research Projects
+Agency (DARPA).
+
+https://www.suasnews.com/2017/08/us-army-walks-back-dji-decision-slightly/
+
+------------------------------
+
+Date: Thu, 24 Aug 2017 12:07:15 -0700
+From: Mark Boolootian <booloo@ucsc.edu>
+Subject: Aero-ease (Aeon)
+
+A wonderful article on the parlance of pilots:
+
+https://aeon.co/essays/the-language-of-the-cockpit-is-technical-obscure-and-irresistibly-romantic
+
+------------------------------
+
+Date: Wed, 30 Aug 2017 09:23:02 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 98.5% of unique net neutrality comments oppose Ajit Pai's
+  anti-Title II plan (Ars Techica)
+
+via NNSquad
+https://arstechnica.com/tech-policy/2017/08/isp-funded-study-finds-huge-support-for-keeping-current-net-neutrality-rules/
+
+  A study funded by Internet service providers has found something that
+  Internet service providers really won't like.  The overwhelming majority
+  of people who wrote unique comments to the Federal Communications
+  Commission want the FCC to keep its current net neutrality rules and
+  classification of ISPs as common carriers under Title II of the
+  Communications Act, according to the study released today.  The study
+  (available here) was conducted by consulting firm Emprata and funded by
+  Broadband for America, whose members include AT&T, CenturyLink, Charter,
+  CTIA-The Wireless Association, Comcast, NCTA-The Internet & Television
+  Association, the Telecommunications Industry Association (TIA), and
+  USTelecom.
+
+------------------------------
+
+Date: Wed, 16 Aug 2017 11:32:23 +0200
+From: Paul van Keep <paul@vankeep.com>
+Subject: Risks of IBAN checksums
+
+Most bank account numbering systems incorporate some sort of checksum into
+their numbering scheme to avoid simple transcription mistakes.  Dutch bank
+accounts rely on the eleven-test (elfproef:
+https://nl.wikipedia.org/wiki/Elfproef) and the European successor IBAN uses
+the 97 check (see:
+https://en.wikipedia.org/wiki/International_Bank_Account_Number).
+Surprisingly, even with both checks combined, these safeguards can fail to
+do their job quite easily as I found out last month.  At the beginning of
+July I was supposed to get quite a substantial payment from a financial
+institution.  But when the money failed to show up in my account after a few
+days I called the company.  The error was then quickly uncovered.  The
+account I supplied to them on my contract, in my handwriting, ended in
+719.  The person who entered the details into their system interpreted the 7
+as a 9 and then the 9 as a 3.  That resulted in a valid account number for
+the eleven-test (7*3+1*2+9*1 = 32 and 9*3+1*2+3*1 = 32), but also produced
+the exact same checksum for the IBAN 97 check (719 / 97 = 7 remainder 40 and
+913 / 97 = 9 remainder 40).
+
+So, even though the two checksum systems look very different, it turns out
+that it's really easy to produce a hash collision with just a two digit
+change.  In this case I did get my money a few days later and I assume the
+initial recipient didn't get to enjoy his or her new found wealth for very
+long.
+
+The risks: relying on two checksums to validate manual input isn't enough
+(and my handwriting is illegible).
+
+Paul van Keep
+
+  [The "check" is in the "fail"!]
+
+------------------------------
+
+Date: Tue, 15 Aug 2017 00:01:12 -0500
+From: Bruce Schneier <schneier@schneier.com>
+Subject: Ethereum Hack
+
+CRYPTO-GRAM, August 15, 2017 [PGN-excerpted for RISKS]
+Bruce Schneier, CTO, IBM Resilient, schneier@schneier.com
+https://www.schneier.com
+<https://www.schneier.com/crypto-gram/archives/2017/0815.html>
+
+The press is reporting a $32M theft of the cryptocurrency Ethereum. Like all
+such thefts, they're not a result of a cryptographic failure in the
+currencies, but instead a software vulnerability in the software surrounding
+the currency -- in this case, digital wallets. This is the second Ethereum
+hack this week. The first tricked people in sending their Ethereum to
+another address.
+
+This is my concern about digital cash. The cryptography can be bulletproof,
+but the computer security will always be an issue.
+
+https://motherboard.vice.com/en_us/article/zmvkke/this-is-not-a-drill-a-hacker-allegedly-stole-dollar32-million-in-ethereum
+https://www.cryptocoinsnews.com/hackers-seize-32-million-in-parity-wallet-breach/
+30-million-worth-of-ethereum/
+
+The first hack:
+https://www.bleepingcomputer.com/news/security/hacker-steals-7-million-worth-of-ethereum-from-coindash-platform/
+https://motherboard.vice.com/en_us/article/zmvg58/hacker-allegedly-steals-dollar74-million-in-ethereum-with-incredibly-simple-trick
+
+------------------------------
+
+Date: Tue, 15 Aug 2017 23:14:24 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: I knew what you were going to do next: AI learns from pro gamers,
+  then crushes them (WashPo)
+
+`It knew what you were going to do next': AI learns from pro gamers â€” then
+crushes them.  It only took the bot a few weeks to go from novice to world
+class.
+
+https://www.washingtonpost.com/news/innovations/wp/2017/08/15/it-knew-what-you-were-going-to-do-next-ai-learns-from-pro-gamers-then-crushes-them/
+
+------------------------------
+
+Date: Sun, 20 Aug 2017 09:55:36 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: How Peter Thiel's Secretive Data Company Pushed Into Policing
+  (WiReD)
+
+via NNSquad
+https://www.wired.com/story/how-peter-thiels-secretive-data-company-pushed-into-policing/
+
+  The scale of Palantir's implementation, the type, quantity and persistence
+  of the data it processes, and the unprecedented access that many thousands
+  of people have to that data all raise significant concerns about privacy,
+  equity, racial justice, and civil rights. But until now, we haven't known
+  very much about how the system works, who is using it, and what their
+  problems are. And neither Palantir nor many of the police departments that
+  use it are willing to talk about it.
+
+------------------------------
+
+Date: Tue, 15 Aug 2017 21:21:33 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: From Isaac Asimov to Aimee Mann, 'robophobia' plagues humans
+  (WashPo)
+
+WashPo via NNSquad
+https://www.washingtonpost.com/national/from-isaac-asimov-to-aimee-mann-robophobia-plagues-humans/2017/08/16/25b21096-8239-11e7-9e7a-20fa8d7a0db6_story.html
+
+  Robots are secretly plotting to kill us. Or enslave us. Or, at best, they
+  will take our jobs, one by one.  From science fiction written by Isaac
+  Asimov eight decades ago to "Dilbert" cartoons today, the relationship
+  between robots and humans has long fascinated -- and worried -- people.
+  There's even a term, "robophobia," for an irrational anxiety about robots
+  and other advanced automation machines.
+
+Positronically!
+
+------------------------------
+
+Date: August 14, 2017 at 6:39:08 PM EDT
+From: Rich Kulawiec <rsk@gsp.org>
+Subject: Carl Sagan in 1995 (Rich Kulawiec)
+
+  ``I have a foreboding of an America in my children's or grandchildren's
+  time -- when the United States is a service and information economy; when
+  nearly all the key manufacturing industries have slipped away to other
+  countries; when awesome technological powers are in the hands of a very
+  few, and no one representing the public interest can even grasp the
+  issues; when the people have lost the ability to set their own agendas or
+  knowledgeably question those in authority; when, clutching our crystals
+  and nervously consulting our horoscopes, our critical faculties decline,
+  unable to distinguish between what feels good and what's true, we slide,
+  almost without noticing, back into superstition and darkness.  The dumb
+  down of America is most evident in the slow decay of substantive content
+  in the enormously influential media, the 30-second sound bites (now down
+  to 10 seconds or less), lowest common denominator programming, credulous
+  presentations on pseudoscience and superstition, but especially a kind of
+  celebration of ignorance.''
+
+  Carl Sagan, "The Demon-Haunted World: Science as a Candle in the Dark",
+  1995
+
+------------------------------
+
+Date: Tue, 15 Aug 2017 21:35:12 +0100
+From: Chris Drewe <e767pmk@yahoo.co.uk>
+Subject: UK Today's Roads Aren't Good Enough for Driverless Cars
+
+A short article in this Saturday's newspaper's cars section features various
+industry commentators on whether today's roads are good enough (at least in
+the UK) for driverless cars.  One problem is that the cars can follow white
+road markings easily, but on side streets or country lanes these are often
+poor quality or just not there; reportedly the cars' cameras are only
+black-and-white so it's difficult to see where the edge of the road is.
+Heavy rain can defeat radar sensors, and rainwater on the road surface at
+night can obscure lane markings, if there are any.  Then there's snow...
+One commentator suggested that segregated dedicated driverless lanes may be
+needed in cities.
+
+Something that's intrigued me is road works.  In the UK, motorways are
+usually three traffic lanes + hard shoulder (emergency lane) in each
+direction; when major repairs are needed (happens a lot), often there's a
+temporary crossover built into the central reservation (median strip) so
+that traffic uses the shoulder and adjacent lane in one direction and the
+other two lanes the other way (this is 'contraflow').  There are plenty of
+signs, cones, reflective studs, temporary lane markings, etc. separating the
+lanes, which humans can follow without too much difficulty (though I've
+unintentionally taken an exit more than once -- it feels like the Cresta
+Run, driving through a canyon of cones!), but how would a driverless car
+manage?  A possible fix would be to have an electronic map of the area which
+could be transmitted to cars as they approach so that they can guide
+themselves through, though somebody would have to take responsibility for
+setting up the map and updating it as the works progress.
+
+------------------------------
+
+Date: Thu, 17 Aug 2017 00:11:52 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Uh oh -- too easy to confuse self-driving cars
+
+Slight Street Sign Modifications Can Completely Fool Machine Learning
+Algorithms
+
+It's very difficult, if not impossible, for us humans to understand how
+robots see the world. Their cameras work like our eyes do, but the space
+between the image that a camera captures and actionable information about
+that image is filled with a black box of machine learning algorithms that
+are trying to translate patterns of features into something that they're
+familiar with. Training these algorithms usually involves showing them a set
+of different pictures of something (like a stop sign), and then seeing if
+they can extract enough common features from those pictures to reliably
+identify stop signs that aren't in their training set.
+
+This works pretty well, but the common features that machine learning
+algorithms come up with generally are not â€œred octagons with the letters
+S-T-O-P on them.â€ Rather, they're looking features that all stop signs
+share, but would not be in the least bit comprehensible to a human looking
+at them. If this seems hard to visualize, that's because it reflects a
+fundamental disconnect between the way our brains and artificial neural
+networks interpret the world.
+
+http://spectrum.ieee.org/cars-that-think/transportation/sensors/slight-street-sign-modifications-can-fool-machine-learning-algorithms
+
+------------------------------
+
+Date: Thu, 17 Aug 2017 17:48:44 -0700
+From: Don Norman <dnorman@ucsd.edu>
+Subject: Re: "Driverless" van in Virginia
+
+One of the many risks of the RISKS digest is that uninformed people use it
+to make fun of legitimate research.  Why did our esteemed moderator let this
+one in?  I have a theory that it was a honey pot, intended to lure me into
+making a response. Well, Peter, if that is so, then it worked.
+
+In RISKS 30.43, a reader responded to a news article about people at
+Virginia Tech dressed in car suits. "What is the Risk?" he asked.  "Is it a
+study to see if people freak out at the sight of a "driverless" van?"
+
+Wendy Ju, a research scientist at Stanford University studying autonomous
+vehicles invented the clever trick of studying driverless cars by hiding a
+real driver inside a suit made of the same upholstery used for the car
+seat. The driver is not visible through the window of the car. However, the
+driver can see out through the loosely woven fabric and can readily control
+the car. (A closer look reveals that the driver's seat is thicker than the
+passenger's, but in our studies, nobody has ever noticed that.)
+
+Why? Consider the communication between driverless vehicles and road users,
+where road users are cars with drivers, motorcycles, bicycles,
+skateboarders, pedestrians, etc.  Why?  well, suppose you want to cross the
+street populated by truly driverless vehicles.  How do you know if they see
+you? How do you know if you can cross? How would you wave them on? How would
+they wave you on? (What if you waved one vehicle on but the others didn't
+notice, so they continue moving?)
+
+At the Design Lab at UC San Diego, we also constructed a car seat and are
+testing solutions to these situations. Virginia Tech is doing the same and
+we know of other groups as well. I can also assure you that Stanford, UC San
+Diego, and VA Tech all have IRB (Institutional Review Board) approval to do
+this work.
+
+It is easy to think of solutions, when there is only one driverless car and
+one road user, but what if there were many such cars and many road users?
+
+The communication problem between driverless vehicles and road users is a
+serious issue. Moreover, it requires standardization: if every automobile
+company used their own signaling methods, the result would be chaos.
+
+Together with the Nissan Research Center-Silicon Valley and the Toyota
+Research Institute, the UCSD Design Lab recently co-sponsored a full day
+standards meeting in San Francisco with multiple OEMs, relevant government
+agencies, representatives of standards groups (ISO) and university research
+labs, both from the US and Europe.  The preliminary results of all the
+research were extremely useful.
+
+I know it is easy and fun to joke about the notion of a driver in a car seat
+suit, but it is legitimate, important research that has the potential to
+save lives.
+
+Moral: Don't make fun of an idea unless you know the whole story.
+
+Rothenb=C3=BCcher, D., Li, J., Sirkin, D., Mok, B., & Ju, W. (2015). *Ghost
+driver: a platform for investigating interactions between pedestrians and
+driverless vehicles*. Paper presented at the Adjunct Proceedings of the 7th
+International Conference on Automotive User Interfaces and Interactive
+Vehicular Applications. from
+http://dl.acm.org/citation.cfm?doid=3D2809730.2809755
+
+Emmenegger, C., Risto, M., Bergen, B., Norman, D., & Hollan*,
+J. (2016). *The Critical Importance of Standards for the Communication
+Between Autonomous Vehicles and Humans*. Paper presented at the Automobile
+Vehicle Systems conference.
+
+Don Norman, Prof. and Director, DesignLab, UC San Diego
+dnorman@ucsd.edu designlab.ucsd.edu/  www.jnd.org  <http://www.jnd.org/>
+
+------------------------------
+
+Date: Fri, 18 Aug 2017 14:11:06 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: Is LIBOR, Benchmark for Trillions of Dollars in Transactions, a
+  Lie?
+
+When a bank owes $100 million it might fail, but if it owes $100 *billion*,
+it's "too big to fail".  Extending that logic, a $350 *trillion *problem is
+no problem at all, precisely because treating it as a problem means "the end
+of economy as we know it".
+
+The "revelation" about LIBOR is just as if in the 1960's, when every pound
+Sterling banknote in the UK still included the statement "I promise to pay
+the bearer the sum of 1 pound sterling silver", someone would have
+"discovered" that the B of E does not really hand out bars of silver at
+all...
+Eventually that statement was unceremoniously removed, and about the same
+time the USA had abandoned the gold base, and nothing really happened.
+
+I assume that this is what's going to happen with LIBOR:  Banks would just
+find another justification to the way it's value is determined, and
+everyone would keep using that value in the same way.  As long as the value
+"feels right" and everyone agrees to use it, it will remain useful.
+
+This just underlines the simple fact that all money in any form --
+including pure hard gold -- is actually virtual, and has always been since
+its invention.
+
+------------------------------
+
+Date: Fri, 18 Aug 2017 14:17:50 +0300
+From: Amos Shapir <amos083@gmail.com>
+Subject: Re: The Death of Ruby? Developers Should Learn These Languages Instead
+  (Manning, RISKS-30.43)
+
+> ... Arthur C. Smith is shown teaching Electrical Engineering to a class of
+> engineers sent to MIT by their employers for a year of upgrading.
+
+But today, are there any employers willing to pay for a year of an
+engineer's re-education?
+
+They'd rather fire Sr. and hire Jr. instead for half the salary.
+
+------------------------------
+
+Date: Wed, 16 Aug 2017 19:36:39 +0100
+From: Michael Bacon - Grimbaldus <michael.bacon@grimbaldus.com>
+Subject: Re: Botched Firmware Update Bricks Hundreds of Smart Door Locks
+  (Bacon, RISKS-30.43)
+
+Following my contribution of fishy puns, that were then battered [sea what I
+did there?] by PGN, I must express a little surprise at his omission of the
+obvious pun on the bricking of an IoT domestic portal access control device
+... "DEAD LOCK".  [MB]
+
+    [That would be very appropriate if you were in a deadly embrace with a
+    giant squid.  Also, browse on "lock fish" and "fish lock" -- with quite
+    different meanings.  However, DEAD LOX would be tautologous.  PGN]
+
+------------------------------
+
+Date: Tue, 22 Aug 2017 17:54:12 -0500
+From: "David Randolph" <dave@prairietrail.com>
+Subject: Re: Microchipping employees (RISKS-30.40)
+
+The reports of a company putting microchips into their employees show that
+they have fallen into the basic identification technology trap: that we can
+build a technology that will uniquely and permanently identify someone.
+
+Microchips work today because they are being used for pets. Once we use them
+for identifying people for the purposes of moving money or goods and
+services, people will figure out a way to fake them. It will be trivial to
+design a microchip that not only reports the current id, but can be
+reprogrammed to a new id from a simple device. Secondly, it will be fairly
+easy to build a scanner that picks up the ids of anyone nearby. Quick scan
+and reprogram and I am a new person with your credit limit.
+
+David Randolph, Prairie Trail Software, Inc., Plano, TX
+
+------------------------------
+
+Date: Thu, 31 Aug 2017 9:13:05 PDT
+From: Peter Neumann <Neumann@csl.sri.com>
+Subject: Lindsay Marshall named UK National Teaching Fellow
+
+You should all know that Lindsay has single-handedly built the searchable
+RISKS repository at Newcastle   <http://catless.ncl.ac.uk/Risks/>, and
+has been maintaining it for lo these many years.  I am eternally indebted
+to him, and wish to congratulate him on this award.
+
+Brian Randell just informed me that Lindsay has been named a National
+Teaching Fellow in the U.K.
+  http://www.ncl.ac.uk/press/news/2017/08/nationalteachingfellow/
+
+Lindsay is quoted:
+
+  ``Naturally, there have been many changes in teaching approaches and
+  attitudes and this is particularly apparent in computing where the pace of
+  change means it is essential to stay current, both in subject knowledge
+  and teaching technique.''
+
+  ``Teaching and inspiring the next generation is both a pleasure and a
+  privilege and I feel very honoured to have been nominated for this award.''
+
+HEA Chief Executive, Professor Stephanie Marshall, said: ``A National
+Teaching Fellowship is the most prestigious individual award for excellence
+in teaching in higher education. These awards represent a fantastic
+achievement by all 55 new NTFs, and I am sure the whole sector joins me in
+applauding them in their success.''
+
+------------------------------
+
+Date: Tue, 10 Jan 2017 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also,  ftp://ftp.sri.com/risks for the current volume
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-30.00
+  Lindsay has also added to the Newcastle catless site a palmtop version
+  of the most recent RISKS issue and a WAP version that works for many but
+  not all telephones: http://catless.ncl.ac.uk/w/r
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+  <http://the.wiretapped.net/security/info/textfiles/risks-digest/>
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 30.44
+************************

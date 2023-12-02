@@ -1,0 +1,827 @@
+RISKS-LIST: Risks-Forum Digest  Tuesday 7 July 2015  Volume 28 : Issue 75
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.75.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Keys Under Doormats: Mandating insecurity by requiring government
+  access to all data and communications (multiple authors)
+David Cameron: Twitter and Facebook privacy is	unsustainable (Politics)
+Cameron reaffirms there will be no "safe spaces" from UK snooping (Ars)
+Kenya to require users of Wi-Fi to register with government (Ars Technica)
+"Terrorism, the Internet, and Google" (Lauren Weinstein)
+Hacking Team responds to data breach, issues public threats and denials
+  (Steve Ragan)
+'Digital amnesia' on the rise as we outsource our memory to the Web
+  (Science Alert via Lauren Weinstein)
+Mac OS Malware Exploits MacKeeper (BAE Systems via Werner U)
+Windows 10 will share your Wi-Fi key with your friends' friends
+  (The Register)
+DVD drive in PC fire hazard (mctaylor)
+Embracing the Internet of Things Means Managing Privacy Risks With Care
+  (HuffPost)
+Russian parliament adopts law forcing search engines to remove search
+  results upon request (USNews)
+Researcher Who Reported E-voting Vulnerability Targeted  by Police Raid
+  in Argentina (Slashdot)
+Harvard announces data breach (The Boston Globe)
+Cisco leaves its Unified CDM software open to hackers (ComputerWorld)
+New MOOC: MediaLIT: Overcoming Information Overload (Dan Gillmor)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 07 Jul 2015 9:00:00 EDT
+From: Danny Weitzner <djweitzner@csail.mit.edu>
+Subject: Keys Under Doormats: Mandating insecurity by requiring government
+  access to all data and communications
+
+  Keys Under Doormats: Mandating insecurity by requiring government access
+  to all data and communications
+
+  Harold Abelson, Ross Anderson, Steven M. Bellovin, Josh Benaloh,
+  Matt Blaze, Whitfield Diffie, John Gilmore, Matthew Green,
+  Peter G. Neumann, Susan Landau, Ronald L. Rivest, Jeffrey I. Schiller,
+  Bruce Schneier, Michael Specter, Daniel J. Weitzner
+
+  http://dspace.mit.edu/handle/1721.1/97690
+
+Abstract
+
+Twenty years ago, law enforcement organizations lobbied to require data and
+communication services to engineer their products to guarantee law
+enforcement access to all data. After lengthy debate and vigorous
+predictions of enforcement channels going dark, these attempts to regulate
+the emerging Internet were abandoned.  In the intervening years, innovation
+on the Internet flourished, and law enforcement agencies found new and more
+effective means of accessing vastly larger quantities of data.  Today we are
+again hearing calls for regulation to mandate the provision of exceptional
+access mechanisms.  In this report, a group of computer scientists and
+security experts, many of whom participated in a 1997 study of these same
+topics, has convened to explore the likely effects of imposing extraordinary
+access mandates.  We have found that the damage that could be caused by law
+enforcement exceptional access requirements would be even greater today than
+it would have been 20 years ago.  In the wake of the growing economic and
+social cost of the fundamental insecurity of today's Internet environment,
+any proposals that alter the security dynamics online should be approached
+with caution.  Exceptional access would force Internet system developers to
+reverse forward secrecy design practices that seek to minimize the impact on
+user privacy when systems are breached.  The complexity of today's Internet
+environment, with millions of apps and globally connected services, means
+that new law enforcement requirements are likely to introduce unanticipated,
+hard to detect security flaws.  Beyond these and other technical
+vulnerabilities, the prospect of globally deployed exceptional access
+systems raises difficult problems about how such an environment would be
+governed and how to ensure that such systems would respect human rights and
+the rule of law.
+
+Executive Summary
+
+Political and law enforcement leaders in the United States and the United
+Kingdom have called for Internet systems to be redesigned to ensure
+government access to information -- even encrypted information.  They argue
+that the growing use of encryption will neutralize their investigative
+capabilities.  They propose that data storage and communications systems
+must be designed for exceptional access by law enforcement agencies.  These
+proposals are unworkable in practice, raise enormous legal and ethical
+questions, and would undo progress on security at a time when Internet
+vulnerabilities are causing extreme economic harm.
+
+As computer scientists with extensive security and systems experience, we
+believe that law enforcement has failed to account for the risks inherent in
+exceptional access systems.  Based on our considerable expertise in
+real-world applications, we know that such risks lurk in the technical
+details.  In this report we examine whether it is technically and
+operationally feasible to meet law enforcement's call for exceptional access
+without causing large-scale security vulnerabilities.  We take no issue here
+with law enforcement's desire to execute lawful surveillance orders when
+they meet the requirements of human rights and the rule of law.  Our strong
+recommendation is that anyone proposing regulations should first present
+concrete technical requirements, which industry, academics, and the public
+can analyze for technical weaknesses and for hidden costs.
+
+Many of us worked together in 1997 in response to a similar but narrower and
+better-defined proposal called the Clipper Chip [1].  The Clipper proposal
+sought to have all strong encryption systems retain a copy of keys necessary
+to decrypt information with a trusted third party who would turn over keys
+to law enforcement upon proper legal authorization.  We found at that time
+that it was beyond the technical state of the art to build key escrow
+systems at scale.  Governments kept pressing for key escrow, but Internet
+firms successfully resisted on the grounds of the enormous expense, the
+governance issues, and the risk.  The Clipper Chip was eventually
+abandoned. A much more narrow set of law enforcement access requirements
+have been imposed, but only on regulated telecommunications systems.  Still,
+in a small but troubling number of cases, weakness related to these
+requirements have emerged and been exploited by state actors and others.
+Those problems would have been worse had key escrow been widely deployed.
+And if all information applications had had to be designed and certified for
+exceptional access, it is doubtful that companies like Facebook and Twitter
+would even exist.  Another important lesson from the 1990's is that the
+decline in surveillance capacity predicted by law enforcement 20 years ago
+did not happen.  Indeed, in 1992, the FBI's Advanced Telephony Unit warned
+that within three years Title III wiretaps would be useless: no more than
+40% would be intelligible and that in the worst case all might be rendered
+useless [2].  The world did not "go dark."  On the contrary, law enforcement
+has much better and more effective surveillance capabilities now than it did
+then.
+
+The goal of this report is to similarly analyze the newly proposed
+requirement of exceptional access to communications in today's more complex,
+global information infrastructure.  We find that it would pose far more
+grave security risks, imperil innovation, and raise thorny issues for human
+rights and international relations.
+
+There are three general problems.  First, providing exceptional access to
+communications would force a U-turn from the best practices now being
+deployed to make the Internet more secure.  These practices include forward
+secrecy -- where decryption keys are deleted immediately after use, so that
+stealing the encryption key used by a communications server would not
+compromise earlier or later communications.  A related technique,
+authenticated encryption, uses the same temporary key to guarantee
+confidentiality and to verify that the message has not been forged or
+tampered with.
+
+Second, building in exceptional access would substantially increase system
+complexity.  Security researchers inside and outside government agree that
+complexity is the enemy of security -- every new feature can interact with
+others to create vulnerabilities.  To achieve widespread exceptional
+access, new technology features would have to be deployed and tested with
+literally hundreds of thousands of developers all around the world.  This is
+a far more complex environment than the electronic surveillance now deployed
+in telecommunications and Internet access services, which tend to use
+similar technologies and are more likely to have the resources to manage
+vulnerabilities that may arise from new features.  Features to permit law
+enforcement exceptional access across a wide range of Internet and mobile
+computing applications could be particularly problematic because their
+typical use would be surreptitious -- making security testing difficult and
+less effective.
+
+Third, exceptional access would create concentrated targets that could
+attract bad actors.  Security credentials that unlock the data would have to
+be retained by the platform provider, law enforcement agencies, or some
+other trusted third party.  If law enforcement's keys guaranteed access to
+everything, an attacker who gained access to these keys would enjoy the same
+privilege.  Moreover, law enforcement's stated need for rapid access to data
+would make it impractical to store keys offline or split keys among multiple
+keyholders, as security engineers would normally do with extremely
+high-value credentials.  Recent attacks on the United States Government
+Office of Personnel Management (OPM) show how much harm can arise when many
+organizations rely on a single institution that itself has security
+vulnerabilities.  In the case of OPM, numerous federal agencies lost
+sensitive data because OPM had insecure infrastructure.  If service
+providers implement exceptional access requirements incorrectly, the
+security of all of their users will be at risk.
+
+Our analysis applies not just to systems providing access to encrypted data
+but also to systems providing access directly to plaintext.  For example,
+law enforcement has called for social networks to allow automated, rapid
+access to their data.  A law enforcement backdoor into a social network is
+also a vulnerability open to attack and abuse.  Indeed, Google's database of
+surveillance targets was surveilled by Chinese agents who hacked into its
+systems, presumably for counterintelligence purposes [3].
+
+The greatest impediment to exceptional access may be jurisdiction.  Building
+in exceptional access would be risky enough even if only one law enforcement
+agency in the world had it.  But this is not only a US issue.  The UK
+government promises legislation this fall to compel communications service
+providers, including US-based corporations, to grant access to UK law
+enforcement agencies, and other countries would certainly follow suit.
+China has already intimated that it may require exceptional access.  If a
+British-based developer deploys a messaging application used by citizens of
+China, must it provide exceptional access to Chinese law enforcement?  Which
+countries have sufficient respect for the rule of law to participate in an
+international exceptional access framework?  How would such determinations
+be made?  How would timely approvals be given for the millions of new
+products with communications capabilities?  And how would this new
+surveillance ecosystem be funded and supervised?  The US and UK governments
+have fought long and hard to keep the governance of the Internet open, in
+the face of demands from authoritarian countries that it be brought under
+state control.  Does not the push for exceptional access represent a
+breathtaking policy reversal?
+
+The need to grapple with these legal and policy concerns could move the
+Internet overnight from its current open and entrepreneurial model to
+becoming a highly regulated industry.  Tackling these questions requires
+more than our technical expertise as computer scientists, but they must be
+answered before anyone can embark on the technical design of an exceptional
+access system.
+
+In the body of this report, we seek to set the basis for the needed debate by
+presenting the historical background to exceptional access, summarizing law
+enforcement demands as we understand them, and then discussing them in the
+context of the two most popular and rapidly growing types of platform: a
+messaging service and a personal electronic device such as a smartphone or
+tablet.  Finally, we set out in detail the questions for which policymakers
+should require answers if the demand for exceptional access is to be taken
+seriously.  Absent a concrete technical proposal, and without adequate
+answers to the questions raised in this report, legislators should reject
+out of hand any proposal to return to the failed cryptography control policy
+of the 1990s.
+
+
+The full technical report  MIT-CSAIL-TR-2015-026  including the references
+noted above  is available at
+  http://dspace.mit.edu/handle/1721.1/97690
+
+  [Please read the entire report.  It is very important.
+  See also Nicole Perlroth's blog item on The New York Times website:
+http://www.nytimes.com/2015/07/08/technology/code-specialists-oppose-us-and-british-government-access-to-encrypted-communication.html?ref=technology
+  PGN]
+
+------------------------------
+
+Date: Wed, 1 Jul 2015 14:33:23 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: David Cameron: Twitter and Facebook privacy is	unsustainable
+
+Politics via NNSquad, 30 Jun 2015
+http://www.politics.co.uk/news/2015/06/30/david-cameron-twitter-and-facebook-privacy-is-unsustainable
+
+  The absolute privacy of Facebook and Twitter users can no longer be
+  tolerated in the face of international terror, David Cameron suggested
+  yesterday.  Tory MP Henry Bellingham asked the prime minister whether the
+  attacks in Tunisia meant it was time "companies such as Google, Facebook
+  and Twitter... understand that their current privacy policies are
+  completely unsustainable?" Cameron agreed, saying that the security
+  services must always be able to "get to the bottom" of online
+  communications.
+
+  [Also, David Cameron wants to ban encryption in Britain, Business Insider
+http://www.businessinsider.com.au/david-cameron-encryption-back-doors-iphone-whatsapp-2015-7
+  PGN]
+
+------------------------------
+
+Date: Thu, 2 Jul 2015 13:43:23 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Cameron reaffirms there will be no "safe spaces" from UK snooping
+
+Ars Technica via NNSquad
+http://arstechnica.co.uk/tech-policy/2015/07/cameron-reaffirms-there-will-be-no-safe-spaces-from-uk-government-snooping/
+
+  David Cameron was replying in the House of Commons on Monday to a question
+  from the Conservative MP David Bellingham, who asked him whether he agreed
+  that the "time has come for companies such as Google, Facebook and Twitter
+  to accept and understand that their current privacy policies are
+  completely unsustainable?" To which Cameron replied: "we must look at all
+  the new media being produced and ensure that, in every case, we are able,
+  in extremis and on the signature of a warrant, to get to the bottom of
+  what is going on."
+
+------------------------------
+
+Date: Wed, 1 Jul 2015 08:25:28 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Kenya to require users of Wi-Fi to register with government (Ars)
+
+Ars Technica via NNSquad
+http://arstechnica.com/tech-policy/2015/07/kenya-to-require-users-of-wi-fi-to-register-with-government/
+
+  Yesterday, in a speech before the annual general meeting of the
+  Association of Regulators of Information and Communications for Eastern
+  and Southern Africa (ARICEA), Wangusi said, "We will license KENIC to
+  register device owners using their national identity cards and telephone
+  numbers. The identity of a device will be known when it connects to
+  Wi-Fi." He also said that the Communications Authority would set up a
+  forensics laboratory within three months to "proactively monitor impending
+  cybersecurity attacks, detect reactive cybercrime, and link up with the
+  judiciary in the fight," according to a report from Kenya's Daily Nation.
+  The registry will enable Kenyan authorities to "be able to trace people
+  using national identity cards that were registered and their phone numbers
+  keyed in during registration" if the devices are associated with criminal
+  activity on the Internet, Wangusi said.  The regulation would apply to
+  anyone connecting to a public Wi-Fi network.  KENIC would maintain the
+  database of devices; anyone connecting to a public network at a hotel,
+  cafe, or other business would be required to register before accessing
+  it. If businesses providing Wi-Fi fail to comply with the regulation, they
+  could have their Internet services cut off.  Additionally, Wangusi
+  announced that all Kenyan businesses will be required to host their
+  websites within Kenya, purportedly to "avoid extra costs associated with
+  sending data out to a different location and back again to the website
+  owner," reported Daily Nation's Lilian Ochieng.  Kenya has just taken over
+  the chair of ARICEA, which coordinates Internet and telecommunications
+  policy across the members of the Common Market for Eastern and Southern
+  Africa (COMESA). That puts Wangusi and the Communication Authority of
+  Kenya in a position to press for similar Internet regulations in the other
+  20 member states in Africa's free trade area, which spans from Libya to
+  Namibia.
+
+Looks the real purpose is to try ensure political control to attack anyone
+who disagrees with the current government.
+
+------------------------------
+
+Date: Tue, 30 Jun 2015 15:03:51 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Lauren's Blog: "Terrorism, the Internet, and Google"
+
+                     Terrorism, the Internet, and Google
+                http://lauren.vortex.com/archive/001111.html
+
+For those of us involved in the early days of the Internet's creation and
+growth, it would at the time have seemed inconceivable that decades later
+the topic of this post would need to be typed. I think it's fair to say that
+none of us -- certainly not yours truly -- ever imagined that the fruits of
+our labors would one day become a crucial tool for terrorists.
+
+That day has nonetheless arrived, and it thrusts us directly into what
+arguably is the single most critical issue facing the Internet and Web today
+-- what to do about the commandeering of social media by the likes of ISIL
+(aka ISIS, or IS, or Daesh) and other terrorist groups.
+
+As we've discussed in the past, governments around the world are already
+using the highly visible Internet presence of these criminal terrorist
+organizations as excuses to call for broad Internet censorship powers,
+and for "backdoors" into encryption systems that would be devastating
+for both privacy and security worldwide.
+
+Yet it's the horrific terrorist "recruitment" videos that have quite
+understandably received the bulk of public attention, and they create a
+complex dilemma for advocates of free speech such as myself.
+
+We know that free speech is not without limits -- the "yelling fire in a
+crowded theater" case being the canonical example.
+
+How and where should we draw the lines on the Web?
+
+Let's begin with a fundamental fact that is all too often ignored or
+misrepresented. When a firm like Google -- or any other organization outside
+of government -- decides it does not want to host or encourage any given
+type of material, this is not censorship.
+
+Just as book publishers are not obligated to distribute every manuscript
+offered to them, and TV networks need not buy every series pilot that
+comes their way, nongovernmental organizations and firms are free to
+determine their own editorial standards and Terms of Service.
+
+They need not participate in the dissemination of sexually-oriented videos,
+kitten abuse compilations ... or beheading videos produced by medieval,
+religious fanatic monsters.
+
+Firms are free to determine for themselves the limits of what their content
+and services will be.
+
+Governments -- on the other hand -- can censor. That is, they determine what
+private parties, firms, and other organizations are (at least in theory)
+permitted to produce, disseminate, or hear and view. And governments can
+back up these censorship orders with both criminal and civil penalties. They
+can throw you in shackles into a dark cell for violating their orders. Last
+time I checked, Google and other Internet firms didn't have such
+capabilities.
+
+So when Google's chief legal officer David Drummond, and policy director
+Victoria Grand recently spoke of the need to fight back against ISIL and
+other terrorist groups' propaganda and recruiting use of YouTube in
+particular, and urged other firms to take similar social media stances, I
+was very proud of their positions and those of Google's broader policy team.
+
+Even for a vocal free speech advocate such as myself, I cannot ethically
+condone the use of powerful platforms like YouTube as genocide-promoting
+social media channels by technologically skilled savages.
+
+This is not to suggest that drawing the lines in such cases is anything but
+vastly complicated.
+
+I have some significant insight into this thanks to my recent consulting to
+Google, and I can state unequivocally that the amount of emotionally
+draining, Solomonic soul-searching judgments that go into decisions
+regarding abusive content removals at Google is absolutely
+awe-inspiring. The motivated and dedicated individuals and teams involved
+deserve our unending respect.
+
+Even seemingly obvious cases -- like those involving ISIL -- turn out to be
+decidedly difficult when you dig into the details.
+
+Some governments would love to try cleanse the entire Net of all references
+to these terror groups via broad censorship orders.
+
+That would be doomed to failure of course, and in fact attempts to utterly
+banish information about the utter brutality of these beasts would not at
+all serve in making sure the world clearly understands the depth of horror
+with which we're dealing.
+
+Yet there is vanishingly little true probative value -- and there is vast
+salacious propagandistic recruitment power -- in the display of actual
+beheadings conducted by these groups, and Google is correct to ban these as
+they have.
+
+A particularly disquieting corollary to this situation is the manner in
+which some of my colleagues seem unwilling or unable to appreciate the
+complexities and nuances inherent in these situations.
+
+Many of them have expressed anger at Google for drawing these content lines,
+arguing that YouTube users should be permitted to post whatever they want
+whenever they want, no matter the content -- even if the videos serve
+purposely and directly as vile terrorist recruiting instruments.
+
+Such arguments essentially attempt to equate all content and all speech as
+equal -- an appealing academic concept perhaps, but a devastatingly
+dangerous construct in the real world of today given the power and reach of
+modern social media.
+
+To be crystal clear about this, I'll emphasize again that decisions about
+content availability and removal in these contexts are complex, difficult,
+and not to be approached cavalierly.
+
+But I'm convinced that Google is doing this right, and the Web at large
+would do well to look toward Google as an example of best ethical practices
+in managing this nightmarish situation in the best interests of the global
+community at large.
+
+------------------------------
+
+Date: Mon, 6 Jul 2015 9:53:04 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Hacking Team responds to data breach, issues public threats and
+  denials (Steve Ragan)
+
+Steve Ragan, CSO, 5-6 Jul 2015
+
+On Sunday evening, someone hijacked the Hacking Team account on Twitter and
+used it to announce that the company known for developing hacking tools was
+itself a victim of a devastating hack. The hackers released a 400GB Torrent
+file with internal documents, source code, and email communications to the
+public at large. As researchers started to examine the leaked documents, the
+story developed and the public got its first real look into the inner
+workings of an exploit development firm.
+
+Article, Part 2, July 6
+http://www.csoonline.com/article/2944333/data-breach/hacking-team-responds-to-data-breach-issues-public-threats-and-denials.html
+
+Article, Part 1, July 5
+http://www.csoonline.com/article/2943968/data-breach/hacking-team-hacked-attackers-claim-400gb-in-dumped-data.html
+
+  [See also a later take on this leak:
+    Massive leak reveals Hacking Team's most private moments in messy detail
+    Privacy and human rights advocates are having a field day picking
+    through a massive leak purporting to show spyware developer Hacking
+    Team's most candid moments, including documents that appear to
+    contradict the company's carefully scripted PR campaign.
+http://arstechnica.com/security/2015/07/massive-leak-reveals-hacking-teams-most-private-moments-in-messy-detail/
+  PGN from LW]
+
+------------------------------
+
+Date: Sun, 5 Jul 2015 13:31:38 -0700
+From: PRIVACY Forum mailing list <privacy@vortex.com>
+Subject: 'Digital amnesia' on the rise as we outsource our memory to the Web
+
+http://www.sciencealert.com/digital-amnesia-on-the-rise-as-we-outsource-our-memory-to-the-web
+
+  But all of the convenience afforded by digital technologies and their
+  capability to instantaneously provide us with answers could be taking a
+  terrible toll on our own natural abilities to memorise and recall things,
+  according to a new study by software firm Kaspersky Lab.
+
+An alternative point of view:
+
+"As We Age, Smartphones Don't Make Us Stupid -- They're Our Saviors":
+
+http://lauren.vortex.com/archive/001094.html
+
+------------------------------
+
+Date: Wed, 1 Jul 2015 14:18:54 +0200
+From: Werner U <werneru@gmail.com>
+Subject: Mac OS Malware Exploits MacKeeper
+
+BAE Systems Applied Intelligence blog, 4 Jun 2015
+
+[ on May 6 it was reported on SlashDot ] MacKeeper May Have To Pay Millions
+In Class-Action Suit you use a Mac, you probably recognize MacKeeper from
+the omnipresent popup ads designed to look vaguely like system warnings
+urging you to download the product and use it to keep your computer
+safe. Now the Ukranian company behind the software and the ads may have to
+pay millions in a class action suit that accuses them of exaggerating
+security problems in order to convince customers to download the software*
+<http://apple.slashdot.org/story/15/05/06/214259/mackeeper-may-have-to-pay-millions-in-class-action-suit>*If
+<http://www.itworld.com/article/2919295/apple-security-program-mackeeper-celebrates-difficult-birthday.html>
+
+[ it was an alert to what was reported on May 5 on ITworld ]
+
+*Apple security program, MacKeeper, celebrates difficult birthday*
+<https://www.itworld.com/article/2919295/apple-security-program-mackeeper-celebrates-difficult-birthday.html>
+
+MacKeeper, a utility and security program for Apple computers, celebrated
+its fifth birthday in April  But its gift to U.S. consumers who bought the
+application may be a slice of a $2 million class-action settlement.
+
+Since 2010, MacKeeper has been dogged by accusations that it exaggerates
+security threats in order to convince customers to buy. Its aggressive
+marketing has splashed MacKeeper pop-up ads all over the web. .....<snip>...
+
+[ then, on June 4, BAE blog-announced ]
+
+Mac OS Malware Exploits MacKeeper
+<https://baesystemsai.blogspot.ch/2015/06/new-mac-os-malware-exploits-mackeeper.html>
+(*Written by Sergei Shevchenko, Cyber Research)*
+(BAE Systems Applied Intelligence blog @blogspot.ch)
+
+Last month a new advisory <http://www.exploit-db.com/exploits/36955/> was
+published on a vulnerability discovered
+<https://twitter.com/drspringfield/status/596316000385167361> in MacKeeper,
+a controversial
+<http://www.pcworld.com/article/2919292/apple-security-program-mackeeper-celebrates-difficult-birthday.html>
+software created by Ukrainian company ZeoBIT, now owned by Kromtech
+Alliance Corp.
+
+As discovered by Braden Thomas, the flaw in MacKeeper's URL handler
+implementation allows arbitrary remote code execution when a user visits a
+specially crafted webpage.
+
+The first reports
+<http://www.thesafemac.com/serious-mackeeper-vulnerability-found/> on this
+vulnerability suggested that no malicious MacKeeper URLs had been spotted
+in the wild yet. Well, not anymore.
+
+Since the proof-of-concept was published, it took just days for the first
+instances to be seen in the wild.
+
+The attack this post discusses can be carried out via a phishing email
+containing a malicious URL.
+
+Once clicked, the users running MacKeeper will be presented with a dialog
+that suggests they are infected with malware, prompting them for a password
+to remove this. The actual reason is so that the malware could be executed
+with the admin rights.
+
+The webpage hosted by the attackers in this particular case has the
+following format:
+
+<!doctype html>
+<html>
+ <body>
+  <script>
+   window.location.href    'com-zeobit-command:///i/ZBAppController/performActionWithHelperTask:
+    arguments:/[BASE_64_ENCODED_STUB]';
+  </script>
+ </body>
+</html>
+
+where [BASE_64_ENCODED_STUB], once decoded, contains..., and the prompt
+message displayed to the user is:
+
+*"Your computer has malware that needs to be removed"*
+
+ As a result, once the unsuspecting user clicks the malicious link, the
+following dialog box will pop up:
+
+    <snip-image-snip>
+
+Once the password is specified, the malware will be downloaded and executed
+(it is a 'dropper) which will dump an embedded executable and launch it.
+The dropper will ... update the *LaunchAgents* in order to enable an
+auto-start for the created executable.
+
+ *Backdoor functionality*
+
+ The embedded executable is a bot that allows remote access.
+
+It can perform the following actions: ....
+
+The bot collects system information such as: ...Availability of any VPN
+connections.
+...
+
+*Configuration*
+
+ The bot keeps its execution parameters in a encoded configuration (config)
+section...
+...it parses and distinguishes a number of configuration parameters...
+...Config parameters...are used to randomise URL parameters (demonstrated
+below)
+
+ *Network Communications*
+
+ The bot checks if it's connected to the Internet by...
+If not, it keeps checking in a loop until the computer goes online.
+
+The data transferred over the network is encrypted with ..
+
+The bot then constructs a blob that consists of...
+
+    <snip-stuff-snip>
+
+*Conclusion*
+
+It's quite interesting to see how little time it took the attackers to
+weaponise a published proof-of-concept exploit code.
+
+One might wonder how the attackers know if the targeted users are running
+MacKeeper.
+
+In its press release
+<http://www.prweb.com/releases/2015/03/prweb12579604.htm>, MacKeeper
+claimed that is has surpassed 20 million downloads worldwide.
+
+Hence, the attackers might simply be 'spraying' their targets with the
+phishing emails hoping that some of them will have MacKeeper installed,
+thus allowing the malware to be delivered to their computers and executed.
+
+------------------------------
+
+Date: Wed, 1 Jul 2015 17:03:00 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Windows 10 will share your Wi-Fi key with your friends' friends
+
+*The Register* via NNSquad
+http://www.theregister.co.uk/2015/06/30/windows_10_wi_fi_sense/
+
+  In an attempt to address the security hole it has created, Microsoft
+  offers a kludge of a workaround: you must add _optout to the SSID (the
+  name of your network) to prevent it from working with Wi-Fi Sense.  (So if
+  you want to opt out of Google Maps and Wi-Fi Sense at the same time, you
+  must change your SSID of, say, myhouse to myhouse_optout_nomap.
+  Technology is great.)  Microsoft enables Windows 10's Wi-Fi Sense by
+  default, and access to password-protected networks are shared with
+  contacts unless the user remembers to uncheck a box when they first
+  connect. Choosing to switch it off may make it a lot less useful, but
+  would make for a more secure IT environment.
+
+------------------------------
+
+Date: Thu, 02 Jul 2015 18:17:42 +0000
+From: mctaylor <mctaylor@mctaylor.com>
+Subject: DVD drive in PC fire hazard
+
+I was forwarded an internal advisory that discusses a potential fire hazard,
+namely with HP 6005 small form factor (SFF) desktop computers.  Six cases
+(out of a large number of units in use) within the organization were
+identified where the users noticed smoke coming from inside the systems, and
+upon investigation in each case it was due to the DVD power connector (12V)
+melting.
+
+I thought this might be slightly novel, as it is the first case I am
+aware of, where an internal power connector posed a fire risk.
+
+------------------------------
+
+Date: Thu, 2 Jul 2015 10:53:09 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Embracing the Internet of Things Means Managing Privacy Risks
+  With Care (HuffPost)
+
+http://www.huffingtonpost.com/alexander-howard/embracing-the-internet-of_b_7715268.html
+
+  Someday, perhaps we'll be able to request our data from data brokers, just
+  as we do credit reports, and log onto dashboards that empower consumers
+  with better privacy tools, just as they do at Google. In the meantime,
+  consumers have to hope that hardware and software makers are adopting FTC
+  recommendations for "privacy by design and proceed with caution.
+
+------------------------------
+
+Date: Fri, 3 Jul 2015 09:12:07 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Russian parliament adopts law forcing search engines to remove
+  search results upon request (USNews)
+
+USNews via NNSquad, 3 Jul 2015
+Russian parliament adopts law forcing search engines to remove search results upon request
+http://www.usnews.com/news/business/articles/2015/07/03/russian-parliament-votes-to-adopt-controversial-privacy-law
+
+  Lawmakers in the Russian parliament on Friday voted for a bill forcing
+  online search engines to remove search results about a specific person at
+  that person's request.  The Russian State Duma voted overwhelmingly for
+  the controversial law that critics say could be used to block information
+  critical of the government or government officials. Though similar to one
+  recently adopted by the European Union, the Russian law is more sweeping,
+  extending the right of removal to public figures and information that is
+  considered in the public interest.  Under the new law, a person can
+  request that search engines like Google remove the search results of their
+  name if the information about them is "no longer relevant" without
+  specifying which links they want removed.
+
+Yep, RTBF is the best friend of crooked politicians and tyrants. A vast
+censorship regime, using search engines as the unwilling instruments of
+its terror.
+
+------------------------------
+
+Date: Sat, 4 Jul 2015 14:57:25 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Researcher Who Reported E-voting Vulnerability Targeted
+  by Police Raid in Argentina
+
+Slashdot via NNSquad
+http://it.slashdot.org/story/15/07/04/2110207/researcher-who-reported-e-voting-vulnerability-targeted-by-police-raid-in-argentina
+
+  Police have raided the home of an Argentinian security professional who
+  discovered and reported several vulnerabilities in the electronic ballot
+  system (Google translation of Spanish original) to be used next week for
+  elections in the city of Buenos Aires. The vulnerabilities (exposed SSL
+  keys and ways to forge ballots with multiple votes) had been reported to
+  the manufacturer of the voting machines, the media, and the public about a
+  week ago. There has been no arrest, but his computers and electronics
+  devices have been impounded (Spanish original).  Meanwhile, the
+  information security community in Argentina is trying to get the media to
+  report this notorious attempt to "kill the messenger."
+
+------------------------------
+
+Date: Fri, 3 Jul 2015 23:02:12 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Harvard announces data breach
+
+https://www.bostonglobe.com/metro/2015/07/01/harvard-announces-data-breach/pqzk9IPWLMiCKBl3IijMUJ/story.html
+
+------------------------------
+
+Date: Fri, 3 Jul 2015 23:20:05 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Cisco leaves its Unified CDM software open to hackers
+
+http://www.computerworld.com/article/2943963/security0/cisco-leaves-its-unified-cdm-software-open-to-hackers.html
+
+------------------------------
+
+Date: June 26, 2015 at 5:11:25 PM EDT
+From: Dan Gillmor <dan@gillmor.com>
+Subject: New MOOC: MediaLIT: Overcoming Information Overload
+
+We're about to launch a massive open online course (MOOC) on media/news
+literacy in the digital age. The title is "MediaLIT: Overcoming Information
+Overload". We do that by becoming active users, not passive consumers, of
+media in a variety of ways.
+
+The free course runs for seven weeks beginning July 6, and features a lot of
+different material including video interviews with some of the most
+interesting people I know in the media and digital worlds. Among them are
+Jimmy Wales, Margaret Sullivan (NY Times public editor), Brian Stelter
+(CNN), Len Downie (former executive editor of the Washington Post), Lawrence
+Krauss (physicist), Baratunde Thurston (author, comedian, etc.), Amanda
+Palmer (musician and author) and many others.
+
+The course is a joint project of ASU Online and is running on the edX
+platform, the MOOC initiative started by Harvard and MIT.
+
+Here's a link to the registration page:
+https://www.edx.org/course/media-lit-overcoming-information-asux-mco425x
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.75
+************************
+
+--_002_9200848ff4d94cdab760a31be19bb1c0EXHUBVM02campusnclacuk_--

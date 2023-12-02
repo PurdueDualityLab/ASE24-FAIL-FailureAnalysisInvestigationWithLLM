@@ -1,0 +1,895 @@
+precedence: bulk
+Subject: Risks Digest 28.41
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 16 December 2014  Volume 28 : Issue 41
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/28.41.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Power outages hit federal buildings in D.C. - CNN.com (Gabe Goldberg)
+"Lenovo recalls more than 500,000 power cords due to spark, burn risk"
+  (Ian Paul via Gene Wirchenko)
+Copenhagen Lighting the Way to Greener, More Efficient Cities
+  (Monty Solomon)
+Sen. Wyden: No Hackdoors! (Henry Baker)
+Sony Hack Reveals Health Details on Employees and Their Children
+  (Deborah Peel)
+The triumph of hope -- or hype? -- over experience (Donald B. Wagner)
+"Sony admits employees' personal data may have been compromised by breach"
+  (Steve Ragan)
+Alberta health-records systems woefully inadequate (Darcy Henton)
+When strong passwords are the fake front behind a hollow system
+  (Jeremy Epstein)
+"Your cell phone number: To give or not to give" (Galen Gruman)
+"NSA spy program targets mobile networks worldwide" (Marc Ferranti)
+"A shadowy consortium opposes your Internet privacy" (Simon Phipps)
+Verizon's Encrypted Calling App Comes Pre-Hacked for the NSA
+  (Joshua Brustein)
+Some Drawbacks in Tapping the Phone to Deposit a Check (Monty Solomon)M
+Phone Scam Nets Almost $2,000 from BU Student (Monty Solomon)
+Amazon glitch leads to rush over 1p 'bargains' (*The Telegraph* via
+  Gabe Goldberg)
+Some TLS variants vulnerable to version of POODLE (CVE-2014-8730)
+  (Bob Gezelter)
+"The Turla espionage operation infected Linux systems with malware"
+  (Lucian Constantin)
+"Over 30 vulnerabilities found in Google App Engine" (Lucian Constantin)
+Multiple Microsoft items (Woody Leonhard via Gene Wirchenko compiled by PGN)
+7 Largest U.S. Districts to Teach Computer Science (Josh Lederman via
+  ACM TechNews)
+Scholarships for Women Studying Information Security (Jeremy Epstein)
+We Can't Trust Uber? (NYTimes via Matthew Kruk)
+Re: This Net was Made for You and Me (Peter Houppermans)
+Re: SmartDriver: a 16-year-old can see the risks (David Brodbeck,
+  Geoffrey Keating)
+Stasi Santa on the Shelf: NSA's Dream Naughty/Nice Daemon (Pinto/Nemorin
+  via Henry Baker)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 15 Dec 2014 13:18:58 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Power outages hit federal buildings in D.C. - CNN.com
+
+Several federal buildings in downtown Washington lost power for a short time
+Monday morning as a result of a "transformer explosion" at the Office of
+Personnel Management, according to D.C. Police Spokesman Araz Alali.
+
+Outages were reported at the White House, State Department and Federal
+Reserve. Other departments that experienced outages Monday included the
+General Services Administration (GSA), Federal Deposit Insurance Corporation
+(FDIC), and the Labor Department, according to Alali. The Smithsonian Metro
+station also experienced an outage.
+
+http://www.cnn.com/2014/12/15/politics/federal-buildings-power-outages/
+
+Economy of scale infrastructure:
+  one failure point hits six large buildings plus a subway station.
+
+------------------------------
+
+Date: Fri, 12 Dec 2014 09:55:38 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Lenovo recalls more than 500,000 power cords due to spark, burn risk"
+  (Ian Paul)
+
+Ian Paul, PCWorld, 10 Dec 2014
+Nearly half a million Lenovo laptops in the U.S. need to swap out
+their power cord ASAP after Lenovo recalls the LS-15 AC adapter
+http://www.infoworld.com/article/2858013/computer-hardware/lenovo-recalls-more-than-500000-power-cords-due-to-spark-burn-risk.html
+
+  [We could laugh about this one -- how could anyone get a power cord wrong?
+  et al -- but this one has a hidden risk.  Power cords are rather generic.
+  Do you have any old power cords kicking around?  I know I do.  I have kept
+  some from old equipment that I have tossed.  How long will these power
+  cords be around?  GW]
+
+------------------------------
+
+Date: Tue, 9 Dec 2014 07:16:27 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Copenhagen Lighting the Way to Greener, More Efficient Cities
+
+Urban areas around the world are installing wireless networks of street
+lamps and sensors that could ease traffic congestion and reduce carbon
+emissions.
+
+http://www.nytimes.com/2014/12/09/business/energy-environment/copenhagen-lighting-the-way-to-greener-more-effecient-cities.html
+
+------------------------------
+
+Date: Tue, 16 Dec 2014 06:10:13 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Sen. Wyden: No Hackdoors!
+
+Ron Wyden (D-Ore.) is a member of the Senate Intelligence Committee.
+With hackers running rampant, why would we poke holes in data security?
+http://www.latimes.com/opinion/op-ed/la-oe-1215-wyden-backdoor-for-cell-phones-20141215-story.html
+
+* Tech 'back doors' for law enforcement are bad for personal data, and bad
+  public policy
+
+* U.S. surveillance programs have been costing tech firms billions in lost
+  market share
+
+* 'If you're building a wall with a hole in it, how much are you going
+  invest in locks and barbed wire?'
+
+Hardly a week goes by without a new report of some massive data theft that
+has put financial information, trade secrets or government records into the
+hands of computer hackers.
+
+The best defense against these attacks is clear: strong data encryption and
+more secure technology systems.
+  [ambiguous, with BOTH meanings relevant: we need more more-secure systems!]
+
+The leaders of U.S. intelligence agencies hold a different view.  Most
+prominently, James Comey, the FBI director, is lobbying Congress to require
+that electronics manufacturers create intentional security holes --
+so-called back doors -- that would enable the government to access data on
+every American's cellphone and computer, even if it is protected by
+encryption.
+
+Unfortunately, there are no magic keys that can be used only by good guys
+for legitimate reasons.  There is only strong security or weak security.
+
+Americans are demanding strong security for their personal data.  Comey and
+others are suggesting that security features shouldn't be too strong,
+because this could interfere with surveillance conducted for law enforcement
+or intelligence purposes.  The problem with this logic is that building a
+back door into every cellphone, tablet, or laptop means deliberately
+creating weaknesses that hackers and foreign governments can exploit.
+Mandating back doors also removes the incentive for companies to develop
+more secure products at the time people need them most; if you're building a
+wall with a hole in it, how much are you going invest in locks and barbed
+wire?  What these officials are proposing would be bad for personal data
+security and bad for business and must be opposed by Congress.
+
+In Silicon Valley several weeks ago I convened a roundtable of executives
+from America's most innovative tech companies.  They made it clear that
+widespread availability of data encryption technology is what consumers are
+demanding.
+
+It is also good public policy.  For years, officials of intelligence
+agencies like the NSA, as well as the Department of Justice, made misleading
+and outright inaccurate statements to Congress about data surveillance
+programs -- not once, but repeatedly for over a decade.  These agencies
+spied on huge numbers of law-abiding Americans, and their dragnet
+surveillance of Americans' data did not make our country safer.
+
+Most Americans accept that there are times their government needs to rely on
+clandestine methods of intelligence gathering to protect national security
+and ensure public safety.  But they also expect government agencies and
+officials to operate within the boundaries of the law, and they now know how
+egregiously intelligence agencies abused their trust.
+
+This breach of trust is also hurting U.S. technology companies' bottom line,
+particularly when trying to sell services and devices in foreign markets.
+The president's own surveillance review group noted that concern about
+U.S. surveillance policies ``can directly reduce the market share of
+U.S. companies.''  One industry estimate suggests that lost market share
+will cost just the U.S. cloud computing sector $21 billion to $35 billion
+over the next three years.
+
+Tech firms are now investing heavily in new systems, including encryption,
+to protect consumers from cyber attacks and rebuild the trust of their
+customers.  As one participant at my roundtable put it, ``I'd be shocked if
+anyone in the industry takes the foot off the pedal in terms of building
+security and encryption into their products.''
+
+Built-in back doors have been tried elsewhere with disastrous results.  In
+2005, for example, Greece discovered that dozens of its senior government
+officials' phones had been under surveillance for nearly a year.  The
+eavesdropper was never identified, but the vulnerability was clear: built-in
+wiretapping features intended to be accessible only to government agencies
+following a legal process.
+
+Chinese hackers have proved how aggressively they will exploit any security
+vulnerability.  A report last year by a leading cyber security company
+identified more than 100 intrusions in U.S. networks from a single cyber
+espionage unit in Shanghai.  As another tech company leader told me,  ``Why
+would we leave a back door lying around?''
+
+Why indeed.  The U.S. House of Representatives recognized how dangerous this
+idea was and in June approved 293-123, a bipartisan amendment that would
+prohibit the government from mandating that technology companies build
+security weaknesses into any of their products.  I introduced legislation in
+the Senate to accomplish the same goal, and will again at the start of the
+next session.
+
+Technology is a tool that can be put to legitimate or illegitimate use.  And
+advances in technology always pose a new challenge to law enforcement
+agencies.  But curtailing innovation on data security is no solution, and
+certainly won't restore public trust in tech companies or government
+agencies.  Instead we should give law enforcement and intelligence agencies
+the resources that they need to adapt, and give the public the data security
+they demand.
+
+Ron Wyden (D-Ore.) is a member of the Senate Intelligence Committee.
+
+------------------------------
+
+Date: Sun, 14 Dec 2014 23:34:36 +0000
+From: "Dr. Deborah Peel" <dpeelmd@patientprivacyrights.org>
+Subject: Sony Hack Reveals Health Details on Employees and Their Children
+
+On top of everything else, the Sony data breach revealed employees'
+sensitive health information:
+http://www.bloomberg.com/news/2014-12-11/sony-hack-reveals-health-details-on-employees-and-their-children.html.
+Top Sony executives saw lists of named employees who had costly medical
+treatments and saw detailed psychiatric treatment records of one employee's
+son.
+
+Like last year's revelation by AOL's CEO, it shows US corporations look at
+employees' health information and costs. By `outing' the fact that 2 of
+AOL's 5,000 employees had premature infants whose treatment cost over $1
+million each, the CEO violated the employees' rights to health information
+privacy. See:
+http://patientprivacyrights.org/2014/02/revelations-aol-boss-raise-fears-privacy/
+
+Trusted relationships simply cannot exist if individuals have no right to
+decide who to let in and who to keep out of pii. Current US technology
+systems make it impossible for us to control personal health data, inside or
+outside of the healthcare system.
+
+Do you trust your employer not to snoop in your personal health information?
+How can you trust your employer without a `chain of custody' for your health
+data? There is no transparency or accountability for the sale or use of our
+health data, even though Congress gave us the right to obtain an Accounting
+for Disclosures (A4D) for disclosures of protected health data from EHRs in
+the 2009 stimulus bill (the regulations have yet to be written).  And we
+have no complete map that tracks the millions of places US citizens' health
+data flows. See: TheDataMap<thedatamap.org>.
+
+There is no way to know who sees, sells, or snoops in our health data unless
+whistleblowers or hackers expose what's going on.  Our personal,
+identifiable health data is in millions of data bases unknown and
+inaccessible to us.  Both the Bush and Obama Administrations support this
+privacy-destructive business model on the Internet and in the US health care
+system.
+
+The US health data broker industry consists of over 100,000 health data
+suppliers covering 780,000 live daily health data feeds. See:
+http://patientprivacyrights.org/2014/01/ims-health-files-ipo-legal/ ).
+
+THE GREATEST DAMAGE CAUSED BY THE LACK OF CONTROL OVER PII IS THE LOSS OF
+TRUST--- TRUSTED RELATIONSHIPS BETWEEN PEOPLE, COMPANIES, AND GOVERNMENTS
+ARE IMPOSSIBLE WITHOUT PERSONAL CONTROL OVER PII.
+
+Both Angela Merkel and Jennifer Lawrence spelled out the deep and persistent
+effects of violating personal boundaries:
+
+* Angela Merkel's reaction to Obama spying on her:
+  http://www.dailymail.co.uk/news/article-2475792/Angela-Merkel-leads-anger-Obama-US-spying-EU-summit.html
+
+* Jennifer Lawrence's reaction to the wide release of intimate photos:
+http://www.independent.ie/entertainment/movies/movie-news/loss-of-privacy-is-taking-a-huge-emotional-toll-jlaw-30749675.html
+
+Both spoke of the deep emotional pain and costs of betrayal, and of being
+unable to trust or feel safe following such serious boundary
+violations. Trust is truly impossible unless individuals can set
+boundaries. People, companies, and governments must respect and honor
+individuals' rights to control access to personal information to be
+trusted. Violating boundaries destroys trust and relationships between
+people and between nations.
+
+Sadly, even though the modern world's concept of 'privacy' comes from our
+nation, from US Supreme Court Justice Louis D. Brandeis' concept of privacy,
+and later in the computer age from Wallis Ware's concept of Fair Information
+Practices, the US has lost its way and is destroying both freedom and the
+right to be let alone.
+
+Among the Western Democracies, has the United States become the world's most
+intrusive surveillance state?
+
+Do we have control over any information about ourselves?  Or is every bit or
+byte of data about us collected, held, and sold by millions of hidden data
+bases?  Learn more about the `world's leading' health data broker:
+http://patientprivacyrights.org/2014/01/ims-health-files-ipo-legal/
+
+------------------------------
+
+Date: Sun, 7 Dec 2014 11:03:04 +0100
+From: "Donald B. Wagner" <zapkatakonk1943.6.22@gmail.com>
+Subject: The triumph of hope -- or hype? -- over experience
+
+"But, the technocratic wish is so strong, hospitals and governments are
+mindlessly rushing forward anyway."
+
+In the Wild West, a cowboy was one who, if he had to go one mile north,
+would walk two miles south to get a horse so he could ride there.
+
+Donald B. Wagner, Jernbanegade 9B, DK-3600 Frederikssund, Denmark
+Tel. +45-3331 2581  http://donwagner.dk
+
+------------------------------
+
+Date: Tue, 16 Dec 2014 13:11:26 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Sony admits employees' personal data may have been
+  compromised by breach" (Steve Ragan)
+
+Steve Ragan, CSO, 16 Dec 2014
+Weeks later, Sony Pictures is telling employees what they already
+know about the scope of data that was compromised by attackers
+http://www.infoworld.com/article/2859830/security/sony-admits-employees-personal-data-may-have-been-compromised-by-breach.html
+
+------------------------------
+
+Date: Sun, 7 Dec 2014 21:21:05 PST
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Alberta health-records systems woefully inadequate (Darcy Henton)
+
+Darcy Henton, Alberta moves on integrated health records system,
+*Calgary Herald*, 5 Dec 2014
+
+The current set of 12 separate medical-record systems is ``woefully
+inadequate'', lacking interoperability, some are still manual.  [PGN-ed]
+http://calgaryherald.com/news/politics/alberta-health-records
+
+  [Thanks to DKross.]
+
+------------------------------
+
+Date: Mon, 8 Dec 2014 10:53:33 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: When strong passwords are the fake front behind a hollow system
+
+http://hackaday.com/2014/12/07/bad-code-results-in-useless-passwords/
+
+Short version: wireless access point comes with a strong and seemingly
+random password, but with major vulnerabilities including a world accessible
+list of hashed passwords suitable for offline cracking, an insecure use of
+cookies for authentication, and a convenient command injection attack.
+
+Why am I not surprised?
+
+------------------------------
+
+Date: Fri, 12 Dec 2014 09:48:32 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Your cell phone number: To give or not to give" (Galen Gruman)
+
+Galen Gruman, Mobile Edge, InfoWorld, 12 Dec 2014
+More and more companies assume your phone is your second-factor
+authentication, raising potential for abuse
+http://www.infoworld.com/article/2854033/internet-privacy/your-cell-phone-number-to-give-or-not-to-give.html
+
+selected text:
+
+I was updating my company 401(k) information last week, and the website
+wanted me to provide my cellphone number. It didn't say why, nor did it
+explain how it would use that information. A conference I signed up for also
+wanted my cellphone number, again with no explanation or context.
+
+In both cases, I left the field blank, but it's getting harder to do so
+these days, as more and more services require a cellphone number, ostensibly
+to text confirmations such as for second-factor authentication or call if
+suspicious activity is detected on your account.
+
+We don't have two-line cellphones in the United States, and if there were
+they'd be confined to the same carrier and probably cost twice as much as a
+single-line plan.
+
+  [I thought of the idea of two-line cellphones myself.  I would give out
+  one number for normal use and keep the other for emergency use.  That one,
+  I would give out to very few.  If busy, I would ignore a call on the first
+  line, but on the second, I would answer.  It seems to me that this could
+  be very useful, so why don't we have this?  GW]
+
+------------------------------
+
+Date: Tue, 09 Dec 2014 11:28:56 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "NSA spy program targets mobile networks worldwide" (Marc Ferranti)
+
+Marc Ferranti, InfoWorld, 8 Dec 2014
+http://www.infoworld.com/article/2856066/security/nsa-spy-program-targets-mobile-networks-worldwide.html
+
+opening text:
+
+The NSA has conducted a covert campaign to intercept internal communications
+of operators and trade groups in order to infiltrate mobile networks
+worldwide, according to the latest revelations from documents supplied by
+Edward Snowden.
+
+------------------------------
+
+Date: Mon, 08 Dec 2014 11:56:53 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "A shadowy consortium opposes your Internet privacy" (Simon Phipps)
+
+Simon Phipps, Open Sources, InfoWorld, 8 Dec 2014
+A cabal of communications companies wants to kill a new Internet
+standard that will make your Web experience faster and safer
+http://www.infoworld.com/article/2855738/internet-privacy/consortium-opposes-your-privacy.html
+
+opening text:
+
+Google researchers have devised a replacement for the HTTP protocol that
+carries the World Wide Web. By default, it's encrypted end to end, it's very
+fast, you're probably already using it, and Google is offering it as the
+basis for the next version of HTTP. It's called SPDY (yes, "speedy") and as
+with the Road Runner, Wile E. Coyote is trying to catch and kill it.
+
+------------------------------
+
+Date: Fri, 12 Dec 2014 10:35:46 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Verizon's Encrypted Calling App Comes Pre-Hacked for the NSA
+  (Joshua Brustein)
+
+Joshua Brustein, *Business Week*,  11 Dec 2014
+http://www.businessweek.com/articles/2014-12-11/verizons-new-encrypted-calling-app-comes-prehacked-for-the-nsa
+
+Verizon is the latest big company to enter the post-Snowden market for
+secure communication, and it's doing so with an encryption standard that
+comes with a way for law enforcement to access ostensibly secure phone
+conversations.
+
+Verizon Voice Cypher, the product introduced on Thursday with the encryption
+company Cellcrypt, offers business and government customers end-to-end
+encryption for voice calls on iOS, Android, or BlackBerry devices equipped
+with a special app.  The encryption software provides secure communications
+for people speaking on devices with the app, regardless of their wireless
+carrier, and it can also connect to an organization's secure phone system.
+
+Cellcrypt and Verizon both say that law enforcement agencies will be able to
+access communications that take place over Voice Cypher, so long as they're
+able to prove that there's a legitimate law enforcement reason for doing so.
+Seth Polansky, Cellcrypt's vice president for North America, disputes the
+idea that building technology to allow wiretapping is a security risk.
+"It's only creating a weakness for government agencies," he says.  "Just
+because a government access option exists, it doesn't mean other companies
+can access it."
+
+Phone carriers like Verizon are required by U.S. law to build networks that
+can be wiretapped.  But the legislation known as the Communications
+Assistance for Law Enforcement Act requires phone carriers to decrypt
+communications for the government only if they have designed their
+technology to make it possible to do so.  If Verizon and Cellcrypt had
+structured their encryption so that neither company had the information
+necessary to decrypt the calls, they would not have been breaking the law.
+
+Other companies have designed their encryption in this way, including AT&T,
+which offers encrypted phone service for business customers.  Apple and
+Android recently began protecting content stored on users' phones in a way
+that would keep the tech companies from being able to comply with requests
+from law enforcement.  The move drew public criticism from FBI Director
+James Comey, and some security experts expect that a renewed effort to stir
+passage of legislation banning such encryption will accompany Silicon
+Valley's increased interest in developing these services.
+
+Verizon believes major demand for its new encryption service will come from
+governmental agencies conveying sensitive but unclassified information over
+the phone, says Tim Petsky, a senior product manager for Verizon Wireless.
+Corporate customers who are concerned about corporate espionage are also
+itching for answers.  "You read about breaches in security almost every week
+in the press," says Petsky.  "Enterprise customers have been asking about
+ways to secure their communications and up until this point, we didn't have
+a solution."
+
+There has been increased interest in encryption from individual consumers,
+too, largely thanks to the NSA revelations leaked by Edward Snowden.  Yahoo
+and Google began offering end-to-end encrypted e-mail services this year.
+Silent Circle, a startup catering to consumer and enterprise clients, has
+been developing end-to-end voice encryption for phones calls.  Verizon's
+service, with a monthly price of $45 per device, isn't targeting individual
+buyers and won't be offered to average consumers in the near future.
+
+But Verizon's partner, Cellcrypt, looks upon selling to large organizations
+as the first step toward bringing down the price before eventually offering
+a consumer-level encryption service.  "At the end of the day, we'd love to
+have this be a line item on your Verizon bill," says Polansky.
+
+It's still not clear how big the potential market for consumer-level
+encryption services is.  Chris Soghoian of the ACLU's speech, privacy, and
+technology project, believes that Verizon's approach is unlikely to have
+wide appeal because of Verizon's decision not to keep out law enforcement.
+
+Many people in the security industry believe that a designed access point
+creates a vulnerability for criminals or spies to exploit.  Last year
+reports surfaced that the FBI was pushing legislation that would require
+many forms of Internet communication to be wiretap-ready.  A group of
+prominent security experts responded strongly: "Requiring software vendors
+to build intercept functionality into their products is unwise and will be
+ineffective, with the result being serious consequences (PDF) for the
+economic well-being and national security of the United States," they wrote
+in a report issued in May.
+
+Verizon's service might well have drawn praise from security experts in the
+past, Soghoian says, but the past year of revelations about government
+surveillance has changed the atmosphere.  "Today, to roll this out with a
+backdoor, that's inexcusable, he says."  With encrypted phone services being
+developed to be inaccessible to anyone, he says, "It's tough to see how
+Verizon can compete here when they're designing a product that is less
+secure."
+
+Brustein is a writer for Businessweek.com in New York.
+
+------------------------------
+
+Date: Sun, 7 Dec 2014 15:13:50 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Some Drawbacks in Tapping the Phone to Deposit a Check
+
+As the service catches on, it becomes increasingly important for customers
+to compare the terms of mobile deposit services that different banks offer.
+http://www.nytimes.com/2014/12/06/your-money/some-drawbacks-in-tapping-the-phone-to-deposit-a-check.html
+
+------------------------------
+
+Date: Mon, 15 Dec 2014 11:31:04 -0500
+From: Monty Solomon <monty@roscom.com>
+Subject: Phone Scam Nets Almost $2,000 from BU Student
+
+http://www.bu.edu/today/2014/phone-scam-nets-almost-2000-from-bu-student/
+
+------------------------------
+
+Date: Mon, 15 Dec 2014 11:54:36 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Amazon glitch leads to rush over 1p 'bargains' (*The Telegraph*)
+
+http://www.telegraph.co.uk/finance/newsbysector/retailandconsumer/11292999/Amazon-glitch-leads-to-rush-over-1p-bargains.html
+
+...what could go wrong? It's like programming stock trades would be, risky.
+
+------------------------------
+
+Date: Tue, 09 Dec 2014 08:24:17 -0700
+From: "Bob Gezelter" <gezelter@rlgsc.com>
+Subject: Some TLS variants vulnerable to version of POODLE (CVE-2014-8730)
+
+F5 Networks has disclosed that some TLS implementations appear vulnerable to
+a variant of the POODLE attack, previously reported as viable against SSLv3.
+Check your TLS implementation and options thereof.  This vulnerability has
+apparently been assigned as CVE-2014-8730, however, not all of the databases
+have been updated to reflect the description of this vulnerability.  The
+announcement from F5 Networks is at:
+https://devcentral.f5.com/articles/cve-2014-8730-padding-issue-8151 Bob
+Gezelter, http://www.rlgsc.com
+
+------------------------------
+
+Date: Tue, 09 Dec 2014 11:30:46 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "The Turla espionage operation infected Linux systems with malware"
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 9 Dec 2014
+A newly identified Linux backdoor program is tied to the Turla cyber
+espionage campaign, researchers from Kaspersky Lab say
+http://www.infoworld.com/article/2857184/security/the-turla-espionage-operation-also-infected-linux-systems-with-malware.html
+
+------------------------------
+
+Date: Fri, 12 Dec 2014 09:24:51 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: "Over 30 vulnerabilities found in Google App Engine"
+  (Lucian Constantin)
+
+Lucian Constantin, InfoWorld, 9 Dec 2014 Security researchers escaped the
+Java sandbox on the cloud platform and executed code on the underlying
+system
+http://www.infoworld.com/article/2857515/cloud-computing/over-30-vulnerabilities-found-in-google-app-engine.html
+
+------------------------------
+
+Date: Mon, 15 Dec 2014 10:12:39 -0800
+From: Gene Wirchenko <genew@telus.net>
+Subject: Multiple Microsoft items (Woody Leonhard, compiled by PGN)
+
+"Microsoft falls short -- again -- in communicating about Windows,
+  10 patch KB 3020114", Woody Leonhard, InfoWorld, 9 Dec 2014
+The problem isn't with the bug, it's with the way Microsoft handled
+the bug. Redmond still hasn't updated the KB with a workaround
+http://www.infoworld.com/article/2857273/operating-systems/microsoft-finally-clarifies-problems-with-windows-10-patch-kb-3020114.html
+
+"Botched KB 3004394 triggers error messages, but no response from Microsoft"
+That's not the only bad patch in yesterday's release: There's also an
+easily fixed error that prevents KB 3002339 from installing
+Woody Leonhard, InfoWorld, 10 Dec 2014
+http://www.infoworld.com/article/2858014/operating-systems/botched-kb-3004394-triggers-uacs-diagnostic-tool-error-0x8000706f7-amd-catalyst-driver-fail-defende.html
+
+Botch brigade: KB 2553154, 2726958 clobber Excel ActiveX while KB
+3011970 Silverlight, KB 3004394 Root Cert both pulled
+KB 3008923 crashes IE, KB 3002339 still hanging on install, KB
+2986475 still pulled -- but there's a small silver lining
+Woody Leonhard, InfoWorld, 11 Dec 2014
+http://www.infoworld.com/article/2858280/microsoft-windows/botch-brigade-kb-2553154-2726958-clobber-excel-activex-kb-3011970-silverlight-kb-3004394-root-cert.html
+
+It's official: If you installed KB 3004394, you need to uninstall the
+patch manually
+Woody Leonhard, InfoWorld, 11 Dec 2014
+http://www.infoworld.com/article/2858738/microsoft-windows/microsoft-recommends-that-you-uninstall-botched-patch-kb-3004394.html
+
+"Microsoft releases 'Silver Bullet' patch KB 3024777 to eliminate KB 3004394"
+Woody Leonhard, InfoWorld, 12 Dec 2014
+More information unfolds about the Windows Root Certification patch
+and its foibles
+http://www.infoworld.com/article/2859115/microsoft-windows/microsoft-releases-silver-bullet-patch-kb-3024777-to-eliminate-botched-patch-kb-3004394.html
+
+Woody Leonhard, InfoWorld, 15 Dec 2014
+Windows 7 hit by rash of bogus 'not genuine' reports, validation code
+0x8004FE21; Windows 7 is suddenly telling users it isn't genuine -- and it
+has nothing to do with Windows being stolen
+http://www.infoworld.com/article/2859267/operating-systems/windows-7-hit-by-rash-of-bogus-not-genuine-reports-validation-code-0x8004fe21.html
+
+------------------------------
+
+Date: Mon, 8 Dec 2014 11:37:16 -0500 (EST)
+From: "ACM TechNews" <technews@hq.acm.org>
+Subject: 7 Largest U.S. Districts to Teach Computer Science (Josh Lederman)
+
+Josh Lederman, AP item, via ACM TechNews, Monday, December 8, 2014
+
+The U.S.'s seven largest school districts, which include New York City, Los
+Angeles, Chicago, Miami, Las Vegas, Houston, and Fort Lauderdale, are
+joining more than 50 other school districts to start offering introductory
+computer science to all of their students.  In addition, the College Board,
+which runs the Advanced Placement (AP) program, is introducing a new course
+called AP Computer Science Principles that will launch in the fall of 2016.
+President Barack Obama has long wanted to make the U.S. more competitive
+with other countries in computing, science, and math education, but his
+efforts have been limited by Congress, which has not acted upon most of the
+president's proposals on education.  In an effort to bypass Congress, Obama
+has sought to use his convening power to get communities and companies to
+help.  The new course will focus on encouraging women and minorities to
+start training for careers in computers.  In order to meet the teaching
+demand, charitable groups are pledging $20 million to train more teachers in
+computer science by the start of the 2015 school year.  "While no one is
+born a computer scientist, becoming a computer scientist isn't as scary as
+it sounds," Obama says.
+http://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_5-d148x2c248x060880&
+
+------------------------------
+
+Date: Sun, 14 Dec 2014 16:12:02 -0500
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: Scholarships for Women Studying Information Security
+
+Since 2011, Applied Computer Security Associates, sponsor of the ACSAC and
+NSPW conferences, has offered scholarships for women in security-related
+undergraduate and masters' degree programs through the Scholarships for
+Women Studying Information Security (SWSIS, www.swsis.org).
+
+Thanks to a $250,000 4-year contribution by Hewlett-Packard company in early
+2014, ACSA expanded our program to award 11 scholarships for the 2014-15
+academic year. The Committee on the Status of Women in Computing Research
+(CRA-W), an arm of the Computing Research Alliance, led selection of
+scholarship winners.  Information about the 11 SWSIS Scholars (scholarship
+winners) is available at www.swsis.org.
+
+ACSA, CRA-W, and HP are pleased to announce that applications for 2015-16
+scholarships are open Dec 15 2014 - Feb 15 2015.
+
+To apply, an applicant must provide:
+* An essay describing her interest and background in the information
+  security field.
+* A current transcript.
+* A resume or CV.
+* At least two letters of reference (typically from faculty members).
+* Her university name and class status.
+
+The scholarship is renewable for a second year subject to availability of
+funds, given proof of satisfactory academic progress.  Preference is for US
+citizens or permanent residents; funds are available for use at any US
+campus of a US university.
+
+More information at www.swsis.org or swsis@swsis.org
+
+Jeremy Epstein, Director, Scholarship Programs
+Applied Computer Security Associates, Inc.
+
+Rebecca Wright, CRA-W Director for SWSIS
+Computing Research Association Committee on the Status of Women in
+Computing Research
+
+------------------------------
+
+Date: Mon, 8 Dec 2014 06:23:54 -0700
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: We Can't Trust Uber?
+
+We need to know how our data is being used.
+http://www.nytimes.com/2014/12/08/opinion/we-cant-trust-uber.html
+
+  [If you are not following the Uber story, you might also look at this:
+http://www.nytimes.com/2014/12/10/technology/ubers-system-for-screening-drivers-comes-under-scrutiny.html
+  thanks to Monty Solomon.  PGN]
+
+------------------------------
+
+Date: Sun, 07 Dec 2014 21:21:19 +0100
+From: Peter Houppermans <peter@houppermans.net>
+Subject: Re: This Net was Made for You and Me (Julian Assange), RISKS-28.40
+
+I just like to occasionally throw this one in the fire ..
+
+> It is now a journalistic cliché to remark that George Orwell's *1984*
+> was `prophetic'. The novel was so prophetic that its prophecies have
+> become modern-day prosaisms.  Reading it now is a tedious experience.
+
+It would then be a good start to stop referring to George Orwell's
+"1984", because that is a very roundabout way to arrive at the concept
+that Orwell's book was based on - why not go to the source?
+
+The basis for "1984" was the late 18th century concept of the Panopticon,
+developed by one Jeremy Bentham.  The Wikipedia entry provides enough data
+to see just how insidious that concept is for a normal society, especially
+one very important aspect: the concept was developed for a PRISON.
+
+Call me fickle, but I very much prefer not to be treated as a prisoner.
+
+------------------------------
+
+Date: Fri, 5 Dec 2014 20:14:09 -0800
+From: David Brodbeck <david.m.brodbeck@gmail.com>
+Subject: Re: SmartDriver: a 16-year-old can see the risks (RISKS-28.40)
+
+I agree with some of Richard O'Keefe's points in his post about
+SmartDriver, but I wanted to add a few things I think he may have
+overlooked:
+
+> The app will lack awareness of the context.  If a child or an animal
+> runs across the road in front of me, and I brake hard enough to avoid
+> a death, I will be penalised for unsafe driving, not rewarded.
+> Similarly, a sharp turn to avoid an accident will count as unsafe...
+
+The insurance company probably doesn't care about the context.  If you
+drive in areas where you frequently have to make sharp maneuvers to avoid
+accidents, you're at a higher risk for an accident, which is what they're
+really trying to measure.
+
+> How long before your insurance company starts charging extra to
+> people who don't use such an app?
+
+Probably not long, but is that really anything new?  I drive a car that's
+30 years old, and as a result pay higher rates than if I owned one that had
+modern features like ABS and stability control.  I don't see that as
+materially different than someone paying higher rates because they choose
+not to have a phone that can run the app, or decide the app is a bad
+trade-off.
+
+I agree with his privacy concerns, and I think it'll be interesting to see
+how the data actually is used in court.  There's been some controversy in
+the US over the "black box" data that the on-board computers in modern cars
+collect, and whether it should be admitted as evidence in court.  Of
+course, that can cut both ways -- as many Russians have found, having your
+own record of what happened can help in exonerating you and confirming your
+version of events.
+
+------------------------------
+
+Date: 06 Dec 2014 12:53:38 -0800
+From: Geoffrey Keating <geoffk@geoffk.org>
+Subject: Re: SmartDriver: a 16-year-old can see the risks (RISKS-28.40)
+
+> The app will lack awareness of the context.  If a child or an animal runs
+> across the road in front of me, and I brake hard enough to avoid a death,
+> I will be penalised for unsafe driving, not rewarded.  Similarly, a sharp
+> turn to avoid an accident will count as unsafe, not safe.
+
+This misunderstands the point of the exercise.  The insurance company wants
+to know if your driving is relatively more or less risky than other drivers.
+If you're often suddenly braking to avoid children, or if your path on the
+road looks like a slalom course, then you're at a higher risk of an
+accident.  This is not making a judgment, merely an observation.
+
+The background is that most drivers are safe drivers and don't cause
+accidents, so this is a way to gain some insight into which of these safe
+drivers are safer.
+
+A similar approach could be used for computer-based risks.  For example,
+most companies do not have breaches of their credit card systems, or
+catastrophic security incidents, and very few have more than one.  It's
+therefore very important to watch for more subtle warning signs that your
+company might be more at risk.  For example, if your desktop support
+department is occasionally cleaning malware off employee devices but it
+seems like there was no further compromise; if 'non-critical' web servers
+sometimes get compromised and have to be restored from backup; if laptops
+(or desktops or backup tapes) sometimes get lost and recovered but weren't
+encrypted.
+
+------------------------------
+
+Date: Mon, 15 Dec 2014 07:28:12 -0800
+From: Henry Baker <hbaker1@pipeline.com>
+Subject: Stasi Santa on the Shelf: NSA's Dream Naughty/Nice Daemon
+
+FYI -- Santa's Workshop relocated from the North Pole to Bluffdale, UT ??
+https://www.policyalternatives.ca/publications/commentary/whos-boss
+
+Laura Pinto and Selena Nemorin, Policy Alternatives, 1 Dec 2014
+Who's the Boss?    [Long item pruned for RISKS.  PGN]
+"The Elf on the Shelf" and the normalization of surveillance
+
+The Elf on the Shelf® is a special scout elf sent from the North Pole to
+help Santa Claus manage his naughty and nice lists.  When a family adopts an
+elf and gives it a name, the elf receives its Christmas magic and can fly to
+the North Pole each night to tell Santa Claus about all of the day's
+adventures.  Each morning, the elf returns to its family and perches in a
+different place to watch the fun.
+
+After several years of observing parents and teachers sharing photos of Elf
+on the Shelf dolls in various (sometimes compromising!) poses on social
+media, our curiosity led us to critically examine this cultural phenomenon.
+
+The Elf on the Shelf is a wildly popular, Christmas-themed book that comes
+with a doll to reinforce the story in home and school settings.  The purpose
+of this article is to explore theoretical and conceptual concerns about the
+popularity and widespread educational use of The Elf on the Shelf in light
+of the contemporary literature on play and panoptic surveillance. [...]
+
+  [Long item pruned for RISKS.  The Elf is not recommended for
+  surveillance-wary readers.  PGN]
+
+------------------------------
+
+Date: Mon, 17 Nov 2014 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+          ^^^  [PLEASE NOTE UPDATE.]
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string `notsp' at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 28.41
+************************

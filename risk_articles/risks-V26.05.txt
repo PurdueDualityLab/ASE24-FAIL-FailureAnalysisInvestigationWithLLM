@@ -1,0 +1,645 @@
+precedence: bulk
+Subject: Risks Digest 26.05
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 4 May 2010  Volume 26 : Issue 05
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.05.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+India EVM susceptible to tampering (Raj Mathur)
+Security Analysis of India's Electronic Voting Machines (Halderman et al.)
+Risks of trusting a sensor, off by 20x (Michael Rosa)
+Ars Technica's old provider hacked.  Data loss. (S. Keeling)
+Top Ten Reasons You Should Quit Facebook (Dan Yoder on Gizmodo)
+U.S. Treasury Department dangerously redirecting users (Dan Goodin)
+Pay attention to Windows 7 update KB980408 (Lauren Weinstein)
+Chip and not bother with the pin (Celine Read)
+Fingerprinting Paper with Laser (Gadi Evron)
+A socio-psychological analysis of the first Internet war: Estonia (Gadi Evron)
+Your Phone Is Locked. Just Drive (David Pogue via Monty Solomon)
+Don't forget to back up the car before reloading the software (Roy Smith)
+Clouds and Phones and Untrustworthiness (Bill Gunshannon)
+Re: Speech recognition and phone banking: not a very good idea (Joe Thompson)
+Re: The Eyes Have It: Car Steered With Driver's Eyes (Marc Wilson)
+Re: USPS allows an INTERNET Change of Address (Edward Reid)
+Re: SSNs again -- in Medicare (Edward Reid)
+Re: Risks of RFID car keys (Bob Schuchman)
+Re: We Have Met the Enemy and He Is PowerPoint (Bob Frankston, John Levine,
+  Gary Borba, Harry Crowther)
+Re: YOUR SAT NAV IS WRONG - GO BACK! (Leonard Finegold)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Thu, 29 Apr 2010 10:23:09 +0530
+From: Raj Mathur <raju@linux-delhi.org>
+Subject: India EVM susceptible to tampering
+
+A group of researchers has demonstrated 2 attacks on the Indian Electronic
+Voting Machine (EVM), which has been used to conduct general elections in
+the world's largest democracy for over a decade.  The attacks are simple and
+cheap to carry out.  A video of the attacks is available at:
+  http://indiaevm.org/
+The press release is at:
+  http://indiaevm.org/press.html
+and the full technical paper will be available at:
+  http://indiaevm.org/paper.html
+
+Given the black-box testing, "validation" and certification of the EVMs over
+the past few years by "noted experts" in India, this raises questions about
+the experts' competence and the will of the Government of India to actually
+have tamper-proof electronic voting (if such a thing is possible).  This
+also raises questions in retrospect of the validity of all elections carried
+out in India since the EVM was introduced.
+
+Looking forward with interest (and, I must admit, scantily-concealed glee)
+to the Government of India's response.
+
+Raj Mathur  raju@kandalaya.org  http://kandalaya.org/
+
+  [scantily-clad glee?  PGN]
+
+------------------------------
+
+Date: Wed, 28 Apr 2010 13:42:23 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Security Analysis of India's Electronic Voting Machines
+
+  [In our long-standing discussions of the risks of election systems,
+  electronic or otherwise, this video seems worthy of your attention.  PGN]
+
+J. Alex Halderman, Hari K. Prasad, Rop Gonggrijp, http://indiaevm.org/
+
+Abstract: Elections in India are conducted almost exclusively using
+electronic voting machines developed over the past two decades by a pair of
+government-owned companies. These devices, known in India as EVMs, have been
+praised for their simple design, ease of use, and reliability, but recently
+they have also been criticized because of widespread reports of election
+irregularities. Despite this criticism, many details of the machines' design
+have never been publicly disclosed, and they have not been subjected to a
+rigorous, independent security evaluation. In this paper, we present a
+security analysis of a real Indian EVM obtained from an anonymous source. We
+describe the machine's design and operation in detail, and we evaluate its
+security, in light of relevant election procedures. We conclude that in
+spite of the machine's simplicity and minimal trusted computing base, it is
+vulnerable to serious attacks that can alter election results and violate
+the secrecy of the ballot. We demonstrate two attacks, implemented using
+custom hardware, which could be carried out by dishonest election insiders
+or other criminals with only brief physical access to the machines. This
+case study contains important lessons for Indian elections and for
+electronic voting security more generally.
+
+------------------------------
+
+Date: Tue, 4 May 2010 14:13:18 +0930
+From: "Michael Rosa" <MRosa@workcover.com>
+Subject: Risks of trusting a sensor, off by 20x
+
+A recorded downturn in Central Market shoppers that had been attributed to
+the global financial crisis has now been blamed on a faulty doorway sensor
+system.  The Adelaide City Council (ACC) and traders have been in a panic
+during the past year over a sharp downturn in visitor figures and fine-tuned
+advertising campaigns to attract shoppers.  An ACC report obtained by *The
+Advertiser* has found faulty sensors caused the dramatic drop in recorded
+visitors, and the ACC has now been forced to review at least a year of data.
+One sensor has been blind to 95 per cent of visitors, the report states.
+The council's best estimate is that the drop in actual visitor numbers over
+the past year is less than 1 per cent, compared with about 10 per cent
+previously believed.  [PGN-ed]
+http://www.adelaidenow.com.au/news/south-australia/faulty-sensors-sends-council-in-a-spin-over-central-market-patronage/story-e6frea83-1225861761513
+
+------------------------------
+
+Date: Fri, 30 Apr 2010 18:37:37 -0600
+From: "s. keeling" <keeling@nucleus.com>
+Subject: Ars Technica's old provider hacked.  Data loss.
+
+See:
+
+       http://arstechnica.com/civis/viewtopic.php?f=3&t=1108748
+
+Summary:
+
+   Ars moved to new provider.
+   Old provider did not lock down/wipe old customer's data soon enough.
+   Old provider cracked.  Cracker gets email addresses of Ars subscribers.
+   Ars users spammed/phished.
+
+As a sysadmin in the oil patch, this is a very familiar story.  When the
+price of oil goes south, they lay off staff and attempt to survive the
+downturn.  When price goes back up, they hire me to clean up the mess
+(including disabling no longer current logins).
+
+They never budget for the future (secure inactive accounts before they can
+hurt us).  They just bet on making it up on the next go-round.
+
+I blame shareholder greed, but that's just me.
+
+  [Quite an E-Shops' Fable.  Moral: What's YOURS is ARS.  PGN]
+
+------------------------------
+
+Date: Tue, 4 May 2010 12:02:53 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Top Ten Reasons You Should Quit Facebook (Dan Yoder on Gizmodo)
+
+http://gizmodo.com/5530178/top-ten-reasons-you-should-quit-facebook
+Disclosure by Dan Yoder: I'm the VP of Engineering for a Hollywood-based
+social media startup, BorderStylo. The opinions expressed here are purely my
+own and are not in any way endorsed by my employer. While I do not see our
+applications as directly competitive to Facebook, nor have I presented them
+As such, it would be disingenuous not to mention this.  Twitter: @dyoder.
+
+After some reflection, I've decided to delete my account on Facebook.  I'd
+like to encourage you to do the same. This is part altruism and part
+selfish.  The altruism part is that I think Facebook, as a company, is
+unethical.  The selfish part is that I'd like my own social network to
+migrate away from Facebook so that I'm not missing anything.  In any event,
+here's my "Top Ten" reasons for why you should join me and many others and
+delete your account.
+
+10. Facebook's Terms Of Service are completely one-sided.
+9. Facebook's CEO has a documented history of unethical behavior.
+8. Facebook has flat out declared war on privacy.
+7. Facebook is pulling a classic bait-and-switch.
+6. Facebook is a bully.
+5. Even your private data is shared with applications.
+4. Facebook is not technically competent enough to be trusted.
+3. Facebook makes it incredibly difficult to truly delete your account.
+2. Facebook doesn't (really) support the Open Web.
+1. The Facebook application itself sucks.
+
+  [In a Network Neutrality Squa posting, Lauren Weinstein noted this article at
+    http://bit.ly/bk7ROb  (Gizmodo)
+  as well as "How to Delete Your Facebook Account with Extreme Prejudice"
+  (and a Bit of Style):
+  http://bit.ly/fb-privacy-with-style  (YouTube)
+  ]
+
+------------------------------
+
+Date: Tue, 4 May 2010 9:10:24 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: U.S. Treasury Department dangerously redirecting users (Dan Goodin)
+
+Dan Goodin, *The Register*, 3 May 2010 [PGN-ed]
+http://www.theregister.co.uk/2010/05/03/treasury_websites_attack/
+
+Websites operated by the US Treasury Department are redirecting visitors to
+websites that attempt to install malware on their PCs, a security researcher
+warned on 3 May 2010.  The infection buries an invisible iframe in
+bep.treas.gov, moneyfactory.gov, and bep.gov that invokes malicious scripts
+from grepad.com.  The code was discovered late the night before and was
+active at time of writing, about 12 hours later.
+
+To cover their tracks, the miscreants behind the compromise tailored it so
+it attacks only IP addresses that haven't already visited the Treasury
+websites. That makes it harder for white hat-hackers and law enforcement
+agents to track the exploit. Indeed, Thompson initially reported that the
+problem had been fixed until he discovered the sites were merely skipping
+over laboratory PCs that had already encountered the attack.  The attack is
+most likely related to mass infections that two weeks ago hit hundreds of
+sites hosted by Network Solutions and GoDaddy, said Dean De Beer, founder
+and CTO of security consultancy Zero(day) Solutions. [...]
+
+  [Thanks to Jeremy Epstein for spotting this one.  PGN]
+
+------------------------------
+
+Date: Sun, 2 May 2010 08:50:35 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Pay attention to Windows 7 update KB980408
+
+If you don't permit Windows 7 updates to install without your individual
+approval, be sure to pay attention to KB980408, which is rolling out right
+now.  You probably want this one.
+
+Titled "April 2010 stability and reliability update," most of the items
+fixed by the update seem relatively innocuous, until you get to this gem at
+the end of the list:
+
+  "You are not warned when you delete more than 1000 files at the same
+   time. Then, the files are deleted permanently and are not moved to the
+   Recycle Bin."
+
+Ouch.  Given how easy it is in Windows Explorer to delete entire folder paths,
+this is a non-trivial situation!
+
+The official MS writeup on the update is at: http://bit.ly/aa3eSH  (Microsoft)
+
+------------------------------
+
+Date: Sun, 2 May 2010 13:38:20 +0200
+From: Celine Read <celine_read@orange.fr>
+Subject: Chip and not bother with the pin
+
+I'm a British immigrant to France so I read the ex-pat forums for
+information.  Recently, I read a post on such a forum that made me choke.
+Red security flags exploded before my eyes and alarm bells nearly stunned
+me:
+
+http://britishexpats.com/forum/showthread.php?t=665410
+(it's post number 7 on the thread)
+
+  ``I hired a car last Wednesday afternoon from Paris, and have never had
+  any problems with my old style driving license. I did however forget all
+  my credit card pin numbers for the deposit. As my card sat in the machine,
+  and the woman said regrettably there's nothing they can do if I can't
+  remember the pin, the payment went through. She said she'd never seen that
+  happen before - because the card had been left for such a long time, it
+  took the payment. I think my lucky stars were with me, as I'd arrived
+  complete with baby and carseat and was already running late.''
+
+The thing that I want to point out is not so much the bad design that
+allowed this to happen, even though it is heart-stopping, but the
+*mentality* of the person to whom it happened and the person at the hire car
+desk.  The hiree thought he was *lucky* and the hire car woman was
+indifferent.  According to the above post, both took a look at something
+that shouldn't have happened, something that they would not want to have
+happen with a stolen credit card, and said, hey, this is great, it saves me
+all sorts of problems.
+
+This is one more reason that security problems are not caught.
+
+------------------------------
+
+Date: Thu, 18 Mar 2010 17:16:33 +0200
+From: Gadi Evron <ge@linuxbox.org>
+Subject: Fingerprinting Paper with Laser
+
+I saw this release today, and just had to share it with anyone I could find.
+
+"Every paper, plastic, metal and ceramic surface is microscopically
+different and has its own 'fingerprint'. Professor Cowburn's LSA system uses
+a laser to read this naturally occurring 'fingerprint'. The accuracy of
+measurement is often greater than that of DNA with a reliability of at least
+one million trillion."
+
+I love it when old technologies and science are used in interesting new ways
+to impact the future.
+
+http://nanotechwire.com/news.asp?nid=2254
+
+I expect to see this technology at an airport near you, in five years or so.
+
+Gadi Evron,  ge@linuxbox.org. Blog: http://gevron.livejournal.com/
+
+------------------------------
+
+Date: Thu, 29 Apr 2010 05:15:46 +0300
+From: Gadi Evron <ge@linuxbox.org>
+Subject: A socio-psychological analysis of the first Internet war: Estonia
+
+In the past year I have been working in collaboration with psychologists
+Robert Cialdini and Rosanna Guadagno on a paper analyzing some of what I saw
+from the social perspective in Estonia, when I wrote the post-mortem
+analysis for the 2007 attacks, but didn't understand at the time.
+
+We analyze how the Russian-speaking population online was manipulated to
+attack Estonia (and Georgia) in the "cyber war" incidents, and how it could
+happen again (regardless of if any actor is behind it).
+
+Article on El Reg:
+http://www.theregister.co.uk/2010/04/28/web_war_one_anonymity/
+
+Paper (for download with pay :( ):
+http://www.liebertonline.com/doi/abs/10.1089/cyber.2009.0134
+
+Gadi Evron,  ge@linuxbox.org  Blog: http://gevron.livejournal.com/
+
+------------------------------
+
+Date: Thu, 29 Apr 2010 09:22:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Your Phone Is Locked. Just Drive (David Pogue)
+
+The statistics on distracted driving are pretty scary. Just making cellphone
+calls increases your chances of crashing by four times; sending text
+messages increases the risk 23 times.  We know this, we get this, but we
+keep doing it. About half of all teenagers admit to texting while driving,
+for example, no matter how many statistics and horror stories we pass along
+to them. ... [Source: David Pogue, *The New York Times*, 28 Apr 2010; PGN-ed]
+  http://www.nytimes.com/2010/04/29/technology/personaltech/29pogue.html
+
+------------------------------
+
+Date: Wed, 28 Apr 2010 17:39:53 -0400
+From: "Roy Smith" <roy@panix.com>
+Subject: Don't forget to back up the car before reloading the software
+
+It's been many years since my last RISKS contribution, but I just got a
+(somewhat agitated) phone call from my wife which prompted me to do so
+again.  She's got a Prius which was subject to the recall for faulty
+anti-lock brakes.  Apparently the fix was to to load new software.  We're
+all used to warnings from software vendors to back up our data before
+installing a new version, but the concept seems to have escaped Toyota's
+notice.
+
+She had the fix/upgrade done yesterday.  Today she noticed that her phone
+contact list (the car has bluetooth pairing with her cell phone and has its
+own contact list) is all gone.  I guess they didn't bother to back up the
+car before reloading the OS.  Or whatever.
+
+Oversight?  Maybe.  More likely, just standard procedure and to heck with
+that fact that they destroyed their customer's data.
+
+------------------------------
+
+Date: Mon, 3 May 2010 09:18:41 -0400 (EDT)
+From: bill.gunshannon@cs.scranton.edu
+Subject: Clouds and Phones and Untrustworthiness (Re: RISKS-26.04)
+
+First.....
+
+  Subject: Cloud Risks and McAfee's blunder
+
+  [Trusted for what?  The risk in the clouds is of course trusting
+  something that is not trustworthy .  PGN]
+
+Finally, someone having the knowledge and gumption to actually point this
+out.  This was the first thing I said about "cloud computing" when they
+started talking about it in our academic circles.  Before that, it was
+Certificates.  What possible reason do I have to trust that one of the
+commercial certificate providers will not sell my private key to an
+outsider?  Or, one of their employees, for that matter.  Trust in all things
+computer related is nothing new, and after all these years of pointing out
+Risks nothing has changed.
+
+  [Aw, shucks.  I've been railing against having to trust untrustwortiness
+  for many years now.  But yes, nothing seems to change in that regard.  PGN]
+
+And, second......
+
+  Subject: Re: Your Cell Phone May Be Hazardous to Your Health (R 25 93)
+
+  Shall we call this "Risks of relying on GQ as a source of reliable
+  information?" ... Please check reliable sources, such as Wikipedia
+
+Am I the only one who ended out rolling on the floor after reading
+this comment?
+
+Bill Gunshannon University of Scranton Scranton, Pennsylvania
+bill.gunshannon@cs.scranton.edu
+
+------------------------------
+
+Date: Fri, 30 Apr 2010 12:36:02 -0400
+From: Joe Thompson <joe@orion-com.com>
+Subject: Re: Speech recognition and phone banking: not a very good idea
+
+In regard to speaking sensitive info over the phone, I've always felt
+uncomfortable about, e.g. service providers who ask you to tell them your
+account number during a phone call.  Not because I don't trust their
+employees (I don't really, but I can't really do anything about that), but
+because I could be anywhere -- a doctor's office, a sports venue, on a
+train, etc. -- and be overheard speaking, for example, my name and Social
+Security number.
+
+A nefarious party could probably make off with a great deal of valuable info
+by standing outside a hospital (or sitting in its cafeteria) with a notepad
+and an open ear, listening for people talking to their medical insurance
+provider. -- Joe
+
+------------------------------
+
+Date: Mon, 03 May 2010 10:55:42 +0100
+From: Marc Wilson <marc@cleopatra.co.uk>
+Subject: Re: The Eyes Have It: Car Steered With Driver's Eyes (RISKS-26.04)
+
+That's going to make those "Wonderbra" billboards even more hazardous.
+
+  [Yes, imagine one's reaction upon crashing into the sign!  PGN]
+
+------------------------------
+
+Date: Sat, 01 May 2010 01:14:50 -0400
+From: Edward Reid <edward@paleo.org>
+Subject: Re: USPS allows an INTERNET Change of Address (RISKS-25.94)
+
+> I was ASTONISHED that I could put in a USPS Change of Address for
+> her. Stunning! I'm sure no one can imagine anything that could go wrong
+> with that. Just pick up your new credit card in Lagos Nigeria!
+
+Some critical points are omitted here. Yes, you can, but it costs $1.  And
+you have to pay for it with a credit card. And the credit card must validate
+using either the old or the new address. Clearly the $1 charge is for
+security, not for the cost of the service. And as always, an acknowldgement
+is snail-mailed to both old and new addresses.
+
+The same procedure appears to apply to change of address by telephone. (They
+say it costs $1; I'm assuming that the same credit card requirement
+applies.)
+
+While not perfect, consider the old way: you fill out a form, sign it, and
+drop it in a letter slot at the post office servicing the old address. Or
+you mail it to the postmaster at the old PO. The verification is only a
+signature, though the snail-mail acknowledgments are sent.
+
+Neither is perfect, but is the new really worse? Both depend in large part
+on heavy penalties for misuse. The credit card validation has holes, but
+it's the same technique used by many merchants. Physical signatures are
+easily forged.
+
+As for picking up your credit card in Lagos, virtually all mail containing a
+credit card has a "non-forwarding endorsement", and USPS policy is that mail
+with such an endorsement will not be forwarded, either domestically or
+internationally.
+
+I found all the USPS information easily on the USPS web site. A little
+research goes a long way.
+
+------------------------------
+
+Date: Sat, 01 May 2010 01:21:03 -0400
+From: Edward Reid <edward@paleo.org>
+Subject: Re: SSNs again -- in Medicare
+
+My wife's driver license is up for renewal.
+
+A recent requirement in Florida is that she show her social security card to
+renew her DL. We lost both our SS cards decades ago, and until recently no
+one wanted to see the card, they just asked for the number. So we applied
+for duplicate cards.
+
+Of course, you have to provide an ID to get a duplicate SS card. What ID?
+Why, a driver license, of course!
+
+I think that we are farther than ever from getting anyone outside IT to
+understand the difference between identification and authentication.
+
+------------------------------
+
+Date: Thu, 29 Apr 2010 18:26:08 -0700
+From: Bob Schuchman <bob.schuchman@gmail.com>
+Subject: RE: Risks of RFID car keys (Garret, RISKS-26.04)
+
+I own a car with an RFID key. It will not lock with the key in the car or in
+the trunk.
+
+My wife insisted that the trunk would not lock. She could press the small
+rubber button on the trunk handle and the trunk would unlock. I told her
+that was because I was close enough with the transmitter in my pocket to
+allow the trunk to be opened. To prove that I walked a long distance away
+and sure enough the trunk would not open when she pressed the button.
+
+She insisted on testing my theory regularly. Then one day the bomb dropped!
+With me and the transmitter quite far away she was able to open the trunk. I
+was flabbergasted; what was going on?
+
+The cause was simple. Her purse, with the second transmitter, was in the
+trunk. The RFID computer will not let you lock the transmitter (or yourself)
+in the trunk. So how do we lock the trunk without removing the transmitter
+from her purse? You remove a physical key from the other transmitter and
+turn it in the trunk's physical lock.
+
+That takes care of the trunk, but now what about locking the car? It usually
+locks by pressing rubber buttons on the driver or passenger door handles or
+locks itself after 30 seconds, but that wouldn't work with a transmitter in
+the trunk. You have to prove to the RFID computer that there is still a
+valid transmitter outside the car by pressing its lock button.
+
+All this was learned because she insists on leaving her transmitter/key in
+her purse so it will not get lost.
+
+------------------------------
+
+Date: Wed, 28 Apr 2010 16:23:31 -0700
+From: "Bob Frankston" <bob2@bobf.frankston.com>
+Subject: Re: We Have Met the Enemy and He Is PowerPoint (Bumiller, RISKS-26.04)
+
+Is this the military once again finding a scapegoat?  It's like blaming the
+mirror for how we look. Sure, bullet points are convenient but not new with
+PowerPoint and it's not the only way to use it.
+
+I observe my son who has become facile with PowerPoint using it as a
+presentation medium with few bullet points if any.
+
+  [Bob,  Your son is wise.  On the other hand, for many people
+    The Medium is the Message.  Marshall McLuhan
+  PGN]
+
+------------------------------
+
+Date: 3 May 2010 05:21:31 -0000
+From: John Levine <johnl@iecc.com>
+Subject: Re: We Have Met the Enemy and He Is PowerPoint (RISKS-26.04)
+
+>* ``PowerPoint makes us stupid.'' (Gen. James N. Mattis of the Marine
+
+Edward Tufte's short screed "The Cognitive Style of PowerPoint" is required
+reading on this topic.  Don't miss the poster "there's no bullet list like
+STALIN's bullet list!"  I keep a few copies around for people who complain
+that I don't do jazzy enough slides.
+
+ http://www.edwardtufte.com/tufte/powerpoint
+
+------------------------------
+
+Date: Mon, 03 May 2010 19:21:07 -0400
+From: Gary Borba <gborba@knology.net>
+Subject: Re: We Have Met the Enemy and He Is PowerPoint (RISKS-26.04)
+
+*The NY Times* article PowerPoint slide appears to be a system dynamics
+diagram.  If one does not know system dynamics then the diagram can look
+like jumbled nonsense.  I would suggest the system dynamics chart is not the
+problem but instead the problem is that it was presented to people who
+apparently do not know system dynamics and then expecting them to make sense
+of it.
+
+As an engineer I am distressed how presentation programs such as PowerPoint
+short-circuit disciplined thinking.  The further we remove technical
+discourse from this monstrosity the better!
+
+------------------------------
+
+Date: Mon, 3 May 2010 20:24:51 -0400
+From: "Harry Crowther" <hdcrowther@comcast.net>
+Subject: Re: We Have Met the Enemy and He Is PowerPoint (RISKS-26.04)
+
+As is pointed out here & elsewhere, the problem with the Afghan PowerPoint
+horror slide is not that it's PowerPoint, rather it's a fairly typical
+Systems Dynamics model, intended to present complex situations
+understandably, more or less.
+
+http://usacac.leavenworth.army.mil/blog/blogs/dlro/archive/2010/04/29/systems-dynamics-and-appreciating-complexity.aspx
+
+------------------------------
+
+Date: Wed, 28 Apr 2010 21:48:48 -0400
+From: Leonard Finegold <L@drexel.edu>
+Subject: Re: YOUR SAT NAV IS WRONG - GO BACK! (RISKS-26.04)
+
+Re: Frederic Rice: "I personally would like to be able to select the route
+which has fewer opposing left-hand turns": I agree that left-turns (in
+countries where one drives on right) are unhealthy.  I suspect that some GPS
+devices are more equal than others, for my Garmin 350 will choose left turns
+only very reluctantly.
+
+Re: Arthur Flatau's Tom-Tom routes being poorer than Google's: When I check
+Google's choice versus my Garmin's, they generally agree; the outfits
+apparently use different maps, at least in US.  I don't have any shares in
+Garmin (alas).
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.05
+************************

@@ -1,0 +1,998 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.08
+
+RISKS-LIST: Risks-Forum Digest  Saturday 5 March 2022  Volume 33 : Issue 08
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.08>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Massive satellite disruption affecting almost 6000 wind turbines in Europe
+ (Market Screener)
+Surprisingly many risky infusion pumps? Are you part of the IoT? (PGN)
+Small cyberphysical watermarks could prevent huge headaches caused by fake
+ meds (phys.org)
+Sophisticated new Chinese hacking tool found, spurring U.S. warning to
+ allies (SCMP)
+DHS calls out firmware and open source as the biggest software risks (DHS)
+Researchers Can Steal Data During Homomorphic Encryption (NCState)
+Flaws Discovered in Cisco's Network Operating System for Switches
+ (The Hacker News)
+Robust Radar: AI Sensor Technology for Autonomous Driving (Christoph Pelzl)
+Computer Security Researchers Aim to Prevent Tech Abuse (Cornell Chronicle)
+Stolen certificates (The Register)
+Ban from China Made Bitcoin Less Friendly to Climate (NYTimes)
+Surgeon General Demands Data on COVID-19 Misinformation From Major Tech
+ Firms (The Hill)
+Humans Will Live In Metaverse Soon, Claims Mark Zuckerberg.  What About
+ Reality? (Washable)
+The metaverse will steal your identity (Unherd)
+Proctorio subpoenas digital rights group in legal spat with student
+ (The Verge)
+Here Comes the Full Amazonification of Whole Foods (Cecilia Kang)
+Move Over Candy Bars, New York Vending Machine Now Sells NFT Art
+ (Daniel Fasterberg)
+Relevant bumper crop in today's NYTimes (PGN)
+More on Ukraine-related risks (PGN-collected)
+Cyberwarfare likely to hit U.S., allies, say experts (Carolyn Said)
+As Tanks Rolled Into Ukraine, So Did Malware. Then Microsoft Entered the War
+ (David E. Sanger et al.)
+The Impossible Suddenly Became Possible (Anne Applebaum)
+Ukraine's Vital Tech Industry Carries on Amid Russian Invasion
+ (Sam Schechner)
+Google temporarily disables Google Maps live traffic data in Ukraine
+ (Reuters)
+Conti Ransomware Source Code Leaked by Ukrainian Researcher
+ (Bleeping Computer)
+Russia's War in Ukraine Could Spur Another Global Chip Shortage (WiReD)
+The Internet and Putin's War (Lauren Weinstein)
+Re: New Bill Would Bring Mobile Voting To WashDC (Jay Libowe)
+Re: Some Mazda cars stuck on a Seattle Station (Martin Ward)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Mon, 28 Feb 2022 18:48:35 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Massive satellite disruption affecting almost 6000 wind turbines in
+ Europe (Market Screener)
+
+https://www.marketscreener.com/quote/stock/VIASAT-INC-11323/news/Satellite-outage-knocks-out-thousands-of-Enercon-s-wind-turbines-39612504/
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 11:53:40 PST
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Surprisingly many risky infusion pumps? Are you part of the IoT?
+
+Three out of four infusion pumps used to deliver medications and fluids to
+patients have cybersecurity flaws, putting them at increased risk of being
+compromised by hackers, according to a new study by Palo Alto Networks' Unit
+42 threat research service.
+
+https://unit42.paloaltonetworks.com/infusion-pump-vulnerabilities/
+
+  An analysis of more than 200,000 infusion pumps from seven medical device
+  manufacturers, using crowd-sourced data supplied by healthcare
+  organizations, found more than half of the devices were susceptible to
+  "critical" and "high" severity cybersecurity vulnerabilities. "Security
+  lapses in these devices have the potential to put lives at risk or expose
+  sensitive patient data," states the report, noting that infusion pumps can
+  number in the thousands in a large hospital or clinic.
+
+The Palo Alto Networks study mirrors results from a January research report
+<https://www.cynerio.com/landing-pages/the-state-of-healthcare-iot-device-security-2022>
+by security firm Cynerio, which found that IV infusion pumps make up 38% of
+a hospital's typical Internet of Things (IoT) footprint, with 73% of those
+devices having a vulnerability "that would jeopardize patient safety, data
+confidentiality, or service availability if it were to be exploited by an
+adversary."
+
+Infusion pumps are the most common connected medical devices in hospitals
+and "possess the lion's share" of cybersecurity risk, concluded Cynerio's
+January report. The Palo Alto Networks study, released on 2 Mar 2022
+identified more than 40 different vulnerabilities and over 70 different
+security alerts among infusion pumps, with one or more affecting 75% of the
+200,000 devices analyzed on the networks of mostly U.S. healthcare
+organizations.
+
+"One of the most striking findings was that 52% of all infusion pumps
+scanned were susceptible to two known vulnerabilities that were disclosed in
+2019 -- one with 'critical' severity, the other with 'high' severity,
+respectively:
+<https://nvd.nist.gov/vuln/detail/CVE-2019-12255>
+<https://nvd.nist.gov/vuln/detail/CVE-2019-12264>
+
+The study also points out that the average infusion pump has a life of eight
+to 10 years, resulting in the widespread use of legacy devices that have
+hampered efforts to improve cybersecurity.
+
+Becton Dickinson's Alaris System vulnerabilities listed in the Palo Alto
+Networks report were disclosed by the company in 2017, 2019 and 2020. BD
+made software updates available to fix these vulnerabilities and encouraged
+customers to update to BD Alaris PCU version 12.1.2, which became available
+in July 2021, according to the report's researchers.
+
+Still, despite the availability of a patch last year, the Common
+Vulnerabilities and Exposures (CVEs) in the BD pumps "still had a 50.39% and
+39.54% representation in the hospitals," according to Chris Gates, director
+of product security at medical device engineering firm Velentium.
+
+"While BD has been a responsible manufacturer, the hospitals have not been
+updating their pumps," which is "magnified by the long service life of these
+pumps in the hospital," Gates said.
+
+Other cybersecurity experts such as Harbor Labs' Director of Medical
+Security Mike Rushanan, who has worked with a wide variety of infusion
+systems, are not impressed with the security practices of much of the
+infusion pump industry.
+
+"Some infusion pump manufacturers do cybersecurity right, and you don't see
+them on this list. Others, like BD, you'll see over and over," Rushanan
+said.  At the same time, Gates is critical of Baxter's response to known
+vulnerabilities in their infusion pumps.  "The Baxter pumps have a raft of
+high scoring vulnerabilities," Gates said. "These types of vulnerabilities
+display a complete disregard for cybersecurity by the manufacturer, this
+isn't some advanced attack by a nation-state or newly discovered
+vulnerability in a third-party component. No, this is just not meeting their
+responsibility as a medical device manufacturer."
+
+In an emailed statement, Baxter said that the company "self-identified,
+investigated and disclosed" vulnerabilities related to its devices that were
+noted in the study.
+
+"Securing medical devices, including infusion pumps, is not a one-time
+event. It requires ongoing vigilance throughout the lifecycle and operation
+of the pump," it said. "Baxter's product security team is continuously
+monitoring for potential vulnerabilities in our medical devices."
+
+A spokesperson at BD said the company planned to issue a statement about the
+matter today. It wasn't made available at the time of publication.
+
+Baxter's recent infusion pump safety notification, which regards improper
+device use, adds to the cybersecurity concerns with the machines. BD has
+similarly had recent problems with its pumps, issuing multiple recalls over
+the last several years due to machine malfunctions.
+<https://www.medtechdive.com/news/baxter-warns-of-missed-alarms-with-some-of-its-infusion-pumps/619215/>
+
+"Recalls, whether due to mechanical failure or cybersecurity vulnerability,
+can be a source of anxiety for supply chain managers, clinical engineers and
+IT security teams," Palo Alto Networks said in the study. "The at-risk
+devices must be identified, found and retired or repaired per the
+instruction of a given recall. An oversight or a miss in any of these areas
+– whether the devices need repair, maintenance, software patches or updates
+– can put patient lives or sensitive information at risk."
+
+The Palo Alto Networks study called on the healthcare industry to "redouble
+efforts to protect against known vulnerabilities" in infusion pumps. Still,
+Velentium's Gates is skeptical that both hospitals and medical device
+manufacturers are up to the task, despite the continuing risks to patient
+safety.  "I would love to see these studies repeated in a year to see how
+many are still unpatched and still in use in the hospitals.  Sadly, I would
+suspect they would find very similar numbers," Gates said.
+
+------------------------------
+
+Date: Wed, 2 Mar 2022 12:26:23 +0800
+From: "Richard Stein" <rmstein@ieee.org>
+Subject: Small cyberphysical watermarks could prevent huge headaches caused
+ by fake meds (phys.org)
+
+https://phys.org/news/2022-03-small-cyberphysical-watermarks-huge-headaches.html
+
+"Counterfeit medications and pharmaceutical products are just a click
+away from being purchased from online pharmacies via smartphone."
+
+The Pharmaceutical Security Institute summarizes grim statistics about
+arrests, drug categories, and the global geographic distribution for
+counterfeit medicines for incidents greater than US$ 100K in product
+value. No aggregated revenue information about the crimes are disclosed.
+See https://www.psi-inc.org/therapeutic-categories retrieved on 02MAR2022.
+
+The AARP, via
+https://www.aarp.org/health/drugs-supplements/info-2016/counterfeit-prescription-drugs-rx.html
+(retrieved on 02MAR2022), estimates the phony drug market size @ ~US$ 200B
+in 2014.
+
+To deter incentives to forge and sell into the marketplace, a silk-based
+watermark will be imprinted on each pill or tablet to establish the
+manufactured medicine's bona fides. Human digestive processes gracefully
+degrade silk and the marking ink.
+
+A cellphone app can be used to examine the watermark and confirm or
+refute authenticity.
+
+Risk: False negative/positive app outcome.
+
+[Unclear how consumers can apply the app via pre-sale sample and buy.
+Law enforcement can benefit by not having to subject the suspected goods
+to rigorous chemical authenticity testing. Wonder if law enforcement use
+of the app might be subject to illegal search and seizure challenges.]
+
+------------------------------
+
+Date: Mon, 28 Feb 2022 21:17:07 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Sophisticated new Chinese hacking tool found, spurring U.S. warning
+ to allies (SCMP)
+
+   - Cybersecurity firm Symantec says the malware, which it calls Daxin,
+   has been used to target high level, non-Western government agencies in Asia
+   and Africa
+   - Researchers say the discovery is noteworthy because of the scale of
+   the intrusions and the advanced nature of the tool
+
+Security researchers with US cybersecurity firm Symantec said they have
+discovered a highly sophisticated Chinese hacking tool that has been able to
+escape public attention for more than a decade.
+
+The discovery was shared with the US government in recent months, who have
+shared the information with foreign partners, said a US official. Symantec,
+a division of chip maker Broadcom, published its research about the tool,
+which it calls Daxin, on Monday.
+
+``It's something we haven't seen before,'' said Clayton Romans, associate
+director with the US Cybersecurity Infrastructure Security Agency (CISA).
+``This is the exact type of information we’re hoping to receive.''
+
+CISA highlighted Symantec's membership in a joint public-private
+cybersecurity information sharing partnership, known as the JCDC, alongside
+the new research paper.  [...]
+
+https://www.scmp.com/news/world/united-states-canada/article/3168740/sophisticated-new-chinese-hacking-tool-found
+
+------------------------------
+
+Date: Sat, 5 Mar 2022 10:31:49 PST
+From: Peter G Neumann <neumann@csl.sri.com>
+Subject: DHS calls out firmware and open source as the biggest software risks
+ (DHS)
+
+https://www.dhs.gov/sites/default/files/2022-02/ICT%20Supply%20Chain%20Report_0.pdf
+
+Assessment of the Critical Supply Chains Supporting the U.S. Information
+and Communications Technology Industry
+
+23 February 2022
+
+"In summary, open-source software and firmware are integral to the ICT
+industrial base, enabling the development and functionality of nearly all
+types of ICT software and hardware products. However, the nature of these
+products in addition to the software supply chain itself present several
+risks. First, the dynamic nature of software development exposes the supply
+chain to countless sources of both known and unknown vulnerabilities, from
+insecure open-source software to zero-day exploits.  Second, the growing
+reliance on open-source software increases the risk and potential impact of
+software supply chain attacks through methods such as package typo squatting
+and malicious injects. Finally, firmware presents a large and ever-expanding
+attack surface as the number of electronic devices grows and the ICT supply
+chain increases in complexity. Product integrity assurance throughout the
+ICT industry is important to ensure secure and reliable products."
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 12:00:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Researchers Can Steal Data During Homomorphic Encryption (NCState)
+
+Matt Shipman, NC State University News, 2 Mar 2022,
+via ACM TechNews; 4 Mar 2022
+
+Researchers at North Carolina State University (NC State) and Turkey's Dokuz
+Eylul University have cracked next-generation homomorphic encryption via
+side-channel attacks. Homomorphic encryption renders data unreadable to
+third parties, while still permitting third parties and third-party
+technologies to perform operations using the data. NC State's Aydin Aysu
+said the process consumes much computing power, and the researchers were
+able to read data during encryption by monitoring power consumption in the
+data encoder using Microsoft's SEAL Homomorphic Encryption Library. "We were
+able to do this with a single power measurement," Aysu noted, and the team
+confirmed the flaw in the library up through least version 3.6.
+
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-2e294x23200ex072994&
+
+------------------------------
+
+Date: Mon, 28 Feb 2022 12:04:13 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Flaws Discovered in Cisco's Network Operating System for Switches
+ (The Hacker News)
+
+Ravie Lakshmanan, *The Hacker News* 24 Feb 2022,
+via ACM TechNews, 28 Feb 2022
+
+Technology conglomerate Cisco has issued software patches to correct four
+security flaws that hackers could exploit to commandeer affected systems.
+The most critical patch fixes a command injection flaw in the NX-API feature
+of Cisco NX-OS software, stemming from insufficient input validation of
+user-supplied data. Cisco warned, "A successful exploit could allow the
+attacker to execute arbitrary commands with root privileges on the
+underlying operating system." Other bugs the patches target include two
+high-severity denial-of-service (DoS) vulnerabilities in NX-OS in the Cisco
+Fabric Services Over IP and Bidirectional Forwarding Detection traffic
+functions. The fourth patch corrects a DoS flaw in the Cisco Discovery
+Protocol service of Cisco FXOS Software and Cisco NX-OS Software, which
+could "allow an unauthenticated, adjacent attacker to cause the service to
+restart, resulting in a denial of service condition."
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e204x231cfcx074336&
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 12:00:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Robust Radar: AI Sensor Technology for Autonomous Driving
+  (Christoph Pelzl)
+
+Christoph Pelzl, Graz University of Technology (Austria), 23 Feb 2022,
+via ACM TechNews; 4 Mar 2022
+
+An artificial intelligence (AI) system for automotive radar sensors
+developed by researchers at Austria's Graz University of Technology (TU
+Graz) filters out interfering signals from other radar sensors to improve
+object detection. The researchers built model architectures for automatic
+noise suppression based on convolutional neural networks (CNNs). To make
+them more efficient, the researchers trained the neural networks with noisy
+data and desired output values, then compressed the most efficient models
+further by reducing bit widths, resulting in an AI model with high filter
+performance and low energy consumption. Said TU Graz's Franz Pernkopf, "We
+want to make CNNs' behavior a bit more explainable. We are not only
+interested in the output result, but also in its range of variation. The
+smaller the variance, the more certain the network is."
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-2e294x232009x072994&
+
+------------------------------
+
+Date: Mon, 28 Feb 2022 12:04:13 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Computer Security Researchers Aim to Prevent Tech Abuse
+ (Cornell Chronicle)
+
+Adam Conner-Simons, Cornell University Chronicle, 24 Feb 2022,
+via ACM TechNews, 28 Feb 2022
+
+76A model developed by Cornell University researchers aims to help domestic
+abuse survivors prevent assailants from hacking into their devices and
+social media. With a focus on "continuity of care," the model matches
+survivors of such abuse with a volunteer consultant who understands their
+needs and provides a seamless relationship over time, giving them multiple
+ways to communicate with their consultant safely, and securely storing their
+tech abuse history and concerns. Cornell's Emily Tseng said, "In an ideal
+world, the people on the 'Geek Squad' would be able to treat tech abuse with
+the sensitivity of a social worker."
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e204x231d04x074336&
+
+------------------------------
+
+Date: Sat, 05 Mar 2022 01:49:19 -0500
+From: "Arthur T." <risks202203.6.atsjbt@xoxy.net>
+Subject: Stolen certificates (The Register)
+
+Extortionists started leaking data they stole from Nvidia.  It includes a
+code-signing certificate. There is already malware in the wild signed by it.
+
+https://www.theregister.com/2022/03/05/nvidia_stolen_certificate/
+
+There is an important question I have that this article doesn't mention:
+Other software companies have had data stolen. Has any of their stolen data
+included signing certificates? If they aren't leaked (as was Nvidia's) we
+might never know that criminals have those certificates in their possession,
+since those who pay ransoms generally don't publicize what kind of data was
+taken (if they even know).
+
+------------------------------
+
+Date: Sat, 26 Feb 2022 13:37:16 PST
+From: Peter G Neumann <neumann@csl.sri.com>
+Subject: Ban from China Made Bitcoin Less Friendly to Climate (NYTimes)
+
+Hiroko Tabuchi, *The New York Times* Business, B8,26 Feb 2022
+
+The exodus of bitcoin miners from China (after last year's government
+crackdown on cryptocurrencies) made cryptomining even worse for the climate.
+Miners lost their access to cheap hydro-electric power in China, and
+migrated (e,g., to Kazakhstan and the U.S.), resulting in the overall use of
+more fossil fuels.  Researchers estimated Bitcoin mining may be responsible
+for about 65 megatons of carbon dioxide annually.  (PGN-ed)
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 12:00:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Surgeon General Demands Data on COVID-19 Misinformation From
+ Major Tech Firms (The Hill)
+
+Brad Dress, *The Hill*, 3 Mar 2022, via ACM TechNews; 4 Mar 2022
+
+U.S. Surgeon General Vivek Murthy reportedly has asked major technology
+companies to disclose data on COVID-19 misinformation. He asked for
+information about the prevalence and scale of the problem on the firms'
+Websites, and on social networks, search engines, crowdsourced and
+e-commerce platforms, and instant messaging systems. Murthy specified that
+the data should detail demographics impacted by misinformation,
+misinformation sources, and "exactly how many users saw or may have been
+exposed to instances of COVID misinformation." Said Murthy, "Technology
+companies now have the opportunity to be open and transparent with the
+American people about the misinformation on their platforms. This is about
+protecting the nation's health."
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-2e294x232005x072994&
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 08:03:48 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Humans Will Live In Metaverse Soon, Claims Mark Zuckerberg.
+ What About Reality? (Washable)
+
+*Meta intends to spend the next five to ten years creating an immersive
+virtual environment that includes fragrance, touch, and sound to allow users
+to lose themselves in virtual reality...* [...]
+https://in.mashable.com/tech/28254/humans-will-live-in-metaverse-soon-claims-mark-zuckerberg-what-about-reality
+
+  [Vot could be Verse?  Those who may be lost in Metaverse may already be
+  lost more broadly.  Smell-o-vision returns?  RISKS-28.78, 30.88, 32.68.
+  PGN]
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 08:33:15 -1000
+From: geoff goodfellow <geoff@iconia.com>
+Subject: The metaverse will steal your identity (Unherd)
+
+*Individuality will dissolve into mindless conformity*
+
+In 1950, sociologist David Riesman declared that we were *The Lonely Crowd*.
+
+In 2000, political scientist Robert D. Putnam told us we were *Bowling
+Alone*. If the metaverse promises us one thing, it's that we will not be
+lonely.
+
+Meta (formerly Facebook) and Microsoft (having recently purchased online
+gaming giant Activision) are enthusiastically talking up the metaverse -- a
+world of virtual reality-enhanced social interactions that will be more real
+than reality. It will capture the nuances of offline interaction in
+massively fulfilling virtual experiences and then monetise them. With
+JPMorgan and Goldman Sachs declaring it a trillion-dollar market, the
+metaverse, if it succeeds, will be a constant presence in our lives.
+
+If this is, as some say
+<https://www.ft.com/content/c60b8543-e7f0-43f1-89f8-32a57bc2b26e>, a
+chilling vision of the future, it's not for the Huxleyesque reasons usually
+given. If the worry is that people will be drawn away from real life into an
+online world provided by high-tech devices, that horse has already
+bolted. Meta's talk of an *immersive* metaverse belies the fact that we are
+already well and deeply immersed in online life.  [...]
+
+https://unherd.com/2022/03/the-metaverse-will-steal-your-identity/
+
+------------------------------
+
+Date: Wed, 2 Mar 2022 19:31:46 -0500
+From: "Gabe Goldberg" <gabe@gabegold.com>
+Subject: Proctorio subpoenas digital rights group in legal spat with student
+ (The Verge)
+
+It asks for all the organization's communications related to the proctoring
+software industry.
+
+The controversial proctoring platform Proctorio has filed a broad
+subpoena against the prominent digital rights nonprofit Fight for the
+Future as part of its legal battle with Miami University student Erik
+Johnson, in what the group describes as an effort to silence critics
+through legal maneuvering.
+
+The fight between Johnson and the company began in September of 2020
+when the student published a lengthy Twitter thread criticizing
+Proctorio's practices, including excerpts of the platform's source code
+that he’d posted on PasteBin. Proctorio filed a copyright takedown
+notice. Three of the tweets were removed but later reinstated. The
+Electronic Frontier Foundation then sued Proctorio on Johnson's behalf,
+arguing that the takedown had ``interfered with Johnson’s First Amendment
+right.''
+
+Proctorio is one of the most prominent software platforms that schools use
+to watch for cheating on remote tests. It records students through their
+webcams as they work, monitoring their head positioning, and flags possible
+signs of cheating to professors.
+
+https://www.theverge.com/2022/2/22/22945634/proctorio-fight-for-the-future-twitter-copyright-lawsuit-subpoena-remote-proctoring
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 12:00:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Here Comes the Full Amazonification of Whole Foods (Cecilia Kang)
+
+Cecilia Kang, *The New York Times*, 28 Feb 2022
+via ACM TechNews; 4 Mar 2022
+
+Amazon has almost completely automated a Whole Foods store in Washington,
+DC's Glover Park neighborhood. The store incorporates Just Walk Out
+technology, a network of cameras, sensors, and deep learning software that
+analyzes shopping habits. Shoppers can activate virtual shopping by scanning
+their palms at kiosks or by scanning quick response codes in the Amazon
+phone app. Just Walk Out detects when shoppers lift sensor-affixed products,
+itemizes their picks, and charges their Amazon account when they exit the
+store, skipping checkout lines. Amazon, which has tested such automation for
+over four years, plans to open a second prototype automated Whole Foods
+store in Los Angeles this year.
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-2e294x232004x072994&
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 12:00:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Move Over Candy Bars, New York Vending Machine Now Sells NFT Art
+ (Daniel Fasterberg)
+
+Daniel Fastenberg, Reuters 2 Mar 2022
+via ACM TechNews; 4 Mar 2022
+
+The first in-person non-fungible token (NFT) vending machine has been
+installed in New York City by digital art collecting platform Neon. The "NFT
+ATM," located in a small storefront in Lower Manhattan's financial district,
+sells QR codes connected to pieces of online art ranging in price from $5.99
+to $420.49. Customers do not know which piece of digital art they have
+purchased until they scan the QR code, which allows them to display the art
+on any smartphone, laptop, or tablet. Neon's Kyle Zappitell said the target
+customer is "the crypto curious, the people who tried to buy cryptocurrency
+or they were interested in buying an NFT, but they just hit too many
+barriers."
+https://orange.hosting.lsoft.com/trk/click?ref=3Dznwrbbrs9_6-2e294x232007x072994&
+
+------------------------------
+
+Date: Sat, 5 Mar 2022 13:23:43 PST
+From: "Peter G, Neumann" <neumann@csl.sri.com>
+Subject: Relevant bumper crop in today's NYTimes
+
+Main op-ed in the editorial slot:
+* Farhad Manjoo -- No Longer a Master of Disinformation;
+    The Ukraine War Is Showing the Limits of Putin's Propaganda
+Lead right-hand page Op-Ed:
+* Glenn S. Gerstall -- America Isn't Ready for the Cyberattacks That
+    are Coming
+Business Section front page:
+* Li Yuan -- Speaking as One Propaganda Voice
+* Ron Lieber -- How to Prepare for Digital Disaster
+* Patricia Cohen -- Why Trade Didn't Keep the Peace
+
+The risks are enormous all around.   PGN
+
+------------------------------
+
+Date: Sat, 26 Feb 2022 09:12:15 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: More on Ukraine-related risks (PGN-collected)
+
+* CISA Releases Advisory on Destructive Malware Targeting Organizations in
+  Ukraine
+
+https://www.cisa.gov/uscert/ncas/current-activity/2022/02/26/cisa-releases-advisory-destructive-malware-targeting-organizations
+
+* Russia Could Use Cryptocurrency to Blunt the Force of U.S. Sanctions
+
+https://www.nytimes.com/2022/02/23/business/russia-sanctions-cryptocurrency.html
+
+* Russian artillery fire has struck Kyiv's children's cancer hospital
+  Okhmadyt, killing one child and wounding two, along with two adults.  (no
+  URL given)
+
+* Official Kremlin website apparently brought down by cyberattacks
+
+  The official website of the Kremlin, office of Putin (kremlin.ru) is
+  reported to be down. And indeed this appears to be the case, after massive
+  cyberattacks on various Russian government and state media websites.
+
+* Ukrainians announce the launch of an 'IT army' to fight off Russian
+  cyberattacks
+
+https://www.euronews.com/next/2022/02/26/ukraine-war-ukrainians-announce-the-launch-of-an-it-army-to-fight-off-russian-cyberattacks
+
+[* Paul Krugman's OpEd, Hidden Money May Be Putin's Achilles Heel, in *The
+  New York Times* 25 Feb 2022 suggests that advanced democracies have
+  another powerful financial weapon -- going after the vast overseas wealth
+  of the oligarchs...  Krugman did suggest removing Russia from SWIFT
+  transactions might happen, albeit with some negative effects.  Somehow he
+  did not mention Deutsche Bank.  PGN]
+
+* Leaders announce selected Russian banks to be cut off from SWIFT
+
+https://www.whitehouse.gov/briefing-room/statements-releases/2022/02/26/joint-statement-on-further-restrictive-economic-measures/
+
+------------------------------
+
+Date: Sat, 26 Feb 2022 13:02:05 PST
+From: Peter G Neumann <neumann@csl.sri.com>
+Subject: Cyberwarfare likely to hit U.S., allies, say experts (Carolyn Said)
+
+Carolyn Said (San Francisco Chronicle, 26 Feb 2022
+
+Underscoring how warfare has changed in the Internet era, the aggression
+includes a wave of cyberattacks against Ukraine seeking to destabilize
+critical infrastructure.  Security experts warn that's just the beginning of
+the online havoc Russia will try to wreak, which is likely to target the
+U.S. and its allies as well.
+
+------------------------------
+
+Date: Wed, 2 Mar 2022 12:18:05 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: As Tanks Rolled Into Ukraine, So Did Malware. Then Microsoft
+ Entered the War (David E. Sanger et al.)
+
+David E. Sanger, Julian E. Barnes and Kate Conger, *The New York
+Times*, 01 Mar 2022, via ACM TechNews; 2 Mar 2022
+
+U.S. technology companies are helping to defend Ukraine against cyberattacks
+orchestrated alongside the Russian invasion. Shortly before the military
+incursion began, Microsoft's Threat Intelligence Center responded to
+previously unseen "wiper" malware targeting Ukraine's government ministries
+and financial institutions; the center dissected the malware, informed
+Ukraine's cyberdefense forces, and updated Microsoft's virus detection
+systems to block the code within hours. Meanwhile, Meta said it had locked
+down Facebook accounts of Ukrainian military officials and public figures
+when hackers attempted to spread disinformation through them.
+Corporate-government partnerships are being tested in the effort to analyze
+and counter Russia's cyberoffensive tactics, with tech companies a primary
+source of actionable intelligence.
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e242x231eb2x072268&
+
+------------------------------
+
+Date: March 2, 2022 14:33:56 JST
+From: Dewayne Hendricks <dewayne@warpspeed.com>
+Subject: The Impossible Suddenly Became Possible (Anne Applebaum)
+
+  [via Dave Farber's IP distribution]  [Highly RISKS-relevant.  PGN]
+
+When Russia invaded Ukraine, the West's assumptions about the world
+became unsustainable.
+
+Anne Applebaum, *The Atlantic*, 1 Mar 2022
+https://www.theatlantic.com/ideas/archive/2022/03/putins-war-dispelled-the-worlds-illusions/623335/
+
+History has accelerated; the impossible has become possible. Shifts that no
+one imagined two weeks ago are unfolding with incredible speed.
+
+As it turns out, nations are not pieces in a game of Risk. They do not, as
+some academics have long imagined, have eternal interests or permanent
+geopolitical orientations, fixed motivations or predictable goals. Nor do
+human beings always react the way they are supposed to react. Last week,
+nobody who was analyzing the coming war in Ukraine imagined that the
+personal bravery of the Ukrainian president and his emotive calls for
+sovereignty and democracy could alter the calculations of foreign ministers,
+bank directors, business executives, and thousands of ordinary people. Few
+imagined that the Russian president's sinister television appearances and
+brutal orders could alter, in just a few days, international perceptions of
+Russia.
+
+And yet all of that has happened. Volodymyr Zelensky's courage has moved
+people, even the hard-bitten CEOs of oil companies, even dull diplomats
+accustomed to rote pronouncements. Vladimir Putin's paranoid ranting,
+meanwhile, has frightened even people who were lauding his savvy just a few
+days ago. He is not, in fact, someone you can do business with, as so many
+in Berlin, Paris, London, and Washington falsely believed; he is a
+cold-blooded dictator happy to murder hundreds of thousands of neighbors and
+impoverish his nation, if that's what it takes to remain in power. However
+the war ends -- and many scenarios are still imaginable -- we already live
+in a world with fewer illusions.
+
+Look at Germany, a nation that has spent nearly 80 years defining its
+national self-interest in purely economic terms. If the government of some
+distant place where Germans buy and sell things was repressive, that was
+never the Germans' fault. If military aggression was reshaping the outer
+borders of Europe, that was peripheral to Germany, too. Former Chancellor
+Angela Merkel, although she talked a lot about liberal and democratic
+values, in practice worried far more about creating good conditions for
+German business, wherever it was operating. That economy-first attitude
+infected her nation. Not long after the Russian annexation of Crimea in
+2014, I joined a panel discussion in Germany about ``the greatest threats to
+Europe.''  Because of the timing, I talked about Russia and assumed the
+others would too. I was wrong. One of the other panelists called me a
+warmonger. Another argued vociferously that the greatest threat was a
+proposed trade agreement that would have allowed Americans to sell chicken
+washed in chlorine to German supermarkets.
+
+I remember that detail because I hadn't known about the great
+chlorinated-chicken discussion that was then engulfing Germany, and I had to
+go home and look it up. But I've had some version of that experience many
+times since. I was on a German television program two weeks ago, along with
+three German politicians who were, even then, arguing that -- despite the
+thousands of troops and armored vehicles gathering on the borders of Ukraine
+-- the only conceivable solution was dialog.
+
+On Saturday, in a 30-minute speech, the current German chancellor, Olaf
+Scholz, threw all of that out the window. Germany, he said, needs ``planes
+that fly, ships that sail, and soldiers who are optimally equipped for their
+missions.''  Germany's military should reflect its size and importance.  The
+German government has done an about-face and will even send weapons to
+Ukraine: 1,000 anti-tank weapons and 500 Stinger missiles. More incredibly,
+this 180-degree turn has the support of an astonishing 78 percent of the
+German public, who now say they support much higher military spending and
+will gladly pay for it. This is a fundamental change in Germany's definition
+of itself, in its understanding of its past: Finally, Germans have
+understood that the lesson of their history is not that Germany must remain
+forever pacifist. The lesson is that Germany must defend democracy and fight
+the modern version of fascism in Europe when it emerges.
+
+But the Germans are not the only ones who have changed. Across Europe people
+are realizing that they live on a continent where war, in their own time, in
+their own countries, is no longer impossible. Platitudes about European
+*unity* and *solidarity* are beginning to have some meaning, along with
+*common foreign policy*, a phrase that, in the European Union, has until now
+been largely fiction. In theory the EU has a single spokesperson for foreign
+policy, but in practice European leaders have given that job to people who
+know little about Russia, and whose fallback position when Russia misbehaves
+is always the expression of *deep concern*.  The previous European high
+representative for foreign policy, Federica Mogherini, was more interested
+in EU relations with Cuba than with Kyiv. The current holder of that office,
+Josep Borrell, stumbled through a meeting with his Russian counterpart last
+year, and seemed surprised to be treated with disdain.
+
+But now everything is suddenly different.  *Deep concern* has been exchanged
+for real action. Less than a week into the invasion, the EU has not only
+announced harsh sanctions on Russian banks, companies, and individuals --
+sanctions that will also affect Europeans -- but has also offered $500
+million of military aid to Ukraine. Individual European states, from France
+to Finland, are sending weapons as well, and applying their own
+sanctions. The French say they are drawing up a list of Russian oligarchs'
+assets, including luxury cars and yachts, in order to seize them.
+
+Europeans have also dropped, abruptly, some of their doubts about Ukraine's
+membership in their institutions. On Monday, the European Parliament not
+only asked Zelensky to speak, by video, but gave him a standing
+ovation. Earlier today the parliamentarians, from all across the continent,
+voted to accept his application for EU membership for Ukraine. Accession to
+the EU is a long process, and it won't happen immediately, even if Ukraine
+emerges intact from this conflict. But the idea has been broached. It is now
+part of the continent's collective imagination. From being a distant place,
+badly understood, it is now part of what people mean when they say Europe.
+
+Ukraine itself will never be the same again either. Events are happening so
+rapidly, with moods and emotions changing every hour of every day, that I
+can't guess what will happen next, or predict how people will feel about
+it. But I am certain that the events of this week have changed not only the
+world's perceptions of Ukraine, but Ukrainians' perceptions of
+themselves. In the long run-up to this war, the conversation in Washington
+and Berlin was always focused on Putin and Joe Biden, Sergei Lavrov and
+Antony Blinken, NATO and Russia. This was the kind of talk that academics
+and pundits liked: big topics, big countries. In this conversation Ukraine
+was, as the political scientist John Mearsheimer put it in 2014, nothing
+more than ``a buffer state of enormous strategic importance to Russia.''
+But the Ukrainians have now put themselves at the heart of the story, and
+they know it.
+
+As a result, thousands of people are making choices that they too could not
+have imagined two weeks ago. Ukrainian sociologists, baristas, rappers, and
+bakers are joining the territorial army. Villagers are standing in front of
+Russian tanks, shouting *occupiers* and *murderers* at Russian soldiers
+firing into the air. Construction workers on lucrative contracts in Poland
+are dropping their tools and taking the train back home to join the
+resistance. A decade's worth of experience fighting Russian propaganda is
+finally paying off, as Ukrainians create their own counternarrative on
+social media. They post videos telling Russian soldiers to go home to their
+mothers. They interview captured teenage Russian conscripts, and put the
+video clips online. Electronic highway signs leading into Kyiv have been
+reconfigured to tell the Russian army to f*ck off.  Even if this ends badly,
+even if there is more bloodshed, every Ukrainian who lived through this
+moment will always remember what it felt like to resist -- and that too will
+matter, for decades to come.
+
+And what about Russia? Is Russia condemned always to be a revanchist state,
+a backward-looking former empire, forever scheming to regain its old role?
+Must this enormous, complicated, paradoxical nation always be ruled badly,
+with cruelty, by elites who want to steal its wealth or oppress its people?
+Will Russian rulers always dream of conquest instead of prosperity?
+
+Right now many Russians don't even realize what is happening in
+Ukraine. State television has not yet admitted that the Russian military has
+attacked Kyiv with rockets, bombed a Holocaust memorial, or destroyed parts
+of central Kharkiv and Mariupol. Instead, the official propagandists are
+telling Russians that they are carrying out a police action in Ukraine's
+far-eastern provinces. The audience gets no information about casualties, or
+war damage, or costs. The extent of the sanctions has not been
+reported. Pictures seen around the world -- the bombing of the Kyiv
+television tower today, for example -- can't be seen on the Russian evening
+news.
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 12:00:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Ukraine's Vital Tech Industry Carries on Amid Russian Invasion
+ (Sam Schechner)
+
+Sam Schechner, *The Wall Street Journal*, 02 Mar 2022,
+via ACM TechNews; 4 Mar 2022
+
+Many software developers in Ukraine continue to produce code for overseas
+clients amid the Russian invasion. Many also are volunteering for the ad hoc
+hacking army launching cyberattacks against Russia. Some Ukrainian
+technology companies are relocating employees to the west, donating money to
+the war effort, or offering office space as refugee housing, among other
+things. Said Tufts University's Bhaskar Chakravorti, "There is a serious
+talent crunch in IT, especially at the higher end where Ukraine was
+increasingly going. It's hard to imagine there will be too many other places
+for clients to go." Stepan Veselovskyi of the Lviv IT Cluster trade group
+said most tech companies in the city are working. Veselovskyi explained,
+"It's important for businesses with international clients to be alive and
+pay taxes and pay salaries to people in a time of war."
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e294x232003x072994&
+
+------------------------------
+
+Date: Tue, 1 Mar 2022 10:39:08 -0500
+From: "Jan Wolitzky" <jan.wolitzky@gmail.com>
+Subject: Google temporarily disables Google Maps live traffic data in
+ Ukraine (Reuters)
+
+Feb 27 (Reuters) - Alphabet Inc's (GOOGL.O) Google confirmed on Sunday it
+has temporarily disabled for Ukraine some Google Maps tools which provide
+live information about traffic conditions and how busy different places are.
+
+The company said it had taken the action of globally disabling the Google
+Maps traffic layer and live information on how busy places like stores and
+restaurants are in Ukraine for the safety of local communities in the
+country, after consulting with sources including regional authorities.
+
+Ukraine is facing attacks from Russian forces who invaded the country on
+Thursday. As missiles fell on Ukrainian cities, nearly 400,000 civilians,
+mainly women and children, have fled into neighbouring countries.
+
+Russia calls its actions in Ukraine a "special operation".
+
+Big tech companies including Google have said they are taking new measures
+to protect users' security in the region.
+
+Online services and social media sites have also been tapped by researchers
+piecing together activity around the war.
+
+A professor at California's Middlebury Institute of International Studies
+said Google Maps helped him track a "traffic jam" that was actually Russian
+movement towards the border hours before Russian President Vladimir Putin
+announced the attack.
+<https://twitter.com/ArmsControlWonk/status/1496657816740036616?s=20&t=hC8JFkNUIhsbBo9ML48CbQ>
+
+Google said live traffic information remained available to drivers using
+its turn-by-turn navigation features in the area.
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 12:00:30 -0500 (EST)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Conti Ransomware Source Code Leaked by Ukrainian Researcher
+ (Bleeping Computer)
+
+Lawrence Abrams, BleepingComputer (1 March 2022),
+via ACM TechNews; 4 Mar 2022
+
+A Ukrainian researcher has exposed a wealth of content on the Conti
+cybercrime gang, including their ransomware's source code, after they sided
+with Russia on the Ukraine incursion. Known on Twitter as @ContiLeaks, the
+researcher leaked 393 JavaScript Object Notation files containing roughly
+60,000 internal messages from the Conti and Ryuk ransomware group's private
+Extensible Messaging and Presence Protocol chat server. ContiLeaks then
+released more damaging material: the most exciting disclosure was a
+password-protected archive featuring the source code for the Conti
+ransomware encryptor, decryptor, and builder. Another researcher cracked the
+password, making the ransomware source code accessible to everyone.
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2e294x23200ax072994&
+
+------------------------------
+
+Date: Thu, 3 Mar 2022 20:00:30 -0500
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Russia's War in Ukraine Could Spur Another Global Chip Shortage
+ (WiReD)
+
+Ukraine is home to half of the world's neon gas, which is critical for
+manufacturing semiconductor chips.
+
+https://www.wired.com/story/ukraine-chip-shortage-neon/
+
+------------------------------
+
+Date: Fri, 4 Mar 2022 09:16:03 -0800
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: The Internet and Putin's War
+
+It's impossible to overstate the importance of the Internet in Russia's war
+on Ukraine. Yes, it can be a source for lies and disinformation, but it also
+allows the world to monitor the conflict and organize against Putin in ways
+that never would be possible before.  Putin can't hide.
+
+Mainstream media seems to suddenly realize that Big Tech is incredibly
+important to let the world know what is REALLY going on during events like
+Putin's war, and that the "All Big Tech is Evil" mantra is a bunch of hooey.
+
+  [Two closely related messages combined into one RISKS item.  PGN]
+
+------------------------------
+
+Date: Sat, 26 Feb 2022 21:13:22 +0000
+From: Jay Libove <libove@felines.org>
+Subject: Re: New Bill Would Bring Mobile Voting To WashDC (RISKS-33.07)
+
+I wonder why I've never seen the following discussed:
+
+* Of course, for people for whom the anonymity of their vote is paramount
+  (and there really are such people, and some of them have objectively
+  provable reasons why), a secure-enough but not-anonymous system wouldn't
+  work.
+
+* But, for anyone (like, say, me) for whom the anonymity of their vote isn't
+  relevant (#1 anybody knowing my vote would have no blowback on me, and #2
+  my votes are pretty predictable...) having a secure-enough and
+  not-anonymous system would be a great convenience.
+
+So, we should do it, and/but we should NOT ONLY do it (that is, it shouldn't
+be forced on people, just made available).
+
+  [What am I missing?]
+
+------------------------------
+
+Date: Tue, 1 Mar 2022 15:25:23 +0000
+From: Martin Ward <martin@gkc.org.uk>
+Subject: Re: Some Mazda cars stuck on a Seattle Station (RISKS-33.06-07)
+
+The real problem is that programmers write printf("foo") to print the string
+"foo", and it works.  So then they go on to write printf(str) to write the
+string str, which mostly works but fails when the string pointed at by str
+contains percent characters.
+
+The first argument to printf is *supposed* to be the format string.  To
+print an arbitrary string the programmer is supposed to write printf("%s",
+str).
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.08
+************************

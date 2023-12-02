@@ -1,0 +1,362 @@
+RISKS-LIST: Risks-Forum Digest  Wednesday 9 October 2013  Volume 27 : Issue 52
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/27.52.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Let's Build a More Secure Internet (Eli Dourado via Matthew Kruk)
+CMU Researchers Claim To Have Created Messaging App Even NSA Can't Crack
+  (Geoff Goodfellow)
+NSA data center 'meltdowns' force year-long delay (James Niccolai via
+  Paul Saffo)
+Hundreds of US companies make false Data Protection claims (Nikolaj Nielsen
+  via Peter Houppermans)
+Re: Lowering Your Standards: DRM and the Future of the W3C (Jeff Jonas)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Wed, 9 Oct 2013 01:29:42 -0600
+From: "Matthew Kruk" <mkrukg@gmail.com>
+Subject: Let's Build a More Secure Internet (Eli Dourado)
+
+Eli Dourado, *The New York Times*, 8 Oct 2013
+Can we ever trust the Internet again?
+http://www.nytimes.com/2013/10/09/opinion/lets-build-a-more-secure-internet.html?nl=todaysheadlines&emcíit_th_20131009
+
+In the wake of the disclosures about the National Security Agency's
+surveillance programs, considerable attention has been focused on the
+agency's collaboration with companies like Microsoft, Apple and Google,
+which according to leaked documents appear to have programmed "back door"
+encryption weaknesses into popular consumer products and services like
+Hotmail, iPhones and Android phones.
+
+But while such vulnerabilities are worrisome, equally important - and
+because of their technical nature, far less widely understood - are the
+weaknesses that the N.S.A. seems to have built into the very infrastructure
+of the Internet. The agency's "upstream collection" capabilities, programs
+with names like Fairview and Blarney, monitor Internet traffic as it passes
+through the guts of the system: the cables and routers and switches.
+
+The concern is that even if consumer software companies like Microsoft and
+telecommunications companies like AT&T and Verizon stop cooperating with the
+N.S.A., your online security will remain compromised as long as the agency
+can still take advantage of weaknesses in the Internet itself.
+
+Fortunately, there is something we can do: encourage the development of an
+"open hardware" movement - an extension of the open-source movement that has
+led to software products like the Mozilla browser and the Linux operating
+system.
+
+The open-source movement champions an approach to product development in
+which there is universal access to a blueprint, as well as universal ability
+to modify and redistribute the blueprint. Wikipedia is perhaps the
+best-known example of a product inspired by the movement. Open-source
+advocates typically emphasize two kinds of freedom that their products
+afford: they are available free of charge, and they can be used and
+manipulated free of restrictions.
+
+But there is a third kind of freedom inherent in open-source systems: the
+freedom to audit. With open-source software, independent security experts
+can scrutinize the code for vulnerabilities - whether accidentally or
+intentionally introduced. The more auditing by the programming masses, the
+better the security. As the open-source software advocate Eric S. Raymond
+has put it, "given enough eyeballs, all bugs are shallow."
+
+Perhaps the greatest open-source success story is the Internet itself - at
+least its "soft" parts. The Internet's communications protocols and the
+software that implements them are collaboratively engineered by loose
+networks of programmers working outside the control of any single person,
+company or government. The Internet Engineering Task Force, which develops
+core Internet protocols, does not even have formal membership and seeks
+contributions from developers all over the world.
+
+But the problem is that the physical layer of the Internet's infrastructure
+- the hardware that transmits, directs and relays traffic online, as well as
+its closely knit software (or "firmware") - is not open-source. It is made
+by commercial computing companies like Cisco, Hewlett-Packard and Juniper
+Networks according to proprietary designs, and then sold to governments,
+universities, private companies and anyone else who wants to set up a
+network.
+
+There is reason to be skeptical about the security of these networking
+products.  The hardware firms that make them often compete for contracts
+with the United States military and presumably face considerable pressure to
+maintain good relations with the government. It stands to reason that such
+pressure might lead companies to collaborate with the government on
+surveillance-related requests.
+
+Because these hardware designs are closed to public scrutiny, it is
+relatively easy for surveillance at the Internet's infrastructural level to
+go undetected.  To make the Internet less susceptible to mass surveillance,
+we need to recreate the physical layer of its infrastructure on the basis of
+open-source principles.
+
+At the moment, the open hardware movement is limited mostly to hobbyists -
+engineers who use the Internet to collaboratively build "open" devices like
+the RepRap 3D printer. But the Internet community, through a concerted
+effort like the one that currently sustains the Internet's software
+architecture, could also develop open-source, Internet-grade
+hardware. Governments like Brazil's that have forsworn further involvement
+with American Internet companies could adopt such nonproprietary equipment
+designs and have them manufactured locally, free from any
+N.S.A. interference.
+
+The result would be Internet infrastructure, both hardware and software,
+that was 100 percent open and auditable.
+
+But never, of course, 100 percent secure. The N.S.A. could still try to
+exploit the Internet's open hardware. And of course, open hardware would do
+little to prevent the government from reading e-mail if it still had the
+cooperation of companies like Microsoft or Google. Open hardware is not a
+panacea.
+
+Still, open hardware would at a minimum make the N.S.A.'s Internet
+surveillance efforts more difficult and less effective. And it would
+increase the difficulty of surveillance not just for the N.S.A. but also for
+foreign governments that might otherwise piggyback on N.S.A.-introduced
+security vulnerabilities.
+
+A 100 percent open-infrastructure Internet - a trustworthy Internet - would
+be an important step in the empowerment of individuals against their
+governments the world over.
+
+Eli Dourado is a research fellow with the technology policy program at the
+Mercatus Center at George Mason University.
+
+  [It is delightful that the author's name conjures up the image of El
+  Dorado (by slightly disemvowling it), with visions of a golden view of the
+  Internet of the future:
+
+     El Dorado in Webster's: Spanish, literally, the gilded one
+        1 : a city or country of fabulous riches held by 16th century
+            explorers to exist in So. America
+        2 : a place of fabulous wealth or opportunity
+
+  The open-source aspect of Eli's article is very refreshing.  However, in
+  light of the reality that today there is no adequate security in the
+  servers, switches, and even local hosts attached to the Intenet, and that
+  NSA could have had secret backdoors implanted in everything, we have a
+  very long way to go before the Internet and all of its attached systems
+  might be considered adequately trustworthy.  PGN]
+
+------------------------------
+
+Date: Tuesday, October 8, 2013
+From: *the keyboard of geoff goodfellow*
+Subject: CMU Researchers Claim To Have Created Messaging App Even NSA Can't
+  Crack
+
+Carnegie Mellon University researchers claim they have created a smartphone
+messaging app with security that not even the National Security Agency can
+break.  The app is called SafeSlinger, and is free on the iTunes store, and
+Google play store for Android phones.  Researchers say the app uses a
+passphrase that only the user, and the other party can know.  They claim
+messages cannot be read by a cellular carrier, Internet-provider, employer,
+or anyone else.
+
+The setup takes a few minutes, with the user answering security questions
+generated by the app that help it generate encryption and authorization
+credentials.  The app then works just like a regular messaging app.
+
+In a press release from CMU's CyLab, programmer Michael W. Farb said, ``the
+most important feature is that SafeSlinger provides secure messaging and
+file transfer without trusting the phone company or any device other than my
+own smartphone.''
+
+http://pittsburgh.cbslocal.com/2013/10/08/cmu-researchers-claim-to-have-created-messaging-app-even-nsa-cant-crack/
+
+  [Of course, it is not just that the app might be nonbreakable.  Note
+  carefully that the last sentence above implies that you have to trust your
+  own smartphone -- even if it is fundamentally untrustworthy.  In addition,
+  don't forget that the underlying smartphone hardware and software may not
+  be impervious to insider misuse, outsider attacks, and so on, irrespective
+  of what the app does.  Also, `unbreakable' might ignore denial-of-service
+  attacks, electromagnetic interference and emanations, and much more.
+  However, the old adage that NOTHING is unbreakable (unless it is actually
+  NOTHING!) makes this sound suspiciously like hype, especially when claimed
+  with respect to defending against the aggregated abilities of the NSA and
+  all sorts of other people with significant experience in breaking
+  supposedly secure systems.  Just a thought from the RISKS perspective.
+  PGN]
+
+------------------------------
+
+Date: Wed, 09 Oct 2013 09:09:18 -0700
+From: Paul Saffo <psaffo@me.com>
+Subject: NSA data center 'meltdowns' force year-long delay (James Niccolai)
+
+James Niccolai, *ComputerWorld*, 8 Oct 2013
+Giant new Utah facility has been dogged by electrical problems, a report
+says
+
+IDG News Service - A massive data center being built by the National
+Security Agency in Utah has been plagued by "chronic electrical surges" that
+have destroyed equipment and delayed its opening for a year, according to a
+report Monday.
+
+The facility has suffered 10 "meltdowns" in the past 13 months that
+destroyed hundreds of thousands of dollars' worth of machinery, The Wall
+Street Journal reported Monday, citing project documents and unnamed
+officials.
+
+The data center is expected to be the NSA's main facility for storing,
+decrypting and analyzing the vast amounts of data it collects through its
+surveillance programs. Those programs have been under scrutiny since the
+disclosures about Prism and other data collection efforts earlier this year.
+
+The data center has cost a reported $1.4 billion excluding the computing
+equipment inside, and covers more than a million square feet.
+
+Data centers can consume huge amounts of power, partly for the compute gear
+but also for cooling equipment that keeps the computers from overheating.
+
+The NSA facility, located 30 miles south of Salt Lake City in a town called
+Bluffdale, continuously uses 65 megawatts of electricity -- enough to power
+a small city -- at a cost of more than $1 million a month, the Journal
+reported.
+
+The electrical problems, known as arc fault failures, create "fiery
+explosions, melt metal and cause circuits to fail," one official told the
+newspaper.
+
+"Documents and interviews paint a picture of a project that cut corners to
+speed building," the Journal said. Backup generators have failed several
+times and the cooling system has yet to be tested, according to the
+newspaper.
+
+An NSA spokeswoman told the Journal that "the failures that occurred during
+testing have been mitigated." But the Journal said there is disagreement
+about the cause of the problems and whether proposed fixes will work.
+
+The NSA planned to turn on some of the computers at the facility this week,
+the Journal reported.
+
+James Niccolai covers data centers and general technology news for IDG News
+Service. Follow James on Twitter at @jniccolai. James's e-mail address is
+james_niccolai@idg.com
+
+
+http://www.computerworld.com/s/article/9243045/NSA_data_center_meltdowns_force_year_long_delay?source=CTWNLE_nlt_serversdata_2013-10-09
+
+------------------------------
+
+Date: Wed, 09 Oct 2013 15:11:59 +0200
+From: Peter Houppermans <ph@phx.li>
+Subject: Hundreds of US companies make false Data Protection claims
+   (Nikolaj Nielsen)
+
+Nikolaj Nielsen, EU Observer
+http://euobserver.com/justice/121695?goback=%2Egde_2083215_member_5793386738592272384#%21
+
+"STRASBOURG - Hundreds of US-based companies handling EU citizens' data have
+lied about belonging to a data protection arrangement known as the Safe
+Harbour Framework. Christopher Connolly, a director at Galexia, an
+Australian-based consulting company on Internet law and privacy, told the
+European Parliament's civil liberties committee on Monday (7 October)
+that ``many claims of Safe Harbour membership are false.''
+
+  Well, duh.  Colour me surprised, knowing that Safe Harbo(u)r certification
+  relies on .. (wait for it) .. SELF assessment.  No conflict of interest
+  there, clearly...
+
+------------------------------
+
+Date: Wed, 9 Oct 2013 01:28:20 -0400 (EDT)
+From: Jeff Jonas <jeffj@panix.com>
+Subject: Re: Lowering Your Standards: DRM and the Future of the W3C (R 27 51)
+
+> the W3C's pragmatists say, no worse than the current environment where
+> Silverlight and Flash serve the purpose of preventing unauthorized
+> behavior.
+
+Despite being a Linux & Unix advocate, I run Windows 7 on my netbook mostly
+because it's a standard platform upon which way too many desired, required
+or useful programs exist.
+
+Despite that, I can't count the number of times Flash or Silverlight have
+crashed.  "preventing unauthorized behavior" seems to mean preventing
+running reliably.  As an engineer and programmer, I'm ashamed that we're
+relying on such an unreliable infrastructure for the future of all
+communications, commerce and education.
+
+Here's a simple way to kill the addition: add a mandatory performance,
+stability & reliability clause, as tested on a reasonable platform of
+existing systems (so it's not used as an excuse for planned obsolescence of
+hardware and/or software).
+
+That also gives me insight as to why M$ was advocating using Windows 8
+embedded on everything.  It's not just for total vertical marketing (M$
+products from the server to the middleware to the mobile device) but for
+Silverlight to display "protected content" and further lock users into the
+proprietary service provider.  Since I'm not a M$ zombie, I didn't catch
+that nuance during the presentation.  But then again, M$ events aren't for
+anyone with a clue about competing products or technologies.
+
+------------------------------
+
+Date: Sun, 7 Oct 2012 20:20:16 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest. Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.  The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users may contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ http://www.risks.org takes you to Lindsay Marshall's searchable archive at
+ newcastle: http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+  is no longer maintained up-to-date except for recent election problems.
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 27.52
+************************
+
+--_002_1efd10ed37754f488d02ccc6bedda830EXHUBVM02campusnclacuk_--

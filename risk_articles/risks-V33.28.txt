@@ -1,0 +1,659 @@
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+precedence: bulk
+Subject: Risks Digest 33.28
+
+RISKS-LIST: Risks-Forum Digest  Tuesday 14 June 2022  Volume 33 : Issue 28
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, founder and still moderator
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/33.28>
+The current issue can also be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+Long-term planning and optimization (PGN)
+Single beaver caused mass Internet, cell service outages in Northern B.C.
+ (CTV News)
+Vulnerability discovered in Apple M1 chip (The Register via Tom Van Vleck)
+The Billionaires Seeking a U.S. Chip-Making Revival (Ephrat Livni)
+How Henry Ford Would Deal With Today's Supply Chain Upheaval (NYTimes)
+Researchers Find Bluetooth Signals Can be Fingerprinted to Track Smartphones
+ (The Hacker News)
+A Story of a Bug Found Fuzzing (Microsoft Browser Vulnerability Research)
+I was able to access thousands of companies' passwords on #Azure
+ and run code on their VMs. This includes access to Microsoft's own
+ credentials (Tzah Pahima)
+New Syslogk Linux Rootkit Lets Attackers Remotely Command It Using "Magic
+ Packets" (The Hacker News)
+The surreal case of the disgruntled CIA hacker accused of exposing the
+  agency's digital arsenal -- ﻿King Joshhn (The New Yorker)
+Coinbase lays off 1,100 employees in 18% cut (Lauren Weinstein)
+'The Music Has Stopped': Crypto Firms Quake as Prices Fall (NYTimes)
+Jay-Z and Jack Dorsey launched a Bitcoin academy in a public housing complex
+ (TechCrunch)
+Researchers Detail PureCrypter Loader Cyber Criminals Using to Distribute
+ Malware (The Hacker New)
+Thefts, Fraud, and Lawsuits at the World's Biggest NFT Marketplace (NYTimes)
+CRISPR-Based Map Ties Every Human Gene to Its Function (Eva Frederick)
+Self-Driving Truck Will Deliver Goods to 34 Sam's Club Locations
+ (Alexandra Skores)
+Has the U.S. Learned Nothing From the UK's Gambling Woes (WiReD)
+Re: Parameter Expansion Considered Dangerous (Cliff Kilby with TomHVV)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 14 Jun 2022 14:36:48 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: Long-term planning and optimization
+
+We've been around this topic in RISKS for many different manifestations, and
+also in the CACM Inside Risks series:
+
+* The Foresight Saga, Redux: Short-term thinking is the enemy of the
+  long-term future, PGN, CACM October 2012:
+    http://www.csl.sri.com/neumann/cacm228.pdf
+
+* A Holistic View of Future Risks: Almost everything is somehow
+  interrelated with everything else -- and that should not surprise
+  us. PGN, CACM October 2020:
+    http://www.csl.sri.com/neumann/cacm250.pdf
+
+The lack of long-term thinking comes up in off-shoring of hardware
+fabrication, outsourcing of critical operations to the cloud or
+untrustworthy third-parties, supply-chain shortages, food production and
+distribution, health care, use of pesticides and toxic wastes,
+overdependence on fossil fuels, and -- perhaps above all -- climate change.
+Many of the issues that arise seem to have a common theme, namely, seeking
+to saving money and labor in the short term, while suppressing or ignoring
+concerns for long-term implications: essentially, kicking the can down the
+road rather than picking it up and recycling it.
+
+An opinion piece by Paul Krugman in today's *The New York Times* impels me
+to write this short note for RISKS readers.
+
+In the context of the pressing need to save the Great Salt Lake from drying
+up totally (with some really nasty implications), Krugman once more leads us
+to an absolutely fundamental point: sooner or later, there comes a time when
+civiliazions must radically do something dramatic -- with costs that vastly
+exceed what was saved in the short term.
+
+Krugman's op-ed piece concludes:
+
+ "Finally, we aren't talking about a global problem.  True, globally climate
+  change has contributed to reduced snowpack, which is one reason the Great
+  Salt Lake has shrunk.  But a large part of the problem is local water
+  consumption; if that consumption could be curbed, Utah needn't worry that
+  its efforts would be negated by the Chinese or whatever.
+
+  So this should be easy: A threatened region should be accepting modest
+  sacrifices, some barely more than inconveniences, to avert a disaster just
+  around the corner.  But it doesn't seem to be happening.
+
+  And if we can't save the Great Salt Lake, what chance do we have of saving
+  the planet?"
+
+I like to look at problems more holistically -- interdisciplinarily,
+internationally, globally, and even in some cases universally (as in
+the two CACM Inside Risks columns noted above), and always at least
+consider the long-term implications before making short-term decisions
+that are clearly incompatible with long-term needs.  Not having this
+kind of long-term awareness can be eventually be devastating.
+
+Albert Einstein has a pithy quote, which I paraphrase:
+
+  Seemingly difficult problems can often be resolved early.
+
+The Yogi Berra corollary is related, but also valid:
+
+  It gets late early.
+
+That's certainly true of climate change (where the future seemed
+inevitable to some wise people at least 60 years ago -- e.g., read
+Silent Spring), outsourcing almost everything, being dependent on
+potentially untrustworthy entities, etc.  In some cases, it may not be
+too late to change.  However, in cases of species extinction,
+remediation becomes impossible and the role of the departed species in
+a balanced ecology is lost forever, and often results in further
+imbalance.  Attempts to compensate by local changes is likely to be
+inadequate, especially when the problems are global to begin with, and
+have no national boundaries.
+
+Is any of my rant relevant to The ACM Risks Forum?   Yes.
+
+The 737 MAX is just one example where a local software fix was attempted
+without understainding the airframe-hardware-software implications.  The
+Deepwater Horizon fiasco was another case in which financial issues hindered
+reasoned remediation even before things went wonky.  (See the very detailed
+Beobert/Blossom book, noted in RISKS-29.49,75,80.)
+
+------------------------------
+
+Date: Tue, 14 Jun 2022 09:44:37 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Single beaver caused mass Internet, cell service outages in
+ Northern B.C.  Northern B.C. (CTV News)
+
+Officials have now identified a beaver as the cause of a June 7 outage that
+left many residents of northwestern B.C. without Internet, landline and
+cellular service for more than eight hours.
+
+The beaver gnawed its way through an aspen tree which then fell on both BC
+Hydro lines and a Telus fibre-optic cable line strung along BC Hydro poles
+between Topley and Houston.
+
+The resulting power outage affected just 21 customers but the fibre optics
+damage affected Telus customers in Burns Lake, Granisle, Haida Gwaii, the
+Hazeltons, Kitimat, Prince George, Prince Rupert, Smithers, Terrace,
+Thornhill, Houston, Topley, Telkwa, Fraser Lake and Vanderhoof.
+
+CityWest, the utilities company owned by the City of Prince Rupert, also had
+its customers affected because it uses the Telus fibre optics line.
+
+BC Hydro official Bob Gammer said crews identified a beaver as the culprit
+because of chew marks at the bottom of the downed tree. [...]
+
+https://bc.ctvnews.ca/single-beaver-caused-mass-internet-cell-service-outages-in-northern-b-c-1.5944697
+
+------------------------------
+
+Date: Fri, 10 Jun 2022 20:03:26 -0400
+From: Tom Van Vleck <thvv@multicians.org>
+Subject: Vulnerability discovered in Apple M1 chip (The Register)
+
+https://www.theregister.com/2022/06/10/apple_m1_pacman_flaw/
+
+"In a paper titled "PACMAN: Attacking Arm Pointer Authentication with
+Speculative Execution," Joseph Ravichandran, eon Taek Na, Jay Lang, and
+Mengjia Yan describe how they were able to use speculative execution -- the
+way in which modern processors perform calculations before they may or may
+not be needed to accelerate execution – to discern the pointer
+authentication code that allows pointer modification on a protected system."
+
+------------------------------
+
+Date: Sat, 11 Jun 2022 16:51:53 PDT
+From: Peter Neumann <neumann@csl.sri.com>
+Subject: The Billionaires Seeking a U.S. Chip-Making Revival (Ephrat Livni)
+
+Ephrat Livni, *The New York Times*, 11 Jun 2022
+
+Looking to invest and get Congress to help foot the bill
+
+Eric Schmidt (ex-CEO Google, Dem donor), Peter Thiel (PayPal founder, Trump
+supporter), H.R. McMaster, and Ash Carter and are part of the American
+Frontier Fund, an "usual nonprofit venture capital fund to invest in
+chip-making" in the U.S., asking Congess to provide $1B.  The AFF has been
+asked by the White House to lead the "Quad Investor Network", described as
+:an independent consortium of investors that seeks to advance access to
+capital for critical and emerging technologies across the U.S., Japan, and
+Australia."  [Ephrat describes varying nuanced views on this effort.
+PGN-ed]
+
+  [It has long been obvious to most far-sighted people that outsourcing fab
+  labs was never a risk-free approach.  This is a bad example of optimizing
+  for cost-cutting via off-shoring, while ignoring all other factors.  The
+  current unavailability of chips and the risks of supply-chain compromises
+  are only two issues that need to be considered.  PGN]
+
+------------------------------
+
+Date: Sun, 12 Jun 2022 15:06:40 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: How Henry Ford Would Deal With Today's Supply Chain Upheaval
+ (NYTimes)
+
+The automobile pioneer believed short-term interests must not squeeze out
+investment in a business' resilience, a lesson many companies have learned
+the hard way since 2020.
+
+https://www.nytimes.com/2022/06/10/business/henry-ford-supply-chain.html
+
+  [I would add that many companies have apparently *not yet* learned that
+  lesson.  PGN]
+
+------------------------------
+
+Date: Sat, 11 Jun 2022 07:49:49 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Researchers Find Bluetooth Signals Can be Fingerprinted to
+ Track Smartphones (The Hacker News)
+
+A new research undertaken by a group of academics from the University of
+California San Diego has revealed for the first time that Bluetooth signals
+can be fingerprinted to track smartphones (and therefore, individuals).
+
+The identification, at its core, hinges on imperfections in the Bluetooth
+chipset hardware introduced during the manufacturing process, resulting in
+a "unique physical-layer fingerprint."
+
+"To perform a physical-layer fingerprinting attack, the attacker must be
+equipped with a Software Defined Radio sniffer: a radio receiver capable of
+recording raw IQ radio signals," the researchers said
+<https://jacobsschool.ucsd.edu/news/release/3461> in a new paper
+<https://cseweb.ucsd.edu/~schulman/docs/oakland22-bletracking.pdf> titled
+<https://github.com/ucsdsysnet/blephytracking> "Evaluating Physical-Layer
+BLE Location Tracking Attacks on Mobile Devices."
+
+The attack <https://pluralistic.net/2021/10/21/sidechannels/#ble-eding> is
+made possible due to the ubiquitous nature of Bluetooth Low Energy (BLE)
+beacons that are continuously transmitted by modern devices to enable
+crucial functions such as contact tracing
+<https://en.wikipedia.org/wiki/Contact_tracing> during public health
+emergencies.
+
+The hardware defects, on the other hand, stem from the fact that both Wi-Fi
+and BLE components are often integrated together into a specialized "combo
+chip
+<https://thehackernews.com/2021/12/researchers-uncover-new-coexistence.html>,"
+effectively subjecting Bluetooth to the same set of metrics that can be
+used to uniquely fingerprint Wi-Fi devices: carrier frequency offset
+<https://en.wikipedia.org/wiki/Carrier_frequency_offset> and IQ imbalance.
+<https://en.wikipedia.org/wiki/IQ_imbalance>   [...]
+https://thehackernews.com/2022/06/researchers-find-bluetooth-signals-can.html
+
+------------------------------
+
+Date: Sat, 11 Jun 2022 08:44:32 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: A Story of a Bug Found Fuzzing (Microsoft Browser Vulnerability
+ Research)
+
+In a previous blogpost, it covered and mentioned automation and how it is
+great at finding memory issues. We also got some feedback to expand on
+fuzzing, so this post will cover how we came to develop a fuzzer and how it
+found its first security issue early in development.
+
+The main intention of this fuzzer is to use the signal from MSRC cases and
+see if it can find the next bug before it gets reported which follows the
+same pattern. The result was a cool browser fuzzer and the experiment
+yielded interesting results.
+
+The Target
+
+We noticed a pattern in recent memory corruption bugs affecting both Edge
+and Chromium where an extension was used as a proof of concept. This was
+particularly interesting to me because I looked at extensions
+<https://leucosite.com/WebExtension-Security-Part-2/> a few years ago and
+only found logic bugs and, with an itch to make an experimental fuzzer why
+not try to create an extension based fuzzer for some variant hunting.
+
+Now that I have a general component (Web Extensions) as a target, where to
+start?
+
+When reading through all of the publicly disclosed chromium bugs that
+involved an extension and a browser crash, two bugs from David Erceg
+<https://twitter.com/david_erceg> stood out (1188889
+<https://bugs.chromium.org/p/chromium/issues/detail?id=1188889>, 1190550
+<https://bugs.chromium.org/p/chromium/issues/detail?id=1190550>) where the
+chrome.debugger.sendCommand was used and it was interesting.
+
+The chrome.debugger extension API allows you to control some tabs using the
+devtools protocol <https://chromedevtools.github.io/devtools-protocol/>,
+this is the same protocol remote debugging uses. The function sendCommand
+stood out which looks like the following:
+
+chrome.debugger.sendCommand(
+  target: Debuggee,
+  method: string,
+  commandParams?: object,
+  callback?: function,
+)
+
+This looks like a promising function to start fuzzing.  [...]
+
+https://microsoftedge.github.io/edgevr/posts/a-story-of-a-bug-found-fuzzing/
+
+------------------------------
+
+Date: Tue, 14 Jun 2022 10:34:09 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: I was able to access thousands of companies' passwords on #Azure
+ and run code on their VMs. This includes access to Microsoft's own
+ credentials (Tzah Pahima)
+
+Here's HOW I did it.
+This is the story of #SynLapse. (1/11)
+https://twitter.com/TzahPahima/status/1536704823722184704
+-and-
+https://orca.security/resources/blog/synlapse-critical-azure-synapse-analytics-service-vulnerability/
+
+------------------------------
+
+Date: Tue, 14 Jun 2022 09:56:44 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: New Syslogk Linux Rootkit Lets Attackers Remotely Command It Using
+ "Magic Packets" (The Hacker News)
+
+A new covert Linux kernel rootkit named Syslogk has been spotted under
+development in the wild and cloaking a malicious payload that can be
+remotely commandeered by an adversary using a magic network traffic packet.
+<https://en.wikipedia.org/wiki/Wake-on-LAN>
+
+"The Syslogk rootkit is heavily based on Adore-Ng but incorporates new
+functionalities making the user-mode application and the kernel rootkit hard
+to detect," Avast security researchers David =C3=81lvarez and Jan Neduchal
+said in a report published Monday.
+<https://decoded.avast.io/davidalvarez/linux-threat-hunting-syslogk-a-kernel-rootkit-found-under-development-in-the-wild/>
+
+Adore-Ng, an open-source rootkit
+<https://github.com/yaoyumeng/adore-ng> available
+since 2004, equips the attacker with full control over a compromised
+system. It also facilitates hiding processes as well as custom malicious
+artifacts, files, and even the kernel module, making it harder to detect.
+
+"The module starts by hooking itself into various file systems. It digs up
+the inode for the root filesystem, and replaces that inode's readdir()
+<https://man7.org/linux/man-pages/man3/readdir.3.html> function pointer
+with one of its own," LWN.net noted <https://lwn.net/Articles/75990/> at
+the time. "The Adore version performs like the one it replaces, except that
+it hides any files owned by a specific user and group ID."
+
+Besides its capabilities to hide network traffic from utilities like netstat
+<https://en.wikipedia.org/wiki/Netstat>, housed within the rootkit is a
+payload named "PgSD93ql" that's nothing but a C-based compiled backdoor
+trojan named Rekoobe
+<https://malpedia.caad.fkie.fraunhofer.de/details/elf.rekoobe> and gets
+triggered upon receiving a magic packet. [...]
+
+https://thehackernews.com/2022/06/new-syslogk-linux-rootkit-lets.html
+
+------------------------------
+
+Date: Mon, 13 Jun 2022 09:16:50 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: The surreal case of the disgruntled CIA hacker accused of
+ exposing the agency's digital arsenal -- King Josh
+
+https://www.newyorker.com/magazine/2022/06/13/the-surreal-case-of-a-cia-hackers-revenge
+
+------------------------------
+
+Date: Tue, 14 Jun 2022 12:36:02 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: Coinbase lays off 1,100 employees in 18% cut
+
+https://web3isgoinggreat.com/?id=coinbase-lays-off-1100-employees-in-18-cut
+
+------------------------------
+
+Date: Tue, 14 Jun 2022 14:52:34 -0700
+From: Lauren Weinstein <lauren@vortex.com>
+Subject: 'The Music Has Stopped': Crypto Firms Quake as Prices Fall
+ (NYTimes)
+
+And the tulips are dying. Yet people have been urged to put their retirement
+savings into this nightmare. People who couldn't possibly understand the
+technology quicksand underpinning it. -L
+
+https://www.nytimes.com/2022/06/14/technology/crypto-industry-prices-fall.html
+
+------------------------------
+
+Date: Mon, 13 Jun 2022 23:21:23 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Jay-Z and Jack Dorsey launched a Bitcoin academy in a public
+ housing complex (TechCrunch)
+
+Is billionaire-funded crypto education really what low-income people need?
+
+https://techcrunch.com/2022/06/09/jay-z-jack-dorsey-bitcoin-academy-marcy-public-housing
+
+------------------------------
+
+Date: Tue, 14 Jun 2022 09:58:38 -0700
+From: geoff goodfellow <geoff@iconia.com>
+Subject: Researchers Detail PureCrypter Loader Cyber Criminals Using to
+ Distribute Malware (The Hacker New)
+
+Cybersecurity researchers have detailed the workings of a fully-featured
+malware loader dubbed PureCrypter that's being purchased by cyber criminals
+to deliver remote access trojans (RATs) and information stealers.
+
+"The loader is a .NET executable obfuscated with SmartAssembly and makes
+use of compression, encryption, and obfuscation to evade antivirus software
+products," Zscaler's Romain Dumont said in a new report.
+https://www.zscaler.com/blogs/security-research/technical-analysis-purecrypter>
+
+Some of the malware families distributed using PureCrypter include Agent
+Tesla <https://malpedia.caad.fkie.fraunhofer.de/details/win.agent_tesla>,
+Arkei
+<https://blogs.blackberry.com/en/2022/02/threat-thursday-arkei-infostealer>
+, AsyncRAT <https://malpedia.caad.fkie.fraunhofer.de/details/win.asyncrat>,
+AZORult <https://malpedia.caad.fkie.fraunhofer.de/details/win.azorult>,
+DarkCrystal RAT
+<https://thehackernews.com/2022/05/experts-sound-alarm-on-dcrat-backdoor.html>
+(DCRat), LokiBot
+<https://thehackernews.com/2018/07/lokibot-infostealer-malware.html>,
+NanoCore <https://malpedia.caad.fkie.fraunhofer.de/details/win.nanocore>,
+RedLine Stealer
+<https://thehackernews.com/2022/04/new-rig-exploit-kit-campaign-infecting.html>
+, Remcos <https://malpedia.caad.fkie.fraunhofer.de/details/win.remcos>,
+Snake Keylogger
+<https://www.fortinet.com/blog/threat-research/deep-dive-into-a-fresh-variant-of-snake-keylogger-malware>,
+and Warzone RAT
+<https://blogs.blackberry.com/en/2021/12/threat-thursday-warzone-rat-breeds-a-litter-of-scriptkiddies>
+
+Sold for a price of $59 by its developer named "PureCoder" for a one-month
+plan (and $249 for a one-off lifetime purchase) since at least March 2021,
+PureCrypter is advertised as the "only crypter in the market that uses
+offline and online delivery technique."
+
+Crypters act as the first layer of defense
+<https://blog.malwarebytes.com/threat-analysis/2015/12/malware-crypters-the-deceptive-first-layer/>
+against
+reverse engineering and are typically used to pack the malicious payload.
+PureCrypter also features what it says is an advanced mechanism to inject
+the embedded malware into native processes and a variety of configurable
+options to achieve persistence on startup and turn on additional options to
+fly under the radar.
+
+Also offered is a Microsoft Office macro builder and a downloader,
+highlighting the potential initial infection routes that can be employed to
+propagate the malware. [...]
+
+https://thehackernews.com/2022/06/researchers-detail-purecrypter-loader.html
+
+------------------------------
+
+Date: Sun, 12 Jun 2022 17:28:22 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Thefts, Fraud, and Lawsuits at the World's Biggest NFT Marketplace
+ (NYTimes)
+
+OpenSea, one of the highest-profile crypto start-ups, is facing a backlash
+over stolen and plagiarized nonfungible tokens.
+
+https://www.nytimes.com/2022/06/06/technology/nft-opensea-theft-fraud.html
+
+  Shocking, no?
+
+------------------------------
+
+Date: Mon, 13 Jun 2022 11:59:50 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: CRISPR-Based Map Ties Every Human Gene to Its Function
+ (Eva Frederick)
+
+Eva Frederick, MIT News, 9 Jun 2022, via ACM TechNews, 13 Jun 2022
+
+A group of researchers from the Massachusetts Institute of Technology (MIT),
+Memorial Sloan Kettering Cancer Center, Princeton University, and
+biotechnology company 10x Genomics have published the first comprehensive
+functional map of genes expressed in human cells. The Perturb-seq map was
+derived from CRISPR-Cas9 genome editing, which introduces genetic changes in
+cells, then applies single-cell RNA sequencing to record data about RNAs
+yielded by a given change. The researchers scaled up the technique to
+encompass the full human genome; MIT's Jonathan Weissman used human blood
+cancer cell lines and noncancerous retinal cells to conduct Perturb-seq
+across 2.5 million-plus cells, and constructed a map linking genotypes to
+phenotypes.
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2ec73x234567x070151&
+
+------------------------------
+
+Date: Mon, 13 Jun 2022 11:59:50 -0400 (EDT)
+From: ACM TechNews <technews-editor@acm.org>
+Subject: Self-Driving Truck Will Deliver Goods to 34 Sam's Club Locations
+ (Alexandra Skores)
+
+Alexandra Skores, *The Dallas Morning News*, 7 Jun 2022,
+via ACM TechNews, 13 Jun 2022
+
+Starting in July, Gatik, a California-based autonomous trucking company,
+will make deliveries to 34 Sam's Club locations in Dallas-Fort Worth, TX,
+using autonomous 26-foot box trucks. Gatik's Richard Steiner said each truck
+will make an average of three runs per day, driving about 100 miles
+round-trip. The trucks initially will include a safety driver, but
+eventually will operate without such a driver. Gatik started testing the
+technology with Sam's Club parent company Walmart in December 2020,
+operating on a seven-mile loop in Bentonville, AR. Said Steiner, "It's
+something which is new for the space, and we're excited to be doing it first
+here in Texas."
+
+https://orange.hosting.lsoft.com/trk/click?ref=znwrbbrs9_6-2ec73x234569x070151&
+
+------------------------------
+
+Date: Sun, 12 Jun 2022 21:25:35 -0400
+From: Gabe Goldberg <gabe@gabegold.com>
+Subject: Has the U.S. Learned Nothing From the UK's Gambling Woes (WiReD)
+
+As American sports betting accelerates, a similar reckoning is sure to
+follow.
+
+In essence, the "gamblification" of sports in the U.S. would shock a UK
+bettor. "What has happened in the States since 2018, has, in so many ways,
+been a 'Hold my beer' moment," says Darragh McGee, an assistant professor in
+the Department of Health at the University of Bath who has examined the
+impact of online sports gambling on young adult males in the UK. "Gambling
+stateside has already accelerated far beyond what we would consider
+acceptable here in the UK."
+
+https://www.wired.com/story/uk-us-online-gambling-lessons
+
+------------------------------
+
+Date: Tue, 14 Jun 2022 18:06:44 -0400
+From: Cliff Kilby <cliffjkilby@gmail.com>
+Subject: Re: Parameter Expansion Considered Dangerous (RISKS 33.25.26)
+
+A sidebar occurred between myself and Tom Van Vleck after the initial
+publication of this RISKS item, and I believe that discussion has some value
+for Risk's audience. As such, that side bar follows (edited to try to
+provide more concrete guidelines).
+
+Certainly true! ..and it's even more risky and complicated, because the
+> special characters
+> that cause expansion may be the result of other expansions.  For example,
+> percent encoding
+> might express <% as %3C%25.  or what about %253C%2525 if it is done
+> twice.
+> or \37253C\372525 if octal escapes are applied first and then percent
+> escapes twice.
+>
+> Each program in a processing sequence scans an input string looking for
+> "magic"
+> character sequences, and replaces some patterns with builtin values or the
+> result
+> of another program.  The result of processing a string depends on the kind
+> and order
+> of expansions.
+>
+> Sometimes I worry about string sanitizing programs I have written, and
+> whether they
+> could catch every possible attack without making needed valid inputs
+> inexpressible.
+> --Tom Van Vleck
+
+A sane framework or application limits its sanitizing to the characters it
+considers magic and exposes that rule to developers and the rest of the
+Input/Output chain as a function.  As the user input progresses through the
+IO chain down from input down to processing and eventual storage, each
+filter should take responsibility for its own magic characters. Upon
+retrieval, the reverse of the chain should put the characters back.
+
+As a developer I should not care if the filter replaces & with &amp; or
+char-escape-seq-marker-start-ampersand-waka-waka, because if I want the
+ampersand back, I should be able to ask that filter to give me the unsafe
+data.
+
+The situation you describe appears to attempt to intercept data outside the
+context it was developed in. To attempt this requires knowing the IO chain
+that created the representation of the data you are viewing.
+
+Of course, knowing the IO chain would require some kind of application
+planning and agile has seemed to undermine that, so, without testing
+literally every combination of characters, if you find yourself with an
+unknowable filter stack, don't replace. Truncate. Limiting the domain of the
+problem is the only reasonable response.
+
+This advice does not hold for languages or frameworks that consider plain
+text magic. (Hello to [0-9][a-zA-Z] and \p{L}).
+
+If you don't know \p{L} and their sibling \p{M} let me give you an
+introduction.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes
+
+If you know you have a form processor that only consumes human entered data,
+put a Web Application Firewall in front of that endpoint and scrub out the
+characters you will not accept, or provide errors to your users if they try
+to submit a character you won't accept, based on your organizations' risk
+model.
+
+If you know your API accepts XML, You're probably going to have to accept
+'[' and '!', but, '(' is probably right out.
+
+If you know your API accepts something that looks like URL query
+parameters, you can replace/drop all the characters that didn't get encoded.
+
+As always, test for both the positive and negative application flow before
+implementing any kind of intercept, or if you find yourself intercepting
+some active anomalous traffic, document everything, and consider rolling
+back as soon as the anomalous traffic stops so you can perform in depth
+testing.
+
+------------------------------
+
+Date: Mon, 1 Aug 2020 11:11:11 -0800
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest.  Its Usenet manifestation is
+ comp.risks, the feed for which is donated by panix.com as of June 2011.
+=> SUBSCRIPTIONS: The mailman Web interface can be used directly to
+ subscribe and unsubscribe:
+   http://mls.csl.sri.com/mailman/listinfo/risks
+
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line that
+   includes the string `notsp'.  Otherwise your message may not be read.
+ *** This attention-string has never changed, but might if spammers use it.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you never send mail where the address becomes public!
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ *** Contributors are assumed to have read the full info file for guidelines!
+
+=> OFFICIAL ARCHIVES:  http://www.risks.org takes you to Lindsay Marshall's
+    searchable html archive at newcastle:
+  http://catless.ncl.ac.uk/Risks/VL.IS --> VoLume, ISsue.
+  Also, ftp://ftp.sri.com/risks for the current volume/previous directories
+     or ftp://ftp.sri.com/VL/risks-VL.IS for previous VoLume
+  If none of those work for you, the most recent issue is always at
+     http://www.csl.sri.com/users/risko/risks.txt, and index at /risks-33.00
+  ALTERNATIVE ARCHIVES: http://seclists.org/risks/ (only since mid-2001)
+ *** NOTE: If a cited URL fails, we do not try to update them.  Try
+  browsing on the keywords in the subject line or cited article leads.
+  Apologies for what Office365 and SafeLinks may have done to URLs.
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 33.28
+************************

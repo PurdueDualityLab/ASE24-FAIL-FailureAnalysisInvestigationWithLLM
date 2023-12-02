@@ -1,0 +1,510 @@
+precedence: bulk
+Subject: Risks Digest 26.04
+
+RISKS-LIST: Risks-Forum Digest  Wednesday 28 April 2010  Volume 26 : Issue 04
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/26.04.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+We Have Met the Enemy and He Is PowerPoint (Elisabeth Bumiller)
+"Software Error" sends out wrong ballots for the UK general election
+  (Steve Loughran)
+PG&E details technical problems with SmartMeters (Dana Hull via Paul Saffo)
+The Eyes Have It? (PGN)
+Dnt Txt N Drv (Oprah Winfrey via Monty Solomon)
+3D TV: A Bad View? (Nestor E. Arellano via Gene Wirchenko)
+More on the McAfee SNAFU (Chris J Brady)
+Cloud Risks and McAfee's blunder (Gene Wirchenko)
+More Virus Protection Woes (Chris J Brady)
+Speech recognition and phone banking: not a very good idea (Tim Bradshaw)
+Risks of RFID car keys (Ron Garret)
+Re: YOUR SAT NAV IS WRONG - GO BACK! (Fredric L. Rice, Arthur Flatau)
+Re: Broadband survivability and certification (Michael D. Sullivan)
+Re: Your Cell Phone May Be Hazardous to Your Health (Jeff Grigg)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Tue, 27 Apr 2010 19:26:59 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: We Have Met the Enemy and He Is PowerPoint (Elisabeth Bumiller)
+
+* ``PowerPoint makes us stupid.'' (Gen. James N. Mattis of the Marine
+  Corps, the Joint Forces commander.)
+
+* ``It's dangerous because it can create the illusion of understanding and
+  the illusion of control.''  (Brig. Gen. H. R. McMaster, who banned
+  PowerPoint presentations when he was in Iraq in 2005.)
+
+* ``When we understand that slide, we'll have won the war."  (General
+  Stanley A. McChrystal, a leader in Afghanistan, responding to an amazing
+  spaghetti-like PowerPoint slide he saw in Kabul (reproduced in the *NYT*
+  article).
+
+[Source: Elisabeth Bumiller, *The New York Times*, 26 Apr 2010,
+We Have Met the Enemy and He Is PowerPoint; PGN-ed]
+http://www.nytimes.com/2010/04/27/world/27powerpoint.html
+
+  [Delightful article.  Excellent reading.  The ppt is truly wonderful.  PGN]
+
+------------------------------
+
+Date: Tue, 27 Apr 2010 09:09:16 +0100
+From: Steve Loughran <steve.loughran@gmail.com>
+Subject: "Software Error" sends out wrong ballots for the UK general election
+
+The UK General election is coming, and with three parties all doing fairly
+well, it's hard to predict the outcome. In a marginal seat -- like Bristol
+West -- every vote matters.
+
+Which is why it is unfortunate that nearly 2400 voters have been sent postal
+ballot papers that are for the adjacent ward, Bristol East.
+
+1.  Voting by post is optional; these are people who have stated in advance
+    they wish to vote by post.
+2. The electoral boundaries of the wards have changed. Last time the area in
+   question was in Bristol East, now it is in Bristol West.
+
+There is more detail on the web site of the Bristol East MP:
+http://kerry-mccarthy.blogspot.com/2010/04/boundary-changes-blunder.html
+
+"Stephen McNamara, the Returning Officer, is going on Radio Bristol
+tomorrow to explain how it happened ("software error" I'm told), and what
+he's going to do about it"
+
+I don't think this is a software error. It smacks of a human error -failure
+to change to boundary specification or entry of the wrong boundary into the
+election database, compounded by a process failure: nobody checked a sample
+of postal voters in the areas of changed boundaries to see their ballot
+papers were valid.
+
+Given the boundary change is not a recent event, and that May 6 is the
+latest date the Labour Party could have held an election, the fact that the
+council seems to have been caught out by this is pretty embarrassing. The
+spare time before the election is called can be used to check that these
+things are up to date, and if some bizarre software problem stops you from
+checking the validity of ballot papers until an election is called,
+verifying a sample of postal ballot papers seems easy and obvious to do. I
+hope everyone has learned from this, and that the consequences -- which
+could involve lawsuits and byelections, possibly even changes of government
+-- are not too serious.
+
+------------------------------
+
+Date: Tue, 27 Apr 2010 07:46:18 -0700
+From: Paul Saffo <paul@saffo.com>
+Subject: PG&E details technical problems with SmartMeters (Dana Hull)
+
+Dana Hull <dhull@mercurynews.com>,
+PG&E details technical problems with SmartMeters, 26 Apr 2010
+http://www.siliconvalley.com/news/ci_14963541
+
+After months of denying any technical problems with its SmartMeter program,
+PG&E publicly detailed a range of glitches Monday affecting tens of
+thousands of the digital meters.  But the San Francisco-based utility said
+it had found just eight meters that inaccurately reported a customer's
+energy use, despite thousands of complaints from customers who say the new
+meters have overcharged them. The utility would not say how many of the 5.5
+million meters installed so far have been tested for accuracy after
+installation.
+
+PG&E detailed 43,376 cases in which the meters were involved in other kinds
+of problems. It said 23,000 meters were installed improperly, 11,376 failed
+to retain consumer usage information.
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 11:19:04 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The Eyes Have It?
+
+  [I hope some risks-aware folks are eye-tracking this one.
+     ``Look Out Where You're Going!'' becomes
+     ``You're Going Where You Look!''
+  If you experience rapid eye movement while driving in your sleep,
+  you might even flip the car over.  PGN]
+
+Car Steered With Driver's Eyes
+Freie University Berlin (Germany) (04/23/10)
+[From ACM TechNews, 26 Apr 2010]
+
+Researchers at the Freie Universitat Berlin's Artificial Intelligence Group
+have developed eyeDriver, software that enables users to steer a car with
+their eyes.  The driver wears a helmet that features two cameras.  One
+camera is pointed at the driver's eyes and captures their movements, and the
+other camera points forward.  The data is transmitted in regular intervals
+to an onboard laptop computer, where the eyeDriver software converts the
+data into control signals for the steering wheel.  The software can
+calculate the position of the pupil in the eye, as well as the position in
+the scene that the user is looking at.  The software has two modes.  In
+"free ride" mode, the driver's gaze direction determines the desired
+position of the steering wheel.  In "routing" mode, the software steers
+autonomously unless an intersection or fork in the road appears.  In that
+case, the car stops and the driver must select the desired route.
+http://www.fu-berlin.de/en/presse/fup/2010/fup_10_106/index.html
+
+  [There's no such thing as a `free ride'.  Lots of other sources,
+  including *Der Spiegel* (German and English).  PGN]
+
+------------------------------
+
+Date: Sun, 25 Apr 2010 21:28:25 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Dnt Txt N Drv (Oprah Winfrey)
+
+... I just kept thinking: How many people have to die [from drunken driving]
+before we "get it"?  Fortunately, we did get it, and since 1980, the number
+of annual traffic fatalities due to drunken driving has decreased to under
+15,500 from more than 30,000.  But in recent years, another kind of tragic
+story has begun to emerge with ever greater frequency. This time, we are
+mourning the deaths of those killed by people talking or sending text
+messages on their cellphones while they drive...  [Oprah Winfrey, OpEd, *The
+New York Times*, 25 Apr 2010; PGN-ed, and well worth reading in its
+entirety.]
+  http://www.nytimes.com/2010/04/25/opinion/25winfrey.html
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 09:22:10 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: 3D TV: A Bad View? (Nestor E. Arellano)
+
+Warning: TV may be bad for your health
+A warning from a 3D TV manufacturer that its product may cause some health
+problems among children, pregnant women, elderly and those who've consumed
+alcohol suggest that 3D TV isn't yet ready for prime time.
+
+Nestor E. Arellano, *IT Business*, 26 Apr 2010
+http://www.itbusiness.ca/it/client/en/home/news.asp?id=57344
+
+Opening paragraphs:
+
+'Have you been eyeing that gorgeous 3D television lately?
+
+You may want to put the brakes on your desire to have exotic aliens and
+super heroes zoom into your living room.
+
+A warning issued by one of the leading 3D TV manufacturers may indicate the
+technology isn't yet ready for family prime time.
+
+Less than a month following the roll out of its 3D TV, Samsung Electronics
+in Australia states on its Web site that some viewers may experience more
+than just awesome visual effects.
+
+It cautions users to "immediately stop watching 3D pictures" and consult a
+doctor if they experience altered vision, lightheadedness, dizziness,
+involuntary movements such as eye twitching, confusion, nausea, loss of
+awareness, convulsion, cramps or disorientation.
+
+Here's something that will definitely be a bummer for kids: Children and
+teenagers may be more susceptible to health issues associated with viewing
+in 3D and should be closely supervised, according to Samsung.'
+
+It puzzles me that this product got to production.  In my twelfth grade
+(1977), the school had a haunted house.  A strobe light was used a one
+point.  There was awareness that this could be a problem for epileptics, so
+it was warned about.  Surely, Samsung should have known of possible issues.
+
+Risks?  Rushing a new technology to the market before it is ready.  There is
+no mention of suits against Samsung, but that seems to me to be a
+possibility.
+
+I think I will let someone else do the first consumer testing of flying cars.
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 01:29:48 -0700 (PDT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: More on the McAfee SNAFU
+
+[Source: Security update hits Windows PCs.  Browsing on that finds too many
+hits for me to figure out where the original one was.  Maybe BBC News?  PGN]
+
+Windows uses lots of copies of the svchost file. Thousands of PCs around the
+world have been paralysed by a security update that wrongly labeled part of
+Windows as a virus.
+
+The update was sent out by security firm McAfee and made affected PCs
+endlessly restart.
+
+Corporate customers of McAfee seemed to be hardest hit but some individuals
+reported problems too.
+
+The update wrongly labeled svchost as the virus and then quarantined it.
+This caused many PCs to crash as Windows uses many copies of the file to
+keep the operating system going.
+
+Computers inside businesses running Windows XP with service pack 3 applied
+were the hardest hit according to reports. The University of Michigan said
+8,000 of its 25,000 computers were hit by the faulty update.
+
+The SANS Internet Storm Center said the update was causing "widespread
+problems" and said it received reports about "networks with thousands of
+down machines and organizations who had to shut down for business until this
+is fixed."
+
+Analyst Rob Enderle said the update "pretty much took Intel down today". Mr
+Enderle was at the chip giant's HQ for a meeting when the widespread crash
+started to hit the computers of the people with whom he sat.
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 09:44:35 -0700
+From: Gene Wirchenko <genew@ocis.net>
+Subject: Cloud Risks and McAfee's blunder
+
+I have not understood how people figure that the cloud will be the saviour
+of computing.  There are too many risks.  ``McAfee's blunder, cloud
+computing's fatal flaw'' states my case rather well: McAfee's update fiasco
+shows that even trusted providers can cause catastrophic harm.  *InfoWorld*,
+26 Apr 2010.
+http://www.infoworld.com/t/software-service/mcafees-blunder-and-cloud-computings-fatal-flaw-742?source=IFWNLE_nlt_daily_2010-04-26
+
+  [Trusted for what?  The risk in the clouds is of course trusting something
+  that is not trustworthy .  PGN]
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 01:59:12 -0700 (PDT)
+From: Chris J Brady <chrisjbrady@yahoo.com>
+Subject: More Virus Protection Woes
+
+I have just bought a new Acer Aspire One 532 Netbook. The thought of using
+mifi and web browsing on the beach rather than in the office does appeal
+somewhat. Even though the unseasonably cold British weather is not exactly
+conducive to such activity (or non-activity) at present. But I digress. The
+Acer came with McAfee virus protection pre-installed for a 60-day free
+trial. But this actually came with a high price -- of wasted time in having
+to investigate an obscure problem with IE8 (which also came
+pre-installed). I quickly found that with many web pages that I browsed that
+had embedded hyperlinks, especially Yahoo Mail for some reason, that IE8
+would not activate these links when clicked upon. Neither would IE8 open a
+new window or a new tab for these links (right mouse click options). Indeed
+it simply ignored the links -- period. The problem is so serious that
+Microsoft has issued a special command file to re-register IE8's dlls
+<http://iefaq.info/index.php?action=artikel&cat=42&id=133&artlang=en>. IE8
+is very sensitive to the incorrect registration of its dlls. Also without
+directly ascribing the blame to any other specific pre-installation the MS
+MVPs have also advised de-installing the McAfee virus protection s/w
+<http://groups.google.com/group/microsoft.public.internetexplorer.general/browse_thread/thread/d287b1411ebc2615?pli=1>.
+Having done both, i.e. removed McAfee and run the respective re-reg. cmd
+file the problem with IE8 was cured (for me). CJB.
+
+------------------------------
+
+Date: Tue, 27 Apr 2010 10:29:15 +0100
+From: Tim Bradshaw <tfb@tfeb.org>
+Subject: Speech recognition and phone banking: not a very good idea
+
+My wife recently had a suspicious transaction on her credit card.  She rang
+the standard phone number for the card company to enquire about it (it was
+actually legitimate), and discovered that they have replaced their previous
+type-the-card-number-on-the-phone-keypad system with something that requires
+you to speak the number, and other authentication details, before you can
+get to talk to a human.
+
+What this means is that you have to speak your card number and other
+details, in a clear voice, trying to minimise any regional pronunciation so
+the system understands it, and probably do this several times because its
+recognition accuracy is dismal (which makes the system far more annoying to
+use than a touchtone system, of course).  Speaking loudly also helps as it
+gets the signal further above the noise.  In other words this is maximising
+the chance of a bystander being able to hear this rather sensitive
+information.
+
+Someone has not been thinking very hard about the security aspects of this.
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 23:43:55 -0700
+From: Ron Garret <ron@flownet.com>
+Subject: Risks of RFID car keys
+
+I rented a car with an RFID key the other day, the kind that is purely
+electronic and wireless.  When I went to return the car, the agent made of a
+point of asking me for the key, and I suddenly realized I had no idea where
+it was.  It was obviously *somewhere* in the car, but apparently at some
+point during the day I had absentmindedly tossed the key somewhere (it
+ultimately turned out to be in my backpack) and forgotten where I had put
+it.  Not only that, it actually slipped my mind that the car even *had* a
+key!  Because the key was in my backpack and the backpack was in the car,
+all I had to do to start the car was to push the start button, and the key
+faded out of my consciousness.  If the agent hadn't thought to ask me for it
+I almost certainly would have inadvertently walked off with it.
+
+Another potential risk: back in the good old days, if you happened to leave
+your key in your car, a potential thief still had to 1) know it was there
+and 2) locate it in order for it to do him or her any good.  No more.  Now
+thanks to handy dandy RFID technology the thief can steal the car first and
+then search for the key after.  And, of course, finding a car whose owner
+has left a key in it somewhere is a simple matter of making a pinging
+device.  You don't even need to break the encryption.  All you have to do is
+elicit a response from the key.  Add a directional antenna and you have a
+remote detector for easily stealable high-end cars.
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 10:28:40 -0700 (PDT)
+From: "Fredric L. Rice" <frice@sonic.net>
+Subject: Re: YOUR SAT NAV IS WRONG - GO BACK! (RISKS-26.01-03)
+
+It's a shame that contemporary GPS receivers with mapping functionality do
+not allow for an operator to select a broad spectrum of specific behaviors
+which would allow operators to tailor degrees of acceptable risks.
+
+Rather than being able to select the shortest route or the quickest route,
+or the route with fewer traffic lights and stop signs, I personally would
+like to be able to select the route which has fewer opposing left-hand turns
+since accumulatively, reducing opposing left-hand turns reduces the risks of
+being struck in that very common mode of accident.
+
+If I recall the statistics correctly, being rear-ended is a major mode of
+accident with greater frequency than someone turning left in front of you
+(in the United States, any way) however opposing left turns is a major
+statistical risk that would, it seems to be, be capable of being reduced
+through alternative navigation.
+
+GPS receivers could be configurable to determine how torturous a route
+would be acceptable to the operator to avoid opposing lefts, and know when
+avoidance becomes absurd enough to simply proceed without opposing
+left-turn avoidance.
+
+In the course of some 40 years of driving, I have been rear-ended by
+speeding vehicles while I was stopped three times, but have narrowly avoided
+striking someone making a left turn through on-coming traffic dozens of
+times.  A smart enough GPS receiver that avoids routes based upon accident
+statistics would at minimum be interesting, and would, I would think, be a
+marketable gimmick.
+
+Manufacturers would have marketing and legal difficulties if they did so,
+though, and since we're a nation of more lawyers than engineers, accident
+victims would probably sue the GPS manufacturers.
+
+------------------------------
+
+Date: Tue, 27 Apr 2010 17:30:15 -0500
+From: Arthur Flatau <flataua@acm.org>
+Subject: Re: YOUR SAT NAV IS WRONG - GO BACK! (RISKS-26.01-03)
+
+I have a similar experience when using my Tom Tom.  When traveling from
+Austin to Houston the usual route is to take Texas Highway 71 to Interstate
+10 (I do not need the GPS for that part of the trip).  The Tom Tom tries to
+direct me to US Highway 183 (which intersects with TX 71 in Austin).  This
+takes you further west (Houston is east of Austin) and according to Google
+maps the US 183 route is about 22 miles longer (Google directs me to take TX
+71) The Tom Tom continues to direct me to take various turns off of TX 71,
+to get to US 183, for 10-15 miles past the intersection.  By looking at the
+expected arrival time, it seems the problem is that the Tom Tom thinks TX 71
+has a speed limit of about 35 miles per hour (both roads are highways with
+speed limits of 60-70 miles per hour for the relevant portions).
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 00:14:12 -0400
+From: "Michael D. Sullivan" <mds@camsul.com>
+Subject: Re: Broadband survivability and certification (Jackson, RISKS-26.03)
+
+>  [Don't you love these easily remembered URLs?  PGN]
+
+Those are the URLs of NECA's repositories (for its daily newsletter)
+of the orders, which may load faster than the FCC orders.  However,
+the official URLs are:
+
+Survivability:
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/FCC-10-62A1.pdf
+Cybersecurity:
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/FCC-10-63A1.pdf
+
+  [Also noted by Danny Burstein, who offers such alternatives as
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-297663A1.doc
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-297663A1.pdf
+http://hraunfoss.fcc.gov/edocs_public/attachmatch/DOC-297663A1.txt
+  PGN]
+
+------------------------------
+
+Date: Mon, 26 Apr 2010 20:26:47 -0500
+From: "Jeff Grigg" <jeffgrigg@charter.net>
+Subject: Re: Your Cell Phone May Be Hazardous to Your Health (R 25 93)
+
+Shall we call this "Risks of relying on GQ as a source of reliable
+information?"
+
+There's been quite a lot of misinformation and even downright hoaxes going
+on around this issue.  No, cell phone will not pop popcorn or cook eggs;
+those videos were hoaxes.  Now as for other dangers, the main one is that
+cell phones are a distraction: Talking or texting while driving is dangerous
+-- probably a lot more dangerous than you think!
+
+Now as for the medical effects of prolonged cell phone use on your brain,
+there is simply insufficient evidence to support such an assertion.  And
+there's been lots of testing.  So if there was a non-trivial effect, we
+should have seen it by now.
+
+Please check reliable sources, such as Wikipedia and the articles it
+references:
+  http://en.wikipedia.org/wiki/Mobile_phone_radiation_and_health
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 26.04
+************************

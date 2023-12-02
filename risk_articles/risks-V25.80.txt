@@ -1,0 +1,564 @@
+precedence: bulk
+Subject: Risks Digest 25.80
+
+RISKS-LIST: Risks-Forum Digest  Friday 9 October 2009  Volume 25 : Issue 80
+
+ACM FORUM ON RISKS TO THE PUBLIC IN COMPUTERS AND RELATED SYSTEMS (comp.risks)
+Peter G. Neumann, moderator, chmn ACM Committee on Computers and Public Policy
+
+***** See last item for further information, disclaimers, caveats, etc. *****
+This issue is archived at <http://www.risks.org> as
+  <http://catless.ncl.ac.uk/Risks/25.80.html>
+The current issue can be found at
+  <http://www.csl.sri.com/users/risko/risks.txt>
+
+  Contents:
+The computers did it -- differently (Wendell Cochran)
+Lobstermen Get Wrong Number for a Hot Line (Ian Austen via PGN)
+Swine flu brings down Kaiser Permanente servers (Tony Lima)
+Restricted manual on avoiding leaking sensitive data is leaked (Mark Thorson)
+Subject: Mass. Blue Cross physicians' personal info on stolen laptop (Kay Lazar
+  via Monty Solomon)
+Airline status display follies (Steven Bellovin)
+For Washington Metro, it's the appearance of risk (Jeremy Epstein)
+Man forged 12,500 pounds worth of train tickets (Mark Brader)
+System diversity helps in power control system (Jeremy Epstein)
+How Hackers Snatch Real-Time Security ID Numbers (Saul Hansell via
+  Monty Solomon)
+Perils of password reuse plus password security hall of shame (Jonathan Kamens)
+WordPress inadvertent disclosure bug (Jonathan Kamens)
+The risks of being cute, Re: Complex Machinery: a parody (Donald Norman, PGN,
+  Bluejay)
+Re: Snow Leopard: A gigabyte by any other name (Phil Hobbs)
+Re: South Africa's Telkom: For the Birds or Not For the Birds (Richard Botting)
+Re: Software never fails, people decide that it does (Paul Robinson)
+Abridged info on RISKS (comp.risks)
+
+----------------------------------------------------------------------
+
+Date: Fri, 2 Oct 2009 10:16:31 -0700
+From: Wendell Cochran <atrypa@eskimo.com>
+Subject: The computers did it -- differently
+
+Airbus's A380 megajet is now two years behind schedule, reports
+*BusinessWeek*, which goes on to say 'Use of incompatible programs takes the
+rap, but behind that is a management team cobbled together from formerly
+separate companies.'
+http://www.businessweek.com/globalbiz/content/oct2006/gb20061005_846432.htm
+
+------------------------------
+
+Date: Fri, 9 Oct 2009 20:35:35 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: Lobstermen Get Wrong Number for a Hot Line
+
+The Canadian government announced a stimulus program for their lobster
+fishery, with a toll-free number that embarrassingly had an incorrect area
+code, resulting in solicitations for "nasty girls".  The president of the
+Prince Edward Island Fisherman's Association put a reverse spin on the
+situation: "Maybe it would have been good if the people calling the sex line
+would have heard the fishing issues, giving them a bit of an education."
+[Source: Ian Austen, *The New York Times*, 28 Sep 2009, National Edition, B5]
+
+------------------------------
+
+Date: Fri, 09 Oct 2009 09:36:19 -0700
+From: Tony Lima <tony.lima@csueastbay.edu>
+Subject: Swine flu brings down Kaiser Permanente servers
+
+Moday morning my wife was trying to log in to her Kaiser online account.
+The server was obviously very busy; her login attempts failed repeatedly
+with timeouts.  The new items on the Kaiser home page were two links to H1N1
+information.  These appeared to be the cause of the problem.  The links
+could have been placed on the members' home page, available only after
+logging in.
+
+RISK: making information available to the general public instead of members
+only can lead to server overload. - Tony Lima (who, by the way, is otherwise
+quite happy with Kaiser)
+
+Prof. Tony Lima, Dept. of Economics, CSU, East Bay, tony.lima@csueastbay.edu
+http://www.cbe.csueastbay.edu/~alima  (510) 885-3889
+
+------------------------------
+
+Date: Mon, 05 Oct 2009 13:35:15 -0700
+From: Mark Thorson <eee@sonic.net>
+Subject: Restricted manual on avoiding leaking sensitive data is leaked
+
+UK's Ministry of Defense 3-volume guide to avoiding leakage of sensitive
+data, itself a restricted document, has been leaked.
+http://www.dailymail.co.uk/news/article-1218315
+
+------------------------------
+
+Date: Sat, 3 Oct 2009 20:06:06 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: Mass. Blue Cross physicians' personal info on stolen laptop (Kay Lazar)
+
+Blue Cross physicians warned of data breach;
+Stolen laptop had doctors' tax IDs
+
+The largest health insurer in Massachusetts is warning roughly 39,000
+physicians and other health care providers in the state that personal
+information, including Social Security numbers, may have been compromised
+after a laptop containing the data was stolen in August from an employee of
+the Blue Cross and Blue Shield Association's national headquarters in
+Chicago.
+
+The breach involves "tens of thousands'' of physicians nationwide, although
+the precise number is unclear, according to a national Blue Cross-Blue
+Shield spokesman. Thirty-nine affiliates feed information about providers
+into a database maintained by the association's national headquarters.
+
+Massachusetts doctors were not notified by letter until yesterday, because
+state Blue Cross-Blue Shield officials said they did not at first know what
+kind of data were on the stolen laptop. They said the data did not contain
+any information about patients or personal health records.
+
+[Source: Kay Lazar, *The Boston Globe*, 3 Oct 2009]
+http://www.boston.com/news/local/massachusetts/articles/2009/10/03/blue_cross_physicians_warned_of_data_breach/
+
+------------------------------
+
+Date: Fri, 9 Oct 2009 22:53:47 -0400
+From: Steven Bellovin <smb@cs.columbia.edu>
+Subject: Airline status display follies
+
+Flying -- more precisely, checking flight status -- is a wonderful way to
+learn how not to design systems.
+
+I was scheduled to fly from Pittsburgh to Newark; my flight was scheduled to
+depart at 6:22pm.  That itself is probably a case of letting precision
+exceed accuracy; indeed, the departure board at the airport showed a
+scheduled departure time of 6:25pm.  Other flights, though, did have times
+like 6:29 or 7:31 shown; admittedly, those were from different airlines.
+But why would my airline show one time on its schedule and web status, and
+another at the airport?
+
+When I got to the airport, around 4:00, I saw that the 3:15 flight hadn't
+left yet: "delayed", no time shown.  I went to the gate, but saw neither a
+plane nor a gate agent.  Odd, especially since the web showed that the
+incoming flight had indeed arrived in Pittsburgh on time.  When someone
+eventually showed up, I asked if I could still get on the 3:15 flight.  "Oh,
+that left a long time ago."  I asked why it was still on the displays.  He
+immediately got on his radio to ask that it be deleted.  The status displays
+aren't database-driven?
+
+I checked my flight again; it showed as on time.  It showed as on time even
+when the inbound plane was running 1.5 hours late.  Well, not quite; the
+inbound plane was listed as departing 1.5 hours late, but arriving on time,
+only four minutes after it was supposed to leave Newark.  Hmm, no sanity
+checks in that display.
+
+And my flight?  Even after the inbound flight departed, 2.25 hours late, it
+still showed an on-time departure, about 1.5 hours after the web claimed the
+inbound equipment will arrive.  Note that the web site actually has a link
+to the inbound flight's status, so some database *knew* which plane was
+involved.  And the airport display?  It showed the flight as "delayed", but
+still with a departure time that wa earlier than the plan's arrival time.
+
+The gate agent told me never to trust the web site.  I forbore to point to
+the airport displays, because at that point one of her colleagues was
+wondering why their information showed that the inbound plane was still
+taxiing at Newark, well after it should have been in the air.  She replied
+"maybe someone forgot to enter the update".
+
+I arrived home about two hours late, musing about systems design.
+
+Steve Bellovin, http://www.cs.columbia.edu/~smb
+
+------------------------------
+
+Date: Sun, 27 Sep 2009 16:09:41 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: For Washington Metro, it's the appearance of risk
+
+After the deadly Metro train crash in June, the Washington Metro system
+reconfigured trains so that the older ("1000 series") train cars were no
+longer at the ends of trains, where they were in the deadly crash.  The
+idea, as described at the time, was to put them in the middle of the train,
+since the newer cars have greater survivability in a crash.
+
+The problem is, there was no engineering to support this hypothesis.
+According to the WashPost, it was a pure PR move, and in fact Metro doesn't
+know if the move made the trains safer or less safe.  They were mostly
+concerned about the appearance of doing something to address risk, lest the
+public (and the localities that fund Metro) decide that the lack of action
+meant Metro didn't care.
+
+The RISK is that when something that looks to the public like an engineering
+action has no engineering basis, we may get results that are
+counterproductive.
+
+There's minimal direct computer risk in this particular action, although
+other postings have noted computer and technology risks elsewhere in the
+Metro system.
+
+http://www.washingtonpost.com/wp-dyn/content/article/2009/09/26/AR2009092602684.html?hpid=topnews
+
+------------------------------
+
+Date: Sat,  3 Oct 2009 05:46:49 -0400 (EDT)
+From: msb@vex.net (Mark Brader)
+Subject: Man forged 12,500 pounds worth of train tickets
+
+Jonathan Moore of Hove, England, described as an "IT expert", has been
+sentenced for using a computer to forge 12,472 pounds worth of train tickets
+that he used for his daily commute to London.  The ongoing fraud was
+eventually detected by a ticket inspector who noticed that Moore's ticket
+was not quite the right color.  Designs for over 70 tickets were found on
+his laptop.
+
+According to the customer services director at the train operating company,
+"It is a tribute to our quick-witted staff that this thief was caught out.
+Fare dodgers are robbing the rail industry of 400 million pounds a year."
+
+http://news.bbc.co.uk/2/hi/uk_news/england/sussex/8287111.stm
+http://www.timesonline.co.uk/tol/news/uk/crime/article6858680.ece
+
+------------------------------
+
+Date: Fri, 2 Oct 2009 08:51:54 -0400
+From: Jeremy Epstein <jeremy.j.epstein@gmail.com>
+Subject: System diversity helps in power control system
+
+*The Inquirer* reports that a virus infestation in the electrical grid
+control room of Integral Energy (Australia) was controlled by replacing the
+Windows-based control consoles with the development systems that run Linux.
+The SCADA systems themselves run Solaris, and the control consoles only are
+used as X Window displays, so the replacement didn't require reprogramming.
+
+This appears to be a case where diversity of implementations and plug
+compatibility (Windows + X replaced by Linux + X) allowed greater resilience
+than either alone.  However, the fact that the SCADA systems run Solaris is
+of scant comfort - while perhaps not as strewn with viruses as Windows, it's
+still not risk-free.
+
+http://www.theinquirer.net/inquirer/news/1556944/linux-saves-aussie-electricity
+
+------------------------------
+
+Date: Thu, 1 Oct 2009 08:27:02 -0400
+From: Monty Solomon <monty@roscom.com>
+Subject: How Hackers Snatch Real-Time Security ID Numbers (Saul Hansell)
+
+[From Saul Hansell's blog, *The New York Times*, 20 Aug 2009]
+
+The world's savviest hackers are on to the "real-time Web" and using it to
+devilish effect. The real-time Web is the fire hose of information coming
+from services like Twitter. The latest generation of Trojans - nasty little
+programs that hacking gangs use to burrow onto your computer - sends a
+Twitter-like stream of updates about everything you do back to their
+controllers, many of whom, researchers say, are in Eastern Europe. Trojans
+used to just accumulate secret diaries of your Web surfing and periodically
+sent the results on to the hacker.
+
+The security world first spotted these new attacks last year. I ran into it
+again while reporting an article in Thursday's Times about a lawsuit meant
+to help track down the perpetrators of these attacks.
+
+By going real time, hackers now can get around some of the roadblocks that
+companies have put in their way. Most significantly, they are now undeterred
+by systems that create temporary passwords, such as RSA's SecurID system,
+which involves a small gadget that displays a six-digit number that changes
+every minute based on a complex formula.
+
+If your computer is infected, the Trojan zaps your temporary password back
+to the waiting hacker who immediately uses it to log onto your
+account. Sometimes, the hacker logs on from his own computer, probably using
+tricks to hide its location. Other times, the Trojan allows the hacker to
+control your computer, opening a browser session that you can't see. ...
+
+http://bits.blogs.nytimes.com/2009/08/20/how-hackers-snatch-real-time-security-id-numbers/
+
+------------------------------
+
+Date: Tue, 6 Oct 2009 10:09:06 -0400
+From: Jonathan Kamens <jik@kamens.brookline.ma.us>
+Subject: Perils of password reuse plus password security hall of shame
+
+Years ago, I developed the bad habit of using the same "medium-security
+password" on lots of different Web sites.  I first started doing this around
+a decade ago, when Web site data breaches were far less frequent and far
+less professionally executed than they are now.  Still, that's a bad excuse
+for forming a bad habit, which it took a real kick in the pants to get me to
+break.
+
+That kick in the pants came a couple of weeks ago, when I inadvertently
+posted my password to my blog for the world to see (more on that under
+separate cover).  After realizing what had happened, I spent every available
+moment for several days logging into ten years' worth of Web sites, many of
+which I haven't used in a long, long time but still had personal information
+about me stored on them, and changing my password on all of them.
+
+This prompted me to write two articles on my blog which may be of interest
+to RISKS readers:
+
+* In http://blog.kamens.brookline.ma.us/~jik/wordpress/300pw, I discuss why
+password reuse is a bad idea (the fact that I had to spend days changing my
+password on over 300 Web sites is only one of many reasons) and offer advice
+on how to avoid it without having to remember different, random password for
+hundreds of Web sites.
+
+* My marathon password-changing journey gave me the opportunity to look at
+how well passwords are secured at a large number of Web sites in many
+different application domains.  In
+http://blog.kamens.brookline.ma.us/~jik/wordpress/pwshame, I've published my
+"Password Security Hall of Shame" of the sites I encountered with poor
+password security.
+
+I am interested in hearing feedback from others about these articles so that
+I can make them better.  In particular, I'd love to add other noteworthy
+pieces of advice to my article about managing the seemingly inevitable
+juggernaut of Web passwords, and I'd also like to add to the Hall of Shame
+any other sites with poor password security of which people are aware.
+Please feel free to post comments on my blog or email me.
+
+------------------------------
+
+Date: Tue, 6 Oct 2009 10:17:54 -0400
+From: "Jonathan Kamens" <jik@kamens.brookline.ma.us>
+Subject: WordPress inadvertent disclosure bug
+
+There is a bug in the current version of the WordPress blogging platform
+(and probably in all versions since 2.8.0) which can cause hidden text to be
+inadvertently published in a blog entry without the user's knowledge.
+
+In a nutshell, sometimes when text is pasted into the WordPress WYSIWYG
+editor, an invisible copy of the text is pasted into the editor without the
+user's knowledge.  This invisible text is published along with the blog
+entry, and although it is not visible on the user's blog, it is visible to
+search engines and to syndicators which strip HTML style attributes.
+
+The exact conditions under which the bug occurs are not yet known.
+
+This is not a terribly serious security hole as these things ago, but it is
+real and needs to be addressed.  Unfortunately, the maintainers of WordPress
+do not seem to be taking it particularly seriously; despite having been
+notified about the issue over a week ago, they have not yet acknowledged
+that it has security implications or committed to fixing it.
+
+I've posted more details about the issue on my blog at
+http://blog.kamens.brookline.ma.us/~jik/wordpress/wpbug.
+
+------------------------------
+
+Date: Fri, 25 Sep 2009 20:08:14 -0700
+From: Donald Norman <don@jnd.org>
+Subject: The risks of being cute, Re: Complex Machinery: a parody (RISKS-25.79)
+
+You know, it's fun to be cute or to pun, but not when it causes the RISKS
+digest to mislead and misinform.
+
+When two otherwise intelligent people, K C Knowlton and our esteemed
+moderator decide to be cute, they should check the facts first. Taking lines
+out of context is bad. Writing about something of which you know nothing is
+worse.
+
+Both Knowlton and Neumann decided to have fun with the poor little Rhode
+Island School of Design (RISD) and its new president, John Maeda.  John was
+quoted in a Lexus ad of all places saying "the more complex the design, the
+simpler the interface will be."  Sounds right to me! Alas, not to our
+esteemed commentators.
+
+RISD is one of the world's best conventional design schools. Many of us in
+the design community are delighted that John has taken over: he will take it
+out of "conventional".  John Maeda is from the MIT Media Lab and one of he
+world's best designers with a best-selling book entitled "Simplicity."  But
+our esteemed commentators couldn't resist stating that his quote meant
+oversimplification and reduction to absurdity.  Shame on both of you. You
+read a message in the quotation that was not there.
+
+The trick in design is to get it just right: neither too simple nor too
+complicated. Moreover,  I have argued that complexity is good -- it is
+complicated that is bad. Simplicity does not mean simple-minded. Maeda has
+made this point many times in his professional writing and talks.
+
+The real quote is that of Einstein who said that everything should be as
+simple as possible, but no simpler.  It is the "but no simpler" part of the
+quote that people forget, but it is the most important.
+
+Simplicity needs to be context sensitive. The average driver needs a very
+simple control for the auto. The skilled driver wants more control, so a bit
+less simplification. And the technicians need to be able to get into the
+guts of the stuff, so they need even less simplification. Yes, he more
+complex the underling machinery, the more sophisticated the interface design
+has to be to tame that complexity so it is at just the right level for
+whatever person is using it at the moment.  Making something easy to use and
+understand often requires increased complexity beneath the surface to make
+that posible. Hence, the fact that the human interface code takes up a
+considerable portion of the code base of any software system.
+
+These are issues Maeda and RISD do understand.  Different people have
+different needs.  The real story requires a book (and John has written one).
+Look folks, don't make up RISKS that do not exist. we have enough real ones
+to cope with.
+
+Don't take isolated quotations out of context. And please don't write about
+topics in which you are not expert.
+
+Don Norman, Nielsen Norman Group, Northwestern University, and KAIST (S. Korea)
+don@jnd.org  www.jnd.org/
+
+------------------------------
+
+Date: Wed, 30 Sep 2009 17:12:14 PDT
+From: "Peter G. Neumann" <neumann@csl.sri.com>
+Subject: The risks of being cute, Re: Complex Machinery: a parody (RISKS-25.80)
+
+Don, I think you have overreacted, and even misunderstood my comments.  And
+you evidently do not believe in causal logic in English.  "The more complex
+the design, the simpler the interface will be." implies a causality: If a
+design is more complex, it follows that the interface will inherently be
+simpler.  That is sheer and utter nonsense.  Ken was undoubtedly reacting to
+the reality that complex systems often have inappropriately over-complex
+interfaces.  On the other hand, if Maeda had said, "If a design must
+inherently be more complex (because of the intrinsic complexity of the
+requirements -- for example, management of fault tolerance and safety and
+survivability usually adds significantly more complexity), the interface had
+very well better be simple." then I would have been comfortable.  Actually,
+I have high respect for Maeda and RISD, and would prefer to think that he
+was misquoted by the typically nontechnically savvy admen-istrators.  PGN]
+
+------------------------------
+
+Date: Fri, 25 Sep 2009 19:20:43 -0400
+From: Bluejay <bluejay@prtcnet.com>
+Subject: The risks of being cute, Re: Complex Machinery: a parody (RISKS-25.79)
+
+>[... ( ...But the secret of success is giving the appearance of
+>simplicity that implicitly masks the inherent complexity.)  PGN]
+
+I have a theory that the amount of complexity of a closed system remains
+constant. For example, long ago computers were very complex to use and
+maintain, but certainly by today's standard they were pretty simple.  Today,
+computers have become so complex as to often defy understanding, but even my
+86-year-old Dad can use one.
+
+Bluejay Adametz, CFII, A&P, AA-5B N45210
+
+------------------------------
+
+Date: Thu, 01 Oct 2009 18:24:03 -0400
+From: Phil Hobbs <pcdhSpamMeSenseless@electrooptical.net>
+Subject: Re: Snow Leopard: A gigabyte by any other name (RISKS-25.78)
+
+It's historical.
+
+Disc drive specifications have been in decimal since the 1950s, whereas the
+1024-byte kilobyte is from the 1970s.
+
+------------------------------
+
+Date: Fri, 02 Oct 2009 12:44:18 -0700
+From: Richard Botting <rbotting@csusb.edu>
+Subject: Re: South Africa's Telkom: For the Birds or Not For the Birds
+
+Gene Wirchenko reported on 11 Sep 2009 on the comparison of Pigeons and the
+Internet to transmit data.  I am bothered by the confusion in the news item
+between latency and bandwidth: "took one hour and eight minutes to fly the
+80 km [...] with a data card strapped to his leg.  In that time, just two
+per cent of the data was sent over the Internet."  Surely we should launch a
+whole series of pigeons to calculate the bandwidth?
+
+By the way, Rocky Mountain Adventures uses pigeons to send data sticks of
+photos to their home base.  See
+  http://odeo.com/episodes/25042064-Pigeon-Protocol-Finds-a-Practical-Purpose
+
+------------------------------
+
+Date: Wed, 30 Sep 2009 21:08:19 +0000 (GMT)
+From: Paul Robinson <paul@paul-robinson.us>
+Subject: Re: Software never fails, people decide that it does (Brydon, R-25.76)
+
+> However, that does not inhibit someone other that the originator from
+> making an informed and educated decision, based on engineering principles,
+> that the product requires updating or replacing.
+
+True, but technically you can't objectively prove it.  Point to a software
+program and all you can really say is that these bits - which look like any
+other bits - need replacing.  Or this code needs replacing because it needs
+to perform a different function than it does or because the function is
+wrong.  But there will be nothing there you can show that is quantitatively
+different from anything else which would indicate evidence of the defect
+other than you claiming there is one, which again, is going to be your
+opinion and no more.
+
+The possibility of failure in a software package can be no less deadly than
+that of any other failure in a device or item under the same sort of usage
+or operation, e.g., a software failure in a pacemaker can be as fatal as
+having bad wiring.  Bad software in a car's engine could be as serious as a
+stuck gas pedal or a failed brake pedal.  But where's the objective proof to
+make the claim?  There really isn't any, it's just an opinion. Evidence of
+failure that has happened is real and can be shown, but unlike rust on a
+bridge, there nothing "there" to show where the failure point is in a piece
+of software.  Again, all bits look alike, there are no obviously corroded or
+"rusty" ones you can single out for repair or replacement.
+
+The difference is that for the real world, we can point to and objectively
+show the rust in a bridge, the corrosion in wiring, the break in a rubber
+hose, the molecular discohesion in a framistat (the latter is a fictional
+example for something that hasn't been invented yet, but we will someday
+have and use.)  But inaccurate or incorrect functionality in a computer
+program can only be shown by errors in some output or damage in something
+else; the software has nothing intrinsic in and of itself to show that it is
+in error or operates improperly except for, unfortunately, someone's opinion
+that the software is wrong or inadequate.
+
+------------------------------
+
+Date: Thu, 29 May 2008 07:53:46 -0900
+From: RISKS-request@csl.sri.com
+Subject: Abridged info on RISKS (comp.risks)
+
+ The ACM RISKS Forum is a MODERATED digest, with Usenet equivalent comp.risks.
+=> SUBSCRIPTIONS: PLEASE read RISKS as a newsgroup (comp.risks or equivalent)
+ if possible and convenient for you.   The mailman Web interface can
+ be used directly to subscribe and unsubscribe:
+   http://lists.csl.sri.com/mailman/listinfo/risks
+ Alternatively, to subscribe or unsubscribe via e-mail to mailman
+ your FROM: address, send a message to
+   risks-request@csl.sri.com
+ containing only the one-word text subscribe or unsubscribe.  You may
+ also specify a different receiving address: subscribe address= ... .
+ You may short-circuit that process by sending directly to either
+   risks-subscribe@csl.sri.com or risks-unsubscribe@csl.sri.com
+ depending on which action is to be taken.
+
+ Subscription and unsubscription requests require that you reply to a
+ confirmation message sent to the subscribing mail address.  Instructions
+ are included in the confirmation message.  Each issue of RISKS that you
+ receive contains information on how to post, unsubscribe, etc.
+
+=> The complete INFO file (submissions, default disclaimers, archive sites,
+ copyright policy, etc.) is online.
+   <http://www.CSL.sri.com/risksinfo.html>
+ The full info file may appear now and then in RISKS issues.
+ *** Contributors are assumed to have read the full info file for guidelines.
+
+=> .UK users should contact <Lindsay.Marshall@newcastle.ac.uk>.
+=> SPAM challenge-responses will not be honored.  Instead, use an alternative
+ address from which you NEVER send mail!
+=> SUBMISSIONS: to risks@CSL.sri.com with meaningful SUBJECT: line.
+ *** NOTE: Including the string "notsp" at the beginning or end of the subject
+ *** line will be very helpful in separating real contributions from spam.
+ *** This attention-string may change, so watch this space now and then.
+=> ARCHIVES: ftp://ftp.sri.com/risks for current volume
+     or ftp://ftp.sri.com/VL/risks for previous VoLume
+ <http://www.risks.org> redirects you to Lindsay Marshall's Newcastle archive
+ http://catless.ncl.ac.uk/Risks/VL.IS.html gets you VoLume, ISsue.
+   Lindsay has also added to the Newcastle catless site a palmtop version
+   of the most recent RISKS issue and a WAP version that works for many but
+   not all telephones: http://catless.ncl.ac.uk/w/r
+ <http://the.wiretapped.net/security/info/textfiles/risks-digest/> .
+==> PGN's comprehensive historical Illustrative Risks summary of one liners:
+    <http://www.csl.sri.com/illustrative.html> for browsing,
+    <http://www.csl.sri.com/illustrative.pdf> or .ps for printing
+==> Special Offer to Join ACM for readers of the ACM RISKS Forum:
+    <http://www.acm.org/joinacm1>
+
+------------------------------
+
+End of RISKS-FORUM Digest 25.80
+************************
