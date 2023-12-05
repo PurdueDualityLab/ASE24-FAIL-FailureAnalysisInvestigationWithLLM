@@ -13,8 +13,10 @@ def extract_sources_from_file(file_path):
     for s in sources:
         s = s.lower()
         # filter the sources that are not relevant
-        if s == 'comp.risks' or any(char.isdigit() for char in s):
+        if s == 'comp.risks' or any(char.isdigit() for char in s) or '@' in s:
             continue
+        if 'via' in s:
+            s = s.split('via')[0]
         for char in s:
             # format the source properly
             if char == '\n':
@@ -36,18 +38,35 @@ def count_sources(directory_path):
     return sources_counter
 
 
-def plot_results(sources_counter):
-    sources = list(sources_counter.keys())
-    counts = list(sources_counter.values())
+def plot_results(sources_counter, threshold=20, bar_width=0.8):
+    total_count = sum(sources_counter.values())
 
-    # Plot the bar chart
-    plt.figure()
-    plt.bar(sources, counts, color='skyblue')
-    plt.xlabel('Source')
-    plt.ylabel('Occurences')
-    plt.title('Occurences of Sources in RISKS Digest Articles')
-    plt.xticks(rotation=90)
-    # plt.tight_layout()
+    # Filter sources with counts less than the threshold
+    filtered_sources = {k: v for k, v in sources_counter.items() if v >= threshold}
+    other_count = sum(v for k, v in sources_counter.items() if v < threshold)
+
+    # Add 'other' category
+    filtered_sources['other'] = other_count
+
+    # Calculate percentages
+    percentages = [(v / total_count) * 100 for v in filtered_sources.values()]
+
+    # Sort sources and percentages in descending order
+    sorted_sources, sorted_percentages = zip(*sorted(zip(filtered_sources.keys(), percentages), key=lambda x: x[1]))
+
+    # Plot the horizontal bar chart with adjusted bar width
+    plt.figure(figsize=(15, 20))
+    bars = plt.barh(sorted_sources, sorted_percentages, color='skyblue', height=bar_width)
+
+    # Display percentage numbers next to the bars
+    for bar, percentage in zip(bars, sorted_percentages):
+        plt.text(bar.get_width() + 1, bar.get_y() + bar.get_height()/2, f'{percentage:.1f}%', va='center')
+
+    plt.xlabel('Percentage (%)')
+    plt.ylabel('Source')
+    plt.title(f'Percentage of Sources in RISKS Digest Articles (total: {total_count}))')
+    plt.tight_layout()
+    plt.savefig('output.png', bbox_inches='tight')
     plt.show()
 
 directory_path = '../../risk_articles'
@@ -55,7 +74,7 @@ sources_counter = count_sources(directory_path)
 plot_results(sources_counter)
 
 # Write the sorted results to a file
-with open('risks_sources.txt', 'w', encoding='utf-8') as output_file:
-    for article, count in sorted(sources_counter.items(), key=lambda x: x[1], reverse=True):
-        output_file.write(f'{count} occurrences - {article}\n')
+# with open('risks_sources.txt', 'w', encoding='utf-8') as output_file:
+#     for article, count in sorted(sources_counter.items(), key=lambda x: x[1], reverse=True):
+#         output_file.write(f'{count} occurrences - {article}\n')
 
