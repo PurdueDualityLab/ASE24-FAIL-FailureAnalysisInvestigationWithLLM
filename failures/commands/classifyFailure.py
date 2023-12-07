@@ -49,8 +49,13 @@ class ClassifyFailureCommand:
         parser.add_argument(
             "--temp",
             type=float,
-            default=1,
+            default=0, 
             help="Sets the temperature for ChatGPT",
+        )
+        parser.add_argument(
+            "--year",
+            type=int,
+            help="To run command for a specific published year of articles.",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
@@ -61,22 +66,33 @@ class ClassifyFailureCommand:
             args (argparse.Namespace): The parsed command-line arguments.
             parser (argparse.ArgumentParser): The argument parser for the configuration
         """
+
+        logging.info("\nClassifying articles on whether report on software failures.")
         
         # Gets list of article to classify
         queryset = (
-            Article.objects.filter(scrape_successful=True, id__in=args.articles) if args.articles else
-            Article.objects.filter(scrape_successful=True) if args.all else
+            Article.objects.filter(scrape_successful=True, id__in=args.articles) if args.articles 
+            else
+            Article.objects.filter(scrape_successful=True, published__year=args.year) if args.year 
+            else
+            Article.objects.filter(scrape_successful=True) if args.all 
+            else
             Article.objects.filter(describes_failure=None, scrape_successful=True)
         )
-        logging.info("\nClassifying articles on whether report on software failures.")
+        
         
         # Initializes ChatGPT Classifier
         classifierChatGPT = ClassifierChatGPT()
 
         # Handles inputs and temperature
-        temperature = args.temp if 0 <= args.temp <= 1 else 1
-        inputs = {"model": "gpt-3.5-turbo", "temperature": temperature}
-        logging.info("Classifying articles using temperature %s.", "{:.2f}".format(temperature))
+        if 0 <= args.temp <= 1:
+            temperature = args.temp
+        else:
+            logging.info("\nTemperature out of range [0,1]. Please check input.")
+            exit()
+
+        inputs = {"model": "gpt-3.5-turbo", "temperature": temperature} #gpt-3.5-turbo , gpt-4-1106-preview
+        logging.info("\nUsing " + inputs["model"] + " with a temperature of " + str(temperature) + ".")
         
         failure_positive_classifications_ChatGPT = 0
 
@@ -94,7 +110,7 @@ class ClassifyFailureCommand:
 
         logging.info("ChatGPT successfully classified %d articles as describing a software failure.", failure_positive_classifications_ChatGPT)
 
-        logging.info("Cleaning up database")
+        #logging.info("Cleaning up database")
         self.process_incident()
 
     def process_incident(self):
@@ -104,39 +120,44 @@ class ClassifyFailureCommand:
 
         Args:
         """
-        logging.info("Resetting incidents/incident relationships for non-failure articles")
         
         # Get list of articles that are not analyzable and do not have an incident tied to them
         articles = Article.objects.filter(describes_failure=False, incident__isnull=False)
 
-        # Init vector DB
-        chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
-        embedding_function = OpenAIEmbeddings()
-        vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
+        if articles:
 
-        for article in articles:
+            logging.info("Cleaning up database")
+            
+            logging.info("Resetting incidents/incident relationships for non-failure articles")
+        
+            # Init vector DB
+            chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
+            embedding_function = OpenAIEmbeddings()
+            vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
 
-            # Get associated incident
-            incident = article.incident
+            for article in articles:
 
-            # Check if there is only one article associated with the incident
-            if incident.articles.count() == 1 and incident.articles.first() == article:
-                # Delete from vectorDB
-                logging.info("Deleting incident " + str(incident.id) + " from Django and VectorDB.")
-                chunks_for_incident = vectorDB.get(where={"incidentID": incident.id})['ids']
-                if chunks_for_incident:
-                    vectorDB._collection.delete(ids=chunks_for_incident)
+                # Get associated incident
+                incident = article.incident
 
-                # Delete incident from Django
-                incident.delete()
+                # Check if there is only one article associated with the incident
+                if incident.articles.count() == 1 and incident.articles.first() == article:
+                    # Delete from vectorDB
+                    logging.info("Deleting incident " + str(incident.id) + " from Django and VectorDB.")
+                    chunks_for_incident = vectorDB.get(where={"incidentID": incident.id})['ids']
+                    if chunks_for_incident:
+                        vectorDB._collection.delete(ids=chunks_for_incident)
 
-            # Delete article from vectorDB
-            logging.info("Deleting article " + str(article.id) + " from VectorDB")
-            chunks_for_sampleArticle = vectorDB.get(where={"articleID": article.id})['ids']
-            if chunks_for_sampleArticle:
-                vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+                    # Delete incident from Django
+                    incident.delete()
 
-            # Set article incident to none, set article stored to false
-            article.incident = None
-            article.article_stored = False
-            article.save()
+                # Delete article from vectorDB
+                logging.info("Deleting article " + str(article.id) + " from VectorDB")
+                chunks_for_sampleArticle = vectorDB.get(where={"articleID": article.id})['ids']
+                if chunks_for_sampleArticle:
+                    vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+
+                # Set article incident to none, set article stored to false
+                article.incident = None
+                article.article_stored = False
+                article.save()

@@ -49,9 +49,9 @@ class PostmortemIncidentCommand:
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
-        logging.info("\nCreating postmortems.")
+        logging.info("\nCreating postmortems for incidents.")
 
-        inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
+        inputs = {"model": "gpt-3.5-turbo", "temperature": 0}
 
         query_all = args.all
         query_key = args.key
@@ -204,4 +204,4 @@ class PostmortemIncidentCommand:
 # Define your desired data structure.
 class JsonResponse(BaseModel):
     explanation: str = Field(description="Provide explanation for the option that answers the question")
-    option: int = Field(description="Choose option number that answers the question")
+    option: str = Field(description="Choose option that answers the question")

@@ -38,7 +38,7 @@ class MergeCommand:
         parser.add_argument(
             "--temp",
             type=float,
-            default=-1,
+            default=0,
             help="Sets the temperature for ChatGPT",
         )
 
@@ -51,6 +51,17 @@ class MergeCommand:
             args (argparse.Namespace): The parsed command-line arguments.
             parser (argparse.ArgumentParser): The argument parser used for configuration.
         """
+
+        logging.info("\n\nIndexing Articles into Incidents.")
+
+        if 0 <= args.temp <= 1:
+            temperature = args.temp
+        else:
+            logging.info("\nTemperature out of range [0,1]. Please check input.")
+            exit()
+
+        inputs = {"model": "gpt-3.5-turbo", "temperature": temperature}
+        logging.info("\nUsing " + inputs["model"] + " with a temperature of " + str(temperature) + ".")
 
         # Delete all incidents
         if args.all and not args.articles:
@@ -90,10 +101,8 @@ class MergeCommand:
         chatGPT = ChatGPT()
         embedder = EmbedderGPT()
         classifierChatGPT = ClassifierChatGPT()
-        temp = args.temp if 0 <= args.temp <= 1 else 1
-        inputs = {"model": "gpt-3.5-turbo", "temperature": temp}
 
-        logging.info("\n\nMerging Articles.")
+        
 
         for article_new in queryset:
 
@@ -120,7 +129,7 @@ class MergeCommand:
                     mean_score = sum_scores #/len(postmortem_keys)                    
 
                     if mean_score > 0.85:
-                        logging.info("High similarity score of " + str(mean_score) + " in incident: " + str(incident))
+                        logging.info("High similarity score of " + str(mean_score) + " in article: " + str(article_incident.headline))
 
                         #TODO: Measure false positive rate with just cosine similarity
 
@@ -178,3 +187,5 @@ class MergeCommand:
                 incidents.append(incident)
 
         logging.info("Articles merged!")
+
+        #TODO: Run through all incidents and set earliest published date. But within merge, this should be done everytime a match is found in an incident

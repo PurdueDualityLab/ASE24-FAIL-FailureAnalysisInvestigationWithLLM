@@ -45,6 +45,8 @@ class PostmortemArticleCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
         """
 
+        logging.info("\nCreating postmortems for articles.")
+
         query_all = args.all
         query_key = args.key
 
@@ -72,7 +74,7 @@ class PostmortemArticleCommand:
             #    questions_chat[question_key] = questions[question_key]
 
 
-        logging.info("\nCreating postmortems.")
+        
         
         # Initialize ChatGPT model
         chatGPT = ChatGPT()

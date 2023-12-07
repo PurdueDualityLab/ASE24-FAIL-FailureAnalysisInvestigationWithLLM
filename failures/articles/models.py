@@ -219,7 +219,7 @@ class Article(models.Model):
 
     # Marking url as unique=True because we don't want to store the same article twice
     url = models.URLField(
-        _("URL"), unique=True, max_length=510, help_text=_("URL of the article.")
+        _("URL"), unique=True, max_length=2048, help_text=_("URL of the article.")
     )
 
     published = models.DateTimeField(
@@ -388,7 +388,11 @@ class Article(models.Model):
             # Continue if "opinion" in title
             if "opinion" in entry["title"].lower():
                 continue
-            dest_url = requests.get(entry.link) 
+            try:
+                dest_url = requests.get(entry.link) 
+            except requests.exceptions.RequestException as e:
+                logging.error(f"Failed to get link: %s: %s.", entry.link, e)
+                continue
             dest_url = dest_url.url
             if not cls.objects.filter(url=dest_url).exists():
                 article = cls.objects.create(
@@ -581,14 +585,14 @@ class Article(models.Model):
         
         article_text = self.body
 
-        content = "You will help classify whether an article reports on a software failure."
+        content = "You will help classify whether an article reports on a software failure incident."
 
         messages = [
                 {"role": "system", 
                 "content": content}
                 ]
 
-        prompt = "Does the provided article report on a software failure (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
+        prompt = "Does the provided article report on a software failure incident(s) (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
                 + "\n" \
                 + "Answer with just True or False." \
                 + "\n" \
