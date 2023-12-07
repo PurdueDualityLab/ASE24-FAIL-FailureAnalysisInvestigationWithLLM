@@ -129,6 +129,9 @@ class EvaluateTemperatureCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+
+        logging.info("\n\nStarting experiment pipeline.")
+
         # Define the file path
         file_path = "./tests/manual_evaluation/perfect_merge.xlsx"
 
@@ -207,7 +210,7 @@ class EvaluateTemperatureCommand:
             # CLASSIFICATION & EVALUATION
             if start <= 0 and end >= 0:
                 if not args.noRun:
-                    logging.info("Classifying articles as failure/non-failure for " + str(temperature) + " temperature.")
+                    logging.info("Classifying articles on whether report on software failures with a " + str(temperature) + " temperature.")
                     # run command
                     classifyFailure = ClassifyFailureCommand()
                     classifyFailure.run(args, parser)
@@ -219,7 +222,7 @@ class EvaluateTemperatureCommand:
 
             if start <= 1 and end >= 1:
                 if not args.noRun:
-                    logging.info("Classifying articles for " + str(temperature) + " temperature.")
+                    logging.info("Classifying articles on whether they contain information for software failure analysis with a " + str(temperature) + " temperature.")
                     # run command
                     ClassifyAnalyzable = ClassifyAnalyzableCommand()
                     ClassifyAnalyzable.run(args, parser)
@@ -232,7 +235,7 @@ class EvaluateTemperatureCommand:
             # MERGING & EVALUATION
             if start <= 2 and end >= 2:
                 if not args.noRun:
-                    logging.info("Merging articles for " + str(temperature) + " temperature.")
+                    logging.info("Merging articles with a " + str(temperature) + " temperature.")
                     # run command
                     merge = MergeCommand()
                     merge.run(args, parser)
@@ -259,7 +262,7 @@ class EvaluateTemperatureCommand:
             # POSTMORTEM INCIDENT & EVALUATION
             if start <= 4 and end >= 4:
                 if not args.noRun:
-                    logging.info("Analyzing postmortem for " + str(temperature) + " temperature.")
+                    logging.info("Analyzing postmortem with a " + str(temperature) + " temperature.")
                     args.all = True
                     postmortem = PostmortemIncidentCommand()
                     postmortem.run(args, parser)
@@ -272,7 +275,7 @@ class EvaluateTemperatureCommand:
             # CLUSTER & EVALUATION
             if start <= 5 and end >= 5:
                 if not args.noRun:
-                    logging.info("Clustering incidents for " + str(temperature) + " temperature.")
+                    logging.info("Clustering incidents with a " + str(temperature) + " temperature.")
                     cluster = ClusterCommand()
                     cluster.run(args, parser)
 

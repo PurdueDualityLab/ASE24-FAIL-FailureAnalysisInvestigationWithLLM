@@ -73,10 +73,10 @@ class exp_RunQueriesCommand:
             "software side effect"
         ]
 
-        start_years = list(range(2010, 2017)) #2017-4-01%20before%3A2017-5-01
-        end_years = list(range(2010, 2017))
-        start_months = list(range(12, 13)) #1, 13)) 
-        end_months = list(range(13, 14)) #2, 14)) 
+        start_years = list(range(2022, 2023)) #after%3A2019-8-01%20before%3A2019-9-01 # Check 2017 to 2019 logs for all months
+        end_years = list(range(2022, 2023))
+        start_months = list(range(7, 13)) #1, 13)) 
+        end_months = list(range(8, 14)) #2, 14)) 
 
         sources = [
             "wired.com", 
