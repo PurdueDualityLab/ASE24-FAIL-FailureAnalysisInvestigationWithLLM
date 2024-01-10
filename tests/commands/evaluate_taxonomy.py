@@ -2,8 +2,9 @@ import argparse
 import logging
 import textwrap
 import pandas as pd
+from sklearn.metrics import confusion_matrix
 
-from failures.articles.models import Article, SearchQuery
+from failures.articles.models import Article, SearchQuery, Incident
 
 
 class EvaluateTaxonomyCommand:
@@ -53,13 +54,25 @@ class EvaluateTaxonomyCommand:
         """
         # Creating metrics to return
         metrics = {}
+
+        # Query for incident IDs matching manual db IDs
+        incident_ids = list(
+            Article.objects.filter(id__in=args.articles)
+            .exclude(incident__isnull=True)
+            .values_list('incident_id', flat=True)
+            .distinct()
+        )
+
+        # Get incidents
+        incidents = Incident.objects.filter(id__in=incident_ids)
         
         # Define the file path
         file_path = "./tests/manual_evaluation/experiment_data_manual_articles_Analyst-B.xlsx" #UPDATE
 
         # Define the columns to read
         columns_to_read = [
-            "id",
+            # "id", # UPDATE WITH MANUAL
+            "Incident ID",
             # "Describes Failure", # Comment back in when manual set is complete
             # "Analyzable Failure", # Comment back in when manual set is complete
             "Phase Option",
@@ -90,22 +103,52 @@ class EvaluateTaxonomyCommand:
             return metrics
 
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1 #UPDATE
-        df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
+        # df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)] # UPDATE WITH MANUAL
+        df = df[df['Incident ID'].apply(lambda x: isinstance(x, int) and x >= 0)]
         # df = df[df['Describes Failure'] == 1 & df['Analyzable Failure'] == 1]
-        print(df)
 
         # Check --articles
-        if args.articles:
-            df = df[df['id'].apply(lambda x: x in args.articles)]
+        # if args.articles:
+        #     # df = df[df['id'].apply(lambda x: x in args.articles)] # UPDATE WITH MANUAL
+        #     df = df[df['Incident ID'].apply(lambda x: x in args.articles)]
+        df = df[df['Incident ID'].apply(lambda x: x in incident_ids)]
 
-        # Get a list of article IDs from the manual database
-        article_ids = df['id'].tolist()
+        # List of taxonomies to iterate over
+        taxonomies = [
+            "Phase Option",
+            "Boundary Option",
+            "Nature Option",
+            "Dimension Option",
+            "Objective Option",
+            "Intent Option",
+            "Capability Option",
+            "Duration Option",
+            "Domain Option",
+            "CPS Option",
+            "Perception Option",
+            "Communication Option",
+            "Application Option",
+            "Behaviour Option"
+        ]
 
-        # Query for articles matching manual db IDs
-        matching_articles = Article.objects.filter(id__in=article_ids)
+        for taxonomy in taxonomies:
+            # Extract relevant column from the dataframe
+            df_taxonomy_values = df[taxonomy].tolist()
+            # print(df_taxonomy_values)
+            # return
 
-        print(matching_articles)
+            # Extract corresponding field values from the incidents
+            incidents_taxonomy_values = list(incidents.values_list(taxonomy, flat=True))
 
-        return
+            # Compute confusion matrix
+            cm = confusion_matrix(incidents_taxonomy_values, df_taxonomy_values)
+
+            # Store or print the confusion matrix as needed
+            metrics[taxonomy] = cm
+
+        # Return the metrics
+
+
+        return metrics
 
         
