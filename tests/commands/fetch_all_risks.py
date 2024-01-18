@@ -2,6 +2,8 @@ import os
 import requests
 import gzip
 import shutil
+import argparse
+import textwrap
 
 class FetchAllRisks:
     def prepare_parser(self, parser: argparse.ArgumentParser):
