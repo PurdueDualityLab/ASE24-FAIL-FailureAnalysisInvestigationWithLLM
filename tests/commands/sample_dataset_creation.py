@@ -119,12 +119,12 @@ class SampleDatasetCreationCommand:
 
         # Download incidents to experiment_data_auto_incidents.csv
         auto_incidents_csv = "./tests/auto_evaluation/experiment_data_auto_incidents.csv"
-        # self.__download_incidents_to_csv(incidents, auto_incidents_csv)
+        self.__download_incidents_to_csv(incidents, auto_incidents_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incidents)) + " incidents to experiment_data_auto_incidents.csv")
 
         # Download articles to experiment_data_auto_articles.csv
         auto_articles_csv = "./tests/auto_evaluation/experiment_data_auto_articles.csv"
-        # self.__download_articles_to_csv(incident_related_articles, auto_articles_csv)
+        self.__download_articles_to_csv(incident_related_articles, auto_articles_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incident_related_articles)) + " articles to experiment_data_auto_articles.csv")
 
         # Get random list of articles classified as non-failure reporting
@@ -145,12 +145,12 @@ class SampleDatasetCreationCommand:
 
         # Download manual dataset to experiment_data_manual_articles.csv
         manual_articles_csv = "./tests/manual_evaluation/experiment_data_manual_articles.csv"
-        # self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
+        self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(manual_articles)) + " articles to experiment_data_manual_articles.csv")
         
         return 0
 
-    def __update_incident_publish_dates(self):
+    def __update_incident_publish_dates(self): #TODO: What about for incidents that have pub date set, but an article with earlier date exists in incident. Need to do a clean up run, and intergrate into Merge
         """
         Updates all incidents with published date of earliest article. 
 

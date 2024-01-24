@@ -80,7 +80,7 @@ class MergeKoCommand:
 
             for article2 in list(articles_dict.values())[i + 1:]:
                 if (article2.published - article1.published).days <= window:
-                    if calculate_tfidf_similarity(article1.body, article2.body) >= 0.25:
+                    if self.calculate_tfidf_similarity(article1.body, article2.body) >= 0.25:
                         graph.add_edge(article1.id, article2.id)
                         window = (article2.published - article1.published).days + 7
                 else: 
