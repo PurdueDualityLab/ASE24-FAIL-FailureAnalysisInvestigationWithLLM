@@ -60,7 +60,7 @@ class EvaluateTemperatureCommand:
         parser.add_argument(
             "--temp",
             type=float,
-            default=-1,
+            default=0,
             help="Sets the temperature for ChatGPT",
         )
         parser.add_argument(

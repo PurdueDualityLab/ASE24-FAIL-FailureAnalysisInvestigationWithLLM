@@ -79,6 +79,9 @@ class ClassifyFailureCommand:
             else
             Article.objects.filter(describes_failure=None, scrape_successful=True)
         )
+
+        if args.all or args.year: #TODO: implement similar logic in other commands
+            queryset.update(describes_failure=None)  #This is to prevent having to redo it all when a crash occurs, if a crash occurs comment this
         
         
         # Initializes ChatGPT Classifier
@@ -107,9 +110,10 @@ class ClassifyFailureCommand:
                 failure_positive_classifications_ChatGPT += 1
                 logging.info("ChatGPT Classifier: Classification met as software failure for article: " + str(article))
 
+            
 
         logging.info("ChatGPT successfully classified %d articles as describing a software failure.", failure_positive_classifications_ChatGPT)
-
+        
         #logging.info("Cleaning up database")
         self.process_incident()
 

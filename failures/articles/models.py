@@ -510,7 +510,7 @@ class Article(models.Model):
         else:
             self.scrape_successful = True
 
-        article_text = "Published on " + str(article_scrape.publish_date) + ". " + article_text
+        article_text = "Published on " + str(article_scrape.published_date) + ". " + article_text #TODO: Error: Fixed from "publish" to "published" on 1/24/24
 
         self.save()
 
