@@ -59,6 +59,14 @@ class EvaluateTaxonomyCommand:
         # Creating metrics to return
         metrics = {}
 
+        # Store metrics
+        metrics['Metrics'] = {
+                'accuracy': 'accuracy',
+                'precision': 'precision',
+                'recall': 'recall',
+                'f1_score': 'f1_score'
+            }
+
         # Get list of correctly merged incidents
         auto_incident_set, man_incident_set = self.get_oto_ids()
 
@@ -164,6 +172,10 @@ class EvaluateTaxonomyCommand:
                 'recall': recall,
                 'f1_score': f1
             }
+
+        # Store metrics in a CSV
+        metrics_df = pd.DataFrame(metrics)
+        metrics_df.to_csv('./tests/performance/taxonomy.csv', index=False)
 
         # Return the metrics
         return metrics
