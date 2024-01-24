@@ -2,19 +2,15 @@ import argparse
 import logging
 import textwrap
 import pandas as pd
-import openpyxl
-import json
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+import openai
 
-from failures.articles.models import Article, SearchQuery
-from failures.networks.models import ChatGPT
-
-from typing import List
-from langchain.llms import OpenAI
-from langchain.output_parsers import PydanticOutputParser
-from langchain.prompts import PromptTemplate
-from langchain.pydantic_v1 import BaseModel, Field, validator
+from failures.articles.models import Article, SearchQuery, Incident
 
 class EvaluatePostmortemCommand:
+    # Define the file path for the manual dataset
+    MANUAL_DATASET_FILE_PATH = "./tests/manual_evaluation/experiment_data_manual_articles_Analyst-B.xlsx"  # UPDATE
+
     def prepare_parser(self, parser: argparse.ArgumentParser):
         """
         Prepare the argument parser for the evaluate postmortem command.
@@ -65,119 +61,259 @@ class EvaluatePostmortemCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
-        # Creating metrics to return
         metrics = {}
 
-        # Define the path to your Excel file
-        excel_file_path = "./tests/manual_evaluation/Pilot_Taxonomy_Manual.xlsx"
-
-        # Load the Excel workbook
-        workbook = openpyxl.load_workbook(excel_file_path)
-
-        # Select the worksheet (assuming the sheet name is "Sheet1")
-        worksheet = workbook['Sheet1']
-
-        # Initialize a list to store dictionaries
-        data_list = []
-
-        # Iterate through columns starting from the 2nd column (1B, 1C, 1D, ...)
-        col_num = 2
-        while worksheet.cell(row=1, column=col_num).value is not None:
-            data_dict = {}
-            for row_num in range(2, 24):
-                # Get the title from row 2 (2A, 3A, 4A, ...)
-                title_cell = worksheet.cell(row=row_num, column=1)
-                title = title_cell.value
-
-                # Get the corresponding value from the current row
-                value_cell = worksheet.cell(row=row_num, column=col_num)
-                value = value_cell.value
-
-                # Add the data to the dictionary
-                data_dict[title] = value
-
-            # Append the dictionary to the list
-            data_list.append(data_dict)
-
-            # Move to next column
-            col_num += 1
-
-        # Close the workbook
-        workbook.close()
-
-        if not data_list:
-            logging.info("evaluate_postmortem: Could not fetch manual information.")
-            return
-
-        self.__compare_similarity_test(data_list[0], data_list[1])
-
-    def __evaluate_response(self, response: dict):
-        """
-        Evalaute the ChatGPT similarity resposne
-
-        Args:
-            response (dict): LangChain formatted response for similarity metrics of all categories for an article
-        """
-
-    def __compare_similarity_test(self, manual: dict, automated: dict, specific: str = None):
-        """
-        Use ChatGPT to compare the similarity between the manual postmortem and
-        the automated postmortem
-
-        Args:
-            manual (dict): The manual postmortem data
-            automated (dict): The LLM generated postmortem data
-            specifc (str, optional): Optional input parameter to add specific details to prompt
-        """
-        # Create a ChatGPT instance
-        chatGPT = ChatGPT() 
-
-        # Define the query
-        original_query = """
-        You will be provided with an answer denoted by \"Answer:\". Check if the following pieces of information denoted by \"Statements: \" are directly contained in the answer.
-        For each of these points perform the following steps:
-        """
-
-        # Set up parser + inject instructions into prompt template
-        parser = PydanticOutputParser(pydantic_object=SimilarQuery)
-
-        prompt = PromptTemplate(
-            template="Answer the user query.\n{format_instructions}\n{statement}\n{answer}\n",
-            input_variables=["statement", "answer"],
-            partial_variables={"format_instructions": parser.get_format_instructions()},
-        )
-
-        # Define set of categories to score
-        categories = ["system", "time", "se-causes", "nse-causes", "impact", "mitigation"]
-
-        # Defining return object
-        response = {}
-
-        # Score all categories
-        for (manual_key, manual_val), (auto_key, auto_val) in zip(manual.items(), automated.items()):
-            if manual_key not in categories:
-                continue
-
-            _input = prompt.format_prompt(statement="Statement: " + str(manual_val), answer="Answer: " + str(auto_val))
-
-            # Define input data
-            input_data = {
-                "messages": [
-                    {"role": "user", "content": _input.to_string()}
-                ],
-                "model": "gpt-3.5-turbo",
-                "temperature": 0
+        # Store metrics
+        metrics['Metrics'] = {
+            'invalid': 'invalid',
+            'disjoint': 'disjoint',
+            'equal': 'equal',
+            'subset': 'subset',
+            'superset': 'superset',
+            'overlapping': 'overlapping'
             }
 
-            # Get and parse output
-            output = chatGPT.predict(input_data)
-            parser.parse(output)
-            response[manual_key] = json.loads(output)
+        # Get list of correctly merged incidents
+        auto_incident_set, man_incident_set = self.get_oto_ids()
 
-        return response
+        # Get incidents
+        incidents = Incident.objects.filter(id__in=auto_incident_set)
+        
+        # Define the file path
+        file_path = EvaluatePostmortemCommand.MANUAL_DATASET_FILE_PATH
 
-class SimilarQuery(BaseModel):
-    statement_in_answer: list = Field(description="1. List the components of the statement not in the answer. Return the statements in a Python list format.")
-    answer_in_statement: list = Field(description="2. List the components of the answer not in the statement. Return the statements in a Python list format.")
-    similar_bool: str = Field(description="Do both the statement and the answer contain the same information? Write \"yes\" if the answer is yes, otherwise write \"no\".")
-    count: int = Field(description="Finally, provide a count of how many \"yes\" answers there are.")
+        # Mapping between Pandas column names and Django model field names
+        column_to_field_mapping = {
+            "Incident ID": "id",
+            "System": "system",
+            "Time": "time",
+            "SEcauses": "SEcauses",
+            "NSEcauses": "NSEcauses",
+            "Impacts": "impacts",
+            "Mitigations": "mitigations",
+            "ResponsibleOrg": "ResponsibleOrg",
+            "ImpactedOrg": "ImpactedOrg",
+            "Sources": "references",
+        }
+
+        # Define the columns to read
+        columns_to_read = [
+            "Incident ID",
+            "System",
+            "Time",
+            "SEcauses",
+            "NSEcauses",
+            "Impacts",
+            "Mitigations",
+            "ResponsibleOrg",
+            "ImpactedOrg",
+            "Sources",
+        ]
+
+        # Read the Excel file into a Pandas DataFrame
+        try:
+            df = pd.read_excel(file_path, usecols=columns_to_read)
+            logging.info("Data loaded successfully.")
+        except FileNotFoundError:
+            logging.info(f"Error: The file '{file_path}' was not found.")
+            return metrics
+        except Exception as e:
+            logging.info(f"An error occurred: {str(e)}")
+            return metrics
+
+        # Rename columns using the mapping
+        df.rename(columns=column_to_field_mapping, inplace=True)
+
+        # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1 #UPDATE
+        df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
+
+        # Filter by incidents
+        df = df[df['id'].apply(lambda x: x in man_incident_set)]
+
+        # List of taxonomies to iterate over
+        taxonomies = list(column_to_field_mapping.values())
+        
+        # Remove 'id' from taxonomies
+        taxonomies.remove('id')
+
+        for taxonomy in taxonomies:
+            logging.info("evaluate_taxonomy: Evaluating %s for %d incidents", taxonomy, len(auto_incident_set))
+            # Extract relevant column from the dataframe (and fill in NaN values as Unknown)
+            df_taxonomy_values = df[taxonomy].fillna('unknown').tolist()
+
+            # Extract corresponding field values from the incidents (and fill in None values as Unknown)
+            incidents_taxonomy_values = list(incidents.values_list(taxonomy, flat=True))
+            incidents_taxonomy_values = ['unknown' if value is None else value for value in incidents_taxonomy_values]
+
+            # Calculate additional metrics
+            # accuracy = accuracy_score(incidents_taxonomy_values, df_taxonomy_values)
+            # precision = precision_score(incidents_taxonomy_values, df_taxonomy_values, average='weighted', zero_division=1)
+            # recall = recall_score(incidents_taxonomy_values, df_taxonomy_values, average='weighted', zero_division=1)
+            # f1 = f1_score(incidents_taxonomy_values, df_taxonomy_values, average='weighted', zero_division=1)
+            count = [0] * 6
+
+            for answer, expert in zip(incidents_taxonomy_values, df_taxonomy_values):
+                resp = self.evaluate_model_output(answer, expert)
+                count[resp['type_of_overlap']] += 1
+
+                # Logging statements
+                logging.info("Answer: %s", answer)
+                logging.info("Expert Answer: %s", expert)
+                logging.info("Type of Overlap: %s", resp["type_of_overlap"])
+                logging.info("Overlap Reason: %s", resp['overlap_reason'])
+                logging.info("Contradiction Reason: %s", resp['contradiction_reason'])
+
+            count = [x / len(incidents_taxonomy_values) for x in count]
+
+            # Store the confusion matrix as needed
+            metrics[taxonomy] = {
+                'invalid': count[0],
+                'disjoint': count[1],
+                'equal': count[2],
+                'subset': count[3],
+                'superset': count[4],
+                'overlapping': count[5]
+            }
+
+        # Store metrics in a CSV
+        metrics_df = pd.DataFrame(metrics)
+        metrics_df.to_csv('./tests/performance/postmortem.csv', index=False)
+
+        # Return the metrics
+        return metrics
+
+    def get_oto_ids(self):
+        """
+        Get a list of Django incident IDs that have a one-to-one mapping of article IDs to the manual dataset.
+
+        Returns:
+            list: List of Django incident IDs.
+        """
+        # Define the file path for the manual dataset
+        manual_dataset_file_path = EvaluatePostmortemCommand.MANUAL_DATASET_FILE_PATH
+
+        # Define the column name in the manual dataset
+        manual_dataset_column_name = "Article IDs"
+
+        # Read the manual dataset into a Pandas DataFrame
+        try:
+            manual_df = pd.read_excel(manual_dataset_file_path, usecols=[manual_dataset_column_name])
+            logging.info("Manual dataset loaded successfully.")
+        except FileNotFoundError:
+            logging.info(f"Error: The file '{manual_dataset_file_path}' was not found.")
+            return []
+
+        # Filter out rows with NaN values in the specified column
+        manual_df = manual_df.dropna(subset=[manual_dataset_column_name])
+
+        # Flatten the list of article IDs
+        article_ids = manual_df[manual_dataset_column_name].tolist()
+
+        # Convert to sets of ids
+        article_ids_sets = [set(map(int, str(item).split(', '))) if isinstance(item, str) else {item} for item in article_ids]
+
+        # List of one-to-one incident ids to return
+        auto_incident_ids = []
+        man_incident_ids = []
+
+        # Iterate through and find one to one incidents
+        for i, article_set in enumerate(article_ids_sets):
+
+            # Check for None
+            if not article_ids_sets:
+                continue
+
+            # Get incident ids of article set
+            incident_ids = list(
+                Article.objects.filter(id__in=article_set)
+                .exclude(incident__isnull=True)
+                .values_list('incident_id', flat=True)
+                .distinct()
+            )
+
+            # Ensure all articles map to the same incident
+            if len(incident_ids) != 1:
+                continue
+            
+            incident_ids = incident_ids[0]
+
+            # Get set of articles related to incident id
+            auto_articles_set = set(
+                Article.objects.filter(incident__id=incident_ids)
+                .exclude(incident__isnull=True)
+                .values_list('id', flat=True)
+                .distinct()
+            )
+
+            # Compare sets
+            if auto_articles_set == article_set:
+                auto_incident_ids.append(incident_ids)
+                man_incident_ids.append(i)
+                
+
+        return auto_incident_ids, man_incident_ids
+
+    def evaluate_model_output(self, answer, expert_answer):
+        """
+        Evaluate the model output with reference to gold-standard answers using ChatGPT API.
+
+        Args:
+            answer (str): Model-generated answer.
+            expert_answer (str): Gold-standard answer.
+
+        Returns:
+            dict: JSON object containing information about the evaluation.
+        """
+
+        # openai.api_key = "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"
+        openai.api_key = os.getenv('OPENAI_API_KEY')
+
+        result = {
+            "type_of_overlap": None,
+            "overlap_reason": None,
+            "contradiction_reason": None
+        }
+
+        # Step 1: Reason about the type of overlap using ChatGPT
+        prompt = f"Respond with just the number to indicate the relationship between the information in the submitted answer and the expert answer: disjoint (1), equal (2), subset (3), superset (4), or overlapping (5). Answer: {answer} Expert Answer: {expert_answer}"
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0,
+            max_tokens=1
+        )
+        result["type_of_overlap"] = response['choices'][0]['message']['content'].strip()
+        type_of_overlap = result["type_of_overlap"]
+
+        # Save as integer
+        try:
+            result["type_of_overlap"] = int(result["type_of_overlap"])
+        except ValueError:
+            result["type_of_overlap"] = 0
+
+        prompt = f"Reason step-by-step about why the information in the submitted answer compared to the expert answer is {type_of_overlap}. Answer: {answer} Expert Answer: {expert_answer}"
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0,
+            max_tokens=100
+        )
+        result["overlap_reason"] = response['choices'][0]['message']['content'].strip()
+
+        # Step 2: Reason about contradiction using ChatGPT
+        prompt = f"Reason step-by-step about whether the submitted answer contradicts any aspect of the expert answer. Submitted Answer: {answer} Expert Answer: {expert_answer}"
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0,
+            max_tokens=100
+        )
+        result["contradiction_reason"] = response['choices'][0]['message']['content'].strip()
+
+        return result
