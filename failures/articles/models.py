@@ -126,10 +126,15 @@ class Incident(models.Model):
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
-    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+    preventions = models.TextField(_("Preventions"), blank=True, null=True)
+    fixes = models.TextField(_("Fixes"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
     references = models.TextField(_("References"), blank=True, null=True)
+
+    recurring_option = models.TextField(_("Recurring Option"), blank=True, null=True) # Needs options
+    recurring_rationale = models.TextField(_("Recurring Rationale"), blank=True, null=True)
+
 
     #Taxonomy fields: Options
     phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
