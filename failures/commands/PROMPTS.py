@@ -8,7 +8,9 @@ QUESTIONS = {
         "SEcauses":         "What were the software causes of the failure incident? (answer in a list)",
         "NSEcauses":        "What were the non-software causes of the failure incident? (answer in a list)",
         "impacts":          "What happened due to the software failure incident? (answer in a list)",
-        "mitigations":      "What could have prevented the software failure incident? (answer in a list)", 
+        "preventions":      "What could have prevented the software failure incident? (answer in a list)", 
+        "solutions":        "What could fix the software failure incident? (answer in a list)",
+        "recurring":        "Was the software failure incident a recurring occurrence? If 'unknown' (option -1). If 'false' (option false). If true, then has the software failure incident occurred before 'within the same impacted entity' (option 0) or 'at other entity(s)' (option 1) or 'unknown' (option true)?",
         "references":       "From where do the articles gather information about the software failure incident? (answer in a list)",
         "phase":            "Was the software failure due to 'system design' (option 0) or 'operation' (option 1) faults or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
         "boundary":         "Was the software failure due to faults from 'within the system' (option 0) or from 'outside the system' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
@@ -17,12 +19,12 @@ QUESTIONS = {
         "objective":        "Was the software failure due to 'malicious' (option 0) or 'non-malicious' (option 1) faults or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
         "intent":           "Was the software failure due to 'deliberate' (option 0) or 'accidental' (option 1) fault or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
         "capability":       "Was the software failure 'accidental' (option 0) or due to 'development incompetence' (option 1) or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
-        "duration":         "Was the software failure 'permanent' (option 0) or 'temporary' (option 1) or 'intermittent' (option 2) or 'unknown' (option -1)?",
+        "duration":         "Was the software failure due to 'permanent' (option 0) or 'temporary' (option 1) or 'intermittent' (option 2) faults or 'unknown' (option -1)?",
         "domain":           "What application domain is the system: 'automotive' (option 0) or 'critical infrastructure' (option 1) or 'healthcare' (option 2) or 'energy' (option 3) or 'transportation' (option 4) or 'infrastructure' (option 5) or 'aerospace' (option 6) or 'telecommunications' (option 7) or 'consumer device' (option 8) or 'other' (option 9) or 'unknown' (option -1)?",
         "cps":              "Does the system contain software that controls physical components (cyber physical system) or is it an IoT system: 'true' (option true) or 'false' (option false) or 'unknown' (option -1)?",
         "perception":       "Was the software failure due to 'sensors' (option 0) or 'actuators' (option 1) or 'processing unit' (option 2) or 'network communication' (option 3) or 'embedded software' (option 4) or 'unknown' (option -1)?",
-        "communication":    "Was there a software failure at the communication level? If false, (option false). If true, then was the failure at the 'link level' (option 1) or 'connectivity level' (option 2) or 'unknown' (option -1)?",
-        "application":      "Was there a software failure at the application level: 'true' (option true) or 'false' (option false) or 'unknown' (option -1)?",
+        "communication":    "Was there a software failure at the communication level? If 'unknown' (option -1). If 'false' (option false). If true, then was the failure at the 'wired/wireless link level' (option 0) or 'connectivity level' (option 1) or 'unknown' (option true)?",
+        "application":      "Was the software failure at the application level due to bugs, operating system errors, unhandled exceptions, or incorrect usage: 'true' (option true) or 'false' (option false) or 'unknown' (option -1)?",
         "behaviour":        "Was the software failure due to a 'crash' (option 0) or 'omission' (option 1) or 'timing' (option 2) or 'incorrect value' (option 3) or 'Byzantine' fault (option 4) or 'unknown' (option -1)?"
 }
 
@@ -42,9 +44,10 @@ TAXONOMY_OPTIONS = {
             "domain": {"0": "automotive", "1": "critical infrastructure", "2": "healthcare", "3": "energy", "4": "transportation", "5": "infrastructure", "6": "aerospace", "7": "telecommunications", "8": "consumer device", "-1": "unknown"},
             "cps": {"true": "true", "false": "false", "-1": "unknown"},
             "perception": {"0": "sensors", "1": "actuators", "2": "processing unit", "3": "network communication", "4": "embedded software", "-1": "unknown"},
-            "communication": {"false": "false", "1": "link level", "2": "connectivity level", "-1": "unknown"},
+            "communication": {"true": "true", "false": "false", "0": "wired/wireless link level", "1": "connectivity level", "-1": "unknown"},
             "application": {"true": "true", "false": "false", "-1": "unknown"},
-            "behaviour": {"0": "crash", "1": "omission", "2": "timing", "3": "value", "4": "byzantine fault", "-1": "unknown"}
+            "behaviour": {"0": "crash", "1": "omission", "2": "timing", "3": "incorrect value", "4": "byzantine fault", "-1": "unknown"},
+            "recurring": {"true": "true", "false": "false", "0": "within the same impacted entity", "1": "at other entity(s)", "-1": "unknown"},
         }
 
 FAILURE_SYNONYMS = "hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
