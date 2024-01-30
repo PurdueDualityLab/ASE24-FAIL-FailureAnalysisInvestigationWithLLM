@@ -84,7 +84,6 @@ class SampleDatasetCreationCommand:
 
         # return
 
-
         # Update publish dates
         self.__update_incident_publish_dates()
         logging.info("SampleDatasetCreationCommand: Incident published dates have been updated")
@@ -145,8 +144,13 @@ class SampleDatasetCreationCommand:
 
         # Download manual dataset to experiment_data_manual_articles.csv
         manual_articles_csv = "./tests/manual_evaluation/experiment_data_manual_articles.csv"
-        # self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
+        self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(manual_articles)) + " articles to experiment_data_manual_articles.csv")
+
+        # Download manual dataset to experiment_data_manual_articles.csv
+        auto_articles_csv = "./tests/auto_evaluation/experiment_data_auto_articles.csv"
+        self.__download_articles_and_vals_to_csv(manual_articles, auto_articles_csv)
+        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(auto_articles_csv)) + " articles to experiment_data_auto_articles.csv")
         
         return 0
 
