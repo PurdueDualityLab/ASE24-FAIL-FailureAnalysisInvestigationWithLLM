@@ -84,13 +84,11 @@ class MergeCommand:
                 Article.objects.filter(describes_failure=True, analyzable_failure=True, incident__isnull=True)
             )
 
-        #TODO: SORT BY PUBLISHED DATE FIRST!!!
-
         questions = {key: QUESTIONS[key] for key in ["title", "summary"]}
 
         questions_chat = questions
         
-        incidents = list(Incident.objects.prefetch_related('articles'))
+        incidents = list(Incident.objects.prefetch_related('articles').order_by('-published'))
 
         #postmortem_keys = ["summary", "time", "system", "ResponsibleOrg", "ImpactedOrg"]
         #weights = [0.20, 0.20, 0.20, 0.20, 0.20]
@@ -157,6 +155,11 @@ class MergeCommand:
                         if similar_found is True:
                             logging.info("Found incident match with a score of " + str(mean_score) + " in incident: " + str(incident))
                             article_new.incident = incident
+
+                            if article_new.published < incident.published: #If published date of new article is older
+                                incident.published = article_new.published
+                                incident.save()
+
                             article_new.save()
 
                             break
@@ -179,7 +182,7 @@ class MergeCommand:
 
                 logging.info("Incident match not found, creating new incident: %s.", article_new.title)
 
-                incident = Incident.objects.create(title=article_new.title)
+                incident = Incident.objects.create(title=article_new.title, published=article_new.published)
 
                 article_new.incident = incident
                 article_new.save()

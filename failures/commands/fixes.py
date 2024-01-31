@@ -71,6 +71,9 @@ class FixesCommand:
 
         logging.info("\nClassifying articles on whether report on software failures.")
         
+        #TODO: Redo publish date for all incidents, with the earliest date of all articles in each incident
+
+
         # Gets list of article to classify
         queryset = (
             Article.objects.filter(scrape_successful=True)
