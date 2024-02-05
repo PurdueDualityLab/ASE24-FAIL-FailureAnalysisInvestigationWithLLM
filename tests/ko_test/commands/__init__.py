@@ -7,6 +7,9 @@ from tests.ko_test.commands.scrape import ScrapeCommand
 from tests.ko_test.commands.classifyFailure import ClassifyFailureCommand
 from tests.ko_test.commands.merge import MergeCommand
 from tests.ko_test.commands.sample_dataset_creation import SampleDatasetCreationCommand
+from tests.ko_test.commands.test import TestCommand
+from tests.ko_test.commands.evaluate_merge import EvaluateMergeCommand
+
 
 _EPILOG = textwrap.dedent(
     """\
@@ -30,7 +33,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), MergeCommand(), SampleDatasetCreationCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), MergeCommand(), SampleDatasetCreationCommand(), TestCommand(), EvaluateMergeCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
