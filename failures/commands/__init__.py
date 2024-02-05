@@ -13,6 +13,7 @@ from failures.commands.postmortemIncident import PostmortemIncidentCommand
 from failures.commands.cluster import ClusterCommand
 from failures.commands.merge import MergeCommand
 from failures.commands.vectordb import VectordbCommand
+from failures.commands.fixes import FixesCommand
 
 from failures.commands.stats import StatsCommand
 
@@ -39,7 +40,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), StatsCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), StatsCommand(), FixesCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
