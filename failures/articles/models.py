@@ -798,6 +798,514 @@ class Article(models.Model):
 
         return True
 
+class Incident_Ko(models.Model):
+
+    published = models.DateTimeField(_("Published"), help_text=_("Date and time when the earliest article was published."), blank=True, null=True)
+    #TODO: Find the earliest published date and use the month and year
+    
+    #Open ended postmortem fields
+    title = models.TextField(_("Title"), blank=True, null=True)
+    summary = models.TextField(_("Summary"), blank=True, null=True)
+    system = models.TextField(_("System"), blank=True, null=True)
+    time = models.TextField(_("Time"), blank=True, null=True)
+    SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
+    NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
+    impacts = models.TextField(_("Impacts"), blank=True, null=True)
+    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+    ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
+    ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
+    references = models.TextField(_("References"), blank=True, null=True)
+
+    #Taxonomy fields: Options
+    phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
+    boundary_option = models.TextField(_("Boundary Option"), blank=True, null=True)
+    nature_option = models.TextField(_("Nature Option"), blank=True, null=True)
+    dimension_option = models.TextField(_("Dimension Option"), blank=True, null=True)
+    objective_option = models.TextField(_("Objective Option"), blank=True, null=True)
+    intent_option = models.TextField(_("Intent Option"), blank=True, null=True)
+    capability_option = models.TextField(_("Capability Option"), blank=True, null=True)
+    duration_option = models.TextField(_("Duration Option"), blank=True, null=True)
+    domain_option = models.TextField(_("Domain Option"), blank=True, null=True)
+    cps_option = models.TextField(_("CPS Option"), blank=True, null=True)
+    perception_option = models.TextField(_("Perception Option"), blank=True, null=True)
+    communication_option = models.TextField(_("Communication Option"), blank=True, null=True)
+    application_option = models.TextField(_("Application Option"), blank=True, null=True)
+    behaviour_option = models.TextField(_("Behaviour Option"), blank=True, null=True)
+    
+
+    #Taxonomy fields: Explanations
+    phase_rationale = models.TextField(_("Phase Rationale"), blank=True, null=True)
+    boundary_rationale = models.TextField(_("Boundary Rationale"), blank=True, null=True)
+    nature_rationale = models.TextField(_("Nature Rationale"), blank=True, null=True)
+    dimension_rationale = models.TextField(_("Dimension Rationale"), blank=True, null=True)
+    objective_rationale = models.TextField(_("Objective Rationale"), blank=True, null=True)
+    intent_rationale = models.TextField(_("Intent Rationale"), blank=True, null=True)
+    capability_rationale = models.TextField(_("Capability Rationale"), blank=True, null=True)
+    duration_rationale = models.TextField(_("Duration Rationale"), blank=True, null=True)
+    domain_rationale = models.TextField(_("Domain Rationale"), blank=True, null=True)
+    cps_rationale = models.TextField(_("CPS Rationale"), blank=True, null=True)
+    perception_rationale = models.TextField(_("Perception Rationale"), blank=True, null=True)
+    communication_rationale = models.TextField(_("Communication Rationale"), blank=True, null=True)
+    application_rationale = models.TextField(_("Application Rationale"), blank=True, null=True)
+    behaviour_rationale = models.TextField(_("Behaviour Rationale"), blank=True, null=True)
+
+    #Embeddings
+    summary_embedding = models.TextField(_("Summary Embedding"), blank=True, null=True)
+    time_embedding = models.TextField(_("Time Embedding"), blank=True, null=True)
+    system_embedding = models.TextField(_("System Embedding"), blank=True, null=True)
+    ResponsibleOrg_embedding = models.TextField(_("ResponsibleOrg Embedding"), blank=True, null=True)
+    ImpactedOrg_embedding = models.TextField(_("ImpactedOrg Embedding"), blank=True, null=True)
+
+    SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
+    NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
+    impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
+    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
+
+    '''
+    incident_updated = models.BooleanField(
+        _("Incident_Ko Updated"),
+        null=True,
+        help_text=_(
+            "Whether a new article has been added to the incident."
+        ),
+    )
+
+    incident_stored = models.BooleanField(
+        _("Incident_Ko Stored"),
+        null=True,
+        help_text=_(
+            "Whether the incident has been stored into the vector database."
+        ),
+    )
+    '''
+
+
+
+    class Meta:
+        verbose_name = _("Incident_Ko")
+        verbose_name_plural = _("Incidents_Ko")
+        
+
+    def __str__(self):
+        return self.title
+
+class Article_Ko(models.Model):
+
+    incident = models.ForeignKey(Incident_Ko, blank=True, null=True, on_delete=models.SET_NULL, related_name='articles')
+
+    published = models.DateTimeField(
+        _("Published"), help_text=_("Date and time when the article was published.")
+    )
+
+    source = models.URLField(
+        _("Source"),
+        help_text=_("URL of the source of the article, such as nytimes.com."),
+    )
+
+    article_summary = models.TextField(
+        _("article_summary"),
+        blank=True,
+        help_text=_("Summary of the article generated by an OS summarizer model."),
+    )
+
+    body = models.TextField(
+        _("Body"), blank=True, help_text=_("Body of the article scraped from the URL.")
+    )
+
+    embedding = models.FileField(
+        _("Embedding"),
+        upload_to="embeddings",
+        null=True,
+        help_text=_("NumPy array of the embedding of the article stored as a file."),
+        editable=False,
+    )
+
+    scraped_at = models.DateTimeField(
+        _("Scraped at"),
+        auto_now_add=True,
+        help_text=_("Date and time when the article was scraped."),
+        editable=False,
+    )
+
+    scrape_successful = models.BooleanField(
+        _("Scrape Successful"),
+        null=True,
+        help_text=_(
+            "Whether the article was scraped successfully."
+        ),
+    )
+
+    relevant_to_story = models.BooleanField(
+        _("Relevant to story"),
+        null=True,
+        help_text=_(
+            "Whether the article is relevant to the ko database story."
+        ),
+    )
+
+    describes_failure = models.BooleanField(
+        _("Describes Failure"),
+        null=True,
+        help_text=_(
+            "Whether the article describes a failure. This field is set by ChatGPT."
+        ),
+    )
+
+    analyzable_failure = models.BooleanField(
+        _("Analyzable Failure"),
+        null=True,
+        help_text=_(
+            "Whether the article can be used to conduct a failure analysis. This field is set by ChatGPT."
+        ),
+    )
+
+    article_stored = models.BooleanField(
+        _("Article_Ko Stored"),
+        null=True,
+        help_text=_(
+            "Whether the article has been stored into the vector database."
+        ),
+    )
+
+
+    similarity_score = models.FloatField(_("Cosine similarity score"),null=True,blank=True)
+    
+    headline = models.TextField(_("Headline"), blank=True, null=True)
+    
+    #Open ended postmortem fields
+    title = models.TextField(_("Title"), blank=True, null=True)
+    summary = models.TextField(_("Summary"), blank=True, null=True)
+    system = models.TextField(_("System"), blank=True, null=True)
+    time = models.TextField(_("Time"), blank=True, null=True)
+    SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
+    NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
+    impacts = models.TextField(_("Impacts"), blank=True, null=True)
+    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+    ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
+    ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
+    references = models.TextField(_("References"), blank=True, null=True)
+
+    #Taxonomy fields: Options
+    phase_option = models.TextField(_("Phase Option"), blank=True, null=True)
+    boundary_option = models.TextField(_("Boundary Option"), blank=True, null=True)
+    nature_option = models.TextField(_("Nature Option"), blank=True, null=True)
+    dimension_option = models.TextField(_("Dimension Option"), blank=True, null=True)
+    objective_option = models.TextField(_("Objective Option"), blank=True, null=True)
+    intent_option = models.TextField(_("Intent Option"), blank=True, null=True)
+    capability_option = models.TextField(_("Capability Option"), blank=True, null=True)
+    duration_option = models.TextField(_("Duration Option"), blank=True, null=True)
+    domain_option = models.TextField(_("Domain Option"), blank=True, null=True)
+    cps_option = models.TextField(_("CPS Option"), blank=True, null=True)
+    perception_option = models.TextField(_("Perception Option"), blank=True, null=True)
+    communication_option = models.TextField(_("Communication Option"), blank=True, null=True)
+    application_option = models.TextField(_("Application Option"), blank=True, null=True)
+    behaviour_option = models.TextField(_("Behaviour Option"), blank=True, null=True)
+    
+
+    #Taxonomy fields: Explanations
+    phase_rationale = models.TextField(_("Phase Rationale"), blank=True, null=True)
+    boundary_rationale = models.TextField(_("Boundary Rationale"), blank=True, null=True)
+    nature_rationale = models.TextField(_("Nature Rationale"), blank=True, null=True)
+    dimension_rationale = models.TextField(_("Dimension Rationale"), blank=True, null=True)
+    objective_rationale = models.TextField(_("Objective Rationale"), blank=True, null=True)
+    intent_rationale = models.TextField(_("Intent Rationale"), blank=True, null=True)
+    capability_rationale = models.TextField(_("Capability Rationale"), blank=True, null=True)
+    duration_rationale = models.TextField(_("Duration Rationale"), blank=True, null=True)
+    domain_rationale = models.TextField(_("Domain Rationale"), blank=True, null=True)
+    cps_rationale = models.TextField(_("CPS Rationale"), blank=True, null=True)
+    perception_rationale = models.TextField(_("Perception Rationale"), blank=True, null=True)
+    communication_rationale = models.TextField(_("Communication Rationale"), blank=True, null=True)
+    application_rationale = models.TextField(_("Application Rationale"), blank=True, null=True)
+    behaviour_rationale = models.TextField(_("Behaviour Rationale"), blank=True, null=True)
+
+    #Embeddings
+    summary_embedding = models.TextField(_("Summary Embedding"), blank=True, null=True)
+    time_embedding = models.TextField(_("Time Embedding"), blank=True, null=True)
+    system_embedding = models.TextField(_("System Embedding"), blank=True, null=True)
+    ResponsibleOrg_embedding = models.TextField(_("ResponsibleOrg Embedding"), blank=True, null=True)
+    ImpactedOrg_embedding = models.TextField(_("ImpactedOrg Embedding"), blank=True, null=True)
+
+    SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
+    NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
+    impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
+    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
+
+
+    class Meta:
+        verbose_name = _("Article_Ko")
+        verbose_name_plural = _("Articles_Ko")
+
+    def __str__(self):
+        return self.headline #TODO: Check places where you use this: Do you want to get headline or title?
+
+    def summarize_body(self, summarizer: Summarizer):
+        self.article_summary: str = summarizer.run(self.body)
+        self.save()
+        return self.article_summary
+
+    def create_postmortem_embeddings_GPT(self, embedder: EmbedderGPT, postmortem_keys: list, query_all: bool): #TODO: Remove? No longer clustering by articles which is what this was used for
+
+        for postmortem_key in postmortem_keys:
+            answer_set = True
+
+            postmortem_embedding_key = postmortem_key + "_embedding"
+            if not getattr(self, postmortem_embedding_key):
+                answer_set = False
+            
+            if query_all or not answer_set: 
+
+                logging.info("Getting embedding for: " + postmortem_embedding_key)
+                
+                embeddings = embedder.run(getattr(self, postmortem_key))
+
+                setattr(self, postmortem_embedding_key, json.dumps(embeddings))
+            
+        self.save()
+
+
+    def cosine_similarity(self, other: "Article_Ko", option_key) -> float:
+        if not getattr(self, option_key) or not getattr(self, option_key):
+            raise ValueError("One or both articles have no " + option_key)
+        
+        embedding_self = json.loads(getattr(self, option_key))
+        embedding_other = json.loads(getattr(other, option_key))
+
+        similarity_score = openai_cosine_similarity(embedding_self, embedding_other)
+
+        if "summary" in option_key:
+            self.similarity_score = similarity_score
+        return similarity_score
+    
+        #return np.dot(embedding_self, embedding_other) / (np.linalg.norm(embedding_one) * np.linalg.norm(embedding_two))
+
+    #Open source classifier
+    def classify_as_failure_os(self, classifier: ZeroShotClassifier, labels: list[str]):
+        classify_data = {"text": self.body, "labels": labels}
+        prediction: tuple[str, float] = classifier.run(classify_data)
+        self.describes_failure_os = classifier.labels.index(prediction[0]) == 0
+        self.describes_failure_confidence = prediction[1]
+
+        self.save()
+        return self.describes_failure_os
+
+    # GPT based classifier for reports on software failure
+    def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
+
+        #Truncate article if it is too long
+        #article_text = self.body.split()[:2750]
+        #article_text = ' '.join(article_text)
+        
+        article_text = self.body
+
+        content = "You will help classify whether an article reports on a software failure."
+
+        messages = [
+                {"role": "system", 
+                "content": content}
+                ]
+
+        prompt = "Does the provided article report on a software failure (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
+                + "\n" \
+                + "Answer with just True or False." \
+                + "\n" \
+                + "Article_Ko: " + article_text
+        
+        #logging.info("\n")
+        #logging.info(prompt)
+
+        messages.append(
+                        {"role": "user", "content": prompt },
+                        )
+        
+        inputs["messages"] = messages
+        
+        self.describes_failure = classifier.run(inputs)
+
+        self.save()
+        return self.describes_failure
+
+
+    # GPT based classifier for: Does the article have enough information to conduct failure analysis
+    def classify_as_analyzable_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
+
+        #Truncate article if it is too long
+        #article_text = self.body.split()[:2750]
+        #article_text = ' '.join(article_text)
+        
+        article_text = self.body
+
+        content = "You will help classify whether an article contains information to conduct failure analysis about a software failure."
+
+        messages = [
+                {"role": "system", 
+                "content": content}
+                ]
+
+        ''' Prompt version 1:
+        prompt = "Does the provided article contain enough information about the provided criteria to conduct a failure analysis of the software failure incident(s) (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
+                + "Answer with just True or False." \
+                + "\n" \
+                + "Criteria: System that failed, cause of failure, and impact of failure." \
+                + "\n" \
+                + "Article_Ko: " + article_text
+        ''' 
+        #Prompt version 2:
+        prompt = "Does the provided article contain information about the provided criteria about the software failure (software failure could mean a " + FAILURE_SYNONYMS + ")?" \
+                + "Answer with just True or False." \
+                + "\n" \
+                + "Criteria: System that failed, cause of failure, and impact of failure." \
+                + "\n" \
+                + "Article_Ko: " + article_text
+
+
+        messages.append(
+                        {"role": "user", "content": prompt },
+                        )
+        
+        inputs["messages"] = messages
+        
+        self.analyzable_failure = classifier.run(inputs)
+
+        self.save()
+        return self.analyzable_failure
+
+
+    def postmortem_from_article_ChatGPT( #OUTDATED
+        self,
+        ChatGPT: ChatGPT,
+        inputs: dict,
+        questions: dict,
+        taxonomy_options: dict,
+        query_all: bool,
+        query_key: str,
+    ): 
+
+        logging.info("Extracting postmortem from article: %s.", self)
+
+        
+        article_body = self.body
+        
+        #Pre-process articles if they are too long
+        article_len = len(article_body.split())
+        if article_len > 2750:
+            article_begin = article_body.split()[:-(article_len-2500)]
+            article_end = article_body.split()[-(article_len-2500):]
+                
+            if len(article_end) > 2750: #if the last part of article is too long, just truncate it
+                article_end = article_end[:2500]
+
+            content = "You will summarize a part of an article."
+            messages = [
+                    {"role": "system", 
+                    "content": content}
+                    ]
+            messages.append(
+                            {"role": "user", "content": "summarize this text (retain information relevant to software failure) with a maximum of 500 words: " + ' '.join(article_end)},
+                            )
+            
+            inputs["messages"] = messages
+            reply = ChatGPT.run(inputs)
+
+            article_body = ' '.join(article_begin) + reply
+            logging.info("Reduced articled length for article: "+ str(self) + "; Old length: " + str(article_len) + " ; New length: " + str(len(article_body.split())) )
+
+
+        #Create postmortems
+        content = "You will answer questions about a software failure using information from on an article."
+
+        
+        if query_key in questions.keys():
+            question_keys = [query_key]
+        else:
+            question_keys = list(questions.keys())
+
+        #logging.info(question_keys)
+
+        postmortem = {}
+        for question_key in question_keys: #[list(questions.keys())[i] for i in [0,2,4,8,16,21]]: #list(questions.keys()):
+
+            #logging.info(question_key)
+            
+            #Check if the question has already been answered
+            answer_set = True
+            if question_key in taxonomy_options.keys():
+                question_option_key = question_key + "_option"
+                question_rationale_key = question_key + "_rationale"
+                if not getattr(self, question_option_key):
+                    answer_set = False
+            else:
+                if not getattr(self, question_key):
+                    answer_set = False
+
+            if query_all or (query_key in question_key) or not answer_set: 
+
+                logging.info("Querying question: " + str(question_key))
+
+                messages = [
+                        {"role": "system", 
+                        "content": content}
+                        ]
+
+                failure_synonyms = FAILURE_SYNONYMS
+                
+                prompt = "Answer the provided question using information from the provided article. Note that software failure could mean a " + failure_synonyms + "." \
+                        + "\n" \
+                        + "Question: " + questions[question_key] \
+                        + "\n" \
+                        + "Article_Ko: " + article_body
+
+
+                messages.append(
+                                {"role": "user", "content": prompt},
+                                )
+                
+                inputs["messages"] = messages
+
+                reply = ChatGPT.run(inputs)
+
+                if "{" and "}" in reply:
+                    try:
+                        #logging.info("Found json")
+
+                        # extract the values for "explanation" and "option" using capturing groups
+                        match = re.search(r'{"explanation": "(.*)", "option": (.*)}', reply)
+                        # sanitize the values if there're quotes
+                        explanation = match.group(1).replace('"', '\\"')
+                        option = match.group(2).replace('"', '')
+                        try:
+                            #logging.info("Trying to catch option")
+                            if "-1" in option:
+                                option_value = taxonomy_options[question_key]["-1"]
+                            else:
+                                option_value = taxonomy_options[question_key][option]
+                        except:
+                            logging.info("Option error")
+                            option_value = option
+
+                        reply = {"explanation": explanation,
+                                    "option": option_value.lower()
+                                    }
+                        
+                        #if response json is in incorrect format
+                    except:
+                        logging.info("Incorrect json form")
+                        #logging.info(type(reply))
+                        reply = reply
+                else:
+
+                    reply = reply
+
+                if question_key in taxonomy_options.keys():
+                    setattr(self, question_option_key, reply['option'])
+                    setattr(self, question_rationale_key, reply['explanation'])
+                else:
+                    setattr(self, question_key, reply)
+
+        self.save()
+
+        return True
+
+
 
 '''
 class FailureCause(models.Model): #TODO: Not used 
