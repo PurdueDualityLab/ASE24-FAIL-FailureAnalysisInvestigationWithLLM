@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.utils.html import format_html
+from django.urls import reverse
 
 from failures.articles.models import Article, Incident, SearchQuery
 
@@ -102,6 +104,7 @@ class ArticleAdmin(ImportExportModelAdmin):
         "application_rationale",
         "behaviour_rationale",
     )
+    search_fields = ["body"]
     
 '''
 class ArticleInline(admin.TabularInline):
@@ -159,8 +162,37 @@ class IncidentAdmin(ImportExportModelAdmin):
         "communication_rationale",
         "application_rationale",
         "behaviour_rationale",
-
+        "get_articles",
     )
+    search_fields = ["title"]
+
+    '''
+    def get_articles(self, obj):
+        articles = obj.articles.all()
+
+        return ", ".join([article.headline for article in articles])
+
+    get_articles.short_description = "Source Articles"
+    '''
+
+    
+    def article_admin_url(self, article_id):
+        # Construct the URL to the article change page in the admin
+        return reverse("admin:articles_article_change", args=[article_id])
+
+    def get_articles(self, obj):
+        articles = obj.articles.all()
+        articles_links = [
+            format_html('<a href="{}">{}</a>', self.article_admin_url(article.id), article.headline)
+            for article in articles
+        ]
+
+        return format_html(", ".join(articles_links))
+    
+    get_articles.short_description = "Source Articles"
+    
+
+    
 
 @admin.register(SearchQuery)
 class SearchQueryAdmin(admin.ModelAdmin):

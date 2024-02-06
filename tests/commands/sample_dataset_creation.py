@@ -82,8 +82,23 @@ class SampleDatasetCreationCommand:
         #     field_value = getattr(incident_477, field_name)
         #     print(f"{field_name}: {field_value}")
 
-        # return
+        my_list = [
+            3111, 3663, 3710, 3740, 3825, 6486, 6702, 7241, 9455, 10162,
+            10745, 11058, 13717, 15042, 16412, 18168, 20155, 20284, 24554,
+            26032, 32055, 32679, 37789, 37995, 38012, 38968, 45326, 47149,
+            47969, 48198, 53309, 54193, 56266, 60988, 66881, 68976, 70171,
+            73072, 73427, 76390, 76430, 77003, 77758, 80099, 81120, 82465,
+            83022, 87984, 88901, 94177, 96761, 101056, 104834, 106334,
+            106355, 106477, 108649, 109711, 110171, 110558, 111985, 112046,
+            115853, 115929, 116081, 116132, 117484, 117508, 122207, 123261,
+            124780, 125629, 126299, 127376, 128447, 134921
+        ]
 
+        articles = Article.objects.filter(id__in=my_list)
+        filename = "tests/auto_evaluation/test.csv"
+        self.__download_articles_to_csv(articles, filename)
+
+        return
 
         # Update publish dates
         self.__update_incident_publish_dates()
@@ -119,12 +134,12 @@ class SampleDatasetCreationCommand:
 
         # Download incidents to experiment_data_auto_incidents.csv
         auto_incidents_csv = "./tests/auto_evaluation/experiment_data_auto_incidents.csv"
-        # self.__download_incidents_to_csv(incidents, auto_incidents_csv)
+        self.__download_incidents_to_csv(incidents, auto_incidents_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incidents)) + " incidents to experiment_data_auto_incidents.csv")
 
         # Download articles to experiment_data_auto_articles.csv
         auto_articles_csv = "./tests/auto_evaluation/experiment_data_auto_articles.csv"
-        # self.__download_articles_to_csv(incident_related_articles, auto_articles_csv)
+        self.__download_articles_to_csv(incident_related_articles, auto_articles_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(incident_related_articles)) + " articles to experiment_data_auto_articles.csv")
 
         # Get random list of articles classified as non-failure reporting
@@ -145,12 +160,17 @@ class SampleDatasetCreationCommand:
 
         # Download manual dataset to experiment_data_manual_articles.csv
         manual_articles_csv = "./tests/manual_evaluation/experiment_data_manual_articles.csv"
-        # self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
+        self.__download_articles_to_csv_manual(manual_articles, manual_articles_csv)
         logging.info("SampleDatasetCreationCommand: Wrote " + str(len(manual_articles)) + " articles to experiment_data_manual_articles.csv")
+
+        # Download manual dataset to experiment_data_manual_articles.csv
+        auto_articles_csv = "./tests/auto_evaluation/experiment_data_auto_articles.csv"
+        self.__download_articles_and_vals_to_csv(manual_articles, auto_articles_csv)
+        logging.info("SampleDatasetCreationCommand: Wrote " + str(len(auto_articles_csv)) + " articles to experiment_data_auto_articles.csv")
         
         return 0
 
-    def __update_incident_publish_dates(self):
+    def __update_incident_publish_dates(self): #TODO: What about for incidents that have pub date set, but an article with earlier date exists in incident. Need to do a clean up run, and intergrate into Merge
         """
         Updates all incidents with published date of earliest article. 
 
@@ -359,8 +379,7 @@ class SampleDatasetCreationCommand:
             article_writer = csv.writer(csvfile)
             # Write the CSV header
             header = [
-                "ID", "URL", "Published", "Source", "Article Summary", "Body",
-                "Embedding", "Scraped At", "Scrape Successful", "Describes Failure",
+                "ID", "URL", "Published", "Source", "Article Summary", "Body", "Scraped At", "Scrape Successful", "Describes Failure",
                 "Analyzable Failure", "Article Stored", "Similarity Score", "Headline",
                 "Title", "Summary", "System", "Time", "SEcauses", "NSEcauses", "Impacts",
                 "Mitigations", "ResponsibleOrg", "ImpactedOrg", "Phase Option", "Boundary Option",
@@ -370,10 +389,7 @@ class SampleDatasetCreationCommand:
                 "Phase Rationale", "Boundary Rationale", "Nature Rationale", "Dimension Rationale",
                 "Objective Rationale", "Intent Rationale", "Capability Rationale", "Duration Rationale",
                 "Domain Rationale", "CPS Rationale", "Perception Rationale", "Communication Rationale",
-                "Application Rationale", "Behaviour Rationale", "Summary Embedding", "Time Embedding",
-                "System Embedding", "ResponsibleOrg Embedding", "ImpactedOrg Embedding",
-                "Software Causes Embedding", "Non-Software Causes Embedding", "Impacts Embedding",
-                "Mitigations Embedding"
+                "Application Rationale", "Behaviour Rationale"
             ]
             article_writer.writerow(header)
 
@@ -381,7 +397,7 @@ class SampleDatasetCreationCommand:
             for article in articles:
                 data_row = [
                     article.id, article.url, article.published, article.source, article.article_summary,
-                    article.body, article.embedding, article.scraped_at, article.scrape_successful,
+                    article.body, article.scraped_at, article.scrape_successful,
                     article.describes_failure, article.analyzable_failure, article.article_stored,
                     article.similarity_score, article.headline, article.title, article.summary,
                     article.system, article.time, article.SEcauses, article.NSEcauses, article.impacts,
@@ -395,10 +411,7 @@ class SampleDatasetCreationCommand:
                     article.objective_rationale, article.intent_rationale, article.capability_rationale,
                     article.duration_rationale, article.domain_rationale, article.cps_rationale,
                     article.perception_rationale, article.communication_rationale, article.application_rationale,
-                    article.behaviour_rationale, article.summary_embedding, article.time_embedding,
-                    article.system_embedding, article.ResponsibleOrg_embedding, article.ImpactedOrg_embedding,
-                    article.SEcauses_embedding, article.NSEcauses_embedding, article.impacts_embedding,
-                    article.mitigations_embedding
+                    article.behaviour_rationale
                 ]
                 article_writer.writerow(data_row)
 

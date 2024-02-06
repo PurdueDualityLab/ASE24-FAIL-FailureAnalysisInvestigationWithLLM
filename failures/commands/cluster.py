@@ -98,7 +98,7 @@ def cluster(queryset, postmortem_keys):
 
     # Initialize ChatGPT for generating themes
     chatGPT = ChatGPT()
-    inputs = {"model": "gpt-3.5-turbo", "temperature": 1}
+    inputs = {"model": "gpt-3.5-turbo", "temperature": 0}
 
     # Define keys for postmortem embeddings
     postmortem_embedding_keys = [key+"_embedding" for key in postmortem_keys]

@@ -91,7 +91,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="experiments.log",
+        filename="trial1.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",

@@ -28,6 +28,51 @@ class exp_RunQueriesCommand:
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+        
+        #self.CollectIncidents(args, parser)
+        
+        self.RerunIncidentPipelineByYear(args, parser)
+
+    def RerunIncidentPipelineByYear(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
+
+        logging.info("\nExperiment: Rerunning Pipeline by Year (to correct ClassifyFailure from temp=1 to temp=0)")
+
+
+        classifyFailure_parser = argparse.ArgumentParser()
+        classifyAnalyzable_parser = argparse.ArgumentParser()
+        merge_parser = argparse.ArgumentParser()
+
+        ClassifyFailure_Command = ClassifyFailureCommand()
+        ClassifyFailure_Command.prepare_parser(classifyFailure_parser)
+        
+
+        ClassifyAnalyzable_Command = ClassifyAnalyzableCommand()
+        ClassifyAnalyzable_Command.prepare_parser(classifyAnalyzable_parser)
+        classifyAnalyzable_options = []
+        classifyAnalyzable_args = classifyAnalyzable_parser.parse_args(classifyAnalyzable_options)
+
+        Merge_Command = MergeCommand()
+        Merge_Command.prepare_parser(merge_parser)
+        merge_options = []
+        merge_args = merge_parser.parse_args(merge_options)
+
+
+        years = list(range(2022, 2023))
+
+        # Iterate through all combinations of keywords, years, and months
+        for year in years:
+            logging.info("\n Pipeline for year: " + str(year))
+            
+            classifyFailure_options = ["--year", str(year)]
+            classifyFailure_args = classifyFailure_parser.parse_args(classifyFailure_options)
+
+            ClassifyFailure_Command.run(classifyFailure_args, classifyFailure_parser)
+
+            ClassifyAnalyzable_Command.run(classifyAnalyzable_args, classifyAnalyzable_parser)
+            Merge_Command.run(merge_args, merge_parser)
+
+    
+    def CollectIncidents(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
         logging.info("\nExperiment: Collecting articles")
 
@@ -73,10 +118,10 @@ class exp_RunQueriesCommand:
             "software side effect"
         ]
 
-        start_years = list(range(2010, 2017)) #2017-4-01%20before%3A2017-5-01
-        end_years = list(range(2010, 2017))
-        start_months = list(range(12, 13)) #1, 13)) 
-        end_months = list(range(13, 14)) #2, 14)) 
+        start_years = list(range(2022, 2023)) #after%3A2019-8-01%20before%3A2019-9-01 # Check 2017 to 2019 logs for all months
+        end_years = list(range(2022, 2023))
+        start_months = list(range(7, 13)) #1, 13)) 
+        end_months = list(range(8, 14)) #2, 14)) 
 
         sources = [
             "wired.com", 
