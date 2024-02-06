@@ -269,6 +269,8 @@ class ChatGPT(Network[dict, str]):
         model = preprocessed_data["model"]
         temperature = preprocessed_data["temperature"]
 
+        #logging.info("\nUsing " + model + " with a temperature of " + str(temperature) + ".")
+
         retries = 0
 
         while retries < self.MAX_RETRIES:
@@ -276,7 +278,7 @@ class ChatGPT(Network[dict, str]):
             try:
                 chat_completion = None
                 chat_completion = self.openai.ChatCompletion.create(
-                                model=model, messages=messages, temperature=temperature #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
+                                request_timeout=120, model=model, messages=messages, temperature=temperature #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
                                 #TODO: Pass temperature, conduct experiment by varying for classification tasks and for open ended responses
                                 #TODO: Pass model, auto switch 4k vs 16k based on article length
                                 ) 

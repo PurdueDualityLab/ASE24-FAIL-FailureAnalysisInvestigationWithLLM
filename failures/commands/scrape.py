@@ -70,6 +70,9 @@ class ScrapeCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+
+        logging.info("\nScraping articles")
+        
         if args.keyword:
             # Create a new search query based on the provided arguments
             search_query = SearchQuery.objects.create(
@@ -84,7 +87,7 @@ class ScrapeCommand:
         else:
             search_queries = SearchQuery.objects.all()
 
-        logging.info("\nScraping articles")
+        
 
         for search_query in search_queries:
             logging.info("Collected articles for search query %s.", search_query)
