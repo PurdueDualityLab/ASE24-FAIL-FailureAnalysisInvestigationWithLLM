@@ -1,5 +1,6 @@
 import os
 import re
+import environ
 from collections import Counter
 import matplotlib.pyplot as plt
 
@@ -69,7 +70,8 @@ def plot_results(sources_counter, threshold=20, bar_width=0.8):
     plt.savefig('output.png', bbox_inches='tight')
     plt.show()
 
-directory_path = '../risk_articles'
+env = environ.Env()
+directory_path = env('RISKS_ARTICLE_PATH')
 sources_counter = count_sources(directory_path)
 plot_results(sources_counter)
 
