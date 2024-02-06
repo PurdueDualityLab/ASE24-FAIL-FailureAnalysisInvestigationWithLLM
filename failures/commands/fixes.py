@@ -69,7 +69,7 @@ class FixesCommand:
             parser (argparse.ArgumentParser): The argument parser for the configuration
         """
 
-        logging.info("\nClassifying articles on whether report on software failures.")
+        logging.info("\nFixing published date reported in article.body for all articles.")
         
         #TODO: Redo publish date for all incidents, with the earliest date of all articles in each incident
 
@@ -88,18 +88,18 @@ class FixesCommand:
             logging.info("Fixing date for %s.", article)
 
             current_body = article.body
-            correct_date = str(article.published_date)
+            correct_date = str(article.published)
 
-            updated_body = re.sub(pattern, f"Published on {correct_date}.", current_body)
+            updated_body = re.sub(pattern, f"Published on {correct_date}.", current_body, count=1)
 
             article.body = updated_body
 
             article.save(update_fields=['body'])
 
-            logging.info("\nOld body: %s.", current_body)
-            logging.info("\nNew body: %s.", article.body)
+            logging.info("\nOld body: %s.", current_body[:100])
+            logging.info("\nNew body: %s.", article.body[:100])
 
             if articles_fixed == 20:
-                break;
+                break
 
         logging.info("Successfully fixed body with published dates for %d articles.", articles_fixed)
