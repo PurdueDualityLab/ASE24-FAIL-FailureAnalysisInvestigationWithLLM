@@ -1308,6 +1308,8 @@ class Article_Ko(models.Model):
 
 class RiskRecord(models.Model):
 
+    incident = models.ForeignKey(Incident, blank=True, null=True, on_delete=models.SET_NULL, related_name='risks_records')
+
     search_queries = models.ManyToManyField(
         SearchQuery,
         related_name="articles",
@@ -1362,7 +1364,6 @@ class RiskRecord(models.Model):
             "Whether the article was scraped successfully."
         ),
     )
-
 
     describes_failure = models.BooleanField(
         _("Describes Failure"),
