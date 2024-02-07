@@ -94,9 +94,13 @@ class SampleDatasetCreationCommand:
             124780, 125629, 126299, 127376, 128447, 134921
         ]
 
-        articles = Article.objects.filter(id__in=my_list)
-        filename = "tests/auto_evaluation/test.csv"
-        self.__download_articles_to_csv(articles, filename)
+        # articles = Article.objects.filter(id__in=my_list)
+        # filename = "tests/auto_evaluation/test.csv"
+        # self.__download_articles_to_csv(articles, filename)
+        incidents = Incident.objects.filter(articles__id__in=my_list).distinct()
+        auto_incidents_csv = "./tests/auto_evaluation/experiment_data_auto_incidents.csv"
+        self.__download_incidents_to_csv(incidents, auto_incidents_csv)
+        
 
         return
 
@@ -291,44 +295,46 @@ class SampleDatasetCreationCommand:
             incident_writer = csv.writer(csvfile)
             # Write the CSV header
             header = [
-                "ID", "Published", "Title", "Summary", "System", "Time", "SEcauses",
-                "NSEcauses", "Impacts", "Mitigations", "ResponsibleOrg", "ImpactedOrg",
+                "ID", 
+                "POSTMORTEM FIELDS"
+                "Published", "Title", "Summary", "System", "Time", "SEcauses",
+                "NSEcauses", "Impacts", "Preventions", "Fixes" "ResponsibleOrg", "ImpactedOrg", 
+                "References", "Recurring Option", "Recurring Rationale",
+                "TAXONOMY OPTIONS",
                 "Phase Option", "Boundary Option", "Nature Option", "Dimension Option",
                 "Objective Option", "Intent Option", "Capability Option", "Duration Option",
                 "Domain Option", "CPS Option", "Perception Option", "Communication Option",
                 "Application Option", "Behaviour Option",
+                "TAXONOMY EXPLANATIONS",
                 "Phase Rationale", "Boundary Rationale", "Nature Rationale",
                 "Dimension Rationale", "Objective Rationale", "Intent Rationale",
                 "Capability Rationale", "Duration Rationale", "Domain Rationale",
                 "CPS Rationale", "Perception Rationale", "Communication Rationale",
-                "Application Rationale", "Behaviour Rationale",
-                "Summary Embedding", "Time Embedding", "System Embedding",
-                "ResponsibleOrg Embedding", "ImpactedOrg Embedding",
-                "Software Causes Embedding", "Non-Software Causes Embedding",
-                "Impacts Embedding", "Mitigations Embedding"
+                "Application Rationale", "Behaviour Rationale"
             ]
             incident_writer.writerow(header)
 
             # Write incident data to CSV
             for incident in incidents:
                 data_row = [
-                    incident.id, incident.published, incident.title, incident.summary,
+                    incident.id, None, incident.published, incident.title, incident.summary,
                     incident.system, incident.time, incident.SEcauses, incident.NSEcauses,
-                    incident.impacts, incident.mitigations, incident.ResponsibleOrg,
-                    incident.ImpactedOrg, incident.phase_option, incident.boundary_option,
+                    incident.impacts, incident.preventions, incident.fixes, incident.ResponsibleOrg,
+                    incident.ImpactedOrg, incident.references, incident.recurring_option, 
+                    incident.recurring_rationale, 
+                    None,
+                    incident.phase_option, incident.boundary_option,
                     incident.nature_option, incident.dimension_option, incident.objective_option,
                     incident.intent_option, incident.capability_option, incident.duration_option,
                     incident.domain_option, incident.cps_option, incident.perception_option,
                     incident.communication_option, incident.application_option,
-                    incident.behaviour_option, incident.phase_rationale, incident.boundary_rationale,
+                    incident.behaviour_option, 
+                    None,
+                    incident.phase_rationale, incident.boundary_rationale,
                     incident.nature_rationale, incident.dimension_rationale, incident.objective_rationale,
                     incident.intent_rationale, incident.capability_rationale, incident.duration_rationale,
                     incident.domain_rationale, incident.cps_rationale, incident.perception_rationale,
-                    incident.communication_rationale, incident.application_rationale, incident.behaviour_rationale,
-                    incident.summary_embedding, incident.time_embedding, incident.system_embedding,
-                    incident.ResponsibleOrg_embedding, incident.ImpactedOrg_embedding,
-                    incident.SEcauses_embedding, incident.NSEcauses_embedding, incident.impacts_embedding,
-                    incident.mitigations_embedding
+                    incident.communication_rationale, incident.application_rationale, incident.behaviour_rationale
                 ]
                 incident_writer.writerow(data_row)
 
