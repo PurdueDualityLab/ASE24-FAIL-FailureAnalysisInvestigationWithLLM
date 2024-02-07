@@ -179,7 +179,8 @@ class Incident(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
+    preventions_embedding = models.TextField(_("Preventions Embedding"), blank=True, null=True)
+    fixes_embedding = models.TextField(_("Fixes Embedding"), blank=True, null=True)
 
     '''
     incident_updated = models.BooleanField(
@@ -307,7 +308,8 @@ class Article(models.Model):
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
-    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+    preventions = models.TextField(_("Preventions"), blank=True, null=True)
+    fixes = models.TextField(_("Fixes"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
     references = models.TextField(_("References"), blank=True, null=True)
@@ -355,8 +357,9 @@ class Article(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
-
+    preventions_embedding = models.TextField(_("Preventions Embedding"), blank=True, null=True)
+    fixes_embedding = models.TextField(_("Fixes Embedding"), blank=True, null=True)
+    
 
     class Meta:
         verbose_name = _("Article")
@@ -811,7 +814,6 @@ class Incident_Ko(models.Model):
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
-    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
     references = models.TextField(_("References"), blank=True, null=True)
@@ -859,7 +861,6 @@ class Incident_Ko(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
 
     '''
     incident_updated = models.BooleanField(
@@ -980,7 +981,6 @@ class Article_Ko(models.Model):
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
-    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
     references = models.TextField(_("References"), blank=True, null=True)
@@ -1028,8 +1028,6 @@ class Article_Ko(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
-
 
     class Meta:
         verbose_name = _("Article_Ko")
@@ -1309,14 +1307,6 @@ class Article_Ko(models.Model):
 class RiskRecord(models.Model):
 
     incident = models.ForeignKey(Incident, blank=True, null=True, on_delete=models.SET_NULL, related_name='risks_records')
-
-    search_queries = models.ManyToManyField(
-        SearchQuery,
-        related_name="articles",
-        related_query_name="article",
-        verbose_name=_("Search Queries"),
-    )
-
 
     # Marking url as unique=True because we don't want to store the same article twice
     url = models.URLField(
