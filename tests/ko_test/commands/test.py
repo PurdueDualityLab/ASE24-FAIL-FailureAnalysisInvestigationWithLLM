@@ -39,25 +39,36 @@ class TestCommand:
 
         """
         # # Retrieve and delete all articles from the database (preventing duplicates)
-        all_articles = Article_Ko.objects.filter(describes_failure=True)
+        # all_articles = Article_Ko.objects.filter(describes_failure=True)
 
-        num_articles = len(all_articles)
+        # num_articles = len(all_articles)
 
-        num_off_topic = len(Article_Ko.objects.filter(describes_failure=True, relevant_to_story=False))
+        # num_off_topic = len(Article_Ko.objects.filter(describes_failure=True, relevant_to_story=False))
 
-        num_relevant = len(Article_Ko.objects.filter(describes_failure=True, relevant_to_story=True))
+        # num_relevant = len(Article_Ko.objects.filter(describes_failure=True, relevant_to_story=True))
 
-        print("Number of Ko articles ingested into DB: " + str(num_articles))
+        # print("Number of Ko articles ingested into DB: " + str(num_articles))
 
-        print("Number of off-topic Ko articles ingested into DB: " + str(num_off_topic))
+        # print("Number of off-topic Ko articles ingested into DB: " + str(num_off_topic))
 
-        print("Number of relevant Ko articles ingested into DB: " + str(num_relevant))
+        # print("Number of relevant Ko articles ingested into DB: " + str(num_relevant))
+
+        article_word_counts_df = [[len(article.body.split(' ')), article] for article in Article.objects.filter(describes_failure=True)].sort(key=lambda x: x[0])
+        article_ko_word_counts_df = [[len(article_ko.body.split(' ')), article_ko] for article_ko in Article_Ko.objects.filter(describes_failure=True)].sort(key=lambda x: x[0])
+
+        print(article_word_counts_df[0][1].body)
+        print("\n\n\n\n\nnext\n\n\n\n\n\n\n\n")
+        print(article_ko_word_counts_df[0][1].body)
+
+        return
 
         # Get article lengths
         article_word_counts_df = [len(article.body.split(' ')) for article in Article.objects.filter(describes_failure=True)]
         article_word_counts_non_df = [len(article.body.split(' ')) for article in Article.objects.all()]
         article_ko_word_counts_df = [len(article_ko.body.split(' ')) for article_ko in Article_Ko.objects.filter(describes_failure=True)]
         article_ko_word_counts_non_df = [len(article_ko.body.split(' ')) for article_ko in Article_Ko.objects.all()]
+
+        # return
 
         # Create a box and whisker plot
         percentiles = [10, 90]
