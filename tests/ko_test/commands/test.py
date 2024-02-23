@@ -10,7 +10,7 @@ from nltk.tokenize import word_tokenize
 import nltk
 # nltk.download('punkt')  # Download the tokenizer data
 
-from failures.articles.models import Article_Ko, Article
+from failures.articles.models import Article_Ko, Article, Incident
 
 
 class TestCommand:
@@ -38,8 +38,10 @@ class TestCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
-        # # Retrieve and delete all articles from the database (preventing duplicates)
+        # Retrieve and delete all articles from the database (preventing duplicates)
         # all_articles = Article_Ko.objects.filter(describes_failure=True)
+
+        # all_ko = len(Article_Ko.objects.all())
 
         # num_articles = len(all_articles)
 
@@ -47,14 +49,75 @@ class TestCommand:
 
         # num_relevant = len(Article_Ko.objects.filter(describes_failure=True, relevant_to_story=True))
 
+        # print("Number of Ko articles with 3 raters: " + str(all_ko))
+
         # print("Number of Ko articles ingested into DB: " + str(num_articles))
 
         # print("Number of off-topic Ko articles ingested into DB: " + str(num_off_topic))
 
         # print("Number of relevant Ko articles ingested into DB: " + str(num_relevant))
 
-        article_word_counts_df = [[len(article.body.split(' ')), article] for article in Article.objects.filter(describes_failure=True)].sort(key=lambda x: x[0])
-        article_ko_word_counts_df = [[len(article_ko.body.split(' ')), article_ko] for article_ko in Article_Ko.objects.filter(describes_failure=True)].sort(key=lambda x: x[0])
+        # Get all the incidents
+        incidents = Incident.objects.all()
+
+        # Create a list of the number of articles per incident
+        article_counts_per_incident = [incident.articles.count() for incident in incidents]
+
+        # Plot the original histogram
+        plt.figure(figsize=(12, 6))
+        plt.subplot(1, 2, 1)
+        plt.hist(article_counts_per_incident, bins=range(min(article_counts_per_incident), max(article_counts_per_incident) + 1), edgecolor='black')
+        plt.xlabel('Number of Articles per Incident')
+        plt.ylabel('Number of Incidents')
+        plt.title('Histogram of Articles per Incident (Original)')
+
+        # Filter incidents with only one article
+        incidents_filtered = [incident for incident in incidents if incident.articles.count() > 1]
+
+        # Create a list of the number of articles per incident for the filtered histogram
+        article_counts_per_incident_filtered = [incident.articles.count() for incident in incidents_filtered]
+
+        # Plot the filtered histogram
+        plt.subplot(1, 2, 2)
+        plt.hist(article_counts_per_incident_filtered, bins=range(min(article_counts_per_incident_filtered), max(article_counts_per_incident_filtered) + 1), edgecolor='black')
+        plt.xlabel('Number of Articles per Incident')
+        plt.ylabel('Number of Incidents')
+        plt.title('Histogram of Articles per Incident (Excluding Incidents with One Article)')
+
+        # Save and show the plot
+        plt.savefig('tests/ko_test/data/auto/histograms_comparison.png')
+
+        # Print additional statistics
+        total_incidents = len(incidents)
+        total_articles = sum(article_counts_per_incident)
+        incidents_with_more_than_one_article = sum(count > 1 for count in article_counts_per_incident)
+        incidents_with_more_than_two_articles = sum(count > 2 for count in article_counts_per_incident)
+        incidents_with_more_than_three_articles = sum(count > 3 for count in article_counts_per_incident)
+
+        percent_incidents_more_than_one_article = (incidents_with_more_than_one_article / total_incidents) * 100
+        percent_incidents_one_or_less_articles = ((total_incidents - incidents_with_more_than_one_article) / total_incidents) * 100
+        percent_incidents_more_than_two_articles = (incidents_with_more_than_two_articles / total_incidents) * 100
+        percent_incidents_two_or_less_articles = ((total_incidents - incidents_with_more_than_two_articles) / total_incidents) * 100
+        percent_incidents_more_than_three_articles = (incidents_with_more_than_three_articles / total_incidents) * 100
+        percent_incidents_three_or_less_articles = ((total_incidents - incidents_with_more_than_three_articles) / total_incidents) * 100
+
+
+        print(f"Total Incidents: {total_incidents}")
+        print(f"Total Articles: {total_articles}")
+        print(f"Incidents with more than 1 article: {incidents_with_more_than_one_article} ({percent_incidents_more_than_one_article:.2f}%)")
+        print(f"Incidents with 1 or less articles: {total_incidents - incidents_with_more_than_one_article} ({percent_incidents_one_or_less_articles:.2f}%)")
+        print(f"Incidents with more than 2 articles: {incidents_with_more_than_two_articles} ({percent_incidents_more_than_two_articles:.2f}%)")
+        print(f"Incidents with 2 or less articles: {total_incidents - incidents_with_more_than_two_articles} ({percent_incidents_two_or_less_articles:.2f}%)")
+        print(f"Incidents with more than 3 articles: {incidents_with_more_than_three_articles} ({percent_incidents_more_than_three_articles:.2f}%)")
+        print(f"Incidents with 3 or less articles: {total_incidents - incidents_with_more_than_three_articles} ({percent_incidents_three_or_less_articles:.2f}%)")
+
+
+        return
+
+        article_word_counts_df = [[len(article.body.split(' ')), article] for article in Article.objects.filter(describes_failure=True)]
+        article_word_counts_df.sort(key=lambda x: x[0])
+        article_ko_word_counts_df = [[len(article_ko.body.split(' ')), article_ko] for article_ko in Article_Ko.objects.filter(describes_failure=True)]
+        article_ko_word_counts_df.sort(key=lambda x: x[0])
 
         print(article_word_counts_df[0][1].body)
         print("\n\n\n\n\nnext\n\n\n\n\n\n\n\n")
