@@ -14,6 +14,7 @@ from failures.commands.cluster import ClusterCommand
 from failures.commands.merge import MergeCommand
 from failures.commands.vectordb import VectordbCommand
 from failures.commands.fixes import FixesCommand
+from failures.commands.cleanup import CleanUpCommand
 
 from failures.commands.stats import StatsCommand
 
@@ -40,7 +41,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), StatsCommand(), FixesCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), StatsCommand(), FixesCommand(), CleanUpCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -92,7 +93,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="trial_postmortem_sample.log",
+        filename="cleanup.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",

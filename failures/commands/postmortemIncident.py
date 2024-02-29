@@ -52,6 +52,12 @@ class PostmortemIncidentCommand:
             type=int,    # Converts the values to integers
             help="A list of integers.",
         )
+        parser.add_argument(
+            "--incidents",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
@@ -65,6 +71,10 @@ class PostmortemIncidentCommand:
         # IF TESTING: Only fetching incidents related to article testing set
         if args.articles:
             incidents = Incident.objects.filter(articles__in=args.articles).distinct()
+        elif args.incidents:
+            incidents = Incident.objects.filter(id__in=args.incidents).distinct()
+            print("Here")
+            print(incidents)
         else:
             incidents = Incident.objects.all()
 
@@ -115,7 +125,7 @@ class PostmortemIncidentCommand:
                     if not getattr(incident, question_key):
                         answer_set = False
 
-                if query_all or (query_key in question_key) or not answer_set: 
+                if query_all or (query_key in question_key) or True:#not answer_set: 
 
                     logging.info("Querying question: " + str(question_key))
                     
