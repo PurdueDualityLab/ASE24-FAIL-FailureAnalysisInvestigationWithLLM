@@ -46,6 +46,12 @@ class PostmortemIncidentCommand:
             default='None',
             help="Redo extraction for a specific postmortem key for all articles.",
         )
+        parser.add_argument(
+            "--articles",
+            nargs="+",  # Accepts one or more values
+            type=int,    # Converts the values to integers
+            help="A list of integers.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
@@ -135,9 +141,12 @@ class PostmortemIncidentCommand:
 
                     try:
                         response = qa_chain({"query": questions[question_key]})
-                    except:
-                        logging.info("Issue with langchain query, skipping question")
+                    except Exception as e:
+                        logging.info(f"Issue with langchain query. Exception: {str(e)}. Skipping question.")
                         continue
+
+
+                    logging.info(str(response))
 
                     logging.info("Sources: " + str(response["source_documents"]))
 
