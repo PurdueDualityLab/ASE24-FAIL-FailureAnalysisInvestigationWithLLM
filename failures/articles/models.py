@@ -179,7 +179,8 @@ class Incident(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
+    preventions_embedding = models.TextField(_("Preventions Embedding"), blank=True, null=True)
+    fixes_embedding = models.TextField(_("Fixes Embedding"), blank=True, null=True)
 
     '''
     incident_updated = models.BooleanField(
@@ -307,7 +308,8 @@ class Article(models.Model):
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
-    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+    preventions = models.TextField(_("Preventions"), blank=True, null=True)
+    fixes = models.TextField(_("Fixes"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
     references = models.TextField(_("References"), blank=True, null=True)
@@ -583,10 +585,6 @@ class Article(models.Model):
 
     # GPT based classifier for reports on software failure
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
-
-        #Truncate article if it is too long
-        #article_text = self.body.split()[:2750]
-        #article_text = ' '.join(article_text)
         
         article_text = self.body
 
@@ -603,9 +601,6 @@ class Article(models.Model):
                 + "\n" \
                 + "Article: " + article_text
         
-        #logging.info("\n")
-        #logging.info(prompt)
-
         messages.append(
                         {"role": "user", "content": prompt },
                         )

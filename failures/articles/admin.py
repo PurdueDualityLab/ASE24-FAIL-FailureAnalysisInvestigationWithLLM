@@ -58,6 +58,7 @@ class ArticleAdmin(admin.ModelAdmin):
 @admin.register(Article)
 class ArticleAdmin(ImportExportModelAdmin):
     list_display = (
+        "id",
         "headline",
         "title",
         "scrape_successful",
@@ -74,7 +75,8 @@ class ArticleAdmin(ImportExportModelAdmin):
         "SEcauses",
         "NSEcauses",
         "impacts",
-        "mitigations",
+        "preventions",
+        "fixes",
         "phase_option",
         "boundary_option",
         "nature_option",
@@ -104,7 +106,7 @@ class ArticleAdmin(ImportExportModelAdmin):
         "application_rationale",
         "behaviour_rationale",
     )
-    search_fields = ["body"]
+    search_fields = ["id"]
     
 '''
 class ArticleInline(admin.TabularInline):
@@ -133,7 +135,8 @@ class IncidentAdmin(ImportExportModelAdmin):
         "SEcauses",
         "NSEcauses",
         "impacts",
-        "mitigations",
+        "preventions",
+        "fixes",
         "phase_option",
         "boundary_option",
         "nature_option",
