@@ -586,10 +586,6 @@ class Article(models.Model):
 
     # GPT based classifier for reports on software failure
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
-
-        #Truncate article if it is too long
-        #article_text = self.body.split()[:2750]
-        #article_text = ' '.join(article_text)
         
         article_text = self.body
 
@@ -606,9 +602,6 @@ class Article(models.Model):
                 + "\n" \
                 + "Article: " + article_text
         
-        #logging.info("\n")
-        #logging.info(prompt)
-
         messages.append(
                         {"role": "user", "content": prompt },
                         )

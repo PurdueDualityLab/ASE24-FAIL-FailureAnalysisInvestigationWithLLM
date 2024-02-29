@@ -58,6 +58,7 @@ class ArticleAdmin(admin.ModelAdmin):
 @admin.register(Article)
 class ArticleAdmin(ImportExportModelAdmin):
     list_display = (
+        "id",
         "headline",
         "title",
         "scrape_successful",
@@ -105,7 +106,7 @@ class ArticleAdmin(ImportExportModelAdmin):
         "application_rationale",
         "behaviour_rationale",
     )
-    search_fields = ["body"]
+    search_fields = ["id"]
     
 '''
 class ArticleInline(admin.TabularInline):
