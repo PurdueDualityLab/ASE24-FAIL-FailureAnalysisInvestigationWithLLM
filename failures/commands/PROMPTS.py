@@ -40,7 +40,7 @@ TAXONOMY_OPTIONS = {
             "objective": {"0": "malicious", "1": "non-malicious", "2": "both", "3": "neither", "-1": "unknown"},
             "intent": {"0": "deliberate", "1": "accidental", "2": "both", "3": "neither", "-1": "unknown"},
             "capability": {"0": "accidental", "1": "development incompetence", "2": "both", "3": "neither", "-1": "unknown"},
-            "duration": {"0": "permanent", "1": "temporary", "2": "intermittent", "-1": "unknown"},
+            "duration": {"0": "permanent", "1": "temporary", "2": "neither", "-1": "unknown"},
             "domain": {"0": "information", "1": "transportation", "2": "natural resources", "3": "sales", "4": "construction", "5": "manufacturing", "6": "utilities", "7": "finance", "8": "knowledge", "9": "health", "10": "entertainment", "11": "government", "12": "consumer device", "13": "multiple", "14": "other", "-1": "unknown"},
             "cps": {"true": "true", "false": "false", "-1": "unknown"},
             "perception": {"0": "sensors", "1": "actuators", "2": "processing unit", "3": "network communication", "4": "embedded software", "-1": "unknown"},
