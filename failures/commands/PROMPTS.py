@@ -9,7 +9,7 @@ QUESTIONS = {
         "NSEcauses":        "What were the non-software causes of the failure incident? (answer in a list)",
         "impacts":          "What happened due to the software failure incident? (answer in a list)",
         "preventions":      "What could have prevented the software failure incident? (answer in a list)", 
-        "solutions":        "What could fix the software failure incident? (answer in a list)",
+        "fixes":        "What could fix the software failure incident? (answer in a list)",
         "recurring":        "Was the software failure incident a recurring occurrence? If 'unknown' (option -1). If 'false' (option false). If true, then has the software failure incident occurred before 'within the same impacted entity' (option 0) or 'at other entity(s)' (option 1) or 'unknown' (option true)?",
         "references":       "From where do the articles gather information about the software failure incident? (answer in a list)",
         "phase":            "Was the software failure due to 'system design' (option 0) or 'operation' (option 1) faults or 'both' (option 2) or 'neither' (option 3) or 'unknown' (option -1)?",
