@@ -179,7 +179,8 @@ class Incident(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
+    preventions_embedding = models.TextField(_("Preventions Embedding"), blank=True, null=True)
+    fixes_embedding = models.TextField(_("Fixes Embedding"), blank=True, null=True)
 
     '''
     incident_updated = models.BooleanField(
@@ -307,7 +308,8 @@ class Article(models.Model):
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
-    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
+    preventions = models.TextField(_("Preventions"), blank=True, null=True)
+    fixes = models.TextField(_("Fixes"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
     references = models.TextField(_("References"), blank=True, null=True)
@@ -355,8 +357,9 @@ class Article(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
-
+    preventions_embedding = models.TextField(_("Preventions Embedding"), blank=True, null=True)
+    fixes_embedding = models.TextField(_("Fixes Embedding"), blank=True, null=True)
+    
 
     class Meta:
         verbose_name = _("Article")
@@ -811,7 +814,6 @@ class Incident_Ko(models.Model):
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
-    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
     references = models.TextField(_("References"), blank=True, null=True)
@@ -859,7 +861,6 @@ class Incident_Ko(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
 
     '''
     incident_updated = models.BooleanField(
@@ -980,7 +981,6 @@ class Article_Ko(models.Model):
     SEcauses = models.TextField(_("Software Causes"), blank=True, null=True)
     NSEcauses = models.TextField(_("Non-Software Causes"), blank=True, null=True)
     impacts = models.TextField(_("Impacts"), blank=True, null=True)
-    mitigations = models.TextField(_("Mitigations"), blank=True, null=True)
     ResponsibleOrg = models.TextField(_("ResponsibleOrg"), blank=True, null=True)
     ImpactedOrg = models.TextField(_("ImpactedOrg"), blank=True, null=True)
     references = models.TextField(_("References"), blank=True, null=True)
@@ -1028,8 +1028,6 @@ class Article_Ko(models.Model):
     SEcauses_embedding = models.TextField(_("Software Causes Embedding"), blank=True, null=True)
     NSEcauses_embedding = models.TextField(_("Non-Software Causes Embedding"), blank=True, null=True)
     impacts_embedding = models.TextField(_("Impacts Embedding"), blank=True, null=True)
-    mitigations_embedding = models.TextField(_("Mitigations Embedding"), blank=True, null=True)
-
 
     class Meta:
         verbose_name = _("Article_Ko")
@@ -1305,6 +1303,86 @@ class Article_Ko(models.Model):
 
         return True
 
+
+class RiskRecord(models.Model):
+
+    incident = models.ForeignKey(Incident, blank=True, null=True, on_delete=models.SET_NULL, related_name='risks_records')
+
+    # Marking url as unique=True because we don't want to store the same article twice
+    url = models.URLField(
+        _("URL"), unique=True, max_length=510, help_text=_("URL of the article.")
+    )
+
+    published = models.DateTimeField(
+        _("Published"), help_text=_("Date and time when the article was published.")
+    )
+
+    source = models.URLField(
+        _("Source"),
+        help_text=_("URL of the source of the article, such as nytimes.com."),
+    )
+
+    article_summary = models.TextField(
+        _("article_summary"),
+        blank=True,
+        help_text=_("Summary of the article generated by an OS summarizer model."),
+    )
+
+    body = models.TextField(
+        _("Body"), blank=True, help_text=_("Body of the article scraped from the URL.")
+    )
+
+    embedding = models.FileField(
+        _("Embedding"),
+        upload_to="embeddings",
+        null=True,
+        help_text=_("NumPy array of the embedding of the article stored as a file."),
+        editable=False,
+    )
+
+    scraped_at = models.DateTimeField(
+        _("Scraped at"),
+        auto_now_add=True,
+        help_text=_("Date and time when the article was scraped."),
+        editable=False,
+    )
+
+    scrape_successful = models.BooleanField(
+        _("Scrape Successful"),
+        null=True,
+        help_text=_(
+            "Whether the article was scraped successfully."
+        ),
+    )
+
+    describes_failure = models.BooleanField(
+        _("Describes Failure"),
+        null=True,
+        help_text=_(
+            "Whether the article describes a failure. This field is set by ChatGPT."
+        ),
+    )
+
+    analyzable_failure = models.BooleanField(
+        _("Analyzable Failure"),
+        null=True,
+        help_text=_(
+            "Whether the article can be used to conduct a failure analysis. This field is set by ChatGPT."
+        ),
+    )
+
+    article_stored = models.BooleanField(
+        _("Article Stored"),
+        null=True,
+        help_text=_(
+            "Whether the article has been stored into the vector database."
+        ),
+    )
+
+
+    similarity_score = models.FloatField(_("Cosine similarity score"),null=True,blank=True)
+    
+    headline = models.TextField(_("Headline"), blank=True, null=True)
 
 
 '''
