@@ -4,8 +4,26 @@ Failures Evaluation
 This folder contains commands necessary to monitor, test, and evaluate the performance and quality of the Failures pipeline and database.
 
 
-Evaluate the Classification Command
+Evaluate Pipeline's Classification Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Introduction
+------------
+
+This command is designed for evaluating the pipeline's classification command. The classification command is responsible for determing whether and article does or does not describe a software failure.
+
+Metrics Evaluated
+-----------------
+
+- Accuracy (Percentage): Measures the overall correctness of the classification in percentage.
+- Accuracy (Fraction): Indicates the accuracy of the classification in fraction format.
+- False Positive (Percentage): Percentage of false positives in the classification.
+- False Positive (Fraction): Fraction of false positives in the classification.
+- False Negative (Percentage): Percentage of false negatives in the classification.
+- False Negative (Fraction): Fraction of false negatives in the classification.
+- Wrong (Percentage): Percentage of incorrect classifications.
+- Wrong (Fraction): Fraction of incorrect classifications.
+- Total Evaluated: Total number of articles evaluated.
 
 #. Display the help text::
 
