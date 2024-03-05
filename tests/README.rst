@@ -7,10 +7,10 @@ This folder contains commands necessary to monitor, test, and evaluate the perfo
 Evaluate Pipeline's Classification Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Introduction
+Description
 ------------
 
-This command is designed for evaluating the pipeline's classification command. The classification command is responsible for determing whether and article does or does not describe a software failure.
+This command is designed for evaluating the pipeline's classification command. The classification command is responsible for determing whether an article does or does not describe a software failure.
 
 Metrics Evaluated
 -----------------
@@ -27,6 +27,36 @@ Metrics Evaluated
 
 #. Display the help text::
 
+    $ docker compose -f local.yml run --rm django python -m tests scrape --help
+
+#. Run a scrape::
+
+    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
+
+
+Evaluate Pipeline's Identification Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+------------
+
+This command is designed for evaluating the pipeline's identification command. The identification command is responsible for determing whether or not an article has enough information to analyze the software failure.
+
+Metrics Evaluated
+-----------------
+
+- Accuracy (Percentage): Measures the overall correctness of the identification in percentage.
+- Accuracy (Fraction): Indicates the accuracy of the identification in fraction format.
+- False Positive (Percentage): Percentage of false positives in the identification.
+- False Positive (Fraction): Fraction of false positives in the identification.
+- False Negative (Percentage): Percentage of false negatives in the identification.
+- False Negative (Fraction): Fraction of false negatives in the identification.
+- Wrong (Percentage): Percentage of incorrect identifications.
+- Wrong (Fraction): Fraction of incorrect identifications.
+- Total Evaluated: Total number of articles evaluated.
+
+#. Display the help text::
+
     $ docker compose -f local.yml run --rm django python -m failures scrape --help
 
 #. Run a scrape::
@@ -34,167 +64,123 @@ Metrics Evaluated
     $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
 
 
-Classifying Articles Using the Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Evaluate Pipeline's Merge Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+------------
+
+This command is designed for evaluating the pipeline's merge command. The merge command is responsible for clustering together articles that report on the same software failure.
+
+Metrics Evaluated
+-----------------
+
+- Homogeneity: Measures the homogeneity of clusters.
+- Completeness: Measures the completeness of clusters.
+- V Measure: Combines homogeneity and completeness into a single metric.
 
 #. Display the help text::
 
-    $ docker compose -f local.yml run --rm django python -m failures classify --help
+    $ docker compose -f local.yml run --rm django python -m failures scrape --help
 
-#. Classify articles::
+#. Run a scrape::
 
-    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m failures classify --all
+    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
 
 
-Create Postmortems for Articles Using the Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Evaluate Pipeline's Postmortem Analysis
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Display the help text::
+Description
+------------
 
-    $ docker compose -f local.yml run --rm django python -m failures postmortem --help
+This command is designed for evaluating the pipeline's open response postmortem ability. This command automates comparing the data within the Failures database to a sample manual ground truth set of incidents. The command compares each of the non-taxonomy postmortem categories using ChatGPT.
 
-#. Create postmortems::
+Metrics Evaluated
+-----------------
 
-    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m failures postmortem --all
-
-Evaluate LLM Classification of Articles Using the Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Display the help text::
-
-    $ docker compose -f local.yml run --rm django python -m tests evaluateclassification --help
-
-#. Evaluate LLM's Classification::
-
-    $ docker compose -f local.yml run --rm django python -m tests evaluateclassification --all --list
-
-Evaluate LLM Analysis of Articles Using the Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Invalid: Count of invalid comparisons between two sets.
+- Disjoint: Count of disjoint comparisons between two sets.
+- Equal: Count of equal comparisons between two sets.
+- Subset: Count of subset comparisons between two sets.
+- Superset: Count of superset comparisons between two sets.
+- Overlapping: Count of overlapping comparisons between two sets.
 
 #. Display the help text::
 
-    $ docker compose -f local.yml run --rm django python -m tests evaluateidentification --help
+    $ docker compose -f local.yml run --rm django python -m failures scrape --help
 
-#. Evaluate LLM's Analysis::
+#. Run a scrape::
 
-    $ docker compose -f local.yml run --rm django python -m tests evaluateidentification --all --list
+    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
 
-Evaluate LLM Merge of Articles Using the Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Display the help text::
+Evaluate Pipeline's Taxonomy Analysis
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --help
+Description
+------------
 
-#. Evaluate LLM's Merge::
+This command is designed for evaluating the pipeline's taxonomy analysis. This command automates comparing the data within the Failures database to a sample manual ground truth set of incidents. This compares the taxonomy values.
 
-    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --all
+Metrics Evaluated
+-----------------
 
-Evaluate LLM Taxonomization of Articles Using the Command Line ##TODO##
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Display the help text::
-
-    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --help
-
-#. Evaluate LLM's Merge::
-
-    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --all
-
-Evaluate LLM Postmortem Creation Using the Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Accuracy: Measures the overall correctness of the classification.
+- Precision: Indicates the accuracy of positive predictions.
+- Recall: Measures the ability to capture positive instances.
+- F1 Score: Balances precision and recall.
 
 #. Display the help text::
 
-    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m tests evaluatepostmortem --help
+    $ docker compose -f local.yml run --rm django python -m failures scrape --help
 
-#. Evaluate LLM's Merge::
+#. Run a scrape::
 
-    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m tests evaluatepostmortem
+    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
 
-Evaluate LLM's performance given set of temperature values Using the Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Evaluate and Run Pipeline
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+------------
+
+This command is designed for evaluating and running the pipeline
+
+Metrics Evaluated
+-----------------
+
+- All metrics from previous commands
 
 #. Display the help text::
 
-    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m tests evaluatetemperature --help
-    
-#. Evaluate LLM's Merge::
+    $ docker compose -f local.yml run --rm django python -m failures scrape --help
 
-    $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m tests evaluatetemperature --all
-    
-Create Embedding for Articles Using the Command Line (OUTDATED): REMOVE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Run a scrape::
+
+    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
+
+
+Evaluate Pipeline's Identification Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+------------
+
+This command is designed for evaluating the pipeline's 
+
+Metrics Evaluated
+-----------------
+
+
 
 #. Display the help text::
 
-    $ docker compose -f local.yml run --rm django python -m failures embed --help
+    $ docker compose -f local.yml run --rm django python -m failures scrape --help
 
-#. Create embeddings for articles::
+#. Run a scrape::
 
-    $ docker compose -f local.yml run --rm django python -m failures embed --all
-
-
-Setting Admin Parameters (OUTDATED): REMOVE
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Navigate to the ``/admin/`` page and log in.
-
-#. Click on ``Parameters`` underneath the ``Parameters`` section.
-
-#. Click on ``ADD PARAMETER +``.
-
-#. Enter a name, value, and value type and click ``SAVE``.
-
-#. Repeat for each parameter.
-
-Working with Parameters Programmatically (OUTDATED): REMOVE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Import the ``Parameter`` model::
-
-    >>> from failures.parameters.models import Parameter
-
-#. Get the value of a parameter::
-
-        >>> Parameter.get("FAILURE_NAME_QUESTION", "What is the name of the software failure?")
-        'What is the name of the software failure?'
-
-If the parameter does not exist, it will be created with the default value. This is similar to
-``dict.get``; however, parameters set in the admin site are persisted in the database.
-
-Using failures.networks Programmatically (OUTDATED): Update (w/ open source models + OpenAI models)
----------------------------------------
-
-There are four main classes in the ``failures.networks.models`` module:
-
-#. ``ZeroShotClassifier``::
-
-        >>> from failures.networks.models import ZeroShotClassifier
-        >>> classifier = ZeroShotClassifier(["software failure", "not a software failure"])
-        >>> classifier.run("This is a software failure.")
-        ('software failure', 0.9999998807907104)
+    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
 
 
-#. ``Summarizer``::
-
-        >>> from failures.networks.models import Summarizer
-        >>> summarizer = Summarizer()
-        >>> summarizer.run("This is an article about a software failure...")
-        'This is a summary of the article.'
-
-#. ``QuestionAnswerer``::
-
-        >>> from failures.networks.models import QuestionAnswerer
-        >>> question_answerer = QuestionAnswerer()
-        >>> question_answerer.run("When did this software failure start?", "This software failure started in 2020.")
-        '2020'
-
-
-#. ``Embedder``::
-
-        >>> from failures.networks.models import Embedder
-        >>> embedder = Embedder()
-        >>> embedder.run("This is an article about a software failure...")
-        array([ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00, ...,
-                0.00000000e+00,  0.00000000e+00, -1.19209290e-07], dtype=float32)
