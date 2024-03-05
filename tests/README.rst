@@ -4,23 +4,7 @@ Failures Evaluation
 This folder contains commands necessary to monitor, test, and evaluate the performance and quality of the Failures pipeline and database.
 
 
-Scraping News Articles Using the Admin Site and the Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Navigate to the ``/admin/`` page and log in.
-
-#. Click on ``Search Queries`` underneath the ``Articles`` section.
-
-#. Click on ``ADD SEARCH QUERY +``.
-
-#. Enter a search query and click ``SAVE``.
-
-#. Run a scrape from the command line::
-
-    $ docker compose -f local.yml run --rm django python -m failures scrape
-
-
-Scraping News Articles Using Only the Command Line
+Evaluate the Classification Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Display the help text::
@@ -30,8 +14,6 @@ Scraping News Articles Using Only the Command Line
 #. Run a scrape::
 
     $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
-
-#. To scrape news for automated experiments use: experiment.sh
 
 
 Classifying Articles Using the Command Line
