@@ -25,6 +25,9 @@ Metrics Evaluated
 - Wrong (Fraction): Fraction of incorrect classifications.
 - Total Evaluated: Total number of articles evaluated.
 
+Commands
+--------
+
 #. Display the help text::
 
     $ docker compose -f local.yml run --rm django python -m tests scrape --help
@@ -55,6 +58,9 @@ Metrics Evaluated
 - Wrong (Fraction): Fraction of incorrect identifications.
 - Total Evaluated: Total number of articles evaluated.
 
+Commands
+--------
+
 #. Display the help text::
 
     $ docker compose -f local.yml run --rm django python -m failures scrape --help
@@ -78,6 +84,9 @@ Metrics Evaluated
 - Homogeneity: Measures the homogeneity of clusters.
 - Completeness: Measures the completeness of clusters.
 - V Measure: Combines homogeneity and completeness into a single metric.
+
+Commands
+--------
 
 #. Display the help text::
 
@@ -106,6 +115,9 @@ Metrics Evaluated
 - Superset: Count of superset comparisons between two sets.
 - Overlapping: Count of overlapping comparisons between two sets.
 
+Commands
+--------
+
 #. Display the help text::
 
     $ docker compose -f local.yml run --rm django python -m failures scrape --help
@@ -131,6 +143,9 @@ Metrics Evaluated
 - Recall: Measures the ability to capture positive instances.
 - F1 Score: Balances precision and recall.
 
+Commands
+--------
+
 #. Display the help text::
 
     $ docker compose -f local.yml run --rm django python -m failures scrape --help
@@ -153,27 +168,8 @@ Metrics Evaluated
 
 - All metrics from previous commands
 
-#. Display the help text::
-
-    $ docker compose -f local.yml run --rm django python -m failures scrape --help
-
-#. Run a scrape::
-
-    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
-
-
-Evaluate Pipeline's Identification Command
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Description
-------------
-
-This command is designed for evaluating the pipeline's 
-
-Metrics Evaluated
------------------
-
-
+Commands
+--------
 
 #. Display the help text::
 
@@ -182,5 +178,3 @@ Metrics Evaluated
 #. Run a scrape::
 
     $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
-
-
