@@ -1,47 +1,7 @@
-Failures
+Failures Evaluation
 ========
 
-Failures is a rich database of software failures scraped from news articles.
-
-Running with Docker
--------------------
-
-#. Build and spin up the container::
-
-    $ docker compose -f local.yml up --build -d
-
-#. Apply the migrations in the container::
-
-    $ docker compose -f local.yml run --rm django python manage.py makemigrations
-    $ docker compose -f local.yml run --rm django python manage.py migrate
-
-#. Make sure the container is running::
-
-    $ docker compose -f local.yml up
-    
-#. To log stdout/stderr for a command that is detached, follow these steps:
-
-    #. Run the command::
-
-        $ docker compose -f local.yml run -e OPENAI_API_KEY -d --name failures_run_command django python -m failures classify
-    
-    #. Wait for the command to finish running, then export the log::
-
-        $ docker logs failures_run_command >> failures_run_command.log 2>&1
-
-    #. Then kill the container::
-
-        $ docker rm failures_run_command
-
-
-Admin Site
-^^^^^^^^^^
-
-#. Create an admin account::
-
-    $ docker compose -f local.yml run --rm django python manage.py createsuperuser
-
-#. Access the site administration page at ``/admin/``
+This folder contains commands necessary to monitor, test, and evaluate the performance and quality of the Failures pipeline and database.
 
 
 Scraping News Articles Using the Admin Site and the Command Line
