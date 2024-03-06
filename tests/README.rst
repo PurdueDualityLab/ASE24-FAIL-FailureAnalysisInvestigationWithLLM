@@ -155,7 +155,7 @@ Commands
     $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
 
 
-Evaluate and Run Pipeline
+Evaluate and Run Pipeline (Outdated)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Description
