@@ -3,6 +3,12 @@ Failures Evaluation
 
 This folder contains commands necessary to monitor, test, and evaluate the performance and quality of the Failures pipeline and database.
 
+Input Files
+-----------
+
+- tests/ground_truth/ground_truth_classify.xlsx : Ground truth file for describes failure, analyzability, incident id. (file provided with correct format)
+- tests/ground_truth/ground_truth_postmortem.xlsx : Ground truth file for incident postmortem information. (file provided with correct format)
+
 
 Evaluate Pipeline's Classification Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -11,6 +17,11 @@ Description
 ------------
 
 This command is designed for evaluating the pipeline's classification command. The classification command is responsible for determing whether an article does or does not describe a software failure.
+
+Output Files
+------------
+
+- tests/performance/describes_failure.csv : Contains evaluation metrics listed below
 
 Metrics Evaluated
 -----------------
@@ -30,11 +41,11 @@ Commands
 
 #. Display the help text::
 
-    $ docker compose -f local.yml run --rm django python -m tests scrape --help
+    $ docker compose -f local.yml run --rm django python -m tests evaluateclassification --help
 
-#. Run a scrape::
+#. Run a evaluation & save to CSV (default path /tests/performance/describes_failure.csv)::
 
-    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
+    $ docker compose -f local.yml run --rm django python -m tests evaluateclassification --saveCSV
 
 
 Evaluate Pipeline's Identification Command
