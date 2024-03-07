@@ -43,7 +43,7 @@ Commands
 
     $ docker compose -f local.yml run --rm django python -m tests evaluateclassification --help
 
-#. Run a evaluation & save to CSV (default path /tests/performance/describes_failure.csv)::
+#. Run evaluation & save to CSV (default path /tests/performance/describes_failure.csv)::
 
     $ docker compose -f local.yml run --rm django python -m tests evaluateclassification --saveCSV
 
@@ -55,6 +55,11 @@ Description
 ------------
 
 This command is designed for evaluating the pipeline's identification command. The identification command is responsible for determing whether or not an article has enough information to analyze the software failure.
+
+Output Files
+------------
+
+- tests/performance/analyzable_failure.csv : Contains evaluation metrics listed below
 
 Metrics Evaluated
 -----------------
@@ -74,11 +79,11 @@ Commands
 
 #. Display the help text::
 
-    $ docker compose -f local.yml run --rm django python -m failures scrape --help
+    $ docker compose -f local.yml run --rm django python -m tests evaluateidentification --help
 
-#. Run a scrape::
+#. Run evaluation & save to CSV (default path /tests/performance/analyzable_failure.csv)::
 
-    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
+    $ docker compose -f local.yml run --rm django python -m tests evaluateidentification --saveCSV
 
 
 Evaluate Pipeline's Merge Command
@@ -89,23 +94,30 @@ Description
 
 This command is designed for evaluating the pipeline's merge command. The merge command is responsible for clustering together articles that report on the same software failure.
 
+Output Files
+------------
+
+- tests/performance/merge.csv : Contains evaluation metrics listed below
+
 Metrics Evaluated
 -----------------
 
 - Homogeneity: Measures the homogeneity of clusters.
 - Completeness: Measures the completeness of clusters.
 - V Measure: Combines homogeneity and completeness into a single metric.
+- Percentage of Articles Used: Percentage of articles from ground truth that had incidents associated with them in the failures database.
+- Fraction of Articles Used: Fraction of articles from ground truth that had incidents associated with them in the failures database.
 
 Commands
 --------
 
 #. Display the help text::
 
-    $ docker compose -f local.yml run --rm django python -m failures scrape --help
+    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --help
 
 #. Run a scrape::
 
-    $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
+    $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --saveCSV
 
 
 Evaluate Pipeline's Postmortem Analysis
