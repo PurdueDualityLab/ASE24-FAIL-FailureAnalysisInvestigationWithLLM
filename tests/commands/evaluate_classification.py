@@ -186,6 +186,7 @@ class EvaluateClassificationCommand:
             }
 
             if args.saveCSV:
+                logging.info(f"Storing metrics in: {output_file_path}")
                 with open(output_file_path, mode='w', newline='') as csv_file:
                     fieldnames = metrics.keys()
                     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
