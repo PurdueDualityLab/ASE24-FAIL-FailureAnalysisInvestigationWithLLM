@@ -6,8 +6,10 @@ from datetime import datetime
 import os
 import matplotlib.pyplot as plt
 import numpy as np
-from nltk.tokenize import word_tokenize
-import nltk
+# from nltk.tokenize import word_tokenize
+# import nltk
+import tiktoken
+
 # nltk.download('punkt')  # Download the tokenizer data
 
 from failures.articles.models import Article_Ko, Article, Incident
@@ -58,6 +60,45 @@ class TestCommand:
         # print("Number of relevant Ko articles ingested into DB: " + str(num_relevant))
 
         # Get all the incidents
+        incidents = Incident.objects.all()
+        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+
+        incident_token_counts = []
+
+        for incident in incidents:
+            related_articles = incident.articles.all()
+
+            incident_tokens = 0
+
+            for article in related_articles:
+                incident_tokens += len(encoding.encode(article.body))
+
+            incident_token_counts.append(incident_tokens)
+
+        # Calculate statistics
+        max_token_count = max(incident_token_counts)
+        min_token_count = min(incident_token_counts)
+        median_token_count = np.median(incident_token_counts)
+        greater_than_16k_count = sum(count > 16000 for count in incident_token_counts)
+
+        # Report statistics
+        print(f"Max Token Count: {max_token_count}")
+        print(f"Min Token Count: {min_token_count}")
+        print(f"Median Token Count: {median_token_count}")
+        print(f"Number of incidents with more than 16k tokens: {greater_than_16k_count}")
+        print(f"Total number of incidents: {len(incidents)}")
+
+        # Plot histogram
+        plt.hist(incident_token_counts, bins=20, edgecolor='black')
+        plt.title('Distribution of Token Counts in Incidents')
+        plt.xlabel('Token Count')
+        plt.ylabel('Frequency')
+        plt.savefig('tests/ko_test/data/auto/incident_tokens.png')
+
+
+        # print(incident_token_counts)
+
+        return
         incidents = Incident.objects.all()
 
         # Create a list of the number of articles per incident
