@@ -9,6 +9,31 @@ Input Files
 - tests/ground_truth/ground_truth_classify.xlsx : Ground truth file for describes failure, analyzability, incident id. (file provided with correct format)
 - tests/ground_truth/ground_truth_postmortem.xlsx : Ground truth file for incident postmortem information. (file provided with correct format)
 
+Fetch Articles Or Incident Data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+------------
+
+This command is designed for fetching Article and Incident data based on either Article or Incident ids.
+
+Output Files
+------------
+
+- tests/fetched_data/incident_data.csv : Contains all non-embedding information stored in the incident class for each incident.
+- tests/fetched_data/article_data.csv : Contains all non-embedding information stored in the article class for each article.
+
+Commands
+--------
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m tests fetchdata --help
+
+#. Run evaluation & save to CSV::
+
+    $ docker compose -f local.yml run --rm django python -m tests fetchdata --option {Integer Choice} --ids {List of integers separated by spaces}
+
 
 Evaluate Pipeline's Classification Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
