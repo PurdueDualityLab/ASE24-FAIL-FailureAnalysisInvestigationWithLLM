@@ -3,13 +3,15 @@ import logging
 import textwrap
 import pandas as pd
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+import csv
 
 from failures.articles.models import Article, SearchQuery, Incident
 
 
 class EvaluateTaxonomyCommand:
     # Define the file path for the manual dataset
-    MANUAL_DATASET_FILE_PATH = "./tests/manual_evaluation/experiment_data_manual_articles_Analyst-B.xlsx"  # UPDATE
+    MANUAL_DATASET_FILE_PATH = "./tests/ground_truth/ground_truth_postmortem.xlsx"
+    OUTPUT_FILE_PATH = "./tests/performance/taxonomy.csv"
 
     def prepare_parser(self, parser: argparse.ArgumentParser):
         """
@@ -33,6 +35,11 @@ class EvaluateTaxonomyCommand:
             "--all",
             action="store_true",
             help="Lists all metrics.",
+        )
+        parser.add_argument(
+            "--saveCSV",
+            action="store_true",
+            help="Save metrics to a csv (saves to tests/performance/describes_failure.csv)",
         )
         parser.add_argument(
             "--list",
@@ -74,7 +81,8 @@ class EvaluateTaxonomyCommand:
         incidents = Incident.objects.filter(id__in=auto_incident_set)
         
         # Define the file path
-        file_path = EvaluateTaxonomyCommand.MANUAL_DATASET_FILE_PATH
+        input_file_path = EvaluateTaxonomyCommand.MANUAL_DATASET_FILE_PATH
+        output_file_path = EvaluateTaxonomyCommand.OUTPUT_FILE_PATH
 
         # Mapping between Pandas column names and Django model field names
         column_to_field_mapping = {
@@ -120,10 +128,10 @@ class EvaluateTaxonomyCommand:
 
         # Read the Excel file into a Pandas DataFrame
         try:
-            df = pd.read_excel(file_path, usecols=columns_to_read)
+            df = pd.read_excel(input_file_path, usecols=columns_to_read)
             logging.info("Data loaded successfully.")
         except FileNotFoundError:
-            logging.info(f"Error: The file '{file_path}' was not found.")
+            logging.info(f"Error: The file '{input_file_path}' was not found.")
             return metrics
         except Exception as e:
             logging.info(f"An error occurred: {str(e)}")
@@ -148,10 +156,14 @@ class EvaluateTaxonomyCommand:
             logging.info("evaluate_taxonomy: Evaluating %s for %d incidents", taxonomy, len(auto_incident_set))
             # Extract relevant column from the dataframe (and fill in NaN values as Unknown)
             df_taxonomy_values = df[taxonomy].fillna('unknown').tolist()
+            df_taxonomy_values = self.get_taxonomy_mapping(taxonomy, df_taxonomy_values)
+
+            print(df_taxonomy_values)
 
             # Extract corresponding field values from the incidents (and fill in None values as Unknown)
             incidents_taxonomy_values = list(incidents.values_list(taxonomy, flat=True))
             incidents_taxonomy_values = ['unknown' if value is None else value for value in incidents_taxonomy_values]
+            
 
             # Calculate additional metrics
             accuracy = accuracy_score(incidents_taxonomy_values, df_taxonomy_values)
@@ -173,9 +185,11 @@ class EvaluateTaxonomyCommand:
                 'f1_score': f1
             }
 
-        # Store metrics in a CSV
-        metrics_df = pd.DataFrame(metrics)
-        metrics_df.to_csv('./tests/performance/taxonomy.csv', index=False)
+        if args.saveCSV:
+            # Store metrics in a CSV
+            logging.info(f"Storing metrics in: {output_file_path}")
+            metrics_df = pd.DataFrame(metrics)
+            metrics_df.to_csv(output_file_path, index=False)
 
         # Return the metrics
         return metrics
@@ -208,7 +222,7 @@ class EvaluateTaxonomyCommand:
         article_ids = manual_df[manual_dataset_column_name].tolist()
 
         # Convert to sets of ids
-        article_ids_sets = [set(map(int, str(item).split(', '))) if isinstance(item, str) else {item} for item in article_ids]
+        article_ids_sets = [set(map(int, str(item).split('; '))) if isinstance(item, str) else {item} for item in article_ids]
 
         # List of one-to-one incident ids to return
         auto_incident_ids = []
@@ -248,8 +262,142 @@ class EvaluateTaxonomyCommand:
                 auto_incident_ids.append(incident_ids)
                 man_incident_ids.append(i)
                 
-
         return auto_incident_ids, man_incident_ids
 
+    def get_taxonomy_mapping(self, taxonomy: str, values: list):
+        pass
+        # TODO: Commented out until working
+    #     """
+    #     Returns the mapping of the string taxonomy values to the integer taxonomy values.
 
-        
+    #     Args:
+    #         taxonomy (String): The taxonomy being evaluated
+    #         values (list): The values stored in the database for the incidents.
+
+    #     """
+    #     taxonomy_mapping = {
+    #         'phase_option': {
+    #             0: 'system design',
+    #             1: 'operation',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'boundary_option': {
+    #             0: 'within the system',
+    #             1: 'outside the system',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'nature_option': {
+    #             0: 'human actions',
+    #             1: 'non-human actions',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'dimension_option': {
+    #             0: 'hardware',
+    #             1: 'software',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'objective_option': {
+    #             0: 'malicious',
+    #             1: 'non-malicious',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'intent_option': {
+    #             0: 'deliberate',
+    #             1: 'accidental',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'capability_option': {
+    #             0: 'accidental',
+    #             1: 'development incompetence',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'duration_option': {
+    #             0: 'Permanent',
+    #             1: 'Transient Intermittent',
+    #             2: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'cps_option': {
+    #             0: True,
+    #             1: False,
+    #             -1: 'unknown',
+    #         },
+    #         'communication_option': {
+    #             0: False,
+    #             1: 'link level',
+    #             2: 'connectivity level',
+    #             -1: 'unknown',
+    #         },
+    #         'application_option': {
+    #             0: True,
+    #             1: False,
+    #             -1: 'unknown',
+    #         },
+    #     }
+    #         'behaviour_option': {
+    #             0: 'crash',
+    #             1: 'omission',
+    #             2: 'timing',
+    #             3: 'value',
+    #             4: 'byzantine fault',
+    #             5: 'Other',
+    #             -1: 'unknown',
+    #         },
+    #         'domain_option': {
+    #             0: 'information',
+    #             1: 'transportation',
+    #             2: 'natural resources',
+    #             3: 'sales',
+    #             4: 'construction',
+    #             5: 'manufacturing',
+    #             6: 'utilities',
+    #             7: 'finance',
+    #             8: 'knowledge',
+    #             9: 'health',
+    #             10: 'entertainment',
+    #             11: 'government',
+    #             12: 'other',
+    #             -1: 'unknown',
+    #         },
+    #         'consequence_option': {
+    #             0: 'death',
+    #             1: 'harm',
+    #             2: 'basic',
+    #             3: 'property',
+    #             4: 'delay',
+    #             5: 'non-human',
+    #             6: 'no consequence',
+    #             7: 'theoretical consequences',
+    #             8: 'other',
+    #             -1: 'unknown',
+    #         },
+    #         'perception_option': {
+    #             0: 'sensors',
+    #             1: 'actuators',
+    #             2: 'processing unit',
+    #             3: 'network communication',
+    #             4: 'embedded software combination',
+    #             5: False,
+    #             -1: 'unknown',
+    #         }
+    #     }
+
+    #     mapped_values = [taxonomy_mapping[taxonomy][value] for value in values]
+
+    #     return mapped_values
+
+
