@@ -145,7 +145,7 @@ Commands
     $ docker compose -f local.yml run --rm django python -m tests evaluatemerge --saveCSV
 
 
-Evaluate Pipeline's Postmortem Analysis
+Evaluate Pipeline's Postmortem Analysis (Needs refactoring, might not work)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Description
@@ -175,7 +175,7 @@ Commands
     $ docker compose -f local.yml run --rm django python -m failures scrape --keyword "keyword"
 
 
-Evaluate Pipeline's Taxonomy Analysis
+Evaluate Pipeline's Taxonomy Analysis (Needs refactoring, not currently working)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Description
