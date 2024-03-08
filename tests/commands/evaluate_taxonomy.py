@@ -265,137 +265,139 @@ class EvaluateTaxonomyCommand:
         return auto_incident_ids, man_incident_ids
 
     def get_taxonomy_mapping(self, taxonomy: str, values: list):
-        """
-        Returns the mapping of the string taxonomy values to the integer taxonomy values.
+        pass
+        # TODO: Commented out until working
+    #     """
+    #     Returns the mapping of the string taxonomy values to the integer taxonomy values.
 
-        Args:
-            taxonomy (String): The taxonomy being evaluated
-            values (list): The values stored in the database for the incidents.
+    #     Args:
+    #         taxonomy (String): The taxonomy being evaluated
+    #         values (list): The values stored in the database for the incidents.
 
-        """
-        taxonomy_mapping = {
-            'phase_option': {
-                0: 'system design',
-                1: 'operation',
-                2: 'both',
-                3: 'neither',
-                -1: 'unknown',
-            },
-            'boundary_option': {
-                0: 'within the system',
-                1: 'outside the system',
-                2: 'both',
-                3: 'neither',
-                -1: 'unknown',
-            },
-            'nature_option': {
-                0: 'human actions',
-                1: 'non-human actions',
-                2: 'both',
-                3: 'neither',
-                -1: 'unknown',
-            },
-            'dimension_option': {
-                0: 'hardware',
-                1: 'software',
-                2: 'both',
-                3: 'neither',
-                -1: 'unknown',
-            },
-            'objective_option': {
-                0: 'malicious',
-                1: 'non-malicious',
-                2: 'both',
-                3: 'neither',
-                -1: 'unknown',
-            },
-            'intent_option': {
-                0: 'deliberate',
-                1: 'accidental',
-                2: 'both',
-                3: 'neither',
-                -1: 'unknown',
-            },
-            'capability_option': {
-                0: 'accidental',
-                1: 'development incompetence',
-                2: 'both',
-                3: 'neither',
-                -1: 'unknown',
-            },
-            'duration_option': {
-                0: 'Permanent',
-                1: 'Transient Intermittent',
-                2: 'neither',
-                -1: 'unknown',
-            },
-            'cps_option': {
-                0: True,
-                1: False,
-                -1: 'unknown',
-            },
-            'communication_option': {
-                0: False,
-                1: 'link level',
-                2: 'connectivity level',
-                -1: 'unknown',
-            },
-            'application_option': {
-                0: True,
-                1: False,
-                -1: 'unknown',
-            },
-        }
-            'behaviour_option': {
-                0: 'crash',
-                1: 'omission',
-                2: 'timing',
-                3: 'value',
-                4: 'byzantine fault',
-                5: 'Other',
-                -1: 'unknown',
-            },
-            'domain_option': {
-                0: 'information',
-                1: 'transportation',
-                2: 'natural resources',
-                3: 'sales',
-                4: 'construction',
-                5: 'manufacturing',
-                6: 'utilities',
-                7: 'finance',
-                8: 'knowledge',
-                9: 'health',
-                10: 'entertainment',
-                11: 'government',
-                12: 'other',
-                -1: 'unknown',
-            },
-            'consequence_option': {
-                0: 'death',
-                1: 'harm',
-                2: 'basic',
-                3: 'property',
-                4: 'delay',
-                5: 'non-human',
-                6: 'no consequence',
-                7: 'theoretical consequences',
-                8: 'other',
-                -1: 'unknown',
-            },
-            'perception_option': {
-                0: 'sensors',
-                1: 'actuators',
-                2: 'processing unit',
-                3: 'network communication',
-                4: 'embedded software combination',
-                5: False,
-                -1: 'unknown',
-            }
-        }
+    #     """
+    #     taxonomy_mapping = {
+    #         'phase_option': {
+    #             0: 'system design',
+    #             1: 'operation',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'boundary_option': {
+    #             0: 'within the system',
+    #             1: 'outside the system',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'nature_option': {
+    #             0: 'human actions',
+    #             1: 'non-human actions',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'dimension_option': {
+    #             0: 'hardware',
+    #             1: 'software',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'objective_option': {
+    #             0: 'malicious',
+    #             1: 'non-malicious',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'intent_option': {
+    #             0: 'deliberate',
+    #             1: 'accidental',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'capability_option': {
+    #             0: 'accidental',
+    #             1: 'development incompetence',
+    #             2: 'both',
+    #             3: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'duration_option': {
+    #             0: 'Permanent',
+    #             1: 'Transient Intermittent',
+    #             2: 'neither',
+    #             -1: 'unknown',
+    #         },
+    #         'cps_option': {
+    #             0: True,
+    #             1: False,
+    #             -1: 'unknown',
+    #         },
+    #         'communication_option': {
+    #             0: False,
+    #             1: 'link level',
+    #             2: 'connectivity level',
+    #             -1: 'unknown',
+    #         },
+    #         'application_option': {
+    #             0: True,
+    #             1: False,
+    #             -1: 'unknown',
+    #         },
+    #     }
+    #         'behaviour_option': {
+    #             0: 'crash',
+    #             1: 'omission',
+    #             2: 'timing',
+    #             3: 'value',
+    #             4: 'byzantine fault',
+    #             5: 'Other',
+    #             -1: 'unknown',
+    #         },
+    #         'domain_option': {
+    #             0: 'information',
+    #             1: 'transportation',
+    #             2: 'natural resources',
+    #             3: 'sales',
+    #             4: 'construction',
+    #             5: 'manufacturing',
+    #             6: 'utilities',
+    #             7: 'finance',
+    #             8: 'knowledge',
+    #             9: 'health',
+    #             10: 'entertainment',
+    #             11: 'government',
+    #             12: 'other',
+    #             -1: 'unknown',
+    #         },
+    #         'consequence_option': {
+    #             0: 'death',
+    #             1: 'harm',
+    #             2: 'basic',
+    #             3: 'property',
+    #             4: 'delay',
+    #             5: 'non-human',
+    #             6: 'no consequence',
+    #             7: 'theoretical consequences',
+    #             8: 'other',
+    #             -1: 'unknown',
+    #         },
+    #         'perception_option': {
+    #             0: 'sensors',
+    #             1: 'actuators',
+    #             2: 'processing unit',
+    #             3: 'network communication',
+    #             4: 'embedded software combination',
+    #             5: False,
+    #             -1: 'unknown',
+    #         }
+    #     }
 
-        mapped_values = [taxonomy_mapping[taxonomy][value] for value in values]
+    #     mapped_values = [taxonomy_mapping[taxonomy][value] for value in values]
 
-        return mapped_values
+    #     return mapped_values
 
 
