@@ -2,6 +2,7 @@ import argparse
 import logging
 import textwrap
 import pandas as pd
+import csv
 
 from failures.articles.models import Article, SearchQuery
 
@@ -30,6 +31,11 @@ class EvaluateIdentificationCommand:
             help="Lists all metrics.",
         )
         parser.add_argument(
+            "--saveCSV",
+            action="store_true",
+            help="Save metrics to a csv (saves to tests/performance/analyzable_failure.csv)",
+        )
+        parser.add_argument(
             "--list",
             action="store_true",
             help="List all articles incorrectly classified.",
@@ -54,34 +60,35 @@ class EvaluateIdentificationCommand:
         logging.info("\n\nNow evaluating ANALYZE FAILURES\n")
         metrics = {}
         
-        # Define the file path
-        file_path = "./tests/manual_evaluation/experiment_data_manual_articles_Analyst-B.xlsx"
+        # Define the file paths
+        input_file_path = "./tests/ground_truth/ground_truth_classify.xlsx"
+        output_file_path = "./tests/performance/analyzable_failure.csv"
 
         # Define the columns to read
-        columns_to_read = ["Article ID", "Describes Failure", "Analyzable Failure"]
+        columns_to_read = ["id", "failure", "analyzable"]
 
         # Read the Excel file into a Pandas DataFrame
         try:
-            df = pd.read_excel(file_path, usecols=columns_to_read)
+            df = pd.read_excel(input_file_path, usecols=columns_to_read)
             logging.info("Data loaded successfully.")
         except FileNotFoundError:
-            logging.info(f"Error: The file '{file_path}' was not found.")
+            logging.info(f"Error: The file '{input_file_path}' was not found.")
             return metrics
         except Exception as e:
             logging.info(f"An error occurred: {str(e)}")
             return metrics
 
-        # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
-        df = df[df['Article ID'].apply(lambda x: isinstance(x, int) and x >= 0)]
-        df = df[df['Describes Failure'] == True]
+        # Filter rows where 'id' is not a positive integer and 'failure?' is not 0 or 1
+        df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
+        df = df[df['failure'] == True]
 
         # Check --articles
         if args.articles:
-            df = df[df['Article ID'].apply(lambda x: x in args.articles)]
-            df = df[df['Describes Failure'] == True]
+            df = df[df['id'].apply(lambda x: x in args.articles)]
+            df = df[df['failure'] == True]
 
         # Get a list of article IDs from the manual database
-        article_ids = df['Article ID'].tolist()
+        article_ids = df['id'].tolist()
 
         # Query for articles matching manual db IDs
         matching_articles = Article.objects.filter(id__in=article_ids)
@@ -98,7 +105,7 @@ class EvaluateIdentificationCommand:
         # Iterate through articles and count matches
         for article in matching_articles:
             article_id = article.id
-            ground_truth = df[df['Article ID'] == article.id]['Analyzable Failure'].values[0]
+            ground_truth = df[df['id'] == article.id]['analyzable'].values[0]
             if article.analyzable_failure != None and article.analyzable_failure == ground_truth:
                 total_match += 1
             else:
@@ -173,6 +180,18 @@ class EvaluateIdentificationCommand:
                 "Identify: Wrong (Fraction)": f"{wrong_classifications}/{total_articles}",
                 "Identify: Total Evaluated": str(total_articles) 
             }
+
+            if args.saveCSV:
+                logging.info(f"Storing metrics in: {output_file_path}")
+                with open(output_file_path, mode='w', newline='') as csv_file:
+                    fieldnames = metrics.keys()
+                    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+                    # Writing the header
+                    writer.writeheader()
+
+                    # Writing the metrics
+                    writer.writerow(metrics)
         else:
             logging.info("Evaluate Identification Command: No common IDs found between ground truth and predicted data.")
 
