@@ -5,6 +5,8 @@ from django.urls import reverse
 from failures.articles.models import Article, Incident, SearchQuery
 
 from import_export.admin import ImportExportModelAdmin
+from public_admin.admin import PublicModelAdmin
+
 
 '''
 @admin.register(Article)
@@ -56,7 +58,7 @@ class ArticleAdmin(admin.ModelAdmin):
 '''
 
 @admin.register(Article)
-class ArticleAdmin(ImportExportModelAdmin):
+class ArticleAdmin(ImportExportModelAdmin, PublicModelAdmin):
     list_display = (
         "id",
         "headline",
@@ -122,7 +124,7 @@ admin.site.register(Incident, IncidentAdmin)
 '''
 
 @admin.register(Incident)
-class IncidentAdmin(ImportExportModelAdmin):
+class IncidentAdmin(ImportExportModelAdmin, PublicModelAdmin):
     list_display = (
         "id",
         "title",
