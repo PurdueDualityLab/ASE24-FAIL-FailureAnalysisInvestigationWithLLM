@@ -1,6 +1,361 @@
 
 FAILURE_SYNONYMS = "hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
 
+
+POSTMORTEM_QUESTIONS = {
+        "title":            "Provide a title describing the software failure incident.",
+        "summary":          "Summarize the software failure incident. Include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s).",
+        "time":             "When did the software failure incident happen?",
+        "system":           "What system(s) failed in the software failure incident?",
+        "ResponsibleOrg":   "Which entity(s) was responsible for causing the software failure incident?",
+        "ImpactedOrg":      "Which entity(s) was impacted by the software failure incident?",
+        "SEcauses":         "What were the software causes of the failure incident?",
+        "NSEcauses":        "What were the non-software causes of the failure incident?",
+        "impacts":          "What were the impacts due to the software failure incident?",
+        "preventions":      "What could have prevented the software failure incident?", 
+        "fixes":            "What could fix the software failure incident?",
+        "references":       "From where do the articles gather information about the software failure incident?",
+}
+
+PROMPT_ADDITIONS = {
+        "title":        {
+                                "before": "",
+                                "after": "\nIf available, include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s).\nTitle should be around 10 words. Return just the title.",
+                        },
+        "summary":      {
+                                "before": "",
+                                "after": "\nAnswer in under 250 words.",
+                        },              
+        "time":         {
+                                "before": "",
+                                "after": """
+                                        Return in a numbered list (with citations in the format: [#, #, ...]). 
+
+                                        If it is unknown, estimate the timeline with following steps (show the calculation):
+                                        Step 1: Find 'Published on ...' date (Do not return the 'Published on ...' date).
+                                        Step 2: If relative time is mentioned (ex: last November, Friday, today, etc.). Then calculate the incident timeline by subtracting from the Published on date. Example: if the article mentions that the incident occured last November, and the article was Published on 2015-06-27, then the incident occured on November 2014. (If available, atleast return the month and year.)
+                                        Step 3: If the timeline cannot be estimated, then return 'unknown'
+                                        """,
+                        },
+        "system":        {
+                                "before": "",
+                                "after": "\nIf specific components failed, include them. Return the system(s) and components that failed in a numbered list (with citations in the format: [#, #, ...]).",
+                        },           
+        "ResponsibleOrg":       {
+                                "before": "",
+                                "after": "\nIf available, include any background information about the entity(s) and how they contributed to the failure. Return in a numbered list (with citations in the format: [#, #, ...]).",
+                        },   
+        "ImpactedOrg":        {
+                                "before": "",
+                                "after": "\nIf available, include any background information about the entity(s) and how they were impacted by the failure. Return in a numbered list (with citations in the format: [#, #, ...]).",
+                        },      
+        "SEcauses":        {
+                                "before": "",
+                                "after": "\nDo not return non-software causes. Return in a numbered list (with citations in the format: [#, #, ...]).",
+                        },         
+        "NSEcauses":        {
+                                "before": "",
+                                "after": "\nDo not return software causes. Return in a numbered list (with citations in the format: [#, #, ...]).",
+                        },        
+        "impacts":        {
+                                "before": "",
+                                "after": "\nReturn in a numbered list (with citations in the format: [#, #, ...]).",
+                        },          
+        "preventions":        {
+                                "before": "",
+                                "after": "\nReturn in a numbered list (with citations in the format: [#, #, ...]).",
+                        },      
+        "fixes":        {
+                                "before": "",
+                                "after": "\nReturn in a numbered list (with citations in the format: [#, #, ...]).",
+                        },                
+        "references":        {
+                                "before": "",
+                                "after": "\nProvide all specific entities from where the articles gather information from. Return in a numbered list (with citations in the format: [#, #, ...]).",
+                        },
+        "recurring":    {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": """
+                                                {
+                                                "one_organization": true or false,
+                                                "multiple_organization": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
+                                        },
+                        },          
+        "phase":        {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": """
+                                                {
+                                                "design": true or false,
+                                                "operation": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
+                                        },
+                        },            
+        "boundary":     {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },         
+        "nature":       {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": """
+                                                {
+                                                "non-human_actions": true or false,
+                                                "human_actions": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
+                                        },
+                        },           
+        "dimension":    {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },        
+        "objective":    {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },        
+        "intent":       {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },           
+        "capability":   {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },       
+        "duration":     {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": """
+                                                {
+                                                "permanent": true or false,
+                                                "temporary": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
+                                        },
+                        },        
+        "domain":       {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },           
+        "cps":          {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },              
+        "perception":   {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },       
+        "communication":{
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },    
+        "application":  {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },      
+        "behaviour":    {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": "",
+                                        },
+                        },       
+}
+
+TAXONOMY_DEFINITIONS = {
+        "recurring":            """
+                                The software failure incident having happened again at:
+                                (a) one_organization: Similar incident has happened before or again within the same organization or with its products and services
+                                (b) multiple_organization: Similar incident has happened before or again at other organizations or with their products and services
+                                """,
+        "phase":                """
+                                The software failure incident being introduced by the development phases:
+                                (a) design: Failure due to contributing factors introduced by system development, system updates, or procedures to operate or maintain the system
+                                (b) operation: Failure due to contributing factors introduced by the operation or misuse of the system
+                                """,
+        "boundary":         ,
+        "nature":               """
+                                The software failure incident being introduced by:
+                                (a) non-human_actions: Failure due to contributing factors introduced without human participation
+                                (b) human_actions: Failure due to contributing factors introduced by human actions
+                                """,
+        "dimension":        ,
+        "objective":        ,
+        "intent":           ,
+        "capability":       ,
+        "duration":             """
+                                The duration of the software failure incident being:
+                                (a) permanent: Failure due to contributing factors introduced by all circumstances
+                                (b) temporary: Failure due to contributing factors introduced by certain circumstances but not all
+                                """,
+        "domain":           ,
+        "cps":              ,
+        "perception":       ,
+        "communication":    ,
+        "application":      ,
+        "behaviour":        ,
+        #CPS:
+        "perception":       ,
+        "communication":    ,
+        "application":      ,
+}
+
+TAXONOMY_QUESTIONS = {
+        "recurring":            """
+                                (a) one: Have similar incident(s) happened before or again within the same organization or with its products and services?
+                                (b) multiple: Have similar incident(s) happened before or again at other organizations or with their products and services?
+                                """,
+        "phase":                """
+                                (a) design: Was the failure due to at least one contributing factor introduced by system development, system updates, or procedures to operate or maintain the system?
+                                (b) operation: Was the failure due to at least one contributing factor introduced by the operation or misuse of the system?
+                                """,
+        "boundary":         ,
+        "nature":               """
+                                (a) non-human_actions: Was the failure due to at least one contributing factor introduced without human participation?
+                                (b) human_actions: Was the failure due to at least one contributing factor introduced by human actions?
+                                """,
+        "dimension":        ,
+        "objective":        ,
+        "intent":           ,
+        "capability":       ,
+        "duration":             """
+                                (a) permanent: Was the failure due to at least one contributing factor introduced by all circumstances?
+                                (b) temporary: Was the failure due to at least one contributing factor introduced by certain circumstances but not all?
+                                """,
+        "domain":           ,
+        "cps":              ,
+        "perception":       ,
+        "communication":    ,
+        "application":      ,
+        "behaviour":        ,
+        #CPS:
+        "perception":       ,
+        "communication":    ,
+        "application":      ,
+}
+
+CPS_KEYS = ["perception","communication","application"]
+
+
+
+### DEPRECIATED
 QUESTIONS = {
         "title":            "Provide a 10 word title for the software failure incident. (return just the title)",
         "summary":          "Summarize the software failure incident. Include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s). (answer in under 250 words)",
@@ -52,6 +407,3 @@ TAXONOMY_OPTIONS = {
             "behaviour": {"0": "crash", "1": "omission", "2": "timing", "3": "incorrect value", "4": "byzantine fault", "-1": "unknown"},
             "recurring": {"true": "true", "false": "false", "0": "within the same impacted entity", "1": "at other entity(s)", "-1": "unknown"},
         }
-
-TAXONOMY_DEFINITIONS = {
-}

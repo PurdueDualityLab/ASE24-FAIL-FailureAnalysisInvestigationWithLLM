@@ -158,7 +158,9 @@ class MergeCommand:
 
                             if article_new.published < incident.published: #If published date of new article is older
                                 incident.published = article_new.published
-                                incident.save()
+
+                            incident.new_article = True
+                            incident.save()
 
                             article_new.save()
 
