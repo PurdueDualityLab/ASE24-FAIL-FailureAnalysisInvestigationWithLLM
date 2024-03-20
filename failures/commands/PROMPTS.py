@@ -77,7 +77,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
@@ -95,7 +95,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
@@ -113,19 +113,25 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "within_system": true or false,
+                                                "outside_system": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },         
         "nature":       {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
@@ -143,55 +149,79 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "hardware": true or false,
+                                                "software": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },        
         "objective":    {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "malicious": true or false,
+                                                "non-malicious": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },        
         "intent":       {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "poor_decisions": true or false,
+                                                "accidental_decisions": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },           
         "capability":   {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "development_incompetence": true or false,
+                                                "accidental": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },       
         "duration":     {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
                                         },
                                 "decision":
                                         {
@@ -201,6 +231,27 @@ PROMPT_ADDITIONS = {
                                                 "permanent": true or false,
                                                 "temporary": true or false,
                                                 "unknown": true or false,
+                                                }
+                                                """,
+                                        },
+                        }, 
+        "behaviour":    {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about the six options.",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": """
+                                                {
+                                                "crash": true or false,
+                                                "omission": true or false,
+                                                "timing": true or false,
+                                                "value": true or false,
+                                                "byzantine": true or false,
+                                                "other": true or false
                                                 }
                                                 """,
                                         },
@@ -264,19 +315,7 @@ PROMPT_ADDITIONS = {
                                         "before": "",
                                         "after": "",
                                         },
-                        },      
-        "behaviour":    {
-                                "rationale": 
-                                        {
-                                        "before": "",
-                                        "after": "",
-                                        },
-                                "decision":
-                                        {
-                                        "before": "",
-                                        "after": "",
-                                        },
-                        },       
+                        },            
 }
 
 TAXONOMY_DEFINITIONS = {
@@ -286,31 +325,56 @@ TAXONOMY_DEFINITIONS = {
                                 (b) multiple_organization: Similar incident has happened before or again at other organizations or with their products and services
                                 """,
         "phase":                """
-                                The software failure incident being introduced by the development phases:
+                                The software failure incident occurring due to the development phases:
                                 (a) design: Failure due to contributing factors introduced by system development, system updates, or procedures to operate or maintain the system
                                 (b) operation: Failure due to contributing factors introduced by the operation or misuse of the system
                                 """,
-        "boundary":         ,
+        "boundary":             """
+                                The boundary of the software failure incident:
+                                (a) within_system: Failure due to contributing factors that originate from within the system 
+                                (b) outside_system: Failure due to contributing factors that originate from outside the system
+                                """,
         "nature":               """
-                                The software failure incident being introduced by:
+                                The software failure incident occurring due to:
                                 (a) non-human_actions: Failure due to contributing factors introduced without human participation
                                 (b) human_actions: Failure due to contributing factors introduced by human actions
                                 """,
-        "dimension":        ,
-        "objective":        ,
-        "intent":           ,
-        "capability":       ,
+        "dimension":            """
+                                The software failure incident occurring due to:
+                                (a) hardware: Failure due to contributing factors that originate in hardware
+                                (b) software: Failure due to contributing factors that originate in software
+                                """,
+        "objective":            """
+                                The objective of the software failure incident:
+                                (a) malicious: Failure due to contributing factors introduced by human(s) with intent to harm the system
+                                (b) non-malicious: Failure due to contributing factors introduced without intent to harm the system
+                                """,
+        "intent":               """
+                                The intent of the software failure incident:
+                                (a) poor_decisions: Failure due to contributing factors introduced by poor decisions
+                                (b) accidental_decisions: Failure due to contributing factors introduced by mistakes or unintended decisions
+                                """,
+        "capability":           """
+                                The software failure incident occurring due to:
+                                (a) development_incompetence: Failure due to contributing factors introduced due to lack of professional competence by humans or development organization
+                                (b) accidental: Failure due to contributing factors introduced accidentally
+                                """,
         "duration":             """
                                 The duration of the software failure incident being:
                                 (a) permanent: Failure due to contributing factors introduced by all circumstances
                                 (b) temporary: Failure due to contributing factors introduced by certain circumstances but not all
                                 """,
+        "behaviour":            """
+                                The behavior of the software failure incident:
+                                (a) crash: Failure due to system losing state and not performing any of its intended functions
+                                (b) omission: Failure due to system omitting to perform its intended functions at an instance(s)
+                                (c) timing: Failure due to system performing its intended functions correctly, but too late or too early 
+                                (d) value: Failure due to system performing its intended functions incorrectly
+                                (e) byzantine: Failure due to system behaving erroneously with inconsistent responses and interactions
+                                (f) other: Failure due to system behaving in a way not described in the (a to e) options; What is the other behaviour?
+                                """,
         "domain":           ,
         "cps":              ,
-        "perception":       ,
-        "communication":    ,
-        "application":      ,
-        "behaviour":        ,
         #CPS:
         "perception":       ,
         "communication":    ,
@@ -326,25 +390,44 @@ TAXONOMY_QUESTIONS = {
                                 (a) design: Was the failure due to at least one contributing factor introduced by system development, system updates, or procedures to operate or maintain the system?
                                 (b) operation: Was the failure due to at least one contributing factor introduced by the operation or misuse of the system?
                                 """,
-        "boundary":         ,
+        "boundary":             """
+                                (a) within_system: Was the failure due to at least one contributing factor that originates from within the system?
+                                (b) outside_system: Was the failure due to at least one contributing factor that originates from outside the system?
+                                """,
         "nature":               """
                                 (a) non-human_actions: Was the failure due to at least one contributing factor introduced without human participation?
                                 (b) human_actions: Was the failure due to at least one contributing factor introduced by human actions?
                                 """,
-        "dimension":        ,
-        "objective":        ,
-        "intent":           ,
-        "capability":       ,
+        "dimension":            """
+                                (a) hardware: Was the failure due to at least one contributing factor that originates in hardware?
+                                (b) software: Was the failure due to at least one contributing factor that originates in software?
+                                """,
+        "objective":            """
+                                (a) malicious: Was the failure due to at least one contributing factor introduced by human(s) with intent to harm the system?
+                                (b) non-malicious: Was the failure due to at least one contributing factor introduced without intent to harm the system?
+                                """,
+        "intent":               """
+                                (a) poor_decisions: Was the failure due to at least one contributing factor introduced by poor decisions?
+                                (b) accidental_decisions: Was the failure due to at least one contributing factor introduced by mistakes or unintended decisions?
+                                """,
+        "capability":           """
+                                (a) development_incompetence: Was the failure due to at least one contributing factor introduced due to lack of professional competence by humans or development organization?
+                                (b) accidental: Was the failure due to at least one contributing factor introduced accidentally?
+                                """,
         "duration":             """
                                 (a) permanent: Was the failure due to at least one contributing factor introduced by all circumstances?
                                 (b) temporary: Was the failure due to at least one contributing factor introduced by certain circumstances but not all?
                                 """,
+        "behaviour":            """
+                                (a) crash: Was the failure due to system losing state and not performing any of its intended functions?
+                                (b) omission: Was the failure due to system omitting to perform its intended functions at an instance(s)?
+                                (c) timing: Was the failure due to system performing its intended functions correctly, but too late or too early?
+                                (d) value: Was the failure due to system performing its intended functions incorrectly?
+                                (e) byzantine: Was the failure due to system behaving erroneously with inconsistent responses and interactions?
+                                (f) other: Was the failure due to system behaving in a way not described in the other options?
+                                """,
         "domain":           ,
         "cps":              ,
-        "perception":       ,
-        "communication":    ,
-        "application":      ,
-        "behaviour":        ,
         #CPS:
         "perception":       ,
         "communication":    ,

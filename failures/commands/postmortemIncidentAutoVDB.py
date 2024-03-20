@@ -151,7 +151,6 @@ class PostmortemIncidentCommand:
         
         ## For Step 1 of taxonomy questions: To 'extract' the information extracted from articles to answer questions
         prompt_template_extract_task = "Extract information from the articles about the software failure incident related to:\n"
-        prompt_template_extract_instruction = "\nDo not choose an option, provide relevant information from the articles about all of the options."
 
         ## For Step 2 of taxonomy questions: To 'make decisions' using the extracted information about the taxonomy
         prompt_template_decision_instruction = "Use the following Extracted Information from news articles reporting on a software failure incident to answer the Questions." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
@@ -244,7 +243,7 @@ class PostmortemIncidentCommand:
                         ### Construct prompt to Ask LLM to extract relevent information from articles to help make the decision about the taxonomy
                         messages = system_message.copy()
 
-                        prompt_question = "\n<Question>" + prompt_template_extract_task + prompt_additions[question_key]["rationale"]["before"] + taxonomy_definitions[question_key] + prompt_additions[question_key]["rationale"]["after"] + prompt_template_extract_instruction + "</Question>"
+                        prompt_question = "\n<Question>" + prompt_template_extract_task + prompt_additions[question_key]["rationale"]["before"] + taxonomy_definitions[question_key] + prompt_additions[question_key]["rationale"]["after"] + "</Question>"
                         
                         final_prompt = prompt_template_articles_instruction + prompt_incident + prompt_question
 
