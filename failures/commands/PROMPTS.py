@@ -77,7 +77,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -95,7 +95,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -113,7 +113,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -131,7 +131,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -149,7 +149,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -167,7 +167,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -185,7 +185,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -203,7 +203,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -221,7 +221,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about both options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -239,7 +239,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about the six options.",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about the six options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -251,7 +251,8 @@ PROMPT_ADDITIONS = {
                                                 "timing": true or false,
                                                 "value": true or false,
                                                 "byzantine": true or false,
-                                                "other": true or false
+                                                "other": true or false,
+                                                "unknown": true or false,
                                                 }
                                                 """,
                                         },
@@ -260,60 +261,125 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select any one option, provide relevant information from the articles about all 13 (a to m) options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "information": true or false,
+                                                "transportation": true or false,
+                                                "natural_resources": true or false,
+                                                "sales": true or false,
+                                                "construction": true or false,
+                                                "manufacturing": true or false,
+                                                "utilities": true or false,
+                                                "finance": true or false,
+                                                "knowledge": true or false,
+                                                "health": true or false,
+                                                "entertainment": true or false,
+                                                "government": true or false,
+                                                "other": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
+                                        },
+                        },
+        "consequence":          {
+                                "rationale": 
+                                        {
+                                        "before": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about the nine options (with citations in the format: [#, #, ...]).",
+                                        },
+                                "decision":
+                                        {
+                                        "before": "",
+                                        "after": """
+                                                {
+                                                "death": true or false,
+                                                "harm": true or false,
+                                                "basic": true or false,
+                                                "property": true or false,
+                                                "delay": true or false,
+                                                "non-human": true or false,
+                                                "no_consequence": true or false,
+                                                "theoretical_consequence": true or false,
+                                                "other": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },           
         "cps":          {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nInclude citations in the format: [#, #, ...].",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "cps": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },              
         "perception":   {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about the five options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                The perception layer of the cyber physical system that failed:
+                                                (a) sensor: Failure due to contributing factors introduced by sensor error
+                                                (b) actuator: Failure due to contributing factors introduced by actuator error
+                                                (c) processing_unit: Failure due to contributing factors introduced by processing error
+                                                (d) network_communication: Failure due to contributing factors introduced by network communication error
+                                                (e) embedded_software: Failure due to contributing factors introduced by embedded software error
+                                                """,
                                         },
                         },       
         "communication":{
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about both options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "link_level": true or false,
+                                                "connectivity_level": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },    
         "application":  {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": "\nInclude citations in the format: [#, #, ...].",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": "",
+                                        "after": """
+                                                {
+                                                "application": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """,
                                         },
                         },            
 }
@@ -373,12 +439,56 @@ TAXONOMY_DEFINITIONS = {
                                 (e) byzantine: Failure due to system behaving erroneously with inconsistent responses and interactions
                                 (f) other: Failure due to system behaving in a way not described in the (a to e) options; What is the other behaviour?
                                 """,
-        "domain":           ,
-        "cps":              ,
+        "domain":               """
+                                The industry that the failed system was intended to support:
+                                (a) information: Production and distribution of information
+                                (b) transportation: Moving people and things
+                                (c) natural_resources: Extracting materials from Earth
+                                (d) sales: Exchanging money for products
+                                (e) construction: Creating built environment
+                                (f) manufacturing: Creating products from materials
+                                (g) utilities: Power, gas, steam, water, and sewage services
+                                (h) finance: Manipulating and moving money for profit
+                                (i) knowledge: Education, research, and space exploration
+                                (j) health: Healthcare, health insurance, and food industries
+                                (k) entertainment: Arts, sports, hospitality, tourism, etc
+                                (l) government: Politics, defense, justice, taxes, public services, etc
+                                (m) other: Was the system that failed related to an industry not described in the (a to l) options? What is the other industry?
+                                """,
+        "consequence":          """
+                                The consequence of the software failure incident:
+                                (a) death: People lost their lives due to the software failure
+                                (b) harm: People were physically harmed due to the software failure
+                                (c) basic: People's access to food or shelter was impacted because of the software failure
+                                (d) property: People's material goods, money, or data was impacted due to the software failure
+                                (e) delay: People had to postpone an activity due to the software failure
+                                (f) non-human: Non-human entities were impacted due to the software failure
+                                (g) no_consequence: There were no real observed consequences of the software failure
+                                (h) theoretical_consequence: There were potential consequences discussed of the software failure that did not occur
+                                (i) other: Was there consequence(s) of the software failure not described in the (a to h) options? What is the other consequence(s)?
+                                """,
+        "cps":                  """
+                                Whether the overall system in the incident is a cyber physical system (cps) meeting the following definition:
+                                cps: Systems that include computational and physical components to monitor and/or control physical inputs/outputs
+                                """,
         #CPS:
-        "perception":       ,
-        "communication":    ,
-        "application":      ,
+        "perception":           """
+                                Whether the failure was related to the perception layer of the cyber physical system that failed:
+                                (a) sensor: Failure due to contributing factors introduced by sensor error
+                                (b) actuator: Failure due to contributing factors introduced by actuator error
+                                (c) processing_unit: Failure due to contributing factors introduced by processing error
+                                (d) network_communication: Failure due to contributing factors introduced by network communication error
+                                (e) embedded_software: Failure due to contributing factors introduced by embedded software error
+                                """,
+        "communication":        """
+                                Whether the failure was related to the communication layer of the cyber physical system that failed:
+                                (a) link_level: Failure due to contributing factors introduced by wired or wireless physical layer
+                                (b) connectivity_level: Failure due to contributing factors introduced by network or transport layer
+                                """,
+        "application":          """
+                                Whether the failure was related to the application layer of the cyber physical system that failed with the following definition:
+                                application: Failure due to contributing factors introduced by bugs, operating system errors, unhandled exceptions, and incorrect usage
+                                """,
 }
 
 TAXONOMY_QUESTIONS = {
@@ -426,12 +536,50 @@ TAXONOMY_QUESTIONS = {
                                 (e) byzantine: Was the failure due to system behaving erroneously with inconsistent responses and interactions?
                                 (f) other: Was the failure due to system behaving in a way not described in the other options?
                                 """,
-        "domain":           ,
-        "cps":              ,
+        "domain":               """
+                                (a) information: Was the system that failed related to the industry of production and distribution of information?
+                                (b) transportation: Was the system that failed related to the industry of moving people and things?
+                                (c) natural_resources: Was the system that failed related to the industry of extracting materials from Earth?
+                                (d) sales: Was the system that failed related to the industry of exchanging money for products?
+                                (e) construction: Was the system that failed related to the industry of creating built environment?
+                                (f) manufacturing: Was the system that failed related to the industry of creating products from materials?
+                                (g) utilities: Was the system that failed related to the industry of power, gas, steam, water, and sewage services?
+                                (h) finance: Was the system that failed related to the industry of manipulating and moving money for profit?
+                                (i) knowledge: Was the system that failed related to the industry of education, research, and space exploration?
+                                (j) health: Was the system that failed related to the industry of healthcare, health insurance, and food industries?
+                                (k) entertainment: Was the system that failed related to the industry of arts, sports, hospitality, tourism, etc?
+                                (l) government: Was the system that failed related to the industry of politics, defense, justice, taxes, public services, etc?
+                                (m) other: Was the system that failed related to an industry not described in the (a to l) options?
+                                """,
+        "consequence":          """
+                                (a) death: Did people lose their lives due to the software failure?
+                                (b) harm: Were people physically harmed due to the software failure?
+                                (c) basic: Were people's access to food or shelter impacted because of the software failure?
+                                (d) property: Were people's material goods, money, or data impacted due to the software failure?
+                                (e) delay: Did people have to postpone an activity due to the software failure?
+                                (f) non-human: Were non-human entities impacted due to the software failure?
+                                (g) no_consequence: Were there no real observed consequences of the software failure?
+                                (h) theoretical_consequence: Were there potential consequences discussed of the software failure that did not occur?
+                                (i) other: Was there consequence(s) of the software failure not described in the (a to h) options? What is the other consequence(s)?
+                                """,
+        "cps":                  """
+                                cps: Is the system that failed a cyber physical system?
+                                """,
         #CPS:
-        "perception":       ,
-        "communication":    ,
-        "application":      ,
+        "perception":           """
+                                (a) sensor: Was the failure due to at least one contributing factor introduced by sensor error?
+                                (b) actuator: Was the failure due to at least one contributing factor introduced by actuator error?
+                                (c) processing_unit: Was the failure due to at least one contributing factor introduced by processing error?
+                                (d) network_communication: Was the failure due to at least one contributing factor introduced by network communication error?
+                                (e) embedded_software: Was the failure due to at least one contributing factor introduced by embedded software error?
+                                """,
+        "communication":        """
+                                (a) link_level: Was the failure due to at least one contributing factor introduced by wired or wireless physical layer?
+                                (b) connectivity_level: Was the failure due to at least one contributing factor introduced by network or transport layer?
+                                """,
+        "application":          """
+                                application: Was the failure due to at least one contributing factor introduced by bugs, operating system errors, unhandled exceptions, and incorrect usage?
+                                """,
 }
 
 CPS_KEYS = ["perception","communication","application"]
