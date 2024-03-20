@@ -29,7 +29,7 @@ from langchain.output_parsers import DatetimeOutputParser
 from langchain.output_parsers import OutputFixingParser
 
 
-class PostmortemIncidentCommand:
+class PostmortemIncidentCommandAutoVDB:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         parser.description = textwrap.dedent(
             """
