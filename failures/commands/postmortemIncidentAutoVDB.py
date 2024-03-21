@@ -29,7 +29,7 @@ from langchain.output_parsers import DatetimeOutputParser
 from langchain.output_parsers import OutputFixingParser
 
 
-class PostmortemIncidentCommandAutoVDB:
+class PostmortemIncidentAutoVDBCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         parser.description = textwrap.dedent(
             """
@@ -48,7 +48,7 @@ class PostmortemIncidentCommandAutoVDB:
             "--key",
             type=str,
             default='None',
-            help="Redo extraction for a specific postmortem key for all incidents.",
+            help="Redo extraction for a specific postmortem key.",
         )
         parser.add_argument(
             "--articles",
@@ -61,6 +61,12 @@ class PostmortemIncidentCommandAutoVDB:
             nargs="+",  # Accepts one or more values
             type=int,    # Converts the values to integers
             help="A list of integers.",
+        )
+        parser.add_argument(
+            "--experiment",
+            type=bool,
+            default=False,
+            help="Marks articles as part of the experiment.",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
@@ -112,7 +118,9 @@ class PostmortemIncidentCommandAutoVDB:
 
         prompt_additions = PROMPT_ADDITIONS
 
-
+        ### If queryset is for an experiment mark it as such
+        if args.experiment is True:
+            incidents.update(experiment=True)
 
         ### Check if a specific question is to be queried
         if query_key != 'None':
@@ -126,6 +134,9 @@ class PostmortemIncidentCommandAutoVDB:
             else:
                 taxonomy_questions = {}
         
+
+        ### ChatGPT
+        chatGPT = ChatGPT()
         
         ### Set up for incidents > 16k context window
         # Vector DB setup
@@ -163,9 +174,11 @@ class PostmortemIncidentCommandAutoVDB:
         for incident in incidents:
             logging.info("Creating postmortem for incident %s.", incident.id)
 
+            ### Get related articles
+            related_articles = incident.articles.all()
+
             ### Count total number of tokens for all articles in an incident
             if incident.tokens == None or incident.new_article == True:  
-                related_articles = incident.articles.all()
                 incident_tokens = 0
 
                 for article in related_articles:
@@ -199,7 +212,7 @@ class PostmortemIncidentCommandAutoVDB:
                         answer_set = False
 
                     # Ask LLM
-                    if query_all or query_key == question_key or incident.new_article == True or answer_set == False: 
+                    if query_all or query_key == question_key or incident.new_article == True or answer_set == False or args.experiment is True: 
                         logging.info("Querying question: " + str(question_key))
 
                         ### Construct prompt
@@ -215,8 +228,11 @@ class PostmortemIncidentCommandAutoVDB:
                         
                         model_parameters_temp = model_parameters.copy()
                         model_parameters_temp["messages"] = messages.copy()
+
+                        logging.info(type(model_parameters_temp))
+                        logging.info(model_parameters_temp)
                 
-                        reply = ChatGPT.run(model_parameters_temp)
+                        reply = chatGPT.run(model_parameters_temp)
 
                         setattr(incident, question_key, reply)
 
@@ -225,7 +241,7 @@ class PostmortemIncidentCommandAutoVDB:
                 for question_key in list(taxonomy_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
 
                     # If question is for CPS, and the system for incident is not CPS, then don't answer
-                    if question_key in cps_keys and incident.cps != True:
+                    if question_key in cps_keys and "\"cps\": true" not in incident.cps_option: #incident.cps != True:
                             continue
 
                     question_rationale_key = question_key + "_rationale"
@@ -237,7 +253,7 @@ class PostmortemIncidentCommandAutoVDB:
                         answer_set = False
 
                     # Ask LLM 
-                    if query_all or query_key == question_key or incident.new_article == True or answer_set == False: 
+                    if query_all or query_key == question_key or incident.new_article == True or answer_set == False or args.experiment is True: 
                         logging.info("Querying question: " + str(question_key))
 
                         ### Construct prompt to Ask LLM to extract relevent information from articles to help make the decision about the taxonomy
@@ -253,8 +269,12 @@ class PostmortemIncidentCommandAutoVDB:
                         
                         model_parameters_temp = model_parameters.copy()
                         model_parameters_temp["messages"] = messages.copy()
+
+                        logging.info(type(model_parameters_temp))
+                        logging.info(model_parameters_temp)
+
                 
-                        reply = ChatGPT.run(model_parameters_temp)
+                        reply = chatGPT.run(model_parameters_temp)
 
                         setattr(incident, question_rationale_key, reply)
 
@@ -276,8 +296,12 @@ class PostmortemIncidentCommandAutoVDB:
                         model_parameters_temp["messages"] = messages.copy()
 
                         model_parameters_temp["response_format"] = {"type": "json_object"}
+
+                        logging.info(type(model_parameters_temp))
+                        logging.info(model_parameters_temp)
                 
-                        reply = ChatGPT.run(model_parameters_temp)
+                        reply = chatGPT.run(model_parameters_temp)
+
 
                         setattr(incident, question_option_key, reply)
 
@@ -302,7 +326,7 @@ class PostmortemIncidentCommandAutoVDB:
             for question_key in list(taxonomy_questions.keys()):
                 
                 # If question is for CPS, and the system for incident is not CPS, then don't check for its completion
-                if question_key in cps_keys and incident.cps != True:
+                if question_key in cps_keys and "\"cps\": true" not in incident.cps_option: #incident.cps != True:
                     continue
 
                 question_option_key = question_key + "_option"
