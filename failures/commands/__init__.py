@@ -9,8 +9,8 @@ from failures.commands.embed import EmbedCommand
 from failures.commands.classifyFailure import ClassifyFailureCommand
 from failures.commands.classifyAnalyzable import ClassifyAnalyzableCommand
 from failures.commands.postmortemArticle import PostmortemArticleCommand
-from failures.commands.postmortemIncidentVDB import PostmortemIncidentCommandVDB
-from failures.commands.postmortemIncidentAutoVDB import PostmortemIncidentCommandAutoVDB
+from failures.commands.postmortemIncidentVDB import PostmortemIncidentVDBCommand
+from failures.commands.postmortemIncidentAutoVDB import PostmortemIncidentAutoVDBCommand
 from failures.commands.cluster import ClusterCommand
 from failures.commands.merge import MergeCommand
 from failures.commands.vectordb import VectordbCommand
@@ -42,7 +42,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentCommandVDB(), PostmortemIncidentCommandAutoVDB, ClusterCommand(), MergeCommand(), VectordbCommand(), StatsCommand(), FixesCommand(), CleanUpCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentVDBCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), StatsCommand(), FixesCommand(), CleanUpCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -94,7 +94,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="cleanup.log",
+        filename="PostmortemIncidentAutoVDB_Testing.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",

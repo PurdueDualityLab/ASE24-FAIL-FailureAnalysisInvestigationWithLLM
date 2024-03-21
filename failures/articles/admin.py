@@ -124,6 +124,7 @@ admin.site.register(Incident, IncidentAdmin)
 @admin.register(Incident)
 class IncidentAdmin(ImportExportModelAdmin):
     list_display = (
+        "experiment",
         "id",
         "title",
         "summary",
@@ -137,6 +138,7 @@ class IncidentAdmin(ImportExportModelAdmin):
         "impacts",
         "preventions",
         "fixes",
+        "references",
         "phase_option",
         "boundary_option",
         "nature_option",
@@ -146,6 +148,7 @@ class IncidentAdmin(ImportExportModelAdmin):
         "capability_option",
         "duration_option",
         "domain_option",
+        "consequence_option",
         "cps_option",
         "perception_option",
         "communication_option",
@@ -160,6 +163,7 @@ class IncidentAdmin(ImportExportModelAdmin):
         "capability_rationale",
         "duration_rationale",
         "domain_rationale",
+        "consequence_rationale",
         "cps_rationale",
         "perception_rationale",
         "communication_rationale",
@@ -167,7 +171,7 @@ class IncidentAdmin(ImportExportModelAdmin):
         "behaviour_rationale",
         "get_articles",
     )
-    search_fields = ["title"]
+    search_fields = ["id"]
 
     '''
     def get_articles(self, obj):

@@ -24,11 +24,7 @@ class FixesCommand:
 
         parser.description = textwrap.dedent(
             """
-            Classify the articles present in the database as either describing a software failure or not. If no arguments are
-            provided, classify all articles that do not have a classification; otherwise, if --all is provided, classify
-            all articles. If an article does not have a body, it will not be classified. 
-            --sample is used for testing.
-            --temp sets the ChatGPT temperature
+            To fix any parts of the database.
             """
         )
         parser.add_argument(
@@ -69,6 +65,9 @@ class FixesCommand:
             parser (argparse.ArgumentParser): The argument parser for the configuration
         """
 
+
+        
+        '''
         logging.info("\nFixing published date reported in article.body for all articles.")
         
         #TODO: Redo publish date for all incidents, with the earliest date of all articles in each incident
@@ -103,3 +102,4 @@ class FixesCommand:
                 break
 
         logging.info("Successfully fixed body with published dates for %d articles.", articles_fixed)
+        '''
