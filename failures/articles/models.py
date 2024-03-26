@@ -887,6 +887,20 @@ class Article_Ko(models.Model):
 
     incident = models.ForeignKey(Incident_Ko, blank=True, null=True, on_delete=models.SET_NULL, related_name='articles')
 
+    storyID = models.IntegerField(
+        _("story id"),
+        null=True, 
+        blank=True,
+        help_text=_("Story ID of the Ko article")
+    )
+    
+    articleID = models.IntegerField(
+        _("article id"),
+        null=True, 
+        blank=True,
+        help_text=_("Article ID of the Ko article")
+    )
+
     published = models.DateTimeField(
         _("Published"), help_text=_("Date and time when the article was published.")
     )
