@@ -260,6 +260,7 @@ class ChatGPT(Network[dict, str]):
         self.openai = openai
         self.openai.api_key = os.getenv('OPENAI_API_KEY')
         self.MAX_RETRIES = 2
+        #TODO: Add seed for reproducability?
 
     def preprocess(self, input_data: dict) -> dict:
         return input_data
@@ -268,6 +269,9 @@ class ChatGPT(Network[dict, str]):
         messages = preprocessed_data["messages"]
         model = preprocessed_data["model"]
         temperature = preprocessed_data["temperature"]
+
+        # Check if "response_format" is present in preprocessed_data use it, if not then None
+        response_format = preprocessed_data.get("response_format", None)
 
         #logging.info("\nUsing " + model + " with a temperature of " + str(temperature) + ".")
 
@@ -278,9 +282,7 @@ class ChatGPT(Network[dict, str]):
             try:
                 chat_completion = None
                 chat_completion = self.openai.ChatCompletion.create(
-                                request_timeout=120, model=model, messages=messages, temperature=temperature #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
-                                #TODO: Pass temperature, conduct experiment by varying for classification tasks and for open ended responses
-                                #TODO: Pass model, auto switch 4k vs 16k based on article length
+                                request_timeout=120, model=model, messages=messages, temperature=temperature, response_format=response_format, #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
                                 ) 
                 break
             
@@ -296,10 +298,15 @@ class ChatGPT(Network[dict, str]):
             except openai.error.InvalidRequestError as e:
                 #Handle invalid request error, e.g. validate parameters or log
                 logging.info(f"OpenAI API request was invalid: {e}")
+
+                #TODO: Signal back to use vector db? The following may be necessary for edge cases (super long articles) for Classify Failure or Classify Analyzability
+                # - Within Classify Failure or Classify Analyzability, catch the error and truncate article to try again? - This might be a very small number of cases
+                '''
                 if "Please reduce the length of the messages" in str(e):
                     logging.info(f"Reducing article length, and trying again.")
                     #messages[1]['content'] = ' '.join(messages[1]['content'].split()[:2250])
                     messages[1]['content'] = truncate_tokens(string=messages[1]['content'], encoding_name=model, max_length=3500)
+                '''
 
             except openai.error.AuthenticationError as e:
                 #Handle authentication error, e.g. check credentials or log
