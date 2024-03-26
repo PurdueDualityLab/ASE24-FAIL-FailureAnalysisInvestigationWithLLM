@@ -2,7 +2,8 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.urls import reverse
 
-from failures.articles.models import Article, Incident, SearchQuery
+from failures.articles.models import Article, Incident, SearchQuery, Article_Ko, Incident_Ko
+
 
 from import_export.admin import ImportExportModelAdmin
 
@@ -55,10 +56,20 @@ class ArticleAdmin(admin.ModelAdmin):
 
 '''
 
+@admin.register(Article_Ko)
+class Article_KoAdmin(ImportExportModelAdmin):
+    list_display = (
+        "id",
+        "headline",
+        "body",
+    )
+    search_fields = ["id"]
+
 @admin.register(Article)
 class ArticleAdmin(ImportExportModelAdmin):
     list_display = (
         "id",
+        "experiment",
         "headline",
         "title",
         "scrape_successful",
@@ -124,8 +135,8 @@ admin.site.register(Incident, IncidentAdmin)
 @admin.register(Incident)
 class IncidentAdmin(ImportExportModelAdmin):
     list_display = (
-        "experiment",
         "id",
+        "experiment",
         "title",
         "summary",
         #"summary_embedding",
@@ -171,7 +182,7 @@ class IncidentAdmin(ImportExportModelAdmin):
         "behaviour_rationale",
         "get_articles",
     )
-    search_fields = ["id"]
+    search_fields = ["title"]
 
     '''
     def get_articles(self, obj):

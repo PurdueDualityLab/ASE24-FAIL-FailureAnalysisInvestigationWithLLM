@@ -52,6 +52,12 @@ class ClassifyAnalyzableCommand:
             default=0,
             help="Sets the temperature for ChatGPT",
         )
+        parser.add_argument(
+            "--experiment",
+            type=bool,
+            default=False,
+            help="Marks articles as part of the experiment.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         """
@@ -70,6 +76,9 @@ class ClassifyAnalyzableCommand:
             Article.objects.filter(describes_failure=True, analyzable_failure=None)
         )
         
+        ### If queryset is for an experiment mark it as such
+        if args.experiment is True:
+            queryset.update(experiment=True)
         
         # Initializes ChatGPT Classifier
         classifierChatGPT = ClassifierChatGPT()
