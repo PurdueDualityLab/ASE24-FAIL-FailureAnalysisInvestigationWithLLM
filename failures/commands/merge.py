@@ -41,6 +41,12 @@ class MergeCommand:
             default=0,
             help="Sets the temperature for ChatGPT",
         )
+        parser.add_argument(
+            "--experiment",
+            type=bool,
+            default=False,
+            help="Marks articles as part of the experiment.",
+        )
 
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
@@ -162,7 +168,14 @@ class MergeCommand:
 
                             if article_new.published < incident.published: #If published date of new article is older
                                 incident.published = article_new.published
-                                incident.save()
+
+                            incident.new_article = True
+
+                            ### If queryset is for an experiment mark it as such
+                            if args.experiment is True:
+                                incident.experiment = True
+
+                            incident.save()
 
                             article_new.save()
 
@@ -189,6 +202,11 @@ class MergeCommand:
                 incident = Incident.objects.create(title=article_new.title, published=article_new.published)
 
                 article_new.incident = incident
+
+                ### If queryset is for an experiment mark it as such
+                if args.experiment is True:
+                    incident.experiment = True
+
                 article_new.save()
 
                 incidents.append(incident)
@@ -196,3 +214,56 @@ class MergeCommand:
         logging.info("Articles merged!")
 
         #TODO: Run through all incidents and set earliest published date. But within merge, this should be done everytime a match is found in an incident
+
+        self.process_incident()
+
+        
+
+    def process_incident(self):
+        """
+        Remove incidents/incident relationships for articles not analyzable for postmortem.
+        Also remove article and incident (if no other articles in incident) from vectorDB. 
+
+        Args:
+        """
+        
+        # Get list of articles that are not analyzable and do not have an incident tied to them
+        articles = Article.objects.filter(analyzable_failure=False, incident__isnull=False)
+
+        if articles:
+
+            logging.info("Cleaning up database")
+
+            logging.info("Resetting incidents/incident relationships for analyzable articles")
+
+            # Init vector DB
+            chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
+            embedding_function = OpenAIEmbeddings()
+            vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
+
+            for article in articles:
+
+                # Get associated incident
+                incident = article.incident
+
+                # Check if there is only one article associated with the incident
+                if incident.articles.count() == 1 and incident.articles.first() == article:
+                    # Delete from vectorDB
+                    logging.info("Deleting incident " + str(incident.id) + " from Django and VectorDB.")
+                    chunks_for_incident = vectorDB.get(where={"incidentID": incident.id})['ids']
+                    if chunks_for_incident:
+                        vectorDB._collection.delete(ids=chunks_for_incident)
+
+                    # Delete incident from Django
+                    incident.delete()
+
+                # Delete article from vectorDB
+                logging.info("Deleting article " + str(article.id) + " from incident " + str(article.incident.id) + " from VectorDB")
+                chunks_for_sampleArticle = vectorDB.get(where={"articleID": article.id})['ids']
+                if chunks_for_sampleArticle:
+                    vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+
+                # Set article incident to none, set article stored to false
+                article.incident = None
+                article.article_stored = False
+                article.save()
