@@ -126,6 +126,47 @@ class EvaluateMergeCommand:
             metrics["Merge: Percentage of Articles Used"] = f"{(used_articles / total_articles) * 100:.2f}%"
             metrics["Merge: Fraction of Articles Used"] = f"{used_articles}/{total_articles}"
 
+            # Get incorrect labels
+            ground_truth_reverse_mapping = {}
+            for _, row in df.iterrows():
+                article_id = row['id']
+                incident_id = int(row['incident'])
+                if incident_id in ground_truth_reverse_mapping:
+                    ground_truth_reverse_mapping[incident_id].append(article_id)
+                else:
+                    ground_truth_reverse_mapping[incident_id] = [article_id]
+
+            with open('tests/auto_evaluation/ground_to_pred_merge.csv', 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                for key in ground_truth_reverse_mapping:
+                    curr_list = []
+                    for article in ground_truth_reverse_mapping[key]:
+                        curr_list.append((predicted_mapping[article], article))
+                    incident = (key, curr_list)
+                    writer.writerow([incident[0]] + curr_list)
+                    print(incident)
+
+            print("\n\n\n\n\n")
+
+            incident_article_mapping = {}
+            for article_id, incident_id in predicted_mapping.items():
+                if incident_id in incident_article_mapping:
+                    incident_article_mapping[incident_id].append(article_id)
+                else:
+                    incident_article_mapping[incident_id] = [article_id]
+
+            with open('tests/auto_evaluation/pred_to_ground_merge.csv', 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                for key in incident_article_mapping:
+                    curr_list = []
+                    for article in incident_article_mapping[key]:
+                        curr_list.append((ground_truth_mapping[article], article))
+                    incident = (key, curr_list)
+                    print([incident[0]] + curr_list)
+                    writer.writerow([incident[0]] + curr_list)
+
+
+
             if args.saveCSV:
                 logging.info(f"Storing metrics in: {output_file_path}")
                 with open(output_file_path, mode='w', newline='') as csv_file:
