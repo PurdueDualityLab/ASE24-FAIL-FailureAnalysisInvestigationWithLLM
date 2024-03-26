@@ -61,8 +61,8 @@ class SampleDatasetCreationCommand:
         )
         parser.add_argument(
             "--experiment",
-            type=int,    # Converts the values to integers
-            help="End year for articles selected (Inclusive).",
+            type=bool, 
+            help="Determines if set is experimental or not",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
@@ -135,6 +135,14 @@ class SampleDatasetCreationCommand:
         # Get related articles
         incident_related_articles = Article.objects.filter(incident__id__in=incident_ids)
         incident_related_article_ids = list(incident_related_articles.values_list('id', flat=True))
+
+        # Set flags to experimental
+        if args.experiment:
+            for exp_article in incident_related_articles:
+                exp_article.experiment = True
+
+            for exp_incident in incidents:
+                exp_incident.experiment = True
 
         ## DELETE, THIS IS JUST FOR TESTING UNTIL DATABASE IS POPULATED ##
         # incident_related_article_ids = random.sample([x for x in range(10000)], 60)

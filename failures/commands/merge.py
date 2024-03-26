@@ -156,6 +156,10 @@ class MergeCommand:
                             logging.info("Found incident match with a score of " + str(mean_score) + " in incident: " + str(incident))
                             article_new.incident = incident
 
+                            # Check for experiment flag
+                            if article_new.experiment:
+                                incident.experiment = True
+
                             if article_new.published < incident.published: #If published date of new article is older
                                 incident.published = article_new.published
                                 incident.save()
