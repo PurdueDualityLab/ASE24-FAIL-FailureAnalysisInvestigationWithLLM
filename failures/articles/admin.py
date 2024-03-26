@@ -4,7 +4,6 @@ from django.urls import reverse
 
 from failures.articles.models import Article, Incident, SearchQuery, Article_Ko, Incident_Ko
 
-
 from import_export.admin import ImportExportModelAdmin
 
 '''
