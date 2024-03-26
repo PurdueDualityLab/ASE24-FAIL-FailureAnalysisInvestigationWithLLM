@@ -72,8 +72,8 @@ class EvaluateMergeCommand:
         matching_articles = Article_Ko.objects.filter(id__in=article_ids)
 
         # Map id to incident for ground truth and predicted
-        ground_truth_mapping =  {}#{row['DjangoArticleID']: int(row['storyID']) for _, row in df.iterrows()}
-        predicted_mapping = {}#{article.id: article.incident.id for article in matching_articles}
+        ground_truth_mapping =  {row['DjangoArticleID']: int(row['storyID']) for _, row in df.iterrows()}
+        predicted_mapping = {article.id: article.incident.id for article in matching_articles if article.incident}
 
         # Get common ids
         common_ids = set(ground_truth_mapping.keys()) & set(predicted_mapping.keys())

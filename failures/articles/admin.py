@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.urls import reverse
 
-from failures.articles.models import Article, Incident, SearchQuery
+from failures.articles.models import Article, Incident, SearchQuery, Article_Ko
 
 from import_export.admin import ImportExportModelAdmin
 
