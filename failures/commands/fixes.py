@@ -3,9 +3,11 @@ import logging
 import textwrap
 import time
 
+import pandas as pd
+
 import re
 
-from failures.articles.models import Article
+from failures.articles.models import Article, Incident
 from failures.networks.models import ZeroShotClassifier, ClassifierChatGPT
 from failures.parameters.models import Parameter
 
@@ -55,6 +57,12 @@ class FixesCommand:
             type=int,
             help="To run command for a specific published year of articles.",
         )
+        parser.add_argument(
+            "--experiment",
+            type=bool,
+            default=False,
+            help="Marks articles as part of the experiment.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         """
@@ -65,14 +73,58 @@ class FixesCommand:
             parser (argparse.ArgumentParser): The argument parser for the configuration
         """
 
+        ### To set experiment flag to True
+        '''
+        incidents = Incident.objects.filter(articles__in=args.articles).distinct()
+        articles = Article.objects.filter(id__in=args.articles)
+
+        ### If queryset is for an experiment mark it as such
+        if args.experiment is True:
+            incidents.update(experiment=True)
+            articles.update(experiment=True)
+        
+        '''
+
+
+
+        '''
+        ### To print incident IDs for articles in experiment set
+        incidents = Incident.objects.filter(articles__in=args.articles).distinct()
+        articles = Article.objects.filter(id__in=args.articles)
+
+
+        # Create a DataFrame to store the data
+        data = {'Article ID': [], 'Incident ID': []}
+
+        # Populate the DataFrame with article and incident IDs
+        for article in articles:
+            incident_ids = incidents.filter(articles=article).values_list('id', flat=True)
+            data['Article ID'].extend([article.id] * len(incident_ids))
+            data['Incident ID'].extend(incident_ids)
+
+        # Convert the data to a DataFrame
+        df = pd.DataFrame(data)
+
+        # Save the DataFrame to a CSV file
+        csv_file_path = 'tests/fetched_data/articles2incidents.csv'  # Provide the desired file path
+        df.to_csv(csv_file_path, index=False)
+        
+        '''
+
+
+        #For incident 31, copy over the lasts parts of merge for that article
+
 
         
+
+
+
+        #TODO: Redo publish date for all incidents, with the earliest date of all articles in each incident
+
+        ### Fixes an error with how the published date is appended to the body of the articles
         '''
         logging.info("\nFixing published date reported in article.body for all articles.")
         
-        #TODO: Redo publish date for all incidents, with the earliest date of all articles in each incident
-
-
         # Gets list of article to classify
         queryset = (
             Article.objects.filter(scrape_successful=True)
