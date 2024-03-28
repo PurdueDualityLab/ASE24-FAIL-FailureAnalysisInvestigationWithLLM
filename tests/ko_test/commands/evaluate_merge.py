@@ -43,7 +43,10 @@ class EvaluateMergeCommand:
         }
 
         # Define the file path
-        file_path = "./tests/ko_test/data/Ko_Stories_Consensus.csv"
+        # input_file_path = "./tests/ko_test/data/Ko_Stories_Consensus.csv"
+        # TODO: add input path as interrater agreement csv. Then read the files in using the storyID and the articleID, then compare
+        input_file_path = ""
+        output_file_path = "tests/ko_test/performance/merge.csv"
 
         # Define the columns to read
         columns_to_read = ["storyID", "articleID", "DjangoArticleID", "Consensus"]
