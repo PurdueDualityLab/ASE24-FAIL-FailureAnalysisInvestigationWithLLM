@@ -93,7 +93,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="cleanup.log",
+        filename="ko_merge.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
