@@ -39,43 +39,40 @@ class EvaluateMergeCommand:
         metrics = {
             "Homogeneity": 0,
             "Completeness": 0,
-            "V Measure": 0
+            "V-Measure": 0
         }
 
         # Define the file path
         # input_file_path = "./tests/ko_test/data/Ko_Stories_Consensus.csv"
         # TODO: add input path as interrater agreement csv. Then read the files in using the storyID and the articleID, then compare
-        input_file_path = ""
-        output_file_path = "tests/ko_test/performance/merge.csv"
+        input_file_path = "tests/ko_test/data/Ko_Stories_Consensus.csv"
+        output_file_path = "tests/ko_test/performance/merge_consensus.csv"
 
         # Define the columns to read
-        columns_to_read = ["storyID", "articleID", "DjangoArticleID", "Consensus"]
+        columns_to_read = ["storyID", "articleID", "Consensus"]
 
         # Read the Excel file into a Pandas DataFrame
         try:
-            df = pd.read_csv(file_path, usecols=columns_to_read)
+            df = pd.read_csv(input_file_path, usecols=columns_to_read)
             logging.info("Data loaded successfully.")
         except FileNotFoundError:
-            logging.info(f"Error: The file '{file_path}' was not found.")
+            logging.info(f"Error: The file '{input_file_path}' was not found.")
             return metrics
         except Exception as e:
             logging.info(f"An error occurred: {str(e)}")
             return metrics
 
-        # Filter out rows with missing values in 'DjangoArticleID'
-        df = df.dropna(subset=['DjangoArticleID'])
-
         # Filter rows where 'Consensus' is 'relevant'
         df = df[df['Consensus'] == 'relevant']
 
-        # Get a list of article IDs from the manual database
-        article_ids = df['DjangoArticleID'].astype(int).tolist()
+        # Get the article ids
+        article_ids = self.get_article_ko_ids(df)
 
         # Query for articles matching manual db IDs
-        matching_articles = Article_Ko.objects.filter(id__in=article_ids)
+        matching_articles = Article_Ko.objects.filter(id__in=article_ids.keys())
 
         # Map id to incident for ground truth and predicted
-        ground_truth_mapping =  {row['DjangoArticleID']: int(row['storyID']) for _, row in df.iterrows()}
+        ground_truth_mapping = article_ids
         predicted_mapping = {article.id: article.incident.id for article in matching_articles if article.incident}
 
         # Get common ids
@@ -104,19 +101,40 @@ class EvaluateMergeCommand:
             # Store metrics
             metrics["Homogeneity"] = homogeneity
             metrics["Completeness"] = completeness
-            metrics["Measure"] = v_measure
+            metrics["V-Measure"] = v_measure
+
+            # Finding some additional metrics
+            ground_truth_set = set(true_labels)
+            predicted_set = set(predicted_labels)
+            metrics["Articles evaluated"] = len(common_ids)
+            metrics["Number of ground truth stories"] = len(ground_truth_set)
+            metrics["Number of predicted stories"] = len(predicted_set)
         else:
             logging.info("Evaluate Merge Command: No common IDs found between ground truth and predicted data.")
-
-        # Store metrics in a CSV file
-        csv_output_path = "./tests/ko_test/eval/merge_output.csv"
 
         # Convert metrics dictionary to a Pandas DataFrame
         metrics_df = pd.DataFrame(metrics, index=[0])
 
         # Save the DataFrame to a CSV file
-        metrics_df.to_csv(csv_output_path, index=False)
-        logging.info(f"Metrics saved to {csv_output_path}")
+        metrics_df.to_csv(output_file_path, index=False)
+        logging.info(f"Metrics saved to {output_file_path}")
 
 
         return metrics
+
+    def get_article_ko_ids(self, df: pd.DataFrame) -> dict:
+
+        ids = {}
+
+        # Iterate through dataframe
+        for index, row in df.iterrows():
+            
+            # Get article_ko id
+            article_ko_instance = Article_Ko.objects.filter(storyID=row['storyID'], articleID=row['articleID'])
+
+            if not article_ko_instance:
+                continue
+        
+            ids[article_ko_instance[0].id] = row['storyID']
+
+        return ids
