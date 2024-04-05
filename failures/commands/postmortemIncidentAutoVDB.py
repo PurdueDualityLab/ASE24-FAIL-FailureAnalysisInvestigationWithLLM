@@ -207,9 +207,7 @@ class PostmortemIncidentAutoVDBCommand:
                 for question_key in list(postmortem_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
             
                     # Check if the question has already been answered
-                    answer_set = True
-                    if not getattr(incident, question_key):
-                        answer_set = False
+                    answer_set = getattr(incident, question_key)
 
                     # Ask LLM
                     if query_all or query_key == question_key or incident.new_article == True or answer_set == False or args.experiment is True: 

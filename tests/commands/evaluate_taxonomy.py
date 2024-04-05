@@ -3,6 +3,7 @@ import logging
 import textwrap
 import pandas as pd
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.preprocessing import LabelEncoder
 import csv
 
 from failures.articles.models import Article, SearchQuery, Incident
@@ -10,7 +11,7 @@ from failures.articles.models import Article, SearchQuery, Incident
 
 class EvaluateTaxonomyCommand:
     # Define the file path for the manual dataset
-    MANUAL_DATASET_FILE_PATH = "./tests/ground_truth/ground_truth_postmortem.xlsx"
+    MANUAL_DATASET_FILE_PATH = "tests/ground_truth/interrater_agreement.csv"
     OUTPUT_FILE_PATH = "./tests/performance/taxonomy.csv"
 
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -86,7 +87,7 @@ class EvaluateTaxonomyCommand:
 
         # Mapping between Pandas column names and Django model field names
         column_to_field_mapping = {
-            "Incident ID": "id",
+            "Incident": "id",
             "Phase Option": "phase_option",
             "Boundary Option": "boundary_option",
             "Nature Option": "nature_option",
@@ -97,16 +98,17 @@ class EvaluateTaxonomyCommand:
             "Duration Option": "duration_option",
             "Domain Option": "domain_option",
             "CPS Option": "cps_option",
-            "Perception Option": "perception_option",
-            "Communication Option": "communication_option",
-            "Application Option": "application_option",
-            "Behaviour Option": "behaviour_option"
+            # "Perception Option": "perception_option",
+            # "Communication Option": "communication_option",
+            # "Application Option": "application_option",
+            "Behaviour Option": "behaviour_option",
+            "Recurring": "recurring_option"
         }
 
         # Define the columns to read
         columns_to_read = [
             # "id", # UPDATE WITH MANUAL
-            "Incident ID",
+            "Incident",
             "Article IDs",
             # "Describes Failure", # Comment back in when manual set is complete
             # "Analyzable Failure", # Comment back in when manual set is complete
@@ -120,15 +122,16 @@ class EvaluateTaxonomyCommand:
             "Duration Option",
             "Domain Option",
             "CPS Option",
-            "Perception Option",
-            "Communication Option",
-            "Application Option",
+            "Recurring",
+            # "Perception Option",
+            # "Communication Option",
+            # "Application Option",
             "Behaviour Option"
         ]
 
         # Read the Excel file into a Pandas DataFrame
         try:
-            df = pd.read_excel(input_file_path, usecols=columns_to_read)
+            df = pd.read_csv(input_file_path, usecols=columns_to_read)
             logging.info("Data loaded successfully.")
         except FileNotFoundError:
             logging.info(f"Error: The file '{input_file_path}' was not found.")
@@ -139,9 +142,6 @@ class EvaluateTaxonomyCommand:
 
         # Rename columns using the mapping
         df.rename(columns=column_to_field_mapping, inplace=True)
-
-        # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1 #UPDATE
-        df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
 
         # Filter by incidents
         df = df[df['id'].apply(lambda x: x in man_incident_set)]
@@ -156,20 +156,32 @@ class EvaluateTaxonomyCommand:
             logging.info("evaluate_taxonomy: Evaluating %s for %d incidents", taxonomy, len(auto_incident_set))
             # Extract relevant column from the dataframe (and fill in NaN values as Unknown)
             df_taxonomy_values = df[taxonomy].fillna('unknown').tolist()
-            df_taxonomy_values = self.get_taxonomy_mapping(taxonomy, df_taxonomy_values)
-
-            print(df_taxonomy_values)
+            # df_taxonomy_values = self.get_taxonomy_mapping(taxonomy, df_taxonomy_values)
 
             # Extract corresponding field values from the incidents (and fill in None values as Unknown)
             incidents_taxonomy_values = list(incidents.values_list(taxonomy, flat=True))
             incidents_taxonomy_values = ['unknown' if value is None else value for value in incidents_taxonomy_values]
-            
+
+            if not df_taxonomy_values or not incidents_taxonomy_values:
+                logging.info("Insufficent values for %s", taxonomy)
+                continue
+
+            print(df_taxonomy_values)
+            print("\n here \n")
+            print(incidents_taxonomy_values)
+            print("\n\n\n\n-----------------------------------------------------------\n\n\n\n\n")
+
+            # Convert string labels to numeric format using LabelEncoder
+            all_labels = set(df_taxonomy_values).union(set(incidents_taxonomy_values))
+            label_encoder = LabelEncoder().fit(list(all_labels))
+            ground_truth_encoded = label_encoder.transform(df_taxonomy_values)
+            predictions_encoded = label_encoder.transform(incidents_taxonomy_values)
 
             # Calculate additional metrics
-            accuracy = accuracy_score(incidents_taxonomy_values, df_taxonomy_values)
-            precision = precision_score(incidents_taxonomy_values, df_taxonomy_values, average='weighted', zero_division=1)
-            recall = recall_score(incidents_taxonomy_values, df_taxonomy_values, average='weighted', zero_division=1)
-            f1 = f1_score(incidents_taxonomy_values, df_taxonomy_values, average='weighted', zero_division=1)
+            accuracy = accuracy_score(predictions_encoded, ground_truth_encoded)
+            precision = precision_score(predictions_encoded, ground_truth_encoded, average='weighted', zero_division=1)
+            recall = recall_score(predictions_encoded, ground_truth_encoded, average='weighted', zero_division=1)
+            f1 = f1_score(predictions_encoded, ground_truth_encoded, average='weighted', zero_division=1)
 
             # Log the confusion matrix and additional metrics
             logging.info("Accuracy for %s: %.4f (%.2f%%)", taxonomy, accuracy, accuracy * 100)
@@ -209,7 +221,7 @@ class EvaluateTaxonomyCommand:
 
         # Read the manual dataset into a Pandas DataFrame
         try:
-            manual_df = pd.read_excel(manual_dataset_file_path, usecols=[manual_dataset_column_name])
+            manual_df = pd.read_csv(manual_dataset_file_path, usecols=[manual_dataset_column_name])
             logging.info("Manual dataset loaded successfully.")
         except FileNotFoundError:
             logging.info(f"Error: The file '{manual_dataset_file_path}' was not found.")

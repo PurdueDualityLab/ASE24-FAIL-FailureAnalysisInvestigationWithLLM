@@ -9,6 +9,8 @@ import numpy as np
 # from nltk.tokenize import word_tokenize
 # import nltk
 import tiktoken
+import csv
+
 
 # nltk.download('punkt')  # Download the tokenizer data
 
@@ -39,18 +41,68 @@ class TestCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
-        article_kos = Article_Ko.objects.all()
+        # Define the path to the CSV file
+        article = Article.objects.filter(id=66881)
 
-        for article_ko in article_kos:
-            print(article_ko.id, article_ko.storyID, article_ko.articleID)
+        print(article.incident.id)
 
         return
-
-        # Define the path to the CSV file
         consensus_csv_path = "tests/ko_test/data/Ko_Stories_Consensus.csv"
 
         # Read the CSV file into a DataFrame
         df = pd.read_csv(consensus_csv_path)
+
+        df = df[df['Consensus'] == 'relevant']
+
+        story_ids_list = set(df['storyID'])
+
+        stories = {}
+
+        for story_id in story_ids_list:
+            articles = Article_Ko.objects.filter(storyID=story_id)
+
+            article_split = {}
+
+            for article in articles:
+                if not article.incident:
+                    continue
+                elif article.incident.id in article_split:
+                    article_split[article.incident.id].append(article.id)
+                else:
+                    article_split[article.incident.id] = [article.id]
+
+            stories[story_id] = article_split
+
+        print(stories)
+
+        # # Convert the 'stories' dictionary to a DataFrame
+        # stories_df = pd.DataFrame.from_dict(stories, orient='index')
+
+        # # Define the path to the output CSV file
+        output_csv_path = "tests/ko_test/eval/stories.csv"
+
+        # # Write the DataFrame to a CSV file
+        # stories_df.to_csv(output_csv_path)
+
+        # print(f"CSV file successfully written to {output_csv_path}")
+
+        # print(stories)
+        # Define the path to the output CSV file
+
+
+        # Open the file in write mode
+        with open(output_csv_path, 'w', newline='') as file:
+            writer = csv.writer(file)
+            
+            # Write the header row
+            writer.writerow(['Key', 'Value'])
+            
+            # Write each key-value pair to the CSV file
+            for key, value in stories.items():
+                writer.writerow([key, str(value)])
+
+
+        return
 
         # Iterate through the DataFrame
         for index, row in df.iterrows():
