@@ -14,3 +14,12 @@ Output Files (Path can be changed, saved as a global variable at top of class de
 
 - tests/set_commands/saved_states/article_stateXXX.csv: File containing the saved article states. (XXX is the user input in the save command)
 - tests/set_commands/saved_states/incident_stateXXX.csv: File containing the saved incident states. (XXX is the user input in the save command)
+
+Save Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+------------
+
+The command takes the input list of articles and saves the current article state as well as the state of the related incidents.
+
