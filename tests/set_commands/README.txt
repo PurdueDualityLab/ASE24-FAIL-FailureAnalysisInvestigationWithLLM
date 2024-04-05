@@ -23,3 +23,13 @@ Description
 
 The command takes the input list of articles and saves the current article state as well as the state of the related incidents.
 
+Commands
+--------
+
+#. Display the help text::
+
+    $ docker compose -f local.yml run --rm django python -m tests.set_commands savestate --help
+
+#. Run save state::
+
+    $ docker compose -f local.yml run --rm django python -m tests.set_commands savestate --stateNum {save_id: int}
