@@ -3,6 +3,8 @@ import logging
 import textwrap
 
 import json
+import math
+
 
 from django.db.models import Q
 
@@ -118,6 +120,8 @@ class PostmortemIncidentAutoVDBCommand:
 
         prompt_additions = PROMPT_ADDITIONS.copy()
 
+        CHUNK_SIZE = 500
+
         ### If queryset is for an experiment mark it as such
         if args.experiment is True:
             incidents.update(experiment=True)
@@ -144,9 +148,11 @@ class PostmortemIncidentAutoVDBCommand:
         chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
         embedding_function = OpenAIEmbeddings()
         vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size = 500, chunk_overlap = 0)
-        
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size = CHUNK_SIZE, chunk_overlap = 0)
 
+        prompt_window = model_parameters["context_window"] - 1500
+        num_chunks = math.floor( prompt_window / CHUNK_SIZE ) #Number of chunks to retrieve 
+        
         ### Set up for counting tokens in incident
         encoding = tiktoken.encoding_for_model(model_parameters["model"])
 
@@ -192,139 +198,218 @@ class PostmortemIncidentAutoVDBCommand:
                 incident.tokens = incident_tokens
 
             
-            
-            ### If incident token length is less than the model's context window, then directly prompt the model with the articles
-            if incident.tokens <= model_parameters["context_window"] - 1500: 
+            RAG_Pipeline = False
 
-                
+            ### If incident token length is less than the model's context window, then directly prompt the model with the articles, if not then do RAG
+            if incident.tokens <= prompt_window: 
+                RAG = False
+                incident.rag = False
+            else:
+                RAG = True
+                incident.rag = True
+
+
+            if RAG_Pipeline is False:
                 # Add Articles for the Incident into a prompt template
                 prompt_incident = ""
                 for article in incident_articles:
                     prompt_incident += "\n" +"<Article " + str(article.id) + ">"
                     prompt_incident += article.body
                     prompt_incident += "</Article " + str(article.id) + ">" +"\n"
-                
-
-                ### Answer open ended postmortem questions
-                for question_key in list(postmortem_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
-            
-                    # Check if the question has already been answered
-                    answer_set = True
-                    if not getattr(incident, question_key):
-                        answer_set = False
-
-                    # Ask LLM
-                    if query_all or query_key == question_key or incident.new_article == True or answer_set == False or args.experiment is True: 
-                        logging.info("Querying question: " + str(question_key))
-
-                        ### Construct prompt
-                        prompt_question = "\n<Question>" + prompt_additions[question_key]["before"] + postmortem_questions[question_key] + prompt_additions[question_key]["after"] + "</Question>"
-
-                        final_prompt = prompt_template_articles_instruction + prompt_incident + prompt_question
-
-                        messages = system_message.copy()
-
-                        messages.append(
-                                        {"role": "user", "content": final_prompt},
-                                        )
-                        
-                        model_parameters_temp = model_parameters.copy()
-                        model_parameters_temp["messages"] = messages.copy()
-
-                        logging.info(type(model_parameters_temp))
-                        logging.info(model_parameters_temp)
-                
-                        reply = chatGPT.run(model_parameters_temp)
-
-                        setattr(incident, question_key, reply)
-
-
-                ### Answer choice-based taxonomy questions
-                for question_key in list(taxonomy_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
-
-                    # If question is for CPS, and the system for incident is not CPS, then don't answer
-                    if question_key in cps_keys and "cps" not in incident.cps_option: #incident.cps != True:
-                            continue
-
-                    question_rationale_key = question_key + "_rationale"
-                    question_option_key = question_key + "_option"
-                
-                    # Check if the question has already been answered
-                    answer_set = True
-                    if not getattr(incident, question_option_key):
-                        answer_set = False
-
-                    # Ask LLM 
-                    if query_all or query_key == question_key or incident.new_article == True or answer_set == False or args.experiment is True: 
-                        logging.info("Querying question: " + str(question_key))
-
-                        ### Construct prompt to Ask LLM to extract relevent information from articles to help make the decision about the taxonomy
-                        messages = system_message.copy()
-
-                        prompt_question = "\n<Question>" + prompt_template_extract_task + prompt_additions[question_key]["rationale"]["before"] + taxonomy_definitions[question_key] + prompt_additions[question_key]["rationale"]["after"] + "</Question>"
-                        
-                        final_prompt = prompt_template_articles_instruction + prompt_incident + prompt_question
-
-                        messages.append(
-                                        {"role": "user", "content": final_prompt},
-                                        )
-                        
-                        model_parameters_temp = model_parameters.copy()
-                        model_parameters_temp["messages"] = messages.copy()
-
-                        logging.info(type(model_parameters_temp))
-                        logging.info(model_parameters_temp)
-
-                
-                        reply = chatGPT.run(model_parameters_temp)
-
-                        setattr(incident, question_rationale_key, reply)
-
-                        
-                        ### Construct prompt to Ask LLM to make the decision about the taxonomy using the extracted information
-                        messages = system_message.copy()
-
-                        extracted_info = "<Extracted Information>" + reply + "</Extracted Information>"
-                        
-                        prompt_question = "\n<Questions>" + prompt_template_decision_task + prompt_additions[question_key]["decision"]["before"] + taxonomy_questions[question_key] + prompt_template_JSON_format + prompt_additions[question_key]["decision"]["after"] + "</Questions>"
-
-                        final_prompt = prompt_template_decision_instruction + extracted_info + prompt_question
-
-                        messages.append(
-                                        {"role": "user", "content": final_prompt},
-                                        )
-                        
-                        model_parameters_temp = model_parameters.copy()
-                        model_parameters_temp["messages"] = messages.copy()
-
-                        model_parameters_temp["response_format"] = {"type": "json_object"}
-
-                        logging.info(type(model_parameters_temp))
-                        logging.info(model_parameters_temp)
-                
-                        reply = chatGPT.run(model_parameters_temp)
-
-                        ### Error handling for JSON format is implemented in ChatGPT class
-
-                        ### Convert JSON to string with options that are true in csv format
-                        if reply is not None:
-                            reply = json.loads(reply)\
-                            # Extract keys where the corresponding values are True
-                            true_keys = [key for key, value in reply.items() if value]
-                            # Convert the list of keys into a string
-                            reply = ', '.join(true_keys)
-
-                        setattr(incident, question_option_key, reply)
-
-
-
             
             
+            if RAG_Pipeline is True:
+                logging.info("Checking Vector DB for Incident: " + str(incident.id))
+
+                ### Store articles in VectorDB
+                for article in incident_articles:
+
+                    ### Check if article is already stored:
+                    if article.stored is not True:
+
+                        metadata = [{"incidentID": incident.id, "articleID": article.id}]
+
+                        document = text_splitter.create_documents([article.body], metadatas=metadata)
+                        
+                        document_splits = text_splitter.split_documents(document)
+
+                        for order, document in enumerate(document_splits): # To keep track of the order of the chunks
+                            document.metadata["order"] = order
+                        
+                        updated_ids = vectorDB.add_documents(document_splits)
+                        
+                        logging.info("Storing Article " + str(article.id) + " into Vector DB with IDs: " + str(vectorDB.get(updated_ids)))
+                        
+                        article.article_stored = True
+                        article.save(update_fields=['article_stored'])
+            
+            
+                
+
+            ### Answer open ended postmortem questions
+            for question_key in list(postmortem_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
+        
+                # Check if the question has already been answered
+                answer_set = True
+                if not getattr(incident, question_key):
+                    answer_set = False
+
+                # Ask LLM
+                if query_all or query_key == question_key or incident.new_article == True or answer_set == False or args.experiment is True: 
+                    logging.info("Querying question: " + str(question_key))
+
+                    ### Retrieve relevant chunks from articles for this incident from the VectorDB related to the Prompt
+                    if RAG_Pipeline is True:
+
+                        #TODO: Put this into a function so you can call it here as well as for the taxonomy
+
+                        ##Get as many chunks as possible relevant to the query from the VectorDB from all articles from the incident
+                        docs = vectorDB.similarity_search(query=postmortem_questions[question_key], filter={"incidentID":incident.id}, k = num_chunks)
+
+                        ##Convert these chunks into condensed articles 
+                        dict_docs = {}
+                        for doc in docs:
+                            articleID = doc.metadata["articleID"]
+                            order = doc.metadata["order"]
+                            page_content = doc.page_content
+                            
+                            if articleID in dict_docs:
+                                dict_docs[articleID].append((order, page_content))
+                            else:
+                                dict_docs[articleID] = [(order, page_content)]
+                        
+                        #Sort the page_content for each articleID based on order
+                        for articleID in dict_docs:
+                            sorted_page_contents = [content for _, content in sorted(dict_docs[articleID])]
+                            dict_docs[articleID] = ' '.join(sorted_page_contents) 
+
+                        # Sort dict_docs by articleID in ascending order
+                        dict_docs = dict(sorted(dict_docs.items()))
+
+                        # Add Articles for the Incident into a prompt template
+                        prompt_incident = ""
+                        for articleID, articleBody in dict_docs.items():
+                            prompt_incident += "\n" +"<Article " + str(articleID) + ">"
+                            prompt_incident += articleBody
+                            prompt_incident += "</Article " + str(articleID) + ">" +"\n"
+
+
+                    ### Construct prompt
+                    prompt_question = "\n<Question>" + prompt_additions[question_key]["before"] + postmortem_questions[question_key] + prompt_additions[question_key]["after"] + "</Question>"
+
+                    final_prompt = prompt_template_articles_instruction + prompt_incident + prompt_question
+
+                    messages = system_message.copy()
+
+                    messages.append(
+                                    {"role": "user", "content": final_prompt},
+                                    )
+                    
+                    model_parameters_temp = model_parameters.copy()
+                    model_parameters_temp["messages"] = messages.copy()
+
+                    logging.info(type(model_parameters_temp))
+                    logging.info(model_parameters_temp)
+            
+                    reply = chatGPT.run(model_parameters_temp)
+
+                    setattr(incident, question_key, reply)
+
+
+            ### Answer choice-based taxonomy questions
+            for question_key in list(taxonomy_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
+
+                # If question is for CPS, and the system for incident is not CPS, then don't answer
+                if question_key in cps_keys and "cps" not in incident.cps_option: #incident.cps != True:
+                        continue
+
+                question_rationale_key = question_key + "_rationale"
+                question_option_key = question_key + "_option"
+            
+                # Check if the question has already been answered
+                answer_set = True
+                if not getattr(incident, question_option_key):
+                    answer_set = False
+
+                # Ask LLM 
+                if query_all or query_key == question_key or incident.new_article == True or answer_set == False or args.experiment is True: 
+                    logging.info("Querying question: " + str(question_key))
+
+                    ### Construct prompt to Ask LLM to extract relevent information from articles to help make the decision about the taxonomy
+                    messages = system_message.copy()
+
+                    prompt_question = "\n<Question>" + prompt_template_extract_task + prompt_additions[question_key]["rationale"]["before"] + taxonomy_definitions[question_key] + prompt_additions[question_key]["rationale"]["after"] + "</Question>"
+                    
+                    final_prompt = prompt_template_articles_instruction + prompt_incident + prompt_question
+
+                    messages.append(
+                                    {"role": "user", "content": final_prompt},
+                                    )
+                    
+                    model_parameters_temp = model_parameters.copy()
+                    model_parameters_temp["messages"] = messages.copy()
+
+                    logging.info(type(model_parameters_temp))
+                    logging.info(model_parameters_temp)
+
+            
+                    reply = chatGPT.run(model_parameters_temp)
+
+                    setattr(incident, question_rationale_key, reply)
+
+                    
+                    ### Construct prompt to Ask LLM to make the decision about the taxonomy using the extracted information
+                    messages = system_message.copy()
+
+                    extracted_info = "<Extracted Information>" + reply + "</Extracted Information>"
+                    
+                    prompt_question = "\n<Questions>" + prompt_template_decision_task + prompt_additions[question_key]["decision"]["before"] + taxonomy_questions[question_key] + prompt_template_JSON_format + prompt_additions[question_key]["decision"]["after"] + "</Questions>"
+
+                    final_prompt = prompt_template_decision_instruction + extracted_info + prompt_question
+
+                    messages.append(
+                                    {"role": "user", "content": final_prompt},
+                                    )
+                    
+                    model_parameters_temp = model_parameters.copy()
+                    model_parameters_temp["messages"] = messages.copy()
+
+                    model_parameters_temp["response_format"] = {"type": "json_object"}
+
+                    logging.info(type(model_parameters_temp))
+                    logging.info(model_parameters_temp)
+            
+                    reply = chatGPT.run(model_parameters_temp)
+
+                    ### Error handling for JSON format is implemented in ChatGPT class
+
+                    ### Convert JSON to string with options that are true in csv format
+                    if reply is not None:
+                        reply = json.loads(reply)
+                        # Extract keys where the corresponding values are True
+                        true_keys = [key for key, value in reply.items() if value]
+                        # Convert the list of keys into a string
+                        reply = ', '.join(true_keys)
+
+                    setattr(incident, question_option_key, reply)
+
             ### If incident token length is greater than the model's context window, then store articles in Vector DB, do RAG, then prompt with relevent chunks
             else:
                 # Do vectorDB + chatgpt
-                logging.info("Skipping article for now: Needs VectorDB to be on.")
-                continue
+                #logging.info("Skipping article for now: Needs VectorDB to be on.")
+                #continue
+
+
+                
+                
+
+
+
+
+
+
+
+
 
             ### Check if report is complete
             complete_report = True

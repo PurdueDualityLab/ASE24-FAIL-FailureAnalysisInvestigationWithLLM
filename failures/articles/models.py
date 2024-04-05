@@ -145,6 +145,14 @@ class Incident(models.Model):
             "Whether the incident is part of the experiment suite."
         ),
     )
+
+    rag = models.BooleanField(
+        _("RAG"),
+        null=True,
+        help_text=_(
+            "Whether RAG was used to create a failure report for the incident."
+        ),
+    )
     
     #Open ended postmortem fields
     title = models.TextField(_("Title"), blank=True, null=True)

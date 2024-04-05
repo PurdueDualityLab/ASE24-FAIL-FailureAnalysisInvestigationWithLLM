@@ -338,12 +338,14 @@ PROMPT_ADDITIONS = {
                                         {
                                         "before": "",
                                         "after": """
-                                                The perception layer of the cyber physical system that failed:
-                                                (a) sensor: Failure due to contributing factors introduced by sensor error
-                                                (b) actuator: Failure due to contributing factors introduced by actuator error
-                                                (c) processing_unit: Failure due to contributing factors introduced by processing error
-                                                (d) network_communication: Failure due to contributing factors introduced by network communication error
-                                                (e) embedded_software: Failure due to contributing factors introduced by embedded software error
+                                                {
+                                                "sensor": true or false,
+                                                "actuator": true or false,
+                                                "processing_unit": true or false,
+                                                "network_communication": true or false,
+                                                "embedded_software": true or false,
+                                                "unknown": true or false,
+                                                }
                                                 """,
                                         },
                         },       
