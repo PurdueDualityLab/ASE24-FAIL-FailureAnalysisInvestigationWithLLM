@@ -8,8 +8,11 @@ import tiktoken
 
 import os
 import logging
-import re
 import time
+
+import re
+import json
+
 
 
 from failures.parameters.models import Parameter
@@ -284,7 +287,23 @@ class ChatGPT(Network[dict, str]):
                 chat_completion = self.openai.ChatCompletion.create(
                                 request_timeout=120, model=model, messages=messages, temperature=temperature, response_format=response_format, #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
                                 ) 
-                break
+                
+                ### Error handing and retry if output is expected in json format and is not in a JSON format
+                if response_format is not None and isinstance(response_format, dict) and response_format.get("type") == "json_object":
+                    # Attempt to convert the reply to JSON
+                    try:
+                        json_object = json.loads(chat_completion.choices[0].message.content)
+                        break
+                    except json.JSONDecodeError as e:
+                        logging.info(f"Error decoding JSON: {e}")
+                        logging.info("with incorrect JSON String: " + str(chat_completion.choices[0].message.content))
+                        retry_count += 1
+                    except Exception as e:
+                        logging.info(f"An unexpected error occurred: {e}")
+                        logging.info("with incorrect JSON String: " + str(chat_completion.choices[0].message.content))
+                        retry_count += 1
+                else:
+                    break
             
             except openai.error.Timeout as e:
                 #Handle timeout error, e.g. retry or log
@@ -322,7 +341,9 @@ class ChatGPT(Network[dict, str]):
             time.sleep(61)
             retries += 1
             
-        
+        if retries == self.MAX_RETRIES:
+            logging.info("Maximum number of retries reached. Failed to get a valid reply.")
+            
         if chat_completion is not None:
             reply = chat_completion.choices[0].message.content
             return reply

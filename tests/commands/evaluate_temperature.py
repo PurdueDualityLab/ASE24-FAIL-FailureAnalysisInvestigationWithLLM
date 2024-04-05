@@ -13,7 +13,7 @@ from failures.commands.classifyAnalyzable import ClassifyAnalyzableCommand #TODO
 from failures.commands.classifyFailure import ClassifyFailureCommand #TODO: Update the rest of the code with this
 from failures.commands.merge import MergeCommand
 from failures.commands.vectordb import VectordbCommand
-from failures.commands.postmortemIncident import PostmortemIncidentCommand
+from failures.commands.postmortemIncidentAutoVDB import PostmortemIncidentAutoVDBCommand
 from failures.commands.cluster import ClusterCommand
 from tests.commands.evaluate_classification import EvaluateClassificationCommand
 from tests.commands.evaluate_identification import EvaluateIdentificationCommand
