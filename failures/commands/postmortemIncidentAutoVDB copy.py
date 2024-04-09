@@ -197,20 +197,19 @@ class PostmortemIncidentAutoVDBCommand:
                 
                 incident.tokens = incident_tokens
 
-            
-            RAG_Pipeline = False
-
             ### If incident token length is less than the model's context window, then directly prompt the model with the articles, if not then do RAG
+            RAG_Pipeline = False
             if incident.tokens <= prompt_window: 
-                RAG = False
+                RAG_Pipeline = False
                 incident.rag = False
             else:
-                RAG = True
+                logging.info("Using RAG for incident: " + str(incident.id))
+                RAG_Pipeline = True
                 incident.rag = True
 
 
             if RAG_Pipeline is False:
-                # Add Articles for the Incident into a prompt template
+                # Add Articles for the Incident directly into a prompt template
                 prompt_incident = ""
                 for article in incident_articles:
                     prompt_incident += "\n" +"<Article " + str(article.id) + ">"
@@ -227,24 +226,17 @@ class PostmortemIncidentAutoVDBCommand:
                     ### Check if article is already stored:
                     if article.stored is not True:
 
-                        metadata = [{"incidentID": incident.id, "articleID": article.id}]
+                        article_body = article.body
+                        articleID = article.id
+                        incidentID = incident.id
 
-                        document = text_splitter.create_documents([article.body], metadatas=metadata)
-                        
-                        document_splits = text_splitter.split_documents(document)
-
-                        for order, document in enumerate(document_splits): # To keep track of the order of the chunks
-                            document.metadata["order"] = order
-                        
-                        updated_ids = vectorDB.add_documents(document_splits)
-                        
+                        updated_ids = self.store_articles(vectorDB, article_body, articleID, incidentID, text_splitter)
+                                                
                         logging.info("Storing Article " + str(article.id) + " into Vector DB with IDs: " + str(vectorDB.get(updated_ids)))
                         
                         article.article_stored = True
                         article.save(update_fields=['article_stored'])
             
-            
-                
 
             ### Answer open ended postmortem questions
             for question_key in list(postmortem_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
@@ -263,32 +255,13 @@ class PostmortemIncidentAutoVDBCommand:
 
                         #TODO: Put this into a function so you can call it here as well as for the taxonomy
 
-                        ##Get as many chunks as possible relevant to the query from the VectorDB from all articles from the incident
-                        docs = vectorDB.similarity_search(query=postmortem_questions[question_key], filter={"incidentID":incident.id}, k = num_chunks)
-
-                        ##Convert these chunks into condensed articles 
-                        dict_docs = {}
-                        for doc in docs:
-                            articleID = doc.metadata["articleID"]
-                            order = doc.metadata["order"]
-                            page_content = doc.page_content
-                            
-                            if articleID in dict_docs:
-                                dict_docs[articleID].append((order, page_content))
-                            else:
-                                dict_docs[articleID] = [(order, page_content)]
-                        
-                        #Sort the page_content for each articleID based on order
-                        for articleID in dict_docs:
-                            sorted_page_contents = [content for _, content in sorted(dict_docs[articleID])]
-                            dict_docs[articleID] = ' '.join(sorted_page_contents) 
-
-                        # Sort dict_docs by articleID in ascending order
-                        dict_docs = dict(sorted(dict_docs.items()))
+                        query = postmortem_questions[question_key]
+                        incidentID = incident.id
+                        dict_articles = self.retrieve_articles(vectorDB, query, incidentID, num_chunks)
 
                         # Add Articles for the Incident into a prompt template
                         prompt_incident = ""
-                        for articleID, articleBody in dict_docs.items():
+                        for articleID, articleBody in dict_articles.items():
                             prompt_incident += "\n" +"<Article " + str(articleID) + ">"
                             prompt_incident += articleBody
                             prompt_incident += "</Article " + str(articleID) + ">" +"\n"
@@ -334,6 +307,21 @@ class PostmortemIncidentAutoVDBCommand:
                 # Ask LLM 
                 if query_all or query_key == question_key or incident.new_article == True or answer_set == False or args.experiment is True: 
                     logging.info("Querying question: " + str(question_key))
+
+                    ### Retrieve relevant chunks from articles for this incident from the VectorDB related to the Prompt
+                    if RAG_Pipeline is True:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+                        query = taxonomy_definitions[question_key]
+                        incidentID = incident.id
+                        dict_articles = self.retrieve_articles(vectorDB, query, incidentID, num_chunks)
+
+                        # Add Articles for the Incident into a prompt template
+                        prompt_incident = ""
+                        for articleID, articleBody in dict_articles.items():
+                            prompt_incident += "\n" +"<Article " + str(articleID) + ">"
+                            prompt_incident += articleBody
+                            prompt_incident += "</Article " + str(articleID) + ">" +"\n"
+
 
                     ### Construct prompt to Ask LLM to extract relevent information from articles to help make the decision about the taxonomy
                     messages = system_message.copy()
@@ -393,23 +381,6 @@ class PostmortemIncidentAutoVDBCommand:
 
                     setattr(incident, question_option_key, reply)
 
-            ### If incident token length is greater than the model's context window, then store articles in Vector DB, do RAG, then prompt with relevent chunks
-            else:
-                # Do vectorDB + chatgpt
-                #logging.info("Skipping article for now: Needs VectorDB to be on.")
-                #continue
-
-
-                
-                
-
-
-
-
-
-
-
-
 
             ### Check if report is complete
             complete_report = True
@@ -439,7 +410,6 @@ class PostmortemIncidentAutoVDBCommand:
             incident.article_new = False
             
             
-            
             incident.save()
 
             logging.info("Succesfully created postmortem for incident %s: %s.", incident.id, incident.title)
@@ -448,150 +418,51 @@ class PostmortemIncidentAutoVDBCommand:
 
         logging.info("Successfully created postmortems for %d incidents.", successful_postmortem_creations)
 
-            
-            
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-        # Prompt template for chunks from Vector DB
-        prompt_template_VDB = "Use the following pieces of context about a software failure to answer the question." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
-        + """
-        If you don't know the answer, return unknown. 
-
-        Context: {context}
-
-        Question: {question}
+    def store_articles(self, vectorDB, article_body, articleID, incidentID, text_splitter):
+        """
+        Store article chunks into vectorDB. 
         """
 
-        # LangChain setup 
-        ChatGPT_LC = ChatOpenAI(model_name=inputs["model"], temperature=inputs["temperature"])
+        metadata = [{"incidentID": incidentID, "articleID": articleID}]
 
-        JsonParser = PydanticOutputParser(pydantic_object=JsonResponse)
-        RetryParser = OutputFixingParser.from_llm(parser=JsonParser, llm=ChatOpenAI(model_name=inputs["model"], temperature=inputs["temperature"]))
+        document = text_splitter.create_documents([article_body], metadatas=metadata)
         
+        document_splits = text_splitter.split_documents(document)
 
-        successful_postmortem_creations = 0
-        for incident in incidents:
-            logging.info("Creating postmortem for incident %s.", incident.id)
+        for order, document in enumerate(document_splits): # To keep track of the order of the chunks
+            document.metadata["order"] = order
+        
+        updated_ids = vectorDB.add_documents(document_splits)
 
-            for question_key in list(questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
-                #Check if the question has already been answered
-                answer_set = True
-                taxonomy_q = False #To use json parser
-                if question_key in taxonomy_options.keys():
-                    question_option_key = question_key + "_option"
-                    question_rationale_key = question_key + "_rationale"
-                    if not getattr(incident, question_option_key):
-                        answer_set = False
-                    taxonomy_q = True
-                else:
-                    if not getattr(incident, question_key):
-                        answer_set = False
+        return updated_ids
+    
+    
+    def retrieve_articles(self, vectorDB, query, incidentID, num_chunks):
+        """
+        Retrieve article chunks from vectorDB. 
+        """
 
-                if query_all or query_key == question_key or answer_set == False: 
+        ##Get as many chunks as possible relevant to the query from the VectorDB from all articles from the incident
+        docs = vectorDB.similarity_search(query=query, filter={"incidentID":incidentID}, k = num_chunks)
 
-                    logging.info("Querying question: " + str(question_key))
-                    
-                    #question_template = template + "\nQuestion: " + questions[question_key]
-
-                    if taxonomy_q: # For JSON parser instructions
-                        formatted_template = template + "\n{format_instructions}"
-                        QA_CHAIN_PROMPT = PromptTemplate(template=formatted_template, input_variables=["context", "question"], partial_variables={"format_instructions": JsonParser.get_format_instructions()})
-                    else:
-                        QA_CHAIN_PROMPT = PromptTemplate.from_template(template=template)
-
-                    qa_chain = RetrievalQA.from_chain_type(
-                        ChatGPT_LC,
-                        retriever=vectorDB.as_retriever(search_kwargs={"filter":{"incidentID":incident.id}}), #TDOD: How does additional instructions in the question influence the vectorDB retriever? (ex: summarize, under 10 words, etc)
-                        chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}, 
-                        return_source_documents=True,
-                    )
-
-                    try:
-                        response = qa_chain({"query": questions[question_key]})
-                    except Exception as e:
-                        logging.info(f"Issue with langchain query. Exception: {str(e)}. Skipping question.")
-                        continue
-
-
-                    logging.info(str(response))
-
-                    logging.info("Sources: " + str(response["source_documents"]))
-
-                    # Extract unique articleIDs from source documents
-                    source_articleIDs = [doc.metadata['articleID'] for doc in response["source_documents"]]
-                    source_articleIDs = f" [{', '.join(map(str, set(source_articleIDs)))}]"
-
-
-                    if taxonomy_q: # If its a taxonomy question, parse for JSON
-                        try:
-                            parsedResult = JsonParser.parse(response["result"])
-                        except:
-                            logging.info("Misformatted JSON returned for " +question_key+ " for incident: "+str(incident.id) + ". Trying again.")
-                            try:
-                                parsedResult = RetryParser.parse(response["result"])
-                            except:
-                                logging.info("On Retry: Misformatted JSON returned for " +question_key+ " for incident: "+str(incident.id))
-                                explanation = response["result"]
-                                setattr(incident, question_rationale_key, explanation)
-                                continue
-
-                        explanation = parsedResult.explanation + source_articleIDs
-                        option_number = str(parsedResult.option)
-
-                        try:
-                            option_value = taxonomy_options[question_key][option_number]
-                        except:
-                            logging.info("KeyError: Wrong option")
-                            setattr(incident, question_rationale_key, "Option: " + option_number + " ; "+ explanation)
-                            continue
-
-                        setattr(incident, question_option_key, option_value)
-                        setattr(incident, question_rationale_key, explanation)
-                        
-                        logging.info(explanation)
-                        logging.info(option_value)
-                    else:
-                        
-                        reply = response["result"] + source_articleIDs
-                            
-                        setattr(incident, question_key, reply)
-                        logging.info(reply)
-
-                    
-            incident.save() #TODO: Also track sources
-
-            #incident.postmortem_from_article_ChatGPT(chatGPT, inputs, questions_chat, taxonomy_options, args.all, args.key)
-            logging.info("Succesfully created postmortem for incident %s: %s.", incident.id, incident.title)
-            successful_postmortem_creations += 1
+        ##Convert these chunks into condensed articles 
+        dict_docs = {}
+        for doc in docs:
+            articleID = doc.metadata["articleID"]
+            order = doc.metadata["order"]
+            page_content = doc.page_content
             
-            #if successful_postmortem_creations > 1:
-                #break
+            if articleID in dict_docs:
+                dict_docs[articleID].append((order, page_content))
+            else:
+                dict_docs[articleID] = [(order, page_content)]
+        
+        #Sort the page_content for each articleID based on order
+        for articleID in dict_docs:
+            sorted_page_contents = [content for _, content in sorted(dict_docs[articleID])]
+            dict_docs[articleID] = ' '.join(sorted_page_contents) 
 
-        logging.info("Successfully created postmortems for %d articles.", successful_postmortem_creations)
+        # Sort dict_docs by articleID in ascending order
+        dict_docs = dict(sorted(dict_docs.items()))
 
-
-# Define your desired data structure.
-class JsonResponse(BaseModel):
-    explanation: str = Field(description="Provide explanation for the option that answers the question")
-    option: str = Field(description="Choose option that answers the question")
-
-'''
+        return dict_docs
