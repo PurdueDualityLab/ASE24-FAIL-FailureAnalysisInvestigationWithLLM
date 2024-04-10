@@ -6,6 +6,7 @@ from typing import Protocol
 from tests.set_commands.commands.save_state import SaveStateCommand
 from tests.set_commands.commands.set_failure import SetFailureCommand
 from tests.set_commands.commands.set_analyzable import SetAnalyzableCommand
+from tests.set_commands.commands.set_incident import SetIncidentCommand
 
 
 _EPILOG = textwrap.dedent(
@@ -30,7 +31,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [SaveStateCommand(), SetFailureCommand(), SetAnalyzableCommand()]
+_COMMANDS: list[Command] = [SaveStateCommand(), SetFailureCommand(), SetAnalyzableCommand(), SetIncidentCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
