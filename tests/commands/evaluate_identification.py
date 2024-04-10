@@ -98,6 +98,8 @@ class EvaluateIdentificationCommand:
         total_articles = len(matching_articles)
         false_positives = 0
         false_negatives = 0
+        true_positives = 0
+        true_negatives = 0
 
         # List of incorrectly classified articles (if --list)
         incorrectly_classified_articles = []
@@ -108,6 +110,10 @@ class EvaluateIdentificationCommand:
             ground_truth = df[df['id'] == article.id]['analyzable'].values[0]
             if article.analyzable_failure != None and article.analyzable_failure == ground_truth:
                 total_match += 1
+                if article.analyzable_failure:
+                    true_positives += 1
+                else:
+                    true_negatives += 1
             else:
                 if args.list:
                     incorrectly_classified_articles.append((
@@ -180,6 +186,14 @@ class EvaluateIdentificationCommand:
                 "Identify: Wrong (Fraction)": f"{wrong_classifications}/{total_articles}",
                 "Identify: Total Evaluated": str(total_articles) 
             }
+
+            # Calculate false positive and false negative rates as percentages
+            fpr = (false_positives / (false_positives + true_negatives)) * 100
+            fnr = (false_negatives / (false_negatives + true_positives)) * 100
+
+            # Adding false positive and false negative rates to the metrics dictionary
+            metrics["Identify: False Positive Rate (Percentage)"] = f"{fpr:.2f}%"
+            metrics["Identify: False Negative Rate (Percentage)"] = f"{fnr:.2f}%"
 
             if args.saveCSV:
                 logging.info(f"Storing metrics in: {output_file_path}")

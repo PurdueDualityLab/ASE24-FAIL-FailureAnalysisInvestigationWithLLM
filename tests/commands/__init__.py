@@ -89,7 +89,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="trial1.log",
+        filename="merge_manual.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",

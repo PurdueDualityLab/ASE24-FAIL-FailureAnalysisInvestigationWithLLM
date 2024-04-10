@@ -7,7 +7,7 @@ import csv
 from failures.articles.models import Article, Incident
 
 class SetFailureCommand:
-    INPUT_FILE_PATH = "tests/set_commands/manual_states/original_state.csv"
+    INPUT_FILE_PATH = "tests/set_commands/manual_states/desired_state.csv"
 
     def __init__(self):
         pass
