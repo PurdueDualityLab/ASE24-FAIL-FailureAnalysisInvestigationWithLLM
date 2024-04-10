@@ -41,6 +41,43 @@ class TestCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+        max_size = 16385 - 1500
+
+        incidents = Incident.objects.all()
+        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+
+        # Define the CSV file path
+        csv_file_path = "tests/ko_test/eval/oversized_incident_sizes.csv"
+
+        # Open the CSV file in write mode
+        with open(csv_file_path, mode='w', newline='') as file:
+            # Define CSV writer
+            writer = csv.writer(file)
+
+            # Write header row
+            writer.writerow(["Incident ID", "Article ID", "Size"])
+
+            # Iterate through incidents
+            for incident in incidents:
+                articles = incident.articles.all()
+
+                # Iterate through articles
+                size = 0
+                for article in articles:
+                    size += len(encoding.encode(article.body))
+
+                # If size exceeds max_size, write to CSV
+                if size > max_size:
+                    # Write incident ID, article ID, and size to CSV
+                    article_ids = list(incident.articles.values_list('id', flat=True))
+                    writer.writerow([incident.id, article_ids, size])
+
+        print("CSV file has been created successfully at:", csv_file_path)
+            
+
+
+
+        return
         # Define the path to the CSV file
         article = Article.objects.filter(id=66881)
 
