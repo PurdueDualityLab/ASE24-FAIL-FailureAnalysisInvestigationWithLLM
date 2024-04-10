@@ -41,6 +41,11 @@ class TestCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+
+        print(Incident.objects.filter(id__in=[2697]))
+        print(Article.objects.get(pk=3663).incident)
+
+        return
         max_size = 16385 - 1500
 
         incidents = Incident.objects.all()
