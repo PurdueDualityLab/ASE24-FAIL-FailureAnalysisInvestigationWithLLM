@@ -94,6 +94,7 @@ class MergeCommand:
 
         questions_chat = questions
         
+        # sorts the Incident objects in descending order based on their published dates. and prefetches all articles for each incident
         incidents = list(Incident.objects.prefetch_related('articles').order_by('-published'))
 
         #postmortem_keys = ["summary", "time", "system", "ResponsibleOrg", "ImpactedOrg"]
