@@ -146,6 +146,7 @@ class IncidentAdmin(ImportExportModelAdmin):
     list_display = (
         "id",
         "experiment",
+        "published",
         "title",
         "summary",
         #"summary_embedding",

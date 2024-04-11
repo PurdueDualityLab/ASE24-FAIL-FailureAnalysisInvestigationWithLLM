@@ -336,6 +336,13 @@ class ChatGPT(Network[dict, str]):
             except openai.error.RateLimitError as e:
                 #Handle rate limit error, e.g. wait or log
                 logging.info(f"OpenAI API request exceeded rate limit: {e}")
+            except openai.error.ServiceUnavailableError as e:
+                # Handle service unavailable error, e.g. log and retry
+                logging.info(f"OpenAI service is unavailable: {e}")
+            except Exception as e:
+                # Handle any other unexpected errors
+                logging.info(f"An unexpected error occurred: {e}")
+            
             
             logging.info(f"Pausing for 1 minute and retrying.")
             time.sleep(61)
