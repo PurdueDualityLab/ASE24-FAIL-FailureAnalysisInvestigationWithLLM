@@ -57,6 +57,12 @@ class ClassifyFailureCommand:
             type=int,
             help="To run command for a specific published year of articles.",
         )
+        parser.add_argument(
+            "--experiment",
+            type=bool,
+            default=False,
+            help="Marks articles as part of the experiment.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         """
@@ -82,6 +88,10 @@ class ClassifyFailureCommand:
 
         if args.all or args.year: #TODO: implement similar logic in other commands
             queryset.update(describes_failure=None)  #This is to prevent having to redo it all when a crash occurs, if a crash occurs comment this
+        
+        ### If queryset is for an experiment mark it as such
+        if args.experiment is True:
+            queryset.update(experiment=True)
         
         
         # Initializes ChatGPT Classifier

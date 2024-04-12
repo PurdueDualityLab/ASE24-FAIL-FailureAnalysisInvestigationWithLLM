@@ -3,21 +3,9 @@ import logging
 import textwrap
 from typing import Protocol
 
-from failures.commands.scrape import ScrapeCommand
-from failures.commands.summarize import SummarizeCommand
-from failures.commands.embed import EmbedCommand
-from failures.commands.classifyFailure import ClassifyFailureCommand
-from failures.commands.classifyAnalyzable import ClassifyAnalyzableCommand
-from failures.commands.postmortemArticle import PostmortemArticleCommand
-from failures.commands.postmortemIncidentVDB import PostmortemIncidentVDBCommand
-from failures.commands.postmortemIncidentAutoVDB import PostmortemIncidentAutoVDBCommand
-from failures.commands.cluster import ClusterCommand
-from failures.commands.merge import MergeCommand
-from failures.commands.vectordb import VectordbCommand
-from failures.commands.fixes import FixesCommand
-from failures.commands.cleanup import CleanUpCommand
-
-from failures.commands.stats import StatsCommand
+from tests.set_commands.commands.save_state import SaveStateCommand
+from tests.set_commands.commands.set_failure import SetFailureCommand
+from tests.set_commands.commands.set_analyzable import SetAnalyzableCommand
 
 
 _EPILOG = textwrap.dedent(
@@ -42,7 +30,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentVDBCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), StatsCommand(), FixesCommand(), CleanUpCommand()]
+_COMMANDS: list[Command] = [SaveStateCommand(), SetFailureCommand(), SetAnalyzableCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -94,11 +82,11 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="PostmortemIncidentAutoVDB_Testing.log",
+        filename="set_commands.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
-        force=True, 
+        force=True,
     )
 
     args.entrypoint(args, parser)

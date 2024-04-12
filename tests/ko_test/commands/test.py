@@ -6,8 +6,12 @@ from datetime import datetime
 import os
 import matplotlib.pyplot as plt
 import numpy as np
-from nltk.tokenize import word_tokenize
-import nltk
+# from nltk.tokenize import word_tokenize
+# import nltk
+import tiktoken
+import csv
+
+
 # nltk.download('punkt')  # Download the tokenizer data
 
 from failures.articles.models import Article_Ko, Article, Incident
@@ -24,8 +28,7 @@ class TestCommand:
         # add description
         parser.description = textwrap.dedent(
             """
-            Scrape articles from Google News RSS feeds. If no arguments are provided, use all search
-            queries present in the database; otherwise, use the provided arguments to create a new search query.
+            This command is used for small scratch work that needs to be done on the database for data collection or visualization.
             """
         )
 
@@ -38,6 +41,203 @@ class TestCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+        # Define the path to the CSV file
+        article = Article.objects.filter(id=66881)
+
+        print(article.incident.id)
+
+        return
+        consensus_csv_path = "tests/ko_test/data/Ko_Stories_Consensus.csv"
+
+        # Read the CSV file into a DataFrame
+        df = pd.read_csv(consensus_csv_path)
+
+        df = df[df['Consensus'] == 'relevant']
+
+        story_ids_list = set(df['storyID'])
+
+        stories = {}
+
+        for story_id in story_ids_list:
+            articles = Article_Ko.objects.filter(storyID=story_id)
+
+            article_split = {}
+
+            for article in articles:
+                if not article.incident:
+                    continue
+                elif article.incident.id in article_split:
+                    article_split[article.incident.id].append(article.id)
+                else:
+                    article_split[article.incident.id] = [article.id]
+
+            stories[story_id] = article_split
+
+        print(stories)
+
+        # # Convert the 'stories' dictionary to a DataFrame
+        # stories_df = pd.DataFrame.from_dict(stories, orient='index')
+
+        # # Define the path to the output CSV file
+        output_csv_path = "tests/ko_test/eval/stories.csv"
+
+        # # Write the DataFrame to a CSV file
+        # stories_df.to_csv(output_csv_path)
+
+        # print(f"CSV file successfully written to {output_csv_path}")
+
+        # print(stories)
+        # Define the path to the output CSV file
+
+
+        # Open the file in write mode
+        with open(output_csv_path, 'w', newline='') as file:
+            writer = csv.writer(file)
+            
+            # Write the header row
+            writer.writerow(['Key', 'Value'])
+            
+            # Write each key-value pair to the CSV file
+            for key, value in stories.items():
+                writer.writerow([key, str(value)])
+
+
+        return
+
+        # Iterate through the DataFrame
+        for index, row in df.iterrows():
+
+            if row['Consensus'] == "invalid":
+                continue
+
+            django_article_id = row['DjangoArticleID']
+
+            # django_story_id = row['DjangoStoryID']
+            article_id = row['articleID']
+            story_id = row['storyID']
+            
+            # Retrieve the Article_Ko instance based on DjangoArticleID
+            article_ko = Article_Ko.objects.get(pk=django_article_id)
+
+            if not article_ko:
+                continue
+            
+            # Set the storyID and articleID fields
+            article_ko.storyID = story_id
+            article_ko.articleID = article_id
+            
+            # Save the changes
+            article_ko.save()
+
+
+        return
+        story_article_tuples = [
+            (57170, 3),
+            (3942, 4),
+            (32384, 12),
+            (57598, 72),
+            (52863, 3),
+            (48515, 9),
+            (6093, 1),
+            (52863, 12),
+            (49946, 7),
+            (25477, 3),
+            (33937, 3),
+            (57598, 26),
+            (4900, 9),
+            (48113, 4),
+            (57598, 61),
+            (27465, 1),
+            (55532, 2),
+            (11814, 1),
+            (50398, 12),
+            (15868, 3),
+            (32384, 1),
+            (10747, 1),
+            (5849, 1),
+            (51848, 1),
+            (33022, 2),
+            (3244, 3),
+            (32524, 9),
+            (15868, 23),
+            (14717, 5),
+            (57598, 3),
+            (1119, 5),
+            (49758, 2),
+            (56840, 6),
+            (4900, 8),
+            (36160, 6),
+            (9680, 7),
+            (37319, 1),
+            (46410, 7),
+            (40232, 15),
+            (51163, 1),
+            (2435, 5),
+            (4577, 3),
+            (12133, 2),
+            (51848, 8),
+            (37564, 5),
+            (20278, 10),
+            (5849, 13),
+            (39242, 4),
+            (44888, 3),
+            (50804, 20),
+            (17892, 17),
+            (30722, 2),
+            (50398, 1),
+            (57598, 33),
+            (33317, 5),
+            (15868, 47),
+            (52863, 45),
+            (57598, 55),
+            (56840, 16),
+            (15868, 4)
+        ]
+
+        # Define the file path
+        file_path = "./tests/ko_test/data/Ko_Stories_Consensus.csv"
+
+        # Define the columns to read
+        columns_to_read = ["storyID", "articleID", "DjangoArticleID", "Consensus"]
+
+        # Read the Excel file into a Pandas DataFrame
+        try:
+            df = pd.read_csv(file_path, usecols=columns_to_read)
+            logging.info("Data loaded successfully.")
+        except FileNotFoundError:
+            logging.info(f"Error: The file '{file_path}' was not found.")
+            return metrics
+        except Exception as e:
+            logging.info(f"An error occurred: {str(e)}")
+            return metrics
+
+        # # Filter out rows with missing values in 'DjangoArticleID'
+        # df = df.dropna(subset=['DjangoArticleID'])
+
+        df_filtered = df[df[['storyID', 'articleID']].apply(tuple, axis=1).isin(story_article_tuples)]
+
+        article_ko_ids = df_filtered['DjangoArticleID'].tolist()
+
+        describes_failure_true_count = Article_Ko.objects.filter(describes_failure=True, id__in=article_ko_ids).count()
+
+        # Query Article_Ko objects with describes_failure=False
+        describes_failure_false_count = Article_Ko.objects.filter(describes_failure=False, id__in=article_ko_ids).count()
+
+        # Total number of articles
+        total_articles = len(article_ko_ids)
+
+        # Calculate percentages
+        percent_describes_failure_true = (describes_failure_true_count / total_articles) * 100
+        percent_describes_failure_false = (describes_failure_false_count / total_articles) * 100
+
+        # Print statistics
+        print("Statistics on describes_failure field:")
+        print(f"Total articles: {total_articles}")
+        print(f"Number of articles describing failure: {describes_failure_true_count} ({percent_describes_failure_true:.2f}%)")
+        print(f"Number of articles not describing failure: {describes_failure_false_count} ({percent_describes_failure_false:.2f}%)")
+
+
+        return
         # Retrieve and delete all articles from the database (preventing duplicates)
         # all_articles = Article_Ko.objects.filter(describes_failure=True)
 
@@ -58,6 +258,45 @@ class TestCommand:
         # print("Number of relevant Ko articles ingested into DB: " + str(num_relevant))
 
         # Get all the incidents
+        incidents = Incident.objects.all()
+        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+
+        incident_token_counts = []
+
+        for incident in incidents:
+            related_articles = incident.articles.all()
+
+            incident_tokens = 0
+
+            for article in related_articles:
+                incident_tokens += len(encoding.encode(article.body))
+
+            incident_token_counts.append(incident_tokens)
+
+        # Calculate statistics
+        max_token_count = max(incident_token_counts)
+        min_token_count = min(incident_token_counts)
+        median_token_count = np.median(incident_token_counts)
+        greater_than_16k_count = sum(count > 16000 for count in incident_token_counts)
+
+        # Report statistics
+        print(f"Max Token Count: {max_token_count}")
+        print(f"Min Token Count: {min_token_count}")
+        print(f"Median Token Count: {median_token_count}")
+        print(f"Number of incidents with more than 16k tokens: {greater_than_16k_count}")
+        print(f"Total number of incidents: {len(incidents)}")
+
+        # Plot histogram
+        plt.hist(incident_token_counts, bins=20, edgecolor='black')
+        plt.title('Distribution of Token Counts in Incidents')
+        plt.xlabel('Token Count')
+        plt.ylabel('Frequency')
+        plt.savefig('tests/ko_test/data/auto/incident_tokens.png')
+
+
+        # print(incident_token_counts)
+
+        return
         incidents = Incident.objects.all()
 
         # Create a list of the number of articles per incident
