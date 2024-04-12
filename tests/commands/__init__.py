@@ -11,6 +11,7 @@ from tests.commands.evaluate_postmortem import EvaluatePostmortemCommand
 from tests.commands.sample_dataset_creation import SampleDatasetCreationCommand
 from tests.commands.exp_runQueries import exp_RunQueriesCommand
 from tests.commands.evaluate_taxonomy import EvaluateTaxonomyCommand
+from tests.commands.fetch_data import FetchDataCommand
 
 
 
@@ -36,7 +37,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand(), SampleDatasetCreationCommand(), exp_RunQueriesCommand(), EvaluateTaxonomyCommand()]
+_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand(), SampleDatasetCreationCommand(), exp_RunQueriesCommand(), EvaluateTaxonomyCommand(), FetchDataCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:

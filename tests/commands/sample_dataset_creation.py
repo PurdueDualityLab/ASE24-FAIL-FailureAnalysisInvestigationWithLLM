@@ -59,6 +59,11 @@ class SampleDatasetCreationCommand:
             type=int,    # Converts the values to integers
             help="End year for articles selected (Inclusive).",
         )
+        parser.add_argument(
+            "--experiment",
+            type=bool, 
+            help="Determines if set is experimental or not",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
         """
@@ -82,27 +87,27 @@ class SampleDatasetCreationCommand:
         #     field_value = getattr(incident_477, field_name)
         #     print(f"{field_name}: {field_value}")
 
-        my_list = [
-            3111, 3663, 3710, 3740, 3825, 6486, 6702, 7241, 9455, 10162,
-            10745, 11058, 13717, 15042, 16412, 18168, 20155, 20284, 24554,
-            26032, 32055, 32679, 37789, 37995, 38012, 38968, 45326, 47149,
-            47969, 48198, 53309, 54193, 56266, 60988, 66881, 68976, 70171,
-            73072, 73427, 76390, 76430, 77003, 77758, 80099, 81120, 82465,
-            83022, 87984, 88901, 94177, 96761, 101056, 104834, 106334,
-            106355, 106477, 108649, 109711, 110171, 110558, 111985, 112046,
-            115853, 115929, 116081, 116132, 117484, 117508, 122207, 123261,
-            124780, 125629, 126299, 127376, 128447, 134921
-        ]
+        # my_list = [
+        #     3111, 3663, 3710, 3740, 3825, 6486, 6702, 7241, 9455, 10162,
+        #     10745, 11058, 13717, 15042, 16412, 18168, 20155, 20284, 24554,
+        #     26032, 32055, 32679, 37789, 37995, 38012, 38968, 45326, 47149,
+        #     47969, 48198, 53309, 54193, 56266, 60988, 66881, 68976, 70171,
+        #     73072, 73427, 76390, 76430, 77003, 77758, 80099, 81120, 82465,
+        #     83022, 87984, 88901, 94177, 96761, 101056, 104834, 106334,
+        #     106355, 106477, 108649, 109711, 110171, 110558, 111985, 112046,
+        #     115853, 115929, 116081, 116132, 117484, 117508, 122207, 123261,
+        #     124780, 125629, 126299, 127376, 128447, 134921
+        # ]
 
-        # articles = Article.objects.filter(id__in=my_list)
-        # filename = "tests/auto_evaluation/test.csv"
-        # self.__download_articles_to_csv(articles, filename)
-        incidents = Incident.objects.filter(articles__id__in=my_list).distinct()
-        auto_incidents_csv = "./tests/auto_evaluation/experiment_data_auto_incidents.csv"
-        self.__download_incidents_to_csv(incidents, auto_incidents_csv)
+        # # articles = Article.objects.filter(id__in=my_list)
+        # # filename = "tests/auto_evaluation/test.csv"
+        # # self.__download_articles_to_csv(articles, filename)
+        # incidents = Incident.objects.filter(articles__id__in=my_list).distinct()
+        # auto_incidents_csv = "./tests/auto_evaluation/experiment_data_auto_incidents.csv"
+        # self.__download_incidents_to_csv(incidents, auto_incidents_csv)
         
 
-        return
+        # return
 
         # Update publish dates
         self.__update_incident_publish_dates()
@@ -130,6 +135,14 @@ class SampleDatasetCreationCommand:
         # Get related articles
         incident_related_articles = Article.objects.filter(incident__id__in=incident_ids)
         incident_related_article_ids = list(incident_related_articles.values_list('id', flat=True))
+
+        # Set flags to experimental
+        if args.experiment:
+            for exp_article in incident_related_articles:
+                exp_article.experiment = True
+
+            for exp_incident in incidents:
+                exp_incident.experiment = True
 
         ## DELETE, THIS IS JUST FOR TESTING UNTIL DATABASE IS POPULATED ##
         # incident_related_article_ids = random.sample([x for x in range(10000)], 60)

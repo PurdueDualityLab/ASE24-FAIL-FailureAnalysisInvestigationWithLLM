@@ -25,26 +25,26 @@ from langchain.output_parsers import DatetimeOutputParser
 from langchain.output_parsers import OutputFixingParser
 
 
-class PostmortemIncidentCommand:
+class PostmortemIncidentVDBCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
         parser.description = textwrap.dedent(
             """
-            Create postmortems for articles that report on SE failures present in the database. If no arguments are provided, create postmortems for all
-            SE failure articles that do not have a postmortem; otherwise, if --all is provided, create postmortems for all
-            SE failure articles. If an article does not have a body, a postmortems will not be created for it.
+            Create postmortems for SE failure incidents present in the database. If no arguments are provided, create postmortems for all
+            SE failure incidents that do not have a postmortem; otherwise, if --all is provided, create postmortems for all
+            SE failure incidents. 
             """
         )
         parser.add_argument(
             "--all",
             action="store_true",
             default=False,
-            help="Create postmortems for all articles even if they already have a postmortem.",
+            help="Create postmortems for all incidents even if they already have a postmortem.",
         )
         parser.add_argument(
             "--key",
             type=str,
             default='None',
-            help="Redo extraction for a specific postmortem key for all articles.",
+            help="Redo extraction for a specific postmortem key for all incidents.",
         )
         parser.add_argument(
             "--articles",
@@ -73,8 +73,6 @@ class PostmortemIncidentCommand:
             incidents = Incident.objects.filter(articles__in=args.articles).distinct()
         elif args.incidents:
             incidents = Incident.objects.filter(id__in=args.incidents).distinct()
-            print("Here")
-            print(incidents)
         else:
             incidents = Incident.objects.all()
 
@@ -125,7 +123,7 @@ class PostmortemIncidentCommand:
                     if not getattr(incident, question_key):
                         answer_set = False
 
-                if query_all or (query_key in question_key) or True:#not answer_set: 
+                if query_all or query_key == question_key or answer_set == False: 
 
                     logging.info("Querying question: " + str(question_key))
                     

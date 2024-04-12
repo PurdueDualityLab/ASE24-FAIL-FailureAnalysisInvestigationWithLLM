@@ -3,6 +3,7 @@ import argparse
 import logging
 import textwrap
 import pandas as pd
+import csv
 
 from failures.articles.models import Article, SearchQuery
 
@@ -31,6 +32,11 @@ class EvaluateMergeCommand:
             help="Lists all metrics.",
         )
         parser.add_argument(
+            "--saveCSV",
+            action="store_true",
+            help="Save metrics to a csv (saves to tests/performance/describes_failure.csv)",
+        )
+        parser.add_argument(
             "--articles",
             nargs="+",  # Accepts one or more values
             type=int,    # Converts the values to integers
@@ -49,18 +55,19 @@ class EvaluateMergeCommand:
         # Create dictionary to store metrics
         metrics = {}
 
-        # Define the file path
-        file_path = "./tests/manual_evaluation/Classification_Auto_Dev.xlsx"
+        # Define the file paths
+        input_file_path = "./tests/ground_truth/ground_truth_classify.xlsx"
+        output_file_path = "./tests/performance/merge.csv"
 
         # Define the columns to read
-        columns_to_read = ["id", "Describes Failure? (0: False | 1: True)", "incident"]
+        columns_to_read = ["id", "incident"]
 
         # Read the Excel file into a Pandas DataFrame
         try:
-            df = pd.read_excel(file_path, usecols=columns_to_read)
+            df = pd.read_excel(input_file_path, usecols=columns_to_read)
             logging.info("Data loaded successfully.")
         except FileNotFoundError:
-            logging.info(f"Error: The file '{file_path}' was not found.")
+            logging.info(f"Error: The file '{input_file_path}' was not found.")
             return metrics
         except Exception as e:
             logging.info(f"An error occurred: {str(e)}")
@@ -68,7 +75,6 @@ class EvaluateMergeCommand:
 
         # Filter rows where 'id' is not a positive integer and 'Describes Failure?' is not 0 or 1
         df = df[df['id'].apply(lambda x: isinstance(x, int) and x >= 0)]
-        df = df[df['Describes Failure? (0: False | 1: True)'].isin([0, 1])]
         df = df[df['incident'].apply(lambda x: isinstance(x, float) and x >= 0)]
 
         # Check --articles
@@ -83,7 +89,7 @@ class EvaluateMergeCommand:
 
         # Map id to incident for ground truth and predicted
         ground_truth_mapping = {row['id']: int(row['incident']) for _, row in df.iterrows()}
-        predicted_mapping = {article.id: article.incident.id for article in matching_articles}
+        predicted_mapping = {article.id: article.incident.id for article in matching_articles if article.incident}
 
         # Get common ids
         common_ids = set(ground_truth_mapping.keys()) & set(predicted_mapping.keys())
@@ -109,10 +115,69 @@ class EvaluateMergeCommand:
                 logging.info(f"Completeness Score: {completeness:.2f}")
             logging.info(f"V-Measure Score: {v_measure:.2f}")
 
+            # Total number of articles and the number used
+            total_articles = len(ground_truth_mapping.keys())
+            used_articles = len(common_ids)
+
             # Store metrics
             metrics["Merge: Homogeneity"] = homogeneity
             metrics["Merge: Completeness"] = completeness
             metrics["Merge: V Measure"] = v_measure
+            metrics["Merge: Percentage of Articles Used"] = f"{(used_articles / total_articles) * 100:.2f}%"
+            metrics["Merge: Fraction of Articles Used"] = f"{used_articles}/{total_articles}"
+
+            # Get incorrect labels
+            ground_truth_reverse_mapping = {}
+            for _, row in df.iterrows():
+                article_id = row['id']
+                incident_id = int(row['incident'])
+                if incident_id in ground_truth_reverse_mapping:
+                    ground_truth_reverse_mapping[incident_id].append(article_id)
+                else:
+                    ground_truth_reverse_mapping[incident_id] = [article_id]
+
+            with open('tests/auto_evaluation/ground_to_pred_merge.csv', 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                for key in ground_truth_reverse_mapping:
+                    curr_list = []
+                    for article in ground_truth_reverse_mapping[key]:
+                        curr_list.append((predicted_mapping[article], article))
+                    incident = (key, curr_list)
+                    writer.writerow([incident[0]] + curr_list)
+                    print(incident)
+
+            print("\n\n\n\n\n")
+
+            incident_article_mapping = {}
+            for article_id, incident_id in predicted_mapping.items():
+                if incident_id in incident_article_mapping:
+                    incident_article_mapping[incident_id].append(article_id)
+                else:
+                    incident_article_mapping[incident_id] = [article_id]
+
+            with open('tests/auto_evaluation/pred_to_ground_merge.csv', 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                for key in incident_article_mapping:
+                    curr_list = []
+                    for article in incident_article_mapping[key]:
+                        curr_list.append((ground_truth_mapping[article], article))
+                    incident = (key, curr_list)
+                    print([incident[0]] + curr_list)
+                    writer.writerow([incident[0]] + curr_list)
+
+
+
+            if args.saveCSV:
+                logging.info(f"Storing metrics in: {output_file_path}")
+                with open(output_file_path, mode='w', newline='') as csv_file:
+                    fieldnames = metrics.keys()
+                    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+                    # Writing the header
+                    writer.writeheader()
+
+                    # Writing the metrics
+                    writer.writerow(metrics)
         else:
             logging.info("Evaluate Merge Command: No common IDs found between ground truth and predicted data.")
 
