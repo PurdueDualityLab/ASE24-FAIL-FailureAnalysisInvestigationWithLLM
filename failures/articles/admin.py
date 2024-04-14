@@ -6,6 +6,7 @@ from failures.articles.models import Article, Incident, SearchQuery, Article_Ko,
 
 from import_export.admin import ImportExportModelAdmin
 
+
 '''
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
