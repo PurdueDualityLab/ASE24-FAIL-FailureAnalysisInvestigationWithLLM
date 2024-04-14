@@ -89,6 +89,7 @@ class PostmortemIncidentVDBCommand:
 
         if query_key != 'None':
             questions = questions[query_key]
+            ### THIS IS INCORECT, TAKE A LOOK AT postmortemIncidentAutoVDB.py
 
 
         template = "Use the following pieces of context about a software failure to answer the question." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \

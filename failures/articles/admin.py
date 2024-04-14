@@ -59,10 +59,20 @@ class ArticleAdmin(admin.ModelAdmin):
 class Article_KoAdmin(ImportExportModelAdmin):
     list_display = (
         "id",
+        "incident_id",
+        "storyID",
+        "articleID",
         "headline",
+        "summary",
         "body",
     )
-    search_fields = ["id"]
+    
+    def incident_id(self, obj):
+        return obj.incident_id if obj.incident_id else "-"
+    
+    incident_id.short_description = 'Incident ID'
+
+    search_fields = ["storyID"]
 
 @admin.register(Article)
 class ArticleAdmin(ImportExportModelAdmin):
@@ -136,6 +146,7 @@ class IncidentAdmin(ImportExportModelAdmin):
     list_display = (
         "id",
         "experiment",
+        "published",
         "title",
         "summary",
         #"summary_embedding",
@@ -179,18 +190,17 @@ class IncidentAdmin(ImportExportModelAdmin):
         "communication_rationale",
         "application_rationale",
         "behaviour_rationale",
+        "article_ids",
         "get_articles",
     )
-    search_fields = ["title"]
+    search_fields = ["id"]
 
-    '''
-    def get_articles(self, obj):
-        articles = obj.articles.all()
-
-        return ", ".join([article.headline for article in articles])
-
-    get_articles.short_description = "Source Articles"
-    '''
+    
+    def article_ids(self, obj):
+        # Fetch and return related Article IDs for the current Incident object
+        return ', '.join(str(article.id) for article in obj.articles.all())
+    article_ids.short_description = 'Source Article IDs'  # Customize column header
+    
 
     
     def article_admin_url(self, article_id):
