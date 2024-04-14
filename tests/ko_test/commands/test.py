@@ -9,6 +9,8 @@ import numpy as np
 # from nltk.tokenize import word_tokenize
 # import nltk
 import tiktoken
+import csv
+
 
 # nltk.download('punkt')  # Download the tokenizer data
 
@@ -39,18 +41,110 @@ class TestCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
-        article_kos = Article_Ko.objects.all()
 
-        for article_ko in article_kos:
-            print(article_ko.id, article_ko.storyID, article_ko.articleID)
+        print(Incident.objects.filter(id__in=[2697]))
+        print(Article.objects.get(pk=3663).incident)
 
         return
+        max_size = 16385 - 1500
 
+        incidents = Incident.objects.all()
+        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+
+        # Define the CSV file path
+        csv_file_path = "tests/ko_test/eval/oversized_incident_sizes.csv"
+
+        # Open the CSV file in write mode
+        with open(csv_file_path, mode='w', newline='') as file:
+            # Define CSV writer
+            writer = csv.writer(file)
+
+            # Write header row
+            writer.writerow(["Incident ID", "Article ID", "Size"])
+
+            # Iterate through incidents
+            for incident in incidents:
+                articles = incident.articles.all()
+
+                # Iterate through articles
+                size = 0
+                for article in articles:
+                    size += len(encoding.encode(article.body))
+
+                # If size exceeds max_size, write to CSV
+                if size > max_size:
+                    # Write incident ID, article ID, and size to CSV
+                    article_ids = list(incident.articles.values_list('id', flat=True))
+                    writer.writerow([incident.id, article_ids, size])
+
+        print("CSV file has been created successfully at:", csv_file_path)
+            
+
+
+
+        return
         # Define the path to the CSV file
+        article = Article.objects.filter(id=66881)
+
+        print(article.incident.id)
+
+        return
         consensus_csv_path = "tests/ko_test/data/Ko_Stories_Consensus.csv"
 
         # Read the CSV file into a DataFrame
         df = pd.read_csv(consensus_csv_path)
+
+        df = df[df['Consensus'] == 'relevant']
+
+        story_ids_list = set(df['storyID'])
+
+        stories = {}
+
+        for story_id in story_ids_list:
+            articles = Article_Ko.objects.filter(storyID=story_id)
+
+            article_split = {}
+
+            for article in articles:
+                if not article.incident:
+                    continue
+                elif article.incident.id in article_split:
+                    article_split[article.incident.id].append(article.id)
+                else:
+                    article_split[article.incident.id] = [article.id]
+
+            stories[story_id] = article_split
+
+        print(stories)
+
+        # # Convert the 'stories' dictionary to a DataFrame
+        # stories_df = pd.DataFrame.from_dict(stories, orient='index')
+
+        # # Define the path to the output CSV file
+        output_csv_path = "tests/ko_test/eval/stories.csv"
+
+        # # Write the DataFrame to a CSV file
+        # stories_df.to_csv(output_csv_path)
+
+        # print(f"CSV file successfully written to {output_csv_path}")
+
+        # print(stories)
+        # Define the path to the output CSV file
+
+
+        # Open the file in write mode
+        with open(output_csv_path, 'w', newline='') as file:
+            writer = csv.writer(file)
+            
+            # Write the header row
+            writer.writerow(['Key', 'Value'])
+            
+            # Write each key-value pair to the CSV file
+            for key, value in stories.items():
+                writer.writerow([key, str(value)])
+
+
+        return
 
         # Iterate through the DataFrame
         for index, row in df.iterrows():
