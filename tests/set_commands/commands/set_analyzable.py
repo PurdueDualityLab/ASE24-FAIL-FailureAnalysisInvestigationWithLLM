@@ -7,7 +7,7 @@ import csv
 from failures.articles.models import Article, Incident
 
 class SetAnalyzableCommand:
-    INPUT_FILE_PATH = "tests/set_commands/manual_states/original_state.csv"
+    INPUT_FILE_PATH = "tests/set_commands/manual_states/desired_state.csv"
 
     def __init__(self):
         pass
@@ -56,8 +56,10 @@ class SetAnalyzableCommand:
             article_id = row["article_id"]
             analyzable_failure_csv = row["analyzable_failure"]
 
-            # Convert the value to a boolean
-            analyzable_failure = bool(analyzable_failure_csv)
+            if type(analyzable_failure_csv) == bool:
+                analyzable_failure = analyzable_failure_csv
+            else:
+                analyzable_failure = False
 
             # Fetch the Article object from the database
             try:
