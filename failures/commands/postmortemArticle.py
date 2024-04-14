@@ -63,6 +63,7 @@ class PostmortemArticleCommand:
 
         if query_key != 'None':
             questions = questions[query_key]
+            ### THIS IS INCORECT, TAKE A LOOK AT postmortemIncidentAutoVDB.py
 
 
         # Create a mapping of questions to ChatGPT prompts

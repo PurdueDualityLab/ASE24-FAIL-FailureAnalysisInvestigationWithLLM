@@ -145,6 +145,14 @@ class Incident(models.Model):
             "Whether the incident is part of the experiment suite."
         ),
     )
+
+    rag = models.BooleanField(
+        _("RAG"),
+        null=True,
+        help_text=_(
+            "Whether RAG was used to create a failure report for the incident."
+        ),
+    )
     
     #Open ended postmortem fields
     title = models.TextField(_("Title"), blank=True, null=True)
@@ -172,7 +180,7 @@ class Incident(models.Model):
     duration_option = models.TextField(_("Duration Option"), blank=True, null=True)
     behaviour_option = models.TextField(_("Behaviour Option"), blank=True, null=True)
     domain_option = models.TextField(_("Domain Option"), blank=True, null=True)
-    consequence_option = models.TextField(_("Domain Option"), blank=True, null=True)
+    consequence_option = models.TextField(_("Consequence Option"), blank=True, null=True)
     cps_option = models.TextField(_("CPS Option"), blank=True, null=True)
     perception_option = models.TextField(_("Perception Option"), blank=True, null=True)
     communication_option = models.TextField(_("Communication Option"), blank=True, null=True)
@@ -191,7 +199,7 @@ class Incident(models.Model):
     duration_rationale = models.TextField(_("Duration Rationale"), blank=True, null=True)
     behaviour_rationale = models.TextField(_("Behaviour Rationale"), blank=True, null=True)
     domain_rationale = models.TextField(_("Domain Rationale"), blank=True, null=True)
-    consequence_rationale = models.TextField(_("Domain Rationale"), blank=True, null=True)
+    consequence_rationale = models.TextField(_("Consequence Rationale"), blank=True, null=True)
     cps_rationale = models.TextField(_("CPS Rationale"), blank=True, null=True)
     perception_rationale = models.TextField(_("Perception Rationale"), blank=True, null=True)
     communication_rationale = models.TextField(_("Communication Rationale"), blank=True, null=True)
