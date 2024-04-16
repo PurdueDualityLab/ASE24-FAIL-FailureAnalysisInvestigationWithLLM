@@ -57,7 +57,7 @@ class ClusterCommand:
         #     incidents = Incident.objects.filter(articles__in=args.articles).distinct()
         # else:
         #     incidents = Incident.objects.all()
-        incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:200] # TODO: THIS IS TEMPORARY
+        incidents = Incident.objects.prefetch_related('articles').filter(SEcauses__isnull=False).order_by('-published')[:200] # TODO: THIS IS TEMPORARY
 
         postmortem_keys = ["SEcauses"] #["summary","SEcauses","NSEcauses","impacts","mitigations"]
 
@@ -65,25 +65,25 @@ class ClusterCommand:
 
         embedder = EmbedderGPT()
 
-        for incident in incidents:
-            logging.info("Creating embeddings for incident %s.", incident)
+        # for incident in incidents:
+        #     logging.info("Creating embeddings for incident %s.", incident)
 
-            for postmortem_key in postmortem_keys:
-                answer_set = True
+        #     for postmortem_key in postmortem_keys:
+        #         answer_set = True
 
-                postmortem_embedding_key = postmortem_key + "_embedding"
-                if not getattr(incident, postmortem_embedding_key):
-                    answer_set = False
+        #         postmortem_embedding_key = postmortem_key + "_embedding"
+        #         if not getattr(incident, postmortem_embedding_key):
+        #             answer_set = False
                 
-                if args.all or not answer_set: 
+        #         if args.all or not answer_set: 
 
-                    logging.info("Getting embedding for: " + postmortem_embedding_key)
+        #             logging.info("Getting embedding for: " + postmortem_embedding_key)
                     
-                    embeddings = embedder.run(getattr(incident, postmortem_key))
+        #             embeddings = embedder.run(getattr(incident, postmortem_key))
 
-                    setattr(incident, postmortem_embedding_key, json.dumps(embeddings))
+        #             setattr(incident, postmortem_embedding_key, json.dumps(embeddings))
                 
-            incident.save()
+        #     incident.save()
 
         #df = pd.DataFrame(list(queryset.values('id', 'summary_embedding', 'SEcauses_embedding', 'NSEcauses_embedding','impacts_embedding','mitigations_embedding')))
 
@@ -106,12 +106,12 @@ def cluster(queryset, postmortem_keys):
     postmortem_embedding_keys = [key+"_embedding" for key in postmortem_keys]
 
     # Convert queryset data to a list of dictionaries
-    queryset_list = list(queryset.values('id', *postmortem_keys, *postmortem_embedding_keys))
+    queryset_list = list(queryset.values('id', *postmortem_keys))
 
-    # Convert JSON strings to Python lists
-    for item in queryset_list:
-        for postmortem_embedding_key in postmortem_embedding_keys:
-            item[postmortem_embedding_key] = json.loads(item[postmortem_embedding_key])
+    # # Convert JSON strings to Python lists
+    # for item in queryset_list:
+    #     for postmortem_embedding_key in postmortem_embedding_keys:
+    #         item[postmortem_embedding_key] = json.loads(item[postmortem_embedding_key])
 
     # Create a DataFrame from the queryset data
     df = pd.DataFrame(queryset_list)
@@ -124,11 +124,14 @@ def cluster(queryset, postmortem_keys):
 
         # Split the SECauses string into individual causes
         causes = []
-        for cause_str in df[postmortem_key]:
+        for (id, cause_str) in zip(df["id"], df[postmortem_key]):
+            # print(id)
             cause_list = re.split(r'\d+\.\s*', cause_str)
+            cause_list = [re.sub(r'\s*\[(?:Article\s+)?\d+(?:,\s*\d+)*\]\s*[\n.]?$', '.', cause_str) for cause_str in cause_list]
             causes.extend(cause_list[1:])  # Skip the first empty item
 
         logging.info(f"Total number of causes; {len(causes)}")
+        print(causes)
 
         # Create embeddings for individual causes
         embedder = EmbedderGPT()
