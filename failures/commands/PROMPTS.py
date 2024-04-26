@@ -647,7 +647,7 @@ CLUSTER_PROMPTS  = {
 
                         Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
 
-                        Step 1: Identify a theme for the Factor that was a cause of a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description). Limit the description to one sentence.
+                        Step 1: Identify a theme for the Factor that was a cause of a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description).
 
                         Return the output in the following JSON format:
                         {
@@ -677,7 +677,7 @@ CLUSTER_PROMPTS  = {
                         Step 1: Find themes that have similar descriptions that can be grouped together.
                         Step 2: Return a JSON only containing only unique themes, with the following format:
                         {
-                        "(grouped theme)": "(<10 word description of the grouped theme)",
+                        "(grouped theme)": "(description of the grouped theme)",
                                 ...
                         }
 
@@ -818,15 +818,15 @@ CLUSTER_PROMPTS  = {
                         List of topics:
                         """
             
-        },
-        "": {
+                },
+        "fixes": {
                 "identify_themes": 
                         """
-                        You will be conducting steps to analyze factors that caused a software failure incident.
+                        You will be conducting steps to analyze fixes/preventions for software failure incidents.
 
                         Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
 
-                        Step 1: Identify a theme for the Factor that was a cause of a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description). Limit the description to one sentence.
+                        Step 1: Identify a theme for the Factor that fixed/prevented a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description). Limit the description to one sentence.
 
                         Return the output in the following JSON format:
                         {
@@ -839,14 +839,14 @@ CLUSTER_PROMPTS  = {
 
                 "reduce_themes": 
                         """
-                        You will be conducting steps to group factors that caused a software failure incident by their themes.
+                        You will be conducting steps to group factors that fixed/prevented a software failure incident by their themes.
 
                         The following JSON named Factors contains all the factors and their themes
 
                         The format of Factors is:
                         [
                         {
-                                "cause": "(factor that caused the failure)",
+                                "fix": "(factor that fixed/prevented the failure)",
                                 "theme: "(theme of factor)",
                                 "description": "(description of theme)",
                         },
@@ -865,7 +865,7 @@ CLUSTER_PROMPTS  = {
 
                 "group_themes": 
                         """
-                        Determine how all of the categories software engineering causes in the following list of topics can be grouped together into greater than 3 themes,
+                        Determine how all of the categories of software engineering failure fixes/preventions in the following list of topics can be grouped together into greater than 3 themes,
                         and topics can also be in more than one group.
 
                         For each theme, provide a detailed definition under 'description' explaining what it encompasses and why it's important in software engineering.
@@ -907,7 +907,7 @@ CLUSTER_PROMPTS  = {
 
                         List of topics:
                         """
-                },
+        }
         
 }
 
@@ -944,6 +944,25 @@ CODING_PROMPTS = {
                         }
 
                         If none of the themes accurately fit which type of impact resulting from a software engineering failure the response is, then create a new theme and description.
+                        The output format for a new theme should be a JSON
+                        {
+                        "theme": "",
+                        "description": ""
+                        }
+                        """
+                },
+        "fixes": {
+                "code_item1": 
+                        """Using the codes and their definitions from the code book, please proceed to label the response accordingly (using code id). """,
+                "code_item2":
+                        """ Here is the response """,
+                "code_item3":
+                        """. The output format should be in JSON.
+                        {
+                        "code": ""
+                        }
+
+                        If none of the themes accurately fit which type of fix/prevention for a software engineering failure the response is, then create a new theme and description.
                         The output format for a new theme should be a JSON
                         {
                         "theme": "",
