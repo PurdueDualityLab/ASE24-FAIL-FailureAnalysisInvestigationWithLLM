@@ -32,24 +32,25 @@ PROMPT_ADDITIONS = {
                                 "after": textwrap.dedent("""
                                         Return in a numbered list (with citations in the format: [#, #, ...]). 
 
-                                        If it is unknown, estimate the timeline with following steps (show the calculation):
-                                        Step 1: Find 'Published on ...' date (Do not return the 'Published on ...' date).
-                                        Step 2: If relative time is mentioned (ex: last November, Friday, today, etc.). Then calculate the incident timeline by subtracting from the Published on date. Example: if the article mentions that the incident occured last November, and the article was Published on 2015-06-27, then the incident occured on November 2014. (If available, atleast return the month and year.)
-                                        Step 3: If the timeline cannot be estimated, then return 'unknown'
+                                        If it is not directly mentioned, estimate the timeline with following steps (Calculate step by step):
+                                        Step 1: Find any clues about the time of the incident (ex: last November, Friday, today, etc.) in an article.
+                                        Step 2: Find the 'Published on ...' date of that article.
+                                        Step 3: Using the published date of the article and the clues about the time of incident, what would be the date of the incident? Example: if the article mentions that the incident occured last November, and the article was Published on 2015-06-27, then the incident occured on November 2014. (If available, atleast return the month and year.)
+                                        Note: If the timeline cannot be estimated, then return 'unknown'.
                                         """),
                         },
         "system":        {
                                 "before": "",
-                                "after": "\nIf specific components failed, include them. Return the system(s) and components that failed in a numbered list (with citations in the format: [#, #, ...]).",
+                                "after": "\nIf specific components or models or versions failed include them. Return the products, systems, components, models and versions that failed in a numbered list (with citations in the format: [#, #, ...]).",
                         },           
         "ResponsibleOrg":       {
                                 "before": "",
-                                "after": "\nIf available, include any background information about the entity(s) and how they contributed to the failure. Return in a numbered list (with citations in the format: [#, #, ...]).",
-                        },   
+                                "after": "\nReturn in a numbered list (with citations in the format: [#, #, ...]).",
+                        },   #If available, include any background information about the entity(s) and how they contributed to the failure.
         "ImpactedOrg":        {
                                 "before": "",
-                                "after": "\nIf available, include any background information about the entity(s) and how they were impacted by the failure. Return in a numbered list (with citations in the format: [#, #, ...]).",
-                        },      
+                                "after": "\nReturn in a numbered list (with citations in the format: [#, #, ...]).",
+                        },   #If available, include any background information about the entity(s) and how they were impacted by the failure.
         "SEcauses":        {
                                 "before": "",
                                 "after": "\nDo not return non-software causes. Return in a numbered list (with citations in the format: [#, #, ...]).",
@@ -240,7 +241,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about the six options (with citations in the format: [#, #, ...]).",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about all six options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -316,7 +317,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nProvide relevant information from the articles on whether the overall system in the incident is a cyber physical system that meets the given description (with citations in the format: [#, #, ...]).",
+                                        "after": "\nProvide relevant information from the articles on whether the overall system in the incident is a cyber physical system that meets the given description (with citations in the format: [#, #, ...]).\nIf the overall system includes cyber-physical components, classify it as a cyber-physical system, even if specific subsystems or components do not meet the criteria individually.",
                                         },
                                 "decision":
                                         {
@@ -333,7 +334,7 @@ PROMPT_ADDITIONS = {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about the five options (with citations in the format: [#, #, ...]).",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about all five options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
@@ -472,7 +473,7 @@ TAXONOMY_DEFINITIONS = {
                                 """),
         "cps":                  textwrap.dedent("""
                                 Whether the overall system in the incident is a cyber physical system (cps) meeting the following definition:
-                                cps: Systems that include computational and physical components to monitor and/or control physical inputs/outputs
+                                cps: Systems that include software and physical components to monitor and/or control physical interactions
                                 """),
         #CPS:
         "perception":           textwrap.dedent("""
@@ -566,7 +567,7 @@ TAXONOMY_QUESTIONS = {
                                 (i) other: Was there consequence(s) of the software failure not described in the (a to h) options? What is the other consequence(s)?
                                 """),
         "cps":                  textwrap.dedent("""
-                                cps: Is the system that failed a cyber physical system?
+                                cps: Is the overall system in the incident a cyber physical system (cps)?
                                 """),
         #CPS:
         "perception":           textwrap.dedent("""
@@ -585,7 +586,7 @@ TAXONOMY_QUESTIONS = {
                                 """),
 }
 
-CPS_KEYS = ["perception","communication","application"]
+CPS_KEYS = [] #["perception","communication","application"]
 
 
 
