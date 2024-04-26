@@ -638,3 +638,317 @@ TAXONOMY_OPTIONS = {
             "behaviour": {"0": "crash", "1": "omission", "2": "timing", "3": "incorrect value", "4": "byzantine fault", "-1": "unknown"},
             "recurring": {"true": "true", "false": "false", "0": "within the same impacted entity", "1": "at other entity(s)", "-1": "unknown"},
         }
+
+CLUSTER_PROMPTS  = {
+        "SEcauses": {
+                "identify_themes": 
+                        """
+                        You will be conducting steps to analyze factors that caused a software failure incident.
+
+                        Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
+
+                        Step 1: Identify a theme for the Factor that was a cause of a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description). Limit the description to one sentence.
+
+                        Return the output in the following JSON format:
+                        {
+                        "theme": "",
+                        "description": "",
+                        }
+
+                        Factor: {factor}
+                        """,
+
+                "reduce_themes": 
+                        """
+                        You will be conducting steps to group factors that caused a software failure incident by their themes.
+
+                        The following JSON named Factors contains all the factors and their themes
+
+                        The format of Factors is:
+                        [
+                        {
+                                "cause": "(factor that caused the failure)",
+                                "theme: "(theme of factor)",
+                                "description": "(description of theme)",
+                        },
+                        ...
+                        ]
+
+                        Step 1: Find themes that have similar descriptions that can be grouped together.
+                        Step 2: Return a JSON only containing only unique themes, with the following format:
+                        {
+                        "(grouped theme)": "(<10 word description of the grouped theme)",
+                                ...
+                        }
+
+                        Factors:
+                        """,
+
+                "group_themes": 
+                        """
+                        Determine how all of the categories software engineering causes in the following list of topics can be grouped together into greater than 3 themes,
+                        and topics can also be in more than one group.
+
+                        For each theme, provide a detailed definition under 'description' explaining what it encompasses and why it's important in software engineering.
+
+                        Format the output as a list of JSONs with keys "theme", "topics", "description", where description explains the theme.
+
+                        {
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                                },
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                                },
+                                ...
+                        }
+
+                        List of topics:
+                        """,
+
+                "name_themes": 
+                        """
+                        using all the topics in the list, give a summary (in 2 sentences) and a name (5 words max) for the summary.
+
+                        Format the output as a JSON list with keys "theme" and "description".
+
+                        {
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                        },
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                        }
+                        ...
+                        }
+
+                        List of topics:
+                        """
+                },
+        "impacts": {
+                "identify_themes": 
+                        """
+                        You will be conducting steps to analyze impacts of software failure incidents.
+
+                        Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
+
+                        Step 1: Identify a theme for the impact resulting from a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description). Limit the description to one sentence.
+
+                        Return the output in the following JSON format:
+                        {
+                        "theme": "",
+                        "description": "",
+                        }
+
+                        Factor: {factor}
+                        """,
+
+                "reduce_themes": 
+                        """
+                        You will be conducting steps to group impacts resulting from software failure incidents by their themes.
+
+                        The following JSON named Factors contains all the impacts and their themes
+
+                        The format of Factors is:
+                        [
+                        {
+                                "impact": "(impact resulting from software failure incident)",
+                                "theme: "(theme of impact)",
+                                "description": "(description of theme)",
+                        },
+                        ...
+                        ]
+
+                        Step 1: Find themes that have similar descriptions that can be grouped together.
+                        Step 2: Return a JSON only containing only unique themes, with the following format:
+                        {
+                        "(grouped theme)": "(<10 word description of the grouped theme)",
+                                ...
+                        }
+
+                        Factors:
+                        """,
+
+                "group_themes": 
+                        """
+                        Determine how all of the categories impacts resulting from software engineering failure incidents in the following list of topics can be grouped together into greater than 3 themes,
+                        and topics can also be in more than one group.
+
+                        For each theme, provide a detailed definition under 'description' explaining what it encompasses and why it's important in software engineering.
+
+                        Format the output as a list of JSONs with keys "theme", "topics", "description", where description explains the theme.
+
+                        {
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                                },
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                                },
+                                ...
+                        }
+
+                        List of topics:
+                        """,
+
+                "name_themes": 
+                        """
+                        using all the topics in the list, give a summary (in 2 sentences) and a name (5 words max) for the summary.
+
+                        Format the output as a JSON list with keys "theme" and "description".
+
+                        {
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                        },
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                        }
+                        ...
+                        }
+
+                        List of topics:
+                        """
+            
+        },
+        "": {
+                "identify_themes": 
+                        """
+                        You will be conducting steps to analyze factors that caused a software failure incident.
+
+                        Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
+
+                        Step 1: Identify a theme for the Factor that was a cause of a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description). Limit the description to one sentence.
+
+                        Return the output in the following JSON format:
+                        {
+                        "theme": "",
+                        "description": "",
+                        }
+
+                        Factor: {factor}
+                        """,
+
+                "reduce_themes": 
+                        """
+                        You will be conducting steps to group factors that caused a software failure incident by their themes.
+
+                        The following JSON named Factors contains all the factors and their themes
+
+                        The format of Factors is:
+                        [
+                        {
+                                "cause": "(factor that caused the failure)",
+                                "theme: "(theme of factor)",
+                                "description": "(description of theme)",
+                        },
+                        ...
+                        ]
+
+                        Step 1: Find themes that have similar descriptions that can be grouped together.
+                        Step 2: Return a JSON only containing only unique themes, with the following format:
+                        {
+                        "(grouped theme)": "(<10 word description of the grouped theme)",
+                                ...
+                        }
+
+                        Factors:
+                        """,
+
+                "group_themes": 
+                        """
+                        Determine how all of the categories software engineering causes in the following list of topics can be grouped together into greater than 3 themes,
+                        and topics can also be in more than one group.
+
+                        For each theme, provide a detailed definition under 'description' explaining what it encompasses and why it's important in software engineering.
+
+                        Format the output as a list of JSONs with keys "theme", "topics", "description", where description explains the theme.
+
+                        {
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                                },
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                                },
+                                ...
+                        }
+
+                        List of topics:
+                        """,
+
+                "name_themes": 
+                        """
+                        using all the topics in the list, give a summary (in 2 sentences) and a name (5 words max) for the summary.
+
+                        Format the output as a JSON list with keys "theme" and "description".
+
+                        {
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                        },
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                        }
+                        ...
+                        }
+
+                        List of topics:
+                        """
+                },
+        
+}
+
+CODING_PROMPTS = {
+        "SEcauses": {
+                "code_item1": 
+                        """Using the codes and their definitions from the code book, please proceed to label the response accordingly (using code id). """,
+                "code_item2":
+                        """ Here is the response """,
+                "code_item3":
+                        """. The output format should be in JSON.
+                        {
+                        "code": ""
+                        }
+
+                        If none of the themes accurately fit which type of cause of software engineering failure the response is, then create a new theme and description.
+                        The output format for a new theme should be a JSON
+                        {
+                        "theme": "",
+                        "description": ""
+                        }
+                        """
+                },
+
+        "impacts": {
+                "code_item1": 
+                        """Using the codes and their definitions from the code book, please proceed to label the response accordingly (using code id). """,
+                "code_item2":
+                        """ Here is the response """,
+                "code_item3":
+                        """. The output format should be in JSON.
+                        {
+                        "code": ""
+                        }
+
+                        If none of the themes accurately fit which type of impact resulting from a software engineering failure the response is, then create a new theme and description.
+                        The output format for a new theme should be a JSON
+                        {
+                        "theme": "",
+                        "description": ""
+                        }
+                        """
+                }
+}

@@ -14,7 +14,7 @@ import csv
 
 # nltk.download('punkt')  # Download the tokenizer data
 
-from failures.articles.models import Article_Ko, Article, Incident
+from failures.articles.models import Article_Ko, Article, Incident, Theme, SubTheme
 
 
 class TestCommand:
@@ -41,6 +41,29 @@ class TestCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
+
+        themes = Theme.objects.all()
+        for theme in themes:
+            print(f"Theme: {theme.theme}")
+            print(f"Theme key: {theme.postmortem_key}")
+            print(f"Theme description: {theme.definition}")
+            print(f"Number of Incidents within theme: {len(theme.incidents.all())}")
+            # for incident in theme.incidents.all():
+            #     print(incident.id)
+
+            print("Subthemes:")
+            for subtheme in theme.subthemes.all():
+                print(f"  Subtheme: {subtheme.sub_theme}")
+                print(f"  Subtheme key: {subtheme.postmortem_key}")
+                print(f"  Theme description: {subtheme.definition}")
+                print(f"   Number of Incidents within sub theme: {len(subtheme.incidents.all())}")
+                # for incident in subtheme.incidents.all():
+                #     print(f"    {incident.id}")
+                print()
+
+            print()
+
+        return
 
         print(Incident.objects.filter(id__in=[2697]))
         print(Article.objects.get(pk=3663).incident)
