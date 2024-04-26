@@ -67,7 +67,7 @@ class FetchDataCommand:
         elif option == 4:
             # Fetch incidents based on provided article ids
             logging.info(f"Fetching incidents with article ids: {ids}")
-            incidents = Incident.objects.filter(articles__id__in=ids)
+            incidents = Incident.objects.filter(articles__id__in=ids, experiment=True)
             self.download_incident_data_to_csv(incidents)
         else:
             logging.error("Invalid sample option. Please provide a valid option (1, 2, 3, or 4).")
@@ -92,17 +92,16 @@ class FetchDataCommand:
 
             # Define CSV header with incident ID and related article IDs
             header = ["Incident ID", "Related Article IDs"] + [
-                "Published", "Title", "Summary", "System", "Time", "SEcauses", "NSEcauses",
-                "Impacts", "Preventions", "Fixes", "ResponsibleOrg", "ImpactedOrg",
-                "References", "Recurring Option", "Recurring Rationale", "Phase Option",
+                "Published", "Title", "Summary", "Time", "System", "ResponsibleOrg", "ImpactedOrg", "SEcauses", "NSEcauses",
+                "Impacts", "Preventions", "Fixes", 
+                "References", "Recurring Option", "Phase Option",
                 "Boundary Option", "Nature Option", "Dimension Option", "Objective Option",
-                "Intent Option", "Capability Option", "Duration Option", "Domain Option",
+                "Intent Option", "Capability Option", "Duration Option", "Behaviour Option", "Domain Option", "Consequence Option", 
                 "CPS Option", "Perception Option", "Communication Option", "Application Option",
-                "Behaviour Option", "Phase Rationale", "Boundary Rationale", "Nature Rationale",
+                "Recurring Rationale", "Phase Rationale", "Boundary Rationale", "Nature Rationale",
                 "Dimension Rationale", "Objective Rationale", "Intent Rationale",
-                "Capability Rationale", "Duration Rationale", "Domain Rationale", "CPS Rationale",
+                "Capability Rationale", "Duration Rationale", "Behaviour Rationale", "Domain Rationale", "Consequence Rationale", "CPS Rationale",
                 "Perception Rationale", "Communication Rationale", "Application Rationale",
-                "Behaviour Rationale"
             ]
 
             # Open CSV file and write header
@@ -117,22 +116,21 @@ class FetchDataCommand:
 
                     # Write row with incident ID and related article IDs
                     csv_writer.writerow([incident.id, related_article_ids] + [
-                        incident.published, incident.title, incident.summary, incident.system,
-                        incident.time, incident.SEcauses, incident.NSEcauses, incident.impacts,
-                        incident.preventions, incident.fixes, incident.ResponsibleOrg,
-                        incident.ImpactedOrg, incident.references, incident.recurring_option,
-                        incident.recurring_rationale, incident.phase_option, incident.boundary_option,
+                        incident.published, incident.title, incident.summary, incident.time, incident.system, 
+                        incident.ResponsibleOrg, incident.ImpactedOrg, 
+                        incident.SEcauses, incident.NSEcauses, incident.impacts,
+                        incident.preventions, incident.fixes, incident.references, incident.recurring_option,
+                        incident.phase_option, incident.boundary_option,
                         incident.nature_option, incident.dimension_option, incident.objective_option,
-                        incident.intent_option, incident.capability_option, incident.duration_option,
-                        incident.domain_option, incident.cps_option, incident.perception_option,
+                        incident.intent_option, incident.capability_option, incident.duration_option, incident.behaviour_option,
+                        incident.domain_option, incident.consequence_option, incident.cps_option, incident.perception_option,
                         incident.communication_option, incident.application_option,
-                        incident.behaviour_option, incident.phase_rationale, incident.boundary_rationale,
+                        incident.recurring_rationale, incident.phase_rationale, incident.boundary_rationale,
                         incident.nature_rationale, incident.dimension_rationale, incident.objective_rationale,
-                        incident.intent_rationale, incident.capability_rationale, incident.duration_rationale,
-                        incident.domain_rationale, incident.cps_rationale, incident.perception_rationale,
+                        incident.intent_rationale, incident.capability_rationale, incident.duration_rationale, incident.behaviour_rationale,
+                        incident.domain_rationale, incident.consequence_rationale, incident.cps_rationale, incident.perception_rationale,
                         incident.communication_rationale, incident.application_rationale,
-                        incident.behaviour_rationale
-                    ])
+                    ]) 
 
             logging.info(f"Incident data downloaded to CSV: {file_path}")
 

@@ -87,6 +87,7 @@ class PostmortemIncidentAutoVDBCommand:
         logging.info("\nCreating postmortems for incidents.")
 
         model_parameters = {"model": "gpt-3.5-turbo", "temperature": 0, "context_window": 16385}
+        #model_parameters = {"model": "gpt-4-turbo-2024-04-09", "temperature": 0, "context_window": 128000} 
 
         query_all = args.all
         query_key = args.key
@@ -100,7 +101,7 @@ class PostmortemIncidentAutoVDBCommand:
         elif query_all:
             incidents = Incident.objects.all()
         else:
-            incidents = Incident.objects.all(Q(new_article=True) | Q(complete_report=False) | Q(complete_report=None))
+            incidents = Incident.objects.filter(Q(new_article=True) | Q(complete_report=False) | Q(complete_report=None))
 
         #TODO: create flags for incidents: (1) new article: use that incident in queryset + redo all questions, (2) incomplete postmortem: use that incident in queryset, 
             # if new article delete existing postmortem info 
@@ -109,7 +110,7 @@ class PostmortemIncidentAutoVDBCommand:
 
         ### TODO: Temporary: order by published date in descending order
         # sorts the Incident objects in descending order based on their published dates. and prefetches all articles for each incident
-        #incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:1]        
+        incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:200]        
 
 
         ### Importing prompts
@@ -126,7 +127,7 @@ class PostmortemIncidentAutoVDBCommand:
         CHUNK_SIZE = 500
 
         ### Check if a specific question is to be queried
-        if query_key != 'None' or query_key != "all":
+        if query_key != 'None' and query_key != "all":
             if query_key in postmortem_questions.keys():
                 postmortem_questions = {}
                 postmortem_questions[query_key] = POSTMORTEM_QUESTIONS[query_key]
@@ -174,7 +175,7 @@ class PostmortemIncidentAutoVDBCommand:
         prompt_template_decision_instruction = "Use the following Extracted Information from news articles reporting on a software failure incident to answer the Questions." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
                 + "\n"+ "If you can't answer the questions using the information, answer with 'unknown'." + "\n"
         prompt_template_decision_task = "Using the Extracted Information answer the following questions:\n"
-        prompt_template_JSON_format = "\nReturn answers in the following JSON format:\n"
+        prompt_template_JSON_format = "\nReturn answers in the following JSON format:"
 
 
         successful_postmortem_creations = 0
@@ -272,7 +273,7 @@ class PostmortemIncidentAutoVDBCommand:
 
                     ### Construct prompt
                     prompt_question = "\n<Question>" + prompt_additions[question_key]["before"] + postmortem_questions[question_key] + prompt_additions[question_key]["after"] + "</Question>"
-
+                    #logging.info(prompt_question)
                     final_prompt = prompt_template_articles_instruction + prompt_incident + prompt_question
 
                     messages = system_message.copy()
@@ -284,10 +285,12 @@ class PostmortemIncidentAutoVDBCommand:
                     model_parameters_temp = model_parameters.copy()
                     model_parameters_temp["messages"] = messages.copy()
 
-                    logging.info(type(model_parameters_temp))
-                    logging.info(model_parameters_temp)
+                    #logging.info(type(model_parameters_temp))
+                    #logging.info(model_parameters_temp)
             
                     reply = chatGPT.run(model_parameters_temp)
+                    #logging.info("Reply:")
+                    #logging.info(reply)
 
                     setattr(incident, question_key, reply)
 
@@ -340,13 +343,13 @@ class PostmortemIncidentAutoVDBCommand:
                     model_parameters_temp = model_parameters.copy()
                     model_parameters_temp["messages"] = messages.copy()
 
-                    logging.info(type(model_parameters_temp))
-                    logging.info(model_parameters_temp)
+                    #logging.info(type(model_parameters_temp))
+                    #logging.info(model_parameters_temp)
 
             
                     reply = chatGPT.run(model_parameters_temp)
-                    logging.info("Reply:")
-                    logging.info(reply)
+                    #logging.info("Reply:")
+                    #logging.info(reply)
 
 
                     setattr(incident, question_rationale_key, reply)
@@ -373,10 +376,12 @@ class PostmortemIncidentAutoVDBCommand:
 
                     model_parameters_temp["response_format"] = {"type": "json_object"}
 
-                    logging.info(type(model_parameters_temp))
-                    logging.info(model_parameters_temp)
+                    #logging.info(type(model_parameters_temp))
+                    #logging.info(model_parameters_temp)
             
                     reply = chatGPT.run(model_parameters_temp)
+                    #logging.info("Reply:")
+                    #logging.info(reply)
 
                     ### Error handling for JSON format is implemented in ChatGPT class
 
