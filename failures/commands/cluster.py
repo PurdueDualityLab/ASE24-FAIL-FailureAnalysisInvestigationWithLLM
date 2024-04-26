@@ -17,7 +17,7 @@ from failures.networks.models import ChatGPT
 CONTEXT_WINDOW = 16385
 
 class ClusterCommand:
-    POSTMORTEM_FIELDS = ["SEcauses", "impacts"]
+    POSTMORTEM_FIELDS = ["SEcauses", "impacts", "fixes"]
     THEMES_PATH = "failures/data/"
 
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -86,6 +86,16 @@ class ClusterCommand:
         for postmortem_key in postmortem_keys:
             # Get initial codes
             initial_codes = get_initial_codes(cleaned_data[postmortem_key], postmortem_key)
+
+            # Specify the file path where you want to save the JSON file
+            file_path = f"failures/data/initial_codes_{postmortem_key}.json"
+
+            # Open the file in write mode and use `json.dump()` to save the list of dictionaries to the file
+            with open(file_path, 'w') as json_file:
+                json.dump(initial_codes, json_file)
+
+            # with open(file_path, 'r') as json_file:
+            #     initial_codes = json.load(json_file)
 
             # Remove duplicates
             initial_codes_trimmed = remove_duplicate_codes(initial_codes, postmortem_key)
@@ -187,7 +197,11 @@ class ClusterCommand:
 
 def pre_process_data(incidents, postmortem_keys) -> dict:
     # Convert incident data to a list of dictionaries
+    if "fixes" in postmortem_keys:
+        postmortem_keys.append("preventions")
     incidents_list = list(incidents.values('id', *postmortem_keys))
+    if "fixes" in postmortem_keys:
+        postmortem_keys.remove("preventions")
 
     # Create a DataFrame from the queryset data
     incidents_df = pd.DataFrame(incidents_list)
@@ -206,6 +220,15 @@ def pre_process_data(incidents, postmortem_keys) -> dict:
 
             # Store id mappings
             ids.extend([id] * len(raw_data[1:]))
+
+        if postmortem_key == "fixes":
+            for (id, raw_data) in zip(incidents_df["id"], incidents_df["preventions"]):
+                raw_data = re.split(r'\d+\.\s*', raw_data) # Split on numbered list
+                raw_data = [re.sub(r'\s*\[(?:Article\s+)?\d+(?:,\s*\d+)*\]\s*[\r\n.]?$', '.', data) for data in raw_data]
+                clean_key.extend(raw_data[1:])  # Skip the first empty item
+
+                # Store id mappings
+                ids.extend([id] * len(raw_data[1:]))
 
         # Store back to output dictionary
         cleaned_data[postmortem_key] = clean_key
