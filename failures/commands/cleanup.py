@@ -59,8 +59,35 @@ class CleanUpCommand:
 
                 # Set article incident to none, set article stored to false
                 article.incident = None
+                article.analyzable_failure = False
                 article.article_stored = False
                 article.save()
+
+        # Get list of articles that are failures but not analyzable and have an incident tied to them
+        articles = Article.objects.filter(describes_failure=True, analyzable_failure=False, incident__isnull=False)
+
+        if articles:
+            
+            logging.info("Resetting incidents/incident relationships failure but not analyzable articles")
+
+            for article in articles:
+                # Delete article from vectorDB
+                logging.info("Deleting article " + str(article.id) + " from VectorDB")
+                chunks_for_sampleArticle = vectorDB.get(where={"articleID": article.id})['ids']
+                if chunks_for_sampleArticle:
+                    vectorDB._collection.delete(ids=chunks_for_sampleArticle)
+
+                # Set article incident to none, set article stored to false
+                article.incident = None
+                article.article_stored = False
+                article.save()
+
+        # Get list of articles that are not failures and update accordingly
+        articles = Article.objects.filter(describes_failure=False, analyzable_failure=True)
+
+        for article in articles:
+            article.analyzable_failure = False
+            article.save()
 
         # Get list of incidents with 0 mapped articles
         incidents = Incident.objects.annotate(num_articles=Count('articles')).filter(num_articles=0)

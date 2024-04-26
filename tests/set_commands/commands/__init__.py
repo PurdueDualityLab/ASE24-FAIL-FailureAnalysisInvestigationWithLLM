@@ -3,16 +3,10 @@ import logging
 import textwrap
 from typing import Protocol
 
-from tests.commands.evaluate_classification import EvaluateClassificationCommand
-from tests.commands.evaluate_identification import EvaluateIdentificationCommand
-from tests.commands.evaluate_merge import EvaluateMergeCommand
-from tests.commands.evaluate_temperature import EvaluateTemperatureCommand
-from tests.commands.evaluate_postmortem import EvaluatePostmortemCommand
-from tests.commands.sample_dataset_creation import SampleDatasetCreationCommand
-from tests.commands.exp_runQueries import exp_RunQueriesCommand
-from tests.commands.evaluate_taxonomy import EvaluateTaxonomyCommand
-from tests.commands.fetch_data import FetchDataCommand
-
+from tests.set_commands.commands.save_state import SaveStateCommand
+from tests.set_commands.commands.set_failure import SetFailureCommand
+from tests.set_commands.commands.set_analyzable import SetAnalyzableCommand
+from tests.set_commands.commands.set_incident import SetIncidentCommand
 
 
 _EPILOG = textwrap.dedent(
@@ -37,7 +31,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [EvaluateClassificationCommand(), EvaluateIdentificationCommand(), EvaluateMergeCommand(), EvaluateTemperatureCommand(), EvaluatePostmortemCommand(), SampleDatasetCreationCommand(), exp_RunQueriesCommand(), EvaluateTaxonomyCommand(), FetchDataCommand()]
+_COMMANDS: list[Command] = [SaveStateCommand(), SetFailureCommand(), SetAnalyzableCommand(), SetIncidentCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -89,7 +83,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="merge_manual.log",
+        filename="set_commands.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
