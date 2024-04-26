@@ -116,7 +116,6 @@ class SearchQuery(models.Model):
 class Incident(models.Model):
 
     published = models.DateTimeField(_("Published"), help_text=_("Date and time when the earliest article was published."), blank=True, null=True)
-    #TODO: Find the earliest published date and use the month and year
 
     tokens = models.FloatField(
         _("Total Tokens in Incident"), blank=True, null=True, help_text=_("Number of total Tokens in all articles in incident.")

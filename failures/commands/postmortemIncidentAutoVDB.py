@@ -103,14 +103,10 @@ class PostmortemIncidentAutoVDBCommand:
         else:
             incidents = Incident.objects.filter(Q(new_article=True) | Q(complete_report=False) | Q(complete_report=None))
 
-        #TODO: create flags for incidents: (1) new article: use that incident in queryset + redo all questions, (2) incomplete postmortem: use that incident in queryset, 
-            # if new article delete existing postmortem info 
-            # Use this to create appropriate queryset up here rather than going through all incidents 
-
 
         ### TODO: Temporary: order by published date in descending order
         # sorts the Incident objects in descending order based on their published dates. and prefetches all articles for each incident
-        incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:200]        
+        #incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:200]        
 
 
         ### Importing prompts
@@ -299,7 +295,7 @@ class PostmortemIncidentAutoVDBCommand:
             for question_key in list(taxonomy_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
 
                 # If question is for CPS, and the system for incident is not CPS, then don't answer
-                if question_key in cps_keys and "cps" not in incident.cps_option: #incident.cps != True:
+                if question_key in cps_keys and "TRUE" not in incident.cps_option: #incident.cps != True:
                         continue
 
                 question_rationale_key = question_key + "_rationale"
@@ -388,10 +384,18 @@ class PostmortemIncidentAutoVDBCommand:
                     ### Convert JSON to string with options that are true in csv format
                     if reply is not None:
                         reply = json.loads(reply)
-                        # Extract keys where the corresponding values are True
-                        true_keys = [key for key, value in reply.items() if value]
-                        # Convert the list of keys into a string
-                        reply = ', '.join(true_keys)
+                        if question_key == "cps" or question_key == "application":
+                            if reply[question_key] is True:
+                                reply = "TRUE"
+                            elif reply[question_key] is False:
+                                reply = "FALSE"
+                            elif reply["unknown"] is True:
+                                reply = "unknown"
+                        else:
+                            # Extract keys where the corresponding values are True
+                            true_keys = [key for key, value in reply.items() if value]
+                            # Convert the list of keys into a string
+                            reply = ', '.join(true_keys)
 
                     setattr(incident, question_option_key, reply)
 

@@ -586,7 +586,7 @@ TAXONOMY_QUESTIONS = {
                                 """),
 }
 
-CPS_KEYS = [] #["perception","communication","application"]
+CPS_KEYS = ["perception","communication","application"]
 
 
 
