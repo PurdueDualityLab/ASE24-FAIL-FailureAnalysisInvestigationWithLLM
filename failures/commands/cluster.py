@@ -236,6 +236,11 @@ def pre_process_data(incidents, postmortem_keys) -> dict:
 
     logging.info("Data has been cleaned and processed for all postmortem keys.")
 
+    # TODO: Remove line below, this is just for testing
+    for key, val in cleaned_data.items():
+        if len(val) > 400:
+            cleaned_data[key] = val[:400]
+
     return cleaned_data
 
 # Prompt OpenAI LLM
