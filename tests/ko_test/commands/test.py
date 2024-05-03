@@ -41,161 +41,179 @@ class TestCommand:
             parser (argparse.ArgumentParser): The argument parser used for configuration.
 
         """
-
-        themes = Theme.objects.all()
-        for theme in themes:
-            print(f"Theme: {theme.theme}")
-            print(f"Theme key: {theme.postmortem_key}")
-            print(f"Theme description: {theme.definition}")
-            print(f"Number of Incidents within theme: {len(theme.incidents.all())}")
-            # for incident in theme.incidents.all():
-            #     print(incident.id)
-
-            print("Subthemes:")
-            for subtheme in theme.subthemes.all():
-                print(f"  Subtheme: {subtheme.sub_theme}")
-                print(f"  Subtheme key: {subtheme.postmortem_key}")
-                print(f"  Theme description: {subtheme.definition}")
-                print(f"   Number of Incidents within sub theme: {len(subtheme.incidents.all())}")
-                # for incident in subtheme.incidents.all():
-                #     print(f"    {incident.id}")
-                print()
-
-            print()
-
-        return
-
-        print(Incident.objects.filter(id__in=[2697]))
-        print(Article.objects.get(pk=3663).incident)
-
-        return
-        max_size = 16385 - 1500
-
-        incidents = Incident.objects.all()
-        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
-
-        # Define the CSV file path
-        csv_file_path = "tests/ko_test/eval/oversized_incident_sizes.csv"
-
-        # Open the CSV file in write mode
-        with open(csv_file_path, mode='w', newline='') as file:
-            # Define CSV writer
-            writer = csv.writer(file)
-
-            # Write header row
-            writer.writerow(["Incident ID", "Article ID", "Size"])
-
-            # Iterate through incidents
-            for incident in incidents:
-                articles = incident.articles.all()
-
-                # Iterate through articles
-                size = 0
-                for article in articles:
-                    size += len(encoding.encode(article.body))
-
-                # If size exceeds max_size, write to CSV
-                if size > max_size:
-                    # Write incident ID, article ID, and size to CSV
-                    article_ids = list(incident.articles.values_list('id', flat=True))
-                    writer.writerow([incident.id, article_ids, size])
-
-        print("CSV file has been created successfully at:", csv_file_path)
-            
-
-
-
-        return
-        # Define the path to the CSV file
-        article = Article.objects.filter(id=66881)
-
-        print(article.incident.id)
-
-        return
+        # Log logistics
+        # Consensus folder
         consensus_csv_path = "tests/ko_test/data/Ko_Stories_Consensus.csv"
 
-        # Read the CSV file into a DataFrame
+        # Read consensus CSV file
         df = pd.read_csv(consensus_csv_path)
+        total_articles = Article_Ko.objects.count()
+        relevant_articles = df[df['Consensus'] == 'relevant'].shape[0]
+        offtopic_articles = df[df['Consensus'] == 'offtopic'].shape[0]
+        # unique_story_ids_count = len(unique_story_ids)
 
-        df = df[df['Consensus'] == 'relevant']
+        logging.info(f"\nTotal Articles in Database: {total_articles}")
+        logging.info(f"Number of Relevant Articles: {relevant_articles}")
+        logging.info(f"Number of Off-topic Articles: {offtopic_articles}")
+        # logging.info(f"Number of Unique Story IDs without 'invalid' consensus: {unique_story_ids_count}")
+        return
+        # print(len(Article_Ko.objects.all()))
+        # return
 
-        story_ids_list = set(df['storyID'])
+        # themes = Theme.objects.all()
+        # for theme in themes:
+        #     print(f"Theme: {theme.theme}")
+        #     print(f"Theme key: {theme.postmortem_key}")
+        #     print(f"Theme description: {theme.definition}")
+        #     print(f"Number of Incidents within theme: {len(theme.incidents.all())}")
+        #     # for incident in theme.incidents.all():
+        #     #     print(incident.id)
 
-        stories = {}
+        #     print("Subthemes:")
+        #     for subtheme in theme.subthemes.all():
+        #         print(f"  Subtheme: {subtheme.sub_theme}")
+        #         print(f"  Subtheme key: {subtheme.postmortem_key}")
+        #         print(f"  Theme description: {subtheme.definition}")
+        #         print(f"   Number of Incidents within sub theme: {len(subtheme.incidents.all())}")
+        #         # for incident in subtheme.incidents.all():
+        #         #     print(f"    {incident.id}")
+        #         print()
 
-        for story_id in story_ids_list:
-            articles = Article_Ko.objects.filter(storyID=story_id)
+        #     print()
 
-            article_split = {}
+        # return
 
-            for article in articles:
-                if not article.incident:
-                    continue
-                elif article.incident.id in article_split:
-                    article_split[article.incident.id].append(article.id)
-                else:
-                    article_split[article.incident.id] = [article.id]
+        # print(Incident.objects.filter(id__in=[2697]))
+        # print(Article.objects.get(pk=3663).incident)
 
-            stories[story_id] = article_split
+        # return
+        # max_size = 16385 - 1500
 
-        print(stories)
+        # incidents = Incident.objects.all()
+        # encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
 
-        # # Convert the 'stories' dictionary to a DataFrame
-        # stories_df = pd.DataFrame.from_dict(stories, orient='index')
+        # # Define the CSV file path
+        # csv_file_path = "tests/ko_test/eval/oversized_incident_sizes.csv"
 
-        # # Define the path to the output CSV file
-        output_csv_path = "tests/ko_test/eval/stories.csv"
+        # # Open the CSV file in write mode
+        # with open(csv_file_path, mode='w', newline='') as file:
+        #     # Define CSV writer
+        #     writer = csv.writer(file)
 
-        # # Write the DataFrame to a CSV file
-        # stories_df.to_csv(output_csv_path)
+        #     # Write header row
+        #     writer.writerow(["Incident ID", "Article ID", "Size"])
 
-        # print(f"CSV file successfully written to {output_csv_path}")
+        #     # Iterate through incidents
+        #     for incident in incidents:
+        #         articles = incident.articles.all()
+
+        #         # Iterate through articles
+        #         size = 0
+        #         for article in articles:
+        #             size += len(encoding.encode(article.body))
+
+        #         # If size exceeds max_size, write to CSV
+        #         if size > max_size:
+        #             # Write incident ID, article ID, and size to CSV
+        #             article_ids = list(incident.articles.values_list('id', flat=True))
+        #             writer.writerow([incident.id, article_ids, size])
+
+        # print("CSV file has been created successfully at:", csv_file_path)
+            
+
+
+
+        # return
+        # Define the path to the CSV file
+        # article = Article.objects.filter(id=66881)
+
+        # print(article.incident.id)
+
+        # return
+        # consensus_csv_path = "tests/ko_test/data/Ko_Stories_Consensus.csv"
+
+        # # Read the CSV file into a DataFrame
+        # df = pd.read_csv(consensus_csv_path)
+
+        # df = df[df['Consensus'] == 'relevant']
+
+        # story_ids_list = set(df['storyID'])
+
+        # stories = {}
+
+        # for story_id in story_ids_list:
+        #     articles = Article_Ko.objects.filter(storyID=story_id)
+
+        #     article_split = {}
+
+        #     for article in articles:
+        #         if not article.incident:
+        #             continue
+        #         elif article.incident.id in article_split:
+        #             article_split[article.incident.id].append(article.id)
+        #         else:
+        #             article_split[article.incident.id] = [article.id]
+
+        #     stories[story_id] = article_split
 
         # print(stories)
-        # Define the path to the output CSV file
+
+        # # # Convert the 'stories' dictionary to a DataFrame
+        # # stories_df = pd.DataFrame.from_dict(stories, orient='index')
+
+        # # # Define the path to the output CSV file
+        # output_csv_path = "tests/ko_test/eval/stories.csv"
+
+        # # # Write the DataFrame to a CSV file
+        # # stories_df.to_csv(output_csv_path)
+
+        # # print(f"CSV file successfully written to {output_csv_path}")
+
+        # # print(stories)
+        # # Define the path to the output CSV file
 
 
-        # Open the file in write mode
-        with open(output_csv_path, 'w', newline='') as file:
-            writer = csv.writer(file)
+        # # Open the file in write mode
+        # with open(output_csv_path, 'w', newline='') as file:
+        #     writer = csv.writer(file)
             
-            # Write the header row
-            writer.writerow(['Key', 'Value'])
+        #     # Write the header row
+        #     writer.writerow(['Key', 'Value'])
             
-            # Write each key-value pair to the CSV file
-            for key, value in stories.items():
-                writer.writerow([key, str(value)])
+        #     # Write each key-value pair to the CSV file
+        #     for key, value in stories.items():
+        #         writer.writerow([key, str(value)])
 
 
-        return
+        # return
 
         # Iterate through the DataFrame
-        for index, row in df.iterrows():
+        # for index, row in df.iterrows():
 
-            if row['Consensus'] == "invalid":
-                continue
+        #     if row['Consensus'] == "invalid":
+        #         continue
 
-            django_article_id = row['DjangoArticleID']
+        #     django_article_id = row['DjangoArticleID']
 
-            # django_story_id = row['DjangoStoryID']
-            article_id = row['articleID']
-            story_id = row['storyID']
+        #     # django_story_id = row['DjangoStoryID']
+        #     article_id = row['articleID']
+        #     story_id = row['storyID']
             
-            # Retrieve the Article_Ko instance based on DjangoArticleID
-            article_ko = Article_Ko.objects.get(pk=django_article_id)
+        #     # Retrieve the Article_Ko instance based on DjangoArticleID
+        #     article_ko = Article_Ko.objects.get(pk=django_article_id)
 
-            if not article_ko:
-                continue
+        #     if not article_ko:
+        #         continue
             
-            # Set the storyID and articleID fields
-            article_ko.storyID = story_id
-            article_ko.articleID = article_id
+        #     # Set the storyID and articleID fields
+        #     article_ko.storyID = story_id
+        #     article_ko.articleID = article_id
             
-            # Save the changes
-            article_ko.save()
+        #     # Save the changes
+        #     article_ko.save()
 
 
-        return
+        # return
         story_article_tuples = [
             (57170, 3),
             (3942, 4),
@@ -259,50 +277,50 @@ class TestCommand:
             (15868, 4)
         ]
 
-        # Define the file path
-        file_path = "./tests/ko_test/data/Ko_Stories_Consensus.csv"
+        # # Define the file path
+        # file_path = "./tests/ko_test/data/Ko_Stories_Consensus.csv"
 
-        # Define the columns to read
-        columns_to_read = ["storyID", "articleID", "DjangoArticleID", "Consensus"]
+        # # Define the columns to read
+        # columns_to_read = ["storyID", "articleID", "DjangoArticleID", "Consensus"]
 
-        # Read the Excel file into a Pandas DataFrame
-        try:
-            df = pd.read_csv(file_path, usecols=columns_to_read)
-            logging.info("Data loaded successfully.")
-        except FileNotFoundError:
-            logging.info(f"Error: The file '{file_path}' was not found.")
-            return metrics
-        except Exception as e:
-            logging.info(f"An error occurred: {str(e)}")
-            return metrics
+        # # Read the Excel file into a Pandas DataFrame
+        # try:
+        #     df = pd.read_csv(file_path, usecols=columns_to_read)
+        #     logging.info("Data loaded successfully.")
+        # except FileNotFoundError:
+        #     logging.info(f"Error: The file '{file_path}' was not found.")
+        #     return metrics
+        # except Exception as e:
+        #     logging.info(f"An error occurred: {str(e)}")
+        #     return metrics
 
-        # # Filter out rows with missing values in 'DjangoArticleID'
-        # df = df.dropna(subset=['DjangoArticleID'])
+        # # # Filter out rows with missing values in 'DjangoArticleID'
+        # # df = df.dropna(subset=['DjangoArticleID'])
 
-        df_filtered = df[df[['storyID', 'articleID']].apply(tuple, axis=1).isin(story_article_tuples)]
+        # df_filtered = df[df[['storyID', 'articleID']].apply(tuple, axis=1).isin(story_article_tuples)]
 
-        article_ko_ids = df_filtered['DjangoArticleID'].tolist()
+        # article_ko_ids = df_filtered['DjangoArticleID'].tolist()
 
-        describes_failure_true_count = Article_Ko.objects.filter(describes_failure=True, id__in=article_ko_ids).count()
+        # describes_failure_true_count = Article_Ko.objects.filter(describes_failure=True, id__in=article_ko_ids).count()
 
-        # Query Article_Ko objects with describes_failure=False
-        describes_failure_false_count = Article_Ko.objects.filter(describes_failure=False, id__in=article_ko_ids).count()
+        # # Query Article_Ko objects with describes_failure=False
+        # describes_failure_false_count = Article_Ko.objects.filter(describes_failure=False, id__in=article_ko_ids).count()
 
-        # Total number of articles
-        total_articles = len(article_ko_ids)
+        # # Total number of articles
+        # total_articles = len(article_ko_ids)
 
-        # Calculate percentages
-        percent_describes_failure_true = (describes_failure_true_count / total_articles) * 100
-        percent_describes_failure_false = (describes_failure_false_count / total_articles) * 100
+        # # Calculate percentages
+        # percent_describes_failure_true = (describes_failure_true_count / total_articles) * 100
+        # percent_describes_failure_false = (describes_failure_false_count / total_articles) * 100
 
-        # Print statistics
-        print("Statistics on describes_failure field:")
-        print(f"Total articles: {total_articles}")
-        print(f"Number of articles describing failure: {describes_failure_true_count} ({percent_describes_failure_true:.2f}%)")
-        print(f"Number of articles not describing failure: {describes_failure_false_count} ({percent_describes_failure_false:.2f}%)")
+        # # Print statistics
+        # print("Statistics on describes_failure field:")
+        # print(f"Total articles: {total_articles}")
+        # print(f"Number of articles describing failure: {describes_failure_true_count} ({percent_describes_failure_true:.2f}%)")
+        # print(f"Number of articles not describing failure: {describes_failure_false_count} ({percent_describes_failure_false:.2f}%)")
 
 
-        return
+        # return
         # Retrieve and delete all articles from the database (preventing duplicates)
         # all_articles = Article_Ko.objects.filter(describes_failure=True)
 
@@ -323,111 +341,111 @@ class TestCommand:
         # print("Number of relevant Ko articles ingested into DB: " + str(num_relevant))
 
         # Get all the incidents
-        incidents = Incident.objects.all()
-        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+        # incidents = Incident.objects.all()
+        # encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
 
-        incident_token_counts = []
+        # incident_token_counts = []
 
-        for incident in incidents:
-            related_articles = incident.articles.all()
+        # for incident in incidents:
+        #     related_articles = incident.articles.all()
 
-            incident_tokens = 0
+        #     incident_tokens = 0
 
-            for article in related_articles:
-                incident_tokens += len(encoding.encode(article.body))
+        #     for article in related_articles:
+        #         incident_tokens += len(encoding.encode(article.body))
 
-            incident_token_counts.append(incident_tokens)
+        #     incident_token_counts.append(incident_tokens)
 
-        # Calculate statistics
-        max_token_count = max(incident_token_counts)
-        min_token_count = min(incident_token_counts)
-        median_token_count = np.median(incident_token_counts)
-        greater_than_16k_count = sum(count > 16000 for count in incident_token_counts)
+        # # Calculate statistics
+        # max_token_count = max(incident_token_counts)
+        # min_token_count = min(incident_token_counts)
+        # median_token_count = np.median(incident_token_counts)
+        # greater_than_16k_count = sum(count > 16000 for count in incident_token_counts)
 
-        # Report statistics
-        print(f"Max Token Count: {max_token_count}")
-        print(f"Min Token Count: {min_token_count}")
-        print(f"Median Token Count: {median_token_count}")
-        print(f"Number of incidents with more than 16k tokens: {greater_than_16k_count}")
-        print(f"Total number of incidents: {len(incidents)}")
+        # # Report statistics
+        # print(f"Max Token Count: {max_token_count}")
+        # print(f"Min Token Count: {min_token_count}")
+        # print(f"Median Token Count: {median_token_count}")
+        # print(f"Number of incidents with more than 16k tokens: {greater_than_16k_count}")
+        # print(f"Total number of incidents: {len(incidents)}")
 
-        # Plot histogram
-        plt.hist(incident_token_counts, bins=20, edgecolor='black')
-        plt.title('Distribution of Token Counts in Incidents')
-        plt.xlabel('Token Count')
-        plt.ylabel('Frequency')
-        plt.savefig('tests/ko_test/data/auto/incident_tokens.png')
-
-
-        # print(incident_token_counts)
-
-        return
-        incidents = Incident.objects.all()
-
-        # Create a list of the number of articles per incident
-        article_counts_per_incident = [incident.articles.count() for incident in incidents]
-
-        # Plot the original histogram
-        plt.figure(figsize=(12, 6))
-        plt.subplot(1, 2, 1)
-        plt.hist(article_counts_per_incident, bins=range(min(article_counts_per_incident), max(article_counts_per_incident) + 1), edgecolor='black')
-        plt.xlabel('Number of Articles per Incident')
-        plt.ylabel('Number of Incidents')
-        plt.title('Histogram of Articles per Incident (Original)')
-
-        # Filter incidents with only one article
-        incidents_filtered = [incident for incident in incidents if incident.articles.count() > 1]
-
-        # Create a list of the number of articles per incident for the filtered histogram
-        article_counts_per_incident_filtered = [incident.articles.count() for incident in incidents_filtered]
-
-        # Plot the filtered histogram
-        plt.subplot(1, 2, 2)
-        plt.hist(article_counts_per_incident_filtered, bins=range(min(article_counts_per_incident_filtered), max(article_counts_per_incident_filtered) + 1), edgecolor='black')
-        plt.xlabel('Number of Articles per Incident')
-        plt.ylabel('Number of Incidents')
-        plt.title('Histogram of Articles per Incident (Excluding Incidents with One Article)')
-
-        # Save and show the plot
-        plt.savefig('tests/ko_test/data/auto/histograms_comparison.png')
-
-        # Print additional statistics
-        total_incidents = len(incidents)
-        total_articles = sum(article_counts_per_incident)
-        incidents_with_more_than_one_article = sum(count > 1 for count in article_counts_per_incident)
-        incidents_with_more_than_two_articles = sum(count > 2 for count in article_counts_per_incident)
-        incidents_with_more_than_three_articles = sum(count > 3 for count in article_counts_per_incident)
-
-        percent_incidents_more_than_one_article = (incidents_with_more_than_one_article / total_incidents) * 100
-        percent_incidents_one_or_less_articles = ((total_incidents - incidents_with_more_than_one_article) / total_incidents) * 100
-        percent_incidents_more_than_two_articles = (incidents_with_more_than_two_articles / total_incidents) * 100
-        percent_incidents_two_or_less_articles = ((total_incidents - incidents_with_more_than_two_articles) / total_incidents) * 100
-        percent_incidents_more_than_three_articles = (incidents_with_more_than_three_articles / total_incidents) * 100
-        percent_incidents_three_or_less_articles = ((total_incidents - incidents_with_more_than_three_articles) / total_incidents) * 100
+        # # Plot histogram
+        # plt.hist(incident_token_counts, bins=20, edgecolor='black')
+        # plt.title('Distribution of Token Counts in Incidents')
+        # plt.xlabel('Token Count')
+        # plt.ylabel('Frequency')
+        # plt.savefig('tests/ko_test/data/auto/incident_tokens.png')
 
 
-        print(f"Total Incidents: {total_incidents}")
-        print(f"Total Articles: {total_articles}")
-        print(f"Incidents with more than 1 article: {incidents_with_more_than_one_article} ({percent_incidents_more_than_one_article:.2f}%)")
-        print(f"Incidents with 1 or less articles: {total_incidents - incidents_with_more_than_one_article} ({percent_incidents_one_or_less_articles:.2f}%)")
-        print(f"Incidents with more than 2 articles: {incidents_with_more_than_two_articles} ({percent_incidents_more_than_two_articles:.2f}%)")
-        print(f"Incidents with 2 or less articles: {total_incidents - incidents_with_more_than_two_articles} ({percent_incidents_two_or_less_articles:.2f}%)")
-        print(f"Incidents with more than 3 articles: {incidents_with_more_than_three_articles} ({percent_incidents_more_than_three_articles:.2f}%)")
-        print(f"Incidents with 3 or less articles: {total_incidents - incidents_with_more_than_three_articles} ({percent_incidents_three_or_less_articles:.2f}%)")
+        # # print(incident_token_counts)
+
+        # return
+        # incidents = Incident.objects.all()
+
+        # # Create a list of the number of articles per incident
+        # article_counts_per_incident = [incident.articles.count() for incident in incidents]
+
+        # # Plot the original histogram
+        # plt.figure(figsize=(12, 6))
+        # plt.subplot(1, 2, 1)
+        # plt.hist(article_counts_per_incident, bins=range(min(article_counts_per_incident), max(article_counts_per_incident) + 1), edgecolor='black')
+        # plt.xlabel('Number of Articles per Incident')
+        # plt.ylabel('Number of Incidents')
+        # plt.title('Histogram of Articles per Incident (Original)')
+
+        # # Filter incidents with only one article
+        # incidents_filtered = [incident for incident in incidents if incident.articles.count() > 1]
+
+        # # Create a list of the number of articles per incident for the filtered histogram
+        # article_counts_per_incident_filtered = [incident.articles.count() for incident in incidents_filtered]
+
+        # # Plot the filtered histogram
+        # plt.subplot(1, 2, 2)
+        # plt.hist(article_counts_per_incident_filtered, bins=range(min(article_counts_per_incident_filtered), max(article_counts_per_incident_filtered) + 1), edgecolor='black')
+        # plt.xlabel('Number of Articles per Incident')
+        # plt.ylabel('Number of Incidents')
+        # plt.title('Histogram of Articles per Incident (Excluding Incidents with One Article)')
+
+        # # Save and show the plot
+        # plt.savefig('tests/ko_test/data/auto/histograms_comparison.png')
+
+        # # Print additional statistics
+        # total_incidents = len(incidents)
+        # total_articles = sum(article_counts_per_incident)
+        # incidents_with_more_than_one_article = sum(count > 1 for count in article_counts_per_incident)
+        # incidents_with_more_than_two_articles = sum(count > 2 for count in article_counts_per_incident)
+        # incidents_with_more_than_three_articles = sum(count > 3 for count in article_counts_per_incident)
+
+        # percent_incidents_more_than_one_article = (incidents_with_more_than_one_article / total_incidents) * 100
+        # percent_incidents_one_or_less_articles = ((total_incidents - incidents_with_more_than_one_article) / total_incidents) * 100
+        # percent_incidents_more_than_two_articles = (incidents_with_more_than_two_articles / total_incidents) * 100
+        # percent_incidents_two_or_less_articles = ((total_incidents - incidents_with_more_than_two_articles) / total_incidents) * 100
+        # percent_incidents_more_than_three_articles = (incidents_with_more_than_three_articles / total_incidents) * 100
+        # percent_incidents_three_or_less_articles = ((total_incidents - incidents_with_more_than_three_articles) / total_incidents) * 100
 
 
-        return
+        # print(f"Total Incidents: {total_incidents}")
+        # print(f"Total Articles: {total_articles}")
+        # print(f"Incidents with more than 1 article: {incidents_with_more_than_one_article} ({percent_incidents_more_than_one_article:.2f}%)")
+        # print(f"Incidents with 1 or less articles: {total_incidents - incidents_with_more_than_one_article} ({percent_incidents_one_or_less_articles:.2f}%)")
+        # print(f"Incidents with more than 2 articles: {incidents_with_more_than_two_articles} ({percent_incidents_more_than_two_articles:.2f}%)")
+        # print(f"Incidents with 2 or less articles: {total_incidents - incidents_with_more_than_two_articles} ({percent_incidents_two_or_less_articles:.2f}%)")
+        # print(f"Incidents with more than 3 articles: {incidents_with_more_than_three_articles} ({percent_incidents_more_than_three_articles:.2f}%)")
+        # print(f"Incidents with 3 or less articles: {total_incidents - incidents_with_more_than_three_articles} ({percent_incidents_three_or_less_articles:.2f}%)")
 
-        article_word_counts_df = [[len(article.body.split(' ')), article] for article in Article.objects.filter(describes_failure=True)]
-        article_word_counts_df.sort(key=lambda x: x[0])
-        article_ko_word_counts_df = [[len(article_ko.body.split(' ')), article_ko] for article_ko in Article_Ko.objects.filter(describes_failure=True)]
-        article_ko_word_counts_df.sort(key=lambda x: x[0])
 
-        print(article_word_counts_df[0][1].body)
-        print("\n\n\n\n\nnext\n\n\n\n\n\n\n\n")
-        print(article_ko_word_counts_df[0][1].body)
+        # return
 
-        return
+        # article_word_counts_df = [[len(article.body.split(' ')), article] for article in Article.objects.filter(describes_failure=True)]
+        # article_word_counts_df.sort(key=lambda x: x[0])
+        # article_ko_word_counts_df = [[len(article_ko.body.split(' ')), article_ko] for article_ko in Article_Ko.objects.filter(describes_failure=True)]
+        # article_ko_word_counts_df.sort(key=lambda x: x[0])
+
+        # print(article_word_counts_df[0][1].body)
+        # print("\n\n\n\n\nnext\n\n\n\n\n\n\n\n")
+        # print(article_ko_word_counts_df[0][1].body)
+
+        # return
 
         # Get article lengths
         article_word_counts_df = [len(article.body.split(' ')) for article in Article.objects.filter(describes_failure=True)]
@@ -490,7 +508,9 @@ class TestCommand:
             print(f"Maximum: {np.max(data)}")
             print(f"Minimum: {np.min(data)}")
             print(f"Percent above {threshold} words: {percent_above_threshold:.2f}%")
+            print(f"Amount above {threshold} words: {above_threshold}")
             print(f"Percent below or equal to {threshold} words: {percent_below_threshold:.2f}%")
+            print(f"Amount below {threshold} words: {below_threshold}")
 
         print_statistics("Article DF", article_word_counts_df)
         print_statistics("Article non-DF", article_word_counts_non_df)
