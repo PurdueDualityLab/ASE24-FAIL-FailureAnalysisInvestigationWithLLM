@@ -729,6 +729,96 @@ CLUSTER_PROMPTS  = {
                         List of topics:
                         """
                 },
+        "NSEcauses": {
+                "identify_themes": 
+                        """
+                        You will be conducting steps to analyze non-software factors that caused a software failure incident.
+
+                        Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
+
+                        Step 1: Identify a theme for the Factor that was a non-software cause of a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description).
+
+                        Return the output in the following JSON format:
+                        {
+                        "theme": "",
+                        "description": "",
+                        }
+
+                        Factor: {factor}
+                        """,
+
+                "reduce_themes": 
+                        """
+                        You will be conducting steps to group non-software factors that caused a software failure incident by their themes.
+
+                        The following JSON named Factors contains all the factors and their themes
+
+                        The format of Factors is:
+                        [
+                        {
+                                "cause": "(factor that caused the failure)",
+                                "theme: "(theme of factor)",
+                                "description": "(description of theme)",
+                        },
+                        ...
+                        ]
+
+                        Step 1: Find themes that have similar descriptions that can be grouped together.
+                        Step 2: Return a JSON only containing only unique themes, with the following format:
+                        {
+                        "(grouped theme)": "(description of the grouped theme)",
+                                ...
+                        }
+
+                        Factors:
+                        """,
+
+                "group_themes": 
+                        """
+                        Determine how all of the categories non-software causes of software engineering failures in the following list of topics can be grouped together into greater than 3 themes,
+                        and topics can also be in more than one group.
+
+                        For each theme, provide a detailed definition under 'description' explaining what it encompasses and why it's important in software engineering.
+
+                        Format the output as a list of JSONs with keys "theme", "topics", "description", where description explains the theme.
+
+                        {
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                                },
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                                },
+                                ...
+                        }
+
+                        List of topics:
+                        """,
+
+                "name_themes": 
+                        """
+                        using all the topics in the list, give a summary (in 2 sentences) and a name (5 words max) for the summary.
+
+                        Format the output as a JSON list with keys "theme" and "description".
+
+                        {
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                        },
+                        (id): {
+                                "theme": "",
+                                "description": ""
+                        }
+                        ...
+                        }
+
+                        List of topics:
+                        """
+                },
+        
         "impacts": {
                 "identify_themes": 
                         """
@@ -924,6 +1014,26 @@ CODING_PROMPTS = {
                         }
 
                         If none of the themes accurately fit which type of cause of software engineering failure the response is, then create a new theme and description.
+                        The output format for a new theme should be a JSON
+                        {
+                        "theme": "",
+                        "description": ""
+                        }
+                        """
+                },
+
+        "NSEcauses": {
+                "code_item1": 
+                        """Using the codes and their definitions from the code book, please proceed to label the response accordingly (using code id). """,
+                "code_item2":
+                        """ Here is the response """,
+                "code_item3":
+                        """. The output format should be in JSON.
+                        {
+                        "code": ""
+                        }
+
+                        If none of the themes accurately fit which type of non software engineering cause of software engineering failure the response is, then create a new theme and description.
                         The output format for a new theme should be a JSON
                         {
                         "theme": "",

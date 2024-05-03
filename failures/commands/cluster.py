@@ -17,7 +17,7 @@ from failures.networks.models import ChatGPT
 CONTEXT_WINDOW = 16385
 
 class ClusterCommand:
-    POSTMORTEM_FIELDS = ["SEcauses", "impacts", "fixes"]
+    POSTMORTEM_FIELDS = ["SEcauses", "impacts", "fixes", "NSEcauses"]
     THEMES_PATH = "failures/data/"
 
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -51,6 +51,11 @@ class ClusterCommand:
             type=bool,
             help="Boolean to delete themes",
         )
+        parser.add_argument(
+            "--import_codes",
+            type=bool,
+            help="Determines whether codes should be imported or regenerated.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
         """
@@ -69,7 +74,7 @@ class ClusterCommand:
             incidents = Incident.objects.filter(id__in=args.ids, complete_report=True)
         else:
             # incidents = Incident.objects.filter(complete_report=True)
-            incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:200] # TODO: Update this to previous line when pipeline is finished
+            incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:10] # TODO: Update this to previous line when pipeline is finished
         logging.info(f"Clustering information from {len(incidents)} incidents.")
 
         # Pre-process data to be clustered
@@ -84,18 +89,21 @@ class ClusterCommand:
 
         # Iterate through keys and get themes
         for postmortem_key in postmortem_keys:
-            # Get initial codes
-            initial_codes = get_initial_codes(cleaned_data[postmortem_key], postmortem_key)
-
             # Specify the file path where you want to save the JSON file
             file_path = f"failures/data/initial_codes_{postmortem_key}.json"
 
-            # Open the file in write mode and use `json.dump()` to save the list of dictionaries to the file
-            with open(file_path, 'w') as json_file:
-                json.dump(initial_codes, json_file)
+            # Read initial codes in from file
+            if args.import_codes:
+                with open(file_path, 'r') as json_file:
+                    initial_codes = json.load(json_file)
 
-            # with open(file_path, 'r') as json_file:
-            #     initial_codes = json.load(json_file)
+            else:
+                # Generate initial codes
+                initial_codes = get_initial_codes(cleaned_data[postmortem_key], postmortem_key)
+
+                # Open the file in write mode and use `json.dump()` to save the list of dictionaries to the file
+                with open(file_path, 'w') as json_file:
+                    json.dump(initial_codes, json_file)
 
             # Remove duplicates
             initial_codes_trimmed = remove_duplicate_codes(initial_codes, postmortem_key)
@@ -106,8 +114,12 @@ class ClusterCommand:
             # Create themes
             major_themes = generate_themes(initial_codes_trimmed, postmortem_key)
             if not major_themes:
-                logging.info(f"Unable to get themes. Skipping coding for {postmortem_key}.")
-                continue
+                logging.info(f"Unable to get themes. Trying again for {postmortem_key}.")
+                major_themes = generate_themes(initial_codes_trimmed, postmortem_key)
+
+                if not major_themes:
+                    logging.info(f"Unable to get themes (Second try). Skipping coding for {postmortem_key}.")
+                    continue
 
             # Deductively code data based on generated codes
             new_codebook, coded_data[postmortem_key], coded_data[postmortem_key + "_themes"] = code_data(major_themes, cleaned_data[postmortem_key], postmortem_key)
@@ -163,39 +175,11 @@ class ClusterCommand:
                 update_db_sub_themes(postmortem_key, major_theme, sub_new_codebook[major_theme], sub_new_coded_data[major_theme + "_themes"], major_clusters[major_theme + "_ids"], sub_themes_first_pass)
                 sub_themes_first_pass = False
 
-                ### OUTDATED ### Can be updated to meet input/output of previous call above
-                # sub_clusters[major_theme] = get_clustered_data(sub_new_codebook[major_theme], sub_new_coded_data[major_theme]) # Cluster sub themes
-
-            # Adding data to codebook
-            # update_codebook(postmortem_key, new_codebook, True)
-
-        # themes = Theme.objects.all()
-        # for theme in themes:
-        #     print(f"Theme: {theme.theme}")
-        #     print(f"Theme key: {theme.postmortem_key}")
-        #     print("Incident IDs:")
-        #     for incident in theme.incidents.all():
-        #         print(incident.id)
-
-        #     print("Subthemes:")
-        #     for subtheme in theme.subthemes.all():
-        #         print(f"  Subtheme: {subtheme.sub_theme}")
-        #         print(f"  Subtheme key: {subtheme.postmortem_key}")
-        #         print("  Incident IDs:")
-        #         for incident in subtheme.incidents.all():
-        #             print(f"    {incident.id}")
-        #         print()
-
-        #     print()
-
-        subthemes = SubTheme.objects.all()
-
-        for subtheme in subthemes:
-            print(subtheme.postmortem_key)
-            print(subtheme.sub_theme)
-
 
 def pre_process_data(incidents, postmortem_keys) -> dict:
+    """
+    Split up each incident entry into individual factors. Return as a dictionary.
+    """
     # Convert incident data to a list of dictionaries
     if "fixes" in postmortem_keys:
         postmortem_keys.append("preventions")
@@ -575,6 +559,7 @@ def update_db_sub_themes(postmortem_key: str, major_theme: str, codebook: dict, 
     # Create Theme objects based on codebook
     logging.info(f"Creating sub theme objects for postmortem key: {postmortem_key}, Major theme: {major_theme}.")
     for key, theme_data in codebook.items():
+        print(codebook)
         theme_name = theme_data["theme"]
         description = theme_data["description"]
 
