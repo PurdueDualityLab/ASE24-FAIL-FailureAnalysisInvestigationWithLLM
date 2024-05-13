@@ -94,7 +94,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="clustering_prototype.log",
+        filename="PostmortemIncidentAutoVDB_SampleSet.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
