@@ -591,6 +591,7 @@ CPS_KEYS = ["perception","communication","application"]
 
 
 ### DEPRECIATED
+#TODO: Need to update this for Merge command, it uses the title and summary prompts from here.
 QUESTIONS = {
         "title":            "Provide a 10 word title for the software failure incident. (return just the title)",
         "summary":          "Summarize the software failure incident. Include information about when the failure occured, what system failed, the cause of failure, the impact of failure, the responsible entity(s), and the impacted entity(s). (answer in under 250 words)",

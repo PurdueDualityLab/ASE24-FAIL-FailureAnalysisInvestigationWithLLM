@@ -104,6 +104,13 @@ class PostmortemIncidentAutoVDBCommand:
             incidents = Incident.objects.filter(Q(new_article=True) | Q(complete_report=False) | Q(complete_report=None))
 
 
+        # Order by ID
+        incidents = incidents.order_by("id")
+        
+        # Exclude incidents where 'experiment' is True
+        incidents = incidents.exclude(experiment=True)
+
+
         ### TODO: Temporary: order by published date in descending order
         # sorts the Incident objects in descending order based on their published dates. and prefetches all articles for each incident
         #incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:200]        
@@ -257,7 +264,12 @@ class PostmortemIncidentAutoVDBCommand:
 
                         query = postmortem_questions[question_key]
                         incidentID = incident.id
-                        dict_articles = self.retrieve_articles(vectorDB, query, incidentID, num_chunks)
+                        
+                        try:
+                            dict_articles = self.retrieve_articles(vectorDB, query, incidentID, num_chunks)
+                        except Exception as e:
+                            logging.error(f"Error retrieving articles for this question, skipping question. Error: {e}")
+                            continue
 
                         # Add Articles for the Incident into a prompt template
                         prompt_incident = ""
@@ -315,7 +327,12 @@ class PostmortemIncidentAutoVDBCommand:
 
                         query = taxonomy_definitions[question_key]
                         incidentID = incident.id
-                        dict_articles = self.retrieve_articles(vectorDB, query, incidentID, num_chunks)
+                        
+                        try:
+                            dict_articles = self.retrieve_articles(vectorDB, query, incidentID, num_chunks)
+                        except Exception as e:
+                            logging.error(f"Error retrieving articles for this question, skipping question. Error: {e}")
+                            continue
 
                         # Add Articles for the Incident into a prompt template
                         prompt_incident = ""
@@ -416,7 +433,7 @@ class PostmortemIncidentAutoVDBCommand:
             for question_key in list(TAXONOMY_QUESTIONS.keys()):
                 
                 # If question is for CPS, and the system for incident is not CPS, then don't check for its completion
-                if question_key in cps_keys and "cps" not in incident.cps_option: #incident.cps != True:  ###"\"cps\": true"
+                if question_key in cps_keys and "TRUE" not in incident.cps_option: #incident.cps != True:  ###"\"cps\": true"
                     continue
 
                 question_option_key = question_key + "_option"
@@ -430,7 +447,7 @@ class PostmortemIncidentAutoVDBCommand:
                 incident.complete_report = False
 
             ### All new articles for the incidents would have contributed to the incident
-            incident.article_new = False
+            incident.new_article = False
             
             
             incident.save()
