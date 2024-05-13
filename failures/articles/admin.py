@@ -148,6 +148,8 @@ class IncidentAdmin(ImportExportModelAdmin):
         "id",
         "complete_report",
         "experiment",
+        "new_article",
+        "rag",
         "published",
         "title",
         "summary",
