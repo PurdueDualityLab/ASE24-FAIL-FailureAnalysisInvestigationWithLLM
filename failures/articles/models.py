@@ -111,7 +111,57 @@ class SearchQuery(models.Model):
 
     def __str__(self):
         return f"{self.keyword}"
+    
+# TODO: Remove codebook, add sub themes 
 
+class Theme(models.Model):
+    incidents = models.ManyToManyField('Incident', related_name='themes', verbose_name=_("Incidents"), blank=True)
+
+    postmortem_key = models.CharField(
+        _("Postmortem Key"),
+        max_length=100,
+        default="no_val",
+        help_text=_("The postmortem of which the theme belongs."),
+    )
+    theme = models.CharField(
+        _("Theme"),
+        max_length=100,
+        default="no_val",
+        help_text=_("The theme name."),
+    )
+    definition = models.TextField(
+        _("Definition"),
+        default="no_val",
+        help_text=_("The definition of the theme."),
+    )
+
+    def __str__(self):
+        return self.theme
+    
+class SubTheme(models.Model):  
+    postmortem_key = models.CharField(
+        _("Postmortem Key"),
+        max_length=100,
+        default="no_val",
+        help_text=_("The postmortem of which the theme belongs."),
+    )
+    sub_theme = models.CharField(
+        _("Sub theme"),
+        max_length=100,
+        default="no_val",
+        help_text=_("The sub theme name."),
+    )
+    definition = models.TextField(
+        _("Definition"),
+        default="no_val",
+        help_text=_("The definition of the theme."),
+    )
+
+    theme = models.ForeignKey(Theme, on_delete=models.CASCADE, related_name='subthemes', verbose_name=_("Theme"))
+    incidents = models.ManyToManyField('Incident', related_name='subthemes', verbose_name=_("Incidents"), blank=True)
+
+    def __str__(self):
+        return self.theme
 
 class Incident(models.Model):
 
