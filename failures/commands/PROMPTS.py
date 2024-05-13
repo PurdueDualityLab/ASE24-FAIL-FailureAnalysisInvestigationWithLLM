@@ -1,3 +1,4 @@
+import textwrap
 
 FAILURE_SYNONYMS = "hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
 
@@ -28,27 +29,28 @@ PROMPT_ADDITIONS = {
                         },              
         "time":         {
                                 "before": "",
-                                "after": """
+                                "after": textwrap.dedent("""
                                         Return in a numbered list (with citations in the format: [#, #, ...]). 
 
-                                        If it is unknown, estimate the timeline with following steps (show the calculation):
-                                        Step 1: Find 'Published on ...' date (Do not return the 'Published on ...' date).
-                                        Step 2: If relative time is mentioned (ex: last November, Friday, today, etc.). Then calculate the incident timeline by subtracting from the Published on date. Example: if the article mentions that the incident occured last November, and the article was Published on 2015-06-27, then the incident occured on November 2014. (If available, atleast return the month and year.)
-                                        Step 3: If the timeline cannot be estimated, then return 'unknown'
-                                        """,
+                                        If it is not directly mentioned, estimate the timeline with following steps (Calculate step by step):
+                                        Step 1: Find any clues about the time of the incident (ex: last November, Friday, today, etc.) in an article.
+                                        Step 2: Find the 'Published on ...' date of that article.
+                                        Step 3: Using the published date of the article and the clues about the time of incident, what would be the date of the incident? Example: if the article mentions that the incident occured last November, and the article was Published on 2015-06-27, then the incident occured on November 2014. (If available, atleast return the month and year.)
+                                        Note: If the timeline cannot be estimated, then return 'unknown'.
+                                        """),
                         },
         "system":        {
                                 "before": "",
-                                "after": "\nIf specific components failed, include them. Return the system(s) and components that failed in a numbered list (with citations in the format: [#, #, ...]).",
+                                "after": "\nIf specific components or models or versions failed include them. Return the products, systems, components, models and versions that failed in a numbered list (with citations in the format: [#, #, ...]).",
                         },           
         "ResponsibleOrg":       {
                                 "before": "",
-                                "after": "\nIf available, include any background information about the entity(s) and how they contributed to the failure. Return in a numbered list (with citations in the format: [#, #, ...]).",
-                        },   
+                                "after": "\nReturn in a numbered list (with citations in the format: [#, #, ...]).",
+                        },   #If available, include any background information about the entity(s) and how they contributed to the failure.
         "ImpactedOrg":        {
                                 "before": "",
-                                "after": "\nIf available, include any background information about the entity(s) and how they were impacted by the failure. Return in a numbered list (with citations in the format: [#, #, ...]).",
-                        },      
+                                "after": "\nReturn in a numbered list (with citations in the format: [#, #, ...]).",
+                        },   #If available, include any background information about the entity(s) and how they were impacted by the failure.
         "SEcauses":        {
                                 "before": "",
                                 "after": "\nDo not return non-software causes. Return in a numbered list (with citations in the format: [#, #, ...]).",
@@ -82,13 +84,13 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "one_organization": true or false,
                                                 "multiple_organization": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },          
         "phase":        {
@@ -100,13 +102,13 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "design": true or false,
                                                 "operation": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },            
         "boundary":     {
@@ -118,13 +120,13 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "within_system": true or false,
                                                 "outside_system": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },         
         "nature":       {
@@ -136,13 +138,13 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "non-human_actions": true or false,
                                                 "human_actions": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },           
         "dimension":    {
@@ -154,13 +156,13 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "hardware": true or false,
                                                 "software": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },        
         "objective":    {
@@ -172,13 +174,13 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "malicious": true or false,
                                                 "non-malicious": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },        
         "intent":       {
@@ -190,13 +192,13 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "poor_decisions": true or false,
                                                 "accidental_decisions": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },           
         "capability":   {
@@ -208,13 +210,13 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "development_incompetence": true or false,
                                                 "accidental": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },       
         "duration":     {
@@ -226,25 +228,25 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "permanent": true or false,
                                                 "temporary": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         }, 
         "behaviour":    {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about the six options (with citations in the format: [#, #, ...]).",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about all six options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "crash": true or false,
                                                 "omission": true or false,
@@ -254,7 +256,7 @@ PROMPT_ADDITIONS = {
                                                 "other": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },        
         "domain":       {
@@ -266,7 +268,7 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "information": true or false,
                                                 "transportation": true or false,
@@ -283,7 +285,7 @@ PROMPT_ADDITIONS = {
                                                 "other": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },
         "consequence":          {
@@ -295,7 +297,7 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "death": true or false,
                                                 "harm": true or false,
@@ -308,43 +310,45 @@ PROMPT_ADDITIONS = {
                                                 "other": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },           
         "cps":          {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nInclude citations in the format: [#, #, ...].",
+                                        "after": "\nProvide relevant information from the articles on whether the overall system in the incident is a cyber physical system that meets the given description (with citations in the format: [#, #, ...]).\nIf the overall system includes cyber-physical components, classify it as a cyber-physical system, even if specific subsystems or components do not meet the criteria individually.",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "cps": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },              
         "perception":   {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nDo not select an option, provide relevant information from the articles about the five options (with citations in the format: [#, #, ...]).",
+                                        "after": "\nDo not select an option, provide relevant information from the articles about all five options (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
-                                                The perception layer of the cyber physical system that failed:
-                                                (a) sensor: Failure due to contributing factors introduced by sensor error
-                                                (b) actuator: Failure due to contributing factors introduced by actuator error
-                                                (c) processing_unit: Failure due to contributing factors introduced by processing error
-                                                (d) network_communication: Failure due to contributing factors introduced by network communication error
-                                                (e) embedded_software: Failure due to contributing factors introduced by embedded software error
-                                                """,
+                                        "after": textwrap.dedent("""
+                                                {
+                                                "sensor": true or false,
+                                                "actuator": true or false,
+                                                "processing_unit": true or false,
+                                                "network_communication": true or false,
+                                                "embedded_software": true or false,
+                                                "unknown": true or false,
+                                                }
+                                                """),
                                         },
                         },       
         "communication":{
@@ -356,81 +360,81 @@ PROMPT_ADDITIONS = {
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "link_level": true or false,
                                                 "connectivity_level": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },    
         "application":  {
                                 "rationale": 
                                         {
                                         "before": "",
-                                        "after": "\nInclude citations in the format: [#, #, ...].",
+                                        "after": "\nProvide relevant information from the articles on whether the failure was related to the application layer, of the cyber physical system that failed, that meets the given description (with citations in the format: [#, #, ...]).",
                                         },
                                 "decision":
                                         {
                                         "before": "",
-                                        "after": """
+                                        "after": textwrap.dedent("""
                                                 {
                                                 "application": true or false,
                                                 "unknown": true or false,
                                                 }
-                                                """,
+                                                """),
                                         },
                         },            
 }
 
 TAXONOMY_DEFINITIONS = {
-        "recurring":            """
+        "recurring":            textwrap.dedent("""
                                 The software failure incident having happened again at:
                                 (a) one_organization: Similar incident has happened before or again within the same organization or with its products and services
                                 (b) multiple_organization: Similar incident has happened before or again at other organizations or with their products and services
-                                """,
-        "phase":                """
+                                """),
+        "phase":                textwrap.dedent("""
                                 The software failure incident occurring due to the development phases:
                                 (a) design: Failure due to contributing factors introduced by system development, system updates, or procedures to operate or maintain the system
                                 (b) operation: Failure due to contributing factors introduced by the operation or misuse of the system
-                                """,
-        "boundary":             """
+                                """),
+        "boundary":             textwrap.dedent("""
                                 The boundary of the software failure incident:
                                 (a) within_system: Failure due to contributing factors that originate from within the system 
                                 (b) outside_system: Failure due to contributing factors that originate from outside the system
-                                """,
-        "nature":               """
+                                """),
+        "nature":               textwrap.dedent("""
                                 The software failure incident occurring due to:
                                 (a) non-human_actions: Failure due to contributing factors introduced without human participation
                                 (b) human_actions: Failure due to contributing factors introduced by human actions
-                                """,
-        "dimension":            """
+                                """),
+        "dimension":            textwrap.dedent("""
                                 The software failure incident occurring due to:
                                 (a) hardware: Failure due to contributing factors that originate in hardware
                                 (b) software: Failure due to contributing factors that originate in software
-                                """,
-        "objective":            """
+                                """),
+        "objective":            textwrap.dedent("""
                                 The objective of the software failure incident:
                                 (a) malicious: Failure due to contributing factors introduced by human(s) with intent to harm the system
                                 (b) non-malicious: Failure due to contributing factors introduced without intent to harm the system
-                                """,
-        "intent":               """
+                                """),
+        "intent":               textwrap.dedent("""
                                 The intent of the software failure incident:
                                 (a) poor_decisions: Failure due to contributing factors introduced by poor decisions
                                 (b) accidental_decisions: Failure due to contributing factors introduced by mistakes or unintended decisions
-                                """,
-        "capability":           """
+                                """),
+        "capability":           textwrap.dedent("""
                                 The software failure incident occurring due to:
                                 (a) development_incompetence: Failure due to contributing factors introduced due to lack of professional competence by humans or development organization
                                 (b) accidental: Failure due to contributing factors introduced accidentally
-                                """,
-        "duration":             """
+                                """),
+        "duration":             textwrap.dedent("""
                                 The duration of the software failure incident being:
                                 (a) permanent: Failure due to contributing factors introduced by all circumstances
                                 (b) temporary: Failure due to contributing factors introduced by certain circumstances but not all
-                                """,
-        "behaviour":            """
+                                """),
+        "behaviour":            textwrap.dedent("""
                                 The behavior of the software failure incident:
                                 (a) crash: Failure due to system losing state and not performing any of its intended functions
                                 (b) omission: Failure due to system omitting to perform its intended functions at an instance(s)
@@ -438,8 +442,8 @@ TAXONOMY_DEFINITIONS = {
                                 (d) value: Failure due to system performing its intended functions incorrectly
                                 (e) byzantine: Failure due to system behaving erroneously with inconsistent responses and interactions
                                 (f) other: Failure due to system behaving in a way not described in the (a to e) options; What is the other behaviour?
-                                """,
-        "domain":               """
+                                """),
+        "domain":               textwrap.dedent("""
                                 The industry that the failed system was intended to support:
                                 (a) information: Production and distribution of information
                                 (b) transportation: Moving people and things
@@ -454,8 +458,8 @@ TAXONOMY_DEFINITIONS = {
                                 (k) entertainment: Arts, sports, hospitality, tourism, etc
                                 (l) government: Politics, defense, justice, taxes, public services, etc
                                 (m) other: Was the system that failed related to an industry not described in the (a to l) options? What is the other industry?
-                                """,
-        "consequence":          """
+                                """),
+        "consequence":          textwrap.dedent("""
                                 The consequence of the software failure incident:
                                 (a) death: People lost their lives due to the software failure
                                 (b) harm: People were physically harmed due to the software failure
@@ -466,77 +470,77 @@ TAXONOMY_DEFINITIONS = {
                                 (g) no_consequence: There were no real observed consequences of the software failure
                                 (h) theoretical_consequence: There were potential consequences discussed of the software failure that did not occur
                                 (i) other: Was there consequence(s) of the software failure not described in the (a to h) options? What is the other consequence(s)?
-                                """,
-        "cps":                  """
+                                """),
+        "cps":                  textwrap.dedent("""
                                 Whether the overall system in the incident is a cyber physical system (cps) meeting the following definition:
-                                cps: Systems that include computational and physical components to monitor and/or control physical inputs/outputs
-                                """,
+                                cps: Systems that include software and physical components to monitor and/or control physical interactions
+                                """),
         #CPS:
-        "perception":           """
+        "perception":           textwrap.dedent("""
                                 Whether the failure was related to the perception layer of the cyber physical system that failed:
                                 (a) sensor: Failure due to contributing factors introduced by sensor error
                                 (b) actuator: Failure due to contributing factors introduced by actuator error
                                 (c) processing_unit: Failure due to contributing factors introduced by processing error
                                 (d) network_communication: Failure due to contributing factors introduced by network communication error
                                 (e) embedded_software: Failure due to contributing factors introduced by embedded software error
-                                """,
-        "communication":        """
+                                """),
+        "communication":        textwrap.dedent("""
                                 Whether the failure was related to the communication layer of the cyber physical system that failed:
                                 (a) link_level: Failure due to contributing factors introduced by wired or wireless physical layer
                                 (b) connectivity_level: Failure due to contributing factors introduced by network or transport layer
-                                """,
-        "application":          """
+                                """),
+        "application":          textwrap.dedent("""
                                 Whether the failure was related to the application layer of the cyber physical system that failed with the following definition:
                                 application: Failure due to contributing factors introduced by bugs, operating system errors, unhandled exceptions, and incorrect usage
-                                """,
+                                """),
 }
 
 TAXONOMY_QUESTIONS = {
-        "recurring":            """
+        "recurring":            textwrap.dedent("""
                                 (a) one: Have similar incident(s) happened before or again within the same organization or with its products and services?
                                 (b) multiple: Have similar incident(s) happened before or again at other organizations or with their products and services?
-                                """,
-        "phase":                """
+                                """),
+        "phase":                textwrap.dedent("""
                                 (a) design: Was the failure due to at least one contributing factor introduced by system development, system updates, or procedures to operate or maintain the system?
                                 (b) operation: Was the failure due to at least one contributing factor introduced by the operation or misuse of the system?
-                                """,
-        "boundary":             """
+                                """),
+        "boundary":             textwrap.dedent("""
                                 (a) within_system: Was the failure due to at least one contributing factor that originates from within the system?
                                 (b) outside_system: Was the failure due to at least one contributing factor that originates from outside the system?
-                                """,
-        "nature":               """
+                                """),
+        "nature":               textwrap.dedent("""
                                 (a) non-human_actions: Was the failure due to at least one contributing factor introduced without human participation?
                                 (b) human_actions: Was the failure due to at least one contributing factor introduced by human actions?
-                                """,
-        "dimension":            """
+                                """),
+        "dimension":            textwrap.dedent("""
                                 (a) hardware: Was the failure due to at least one contributing factor that originates in hardware?
                                 (b) software: Was the failure due to at least one contributing factor that originates in software?
-                                """,
-        "objective":            """
+                                """),
+        "objective":            textwrap.dedent("""
                                 (a) malicious: Was the failure due to at least one contributing factor introduced by human(s) with intent to harm the system?
                                 (b) non-malicious: Was the failure due to at least one contributing factor introduced without intent to harm the system?
-                                """,
-        "intent":               """
+                                """),
+        "intent":               textwrap.dedent("""
                                 (a) poor_decisions: Was the failure due to at least one contributing factor introduced by poor decisions?
                                 (b) accidental_decisions: Was the failure due to at least one contributing factor introduced by mistakes or unintended decisions?
-                                """,
-        "capability":           """
+                                """),
+        "capability":           textwrap.dedent("""
                                 (a) development_incompetence: Was the failure due to at least one contributing factor introduced due to lack of professional competence by humans or development organization?
                                 (b) accidental: Was the failure due to at least one contributing factor introduced accidentally?
-                                """,
-        "duration":             """
+                                """),
+        "duration":             textwrap.dedent("""
                                 (a) permanent: Was the failure due to at least one contributing factor introduced by all circumstances?
                                 (b) temporary: Was the failure due to at least one contributing factor introduced by certain circumstances but not all?
-                                """,
-        "behaviour":            """
+                                """),
+        "behaviour":            textwrap.dedent("""
                                 (a) crash: Was the failure due to system losing state and not performing any of its intended functions?
                                 (b) omission: Was the failure due to system omitting to perform its intended functions at an instance(s)?
                                 (c) timing: Was the failure due to system performing its intended functions correctly, but too late or too early?
                                 (d) value: Was the failure due to system performing its intended functions incorrectly?
                                 (e) byzantine: Was the failure due to system behaving erroneously with inconsistent responses and interactions?
                                 (f) other: Was the failure due to system behaving in a way not described in the other options?
-                                """,
-        "domain":               """
+                                """),
+        "domain":               textwrap.dedent("""
                                 (a) information: Was the system that failed related to the industry of production and distribution of information?
                                 (b) transportation: Was the system that failed related to the industry of moving people and things?
                                 (c) natural_resources: Was the system that failed related to the industry of extracting materials from Earth?
@@ -550,8 +554,8 @@ TAXONOMY_QUESTIONS = {
                                 (k) entertainment: Was the system that failed related to the industry of arts, sports, hospitality, tourism, etc?
                                 (l) government: Was the system that failed related to the industry of politics, defense, justice, taxes, public services, etc?
                                 (m) other: Was the system that failed related to an industry not described in the (a to l) options?
-                                """,
-        "consequence":          """
+                                """),
+        "consequence":          textwrap.dedent("""
                                 (a) death: Did people lose their lives due to the software failure?
                                 (b) harm: Were people physically harmed due to the software failure?
                                 (c) basic: Were people's access to food or shelter impacted because of the software failure?
@@ -561,28 +565,28 @@ TAXONOMY_QUESTIONS = {
                                 (g) no_consequence: Were there no real observed consequences of the software failure?
                                 (h) theoretical_consequence: Were there potential consequences discussed of the software failure that did not occur?
                                 (i) other: Was there consequence(s) of the software failure not described in the (a to h) options? What is the other consequence(s)?
-                                """,
-        "cps":                  """
-                                cps: Is the system that failed a cyber physical system?
-                                """,
+                                """),
+        "cps":                  textwrap.dedent("""
+                                cps: Is the overall system in the incident a cyber physical system (cps)?
+                                """),
         #CPS:
-        "perception":           """
+        "perception":           textwrap.dedent("""
                                 (a) sensor: Was the failure due to at least one contributing factor introduced by sensor error?
                                 (b) actuator: Was the failure due to at least one contributing factor introduced by actuator error?
                                 (c) processing_unit: Was the failure due to at least one contributing factor introduced by processing error?
                                 (d) network_communication: Was the failure due to at least one contributing factor introduced by network communication error?
                                 (e) embedded_software: Was the failure due to at least one contributing factor introduced by embedded software error?
-                                """,
-        "communication":        """
+                                """),
+        "communication":        textwrap.dedent("""
                                 (a) link_level: Was the failure due to at least one contributing factor introduced by wired or wireless physical layer?
                                 (b) connectivity_level: Was the failure due to at least one contributing factor introduced by network or transport layer?
-                                """,
-        "application":          """
+                                """),
+        "application":          textwrap.dedent("""
                                 application: Was the failure due to at least one contributing factor introduced by bugs, operating system errors, unhandled exceptions, and incorrect usage?
-                                """,
+                                """),
 }
 
-CPS_KEYS = ["perception","communication","application"]
+CPS_KEYS = [] #["perception","communication","application"]
 
 
 
