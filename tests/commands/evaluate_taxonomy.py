@@ -1,5 +1,6 @@
 import argparse
 import logging
+import json
 import textwrap
 import pandas as pd
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
@@ -77,6 +78,8 @@ class EvaluateTaxonomyCommand:
 
         # Get list of correctly merged incidents
         auto_incident_set, man_incident_set = self.get_oto_ids()
+
+        print(man_incident_set)
 
         # Get incidents
         incidents = Incident.objects.filter(id__in=auto_incident_set)
@@ -166,14 +169,42 @@ class EvaluateTaxonomyCommand:
                 logging.info("Insufficent values for %s", taxonomy)
                 continue
 
-            print(df_taxonomy_values)
-            print("\n here \n")
-            print(incidents_taxonomy_values)
-            print("\n\n\n\n-----------------------------------------------------------\n\n\n\n\n")
+            # print(df_taxonomy_values)
+            # print("\n here \n")
+            # print(incidents_taxonomy_values)
+            # print("\n\n\n\n-----------------------------------------------------------\n\n\n\n\n")
+
+            # incidents_taxonomy_values = [json.dumps(json.loads(value.replace("\n", ""))) for value in incidents_taxonomy_values]
+
+            # print(incidents_taxonomy_values)
+            # print("\n here \n")
+
+            # json_format = json.loads(incidents_taxonomy_values[0]).copy()
+
+            # for key, value in json_format.items():
+            #     json_format[key] = False
+
+            # df_taxonomy_values_updated = []
+            # for value in df_taxonomy_values:
+            #     value = [val.strip() for val in value.split(',')]
+            #     json_copy = json_format.copy()
+
+            #     for val in value:
+            #         json_copy[val] = True
+
+            #     df_taxonomy_values_updated.append(json.dumps(json_copy))
+
+            # print(df_taxonomy_values_updated)
+
+            # df_taxonomy_values = df_taxonomy_values_updated
+
+            # return
 
             # Convert string labels to numeric format using LabelEncoder
             all_labels = set(df_taxonomy_values).union(set(incidents_taxonomy_values))
             label_encoder = LabelEncoder().fit(list(all_labels))
+            print(len(df_taxonomy_values))
+            print(len(incidents_taxonomy_values))
             ground_truth_encoded = label_encoder.transform(df_taxonomy_values)
             predictions_encoded = label_encoder.transform(incidents_taxonomy_values)
 
@@ -272,7 +303,7 @@ class EvaluateTaxonomyCommand:
             # Compare sets
             if auto_articles_set == article_set:
                 auto_incident_ids.append(incident_ids)
-                man_incident_ids.append(i)
+                man_incident_ids.append(i + 1)
                 
         return auto_incident_ids, man_incident_ids
 
