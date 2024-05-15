@@ -622,9 +622,6 @@ QUESTIONS = {
         "behaviour":        "Was the software failure due to a 'crash' (option 0) or 'omission' (option 1) or 'timing' (option 2) or 'incorrect value' (option 3) or 'Byzantine' fault (option 4) or 'unknown' (option -1)?"
 }
 
-# TODO: Split IoT questions and only ask the questions if it is an IoT system.
-
-# TODO: For auto prompt, split the extra instructions (ex: answer in under 10 words, etc)
 
 TAXONOMY_OPTIONS = {
             "phase": {"0": "system design", "1": "operation", "2": "both", "3": "neither", "-1": "unknown"},
