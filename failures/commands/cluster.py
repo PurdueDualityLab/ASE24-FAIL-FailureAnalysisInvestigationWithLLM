@@ -17,7 +17,7 @@ from failures.networks.models import ChatGPT
 CONTEXT_WINDOW = 16385
 
 class ClusterCommand:
-    POSTMORTEM_FIELDS = ["SEcauses", "impacts", "fixes", "NSEcauses"]
+    POSTMORTEM_FIELDS = ["SEcauses", "NSEcauses", "impacts", "fixes"]
     THEMES_PATH = "failures/data/"
 
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -73,7 +73,7 @@ class ClusterCommand:
         if args.ids:
             incidents = Incident.objects.filter(id__in=args.ids, complete_report=True)
         else:
-            # incidents = Incident.objects.filter(complete_report=True)
+            # incidents = Incident.objects.filter(complete_report=True) # TODO: Use this. And use the dates: 2010 to 2022
             incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:10] # TODO: Update this to previous line when pipeline is finished
         logging.info(f"Clustering information from {len(incidents)} incidents.")
 
