@@ -59,7 +59,7 @@ class StatsCommand:
             }
 
 
-        csv_file_path = 'stats.csv'
+        csv_file_path = 'results/stats.csv'
         # Write the data to the CSV file
         with open(csv_file_path, 'w', newline='') as csvfile:
             fieldnames = ['Year', 'All', 'Scrape Successful', 'Describes Failure', 'Analyzable Failure', 'Incidents']
