@@ -18,18 +18,19 @@ from failures.commands.fixes import FixesCommand
 from failures.commands.cleanup import CleanUpCommand
 
 from failures.commands.stats import StatsCommand
+from failures.commands.results import ResultsCommand
 
 
 _EPILOG = textwrap.dedent(
     """\
     Please submit feedback, ideas, and bug reports by filing a new issue at
-    https://github.com/d57montes/failures/issues.
+    https://github.com/Dharun-Anand/failures/issues.
     """
 )
 
 _DESCRIPTION = textwrap.dedent(
     """\
-    failures is a tool for scraping and analyzing software failures in the news.
+    failures is a pipeline for scraping and analyzing software failures in the news.
     """
 )
 
@@ -42,7 +43,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentVDBCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), StatsCommand(), FixesCommand(), CleanUpCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentVDBCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), FixesCommand(), CleanUpCommand(), StatsCommand(), ResultsCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
