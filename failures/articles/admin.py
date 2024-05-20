@@ -146,7 +146,10 @@ admin.site.register(Incident, IncidentAdmin)
 class IncidentAdmin(ImportExportModelAdmin):
     list_display = (
         "id",
+        "complete_report",
         "experiment",
+        "new_article",
+        "rag",
         "published",
         "title",
         "summary",

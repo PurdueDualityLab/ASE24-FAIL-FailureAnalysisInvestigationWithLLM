@@ -73,6 +73,131 @@ class FixesCommand:
             parser (argparse.ArgumentParser): The argument parser for the configuration
         """
 
+        ### Set incident attributes to Null before compiling postmortem reports 
+        '''
+        # Step 1: Get the IDs of the latest 200 incidents based on published date
+        latest_200_incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:200] 
+        latest_200_ids = [incident.id for incident in latest_200_incidents]
+
+        # Step 2: Select incidents that are NOT in the latest 200 and experiment is not True
+        non_experiment_incidents = Incident.objects.exclude(id__in=latest_200_ids).filter(experiment=False) 
+        non_experiment_incidents = Incident.objects.exclude(id__in=latest_200_ids).filter(experiment=False) 
+
+        # Step 3: Set all report attributes to None (or blank)
+        non_experiment_incidents.update(
+            title=None,
+            summary=None,
+            time=None,
+            system=None,
+            ResponsibleOrg=None,
+            ImpactedOrg=None,
+            SEcauses=None,
+            NSEcauses=None,
+            impacts=None,
+            preventions=None,
+            fixes=None,
+            references=None,
+            recurring_option=None,
+            phase_option=None,
+            boundary_option=None,
+            nature_option=None,
+            dimension_option=None,
+            objective_option=None,
+            intent_option=None,
+            capability_option=None,
+            duration_option=None,
+            behaviour_option=None,
+            domain_option=None,
+            consequence_option=None,
+            cps_option=None,
+            perception_option=None,
+            communication_option=None,
+            application_option=None,
+            recurring_rationale=None,
+            phase_rationale=None,
+            boundary_rationale=None,
+            nature_rationale=None,
+            dimension_rationale=None,
+            objective_rationale=None,
+            intent_rationale=None,
+            capability_rationale=None,
+            duration_rationale=None,
+            behaviour_rationale=None,
+            domain_rationale=None,
+            consequence_rationale=None,
+            cps_rationale=None,
+            perception_rationale=None,
+            communication_rationale=None,
+            application_rationale=None
+        )
+
+        latest_200_incidents_with_experiment_false = (
+            Incident.objects
+                .filter(id__in=[incident.id for incident in latest_200_incidents])
+                .filter(experiment=False)
+        )
+
+        latest_200_incidents_with_experiment_false.update(
+            title=None,
+            summary=None,
+            time=None,
+            system=None,
+            ResponsibleOrg=None,
+            ImpactedOrg=None,
+            NSEcauses=None,
+            references=None,
+            recurring_option=None,
+            phase_option=None,
+            boundary_option=None,
+            nature_option=None,
+            dimension_option=None,
+            objective_option=None,
+            intent_option=None,
+            capability_option=None,
+            duration_option=None,
+            behaviour_option=None,
+            domain_option=None,
+            consequence_option=None,
+            cps_option=None,
+            perception_option=None,
+            communication_option=None,
+            application_option=None,
+            recurring_rationale=None,
+            phase_rationale=None,
+            boundary_rationale=None,
+            nature_rationale=None,
+            dimension_rationale=None,
+            objective_rationale=None,
+            intent_rationale=None,
+            capability_rationale=None,
+            duration_rationale=None,
+            behaviour_rationale=None,
+            domain_rationale=None,
+            consequence_rationale=None,
+            cps_rationale=None,
+            perception_rationale=None,
+            communication_rationale=None,
+            application_rationale=None
+        )
+        '''
+
+        ### Setting experiment flag for non-experiment incidents to False
+        '''
+        # List of IDs that should NOT be updated
+        excluded_ids = [
+            2728, 2729, 2730, 2731, 2732, 2733, 2734, 2735, 2736, 2737,
+            2738, 2739, 2740, 2741, 2742, 2743, 2744, 2745, 2746, 2747,
+            2748, 2749, 2750, 2751, 2752, 2753, 2754, 2755, 2756, 2757,
+            2758
+        ]
+
+        # Create a queryset for incidents excluding the specified IDs
+        incidents_to_update = Incident.objects.exclude(id__in=excluded_ids)
+
+        # Set the experiment flag to False for all incidents in the queryset
+        incidents_to_update.update(experiment=False)
+        '''
+
         ### To set experiment flag to True
         '''
         incidents = Incident.objects.filter(articles__in=args.articles).distinct()
@@ -110,11 +235,6 @@ class FixesCommand:
         df.to_csv(csv_file_path, index=False)
         
         '''
-
-
-        #For incident 31, copy over the lasts parts of merge for that article
-
-
         
 
 
