@@ -641,77 +641,104 @@ TAXONOMY_OPTIONS = {
             "recurring": {"true": "true", "false": "false", "0": "within the same impacted entity", "1": "at other entity(s)", "-1": "unknown"},
         }
 
+# TODO: Get the software failure synonyms from the variable
 CLUSTER_PROMPTS  = {
         "SEcauses": {
-                "identify_themes": 
-                        """
-                        You will be conducting steps to analyze factors that caused a software failure incident.
+                "identify_themes": # We call memos as themes
+                        textwrap.dedent("""
+                        You will be conducting tasks to analyze a factor that caused a software failure incident.
 
                         Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
 
-                        Step 1: Identify a theme for the Factor that was a cause of a software failure incident. Provide a theme for the factor (key: theme) and a description for the theme (key: description).
-
+                        Task: For the provided Factor which was a cause of a software failure incident, identify a theme. Provide a theme for the factor (key: theme) and a description for the theme (key: description).
+                        
+                        If the Factor is unknown, identify the theme as unknown.
+                        
+                        Note: Don't identify themes that are too general or vague (For example: Don't create themes like 'Technical Failure', it would be too general.).
+                        
                         Return the output in the following JSON format:
                         {
                         "theme": "",
                         "description": "",
                         }
 
-                        Factor: {factor}
-                        """,
+                        Factor:
+                        """),
 
-                "reduce_themes": 
-                        """
-                        You will be conducting steps to group factors that caused a software failure incident by their themes.
+                "reduce_themes": # We call memos as themes
+                        textwrap.dedent("""
+                        You will be conducting tasks to reduce duplicate themes by grouping themes that are identical and then create unique themes representing each group of identical themes.
+                                        
+                        Note that each theme represents a factor that caused a software failure incident.
+                                        
+                        Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
 
-                        The following JSON named Factors contains all the factors and their themes
+                        The provided JSON named Themes contains all the themes and their descriptions.
 
-                        The format of Factors is:
+                        The format of Themes is:
                         [
                         {
-                                "cause": "(factor that caused the failure)",
-                                "theme: "(theme of factor)",
-                                "description": "(description of theme)",
+                        "theme: "(theme representing a cause of a software failure incident)",
+                        "description": "(description of theme)",
                         },
                         ...
                         ]
-
-                        Step 1: Find themes that have similar descriptions that can be grouped together.
-                        Step 2: Return a JSON only containing only unique themes, with the following format:
+                        
+                        Tasks:
+                        Task 1: Group together themes that have identical or similar descriptions.
+                        Task 2: Create a unique theme representing the group for each group of identical or similar themes.
+                        Task 3: Return a JSON containing only the unique themes, with the following format:
                         {
-                        "(grouped theme)": "(description of the grouped theme)",
-                                ...
+                        "(grouped unique theme)": "(description of the grouped unique theme)",
+                        ...
                         }
 
-                        Factors:
-                        """,
+                        Note that if there are unknown themes, group them into a theme called unknown.
 
-                "group_themes": 
-                        """
-                        Determine how all of the categories software engineering causes in the following list of topics can be grouped together into greater than 3 themes,
-                        and topics can also be in more than one group.
+                        Themes:
+                        """),
 
-                        For each theme, provide a detailed definition under 'description' explaining what it encompasses and why it's important in software engineering.
+                "group_themes": #A cause can be in more than one group. # Note, that rather than calling memos or themes, we call them causes.
+                        textwrap.dedent("""
+                        Given a set of themes representing causes of software failure incidents, you will be conducting tasks to group similar themes into bigger themes.
+                                        
+                        Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
+                        
+                        The provided list of JSONs named Themes contains all the themes and their descriptions.
 
-                        Format the output as a list of JSONs with keys "theme", "topics", "description", where description explains the theme.
-
+                        The format of Themes is:
+                        [
+                        {
+                        "(theme representing a cause of a software failure incident)": "(description of the theme)",
+                        },
+                        ...
+                        ]
+                        
+                        Tasks: 
+                        Task 1: Determine how similar themes in the Themes list can be grouped into bigger themes representing causes of software failure incidents.
+                        Task 2: For each group of similar themes under a bigger theme, name the bigger theme and provide a detailed definition under 'description' explaining what causes of software failures the bigger theme encompasses.
+                        Task 3: Return a JSON containing the bigger themes, with the following format:
                         {
                         (id): {
                                 "theme": "",
                                 "description": ""
                                 },
-                        (id): {
-                                "theme": "",
-                                "description": ""
-                                },
                                 ...
                         }
+                        
+                        Note that id should just be a number as a string.
+                        
+                        Note that there should be more than 3 big themes.
+                        
+                        Note that if there are unknown themes, group them into a big theme called unknown.
+                        
+                        Note: Don't create big themes that are too general or vague (For example: Don't create themes like 'Technical Failure', it would be too general.).
 
-                        List of topics:
-                        """,
+                        Themes:
+                        """),
 
-                "name_themes": 
-                        """
+                "name_themes": # TODO: Outdated? Not necessary
+                        textwrap.dedent("""
                         using all the topics in the list, give a summary (in 2 sentences) and a name (5 words max) for the summary.
 
                         Format the output as a JSON list with keys "theme" and "description".
@@ -729,11 +756,11 @@ CLUSTER_PROMPTS  = {
                         }
 
                         List of topics:
-                        """
+                        """),
                 },
         "NSEcauses": {
                 "identify_themes": 
-                        """
+                        textwrap.dedent("""
                         You will be conducting steps to analyze non-software factors that caused a software failure incident.
 
                         Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
@@ -746,11 +773,11 @@ CLUSTER_PROMPTS  = {
                         "description": "",
                         }
 
-                        Factor: {factor}
-                        """,
+                        Factor:
+                        """),
 
                 "reduce_themes": 
-                        """
+                        textwrap.dedent("""
                         You will be conducting steps to group non-software factors that caused a software failure incident by their themes.
 
                         The following JSON named Factors contains all the factors and their themes
@@ -773,10 +800,10 @@ CLUSTER_PROMPTS  = {
                         }
 
                         Factors:
-                        """,
+                        """),
 
                 "group_themes": 
-                        """
+                        textwrap.dedent("""
                         Determine how all of the categories non-software causes of software engineering failures in the following list of topics can be grouped together into greater than 3 themes,
                         and topics can also be in more than one group.
 
@@ -797,10 +824,10 @@ CLUSTER_PROMPTS  = {
                         }
 
                         List of topics:
-                        """,
+                        """),
 
                 "name_themes": 
-                        """
+                        textwrap.dedent("""
                         using all the topics in the list, give a summary (in 2 sentences) and a name (5 words max) for the summary.
 
                         Format the output as a JSON list with keys "theme" and "description".
@@ -818,12 +845,12 @@ CLUSTER_PROMPTS  = {
                         }
 
                         List of topics:
-                        """
+                        """),
                 },
         
         "impacts": {
                 "identify_themes": 
-                        """
+                        textwrap.dedent("""
                         You will be conducting steps to analyze impacts of software failure incidents.
 
                         Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
@@ -836,11 +863,11 @@ CLUSTER_PROMPTS  = {
                         "description": "",
                         }
 
-                        Factor: {factor}
-                        """,
+                        Factor:
+                        """),
 
                 "reduce_themes": 
-                        """
+                        textwrap.dedent("""
                         You will be conducting steps to group impacts resulting from software failure incidents by their themes.
 
                         The following JSON named Factors contains all the impacts and their themes
@@ -863,10 +890,10 @@ CLUSTER_PROMPTS  = {
                         }
 
                         Factors:
-                        """,
+                        """),
 
                 "group_themes": 
-                        """
+                        textwrap.dedent("""
                         Determine how all of the categories impacts resulting from software engineering failure incidents in the following list of topics can be grouped together into greater than 3 themes,
                         and topics can also be in more than one group.
 
@@ -887,10 +914,10 @@ CLUSTER_PROMPTS  = {
                         }
 
                         List of topics:
-                        """,
+                        """),
 
                 "name_themes": 
-                        """
+                        textwrap.dedent("""
                         using all the topics in the list, give a summary (in 2 sentences) and a name (5 words max) for the summary.
 
                         Format the output as a JSON list with keys "theme" and "description".
@@ -908,12 +935,12 @@ CLUSTER_PROMPTS  = {
                         }
 
                         List of topics:
-                        """
+                        """),
             
                 },
         "fixes": {
                 "identify_themes": 
-                        """
+                        textwrap.dedent("""
                         You will be conducting steps to analyze fixes/preventions for software failure incidents.
 
                         Note that a software failure incident could mean a hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect.
@@ -926,11 +953,11 @@ CLUSTER_PROMPTS  = {
                         "description": "",
                         }
 
-                        Factor: {factor}
-                        """,
+                        Factor:
+                        """),
 
                 "reduce_themes": 
-                        """
+                        textwrap.dedent("""
                         You will be conducting steps to group factors that fixed/prevented a software failure incident by their themes.
 
                         The following JSON named Factors contains all the factors and their themes
@@ -953,10 +980,10 @@ CLUSTER_PROMPTS  = {
                         }
 
                         Factors:
-                        """,
+                        """),
 
                 "group_themes": 
-                        """
+                        textwrap.dedent("""
                         Determine how all of the categories of software engineering failure fixes/preventions in the following list of topics can be grouped together into greater than 3 themes,
                         and topics can also be in more than one group.
 
@@ -977,10 +1004,10 @@ CLUSTER_PROMPTS  = {
                         }
 
                         List of topics:
-                        """,
+                        """),
 
                 "name_themes": 
-                        """
+                        textwrap.dedent("""
                         using all the topics in the list, give a summary (in 2 sentences) and a name (5 words max) for the summary.
 
                         Format the output as a JSON list with keys "theme" and "description".
@@ -998,30 +1025,35 @@ CLUSTER_PROMPTS  = {
                         }
 
                         List of topics:
-                        """
+                        """),
         }
         
 }
-
+'''
+If an appropriate theme was not found, then create a new theme and description for the factor .
+The output format for a new theme should be a JSON
+{
+"theme": "",
+"description": ""
+}
+'''
 CODING_PROMPTS = {
         "SEcauses": {
-                "code_item1": 
-                        """Using the codes and their definitions from the code book, please proceed to label the response accordingly (using code id). """,
-                "code_item2":
-                        """ Here is the response """,
-                "code_item3":
-                        """. The output format should be in JSON.
+                "str1": 
+                        """Using the following CodeBook containing themes and their descriptions, label the provided Factor (use its Memo and Description as context) with the most appropriate theme (using the id number).""",
+                "str2": """\n\nCodeBook = """,
+                "str3":
+                        """\n\nFactor: """,
+                "str4":
+                        """\n(Memo: """,
+                "str5":
+                        """, Description: """,
+                "str6":
+                        textwrap.dedent(""")\n\nReturn a JSON with the id of the theme that most appropriately descibes the Factor:
                         {
-                        "code": ""
+                        "id": ""
                         }
-
-                        If none of the themes accurately fit which type of cause of software engineering failure the response is, then create a new theme and description.
-                        The output format for a new theme should be a JSON
-                        {
-                        "theme": "",
-                        "description": ""
-                        }
-                        """
+                        """),
                 },
 
         "NSEcauses": {
@@ -1030,7 +1062,7 @@ CODING_PROMPTS = {
                 "code_item2":
                         """ Here is the response """,
                 "code_item3":
-                        """. The output format should be in JSON.
+                        textwrap.dedent(""". The output format should be in JSON.
                         {
                         "code": ""
                         }
@@ -1041,7 +1073,7 @@ CODING_PROMPTS = {
                         "theme": "",
                         "description": ""
                         }
-                        """
+                        """),
                 },
 
         "impacts": {
@@ -1050,7 +1082,7 @@ CODING_PROMPTS = {
                 "code_item2":
                         """ Here is the response """,
                 "code_item3":
-                        """. The output format should be in JSON.
+                        textwrap.dedent(""". The output format should be in JSON.
                         {
                         "code": ""
                         }
@@ -1061,7 +1093,7 @@ CODING_PROMPTS = {
                         "theme": "",
                         "description": ""
                         }
-                        """
+                        """),
                 },
         "fixes": {
                 "code_item1": 
@@ -1069,7 +1101,7 @@ CODING_PROMPTS = {
                 "code_item2":
                         """ Here is the response """,
                 "code_item3":
-                        """. The output format should be in JSON.
+                        textwrap.dedent(""". The output format should be in JSON.
                         {
                         "code": ""
                         }
@@ -1080,6 +1112,6 @@ CODING_PROMPTS = {
                         "theme": "",
                         "description": ""
                         }
-                        """
+                        """),
                 }
 }

@@ -4,22 +4,25 @@ import textwrap
 from typing import Protocol
 
 from failures.commands.scrape import ScrapeCommand
-from failures.commands.summarize import SummarizeCommand
-from failures.commands.embed import EmbedCommand
+from failures.commands.outdated.summarize import SummarizeCommand
 from failures.commands.classifyFailure import ClassifyFailureCommand
 from failures.commands.classifyAnalyzable import ClassifyAnalyzableCommand
-from failures.commands.postmortemArticle import PostmortemArticleCommand
-from failures.commands.postmortemIncidentVDB import PostmortemIncidentVDBCommand
 from failures.commands.postmortemIncidentAutoVDB import PostmortemIncidentAutoVDBCommand
 from failures.commands.cluster import ClusterCommand
 from failures.commands.merge import MergeCommand
-from failures.commands.vectordb import VectordbCommand
 from failures.commands.fixes import FixesCommand
 from failures.commands.cleanup import CleanUpCommand
 
 from failures.commands.stats import StatsCommand
 from failures.commands.results import ResultsCommand
 
+'''
+from failures.commands.outdated.summarize import SummarizeCommand
+from failures.commands.outdated.embed import EmbedCommand
+from failures.commands.outdated.postmortemArticle import PostmortemArticleCommand
+from failures.commands.outdated.postmortemIncidentVDB import PostmortemIncidentVDBCommand
+from failures.commands.outdated.vectordb import VectordbCommand
+'''
 
 _EPILOG = textwrap.dedent(
     """\
@@ -43,7 +46,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), SummarizeCommand(), EmbedCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), PostmortemArticleCommand(), PostmortemIncidentVDBCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), MergeCommand(), VectordbCommand(), FixesCommand(), CleanUpCommand(), StatsCommand(), ResultsCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), MergeCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), FixesCommand(), CleanUpCommand(), StatsCommand(), ResultsCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -95,7 +98,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="PostmortemIncidentAutoVDB_SampleSet.log",
+        filename="PaperResults.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",
