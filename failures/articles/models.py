@@ -1190,7 +1190,7 @@ class Article_Ko(models.Model):
         self.save()
         return self.describes_failure_os
 
-    # GPT based classifier for reports on software failure
+    # GPT based classifier for reports on software failure #TODO: classify_as_failure_ChatGPT should be a function disjoint from the model, so that we can call it on any body of text.
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
 
         #Truncate article if it is too long

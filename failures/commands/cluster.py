@@ -9,6 +9,8 @@ import csv
 import tiktoken
 import math
 
+from datetime import datetime
+
 from failures.articles.models import Incident, Theme, SubTheme
 from failures.commands.PROMPTS import CLUSTER_PROMPTS, CODING_PROMPTS
 from failures.commands.MODEL_INPUTS import OPENAI_THEMES_INPUTS
@@ -46,7 +48,7 @@ class ClusterCommand:
             type=int,
             help="List of incident ids.",
         )
-        parser.add_argument(
+        parser.add_argument( #TODO: Not used
             "--delete_themes",
             type=bool,
             help="Boolean to delete themes",
@@ -54,7 +56,20 @@ class ClusterCommand:
         parser.add_argument(
             "--import_codes",
             type=bool,
+            default=False,
             help="Determines whether codes should be imported or regenerated.",
+        )
+        parser.add_argument(
+            "--hitl",
+            type=bool,
+            default=False,
+            help="Human in the loop for whether the generated themes are acceptable.",
+        )
+        parser.add_argument(
+            "--experiment",
+            type=bool,
+            default=False,
+            help="To cluster incidents between 2010 and 2022 for experiment.",
         )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser, articles = None):
@@ -65,21 +80,29 @@ class ClusterCommand:
             args (argparse.Namespace): The parsed command-line arguments.
             parser (argparse.ArgumentParser): The argument parser used for configuration.
         """
+
+        #TODO: The way the factors, codes, and themes are stored within the script is confusing and inefficient. It should instead be stored in one dictionary. For example, cleaned_data should be: ["SEcauses"]["incident-ID"]["factors"] = list of SE causes and ["SEcauses"]["incident-ID"]["memos"] = memos and their descriptions; it is currently ["SEcauses"] = list of causes, and ["SEcauses_ids"] = incident ids of the causes, and the memos are not stored
+
         # Get fields to cluster
         postmortem_keys = args.fields
-        logging.info(f"Clustering postmortem information for fields: {postmortem_keys}")
+        logging.info(f"Conducting thematic analysis for fields: {postmortem_keys}")
 
         # Get incidents
         if args.ids:
             incidents = Incident.objects.filter(id__in=args.ids, complete_report=True)
+        elif args.experiment:
+            start_date = datetime(2010, 1, 1)
+            end_date = datetime(2022, 12, 31, 23, 59, 59)
+
+            incidents = Incident.objects.filter(published__range=(start_date, end_date))#, complete_report=True)
         else:
-            # incidents = Incident.objects.filter(complete_report=True) # TODO: Use this. And use the dates: 2010 to 2022
-            incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:10] # TODO: Update this to previous line when pipeline is finished
-        logging.info(f"Clustering information from {len(incidents)} incidents.")
+            #incidents = Incident.objects.filter(complete_report=True)
+            incidents = Incident.objects.prefetch_related('articles').order_by('-published')[:50] # TODO: Update this to previous line when pipeline is finished
+        logging.info(f"Conducting thematic analysis on {len(incidents)} incidents.")
 
         # Pre-process data to be clustered
         cleaned_data = pre_process_data(incidents, postmortem_keys)
-
+        
         # Contains all information for coded data
         coded_data = {}
 
@@ -89,11 +112,14 @@ class ClusterCommand:
 
         # Iterate through keys and get themes
         for postmortem_key in postmortem_keys:
+
+            logging.info("Conducting thematic analysis for field: " + str(postmortem_key))
+
             # Specify the file path where you want to save the JSON file
             file_path = f"failures/data/initial_codes_{postmortem_key}.json"
 
             # Read initial codes in from file
-            if args.import_codes:
+            if args.import_codes == True:
                 with open(file_path, 'r') as json_file:
                     initial_codes = json.load(json_file)
 
@@ -111,18 +137,32 @@ class ClusterCommand:
                 logging.info(f"Unable to remove duplicate codes. Skipping coding for {postmortem_key}.")
                 continue
 
-            # Create themes
-            major_themes = generate_themes(initial_codes_trimmed, postmortem_key)
-            if not major_themes:
-                logging.info(f"Unable to get themes. Trying again for {postmortem_key}.")
+            while True: #If human-in-the-loop, then check if the themes are acceptable and loop to generate themes until they are acceptable
+                # Create themes
                 major_themes = generate_themes(initial_codes_trimmed, postmortem_key)
-
                 if not major_themes:
-                    logging.info(f"Unable to get themes (Second try). Skipping coding for {postmortem_key}.")
-                    continue
+                    logging.info(f"Unable to get themes. Trying again for {postmortem_key}.")
+                    major_themes = generate_themes(initial_codes_trimmed, postmortem_key)
+
+                    if not major_themes:
+                        logging.info(f"Unable to get themes (Second try). Skipping coding for {postmortem_key}.")
+                        continue
+
+                if args.hitl is True: #If human-in-the-loop, then check if the themes are acceptable
+                    acceptable_themes = input("Are the generated themes acceptable? Only return bool True or False: ")
+                    if acceptable_themes == "True":
+                        acceptable_themes = True
+                    else:
+                        acceptable_themes = False
+
+                    if acceptable_themes is True:
+                        break
+                    logging.info("Generated themes were not acceptable. Re-generating themes.")
+                else:
+                    break
 
             # Deductively code data based on generated codes
-            new_codebook, coded_data[postmortem_key], coded_data[postmortem_key + "_themes"] = code_data(major_themes, cleaned_data[postmortem_key], postmortem_key)
+            new_codebook, coded_data[postmortem_key], coded_data[postmortem_key + "_themes"] = code_data(major_themes, cleaned_data[postmortem_key], postmortem_key, initial_codes)
             if not new_codebook or not coded_data[postmortem_key]:
                 logging.info(f"Unable to code data. Skipping coding for {postmortem_key}.")
                 continue
@@ -149,24 +189,40 @@ class ClusterCommand:
                 if major_theme[-4:] == "_ids":
                     continue
 
-                if len(data) < 15:
+                if len(data) < 30:
                     logging.info(f"Skipping sub themes for {major_theme}. Not enough data points.")
                     continue
 
-                logging.info(f"\n\nMAJOR THEME: {major_theme}\n\n")
-                sub_initial_codes[major_theme] = get_initial_codes(data, postmortem_key, f"The follow task is being performed to code sub themes under the major {major_theme}. Thus, the theme created in the following task should be much more specific than the major them. ") # Create sub theme codes
+                logging.info(f"\n\nCreating Sub-Themes for MAJOR THEME: {major_theme}\n\n")
+                sub_initial_codes[major_theme] = get_initial_codes(data, postmortem_key, f"In the following tasks, you will be tasked to identify a theme. The theme you identify should be a sub-theme under the larger theme: \"{major_theme}\". Thus, the theme identified in the following tasks should be more specific than the larger theme.\n") # Create sub theme codes
                 sub_initial_codes_trimmed[major_theme] = remove_duplicate_codes(sub_initial_codes[major_theme], postmortem_key) # Remove duplicates in sub theme codes
                 if not sub_initial_codes_trimmed[major_theme]:
                     logging.info(f"Unable to remove duplicate sub themes within theme {major_theme} for postmortem key {postmortem_key}. Skipping further coding.")
                     continue
+                
+                logging.info("Generating sub-themes for major theme: " + major_theme)
+                
+                while True: #If human-in-the-loop, then check if the themes are acceptable and loop to generate themes until they are acceptable   
+                    sub_themes[major_theme] = generate_themes(sub_initial_codes_trimmed[major_theme], postmortem_key, f"In the following tasks, you will be tasked to group themes. The themes you identify should be sub-themes under the larger theme: \"{major_theme}\". Thus, the themes identified in the following tasks should be more specific than the larger theme.\n") # Generate sub themes
+                    if not sub_themes[major_theme]:
+                        logging.info(f"Unable to get sub themes within theme {major_theme} for postmortem key {postmortem_key}. Skipping further coding.")
+                        continue
+                    
+                    if args.hitl is True: #If human-in-the-loop, then check if the themes are acceptable
+                        acceptable_themes = input("Are the generated themes acceptable? Only return bool True or False: ")
+                        if acceptable_themes == "True":
+                            acceptable_themes = True
+                        else:
+                            acceptable_themes = False
 
-                sub_themes[major_theme] = generate_themes(sub_initial_codes_trimmed[major_theme], postmortem_key, f"The follow task is being performed to code sub themes under the major {major_theme}. Thus, the theme created in the following task should be much more specific than the major them. ") # Generate sub themes
-                if not sub_themes[major_theme]:
-                    logging.info(f"Unable to get sub themes within theme {major_theme} for postmortem key {postmortem_key}. Skipping further coding.")
-                    continue
+                        if acceptable_themes is True:
+                            break
+                        logging.info("Generated themes were not acceptable. Re-generating themes.")
+                    else:
+                        break
                 
                 # TODO: Update how this is called
-                sub_new_codebook[major_theme], sub_new_coded_data[major_theme], sub_new_coded_data[major_theme + "_themes"] = code_data(sub_themes[major_theme], data, postmortem_key) # Code data for sub themes
+                sub_new_codebook[major_theme], sub_new_coded_data[major_theme], sub_new_coded_data[major_theme + "_themes"] = code_data(sub_themes[major_theme], data, postmortem_key, sub_initial_codes[major_theme]) # Code data for sub themes
                 if not sub_new_codebook[major_theme] or not sub_new_coded_data[major_theme]:
                     logging.info(f"Unable to code sub themes within theme {major_theme} for postmortem key {postmortem_key}. Skipping further coding.")
                     continue
@@ -175,11 +231,14 @@ class ClusterCommand:
                 update_db_sub_themes(postmortem_key, major_theme, sub_new_codebook[major_theme], sub_new_coded_data[major_theme + "_themes"], major_clusters[major_theme + "_ids"], sub_themes_first_pass)
                 sub_themes_first_pass = False
 
+                logging.info("Finished conducting thematic analysis for field: " + str(postmortem_key))
+
 
 def pre_process_data(incidents, postmortem_keys) -> dict:
     """
     Split up each incident entry into individual factors. Return as a dictionary.
     """
+    logging.info("\nPreprocessing data.")
     # Convert incident data to a list of dictionaries
     if "fixes" in postmortem_keys:
         postmortem_keys.append("preventions")
@@ -195,6 +254,7 @@ def pre_process_data(incidents, postmortem_keys) -> dict:
 
     # Clean data
     for postmortem_key in postmortem_keys:
+        logging.info("\nPreprocessing data for " + postmortem_key +".")
         clean_key = []
         ids = []
         for (id, raw_data) in zip(incidents_df["id"], incidents_df[postmortem_key]):
@@ -220,59 +280,69 @@ def pre_process_data(incidents, postmortem_keys) -> dict:
 
     logging.info("Data has been cleaned and processed for all postmortem keys.")
 
-    # TODO: Remove line below, this is just for testing
-    for key, val in cleaned_data.items():
-        if len(val) > 400:
-            cleaned_data[key] = val[:400]
 
     return cleaned_data
 
 # Prompt OpenAI LLM
 def get_completion(prompt, model="gpt-3.5-turbo"):
-    # Initializes ChatGPT Classifier
-    classifierChatGPT = ChatGPT()
+    # Initializes ChatGPT 
+    chatgpt = ChatGPT()
     inputs = OPENAI_THEMES_INPUTS
     messages = [{"role": "user", "content": prompt}]
     inputs["messages"] = messages
-    response = classifierChatGPT.run(inputs)
+    inputs["response_format"] = {"type": "json_object"}
+    logging.info("\nPrompt Inputs: \n")
+    logging.info(prompt)
+    logging.info("\n")
+    response = chatgpt.run(inputs)
+    logging.info("\nResponse: \n")
+    logging.info(response)
+    logging.info("\n")
     return response
 
 def get_initial_codes(input_data: list, postmortem_key: str, pre_prompt: str="") -> list:
-  initial_code_information = [] # All theme information
 
-  # Get themes
-  for i, item in enumerate(input_data):
+    logging.info("\nGetting initial codes for : " + str(postmortem_key))
+  
+    initial_code_information = [] # All theme information
 
-    # Format prompt
-    prompt = pre_prompt + CLUSTER_PROMPTS[postmortem_key]['identify_themes'] + "'''" + str(item) + "'''"
+    # Get themes
+    for i, item in enumerate(input_data):
 
-    # Get response
-    response = get_completion(prompt)
+        # Format prompt
+        prompt = pre_prompt + CLUSTER_PROMPTS[postmortem_key]['identify_themes'] + "'''" + str(item) + "'''"
 
-    # Convert response to JSON
-    try:
-        json_response = json.loads(response)
-    except ValueError as e:
-        logging.info(f"Couldnt convert GPT response to json for: {response}") # TODO: Convert to logging
-        continue
+        # Get response
+        response = get_completion(prompt)
 
-    if not all(key in json_response for key in ["theme", "description"]):
-        logging.info(f"Incorrect JSON formatting for response: {json_response}")
-        continue
+        # Convert response to JSON
+        try:
+            json_response = json.loads(response)
+        except ValueError as e:
+            logging.info(f"Couldnt convert GPT response to json for: {response}") # TODO: Convert to logging
+            continue
 
-    # Add cause
-    json_response["cause"] = item
+        if not all(key in json_response for key in ["theme", "description"]):
+            logging.info(f"Incorrect JSON formatting for response: {json_response}")
+            continue
 
-    # Store information
-    logging.info(f"{str(i + 1)} of {len(input_data)}. ({postmortem_key}) data: {item}")
-    logging.info(f"{str(i + 1)} of {len(input_data)}. ({postmortem_key}) code: {json_response['theme']}")
+        # Add cause
+        json_response["cause"] = item
 
-    initial_code_information.append(json_response)
+        # Store information
+        logging.info(f"{str(i + 1)} of {len(input_data)}. ({postmortem_key}) data: {item}")
+        logging.info(f"{str(i + 1)} of {len(input_data)}. ({postmortem_key}) code: {json_response['theme']}")
 
-  return initial_code_information
+        initial_code_information.append(json_response)
+
+    logging.info("\nFinished getting initial codes for : " + str(postmortem_key))
+    
+    return initial_code_information
 
 def remove_duplicate_codes(input_data: list, postmortem_key: str) -> dict:
 
+    logging.info("\nRemoving duplicate codes for : " + str(postmortem_key))
+    
     # Initialize token encoder to determine length
     encoding = tiktoken.encoding_for_model(OPENAI_THEMES_INPUTS["model"])
 
@@ -312,6 +382,9 @@ def remove_duplicate_codes(input_data: list, postmortem_key: str) -> dict:
     return reduced_codes
 
 def generate_themes(input_data: dict, postmortem_key: str, pre_prompt: str="") -> dict:
+    
+    logging.info("\nGenerating themes for : " + str(postmortem_key))
+    
     # Initialize token encoder to determine length
     encoding = tiktoken.encoding_for_model(OPENAI_THEMES_INPUTS["model"])
 
@@ -342,16 +415,19 @@ def generate_themes(input_data: dict, postmortem_key: str, pre_prompt: str="") -
         response = get_completion(prompt)
 
         try:
-            themes.update(json.loads(response))
+            themes.update(json.loads(response)) ### TODO: the themes are writing over themselves
         except json.decoder.JSONDecodeError as e:
             logging.info(f"Error decoding JSON: {e}")
             # Handle the error here, such as logging it or returning an empty dictionaryx
 
-    logging.info(f"Generating themes for postmortem key {postmortem_key}: \n{json.dumps(themes, indent=4)}")
+    logging.info(f"Generated themes for postmortem key {postmortem_key}: \n{json.dumps(themes, indent=4)}")
 
     return themes
 
-def code_data(codebook: dict, input_data: list, postmortem_key: str):
+def code_data(codebook: dict, input_data: list, postmortem_key: str, initial_codes: list):
+    
+    logging.info("\nCoding data with codebook for : " + str(postmortem_key))
+    
     # Make a deep copy of codebook to preserve original
     codebook_copy = copy.deepcopy(codebook)
 
@@ -365,8 +441,10 @@ def code_data(codebook: dict, input_data: list, postmortem_key: str):
 
     logging.info("Codebook Before Coding:\n" + json.dumps(codebook_copy, indent=3) + "\n\n")
 
+    prompt_temp = CODING_PROMPTS[postmortem_key]
+
     for i, data in enumerate(input_data):
-        prompt = CODING_PROMPTS[postmortem_key]["code_item1"] + json.dumps(codebook_copy) + CODING_PROMPTS[postmortem_key]["code_item2"] + str(data) + CODING_PROMPTS[postmortem_key]["code_item3"]
+        prompt = prompt_temp["str1"] +  prompt_temp["str2"] + json.dumps(codebook_copy) + prompt_temp["str3"] + str(data) + prompt_temp["str4"] + initial_codes[i]["theme"] + prompt_temp["str5"] + initial_codes[i]["description"] + prompt_temp["str6"]
 
         # Get response
         response = get_completion(prompt)
@@ -376,8 +454,8 @@ def code_data(codebook: dict, input_data: list, postmortem_key: str):
 
         logging.info(f"Coded item {str(i + 1)} of {str(len(input_data))} data: {data}")
         logging.info(f"Coded item {str(i + 1)} of {str(len(input_data))} code: {coded_item}")
-
-        if "description" in coded_item:
+  
+        if "description" in coded_item: ### TODO: No longer part of prompt to create a new theme if existing themes aren't appropriate.
             # Store new theme
             codebook_copy[curr_id] = coded_item
             curr_id += 1
@@ -391,11 +469,11 @@ def code_data(codebook: dict, input_data: list, postmortem_key: str):
             themes.append(coded_item["theme"])
             continue
 
-        elif not type(coded_item["code"]) == str:
+        elif not type(coded_item["id"]) == str:
             logging.info(f"Unable to code item: {data}. Got output {response}.")
             logging.info(f"Retrying coding once for {data}")
 
-            prompt = CODING_PROMPTS[postmortem_key]["code_item1"] + json.dumps(codebook_copy) + CODING_PROMPTS[postmortem_key]["code_item2"] + data + CODING_PROMPTS[postmortem_key]["code_item3"]
+            prompt = prompt_temp["str1"] +  prompt_temp["str2"] + json.dumps(codebook_copy) + prompt_temp["str3"] + str(data) + prompt_temp["str4"] + initial_codes[i]["theme"] + prompt_temp["str5"] + initial_codes[i]["description"] + prompt_temp["str6"]
 
             # Get response
             response = get_completion(prompt)
@@ -405,17 +483,17 @@ def code_data(codebook: dict, input_data: list, postmortem_key: str):
 
             logging.info(f"Coded item (retry): {coded_item}")
 
-            if not type(coded_item["code"]) == str:
+            if not type(coded_item["id"]) == str:
                 logging.info(f"Unable to code item (second try): {data}. Got output {response}.")
                 continue
 
-        coded_data[data] = coded_item["code"]
+        coded_data[data] = coded_item["id"]
 
         # Add theme mapping
-        if coded_item["code"] in codebook_copy:
-            theme = codebook_copy[coded_item["code"]].copy()
+        if coded_item["id"] in codebook_copy:
+            theme = codebook_copy[coded_item["id"]].copy()
             theme["data"] = data
-            theme["codebook_id"] = coded_item["code"]
+            theme["codebook_id"] = coded_item["id"]
             themes.append(theme)
         else:
             themes.append("NA")
@@ -423,10 +501,15 @@ def code_data(codebook: dict, input_data: list, postmortem_key: str):
     logging.info(f"Codebook After Coding ({postmortem_key}):\n" + json.dumps(codebook_copy, indent=3) + "\n\n")
 
     logging.info(json.dumps(coded_data, indent=4))
+    
+    logging.info("\nFinished coding data with codebook for : " + str(postmortem_key))
 
     return codebook_copy, coded_data, themes
 
 def get_clustered_data(codebook: dict, input_data_list: list, id_list: list) -> dict:
+    
+    logging.info("Group data")
+    
     # Make cluster dict with key=theme, value=list of causes within theme
     clusters = {}
     for code in codebook.values():

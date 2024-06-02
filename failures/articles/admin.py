@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.urls import reverse
 
-from failures.articles.models import Article, Incident, SearchQuery, Article_Ko, Incident_Ko, Theme, SubTheme
+from failures.articles.models import Article, Incident, SearchQuery, Article_Ko, Theme, SubTheme, RiskRecord
 
 from import_export.admin import ImportExportModelAdmin
 
@@ -239,7 +239,7 @@ class SearchQueryAdmin(admin.ModelAdmin):
     )
     list_filter = ("created_at", "last_searched_at")
 
-'''
+
 @admin.register(Theme)
 class ThemeAdmin(ImportExportModelAdmin):
     list_display = (
@@ -260,7 +260,14 @@ class SubThemeAdmin(ImportExportModelAdmin):
         "definition",
     )
     list_filter = ("postmortem_key",)
-'''
+
+@admin.register(RiskRecord)
+class SubThemeAdmin(ImportExportModelAdmin):
+    list_display = (
+        "id",
+        "url",
+    )
+    list_filter = ("url",)
 
 
 '''
