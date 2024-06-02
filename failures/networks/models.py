@@ -297,11 +297,11 @@ class ChatGPT(Network[dict, str]):
                     except json.JSONDecodeError as e:
                         logging.info(f"Error decoding JSON: {e}")
                         logging.info("with incorrect JSON String: " + str(chat_completion.choices[0].message.content))
-                        retry_count += 1
+                        retries += 1
                     except Exception as e:
                         logging.info(f"An unexpected error occurred: {e}")
                         logging.info("with incorrect JSON String: " + str(chat_completion.choices[0].message.content))
-                        retry_count += 1
+                        retries += 1
                 else:
                     break
             
