@@ -12,8 +12,9 @@ from collections import Counter
 import itertools
 from urllib.parse import urlparse
 
-from failures.articles.models import Article, Incident
+from django.db.models import Count, Q
 
+from failures.articles.models import Article, Incident
 from failures.commands.PROMPTS import TAXONOMY_QUESTIONS, CPS_KEYS
 
 
@@ -39,96 +40,96 @@ class ResultsCommand:
         incidents = Incident.objects.filter(published__range=(start_date, end_date))
         num_incidents = len(incidents)
 
+        ### To plot incidents over time
         '''
+        years = [year for year in range(start_year, end_year + 1)]
 
-        # Get the list of distinct years
-        years = list(range(start_year,end_year+1)) #list(Article.objects.values_list('published__year', flat=True).distinct())
+        # Initialize a dictionary to store the count of incidents per year
+        incidents_per_year = {year: 0 for year in years}
 
-        stats = {}
-        for year in years:
-            count_all = Article.objects.filter(published__year=year).count()
-            count_scrape_successful = Article.objects.filter(scrape_successful=True, published__year=year).count()
-            count_describes_failure = Article.objects.filter(describes_failure=True, published__year=year).count()
-            count_analyzable_failure = Article.objects.filter(analyzable_failure=True, published__year=year).count()
-            count_incidents = Incident.objects.filter(published__year=year).count()
+        # Count the number of incidents per year
+        for incident in incidents:
+            if incident.published.year in years:
+                incidents_per_year[incident.published.year] += 1
 
-            stats[year] = {
-                'All': count_all,
-                'Scrape Successful': count_scrape_successful,
-                'Describes Failure': count_describes_failure,
-                'Analyzable Failure': count_analyzable_failure,
-                'Incidents': count_incidents
-            }
+        # Create lists of years and corresponding incident counts
+        years_list = list(incidents_per_year.keys())
+        incident_counts = list(incidents_per_year.values())
 
-        # Prepare data for the Sankey diagram
-        labels = []
-        source = []
-        target = []
-        value = []
+        # Calculate year-over-year changes
+        yearly_changes = []
+        for i in range(1, len(incident_counts)):
+            yearly_changes.append(incident_counts[i] - incident_counts[i - 1])
 
-        label_to_index = {}
-        index = 0
+        # Calculate the average change in the number of incidents
+        average_change = sum(yearly_changes) / len(yearly_changes)
 
-        # Create labels for years and stats categories
-        for year in years:
-            labels.append(f"Year {year}")
-            label_to_index[f"Year {year}"] = index
-            index += 1
+        # Print the results
+        logging.info(f"Yearly changes in incident counts: {yearly_changes}")
+        logging.info(f"Average change in the number of incidents per year: {average_change:.2f}")
+        
 
-        for category in ['All', 'Scrape Successful', 'Describes Failure', 'Analyzable Failure', 'Incidents']:
-            labels.append(category)
-            label_to_index[category] = index
-            index += 1
-
-        # Create source, target, and value lists for Sankey
-        for year in years:
-            if year in stats:
-                for category, count in stats[year].items():
-                    source.append(label_to_index[f"Year {year}"])
-                    target.append(label_to_index[category])
-                    value.append(count)
-
-        # Create the Sankey plot
-        fig = go.Figure(data=[go.Sankey(
-            node=dict(
-                pad=15,
-                thickness=20,
-                line=dict(color="black", width=0.5),
-                label=labels,
-            ),
-            link=dict(
-                source=source,
-                target=target,
-                value=value
-            ))])
-
-        # Update layout and save the figure
-        fig.write_image("results/IncidentsOverYears.png")
-        '''
-
-        '''
-        # Convert the stats dictionary to a DataFrame
-        df = pd.DataFrame.from_dict(stats, orient='index').sort_index()
-
-        logging.info(df)
-
-        # Plotting the stacked bar chart
-        ax = df.plot(kind='bar', stacked=True, figsize=(14, 8))
-
-        # Adding labels and title
-        ax.set_xlabel('Year')
-        ax.set_ylabel('Count')
-        ax.set_title('Incident Statistics Over the Years')
-        ax.legend(title='Categories', bbox_to_anchor=(1.05, 1), loc='upper left')
-
-        # Save the plot as a PNG file
-        plt.tight_layout()
-        plt.savefig('results/IncidentsOverYears.png')
-        plt.close()
-
+        # Plotting
+        plt.bar(years_list, incident_counts, color="tab:blue", edgecolor="midnightblue")
+        plt.ylabel('Number of incidents')
+        plt.xticks(years_list, rotation=45)  # Ensure all years are displayed on the x-axis
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        plt.tight_layout()  # Adjust layout to prevent clipping of labels
+        plt.savefig('results/IncidentsOverTime.png',dpi=300)
         '''
 
 
+
+        ### To plot the frequency of articles to incidents 
+        
+        # Annotate the number of articles for each incident
+        incidents_with_article_count = incidents.annotate(num_articles=Count('articles'))
+
+        # Extract the number of articles for each incident
+        article_counts = incidents_with_article_count.values_list('num_articles', flat=True)
+
+        # Plot the histogram
+        plt.hist(article_counts, bins=range(min(article_counts), max(article_counts) + 1), align='left', color="tab:blue",edgecolor="midnightblue")
+        plt.xlabel('Number of articles')
+        plt.ylabel('Number of incidents')
+        plt.grid(True)
+        plt.yscale('log')
+
+        #Plot box plot
+        #plt.boxplot(article_counts)
+
+        #plt.savefig('results/FrequencyArticlesIncidents.png',dpi=300)
+
+        article_counts = pd.Series(article_counts)
+        logging.info("Summary stats:")
+        logging.info(article_counts.describe())
+
+        total_incidents = incidents_with_article_count.count()
+
+        # Calculate the percentages
+        count_1_article = incidents_with_article_count.filter(num_articles=1).count()
+        count_2_to_10_articles = incidents_with_article_count.filter(num_articles__range=(2, 10)).count()
+        count_11_to_20_articles = incidents_with_article_count.filter(num_articles__range=(11, 20)).count()
+        count_21_to_30_articles = incidents_with_article_count.filter(num_articles__range=(21, 30)).count()
+        count_more_than_30_articles = incidents_with_article_count.filter(num_articles__gt=30).count()
+
+        # Calculate the percentages
+        percentage_1_article = count_1_article / total_incidents * 100
+        percentage_2_to_10_articles = count_2_to_10_articles / total_incidents * 100
+        percentage_11_to_20_articles = count_11_to_20_articles / total_incidents * 100
+        percentage_21_to_30_articles = count_21_to_30_articles / total_incidents * 100
+        percentage_more_than_30_articles = count_more_than_30_articles / total_incidents * 100
+
+        # Print the results
+        logging.info(f"Count of incidents with exactly 1 article: {count_1_article}, Percentage: {percentage_1_article:.2f}%")
+        logging.info(f"Count of incidents with 2 to 10 articles: {count_2_to_10_articles}, Percentage: {percentage_2_to_10_articles:.2f}%")
+        logging.info(f"Count of incidents with 11 to 20 articles: {count_11_to_20_articles}, Percentage: {percentage_11_to_20_articles:.2f}%")
+        logging.info(f"Count of incidents with 21 to 30 articles: {count_21_to_30_articles}, Percentage: {percentage_21_to_30_articles:.2f}%")
+        logging.info(f"Count of incidents with more than 30 articles: {count_more_than_30_articles}, Percentage: {percentage_more_than_30_articles:.2f}%")
+        
+
+
+        # Single big plot of taxonomy for all years
         '''
         start_date = datetime(start_year, 1, 1)
         end_date = datetime(end_year, 12, 31, 23, 59, 59)
@@ -209,7 +210,13 @@ class ResultsCommand:
 
         ### For plotting the taxonomy
         '''
-        characterize = "impacts" #impacts
+        #incidents = incidents.filter(~Q(objective_option__in=["non-malicious", "unknown"]))
+        incidents = incidents.filter(cps_option="TRUE")
+        #incidents = incidents.filter(phase_option__contains="operation")
+
+        #num_incidents = len(incidents)
+
+        characterize = ""#"impacts" #"causes"
         causes = ["recurring", "phase", "boundary", "nature", "dimension", "objective", "intent", "capability", "cps", "perception", "communication", "application"]
         impacts = ["duration", "behaviour", "domain", "consequence"]
 
@@ -231,8 +238,6 @@ class ResultsCommand:
 
         # Determine the maximum count for scaling
         max_count = max(df.apply(lambda x: x.value_counts().max(), axis=0))
-
-        #long_labels = ["multiple_organization","network_communication","embedded_software","accidental_decisions","natural_resources","connectivity_level","development_incompetence","theoretical_consequence"]
 
         fields = list(data.keys())
         if characterize == "causes":
@@ -277,9 +282,9 @@ class ResultsCommand:
                     ax.text(width + offset, bar.get_y() + bar.get_height() / 2, str(width)+", "+str(int(width/num_incidents_ratio*100))+"%", ha=ha, va='center', color=text_color, fontsize=12)
             
         plt.tight_layout()
-        plt.savefig(f'results/TaxonomyDistributionSubplots{characterize}.png',dpi=300)
-        
+        plt.savefig(f'results/TaxonomyDistributionSubplotsRecurring{characterize}.png',dpi=300)
         '''
+        
 
 
         ### To plot pie chart of keywords and sources 
@@ -366,3 +371,115 @@ def group_small_counts(counter, threshold=0.02):
         grouped_counter["other"] = other_count
     return grouped_counter
     '''
+        
+        '''
+        tax_field = "dimension"
+        tax_options = ["hardware"]
+
+        # Construct the filter expression dynamically
+        filter_expression = Q()
+        for tax_option in tax_options:
+            filter_expression |= Q(**{f"{tax_field}_option__contains": tax_option})
+
+        # Apply the filter expression to the queryset
+        filtered_incidents = incidents.filter(filter_expression)
+
+        #filtered_incidents = incidents.filter(recurring_option__contains="multiple_organization")
+
+        characterize = ""  # "impacts" or "causes"
+        causes = ["recurring", "phase", "boundary", "nature", "dimension", "objective", "intent", "capability", "cps", "perception", "communication", "application"]
+        impacts = ["duration", "behaviour", "domain", "consequence"]
+
+        # Function to process incidents into a DataFrame
+        def process_incidents(incidents):
+            data = {taxonomy_key: [] for taxonomy_key in TAXONOMY_QUESTIONS.keys()}
+            for incident in incidents:
+                for field in data.keys():
+                    values = getattr(incident, field + "_option")
+                    if values:
+                        true_values = [val.strip() for val in values.split(",")]
+                        if "unknown" in true_values and len(true_values) > 1:
+                            true_values.remove("unknown")
+                        data[field].extend(true_values)
+            return pd.DataFrame({key: pd.Series(value) for key, value in data.items()})
+
+        # Process main incidents and filtered incidents
+        df = process_incidents(incidents)
+        filtered_df = process_incidents(filtered_incidents)
+
+        # Determine the maximum count for scaling
+        max_count = max(df.apply(lambda x: x.value_counts().max(), axis=0))
+
+        # Filter fields based on characterize variable
+        fields = list(TAXONOMY_QUESTIONS.keys())
+        if characterize == "causes":
+            fields = [key for key in fields if key in causes]
+        elif characterize == "impacts":
+            fields = [key for key in fields if key in impacts]
+
+        # Create subplots
+        fig, axes = plt.subplots(nrows=int(len(fields) / 4), ncols=4, figsize=(20, int((len(fields) / 4) * 5)))
+
+        # Plot each taxonomy field
+        for i, ax in enumerate(axes.flatten()):
+            if i < len(fields):
+                field = fields[i]
+                num_incidents_ratio = num_incidents
+
+                # Main incidents value counts
+                value_counts = df[field].value_counts()
+
+                # Filtered incidents value counts
+                filtered_value_counts = filtered_df[field].value_counts()
+
+                if field == "consequence":
+                    value_counts = value_counts.drop(index="non-human", errors='ignore')
+                    value_counts = value_counts.drop(index="theoretical_consequence", errors='ignore')
+                    filtered_value_counts = filtered_value_counts.drop(index="non-human", errors='ignore')
+                    filtered_value_counts = filtered_value_counts.drop(index="theoretical_consequence", errors='ignore')
+
+                # Reindex filtered_value_counts to match the main value_counts index
+                filtered_value_counts = filtered_value_counts.reindex(value_counts.index).fillna(0)
+
+                # Plot main incidents
+                bars = value_counts.plot(kind='barh', ax=ax, alpha=0.7, color='mistyrose', label='All Incidents')
+                
+                # Overlay filtered incidents
+                filtered_bars = filtered_value_counts.plot(kind='barh', ax=ax, alpha=0.5, color='aquamarine', label='Filtered Incidents')
+                
+                ax.set_title(field)
+                ax.set_xlabel('Number of incidents')
+                if field in CPS_KEYS:
+                    ax.set_xlim(0, df["cps"].value_counts().get("TRUE", 0))
+                    num_incidents_ratio = df["cps"].value_counts().get("TRUE", 0)
+                else:
+                    ax.set_xlim(0, num_incidents)
+
+                labels = [label.replace('_', '\n') for label in value_counts.index]
+                ax.set_yticks(range(len(labels)))
+                ax.set_yticklabels(labels)
+
+                # Display value of each bar inside the bar for main incidents
+                for bar in bars.patches:
+                    width = bar.get_width()
+                    placement = 'inside' if width > (max_count * 0.7) else 'outside'
+                    text_color = 'red'
+                    offset = -5 if placement == 'inside' else 5
+                    ha = 'right' if placement == 'inside' else 'left'
+                    ax.text(width + offset, bar.get_y() + bar.get_height() / 2, str(width) + ", " + str(int(width / num_incidents_ratio * 100)) + "%", ha=ha, va='center', color=text_color, fontsize=8, rotation=45)
+                
+                # Display value of each bar inside the bar for filtered incidents
+                for bar in filtered_bars.patches:
+                    width = bar.get_width()
+                    placement = 'inside' if width > (max_count * 0.7) else 'outside'
+                    text_color = 'blue'
+                    offset = -5 if placement == 'inside' else 5
+                    ha = 'right' if placement == 'inside' else 'left'
+                    ax.text(width + offset, bar.get_y() + bar.get_height() / 2, str(width) + ", " + str(int(width / num_incidents_ratio * 100)) + "%", ha=ha, va='center', color=text_color, fontsize=8, rotation=45)
+
+                ax.legend()
+
+        plt.tight_layout()
+        #plt.savefig(f'results/taxonomy/{tax_field}-multiple_organization-one_organization.png',dpi=300)
+        plt.savefig(f'results/taxonomy/{tax_field}-{tax_option}.png',dpi=300)
+        '''
