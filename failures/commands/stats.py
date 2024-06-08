@@ -2,6 +2,7 @@ import argparse
 import logging
 import textwrap
 
+from datetime import datetime
 import csv
 
 from failures.articles.models import Article, Incident
@@ -27,6 +28,12 @@ class StatsCommand:
             default=None,
             help="Report stats for articles published in a specific year in database.",
         )
+        parser.add_argument(
+            "--experiment",
+            type=bool,
+            default=False,
+            help="To cluster incidents between 2010 and 2022 for experiment.",
+        )
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
@@ -37,6 +44,12 @@ class StatsCommand:
 
         if query_year != None:
             years = [query_year]
+        elif args.experiment is True:
+            start_year = 2010
+            end_year = 2022
+
+            years = [year for year in range(start_year, end_year + 1)]
+
         else:
             years = list(Article.objects.values_list('published__year', flat=True).distinct())
 
@@ -48,7 +61,7 @@ class StatsCommand:
             count_analyzable_failure = Article.objects.filter(analyzable_failure=True, published__year=year).count()
 
             # Count incidents with articles for the specific year
-            count_incidents = Incident.objects.filter(articles__published__year=year).distinct().count()
+            count_incidents = Incident.objects.filter(published__year=year).count() #Incident.objects.filter(articles__published__year=year).distinct().count()
 
             stats[year] = {
                 'all': count_all,
