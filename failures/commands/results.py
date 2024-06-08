@@ -81,7 +81,7 @@ class ResultsCommand:
 
 
         ### To plot the frequency of articles to incidents 
-        
+        '''
         # Annotate the number of articles for each incident
         incidents_with_article_count = incidents.annotate(num_articles=Count('articles'))
 
@@ -126,7 +126,7 @@ class ResultsCommand:
         logging.info(f"Count of incidents with 11 to 20 articles: {count_11_to_20_articles}, Percentage: {percentage_11_to_20_articles:.2f}%")
         logging.info(f"Count of incidents with 21 to 30 articles: {count_21_to_30_articles}, Percentage: {percentage_21_to_30_articles:.2f}%")
         logging.info(f"Count of incidents with more than 30 articles: {count_more_than_30_articles}, Percentage: {percentage_more_than_30_articles:.2f}%")
-        
+        '''
 
 
         # Single big plot of taxonomy for all years
@@ -483,3 +483,14 @@ def group_small_counts(counter, threshold=0.02):
         #plt.savefig(f'results/taxonomy/{tax_field}-multiple_organization-one_organization.png',dpi=300)
         plt.savefig(f'results/taxonomy/{tax_field}-{tax_option}.png',dpi=300)
         '''
+
+        # Query to annotate each incident with the count of related articles
+        incidents_with_article_counts = Incident.objects.annotate(article_count=Count('articles'))
+
+        # Filter incidents which have more than 30 articles
+        incidents_with_more_than_30_articles = incidents_with_article_counts.filter(article_count__gt=30)
+
+        # Print the IDs of these incidents
+        for incident in incidents_with_more_than_30_articles:
+            logging.info(f"Incident ID: {incident.id}, Article Count: {incident.article_count}")
+            print(f"Incident ID: {incident.id}, Article Count: {incident.article_count}")
