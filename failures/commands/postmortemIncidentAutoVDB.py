@@ -362,7 +362,7 @@ class PostmortemIncidentAutoVDBCommand:
             
                     reply = chatGPT.run(model_parameters_temp)
                     #logging.info("Reply:")
-                    #logging.info(reply)
+                    logging.info(reply)
 
 
                     setattr(incident, question_rationale_key, reply)
@@ -394,7 +394,7 @@ class PostmortemIncidentAutoVDBCommand:
             
                     reply = chatGPT.run(model_parameters_temp)
                     #logging.info("Reply:")
-                    #logging.info(reply)
+                    logging.info(reply)
 
                     ### Error handling for JSON format is implemented in ChatGPT class
 
