@@ -1,6 +1,9 @@
-# Failures
+# FAIL
 
-Failures is a rich database of software failures scraped from news articles.
+FAIL is an LLM based pipeline to collect and analyze software failures from the news.
+
+A database of software failures from 2010 to 2022 curated by FAIL is available at: http://ec2-44-222-209-185.compute-1.amazonaws.com:8000/dashboard/
+
 
 ## Setting up the pipeline
 
