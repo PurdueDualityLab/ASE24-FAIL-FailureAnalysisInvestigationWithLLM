@@ -13,7 +13,7 @@ from failures.commands.merge import MergeCommand
 from failures.commands.fixes import FixesCommand
 from failures.commands.cleanup import CleanUpCommand
 
-from failures.commands.stats import StatsCommand
+from failures.commands.outdated.stats import StatsCommand
 from failures.commands.results import ResultsCommand
 
 '''
