@@ -2,7 +2,17 @@
 
 FAIL is an LLM based pipeline to collect and analyze software failures from the news.
 
-A database of software failures from 2010 to 2022 curated by FAIL is available at: http://ec2-44-222-209-185.compute-1.amazonaws.com:8000/dashboard/
+A database of software failures from 2010 to 2022 curated by FAIL is available at: [http://ec2-44-222-209-185.compute-1.amazonaws.com:8000/dashboard/](http://ec2-44-222-209-185.compute-1.amazonaws.com:8000/dashboard/)
+
+## About
+This repository contains all of the artifacts of the project.
+
+Our artifact includes the following (ordered by sections):
+|   Item   |   Description  |   Corresponding content in the paper  |
+|----------|----------------|---------------------------------------|
+|[Source code of FAIL](#running-the-pipeline)| Source code of the pipeline to automatically analyze failures from the news | Section 3 - FAIL: Design and implementation |
+| [Manual Analysis and Evaluation](#manual-analysis-and-evaluation) | Manual analysis of incidents and evaluation of the pipeline | Section 3.2 - Component Development and Validation | |
+| [Results](#plot-figures-and-gather-statistics-used-in-the-paper) | Source code to plot figures and gather other results from the paper |  Section 4 - Analyzing the FAIL DB |
 
 
 ## Setting up the pipeline
@@ -52,6 +62,7 @@ Note: To log stdout/stderr for pipeline command that is detached, follow these s
 2. Access the site administration page at `/admin/`
 
 ## Running the pipeline
+
 ### Step 1. Searching and scraping news articles 
 Option 1. Using the Admin Site and the Command Line
 
@@ -163,6 +174,8 @@ Option 2. Using Only the Command Line
 ### To evaluate the steps of the pipeline, follow [tests/README.rst](tests/README.rst)
 
 ## Manual analysis and evaluation
+
 ### Step 2 to Step 4: Manual analysis and evaluation: [results/manual_analysis/Step2_to_Step4.xlsx](results/manual_analysis/Step2_to_Step4.xlsx)
+
 ### Step 6: Manual analysis and evaluation: [results/manual_analysis/Step6.xlsx](results/manual_analysis/Step6.xlsx)
 
