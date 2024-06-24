@@ -171,11 +171,10 @@ Option 2. Using Only the Command Line
     $ docker compose -f local.yml run -e OPENAI_API_KEY --rm django python -m failures results
     ```
 
-### To evaluate the steps of the pipeline, follow [tests/README.rst](tests/README.rst)
-
 ## Manual analysis and evaluation
 
 ### Step 2 to Step 4: Manual analysis and evaluation: [results/manual_analysis/Step2_to_Step4.xlsx](results/manual_analysis/Step2_to_Step4.xlsx)
 
 ### Step 6: Manual analysis and evaluation: [results/manual_analysis/Step6.xlsx](results/manual_analysis/Step6.xlsx)
 
+### To evaluate the steps of the pipeline automatically, follow [tests/README.rst](tests/README.rst)
