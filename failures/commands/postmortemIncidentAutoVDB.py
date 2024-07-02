@@ -73,17 +73,6 @@ class PostmortemIncidentAutoVDBCommand:
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
-        '''
-        1. Incidents = Queryset
-        2. Count tokens for all articles in incident
-        3a. If tokens > 14.5k:
-            4a. check if articles for incident are already stored in VDB
-            4b. prompt with chunks from VDB
-        3b. If tokens < 14.5k:
-            4a. combine all articles and prompt with all articles
-        5. 
-        '''
-
         logging.info("\nCreating postmortems for incidents.")
 
         model_parameters = {"model": "gpt-3.5-turbo", "temperature": 0, "context_window": 16385}
