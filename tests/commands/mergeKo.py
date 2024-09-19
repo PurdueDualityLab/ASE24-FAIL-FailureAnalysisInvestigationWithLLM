@@ -9,7 +9,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 from failures.articles.models import Article, Incident
-from failures.networks.models import QuestionAnswerer, ChatGPT, EmbedderGPT,  ClassifierChatGPT
+from failures.networks.models import ChatGPT, EmbedderGPT,  ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 from failures.commands.PROMPTS import QUESTIONS, FAILURE_SYNONYMS

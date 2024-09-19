@@ -3,7 +3,7 @@ import logging
 import textwrap
 
 from failures.articles.models import Article
-from failures.networks.models import Embedder
+#from failures.networks.models import Embedder
 
 
 class EmbedCommand:
@@ -37,7 +37,7 @@ class EmbedCommand:
         """
 
         # Initialize the embedder for creating embeddings
-        embedder = Embedder()
+        #embedder = Embedder()
 
         # Determine the queryset of articles to embed on the provided arguments
         queryset = (
@@ -55,7 +55,7 @@ class EmbedCommand:
                 continue
 
             # Create embedding for the article
-            article.create_embedding(embedder)
+            #article.create_embedding(embedder)
             successful_embeddings += 1
 
         logging.info("Successfully created embeddings for %d articles.", successful_embeddings)

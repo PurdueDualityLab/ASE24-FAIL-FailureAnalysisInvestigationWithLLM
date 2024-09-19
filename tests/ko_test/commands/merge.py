@@ -3,7 +3,7 @@ import logging
 import textwrap
 
 from failures.articles.models import Article_Ko, Incident_Ko
-from failures.networks.models import QuestionAnswerer, ChatGPT, EmbedderGPT,  ClassifierChatGPT
+from failures.networks.models import ChatGPT, EmbedderGPT,  ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 from failures.commands.PROMPTS import QUESTIONS, FAILURE_SYNONYMS
