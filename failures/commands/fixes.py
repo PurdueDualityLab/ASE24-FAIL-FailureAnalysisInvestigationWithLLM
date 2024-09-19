@@ -8,7 +8,7 @@ import pandas as pd
 import re
 
 from failures.articles.models import Article, Incident
-from failures.networks.models import ZeroShotClassifier, ClassifierChatGPT
+from failures.networks.models import ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 import chromadb

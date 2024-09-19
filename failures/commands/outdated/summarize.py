@@ -3,7 +3,7 @@ import logging
 import textwrap
 
 from failures.articles.models import Article
-from failures.networks.models import Summarizer, ChatGPT
+from failures.networks.models import ChatGPT #, Summarizer
 
 
 class SummarizeCommand:

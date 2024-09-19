@@ -9,7 +9,7 @@ import math
 from django.db.models import Q, Min
 
 from failures.articles.models import Article, Incident
-from failures.networks.models import QuestionAnswerer, ChatGPT
+from failures.networks.models import ChatGPT
 from failures.parameters.models import Parameter
 
 from failures.commands.PROMPTS import FAILURE_SYNONYMS, POSTMORTEM_QUESTIONS, TAXONOMY_QUESTIONS, TAXONOMY_DEFINITIONS, CPS_KEYS, PROMPT_ADDITIONS
