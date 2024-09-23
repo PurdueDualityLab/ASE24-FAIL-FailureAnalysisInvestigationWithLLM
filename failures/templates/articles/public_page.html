@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Failures Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Failures Database">
+  <meta name="author" content="Purdue University ECE Duality Lab">
+
+  <!-- Third-party CSS libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+        integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+<div class="container my-4">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/1200px-Purdue_Boilermakers_logo.svg.png"
+        alt="Purdue Logo" width="80" height="55">
+      Failures Database
+    </a>
+  </nav>
+
+  <div class="row mt-4">
+    <!-- Loop through Incidents -->
+    {% if incidents %}
+      {% for incident in incidents %}
+        <div class="col-lg-6 mb-4">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+              <h5>{{ incident.title }}</h5>
+              <small><strong>Published:</strong> {{ incident.published|date:"Y-m-d" }}</small>
+            </div>
+            <div class="card-body">
+              <p><strong>System:</strong> {{ incident.system }}</p>
+              <p><strong>Summary:</strong> {{ incident.summary }}</p>
+              <p><strong>Responsible Org:</strong> {{ incident.ResponsibleOrg }}</p>
+              <p><strong>Impacted Org:</strong> {{ incident.ImpactedOrg }}</p>
+              <p><strong>Software Causes:</strong> {{ incident.SEcauses }}</p>
+              <p><strong>Non-Software Causes:</strong> {{ incident.NSEcauses }}</p>
+              <a href="#incident-{{ incident.id }}" class="btn btn-outline-secondary" data-bs-toggle="collapse">View Articles</a>
+
+              <!-- Articles for this incident -->
+              <div class="collapse mt-3" id="incident-{{ incident.id }}">
+                {% for article in incident.articles.all %}
+                  <div class="card mb-2">
+                    <div class="card-header">
+                      <h6>{{ article.title }}</h6>
+                      <small><strong>Source:</strong> {{ article.source }} | <strong>Published:</strong> {{ article.published|date:"Y-m-d" }}</small>
+                    </div>
+                    <div class="card-body">
+                      <p>{{ article.article_summary }}</p>
+                      <a href="{{ article.url }}" target="_blank" class="btn btn-sm btn-outline-primary">Read Full Article</a>
+                    </div>
+                  </div>
+                {% empty %}
+                  <p>No articles available for this incident.</p>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="text-center">No failure incidents available.</p>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
