@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
-  
 
 <div class="container my-4">
   <!-- Navbar -->
@@ -28,53 +27,25 @@
   </nav>
 
   <div class="row mt-4">
-    <!-- Incident Table -->
+    <!-- Loop through Incidents -->
     {% if incidents %}
-      <table class="table table-bordered">
+      <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Title</th>
-            <th scope="col">System</th>
             <th scope="col">Published Date</th>
-            <th scope="col">Details</th>
+            <th scope="col">System</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
           {% for incident in incidents %}
-            <tr data-bs-toggle="collapse" data-bs-target="#incident-details-{{ incident.id }}" class="clickable">
+            <tr>
               <td>{{ incident.title }}</td>
-              <td>{{ incident.system }}</td>
               <td>{{ incident.published|date:"Y-m-d" }}</td>
+              <td>{{ incident.system }}</td>
               <td>
-                <button class="btn btn-outline-secondary btn-sm" type="button">View Details</button>
-              </td>
-            </tr>
-
-            <!-- Collapsible Row for Incident Details -->
-            <tr id="incident-details-{{ incident.id }}" class="collapse">
-              <td colspan="4">
-                <div class="card card-body">
-                  <p><strong>Summary:</strong> {{ incident.summary }}</p>
-                  <p><strong>Responsible Org:</strong> {{ incident.ResponsibleOrg }}</p>
-                  <p><strong>Impacted Org:</strong> {{ incident.ImpactedOrg }}</p>
-                  <p><strong>Software Causes:</strong> {{ incident.SEcauses }}</p>
-                  <p><strong>Non-Software Causes:</strong> {{ incident.NSEcauses }}</p>
-                  <h6>Articles:</h6>
-                  {% if incident.articles.all %}
-                    <ul>
-                      {% for article in incident.articles.all %}
-                        <li>
-                          <strong>{{ article.title }}</strong> - <small>{{ article.source }} ({{ article.published|date:"Y-m-d" }})</small>
-                          <br>
-                          <p>{{ article.article_summary }}</p>
-                          <a href="{{ article.url }}" target="_blank" class="btn btn-sm btn-outline-primary">Read Full Article</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% else %}
-                    <p>No articles available for this incident.</p>
-                  {% endif %}
-                </div>
+                <a href="{% url 'articles:incident-detail' incident.pk %}" class="btn btn-primary">View Details</a>
               </td>
             </tr>
           {% endfor %}
