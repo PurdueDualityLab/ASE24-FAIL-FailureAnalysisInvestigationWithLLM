@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Incident Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Failure Incident Details">
+  <meta name="author" content="Purdue University ECE Duality Lab">
+
+  <!-- Third-party CSS libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+        integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+<div class="container my-4">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/1200px-Purdue_Boilermakers_logo.svg.png"
+        alt="Purdue Logo" width="80" height="55">
+      Failures Database
+    </a>
+  </nav>
+
+  <div class="mt-4">
+    <!-- Incident Details -->
+    <h2>Incident: {{ incident.title }}</h2>
+    <p><strong>Published Date:</strong> {{ incident.published|date:"Y-m-d" }}</p>
+
+    <!-- Postmortem Analysis -->
+    <table class="table table-bordered mt-3">
+      <thead class="thead-dark">
+        <tr>
+          <th colspan="2">Postmortem Analysis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Timeline</strong></td>
+          <td>{{ incident.time }}</td>
+        </tr>
+        <tr>
+          <td><strong>System</strong></td>
+          <td>{{ incident.system }}</td>
+        </tr>
+        <tr>
+          <td><strong>Responsible Organization</strong></td>
+          <td>{{ incident.ResponsibleOrg }}</td>
+        </tr>
+        <tr>
+          <td><strong>Impacted Organization</strong></td>
+          <td>{{ incident.ImpactedOrg }}</td>
+        </tr>
+        <tr>
+          <td><strong>Software Causes</strong></td>
+          <td>{{ incident.SEcauses }}</td>
+        </tr>
+        <tr>
+          <td><strong>Non-software Causes</strong></td>
+          <td>{{ incident.NSEcauses }}</td>
+        </tr>
+        <tr>
+          <td><strong>Impacts</strong></td>
+          <td>{{ incident.impacts }}</td>
+        </tr>
+        <tr>
+          <td><strong>Preventions & Fixes</strong></td>
+          <td>{{ incident.preventions }} {{ incident.fixes }}</td>
+        </tr>
+        <tr>
+          <td><strong>References</strong></td>
+          <td>{{ incident.references }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Combined Software Taxonomy of Faults Table -->
+    <h4 class="mt-4">Software Taxonomy of Faults</h4>
+    <table class="table table-bordered mt-3">
+      <thead class="thead-dark">
+        <tr>
+          <th>Category</th>
+          <th>Option</th>
+          <th>Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Recurring</strong></td>
+          <td>{{ incident.recurring_option }}</td>
+          <td>{{ incident.recurring_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Phase (Design/Operation)</strong></td>
+          <td>{{ incident.phase_option }}</td>
+          <td>{{ incident.phase_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Boundary (Internal/External)</strong></td>
+          <td>{{ incident.boundary_option }}</td>
+          <td>{{ incident.boundary_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Nature (Human/Non-human)</strong></td>
+          <td>{{ incident.nature_option }}</td>
+          <td>{{ incident.nature_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Dimension (Hardware/Software)</strong></td>
+          <td>{{ incident.dimension_option }}</td>
+          <td>{{ incident.dimension_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Objective (Malicious/Non-malicious)</strong></td>
+          <td>{{ incident.objective_option }}</td>
+          <td>{{ incident.objective_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Intent (Poor/Accidental Decisions)</strong></td>
+          <td>{{ incident.intent_option }}</td>
+          <td>{{ incident.intent_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Capability (Incompetence/Accidental)</strong></td>
+          <td>{{ incident.capability_option }}</td>
+          <td>{{ incident.capability_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Duration</strong></td> 
+          <td>{{ incident.duration_option }}</td>
+          <td>{{ incident.duration_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Behaviour</strong></td>
+          <td>{{ incident.behaviour_option }}</td>
+          <td>{{ incident.behaviour_rationale }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- IoT System Layer -->
+    <h4 class="mt-4">IoT System Layer</h4>
+    <table class="table table-bordered mt-3">
+      <thead class="thead-dark">
+        <tr>
+          <th>Layer</th>
+          <th>Option</th>
+          <th>Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Perception</strong></td>
+          <td>{{ incident.perception_option }}</td>
+          <td>{{ incident.perception_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Communication</strong></td>
+          <td>{{ incident.communication_option }}</td>
+          <td>{{ incident.communication_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Application</strong></td>
+          <td>{{ incident.application_option }}</td>
+          <td>{{ incident.application_rationale }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Other Details -->
+    <h4 class="mt-4">Other Details</h4>
+    <table class="table table-bordered mt-3">
+      <thead class="thead-dark">
+        <tr>
+          <th>Category</th>
+          <th>Option</th>
+          <th>Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Consequence</strong></td>
+          <td>{{ incident.consequence_option }}</td>
+          <td>{{ incident.consequence_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Domain</strong></td>
+          <td>{{ incident.domain_option }}</td>
+          <td>{{ incident.domain_rationale }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Related Articles -->
+    <h4 class="mt-4">Sources</h4>
+    <ul>
+      {% for article in incident.articles.all %}
+        <li>
+          <a href="{{ article.url }}" target="_blank">{{ article.headline }}</a> - 
+          <small>Published on: {{ article.published|date:"Y-m-d" }}</small>
+          <p><strong>Article ID:</strong> {{ article.id }}</p>
+          <p>{{ article.article_summary }}</p>
+        </li>
+      {% empty %}
+        <li>No sources available.</li>
+      {% endfor %}
+    </ul>
+
+    <!-- Button to go back -->
+    <a href="{% url 'articles:public_page' %}" class="btn btn-secondary mt-3">Back to List</a>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
