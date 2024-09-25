@@ -78,101 +78,135 @@
       </tbody>
     </table>
 
-    <!-- Software Taxonomy of Faults -->
+    <!-- Combined Software Taxonomy of Faults Table -->
+    <h4 class="mt-4">Software Taxonomy of Faults</h4>
     <table class="table table-bordered mt-3">
       <thead class="thead-dark">
         <tr>
-          <th colspan="2">Software Taxonomy of Faults</th>
+          <th>Category</th>
+          <th>Option</th>
+          <th>Rationale</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Recurring</strong></td>
-          <td>{{ incident.recurring_option }} - {{ incident.recurring_rationale }}</td>
+          <td>{{ incident.recurring_option }}</td>
+          <td>{{ incident.recurring_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Phase (Design/Operation)</strong></td>
-          <td>{{ incident.phase_option }} - {{ incident.phase_rationale }}</td>
+          <td>{{ incident.phase_option }}</td>
+          <td>{{ incident.phase_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Boundary (Internal/External)</strong></td>
-          <td>{{ incident.boundary_option }} - {{ incident.boundary_rationale }}</td>
+          <td>{{ incident.boundary_option }}</td>
+          <td>{{ incident.boundary_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Nature (Human/Non-human)</strong></td>
-          <td>{{ incident.nature_option }} - {{ incident.nature_rationale }}</td>
+          <td>{{ incident.nature_option }}</td>
+          <td>{{ incident.nature_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Dimension (Hardware/Software)</strong></td>
-          <td>{{ incident.dimension_option }} - {{ incident.dimension_rationale }}</td>
+          <td>{{ incident.dimension_option }}</td>
+          <td>{{ incident.dimension_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Objective (Malicious/Non-malicious)</strong></td>
-          <td>{{ incident.objective_option }} - {{ incident.objective_rationale }}</td>
+          <td>{{ incident.objective_option }}</td>
+          <td>{{ incident.objective_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Intent (Poor/Accidental Decisions)</strong></td>
-          <td>{{ incident.intent_option }} - {{ incident.intent_rationale }}</td>
+          <td>{{ incident.intent_option }}</td>
+          <td>{{ incident.intent_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Capability (Incompetence/Accidental)</strong></td>
-          <td>{{ incident.capability_option }} - {{ incident.capability_rationale }}</td>
+          <td>{{ incident.capability_option }}</td>
+          <td>{{ incident.capability_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Duration</strong></td> 
+          <td>{{ incident.duration_option }}</td>
+          <td>{{ incident.duration_rationale }}</td>
+        </tr>
+        <tr>
+          <td><strong>Behaviour</strong></td>
+          <td>{{ incident.behaviour_option }}</td>
+          <td>{{ incident.behaviour_rationale }}</td>
         </tr>
       </tbody>
     </table>
 
     <!-- IoT System Layer -->
+    <h4 class="mt-4">IoT System Layer</h4>
     <table class="table table-bordered mt-3">
       <thead class="thead-dark">
         <tr>
-          <th colspan="2">IoT System Layer</th>
+          <th>Layer</th>
+          <th>Option</th>
+          <th>Rationale</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Perception</strong></td>
-          <td>{{ incident.perception_option }} - {{ incident.perception_rationale }}</td>
+          <td>{{ incident.perception_option }}</td>
+          <td>{{ incident.perception_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Communication</strong></td>
-          <td>{{ incident.communication_option }} - {{ incident.communication_rationale }}</td>
+          <td>{{ incident.communication_option }}</td>
+          <td>{{ incident.communication_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Application</strong></td>
-          <td>{{ incident.application_option }} - {{ incident.application_rationale }}</td>
+          <td>{{ incident.application_option }}</td>
+          <td>{{ incident.application_rationale }}</td>
         </tr>
       </tbody>
     </table>
 
     <!-- Other Details -->
+    <h4 class="mt-4">Other Details</h4>
     <table class="table table-bordered mt-3">
       <thead class="thead-dark">
         <tr>
-          <th colspan="2">Other Details</th>
+          <th>Category</th>
+          <th>Option</th>
+          <th>Rationale</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Consequence</strong></td>
-          <td>{{ incident.consequence_option }} - {{ incident.consequence_rationale }}</td>
+          <td>{{ incident.consequence_option }}</td>
+          <td>{{ incident.consequence_rationale }}</td>
         </tr>
         <tr>
           <td><strong>Domain</strong></td>
-          <td>{{ incident.domain_option }} - {{ incident.domain_rationale }}</td>
+          <td>{{ incident.domain_option }}</td>
+          <td>{{ incident.domain_rationale }}</td>
         </tr>
       </tbody>
     </table>
 
     <!-- Related Articles -->
-    <h4 class="mt-4">Related Articles</h4>
+    <h4 class="mt-4">Sources</h4>
     <ul>
       {% for article in incident.articles.all %}
         <li>
-          <a href="{{ article.url }}" target="_blank">{{ article.headline }}</a> - <small>{{ article.published|date:"Y-m-d" }}</small>
+          <a href="{{ article.url }}" target="_blank">{{ article.headline }}</a> - 
+          <small>Published on: {{ article.published|date:"Y-m-d" }}</small>
+          <p><strong>Article ID:</strong> {{ article.id }}</p>
           <p>{{ article.article_summary }}</p>
         </li>
       {% empty %}
-        <li>No related articles available.</li>
+        <li>No sources available.</li>
       {% endfor %}
     </ul>
 

@@ -26,8 +26,20 @@
     </a>
   </nav>
 
+  <!-- Search Form -->
   <div class="row mt-4">
-    <!-- Loop through Incidents -->
+    <form method="GET" action=".">
+      <div class="input-group mb-3">
+        <input type="text" name="q" class="form-control" placeholder="Search by title..." value="{{ request.GET.q }}">
+        <input type="date" name="start_date" class="form-control" placeholder="Start Date" value="{{ request.GET.start_date }}">
+        <input type="date" name="end_date" class="form-control" placeholder="End Date" value="{{ request.GET.end_date }}">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="row mt-4">
+    <!-- Display Incidents -->
     {% if incidents %}
       <table class="table table-striped">
         <thead class="thead-dark">
