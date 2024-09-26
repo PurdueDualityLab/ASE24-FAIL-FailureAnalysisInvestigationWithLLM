@@ -19,7 +19,7 @@
 <div class="container my-4">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/public/">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/1200px-Purdue_Boilermakers_logo.svg.png"
         alt="Purdue Logo" width="80" height="55">
       Failures Database
@@ -39,22 +39,21 @@
   </div>
 
   <!-- Sorting Options with Dropdown -->
-<!-- Updated Sorting Options with Dropdown -->
-<div class="row mt-4">
-  <div class="col-12">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-        Sort By
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-        <li><a class="dropdown-item" href="?sort=asc">Article Count (Ascending)</a></li>
-        <li><a class="dropdown-item" href="?sort=desc">Article Count (Descending)</a></li>
-        <li><a class="dropdown-item" href="?sort=title_asc">Title (Ascending)</a></li>
-        <li><a class="dropdown-item" href="?sort=title_desc">Title (Descending)</a></li>
-      </ul>
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Sort By
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+          <li><a class="dropdown-item" href="?sort=asc">Article Count (Ascending)</a></li>
+          <li><a class="dropdown-item" href="?sort=desc">Article Count (Descending)</a></li>
+          <li><a class="dropdown-item" href="?sort=title_asc">Title (Ascending)</a></li>
+          <li><a class="dropdown-item" href="?sort=title_desc">Title (Descending)</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
   <div class="row mt-4">
     <!-- Display Incidents -->
