@@ -38,6 +38,24 @@
     </form>
   </div>
 
+  <!-- Sorting Options with Dropdown -->
+<!-- Updated Sorting Options with Dropdown -->
+<div class="row mt-4">
+  <div class="col-12">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        Sort By
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+        <li><a class="dropdown-item" href="?sort=asc">Article Count (Ascending)</a></li>
+        <li><a class="dropdown-item" href="?sort=desc">Article Count (Descending)</a></li>
+        <li><a class="dropdown-item" href="?sort=title_asc">Title (Ascending)</a></li>
+        <li><a class="dropdown-item" href="?sort=title_desc">Title (Descending)</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
   <div class="row mt-4">
     <!-- Display Incidents -->
     {% if incidents %}
@@ -47,6 +65,7 @@
             <th scope="col">Title</th>
             <th scope="col">Published Date</th>
             <th scope="col">System</th>
+            <th scope="col">Number of Articles</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -56,6 +75,7 @@
               <td>{{ incident.title }}</td>
               <td>{{ incident.published|date:"Y-m-d" }}</td>
               <td>{{ incident.system }}</td>
+              <td>{{ incident.article_count }}</td>
               <td>
                 <a href="{% url 'articles:incident-detail' incident.pk %}" class="btn btn-primary">View Details</a>
               </td>

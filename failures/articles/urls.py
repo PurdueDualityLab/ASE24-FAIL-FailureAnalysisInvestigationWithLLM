@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import public_page, index
-from .views import public_page, incident_detail_view
+from .views import incident_detail_view
 
 app_name = "articles"
 
