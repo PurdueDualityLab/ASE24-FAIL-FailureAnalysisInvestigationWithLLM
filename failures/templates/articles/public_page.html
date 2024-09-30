@@ -8,10 +8,8 @@
   <meta name="description" content="Failures Database">
   <meta name="author" content="Purdue University ECE Duality Lab">
 
-  <!-- Third-party CSS libraries -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
-        integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
@@ -26,37 +24,205 @@
     </a>
   </nav>
 
-  <!-- Search Form -->
+  <!-- Search Form and Sort By Dropdown -->
   <div class="row mt-4">
-    <form method="GET" action=".">
-      <div class="input-group mb-3">
-        <input type="text" name="q" class="form-control" placeholder="Search by title..." value="{{ request.GET.q }}">
-        <input type="date" name="start_date" class="form-control" placeholder="Start Date" value="{{ request.GET.start_date }}">
-        <input type="date" name="end_date" class="form-control" placeholder="End Date" value="{{ request.GET.end_date }}">
-        <button class="btn btn-outline-secondary" type="submit">Search</button>
-      </div>
-    </form>
+    <div class="col-md-8">
+      <form method="GET" action=".">
+        <div class="input-group mb-3">
+          <input type="text" name="q" class="form-control" placeholder="Search by title..." value="{{ request.GET.q }}">
+          <input type="date" name="start_date" class="form-control" placeholder="Start Date" value="{{ request.GET.start_date }}">
+          <input type="date" name="end_date" class="form-control" placeholder="End Date" value="{{ request.GET.end_date }}">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sort By Dropdown -->
+    <div class="col-md-4 text-end">
+      <form method="GET" action=".">
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="sortDropdown">Sort By</label>
+          <select class="form-select form-control-sm" id="sortDropdown" name="sort">
+            <option value="">Select</option>
+            <option value="title_asc" {% if sort_by_articles == 'title_asc' %}selected{% endif %}>Title (Ascending)</option>
+            <option value="title_desc" {% if sort_by_articles == 'title_desc' %}selected{% endif %}>Title (Descending)</option>
+            <option value="asc" {% if sort_by_articles == 'asc' %}selected{% endif %}>Article Count (Ascending)</option>
+            <option value="desc" {% if sort_by_articles == 'desc' %}selected{% endif %}>Article Count (Descending)</option>
+            <option value="date_asc" {% if sort_by_articles == 'date_asc' %}selected{% endif %}>Date (Ascending)</option>
+            <option value="date_desc" {% if sort_by_articles == 'date_desc' %}selected{% endif %}>Date (Descending)</option>
+          </select>
+          <button class="btn btn-outline-secondary" type="submit">Sort</button>
+        </div>
+      </form>
+    </div>
   </div>
 
-  <!-- Sorting Options with Dropdown -->
-  <div class="row mt-4">
-    <div class="col-12">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          Sort By
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-          <li><a class="dropdown-item" href="?sort=asc">Article Count (Ascending)</a></li>
-          <li><a class="dropdown-item" href="?sort=desc">Article Count (Descending)</a></li>
-          <li><a class="dropdown-item" href="?sort=title_asc">Title (Ascending)</a></li>
-          <li><a class="dropdown-item" href="?sort=title_desc">Title (Descending)</a></li>
-        </ul>
+  <!-- Filter Button -->
+  <div class="row">
+    <div class="col-12 text-end">
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#filterSection" aria-expanded="false" aria-controls="filterSection">
+        Show Filters <i class="bi bi-funnel-fill"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Collapsible Filter Section -->
+  <div class="collapse mt-3" id="filterSection">
+    <div class="row">
+      <div class="col-12">
+        <form method="GET" action=".">
+        <!-- Recurring Filter -->
+        <div class="form-group mb-3">
+          <label for="recurring_option">Recurring:</label>
+          <div>
+            {% for recurring in recurring_options %}
+              {% if recurring %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="recurring_option" value="{{ recurring }}"
+                      {% if recurring in recurring_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ recurring }}</label>
+              </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+          <!-- Phase Filter -->
+          <div class="form-group mb-3">
+            <label for="phase_option">Phase:</label>
+            <div>
+              {% for phase in phase_options %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="phase_option" value="{{ phase }}"
+                       {% if phase in phase_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ phase }}</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Boundary Filter -->
+          <div class="form-group mb-3">
+            <label for="boundary_option">Boundary:</label>
+            <div>
+              {% for boundary in boundary_options %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="boundary_option" value="{{ boundary }}"
+                       {% if boundary in boundary_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ boundary }}</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Nature Filter -->
+          <div class="form-group mb-3">
+            <label for="nature_option">Nature:</label>
+            <div>
+              {% for nature in nature_options %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="nature_option" value="{{ nature }}"
+                       {% if nature in nature_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ nature }}</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Dimension Filter -->
+          <div class="form-group mb-3">
+            <label for="dimension_option">Dimension:</label>
+            <div>
+              {% for dimension in dimension_options %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="dimension_option" value="{{ dimension }}"
+                       {% if dimension in dimension_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ dimension }}</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Objective Filter -->
+          <div class="form-group mb-3">
+            <label for="objective_option">Objective:</label>
+            <div>
+              {% for objective in objective_options %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="objective_option" value="{{ objective }}"
+                       {% if objective in objective_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ objective }}</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Capability Filter -->
+          <div class="form-group mb-3">
+            <label for="capability_option">Capability:</label>
+            <div>
+              {% for capability in capability_options %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="capability_option" value="{{ capability }}"
+                       {% if capability in capability_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ capability }}</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Duration Filter -->
+          <div class="form-group mb-3">
+            <label for="duration_option">Duration:</label>
+            <div>
+              {% for duration in duration_options %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="duration_option" value="{{ duration }}"
+                       {% if duration in duration_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ duration }}</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Behavior Filter -->
+          <div class="form-group mb-3">
+            <label for="behavior_option">Behavior:</label>
+            <div>
+              {% for behavior in behavior_options %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="behavior_option" value="{{ behavior }}"
+                       {% if behavior in behavior_options_selected %}checked{% endif %}>
+                <label class="form-check-label">{{ behavior }}</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Intent Filter -->
+          <div class="form-group mb-3">
+            <label for="intent_option">Intent:</label>
+            <div>
+              {% for intent in intent_options %}
+                {% if intent %}
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="intent_option" value="{{ intent }}"
+                        {% if intent in intent_options_selected %}checked{% endif %}>
+                  <label class="form-check-label">{{ intent }}</label>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Apply Filters</button>
+        </form>
       </div>
     </div>
   </div>
 
+  <!-- Display Incidents -->
   <div class="row mt-4">
-    <!-- Display Incidents -->
     {% if incidents %}
       <table class="table table-striped">
         <thead class="thead-dark">
