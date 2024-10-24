@@ -7,4 +7,4 @@ set -o nounset
 
 python /app/manage.py collectstatic --noinput
 
-/usr/local/bin/gunicorn --workers 3 --timeout 120 config.wsgi:application --bind 0.0.0.0:8000 --chdir=/app
+/usr/local/bin/gunicorn --workers 3 --timeout 120 config.wsgi:application --bind 0.0.0.0:80 --chdir=/app
