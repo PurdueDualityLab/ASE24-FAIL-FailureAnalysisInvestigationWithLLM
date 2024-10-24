@@ -283,7 +283,7 @@
 
   <!-- Display Incidents -->
   <div class="row mt-4">
-    {% if incidents %}
+    {% if page_obj %}
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
@@ -295,7 +295,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for incident in incidents %}
+          {% for incident in page_obj %}
             <tr>
               <td>{{ incident.title }}</td>
               <td>{{ incident.published|date:"Y-m-d" }}</td>
@@ -308,6 +308,21 @@
           {% endfor %}
         </tbody>
       </table>
+
+      <!-- Pagination Controls -->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&lsaquo; Previous</a></li>
+          {% endif %}
+          <li class="page-item disabled"><span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+          {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next &rsaquo;</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+          {% endif %}
+        </ul>
+      </nav>
     {% else %}
       <p class="text-center">No failure incidents available.</p>
     {% endif %}
@@ -318,4 +333,3 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-  

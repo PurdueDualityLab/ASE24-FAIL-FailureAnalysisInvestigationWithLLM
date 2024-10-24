@@ -5,7 +5,6 @@ import textwrap
 import json
 import math
 
-
 from django.db.models import Q, Min
 
 from failures.articles.models import Article, Incident

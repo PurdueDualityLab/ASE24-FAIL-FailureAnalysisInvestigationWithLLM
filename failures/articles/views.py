@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Incident
 from django.utils.dateparse import parse_date
 from django.db.models import Count
-
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 def index(request):
     return render(
         request,
@@ -136,8 +136,20 @@ def public_page(request):
     elif sort_by_articles == 'title_desc':
         incidents = incidents.order_by('-title')
 
+    # Pagination Logic
+    paginator = Paginator(incidents, 10)  # Show 10 incidents per page
+    page = request.GET.get('page')
+
+    try:
+        page_obj = paginator.page(page)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+
     # Pass the context to the template
     context = {
+        'page_obj': page_obj,
         'incidents': incidents,
         'dimension_options': dimension_options,
         'phase_options': phase_options,
@@ -171,6 +183,9 @@ def public_page(request):
     }
 
     return render(request, 'articles/public_page.html', context)
+
+
+
 
 # View for individual incident detail page
 def incident_detail_view(request, pk):
