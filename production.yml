@@ -28,8 +28,6 @@ services:
     volumes:
       - production_postgres_data:/var/lib/postgresql/data:Z
       - production_postgres_data_backups:/backups:z
-    env_file:
-      - ./.envs/.production/.postgres
 
   traefik:
     build:
