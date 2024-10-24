@@ -21,18 +21,13 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: Log in to Amazon ECR
-      run: |
-        aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY_URL }}
-
-    - name: Build Docker image
+    - name: Build and Push Docker image
       run: |
         docker compose -f production.yml build django
         docker tag failures_production_django:latest ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest
-
-    - name: Push Docker image to ECR
-      run: |
+        aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY_URL }}
         docker push ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest
+
 
   deploy_to_ec2:
     if: github.event.head_commit.message == '#deploy-to-prod'  # Check for commit message
