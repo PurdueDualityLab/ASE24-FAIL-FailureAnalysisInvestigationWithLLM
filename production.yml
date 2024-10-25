@@ -16,9 +16,8 @@ services:
     depends_on:
       - postgres
       - redis
-    env_file:
-      - ./.envs/.production/.django
-      - ./.envs/.production/.postgres
+    ports:
+      - "8000:8000"
     command: /start
 
   postgres:
@@ -29,8 +28,6 @@ services:
     volumes:
       - production_postgres_data:/var/lib/postgresql/data:Z
       - production_postgres_data_backups:/backups:z
-    env_file:
-      - ./.envs/.production/.postgres
 
   traefik:
     build:
