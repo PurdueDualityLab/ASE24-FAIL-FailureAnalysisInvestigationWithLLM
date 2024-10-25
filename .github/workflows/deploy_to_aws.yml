@@ -26,6 +26,7 @@ jobs:
         docker compose -f production.yml build django
         docker tag failures_production_django:latest ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest
         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY_URL }}
+        echo ${{ secrets.AWS_ECR_REPOSITORY_URL }}
         docker push ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest
 
 
