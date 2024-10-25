@@ -55,6 +55,8 @@ jobs:
           aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 038462785274.dkr.ecr.us-east-1.amazonaws.com
           export $(aws secretsmanager get-secret-value --secret-id prod/failure/postgres --region us-east-1 --query SecretString --output text | jq -r '. as $secret | "POSTGRES_HOST=\($secret | .host)\nPOSTGRES_PORT=5432\nPOSTGRES_DB=\($secret | .dbname)\nPOSTGRES_USER=\($secret | .username)\nPOSTGRES_PASSWORD=\($secret | .password)\nDATABASE_URL=postgres://\($secret | .username):\($secret | .password)@\($secret | .host):5432/\($secret | .dbname)"')
 
+          echo $DJANGO_ALLOWED_HOSTS $REDIS_URL $POSTGRES_HOST $POSTGRES_PORT $POSTGRES_DB $POSTGRES_USER $POSTGRES_PASSWORD $DATABASE_URL
+
           # Stop and remove the current container
           sudo docker stop django-prod || true
           sudo docker rm django-prod || true
