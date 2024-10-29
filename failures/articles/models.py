@@ -26,10 +26,9 @@ FAILURE_SYNONYMS = "hack, bug, fault, error, exception, crash, glitch, defect, i
 
 
 from failures.networks.models import (
-    Embedder,
-    QuestionAnswerer,
-    Summarizer,
-    ZeroShotClassifier,
+    #Embedder,
+    #Summarizer,
+    #ZeroShotClassifier,
     ChatGPT,
     SummarizerGPT,
     ClassifierChatGPT,
@@ -621,12 +620,13 @@ class Article(models.Model):
 
         return article_text
 
+    '''
     def summarize_body(self, summarizer: Summarizer):
         self.article_summary: str = summarizer.run(self.body)
         self.save()
         return self.article_summary
 
-    '''
+    
     def create_embedding(self, embedder: Embedder):
         embedding = embedder.run(self.body)
         bytes_io = io.BytesIO()
@@ -671,6 +671,7 @@ class Article(models.Model):
     
         #return np.dot(embedding_self, embedding_other) / (np.linalg.norm(embedding_one) * np.linalg.norm(embedding_two))
 
+    '''
     #Open source classifier
     def classify_as_failure_os(self, classifier: ZeroShotClassifier, labels: list[str]):
         classify_data = {"text": self.body, "labels": labels}
@@ -680,6 +681,7 @@ class Article(models.Model):
 
         self.save()
         return self.describes_failure_os
+    '''
 
     # GPT based classifier for reports on software failure
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):
@@ -1140,10 +1142,12 @@ class Article_Ko(models.Model):
     def __str__(self):
         return self.headline #TODO: Check places where you use this: Do you want to get headline or title?
 
+    '''
     def summarize_body(self, summarizer: Summarizer):
         self.article_summary: str = summarizer.run(self.body)
         self.save()
         return self.article_summary
+    '''
 
     def create_postmortem_embeddings_GPT(self, embedder: EmbedderGPT, postmortem_keys: list, query_all: bool): #TODO: Remove? No longer clustering by articles which is what this was used for
 
@@ -1180,15 +1184,6 @@ class Article_Ko(models.Model):
     
         #return np.dot(embedding_self, embedding_other) / (np.linalg.norm(embedding_one) * np.linalg.norm(embedding_two))
 
-    #Open source classifier
-    def classify_as_failure_os(self, classifier: ZeroShotClassifier, labels: list[str]):
-        classify_data = {"text": self.body, "labels": labels}
-        prediction: tuple[str, float] = classifier.run(classify_data)
-        self.describes_failure_os = classifier.labels.index(prediction[0]) == 0
-        self.describes_failure_confidence = prediction[1]
-
-        self.save()
-        return self.describes_failure_os
 
     # GPT based classifier for reports on software failure #TODO: classify_as_failure_ChatGPT should be a function disjoint from the model, so that we can call it on any body of text.
     def classify_as_failure_ChatGPT(self, classifier: ClassifierChatGPT, inputs: dict):

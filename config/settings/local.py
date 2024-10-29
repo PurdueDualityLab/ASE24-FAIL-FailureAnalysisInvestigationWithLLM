@@ -11,6 +11,9 @@ SECRET_KEY = env(
 )
 
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS += env.list("DJANGO_ALLOWED_HOSTS", default=[])
+
+CSRF_TRUSTED_ORIGINS = ["https://softwarefailures.com"] + ALLOWED_HOSTS
 
 # CACHES
 # ------------------------------------------------------------------------------

@@ -5,7 +5,7 @@ import textwrap
 
 from django.db.models import Q
 from failures.articles.models import Article, Incident
-from failures.networks.models import QuestionAnswerer, ChatGPT, EmbedderGPT,  ClassifierChatGPT
+from failures.networks.models import ChatGPT, EmbedderGPT,  ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 import chromadb

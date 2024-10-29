@@ -38,16 +38,16 @@ class ResultsCommand:
 
         incidents = Incident.objects.filter(published__range=(start_date, end_date))
 
-        plot_incidents_over_time(incidents, start_year, end_year)
-        plot_frequency_of_articles_to_incidents(incidents)
-        plot_all_taxonomy(incidents)
+        #plot_incidents_over_time(incidents, start_year, end_year)
+        #plot_frequency_of_articles_to_incidents(incidents)
+        #plot_all_taxonomy(incidents)
 
-        plot_taxonomy(incidents, "causes")
-        plot_taxonomy(incidents, "impacts")
+        #plot_taxonomy(incidents, "causes")
+        #plot_taxonomy(incidents, "impacts")
 
         print_stats(incidents, start_date, end_date)
 
-        plot_keywords_sources(incidents)
+        #plot_keywords_sources(incidents)
 
 
 def plot_incidents_over_time(incidents, start_year, end_year):
@@ -181,6 +181,7 @@ def print_stats(incidents, start_date, end_date):
     num_incidents = len(incidents)
     logging.info("Number of incidents between 2010 to 2022: " + str(num_incidents))
 
+    
     incidents = Incident.objects.filter(published__range=(start_date, end_date), rag=True)
     num_incidents = len(incidents)
     logging.info("Number of incidents between 2010 to 2022 with RAG: " + str(num_incidents))
@@ -191,14 +192,96 @@ def print_stats(incidents, start_date, end_date):
 
     incidents = Incident.objects.filter(published__range=(start_date, end_date))
     num_incidents = len(incidents)
-    
+
     count = 0
     for incident in incidents:
         if "one_organization" in incident.recurring_option or "multiple_organization" in incident.recurring_option:
             count += 1
     
     logging.info("Number of recurring incidents, one_organization or multiple_organization: "+ str(count) +", "+str(int(count/num_incidents*100)) + "%")
+
+    recurring_count = 0
+    for incident in incidents:
+        if "one_organization" in incident.recurring_option or "multiple_organization" in incident.recurring_option:
+            recurring_count += 1
     
+    logging.info(f"w/o unknown:  Number of recurring incidents, one_organization or multiple_organization: {recurring_count}, {recurring_count/num_incidents*100:.2f}%")
+
+    count = 0
+    for incident in incidents:
+        if "one_organization" in incident.recurring_option and "multiple_organization" in incident.recurring_option:
+            count += 1
+    
+    logging.info(f"w/o unknown: Number of recurring incidents, one_organization and multiple_organization: {count}, {count/recurring_count*100:.2f}%")
+    
+    
+    count = 0
+    for incident in incidents:
+        if "one_organization" in incident.recurring_option and "multiple_organization" not in incident.recurring_option:
+            count += 1
+    
+    logging.info(f"w/o unknown: Number of recurring incidents, only one_organization: {count}, {count/recurring_count*100:.2f}%")
+    
+    count = 0
+    for incident in incidents:
+        if "one_organization" not in incident.recurring_option  and "multiple_organization" in incident.recurring_option:
+            count += 1
+    
+    logging.info(f"w/o unknown: Number of recurring incidents, only multiple_organization: {count}, {count/recurring_count*100:.2f}%")
+
+    count = 0
+    for incident in incidents:
+        if "unknown" in incident.recurring_option and "one_organization" not in incident.recurring_option  and "multiple_organization" not in incident.recurring_option:
+            count += 1
+    
+    logging.info(f"Number of recurring incidents with only unknown: {count}, {count/num_incidents*100:.2f}%")
+
+
+    phase_count = 0
+    for incident in incidents:
+        if "operation" in incident.phase_option or "design" in incident.phase_option:
+            phase_count += 1
+    
+    logging.info(f"w/o unknown: Number of incidents: operation or design: {phase_count}, {phase_count/num_incidents*100:.2f}%")
+
+    count = 0
+    for incident in incidents:
+        if "operation" in incident.phase_option and "design" in incident.phase_option:
+            count += 1
+    
+    logging.info(f"w/o unknown: Number of incidents: operation and design: {count}, {count/phase_count*100:.2f}%")
+    
+
+    count = 0
+    for incident in incidents:
+        if "operation" in incident.phase_option and "design" not in incident.phase_option:
+            count += 1
+    
+    logging.info(f"w/o unknown: Number of incidents: only operation: {count}, {count/phase_count*100:.2f}%")
+    
+    count = 0
+    for incident in incidents:
+        if "operation" not in incident.phase_option and "design" in incident.phase_option:
+            count += 1
+    
+    logging.info(f"w/o unknown: Number of incidents: only design: {count}, {count/phase_count*100:.2f}%")
+
+
+    count = 0
+    for incident in incidents:
+        if "unknown" in incident.phase_option and "operation" not in incident.phase_option and "design" not in incident.phase_option:
+            count += 1
+    
+    logging.info(f"Number of incidents: only unknown: {count}, {count/num_incidents*100:.2f}%")
+
+    count = 0
+    for incident in incidents:
+        if "hardware" in incident.dimension_option and "software" in incident.dimension_option:
+            count += 1
+    
+    logging.info("Number of incidents: hardware and software: "+ str(count) +", "+str(int(count/num_incidents*100)) + "%")
+
+
     # Query to annotate each incident with the count of related articles
     incidents_with_article_counts = Incident.objects.annotate(article_count=Count('articles'))
 
@@ -253,6 +336,8 @@ def print_stats(incidents, start_date, end_date):
             })
 
     logging.info(f'Stats has been written to {csv_file_path}')
+
+    
 
 def plot_taxonomy(incidents, characterize):
     ### For plotting the taxonomy
@@ -334,6 +419,20 @@ def plot_taxonomy(incidents, characterize):
 
 def plot_keywords_sources(incidents):
     ### To plot pie chart of keywords and sources 
+
+    # Step 4: Group keywords that are less than 2% into the "Other" category
+    def group_small_counts(counter, threshold=0.02):
+        total_count = sum(counter.values())
+        other_count = 0
+        grouped_counter = Counter()
+        for key, count in counter.items():
+            if count / total_count < threshold:
+                other_count += count
+            else:
+                grouped_counter[key] += count
+        if other_count > 0:
+            grouped_counter["other"] = other_count
+        return grouped_counter
     
     # Step 2: Get the associated articles for the queried incidents
     articles = Article.objects.filter(incident__in=incidents)
@@ -402,20 +501,6 @@ def plot_keywords_sources(incidents):
 
     plt.savefig(f'results/SourcesKeywordsPieChart.png',dpi=300)
 
-
-    # Step 4: Group keywords that are less than 2% into the "Other" category
-    def group_small_counts(counter, threshold=0.02):
-        total_count = sum(counter.values())
-        other_count = 0
-        grouped_counter = Counter()
-        for key, count in counter.items():
-            if count / total_count < threshold:
-                other_count += count
-            else:
-                grouped_counter[key] += count
-        if other_count > 0:
-            grouped_counter["other"] = other_count
-        return grouped_counter
     
     
     '''

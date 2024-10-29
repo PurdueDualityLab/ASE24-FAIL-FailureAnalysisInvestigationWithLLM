@@ -4,7 +4,7 @@ import textwrap
 import time
 
 from failures.articles.models import Article_Ko
-from failures.networks.models import ZeroShotClassifier, ClassifierChatGPT
+from failures.networks.models import ClassifierChatGPT #, ZeroShotClassifier
 from failures.parameters.models import Parameter
 
 import chromadb

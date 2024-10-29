@@ -1,15 +1,19 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.http import JsonResponse
 from django.urls import include, path
 from django.views import defaults as default_views
+
 from failures.articles.public_admin import public_admin
 
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-    path("failures/", include("failures.articles.urls", namespace="articles")),
-    path("dashboard/", public_admin.urls)
+    path('health/', lambda request: JsonResponse({"status": "healthy"}, status=200), name='health_check'),
+    path("", include("failures.articles.urls", namespace="articles")),
+    # path("", public_admin.urls),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

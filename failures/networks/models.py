@@ -1,7 +1,7 @@
 from typing import Any, Protocol, TypeVar, Union
 
-import sentence_transformers
-import transformers
+# import sentence_transformers
+# import transformers
 
 import openai
 import tiktoken
@@ -36,7 +36,7 @@ class Network(Protocol[T, E]):
         prediction = self.predict(preprocessed_data)
         return self.postprocess(prediction)
 
-
+'''
 class ZeroShotClassifier(Network[str, tuple[str, float]]):
     def __init__(self, model_name: str = "facebook/bart-large-mnli"):
         self.classifier = transformers.pipeline(
@@ -59,7 +59,6 @@ class ZeroShotClassifier(Network[str, tuple[str, float]]):
         scores: list[float] = prediction["scores"]
         max_score: float = max(scores)
         return prediction["labels"][scores.index(max_score)], max_score
-
 
 
 # TODO: expose parameters for summary length
@@ -112,7 +111,7 @@ class Embedder(Network[str, list[float]]):
 
     def postprocess(self, prediction: list[list[float]]) -> list[float]:
         return prediction[0]
-
+'''
 
 class EmbedderGPT(Network[str, list[float]]):
     def __init__(self):
