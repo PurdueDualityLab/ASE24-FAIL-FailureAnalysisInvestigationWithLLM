@@ -47,7 +47,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i ec2-key.pem ec2-user@ec2-35-173-190-74.compute-1.amazonaws.com << 'EOF'
 
           # Setup environment variables
-          export DJANGO_ALLOWED_HOSTS=softwarefailures.com,35.173.190.74
+          export DJANGO_ALLOWED_HOSTS="softwarefailures.com,$(ifconfig enX0 | grep 'inet ' | awk '{print $2}'),$(curl -s http://checkip.amazonaws.com)"
           export REDIS_URL=redis://redis:6379/0
           export $(aws secretsmanager get-secret-value --secret-id prod/failure/postgres --region us-east-1 --query SecretString --output text | jq -r '. as $secret | "POSTGRES_HOST=\($secret | .host)\nPOSTGRES_PORT=5432\nPOSTGRES_DB=\($secret | .dbname)\nPOSTGRES_USER=\($secret | .username)\nPOSTGRES_PASSWORD=\($secret | .password)\nDATABASE_URL=postgres://\($secret | .username):\($secret | .password)@\($secret | .host):5432/\($secret | .dbname)"')
 
