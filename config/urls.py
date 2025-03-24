@@ -10,9 +10,9 @@ from failures.articles.public_admin import public_admin
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-    path("failures/", include("failures.articles.urls", namespace="articles")),
     path('health/', lambda request: JsonResponse({"status": "healthy"}, status=200), name='health_check'),
-    path("", public_admin.urls),
+    path("", include("failures.articles.urls", namespace="articles")),
+    # path("", public_admin.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

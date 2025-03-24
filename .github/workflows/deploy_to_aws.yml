@@ -46,8 +46,12 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no -i ec2-key.pem ec2-user@ec2-35-173-190-74.compute-1.amazonaws.com << 'EOF'
 
+          # Stop and remove everything
+          docker stop $(docker ps -aq)
+          docker rm $(docker ps -aq)
+
           # Setup environment variables
-          export DJANGO_ALLOWED_HOSTS=softwarefailures.com,35.173.190.74
+          export DJANGO_ALLOWED_HOSTS="softwarefailures.com,$(ifconfig enX0 | grep 'inet ' | awk '{print $2}'),$(curl -s http://checkip.amazonaws.com)"
           export REDIS_URL=redis://redis:6379/0
           export $(aws secretsmanager get-secret-value --secret-id prod/failure/postgres --region us-east-1 --query SecretString --output text | jq -r '. as $secret | "POSTGRES_HOST=\($secret | .host)\nPOSTGRES_PORT=5432\nPOSTGRES_DB=\($secret | .dbname)\nPOSTGRES_USER=\($secret | .username)\nPOSTGRES_PASSWORD=\($secret | .password)\nDATABASE_URL=postgres://\($secret | .username):\($secret | .password)@\($secret | .host):5432/\($secret | .dbname)"')
 
@@ -55,16 +59,12 @@ jobs:
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY_URL }}
           docker pull ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest
 
-          # Stop and remove everything
-          docker stop $(docker ps -aq)
-          docker rm $(docker ps -aq)
-
           # Start the container with the new image
           docker run -d --name redis -p 6379:6379 redis:alpine
           docker run -d --name django-prod -p 80:80 -e POSTGRES_HOST -e POSTGRES_PORT -e POSTGRES_DB -e POSTGRES_USER -e POSTGRES_PASSWORD -e DATABASE_URL -e REDIS_URL -e DJANGO_ALLOWED_HOSTS ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest /start
 
           # Clean up
-          docker rmi $(docker images -q)
+          docker image prune -f --all
           docker volume prune -f
           docker network prune -f
 
