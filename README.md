@@ -9,7 +9,7 @@ A database of software failures from 2010 to 2022 curated by FAIL is available a
 
 
 ## About
-This repository contains all of the artifacts of the project.
+This repository contains all of the project's artifacts.
 
 Our artifact includes the following (ordered by sections):
 |   Item   |   Description  |   Corresponding content in the paper  |
