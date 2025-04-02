@@ -44,7 +44,7 @@ jobs:
 
     - name: SSH into EC2 and restart Docker
       run: |
-        ssh -o StrictHostKeyChecking=no -i ec2-key.pem ec2-user@ec2-35-173-190-74.compute-1.amazonaws.com << 'EOF'
+        ssh -o StrictHostKeyChecking=no -i ec2-key.pem ec2-user@ec2-${{ secrets.AWS_EC2_PUBLIC_IP_WITH_DASHES }}.compute-1.amazonaws.com << 'EOF'
 
           # Stop and remove everything
           docker stop $(docker ps -aq)
