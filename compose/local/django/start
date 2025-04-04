@@ -5,5 +5,11 @@ set -o pipefail
 set -o nounset
 
 
+echo "Waiting for database to be ready..."
+sleep 5  # Optional: gives time for DB to finish booting
+
+echo "Applying migrations..."
 python manage.py migrate
+
+echo "Starting server..."
 python manage.py runserver 0.0.0.0:8000

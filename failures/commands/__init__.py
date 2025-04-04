@@ -16,6 +16,8 @@ from failures.commands.cleanup import CleanUpCommand
 from failures.commands.outdated.stats import StatsCommand
 from failures.commands.results import ResultsCommand
 
+from failures.commands.fmeatest import fmeatestCommand
+
 '''
 from failures.commands.outdated.summarize import SummarizeCommand
 from failures.commands.outdated.embed import EmbedCommand
@@ -46,7 +48,7 @@ class Command(Protocol):
         ...
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), MergeCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), FixesCommand(), CleanUpCommand(), StatsCommand(), ResultsCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), MergeCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), FixesCommand(), CleanUpCommand(), StatsCommand(), ResultsCommand(), fmeatestCommand()]
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
@@ -98,7 +100,7 @@ def main():
     args = parser.parse_args()
 
     logging.basicConfig(
-        filename="PaperResults.log",
+        filename="ChatBotTesting.log",
         filemode='a',
         level=determine_logging_level(args.verbose),
         format="%(asctime)s %(levelname)s: %(message)s",

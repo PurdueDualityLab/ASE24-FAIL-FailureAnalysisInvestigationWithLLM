@@ -13,7 +13,15 @@ SECRET_KEY = env(
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
 ALLOWED_HOSTS += env.list("DJANGO_ALLOWED_HOSTS", default=[])
 
-CSRF_TRUSTED_ORIGINS = ["https://softwarefailures.com"] + ALLOWED_HOSTS
+#CSRF_TRUSTED_ORIGINS = ["https://softwarefailures.com"] + ALLOWED_HOSTS
+CSRF_TRUSTED_ORIGINS = ["https://softwarefailures.com"] + [
+    f"http://{host}" for host in ALLOWED_HOSTS
+]
+
+SECURE_SSL_REDIRECT = False
+SECURE_PROXY_SSL_HEADER = None
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 # CACHES
 # ------------------------------------------------------------------------------
