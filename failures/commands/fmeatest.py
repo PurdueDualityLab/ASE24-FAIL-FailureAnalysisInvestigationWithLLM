@@ -49,14 +49,6 @@ class fmeatestCommand:
         #model_parameters = {"model": "gpt-3.5-turbo", "temperature": 0, "context_window": 16385}
         model_parameters = {"model": "gpt-4o-mini", "temperature": 0, "context_window": 128000} 
 
-
-        # Filter for incidents tagged as healthcare, 
-        # 1st experiment: just use the incident summaries
-        # 2nd experiment: get their causes, impacts and mitigations.
-        # Then prompt for potential failure modes, impacts, and mitigations
-
-        #incidents = Incident.objects.all()
-
         system_dict = dict(Incident.objects.values_list('id', 'system'))
 
         ### System instructions for LLM to conduct failure analysis
@@ -67,7 +59,14 @@ class fmeatestCommand:
                 ]
         
         prompt_SystemDescriptionUser_instructions = "Here is a description of a system a user is trying to design:"
-        prompt_SystemDescriptionUser = '''
+
+
+        # Prompt user for system description
+        print("\n👋 Welcome! I am a Failure Aware ChatBot. Please describe the system you're designing.")
+        user_input = input("🛠️  System Description:\n> ")
+
+        '''
+        prompt_SystemDescriptionUser = """
         Description: I am designing a Smart Diabetic Monitor. It is an IoT-based wearable system designed to continuously track and manage blood glucose levels for diabetic patients. The device integrates a Continuous Glucose Monitor (CGM) sensor, a mobile application, and an alert system to provide real-time insights and actionable alerts.
 
         Key Components:
@@ -85,11 +84,14 @@ class fmeatestCommand:
         Cloud Platform: Stores historical data, supports machine learning analysis, and allows caregiver/physician access.
 
         Battery Module: Rechargeable power supply ensuring continuous monitoring.
+        """
         '''
+
+        prompt_SystemDescriptionUser = f"Description: {user_input}"
 
         prompt_SystemDict_instructions = "Below is a dictionary of descriptions of systems and their components. It is in the format: {id:\"systems and components\"}."
 
-        prompt_SystemSelection_instructions = "Return a JSON of the systems from the dictionary that are most similar to the user provided description of a system.\nThe returned JSON should be in the format: {\"id\":\"systems and components\"}"
+        prompt_SystemSelection_instructions = "From the dictionary find systems that are similar in terms of functionality to the user provided system. Return the similar systems in JSON format: {\"id\":\"systems and components\"}"
         
         prompt_SystemSelection = prompt_SystemDescriptionUser_instructions + "\n\n---\n\n" + prompt_SystemDescriptionUser + "\n\n---\n\n" + prompt_SystemDict_instructions + "\n\n---\n\n" + str(system_dict) + "\n\n---\n\n" + prompt_SystemSelection_instructions
 
@@ -114,6 +116,11 @@ class fmeatestCommand:
             logging.info("Incorrect JSON output")
 
         similar_systems = {int(k): v for k, v in similar_systems.items()}
+
+        print("\n✅ Similar systems found:")
+        for k, v in similar_systems.items():
+            print(f"- Incident #{k}:\n---\n{v}\n---")
+            print("\n")
 
         field_mapping = {
             "id": "ID",
@@ -144,7 +151,7 @@ class fmeatestCommand:
 
         prompt_FMEA_instructions =   "Create a software FMEA for the user provided system.\n" \
                         "Include the following columns: Item/Function, Potential Failure Mode, Potential Causes, Potential Effects of Failure, Severity (S), Occurrence (O), Detection (D), RPN, RPN Rationale, Recommended Mitigations.\n" \
-                        "Ground the FMEA with the knowledge of past incidents with similar systems. Cite incident ID(s) for the failure mode, causes, effects, and mitigations. Provide a rationale for S, O, D, and RPN in RPN Rationale from the past incidents.\n" \
+                        "Ground the FMEA with the knowledge of past incidents with similar systems. Cite incident ID(s) for the failure mode, causes, effects, and mitigations. Within the Rationale column, provide a rationale for S, O, D, and RPN.\n" \
                         "If you know additional incidents with similar systems, include failure modes from them as well, and cite the incidents."
         
         prompt_FMEA = prompt_SimilarIncidents + "\n\n---\n\n" + similar_incidents_str + "\n\n---\n\n" + prompt_SystemDescriptionUser_instructions + "\n\n---\n\n" + prompt_SystemDescriptionUser + "\n\n---\n\n" + prompt_FMEA_instructions
@@ -167,18 +174,6 @@ class fmeatestCommand:
 
         logging.info(model_parameters_temp)
 
+        print("\n📋 Generated FMEA:\n")
+        print(reply)
         logging.info(reply)
-
-
-        
-
-
-         
-            
-
-
-
-
-
-
-

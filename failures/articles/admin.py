@@ -199,7 +199,7 @@ class IncidentAdmin(ImportExportModelAdmin):
         "article_ids",
         "get_articles",
     )
-    search_fields = ["summary"]
+    search_fields = ["id"]
 
     
     def article_ids(self, obj):
