@@ -64,7 +64,10 @@ class IncidentChatbotCommand:
             logging.info(f"📋 Retrieving articles for query using {similarity_threshold} threshold: {query}")
             # Perform similarity search with relevance scores
             results_with_scores = self.vector_db.similarity_search_with_relevance_scores(query,50)
-            print(results_with_scores)
+
+            for doc, score in results_with_scores:
+                    logging.info(f"incidentID: {doc.metadata['incidentID']}, score: {score:.6f}")
+            
             # Filter results based on the similarity threshold
             filtered_results = [
                 doc for doc, score in results_with_scores if score >= similarity_threshold
@@ -153,7 +156,7 @@ class IncidentChatbotCommand:
             incidents_qs = Incident.objects.filter(id__in=incident_ids).values(*field_mapping.keys())
             incidents = [{field_mapping[k]: v for k, v in incident.items()} for incident in incidents_qs]
             incidents_json = json.dumps(incidents, indent=2)
-            print(f"incident_ids = {incident_ids}")        
+            print(f"incident_ids = {incidents_json}")        
             # Step 3: Prompt structure to match fmeatest.py
             prompt_SimilarIncidents = "Here is a list of past incidents that happened with systems similar to a user provided system:"
             prompt_FMEA_instructions = (
@@ -181,7 +184,6 @@ class IncidentChatbotCommand:
             logging.info("Generating FMEA grounded in article-linked incidents...")
             response = self.conversation_chain.predict(input=prompt)
             logging.info(f"FMEA Response:\n{response}")
-            print(prompt)
 
 
             return response
@@ -202,22 +204,15 @@ class IncidentChatbotCommand:
             #     print("Chatbot stopped.")
             #     break
             user_query = """I am designing a Smart Diabetic Monitor. It is an IoT-based wearable system designed to continuously track and manage blood glucose levels for diabetic patients. The device integrates a Continuous Glucose Monitor (CGM) sensor, a mobile application, and an alert system to provide real-time insights and actionable alerts.
-                
                         Key Components:
-
                         CGM Sensor: Implanted or wearable biosensor that continuously measures interstitial glucose levels.
-
                         Microcontroller (MCU): Interfaces with the sensor, processes readings, and transmits data securely.
-
                         Bluetooth/Wi-Fi Module: Enables real-time communication with the user’s smartphone or cloud.
-
                         Mobile App: Displays glucose trends, logs insulin intake and meals, and provides personalized recommendations.
-
                         Alert System: Sends critical alerts (sound, vibration, push notifications) when glucose levels are too high or too low.
-
                         Cloud Platform: Stores historical data, supports machine learning analysis, and allows caregiver/physician access.
-
                         Battery Module: Rechargeable power supply ensuring continuous monitoring."""
+            
             articles = self.retrieve_articles(user_query)
             fmea_output = self.generate_fmea_from_articles(articles, user_query)
             print(f"\n📋 Generated FMEA:\n\n{fmea_output}")
