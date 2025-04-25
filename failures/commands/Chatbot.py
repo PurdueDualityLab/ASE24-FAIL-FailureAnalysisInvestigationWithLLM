@@ -59,7 +59,11 @@ class IncidentChatbotCommand:
     #         logging.error(f"Error retrieving articles: {e}")
     #         return {}
 
-    def retrieve_articles(self, query, similarity_threshold=0.7):
+    # TODO: change from retrieve articles to incidents,  - This is to better simulate the stages of the pipeline
+    # just return the incident ids. 
+    # update dependencies and include new function that does similarity score
+
+    def RAG_relevant_incidents(self, query, similarity_threshold=0.7):
         try:
             logging.info(f"📋 Retrieving articles for query using {similarity_threshold} threshold: {query}")
             # Perform similarity search with relevance scores
@@ -80,54 +84,9 @@ class IncidentChatbotCommand:
                     logging.info(f"Article content snippet: {doc.page_content[:50]}...")
             else:
                 logging.info("No relevant articles found above the similarity threshold.")
-            return {doc.metadata["articleID"]: doc.page_content for doc in filtered_results}
-
-        except Exception as e:
-            logging.error(f"Error retrieving articles: {e}")
-            return {}
-
-    def build_prompt(self, articles):
-        """
-        Builds the prompt for ChatGPT using the retrieved articles and a taxonomy prompt.
-        """
-        prompt = "Analyze the following articles for a software failure:\n"
-        for article_id, content in articles.items():
-            prompt += f"\n<ARTICLE {article_id}>\n{content}\n</ARTICLE>\n"
-        prompt += "\nWhat are the taxonomy details for this incident?"
-        return prompt
-
-    def process_query(self, user_query):
-        """
-        Processes a user query to analyze articles from the vector DB and provide an answer.
-        """
-        try:
-            # Fetch relevant articles using similarity search
-            articles = self.retrieve_articles(user_query)
-
-            if not articles:
-                return "No relevant articles found."
-
-            # Build the prompt for the LLM
-            prompt = self.build_prompt(articles)
-
-            # Use the conversation chain to predict the response, automatically handling memory
-            response = self.conversation_chain.predict(input=prompt)
-
-            # Log the response from the bot
-            logging.info(f"Bot response: {response}")
-
-            return response
-
-        except Exception as e:
-            logging.error(f"An error occurred: {e}")
-            return "An error occurred while processing the query."
+            articles = {doc.metadata["articleID"]: doc.page_content for doc in filtered_results}
         
-    def generate_fmea_from_articles(self, articles: dict, user_description: str):
-        """
-        Generates a Software FMEA table using incidents linked to the retrieved articles.
-        """
-        try:
-            # Step 1: Get incidents from article metadata
+            # Get incidents from article metadata
             incident_ids = set()
             for article_id in articles:
                 try:
@@ -141,9 +100,10 @@ class IncidentChatbotCommand:
             if not incident_ids:
                 logging.log("No incidents found linked to the retrieved articles.")
 
-            # Step 2: Retrieve detailed incident information
+            # Retrieve detailed incident information
             field_mapping = {
                 "id": "ID",
+                "title": "Title",
                 "summary": "Summary",
                 "system": "System",
                 "SEcauses": "Software Causes",
@@ -155,8 +115,26 @@ class IncidentChatbotCommand:
 
             incidents_qs = Incident.objects.filter(id__in=incident_ids).values(*field_mapping.keys())
             incidents = [{field_mapping[k]: v for k, v in incident.items()} for incident in incidents_qs]
+            
+            print("Using RAG, found these incidents as relevant:\n")
+            for inc in incidents:
+                print(f"- ID: {inc['ID']}, Title: {inc['Title']}")  
+
+            return incidents
+
+        except Exception as e:
+            logging.error(f"Error retrieving relevant incidents with RAG: {e}")
+            return {}
+
+        
+    def generate_fmea_from_articles(self, incidents: list, user_description: str):
+        """
+        Generates a Software FMEA table using incidents linked to the retrieved articles.
+        """
+        try:
+
             incidents_json = json.dumps(incidents, indent=2)
-            print(f"incident_ids = {incidents_json}")        
+
             # Step 3: Prompt structure to match fmeatest.py
             prompt_SimilarIncidents = "Here is a list of past incidents that happened with systems similar to a user provided system:"
             prompt_FMEA_instructions = (
@@ -193,11 +171,54 @@ class IncidentChatbotCommand:
             return " An error occurred while generating the FMEA."
 
 
+    def filter_relevant_incidents_with_llm(self, incidents: list, user_description: str) -> list:
+        """
+        Uses the LLM to filter out only the incidents relevant to the user's system.
+        """
+        try:
+
+            incident_summaries = summary_only = [
+                                    {"ID": inc.get("ID", "No ID"), "Summary": inc.get("Summary", "No summary")}
+                                    for inc in incidents
+                                ]
+            prompt = (
+                "Given a set of past software incidents, you will determine which are relevant to a new system being designed.\n"
+                "Here is a description of the new system:\n"
+                f"{user_description}\n\n"
+                "Below is a list of past incident summaries:\n"
+                f"{json.dumps(incident_summaries, indent=2)}\n\n"
+                "Return a list of the incident IDs that are most relevant to the new system, based on similarity in technologies, causes, or context.\n"
+                "Only return a JSON array of the relevant incident IDs, like this:\n[\"incidentID1\", \"incidentID2\"]"
+            )
+            response = self.conversation_chain.predict(input=prompt)
+
+            logging.info(f"🔍 Incident filtering response: {response}")
+
+            # Extract the list of incident IDs
+            filtered_incident_ids = json.loads(response.strip())
+            # Ensure it's a list before filtering
+            if isinstance(filtered_incident_ids, list):
+                incidents = [inc for inc in incidents if inc["ID"] in filtered_incident_ids]
+            else:
+                incidents = []
+            
+            print("Using LLM, filtered these incidents as most relevant:\n")
+            for inc in incidents:
+                print(f"- ID: {inc['ID']}, Title: {inc['Title']}")  
+
+            return incidents
+
+        except Exception as e:
+            logging.error(f"Error during incident filtering with LLM: {e}")
+            return []
+
+
     def start_chat(self):
         """
         Starts the chatbot for interactive user queries.
         """
         print("Chatbot started! Type 'exit' to quit.")
+        print("\n👋 Welcome! I am a Failure Aware ChatBot. To get started, please describe the system you're designing:\n")
         while True:
             #user_query = input("You: ")
             # if user_query.lower() in ["exit", "quit"]:
@@ -213,10 +234,8 @@ class IncidentChatbotCommand:
                         Cloud Platform: Stores historical data, supports machine learning analysis, and allows caregiver/physician access.
                         Battery Module: Rechargeable power supply ensuring continuous monitoring."""
             
-            articles = self.retrieve_articles(user_query)
-            fmea_output = self.generate_fmea_from_articles(articles, user_query)
+            relevant_incidents = self.RAG_relevant_incidents(user_query)
+            filtered_incidents = self.filter_relevant_incidents_with_llm(relevant_incidents, user_query)
+            fmea_output = self.generate_fmea_from_articles(filtered_incidents, user_query)
             print(f"\n📋 Generated FMEA:\n\n{fmea_output}")
             return
-
-
-
