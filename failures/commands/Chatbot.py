@@ -1,14 +1,22 @@
+from failures.articles.models import Incident
+from failures.articles.models import Article
+
 import logging
+import argparse
+import json
+from pydantic import BaseModel
+from typing import List
+
 import chromadb
 from langchain.vectorstores import Chroma
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
-import argparse
-import json
-from failures.articles.models import Incident
-from failures.articles.models import Article
+
+#For structured output of incident list
+class IncidentIDList(BaseModel):
+    incident_ids: List[str]
 
 class IncidentChatbotCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -26,38 +34,17 @@ class IncidentChatbotCommand:
         self.vector_db = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
 
         # Initialize the LLM and memory
-        self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.5)
+        self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
         # Use ConversationBufferMemory to maintain the conversation history
         self.memory = ConversationBufferMemory()
 
-        # Set up the conversation chain
+        # Set up the conversation chain starting from the FMEA
         self.conversation_chain = ConversationChain(memory=self.memory, llm=self.llm)
 
         # Start the chat
         self.start_chat()
 
-    # def retrieve_articles(self, query, num_chunks=25):
-    #     """
-    #     Retrieves relevant articles from the vector database for a general query.
-    #     """
-    #     try:
-    #         logging.info(f"Retrieving articles for query: {query}")
-    #         docs = self.vector_db.similarity_search(query=query, k=num_chunks)
-    #         if docs:
-    #             # Log details about retrieved articles
-    #             logging.info(f"Found {len(docs)} relevant articles.")
-    #             for doc in docs:
-    #                 logging.info(f"Retrieved Article ID: {doc.metadata.get('articleID', 'No ID')}")
-    #                 logging.info(f"Article content snippet: {doc.page_content[:50]}...")  # Display first 200 characters of the article content
-    #         else:
-    #             logging.info("No relevant articles found.")
-                
-    #         return {doc.metadata["articleID"]: doc.page_content for doc in docs}
-
-    #     except Exception as e:
-    #         logging.error(f"Error retrieving articles: {e}")
-    #         return {}
 
     # TODO: change from retrieve articles to incidents,  - This is to better simulate the stages of the pipeline
     # just return the incident ids. 
@@ -190,12 +177,16 @@ class IncidentChatbotCommand:
                 "Return a list of the incident IDs that are most relevant to the new system, based on similarity in technologies, causes, or context.\n"
                 "Only return a JSON array of the relevant incident IDs, like this:\n[\"incidentID1\", \"incidentID2\"]"
             )
-            response = self.conversation_chain.predict(input=prompt)
 
-            logging.info(f"🔍 Incident filtering response: {response}")
+            # To get incident ids as json list
+            structured_llm = self.llm.with_structured_output(IncidentIDList, method="json_mode")
+
+            incident_ids_obj = structured_llm.invoke(prompt)
+
+            logging.info(f"🔍 Incident filtering response: {incident_ids_obj}")
 
             # Extract the list of incident IDs
-            filtered_incident_ids = json.loads(response.strip())
+            filtered_incident_ids = incident_ids_obj.incident_ids
             # Ensure it's a list before filtering
             if isinstance(filtered_incident_ids, list):
                 incidents = [inc for inc in incidents if inc["ID"] in filtered_incident_ids]
