@@ -4,9 +4,9 @@ import json
 import logging
 import django
 import chainlit as cl
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chat_models import ChatOpenAI
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 

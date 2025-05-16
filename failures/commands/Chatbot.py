@@ -8,15 +8,15 @@ from pydantic import BaseModel
 from typing import List
 
 import chromadb
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chat_models import ChatOpenAI
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 
 #For structured output of incident list
 class IncidentIDList(BaseModel):
-    incident_ids: List[str]
+    incident_ids: List[int]
 
 class IncidentChatbotCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -58,7 +58,7 @@ class IncidentChatbotCommand:
 
             for doc, score in results_with_scores:
                     logging.info(f"incidentID: {doc.metadata['incidentID']}, score: {score:.6f}")
-            
+
             # Filter results based on the similarity threshold
             filtered_results = [
                 doc for doc, score in results_with_scores if score >= similarity_threshold
@@ -72,7 +72,7 @@ class IncidentChatbotCommand:
             else:
                 logging.info("No relevant articles found above the similarity threshold.")
             articles = {doc.metadata["articleID"]: doc.page_content for doc in filtered_results}
-        
+
             # Get incidents from article metadata
             incident_ids = set()
             for article_id in articles:
@@ -81,11 +81,11 @@ class IncidentChatbotCommand:
                     if article.incident:
                         incident_ids.add(article.incident.id)
                 except Article.DoesNotExist:
-                    logging.log(f"Article with ID {article_id} not found.")
+                    logging.info(f"Article with ID {article_id} not found.")
             print(f"Incident ID's for FMEA table {incident_ids}")
             logging.info(f"Incidents ID found: {incident_ids}")
             if not incident_ids:
-                logging.log("No incidents found linked to the retrieved articles.")
+                logging.info("No incidents found linked to the retrieved articles.")
 
             # Retrieve detailed incident information
             field_mapping = {
@@ -102,7 +102,7 @@ class IncidentChatbotCommand:
 
             incidents_qs = Incident.objects.filter(id__in=incident_ids).values(*field_mapping.keys())
             incidents = [{field_mapping[k]: v for k, v in incident.items()} for incident in incidents_qs]
-            
+
             print("Using RAG, found these incidents as relevant:\n")
             for inc in incidents:
                 print(f"- ID: {inc['ID']}, Title: {inc['Title']}")  
@@ -113,7 +113,7 @@ class IncidentChatbotCommand:
             logging.error(f"Error retrieving relevant incidents with RAG: {e}")
             return {}
 
-        
+
     def generate_fmea_from_articles(self, incidents: list, user_description: str):
         """
         Generates a Software FMEA table using incidents linked to the retrieved articles.
@@ -164,7 +164,7 @@ class IncidentChatbotCommand:
         """
         try:
 
-            incident_summaries = summary_only = [
+            incident_summaries = [
                                     {"ID": inc.get("ID", "No ID"), "Summary": inc.get("Summary", "No summary")}
                                     for inc in incidents
                                 ]
@@ -175,7 +175,8 @@ class IncidentChatbotCommand:
                 "Below is a list of past incident summaries:\n"
                 f"{json.dumps(incident_summaries, indent=2)}\n\n"
                 "Return a list of the incident IDs that are most relevant to the new system, based on similarity in technologies, causes, or context.\n"
-                "Only return a JSON array of the relevant incident IDs, like this:\n[\"incidentID1\", \"incidentID2\"]"
+                "Only return a JSON array of the relevant incident IDs, in this format:\n"
+                "{\"incident_ids\": [...]}"
             )
 
             # To get incident ids as json list
@@ -187,19 +188,23 @@ class IncidentChatbotCommand:
 
             # Extract the list of incident IDs
             filtered_incident_ids = incident_ids_obj.incident_ids
+
             # Ensure it's a list before filtering
             if isinstance(filtered_incident_ids, list):
                 incidents = [inc for inc in incidents if inc["ID"] in filtered_incident_ids]
             else:
                 incidents = []
-            
+
             print("Using LLM, filtered these incidents as most relevant:\n")
+            logging.info("Using LLM, filtered these incidents as most relevant:\n")
             for inc in incidents:
+                logging.info(f"- ID: {inc['ID']}, Title: {inc['Title']}")  
                 print(f"- ID: {inc['ID']}, Title: {inc['Title']}")  
 
             return incidents
 
         except Exception as e:
+            print(f"Error during incident filtering with LLM: {e}")
             logging.error(f"Error during incident filtering with LLM: {e}")
             return []
 
@@ -224,7 +229,7 @@ class IncidentChatbotCommand:
                         Alert System: Sends critical alerts (sound, vibration, push notifications) when glucose levels are too high or too low.
                         Cloud Platform: Stores historical data, supports machine learning analysis, and allows caregiver/physician access.
                         Battery Module: Rechargeable power supply ensuring continuous monitoring."""
-            
+
             relevant_incidents = self.RAG_relevant_incidents(user_query)
             filtered_incidents = self.filter_relevant_incidents_with_llm(relevant_incidents, user_query)
             fmea_output = self.generate_fmea_from_articles(filtered_incidents, user_query)

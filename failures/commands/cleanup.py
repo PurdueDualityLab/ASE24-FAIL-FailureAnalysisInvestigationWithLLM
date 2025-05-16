@@ -6,8 +6,8 @@ from django.db.models import Count
 from failures.articles.models import Article, Incident
 
 import chromadb
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
 
 class CleanUpCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -42,12 +42,12 @@ class CleanUpCommand:
         chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
         embedding_function = OpenAIEmbeddings()
         vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
-        
+
         # Get list of articles that are not analyzable and have an incident tied to them
         articles = Article.objects.filter(describes_failure=False, incident__isnull=False)
 
         if articles:
-            
+
             logging.info("Resetting incidents/incident relationships for non-failure articles")
 
             for article in articles:
@@ -67,7 +67,7 @@ class CleanUpCommand:
         articles = Article.objects.filter(describes_failure=True, analyzable_failure=False, incident__isnull=False)
 
         if articles:
-            
+
             logging.info("Resetting incidents/incident relationships failure but not analyzable articles")
 
             for article in articles:
@@ -106,5 +106,4 @@ class CleanUpCommand:
                 incident.delete()
 
         logging.info("Database is clean!")
-    
-        
+

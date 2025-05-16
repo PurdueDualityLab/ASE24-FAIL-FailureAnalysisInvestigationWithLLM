@@ -18,8 +18,6 @@ import re
 import json
 import sys
 
-from openai.embeddings_utils import cosine_similarity as openai_cosine_similarity
-
 #from failures.commands.PROMPTS import FAILURE_SYNONYMS
 FAILURE_SYNONYMS = "hack, bug, fault, error, exception, crash, glitch, defect, incident, flaw, mistake, anomaly, or side effect"
 
@@ -663,7 +661,7 @@ class Article(models.Model):
         embedding_self = json.loads(getattr(self, option_key))
         embedding_other = json.loads(getattr(other, option_key))
 
-        similarity_score = openai_cosine_similarity(embedding_self, embedding_other)
+        similarity_score = np.dot(embedding_self, embedding_other) / (np.linalg.norm(embedding_self) * np.linalg.norm(embedding_other))
 
         if "summary" in option_key:
             self.similarity_score = similarity_score

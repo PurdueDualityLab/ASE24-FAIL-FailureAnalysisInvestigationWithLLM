@@ -17,15 +17,17 @@ import tiktoken
 
 import chromadb
 from chromadb.config import Settings
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.llms import OpenAI
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
+from langchain_openai import OpenAI
 from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.prompts import PromptTemplate
-from langchain.output_parsers import PydanticOutputParser, OutputFixingParser, DatetimeOutputParser
-from langchain.pydantic_v1 import BaseModel, Field, validator
+from langchain_openai import ChatOpenAI
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.prompts import PromptTemplate
+from langchain.output_parsers import  OutputFixingParser, DatetimeOutputParser
+
+from langchain_core.output_parsers import PydanticOutputParser
+from pydantic import BaseModel, Field, validator
 from langchain.output_parsers import DatetimeOutputParser
 from langchain.output_parsers import OutputFixingParser
 
@@ -37,7 +39,7 @@ class fmeatestCommand:
             Runs the Failure Aware Chatbot
             """
         )
-        
+
 
     def run(self, args: argparse.Namespace, parser: argparse.ArgumentParser):
 
@@ -57,7 +59,7 @@ class fmeatestCommand:
                 {"role": "system", 
                 "content": content}
                 ]
-        
+
         prompt_SystemDescriptionUser_instructions = "Here is a description of a system a user is trying to design:"
 
 
@@ -92,14 +94,14 @@ class fmeatestCommand:
         prompt_SystemDict_instructions = "Below is a dictionary of descriptions of systems and their components. It is in the format: {id:\"systems and components\"}."
 
         prompt_SystemSelection_instructions = "From the dictionary find systems that are similar in terms of functionality to the user provided system. Return the similar systems in JSON format: {\"id\":\"systems and components\"}"
-        
+
         prompt_SystemSelection = prompt_SystemDescriptionUser_instructions + "\n\n---\n\n" + prompt_SystemDescriptionUser + "\n\n---\n\n" + prompt_SystemDict_instructions + "\n\n---\n\n" + str(system_dict) + "\n\n---\n\n" + prompt_SystemSelection_instructions
 
         messages = system_message.copy()
         messages.append(
                 {"role": "user", "content": prompt_SystemSelection},
                 )
-        
+
         model_parameters_temp = model_parameters.copy()
         model_parameters_temp["messages"] = messages.copy()
         model_parameters_temp["response_format"] = {"type": "json_object"}
@@ -153,7 +155,7 @@ class fmeatestCommand:
                         "Include the following columns: Item/Function, Potential Failure Mode, Potential Causes, Potential Effects of Failure, Severity (S), Occurrence (O), Detection (D), RPN, RPN Rationale, Recommended Mitigations.\n" \
                         "Ground the FMEA with the knowledge of past incidents with similar systems. Cite incident ID(s) for the failure mode, causes, effects, and mitigations. Within the Rationale column, provide a rationale for S, O, D, and RPN.\n" \
                         "If you know additional incidents with similar systems, include failure modes from them as well, and cite the incidents."
-        
+
         prompt_FMEA = prompt_SimilarIncidents + "\n\n---\n\n" + similar_incidents_str + "\n\n---\n\n" + prompt_SystemDescriptionUser_instructions + "\n\n---\n\n" + prompt_SystemDescriptionUser + "\n\n---\n\n" + prompt_FMEA_instructions
 
         content = "Given a list of past incidents and a user provided system description, you will create a Software FMEA for the user provided system grounded by past failures."
@@ -166,7 +168,7 @@ class fmeatestCommand:
         messages.append(
                 {"role": "user", "content": prompt_FMEA},
                 )
-        
+
         model_parameters_temp = model_parameters.copy()
         model_parameters_temp["messages"] = messages.copy()
 

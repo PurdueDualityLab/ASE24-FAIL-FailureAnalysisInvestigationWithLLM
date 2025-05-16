@@ -47,7 +47,8 @@ services:
 
 
   chroma:
-    image: ghcr.io/chroma-core/chroma:latest
+    image: ghcr.io/chroma-core/chroma:1.0.9 #latest
+    container_name: failures_local_chromadb
     volumes:
       - failures_local_chroma_data:/var/lib/chroma/data:Z
     ports:
@@ -60,7 +61,8 @@ services:
       - IS_PERSISTENT=TRUE
       - PERSIST_DIRECTORY=/var/lib/chroma/data
       - ALLOW_RESET=TRUE
-    command: uvicorn chromadb.app:app --reload --workers 1 --host 0.0.0.0 --port 8001
+    #command: uvicorn chromadb.app:app --reload --workers 1 --host 0.0.0.0 --port 8001
+    command: run --host 0.0.0.0 --port 8001 --path /var/lib/chroma/data
     extra_hosts:
       - "host.docker.internal:host-gateway"
 

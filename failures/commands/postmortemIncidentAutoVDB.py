@@ -17,15 +17,17 @@ import tiktoken
 
 import chromadb
 from chromadb.config import Settings
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.llms import OpenAI
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
+from langchain_openai import OpenAI
 from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.prompts import PromptTemplate
-from langchain.output_parsers import PydanticOutputParser, OutputFixingParser, DatetimeOutputParser
-from langchain.pydantic_v1 import BaseModel, Field, validator
+from langchain_openai import ChatOpenAI
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.prompts import PromptTemplate
+from langchain.output_parsers import  OutputFixingParser, DatetimeOutputParser
+
+from langchain_core.output_parsers import PydanticOutputParser
+from pydantic import BaseModel, Field, validator
 from langchain.output_parsers import DatetimeOutputParser
 from langchain.output_parsers import OutputFixingParser
 
@@ -94,7 +96,7 @@ class PostmortemIncidentAutoVDBCommand:
 
         # Order by ID
         incidents = incidents.order_by("id")
-        
+
         # Exclude incidents where 'experiment' is True
         incidents = incidents.exclude(experiment=True)
 
@@ -124,16 +126,16 @@ class PostmortemIncidentAutoVDBCommand:
                 postmortem_questions[query_key] = POSTMORTEM_QUESTIONS[query_key]
             else: 
                 postmortem_questions = {}
-            
+
             if query_key in taxonomy_questions.keys():
                 taxonomy_questions={}
                 taxonomy_questions[query_key] = TAXONOMY_QUESTIONS[query_key]
             else:
                 taxonomy_questions = {}
-        
+
         ### ChatGPT
         chatGPT = ChatGPT()
-        
+
         ### Set up for incidents > 16k context window
         # Vector DB setup
         chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
@@ -143,7 +145,7 @@ class PostmortemIncidentAutoVDBCommand:
 
         prompt_window = model_parameters["context_window"] - 1500
         num_chunks = math.floor( prompt_window / CHUNK_SIZE ) #Number of chunks to retrieve 
-        
+
         ### Set up for counting tokens in incident
         encoding = tiktoken.encoding_for_model(model_parameters["model"])
 
@@ -154,11 +156,11 @@ class PostmortemIncidentAutoVDBCommand:
                 {"role": "system", 
                 "content": content}
                 ]
-        
+
         ## For open ended postmorterm questions & for Step 1 of taxonomy questions: To 'answer' information directly from articles
         prompt_template_articles_instruction = "Use the following news articles reporting on a software failure incident to answer the Question." + "\n" + "Note that software failure could mean a " + failure_synonyms + "." \
                 + "\n"+ "Cite the Article # for articles used to answer the question in the format: [#, #, ...]. If you can't answer the question using the articles, return 'unknown'." + "\n"
-        
+
         ## For Step 1 of taxonomy questions: To 'extract' the information extracted from articles to answer questions
         prompt_template_extract_task = "Extract information from the articles about the software failure incident related to:\n"
 
@@ -189,7 +191,7 @@ class PostmortemIncidentAutoVDBCommand:
                         article.tokens = len(encoding.encode(article.body))
 
                     incident_tokens += article.tokens
-                
+
                 incident.tokens = incident_tokens
 
             ### If incident token length is less than the model's context window, then directly prompt the model with the articles, if not then do RAG
@@ -210,8 +212,8 @@ class PostmortemIncidentAutoVDBCommand:
                     prompt_incident += "\n" +"<Article " + str(article.id) + ">"
                     prompt_incident += article.body
                     prompt_incident += "</Article " + str(article.id) + ">" +"\n"
-            
-            
+
+
             if RAG_Pipeline is True:
                 logging.info("Checking Vector DB for Incident: " + str(incident.id))
 
@@ -226,16 +228,16 @@ class PostmortemIncidentAutoVDBCommand:
                         incidentID = incident.id
 
                         updated_ids = self.store_articles(vectorDB, article_body, articleID, incidentID, text_splitter)
-                                                
+
                         logging.info("Storing Article " + str(article.id) + " into Vector DB with IDs: " + str(vectorDB.get(updated_ids)))
-                        
+
                         article.article_stored = True
                         article.save(update_fields=['article_stored'])
-            
+
 
             ### Answer open ended postmortem questions
             for question_key in list(postmortem_questions.keys()): #[list(questions.keys())[i] for i in [0,1,2,10,11,12]]:
-        
+
                 # Check if the question has already been answered
                 answer_set = True
                 if not getattr(incident, question_key):
@@ -252,7 +254,7 @@ class PostmortemIncidentAutoVDBCommand:
 
                         query = postmortem_questions[question_key]
                         incidentID = incident.id
-                        
+
                         try:
                             dict_articles = self.retrieve_articles(vectorDB, query, incidentID, num_chunks)
                         except Exception as e:
@@ -277,13 +279,13 @@ class PostmortemIncidentAutoVDBCommand:
                     messages.append(
                                     {"role": "user", "content": final_prompt},
                                     )
-                    
+
                     model_parameters_temp = model_parameters.copy()
                     model_parameters_temp["messages"] = messages.copy()
 
                     #logging.info(type(model_parameters_temp))
                     #logging.info(model_parameters_temp)
-            
+
                     reply = chatGPT.run(model_parameters_temp)
                     #logging.info("Reply:")
                     #logging.info(reply)
@@ -300,7 +302,7 @@ class PostmortemIncidentAutoVDBCommand:
 
                 question_rationale_key = question_key + "_rationale"
                 question_option_key = question_key + "_option"
-            
+
                 # Check if the question has already been answered
                 answer_set = True
                 if not getattr(incident, question_option_key):
@@ -315,7 +317,7 @@ class PostmortemIncidentAutoVDBCommand:
 
                         query = taxonomy_definitions[question_key]
                         incidentID = incident.id
-                        
+
                         try:
                             dict_articles = self.retrieve_articles(vectorDB, query, incidentID, num_chunks)
                         except Exception as e:
@@ -334,20 +336,20 @@ class PostmortemIncidentAutoVDBCommand:
                     messages = system_message.copy()
 
                     prompt_question = "\n<Question>" + prompt_template_extract_task + prompt_additions[question_key]["rationale"]["before"] + taxonomy_definitions[question_key] + prompt_additions[question_key]["rationale"]["after"] + "</Question>"
-                    
+
                     final_prompt = prompt_template_articles_instruction + prompt_incident + prompt_question
 
                     messages.append(
                                     {"role": "user", "content": final_prompt},
                                     )
-                    
+
                     model_parameters_temp = model_parameters.copy()
                     model_parameters_temp["messages"] = messages.copy()
 
                     #logging.info(type(model_parameters_temp))
                     #logging.info(model_parameters_temp)
 
-            
+
                     reply = chatGPT.run(model_parameters_temp)
                     #logging.info("Reply:")
                     logging.info(reply)
@@ -363,7 +365,7 @@ class PostmortemIncidentAutoVDBCommand:
                     messages = system_message.copy()
 
                     extracted_info = "<Extracted Information>" + reply + "</Extracted Information>"
-                    
+
                     prompt_question = "\n<Questions>" + prompt_template_decision_task + prompt_additions[question_key]["decision"]["before"] + taxonomy_questions[question_key] + prompt_template_JSON_format + prompt_additions[question_key]["decision"]["after"] + "</Questions>"
 
                     final_prompt = prompt_template_decision_instruction + extracted_info + prompt_question
@@ -371,7 +373,7 @@ class PostmortemIncidentAutoVDBCommand:
                     messages.append(
                                     {"role": "user", "content": final_prompt},
                                     )
-                    
+
                     model_parameters_temp = model_parameters.copy()
                     model_parameters_temp["messages"] = messages.copy()
 
@@ -379,7 +381,7 @@ class PostmortemIncidentAutoVDBCommand:
 
                     #logging.info(type(model_parameters_temp))
                     #logging.info(model_parameters_temp)
-            
+
                     reply = chatGPT.run(model_parameters_temp)
                     #logging.info("Reply:")
                     logging.info(reply)
@@ -404,7 +406,7 @@ class PostmortemIncidentAutoVDBCommand:
 
                     setattr(incident, question_option_key, reply)
 
-            
+
             # Query the related articles for the current incident and find the earliest published date
             if incident.published is None or incident.new_article is True:
                 incident.published = incident.articles.aggregate(earliest_published=Min('published'))['earliest_published']
@@ -417,9 +419,9 @@ class PostmortemIncidentAutoVDBCommand:
                 if not getattr(incident, question_key):
                     complete_report = False
                     break
-            
+
             for question_key in list(TAXONOMY_QUESTIONS.keys()):
-                
+
                 # If question is for CPS, and the system for incident is not CPS, then don't check for its completion
                 if question_key in cps_keys and "TRUE" not in incident.cps_option: #incident.cps != True:  ###"\"cps\": true"
                     continue
@@ -428,7 +430,7 @@ class PostmortemIncidentAutoVDBCommand:
                 if not getattr(incident, question_option_key) or complete_report == False:
                     complete_report = False
                     break
-            
+
             if complete_report == True:
                 incident.complete_report = True
             else:
@@ -436,13 +438,13 @@ class PostmortemIncidentAutoVDBCommand:
 
             ### All new articles for the incidents would have contributed to the incident
             incident.new_article = False
-            
-            
+
+
             incident.save()
 
             logging.info("Succesfully created postmortem for incident %s: %s.", incident.id, incident.title)
             successful_postmortem_creations += 1
-            
+
 
         logging.info("Successfully created postmortems for %d incidents.", successful_postmortem_creations)
 
@@ -454,17 +456,17 @@ class PostmortemIncidentAutoVDBCommand:
         metadata = [{"incidentID": incidentID, "articleID": articleID}]
 
         document = text_splitter.create_documents([article_body], metadatas=metadata)
-        
+
         document_splits = text_splitter.split_documents(document)
 
         for order, document in enumerate(document_splits): # To keep track of the order of the chunks
             document.metadata["order"] = order
-        
+
         updated_ids = vectorDB.add_documents(document_splits)
 
         return updated_ids
-    
-    
+
+
     def retrieve_articles(self, vectorDB, query, incidentID, num_chunks):
         """
         Retrieve article chunks from vectorDB. 
@@ -479,12 +481,12 @@ class PostmortemIncidentAutoVDBCommand:
             articleID = doc.metadata["articleID"]
             order = doc.metadata["order"]
             page_content = doc.page_content
-            
+
             if articleID in dict_docs:
                 dict_docs[articleID].append((order, page_content))
             else:
                 dict_docs[articleID] = [(order, page_content)]
-        
+
         #Sort the page_content for each articleID based on order
         for articleID in dict_docs:
             sorted_page_contents = [content for _, content in sorted(dict_docs[articleID])]
