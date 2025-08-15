@@ -71,6 +71,7 @@ class IncidentChatbotCommand:
                     logging.info(f"Article content snippet: {doc.page_content[:50]}...")
             else:
                 logging.info("No relevant articles found above the similarity threshold.")
+                
             articles = {doc.metadata["articleID"]: doc.page_content for doc in filtered_results}
 
             # Get incidents from article metadata

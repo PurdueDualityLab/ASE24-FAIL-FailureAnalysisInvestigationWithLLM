@@ -100,3 +100,18 @@ services:
     ports:
       - "5555:5555"
     command: /start-flower
+
+  chainlit:
+    <<: *django
+    image: failures_local_chainlit
+    container_name: failures_local_chainlit
+    working_dir: /app/failbot
+    depends_on:
+      - django
+    environment:
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=config.settings.local
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - "8501:8501"
+    command: chainlit run failbotUI.py --port 8501 --host 0.0.0.0 
