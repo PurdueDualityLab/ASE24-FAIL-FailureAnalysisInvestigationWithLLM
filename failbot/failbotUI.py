@@ -22,7 +22,7 @@ from asgiref.sync import sync_to_async
 
 # --- Setup ---
 
-chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001")
+chroma_client = chromadb.HttpClient(host="chroma", port="8001")
 embedding_function = OpenAIEmbeddings()
 vector_db = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
 
