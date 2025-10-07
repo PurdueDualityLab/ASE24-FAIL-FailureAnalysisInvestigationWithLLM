@@ -163,19 +163,38 @@ def generate_fmea_from_articles(incidents, user_description):
 # --- Chainlit App ---
 @cl.on_chat_start
 async def start():
-    cl.user_session.set("awaiting_description", True)
+    cl.user_session.set("state", "initial")
+    actions = [
+        cl.Action(name="create_fmea", value="fmea", label="Create an FMEA"),
+        cl.Action(name="chat_db", value="chat", label="Chat with the Failures database"),
+    ]
     await cl.Message(
-        content="👋 Welcome! I am a Failure Aware ChatBot. I can help you create Software FMEAs. To get started, please describe the system you're designing:"
+        content="Welcome to FailBot! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
+        actions=actions
     ).send()
 
+@cl.action_callback("create_fmea")
+async def on_create_fmea(action):
+    cl.user_session.set("state", "awaiting_fmea_description")
+    await cl.Message(
+        content="To get started, please describe the system you're designing:"
+    ).send()
+
+@cl.action_callback("chat_db")
+async def on_chat_db(action):
+    cl.user_session.set("state", "chat_mode")
+    await cl.Message(
+        content="You can now chat with the Failures database. What would you like to know? You can also ask me to create an FMEA at any time."
+    ).send()
 
 @cl.on_message
 async def on_message(message: cl.Message):
-    if cl.user_session.get("awaiting_description", True):
+    state = cl.user_session.get("state")
+
+    if state == "awaiting_fmea_description":
         system_description = message.content
         cl.user_session.set("system_description", system_description)
-        cl.user_session.set("awaiting_description", False)
-
+        
         await cl.Message(content="🔍 Retrieving relevant incidents from FailDB...").send()
         incidents = await sync_to_async(RAG_relevant_incidents)(system_description)
 
@@ -189,24 +208,74 @@ async def on_message(message: cl.Message):
         fmea_output = await sync_to_async(generate_fmea_from_articles)(filtered_incidents, system_description)
 
         cl.user_session.set("fmea_context", fmea_output)
+        cl.user_session.set("state", "fmea_generated")
 
         await cl.Message(
             content=f"📋 **Generated FMEA:**\n\n{fmea_output}",
             actions=[cl.Action(name="restart", value="restart", label="🔄 Start Over", payload={})]
         ).send()
-    else:
-        # Continue the conversation after FMEA
+    
+    elif state == "chat_mode":
+        user_message = message.content.lower()
+        if "create fmea" in user_message or "generate fmea" in user_message:
+            cl.user_session.set("state", "awaiting_fmea_description")
+            await cl.Message(
+                content="It looks like you want to create an FMEA. To get started, please describe the system you're designing:"
+            ).send()
+            return
+
+        await cl.Message(content="🔍 Searching the Failures database...").send()
+        incidents = await sync_to_async(RAG_relevant_incidents)(message.content)
+        
+        if not incidents:
+            response = await sync_to_async(conversation_chain.predict)(input=message.content)
+            await cl.Message(content=response).send()
+            return
+
+        incidents_json = json.dumps(incidents, indent=2)
+        prompt = (
+            "You are a chatbot assistant for a database of software failures. "
+            "A user has asked a question. Use the following relevant incidents from the database to answer the user's question.\n"
+            "User question: "
+            f"{message.content}\n\n"
+            "Relevant incidents:\n"
+            f"{incidents_json}\n\n"
+            "Answer the user's question based on the provided incidents. If the incidents are not relevant, say that you couldn't find an answer in the database. "
+            "Cite incident IDs when you use information from them."
+        )
+        
+        response = await sync_to_async(conversation_chain.predict)(input=prompt)
+        await cl.Message(content=response).send()
+
+    elif state == "fmea_generated":
         follow_up = message.content
         response = await sync_to_async(conversation_chain.predict)(input=follow_up)
         await cl.Message(content=response).send()
+        
+    else: # state is "initial" or None
+        actions = [
+            cl.Action(name="create_fmea", value="fmea", label="Create an FMEA"),
+            cl.Action(name="chat_db", value="chat", label="Chat with the Failures database"),
+        ]
+        await cl.Message(
+            content="Please choose an option. Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
+            actions=actions
+        ).send()
 
 @cl.action_callback("restart")
 async def on_restart(action):
-    cl.user_session.set("awaiting_description", True)
     cl.user_session.set("system_description", None)
     cl.user_session.set("fmea_context", None)
     memory.clear()
-    await cl.Message(content="🔄 Restarted! Please describe a new system you'd like help with:").send()
+    cl.user_session.set("state", "initial")
+    actions = [
+        cl.Action(name="create_fmea", value="fmea", label="Create an FMEA"),
+        cl.Action(name="chat_db", value="chat", label="Chat with the Failures database"),
+    ]
+    await cl.Message(
+        content="🔄 Restarted! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
+        actions=actions
+    ).send()
 
 
 #TODO:
