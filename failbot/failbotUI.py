@@ -165,8 +165,8 @@ def generate_fmea_from_articles(incidents, user_description):
 async def start():
     cl.user_session.set("state", "initial")
     actions = [
-        cl.Action(name="create_fmea", value="fmea", label="Create an FMEA"),
-        cl.Action(name="chat_db", value="chat", label="Chat with the Failures database"),
+        cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
+        cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
     ]
     await cl.Message(
         content="Welcome to FailBot! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
@@ -254,8 +254,8 @@ async def on_message(message: cl.Message):
         
     else: # state is "initial" or None
         actions = [
-            cl.Action(name="create_fmea", value="fmea", label="Create an FMEA"),
-            cl.Action(name="chat_db", value="chat", label="Chat with the Failures database"),
+            cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
+            cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
         ]
         await cl.Message(
             content="Please choose an option. Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
@@ -269,8 +269,8 @@ async def on_restart(action):
     memory.clear()
     cl.user_session.set("state", "initial")
     actions = [
-        cl.Action(name="create_fmea", value="fmea", label="Create an FMEA"),
-        cl.Action(name="chat_db", value="chat", label="Chat with the Failures database"),
+        cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
+        cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
     ]
     await cl.Message(
         content="🔄 Restarted! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
