@@ -1,4 +1,4 @@
-# FAIL [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13376644.svg)](https://doi.org/10.5281/zenodo.13376644)
+# FAIL [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13376644.svg)](https://doi.org/10.5281/zenodo.13376644) 
 
 FAIL is an LLM based pipeline to collect and analyze software failures from the news. This paper can be found here [https://arxiv.org/abs/2406.08221](https://arxiv.org/abs/2406.08221).
 
