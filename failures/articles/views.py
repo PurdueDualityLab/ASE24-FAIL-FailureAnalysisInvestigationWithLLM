@@ -72,7 +72,7 @@ def public_page(request):
 
     # Apply filters
     if query:
-        incidents = incidents.filter(title__icontains=query)
+        incidents = incidents.filter(summary__icontains=query)
 
     if start_date:
         incidents = incidents.filter(published__gte=start_date)
