@@ -115,8 +115,7 @@ class Embedder(Network[str, list[float]]):
 
 class EmbedderGPT(Network[str, list[float]]):
     def __init__(self):
-        self.openai = openai
-        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.client = openai.OpenAI()
         self.MAX_RETRIES = 1
 
     def preprocess(self, input_data: str) -> str:
@@ -130,7 +129,7 @@ class EmbedderGPT(Network[str, list[float]]):
         while retries < self.MAX_RETRIES:
             try:
                 response = None
-                response = self.openai.Embedding.create(input = [preprocessed_data], model='text-embedding-ada-002')
+                response = self.client.embeddings.create(input = [preprocessed_data], model='text-embedding-ada-002')
                 break
 
             except openai.Timeout as e:
@@ -161,7 +160,7 @@ class EmbedderGPT(Network[str, list[float]]):
 
 
         if response is not None:
-            embeddings = response['data'][0]['embedding']
+            embeddings = response.data[0].embedding
             return embeddings
         else:
             return None
@@ -202,22 +201,22 @@ class ClassifierChatGPT(Network[dict, bool]):
 
 class SummarizerGPT(Network[str, str]):
     def __init__(self):
-        self.openai = openai
-        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.client = openai.OpenAI()
 
         self.context = "Provide a summary of this text: \n\n"
 
     def preprocess(self, input_data: str) -> str:
         prompt = self.context + input_data[:1500] + "\n\n"
+        return prompt
 
     def predict(self, preprocessed_data: str) -> str:
         prompt = preprocessed_data
 
         try:
             response = None
-            response = self.openai.Completion.create(
-                model="text-babbage-001",
-                prompt=prompt,
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": prompt}],
                 max_tokens=300,
             )
 
@@ -244,7 +243,7 @@ class SummarizerGPT(Network[str, str]):
             logging.info(f"OpenAI API request exceeded rate limit: {e}")
 
         if response is not None:
-            summary = response.choices[0]['text'].strip()
+            summary = response.choices[0].message.content.strip()
             return summary
         else:
             return None
@@ -259,8 +258,7 @@ class SummarizerGPT(Network[str, str]):
 class ChatGPT(Network[dict, str]):
 
     def __init__(self):
-        self.openai = openai
-        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.client = openai.OpenAI()
         self.MAX_RETRIES = 2
         #TODO: Add seed for reproducability?
 
@@ -283,7 +281,7 @@ class ChatGPT(Network[dict, str]):
 
             try:
                 chat_completion = None
-                chat_completion = self.openai.ChatCompletion.create(
+                chat_completion = self.client.chat.completions.create(
                                 request_timeout=120, model=model, messages=messages, temperature=temperature, response_format=response_format, #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1
                                 )
 
