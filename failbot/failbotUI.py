@@ -154,7 +154,7 @@ def generate_fmea_from_articles(incidents, user_description):
     )
 
     logging.info("Generating FMEA grounded in article-linked incidents...")
-    response = conversation_chain.predict(input=prompt)
+    response = conversation_chain.invoke({"input": prompt})["response"]
     logging.info(f"FMEA Response:\n{response}")
     
     return response
@@ -228,7 +228,7 @@ async def on_message(message: cl.Message):
         incidents = await sync_to_async(RAG_relevant_incidents)(message.content)
         
         if not incidents:
-            response = await sync_to_async(conversation_chain.predict)(input=message.content)
+            response = (await sync_to_async(conversation_chain.invoke)({'input': message.content}))['response']
             await cl.Message(content=response).send()
             return
 
@@ -244,12 +244,12 @@ async def on_message(message: cl.Message):
             "Cite incident IDs when you use information from them."
         )
         
-        response = await sync_to_async(conversation_chain.predict)(input=prompt)
+        response = (await sync_to_async(conversation_chain.invoke)({'input': prompt}))['response']
         await cl.Message(content=response).send()
 
     elif state == "fmea_generated":
         follow_up = message.content
-        response = await sync_to_async(conversation_chain.predict)(input=follow_up)
+        response = (await sync_to_async(conversation_chain.invoke)({'input': follow_up}))['response']
         await cl.Message(content=response).send()
         
     else: # state is "initial" or None
