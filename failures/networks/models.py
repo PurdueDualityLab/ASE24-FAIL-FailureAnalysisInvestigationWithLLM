@@ -215,7 +215,7 @@ class SummarizerGPT(Network[str, str]):
         try:
             response = None
             response = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="text-babbage-001",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=300,
             )
