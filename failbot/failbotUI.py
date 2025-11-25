@@ -19,6 +19,19 @@ from pydantic import BaseModel
 import chainlit as cl
 
 from asgiref.sync import sync_to_async
+from django.contrib.auth import authenticate
+
+
+@cl.password_auth_callback
+async def auth_callback(username, password):
+    # Use sync_to_async to run the synchronous Django authenticate function
+    user = await sync_to_async(authenticate)(username=username, password=password)
+    if user is not None:
+        # Django user is authenticated, return a Chainlit user
+        return cl.User(identifier=user.username, metadata={"role": "user"})
+    # Authentication failed
+    return None
+
 
 # --- Setup ---
 
@@ -163,13 +176,14 @@ def generate_fmea_from_articles(incidents, user_description):
 # --- Chainlit App ---
 @cl.on_chat_start
 async def start():
+    user = cl.user_session.get("user")
     cl.user_session.set("state", "initial")
     actions = [
         cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
         cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
     ]
     await cl.Message(
-        content="Welcome to FailBot! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
+        content=f"Welcome to FailBot, {user.identifier}! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
         actions=actions
     ).send()
 
