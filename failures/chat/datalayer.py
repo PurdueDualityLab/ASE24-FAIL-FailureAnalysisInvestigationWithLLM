@@ -7,7 +7,8 @@ import chainlit.data as cl_data
 import chainlit.types as cl_types
 from chainlit.data import BaseDataLayer
 from chainlit.step import StepDict
-from chainlit.element import ElementDict
+from chainlit.element import Element, ElementDict
+from chainlit.types import Feedback
 from django.contrib.auth import get_user_model
 from asgiref.sync import sync_to_async
 from django.utils import timezone
@@ -21,6 +22,9 @@ class DjangoDataLayer(BaseDataLayer):
     """
     Chainlit Data Layer implementation using Django ORM.
     """
+
+    async def build_debug_url(self) -> str:
+        return ""
 
     async def get_user(self, identifier: str) -> Optional[cl.User]:
         try:
@@ -189,6 +193,15 @@ class DjangoDataLayer(BaseDataLayer):
     async def delete_thread(self, thread_id: str):
         await ChainlitThread.objects.filter(id=thread_id).adelete()
 
+    async def get_thread_author(self, thread_id: str) -> str:
+        try:
+            thread = await ChainlitThread.objects.select_related("user").aget(id=thread_id)
+            if thread.user:
+                return thread.user.username
+        except ChainlitThread.DoesNotExist:
+            pass
+        return ""
+
     async def create_step(self, step_dict: StepDict):
         thread_id = step_dict.get("threadId")
         if not thread_id:
@@ -257,8 +270,8 @@ class DjangoDataLayer(BaseDataLayer):
     async def delete_step(self, step_id: str):
         await ChainlitStep.objects.filter(id=step_id).adelete()
 
-    async def create_element(self, element_dict: ElementDict):
-        thread_id = element_dict.get("threadId")
+    async def create_element(self, element: Element):
+        thread_id = element.thread_id
         if not thread_id:
             return
         
@@ -268,18 +281,37 @@ class DjangoDataLayer(BaseDataLayer):
             return
 
         await ChainlitElement.objects.acreate(
-            id=element_dict.get("id"),
+            id=element.id,
             thread=thread,
-            type=element_dict.get("type"),
-            url=element_dict.get("url"),
-            chainlit_key=element_dict.get("chainlitKey"),
-            name=element_dict.get("name"),
-            display=element_dict.get("display"),
-            size=element_dict.get("size"),
-            language=element_dict.get("language"),
-            page=element_dict.get("page"),
-            props=element_dict.get("props", {}),
+            type=element.type,
+            url=element.url,
+            chainlit_key=element.chainlit_key,
+            name=element.name,
+            display=element.display,
+            size=getattr(element, "size", None),
+            language=getattr(element, "language", None),
+            page=getattr(element, "page", None),
+            props=getattr(element, "props", {}),
         )
+
+    async def get_element(self, thread_id: str, element_id: str) -> Optional[ElementDict]:
+        try:
+            el = await ChainlitElement.objects.aget(id=element_id, thread_id=thread_id)
+            return {
+                "id": el.id,
+                "threadId": el.thread.id,
+                "type": el.type,
+                "url": el.url,
+                "chainlitKey": el.chainlit_key,
+                "name": el.name,
+                "display": el.display,
+                "size": el.size,
+                "language": el.language,
+                "page": el.page,
+                "props": el.props,
+            }
+        except ChainlitElement.DoesNotExist:
+            return None
 
     async def update_element(self, element_dict: ElementDict):
         element_id = element_dict.get("id")
@@ -294,11 +326,11 @@ class DjangoDataLayer(BaseDataLayer):
         if update_fields:
             await ChainlitElement.objects.filter(id=element_id).aupdate(**update_fields)
 
-    async def delete_element(self, element_id: str):
+    async def delete_element(self, element_id: str, thread_id: Optional[str] = None):
         await ChainlitElement.objects.filter(id=element_id).adelete()
 
-    async def create_feedback(self, feedback_dict: cl_types.FeedbackDict):
-        step_id = feedback_dict.get("forId")
+    async def upsert_feedback(self, feedback: Feedback) -> str:
+        step_id = feedback.forId
         step = None
         if step_id:
             try:
@@ -306,23 +338,28 @@ class DjangoDataLayer(BaseDataLayer):
             except ChainlitStep.DoesNotExist:
                 pass
         
-        await ChainlitFeedback.objects.acreate(
-            id=feedback_dict.get("id"),
-            for_id=step_id,
-            value=feedback_dict.get("value"),
-            comment=feedback_dict.get("comment"),
-            step=step
-        )
-        return feedback_dict.get("id")
-
-    async def update_feedback(self, feedback_dict: cl_types.FeedbackDict):
-        feedback_id = feedback_dict.get("id")
-        update_fields = {}
-        if "value" in feedback_dict: update_fields["value"] = feedback_dict["value"]
-        if "comment" in feedback_dict: update_fields["comment"] = feedback_dict["comment"]
+        feedback_id = feedback.id or "" # What if id is None? Model expects ID? 
+        # Chainlit usually provides ID for upsert or it expects backend to handle it.
+        # Check Feedback dataclass: id: Optional[str] = None
         
-        if update_fields:
-            await ChainlitFeedback.objects.filter(id=feedback_id).aupdate(**update_fields)
+        defaults = {
+            "for_id": step_id,
+            "value": feedback.value,
+            "comment": feedback.comment,
+            "step": step
+        }
+        
+        if feedback_id:
+            await ChainlitFeedback.objects.aupdate_or_create(
+                id=feedback_id,
+                defaults=defaults
+            )
+            return feedback_id
+        else:
+            # Create new
+            new_feedback = await ChainlitFeedback.objects.acreate(**defaults)
+            return new_feedback.id
 
-    async def delete_feedback(self, feedback_id: str):
-        await ChainlitFeedback.objects.filter(id=feedback_id).adelete()
+    async def delete_feedback(self, feedback_id: str) -> bool:
+        count, _ = await ChainlitFeedback.objects.filter(id=feedback_id).adelete()
+        return count > 0
