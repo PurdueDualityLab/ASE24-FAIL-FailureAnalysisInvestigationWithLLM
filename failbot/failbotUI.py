@@ -18,6 +18,9 @@ from langchain.chains import ConversationChain
 from pydantic import BaseModel
 import chainlit as cl
 
+from failures.chat.datalayer import DjangoDataLayer
+cl.data_layer = DjangoDataLayer()
+
 from asgiref.sync import sync_to_async
 from django.contrib.auth import authenticate
 

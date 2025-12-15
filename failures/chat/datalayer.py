@@ -1,0 +1,338 @@
+import logging
+import datetime
+from typing import Optional, List, Dict, Any, Union
+
+import chainlit.data as cl_data
+import chainlit.types as cl_types
+from chainlit.data import BaseDataLayer
+from django.contrib.auth import get_user_model
+from asgiref.sync import sync_to_async
+from django.utils import timezone
+from django.db.models import Q
+
+from failures.chat.models import ChainlitThread, ChainlitStep, ChainlitElement, ChainlitFeedback
+
+User = get_user_model()
+
+class DjangoDataLayer(BaseDataLayer):
+    """
+    Chainlit Data Layer implementation using Django ORM.
+    """
+
+    async def get_user(self, identifier: str) -> Optional[cl_types.User]:
+        try:
+            user = await User.objects.aget(username=identifier)
+            return cl_types.User(identifier=user.username, metadata={"id": user.id})
+        except User.DoesNotExist:
+            return None
+
+    async def create_user(self, user: cl_types.User) -> Optional[cl_types.User]:
+        # We assume users are managed by Django auth, so we don't create them here 
+        # unless we want to support auto-registration via Chainlit (optional).
+        # For now, we return the user if exists.
+        return await self.get_user(user.identifier)
+
+    async def list_threads(
+        self, pagination: cl_types.Pagination, filter: cl_types.ThreadFilter
+    ) -> cl_types.PaginatedResponse[cl_types.ThreadDict]:
+        
+        qs = ChainlitThread.objects.all().select_related("user")
+
+        if filter.userIdentifier:
+            qs = qs.filter(user__username=filter.userIdentifier)
+        
+        if filter.search:
+            qs = qs.filter(name__icontains=filter.search)
+        
+        if filter.feedback is not None:
+            # This requires joining with feedback, which might be complex.
+            # Simplifying for now: filter threads that have steps with feedback with value.
+            if filter.feedback == 1:
+                qs = qs.filter(steps__feedbacks__value=1).distinct()
+            elif filter.feedback == -1:
+                qs = qs.filter(steps__feedbacks__value=0).distinct() # Chainlit typically uses 0/1, sometimes -1.
+
+        qs = qs.order_by("-created_at")
+
+        # Pagination logic
+        # Cursor-based pagination is tricky with offset. 
+        # Chainlit often sends `first` and `cursor`. If cursor is not present, start from 0.
+        # If cursor is present, it might be an ID or timestamp. 
+        # Let's assume simple offset-based for MVP if cursor is handled as index, 
+        # or just fetch all within reasonable limit if cursor logic is complex without specific ID.
+        
+        # Assuming cursor is timestamp of last item? Or just ignore cursor for now and use limit/offset if passed?
+        # Chainlit `Pagination` has `first` (limit) and `cursor`.
+        
+        limit = pagination.first or 20
+        # If cursor is provided, we need to filter items older than cursor (if time-based)
+        # For this implementation, let's ignore cursor for simplicity or implement simple offset if Chainlit supports it.
+        # Actually, let's implement time-based cursor if possible.
+        if pagination.cursor:
+             # Assuming cursor is created_at iso string?
+             # Let's try to parse it.
+             try:
+                 cursor_dt = datetime.datetime.fromisoformat(pagination.cursor)
+                 qs = qs.filter(created_at__lt=cursor_dt)
+             except ValueError:
+                 pass
+
+        threads_data = []
+        
+        # We need to slice one more to check `hasNextPage`
+        threads_list = [t async for t in qs[:limit + 1]]
+        has_next_page = len(threads_list) > limit
+        if has_next_page:
+            threads_list = threads_list[:limit]
+        
+        end_cursor = None
+        if threads_list:
+            end_cursor = threads_list[-1].created_at.isoformat()
+
+        for thread in threads_list:
+            user_data = None
+            if thread.user:
+                user_data = {"identifier": thread.user.username}
+            
+            threads_data.append({
+                "id": thread.id,
+                "createdAt": thread.created_at.isoformat(),
+                "name": thread.name,
+                "userId": thread.user.username if thread.user else None,
+                "user": user_data,
+                "tags": thread.tags,
+                "metadata": thread.metadata,
+            })
+
+        return cl_types.PaginatedResponse(
+            data=threads_data,
+            pageInfo=cl_types.PageInfo(hasNextPage=has_next_page, endCursor=end_cursor)
+        )
+
+    async def get_thread(self, thread_id: str) -> Optional[cl_types.ThreadDict]:
+        try:
+            thread = await ChainlitThread.objects.select_related("user").aget(id=thread_id)
+        except ChainlitThread.DoesNotExist:
+            return None
+
+        steps_data = []
+        async for step in thread.steps.all().order_by("created_at"):
+            feedbacks = []
+            async for fb in step.feedbacks.all():
+                feedbacks.append({
+                    "id": fb.id,
+                    "forId": fb.for_id,
+                    "value": fb.value,
+                    "comment": fb.comment
+                })
+            
+            steps_data.append({
+                "id": step.id,
+                "name": step.name,
+                "type": step.type,
+                "threadId": thread.id,
+                "parentId": step.parent_id,
+                "disableFeedback": step.disable_feedback,
+                "streaming": step.streaming,
+                "input": step.input,
+                "output": step.output,
+                "createdAt": step.created_at.isoformat(),
+                "start": step.start.isoformat() if step.start else None,
+                "end": step.end.isoformat() if step.end else None,
+                "generation": step.generation,
+                "showInput": step.show_input,
+                "language": step.language,
+                "indent": step.indent,
+                "feedback": feedbacks[0] if feedbacks else None # Chainlit Step dict expects single feedback object or list? Usually 'feedback' field.
+            })
+
+        elements_data = []
+        async for el in thread.elements.all():
+            elements_data.append({
+                "id": el.id,
+                "threadId": thread.id,
+                "type": el.type,
+                "url": el.url,
+                "chainlitKey": el.chainlit_key,
+                "name": el.name,
+                "display": el.display,
+                "size": el.size,
+                "language": el.language,
+                "page": el.page,
+                "props": el.props,
+            })
+
+        return {
+            "id": thread.id,
+            "createdAt": thread.created_at.isoformat(),
+            "name": thread.name,
+            "userId": thread.user.username if thread.user else None,
+            "user": {"identifier": thread.user.username} if thread.user else None,
+            "tags": thread.tags,
+            "metadata": thread.metadata,
+            "steps": steps_data,
+            "elements": elements_data,
+        }
+
+    async def update_thread(self, thread_id: str, name: Optional[str] = None, user_id: Optional[str] = None, metadata: Optional[Dict] = None, tags: Optional[List[str]] = None):
+        defaults = {}
+        if name is not None:
+            defaults["name"] = name
+        if metadata is not None:
+            defaults["metadata"] = metadata
+        if tags is not None:
+            defaults["tags"] = tags
+        
+        user = None
+        if user_id:
+            try:
+                user = await User.objects.aget(username=user_id)
+                defaults["user"] = user
+            except User.DoesNotExist:
+                pass
+
+        await ChainlitThread.objects.aupdate_or_create(
+            id=thread_id,
+            defaults=defaults
+        )
+
+    async def delete_thread(self, thread_id: str):
+        await ChainlitThread.objects.filter(id=thread_id).adelete()
+
+    async def create_step(self, step_dict: cl_types.StepDict):
+        thread_id = step_dict.get("threadId")
+        if not thread_id:
+            return
+
+        try:
+            thread = await ChainlitThread.objects.aget(id=thread_id)
+        except ChainlitThread.DoesNotExist:
+            # Implicitly create thread if missing? Typically Chainlit calls update_thread first.
+            # But let's create a stub if needed.
+            thread = await ChainlitThread.objects.acreate(id=thread_id)
+
+        # Parse timestamps
+        created_at = step_dict.get("createdAt")
+        if isinstance(created_at, str):
+            created_at = datetime.datetime.fromisoformat(created_at)
+        
+        start = step_dict.get("start")
+        if isinstance(start, str):
+            start = datetime.datetime.fromisoformat(start)
+            
+        end = step_dict.get("end")
+        if isinstance(end, str):
+            end = datetime.datetime.fromisoformat(end)
+
+        await ChainlitStep.objects.acreate(
+            id=step_dict.get("id"),
+            name=step_dict.get("name"),
+            type=step_dict.get("type"),
+            thread=thread,
+            parent_id=step_dict.get("parentId"),
+            disable_feedback=step_dict.get("disableFeedback", False),
+            streaming=step_dict.get("streaming", False),
+            input=step_dict.get("input"),
+            output=step_dict.get("output"),
+            created_at=created_at or timezone.now(),
+            start=start,
+            end=end,
+            generation=step_dict.get("generation"),
+            show_input=step_dict.get("showInput", True),
+            language=step_dict.get("language"),
+            indent=step_dict.get("indent", 0)
+        )
+
+    async def update_step(self, step_dict: cl_types.StepDict):
+        step_id = step_dict.get("id")
+        update_fields = {}
+        
+        if "input" in step_dict: update_fields["input"] = step_dict["input"]
+        if "output" in step_dict: update_fields["output"] = step_dict["output"]
+        if "generation" in step_dict: update_fields["generation"] = step_dict["generation"]
+        if "start" in step_dict:
+             start = step_dict["start"]
+             if isinstance(start, str): start = datetime.datetime.fromisoformat(start)
+             update_fields["start"] = start
+        if "end" in step_dict:
+             end = step_dict["end"]
+             if isinstance(end, str): end = datetime.datetime.fromisoformat(end)
+             update_fields["end"] = end
+        if "language" in step_dict: update_fields["language"] = step_dict["language"]
+        if "streaming" in step_dict: update_fields["streaming"] = step_dict["streaming"]
+        
+        if update_fields:
+            await ChainlitStep.objects.filter(id=step_id).aupdate(**update_fields)
+
+    async def delete_step(self, step_id: str):
+        await ChainlitStep.objects.filter(id=step_id).adelete()
+
+    async def create_element(self, element_dict: cl_types.ElementDict):
+        thread_id = element_dict.get("threadId")
+        if not thread_id:
+            return
+        
+        try:
+            thread = await ChainlitThread.objects.aget(id=thread_id)
+        except ChainlitThread.DoesNotExist:
+            return
+
+        await ChainlitElement.objects.acreate(
+            id=element_dict.get("id"),
+            thread=thread,
+            type=element_dict.get("type"),
+            url=element_dict.get("url"),
+            chainlit_key=element_dict.get("chainlitKey"),
+            name=element_dict.get("name"),
+            display=element_dict.get("display"),
+            size=element_dict.get("size"),
+            language=element_dict.get("language"),
+            page=element_dict.get("page"),
+            props=element_dict.get("props", {}),
+        )
+
+    async def update_element(self, element_dict: cl_types.ElementDict):
+        element_id = element_dict.get("id")
+        update_fields = {}
+        # Populate fields to update
+        for k in ["url", "chainlitKey", "name", "display", "size", "language", "page", "props"]:
+            if k in element_dict:
+                # Map camelCase to snake_case
+                key = "chainlit_key" if k == "chainlitKey" else k
+                update_fields[key] = element_dict[k]
+        
+        if update_fields:
+            await ChainlitElement.objects.filter(id=element_id).aupdate(**update_fields)
+
+    async def delete_element(self, element_id: str):
+        await ChainlitElement.objects.filter(id=element_id).adelete()
+
+    async def create_feedback(self, feedback_dict: cl_types.FeedbackDict):
+        step_id = feedback_dict.get("forId")
+        step = None
+        if step_id:
+            try:
+                step = await ChainlitStep.objects.aget(id=step_id)
+            except ChainlitStep.DoesNotExist:
+                pass
+        
+        await ChainlitFeedback.objects.acreate(
+            id=feedback_dict.get("id"),
+            for_id=step_id,
+            value=feedback_dict.get("value"),
+            comment=feedback_dict.get("comment"),
+            step=step
+        )
+        return feedback_dict.get("id")
+
+    async def update_feedback(self, feedback_dict: cl_types.FeedbackDict):
+        feedback_id = feedback_dict.get("id")
+        update_fields = {}
+        if "value" in feedback_dict: update_fields["value"] = feedback_dict["value"]
+        if "comment" in feedback_dict: update_fields["comment"] = feedback_dict["comment"]
+        
+        if update_fields:
+            await ChainlitFeedback.objects.filter(id=feedback_id).aupdate(**update_fields)
+
+    async def delete_feedback(self, feedback_id: str):
+        await ChainlitFeedback.objects.filter(id=feedback_id).adelete()
