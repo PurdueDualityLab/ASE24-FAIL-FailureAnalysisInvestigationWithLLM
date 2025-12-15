@@ -40,7 +40,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 
 # DATABASES
 # ------------------------------------------------------------------------------
-DATABASES = {"default": env.db("DJANGO_DATABASE_URL", default=env.db("DATABASE_URL", default="postgres:///failures"))}
+DATABASES = {"default": env.db("DJANGO_DATABASE_URL", default=env("DATABASE_URL", default="postgres:///failures"))}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
