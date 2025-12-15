@@ -6,6 +6,8 @@ import chainlit as cl
 import chainlit.data as cl_data
 import chainlit.types as cl_types
 from chainlit.data import BaseDataLayer
+from chainlit.step import StepDict
+from chainlit.element import ElementDict
 from django.contrib.auth import get_user_model
 from asgiref.sync import sync_to_async
 from django.utils import timezone
@@ -187,7 +189,7 @@ class DjangoDataLayer(BaseDataLayer):
     async def delete_thread(self, thread_id: str):
         await ChainlitThread.objects.filter(id=thread_id).adelete()
 
-    async def create_step(self, step_dict: cl_types.StepDict):
+    async def create_step(self, step_dict: StepDict):
         thread_id = step_dict.get("threadId")
         if not thread_id:
             return
@@ -231,7 +233,7 @@ class DjangoDataLayer(BaseDataLayer):
             indent=step_dict.get("indent", 0)
         )
 
-    async def update_step(self, step_dict: cl_types.StepDict):
+    async def update_step(self, step_dict: StepDict):
         step_id = step_dict.get("id")
         update_fields = {}
         
@@ -255,7 +257,7 @@ class DjangoDataLayer(BaseDataLayer):
     async def delete_step(self, step_id: str):
         await ChainlitStep.objects.filter(id=step_id).adelete()
 
-    async def create_element(self, element_dict: cl_types.ElementDict):
+    async def create_element(self, element_dict: ElementDict):
         thread_id = element_dict.get("threadId")
         if not thread_id:
             return
@@ -279,7 +281,7 @@ class DjangoDataLayer(BaseDataLayer):
             props=element_dict.get("props", {}),
         )
 
-    async def update_element(self, element_dict: cl_types.ElementDict):
+    async def update_element(self, element_dict: ElementDict):
         element_id = element_dict.get("id")
         update_fields = {}
         # Populate fields to update
