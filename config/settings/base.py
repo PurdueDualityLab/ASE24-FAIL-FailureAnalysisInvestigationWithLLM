@@ -37,7 +37,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 
 # DATABASES
 # ------------------------------------------------------------------------------
-DATABASES = {"default": env.db("DATABASE_URL")}
+DATABASES = {"default": env.db("DJANGO_DATABASE_URL", default=env.db("DATABASE_URL", default="postgres:///failures"))}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -70,6 +70,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "failures.articles.apps.ArticlesConfig",
     "failures.parameters.apps.ParametersConfig",
+    "failures.chat.apps.ChatConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
