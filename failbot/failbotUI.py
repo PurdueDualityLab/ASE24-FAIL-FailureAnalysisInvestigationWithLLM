@@ -25,10 +25,15 @@ from django.contrib.auth import authenticate
 @cl.password_auth_callback
 async def auth_callback(username, password):
     # Use sync_to_async to run the synchronous Django authenticate function
-    user = await sync_to_async(authenticate)(username=username, password=password)
-    if user is not None:
-        # Django user is authenticated, return a Chainlit user
-        return cl.User(identifier=user.username, metadata={"role": "user"})
+    try:
+        user = await sync_to_async(authenticate)(username=username, password=password)
+        if user is not None:
+            logging.info(f"User authenticated successfully: {user.username}")
+            # Django user is authenticated, return a Chainlit user
+            return cl.User(identifier=user.username, metadata={"role": "user"})
+        logging.warning(f"Authentication failed for user: {username}")
+    except Exception as e:
+        logging.error(f"Error during authentication: {e}", exc_info=True)
     # Authentication failed
     return None
 
@@ -176,16 +181,27 @@ def generate_fmea_from_articles(incidents, user_description):
 # --- Chainlit App ---
 @cl.on_chat_start
 async def start():
-    user = cl.user_session.get("user")
-    cl.user_session.set("state", "initial")
-    actions = [
-        cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
-        cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
-    ]
-    await cl.Message(
-        content=f"Welcome to FailBot, {user.identifier}! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
-        actions=actions
-    ).send()
+    try:
+        user = cl.user_session.get("user")
+        logging.info(f"Chat started. Session user: {user}")
+        
+        if not user:
+            logging.error("User missing in session on chat start.")
+            await cl.Message(content="Error: User session not found. Please try logging in again.").send()
+            return
+
+        cl.user_session.set("state", "initial")
+        actions = [
+            cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
+            cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
+        ]
+        await cl.Message(
+            content=f"Welcome to FailBot, {user.identifier}! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
+            actions=actions
+        ).send()
+    except Exception as e:
+        logging.error(f"Error in on_chat_start: {e}", exc_info=True)
+        await cl.Message(content=f"An internal error occurred: {str(e)}").send()
 
 @cl.action_callback("create_fmea")
 async def on_create_fmea(action):
