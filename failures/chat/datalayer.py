@@ -2,6 +2,7 @@ import logging
 import datetime
 from typing import Optional, List, Dict, Any, Union
 
+import chainlit as cl
 import chainlit.data as cl_data
 import chainlit.types as cl_types
 from chainlit.data import BaseDataLayer
@@ -19,14 +20,14 @@ class DjangoDataLayer(BaseDataLayer):
     Chainlit Data Layer implementation using Django ORM.
     """
 
-    async def get_user(self, identifier: str) -> Optional[cl_types.User]:
+    async def get_user(self, identifier: str) -> Optional[cl.User]:
         try:
             user = await User.objects.aget(username=identifier)
-            return cl_types.User(identifier=user.username, metadata={"id": user.id})
+            return cl.User(identifier=user.username, metadata={"id": user.id})
         except User.DoesNotExist:
             return None
 
-    async def create_user(self, user: cl_types.User) -> Optional[cl_types.User]:
+    async def create_user(self, user: cl.User) -> Optional[cl.User]:
         # We assume users are managed by Django auth, so we don't create them here 
         # unless we want to support auto-registration via Chainlit (optional).
         # For now, we return the user if exists.
@@ -55,22 +56,9 @@ class DjangoDataLayer(BaseDataLayer):
         qs = qs.order_by("-created_at")
 
         # Pagination logic
-        # Cursor-based pagination is tricky with offset. 
-        # Chainlit often sends `first` and `cursor`. If cursor is not present, start from 0.
-        # If cursor is present, it might be an ID or timestamp. 
-        # Let's assume simple offset-based for MVP if cursor is handled as index, 
-        # or just fetch all within reasonable limit if cursor logic is complex without specific ID.
-        
-        # Assuming cursor is timestamp of last item? Or just ignore cursor for now and use limit/offset if passed?
-        # Chainlit `Pagination` has `first` (limit) and `cursor`.
-        
         limit = pagination.first or 20
-        # If cursor is provided, we need to filter items older than cursor (if time-based)
-        # For this implementation, let's ignore cursor for simplicity or implement simple offset if Chainlit supports it.
-        # Actually, let's implement time-based cursor if possible.
+        
         if pagination.cursor:
-             # Assuming cursor is created_at iso string?
-             # Let's try to parse it.
              try:
                  cursor_dt = datetime.datetime.fromisoformat(pagination.cursor)
                  qs = qs.filter(created_at__lt=cursor_dt)
