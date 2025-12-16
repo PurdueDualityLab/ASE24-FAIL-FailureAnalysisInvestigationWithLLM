@@ -190,10 +190,16 @@ class DjangoDataLayer(BaseDataLayer):
         if user_id:
             try:
                 user = await User.objects.aget(username=user_id)
-                defaults["user"] = user
             except User.DoesNotExist:
-                logging.warning(f"User {user_id} not found during thread update")
-                pass
+                # Try looking up by ID as fallback
+                try:
+                    user = await User.objects.aget(pk=user_id)
+                except (User.DoesNotExist, ValueError):
+                    logging.warning(f"User {user_id} not found during thread update")
+                    pass
+            
+            if user:
+                defaults["user"] = user
 
         await ChainlitThread.objects.aupdate_or_create(
             id=thread_id,
