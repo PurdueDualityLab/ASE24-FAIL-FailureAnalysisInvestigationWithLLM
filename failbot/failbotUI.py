@@ -17,6 +17,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 from pydantic import BaseModel
 import chainlit as cl
+from chainlit.context import context
 
 from failures.chat.datalayer import DjangoDataLayer
 
@@ -36,7 +37,9 @@ async def auth_callback(username, password):
         if user is not None:
             logging.info(f"User authenticated successfully: {user.username}")
             # Django user is authenticated, return a Chainlit user
-            return cl.User(identifier=user.username, metadata={"role": "user"})
+            # We return the username as identifier, and ID in metadata just in case, 
+            # but PersistedUser in datalayer.py uses the ID field.
+            return cl.User(identifier=user.username, metadata={"id": user.id})
         logging.warning(f"Authentication failed for user: {username}")
     except Exception as e:
         logging.error(f"Error during authentication: {e}", exc_info=True)
@@ -195,6 +198,19 @@ async def start():
             logging.error("User missing in session on chat start.")
             await cl.Message(content="Error: User session not found. Please try logging in again.").send()
             return
+
+        # Explicitly update thread with user info immediately
+        thread_id = context.session.thread_id
+        # We assume user.metadata["id"] contains the DB ID, or user.identifier is username.
+        # datalayer.update_thread handles both.
+        # But get_user returned PersistedUser which has 'id' property.
+        user_id_for_db = user.id if hasattr(user, 'id') else user.identifier
+        
+        await cl.data_layer.update_thread(
+            thread_id=thread_id,
+            user_id=user_id_for_db,
+            name="New Conversation"
+        )
 
         cl.user_session.set("state", "initial")
         actions = [
