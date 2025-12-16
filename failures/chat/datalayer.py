@@ -49,9 +49,11 @@ class DjangoDataLayer(BaseDataLayer):
         self, pagination: cl_types.Pagination, filter: cl_types.ThreadFilter
     ) -> cl_types.PaginatedResponse[cl_types.ThreadDict]:
         
+        logging.info(f"List threads called with filter: {filter} and pagination: {pagination}")
         qs = ChainlitThread.objects.all().select_related("user")
 
         if filter.userId:
+            logging.info(f"Filtering by userId: {filter.userId}")
             qs = qs.filter(user__username=filter.userId)
         
         if filter.search:
@@ -175,6 +177,7 @@ class DjangoDataLayer(BaseDataLayer):
         }
 
     async def update_thread(self, thread_id: str, name: Optional[str] = None, user_id: Optional[str] = None, metadata: Optional[Dict] = None, tags: Optional[List[str]] = None):
+        logging.info(f"Update thread: {thread_id}, user_id: {user_id}")
         defaults = {}
         if name is not None:
             defaults["name"] = name
@@ -189,6 +192,7 @@ class DjangoDataLayer(BaseDataLayer):
                 user = await User.objects.aget(username=user_id)
                 defaults["user"] = user
             except User.DoesNotExist:
+                logging.warning(f"User {user_id} not found during thread update")
                 pass
 
         await ChainlitThread.objects.aupdate_or_create(
