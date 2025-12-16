@@ -105,7 +105,7 @@ class DjangoDataLayer(BaseDataLayer):
 
         return cl_types.PaginatedResponse(
             data=threads_data,
-            pageInfo=cl_types.PageInfo(hasNextPage=has_next_page, endCursor=end_cursor)
+            pageInfo=cl_types.PageInfo(hasNextPage=has_next_page, endCursor=end_cursor, startCursor=None)
         )
 
     async def get_thread(self, thread_id: str) -> Optional[cl_types.ThreadDict]:
