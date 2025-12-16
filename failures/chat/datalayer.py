@@ -50,8 +50,8 @@ class DjangoDataLayer(BaseDataLayer):
         
         qs = ChainlitThread.objects.all().select_related("user")
 
-        if filter.userIdentifier:
-            qs = qs.filter(user__username=filter.userIdentifier)
+        if filter.userId:
+            qs = qs.filter(user__username=filter.userId)
         
         if filter.search:
             qs = qs.filter(name__icontains=filter.search)
