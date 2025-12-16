@@ -21,9 +21,12 @@ from chainlit.context import context
 
 from failures.chat.datalayer import DjangoDataLayer
 
+# Instantiate the data layer globally
+data_layer = DjangoDataLayer()
+
 @cl.data_layer
 def get_data_layer():
-    return DjangoDataLayer()
+    return data_layer
 
 from asgiref.sync import sync_to_async
 from django.contrib.auth import authenticate
@@ -199,14 +202,11 @@ async def start():
             await cl.Message(content="Error: User session not found. Please try logging in again.").send()
             return
 
-        # Explicitly update thread with user info immediately
-        thread_id = context.session.thread_id
-        # We assume user.metadata["id"] contains the DB ID, or user.identifier is username.
-        # datalayer.update_thread handles both.
-        # But get_user returned PersistedUser which has 'id' property.
+        # We return the username as identifier, and ID in metadata just in case, 
+        # but PersistedUser in datalayer.py uses the ID field.
         user_id_for_db = user.id if hasattr(user, 'id') else user.identifier
         
-        await cl.data_layer.update_thread(
+        await data_layer.update_thread(
             thread_id=thread_id,
             user_id=user_id_for_db,
             name="New Conversation"
