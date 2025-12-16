@@ -229,7 +229,7 @@ async def start():
         await cl.Message(content=f"An internal error occurred: {str(e)}").send()
 
 @cl.on_chat_resume
-async def on_resume(thread: cl.ThreadDict):
+async def on_resume(thread: dict):
     cl.user_session.set("state", "chat_mode")
     logging.info(f"Resumed chat thread: {thread['id']}")
 
