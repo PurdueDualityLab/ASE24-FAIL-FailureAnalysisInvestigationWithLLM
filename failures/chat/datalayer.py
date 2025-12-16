@@ -9,6 +9,7 @@ from chainlit.data import BaseDataLayer
 from chainlit.step import StepDict
 from chainlit.element import Element, ElementDict
 from chainlit.types import Feedback
+from chainlit.user import PersistedUser
 from django.contrib.auth import get_user_model
 from asgiref.sync import sync_to_async
 from django.utils import timezone
@@ -26,14 +27,18 @@ class DjangoDataLayer(BaseDataLayer):
     async def build_debug_url(self) -> str:
         return ""
 
-    async def get_user(self, identifier: str) -> Optional[cl.User]:
+    async def get_user(self, identifier: str) -> Optional[PersistedUser]:
         try:
             user = await User.objects.aget(username=identifier)
-            return cl.User(identifier=user.username, metadata={"id": user.id})
+            return PersistedUser(
+                id=str(user.id),
+                identifier=user.username,
+                createdAt=user.date_joined.isoformat()
+            )
         except User.DoesNotExist:
             return None
 
-    async def create_user(self, user: cl.User) -> Optional[cl.User]:
+    async def create_user(self, user: cl.User) -> Optional[PersistedUser]:
         # We assume users are managed by Django auth, so we don't create them here 
         # unless we want to support auto-registration via Chainlit (optional).
         # For now, we return the user if exists.
@@ -227,6 +232,12 @@ class DjangoDataLayer(BaseDataLayer):
         if isinstance(end, str):
             end = datetime.datetime.fromisoformat(end.replace("Z", "+00:00"))
 
+        show_input_val = step_dict.get("showInput", True)
+        if isinstance(show_input_val, str):
+            show_input_bool = True
+        else:
+            show_input_bool = bool(show_input_val)
+
         await ChainlitStep.objects.acreate(
             id=step_dict.get("id"),
             name=step_dict.get("name"),
@@ -241,7 +252,7 @@ class DjangoDataLayer(BaseDataLayer):
             start=start,
             end=end,
             generation=step_dict.get("generation"),
-            show_input=step_dict.get("showInput", True),
+            show_input=show_input_bool,
             language=step_dict.get("language"),
             indent=step_dict.get("indent", 0)
         )
