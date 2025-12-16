@@ -14,6 +14,7 @@ from django.contrib.auth import get_user_model
 from asgiref.sync import sync_to_async
 from django.utils import timezone
 from django.db.models import Q
+from django.db.utils import IntegrityError
 
 from failures.chat.models import ChainlitThread, ChainlitStep, ChainlitElement, ChainlitFeedback
 
@@ -216,8 +217,11 @@ class DjangoDataLayer(BaseDataLayer):
             thread = await ChainlitThread.objects.aget(id=thread_id)
         except ChainlitThread.DoesNotExist:
             # Implicitly create thread if missing? Typically Chainlit calls update_thread first.
-            # But let's create a stub if needed.
-            thread = await ChainlitThread.objects.acreate(id=thread_id)
+            try:
+                thread = await ChainlitThread.objects.acreate(id=thread_id)
+            except IntegrityError:
+                # Race condition: another request created the thread in the meantime
+                thread = await ChainlitThread.objects.aget(id=thread_id)
 
         # Parse timestamps
         created_at = step_dict.get("createdAt")
