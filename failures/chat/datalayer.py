@@ -217,15 +217,15 @@ class DjangoDataLayer(BaseDataLayer):
         # Parse timestamps
         created_at = step_dict.get("createdAt")
         if isinstance(created_at, str):
-            created_at = datetime.datetime.fromisoformat(created_at)
+            created_at = datetime.datetime.fromisoformat(created_at.replace("Z", "+00:00"))
         
         start = step_dict.get("start")
         if isinstance(start, str):
-            start = datetime.datetime.fromisoformat(start)
+            start = datetime.datetime.fromisoformat(start.replace("Z", "+00:00"))
             
         end = step_dict.get("end")
         if isinstance(end, str):
-            end = datetime.datetime.fromisoformat(end)
+            end = datetime.datetime.fromisoformat(end.replace("Z", "+00:00"))
 
         await ChainlitStep.objects.acreate(
             id=step_dict.get("id"),
@@ -255,11 +255,11 @@ class DjangoDataLayer(BaseDataLayer):
         if "generation" in step_dict: update_fields["generation"] = step_dict["generation"]
         if "start" in step_dict:
              start = step_dict["start"]
-             if isinstance(start, str): start = datetime.datetime.fromisoformat(start)
+             if isinstance(start, str): start = datetime.datetime.fromisoformat(start.replace("Z", "+00:00"))
              update_fields["start"] = start
         if "end" in step_dict:
              end = step_dict["end"]
-             if isinstance(end, str): end = datetime.datetime.fromisoformat(end)
+             if isinstance(end, str): end = datetime.datetime.fromisoformat(end.replace("Z", "+00:00"))
              update_fields["end"] = end
         if "language" in step_dict: update_fields["language"] = step_dict["language"]
         if "streaming" in step_dict: update_fields["streaming"] = step_dict["streaming"]
