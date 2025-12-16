@@ -202,8 +202,11 @@ async def start():
             await cl.Message(content="Error: User session not found. Please try logging in again.").send()
             return
 
-        # We return the username as identifier, and ID in metadata just in case, 
-        # but PersistedUser in datalayer.py uses the ID field.
+        # Explicitly update thread with user info immediately
+        thread_id = context.session.thread_id
+        # We assume user.metadata["id"] contains the DB ID, or user.identifier is username.
+        # datalayer.update_thread handles both.
+        # But get_user returned PersistedUser which has 'id' property.
         user_id_for_db = user.id if hasattr(user, 'id') else user.identifier
         
         await data_layer.update_thread(
@@ -224,6 +227,11 @@ async def start():
     except Exception as e:
         logging.error(f"Error in on_chat_start: {e}", exc_info=True)
         await cl.Message(content=f"An internal error occurred: {str(e)}").send()
+
+@cl.on_chat_resume
+async def on_resume(thread: cl.ThreadDict):
+    cl.user_session.set("state", "chat_mode")
+    logging.info(f"Resumed chat thread: {thread['id']}")
 
 @cl.action_callback("create_fmea")
 async def on_create_fmea(action):
