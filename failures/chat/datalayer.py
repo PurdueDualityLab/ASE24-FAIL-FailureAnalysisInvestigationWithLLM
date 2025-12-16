@@ -54,7 +54,8 @@ class DjangoDataLayer(BaseDataLayer):
 
         if filter.userId:
             logging.info(f"Filtering by userId: {filter.userId}")
-            qs = qs.filter(user__username=filter.userId)
+            # Chainlit sends the User ID because we returned it in PersistedUser
+            qs = qs.filter(user__id=filter.userId)
         
         if filter.search:
             qs = qs.filter(name__icontains=filter.search)
@@ -189,17 +190,17 @@ class DjangoDataLayer(BaseDataLayer):
         user = None
         if user_id:
             try:
-                user = await User.objects.aget(username=user_id)
-            except User.DoesNotExist:
-                # Try looking up by ID as fallback
-                try:
-                    user = await User.objects.aget(pk=user_id)
-                except (User.DoesNotExist, ValueError):
-                    logging.warning(f"User {user_id} not found during thread update")
-                    pass
-            
-            if user:
+                # We return user ID as string in get_user, so we expect ID here.
+                user = await User.objects.aget(pk=user_id)
                 defaults["user"] = user
+            except (User.DoesNotExist, ValueError):
+                logging.warning(f"User with ID {user_id} not found during thread update")
+                pass
+
+        await ChainlitThread.objects.aupdate_or_create(
+            id=thread_id,
+            defaults=defaults
+        )
 
         await ChainlitThread.objects.aupdate_or_create(
             id=thread_id,
