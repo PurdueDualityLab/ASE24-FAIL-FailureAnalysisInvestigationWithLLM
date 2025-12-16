@@ -230,8 +230,11 @@ async def start():
 
 @cl.on_chat_resume
 async def on_resume(thread: dict):
-    cl.user_session.set("state", "chat_mode")
-    logging.info(f"Resumed chat thread: {thread['id']}")
+    try:
+        cl.user_session.set("state", "chat_mode")
+        logging.info(f"Resumed chat thread: {thread['id']}")
+    except Exception as e:
+        logging.error(f"Error in on_resume: {e}", exc_info=True)
 
 @cl.action_callback("create_fmea")
 async def on_create_fmea(action):

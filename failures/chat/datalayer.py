@@ -113,9 +113,11 @@ class DjangoDataLayer(BaseDataLayer):
         )
 
     async def get_thread(self, thread_id: str) -> Optional[cl_types.ThreadDict]:
+        logging.info(f"get_thread called for {thread_id}")
         try:
             thread = await ChainlitThread.objects.select_related("user").aget(id=thread_id)
         except ChainlitThread.DoesNotExist:
+            logging.warning(f"Thread {thread_id} not found")
             return None
 
         steps_data = []
