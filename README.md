@@ -1,9 +1,9 @@
 # FAIL [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13376644.svg)](https://doi.org/10.5281/zenodo.13376644)
 
-FAIL is an LLM based pipeline to collect and analyze software failures from the news. This paper can be found here [https://arxiv.org/abs/2406.08221](https://arxiv.org/abs/2406.08221).
+FAIL is an LLM based pipeline to collect and analyze software failures from the news. This paper can be found here [https://doi.org/10.1145/3691620.3695022](https://doi.org/10.1145/3691620.3695022).
 
-A database of software failures from 2010 to 2022 curated by FAIL is available at: [http://ec2-44-222-209-185.compute-1.amazonaws.com:8000/dashboard/](http://ec2-44-222-209-185.compute-1.amazonaws.com:8000/dashboard/)
-- Unfortunately, the website is currently broken, and we are working on fixing it. In the meantime, our raw database is available as a JSON dump at: [https://drive.google.com/file/d/1Ajwxj2PKVunTJHT98naD9s7lc6kmptHu/view](https://drive.google.com/file/d/1Ajwxj2PKVunTJHT98naD9s7lc6kmptHu/view)
+A database of software failures from 2010 to 2022 curated by FAIL is available at: [https://softwarefailures.com/](https://softwarefailures.com/)
+- If the website is broken, our raw database is available as a JSON dump at: [https://drive.google.com/file/d/1Ajwxj2PKVunTJHT98naD9s7lc6kmptHu/view](https://drive.google.com/file/d/1Ajwxj2PKVunTJHT98naD9s7lc6kmptHu/view)
 - You can also view our database as a SQL dump at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13376695.svg)](https://doi.org/10.5281/zenodo.13376695)
 - The JSON data contains a list of articles and incidents. Incidents have a generated postmortem report as described in Table 1 of the paper. Please note that there are occasionall missing (N/A) values in the reports. An analysis of this data is described in Section 4 of the paper.
 
@@ -116,7 +116,7 @@ Option 2. Using Only the Command Line
        ```
 
 > [!TIP] 
->To scrape news for specific years, specific sources, specific key words, modify and run: [tests/commands/exp_RunQueriesCommand.py](tests/commands/exp_RunQueriesCommand.py)
+>To scrape news for specific years, specific sources, specific key words, modify and run: [tests/commands/exp_runQueries.py](tests/commands/exp_runQueries.py)
 
 ### Step 2. Classifying articles on whether they report on software failures
 
