@@ -202,16 +202,8 @@ async def start():
             await cl.Message(content="Error: User session not found. Please try logging in again.").send()
             return
 
-        thread_id = context.session.thread_id
-        
-        # Check if this is actually a resume
-        existing_thread = await data_layer.get_thread(thread_id)
-        if existing_thread and existing_thread.get("steps"):
-            logging.info(f"Thread {thread_id} already exists with steps. Treating as resume.")
-            await on_resume(existing_thread)
-            return
-
         # Explicitly update thread with user info immediately
+        thread_id = context.session.thread_id
         # We assume user.metadata["id"] contains the DB ID, or user.identifier is username.
         # datalayer.update_thread handles both.
         # But get_user returned PersistedUser which has 'id' property.
