@@ -232,7 +232,7 @@ async def start():
 async def on_resume(thread: dict):
     try:
         cl.user_session.set("state", "chat_mode")
-        logging.info(f"Resumed chat thread: {thread['id']}")
+        logging.info(f"Resumed chat thread: {thread.get('id', 'UNKNOWN_ID')}")
     except Exception as e:
         logging.error(f"Error in on_resume: {e}", exc_info=True)
 

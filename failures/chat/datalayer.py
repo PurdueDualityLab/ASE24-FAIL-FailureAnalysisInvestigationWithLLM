@@ -19,6 +19,7 @@ from django.db.utils import IntegrityError
 from failures.chat.models import ChainlitThread, ChainlitStep, ChainlitElement, ChainlitFeedback
 
 User = get_user_model()
+logger = logging.getLogger(__name__)
 
 class DjangoDataLayer(BaseDataLayer):
     """
@@ -40,37 +41,30 @@ class DjangoDataLayer(BaseDataLayer):
             return None
 
     async def create_user(self, user: cl.User) -> Optional[PersistedUser]:
-        # We assume users are managed by Django auth, so we don't create them here 
-        # unless we want to support auto-registration via Chainlit (optional).
-        # For now, we return the user if exists.
         return await self.get_user(user.identifier)
 
     async def list_threads(
         self, pagination: cl_types.Pagination, filter: cl_types.ThreadFilter
     ) -> cl_types.PaginatedResponse[cl_types.ThreadDict]:
         
-        logging.info(f"List threads called with filter: {filter} and pagination: {pagination}")
+        logger.info(f"List threads called with filter: {filter} and pagination: {pagination}")
         qs = ChainlitThread.objects.all().select_related("user")
 
         if filter.userId:
-            logging.info(f"Filtering by userId: {filter.userId}")
-            # Chainlit sends the User ID because we returned it in PersistedUser
+            logger.info(f"Filtering by userId: {filter.userId}")
             qs = qs.filter(user__id=filter.userId)
         
         if filter.search:
             qs = qs.filter(name__icontains=filter.search)
         
         if filter.feedback is not None:
-            # This requires joining with feedback, which might be complex.
-            # Simplifying for now: filter threads that have steps with feedback with value.
             if filter.feedback == 1:
                 qs = qs.filter(steps__feedbacks__value=1).distinct()
             elif filter.feedback == -1:
-                qs = qs.filter(steps__feedbacks__value=0).distinct() # Chainlit typically uses 0/1, sometimes -1.
+                qs = qs.filter(steps__feedbacks__value=0).distinct()
 
         qs = qs.order_by("-created_at")
 
-        # Pagination logic
         limit = pagination.first or 20
         
         if pagination.cursor:
@@ -82,7 +76,6 @@ class DjangoDataLayer(BaseDataLayer):
 
         threads_data = []
         
-        # We need to slice one more to check `hasNextPage`
         threads_list = [t async for t in qs[:limit + 1]]
         has_next_page = len(threads_list) > limit
         if has_next_page:
@@ -106,6 +99,8 @@ class DjangoDataLayer(BaseDataLayer):
                 "tags": thread.tags,
                 "metadata": thread.metadata,
             })
+        
+        logger.info(f"Returning {len(threads_data)} threads. IDs: {[t['id'] for t in threads_data]}")
 
         return cl_types.PaginatedResponse(
             data=threads_data,
@@ -113,74 +108,88 @@ class DjangoDataLayer(BaseDataLayer):
         )
 
     async def get_thread(self, thread_id: str) -> Optional[cl_types.ThreadDict]:
-        logging.info(f"get_thread called for {thread_id}")
+        logger.info(f"get_thread called for ID: '{thread_id}'")
         try:
+            # First verify existence without select_related to isolate issues
+            exists = await ChainlitThread.objects.filter(id=thread_id).aexists()
+            if not exists:
+                logger.warning(f"Thread '{thread_id}' does not exist in DB.")
+                return None
+            
             thread = await ChainlitThread.objects.select_related("user").aget(id=thread_id)
+            logger.info(f"Found thread: {thread.id}, Name: {thread.name}")
         except ChainlitThread.DoesNotExist:
-            logging.warning(f"Thread {thread_id} not found")
+            logger.warning(f"Thread '{thread_id}' not found (raised DoesNotExist).")
+            return None
+        except Exception as e:
+            logger.error(f"Error fetching thread '{thread_id}': {e}", exc_info=True)
             return None
 
-        steps_data = []
-        async for step in thread.steps.all().order_by("created_at"):
-            feedbacks = []
-            async for fb in step.feedbacks.all():
-                feedbacks.append({
-                    "id": fb.id,
-                    "forId": fb.for_id,
-                    "value": fb.value,
-                    "comment": fb.comment
+        try:
+            steps_data = []
+            async for step in thread.steps.all().order_by("created_at"):
+                feedbacks = []
+                async for fb in step.feedbacks.all():
+                    feedbacks.append({
+                        "id": fb.id,
+                        "forId": fb.for_id,
+                        "value": fb.value,
+                        "comment": fb.comment
+                    })
+                
+                steps_data.append({
+                    "id": step.id,
+                    "name": step.name,
+                    "type": step.type,
+                    "threadId": thread.id,
+                    "parentId": step.parent_id,
+                    "disableFeedback": step.disable_feedback,
+                    "streaming": step.streaming,
+                    "input": step.input,
+                    "output": step.output,
+                    "createdAt": step.created_at.isoformat(),
+                    "start": step.start.isoformat() if step.start else None,
+                    "end": step.end.isoformat() if step.end else None,
+                    "generation": step.generation,
+                    "showInput": step.show_input,
+                    "language": step.language,
+                    "indent": step.indent,
+                    "feedback": feedbacks[0] if feedbacks else None
                 })
-            
-            steps_data.append({
-                "id": step.id,
-                "name": step.name,
-                "type": step.type,
-                "threadId": thread.id,
-                "parentId": step.parent_id,
-                "disableFeedback": step.disable_feedback,
-                "streaming": step.streaming,
-                "input": step.input,
-                "output": step.output,
-                "createdAt": step.created_at.isoformat(),
-                "start": step.start.isoformat() if step.start else None,
-                "end": step.end.isoformat() if step.end else None,
-                "generation": step.generation,
-                "showInput": step.show_input,
-                "language": step.language,
-                "indent": step.indent,
-                "feedback": feedbacks[0] if feedbacks else None # Chainlit Step dict expects single feedback object or list? Usually 'feedback' field.
-            })
 
-        elements_data = []
-        async for el in thread.elements.all():
-            elements_data.append({
-                "id": el.id,
-                "threadId": thread.id,
-                "type": el.type,
-                "url": el.url,
-                "chainlitKey": el.chainlit_key,
-                "name": el.name,
-                "display": el.display,
-                "size": el.size,
-                "language": el.language,
-                "page": el.page,
-                "props": el.props,
-            })
+            elements_data = []
+            async for el in thread.elements.all():
+                elements_data.append({
+                    "id": el.id,
+                    "threadId": thread.id,
+                    "type": el.type,
+                    "url": el.url,
+                    "chainlitKey": el.chainlit_key,
+                    "name": el.name,
+                    "display": el.display,
+                    "size": el.size,
+                    "language": el.language,
+                    "page": el.page,
+                    "props": el.props,
+                })
 
-        return {
-            "id": thread.id,
-            "createdAt": thread.created_at.isoformat(),
-            "name": thread.name,
-            "userId": thread.user.username if thread.user else None,
-            "user": {"identifier": thread.user.username} if thread.user else None,
-            "tags": thread.tags,
-            "metadata": thread.metadata,
-            "steps": steps_data,
-            "elements": elements_data,
-        }
+            return {
+                "id": thread.id,
+                "createdAt": thread.created_at.isoformat(),
+                "name": thread.name,
+                "userId": thread.user.username if thread.user else None,
+                "user": {"identifier": thread.user.username} if thread.user else None,
+                "tags": thread.tags,
+                "metadata": thread.metadata,
+                "steps": steps_data,
+                "elements": elements_data,
+            }
+        except Exception as e:
+            logger.error(f"Error constructing response for thread '{thread_id}': {e}", exc_info=True)
+            return None
 
     async def update_thread(self, thread_id: str, name: Optional[str] = None, user_id: Optional[str] = None, metadata: Optional[Dict] = None, tags: Optional[List[str]] = None):
-        logging.info(f"Update thread: {thread_id}, user_id: {user_id}")
+        logger.info(f"Update thread: {thread_id}, user_id: {user_id}, name: {name}")
         defaults = {}
         if name is not None:
             defaults["name"] = name
@@ -192,17 +201,11 @@ class DjangoDataLayer(BaseDataLayer):
         user = None
         if user_id:
             try:
-                # We return user ID as string in get_user, so we expect ID here.
                 user = await User.objects.aget(pk=user_id)
                 defaults["user"] = user
             except (User.DoesNotExist, ValueError):
-                logging.warning(f"User with ID {user_id} not found during thread update")
+                logger.warning(f"User with ID {user_id} not found during thread update")
                 pass
-
-        await ChainlitThread.objects.aupdate_or_create(
-            id=thread_id,
-            defaults=defaults
-        )
 
         await ChainlitThread.objects.aupdate_or_create(
             id=thread_id,
@@ -229,14 +232,11 @@ class DjangoDataLayer(BaseDataLayer):
         try:
             thread = await ChainlitThread.objects.aget(id=thread_id)
         except ChainlitThread.DoesNotExist:
-            # Implicitly create thread if missing? Typically Chainlit calls update_thread first.
             try:
                 thread = await ChainlitThread.objects.acreate(id=thread_id)
             except IntegrityError:
-                # Race condition: another request created the thread in the meantime
                 thread = await ChainlitThread.objects.aget(id=thread_id)
 
-        # Parse timestamps
         created_at = step_dict.get("createdAt")
         if isinstance(created_at, str):
             created_at = datetime.datetime.fromisoformat(created_at.replace("Z", "+00:00"))
@@ -344,10 +344,8 @@ class DjangoDataLayer(BaseDataLayer):
     async def update_element(self, element_dict: ElementDict):
         element_id = element_dict.get("id")
         update_fields = {}
-        # Populate fields to update
         for k in ["url", "chainlitKey", "name", "display", "size", "language", "page", "props"]:
             if k in element_dict:
-                # Map camelCase to snake_case
                 key = "chainlit_key" if k == "chainlitKey" else k
                 update_fields[key] = element_dict[k]
         
@@ -366,9 +364,7 @@ class DjangoDataLayer(BaseDataLayer):
             except ChainlitStep.DoesNotExist:
                 pass
         
-        feedback_id = feedback.id or "" # What if id is None? Model expects ID? 
-        # Chainlit usually provides ID for upsert or it expects backend to handle it.
-        # Check Feedback dataclass: id: Optional[str] = None
+        feedback_id = feedback.id or ""
         
         defaults = {
             "for_id": step_id,
@@ -384,7 +380,6 @@ class DjangoDataLayer(BaseDataLayer):
             )
             return feedback_id
         else:
-            # Create new
             new_feedback = await ChainlitFeedback.objects.acreate(**defaults)
             return new_feedback.id
 
