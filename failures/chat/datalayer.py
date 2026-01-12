@@ -243,7 +243,7 @@ class DjangoDataLayer(BaseDataLayer):
             pass
         return ""
     
-    async def create_user_message(self, user_message: cl_types.UserMessageDict):
+    async def create_user_message(self, user_message: Dict):
         # Compatibility wrapper for older Chainlit versions or fallback
         logger.info(f"create_user_message called for {user_message.get('id')}")
         step_dict: StepDict = {

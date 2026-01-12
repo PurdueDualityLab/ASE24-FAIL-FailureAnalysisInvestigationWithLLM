@@ -260,6 +260,20 @@ async def on_chat_db(action):
 
 @cl.on_message
 async def on_message(message: cl.Message):
+    # Manually persist user message to ensure history is saved (workaround for missing persistence)
+    try:
+        if message.id and message.thread_id:
+            await data_layer.create_user_message({
+                "id": message.id,
+                "name": "User",
+                "type": "user_message",
+                "threadId": message.thread_id,
+                "output": message.content,
+                "createdAt": message.created_at if message.created_at else None
+            })
+    except Exception as e:
+        logging.error(f"Failed to manually persist user message: {e}", exc_info=True)
+
     state = cl.user_session.get("state")
 
     if state == "awaiting_fmea_description":
