@@ -178,8 +178,25 @@ class DjangoDataLayer(BaseDataLayer):
             userId = str(thread.user.id) if thread.user else None
             logger.info(f"Thread {thread_id} returning userId: {userId} (should match Session User ID)")
 
+            # Sanitize parentIds to ensure tree integrity
+            step_ids = set(s['id'] for s in steps_data)
+            for step in steps_data:
+                if step['parentId'] and step['parentId'] not in step_ids:
+                    logger.warning(f"Step {step['id']} has missing parent {step['parentId']}. Resetting to root.")
+                    step['parentId'] = None
+
             if steps_data:
                 logger.info(f"First step: ID={steps_data[0]['id']}, ParentID={steps_data[0]['parentId']}")
+                types = [s['type'] for s in steps_data]
+                logger.info(f"Step types in thread: {types}")
+                
+                # Check for potential tree issues (logging only, as we fixed them above)
+                # missing_parents check is now redundant but kept for confirmation
+                missing_parents = [s['id'] for s in steps_data if s['parentId'] and s['parentId'] not in step_ids]
+                if missing_parents:
+                    logger.error(f"Logic error: Steps with missing parents still exist: {missing_parents}")
+
+
 
             return {
                 "id": thread.id,
