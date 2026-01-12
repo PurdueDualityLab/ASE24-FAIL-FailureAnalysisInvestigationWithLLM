@@ -175,11 +175,17 @@ class DjangoDataLayer(BaseDataLayer):
                     "props": el.props,
                 })
 
+            userId = str(thread.user.id) if thread.user else None
+            logger.info(f"Thread {thread_id} returning userId: {userId} (should match Session User ID)")
+
+            if steps_data:
+                logger.info(f"First step: ID={steps_data[0]['id']}, ParentID={steps_data[0]['parentId']}")
+
             return {
                 "id": thread.id,
                 "createdAt": thread.created_at.isoformat(),
                 "name": thread.name,
-                "userId": str(thread.user.id) if thread.user else None,
+                "userId": userId,
                 "user": {"identifier": thread.user.username} if thread.user else None,
                 "tags": thread.tags,
                 "metadata": thread.metadata,
