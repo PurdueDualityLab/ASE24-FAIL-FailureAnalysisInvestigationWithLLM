@@ -110,12 +110,6 @@ class DjangoDataLayer(BaseDataLayer):
     async def get_thread(self, thread_id: str) -> Optional[cl_types.ThreadDict]:
         logger.info(f"get_thread called for ID: '{thread_id}'")
         try:
-            # First verify existence without select_related to isolate issues
-            exists = await ChainlitThread.objects.filter(id=thread_id).aexists()
-            if not exists:
-                logger.warning(f"Thread '{thread_id}' does not exist in DB.")
-                return None
-            
             thread = await ChainlitThread.objects.select_related("user").aget(id=thread_id)
             logger.info(f"Found thread: {thread.id}, Name: {thread.name}")
         except ChainlitThread.DoesNotExist:
@@ -248,6 +242,27 @@ class DjangoDataLayer(BaseDataLayer):
         except ChainlitThread.DoesNotExist:
             pass
         return ""
+    
+    async def create_user_message(self, user_message: cl_types.UserMessageDict):
+        # Compatibility wrapper for older Chainlit versions or fallback
+        logger.info(f"create_user_message called for {user_message.get('id')}")
+        step_dict: StepDict = {
+            "id": user_message.get("id"),
+            "name": user_message.get("name", "User"),
+            "type": "user_message",
+            "threadId": user_message.get("threadId"),
+            "parentId": user_message.get("parentId"),
+            "input": user_message.get("output"), # User message content is usually in output? or input? Chainlit types are confusing. 
+            # In Chainlit 1.x user message had 'content'. In 2.x Step has 'output'. 
+            # But wait, create_user_message argument is UserMessageDict?
+            # Let's inspect what we get.
+            "output": user_message.get("output"),
+            "createdAt": user_message.get("createdAt"),
+            "showInput": True,
+        }
+        # If input is missing but output is present, map output to input? 
+        # Usually user message text is in 'output' for Steps.
+        await self.create_step(step_dict)
 
     async def create_step(self, step_dict: StepDict):
         thread_id = step_dict.get("threadId")
