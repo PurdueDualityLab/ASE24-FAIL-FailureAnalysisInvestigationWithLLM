@@ -261,6 +261,8 @@ class DjangoDataLayer(BaseDataLayer):
                 thread = await ChainlitThread.objects.acreate(id=thread_id)
             except IntegrityError:
                 thread = await ChainlitThread.objects.aget(id=thread_id)
+        
+        logger.info(f"Creating step: {step_dict.get('id')} ({step_dict.get('type')}) for thread {thread_id}")
 
         created_at = step_dict.get("createdAt")
         if isinstance(created_at, str):
@@ -280,27 +282,31 @@ class DjangoDataLayer(BaseDataLayer):
         else:
             show_input_bool = bool(show_input_val)
 
-        await ChainlitStep.objects.acreate(
-            id=step_dict.get("id"),
-            name=step_dict.get("name"),
-            type=step_dict.get("type"),
-            thread=thread,
-            parent_id=step_dict.get("parentId"),
-            disable_feedback=step_dict.get("disableFeedback", False),
-            streaming=step_dict.get("streaming", False),
-            input=step_dict.get("input"),
-            output=step_dict.get("output"),
-            created_at=created_at or timezone.now(),
-            start=start,
-            end=end,
-            generation=step_dict.get("generation"),
-            show_input=show_input_bool,
-            language=step_dict.get("language"),
-            indent=step_dict.get("indent", 0)
-        )
+        try:
+            await ChainlitStep.objects.acreate(
+                id=step_dict.get("id"),
+                name=step_dict.get("name"),
+                type=step_dict.get("type"),
+                thread=thread,
+                parent_id=step_dict.get("parentId"),
+                disable_feedback=step_dict.get("disableFeedback", False),
+                streaming=step_dict.get("streaming", False),
+                input=step_dict.get("input"),
+                output=step_dict.get("output"),
+                created_at=created_at or timezone.now(),
+                start=start,
+                end=end,
+                generation=step_dict.get("generation"),
+                show_input=show_input_bool,
+                language=step_dict.get("language"),
+                indent=step_dict.get("indent", 0)
+            )
+        except Exception as e:
+            logger.error(f"Failed to create step {step_dict.get('id')}: {e}", exc_info=True)
 
     async def update_step(self, step_dict: StepDict):
         step_id = step_dict.get("id")
+        logger.info(f"Updating step: {step_id}")
         update_fields = {}
         
         if "input" in step_dict: update_fields["input"] = step_dict["input"]
