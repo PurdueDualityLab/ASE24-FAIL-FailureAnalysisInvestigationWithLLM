@@ -94,7 +94,7 @@ class DjangoDataLayer(BaseDataLayer):
                 "id": thread.id,
                 "createdAt": thread.created_at.isoformat(),
                 "name": thread.name,
-                "userId": thread.user.username if thread.user else None,
+                "userId": str(thread.user.id) if thread.user else None,
                 "user": user_data,
                 "tags": thread.tags,
                 "metadata": thread.metadata,
@@ -156,6 +156,8 @@ class DjangoDataLayer(BaseDataLayer):
                     "indent": step.indent,
                     "feedback": feedbacks[0] if feedbacks else None
                 })
+            
+            logger.info(f"Thread {thread_id} has {len(steps_data)} steps.")
 
             elements_data = []
             async for el in thread.elements.all():
@@ -177,7 +179,7 @@ class DjangoDataLayer(BaseDataLayer):
                 "id": thread.id,
                 "createdAt": thread.created_at.isoformat(),
                 "name": thread.name,
-                "userId": thread.user.username if thread.user else None,
+                "userId": str(thread.user.id) if thread.user else None,
                 "user": {"identifier": thread.user.username} if thread.user else None,
                 "tags": thread.tags,
                 "metadata": thread.metadata,
