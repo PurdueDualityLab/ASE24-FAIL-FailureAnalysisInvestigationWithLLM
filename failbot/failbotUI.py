@@ -17,12 +17,42 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 from pydantic import BaseModel
 import chainlit as cl
+from chainlit.context import context
+
+from failures.chat.datalayer import DjangoDataLayer
+
+# Instantiate the data layer globally
+data_layer = DjangoDataLayer()
+
+@cl.data_layer
+def get_data_layer():
+    return data_layer
 
 from asgiref.sync import sync_to_async
+from django.contrib.auth import authenticate
+
+
+@cl.password_auth_callback
+async def auth_callback(username, password):
+    # Use sync_to_async to run the synchronous Django authenticate function
+    try:
+        user = await sync_to_async(authenticate)(username=username, password=password)
+        if user is not None:
+            logging.info(f"User authenticated successfully: {user.username}")
+            # Django user is authenticated, return a Chainlit user
+            # We return the username as identifier, and ID in metadata just in case, 
+            # but PersistedUser in datalayer.py uses the ID field.
+            return cl.User(identifier=user.username, metadata={"id": user.id})
+        logging.warning(f"Authentication failed for user: {username}")
+    except Exception as e:
+        logging.error(f"Error during authentication: {e}", exc_info=True)
+    # Authentication failed
+    return None
+
 
 # --- Setup ---
 
-chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001")
+chroma_client = chromadb.HttpClient(host="chroma", port="8001")
 embedding_function = OpenAIEmbeddings()
 vector_db = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
 
@@ -154,28 +184,79 @@ def generate_fmea_from_articles(incidents, user_description):
     )
 
     logging.info("Generating FMEA grounded in article-linked incidents...")
-    response = conversation_chain.predict(input=prompt)
+    response = conversation_chain.invoke({"input": prompt})["response"]
     logging.info(f"FMEA Response:\n{response}")
     
     return response
 
 
+async def resume_chat(thread: dict):
+    try:
+        cl.user_session.set("state", "chat_mode")
+        logging.info(f"Resumed chat thread: {thread.get('id', 'UNKNOWN_ID')}")
+    except Exception as e:
+        logging.error(f"Error in resume_chat: {e}", exc_info=True)
+
+@cl.on_chat_resume
+async def on_resume(thread: dict):
+    await resume_chat(thread)
+
 # --- Chainlit App ---
 @cl.on_chat_start
 async def start():
-    cl.user_session.set("awaiting_description", True)
-    await cl.Message(
-        content="👋 Welcome! I am a Failure Aware ChatBot. I can help you create Software FMEAs. To get started, please describe the system you're designing:"
-    ).send()
+    try:
+        user = cl.user_session.get("user")
+        logging.info(f"Chat started. Session user: {user}")
+        
+        if not user:
+            logging.error("User missing in session on chat start.")
+            await cl.Message(content="Error: User session not found. Please try logging in again.").send()
+            return
 
+        thread_id = context.session.thread_id
+        
+        # Check if this is actually a resume (Manual check as native on_chat_resume is unreliable here)
+        # existing_thread = await data_layer.get_thread(thread_id)
+        # if existing_thread and existing_thread.get("steps"):
+        #     logging.info(f"Thread {thread_id} already exists with steps. Treating as resume.")
+        #     await resume_chat(existing_thread)
+        #     return
+
+        # Explicitly update thread with user info immediately
+        # We assume user.metadata["id"] contains the DB ID, or user.identifier is username.
+        # datalayer.update_thread handles both.
+        # But get_user returned PersistedUser which has 'id' property.
+        user_id_for_db = getattr(user, "id", None) or user.metadata.get("id") or user.identifier
+        
+        logging.info(f"Updating thread {thread_id} for user {user.identifier} (DB ID: {user_id_for_db})")
+        
+        await data_layer.update_thread(
+            thread_id=thread_id,
+            user_id=user_id_for_db,
+            name="New Conversation"
+        )
+
+        cl.user_session.set("state", "initial")
+        actions = [
+            cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
+            cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
+        ]
+        await cl.Message(
+            content=f"Welcome to FailBot, {user.identifier}! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
+            actions=actions
+        ).send()
+    except Exception as e:
+        logging.error(f"Error in on_chat_start: {e}", exc_info=True)
+        await cl.Message(content=f"An internal error occurred: {str(e)}").send()
 
 @cl.on_message
 async def on_message(message: cl.Message):
-    if cl.user_session.get("awaiting_description", True):
+    state = cl.user_session.get("state")
+
+    if state == "awaiting_fmea_description":
         system_description = message.content
         cl.user_session.set("system_description", system_description)
-        cl.user_session.set("awaiting_description", False)
-
+        
         await cl.Message(content="🔍 Retrieving relevant incidents from FailDB...").send()
         incidents = await sync_to_async(RAG_relevant_incidents)(system_description)
 
@@ -189,24 +270,74 @@ async def on_message(message: cl.Message):
         fmea_output = await sync_to_async(generate_fmea_from_articles)(filtered_incidents, system_description)
 
         cl.user_session.set("fmea_context", fmea_output)
+        cl.user_session.set("state", "fmea_generated")
 
         await cl.Message(
             content=f"📋 **Generated FMEA:**\n\n{fmea_output}",
             actions=[cl.Action(name="restart", value="restart", label="🔄 Start Over", payload={})]
         ).send()
-    else:
-        # Continue the conversation after FMEA
-        follow_up = message.content
-        response = await sync_to_async(conversation_chain.predict)(input=follow_up)
+    
+    elif state == "chat_mode":
+        user_message = message.content.lower()
+        if "create fmea" in user_message or "generate fmea" in user_message:
+            cl.user_session.set("state", "awaiting_fmea_description")
+            await cl.Message(
+                content="It looks like you want to create an FMEA. To get started, please describe the system you're designing:"
+            ).send()
+            return
+
+        await cl.Message(content="🔍 Searching the Failures database...").send()
+        incidents = await sync_to_async(RAG_relevant_incidents)(message.content)
+        
+        if not incidents:
+            response = (await sync_to_async(conversation_chain.invoke)({'input': message.content}))['response']
+            await cl.Message(content=response).send()
+            return
+
+        incidents_json = json.dumps(incidents, indent=2)
+        prompt = (
+            "You are a chatbot assistant for a database of software failures. "
+            "A user has asked a question. Use the following relevant incidents from the database to answer the user's question.\n"
+            "User question: "
+            f"{message.content}\n\n"
+            "Relevant incidents:\n"
+            f"{incidents_json}\n\n"
+            "Answer the user's question based on the provided incidents. If the incidents are not relevant, say that you couldn't find an answer in the database. "
+            "Cite incident IDs when you use information from them."
+        )
+        
+        response = (await sync_to_async(conversation_chain.invoke)({'input': prompt}))['response']
         await cl.Message(content=response).send()
+
+    elif state == "fmea_generated":
+        follow_up = message.content
+        response = (await sync_to_async(conversation_chain.invoke)({'input': follow_up}))['response']
+        await cl.Message(content=response).send()
+        
+    else: # state is "initial" or None
+        actions = [
+            cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
+            cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
+        ]
+        await cl.Message(
+            content="Please choose an option. Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
+            actions=actions
+        ).send()
 
 @cl.action_callback("restart")
 async def on_restart(action):
-    cl.user_session.set("awaiting_description", True)
     cl.user_session.set("system_description", None)
     cl.user_session.set("fmea_context", None)
     memory.clear()
-    await cl.Message(content="🔄 Restarted! Please describe a new system you'd like help with:").send()
+    cl.user_session.set("state", "initial")
+    actions = [
+        cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
+        cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
+    ]
+    await cl.Message(
+        content="🔄 Restarted! Would you like me to create an FMEA for your system or would you like to chat with the Failures database?",
+        actions=actions
+    ).send()
 
 
 #TODO:

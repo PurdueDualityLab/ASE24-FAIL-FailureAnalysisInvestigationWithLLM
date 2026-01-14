@@ -11,10 +11,13 @@ APPS_DIR = ROOT_DIR / "failures"
 env = environ.Env()
 
 # Fix to Chroma requires sqlite3 >= 3.35.0
-__import__('pysqlite3')
-import sys
+try:
+    __import__('pysqlite3')
+    import sys
 
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except (ImportError, RecursionError):
+    pass
 
 
 # GENERAL
@@ -37,7 +40,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 
 # DATABASES
 # ------------------------------------------------------------------------------
-DATABASES = {"default": env.db("DATABASE_URL")}
+DATABASES = {"default": env.db("DJANGO_DATABASE_URL", default=env("DATABASE_URL", default="postgres:///failures"))}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -70,6 +73,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "failures.articles.apps.ArticlesConfig",
     "failures.parameters.apps.ParametersConfig",
+    "failures.chat.apps.ChatConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

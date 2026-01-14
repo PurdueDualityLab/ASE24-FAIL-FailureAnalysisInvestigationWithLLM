@@ -25,12 +25,15 @@ services:
     volumes:
       - .:/app:z
     env_file:
+      - .env
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
       - ./.envs/.local/.data
     ports:
       - "8000:8000"
     command: /start
+    networks:
+      - net
 
 
   postgres:
@@ -44,6 +47,8 @@ services:
       - failures_local_postgres_data_backups:/backups:z
     env_file:
       - ./.envs/.local/.postgres
+    networks:
+      - net
 
 
   chroma:
@@ -70,6 +75,8 @@ services:
   redis:
     image: redis:6
     container_name: failures_local_redis
+    networks:
+      - net
 
   celeryworker:
     <<: *django
