@@ -1,5 +1,6 @@
 import logging
 import datetime
+import sys
 from typing import Optional, List, Dict, Any, Union
 
 import chainlit as cl
@@ -117,6 +118,7 @@ class DjangoDataLayer(BaseDataLayer):
             return None
         except Exception as e:
             logger.error(f"Error fetching thread '{thread_id}': {e}", exc_info=True)
+            print(f"ERROR in get_thread for {thread_id}: {e}", file=sys.stderr)
             return None
 
         try:
