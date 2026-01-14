@@ -190,6 +190,17 @@ def generate_fmea_from_articles(incidents, user_description):
     return response
 
 
+async def resume_chat(thread: dict):
+    try:
+        cl.user_session.set("state", "chat_mode")
+        logging.info(f"Resumed chat thread: {thread.get('id', 'UNKNOWN_ID')}")
+    except Exception as e:
+        logging.error(f"Error in resume_chat: {e}", exc_info=True)
+
+@cl.on_chat_resume
+async def on_resume(thread: dict):
+    await resume_chat(thread)
+
 # --- Chainlit App ---
 @cl.on_chat_start
 async def start():
@@ -202,8 +213,16 @@ async def start():
             await cl.Message(content="Error: User session not found. Please try logging in again.").send()
             return
 
-        # Explicitly update thread with user info immediately
         thread_id = context.session.thread_id
+        
+        # Check if this is actually a resume (Manual check as native on_chat_resume is unreliable here)
+        existing_thread = await data_layer.get_thread(thread_id)
+        if existing_thread and existing_thread.get("steps"):
+            logging.info(f"Thread {thread_id} already exists with steps. Treating as resume.")
+            await resume_chat(existing_thread)
+            return
+
+        # Explicitly update thread with user info immediately
         # We assume user.metadata["id"] contains the DB ID, or user.identifier is username.
         # datalayer.update_thread handles both.
         # But get_user returned PersistedUser which has 'id' property.
@@ -227,28 +246,6 @@ async def start():
     except Exception as e:
         logging.error(f"Error in on_chat_start: {e}", exc_info=True)
         await cl.Message(content=f"An internal error occurred: {str(e)}").send()
-
-@cl.on_chat_resume
-async def on_resume(thread: dict):
-    try:
-        cl.user_session.set("state", "chat_mode")
-        logging.info(f"Resumed chat thread: {thread.get('id', 'UNKNOWN_ID')}")
-    except Exception as e:
-        logging.error(f"Error in on_resume: {e}", exc_info=True)
-
-@cl.action_callback("create_fmea")
-async def on_create_fmea(action):
-    cl.user_session.set("state", "awaiting_fmea_description")
-    await cl.Message(
-        content="To get started, please describe the system you're designing:"
-    ).send()
-
-@cl.action_callback("chat_db")
-async def on_chat_db(action):
-    cl.user_session.set("state", "chat_mode")
-    await cl.Message(
-        content="You can now chat with the Failures database. What would you like to know? You can also ask me to create an FMEA at any time."
-    ).send()
 
 @cl.on_message
 async def on_message(message: cl.Message):

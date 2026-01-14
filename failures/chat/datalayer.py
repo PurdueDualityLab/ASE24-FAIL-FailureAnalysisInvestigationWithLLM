@@ -197,7 +197,7 @@ class DjangoDataLayer(BaseDataLayer):
                 "createdAt": thread.created_at.isoformat(),
                 "name": thread.name,
                 "userId": userId,
-                "user": None, # Simplifying to avoid validation issues
+                "user": {"identifier": thread.user.username} if thread.user else None,
                 "tags": thread.tags,
                 "metadata": thread.metadata,
                 "steps": steps_data,
