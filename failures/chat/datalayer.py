@@ -259,6 +259,7 @@ class DjangoDataLayer(BaseDataLayer):
             "output": user_message.get("output"),
             "createdAt": user_message.get("createdAt"),
             "showInput": True,
+            "generation": {},
         }
         # If input is missing but output is present, map output to input? 
         # Usually user message text is in 'output' for Steps.
@@ -311,7 +312,7 @@ class DjangoDataLayer(BaseDataLayer):
                 created_at=created_at or timezone.now(),
                 start=start,
                 end=end,
-                generation=step_dict.get("generation"),
+                generation=step_dict.get("generation") or {},
                 show_input=show_input_bool,
                 language=step_dict.get("language"),
                 indent=step_dict.get("indent", 0)
