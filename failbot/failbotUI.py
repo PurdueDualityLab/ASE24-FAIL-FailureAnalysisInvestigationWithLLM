@@ -226,7 +226,7 @@ async def start():
         # We assume user.metadata["id"] contains the DB ID, or user.identifier is username.
         # datalayer.update_thread handles both.
         # But get_user returned PersistedUser which has 'id' property.
-        user_id_for_db = user.metadata.get("id") or user.identifier
+        user_id_for_db = getattr(user, "id", None) or user.metadata.get("id") or user.identifier
         
         logging.info(f"Updating thread {thread_id} for user {user.identifier} (DB ID: {user_id_for_db})")
         
