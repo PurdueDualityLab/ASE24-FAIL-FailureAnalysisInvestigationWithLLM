@@ -22,7 +22,7 @@ allow_origins = ["*"]
 # Process and display HTML in messages. This can be a security risk (see https://stackoverflow.com/questions/19603097/why-is-it-dangerous-to-render-user-generated-html-or-javascript)
 unsafe_allow_html = false
 # To not save chat history
-persistence = false
+persistence = true
 
 # Process and display mathematical expressions. This can clash with "$" characters in messages.
 latex = false
@@ -93,5 +93,5 @@ login_page_image = "/public/logo_light.png"
 [meta]
 generated_by = "2.3.0"
 
-[data]
-provider = "local"
+#[data]
+#provider = "local"

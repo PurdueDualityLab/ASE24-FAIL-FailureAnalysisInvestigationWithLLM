@@ -33,6 +33,11 @@ async def auth_callback(username, password):
     return None
 
 
+@cl.on_chat_resume
+async def on_chat_resume(thread):
+    pass
+
+
 # --- Setup ---
 
 chroma_client = chromadb.HttpClient(host="chroma", port="8001")
