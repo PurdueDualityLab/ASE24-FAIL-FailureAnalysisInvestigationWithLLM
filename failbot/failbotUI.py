@@ -216,11 +216,11 @@ async def start():
         thread_id = context.session.thread_id
         
         # Check if this is actually a resume (Manual check as native on_chat_resume is unreliable here)
-        existing_thread = await data_layer.get_thread(thread_id)
-        if existing_thread and existing_thread.get("steps"):
-            logging.info(f"Thread {thread_id} already exists with steps. Treating as resume.")
-            await resume_chat(existing_thread)
-            return
+        # existing_thread = await data_layer.get_thread(thread_id)
+        # if existing_thread and existing_thread.get("steps"):
+        #     logging.info(f"Thread {thread_id} already exists with steps. Treating as resume.")
+        #     await resume_chat(existing_thread)
+        #     return
 
         # Explicitly update thread with user info immediately
         # We assume user.metadata["id"] contains the DB ID, or user.identifier is username.

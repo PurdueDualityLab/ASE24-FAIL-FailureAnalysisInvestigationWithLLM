@@ -172,7 +172,7 @@ class DjangoDataLayer(BaseDataLayer):
                 })
 
             userId = str(thread.user.id) if thread.user else None
-            logger.info(f"Thread {thread_id} returning userId: {userId} (should match Session User ID)")
+            logger.info(f"Thread {thread_id} returning userId: '{userId}' (type: {type(userId)})")
 
             # Sanitize parentIds to ensure tree integrity
             step_ids = set(s['id'] for s in steps_data)
