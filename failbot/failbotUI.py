@@ -54,7 +54,7 @@ class IncidentIDList(BaseModel):
 
 # --- Core Functions ---
 
-def RAG_relevant_incidents(query, similarity_threshold=0.5):
+def RAG_relevant_incidents(query, similarity_threshold=0.05):
     logging.info(f"📋 Retrieving articles for query using {similarity_threshold} threshold: {query}")
     results_with_scores = vector_db.similarity_search_with_relevance_scores(query, 50)
 
