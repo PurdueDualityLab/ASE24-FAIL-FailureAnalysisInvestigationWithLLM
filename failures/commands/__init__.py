@@ -13,6 +13,7 @@ from failures.commands.merge import MergeCommand
 from failures.commands.fixes import FixesCommand
 from failures.commands.cleanup import CleanUpCommand
 from failures.commands.Chatbot import IncidentChatbotCommand
+from failures.commands.populate_vectordb import PopulateVectorDBCommand
 
 from failures.commands.outdated.stats import StatsCommand
 from failures.commands.results import ResultsCommand
@@ -50,7 +51,7 @@ class Command(Protocol):
 
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), MergeCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), FixesCommand(), CleanUpCommand(), StatsCommand(), ResultsCommand(), IncidentChatbotCommand(), fmeatestCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), MergeCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), FixesCommand(), CleanUpCommand(), StatsCommand(), ResultsCommand(), IncidentChatbotCommand(), fmeatestCommand(), PopulateVectorDBCommand()]
 
 
 
