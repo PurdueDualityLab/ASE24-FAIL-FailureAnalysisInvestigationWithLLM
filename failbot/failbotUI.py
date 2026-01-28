@@ -54,7 +54,7 @@ class IncidentIDList(BaseModel):
 
 # --- Core Functions ---
 
-def RAG_relevant_incidents(query, similarity_threshold=0.7):
+def RAG_relevant_incidents(query, similarity_threshold=0.5):
     logging.info(f"📋 Retrieving articles for query using {similarity_threshold} threshold: {query}")
     results_with_scores = vector_db.similarity_search_with_relevance_scores(query, 50)
 
@@ -106,7 +106,7 @@ def RAG_relevant_incidents(query, similarity_threshold=0.7):
 
     print("Using RAG, found these incidents as relevant:\n")
     for inc in incidents:
-        print(f"- ID: {inc['ID']}, Title: {inc['Title']}")  
+        print(f"- ID: {inc['ID']}, Title: {inc['Title']}")
 
     return incidents
 
@@ -143,8 +143,8 @@ def filter_relevant_incidents_with_llm(incidents, user_description):
     print("Using LLM, filtered these incidents as most relevant:\n")
     logging.info("Using LLM, filtered these incidents as most relevant:\n")
     for inc in incidents:
-        logging.info(f"- ID: {inc['ID']}, Title: {inc['Title']}")  
-        print(f"- ID: {inc['ID']}, Title: {inc['Title']}")  
+        logging.info(f"- ID: {inc['ID']}, Title: {inc['Title']}")
+        print(f"- ID: {inc['ID']}, Title: {inc['Title']}")
 
     return incidents
 
@@ -166,7 +166,7 @@ def generate_fmea_from_articles(incidents, user_description):
         "Create a Software FMEA for the user provided system.\n"
         "Include the following columns: Item/Function, Potential Failure Mode, Causes, Effects, Severity (S), Occurrence (O), Detection (D), RPN, RPN Rationale, Mitigations.\n"
         "Ground the FMEA with the knowledge of the past similar incidents"
-        "Cite incident ID(s) for the failure mode, causes, effects, and mitigations." 
+        "Cite incident ID(s) for the failure mode, causes, effects, and mitigations."
         "Justify S, O, D values, and provide the rationale within the RPN Rationale column.\n"
         "If applicable, add more failure modes and cite relevant incidents beyond the provided past incidents."
     )
@@ -174,7 +174,7 @@ def generate_fmea_from_articles(incidents, user_description):
     logging.info("Generating FMEA grounded in article-linked incidents...")
     response = conversation_chain.invoke({"input": prompt})["response"]
     logging.info(f"FMEA Response:\n{response}")
-    
+
     return response
 
 
@@ -213,7 +213,7 @@ async def on_message(message: cl.Message):
     if state == "awaiting_fmea_description":
         system_description = message.content
         cl.user_session.set("system_description", system_description)
-        
+
         await cl.Message(content="🔍 Retrieving relevant incidents from FailDB...").send()
         incidents = await sync_to_async(RAG_relevant_incidents)(system_description)
 
@@ -233,7 +233,7 @@ async def on_message(message: cl.Message):
             content=f"📋 **Generated FMEA:**\n\n{fmea_output}",
             actions=[cl.Action(name="restart", value="restart", label="🔄 Start Over", payload={})]
         ).send()
-    
+
     elif state == "chat_mode":
         user_message = message.content.lower()
         if "create fmea" in user_message or "generate fmea" in user_message:
@@ -245,7 +245,7 @@ async def on_message(message: cl.Message):
 
         await cl.Message(content="🔍 Searching the Failures database...").send()
         incidents = await sync_to_async(RAG_relevant_incidents)(message.content)
-        
+
         if not incidents:
             response = (await sync_to_async(conversation_chain.invoke)({'input': message.content}))['response']
             await cl.Message(content=response).send()
@@ -262,7 +262,7 @@ async def on_message(message: cl.Message):
             "Answer the user's question based on the provided incidents. If the incidents are not relevant, say that you couldn't find an answer in the database. "
             "Cite incident IDs when you use information from them."
         )
-        
+
         response = (await sync_to_async(conversation_chain.invoke)({'input': prompt}))['response']
         await cl.Message(content=response).send()
 
@@ -270,7 +270,7 @@ async def on_message(message: cl.Message):
         follow_up = message.content
         response = (await sync_to_async(conversation_chain.invoke)({'input': follow_up}))['response']
         await cl.Message(content=response).send()
-        
+
     else: # state is "initial" or None
         actions = [
             cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
