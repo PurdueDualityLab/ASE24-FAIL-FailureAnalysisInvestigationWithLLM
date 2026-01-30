@@ -245,8 +245,11 @@ async def on_message(message: cl.Message):
 
         await cl.Message(content="🔍 Searching the Failures database...").send()
         incidents = await sync_to_async(RAG_relevant_incidents)(message.content)
+
+        await cl.Message(content=f"🔍 Found {len(incidents)} relevant incidents.").send()
         
         if not incidents:
+            await cl.Message(content=f"🔍 No relevant incidents found.").send()
             response = (await sync_to_async(conversation_chain.invoke)({'input': message.content}))['response']
             await cl.Message(content=response).send()
             return
