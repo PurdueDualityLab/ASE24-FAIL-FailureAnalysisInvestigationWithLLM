@@ -246,6 +246,12 @@ async def on_message(message: cl.Message):
         await cl.Message(content="🔍 Searching the Failures database...").send()
         incidents = await sync_to_async(RAG_relevant_incidents)(message.content)
 
+        await cl.Message(content=f"🔎 Found {len(incidents)} incidents. Filtering with LLM for most relevant incidents...").send()
+        filtered_incidents = await sync_to_async(filter_relevant_incidents_with_llm)(incidents, system_description)
+
+        filtered_incidents_str = "\n".join([f"- ID: {inc['ID']}, Title: {inc['Title']}" for inc in filtered_incidents])
+        await cl.Message(content=f"📋 **Filtered Incidents:**\n{filtered_incidents_str}").send()
+
         await cl.Message(content=f"🔍 Found {len(incidents)} relevant incidents.").send()
         
         if not incidents:
