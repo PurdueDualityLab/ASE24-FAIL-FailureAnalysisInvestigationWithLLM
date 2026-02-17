@@ -115,14 +115,13 @@ class Embedder(Network[str, list[float]]):
 
 class EmbedderGPT(Network[str, list[float]]):
     def __init__(self):
-        self.openai = openai
-        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.client = openai.OpenAI()
         self.MAX_RETRIES = 1
 
     def preprocess(self, input_data: str) -> str:
         input_data = input_data.replace("\n", " ")
-        return input_data        
-    
+        return input_data
+
     def predict(self, preprocessed_data: str) -> list[float]:
 
         retries = 0
@@ -130,43 +129,43 @@ class EmbedderGPT(Network[str, list[float]]):
         while retries < self.MAX_RETRIES:
             try:
                 response = None
-                response = self.openai.Embedding.create(input = [preprocessed_data], model='text-embedding-ada-002')
+                response = self.client.embeddings.create(input = [preprocessed_data], model='text-embedding-ada-002')
                 break
 
-            except openai.error.Timeout as e:
+            except openai.Timeout as e:
                 #Handle timeout error, e.g. retry or log
                 logging.info(f"OpenAI API request timed out: {e}")
-            except openai.error.APIError as e:
+            except openai.APIError as e:
                 #Handle API error, e.g. retry or log
                 logging.info(f"OpenAI API returned an API Error: {e}")
-            except openai.error.APIConnectionError as e:
+            except openai.APIConnectionError as e:
                 #Handle connection error, e.g. check network or log
                 logging.info(f"OpenAI API request failed to connect: {e}")
-            except openai.error.InvalidRequestError as e:
+            except openai.BadRequestError as e:
                 #Handle invalid request error, e.g. validate parameters or log
                 logging.info(f"OpenAI API request was invalid: {e}")
-            except openai.error.AuthenticationError as e:
+            except openai.AuthenticationError as e:
                 #Handle authentication error, e.g. check credentials or log
                 logging.info(f"OpenAI API request was not authorized: {e}")
-            except openai.error.PermissionError as e:
+            except openai.PermissionDeniedError as e:
                 #Handle permission error, e.g. check scope or log
                 logging.info(f"OpenAI API request was not permitted: {e}")
-            except openai.error.RateLimitError as e:
+            except openai.RateLimitError as e:
                 #Handle rate limit error, e.g. wait or log
                 logging.info(f"OpenAI API request exceeded rate limit: {e}")
-                
+
             logging.info(f"Pausing for 1 minute and retrying.")
             time.sleep(61)
             retries += 1
 
-        
+
         if response is not None:
-            embeddings = response['data'][0]['embedding']
+            embeddings = response.data[0].embedding
             return embeddings
         else:
             return None
 
-    
+
     def postprocess(self, prediction: list[float]) -> list[float]:
         return prediction
 
@@ -179,14 +178,14 @@ class ClassifierChatGPT(Network[dict, bool]):
 
     def preprocess(self, input_data: dict) -> dict:
         return input_data
-    
+
     def predict(self, preprocessed_data: dict) -> str:
         inputs = preprocessed_data
-        
+
         response = self.chatGPT.run(inputs)
 
         return response
-    
+
     def postprocess(self, prediction: str) -> bool:
         if prediction is not None:
             if "true" in prediction.lower():
@@ -202,49 +201,49 @@ class ClassifierChatGPT(Network[dict, bool]):
 
 class SummarizerGPT(Network[str, str]):
     def __init__(self):
-        self.openai = openai
-        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.client = openai.OpenAI()
 
         self.context = "Provide a summary of this text: \n\n"
 
     def preprocess(self, input_data: str) -> str:
         prompt = self.context + input_data[:1500] + "\n\n"
-        
+        return prompt
+
     def predict(self, preprocessed_data: str) -> str:
         prompt = preprocessed_data
 
         try:
             response = None
-            response = self.openai.Completion.create(
+            response = self.client.chat.completions.create(
                 model="text-babbage-001",
-                prompt=prompt,
+                messages=[{"role": "user", "content": prompt}],
                 max_tokens=300,
             )
-        
-        except openai.error.Timeout as e:
+
+        except openai.Timeout as e:
             #Handle timeout error, e.g. retry or log
             logging.info(f"OpenAI API request timed out: {e}")
-        except openai.error.APIError as e:
+        except openai.APIError as e:
             #Handle API error, e.g. retry or log
             logging.info(f"OpenAI API returned an API Error: {e}")
-        except openai.error.APIConnectionError as e:
+        except openai.APIConnectionError as e:
             #Handle connection error, e.g. check network or log
             logging.info(f"OpenAI API request failed to connect: {e}")
-        except openai.error.InvalidRequestError as e:
+        except openai.BadRequestError as e:
             #Handle invalid request error, e.g. validate parameters or log
             logging.info(f"OpenAI API request was invalid: {e}")
-        except openai.error.AuthenticationError as e:
+        except openai.AuthenticationError as e:
             #Handle authentication error, e.g. check credentials or log
             logging.info(f"OpenAI API request was not authorized: {e}")
-        except openai.error.PermissionError as e:
+        except openai.PermissionDeniedError as e:
             #Handle permission error, e.g. check scope or log
             logging.info(f"OpenAI API request was not permitted: {e}")
-        except openai.error.RateLimitError as e:
+        except openai.RateLimitError as e:
             #Handle rate limit error, e.g. wait or log
             logging.info(f"OpenAI API request exceeded rate limit: {e}")
 
         if response is not None:
-            summary = response.choices[0]["text"].strip()
+            summary = response.choices[0].message.content.strip()
             return summary
         else:
             return None
@@ -257,10 +256,9 @@ class SummarizerGPT(Network[str, str]):
 
 
 class ChatGPT(Network[dict, str]):
-    
+
     def __init__(self):
-        self.openai = openai
-        self.openai.api_key = os.getenv('OPENAI_API_KEY')
+        self.client = openai.OpenAI()
         self.MAX_RETRIES = 2
         #TODO: Add seed for reproducability?
 
@@ -280,13 +278,13 @@ class ChatGPT(Network[dict, str]):
         retries = 0
 
         while retries < self.MAX_RETRIES:
-        
+
             try:
                 chat_completion = None
-                chat_completion = self.openai.ChatCompletion.create(
-                                request_timeout=120, model=model, messages=messages, temperature=temperature, response_format=response_format, #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1 
-                                ) 
-                
+                chat_completion = self.client.chat.completions.create(
+                                request_timeout=120, model=model, messages=messages, temperature=temperature, response_format=response_format, #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1
+                                )
+
                 ### Error handing and retry if output is expected in json format and is not in a JSON format
                 if response_format is not None and isinstance(response_format, dict) and response_format.get("type") == "json_object":
                     # Attempt to convert the reply to JSON
@@ -303,17 +301,17 @@ class ChatGPT(Network[dict, str]):
                         retries += 1
                 else:
                     break
-            
-            except openai.error.Timeout as e:
+
+            except openai.Timeout as e:
                 #Handle timeout error, e.g. retry or log
                 logging.info(f"OpenAI API request timed out: {e}")
-            except openai.error.APIError as e:
+            except openai.APIError as e:
                 #Handle API error, e.g. retry or log
                 logging.info(f"OpenAI API returned an API Error: {e}")
-            except openai.error.APIConnectionError as e:
+            except openai.APIConnectionError as e:
                 #Handle connection error, e.g. check network or log
                 logging.info(f"OpenAI API request failed to connect: {e}")
-            except openai.error.InvalidRequestError as e:
+            except openai.BadRequestError as e:
                 #Handle invalid request error, e.g. validate parameters or log
                 logging.info(f"OpenAI API request was invalid: {e}")
 
@@ -326,40 +324,40 @@ class ChatGPT(Network[dict, str]):
                     messages[1]['content'] = truncate_tokens(string=messages[1]['content'], encoding_name=model, max_length=3500)
                 '''
 
-            except openai.error.AuthenticationError as e:
+            except openai.AuthenticationError as e:
                 #Handle authentication error, e.g. check credentials or log
                 logging.info(f"OpenAI API request was not authorized: {e}")
-            except openai.error.PermissionError as e:
+            except openai.PermissionDeniedError as e:
                 #Handle permission error, e.g. check scope or log
                 logging.info(f"OpenAI API request was not permitted: {e}")
-            except openai.error.RateLimitError as e:
+            except openai.RateLimitError as e:
                 #Handle rate limit error, e.g. wait or log
                 logging.info(f"OpenAI API request exceeded rate limit: {e}")
-            except openai.error.ServiceUnavailableError as e:
+            except openai.InternalServerError as e:
                 # Handle service unavailable error, e.g. log and retry
                 logging.info(f"OpenAI service is unavailable: {e}")
             except Exception as e:
                 # Handle any other unexpected errors
                 logging.info(f"An unexpected error occurred: {e}")
-            
-            
+
+
             logging.info(f"Pausing for 1 minute and retrying.")
             time.sleep(61)
             retries += 1
-            
+
         if retries == self.MAX_RETRIES:
             logging.info("Maximum number of retries reached. Failed to get a valid reply.")
-            
+
         if chat_completion is not None:
             reply = chat_completion.choices[0].message.content
             return reply
         else:
             return None
-            
+
 
     def postprocess(self, prediction: str) -> str:
         return prediction
-    
+
 
 def truncate_tokens(string: str, encoding_name: str, max_length: int = 4097) -> str:
         """Truncates a text string based on max number of tokens."""

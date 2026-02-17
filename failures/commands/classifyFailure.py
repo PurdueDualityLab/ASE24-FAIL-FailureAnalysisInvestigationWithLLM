@@ -8,8 +8,8 @@ from failures.networks.models import ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 import chromadb
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
 
 class ClassifyFailureCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -74,7 +74,7 @@ class ClassifyFailureCommand:
         """
 
         logging.info("\nClassifying articles on whether report on software failures.")
-        
+
         # Gets list of article to classify
         queryset = (
             Article.objects.filter(scrape_successful=True, id__in=args.articles) if args.articles 
@@ -88,12 +88,12 @@ class ClassifyFailureCommand:
 
         if args.all or args.year: #TODO: implement similar logic in other commands
             queryset.update(describes_failure=None)  #This is to prevent having to redo it all when a crash occurs, if a crash occurs comment this
-        
+
         ### If queryset is for an experiment mark it as such
         if args.experiment is True:
             queryset.update(experiment=True)
-        
-        
+
+
         # Initializes ChatGPT Classifier
         classifierChatGPT = ClassifierChatGPT()
 
@@ -106,13 +106,13 @@ class ClassifyFailureCommand:
 
         inputs = {"model": "gpt-3.5-turbo", "temperature": temperature} #gpt-3.5-turbo , gpt-4-1106-preview
         logging.info("\nUsing " + inputs["model"] + " with a temperature of " + str(temperature) + ".")
-        
+
         failure_positive_classifications_ChatGPT = 0
 
         for article in queryset:
             #if article.body == "": #or article.scrape_successful is False:
             #    continue
-            
+
             logging.info("Classifying %s.", article)
 
 
@@ -120,10 +120,10 @@ class ClassifyFailureCommand:
                 failure_positive_classifications_ChatGPT += 1
                 logging.info("ChatGPT Classifier: Classification met as software failure for article: " + str(article))
 
-            
+
 
         logging.info("ChatGPT successfully classified %d articles as describing a software failure.", failure_positive_classifications_ChatGPT)
-        
+
         #logging.info("Cleaning up database")
         self.process_incident()
 
@@ -134,16 +134,16 @@ class ClassifyFailureCommand:
 
         Args:
         """
-        
+
         # Get list of articles that are not analyzable and do not have an incident tied to them
         articles = Article.objects.filter(describes_failure=False, incident__isnull=False)
 
         if articles:
 
             logging.info("Cleaning up database")
-            
+
             logging.info("Resetting incidents/incident relationships for non-failure articles")
-        
+
             # Init vector DB
             chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
             embedding_function = OpenAIEmbeddings()

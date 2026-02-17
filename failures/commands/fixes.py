@@ -12,8 +12,8 @@ from failures.networks.models import ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 import chromadb
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
 
 class FixesCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -235,7 +235,7 @@ class FixesCommand:
         df.to_csv(csv_file_path, index=False)
         
         '''
-        
+
 
 
 

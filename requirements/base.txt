@@ -4,31 +4,37 @@ newspaper3k==0.2.8
 news-please==1.5.22
 beautifulsoup4==4.12.2
 
-langchain==0.0.295
-chromadb==0.4.11
-openai==0.27.4
-tiktoken==0.5.1
+langchain==0.3.25 #0.0.295
+langchain-openai==0.3.16
+langchain-community==0.3.24
+chromadb==1.0.9
+openai==1.78.1
+tiktoken==0.9.0
+pydantic==2.11.4
+chainlit==2.3.0
+
+asyncpg==0.30.0
 
 # Chroma requires sqlite3 >= 3.35.0
 pysqlite3-binary==0.5.2
 
 
 # transformers==4.24.0
-numpy==1.23.4
+numpy==2.0.2
 # torch==1.13.0
 # sentence-transformers==2.2.2
 channels[daphne]==4.0.0
-scikit-learn==1.2.2
+scikit-learn==1.6.1
 
-pandas==1.5.1
-matplotlib==3.7.1
+pandas==2.2.3
+matplotlib==3.9.4
 plotly==5.14.1
 
 pytz==2022.6  # https://github.com/stub42/pytz
 Pillow==9.3.0  # https://github.com/python-pillow/Pillow
 argon2-cffi==21.3.0  # https://github.com/hynek/argon2_cffi
 whitenoise==6.2.0  # https://github.com/evansd/whitenoise
-redis==4.3.4  # https://github.com/redis/redis-py
+redis==4.6.0  # https://github.com/redis/redis-py
 hiredis==2.0.0  # https://github.com/redis/hiredis-py
 celery==5.2.7  # pyup: < 6.0  # https://github.com/celery/celery
 django-celery-beat==2.4.0  # https://github.com/celery/django-celery-beat

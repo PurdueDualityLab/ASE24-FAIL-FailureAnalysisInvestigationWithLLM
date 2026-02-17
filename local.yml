@@ -25,12 +25,15 @@ services:
     volumes:
       - .:/app:z
     env_file:
+      - .env
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
       - ./.envs/.local/.data
     ports:
       - "8000:8000"
     command: /start
+    networks:
+      - net
 
 
   postgres:
@@ -44,10 +47,13 @@ services:
       - failures_local_postgres_data_backups:/backups:z
     env_file:
       - ./.envs/.local/.postgres
+    networks:
+      - net
 
 
   chroma:
-    image: ghcr.io/chroma-core/chroma:latest
+    image: ghcr.io/chroma-core/chroma:1.0.9 #latest
+    container_name: failures_local_chromadb
     volumes:
       - failures_local_chroma_data:/var/lib/chroma/data:Z
     ports:
@@ -60,7 +66,8 @@ services:
       - IS_PERSISTENT=TRUE
       - PERSIST_DIRECTORY=/var/lib/chroma/data
       - ALLOW_RESET=TRUE
-    command: uvicorn chromadb.app:app --reload --workers 1 --host 0.0.0.0 --port 8001
+    #command: uvicorn chromadb.app:app --reload --workers 1 --host 0.0.0.0 --port 8001
+    command: run --host 0.0.0.0 --port 8001 --path /var/lib/chroma/data
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -68,6 +75,8 @@ services:
   redis:
     image: redis:6
     container_name: failures_local_redis
+    networks:
+      - net
 
   celeryworker:
     <<: *django
@@ -98,3 +107,18 @@ services:
     ports:
       - "5555:5555"
     command: /start-flower
+
+  chainlit:
+    <<: *django
+    image: failures_local_chainlit
+    container_name: failures_local_chainlit
+    working_dir: /app/failbot
+    depends_on:
+      - django
+    environment:
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=config.settings.local
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - "8501:8501"
+    command: chainlit run failbotUI.py --port 8501 --host 0.0.0.0 

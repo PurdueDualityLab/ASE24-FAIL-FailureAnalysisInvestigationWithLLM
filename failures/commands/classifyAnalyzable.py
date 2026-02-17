@@ -8,8 +8,8 @@ from failures.networks.models import ClassifierChatGPT
 from failures.parameters.models import Parameter
 
 import chromadb
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
 
 class ClassifyAnalyzableCommand:
     def prepare_parser(self, parser: argparse.ArgumentParser):
@@ -75,11 +75,11 @@ class ClassifyAnalyzableCommand:
             Article.objects.filter(describes_failure=True) if args.all else
             Article.objects.filter(describes_failure=True, analyzable_failure=None)
         )
-        
+
         ### If queryset is for an experiment mark it as such
         if args.experiment is True:
             queryset.update(experiment=True)
-        
+
         # Initializes ChatGPT Classifier
         classifierChatGPT = ClassifierChatGPT()
 
@@ -89,14 +89,14 @@ class ClassifyAnalyzableCommand:
         else:
             logging.info("\nTemperature out of range [0,1]. Please check input.")
             exit()
-        
+
         inputs = {"model": "gpt-3.5-turbo", "temperature": temperature} #gpt-3.5-turbo , gpt-4-1106-preview
         logging.info("\nUsing " + inputs["model"] + " with a temperature of " + str(temperature) + ".")
-        
+
         analyzable_positive_classifications_ChatGPT = 0
 
         for article in queryset:
-            
+
             logging.info("Classifying %s.", article)
 
             if article.classify_as_analyzable_ChatGPT(classifierChatGPT, inputs):
@@ -108,7 +108,7 @@ class ClassifyAnalyzableCommand:
 
         self.process_incident()
 
-        
+
 
     def process_incident(self):
         """
@@ -117,7 +117,7 @@ class ClassifyAnalyzableCommand:
 
         Args:
         """
-        
+
         # Get list of articles that are not analyzable and do not have an incident tied to them
         articles = Article.objects.filter(analyzable_failure=False, incident__isnull=False)
 
