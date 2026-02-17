@@ -4,6 +4,7 @@ volumes:
   production_postgres_data: {}
   production_postgres_data_backups: {}
   production_traefik: {}
+  production_chroma_data: {}
 
 # TODO: security for traefik
 services:
@@ -16,6 +17,7 @@ services:
     depends_on:
       - postgres
       - redis
+      - chroma
     ports:
       - "8000:8000"
     command: /start
@@ -36,6 +38,7 @@ services:
     image: failures_production_traefik
     depends_on:
       - django
+      - chainlit
     volumes:
       - production_traefik:/etc/traefik/acme:z
     ports:
@@ -45,6 +48,34 @@ services:
 
   redis:
     image: redis:6
+
+  chroma:
+    image: ghcr.io/chroma-core/chroma:1.0.9
+    volumes:
+      - production_chroma_data:/var/lib/chroma/data:Z
+    expose:
+      - "8001"
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/var/lib/chroma/data
+      - ALLOW_RESET=TRUE
+    command: run --host 0.0.0.0 --port 8001 --path /var/lib/chroma/data
+
+  chainlit:
+    <<: *django
+    image: failures_production_chainlit
+    working_dir: /app/failbot
+    depends_on:
+      - django
+      - postgres
+      - chroma
+    ports: []
+    environment:
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=config.settings.production
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CHAINLIT_DB_URI=${CHAINLIT_DB_URI}
+    command: chainlit run failbotUI.py --port 8501 --host 0.0.0.0 --root-path /failbot
 
   celeryworker:
     <<: *django

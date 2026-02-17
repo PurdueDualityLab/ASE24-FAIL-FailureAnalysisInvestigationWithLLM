@@ -31,7 +31,7 @@ certificatesResolvers:
 http:
   routers:
     web-secure-router:
-      rule: "Host(`failures.com`) || Host(`www.failures.com`)"
+      rule: "(Host(`failures.com`) || Host(`www.failures.com`)) && !PathPrefix(`/failbot`)"
       entryPoints:
         - web-secure
       middlewares:
@@ -39,6 +39,16 @@ http:
       service: django
       tls:
         # https://docs.traefik.io/master/routing/routers/#certresolver
+        certResolver: letsencrypt
+
+    failbot-secure-router:
+      rule: "(Host(`failures.com`) || Host(`www.failures.com`)) && PathPrefix(`/failbot`)"
+      entryPoints:
+        - web-secure
+      middlewares:
+        - failbot-strip-prefix
+      service: chainlit
+      tls:
         certResolver: letsencrypt
 
     flower-secure-router:
@@ -56,12 +66,21 @@ http:
       # https://docs.djangoproject.com/en/dev/ref/csrf/#ajax
       headers:
         hostsProxyHeaders: ["X-CSRFToken"]
+    failbot-strip-prefix:
+      stripPrefix:
+        prefixes:
+          - /failbot
 
   services:
     django:
       loadBalancer:
         servers:
           - url: http://django:5000
+
+    chainlit:
+      loadBalancer:
+        servers:
+          - url: http://chainlit:8501
 
     flower:
       loadBalancer:
