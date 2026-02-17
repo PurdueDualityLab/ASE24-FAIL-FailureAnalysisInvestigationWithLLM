@@ -2,42 +2,28 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.http import JsonResponse
+from django.shortcuts import redirect
 from django.urls import include, path
 from django.views import defaults as default_views
-from django.views.generic import RedirectView
 
 from failures.articles.public_admin import public_admin
+
+def failbot_redirect(request):
+    host = request.get_host().split(":")[0].lower()
+    if host in {"localhost", "127.0.0.1", "0.0.0.0"}:
+        return redirect("http://localhost:8501")
+    return redirect("/failbot/")
 
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
+    path("failbot", failbot_redirect, name="failbot_redirect"),
+    path("failbot/", failbot_redirect, name="failbot_redirect_slash"),
     path('health/', lambda request: JsonResponse({"status": "healthy"}, status=200), name='health_check'),
     path("", include("failures.articles.urls", namespace="articles")),
     # path("", public_admin.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-if settings.DEBUG:
-    urlpatterns += [
-        path(
-            "failbot",
-            RedirectView.as_view(url="http://localhost:8501", permanent=False),
-            name="failbot_redirect_local",
-        ),
-        path(
-            "failbot/",
-            RedirectView.as_view(url="http://localhost:8501", permanent=False),
-            name="failbot_redirect_local_slash",
-        ),
-    ]
-else:
-    urlpatterns += [
-        path(
-            "failbot",
-            RedirectView.as_view(url="/failbot/", permanent=False),
-            name="failbot_redirect",
-        ),
-    ]
 
 
 if settings.DEBUG:
