@@ -1,16 +1,24 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.http import JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import include, path
 from django.views import defaults as default_views
 
 from failures.articles.public_admin import public_admin
 
+
+def failbot_redirect(request):
+    host = request.get_host().split(":")[0]
+    return HttpResponseRedirect(f"//{host}:8501/")
+
+
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     path('health/', lambda request: JsonResponse({"status": "healthy"}, status=200), name='health_check'),
+    path("failbot", failbot_redirect, name="failbot_redirect_no_slash"),
+    path("failbot/", failbot_redirect, name="failbot_redirect"),
     path("", include("failures.articles.urls", namespace="articles")),
     # path("", public_admin.urls),
 
