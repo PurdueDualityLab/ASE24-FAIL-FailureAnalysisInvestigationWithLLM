@@ -11,12 +11,33 @@ from failures.articles.public_admin import public_admin
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-    path("failbot", RedirectView.as_view(url="/failbot/", permanent=False), name="failbot_redirect"),
     path('health/', lambda request: JsonResponse({"status": "healthy"}, status=200), name='health_check'),
     path("", include("failures.articles.urls", namespace="articles")),
     # path("", public_admin.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += [
+        path(
+            "failbot",
+            RedirectView.as_view(url="http://localhost:8501", permanent=False),
+            name="failbot_redirect_local",
+        ),
+        path(
+            "failbot/",
+            RedirectView.as_view(url="http://localhost:8501", permanent=False),
+            name="failbot_redirect_local_slash",
+        ),
+    ]
+else:
+    urlpatterns += [
+        path(
+            "failbot",
+            RedirectView.as_view(url="/failbot/", permanent=False),
+            name="failbot_redirect",
+        ),
+    ]
 
 
 if settings.DEBUG:
