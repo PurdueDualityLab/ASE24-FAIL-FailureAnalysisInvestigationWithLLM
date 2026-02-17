@@ -84,6 +84,7 @@ services:
     environment:
       - PYTHONPATH=/app
       - DJANGO_SETTINGS_MODULE=config.settings.production
+      - REDIS_URL=${REDIS_URL}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - CHAINLIT_DB_URI=${DATABASE_URL}
     ports:
