@@ -58,6 +58,7 @@ jobs:
           export CHAINLIT_DB_URI="${DATABASE_URL}"
           export DJANGO_SECRET_KEY='test'
           export DJANGO_ADMIN_URL='admin/'
+          export CHAINLIT_AUTH_SECRET="0,uZEoYlN7auIrSf1F%7mm/6@n9:ubHDb36Z31L9vhY^2uzr4eiZGzQpMpK:%K,I"
 
           # Pull the latest image
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY_URL }}
