@@ -4,13 +4,18 @@ from django.contrib import admin
 from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import include, path
 from django.views import defaults as default_views
+import os
 
 from failures.articles.public_admin import public_admin
 
 
 def failbot_redirect(request):
+    configured_url = os.getenv("FAILBOT_REDIRECT_URL")
+    if configured_url:
+        return HttpResponseRedirect(configured_url)
+
     host = request.get_host().split(":")[0]
-    return HttpResponseRedirect(f"//{host}:8501/")
+    return HttpResponseRedirect(f"http://{host}:8501/")
 
 
 urlpatterns = [
