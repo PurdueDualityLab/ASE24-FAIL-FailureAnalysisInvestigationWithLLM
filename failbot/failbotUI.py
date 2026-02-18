@@ -111,7 +111,7 @@ def RAG_relevant_incidents(query, similarity_threshold=0.7):
     return incidents
 
 
-def filter_relevant_incidents_with_llm(incidents, user_description):
+async def filter_relevant_incidents_with_llm(incidents, user_description):
     """
     Uses the LLM to filter out only the incidents relevant to the user's system.
     """
@@ -132,7 +132,7 @@ def filter_relevant_incidents_with_llm(incidents, user_description):
     )
 
     structured_llm = llm.with_structured_output(IncidentIDList, method="json_mode")
-    incident_ids_obj = structured_llm.invoke(prompt)
+    incident_ids_obj = await structured_llm.ainvoke(prompt)
 
     logging.info(f"🔍 Incident filtering response: {incident_ids_obj}")
 
@@ -149,7 +149,7 @@ def filter_relevant_incidents_with_llm(incidents, user_description):
     return incidents
 
 
-def generate_fmea_from_articles(incidents, user_description):
+async def generate_fmea_from_articles(incidents, user_description):
     """
     Generates a Software FMEA table using incidents linked to the retrieved articles.
     """
@@ -172,7 +172,7 @@ def generate_fmea_from_articles(incidents, user_description):
     )
 
     logging.info("Generating FMEA grounded in article-linked incidents...")
-    response = conversation_chain.invoke({"input": prompt})["response"]
+    response = (await conversation_chain.ainvoke({"input": prompt}))["response"]
     logging.info(f"FMEA Response:\n{response}")
     
     return response
@@ -218,13 +218,13 @@ async def on_message(message: cl.Message):
         incidents = await sync_to_async(RAG_relevant_incidents)(system_description)
 
         await cl.Message(content=f"🔎 Found {len(incidents)} incidents. Filtering with LLM for most relevant incidents...").send()
-        filtered_incidents = await sync_to_async(filter_relevant_incidents_with_llm)(incidents, system_description)
+        filtered_incidents = await filter_relevant_incidents_with_llm(incidents, system_description)
 
         filtered_incidents_str = "\n".join([f"- ID: {inc['ID']}, Title: {inc['Title']}" for inc in filtered_incidents])
         await cl.Message(content=f"📋 **Filtered Incidents:**\n{filtered_incidents_str}").send()
 
         await cl.Message(content=f"📊 Generating FMEA from {len(filtered_incidents)} filtered incidents...").send()
-        fmea_output = await sync_to_async(generate_fmea_from_articles)(filtered_incidents, system_description)
+        fmea_output = await generate_fmea_from_articles(filtered_incidents, system_description)
 
         cl.user_session.set("fmea_context", fmea_output)
         cl.user_session.set("state", "fmea_generated")
@@ -247,7 +247,8 @@ async def on_message(message: cl.Message):
         incidents = await sync_to_async(RAG_relevant_incidents)(message.content)
 
         await cl.Message(content=f"🔎 Found {len(incidents)} incidents. Filtering with LLM for most relevant incidents...").send()
-        filtered_incidents = await sync_to_async(filter_relevant_incidents_with_llm)(incidents, system_description)
+        system_description = cl.user_session.get("system_description", message.content)
+        filtered_incidents = await filter_relevant_incidents_with_llm(incidents, system_description)
 
         filtered_incidents_str = "\n".join([f"- ID: {inc['ID']}, Title: {inc['Title']}" for inc in filtered_incidents])
         await cl.Message(content=f"📋 **Filtered Incidents:**\n{filtered_incidents_str}").send()
@@ -256,7 +257,7 @@ async def on_message(message: cl.Message):
         
         if not incidents:
             await cl.Message(content=f"🔍 No relevant incidents found.").send()
-            response = (await sync_to_async(conversation_chain.invoke)({'input': message.content}))['response']
+            response = (await conversation_chain.ainvoke({"input": message.content}))["response"]
             await cl.Message(content=response).send()
             return
 
@@ -272,12 +273,12 @@ async def on_message(message: cl.Message):
             "Cite incident IDs when you use information from them."
         )
         
-        response = (await sync_to_async(conversation_chain.invoke)({'input': prompt}))['response']
+        response = (await conversation_chain.ainvoke({"input": prompt}))["response"]
         await cl.Message(content=response).send()
 
     elif state == "fmea_generated":
         follow_up = message.content
-        response = (await sync_to_async(conversation_chain.invoke)({'input': follow_up}))['response']
+        response = (await conversation_chain.ainvoke({"input": follow_up}))["response"]
         await cl.Message(content=response).send()
         
     else: # state is "initial" or None
