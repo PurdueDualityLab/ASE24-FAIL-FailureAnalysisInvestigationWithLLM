@@ -11,15 +11,32 @@ import logging
 from typing import List
 
 import chromadb
+from chromadb.errors import NotFoundError
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 from pydantic import BaseModel
 import chainlit as cl
+import chainlit.message as cl_message
+from chainlit.context import local_steps
 
 from asgiref.sync import sync_to_async
 from django.contrib.auth import authenticate
+
+
+if not getattr(cl_message.MessageBase, "_failbot_safe_post_init", False):
+    _original_post_init = cl_message.MessageBase.__post_init__
+
+    def _safe_post_init(self):
+        try:
+            return _original_post_init(self)
+        except LookupError:
+            local_steps.set([])
+            return _original_post_init(self)
+
+    cl_message.MessageBase.__post_init__ = _safe_post_init
+    cl_message.MessageBase._failbot_safe_post_init = True
 
 
 @cl.password_auth_callback
@@ -40,9 +57,19 @@ async def on_chat_resume(thread):
 
 # --- Setup ---
 
-chroma_client = chromadb.HttpClient(host="chroma", port="8001")
 embedding_function = OpenAIEmbeddings()
-vector_db = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
+
+
+def _new_vector_db():
+    chroma_client = chromadb.HttpClient(host="chroma", port="8001")
+    return Chroma(
+        client=chroma_client,
+        collection_name="articlesVDB",
+        embedding_function=embedding_function,
+    )
+
+
+vector_db = _new_vector_db()
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 memory = ConversationBufferMemory()
@@ -55,8 +82,14 @@ class IncidentIDList(BaseModel):
 # --- Core Functions ---
 
 def RAG_relevant_incidents(query, similarity_threshold=0.7):
+    global vector_db
     logging.info(f"📋 Retrieving articles for query using {similarity_threshold} threshold: {query}")
-    results_with_scores = vector_db.similarity_search_with_relevance_scores(query, 50)
+    try:
+        results_with_scores = vector_db.similarity_search_with_relevance_scores(query, 50)
+    except NotFoundError:
+        logging.warning("Chroma collection handle was stale, reinitializing vector DB client.")
+        vector_db = _new_vector_db()
+        results_with_scores = vector_db.similarity_search_with_relevance_scores(query, 50)
 
     for doc, score in results_with_scores:
         logging.info(f"incidentID: {doc.metadata['incidentID']}, score: {score:.6f}")
