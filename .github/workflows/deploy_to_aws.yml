@@ -60,7 +60,7 @@ jobs:
           export DJANGO_SECRET_KEY='test'
           export DJANGO_ADMIN_URL='admin/'
           export CHAINLIT_AUTH_SECRET="0,uZEoYlN7auIrSf1F%7mm/6@n9:ubHDb36Z31L9vhY^2uzr4eiZGzQpMpK:%K,I"
-          export FAILBOT_REDIRECT_URL="http://ec2-${{ secrets.AWS_EC2_PUBLIC_IP_WITH_DASHES }}.compute-1.amazonaws.com:8501/"
+          export FAILBOT_REDIRECT_URL='${{ secrets.FAILBOT_REDIRECT_URL }}'
 
           # Pull the latest image
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY_URL }}
