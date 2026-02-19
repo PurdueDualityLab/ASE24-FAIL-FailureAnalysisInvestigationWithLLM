@@ -76,14 +76,7 @@ jobs:
 
           # Initial backfill only when collection is empty
           sleep 10
-          CHROMA_COUNT=$(docker exec django-prod /bin/sh -lc 'python - <<'"'"'"'"'"'"'"'"'PY'"'"'"'"'"'"'"'"'
-import sys, pysqlite3
-sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
-import chromadb
-client = chromadb.HttpClient(host="chroma", port=8001)
-col = client.get_or_create_collection("articlesVDB")
-print(col.count())
-PY')
+          CHROMA_COUNT=$(docker exec django-prod /bin/sh -lc 'python -c "import sys,pysqlite3; sys.modules[\"sqlite3\"]=sys.modules.pop(\"pysqlite3\"); import chromadb; c=chromadb.HttpClient(host=\"chroma\", port=8001); col=c.get_or_create_collection(\"articlesVDB\"); print(col.count())"')
           if [ "$CHROMA_COUNT" = "0" ]; then
             docker exec django-prod python -m failures backfillchroma
           fi
