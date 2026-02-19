@@ -19,6 +19,7 @@ from langchain.chains import ConversationChain
 from pydantic import BaseModel
 import chainlit as cl
 import chainlit.message as cl_message
+import chainlit.step as cl_step
 from chainlit.context import local_steps
 
 from asgiref.sync import sync_to_async
@@ -37,6 +38,28 @@ if not getattr(cl_message.MessageBase, "_failbot_safe_post_init", False):
 
     cl_message.MessageBase.__post_init__ = _safe_post_init
     cl_message.MessageBase._failbot_safe_post_init = True
+
+if not getattr(cl_step.Step, "_failbot_safe_context", False):
+    _original_aenter = cl_step.Step.__aenter__
+    _original_enter = cl_step.Step.__enter__
+
+    async def _safe_aenter(self):
+        try:
+            return await _original_aenter(self)
+        except LookupError:
+            local_steps.set([])
+            return await _original_aenter(self)
+
+    def _safe_enter(self):
+        try:
+            return _original_enter(self)
+        except LookupError:
+            local_steps.set([])
+            return _original_enter(self)
+
+    cl_step.Step.__aenter__ = _safe_aenter
+    cl_step.Step.__enter__ = _safe_enter
+    cl_step.Step._failbot_safe_context = True
 
 
 @cl.password_auth_callback
