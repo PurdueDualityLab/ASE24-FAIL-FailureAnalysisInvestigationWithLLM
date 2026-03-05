@@ -67,12 +67,46 @@ jobs:
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY_URL }}
           docker pull ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest
 
+          cat > /tmp/failures-nginx.conf << 'NGINX'
+          server {
+            listen 80;
+            server_name _;
+
+            client_max_body_size 50m;
+
+            location = /failbot {
+              return 301 /failbot/;
+            }
+
+            location /failbot/ {
+              proxy_pass http://chainlit-prod:8501;
+              proxy_http_version 1.1;
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection "upgrade";
+              proxy_read_timeout 600s;
+            }
+
+            location / {
+              proxy_pass http://django-prod:80;
+              proxy_http_version 1.1;
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+            }
+          }
+          NGINX
+
           # Start the container with the new image
           docker network create failures-prod || true
           docker volume create failures_chroma_data || true
-          docker run -d --name redis --network failures-prod -p 6379:6379 redis:alpine
-          docker run -d --name chroma --network failures-prod -p 8001:8001 -v failures_chroma_data:/var/lib/chroma/data ghcr.io/chroma-core/chroma:1.0.9 run --host 0.0.0.0 --port 8001 --path /var/lib/chroma/data
-          docker run -d --name django-prod --network failures-prod -p 80:80 -e POSTGRES_HOST -e POSTGRES_PORT -e POSTGRES_DB -e POSTGRES_USER -e POSTGRES_PASSWORD -e DATABASE_URL -e REDIS_URL -e CELERY_BROKER_URL -e DJANGO_ALLOWED_HOSTS -e DJANGO_SECRET_KEY -e DJANGO_ADMIN_URL -e FAILBOT_REDIRECT_URL -e OPENAI_API_KEY -e DJANGO_SETTINGS_MODULE=config.settings.production ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest /start
+          docker run -d --name redis --network failures-prod redis:alpine
+          docker run -d --name chroma --network failures-prod -v failures_chroma_data:/var/lib/chroma/data ghcr.io/chroma-core/chroma:1.0.9 run --host 0.0.0.0 --port 8001 --path /var/lib/chroma/data
+          docker run -d --name django-prod --network failures-prod -e POSTGRES_HOST -e POSTGRES_PORT -e POSTGRES_DB -e POSTGRES_USER -e POSTGRES_PASSWORD -e DATABASE_URL -e REDIS_URL -e CELERY_BROKER_URL -e DJANGO_ALLOWED_HOSTS -e DJANGO_SECRET_KEY -e DJANGO_ADMIN_URL -e FAILBOT_REDIRECT_URL -e OPENAI_API_KEY -e DJANGO_SETTINGS_MODULE=config.settings.production ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest /start
 
           # Initial backfill only when collection is empty
           sleep 10
@@ -82,7 +116,8 @@ jobs:
           fi
 
           # Start Chainlit after backfill to avoid stale collection handles
-          docker run -d --name chainlit-prod --network failures-prod --cpus 1.0 --memory 2g --memory-swap 2g -w /app/failbot -p 8501:8501 -e POSTGRES_HOST -e POSTGRES_PORT -e POSTGRES_DB -e POSTGRES_USER -e POSTGRES_PASSWORD -e DATABASE_URL="${CHAINLIT_DATABASE_URL}" -e REDIS_URL -e CELERY_BROKER_URL -e DJANGO_SECRET_KEY -e DJANGO_ADMIN_URL -e CHAINLIT_DB_URI="${CHAINLIT_DATABASE_URL}" -e CHAINLIT_AUTH_SECRET -e OPENAI_API_KEY -e DJANGO_SETTINGS_MODULE=config.settings.production -e PYTHONPATH=/app ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest chainlit run failbotUI.py --port 8501 --host 0.0.0.0
+          docker run -d --name chainlit-prod --network failures-prod --cpus 1.0 --memory 2g --memory-swap 2g -w /app/failbot -e POSTGRES_HOST -e POSTGRES_PORT -e POSTGRES_DB -e POSTGRES_USER -e POSTGRES_PASSWORD -e DATABASE_URL="${CHAINLIT_DATABASE_URL}" -e REDIS_URL -e CELERY_BROKER_URL -e DJANGO_SECRET_KEY -e DJANGO_ADMIN_URL -e CHAINLIT_DB_URI="${CHAINLIT_DATABASE_URL}" -e CHAINLIT_AUTH_SECRET -e OPENAI_API_KEY -e DJANGO_SETTINGS_MODULE=config.settings.production -e PYTHONPATH=/app ${{ secrets.AWS_ECR_REPOSITORY_URL }}:latest chainlit run failbotUI.py --port 8501 --host 0.0.0.0 --root-path /failbot
+          docker run -d --name nginx-proxy --network failures-prod -p 80:80 -v /tmp/failures-nginx.conf:/etc/nginx/conf.d/default.conf:ro nginx:alpine
 
           # Clean up
           docker image prune -f --all
