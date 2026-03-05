@@ -50,6 +50,7 @@ def landing_page(request):
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
+    path(f"database/{settings.ADMIN_URL}", admin.site.urls),
     path('health/', lambda request: JsonResponse({"status": "healthy"}, status=200), name='health_check'),
     path("", landing_page, name="landing_page"),
     path("database/", include("failures.articles.urls", namespace="articles")),
