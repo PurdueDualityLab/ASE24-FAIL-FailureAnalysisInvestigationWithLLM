@@ -317,6 +317,69 @@ async def generate_fmea_from_articles(incidents, user_description):
     return response
 
 
+async def revise_fmea(existing_fmea, incidents, user_description, user_feedback):
+    """
+    Revises an existing Software FMEA using user feedback while keeping it grounded in relevant incidents.
+    """
+    incidents_json = json.dumps(incidents, indent=2)
+
+    prompt = (
+        "You previously created a Software FMEA for a user-provided system.\n\n"
+        "System description:\n"
+        f"{user_description}\n\n"
+        "Relevant incidents:\n"
+        f"{incidents_json}\n\n"
+        "Current FMEA:\n"
+        f"{existing_fmea}\n\n"
+        "User feedback for improving the FMEA:\n"
+        f"{user_feedback}\n\n"
+        "Revise the FMEA to address the feedback.\n"
+        "Keep the same core columns: Item/Function, Potential Failure Mode, Causes, Effects, Severity (S), Occurrence (O), Detection (D), RPN, RPN Rationale, Mitigations.\n"
+        "Ground the revised FMEA in the relevant incidents and cite incident ID(s) where appropriate.\n"
+        "Improve completeness, clarity, and prioritization where the feedback indicates changes are needed.\n"
+        "Return only the revised FMEA."
+    )
+
+    logging.info("Revising FMEA using user feedback...")
+    response = (await conversation_chain.ainvoke({"input": prompt}))["response"]
+    logging.info(f"Revised FMEA Response:\n{response}")
+
+    return response
+
+
+def _fmea_iteration_actions():
+    return [
+        cl.Action(name="fmea_done", value="done", label="✅ Looks Good", payload={}),
+        cl.Action(name="restart", value="restart", label="🔄 Start Over", payload={}),
+    ]
+
+
+def _filtered_incidents_message(filtered_incidents):
+    if not filtered_incidents:
+        return "📋 **Filtered Incidents:**\nNo incidents remained after filtering."
+
+    filtered_incidents_str = "\n".join(
+        [f"- ID: {inc['ID']}, Title: {inc['Title']}" for inc in filtered_incidents]
+    )
+    return f"📋 **Filtered Incidents:**\n{filtered_incidents_str}"
+
+
+def _is_fmea_iteration_complete(user_message):
+    normalized = user_message.strip().lower()
+    return normalized in {
+        "done",
+        "looks good",
+        "this looks good",
+        "good",
+        "approved",
+        "ship it",
+        "finalize",
+        "finalise",
+        "no changes",
+        "no more changes",
+    }
+
+
 # --- Chainlit App ---
 @cl.on_chat_start
 async def start():
@@ -336,6 +399,8 @@ async def start():
 
 @cl.action_callback("create_fmea")
 async def on_create_fmea(action):
+    cl.user_session.set("fmea_context", None)
+    cl.user_session.set("filtered_incidents", None)
     cl.user_session.set("state", "awaiting_fmea_description")
     await cl.Message(
         content="To get started, please describe the system you're designing:"
@@ -362,9 +427,9 @@ async def on_message(message: cl.Message):
 
         await cl.Message(content=f"🔎 Found {len(incidents)} incidents. Filtering with LLM for most relevant incidents...").send()
         filtered_incidents = await filter_relevant_incidents_with_llm(incidents, system_description)
+        cl.user_session.set("filtered_incidents", filtered_incidents)
 
-        filtered_incidents_str = "\n".join([f"- ID: {inc['ID']}, Title: {inc['Title']}" for inc in filtered_incidents])
-        await cl.Message(content=f"📋 **Filtered Incidents:**\n{filtered_incidents_str}").send()
+        await cl.Message(content=_filtered_incidents_message(filtered_incidents)).send()
 
         await cl.Message(content=f"📊 Generating FMEA from {len(filtered_incidents)} filtered incidents...").send()
         fmea_output = await generate_fmea_from_articles(filtered_incidents, system_description)
@@ -373,8 +438,12 @@ async def on_message(message: cl.Message):
         cl.user_session.set("state", "fmea_generated")
 
         await cl.Message(
-            content=f"📋 **Generated FMEA:**\n\n{fmea_output}",
-            actions=[cl.Action(name="restart", value="restart", label="🔄 Start Over", payload={})]
+            content=(
+                f"📋 **Generated FMEA:**\n\n{fmea_output}\n\n"
+                "Tell me what you want to improve and I will revise this FMEA. "
+                "For example: add more failure modes, adjust severity rankings, expand mitigations, or tighten the rationale."
+            ),
+            actions=_fmea_iteration_actions(),
         ).send()
     
     elif state == "chat_mode":
@@ -394,19 +463,19 @@ async def on_message(message: cl.Message):
         await cl.Message(content=f"🔎 Found {len(incidents)} incidents. Filtering with LLM for most relevant incidents...").send()
         system_description = cl.user_session.get("system_description", message.content)
         filtered_incidents = await filter_relevant_incidents_with_llm(incidents, system_description)
+        cl.user_session.set("filtered_incidents", filtered_incidents)
 
-        filtered_incidents_str = "\n".join([f"- ID: {inc['ID']}, Title: {inc['Title']}" for inc in filtered_incidents])
-        await cl.Message(content=f"📋 **Filtered Incidents:**\n{filtered_incidents_str}").send()
+        await cl.Message(content=_filtered_incidents_message(filtered_incidents)).send()
 
-        await cl.Message(content=f"🔍 Found {len(incidents)} relevant incidents.").send()
+        await cl.Message(content=f"🔍 Found {len(filtered_incidents)} relevant incidents after filtering.").send()
         
-        if not incidents:
+        if not filtered_incidents:
             await cl.Message(content=f"🔍 No relevant incidents found.").send()
             response = (await conversation_chain.ainvoke({"input": message.content}))["response"]
             await cl.Message(content=response).send()
             return
 
-        incidents_json = json.dumps(incidents, indent=2)
+        incidents_json = json.dumps(filtered_incidents, indent=2)
         prompt = (
             "You are a chatbot assistant for a database of software failures. "
             "A user has asked a question. Use the following relevant incidents from the database to answer the user's question.\n"
@@ -424,8 +493,34 @@ async def on_message(message: cl.Message):
     elif state == "fmea_generated":
         follow_up = message.content
         await _maybe_update_thread_title(follow_up)
-        response = (await conversation_chain.ainvoke({"input": follow_up}))["response"]
-        await cl.Message(content=response).send()
+        if _is_fmea_iteration_complete(follow_up):
+            cl.user_session.set("state", "chat_mode")
+            await cl.Message(
+                content="FMEA iteration complete. You can now chat with the Failures database or start another FMEA whenever you want.",
+                actions=[cl.Action(name="restart", value="restart", label="🔄 Start Over", payload={})],
+            ).send()
+            return
+
+        system_description = cl.user_session.get("system_description")
+        filtered_incidents = cl.user_session.get("filtered_incidents", [])
+        current_fmea = cl.user_session.get("fmea_context")
+
+        await cl.Message(content="🛠 Revising the FMEA based on your feedback...").send()
+        revised_fmea = await revise_fmea(
+            existing_fmea=current_fmea,
+            incidents=filtered_incidents,
+            user_description=system_description,
+            user_feedback=follow_up,
+        )
+
+        cl.user_session.set("fmea_context", revised_fmea)
+        await cl.Message(
+            content=(
+                f"📋 **Revised FMEA:**\n\n{revised_fmea}\n\n"
+                "Tell me what else to improve, or click Looks Good if you want to keep this version."
+            ),
+            actions=_fmea_iteration_actions(),
+        ).send()
         
     else: # state is "initial" or None
         actions = [
@@ -437,10 +532,19 @@ async def on_message(message: cl.Message):
             actions=actions
         ).send()
 
+@cl.action_callback("fmea_done")
+async def on_fmea_done(action):
+    cl.user_session.set("state", "chat_mode")
+    await cl.Message(
+        content="FMEA iteration complete. You can keep chatting with the Failures database or start another FMEA whenever you want.",
+        actions=[cl.Action(name="restart", value="restart", label="🔄 Start Over", payload={})],
+    ).send()
+
 @cl.action_callback("restart")
 async def on_restart(action):
     cl.user_session.set("system_description", None)
     cl.user_session.set("fmea_context", None)
+    cl.user_session.set("filtered_incidents", None)
     memory.clear()
     cl.user_session.set("state", "initial")
     actions = [
