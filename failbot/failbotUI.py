@@ -24,6 +24,9 @@ from chainlit.step import Step
 
 from asgiref.sync import sync_to_async
 from django.contrib.auth import authenticate
+from django.db import connection
+
+from failbot.chat_naming import build_chat_title, should_replace_thread_name
 
 
 if not getattr(cl_message.MessageBase, "_failbot_safe_post_init", False):
@@ -75,7 +78,13 @@ async def auth_callback(username, password):
 
 @cl.on_chat_resume
 async def on_chat_resume(thread):
-    pass
+    if isinstance(thread, dict):
+        thread_id = thread.get("id") or thread.get("threadId")
+    else:
+        thread_id = getattr(thread, "id", None) or getattr(thread, "threadId", None)
+
+    if thread_id:
+        cl.user_session.set("thread_id", thread_id)
 
 
 # --- Setup ---
@@ -103,6 +112,80 @@ class IncidentIDList(BaseModel):
     incident_ids: List[int]
 
 # --- Core Functions ---
+
+
+def _get_current_thread_id():
+    stored_thread_id = cl.user_session.get("thread_id")
+    if stored_thread_id:
+        return stored_thread_id
+
+    try:
+        session = cl.context.session
+    except Exception:
+        session = None
+
+    candidates = []
+    if session is not None:
+        candidates.extend([
+            getattr(session, "thread_id", None),
+            getattr(session, "threadId", None),
+        ])
+
+        thread = getattr(session, "thread", None)
+        if isinstance(thread, dict):
+            candidates.extend([
+                thread.get("id"),
+                thread.get("thread_id"),
+                thread.get("threadId"),
+            ])
+        elif thread is not None:
+            candidates.extend([
+                getattr(thread, "id", None),
+                getattr(thread, "thread_id", None),
+                getattr(thread, "threadId", None),
+            ])
+
+    thread_id = next((candidate for candidate in candidates if candidate), None)
+    if thread_id:
+        cl.user_session.set("thread_id", thread_id)
+
+    return thread_id
+
+
+def _get_thread_name(thread_id):
+    with connection.cursor() as cursor:
+        cursor.execute('SELECT "name" FROM "Thread" WHERE "id" = %s', [thread_id])
+        row = cursor.fetchone()
+    return row[0] if row else None
+
+
+def _set_thread_name(thread_id, title):
+    with connection.cursor() as cursor:
+        cursor.execute(
+            'UPDATE "Thread" SET "name" = %s, "updatedAt" = CURRENT_TIMESTAMP WHERE "id" = %s',
+            [title, thread_id],
+        )
+        return cursor.rowcount > 0
+
+
+async def _maybe_update_thread_title(message_content):
+    thread_id = _get_current_thread_id()
+    if not thread_id:
+        logging.warning("Unable to determine the active Chainlit thread ID for chat naming.")
+        return
+
+    current_name = await sync_to_async(_get_thread_name)(thread_id)
+    if not should_replace_thread_name(current_name):
+        return
+
+    title = build_chat_title(message_content)
+    if not title:
+        return
+
+    updated = await sync_to_async(_set_thread_name)(thread_id, title)
+    if updated:
+        logging.info("Updated Chainlit thread %s title to '%s'.", thread_id, title)
+
 
 def RAG_relevant_incidents(query, similarity_threshold=0.7):
     global vector_db
@@ -239,6 +322,9 @@ async def generate_fmea_from_articles(incidents, user_description):
 async def start():
     user = cl.user_session.get("user")
     cl.user_session.set("state", "initial")
+    thread_id = _get_current_thread_id()
+    if thread_id:
+        cl.user_session.set("thread_id", thread_id)
     actions = [
         cl.Action(name="create_fmea", value="fmea", label="Create an FMEA", payload={}),
         cl.Action(name="chat_db", value="chat", label="Chat with the Failures database", payload={}),
@@ -269,6 +355,7 @@ async def on_message(message: cl.Message):
     if state == "awaiting_fmea_description":
         system_description = message.content
         cl.user_session.set("system_description", system_description)
+        await _maybe_update_thread_title(system_description)
         
         await cl.Message(content="🔍 Retrieving relevant incidents from FailDB...").send()
         incidents = await sync_to_async(RAG_relevant_incidents)(system_description)
@@ -298,6 +385,8 @@ async def on_message(message: cl.Message):
                 content="It looks like you want to create an FMEA. To get started, please describe the system you're designing:"
             ).send()
             return
+
+        await _maybe_update_thread_title(message.content)
 
         await cl.Message(content="🔍 Searching the Failures database...").send()
         incidents = await sync_to_async(RAG_relevant_incidents)(message.content)
@@ -334,6 +423,7 @@ async def on_message(message: cl.Message):
 
     elif state == "fmea_generated":
         follow_up = message.content
+        await _maybe_update_thread_title(follow_up)
         response = (await conversation_chain.ainvoke({"input": follow_up}))["response"]
         await cl.Message(content=response).send()
         
