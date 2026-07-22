@@ -132,7 +132,7 @@ class EmbedderGPT(Network[str, list[float]]):
                 response = self.client.embeddings.create(input = [preprocessed_data], model='text-embedding-ada-002')
                 break
 
-            except openai.Timeout as e:
+            except openai.APITimeoutError as e:
                 #Handle timeout error, e.g. retry or log
                 logging.info(f"OpenAI API request timed out: {e}")
             except openai.APIError as e:
@@ -220,7 +220,7 @@ class SummarizerGPT(Network[str, str]):
                 max_tokens=300,
             )
 
-        except openai.Timeout as e:
+        except openai.APITimeoutError as e:
             #Handle timeout error, e.g. retry or log
             logging.info(f"OpenAI API request timed out: {e}")
         except openai.APIError as e:
@@ -282,7 +282,7 @@ class ChatGPT(Network[dict, str]):
             try:
                 chat_completion = None
                 chat_completion = self.client.chat.completions.create(
-                                request_timeout=120, model=model, messages=messages, temperature=temperature, response_format=response_format, #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1
+                                timeout=120, model=model, messages=messages, temperature=temperature, response_format=response_format, #"gpt-3.5-turbo", messages=messages, temperature=1 #top_p=1
                                 )
 
                 ### Error handing and retry if output is expected in json format and is not in a JSON format
@@ -302,7 +302,7 @@ class ChatGPT(Network[dict, str]):
                 else:
                     break
 
-            except openai.Timeout as e:
+            except openai.APITimeoutError as e:
                 #Handle timeout error, e.g. retry or log
                 logging.info(f"OpenAI API request timed out: {e}")
             except openai.APIError as e:

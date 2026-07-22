@@ -123,6 +123,9 @@ class MergeCommand:
             for incident in incidents:
                 logging.info("Searching within incident: %s.", incident)
                 for article_incident in incident.articles.all():
+
+                    article_incident.postmortem_from_article_ChatGPT(chatGPT, inputs, questions_chat, {}, args.all, "summary")
+                    article_incident.create_postmortem_embeddings_GPT(embedder, postmortem_keys, False)
                     
                     mean_score = 0
                     sum_scores = 0

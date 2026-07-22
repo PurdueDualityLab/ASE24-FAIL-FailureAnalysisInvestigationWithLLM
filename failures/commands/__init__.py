@@ -14,6 +14,7 @@ from failures.commands.fixes import FixesCommand
 from failures.commands.cleanup import CleanUpCommand
 from failures.commands.backfillChroma import BackfillChromaCommand
 from failures.commands.Chatbot import IncidentChatbotCommand
+from failures.commands.loadDataset import LoadDatasetCommand    
 
 from failures.commands.outdated.stats import StatsCommand
 from failures.commands.results import ResultsCommand
@@ -51,7 +52,7 @@ class Command(Protocol):
 
 
 
-_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), MergeCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), FixesCommand(), CleanUpCommand(), BackfillChromaCommand(), StatsCommand(), ResultsCommand(), IncidentChatbotCommand(), fmeatestCommand()]
+_COMMANDS: list[Command] = [ScrapeCommand(), ClassifyFailureCommand(), ClassifyAnalyzableCommand(), MergeCommand(), PostmortemIncidentAutoVDBCommand(), ClusterCommand(), FixesCommand(), CleanUpCommand(), BackfillChromaCommand(), StatsCommand(), ResultsCommand(), IncidentChatbotCommand(),LoadDatasetCommand(), fmeatestCommand()]
 
 
 

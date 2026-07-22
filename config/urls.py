@@ -36,7 +36,7 @@ def landing_page(request):
       <p>Browse the failure database or use FailBot for interactive analysis.</p>
       <div class="row">
         <a class="btn primary" href="/database/">Open Database</a>
-        <a class="btn secondary" href="/failbot/">Open FailBot</a>
+        <a class="btn secondary" href="http://localhost:8501">Open FailBot</a>
       </div>
     </div>
   </div>

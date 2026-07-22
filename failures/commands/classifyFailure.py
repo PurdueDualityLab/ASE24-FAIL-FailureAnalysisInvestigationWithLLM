@@ -74,7 +74,7 @@ class ClassifyFailureCommand:
         """
 
         logging.info("\nClassifying articles on whether report on software failures.")
-
+        
         # Gets list of article to classify
         queryset = (
             Article.objects.filter(scrape_successful=True, id__in=args.articles) if args.articles 

@@ -138,7 +138,7 @@ class PostmortemIncidentAutoVDBCommand:
 
         ### Set up for incidents > 16k context window
         # Vector DB setup
-        chroma_client = chromadb.HttpClient(host="172.17.0.1", port="8001") #TODO: host.docker.internal
+        chroma_client = chromadb.HttpClient(host="chroma", port="8001") #TODO: host.docker.internal
         embedding_function = OpenAIEmbeddings()
         vectorDB = Chroma(client=chroma_client, collection_name="articlesVDB", embedding_function=embedding_function)
         text_splitter = RecursiveCharacterTextSplitter(chunk_size = CHUNK_SIZE, chunk_overlap = 0)

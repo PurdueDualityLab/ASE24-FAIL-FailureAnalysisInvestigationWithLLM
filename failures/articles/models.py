@@ -655,7 +655,8 @@ class Article(models.Model):
 
 
     def cosine_similarity(self, other: "Article", option_key) -> float:
-        if not getattr(self, option_key) or not getattr(self, option_key):
+        #if not getattr(self, option_key) or not getattr(self, option_key):
+        if not getattr(self, option_key) or not getattr(other, option_key):
             raise ValueError("One or both articles have no " + option_key)
         
         embedding_self = json.loads(getattr(self, option_key))
@@ -1168,7 +1169,8 @@ class Article_Ko(models.Model):
 
 
     def cosine_similarity(self, other: "Article_Ko", option_key) -> float:
-        if not getattr(self, option_key) or not getattr(self, option_key):
+        #if not getattr(self, option_key) or not getattr(self, option_key):
+        if not getattr(self, option_key) or not getattr(other, option_key):
             raise ValueError("One or both articles have no " + option_key)
         
         embedding_self = json.loads(getattr(self, option_key))
