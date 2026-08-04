@@ -27,6 +27,7 @@ from django.contrib.auth import authenticate
 from django.db import connection
 
 from failbot.chat_naming import build_chat_title, should_replace_thread_name
+from failbot.sfmea_service import SFMEAPipeline
 
 
 if not getattr(cl_message.MessageBase, "_failbot_safe_post_init", False):
@@ -106,6 +107,7 @@ vector_db = _new_vector_db()
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 memory = ConversationBufferMemory()
 conversation_chain = ConversationChain(memory=memory, llm=llm)
+sfmea_generator = SFMEAPipeline(llm=llm)
 
 # For structured output of incident list
 class IncidentIDList(BaseModel):
@@ -287,7 +289,28 @@ async def filter_relevant_incidents_with_llm(incidents, user_description):
 
     return incidents
 
+async def generate_fmea_from_articles(incidents, user_description, system_design):
+    """
+    Generates a Software FMEA table using the staged SFMEA state machine
+    """
 
+    async def report_progress(stage):
+        await cl.Message(content=f"Running SFMEA stage: {stage.replace('_', ' ')}...").send()
+
+    logging.info("Generating SFMEA ..")
+
+    fmea_document = await sfmea_generator.generate(
+        system_description=user_description,
+        system_design=system_design,
+        historical_incidents=incidents,
+        progress_callback=report_progress,
+    )
+
+    logging.info("Generating FMEA grounded in article-linked incidents...")
+    return fmea_document
+
+
+'''
 async def generate_fmea_from_articles(incidents, user_description):
     """
     Generates a Software FMEA table using incidents linked to the retrieved articles.
@@ -315,6 +338,7 @@ async def generate_fmea_from_articles(incidents, user_description):
     logging.info(f"FMEA Response:\n{response}")
     
     return response
+'''
 
 
 async def revise_fmea(existing_fmea, incidents, user_description, user_feedback):
@@ -422,17 +446,31 @@ async def on_message(message: cl.Message):
         cl.user_session.set("system_description", system_description)
         await _maybe_update_thread_title(system_description)
         
+        cl.user_session.set("state","awaiting_fmea_system_design")
+        await cl.Message(
+            content=(
+                "Provide a high level system architecture eg software components, interfaces, services and user-facing modules "
+            )
+        ).send()
+
+    elif state == "awaiting_fmea_system_design"
+        system_design = message.content
+        system_description = cl.user_session.get("system_description", "")
+        cl.user_session.set("system_design", system_design)
+
+        await _maybe_update_thread_title(system_description or system_design)
+
         await cl.Message(content="🔍 Retrieving relevant incidents from FailDB...").send()
-        incidents = await sync_to_async(RAG_relevant_incidents)(system_description)
+        incidents = await sync_to_async(RAG_relevant_incidents)(system_description)(system_design)
 
         await cl.Message(content=f"🔎 Found {len(incidents)} incidents. Filtering with LLM for most relevant incidents...").send()
-        filtered_incidents = await filter_relevant_incidents_with_llm(incidents, system_description)
+        filtered_incidents = await filter_relevant_incidents_with_llm(incidents, f"{system_description}\n\n{system_design}")
         cl.user_session.set("filtered_incidents", filtered_incidents)
 
         await cl.Message(content=_filtered_incidents_message(filtered_incidents)).send()
 
         await cl.Message(content=f"📊 Generating FMEA from {len(filtered_incidents)} filtered incidents...").send()
-        fmea_output = await generate_fmea_from_articles(filtered_incidents, system_description)
+        fmea_output = await generate_fmea_from_articles(filtered_incidents, system_description,system_design)
 
         cl.user_session.set("fmea_context", fmea_output)
         cl.user_session.set("state", "fmea_generated")
