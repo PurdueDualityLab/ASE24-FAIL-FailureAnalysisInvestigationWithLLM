@@ -22,9 +22,7 @@ class SFMEAStage(str, Enum):
 
 class Component(BaseModel):
     item_id: str = Field(description="Stable component identifier, such as C1.")
-    description: str = Field(description="Component name or short description.")
-    function: str = Field(default="", description="Known function of the component.")
-    assumptions_or_gaps: List[str] = Field(default_factory=list)
+    item_function: str = Field(description="The function of the component in the system.")
 
 
 class ComponentInventory(BaseModel):
@@ -33,8 +31,8 @@ class ComponentInventory(BaseModel):
 
 class Criticality(BaseModel):
     item_id: str
-    safety_criticality: str
-    mission_criticality: str
+    safety_criticality: int 
+    mission_criticality: int 
     rationale: str
 
 
@@ -43,14 +41,14 @@ class CriticalityRanking(BaseModel):
 
 
 class FailureMode(BaseModel):
-    item_id: str = Field(description="Stable failure mode identifier, such as FM1.")
-    component_id: str = Field(description="The component item_id this failure mode belongs to.")
-    component: str
+    item_id: str = Field(description="The associated component's stable identifier, such as C1.")
+    failure_id: str = Field(description="The failure mode's associated component ID, such as FM1.")
+    item_function: str
     failure_mode: str
     rationale: str
     source: str = Field(description="Grounded or Inferred.")
     source_incident_ids: List[int] = Field(default_factory=list)
-    sfmea_viewpoint: str = Field(default="")
+    
 
 
 class FailureModeSet(BaseModel):
@@ -140,10 +138,9 @@ class MitigatedFailureModeSet(BaseModel):
 
 
 class SFMEARow(BaseModel):
-    item_id: str
-    component_id: str
+    row_id: str
+    failure_id: str
     item_function: str
-    component: str
     failure_mode: str
     root_cause: str
     local_effect: str
@@ -156,7 +153,6 @@ class SFMEARow(BaseModel):
     failure_mode_source: str
     source_incident_ids: List[int] = Field(default_factory=list)
 
-
 class SFMEADocument(BaseModel):
     system_description: str
     system_design: str
@@ -167,7 +163,6 @@ class SFMEADocument(BaseModel):
         headers = [
             "ID",
             "Item/Function",
-            "Component",
             "Failure Mode",
             "Root Cause",
             "Local Effect",
@@ -182,98 +177,8 @@ class SFMEADocument(BaseModel):
         ]
         rows = [
             [
-                row.item_id,
+                row.row_id,
                 row.item_function,
-                row.component,
-                row.failure_mode,
-                row.root_cause,
-                row.local_effect,
-                row.preventive_measures,
-                row.severity,
-                row.likelihood,
-                str(row.rpn),
-                row.rpn_rationale,
-                row.corrective_actions,
-                row.failure_mode_source,
-                ", ".join(str(incident_id) for incident_id in row.source_incident_ids) or "-",
-            ]
-            for row in self.rows
-        ]
-        return _markdown_table(headers, rows)
-
-class LLMAdapter:
-    def __init__(self, llm: Optional[ChatOpenAI] = None):
-        self.llm = llm or ChatOpenAI(model="gpt-4o-mini", temperature=0)
-
-    async def structured_output(self, prompt: str, output_model: type[BaseModel]) -> BaseModel:
-        structured_llm = self.llm.with_structured_output(output_model, method="json_mode")
-        return await structured_llm.ainvoke(prompt)
-
-class StageRunner:
-    def __init__(self, llm_adapter: LLMAdapter, progress_callback: Optional[ProgressCallback] = None):
-        self.llm_adapter = llm_adapter
-        self.progress_callback = progress_callback
-
-    async def run_llm_stage(
-        self,
-        stage: SFMEAStage,
-        output_model: type[BaseModel],
-        prompt: str,
-    ) -> BaseModel:
-        await self.report(stage)
-        logging.info("Running SFMEA stage: %s", stage.value)
-        return await self.llm_adapter.structured_output(prompt, output_model)
-
-    async def report(self, stage: SFMEAStage) -> None:
-        if self.progress_callback:
-            await self.progress_callback(stage.value)
-
-
-    item_id: str
-    component_id: str
-    item_function: str
-    component: str
-    failure_mode: str
-    root_cause: str
-    local_effect: str
-    preventive_measures: str
-    severity: str
-    likelihood: str
-    rpn: int
-    rpn_rationale: str
-    corrective_actions: str
-    failure_mode_source: str
-    source_incident_ids: List[int] = Field(default_factory=list)
-
-
-class SFMEADocument(BaseModel):
-    system_description: str
-    system_design: str
-    rows: List[SFMEARow]
-    stage_outputs: dict = Field(default_factory=dict)
-
-    def to_markdown(self) -> str:
-        headers = [
-            "ID",
-            "Item/Function",
-            "Component",
-            "Failure Mode",
-            "Root Cause",
-            "Local Effect",
-            "Preventive Measures",
-            "Severity",
-            "Likelihood",
-            "RPN",
-            "RPN Rationale",
-            "Corrective Actions",
-            "Source",
-            "Incidents",
-        ]
-        rows = [
-            [
-                row.item_id,
-                row.item_function,
-                row.component,
                 row.failure_mode,
                 row.root_cause,
                 row.local_effect,
@@ -336,8 +241,7 @@ Original system description:
 High-level system design:
 {system_design}
 
-Return a JSON object with a "components" array. Do not fabricate missing parts. If a component's function is unclear,
-include the uncertainty in "assumptions_or_gaps".
+Return a JSON object with a "components" array. Each component should have an item_id ,and item_function.
 """,
         )
 
@@ -402,6 +306,14 @@ Historical incidents:
 {historical_data}
 
 Return a JSON object with a "failure_modes" array. Use source="Grounded" for incident-derived modes and include source_incident_ids.
+Each JSON object in the array should have the following fields:
+- item_id: component ID such as C1
+- item_function: component name/function
+- failure_id: failure-mode ID such as HFM1
+- failure_mode
+- rationale
+- source
+- source_incident_ids
 """,
         )
 
@@ -434,6 +346,14 @@ Criticality ranking:
 {criticality.model_dump_json(indent=2)}
 
 Return a JSON object with a "failure_modes" array. Use source="Inferred" unless directly grounded in the supplied context.
+Each JSON object in the array should have the following fields:
+- item_id: component ID such as C1
+- item_function: component name/function
+- failure_id: failure-mode ID such as HFM1
+- failure_mode
+- rationale
+- source
+- source_incident_ids
 """,
         )
 
@@ -473,6 +393,14 @@ Viewpoint failure modes:
 {viewpoint_modes.model_dump_json(indent=2)}
 
 Return a JSON object with a "failure_modes" array, sorted by the failure modes affecting the most components first.
+Each JSON object in the array should have the following fields:
+- item_id: component ID such as C1
+- item_function: component name/function
+- failure_id: failure-mode ID such as HFM1
+- failure_mode
+- rationale
+- source
+- source_incident_ids
 """,
         )
 
@@ -508,6 +436,13 @@ Failure modes:
 {failure_modes.model_dump_json(indent=2)}
 
 Return a JSON object with an "entries" array.
+Each JSON object in entries must have exactly these fields: item_id, failure_mode, cause, effect, and assessment.
+- failure_mode must have exactly: item_id, item_function, failure_id, failure_mode, rationale,
+  source, and source_incident_ids.
+- cause must have exactly: item_id, root_cause, rationale, and source.
+- effect must have exactly: item_id, local_effect, rationale, and source.
+- assessment must have exactly: item_id, severity, likelihood, severity_rationale,
+  likelihood_rationale, severity_source, and likelihood_source.
 """,
         )
 
@@ -658,9 +593,9 @@ class DocumentAssembler:
             component = components_by_id.get(entry.failure_mode.component_id)
             rows.append(
                 SFMEARow(
-                    item_id=entry.item_id,
+                    row_id=entry.item_id,
                     component_id=entry.failure_mode.component_id,
-                    item_function=component.function if component else "",
+                    item_function=component.item_function if component else "",
                     component=component.description if component else entry.failure_mode.component,
                     failure_mode=entry.failure_mode.failure_mode,
                     root_cause=entry.cause.root_cause,
