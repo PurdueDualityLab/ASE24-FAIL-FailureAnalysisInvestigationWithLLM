@@ -138,12 +138,15 @@ class MitigatedFailureModeSet(BaseModel):
 
 
 class SFMEARow(BaseModel):
-    row_id: str
     failure_id: str
+    row_id: str
     item_function: str
     failure_mode: str
+    failure_mode_rationale: str
     root_cause: str
+    root_cause_rationale: str
     local_effect: str
+    local_effect_rationale: str
     preventive_measures: str
     severity: str
     likelihood: str
@@ -164,8 +167,11 @@ class SFMEADocument(BaseModel):
             "ID",
             "Item/Function",
             "Failure Mode",
+            "Failure Mode Rationale",
             "Root Cause",
+            "Root Cause Rationale",
             "Local Effect",
+            "Local Effect Rationale",
             "Preventive Measures",
             "Severity",
             "Likelihood",
@@ -177,11 +183,14 @@ class SFMEADocument(BaseModel):
         ]
         rows = [
             [
-                row.row_id,
+                row.failure_id,
                 row.item_function,
                 row.failure_mode,
+                row.failure_mode_rationale,
                 row.root_cause,
+                row.root_cause_rationale,
                 row.local_effect,
+                row.local_effect_rationale,
                 row.preventive_measures,
                 row.severity,
                 row.likelihood,
@@ -416,8 +425,9 @@ Each JSON object in the array should have the following fields:
             "Root causes and local effects",
             f"""
 Identify the root cause and local effect for each failure mode.
-Preserve failure mode item_id and component_id values exactly.
-Assign cause.item_id as "<failure_mode_id>:CAUSE" and effect.item_id as "<failure_mode_id>:EFFECT".
+Preserve failure mode item_id, failure_id, and item_function values exactly.
+Assign each entry.item_id to failure_mode.failure_id. Assign cause.item_id as "<failure_id>:CAUSE"
+and effect.item_id as "<failure_id>:EFFECT".
 Keep source fields as Grounded when supported by historical incident data and Inferred otherwise.
 
 System description:
@@ -490,6 +500,14 @@ Failure modes with causes and effects:
 {cause_effects.model_dump_json(indent=2)}
 
 Return a JSON object with an "entries" array.
+Each JSON object in entries must have exactly these
+fields: item_id, failure_mode, cause, effect, and assessment.
+- failure_mode must have exactly: item_id, item_function, failure_id, failure_mode, rationale,
+  source, and source_incident_ids.
+- cause must have exactly: item_id, root_cause, rationale, and source.
+- effect must have exactly: item_id, local_effect, rationale, and source.
+- assessment must have exactly: item_id, severity, likelihood, severity_rationale,
+  likelihood_rationale, severity_source, and likelihood_source.
 """,
         )
 
@@ -523,6 +541,18 @@ Failure modes with severity, likelihood, and calculated RPN:
 {scored_modes.model_dump_json(indent=2)}
 
 Return a JSON object with an "entries" array.
+Each JSON object in entries must have exactly these
+fields: item_id, failure_mode, cause, effect, assessment, rpn, and mitigation.
+- failure_mode must have exactly: item_id, item_function, failure_id, failure_mode, rationale,
+  source, and source_incident_ids.
+- cause must have exactly: item_id, root_cause, rationale, and source.
+- effect must have exactly: item_id, local_effect, rationale, and source.
+- assessment must have exactly: item_id, severity, likelihood, severity_rationale,
+  likelihood_rationale, severity_source, and likelihood_source.
+- rpn must have exactly: item_id, rpn, and rationale. Return rpn as a JSON integer.
+- mitigation must have exactly: item_id, preventive_measures, and corrective_actions. Both
+  preventive_measures and corrective_actions must each be one JSON string, never an array. Combine
+  multiple actions into the single string using semicolons.
 """,
         )
 
@@ -558,7 +588,7 @@ class RPNCalculator:
                         item_id=f"{entry.item_id}:RPN",
                         rpn=rpn,
                         rationale=(
-                            f"Python-calculated RPN: severity score {severity_score} "
+                            f" RPN: severity score {severity_score} "
                             f"x likelihood score {likelihood_score} = {rpn}."
                         ),
                     ),
@@ -590,16 +620,18 @@ class DocumentAssembler:
         components_by_id = {component.item_id: component for component in components.components}
         rows = []
         for entry in mitigated_modes.entries:
-            component = components_by_id.get(entry.failure_mode.component_id)
+            component = components_by_id.get(entry.failure_mode.item_id)
             rows.append(
                 SFMEARow(
-                    row_id=entry.item_id,
-                    component_id=entry.failure_mode.component_id,
+                    failure_id=entry.failure_mode.failure_id,
+                    row_id=entry.failure_mode.item_id,
                     item_function=component.item_function if component else "",
-                    component=component.description if component else entry.failure_mode.component,
                     failure_mode=entry.failure_mode.failure_mode,
+                    failure_mode_rationale=entry.failure_mode.rationale,
                     root_cause=entry.cause.root_cause,
+                    root_cause_rationale=entry.cause.rationale,
                     local_effect=entry.effect.local_effect,
+                    local_effect_rationale=entry.effect.rationale,
                     preventive_measures=entry.mitigation.preventive_measures,
                     severity=entry.assessment.severity,
                     likelihood=entry.assessment.likelihood,
