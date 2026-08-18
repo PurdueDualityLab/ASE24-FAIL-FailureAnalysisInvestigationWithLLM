@@ -27,7 +27,7 @@ from django.contrib.auth import authenticate
 from django.db import connection
 
 from failbot.chat_naming import build_chat_title, should_replace_thread_name
-from failbot.sfmea_service import SFMEAPipeline
+from failbot.sfmea_service import SFMEAPipeline, SFMEADocument
 
 
 if not getattr(cl_message.MessageBase, "_failbot_safe_post_init", False):
@@ -306,9 +306,14 @@ async def generate_fmea_from_articles(incidents, user_description, system_design
         progress_callback=report_progress,
     )
 
-    logging.info("Generating FMEA grounded in article-linked incidents...")
+    logging.info("Generating FMEA grounded in article-linked incidents...", fmea_document.model_dump_json(indent=2))
     return fmea_document
 
+def _render_fmea_document(fmea_document: SFMEADocument):
+    if isinstance(fmea_document, SFMEADocument):
+        return fmea_document.to_markdown()
+    return str(document)
+ 
 
 '''
 async def generate_fmea_from_articles(incidents, user_description):
@@ -453,7 +458,7 @@ async def on_message(message: cl.Message):
             )
         ).send()
 
-    elif state == "awaiting_fmea_system_design"
+    elif state == "awaiting_fmea_system_design":
         system_design = message.content
         system_description = cl.user_session.get("system_description", "")
         cl.user_session.set("system_design", system_design)
@@ -461,7 +466,7 @@ async def on_message(message: cl.Message):
         await _maybe_update_thread_title(system_description or system_design)
 
         await cl.Message(content="🔍 Retrieving relevant incidents from FailDB...").send()
-        incidents = await sync_to_async(RAG_relevant_incidents)(system_description)(system_design)
+        incidents = await sync_to_async(RAG_relevant_incidents)(f"{system_description}\n\n{system_design}")
 
         await cl.Message(content=f"🔎 Found {len(incidents)} incidents. Filtering with LLM for most relevant incidents...").send()
         filtered_incidents = await filter_relevant_incidents_with_llm(incidents, f"{system_description}\n\n{system_design}")
@@ -470,8 +475,11 @@ async def on_message(message: cl.Message):
         await cl.Message(content=_filtered_incidents_message(filtered_incidents)).send()
 
         await cl.Message(content=f"📊 Generating FMEA from {len(filtered_incidents)} filtered incidents...").send()
-        fmea_output = await generate_fmea_from_articles(filtered_incidents, system_description,system_design)
+        fmea_document = await generate_fmea_from_articles(filtered_incidents, system_description,system_design)
 
+        fmea_output = _render_fmea_document(fmea_document)
+
+        cl.user_session.set("fmea_document", fmea_document.model_dump())
         cl.user_session.set("fmea_context", fmea_output)
         cl.user_session.set("state", "fmea_generated")
 
@@ -500,7 +508,8 @@ async def on_message(message: cl.Message):
 
         await cl.Message(content=f"🔎 Found {len(incidents)} incidents. Filtering with LLM for most relevant incidents...").send()
         system_description = cl.user_session.get("system_description", message.content)
-        filtered_incidents = await filter_relevant_incidents_with_llm(incidents, system_description)
+        system_design = cl.user_session.get("system_design", "")
+        filtered_incidents = await filter_relevant_incidents_with_llm(incidents, f"{system_description}\n\n{system_design}")
         cl.user_session.set("filtered_incidents", filtered_incidents)
 
         await cl.Message(content=_filtered_incidents_message(filtered_incidents)).send()
