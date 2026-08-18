@@ -157,8 +157,6 @@ class SFMEARow(BaseModel):
     source_incident_ids: List[int] = Field(default_factory=list)
 
 class SFMEADocument(BaseModel):
-    system_description: str
-    system_design: str
     rows: List[SFMEARow]
     stage_outputs: dict = Field(default_factory=dict)
 
@@ -611,8 +609,6 @@ def calculate_rpn_scores(assessments: AssessmentSet) -> ScoredFailureModeSet:
 class DocumentAssembler:
     def assemble(
         self,
-        system_description: str,
-        system_design: str,
         components: ComponentInventory,
         mitigated_modes: MitigatedFailureModeSet,
         stage_outputs: dict,
@@ -643,8 +639,6 @@ class DocumentAssembler:
                 )
             )
         return SFMEADocument(
-            system_description=system_description,
-            system_design=system_design,
             rows=rows,
             stage_outputs=stage_outputs,
         )
@@ -751,8 +745,6 @@ class SFMEAPipeline:
 
         await runner.report(SFMEAStage.SFMEA_TABLE)
         return self.document_assembler.assemble(
-            system_description=system_description,
-            system_design=system_design,
             components=components,
             mitigated_modes=mitigated_modes,
             stage_outputs={
